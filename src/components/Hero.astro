@@ -1,0 +1,31 @@
+---
+import CtaButton from "../components/CtaButton.astro"
+---
+
+<div class="py-32 relative">
+  <div class="z-10 max-w-4xl mx-auto relative">
+    <div class="max-w-2xl">
+      <h1 class="text-5xl font-bold">
+        Docker-based PHP development environments.
+      </h1>
+      <h2 class="text-2xl my-6">
+        Container superpowers with zero required Docker skills: environments in
+        minutes, multiple concurrent projects, and less time to deployment.
+      </h2>
+
+      <div class="my-8 flex w-3/4 -mx-2">
+        <CtaButton text="Get Started" href="/get-started" />
+        <CtaButton
+          text="Documentation"
+          href="https://ddev.readthedocs.io/"
+          type="hollow"
+          target="_blank"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full h-72 absolute top-0 z-0" style="right: -40rem;">
+    <img src="/img/fpo-terminal.png" class="mx-auto" width="800" alt="" />
+  </div>
+</div>

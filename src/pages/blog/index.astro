@@ -1,0 +1,44 @@
+---
+import { getAllBlogPosts, formatDate, getReadTime } from "../../lib/api"
+import Layout from "../../layouts/Layout.astro"
+import BlogPostCard from "../../components/BlogPostCard.astro"
+import Heading from "../../components/Heading.astro"
+import Paging from "../../components/Paging.astro"
+
+const nodes = await getAllBlogPosts()
+
+const posts = nodes.edges
+  .map(({ node }) => {
+    return {
+      title: node.title,
+      href: `/blog/${node.slug}`,
+      category: {
+        name: "",
+        href: "#",
+      },
+      date: formatDate(node.date),
+      imageUrl: node.featuredImage ? node.featuredImage.node.sourceUrl : null,
+      readingTime: getReadTime(node.content),
+      author: {
+        name: node.author.node.name,
+        href: "#",
+        imageUrl: node.author.node.avatar.url,
+      },
+    }
+  })
+  .slice(0, 6)
+
+const title = `Blog Posts`
+---
+
+<Layout title={title}>
+  <main class="max-w-4xl mx-auto">
+    <Heading title={title} subtitle={`DDEV, Docker, and local development.`} />
+    <div
+      class="mt-12 mb-24 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none"
+    >
+      {posts.map((post) => <BlogPostCard post={post} />)}
+    </div>
+  </main>
+  <Paging nextURL={`/blog/2`} />
+</Layout>

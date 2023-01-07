@@ -1,0 +1,49 @@
+---
+import { getAllBlogPosts, formatDate, getReadTime } from "../../lib/api"
+import Layout from "../../layouts/Layout.astro"
+import BlogPostCard from "../../components/BlogPostCard.astro"
+import Heading from "../../components/Heading.astro"
+import Paging from "../../components/Paging.astro"
+
+export async function getStaticPaths({ paginate }) {
+  const nodes = await getAllBlogPosts()
+
+  const posts = nodes.edges.map(({ node }) => {
+    return {
+      title: node.title,
+      href: `/blog/${node.slug}`,
+      category: {
+        name: "",
+        href: "#",
+      },
+      date: formatDate(node.date),
+      imageUrl: node.featuredImage ? node.featuredImage.node.sourceUrl : null,
+      readingTime: getReadTime(node.content),
+      author: {
+        name: node.author.node.name,
+        href: "#",
+        imageUrl: node.author.node.avatar.url,
+      },
+    }
+  })
+
+  // Generate pages from our array of astronauts, with 6 to a page
+  return paginate(posts, { pageSize: 6 })
+}
+
+const { page } = Astro.props
+
+const title = `Blog Posts`
+---
+
+<Layout title={title + `, Page ${page.currentPage}`}>
+  <main class="max-w-4xl mx-auto">
+    <Heading title={title} subtitle={`DDEV, Docker, and local development.`} />
+    <div
+      class="mt-12 mb-24 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none"
+    >
+      {page.data.map((post) => <BlogPostCard post={post} />)}
+    </div>
+  </main>
+  <Paging nextURL={page.url.next} prevURL={page.url.prev} />
+</Layout>

@@ -1,0 +1,28 @@
+---
+import { getAllBlogPosts, getBlogPostBySlug, formatDate } from "../../lib/api"
+import Layout from "../../layouts/Layout.astro"
+import PostBody from "../../components/PostBody.astro"
+import Heading from "../../components/Heading.astro"
+
+export async function getStaticPaths() {
+  const pagesWithSlugs = await getAllBlogPosts()
+  return pagesWithSlugs.edges.map(({ node }) => {
+    return {
+      params: { slug: node.slug },
+    }
+  })
+}
+
+const { slug } = Astro.params
+const page = await getBlogPostBySlug(slug)
+const title = page.title
+---
+
+<Layout title={title}>
+  <main class="max-w-4xl mx-auto mb-24">
+    <Heading title={title} date={formatDate(page.date, { month: "long" })} />
+    <PostBody>
+      <div set:html={page.content} />
+    </PostBody>
+  </main>
+</Layout>

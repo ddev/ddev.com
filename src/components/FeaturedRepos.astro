@@ -1,0 +1,33 @@
+---
+import { GITHUB_REPO } from "../config"
+import RepoCard from "./RepoCard.astro"
+
+const repos = [
+  {
+    name: GITHUB_REPO,
+    description: "Official DDEV development and issues.",
+  },
+  {
+    name: "drud/ddev-contrib",
+    description:
+      "Vetted, user-contributed recipes for using and extending DDEV.",
+  },
+  {
+    name: "drud/awesome-ddev",
+    description:
+      "External resources, blog posts, recipes, screencasts, and more.",
+  },
+]
+---
+
+<div class="">
+  <div class="max-w-4xl mx-auto py-24">
+    <div class="grid gap-x-6 gap-y-12 grid-cols-3">
+      {
+        repos.map((repo) => (
+          <RepoCard name={repo.name} description={repo.description} />
+        ))
+      }
+    </div>
+  </div>
+</div>

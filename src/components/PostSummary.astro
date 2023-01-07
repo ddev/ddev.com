@@ -1,0 +1,16 @@
+---
+export interface Props {
+  title: string
+  date: string
+  href: string
+}
+
+import { formatDate } from "../lib/api"
+
+const { href, title, date } = Astro.props
+---
+
+<a href={href}>
+  <h2 class="text-3xl font-bold">{title}</h2>
+  <div class="font-mono">{formatDate(date, { month: "long" })}</div>
+</a>

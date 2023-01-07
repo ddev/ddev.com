@@ -1,0 +1,114 @@
+---
+import {
+  CheckCircleIcon,
+  Square3Stack3DIcon,
+  GlobeAltIcon,
+  KeyIcon,
+  AdjustmentsVerticalIcon,
+  BoltIcon,
+  CloudArrowUpIcon,
+  PuzzlePieceIcon,
+  LockOpenIcon,
+} from "@heroicons/react/24/solid/index.js"
+
+const features = [
+  {
+    name: "Modern Development Stack",
+    description:
+      "PHP, Node.js, MySQL, PostgreSQL, nginx, Apache, Redis, MailHog, and more.",
+    icon: CheckCircleIcon,
+  },
+  {
+    name: "Unlimited Projects",
+    description:
+      "Run multiple projects at once. Start and stop each as needed.",
+    icon: Square3Stack3DIcon,
+  },
+  {
+    name: "Multi-Platform",
+    description:
+      "Supported and rigorously tested on macOS, Windows, and Linux.",
+    icon: GlobeAltIcon,
+  },
+  {
+    name: "Custom Domains & SSL",
+    description:
+      "Included router automatically handles custom domain names and HTTPS.",
+    icon: KeyIcon,
+  },
+  {
+    name: "App Ready",
+    description:
+      "Presets for Laravel, WordPress, Drupal, TYPO3, Backdrop, Magento, Craft CMS and more.",
+    icon: AdjustmentsVerticalIcon,
+  },
+  {
+    name: "Great Performance",
+    description:
+      "Always evolving to incorporate features and practices that maximize speed.",
+    icon: BoltIcon,
+  },
+  {
+    name: "Custom Deployments",
+    description:
+      "Integrate with other providers and environments for fast, controlled deployment.",
+    icon: CloudArrowUpIcon,
+  },
+  {
+    name: "Extensible",
+    description:
+      "Painlessly use add-ons, run scripts in lifecycle hooks, and BYO Dockerfiles.",
+    icon: PuzzlePieceIcon,
+  },
+  {
+    name: "Open Source",
+    description:
+      "Apache 2.0 license; free to use, modify, and pass on to others.",
+    icon: LockOpenIcon,
+  },
+]
+---
+
+<div class="relative py-16 sm:py-24 lg:py-32">
+  <div
+    class="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8"
+  >
+    <h2 class="text-base font-mono text-navy-300">Features</h2>
+    <p class="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">
+      Running in minutes, ready for the long haul.
+    </p>
+    <p class="mx-auto mt-5 max-w-prose text-xl text-gray-500">
+      Start new DDEV projects in seconds. Customize, share, and extend with
+      ease.
+    </p>
+    <div class="mt-12">
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          features.map((feature) => (
+            <div class="pt-6">
+              <div class="rounded-lg px-6 pb-8">
+                <div class="-mt-6">
+                  <div>
+                    <span class="icon inline-flex items-center justify-center rounded-md text-navy-300 p-3">
+                      {() => {
+                        return (
+                          feature.icon && <feature.icon className="w-6 h-6" />
+                        )
+                      }}
+                    </span>
+                  </div>
+                  <h3 class="text-lg font-medium tracking-tight text-gray-900">
+                    {feature.name}
+                  </h3>
+                  <p class="mt-5 text-base text-gray-500">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</div>

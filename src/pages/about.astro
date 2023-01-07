@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Heading from "../components/Heading.astro"
+import PostBody from "../components/PostBody.astro"
+
+const title = `About DDEV`
+---
+
+<Layout title={title}>
+  <main class="max-w-4xl mx-auto mb-24">
+    <Heading title={title} />
+    <PostBody>
+      <p>
+        DDEV is an actively-developed, open source project for managing
+        Docker-based local development environments. It’s primarily been
+        PHP-based, but has grown with support for the Node.js ecosystem.
+      </p>
+      <p>
+        The project is maintained primarily by Randy Fay, who oversees
+        development, testing, and support with the help of volunteers and the
+        broader community. Development is supported by Platform.sh and many
+        individual sponsors.
+      </p>
+      <p>DDEV-Local was first released by a company called Drud in 19XX.</p>
+    </PostBody>
+  </main>
+</Layout>

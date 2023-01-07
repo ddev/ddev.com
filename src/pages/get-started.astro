@@ -1,0 +1,142 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Heading from "../components/Heading.astro"
+import PostBody from "../components/PostBody.astro"
+import { Code } from "astro/components"
+---
+
+<Layout>
+  <main class="max-w-4xl mx-auto mb-24">
+    <Heading
+      title={`Get Started with DDEV`}
+      subtitle={`How to install and start using DDEV.`}
+    />
+    <PostBody>
+      <h2>Step 1: Install DDEV</h2>
+      <ol>
+        <li>
+          <a
+            href="https://ddev.readthedocs.io/en/latest/users/install/docker-installation/"
+            >Install a Docker provider for your environment.</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://ddev.readthedocs.io/en/latest/users/install/ddev-installation/"
+            >Install DDEV for your environment</a
+          >.
+        </li>
+      </ol>
+      <p>
+        To see which commands are available, run <code>ddev</code> or
+      </p>
+
+      <Code code={`ddev -h`} lang="bash" />
+
+      <p>
+        <strong>Tip:</strong> If you’re already running a webserver on port 80, follow
+        <a href="https://ddev.readthedocs.io/en/latest/users/troubleshooting/"
+          >troubleshooting steps</a
+        > to resolve port conflicts.
+      </p>
+      <h2>Step 2: Set Up a Project</h2>
+      <p>
+        Check out the existing site repository to a local directory. This is the
+        project directory.
+      </p>
+      <p>
+        Set up a project for the first time with <code>ddev config</code
+        >.&nbsp;You only need to do this once per project. To set up a new
+        project, answer three questions:
+      </p>
+      <ul>
+        <li>What’s site name?</li>
+        <li>What’s the location of the docroot?</li>
+        <li>
+          What type of project is it? Such as Drupal, PHP, WordPress, etc.
+        </li>
+      </ul>
+      <p>
+        Follow the <a
+          href="https://ddev.readthedocs.io/en/latest/users/quickstart/"
+          >configuration examples for the CMS you’re working within</a
+        > the Quickstart Guides in the documentation.
+      </p>
+      <p>
+        Depending on the CMS, and whether the project is a brand new site or an
+        existing one, DDEV attempts to make the <a
+          href="https://ddev.readthedocs.io/en/latest/users/basics/cli-usage/"
+          >CMS-specific settings files</a
+        >.
+      </p>
+      <p>
+        If you’re working with an existing project follow the steps to <a
+          href="https://ddev.readthedocs.io/en/latest/users/basics/cli-usage/"
+          >import the database</a
+        >. Then,&nbsp;run <code>ddev describe</code> to get the database credentials
+        for the project.
+      </p>
+      <p>
+        This was a one-time configuration, and configuration files were created
+        for the project.&nbsp;Take a look at the project’s .ddev/ddev.yaml file.
+      </p>
+      <h2>Step 3. Use DDEV every day</h2>
+      <p>
+        To see a list of the current DDEV projects type <code>ddev list</code
+        >.&nbsp;The terminal will display what projects are configured, their
+        status, and a link to access each project.
+      </p>
+      <p><strong>Start your project</strong></p>
+      <p>
+        Each time you want to work on a project run <code>ddev start</code> from
+        the project directory. Or, to start any project, from anywhere, run:
+      </p>
+      <Code code={`ddev start projectname`} lang="bash" />
+      <p>
+        It’s the same with other DDEV CLI commands. Run them directly from
+        within the project (docroot), or specify the project name from anywhere.
+      </p>
+      <p><strong>Done working? Remove the container.</strong></p>
+      <p>
+        When you’re done with your tasks, remove the project while maintaining
+        the database and keeping the&nbsp;state of the project intact without
+        using up resources:
+      </p>
+      <Code code={`ddev stop`} lang="bash" />
+      <p>
+        Because <code>ddev stop</code> is not destructive (it maintains the database)
+        it makes starting up next time much easier. So that means, to start this
+        project&nbsp;type <code>ddev start projectname</code>, or cd into the
+        project directory and type<code>ddev start</code>.
+      </p>
+      <p>
+        If you do need to wipe out the database and erase DDEV’s memory of the
+        project
+      </p>
+      <Code code={`ddev delete`} lang="bash" />
+
+      <h2>Step 4. Stay up-to-date</h2>
+      <p>
+        From this point on, when you need to update DDEV follow the instructions
+        under <a
+          href="https://ddev.readthedocs.io/en/latest/users/basics/cli-usage/"
+          >the installation guide</a
+        >. <code></code>
+      </p>
+    </PostBody>
+
+    <aside class="bg-gray-200 p-8 rounded-lg mt-12">
+      <div class="prose">
+        <h2>Join the DDEV Community</h2>
+        <p>DDEV is an open source project with a growing community!</p>
+        <p>
+          Check out the <a
+            href="https://ddev.readthedocs.io/en/stable/users/support/"
+            >support options</a
+          > and stop by our <a href="">GitHub Issues</a> with feature proposals,
+          bugs, or just to get a look at what’s current.
+        </p>
+      </div>
+    </aside>
+  </main>
+</Layout>

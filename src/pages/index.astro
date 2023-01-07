@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Features from "../components/Features.astro"
+import Hero from "../components/Hero.astro"
+import SoftwareLogos from "../components/SoftwareLogos.astro"
+import Benefits from "../components/Benefits.astro"
+import AppLogos from "../components/AppLogos.astro"
+import BlogFeatures from "../components/BlogFeatures.astro"
+import FeaturedRepos from "../components/FeaturedRepos.astro"
+import Contributors from "../components/Contributors.astro"
+---
+
+<Layout>
+  <main>
+    <Hero />
+
+    <div class="max-w-6xl mx-auto">
+      <Features />
+    </div>
+
+    <SoftwareLogos />
+    <Benefits />
+    <AppLogos />
+    <BlogFeatures />
+    <Contributors />
+    <FeaturedRepos />
+  </main>
+</Layout>

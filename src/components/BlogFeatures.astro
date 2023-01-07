@@ -1,0 +1,39 @@
+---
+import { getRecentBlogPosts, formatDate, getReadTime } from "../lib/api"
+
+import BlogPostCard from "./BlogPostCard.astro"
+
+const nodes = await getRecentBlogPosts()
+
+const posts = nodes.edges.map(({ node }) => {
+  return {
+    title: node.title,
+    href: `/blog/${node.slug}`,
+    category: {
+      name: "",
+      href: "#",
+    },
+    date: formatDate(node.date),
+    imageUrl: node.featuredImage.node.sourceUrl,
+    readingTime: getReadTime(node.content),
+    author: {
+      name: node.author.node.name,
+      href: "#",
+      imageUrl: node.author.node.avatar.url,
+    },
+  }
+})
+---
+
+<div class="relative my-24 px-8">
+  <div class="relative max-w-5xl mx-auto">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
+        Latest Blog Posts
+      </h2>
+    </div>
+    <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+      {posts.map((post) => <BlogPostCard post={post} />)}
+    </div>
+  </div>
+</div>

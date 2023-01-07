@@ -1,0 +1,135 @@
+---
+import {
+  GITHUB_ISSUES_URL,
+  DOCUMENTATION_URL,
+  DISCORD_URL,
+  COPYRIGHT_HOLDER,
+  TWITTER_URL,
+  GITHUB_URL,
+} from "../config"
+
+import Icon from "./Icon.astro"
+
+const navigation = {
+  support: [
+    { name: "Documentation", href: DOCUMENTATION_URL },
+    { name: "GitHub Issues", href: GITHUB_ISSUES_URL },
+    { name: "Discord", href: DISCORD_URL },
+  ],
+  product: [
+    { name: "About", href: "/about" },
+    { name: "Sponsors", href: "#" },
+    { name: "Contributing", href: "/support-ddev" },
+    { name: "Blog", href: "/blog" },
+  ],
+  legal: [
+    {
+      name: "Subscription Services Agreement",
+      href: "/subscription-services-agreement",
+    },
+    { name: "Acceptable Use Policy", href: "/acceptable-use-policy" },
+    { name: "Technical Support Policies", href: "/technical-support-policies" },
+    { name: "Privacy Policy", href: "/privacy-policy" },
+  ],
+  social: [
+    {
+      name: "Discord",
+      href: DISCORD_URL,
+    },
+    {
+      name: "Twitter",
+      href: TWITTER_URL,
+    },
+    {
+      name: "GitHub",
+      href: GITHUB_URL,
+    },
+  ],
+}
+---
+
+<footer>
+  <div class="max-w-4xl mx-auto py-12 lg:py-16">
+    <div class="pb-8 xl:grid xl:grid-cols-3 xl:gap-8">
+      <div class="grid grid-cols-2 gap-8 xl:col-span-4">
+        <div class="md:grid md:grid-cols-2 md:gap-8">
+          <div class="mt-12 md:mt-0">
+            <h3 class="text-sm font-mono text-navy-300 tracking-wider">
+              Support
+            </h3>
+            <ul class="mt-4 space-y-4">
+              {
+                navigation.support.map((item) => (
+                  <li>
+                    <a href={item.href} class="text-base" target="_blank">
+                      {item.name}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-sm font-mono text-navy-300 tracking-wider">
+              Product
+            </h3>
+            <ul class="mt-4 space-y-4">
+              {
+                navigation.product.map((item) => (
+                  <li>
+                    <a href={item.href} class="text-base">
+                      {item.name}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+        <div class="md:grid md:grid-cols-1 md:gap-8">
+          <div class="mt-12 md:mt-0">
+            <h3 class="text-sm font-mono text-navy-300 tracking-wider">
+              Legal
+            </h3>
+            <ul class="mt-4 space-y-4">
+              {
+                navigation.legal.map((item) => (
+                  <li>
+                    <a href={item.href} class="text-base">
+                      {item.name}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mt-8 border-t border-gray-300 pt-8 md:flex md:items-center md:justify-between"
+    >
+      <div
+        class="flex space-x-6 md:order-2 items-center justify-center content-center"
+      >
+        {
+          navigation.social.map((item) => (
+            <a
+              href={item.href}
+              target="_blank"
+              class={`text-gray-500 hover:text-black ${
+                item.name == "Discord" ? `w-5` : `w-6`
+              }`}
+            >
+              <Icon name={item.name} />
+            </a>
+          ))
+        }
+      </div>
+      <p class="mt-8 text-sm text-gray-600 font-mono md:mt-0 md:order-1">
+        &copy; {new Date().getFullYear()}
+        {COPYRIGHT_HOLDER}
+      </p>
+    </div>
+  </div>
+</footer>

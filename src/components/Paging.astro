@@ -1,0 +1,49 @@
+---
+import {
+  ArrowLeftIcon,
+  ArrowRightIcon,
+} from "@heroicons/react/24/solid/index.js"
+
+export interface Props {
+  nextURL?: string
+  prevURL?: string
+  nextLabel?: string
+  prevLabel?: string
+}
+
+const {
+  nextURL,
+  prevURL,
+  nextLabel = "Older Posts",
+  prevLabel = "Newer Posts",
+} = Astro.props
+---
+
+<nav
+  class={`max-w-4xl mx-auto my-24 flex ${
+    prevURL ? `justify-between` : `justify-end`
+  }`}
+>
+  {
+    prevURL && (
+      <a href={prevURL} class="font-bold">
+        <ArrowLeftIcon
+          className="w-5 h-5 inline-block relative"
+          style={{ top: "-1px" }}
+        />{" "}
+        {prevLabel}
+      </a>
+    )
+  }
+  {
+    nextURL && (
+      <a href={nextURL} class="font-bold">
+        {nextLabel}{" "}
+        <ArrowRightIcon
+          className="w-5 h-5 inline-block relative"
+          style={{ top: "-1px" }}
+        />
+      </a>
+    )
+  }
+</nav>

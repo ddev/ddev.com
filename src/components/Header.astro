@@ -1,0 +1,36 @@
+---
+import { GITHUB_URL, DOCUMENTATION_URL } from "../config"
+import { MagnifyingGlassIcon } from "@heroicons/react/24/solid/index.js"
+---
+
+<header class="w-full p-8">
+  <nav class="flex justify-between max-w-4xl mx-auto">
+    <a href="/" class="relative -ml-2">
+      <img
+        class="h-8 w-auto sm:h-10"
+        src="https://ddev.readthedocs.io/en/stable/developers/logos/1x/Logo_w_text.png"
+        alt=""
+      />
+    </a>
+    <div class="w-2/3 flex justify-end">
+      <ul class="flex">
+        <li class="mx-4">
+          <a class="font-bold" href="/get-started">Get Started</a>
+        </li>
+        <li class="mx-4">
+          <a class="font-bold" href={DOCUMENTATION_URL} target="_blank">Docs</a>
+        </li>
+        <li class="mx-4">
+          <a class="font-bold" href="/blog">Blog</a>
+        </li>
+        <li class="mx-4">
+          <a class="font-bold" href={GITHUB_URL} target="_blank">GitHub</a>
+        </li>
+        <li class="mx-4">
+          <a class="font-bold" href="/support-ddev">❤️ Support DDEV</a>
+        </li>
+      </ul>
+      <a href="" class="ml-4"><MagnifyingGlassIcon className="w-6 h-6" /></a>
+    </div>
+  </nav>
+</header>

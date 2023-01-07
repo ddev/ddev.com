@@ -1,0 +1,35 @@
+---
+import { StarIcon } from "@heroicons/react/24/outline/index.js"
+
+export interface Props {
+  name: string
+  description: string
+}
+
+const { name, description } = Astro.props
+
+// https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#get-a-repository
+const response = await fetch(`https://api.github.com/repos/${name}`)
+const data = await response.json()
+---
+
+<a
+  href={`https://github.com/${name}`}
+  class="border hover:border-blue-300 rounded-md shadow-sm hover:shadow-lg"
+>
+  <div class="">
+    <div class="flex justify-between border-b px-3 py-3">
+      <h3 class="text-base font-bold">{name}</h3>
+      <div class="font-mono text-sm" style="margin-top: 2px">
+        <StarIcon
+          className="w-4 h-4 inline-block relative"
+          style={{ top: "-1px" }}
+        />{" "}
+        {parseInt(data.stargazers_count).toLocaleString("en-US")}
+      </div>
+    </div>
+    <p class="mt-2 text-sm opacity-50 px-3 pt-1 pb-4">
+      {description}
+    </p>
+  </div>
+</a>

@@ -1,0 +1,72 @@
+---
+import { CheckIcon } from "@heroicons/react/24/solid/index.js"
+
+const features = [
+  {
+    name: "Efficient Onboarding",
+    description:
+      "Fast spinup and easy sharing let everyone skip the devops and get back to the code.",
+  },
+  {
+    name: "Identical Environments",
+    description:
+      "Use the exact same setup across machines, team members, and even hosted environments.",
+  },
+  {
+    name: "Tailored Projects",
+    description:
+      "Focus on the software you need for each project without installing anything on your workstation.",
+  },
+  {
+    name: "Proven Support & Maintenance",
+    description:
+      "Agencies, enterprise businesses, and open source communities have trusted and shaped DDEV’s evolution for years.",
+  },
+  {
+    name: "Wholesome Ingredients",
+    description:
+      "Built on sturdy, industry-standard technologies, including open source projects like Docker and Go.",
+  },
+  {
+    name: "Quick and Capable",
+    description:
+      "Opinionated architecture focused on daily use, and highly adaptable when you need more.",
+  },
+]
+---
+
+<div class="bg-white">
+  <div class="max-w-6xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-base font-mono text-navy-300 mb-3">Benefits</h2>
+      <h3 class="text-3xl font-extrabold text-gray-900">
+        Made for people that make websites.
+      </h3>
+      <p class="mt-4 text-lg text-gray-500">
+        DDEV handles Docker so you and your team can focus on your work.
+      </p>
+    </div>
+    <dl
+      class="mt-12 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-3 lg:gap-x-8"
+    >
+      {
+        features.map((feature) => (
+          <div class="relative">
+            <dt>
+              <CheckIcon
+                className="absolute h-6 w-6 text-green-500"
+                aria-hidden="true"
+              />
+              <p class="ml-9 text-lg leading-6 font-medium text-gray-900">
+                {feature.name}
+              </p>
+            </dt>
+            <dd class="mt-2 ml-9 text-base text-gray-500">
+              {feature.description}
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</div>
