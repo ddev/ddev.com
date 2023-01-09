@@ -1,7 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import Heading from "../components/Heading.astro"
-import PostBody from "../components/PostBody.astro"
+import CtaButton from "../components/CtaButton.astro"
+import {
+  GITHUB_ISSUES_URL,
+  DISCORD_URL,
+  DOCUMENTATION_URL,
+  TWITTER_URL,
+} from "../config"
 
 const title = `Support DDEV`
 ---
@@ -9,12 +15,15 @@ const title = `Support DDEV`
 <Layout title={title}>
   <main class="max-w-4xl mx-auto mb-24">
     <Heading title={title} subtitle={`We’d love your help!`} />
-    <PostBody>
+    <div class="prose text-lg my-12">
       <p>
-        DDEV exists because of the generosity of community members and sponsors.
+        DDEV exists because of the generosity of community members and sponsors.<br
+        />
         There are several ways to get involved and we’d love for you to join us.
       </p>
+    </div>
 
+    <div class="prose mt-12">
       <h2>File an Issue or PR</h2>
 
       <p>
@@ -22,15 +31,47 @@ const title = `Support DDEV`
         PR to contribute, please take the time to file a GitHub Issue or Pull
         Request.
       </p>
+    </div>
 
+    <div class="mt-6 mb-12 flex w-2/5 -mx-2">
+      <CtaButton
+        text="Check Out GitHub Issues →"
+        href={GITHUB_ISSUES_URL}
+        type="hollow"
+        target="_blank"
+      />
+    </div>
+
+    <div class="prose mt-12">
       <h2>Improve the Docs</h2>
       <p>
-        Our documentation is always evolving and never perfect. It doesn’t
-        matter whether you’ve found a typo, can wordsmith something to better
-        explain or fit our style guide, or whether you’d like to suggest an
+        It doesn’t matter whether you’ve found a typo, can wordsmith something
+        to better explain or fit our style guide, or you’d like to suggest an
         entirely new section or use case. We’d be happy to have your input!
       </p>
 
+      <figure>
+        <img
+          src="/img/edit-docs.png"
+          alt="Screenshot visually highlighting the “Edit this page” icon in the docs and pointing to its corresponding GitHub URL"
+        />
+        <figcaption>
+          The pencil icon in the published docs links to the relevant GitHub
+          source for suggestions.
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="mt-6 mb-12 flex w-2/5 -mx-2">
+      <CtaButton
+        text="Visit the Docs →"
+        href={DOCUMENTATION_URL}
+        type="hollow"
+        target="_blank"
+      />
+    </div>
+
+    <div class="prose mt-12">
       <h2>Sponsor Development</h2>
       <p>
         We’re grateful for our sponsors, and all contributions to the DDEV
@@ -38,20 +79,51 @@ const title = `Support DDEV`
         to help attract contributors, cover test-running costs, and try to
         secure DDEV’s future.
       </p>
+    </div>
 
+    <div class="mt-6 mb-12 flex w-2/5 -mx-2">
+      <CtaButton
+        text="Sponsor Randy on GitHub →"
+        href="https://github.com/sponsors/rfay"
+        type="hollow"
+        target="_blank"
+      />
+    </div>
+
+    <div class="prose mt-12">
       <h2>Help Others</h2>
       <p>
         There’s no shortage of questions on Discord, GitHub, and Stack Overflow.
         If you have the time to help someone out, it helps us out and lets us
         focus more on development.
       </p>
+    </div>
 
+    <div class="mt-6 mb-12 flex w-2/5 -mx-2">
+      <CtaButton
+        text="Say Hi in Discord →"
+        href={DISCORD_URL}
+        type="hollow"
+        target="_blank"
+      />
+    </div>
+
+    <div class="prose mt-12">
       <h2>Spread the Word</h2>
       <p>
         If you like using DDEV, don’t keep it to yourself! Star the project on
         GitHub and make sure we know about your latest blog post, tweet, or
         YouTube video.
       </p>
-    </PostBody>
+    </div>
+
+    <div class="mt-6 mb-12 flex w-2/5 -mx-2">
+      <CtaButton
+        text="#DDEV on Twitter →"
+        href={`https://twitter.com/hashtag/DDEV`}
+        type="hollow"
+        target="_blank"
+      />
+    </div>
   </main>
 </Layout>
