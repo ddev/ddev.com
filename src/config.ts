@@ -6,5 +6,5 @@ export const GITHUB_URL = 'https://github.com/drud/ddev';
 export const GITHUB_ISSUES_URL = 'https://github.com/drud/ddev/issues';
 export const DOCUMENTATION_URL = 'https://ddev.readthedocs.io/';
 export const DISCORD_URL = 'https://discord.gg/hCZFfAMc5k';
-export const COPYRIGHT_HOLDER = 'Fruition Growth, LLC.'
+export const COPYRIGHT_HOLDER = 'Localdev Foundation'
 export const TWITTER_URL = 'https://twitter.com/search?q=%23ddev&src=typd&f=live'
