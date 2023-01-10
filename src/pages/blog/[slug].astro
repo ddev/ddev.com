@@ -30,7 +30,7 @@ const author = page.author.node
       title={title}
       date={formatDate(page.date, { month: "long" })}
       author={author.name}
-      authorUrl={`/blog/${author.slug}`}
+      authorUrl={`/blog/author/${author.slug}`}
       authorAvatar={author.avatar.url}
       readTime={getReadTime(page.content)}
     />

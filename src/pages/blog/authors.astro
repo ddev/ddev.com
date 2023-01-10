@@ -1,9 +1,7 @@
 ---
-import { getAllBlogPostAuthors, formatDate, getReadTime } from "../../lib/api"
+import { getAllBlogPostAuthors } from "../../lib/api"
 import Layout from "../../layouts/Layout.astro"
-import BlogPostCard from "../../components/BlogPostCard.astro"
 import Heading from "../../components/Heading.astro"
-import Paging from "../../components/Paging.astro"
 
 const data = await getAllBlogPostAuthors()
 const authors = data.nodes.filter((node) => {
@@ -22,7 +20,7 @@ const title = `Blog Authors`
       {
         authors.map((author) => (
           <div>
-            <a href={`/blog/${author.slug}`}>{author.name}</a>
+            <a href={`/blog/author/${author.slug}`}>{author.name}</a>
           </div>
         ))
       }

@@ -5,24 +5,24 @@ import {
   getAuthorDetails,
   formatDate,
   getReadTime,
-} from "../../lib/api"
+} from "../../../lib/api"
 import { marked } from "marked"
-import Layout from "../../layouts/Layout.astro"
-import BlogPostCard from "../../components/BlogPostCard.astro"
+import Layout from "../../../layouts/Layout.astro"
+import BlogPostCard from "../../../components/BlogPostCard.astro"
 
 export async function getStaticPaths() {
   const users = await getAllBlogPostAuthors()
   return users.nodes.map((node) => {
     return {
-      params: { author: node.slug },
+      params: { slug: node.slug },
     }
   })
 }
 
-const { author } = Astro.params
+const { slug } = Astro.params
 
-const authorData = await getAuthorDetails(author)
-const postData = await getBlogPostsByAuthor(authorData.userId)
+const author = await getAuthorDetails(slug)
+const postData = await getBlogPostsByAuthor(author.userId)
 
 const posts = postData.nodes.map((node) => {
   return {
@@ -43,21 +43,19 @@ const posts = postData.nodes.map((node) => {
   }
 })
 
-const title = `Posts by ${authorData.name}`
-const content = marked.parse(authorData.description)
+const title = `Posts by ${author.name}`
+const content = marked.parse(author.description)
 ---
 
 <Layout title={title}>
   <main class="max-w-4xl mx-auto mb-24">
     <div class="flex space-x-12 py-24">
-      <h1 class="font-bold text-4xl">{authorData.name}</h1>
+      <h1 class="font-bold text-4xl">{author.name}</h1>
       <div class="prose" set:html={content} />
     </div>
 
     <h2 class="text-base font-mono text-navy-300">
-      {authorData.firstName || authorData.name}’s {
-        posts.length == 1 ? `Post` : `Posts`
-      }
+      {author.firstName || author.name}’s {posts.length == 1 ? `Post` : `Posts`}
     </h2>
 
     <div
