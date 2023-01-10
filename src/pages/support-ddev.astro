@@ -7,7 +7,9 @@ import {
   DISCORD_URL,
   DOCUMENTATION_URL,
   TWITTER_URL,
+  GITHUB_URL,
 } from "../config"
+import Sponsors from "../components/Sponsors.astro"
 
 const title = `Support DDEV`
 ---
@@ -15,7 +17,7 @@ const title = `Support DDEV`
 <Layout title={title}>
   <main class="max-w-4xl mx-auto mb-24">
     <Heading title={title} subtitle={`We’d love your help!`} />
-    <div class="prose text-lg my-12">
+    <div class="prose text-lg mt-0 mb-24">
       <p>
         DDEV exists because of the generosity of community members and sponsors.<br
         />
@@ -27,45 +29,24 @@ const title = `Support DDEV`
       <h2>File an Issue or PR</h2>
 
       <p>
-        If you have an idea, or you found a bug, or you’re a devops whiz with a
-        PR to contribute, please take the time to file a GitHub Issue or Pull
-        Request.
+        If you have an idea, a bug report, or code to contribute, please take
+        the time to <a
+          href="https://github.com/drud/ddev/blob/master/CONTRIBUTING.md"
+          target="_blank">contribute</a
+        > a GitHub Issue or Pull Request.
       </p>
-    </div>
 
-    <div class="mt-6 mb-12 flex w-2/5 -mx-2">
-      <CtaButton
-        text="Check Out GitHub Issues →"
-        href={GITHUB_ISSUES_URL}
-        type="hollow"
-        target="_blank"
+      <img
+        src="/img/pr.png"
+        alt="Screenshot of GitHub PR #217, where @beeradb added new version notifications"
+        class="shadow-lg rounded-lg"
       />
     </div>
 
-    <div class="prose mt-12">
-      <h2>Improve the Docs</h2>
-      <p>
-        It doesn’t matter whether you’ve found a typo, can wordsmith something
-        to better explain or fit our style guide, or you’d like to suggest an
-        entirely new section or use case. We’d be happy to have your input!
-      </p>
-
-      <figure>
-        <img
-          src="/img/edit-docs.png"
-          alt="Screenshot visually highlighting the “Edit this page” icon in the docs and pointing to its corresponding GitHub URL"
-        />
-        <figcaption>
-          The pencil icon in the published docs links to the relevant GitHub
-          source for suggestions.
-        </figcaption>
-      </figure>
-    </div>
-
-    <div class="mt-6 mb-12 flex w-2/5 -mx-2">
+    <div class="mt-8 mb-24 flex w-2/5 -mx-2">
       <CtaButton
-        text="Visit the Docs →"
-        href={DOCUMENTATION_URL}
+        text="Check Out GitHub Issues →"
+        href={GITHUB_ISSUES_URL}
         type="hollow"
         target="_blank"
       />
@@ -76,14 +57,18 @@ const title = `Support DDEV`
       <p>
         We’re grateful for our sponsors, and all contributions to the DDEV
         Foundation go entirely toward development. We can always use resources
-        to help attract contributors, cover test-running costs, and try to
-        secure DDEV’s future.
+        to help attract contributors, cover test-running costs, and secure
+        DDEV’s future.
       </p>
     </div>
 
-    <div class="mt-6 mb-12 flex w-2/5 -mx-2">
+    <div class="mt-4 mb-8 max-w-2xl">
+      <Sponsors />
+    </div>
+
+    <div class="mt-6 mb-24 flex w-2/5 -mx-2">
       <CtaButton
-        text="Sponsor Randy on GitHub →"
+        text="Join Our GitHub Sponsors →"
         href="https://github.com/sponsors/rfay"
         type="hollow"
         target="_blank"
@@ -94,12 +79,17 @@ const title = `Support DDEV`
       <h2>Help Others</h2>
       <p>
         There’s no shortage of questions on Discord, GitHub, and Stack Overflow.
-        If you have the time to help someone out, it helps us out and lets us
-        focus more on development.
+        If you can help someone out, it helps us focus more on development.
       </p>
+
+      <img
+        src="/img/discord.png"
+        alt="Screenshot of Discord server, with several active Q&A channels"
+        class="rounded-lg"
+      />
     </div>
 
-    <div class="mt-6 mb-12 flex w-2/5 -mx-2">
+    <div class="mt-8 mb-24 flex w-2/5 -mx-2">
       <CtaButton
         text="Say Hi in Discord →"
         href={DISCORD_URL}
@@ -109,18 +99,95 @@ const title = `Support DDEV`
     </div>
 
     <div class="prose mt-12">
-      <h2>Spread the Word</h2>
+      <h2>Improve the Docs</h2>
       <p>
-        If you like using DDEV, don’t keep it to yourself! Star the project on
-        GitHub and make sure we know about your latest blog post, tweet, or
-        YouTube video.
+        It doesn’t matter whether you’ve found a typo, can wordsmith something
+        to better explain or fit <a
+          href="https://ddev.readthedocs.io/en/latest/developers/writing-style-guide/"
+          target="_blank">our style guide</a
+        >, or you’d like to suggest an entirely new section or use case. We’d be
+        happy to have your input!
       </p>
+
+      <figure>
+        <img
+          src="/img/edit-docs.png"
+          alt="Screenshot visually highlighting the “Edit this page” icon in the docs and pointing to its corresponding GitHub URL"
+          class="rounded-lg"
+        />
+        <figcaption>
+          The pencil icon in the published docs links to the relevant GitHub
+          source for suggestions.
+        </figcaption>
+      </figure>
     </div>
 
-    <div class="mt-6 mb-12 flex w-2/5 -mx-2">
+    <div class="mt-8 mb-24 flex w-2/5 -mx-2">
       <CtaButton
-        text="#DDEV on Twitter →"
+        text="Read the Docs →"
+        href={DOCUMENTATION_URL}
+        type="hollow"
+        target="_blank"
+      />
+    </div>
+
+    <div class="prose mt-12">
+      <h2>Spread the Word</h2>
+      <p>
+        If you like using DDEV, don’t keep it to yourself! Star the project <a
+          href={GITHUB_URL}
+          target="_blank">on GitHub</a
+        > and make sure we know about your latest blog post, tweet, or YouTube video.
+      </p>
+
+      <blockquote class="twitter-tweet">
+        <p lang="en" dir="ltr">
+          <a
+            href="https://twitter.com/hashtag/fedora?src=hash&ref_src=twsrc%5Etfw"
+            >#fedora</a
+          > 36 (just upgraded from 35) still happily runs <a
+            href="https://twitter.com/hashtag/ddev?src=hash&ref_src=twsrc%5Etfw"
+            >#ddev</a
+          > , one of my most used tools. <a href="https://t.co/9dPAs8BTqg"
+            >pic.twitter.com/9dPAs8BTqg</a>
+        </p>&mdash; Novák Áron (@NovakAron) <a
+          href="https://twitter.com/NovakAron/status/1541396362885054465?ref_src=twsrc%5Etfw"
+          >June 27, 2022</a>
+      </blockquote>
+      <script
+        async
+        src="https://platform.twitter.com/widgets.js"
+        charset="utf-8"
+      ></script>
+    </div>
+
+    <div class="mt-8 mb-24 flex w-2/5 -mx-2">
+      <CtaButton
+        text="Check #DDEV on Twitter →"
         href={`https://twitter.com/hashtag/DDEV`}
+        type="hollow"
+        target="_blank"
+      />
+    </div>
+
+    <div class="prose mt-12">
+      <h2>Join the Advisory Group</h2>
+      <p>
+        We meet regularly to discuss DDEV’s present and future. You’re welcome
+        to join us!
+      </p>
+
+      <img
+        src="/img/advisory-group-call.png"
+        alt="Screenshot of an advisory group Zoom call with a grid of sixteen faces"
+        class="rounded-lg"
+      />
+    </div>
+
+    <div class="mt-8 mb-24 flex w-2/5 -mx-2">
+      <CtaButton
+        text="Read Advisory Group Notes →"
+        href={`https://github.com/drud/ddev/discussions/categories/ddev-advisory-group`}
         type="hollow"
         target="_blank"
       />

@@ -1,0 +1,23 @@
+---
+// https://github.com/filiptronicek/gh-sponsors-api#notes
+const response = await fetch("https://ghs.vercel.app/sponsors/rfay")
+const data = await response.json()
+const sponsors = data.sponsors
+---
+
+<div class="relative">
+  <div class="flex flex-wrap -mx-1">
+    {
+      sponsors.map((sponsor) => (
+        <a
+          class="block w-8 h-8 rounded-full relative overflow-hidden m-1 shadow-md"
+          title={sponsor.handle}
+          href={sponsor.profile}
+          target="_blank"
+        >
+          <img src={sponsor.avatar} class="block w-full h-full" />
+        </a>
+      ))
+    }
+  </div>
+</div>
