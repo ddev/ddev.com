@@ -1,3 +1,6 @@
+/**
+ * Creates a static JSON search index at build time that can be consumed on the client end.
+ */
 import { getSearchIndex } from "@barnabask/astro-minisearch"
 
 const posts = []

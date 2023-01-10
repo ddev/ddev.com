@@ -1,7 +1,18 @@
+/**
+ * Collection of content-fetching and formatting methods, mostly for
+ * extracting blog-related content from WordPress via GraphQL.
+ */
+
 import dotenv from "dotenv"
 dotenv.config()
-const API_URL = process.env.WP_URL
+const API_URL = new URL(process.env.WP_URL)
 
+/**
+ * Query the WordPress GraphQL endpoint.
+ * @param query The query body.
+ * @param params Any query parameters to include.
+ * @returns response data
+ */
 async function fetchAPI(query, { variables } = {}) {
   const headers = { "Content-Type": "application/json" }
   const res = await fetch(API_URL, {
@@ -19,6 +30,10 @@ async function fetchAPI(query, { variables } = {}) {
   return json.data
 }
 
+/**
+ * Fetch every blog post with its content.
+ * @returns response data
+ */
 export async function getAllBlogPosts() {
   const data = await fetchAPI(`
     {
@@ -50,6 +65,14 @@ export async function getAllBlogPosts() {
   return data?.posts
 }
 
+/**
+ * Fetch all the users that have published blog posts.
+ *
+ * It’s somehow still possible that a user can be returned despite having no posts,
+ * so we include post IDs for filtering later.
+ *
+ * @returns response data
+ */
 export async function getAllBlogPostAuthors() {
   const data = await fetchAPI(`
     {
@@ -72,6 +95,11 @@ export async function getAllBlogPostAuthors() {
   return data?.users
 }
 
+/**
+ * Fetch details for a single author.
+ * @param slug The author’s unique, URL-friendly slug.
+ * @returns response data
+ */
 export async function getAuthorDetails(slug: string) {
   const data = await fetchAPI(`
     {
@@ -90,10 +118,15 @@ export async function getAuthorDetails(slug: string) {
   return data?.user
 }
 
-export async function getRecentBlogPosts() {
+/**
+ * Returns recent blog posts. (Used in the `BlogFeatures` component.)
+ * @param first Number of posts to return.
+ * @returns response data
+ */
+export async function getRecentBlogPosts(first: number = 3) {
   const data = await fetchAPI(`
     {
-      posts(first: 3) {
+      posts(first: ${first}) {
         edges {
           node {
             title
@@ -121,6 +154,11 @@ export async function getRecentBlogPosts() {
   return data?.posts
 }
 
+/**
+ * Get a specific blog post by its slug. (Not the same as its URI!)
+ * @param slug The desired post’s slug.
+ * @returns response data
+ */
 export async function getBlogPostBySlug(slug: string) {
   const data = await fetchAPI(`
   {
@@ -143,6 +181,11 @@ export async function getBlogPostBySlug(slug: string) {
   return data?.post
 }
 
+/**
+ * Fetch all blog posts published by a specific author.
+ * @param authorId The WordPress `userId` of the desired author.
+ * @returns response data
+ */
 export async function getBlogPostsByAuthor(authorId: number) {
   const data = await fetchAPI(`
   {
@@ -166,6 +209,11 @@ export async function getBlogPostsByAuthor(authorId: number) {
   return data?.posts
 }
 
+/**
+ * Get a specific page by its slug. (Unused but maybe useful later?)
+ * @param slug The desired page slug.
+ * @returns response data
+ */
 export async function getPageBySlug(slug: string) {
   const data = await fetchAPI(`
   {
@@ -178,6 +226,14 @@ export async function getPageBySlug(slug: string) {
   return data?.page
 }
 
+/**
+ * Format a date string we got via GraphQL. Used mostly for blog post listings
+ * and detail pages.
+ *
+ * @param date The source date, which probably looks like `2021-01-28T13:05:28`.
+ * @param customOptions Options for [Intl.DateTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat)
+ * @returns formatted date string
+ */
 export const formatDate = (date: string, customOptions?: object) => {
   const pubDate = new Date(date)
   const defaultOptions = {
@@ -197,6 +253,11 @@ export const formatDate = (date: string, customOptions?: object) => {
 
 import getReadingTime from 'reading-time';
 
+/**
+ * Returns approximate reading time for the provided text.
+ * @param text The complete text whose read time we’re evaluating.
+ * @returns plain-English description of reading time, like `5 min read`
+ */
 export const getReadTime = (text: string) : string => {
   const readingTime = getReadingTime(text);
   return readingTime.text
