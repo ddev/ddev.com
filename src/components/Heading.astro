@@ -3,13 +3,54 @@ export interface Props {
   title: string
   subtitle?: string
   date?: string
+  author?: string
+  authorUrl?: string
+  authorAvatar?: string
+  readTime?: string
 }
 
-const { title, subtitle, date } = Astro.props
+const { title, subtitle, date, author, authorUrl, authorAvatar, readTime } =
+  Astro.props
 ---
 
 <div class="my-24">
   <h1 class="font-bold text-4xl">{title}</h1>
   {subtitle && <p class="text-2xl text-gray-600 my-4">{subtitle}</p>}
-  {date && <p class="font-mono my-6">{date}</p>}
+
+  <div class="flex items-center content-center my-6 font-mono">
+    {
+      author && (
+        <div class="flex items-center content-center mr-2">
+          {authorAvatar && (
+            <div class="rounded-full overflow-hidden mr-2">
+              <img src={authorAvatar} alt={author} class="block w-12 h-12" />
+            </div>
+          )}
+          {author && (
+            <div class="ml-1">
+              <a href={authorUrl}>{author}</a>
+            </div>
+          )}
+        </div>
+      )
+    }
+    <p class="">
+      {
+        date && (
+          <span>
+            {" "}
+            <span aria-hidden="true"> ·</span>
+            {date}
+          </span>
+        )
+      }{
+        readTime && (
+          <span>
+            {" "}
+            <span aria-hidden="true"> ·</span> {readTime}
+          </span>
+        )
+      }
+    </p>
+  </div>
 </div>

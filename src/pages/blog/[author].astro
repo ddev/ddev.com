@@ -1,0 +1,69 @@
+---
+import {
+  getAllBlogPostAuthors,
+  getBlogPostsByAuthor,
+  getAuthorDetails,
+  formatDate,
+  getReadTime,
+} from "../../lib/api"
+import { marked } from "marked"
+import Layout from "../../layouts/Layout.astro"
+import BlogPostCard from "../../components/BlogPostCard.astro"
+
+export async function getStaticPaths() {
+  const users = await getAllBlogPostAuthors()
+  return users.nodes.map((node) => {
+    return {
+      params: { author: node.slug },
+    }
+  })
+}
+
+const { author } = Astro.params
+
+const authorData = await getAuthorDetails(author)
+const postData = await getBlogPostsByAuthor(authorData.userId)
+
+const posts = postData.nodes.map((node) => {
+  return {
+    title: node.title,
+    href: `/blog/${node.slug}`,
+    category: {
+      name: "",
+      href: "#",
+    },
+    date: formatDate(node.date),
+    imageUrl: node.featuredImage ? node.featuredImage.node.sourceUrl : null,
+    readingTime: getReadTime(node.content),
+    author: {
+      name: node.author.node.name,
+      href: "#",
+      imageUrl: node.author.node.avatar.url,
+    },
+  }
+})
+
+const title = `Posts by ${authorData.name}`
+const content = marked.parse(authorData.description)
+---
+
+<Layout title={title}>
+  <main class="max-w-4xl mx-auto mb-24">
+    <div class="flex space-x-12 py-24">
+      <h1 class="font-bold text-4xl">{authorData.name}</h1>
+      <div class="prose" set:html={content} />
+    </div>
+
+    <h2 class="text-base font-mono text-navy-300">
+      {authorData.firstName || authorData.name}’s {
+        posts.length == 1 ? `Post` : `Posts`
+      }
+    </h2>
+
+    <div
+      class="mt-12 mb-24 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none"
+    >
+      {posts.map((post) => <BlogPostCard post={post} />)}
+    </div>
+  </main>
+</Layout>

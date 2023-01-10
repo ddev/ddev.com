@@ -1,5 +1,10 @@
 ---
-import { getAllBlogPosts, getBlogPostBySlug, formatDate } from "../../lib/api"
+import {
+  getAllBlogPosts,
+  getBlogPostBySlug,
+  formatDate,
+  getReadTime,
+} from "../../lib/api"
 import Layout from "../../layouts/Layout.astro"
 import PostBody from "../../components/PostBody.astro"
 import Heading from "../../components/Heading.astro"
@@ -16,11 +21,19 @@ export async function getStaticPaths() {
 const { slug } = Astro.params
 const page = await getBlogPostBySlug(slug)
 const title = page.title
+const author = page.author.node
 ---
 
 <Layout title={title}>
   <main class="max-w-4xl mx-auto mb-24">
-    <Heading title={title} date={formatDate(page.date, { month: "long" })} />
+    <Heading
+      title={title}
+      date={formatDate(page.date, { month: "long" })}
+      author={author.name}
+      authorUrl={`/blog/${author.slug}`}
+      authorAvatar={author.avatar.url}
+      readTime={getReadTime(page.content)}
+    />
     <PostBody>
       <div set:html={page.content} />
     </PostBody>

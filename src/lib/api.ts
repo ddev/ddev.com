@@ -19,50 +19,6 @@ async function fetchAPI(query, { variables } = {}) {
   return json.data
 }
 
-export async function getPrimaryMenu() {
-  const data = await fetchAPI(`
-    {
-      menus(where: {location: PRIMARY}) {
-        nodes {
-          menuItems {
-            edges {
-              node {
-                path
-                label
-                connectedNode {
-                  node {
-                    ... on Page {
-                      isPostsPage
-                      slug
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    `)
-  return data?.menus?.nodes[0]
-}
-
-export async function getAllPagesWithSlugs() {
-  const data = await fetchAPI(`
-    {
-      pages(first: 10000) {
-        edges {
-          node {
-            title
-            slug
-          }
-        }
-      }
-    }
-    `)
-  return data?.pages
-}
-
 export async function getAllBlogPosts() {
   const data = await fetchAPI(`
     {
@@ -79,7 +35,7 @@ export async function getAllBlogPosts() {
             author {
               node {
                 name
-                  avatar {
+                avatar {
                   url
                 }
               }
@@ -92,6 +48,46 @@ export async function getAllBlogPosts() {
     }
     `)
   return data?.posts
+}
+
+export async function getAllBlogPostAuthors() {
+  const data = await fetchAPI(`
+    {
+      users(where: {hasPublishedPosts: POST}) {
+        nodes {
+          name
+          slug
+          posts(where: {status: PUBLISH}) {
+            nodes {
+              id
+            }
+          }
+          avatar {
+            url
+          }
+        }
+      }
+    }
+  `)
+  return data?.users
+}
+
+export async function getAuthorDetails(slug: string) {
+  const data = await fetchAPI(`
+    {
+      user(id: "${slug}", idType: SLUG) {
+        userId
+        name
+        firstName
+        slug
+        description
+        avatar {
+          url
+        }
+      }
+    }
+  `)
+  return data?.user
 }
 
 export async function getRecentBlogPosts() {
@@ -110,7 +106,7 @@ export async function getRecentBlogPosts() {
             author {
               node {
                 name
-                  avatar {
+                avatar {
                   url
                 }
               }
@@ -135,7 +131,8 @@ export async function getBlogPostBySlug(slug: string) {
       author {
         node {
           name
-            avatar {
+          slug
+          avatar {
             url
           }
         }
@@ -144,6 +141,29 @@ export async function getBlogPostBySlug(slug: string) {
   }
   `)
   return data?.post
+}
+
+export async function getBlogPostsByAuthor(authorId: number) {
+  const data = await fetchAPI(`
+  {
+    posts(where: { author: ${authorId} }) {
+      nodes {
+        title
+        date
+        content
+        author {
+          node {
+            name
+            avatar {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+  `)
+  return data?.posts
 }
 
 export async function getPageBySlug(slug: string) {

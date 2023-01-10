@@ -1,0 +1,31 @@
+---
+import { getAllBlogPostAuthors, formatDate, getReadTime } from "../../lib/api"
+import Layout from "../../layouts/Layout.astro"
+import BlogPostCard from "../../components/BlogPostCard.astro"
+import Heading from "../../components/Heading.astro"
+import Paging from "../../components/Paging.astro"
+
+const data = await getAllBlogPostAuthors()
+const authors = data.nodes.filter((node) => {
+  return node.posts.nodes.length > 0
+})
+
+const title = `Blog Authors`
+---
+
+<Layout title={title}>
+  <main class="max-w-4xl mx-auto">
+    <Heading title={title} />
+    <div
+      class="mt-12 mb-24 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none"
+    >
+      {
+        authors.map((author) => (
+          <div>
+            <a href={`/blog/${author.slug}`}>{author.name}</a>
+          </div>
+        ))
+      }
+    </div>
+  </main>
+</Layout>
