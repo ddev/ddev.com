@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^1.2.2",
+    "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^2.1.3",
     "@astrolib/seo": "^0.2.1",
     "@barnabask/astro-minisearch": "^1.1.0",

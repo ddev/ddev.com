@@ -3,6 +3,7 @@ import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs"
 import tailwind from "@astrojs/tailwind"
 import react from "@astrojs/react"
 import robotsTxt from "astro-robots-txt"
+import sitemap from "@astrojs/sitemap"
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,6 +17,8 @@ export default defineConfig({
     react(),
     robotsTxt({
       sitemap: false,
+      policy: [{ disallow: "/", userAgent: "*" }],
     }),
+    sitemap(),
   ],
 })
