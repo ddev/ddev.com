@@ -1,27 +1,29 @@
+---
+const logos = [
+  { name: "Drupal", src: "/logos/drupal.svg", extraClasses: [] },
+  { name: "WordPress", src: "/logos/wordpress.svg", extraClasses: [] },
+  { name: "TYPO3 CMS", src: "/logos/typo3.svg", extraClasses: [] },
+  { name: "Magento", src: "/logos/magento.svg", extraClasses: [] },
+  { name: "Backdrop CMS", src: "/logos/backdrop.svg", extraClasses: [] },
+  { name: "Craft CMS", src: "/logos/craft.svg", extraClasses: ["w-7"] },
+  { name: "Laravel", src: "/logos/laravel.svg", extraClasses: ["w-7"] },
+]
+---
+
 <div class="opacity-60">
   <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
     <div class="flex justify-center content-center flex-wrap">
-      <div class="px-12 py-6">
-        <img class="h-12" src="/logos/drupal.svg" alt="" />
-      </div>
-      <div class="px-12 py-6">
-        <img class="h-12" src="/logos/wordpress.svg" alt="" />
-      </div>
-      <div class="px-12 py-6">
-        <img class="h-12" src="/logos/typo3.svg" alt="" />
-      </div>
-      <div class="px-12 py-6">
-        <img class="h-12" src="/logos/magento.svg" alt="" />
-      </div>
-      <div class="px-12 py-6">
-        <img class="h-12" src="/logos/backdrop.svg" alt="" />
-      </div>
-      <div class="px-12 py-6">
-        <img class="h-12 w-7" src="/logos/craft.svg" alt="" />
-      </div>
-      <div class="px-12 py-6">
-        <img class="h-12 w-7" src="/logos/laravel.svg" alt="" />
-      </div>
+      {
+        logos.map((logo) => (
+          <div class="px-12 py-6">
+            <img
+              class={["h-12", ...logo.extraClasses].join(" ")}
+              src={logo.src}
+              alt={`${logo.name} logo`}
+            />
+          </div>
+        ))
+      }
     </div>
   </div>
 </div>

@@ -226,6 +226,13 @@ export async function getPageBySlug(slug: string) {
   return data?.page
 }
 
+export async function getSponsors() {
+  // https://github.com/filiptronicek/gh-sponsors-api#notes
+  const response = await fetch("https://ghs.vercel.app/sponsors/rfay")
+  const data = await response.json()
+  return data.sponsors
+}
+
 /**
  * Format a date string we got via GraphQL. Used mostly for blog post listings
  * and detail pages.

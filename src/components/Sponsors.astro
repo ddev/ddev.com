@@ -1,8 +1,7 @@
 ---
-// https://github.com/filiptronicek/gh-sponsors-api#notes
-const response = await fetch("https://ghs.vercel.app/sponsors/rfay")
-const data = await response.json()
-const sponsors = data.sponsors
+import { getSponsors } from "../lib/api"
+
+const sponsors = await getSponsors()
 ---
 
 <div class="relative">
