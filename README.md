@@ -10,7 +10,14 @@ The project includes an `.nvmrc` file, so if you have `nvm` installed you can ru
 
 After that, run `npm install` to set up the project’s dependencies. Then you can run any of the [commands](#commands) below.
 
-> 💡: There’s also a `.prettierrc` file in the project that’ll save you formatting time and keep things consistent if you’re using Prettier in your editor or IDE.
+> 💡 There’s also a `.prettierrc` file in the project that’ll save you formatting time and keep things consistent if you’re using Prettier in your editor or IDE.
+
+You’ll also need to wire up GraphQL so Astro can pull blog post content from Wordpress. Right now you’ll need a locally-running build of `drud/ddevdotcom`.
+
+1. Get `drud/ddevdotcom` running locally, ideally with DDEV. :)
+2. Install the WPGraphQL WordPress plugin.
+3. Copy this project’s `.env.example` to `.env`, and add your GraphQL endpoint. (Something like `http://ddevdotcom.ddev.site/wp/graphql`.)
+4. Run `npm run dev` or `npm run build` and see if it works or falls over.
 
 ## Ingredients
 

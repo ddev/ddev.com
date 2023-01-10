@@ -10,6 +10,10 @@ import { marked } from "marked"
 import Layout from "../../../layouts/Layout.astro"
 import BlogPostCard from "../../../components/BlogPostCard.astro"
 
+/**
+ * Tell Astro to build routes using our author slugs.
+ * https://docs.astro.build/en/reference/api-reference/#getstaticpaths
+ */
 export async function getStaticPaths() {
   const users = await getAllBlogPostAuthors()
   return users.nodes.map((node) => {

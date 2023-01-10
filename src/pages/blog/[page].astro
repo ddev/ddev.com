@@ -5,6 +5,10 @@ import BlogPostCard from "../../components/BlogPostCard.astro"
 import Heading from "../../components/Heading.astro"
 import Paging from "../../components/Paging.astro"
 
+/**
+ * Tell Astro to build routes for paginated blog post listings.
+ * https://docs.astro.build/en/reference/api-reference/#getstaticpaths
+ */
 export async function getStaticPaths({ paginate }) {
   const nodes = await getAllBlogPosts()
 

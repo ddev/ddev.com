@@ -9,6 +9,10 @@ import Layout from "../../layouts/Layout.astro"
 import PostBody from "../../components/PostBody.astro"
 import Heading from "../../components/Heading.astro"
 
+/**
+ * Tell Astro to build routes for individual blog posts.
+ * https://docs.astro.build/en/reference/api-reference/#getstaticpaths
+ */
 export async function getStaticPaths() {
   const pagesWithSlugs = await getAllBlogPosts()
   return pagesWithSlugs.edges.map(({ node }) => {
