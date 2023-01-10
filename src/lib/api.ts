@@ -13,7 +13,7 @@ const API_URL = new URL(process.env.WP_URL)
  * @param params Any query parameters to include.
  * @returns response data
  */
-async function fetchAPI(query, { variables } = {}) {
+async function fetchAPI(query: string, { variables } = {}) {
   const headers = { "Content-Type": "application/json" }
   const res = await fetch(API_URL, {
     method: "POST",
