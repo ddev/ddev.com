@@ -2,28 +2,18 @@
  * Creates a static JSON search index at build time that can be consumed on the client end.
  */
 import { getSearchIndex } from "@barnabask/astro-minisearch"
+import { getAllBlogPosts } from "../lib/api"
 
-const posts = []
+const pages = await import.meta.glob('../pages/post/*.astro')
+const posts = await getAllBlogPosts()
+
+const items = posts.edges.map(({ node }) => {
+  return {
+    url: `/blog/${node.slug}`,
+    title: node.title,
+    text: node.content,
+  }
+})
 
 export const get = () =>
-  getSearchIndex(
-    posts.map((post) => {
-      let searchText = ""
-
-      if (post.frontmatter.author) {
-        searchText += post.frontmatter.author + " "
-      }
-
-      if (post.frontmatter.summary) {
-        searchText += post.frontmatter.summary + " "
-      }
-
-      searchText += post.frontmatter.plainText
-
-      return {
-        url: post.url,
-        title: post.frontmatter.title,
-        text: searchText,
-      }
-    })
-  )
+  getSearchIndex(items)

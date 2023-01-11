@@ -6,6 +6,34 @@ import PostBody from "../components/PostBody.astro"
 const title = `Search`
 ---
 
+<script>
+  import { loadIndex } from "@barnabask/astro-minisearch"
+
+  const input = document.getElementById("search-keywords")
+  const response = await fetch("./search.json")
+  const searchData = await response.json()
+  const maxResults = 20
+  let searchIndex
+
+  if (searchData) {
+    searchIndex = loadIndex(searchData)
+  }
+
+  const getResults = (keywords: string) => {
+    if (!searchIndex) {
+      return []
+    }
+
+    return searchIndex.search(keywords).slice(0, maxResults)
+  }
+
+  input.addEventListener('keyup', () => {
+    let results = getResults(input.value)
+
+    console.log(results)
+  })
+</script>
+
 <Layout title={title}>
   <main class="max-w-4xl mx-auto mb-24">
     <Heading title={title} />
@@ -14,6 +42,7 @@ const title = `Search`
         TODO: When this page grows up, you’ll be able to search this site with
         it.
       </p>
+      <input id="search-keywords" type="search" class="border rounded px-4 py-2 text-lg" />
     </PostBody>
   </main>
 </Layout>
