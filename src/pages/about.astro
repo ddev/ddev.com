@@ -8,20 +8,46 @@ const title = `About DDEV`
 
 <Layout title={title}>
   <main class="max-w-4xl mx-auto mb-24">
-    <Heading title={title} />
+    <Heading title={`The Story of DDEV`} />
     <PostBody>
       <p>
-        DDEV is an actively-developed, open source project for managing
-        Docker-based local development environments. It’s primarily been
-        PHP-based, but has grown with support for the Node.js ecosystem.
+        DDEV is a local development environment for web developers. It
+        originated within the company "Drud" in about 2016. Drud was building a
+        general-purpose CLI for its infant web hosting product (named
+        "DDEV-Live", with the local dev tool named "DDEV-Local"), and the and
+        was visionary enough to build local development into the idea. (Nobody
+        really remembers what "DDEV" stands for, it might be "Docker
+        development" or it might have been "Drud development".)
       </p>
+
       <p>
-        The project is maintained primarily by Randy Fay, who oversees
-        development, testing, and support with the help of volunteers and the
-        broader community. Development is supported by Platform.sh and many
-        individual sponsors.
+        The independent value of the tool was soon recognized and it was
+        refactored into its own repository, and then made open-source and it
+        began its journey. Randy Fay was an employee of Drud in this period, and
+        as a long-time proponent of local development and debugging was sold on
+        its value. Drud graciously sponsored Randy to work on DDEV for nearly
+        five years, until it lost its funding. DDEV of course had integration to
+        Drud's hosting product during this period, and it was seen as a way to
+        bring developers into the Drud-hosting world.
       </p>
-      <p>DDEV-Local was first released by a company called Drud in 19XX.</p>
+
+      <p>
+        The company Drud (by then renamed "DDEV") shut down in 2021 when it lost
+        its venture funding. Randy Fay continued to maintain the project without
+        interruption.
+      </p>
+
+      <p>
+        In 2022, <a href="/blog/platform-sh-becomes-a-lead-sponsor-of-ddev/"
+          >Platform.sh stepped in as a major sponsor of DDEV</a
+        > and hired Randy to maintain it and continues doing so. DDEV remains an
+        open-source project, free to all, and with community governance via an <a
+          href="https://github.com/drud/ddev/discussions/categories/ddev-advisory-group"
+          >Advisory Group</a
+        >, and funded via the <a href="https://localdev.foundation"
+          >Localdev Foundation</a
+        >, a Colorado, USA nonprofit organization.
+      </p>
     </PostBody>
   </main>
 </Layout>
