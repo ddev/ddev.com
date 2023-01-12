@@ -4,6 +4,7 @@ import tailwind from "@astrojs/tailwind"
 import react from "@astrojs/react"
 import robotsTxt from "astro-robots-txt"
 import sitemap from "@astrojs/sitemap"
+import searchIndex from "./src/lib/search-index.js"
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,5 +21,8 @@ export default defineConfig({
       policy: [{ disallow: "/", userAgent: "*" }],
     }),
     sitemap(),
+    searchIndex({
+      output: "search.json",
+    }),
   ],
 })

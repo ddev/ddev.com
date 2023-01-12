@@ -1,7 +1,9 @@
 ---
+/**
+ * You must generate a static build (`npm run build`) before you can test this page locally!
+ */
 import Layout from "../layouts/Layout.astro"
 import Heading from "../components/Heading.astro"
-import PostBody from "../components/PostBody.astro"
 
 const title = `Search`
 ---
@@ -9,15 +11,18 @@ const title = `Search`
 <script>
   import { loadIndex } from "@barnabask/astro-minisearch"
 
-  const input = document.getElementById("search-keywords")
-  const response = await fetch("./search.json")
-  const searchData = await response.json()
   const maxResults = 20
-  let searchIndex
+  const env = process.env.NODE_ENV || "production"
 
-  if (searchData) {
-    searchIndex = loadIndex(searchData)
-  }
+  // Load the statically-built file in the `dist/` directory for local development
+  const indexPath =
+    env === "development" ? "../../dist/search.json" : "./search.json"
+
+  const inputElement = document.getElementById("search-keywords")
+  const resultsContainer = document.getElementById("results")
+  const response = await fetch(indexPath)
+  const searchData = await response.json()
+  const searchIndex = loadIndex(searchData)
 
   const getResults = (keywords: string) => {
     if (!searchIndex) {
@@ -27,22 +32,54 @@ const title = `Search`
     return searchIndex.search(keywords).slice(0, maxResults)
   }
 
-  input.addEventListener('keyup', () => {
-    let results = getResults(input.value)
+  inputElement.addEventListener("keyup", () => {
+    let results = getResults(inputElement.value)
 
-    console.log(results)
+    resultsContainer.innerHTML = results
+      .map((result) => {
+        return `
+        <a href="${
+          result.id
+        }" class="border rounded w-full flex items-center content-center my-2 p-4 hover:shadow-sm hover:border-blue-300">
+          <h2 class="font-bold block w-3/4">${result.title}</h2>
+          <div class="block w-1/4 text-right">
+            <div class="inline-block text-sm font-mono">${getResultLabelFromPath(
+              result.id
+            )}</div>
+          </div>
+            
+        </a>
+      `
+      })
+      .join("")
   })
+
+  /**
+   * Returns a label for the post item based on its path.
+   */
+  const getResultLabelFromPath = (path) => {
+    if (
+      path.includes("/blog/") &&
+      !(path.endsWith("/blog/") || path.includes("/blog/authors/"))
+    ) {
+      // Label a post detail page, but *not* the main listing or author listing
+      return "Blog Post"
+    } else {
+      return "Page"
+    }
+  }
 </script>
 
-<Layout title={title}>
+<Layout title={title} noindex={true}>
   <main class="max-w-4xl mx-auto mb-24">
     <Heading title={title} />
-    <PostBody>
-      <p>
-        TODO: When this page grows up, you’ll be able to search this site with
-        it.
-      </p>
-      <input id="search-keywords" type="search" class="border rounded px-4 py-2 text-lg" />
-    </PostBody>
+    <div class="max-w-3xl">
+      <input
+        id="search-keywords"
+        type="search"
+        class="border rounded px-4 py-2 text-lg w-full"
+      />
+      <div id="results"></div>
+    </div>
   </main>
 </Layout>

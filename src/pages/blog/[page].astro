@@ -40,7 +40,7 @@ const { page } = Astro.props
 const title = `Blog Posts`
 ---
 
-<Layout title={title + `, Page ${page.currentPage}`}>
+<Layout title={title + `, Page ${page.currentPage}`} noindex={true}>
   <main class="max-w-4xl mx-auto">
     <Heading title={title} subtitle={`DDEV, Docker, and local development.`} />
     <div
