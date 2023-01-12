@@ -2,14 +2,27 @@
 import { getSponsors } from "../lib/api"
 
 const sponsors = await getSponsors()
+
+export interface Props {
+  size?: string
+  align?: string
+}
+
+const { size = "normal", align = "left" } = Astro.props
 ---
 
 <div class="relative">
-  <div class="flex flex-wrap -mx-1">
+  <div
+    class={`flex flex-wrap -mx-1` +
+      (align == "center" ? " justify-center" : "")}
+  >
     {
       sponsors.map((sponsor) => (
         <a
-          class="block w-8 h-8 rounded-full relative overflow-hidden m-1 shadow-md"
+          class={
+            `block rounded-full relative overflow-hidden m-1 shadow-md ` +
+            (size == "large" ? `w-12 h-12` : `w-8 h-8`)
+          }
           title={sponsor.handle}
           href={sponsor.profile}
           target="_blank"

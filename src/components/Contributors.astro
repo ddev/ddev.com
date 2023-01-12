@@ -1,5 +1,6 @@
 ---
 import { GITHUB_REPO } from "../config"
+import Sponsors from "./Sponsors.astro"
 
 let page = 1
 let contributors = []
@@ -67,9 +68,13 @@ await fetchContributors(progressCallback)
   <div class="relative max-w-5xl mx-auto">
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
-        Our Wonderful GitHub Contributors
+        Our Wonderful GitHub Supporters
       </h2>
     </div>
+
+    <h3 class="text-base font-mono text-navy-300 text-center mb-8">
+      Contributors
+    </h3>
     <div class="max-w-5xl mx-auto flex flex-wrap justify-center">
       {
         contributors.map((contributor) => (
@@ -83,6 +88,13 @@ await fetchContributors(progressCallback)
           </a>
         ))
       }
+    </div>
+
+    <h3 class="mt-12 mb-8 text-base font-mono text-navy-300 text-center">
+      Sponsors
+    </h3>
+    <div class="max-w-4xl mx-auto flex flex-wrap justify-center">
+      <Sponsors size="large" align="center" />
     </div>
   </div>
 </div>
