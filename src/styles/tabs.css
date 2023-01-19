@@ -1,0 +1,11 @@
+.tab {
+  @apply px-4 pb-2 font-mono text-sm hover:underline text-blue-600 hover:border-blue-700 hover:text-blue-700;
+}
+
+.tab-selector:checked ~ .tab {
+  @apply underline font-bold;
+}
+
+.panel {
+  @apply px-4 rounded-lg shadow-xl;
+}

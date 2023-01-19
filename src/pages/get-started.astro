@@ -1,142 +1,478 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import Heading from "../components/Heading.astro"
-import PostBody from "../components/PostBody.astro"
+import Icon from "../components/Icon.astro"
+import Terminal from "../components/Terminal.astro"
+import { Tabs } from "astro-tabs"
 import { Code } from "astro/components"
+
+import "../styles/tabs.css"
+
+const title = "Get Started with DDEV"
+const codeTheme = "nord"
 ---
 
-<Layout>
+<style lang="postcss">
+  input[type="radio"]:checked + label {
+    @apply font-bold border-blue-300 shadow;
+  }
+
+  input[value="mac"]:checked + label {
+    @apply border;
+  }
+
+  input[value="windows"]:checked + label {
+    @apply border;
+  }
+
+  .content-panel {
+    @apply mt-16;
+  }
+</style>
+
+<script>
+  const hash = window.location.hash ?? null
+  const osRadioButtons = document.querySelectorAll('input[name="os"]')
+  const instructionDivs = document.querySelectorAll("div[data-os]")
+
+  let options = new Array()
+  let selectedOs
+
+  const showInstructions = (os) => {
+    instructionDivs.forEach((element) => {
+      if (element.getAttribute("data-os") === os) {
+        element.classList.remove("hidden")
+      } else {
+        element.classList.add("hidden")
+      }
+    })
+  }
+
+  const selectOs = (os) => {
+    osRadioButtons.forEach((element) => {
+      element.checked = element.value === os
+    })
+    showInstructions(os)
+  }
+
+  // https://stackoverflow.com/a/38241481/897279
+  function getOS() {
+    var userAgent = window.navigator.userAgent,
+      platform =
+        window.navigator?.userAgentData?.platform || window.navigator.platform,
+      macosPlatforms = ["Macintosh", "MacIntel", "MacPPC", "Mac68K"],
+      windowsPlatforms = ["Win32", "Win64", "Windows", "WinCE"],
+      os = null
+
+    if (macosPlatforms.indexOf(platform) !== -1) {
+      os = "mac"
+    } else if (windowsPlatforms.indexOf(platform) !== -1) {
+      os = "windows"
+    } else if (/Linux/.test(platform)) {
+      os = "linux"
+    }
+
+    return os
+  }
+
+  osRadioButtons.forEach((element) => {
+    options.push(element.getAttribute("value"))
+    element.addEventListener("change", (event) => {
+      selectedOs = event.target.value
+      showInstructions(selectedOs)
+    })
+  })
+
+  if (hash) {
+    const bareHash = hash.replace("#", "")
+    if (options.includes(bareHash)) {
+      selectOs(bareHash)
+    }
+  } else {
+    const os = getOS()
+
+    if (os) {
+      selectOs(os)
+    }
+  }
+</script>
+
+<Layout title={title}>
   <main class="max-w-4xl mx-auto mb-24">
-    <Heading
-      title={`Get Started with DDEV`}
-      subtitle={`How to install and start using DDEV.`}
-    />
-    <PostBody>
-      <h2>Step 1: Install DDEV</h2>
-      <ol>
-        <li>
-          <a
-            href="https://ddev.readthedocs.io/en/latest/users/install/docker-installation/"
-            >Install a Docker provider for your environment.</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://ddev.readthedocs.io/en/latest/users/install/ddev-installation/"
-            >Install DDEV for your environment</a
-          >.
-        </li>
-      </ol>
-      <p>
-        To see which commands are available, run <code>ddev</code> or
-      </p>
+    <Heading title={title} subtitle={`Install and start using DDEV.`} />
+    <div class="prose">
+      <div class="choose">
+        <h2>Choose your operating system:</h2>
+        <div class="choose-os flex">
+          <div class="w-full">
+            <input
+              id="os-mac"
+              type="radio"
+              name="os"
+              value="mac"
+              class="hidden"
+            />
+            <label
+              class="block w-full text-center border-y border-l rounded-l py-4 select-none cursor-pointer"
+              for="os-mac"
+            >
+              <span class="inline-block w-4 h-4 relative" style="top: 2px"
+                ><Icon name="Apple" />
+              </span>
+              Mac</label
+            >
+          </div>
+          <div class="w-full">
+            <input
+              id="os-windows"
+              name="os"
+              type="radio"
+              value="windows"
+              class="hidden"
+            />
+            <label
+              class="block w-full text-center border py-4 select-none cursor-pointer"
+              for="os-windows"
+            >
+              <span class="inline-block w-4 h-4 relative" style="top: 2px"
+                ><Icon name="Windows" />
+              </span>
+              Windows</label
+            >
+          </div>
+          <div class="w-full">
+            <input
+              id="os-linux"
+              type="radio"
+              name="os"
+              value="linux"
+              class="hidden"
+            />
+            <label
+              class="block w-full text-center border-y border-r rounded-r py-4 select-none cursor-pointer"
+              for="os-linux"
+            >
+              <span class="inline-block w-4 h-4 relative" style="top: 2px"
+                ><Icon name="Linux" />
+              </span>
 
-      <Code code={`ddev -h`} lang="bash" />
-
-      <p>
-        <strong>Tip:</strong> If you’re already running a webserver on port 80, follow
-        <a href="https://ddev.readthedocs.io/en/latest/users/troubleshooting/"
-          >troubleshooting steps</a
-        > to resolve port conflicts.
-      </p>
-      <h2>Step 2: Set Up a Project</h2>
-      <p>
-        Check out the existing site repository to a local directory. This is the
-        project directory.
-      </p>
-      <p>
-        Set up a project for the first time with <code>ddev config</code
-        >.&nbsp;You only need to do this once per project. To set up a new
-        project, answer three questions:
-      </p>
-      <ul>
-        <li>What’s site name?</li>
-        <li>What’s the location of the docroot?</li>
-        <li>
-          What type of project is it? Such as Drupal, PHP, WordPress, etc.
-        </li>
-      </ul>
-      <p>
-        Follow the <a
-          href="https://ddev.readthedocs.io/en/latest/users/quickstart/"
-          >configuration examples for the CMS you’re working within</a
-        > the Quickstart Guides in the documentation.
-      </p>
-      <p>
-        Depending on the CMS, and whether the project is a brand new site or an
-        existing one, DDEV attempts to make the <a
-          href="https://ddev.readthedocs.io/en/latest/users/basics/cli-usage/"
-          >CMS-specific settings files</a
-        >.
-      </p>
-      <p>
-        If you’re working with an existing project follow the steps to <a
-          href="https://ddev.readthedocs.io/en/latest/users/basics/cli-usage/"
-          >import the database</a
-        >. Then,&nbsp;run <code>ddev describe</code> to get the database credentials
-        for the project.
-      </p>
-      <p>
-        This was a one-time configuration, and configuration files were created
-        for the project.&nbsp;Take a look at the project’s .ddev/ddev.yaml file.
-      </p>
-      <h2>Step 3. Use DDEV every day</h2>
-      <p>
-        To see a list of the current DDEV projects type <code>ddev list</code
-        >.&nbsp;The terminal will display what projects are configured, their
-        status, and a link to access each project.
-      </p>
-      <p><strong>Start your project</strong></p>
-      <p>
-        Each time you want to work on a project run <code>ddev start</code> from
-        the project directory. Or, to start any project, from anywhere, run:
-      </p>
-      <Code code={`ddev start projectname`} lang="bash" />
-      <p>
-        It’s the same with other DDEV CLI commands. Run them directly from
-        within the project (docroot), or specify the project name from anywhere.
-      </p>
-      <p><strong>Done working? Remove the container.</strong></p>
-      <p>
-        When you’re done with your tasks, remove the project while maintaining
-        the database and keeping the&nbsp;state of the project intact without
-        using up resources:
-      </p>
-      <Code code={`ddev stop`} lang="bash" />
-      <p>
-        Because <code>ddev stop</code> is not destructive (it maintains the database)
-        it makes starting up next time much easier. So that means, to start this
-        project&nbsp;type <code>ddev start projectname</code>, or cd into the
-        project directory and type<code>ddev start</code>.
-      </p>
-      <p>
-        If you do need to wipe out the database and erase DDEV’s memory of the
-        project
-      </p>
-      <Code code={`ddev delete`} lang="bash" />
-
-      <h2>Step 4. Stay up-to-date</h2>
-      <p>
-        From this point on, when you need to update DDEV follow the instructions
-        under <a
-          href="https://ddev.readthedocs.io/en/latest/users/basics/cli-usage/"
-          >the installation guide</a
-        >. <code></code>
-      </p>
-    </PostBody>
-
-    <aside class="bg-gray-200 p-8 rounded-lg mt-12">
-      <div class="prose">
-        <h2>Join the DDEV Community</h2>
-        <p>DDEV is an open source project with a growing community!</p>
-        <p>
-          Check out the <a
-            href="https://ddev.readthedocs.io/en/stable/users/support/"
-            >support options</a
-          > and stop by our <a href="">GitHub Issues</a> with feature proposals,
-          bugs, or just to get a look at what’s current.
-        </p>
+              Linux</label
+            >
+          </div>
+        </div>
       </div>
-    </aside>
+    </div>
+    <div data-os="mac" class="content-panel hidden">
+      <div class="prose">
+        <h2 class="text-3xl mt-24">
+          <small class="block font-mono text-xs text-gray-500">1/3</small
+          >Install Docker
+        </h2>
+      </div>
+
+      <Tabs class="-mx-4 mb-6" style="max-width: 41.5rem;">
+        <Fragment slot="tab-1">Homebrew</Fragment>
+        <Fragment slot="tab-2">Download</Fragment>
+        <Fragment slot="panel-1">
+          <div class="prose py-5">
+            <p>
+              With <a href="https://brew.sh" target="_blank">Homebrew</a> installed,
+              you can install Docker Desktop with one command:
+            </p>
+            <Terminal>
+              <Code
+                code={`→ brew install homebrew/cask/docker`}
+                lang="bash"
+                theme={codeTheme}
+              />
+            </Terminal>
+          </div>
+        </Fragment>
+        <Fragment slot="panel-2">
+          <div class="prose py-5">
+            <p>
+              Download and run the <a
+                href="https://www.docker.com/products/docker-desktop"
+                target="_blank">Docker Desktop installer</a
+              >.
+            </p>
+          </div>
+        </Fragment>
+      </Tabs>
+
+      <div class="prose">
+        <p>Confirm that you’ve now got a Docker provider:</p>
+        <Terminal
+          ><Code
+            code={`→ docker -v\nDocker version 20.10.21, build baeda1f`}
+            lang="bash"
+            theme={codeTheme}
+          />
+        </Terminal>
+
+        <h2 class="text-3xl mt-24">
+          <small class="block font-mono text-xs text-gray-500">2/3</small
+          >Install DDEV
+        </h2>
+      </div>
+
+      <Tabs class="-mx-4 mb-6" style="max-width: 41.5rem;">
+        <Fragment slot="tab-1">Homebrew</Fragment>
+        <Fragment slot="tab-2">Install Script</Fragment>
+        <Fragment slot="panel-1">
+          <div class="prose py-5">
+            <Terminal>
+              <Code
+                code={`→ brew install drud/ddev/ddev`}
+                lang="bash"
+                theme={codeTheme}
+              />
+            </Terminal>
+          </div>
+        </Fragment>
+        <Fragment slot="panel-2">
+          <div class="prose py-5">
+            <Terminal>
+              <Code
+                code={`→ curl -fsSL https://raw.githubusercontent.com/drud/ddev/master/scripts/install_ddev.sh | bash`}
+                lang="bash"
+                theme={codeTheme}
+              />
+            </Terminal>
+          </div>
+        </Fragment>
+      </Tabs>
+
+      <div class="prose">
+        <p>Confirm that you’ve now got DDEV installed: 🎉</p>
+        <Terminal>
+          <Code
+            code={`→ ddev -v\nddev version v1.21.3`}
+            lang="bash"
+            theme={codeTheme}
+          />
+        </Terminal>
+
+        <h2 class="text-3xl mt-24">
+          <small class="block font-mono text-xs text-gray-500">3/3</small>Create
+          a Project
+        </h2>
+
+        <p>Navigate to a project you’d like to spin up with DDEV:</p>
+        <Terminal>
+          <Code code={`→ cd ~/dev/my-project`} lang="bash" theme={codeTheme} />
+        </Terminal>
+
+        <p>
+          Initialize the project by running the <a
+            href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#config"
+            target="_blank"
+            ><code>ddev config</code>
+          </a> command:
+        </p>
+        <Terminal>
+          <Code code={`→ ddev config`} lang="bash" theme={codeTheme} />
+        </Terminal>
+
+        <p>
+          Start the project for the first time. You’ll use the same command to
+          start it later, too!
+        </p>
+        <Terminal>
+          <Code code={`→ ddev start`} lang="bash" theme={codeTheme} />
+        </Terminal>
+      </div>
+
+      <div class="prose">
+        <h2 class="text-3xl mt-24">Explore & Enjoy!</h2>
+
+        <p>
+          Take a peek at your project’s new <code>.ddev/</code> directory. You can
+          add this to your repo to share your DDEV config, edit <code
+            >.ddev/ddev.yaml</code
+          > to change <a
+            href="https://ddev.readthedocs.io/en/latest/users/configuration/config/"
+            target="_blank">project options</a
+          >, or even go about your business and pretend this folder doesn’t
+          exist.
+        </p>
+
+        <p>
+          Run the <a
+            href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#help"
+            target="_blank"
+            >help command
+          </a> (or plain <code>ddev</code>) to see the actions you can take with
+          the CLI:
+        </p>
+
+        <Terminal>
+          <Code code={`→ ddev -h`} lang="bash" theme={codeTheme} />
+        </Terminal>
+
+        <p>
+          Use the <a
+            href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#describe"
+            target="_blank"
+            >describe command
+          </a> to see a project’s parts and get database connection details:
+        </p>
+
+        <Terminal>
+          <Code code={`→ ddev describe`} lang="bash" theme={codeTheme} />
+        </Terminal>
+
+        <p>
+          If you’re done working on a project and want to shut it down without
+          removing anything, use the <a
+            href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#stop"
+            target="_blank"
+            >stop command
+          </a>:
+        </p>
+
+        <Terminal>
+          <Code code={`→ ddev stop`} lang="bash" theme={codeTheme} />
+        </Terminal>
+
+        <p>
+          If you were just kicking the tires and you want to permanently delete
+          the project and its resources without touching your code, run the <a
+            href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#delete"
+            target="_blank"
+            >delete command
+          </a>:
+        </p>
+
+        <Terminal>
+          <Code code={`→ ddev delete`} lang="bash" theme={codeTheme} />
+        </Terminal>
+
+        <p>
+          DDEV will remove everything it created for the project and have no
+          memory of its existence.
+        </p>
+
+        <p>
+          To uninstall DDEV, first clean up its Docker bits and delete its files
+          from your system:
+        </p>
+
+        <Terminal>
+          <Code
+            code={`→ ddev clean --all\n→ ddev hostname --remove-inactive\n→ rm -r ~/.ddev\n→ rm -r ~/.ddev_mutagen_data_directory`}
+            lang="bash"
+            theme={codeTheme}
+          />
+        </Terminal>
+
+        <p>
+          Then remove the <code>ddev</code> binary however you installed it:
+        </p>
+
+        <Tabs class="-mx-4 -mt-4" style="max-width: 41.5rem;">
+          <Fragment slot="tab-1">Homebrew</Fragment>
+          <Fragment slot="tab-2">Install Script</Fragment>
+          <Fragment slot="panel-1">
+            <div class="prose py-5">
+              <Terminal>
+                <Code
+                  code={`→ brew uninstall ddev`}
+                  lang="bash"
+                  theme={codeTheme}
+                />
+              </Terminal>
+            </div>
+          </Fragment>
+          <Fragment slot="panel-2">
+            <div class="prose py-5">
+              <Terminal>
+                <Code
+                  code={`→ rm /usr/local/bin/ddev`}
+                  lang="bash"
+                  theme={codeTheme}
+                />
+              </Terminal>
+            </div>
+          </Fragment>
+        </Tabs>
+
+        <aside class="bg-gray-200 p-8 rounded-lg mt-36">
+          <h2 class="mt-0">Join the DDEV Community</h2>
+          <p class="mb-0">
+            DDEV is an open source project with a growing community, and there
+            are lots of ways to <a href="/support-ddev">get involved</a>!
+          </p>
+        </aside>
+      </div>
+    </div>
+    <div data-os="windows" class="hidden">
+      <div class="prose">
+        <h2 class="text-3xl mt-24">
+          <small class="block font-mono text-xs text-gray-500">1/3</small
+          >Install Docker
+        </h2>
+      </div>
+
+      <div class="prose">
+        <h2 class="text-3xl mt-24">
+          <small class="block font-mono text-xs text-gray-500">2/3</small
+          >Install DDEV
+        </h2>
+      </div>
+
+      <div class="prose">
+        <h2 class="text-3xl mt-24">
+          <small class="block font-mono text-xs text-gray-500">3/3</small>Create
+          a Project
+        </h2>
+      </div>
+
+      <div class="prose">
+        <h2 class="text-3xl mt-24">Explore & Enjoy!</h2>
+
+        <aside class="bg-gray-200 p-8 rounded-lg mt-36">
+          <h2 class="mt-0">Join the DDEV Community</h2>
+          <p class="mb-0">
+            DDEV is an open source project with a growing community, and there
+            are lots of ways to <a href="/support-ddev">get involved</a>!
+          </p>
+        </aside>
+      </div>
+    </div>
+    <div data-os="linux" class="hidden">
+      <div class="prose">
+        <h2 class="text-3xl mt-24">
+          <small class="block font-mono text-xs text-gray-500">1/3</small
+          >Install Docker
+        </h2>
+      </div>
+
+      <div class="prose">
+        <h2 class="text-3xl mt-24">
+          <small class="block font-mono text-xs text-gray-500">2/3</small
+          >Install DDEV
+        </h2>
+      </div>
+
+      <div class="prose">
+        <h2 class="text-3xl mt-24">
+          <small class="block font-mono text-xs text-gray-500">3/3</small>Create
+          a Project
+        </h2>
+      </div>
+
+      <div class="prose">
+        <h2 class="text-3xl mt-24">Explore & Enjoy!</h2>
+
+        <aside class="bg-gray-200 p-8 rounded-lg mt-36">
+          <h2 class="mt-0">Join the DDEV Community</h2>
+          <p class="mb-0">
+            DDEV is an open source project with a growing community, and there
+            are lots of ways to <a href="/support-ddev">get involved</a>!
+          </p>
+        </aside>
+      </div>
+    </div>
   </main>
 </Layout>
