@@ -1,11 +1,21 @@
 ---
+/**
+ * Somewhat flexible component used to display the primary heading (`h1`) on most pages.
+ */
 export interface Props {
+  // Required primary text
   title: string
+  // Smaller text to be displayed beneath the primary heading
   subtitle?: string
+  // A pre-formatted date string (used for blog posts)
   date?: string
+  // Human-formatted name for the page author (used for blog posts)
   author?: string
+  // URL for the author’s index page (used for blog posts)
   authorUrl?: string
+  // URL to the author’s avatar image (used for blog posts)
   authorAvatar?: string
+  // Human-formatted read time (used for blog posts)
   readTime?: string
 }
 

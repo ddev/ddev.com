@@ -4,6 +4,13 @@ import { getSearchIndex } from "@barnabask/astro-minisearch"
 import { fileURLToPath } from "node:url"
 import { parseHTML } from "linkedom"
 
+/**
+ * Uses Astro’s post-build hook to scan rendered HTML files, grab their content,
+ * and add it to a JSON index used by the internal search tool.
+ *
+ * @param {*} config
+ * @returns
+ */
 export default function searchIndex(config) {
   return {
     name: "search-index",
