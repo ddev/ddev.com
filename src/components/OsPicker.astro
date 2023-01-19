@@ -1,0 +1,178 @@
+---
+/**
+ * Provides a styled input for choosing “Mac”, “Windows”, or “Linux” and attempts
+ * to toggle corresponding content elements having `data-os="mac"`, `data-os="windows"`,
+ * or `data-os="linux"`.
+ */
+
+import Icon from "./Icon.astro"
+
+export interface Props {
+  heading?: string
+  inputName?: string
+}
+
+const { heading, inputName = "os" } = Astro.props
+---
+
+<style lang="postcss">
+  input[type="radio"]:checked + label {
+    @apply font-bold border-blue-300 shadow;
+  }
+
+  input[value="mac"]:checked + label {
+    @apply border;
+  }
+
+  input[value="windows"]:checked + label {
+    @apply border;
+  }
+</style>
+
+<script>
+  const hash = window.location.hash ?? null
+  const osRadioButtons = document.querySelectorAll('input[name="os"]')
+  const instructionDivs = document.querySelectorAll("div[data-os]")
+
+  let options = new Array()
+  let selectedOs
+
+  /**
+   * Show the instruction content for the specified operating system.
+   */
+  const showInstructions = (os) => {
+    instructionDivs.forEach((element) => {
+      if (element.getAttribute("data-os") === os) {
+        element.classList.remove("hidden")
+      } else {
+        element.classList.add("hidden")
+      }
+    })
+  }
+
+  /**
+   * Select an operating system, update the controls to reflect the selection,
+   * and show the appropriate content for that OS.
+   */
+  const selectOs = (os) => {
+    osRadioButtons.forEach((element) => {
+      element.checked = element.value === os
+    })
+    showInstructions(os)
+  }
+
+  /**
+   * Autodetect the visitor’s operating system.
+   * Returns `'mac'`, `'windows'`, `'linux'`, or `null`.
+   *
+   * Adapted from https://stackoverflow.com/a/38241481/897279
+   */
+  function getOS() {
+    var userAgent = window.navigator.userAgent,
+      platform =
+        window.navigator?.userAgentData?.platform || window.navigator.platform,
+      macosPlatforms = ["Macintosh", "MacIntel", "MacPPC", "Mac68K"],
+      windowsPlatforms = ["Win32", "Win64", "Windows", "WinCE"],
+      os = null
+
+    if (macosPlatforms.indexOf(platform) !== -1) {
+      os = "mac"
+    } else if (windowsPlatforms.indexOf(platform) !== -1) {
+      os = "windows"
+    } else if (/Linux/.test(platform)) {
+      os = "linux"
+    }
+
+    return os
+  }
+
+  /**
+   * Add input event listeners for having a selection display the
+   * relevant page content panel.
+   */
+  osRadioButtons.forEach((element) => {
+    options.push(element.getAttribute("value"))
+    element.addEventListener("change", (event) => {
+      selectedOs = event.target.value
+      showInstructions(selectedOs)
+    })
+  })
+
+  /**
+   * First look for an explicit options in a URL fragment, then fall
+   * back to OS autodetection.
+   */
+  if (hash) {
+    const bareHash = hash.replace("#", "")
+    if (options.includes(bareHash)) {
+      selectOs(bareHash)
+    }
+  } else {
+    const os = getOS()
+
+    if (os) {
+      selectOs(os)
+    }
+  }
+</script>
+
+<div class="choose">
+  {heading && <h2>{heading}</h2>}
+  <div class="choose-os flex">
+    <div class="w-full">
+      <input
+        id="os-mac"
+        type="radio"
+        name={inputName}
+        value="mac"
+        class="hidden"
+      />
+      <label
+        class="block w-full text-center border-y border-l rounded-l py-4 select-none cursor-pointer"
+        for="os-mac"
+      >
+        <span class="inline-block w-4 h-4 relative" style="top: 2px"
+          ><Icon name="Apple" />
+        </span>
+        Mac</label
+      >
+    </div>
+    <div class="w-full">
+      <input
+        id="os-windows"
+        name={inputName}
+        type="radio"
+        value="windows"
+        class="hidden"
+      />
+      <label
+        class="block w-full text-center border py-4 select-none cursor-pointer"
+        for="os-windows"
+      >
+        <span class="inline-block w-4 h-4 relative" style="top: 2px"
+          ><Icon name="Windows" />
+        </span>
+        Windows</label
+      >
+    </div>
+    <div class="w-full">
+      <input
+        id="os-linux"
+        type="radio"
+        name={inputName}
+        value="linux"
+        class="hidden"
+      />
+      <label
+        class="block w-full text-center border-y border-r rounded-r py-4 select-none cursor-pointer"
+        for="os-linux"
+      >
+        <span class="inline-block w-4 h-4 relative" style="top: 2px"
+          ><Icon name="Linux" />
+        </span>
+
+        Linux</label
+      >
+    </div>
+  </div>
+</div>
