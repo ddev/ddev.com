@@ -19,15 +19,7 @@ const { heading, inputName = "os" } = Astro.props
 
 <style lang="postcss">
   input[type="radio"]:checked + label {
-    @apply font-bold border-blue-300 shadow;
-  }
-
-  input[value="mac"]:checked + label {
-    @apply border;
-  }
-
-  input[value="windows"]:checked + label {
-    @apply border;
+    @apply font-bold border-blue-300 shadow border;
   }
 </style>
 
