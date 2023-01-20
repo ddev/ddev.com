@@ -335,10 +335,10 @@ const latestRelease = await getLatestReleaseVersion()
         </Terminal>
 
         <p>
-          In either the “Ubuntu” terminal app or Windows Terminal, confirm that
-          you’ve now got DDEV installed: 🎉
+          In the “Ubuntu” terminal app or Windows Terminal, confirm that DDEV is
+          installed: 🎉
         </p>
-        <Terminal type="powershell">
+        <Terminal type="powershell-ubuntu">
           <Code
             code={`> ddev -v\nddev version ${latestRelease}`}
             lang="bash"

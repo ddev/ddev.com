@@ -16,6 +16,7 @@ export interface Props {
   type?:
     | "default"
     | "powershell"
+    | "powershell-ubuntu"
     | "admin-powershell"
     | "windows-terminal"
     | "ubuntu"
@@ -32,7 +33,11 @@ const { type = "default" } = Astro.props
 
   .terminal-wrapper .top-bar {
     &.powershell {
-      @apply justify-end text-white;
+      @apply justify-between text-white;
+      background: #1F2023;
+    }
+    &.powershell-ubuntu {
+      @apply justify-between text-white;
       background: #1F2023;
     }
   }
@@ -50,9 +55,20 @@ const { type = "default" } = Astro.props
       <div class="block rounded-full bg-slate-500 w-3 h-3"></div>
     )}
     {type == "powershell" && (
-      <div class="block w-3 h-3"><MinusIcon /></div>
-      <div class="block w-3 h-3"><StopIcon /></div>
-      <div class="block w-3 h-3"><XMarkIcon /></div>
+      <img src="/logos/powershell.svg" alt="" class="block w-3 h-3 m-0 self-start" />
+      <div class="flex space-x-2">
+        <div class="block w-3 h-3 items-end"><MinusIcon /></div>
+        <div class="block w-3 h-3 items-end"><StopIcon /></div>
+        <div class="block w-3 h-3 items-end"><XMarkIcon /></div>
+      </div>
+    )}
+    {type == "powershell-ubuntu" && (
+      <img src="/logos/tux.svg" alt="" class="block w-3 h-3 m-0 self-start" />
+      <div class="flex space-x-2">
+        <div class="block w-3 h-3 items-end"><MinusIcon /></div>
+        <div class="block w-3 h-3 items-end"><StopIcon /></div>
+        <div class="block w-3 h-3 items-end"><XMarkIcon /></div>
+      </div>
     )}
   </div>
   <div class="overflow-hidden my-0">
