@@ -1,20 +1,21 @@
 ---
 /**
  * Provides a styled input for choosing “Mac”, “Windows”, or “Linux” and attempts
- * to toggle corresponding content elements having `data-os="mac"`, `data-os="windows"`,
- * or `data-os="linux"`.
+ * to toggle corresponding content elements having `data-platform="mac"`,
+ * `data-platform="windows"`, `data-platform="linux"`, or `data-platform="cloud"`.
  *
  * Used on the “Get Started with DDEV” page.
  */
 
 import Icon from "./Icon.astro"
+import { CloudIcon } from "@heroicons/react/24/solid/index.js"
 
 export interface Props {
   heading?: string
   inputName?: string
 }
 
-const { heading, inputName = "os" } = Astro.props
+const { heading, inputName = "platform" } = Astro.props
 ---
 
 <style lang="postcss">
@@ -25,18 +26,20 @@ const { heading, inputName = "os" } = Astro.props
 
 <script>
   const hash = window.location.hash ?? null
-  const osRadioButtons = document.querySelectorAll('input[name="os"]')
-  const instructionDivs = document.querySelectorAll("div[data-os]")
+  const platformRadioButtons = document.querySelectorAll(
+    'input[name="platform"]'
+  )
+  const instructionDivs = document.querySelectorAll("div[data-platform]")
 
   let options = new Array()
-  let selectedOs
+  let selectedPlatform
 
   /**
    * Show the instruction content for the specified operating system.
    */
-  const showInstructions = (os) => {
+  const showInstructions = (platform) => {
     instructionDivs.forEach((element) => {
-      if (element.getAttribute("data-os") === os) {
+      if (element.getAttribute("data-platform") === platform) {
         element.classList.remove("hidden")
       } else {
         element.classList.add("hidden")
@@ -45,14 +48,14 @@ const { heading, inputName = "os" } = Astro.props
   }
 
   /**
-   * Select an operating system, update the controls to reflect the selection,
-   * and show the appropriate content for that OS.
+   * Select a platform, update the controls to reflect the selection,
+   * and show the appropriate content for that platform.
    */
-  const selectOs = (os) => {
-    osRadioButtons.forEach((element) => {
-      element.checked = element.value === os
+  const selectPlatform = (platform) => {
+    platformRadioButtons.forEach((element) => {
+      element.checked = element.value === platform
     })
-    showInstructions(os)
+    showInstructions(platform)
   }
 
   /**
@@ -84,11 +87,11 @@ const { heading, inputName = "os" } = Astro.props
    * Add input event listeners for having a selection display the
    * relevant page content panel.
    */
-  osRadioButtons.forEach((element) => {
+  platformRadioButtons.forEach((element) => {
     options.push(element.getAttribute("value"))
     element.addEventListener("change", (event) => {
-      selectedOs = event.target.value
-      showInstructions(selectedOs)
+      selectedPlatform = event.target.value
+      showInstructions(selectedPlatform)
     })
   })
 
@@ -99,23 +102,23 @@ const { heading, inputName = "os" } = Astro.props
   if (hash) {
     const bareHash = hash.replace("#", "")
     if (options.includes(bareHash)) {
-      selectOs(bareHash)
+      selectPlatform(bareHash)
     }
   } else {
     const os = getOS()
 
     if (os) {
-      selectOs(os)
+      selectPlatform(os)
     }
   }
 </script>
 
 <div class="choose">
   {heading && <h2>{heading}</h2>}
-  <div class="choose-os flex">
+  <div class="choose-platform flex">
     <div class="w-full">
       <input
-        id="os-mac"
+        id="platform-mac"
         type="radio"
         name={inputName}
         value="mac"
@@ -123,7 +126,7 @@ const { heading, inputName = "os" } = Astro.props
       />
       <label
         class="block w-full text-center border-y border-l rounded-l py-4 select-none cursor-pointer"
-        for="os-mac"
+        for="platform-mac"
       >
         <span class="inline-block w-4 h-4 relative" style="top: 2px"
           ><Icon name="Apple" />
@@ -133,15 +136,15 @@ const { heading, inputName = "os" } = Astro.props
     </div>
     <div class="w-full">
       <input
-        id="os-windows"
+        id="platform-windows"
         name={inputName}
         type="radio"
         value="windows"
         class="hidden"
       />
       <label
-        class="block w-full text-center border py-4 select-none cursor-pointer"
-        for="os-windows"
+        class="block w-full text-center border-y border-l py-4 select-none cursor-pointer"
+        for="platform-windows"
       >
         <span class="inline-block w-4 h-4 relative" style="top: 2px"
           ><Icon name="Windows" />
@@ -151,21 +154,40 @@ const { heading, inputName = "os" } = Astro.props
     </div>
     <div class="w-full">
       <input
-        id="os-linux"
+        id="platform-linux"
         type="radio"
         name={inputName}
         value="linux"
         class="hidden"
       />
       <label
-        class="block w-full text-center border-y border-r rounded-r py-4 select-none cursor-pointer"
-        for="os-linux"
+        class="block w-full text-center border-y border-l py-4 select-none cursor-pointer"
+        for="platform-linux"
       >
         <span class="inline-block w-4 h-4 relative" style="top: 2px"
           ><Icon name="Linux" />
         </span>
 
         Linux</label
+      >
+    </div>
+    <div class="w-full">
+      <input
+        id="platform-cloud"
+        type="radio"
+        name={inputName}
+        value="cloud"
+        class="hidden"
+      />
+      <label
+        class="block w-full text-center border-y border-x rounded-r py-4 select-none cursor-pointer"
+        for="platform-cloud"
+      >
+        <span class="inline-block w-4 h-4 relative" style="top: 2px"
+          ><CloudIcon />
+        </span>
+
+        Cloud</label
       >
     </div>
   </div>

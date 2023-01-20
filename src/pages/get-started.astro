@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import Heading from "../components/Heading.astro"
-import OsPicker from "../components/OsPicker.astro"
+import PlatformPicker from "../components/PlatformPicker.astro"
 import Terminal from "../components/Terminal.astro"
 import { Tabs } from "astro-tabs"
 import { Code } from "astro/components"
@@ -18,11 +18,11 @@ const latestRelease = await getLatestReleaseVersion()
   <main class="max-w-4xl mx-auto mb-24">
     <Heading title={title} subtitle={`Install and start using DDEV.`} />
     <div class="prose mb-16">
-      <OsPicker heading={`Choose your operating system:`} />
+      <PlatformPicker heading={`Choose your platform:`} />
     </div>
 
     {/* Mac instructions */}
-    <div data-os="mac" class="hidden">
+    <div data-platform="mac" class="hidden">
       <div class="prose">
         <p class="text-gray-600 mb-16">
           We’ll use Docker Desktop since it’s the most straightforward of <a
@@ -275,7 +275,7 @@ const latestRelease = await getLatestReleaseVersion()
     </div>
 
     {/* Windows instructions */}
-    <div data-os="windows" class="hidden">
+    <div data-platform="windows" class="hidden">
       <div class="prose">
         <p class="text-gray-600 mb-16">
           We’ll use WSL2 with Docker inside since it’s the fastest and most
@@ -373,7 +373,7 @@ const latestRelease = await getLatestReleaseVersion()
     </div>
 
     {/* Linux instructions */}
-    <div data-os="linux" class="hidden">
+    <div data-platform="linux" class="hidden">
       <div class="prose">
         <h2 class="text-3xl mt-24">
           <small class="block font-mono text-xs text-gray-500">1/3</small
@@ -463,6 +463,36 @@ const latestRelease = await getLatestReleaseVersion()
           <small class="block font-mono text-xs text-gray-500">3/3</small>Create
           a Project
         </h2>
+      </div>
+
+      <div class="prose">
+        <h2 class="text-3xl mt-24">Explore & Enjoy!</h2>
+
+        <aside class="bg-gray-200 p-8 rounded-lg mt-36">
+          <h2 class="mt-0">Join the DDEV Community</h2>
+          <p class="mb-0">
+            DDEV is an open source project with a growing community, and there
+            are lots of ways to <a href="/support-ddev">get involved</a>!
+          </p>
+        </aside>
+      </div>
+    </div>
+
+    {/* Cloud instructions */}
+    <div data-platform="cloud" class="hidden">
+      <div class="prose">
+        <h2 class="text-3xl mt-24">Launch with a Provider</h2>
+
+        <Tabs class="-mx-4 mb-6" style="max-width: 41.5rem;">
+          <Fragment slot="tab-1">Gitpod</Fragment>
+          <Fragment slot="tab-2">GitHub Codespaces</Fragment>
+          <Fragment slot="panel-1">
+            <div class="prose py-5"></div>
+          </Fragment>
+          <Fragment slot="panel-2">
+            <div class="prose py-5"></div>
+          </Fragment>
+        </Tabs>
       </div>
 
       <div class="prose">
