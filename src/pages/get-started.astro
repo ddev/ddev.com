@@ -5,11 +5,13 @@ import OsPicker from "../components/OsPicker.astro"
 import Terminal from "../components/Terminal.astro"
 import { Tabs } from "astro-tabs"
 import { Code } from "astro/components"
+import { getLatestReleaseVersion } from "../lib/api"
 
 import "../styles/tabs.css"
 
 const title = "Get Started with DDEV"
 const codeTheme = "nord"
+const latestRelease = await getLatestReleaseVersion()
 ---
 
 <Layout title={title}>
@@ -22,6 +24,13 @@ const codeTheme = "nord"
     {/* Mac instructions */}
     <div data-os="mac" class="hidden">
       <div class="prose">
+        <p class="text-gray-600 mb-16">
+          We’ll use Docker Desktop since it’s the most straightforward of <a
+            href="https://ddev.readthedocs.io/en/latest/users/install/docker-installation/#macos"
+            >several options</a
+          >.
+        </p>
+
         <h2 class="text-3xl mt-24">
           <small class="block font-mono text-xs text-gray-500">1/3</small
           >Install Docker
@@ -105,7 +114,7 @@ const codeTheme = "nord"
         <p>Confirm that you’ve now got DDEV installed: 🎉</p>
         <Terminal>
           <Code
-            code={`→ ddev -v\nddev version v1.21.3`}
+            code={`→ ddev -v\nddev version ${latestRelease}`}
             lang="bash"
             theme={codeTheme}
           />

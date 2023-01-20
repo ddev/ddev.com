@@ -319,6 +319,13 @@ export async function getRepoDetails(name: string) {
   return data
 }
 
+export async function getLatestReleaseVersion() {
+  const response = await fetch(`https://api.github.com/repos/drud/ddev/releases`)
+  const data = await response.json()
+
+  return data[0].tag_name;
+}
+
 /**
  * Format a date string we got via GraphQL. Used mostly for blog post listings
  * and detail pages.
