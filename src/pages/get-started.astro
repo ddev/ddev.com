@@ -277,17 +277,74 @@ const latestRelease = await getLatestReleaseVersion()
     {/* Windows instructions */}
     <div data-os="windows" class="hidden">
       <div class="prose">
+        <p class="text-gray-600 mb-16">
+          We’ll use WSL2 with Docker inside since it’s the fastest and most
+          straightforward of <a
+            href="https://ddev.readthedocs.io/en/latest/users/install/docker-installation/#windows"
+            >several options</a
+          >.
+        </p>
+
         <h2 class="text-3xl mt-24">
           <small class="block font-mono text-xs text-gray-500">1/3</small
-          >Install Docker
+          >Install WSL2 with Ubuntu
         </h2>
+
+        <p>Run the following in a PowerShell v5 terminal:</p>
+
+        <Terminal type="powershell">
+          <Code code={`> wsl --install`} lang="bash" theme={codeTheme} />
+        </Terminal>
+
+        <p>You’ll probably need to reboot.</p>
+
+        <p>
+          Visit the Microsoft Store and install the updated “Windows Subsystem
+          for Linux” and click “Open”. It will likely prompt you for a username
+          and password for the Ubuntu WSL2 instance it creates.
+        </p>
+
+        <p>Verify that you now have an Ubuntu distro set as default:</p>
+
+        <Terminal type="powershell">
+          <Code code={`> wsl.exe -l -v`} lang="bash" theme={codeTheme} />
+        </Terminal>
+
+        <p>
+          Bonus: to keep WSL2 up to date, visit <i>Windows Update Settings</i> →
+          <i>Advanced Options</i>, and enable <i
+            >Receive updates for other Microsoft products</i
+          >.
+        </p>
       </div>
 
       <div class="prose">
         <h2 class="text-3xl mt-24">
-          <small class="block font-mono text-xs text-gray-500">2/3</small
-          >Install DDEV
+          <small class="block font-mono text-xs text-gray-500">2/3</small>Run
+          the Install Script
         </h2>
+
+        <p>Run the following in an administrative PowerShell:</p>
+
+        <Terminal type="powershell">
+          <Code
+            code={`> Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;\niex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/drud/ddev/master/scripts/install_ddev_wsl2_docker_inside.ps1'))`}
+            lang="bash"
+            theme={codeTheme}
+          />
+        </Terminal>
+
+        <p>
+          In either the “Ubuntu” terminal app or Windows Terminal, confirm that
+          you’ve now got DDEV installed: 🎉
+        </p>
+        <Terminal type="powershell">
+          <Code
+            code={`> ddev -v\nddev version ${latestRelease}`}
+            lang="bash"
+            theme={codeTheme}
+          />
+        </Terminal>
       </div>
 
       <div class="prose">
@@ -295,6 +352,11 @@ const latestRelease = await getLatestReleaseVersion()
           <small class="block font-mono text-xs text-gray-500">3/3</small>Create
           a Project
         </h2>
+
+        <p>Navigate to a project you’d like to spin up with DDEV:</p>
+        <Terminal type="powershell">
+          <Code code={`> cd ~/dev/my-project`} lang="bash" theme={codeTheme} />
+        </Terminal>
       </div>
 
       <div class="prose">
