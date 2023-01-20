@@ -386,6 +386,76 @@ const latestRelease = await getLatestReleaseVersion()
           <small class="block font-mono text-xs text-gray-500">2/3</small
           >Install DDEV
         </h2>
+
+        <Tabs class="-mx-4 mb-6" style="max-width: 41.5rem;">
+          <Fragment slot="tab-1">Install Script</Fragment>
+          <Fragment slot="tab-2">Debian/Ubuntu</Fragment>
+          <Fragment slot="tab-3">Fedora, Red Hat, etc.</Fragment>
+          <Fragment slot="tab-4">Arch Linux</Fragment>
+          <Fragment slot="panel-1">
+            <div class="prose py-5">
+              <p>Download and execute the standalone install script:</p>
+
+              <Terminal type="ubuntu">
+                <Code
+                  code={`$ curl -fsSL https://raw.githubusercontent.com/drud/ddev/master/scripts/install_ddev.sh | bash`}
+                  lang="bash"
+                  theme={codeTheme}
+                />
+              </Terminal>
+            </div>
+          </Fragment>
+          <Fragment slot="panel-2">
+            <div class="prose py-5">
+              <p>
+                Trust DDEV’s packages, then install it with <code>apt</code> or <code
+                  >yum</code
+                >:
+              </p>
+              <Terminal type="ubuntu">
+                <Code
+                  code={`$ curl -fsSL https://apt.fury.io/drud/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null\necho "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://apt.fury.io/drud/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list\nsudo apt update && sudo apt install -y ddev`}
+                  lang="bash"
+                  theme={codeTheme}
+                />
+              </Terminal>
+            </div>
+          </Fragment>
+          <Fragment slot="panel-3">
+            <div class="prose py-5">
+              <p>
+                Add DDEV’s package repository, then install with <code>dnf</code
+                >:
+              </p>
+
+              <Terminal type="ubuntu">
+                <Code
+                  code={`$ echo '[ddev]\nname=DDEV Repo\nbaseurl=https://yum.fury.io/drud/\nenabled=1\ngpgcheck=0' | sudo tee -a /etc/yum.repos.d/ddev.repo\n$ sudo dnf install --refresh ddev
+`}
+                  lang="bash"
+                  theme={codeTheme}
+                />
+              </Terminal>
+            </div>
+          </Fragment>
+          <Fragment slot="panel-4">
+            <div class="prose py-5">
+              <p>
+                Use <code>yay</code> or your favorite AUR tool to install the <a
+                  href="https://aur.archlinux.org/packages/ddev-bin/"
+                  target="_blank">ddev-bin</a
+                > package, then run <code>mkcert</code>.
+              </p>
+              <Terminal type="ubuntu">
+                <Code
+                  code={`$ yay -S ddev\n$ mkcert -install`}
+                  lang="bash"
+                  theme={codeTheme}
+                />
+              </Terminal>
+            </div>
+          </Fragment>
+        </Tabs>
       </div>
 
       <div class="prose">

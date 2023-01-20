@@ -40,6 +40,9 @@ const { type = "default" } = Astro.props
       @apply justify-between text-white;
       background: #1F2023;
     }
+    &.ubuntu {
+      @apply justify-end;
+    }
   }
 
   .prose .terminal-wrapper pre {
@@ -49,7 +52,7 @@ const { type = "default" } = Astro.props
 
 <div class="terminal-wrapper">
   <div class={`top-bar flex p-3 space-x-2 rounded-t-lg ${type}`}>
-    {type == "default" && (
+    {(type == "default" || type == "ubuntu") && (
       <div class="block rounded-full bg-slate-500 w-3 h-3"></div>
       <div class="block rounded-full bg-slate-500 w-3 h-3"></div>
       <div class="block rounded-full bg-slate-500 w-3 h-3"></div>
