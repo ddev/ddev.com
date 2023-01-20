@@ -3,6 +3,7 @@
 # build output
 dist/
 .output/
+cache/
 
 # dependencies
 node_modules/
