@@ -487,10 +487,62 @@ const latestRelease = await getLatestReleaseVersion()
           <Fragment slot="tab-1">Gitpod</Fragment>
           <Fragment slot="tab-2">GitHub Codespaces</Fragment>
           <Fragment slot="panel-1">
-            <div class="prose py-5"></div>
+            <div class="prose pt-5">
+              <p>
+                <a
+                  href="https://www.gitpod.io/docs/getting-started"
+                  target="_blank">Open any repository</a
+                > using Gitpod and install DDEV:
+              </p>
+              <Terminal>
+                <Code
+                  code={`→ brew install drud/ddev/ddev`}
+                  lang="bash"
+                  theme={codeTheme}
+                />
+              </Terminal>
+            </div>
+            <a href="https://gitpod.io/#https://github.com/drud/ddev"
+              ><img
+                src="/img/open-in-gitpod.svg"
+                alt="Open in Gitpod"
+                class="drop-shadow-sm mb-4"
+              />
+            </a>
           </Fragment>
           <Fragment slot="panel-2">
-            <div class="prose py-5"></div>
+            <div class="prose py-5">
+              <ol>
+                <li>
+                  <a href="https://github.com/codespaces/new"
+                    >Create a new codespace</a
+                  > for your project or open an existing one.
+                </li>
+                <li>
+                  Edit the project’s <code>.devcontainer/devcontainer.json</code
+                  > file to include these two lines in the “features” section:
+                  <Code
+                    code={`"features": {\n    "ghcr.io/devcontainers/features/docker-in-docker:1": {},\n    "ghcr.io/drud/ddev/install-ddev:latest": {}\n},`}
+                    lang="json"
+                  />
+                </li>
+                <li>
+                  Save the file and rebuild the container by running VS Code’s
+                  “Codespaces: Rebuild Container” action. (<kbd>⌘</kbd> + <kbd
+                    >SHIFT</kbd
+                  > + <kbd>P</kbd> on a Mac or <kbd>CTRL</kbd> + <kbd>SHIFT</kbd
+                  > + <kbd>P</kbd> on Windows, then search for “rebuild”.)
+                </li>
+              </ol>
+            </div>
+            <a
+              href="https://github.com/codespaces/new?hide_repo_select=true&ref=20221220_codespaces&repo=80927419&machine=basicLinux32gb&location=WestUs2"
+              ><img
+                src="https://github.com/codespaces/badge.svg"
+                alt="Open in GitHub Codespaces"
+                class="mb-4"
+              />
+            </a>
           </Fragment>
         </Tabs>
       </div>
