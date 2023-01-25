@@ -3,9 +3,54 @@
  * The large, leading copy and image used on the homepage.
  */
 import CtaButton from "../components/CtaButton.astro"
+import Terminal from "./Terminal.astro"
+
+const panels = [
+  {
+    output: `→ ddev start
+
+Starting my-project...
+Container ddev-my-project-web  Running
+Container ddev-my-project-dba  Running
+Container ddev-my-project-db  Running
+Container ddev-router  Running
+Successfully started my-project
+Project can be reached at https://my-project.ddev.site https://127.0.0.1:51046`,
+  },
+  {
+    output: `→ ddev describe
+┌─────────────────────────────────────────────────────────────────────────────────────┐
+│ Project: my-project ~/dev/my-project https://my-project.ddev.site                   │
+│ Docker environment: docker 20.10.21                                                 │
+├────────────┬──────┬────────────────────────────────────────────┬────────────────────┤
+│ SERVICE    │ STAT │ URL/PORT                                   │ INFO               │
+├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
+│ web        │ OK   │ https://my-project.ddev.site               │ php PHP8.1         │
+│            │      │ InDocker: ddev-my-project-web:443,80,8025  │ nginx-fpm          │
+│            │      │ Host: localhost:51046,51047                │ docroot:''         │
+│            │      │                                            │ NodeJS:16          │
+├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
+│ db         │ OK   │ InDocker: ddev-my-project-db:3306          │ mysql:8.0          │
+│            │      │ Host: localhost:51045                      │ User/Pass: 'db/db' │
+│            │      │                                            │ or 'root/root'     │
+├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
+│ PHPMyAdmin │ OK   │ https://my-project.ddev.site:8037          │                    │
+│            │      │ InDocker: ddev-my-project-dba:80,80        │                    │
+│            │      │ \`ddev launch -p\`                           │                    │
+├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
+│ Mailhog    │      │ MailHog: https://my-project.ddev.site:8026 │                    │
+│            │      │ \`ddev launch -m\`                           │                    │
+├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
+│ All URLs   │      │ https://my-project.ddev.site,              │                    │
+│            │      │ https://127.0.0.1:51046,                   │                    │
+│            │      │ http://my-project.ddev.site,               │                    │
+│            │      │ http://127.0.0.1:51047                     │                    │
+└────────────┴──────┴────────────────────────────────────────────┴────────────────────┘`,
+  },
+]
 ---
 
-<div class="py-32 relative">
+<div class="mt-12 py-32 relative overflow-x-hidden">
   <div class="z-10 max-w-4xl mx-auto relative">
     <div class="max-w-2xl">
       <h1 class="text-5xl font-bold">
@@ -29,6 +74,12 @@ import CtaButton from "../components/CtaButton.astro"
   </div>
 
   <div class="w-full h-72 absolute top-0 z-0" style="right: -40rem;">
-    <img src="/img/fpo-terminal.png" class="mx-auto" width="800" alt="" />
+    <div class="mx-auto h-full" style="max-width: 49.25rem;">
+      <Terminal>
+        <div class="h-full p-4 text-slate-300 text-xs" style="height: 540px;">
+          <pre>{panels[0].output}</pre>
+        </div>
+      </Terminal>
+    </div>
   </div>
 </div>
