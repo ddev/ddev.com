@@ -1,7 +1,7 @@
 ---
 import { getSponsors } from "../lib/api"
 
-const sponsors = await getSponsors()
+const gitHubSponsors = await getSponsors()
 
 export interface Props {
   size?: string
@@ -17,7 +17,7 @@ const { size = "normal", align = "left" } = Astro.props
       (align == "center" ? " justify-center" : "")}
   >
     {
-      sponsors.map((sponsor) => (
+      gitHubSponsors.map((sponsor) => (
         <a
           class={
             `block rounded-full relative overflow-hidden m-1 shadow-md ` +

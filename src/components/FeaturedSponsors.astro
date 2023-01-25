@@ -1,0 +1,106 @@
+---
+const featuredSponsors = [
+  {
+    name: "Platform.sh",
+    logo: "/logos/platform.sh.svg",
+    url: "https://platform.sh",
+    class: "mt-12 h-11",
+  },
+  {
+    name: "Tag1",
+    logo: "/logos/tag1.svg",
+    url: "https://tag1.com",
+    class: "h-9",
+  },
+  {
+    name: "Agaric",
+    logo: "/logos/agaric.svg",
+    url: "https://agaric.coop/",
+  },
+  {
+    name: "b13",
+    logo: "/logos/b13.svg",
+    url: "https://b13.com/",
+  },
+  {
+    name: "Gizra",
+    logo: "/logos/gizra.svg",
+    url: "https://gizra.com/",
+  },
+  {
+    name: "Oliver Wand",
+    logo: "/logos/oliver-wand.jpg",
+    url: "https://github.com/wandoliver",
+    class: "h-12 w-12",
+  },
+  {
+    name: "Centarro",
+    logo: "/logos/centarro.svg",
+    url: "https://www.centarro.io/",
+  },
+  {
+    name: "DrupalEasy",
+    logo: "/logos/drupal-easy.jpg",
+    url: "https://www.drupaleasy.com/",
+    class: "h-12 w-12",
+  },
+  {
+    name: "Redfin Solutions",
+    logo: "/logos/redfin-solutions.svg",
+    url: "https://redfinsolutions.com/",
+    class: "h-16 w-16",
+  },
+  {
+    name: "MacStadium",
+    logo: "/logos/mac-stadium.svg",
+    url: "https://www.macstadium.com",
+    class: "h-15",
+  },
+  {
+    name: "Lullabot",
+    logo: "/logos/lullabot.svg",
+    url: "https://www.lullabot.com",
+    class: "h-9",
+  },
+  {
+    name: "Craft CMS",
+    logo: "/logos/craft-cms.svg",
+    url: "https://craftcms.com/",
+    class: "h-11",
+  },
+  {
+    name: "undpaul",
+    logo: "/logos/undpaul.svg",
+    url: "https://undpaul.de",
+    class: "h-9",
+  },
+  {
+    name: "1xINTERNET",
+    logo: "/logos/1xinternet.svg",
+    url: "https://1xinternet.de",
+    class: "h-11",
+  },
+]
+---
+
+<div class="relative">
+  <div
+    class={`flex flex-wrap space-x-12 space-y-12 -mt-12 justify-center items-center content-center`}
+  >
+    {
+      featuredSponsors.map((sponsor) => (
+        <a
+          class={
+            `block relative overflow-hidden cursor-pointer h-12` +
+            (sponsor.hasOwnProperty("class") ? ` ` + sponsor.class : ``)
+          }
+          title={sponsor.name}
+          href={sponsor.url}
+          target="_blank"
+        >
+          <img src={sponsor.logo} class="block w-auto h-full" />
+        </a>
+      ))
+    }
+  </div>
+</div>
