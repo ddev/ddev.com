@@ -8,6 +8,7 @@ import getReadingTime from 'reading-time';
 import fs2 from "fs"
 import path from 'path'
 import fetchContributors from "./fetch-contributors"
+import { GITHUB_REPO } from "../config"
 
 dotenv.config()
 
@@ -246,26 +247,8 @@ export async function getPageBySlug(slug: string) {
  * @returns response data
  */
 export async function getSponsors(useDevCache = true) {
-  const filename = 'sponsors.json'
-  let data
-
-  if (useDevCache) {
-    const cacheValue = getCachedFile(filename);
-
-    if (cacheValue) {
-      data = JSON.parse(cacheValue)
-    }
-  }
-
-  if (!data) {
-    // https://github.com/filiptronicek/gh-sponsors-api#notes
-    const response = await fetch("https://ghs.vercel.app/sponsors/rfay")
-    data = await response.json()
-
-    if (useDevCache) {
-      storeCachedFile(filename, JSON.stringify(data))
-    }
-  }
+  // https://github.com/filiptronicek/gh-sponsors-api#notes
+  const data = await fetchLiveOrCachedJson(`https://ghs.vercel.app/sponsors/rfay`, 'sponsors.json');
 
   return data.sponsors
 }
@@ -313,16 +296,16 @@ export async function getContributors(useDevCache = true) {
  * @returns response data
  */
 export async function getRepoDetails(name: string) {
-  const response = await fetch(`https://api.github.com/repos/${name}`)
-  const data = await response.json()
-
-  return data
+  const slug = name.replace('/', '-')
+  return await fetchLiveOrCachedJson(`https://api.github.com/repos/${name}`, `repository-${slug}.json`);
 }
 
+/**
+ * Gets the most recent `drud/ddev` tag name, like `v1.21.4`.
+ * @returns tag name
+ */
 export async function getLatestReleaseVersion() {
-  const response = await fetch(`https://api.github.com/repos/drud/ddev/releases`)
-  const data = await response.json()
-
+  const data = await fetchLiveOrCachedJson(`https://api.github.com/repos/${GITHUB_REPO}/releases`, 'releases.json');
   return data[0].tag_name;
 }
 
@@ -359,6 +342,38 @@ export const formatDate = (date: string, customOptions?: object) => {
 export const getReadTime = (text: string) : string => {
   const readingTime = getReadingTime(text);
   return readingTime.text
+}
+
+const fetchLiveOrCachedJson = async (url: string, filename: string, useDevCache = true) => {
+  let data
+
+  if (useDevCache) {
+    const cacheValue = getCachedFile(filename);
+
+    if (cacheValue) {
+      console.log(
+        `Loaded cached ${filename}.`
+      )
+      data = JSON.parse(cacheValue)
+
+      return data
+    }
+  }
+
+  if (!data) {
+    console.log(
+      `Fetching ${url}.`
+    )
+
+    const response = await fetch(url)
+    const data = await response.json()
+
+    if (useDevCache) {
+      storeCachedFile(filename, JSON.stringify(data))
+    }
+
+    return data
+  }
 }
 
 /**
