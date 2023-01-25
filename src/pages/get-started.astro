@@ -182,7 +182,7 @@ const latestRelease = await getLatestReleaseVersion()
             href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#describe"
             target="_blank"
             >describe command
-          </a> to see a project’s parts and get database connection details:
+          </a> to see a project’s parts and database connection details:
         </p>
 
         <Terminal>
@@ -545,10 +545,55 @@ const latestRelease = await getLatestReleaseVersion()
             </a>
           </Fragment>
         </Tabs>
+      
+        <p>Confirm that you’ve now got DDEV installed: 🎉</p>
+        <Terminal>
+          <Code
+            code={`→ ddev -v\nddev version ${latestRelease}`}
+            lang="bash"
+            theme={codeTheme}
+          />
+        </Terminal>
       </div>
 
       <div class="prose">
         <h2 class="text-3xl mt-24">Explore & Enjoy!</h2>
+
+        <p>
+          Take a peek at your project’s new <code>.ddev/</code> directory. You can
+          add this to your repo to share your DDEV config, edit <code
+            >.ddev/ddev.yaml</code
+          > to change <a
+            href="https://ddev.readthedocs.io/en/latest/users/configuration/config/"
+            target="_blank">project options</a
+          >, or even go about your business and pretend this folder doesn’t
+          exist.
+        </p>
+
+        <p>
+          Run the <a
+            href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#help"
+            target="_blank"
+            >help command
+          </a> (or plain <code>ddev</code>) to see the actions you can take with
+          the CLI:
+        </p>
+
+        <Terminal>
+          <Code code={`→ ddev -h`} lang="bash" theme={codeTheme} />
+        </Terminal>
+
+        <p>
+          Use the <a
+            href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#describe"
+            target="_blank"
+            >describe command
+          </a> to see a project’s parts and database connection details:
+        </p>
+
+        <Terminal>
+          <Code code={`→ ddev describe`} lang="bash" theme={codeTheme} />
+        </Terminal>
 
         <aside class="bg-gray-200 p-8 rounded-lg mt-36">
           <h2 class="mt-0">Join the DDEV Community</h2>
