@@ -15,7 +15,6 @@ const posts = nodes.edges.map(({ node }) => {
 })
 
 posts.forEach((post, index) => {
-  console.log(slug)
   if (post.slug === slug) {
     if (posts[index - 1]) {
       prev = posts[index - 1]
