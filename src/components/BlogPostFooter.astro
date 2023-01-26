@@ -1,0 +1,66 @@
+---
+import { getAllBlogPosts } from "../lib/api"
+
+export interface Props {
+  slug: object
+}
+
+const { slug } = Astro.props
+
+let next, prev
+
+const nodes = await getAllBlogPosts()
+const posts = nodes.edges.map(({ node }) => {
+  return node
+})
+
+posts.forEach((post, index) => {
+  console.log(slug)
+  if (post.slug === slug) {
+    if (posts[index - 1]) {
+      prev = posts[index - 1]
+    }
+
+    if (posts[index + 1]) {
+      next = posts[index + 1]
+    }
+  }
+})
+---
+
+<nav class="max-w-4xl mx-auto md:flex md:gap-2 md:columns-3 mt-32 py-4">
+  {
+    prev && (
+      <a
+        href={`/blog/${prev.slug}`}
+        rel="prefetch"
+        class="flex border items-center rounded-md w-full my-1 md:my-0 content-center justify-center md:justify-start p-4 hover:border-blue-300 hover:shadow-sm"
+        title={`Previous: ${prev.title}`}
+      >
+        <div>
+          <span class="font-mono text-sm block text-navy-300 tracking-wider">
+            Previous Post
+          </span>
+          <span class="py-3 md:w-full font-bold">{prev.title}</span>
+        </div>
+      </a>
+    )
+  }
+  {
+    next && (
+      <a
+        href={`/blog/${next.slug}`}
+        rel="prefetch"
+        class="flex border items-center rounded-md w-full my-1 md:my-0 content-center justify-center md:justify-end text-right p-4 hover:border-blue-300 hover:shadow-sm"
+        title={`Next: ${next.title}`}
+      >
+        <div>
+          <span class="font-mono text-sm block text-navy-300 tracking-wider">
+            Next Post
+          </span>
+          <span class="py-3 md:w-full font-bold">{next.title}</span>
+        </div>
+      </a>
+    )
+  }
+</nav>
