@@ -376,8 +376,12 @@ export async function getRepoDetails(name: string) {
  * @returns tag name
  */
 export async function getLatestReleaseVersion() {
-  const data = await fetchLiveOrCachedJson(`https://api.github.com/repos/${GITHUB_REPO}/releases`, 'releases.json');
+  const data = await getReleases()
   return data[0].tag_name;
+}
+
+export async function getReleases() {
+  return await fetchLiveOrCachedJson(`https://api.github.com/repos/${GITHUB_REPO}/releases`, 'releases.json');
 }
 
 /**

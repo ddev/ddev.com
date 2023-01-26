@@ -2,52 +2,118 @@
 import Layout from "../layouts/Layout.astro"
 import Heading from "../components/Heading.astro"
 import PostBody from "../components/PostBody.astro"
+import {
+  getRepoDetails,
+  getContributors,
+  getSponsors,
+  getReleases,
+} from "../lib/api"
+import { GITHUB_REPO } from "../config"
 
 const title = `About DDEV`
+const repoData = await getRepoDetails(GITHUB_REPO)
+const contributorData = await getContributors()
+const sponsorData = await getSponsors()
+const releaseData = await getReleases()
 ---
 
 <Layout title={title}>
   <main class="max-w-4xl mx-auto mb-24">
     <Heading title={`The Story of DDEV`} />
-    <PostBody>
-      <p>
-        DDEV is a local development environment for web developers. It
-        originated within the company “Drud” in about 2016. Drud was building a
-        general-purpose CLI for its infant web hosting product (named
-        “DDEV-Live”, with the local dev tool named “DDEV-Local”), and the and
-        was visionary enough to build local development into the idea. (Nobody
-        really remembers what “DDEV” stands for, it might be “Docker
-        development” or it might have been “Drud development”.)
-      </p>
+    <div class="flex">
+      <div class="w-2/3">
+        <PostBody>
+          <p>
+            DDEV is a local development environment for web developers. It
+            originated within the company “Drud” in about 2016. Drud was
+            building a general-purpose CLI for its infant web hosting product
+            (named “DDEV-Live”, with the local dev tool named “DDEV-Local”), and
+            the and was visionary enough to build local development into the
+            idea. (Nobody really remembers what “DDEV” stands for, it might be
+            “Docker development” or it might have been “Drud development”.)
+          </p>
 
-      <p>
-        The independent value of the tool was soon recognized and it was
-        refactored into its own repository, and then made open-source and it
-        began its journey. Randy Fay was an employee of Drud in this period, and
-        as a long-time proponent of local development and debugging was sold on
-        its value. Drud graciously sponsored Randy to work on DDEV for nearly
-        five years, until it lost its funding. DDEV of course had integration to
-        Drud’s hosting product during this period, and it was seen as a way to
-        bring developers into the Drud-hosting world.
-      </p>
+          <p>
+            The independent value of the tool was soon recognized and it was
+            refactored into its own repository, and then made open-source and it
+            began its journey. Randy Fay was an employee of Drud in this period,
+            and as a long-time proponent of local development and debugging was
+            sold on its value. Drud graciously sponsored Randy to work on DDEV
+            for nearly five years, until it lost its funding. DDEV of course had
+            integration to Drud’s hosting product during this period, and it was
+            seen as a way to bring developers into the Drud-hosting world.
+          </p>
 
-      <p>
-        The company Drud (by then renamed “DDEV”) shut down in 2021 when it lost
-        its venture funding. Randy Fay continued to maintain the project without
-        interruption.
-      </p>
+          <p>
+            The company Drud (by then renamed “DDEV”) shut down in 2021 when it
+            lost its venture funding. Randy Fay continued to maintain the
+            project without interruption.
+          </p>
 
-      <p>
-        In 2022, <a href="/blog/platform-sh-becomes-a-lead-sponsor-of-ddev/"
-          >Platform.sh stepped in as a major sponsor of DDEV</a
-        > and hired Randy to maintain it and continues doing so. DDEV remains an
-        open-source project, free to all, and with community governance via an <a
-          href="https://github.com/drud/ddev/discussions/categories/ddev-advisory-group"
-          >Advisory Group</a
-        >, and funded via the <a href="https://localdev.foundation"
-          >Localdev Foundation</a
-        >, a Colorado, USA nonprofit organization.
-      </p>
-    </PostBody>
+          <p>
+            In 2022, <a href="/blog/platform-sh-becomes-a-lead-sponsor-of-ddev/"
+              >Platform.sh stepped in as a major sponsor of DDEV</a
+            > and hired Randy to maintain it and continues doing so. DDEV remains
+            an open-source project, free to all, and with community governance via
+            an <a
+              href="https://github.com/drud/ddev/discussions/categories/ddev-advisory-group"
+              >Advisory Group</a
+            >, and funded via the <a href="https://localdev.foundation"
+              >Localdev Foundation</a
+            >, a Colorado, USA nonprofit organization.
+          </p>
+        </PostBody>
+      </div>
+      <div class="w-1/3 pl-16">
+        <ul>
+          <li class="mb-4">
+            <span class="text-5xl font-thin"
+              >{parseInt(5000).toLocaleString("en-US")}+</span
+            >
+            <span class="block font-mono text-sm">active users</span>
+          </li>
+          <li class="mb-4">
+            <span class="text-5xl font-thin"
+              >{parseInt(releaseData.length).toLocaleString("en-US")}</span
+            >
+            <span class="block font-mono text-sm">releases</span>
+          </li>
+          <li class="mb-4">
+            <span class="text-5xl font-thin"
+              >{parseInt(contributorData.length).toLocaleString("en-US")}</span
+            >
+            <span class="block font-mono text-sm">contributors</span>
+          </li>
+          <li class="mb-4">
+            <span class="text-5xl font-thin"
+              >{parseInt(sponsorData.length).toLocaleString("en-US")}</span
+            >
+            <span class="block font-mono text-sm">sponsors</span>
+          </li>
+          <li>
+            <span class="text-5xl font-thin"
+              >{
+                parseInt(repoData.stargazers_count).toLocaleString("en-US")
+              }</span
+            >
+            <span class="block font-mono text-sm">GitHub stars</span>
+            <div class="mt-2 prose">
+              <figure>
+                <img
+                  src="https://stars.medv.io/drud/ddev.svg"
+                  alt="Sparkline chart of DDEV’s GitHub stars over time"
+                />
+                <figcaption>
+                  Project GitHub stars over time, courtesy of <a
+                    href="https://stars.medv.io/"
+                    target="_blank">stars.medv.io</a
+                  >.
+                </figcaption>
+              </figure>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </main>
 </Layout>
