@@ -72,6 +72,12 @@ export async function getAllBlogPosts() {
             }
             date
             content
+            categories {
+              nodes {
+                name
+                slug
+              }
+            }
           }
         }
       }
@@ -190,10 +196,75 @@ export async function getBlogPostBySlug(slug: string) {
           }
         }
       }
+      categories {
+        nodes {
+          name
+          slug
+        }
+      }
     }
   }
   `)
   return data?.post
+}
+
+export async function getBlogPostCategories() {
+  const data = await fetchAPI(`
+  {
+    categories(first: 1000) {
+      nodes {
+        name
+        slug
+      }
+    }
+  }
+  `)
+  return data?.categories
+
+}
+
+
+export async function getBlogPostCategory(slug: string) {
+  const data = await fetchAPI(`
+  {
+    categories(where: { slug: "${slug}" }) {
+      nodes {
+        name
+        slug
+      }
+    }
+  }
+  `)
+  return data?.categories.nodes[0]
+}
+
+export async function getBlogPostsByCategory(slug: string) {
+    const data = await fetchAPI(`
+  {
+    categories(where: { slug: "${slug}" }) {
+      nodes {
+        posts {
+          nodes {
+            title
+            date
+            content
+            slug
+            author {
+              node {
+                name
+                avatar {
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  `)
+
+  return data?.categories.nodes[0].posts
 }
 
 /**

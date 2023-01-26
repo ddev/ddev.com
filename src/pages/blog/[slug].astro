@@ -39,9 +39,33 @@ const author = page.author.node
       authorAvatar={author.avatar.url}
       readTime={getReadTime(page.content)}
     />
-    <PostBody>
-      <div set:html={page.content} />
-    </PostBody>
+    <div class="flex">
+      <div class="w-2/3">
+        <PostBody>
+          <div set:html={page.content} />
+        </PostBody>
+      </div>
+      <div class="w-1/3 pl-24 mt-6">
+        {
+          page.categories.nodes.length && (
+            <>
+              <span class="font-mono text-sm block text-navy-300 tracking-wider">
+                Posted In
+              </span>
+              <ul class="mt-1">
+                {page.categories.nodes.map((node) => (
+                  <li class="my-1">
+                    <a href={`/blog/category/${node.slug}`} class="font-bold">
+                      {node.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )
+        }
+      </div>
+    </div>
   </main>
   <BlogPostFooter slug={slug} />
 </Layout>
