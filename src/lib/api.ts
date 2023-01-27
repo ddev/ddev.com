@@ -9,7 +9,7 @@ import fs2 from "fs"
 import path from 'path'
 import fetchContributors from "./fetch-contributors"
 import fetchReleases from "./fetch-releases"
-import { GITHUB_REPO } from "../config"
+import { NodeHtmlMarkdown, NodeHtmlMarkdownOptions } from 'node-html-markdown'
 
 dotenv.config()
 
@@ -84,6 +84,32 @@ export async function getAllBlogPosts() {
       }
     }
     `)
+  
+  const edges = data.posts.edges;
+  const dir = path.resolve('./' + DEVELOPMENT_CACHE_DIR + '/posts')
+
+  if (!fs2.existsSync(dir)) {
+    fs2.mkdirSync(dir);
+  }
+
+  edges.forEach(({ node }) => {
+    let filename = node.slug + '.md'
+    let filePath = dir + '/' + filename
+    let contents = `---
+title: "${node.title}"
+pubDate: ${node.date.split("T")[0]}
+author: ${node.author.node.name}
+featuredImage: ${node.featuredImage?.node.sourceUrl}
+categories:${node.categories.nodes.map((node) => {
+  return `\n  - ${node.name}`
+})}
+---
+
+${NodeHtmlMarkdown.translate(node.content)}
+`
+    fs2.writeFileSync(filePath, contents)
+  })
+
   return data?.posts
 }
 
