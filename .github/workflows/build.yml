@@ -15,9 +15,11 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Push build
-        uses: stefanzweifel/git-auto-commit-action@v4
-          with:
-            branch: main
-            repository: ./dist
-            commit_message: Update build.
+  push:
+    needs: build
+    steps:
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          branch: main
+          repository: ./dist
+          commit_message: Update build.
