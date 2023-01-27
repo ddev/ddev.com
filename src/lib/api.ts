@@ -279,6 +279,7 @@ export async function getBlogPostsByAuthor(authorId: number) {
       nodes {
         title
         date
+        slug
         content
         author {
           node {
