@@ -8,6 +8,7 @@ import getReadingTime from 'reading-time';
 import fs2 from "fs"
 import path from 'path'
 import fetchContributors from "./fetch-contributors"
+import fetchReleases from "./fetch-releases"
 import { GITHUB_REPO } from "../config"
 
 dotenv.config()
@@ -315,10 +316,9 @@ export async function getPageBySlug(slug: string) {
 
 /**
  * Fetches GitHub Sponsors.
- * @param useDevCache Whether to use a local result cache in development to reduce third-party calls.
  * @returns response data
  */
-export async function getSponsors(useDevCache = true) {
+export async function getSponsors() {
   // https://github.com/filiptronicek/gh-sponsors-api#notes
   const data = await fetchLiveOrCachedJson(`https://ghs.vercel.app/sponsors/rfay`, 'sponsors.json');
 
@@ -330,29 +330,24 @@ export async function getSponsors(useDevCache = true) {
  * @param useDevCache Whether to use a local result cache in development to reduce third-party calls.
  * @returns response data
  */
-export async function getContributors(useDevCache = true) {
+export async function getContributors() {
   const filename = 'contributors.json'
   let data
 
-  if (useDevCache) {
-    const cacheValue = getCachedFile(filename);
+  const cacheValue = getCachedFile(filename);
 
-    if (cacheValue) {
-      console.log(
-        `Loaded cached contributors.`
-      )
-      data = JSON.parse(cacheValue)
-    }
+  if (cacheValue) {
+    console.log(
+      `Loaded cached contributors.`
+    )
+    data = JSON.parse(cacheValue)
   }
 
   if (!data) {
     const response = await fetchContributors()
       .then((collectedContributors) => {
         data = collectedContributors
-
-        if (useDevCache) {
-          storeCachedFile(filename, JSON.stringify(data))
-        }
+        storeCachedFile(filename, JSON.stringify(data))
       })
       .catch(console.error)
   }
@@ -382,7 +377,29 @@ export async function getLatestReleaseVersion() {
 }
 
 export async function getReleases() {
-  return await fetchLiveOrCachedJson(`https://api.github.com/repos/${GITHUB_REPO}/releases`, 'releases.json');
+  const filename = 'releases.json'
+  let data
+
+  const cacheValue = getCachedFile(filename);
+
+  if (cacheValue) {
+    console.log(
+      `Loaded cached releases.`
+    )
+    data = JSON.parse(cacheValue)
+  }
+
+  if (!data) {
+    const response = await fetchReleases()
+      .then((collectedReleases) => {
+        data = collectedReleases
+        storeCachedFile(filename, JSON.stringify(data))
+      })
+      .catch(console.error)
+  }
+
+  return data ?? []
+
 }
 
 /**
@@ -420,10 +437,10 @@ export const getReadTime = (text: string) : string => {
   return readingTime.text
 }
 
-const fetchLiveOrCachedJson = async (url: string, filename: string, useDevCache = true) => {
+const fetchLiveOrCachedJson = async (url: string, filename: string, useCache = true) => {
   let data
 
-  if (useDevCache) {
+  if (useCache) {
     const cacheValue = getCachedFile(filename);
 
     if (cacheValue) {
@@ -444,7 +461,7 @@ const fetchLiveOrCachedJson = async (url: string, filename: string, useDevCache 
     const response = await fetch(url)
     const data = await response.json()
 
-    if (useDevCache) {
+    if (useCache) {
       storeCachedFile(filename, JSON.stringify(data))
     }
 
@@ -458,10 +475,6 @@ const fetchLiveOrCachedJson = async (url: string, filename: string, useDevCache 
  * @returns file contents or null
  */
 const getCachedFile = (filename: string) => {
-  if (env !== "development") {
-    return
-  }
-
   const dir = path.resolve('./' + DEVELOPMENT_CACHE_DIR)
   const filePath = dir + '/' + filename
   
@@ -478,10 +491,6 @@ const getCachedFile = (filename: string) => {
  * @param contents Contents of the file.
  */
 const storeCachedFile = (filename: string, contents: string) => {
-  if (env !== "development") {
-    return
-  }
-
   const dir = path.resolve('./' + DEVELOPMENT_CACHE_DIR)
   const filePath = dir + '/' + filename
 

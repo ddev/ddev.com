@@ -12,8 +12,8 @@ import { GITHUB_REPO } from "../config"
  * https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#list-repository-contributors
  */
 export default async function fetchContributors(
-  url = `https://api.github.com/repos/${GITHUB_REPO}/contributors?per_page=${pageLimit}`,
-  collectedContributors = []
+  url = `https://api.github.com/repos/${GITHUB_REPO}/releases?per_page=${pageLimit}`,
+  collectedReleases = []
 ) {
   return new Promise((resolve, reject) =>
     fetch(url)
@@ -25,22 +25,22 @@ export default async function fetchContributors(
         response
           .json()
           .then((data) => {
-            collectedContributors = collectedContributors.concat(data)
+            collectedReleases = collectedReleases.concat(data)
             page++
 
             if (data.length == pageLimit) {
               fetchContributors(
-                `https://api.github.com/repos/${GITHUB_REPO}/contributors?per_page=${pageLimit}&page=${page}`,
-                collectedContributors
+                `https://api.github.com/repos/${GITHUB_REPO}/releases?per_page=${pageLimit}&page=${page}`,
+                collectedReleases
               )
                 .then(resolve)
                 .catch(reject)
             } else {
               console.log(
-                `Finished loading ${collectedContributors.length} contributors.`
+                `Finished loading ${collectedReleases.length} releases.`
               )
 
-              resolve(collectedContributors)
+              resolve(collectedReleases)
             }
           })
           .catch(reject)
