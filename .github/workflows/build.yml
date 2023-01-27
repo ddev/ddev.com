@@ -1,4 +1,4 @@
-name: Build + Commit
+name: Build + Push
 on:
   push:
     branches: [main]
@@ -23,5 +23,5 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           branch: main
-          repository: ./dist
+          file_pattern: "dist/*"
           commit_message: Update build.
