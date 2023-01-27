@@ -2,6 +2,7 @@ name: Build + Push
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 jobs:
   build:
     timeout-minutes: 15
