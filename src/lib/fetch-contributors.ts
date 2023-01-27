@@ -12,7 +12,7 @@ import { GITHUB_REPO } from "../config"
  * https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#list-repository-contributors
  */
 export default async function fetchContributors(
-  url = `https://api.github.com/repos/${GITHUB_REPO}/contributors?per_page=${pageLimit}`,
+  url = `https://api.github.com/repos/${GITHUB_REPO}/contributors?per_page=${pageLimit}&anon=1`,
   collectedContributors = []
 ) {
   return new Promise((resolve, reject) =>
@@ -30,7 +30,7 @@ export default async function fetchContributors(
 
             if (data.length == pageLimit) {
               fetchContributors(
-                `https://api.github.com/repos/${GITHUB_REPO}/contributors?per_page=${pageLimit}&page=${page}`,
+                `https://api.github.com/repos/${GITHUB_REPO}/contributors?per_page=${pageLimit}&page=${page}&anon=1`,
                 collectedContributors
               )
                 .then(resolve)
