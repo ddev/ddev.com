@@ -1,22 +1,29 @@
 import rss from "@astrojs/rss"
 import sanitizeHtml from "sanitize-html"
-import { getRecentBlogPosts } from "../../lib/api"
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../config"
 
-const postData = await getRecentBlogPosts(50)
-const recentPosts = postData.edges
+const posts = await import.meta.glob("./*.md", { eager: true })
 
-const items = recentPosts.map(({ node }) => {
-  let postContent = sanitizeHtml(node.content, {
+// Get the 50 most recent blog posts
+const recentPosts = Object.values(posts)
+  .sort((a, b) => {
+    return new Date(a.frontmatter.pubDate) > new Date(b.frontmatter.pubDate)
+      ? -1
+      : 1
+  })
+  .slice(0, 50)
+
+const items = recentPosts.map((post) => {
+  let postContent = sanitizeHtml(post.compiledContent(), {
     allowedTags: false,
     selfClosing: [],
   })
 
   return {
-    link: `/blog/${node.slug}`,
-    title: node.title,
+    link: post.url,
+    title: post.frontmatter.title,
     customData: `<content:encoded><![CDATA[${postContent}]]></content:encoded>`,
-    pubDate: node.date,
+    pubDate: post.frontmatter.pubDate,
   }
 })
 

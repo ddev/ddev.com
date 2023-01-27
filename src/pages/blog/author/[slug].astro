@@ -1,11 +1,5 @@
 ---
-import {
-  getAllBlogPostAuthors,
-  getBlogPostsByAuthor,
-  getAuthorDetails,
-  formatDate,
-  getReadTime,
-} from "../../../lib/api"
+import { getAuthorData, getSlug } from "../../../lib/api"
 import { marked } from "marked"
 import Layout from "../../../layouts/Layout.astro"
 import BlogPostCard from "../../../components/BlogPostCard.astro"
@@ -15,37 +9,29 @@ import BlogPostCard from "../../../components/BlogPostCard.astro"
  * https://docs.astro.build/en/reference/api-reference/#getstaticpaths
  */
 export async function getStaticPaths() {
-  const users = await getAllBlogPostAuthors()
-  return users.nodes.map((node) => {
+  const authors = getAuthorData()
+  const posts = await Astro.glob("./../*.md")
+
+  return authors.map((author) => {
+    const authorPosts = posts
+      .filter((post) => post.frontmatter.author === author.name)
+      .sort((a, b) => {
+        return new Date(a.frontmatter.pubDate) > new Date(b.frontmatter.pubDate)
+          ? -1
+          : 1
+      })
+
     return {
-      params: { slug: node.slug },
+      params: { slug: getSlug(author.name) },
+      props: {
+        author: author,
+        posts: authorPosts,
+      },
     }
   })
 }
 
-const { slug } = Astro.params
-
-const author = await getAuthorDetails(slug)
-const postData = await getBlogPostsByAuthor(author.userId)
-
-const posts = postData.nodes.map((node) => {
-  return {
-    title: node.title,
-    href: `/blog/${node.slug}`,
-    category: {
-      name: "",
-      href: "#",
-    },
-    date: formatDate(node.date),
-    imageUrl: node.featuredImage ? node.featuredImage.node.sourceUrl : null,
-    readingTime: getReadTime(node.content),
-    author: {
-      name: node.author.node.name,
-      href: "#",
-      imageUrl: node.author.node.avatar.url,
-    },
-  }
-})
+const { author, posts } = Astro.props
 
 const title = `Posts by ${author.name}`
 const content = marked.parse(author.description)

@@ -4,13 +4,13 @@ pubDate: 2022-03-23
 author: Randy Fay
 featuredImage: undefined
 categories:
-  - DDEV,
+  - DDEV
   - Uncategorized
 ---
 
 There’s been lots of excitement about the new docker-based performance options on macOS with DDEV lately. In DDEV v1.19 [Colima](https://github.com/abiosoft/colima) is a new option, and Colima with Mutagen enabled is screaming fast. But Docker Desktop has just released an experimental VirtioFS filesystem mounting system that is much faster than previous iterations. So I was interested in seeing how all these things compare.
 
-**Methodology**: I tested each of these permutations with both a [Puppeteer script](https://github.com/drud/ddev-puppeteer) to do a web install of Drupal 9 demo\_umami and also a `drush` command-line install (`ddev mysql -e "DROP DATABASE IF EXISTS db; CREATE DATABASE db;" && ddev exec killall -USR2 php-fpm && time ddev drush si -y demo_umami --account-pass=admin`). I tried each 3 times to make sure that the numbers were tracking reasonably, and then took the mean. The Drupal 9 installation is a very heavy web activity that touches thousands of PHP files, and it’s a sequential operation with a fixed timeline, so it’s a tempting thing to use for benchmarking.
+**Methodology**: I tested each of these permutations with both a [Puppeteer script](https://github.com/drud/ddev-puppeteer) to do a web install of Drupal 9 demo_umami and also a `drush` command-line install (`ddev mysql -e "DROP DATABASE IF EXISTS db; CREATE DATABASE db;" && ddev exec killall -USR2 php-fpm && time ddev drush si -y demo_umami --account-pass=admin`). I tried each 3 times to make sure that the numbers were tracking reasonably, and then took the mean. The Drupal 9 installation is a very heavy web activity that touches thousands of PHP files, and it’s a sequential operation with a fixed timeline, so it’s a tempting thing to use for benchmarking.
 
 It turned out that the command-line installs basically tracked about twice as fast as the web-based installs, which was no surprise, but it probably means we don’t have to look at both of them to get a good idea of what’s going on, so I’ll show the comparison only for the command-line install, but the other graphs are in the linked spreadsheet.
 
@@ -20,7 +20,7 @@ It turned out that the command-line installs basically tracked about twice as fa
 
 If you’re interested in the raw numbers and other graphs, [here’s the spreadsheet link](https://docs.google.com/spreadsheets/d/1yLE5TcWyVxv5taut%5FlKl1xqYCPK0%5FajL-x8tjcCcle0/edit#gid=0).
 
-If you’re interested in Colima with DDEV, see the [docs](https://ddev.readthedocs.io/en/latest/users/docker%5Finstallation/#macos-installation-colima). It’s super easy to set up, and even though it’s a young project, it’s well-maintained and people have been having good experiences with it. And for those of you concerned about Docker Desktop’s new subscription license fee, it’s a great option. But as you see here, it’s a great option for other reasons. 
+If you’re interested in Colima with DDEV, see the [docs](https://ddev.readthedocs.io/en/latest/users/docker%5Finstallation/#macos-installation-colima). It’s super easy to set up, and even though it’s a young project, it’s well-maintained and people have been having good experiences with it. And for those of you concerned about Docker Desktop’s new subscription license fee, it’s a great option. But as you see here, it’s a great option for other reasons.
 
 And of course, if you haven’t tried out mutagen with DDEV on macOS, it’s time. People have had great experiences, just `ddev config global --mutagen-enabled` and `ddev restart` and you’re on your way, see [DDEV docs](https://ddev.readthedocs.io/en/latest/users/performance/#using-mutagen). A nice feature of DDEV v1.19 is that it doesn’t use nearly as much disk space as this feature did previously.
 

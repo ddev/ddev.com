@@ -4,7 +4,7 @@ pubDate: 2021-01-21
 author: Elli Ludwigson
 featuredImage: https://ddevdotcom.ddev.site/app/uploads/2021/01/40629336923_4f79c53b93_c.jpg
 categories:
-  - Community,
+  - Community
   - DDEV
 ---
 

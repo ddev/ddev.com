@@ -9,360 +9,84 @@ import fs2 from "fs"
 import path from 'path'
 import fetchContributors from "./fetch-contributors"
 import fetchReleases from "./fetch-releases"
-import { NodeHtmlMarkdown, NodeHtmlMarkdownOptions } from 'node-html-markdown'
+import Slugger from 'github-slugger'
+
 
 dotenv.config()
-
-// WordPress GraphQL endpoint
-const API_URL = new URL(process.env.WP_URL)
 
 // Project-root-relative directory for temporary data used in local development
 const DEVELOPMENT_CACHE_DIR = 'cache'
 
-// Current environment
-const env = process.env.NODE_ENV || "production"
-
-
 /**
- * Query the WordPress GraphQL endpoint.
- * @param query The query body.
- * @param params Any query parameters to include.
- * @returns response data
+ * Returns a URL-friendly slug for a given string.
+ * @param value
+ * @returns string
  */
-async function fetchAPI(query: string, { variables } = {}) {
-  const headers = { "Content-Type": "application/json" }
-  const res = await fetch(API_URL, {
-    method: "POST",
-    headers,
-    body: JSON.stringify({ query, variables }),
-  })
-
-  const json = await res.json()
-  if (json.errors) {
-    console.log(json.errors)
-    throw new Error("Failed to fetch API")
-  }
-
-  return json.data
+export function getSlug(value: string) {
+  const slugger = new Slugger();
+  return slugger.slug(value);
 }
 
 /**
- * Fetch every blog post with its content.
- * @returns response data
+ * Returns the URL for an author’s detail page.
+ * @param name The author’s full name
+ * @returns root-relative path
  */
-export async function getAllBlogPosts() {
-  const data = await fetchAPI(`
-    {
-      posts(first: 1000) {
-        edges {
-          node {
-            title
-            slug
-            featuredImage {
-              node {
-                sourceUrl
-              }
-            }
-            author {
-              node {
-                name
-                avatar {
-                  url
-                }
-              }
-            }
-            date
-            content
-            categories {
-              nodes {
-                name
-                slug
-              }
-            }
-          }
-        }
-      }
-    }
-    `)
+export function getAuthorUrl(name: string) {
+  return `/blog/author/${getSlug(name)}`;
+}
+
+/**
+ * Returns the URL for an author’s avatar image.
+ * @param name The author’s full name
+ * @returns absolute URL
+ */
+export function getAuthorImage(name: string) {
+  const authorData = getAuthorDataByName(name);
+  return authorData?.avatarUrl
+}
+
+/**
+ * Returns the URL for a category’s listing page.
+ * @param name The full category name
+ * @returns root-relative path
+ */
+export function getCategoryUrl(name: string) {
+  return `/blog/category/${getSlug(name)}`
+}
+
+/**
+ * Returns author detail from the JSON blob for a given author.
+ * @param name The author’s full name
+ * @returns object
+ */
+export function getAuthorDataByName(name: string) {
+  const authorData = getAuthorData();
+  return authorData.find((author: object) => author.name == name)
+}
+
+// Local reference for loaded data
+let authorData: Array<object>
+
+/**
+ * Gets data for the JSON blob at `src/authors.json`.
+ * @returns array
+ */
+export function getAuthorData() {
+  const dir = path.resolve('./src/')
+  const filePath = dir + '/authors.json'
   
-  const edges = data.posts.edges;
-  const dir = path.resolve('./' + DEVELOPMENT_CACHE_DIR + '/posts')
-
-  if (!fs2.existsSync(dir)) {
-    fs2.mkdirSync(dir);
+  if (authorData) {
+    return authorData
+  } else if (fs2.existsSync(filePath)) {
+    const data = fs2.readFileSync(filePath)
+    authorData = JSON.parse(data);
+    return authorData;
+  } else {
+    console.log(`Author data not found in ${filePath}!`)
   }
 
-  edges.forEach(({ node }) => {
-    let filename = node.slug + '.md'
-    let filePath = dir + '/' + filename
-    let contents = `---
-title: "${node.title}"
-pubDate: ${node.date.split("T")[0]}
-author: ${node.author.node.name}
-featuredImage: ${node.featuredImage?.node.sourceUrl}
-categories:${node.categories.nodes.map((node) => {
-  return `\n  - ${node.name}`
-})}
----
-
-${NodeHtmlMarkdown.translate(node.content)}
-`
-    fs2.writeFileSync(filePath, contents)
-  })
-
-  return data?.posts
-}
-
-/**
- * Fetch all the users that have published blog posts.
- *
- * It’s somehow still possible that a user can be returned despite having no posts,
- * so we include post IDs for filtering later.
- *
- * @returns response data
- */
-export async function getAllBlogPostAuthors() {
-  const data = await fetchAPI(`
-    {
-      users(where: {hasPublishedPosts: POST}) {
-        nodes {
-          name
-          slug
-          firstName
-          description
-          posts(where: {status: PUBLISH}) {
-            nodes {
-              id
-            }
-          }
-          avatar {
-            url
-          }
-        }
-      }
-    }
-  `)
-
-
-  const nodes = data.users.nodes;
-  const dir = path.resolve('./' + DEVELOPMENT_CACHE_DIR)
-  const authorData = nodes.map((node) => {
-    return {
-      name: node.name,
-      firstName: node.firstName,
-      description: node.description,
-      slug: node.slug,
-      avatarUrl: node.avatar.url,
-    }
-  })
-
-  if (!fs2.existsSync(dir)) {
-    fs2.mkdirSync(dir);
-  }
-
-  let filePath = dir + '/' + 'authors.json'
-
-  fs2.writeFileSync(filePath, JSON.stringify(authorData))
-
-
-  return data?.users
-}
-
-/**
- * Fetch details for a single author.
- * @param slug The author’s unique, URL-friendly slug.
- * @returns response data
- */
-export async function getAuthorDetails(slug: string) {
-  const data = await fetchAPI(`
-    {
-      user(id: "${slug}", idType: SLUG) {
-        userId
-        name
-        firstName
-        slug
-        description
-        avatar {
-          url
-        }
-      }
-    }
-  `)
-  return data?.user
-}
-
-/**
- * Returns recent blog posts. (Used in the `BlogFeatures` component.)
- * @param first Number of posts to return.
- * @returns response data
- */
-export async function getRecentBlogPosts(first: number = 3) {
-  const data = await fetchAPI(`
-    {
-      posts(first: ${first}) {
-        edges {
-          node {
-            title
-            slug
-            featuredImage {
-              node {
-                sourceUrl
-              }
-            }
-            author {
-              node {
-                name
-                avatar {
-                  url
-                }
-              }
-            }
-            date
-            content
-          }
-        }
-      }
-    }
-    `)
-  return data?.posts
-}
-
-/**
- * Get a specific blog post by its slug. (Not the same as its URI!)
- * @param slug The desired post’s slug.
- * @returns response data
- */
-export async function getBlogPostBySlug(slug: string) {
-  const data = await fetchAPI(`
-  {
-    post(id: "${slug}", idType: SLUG) {
-      title
-      date
-      content
-      author {
-        node {
-          name
-          slug
-          avatar {
-            url
-          }
-        }
-      }
-      categories {
-        nodes {
-          name
-          slug
-        }
-      }
-    }
-  }
-  `)
-  return data?.post
-}
-
-export async function getBlogPostCategories() {
-  const data = await fetchAPI(`
-  {
-    categories(first: 1000) {
-      nodes {
-        name
-        slug
-      }
-    }
-  }
-  `)
-  return data?.categories
-
-}
-
-
-export async function getBlogPostCategory(slug: string) {
-  const data = await fetchAPI(`
-  {
-    categories(where: { slug: "${slug}" }) {
-      nodes {
-        name
-        slug
-      }
-    }
-  }
-  `)
-  return data?.categories.nodes[0]
-}
-
-export async function getBlogPostsByCategory(slug: string) {
-    const data = await fetchAPI(`
-  {
-    categories(where: { slug: "${slug}" }) {
-      nodes {
-        posts {
-          nodes {
-            title
-            date
-            content
-            slug
-            author {
-              node {
-                name
-                avatar {
-                  url
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  `)
-
-  return data?.categories.nodes[0].posts
-}
-
-/**
- * Fetch all blog posts published by a specific author.
- * @param authorId The WordPress `userId` of the desired author.
- * @returns response data
- */
-export async function getBlogPostsByAuthor(authorId: number) {
-  const data = await fetchAPI(`
-  {
-    posts(where: { author: ${authorId} }) {
-      nodes {
-        title
-        date
-        slug
-        content
-        author {
-          node {
-            name
-            avatar {
-              url
-            }
-          }
-        }
-      }
-    }
-  }
-  `)
-  return data?.posts
-}
-
-/**
- * Get a specific page by its slug. (Unused but maybe useful later?)
- * @param slug The desired page slug.
- * @returns response data
- */
-export async function getPageBySlug(slug: string) {
-  const data = await fetchAPI(`
-  {
-    page(id: "${slug}", idType: URI) {
-      title
-      content
-    }
-  }
-  `)
-  return data?.page
+  return
 }
 
 /**
@@ -381,8 +105,8 @@ export async function getSponsors() {
  * @param useDevCache Whether to use a local result cache in development to reduce third-party calls.
  * @returns response data
  */
-export async function getContributors() {
-  const filename = 'contributors.json'
+export async function getContributors(includeAnonymous = false) {
+  const filename = includeAnonymous ? 'contributors-with-anon.json' : 'contributors.json'
   let data
 
   const cacheValue = getCachedFile(filename);
@@ -395,7 +119,7 @@ export async function getContributors() {
   }
 
   if (!data) {
-    const response = await fetchContributors()
+    const response = await fetchContributors(includeAnonymous)
       .then((collectedContributors) => {
         data = collectedContributors
         storeCachedFile(filename, JSON.stringify(data))
@@ -488,6 +212,14 @@ export const getReadTime = (text: string) : string => {
   return readingTime.text
 }
 
+/**
+ * Returns request data, preferring locally-cached JSON if it exists in order
+ * to avoid excessive network requests.
+ * @param url The endpoint to be fetched
+ * @param filename JSON filename (`*.json`) local data should be stored in
+ * @param useCache Whether to use a local cache
+ * @returns array|object The decoded JSON value
+ */
 const fetchLiveOrCachedJson = async (url: string, filename: string, useCache = true) => {
   let data
 
@@ -521,7 +253,7 @@ const fetchLiveOrCachedJson = async (url: string, filename: string, useCache = t
 }
 
 /**
- * Returns a cached file if it exists and we’re in a development environment.
+ * Returns a cached file if it exists.
  * @param filename Name of the file to look for in the cache directory.
  * @returns file contents or null
  */
@@ -537,7 +269,7 @@ const getCachedFile = (filename: string) => {
 }
 
 /**
- * Write a file to the cache directory if we’re in a development environment.
+ * Write a file to the cache directory.
  * @param filename Name of the file to write to the cache directory.
  * @param contents Contents of the file.
  */

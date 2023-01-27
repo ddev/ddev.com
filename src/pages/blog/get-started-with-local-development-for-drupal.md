@@ -4,7 +4,7 @@ pubDate: 2021-03-24
 author: Elli Ludwigson
 featuredImage: https://ddevdotcom.ddev.site/app/uploads/2021/03/ddevmidcamp.png
 categories:
-  - Community,
+  - Community
   - DDEV
 ---
 

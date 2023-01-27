@@ -4,8 +4,8 @@ pubDate: 2020-12-08
 author: Randy Fay
 featuredImage: https://ddevdotcom.ddev.site/app/uploads/2020/12/juggler-2329843_1280-e1607477143481.jpg
 categories:
-  - DDEV,
-  - DevOps,
+  - DDEV
+  - DevOps
   - Workflow
 ---
 

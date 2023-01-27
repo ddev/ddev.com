@@ -1,4 +1,5 @@
 ---
+import { NEXT } from "linkedom/types/shared/symbols"
 import { getAllBlogPosts } from "../lib/api"
 
 export interface Props {
@@ -9,12 +10,14 @@ const { slug } = Astro.props
 
 let next, prev
 
-const nodes = await getAllBlogPosts()
-const posts = nodes.edges.map(({ node }) => {
-  return node
+const posts = await Astro.glob("./../pages/blog/*.md")
+const orderedPosts = posts.sort((a, b) => {
+  return new Date(a.frontmatter.pubDate) > new Date(b.frontmatter.pubDate)
+    ? -1
+    : 1
 })
 
-posts.forEach((post, index) => {
+orderedPosts.forEach((post, index) => {
   if (post.slug === slug) {
     if (posts[index - 1]) {
       prev = posts[index - 1]
@@ -31,16 +34,16 @@ posts.forEach((post, index) => {
   {
     prev && (
       <a
-        href={`/blog/${prev.slug}`}
+        href={prev.url}
         rel="prefetch"
         class="flex border items-center rounded-md w-full my-1 md:my-0 content-center justify-center md:justify-start p-4 hover:border-blue-300 hover:shadow-sm"
-        title={`Previous: ${prev.title}`}
+        title={`Previous: ${prev.frontmatter.title}`}
       >
         <div>
           <span class="font-mono text-sm block text-navy-300 tracking-wider">
             Previous Post
           </span>
-          <span class="py-3 md:w-full font-bold">{prev.title}</span>
+          <span class="py-3 md:w-full font-bold">{prev.frontmatter.title}</span>
         </div>
       </a>
     )
@@ -48,16 +51,16 @@ posts.forEach((post, index) => {
   {
     next && (
       <a
-        href={`/blog/${next.slug}`}
+        href={next.url}
         rel="prefetch"
         class="flex border items-center rounded-md w-full my-1 md:my-0 content-center justify-center md:justify-end text-right p-4 hover:border-blue-300 hover:shadow-sm"
-        title={`Next: ${next.title}`}
+        title={`Next: ${next.frontmatter.title}`}
       >
         <div>
           <span class="font-mono text-sm block text-navy-300 tracking-wider">
             Next Post
           </span>
-          <span class="py-3 md:w-full font-bold">{next.title}</span>
+          <span class="py-3 md:w-full font-bold">{next.frontmatter.title}</span>
         </div>
       </a>
     )

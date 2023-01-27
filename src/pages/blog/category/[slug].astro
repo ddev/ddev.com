@@ -1,11 +1,5 @@
 ---
-import {
-  getBlogPostCategory,
-  getBlogPostsByCategory,
-  getBlogPostCategories,
-  formatDate,
-  getReadTime,
-} from "../../../lib/api"
+import { getSlug } from "../../../lib/api"
 import Layout from "../../../layouts/Layout.astro"
 import BlogPostCard from "../../../components/BlogPostCard.astro"
 
@@ -14,45 +8,40 @@ import BlogPostCard from "../../../components/BlogPostCard.astro"
  * https://docs.astro.build/en/reference/api-reference/#getstaticpaths
  */
 export async function getStaticPaths() {
-  const categories = await getBlogPostCategories()
-  return categories.nodes.map((node) => {
+  const posts = await Astro.glob("./../*.md")
+  const categories = [
+    ...new Set(posts.map((post) => post.frontmatter.categories).flat()),
+  ]
+
+  return categories.map((category) => {
     return {
-      params: { slug: node.slug },
+      params: {
+        slug: getSlug(category),
+      },
+      props: {
+        name: category,
+        posts: posts
+          .filter((post) => post.frontmatter.categories.includes(category))
+          .sort((a, b) => {
+            return new Date(a.frontmatter.pubDate) >
+              new Date(b.frontmatter.pubDate)
+              ? -1
+              : 1
+          }),
+      },
     }
   })
 }
 
-const { slug } = Astro.params
+const { name, posts } = Astro.props
 
-const category = await getBlogPostCategory(slug)
-const postData = await getBlogPostsByCategory(slug)
-
-const posts = postData.nodes.map((node) => {
-  return {
-    title: node.title,
-    href: `/blog/${node.slug}`,
-    category: {
-      name: "",
-      href: "#",
-    },
-    date: formatDate(node.date),
-    imageUrl: node.featuredImage ? node.featuredImage.node.sourceUrl : null,
-    readingTime: getReadTime(node.content),
-    author: {
-      name: node.author.node.name,
-      href: "#",
-      imageUrl: node.author.node.avatar.url,
-    },
-  }
-})
-
-const title = `Posts in “${category.name}”`
+const title = `Posts in “${name}”`
 ---
 
 <Layout title={title}>
   <main class="max-w-4xl mx-auto mb-24">
     <div class="flex space-x-12 py-24">
-      <h1 class="font-bold text-4xl">Posts in “{category.name}”</h1>
+      <h1 class="font-bold text-4xl">Posts in “{name}”</h1>
     </div>
 
     <div

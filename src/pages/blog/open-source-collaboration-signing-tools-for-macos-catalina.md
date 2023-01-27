@@ -4,7 +4,7 @@ pubDate: 2020-05-13
 author: Randy Fay
 featuredImage: https://ddevdotcom.ddev.site/app/uploads/2020/05/signing.png
 categories:
-  - DDEV,
+  - DDEV
   - DevOps
 ---
 

@@ -4,7 +4,7 @@ pubDate: 2021-01-28
 author: Elli Ludwigson
 featuredImage: https://ddevdotcom.ddev.site/app/uploads/2021/01/Hilmar-DrupalCon-Amsterdam-by-Illek-Petr.jpg
 categories:
-  - Community,
+  - Community
   - DDEV
 ---
 

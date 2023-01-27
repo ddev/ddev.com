@@ -4,7 +4,7 @@ pubDate: 2020-10-28
 author: DDEV
 featuredImage: https://ddevdotcom.ddev.site/app/uploads/2020/10/Git-Flow-Benni-Blog.001-2.jpeg
 categories:
-  - CI/CD,
+  - CI/CD
   - DDEV
 ---
 

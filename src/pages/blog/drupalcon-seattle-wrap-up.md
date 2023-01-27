@@ -4,7 +4,7 @@ pubDate: 2019-04-22
 author: Kevin Bridges
 featuredImage: https://ddevdotcom.ddev.site/app/uploads/2019/04/IMG_20190409_152301-e1555796618534.jpg
 categories:
-  - Community,
+  - Community
   - DDEV
 ---
 

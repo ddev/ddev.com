@@ -1,5 +1,4 @@
 ---
-import { getAllBlogPosts, formatDate, getReadTime } from "../../lib/api"
 import Layout from "../../layouts/Layout.astro"
 import BlogPostCard from "../../components/BlogPostCard.astro"
 import Heading from "../../components/Heading.astro"
@@ -10,29 +9,15 @@ import Paging from "../../components/Paging.astro"
  * https://docs.astro.build/en/reference/api-reference/#getstaticpaths
  */
 export async function getStaticPaths({ paginate }) {
-  const nodes = await getAllBlogPosts()
-
-  const posts = nodes.edges.map(({ node }) => {
-    return {
-      title: node.title,
-      href: `/blog/${node.slug}`,
-      category: {
-        name: "",
-        href: "#",
-      },
-      date: formatDate(node.date),
-      imageUrl: node.featuredImage ? node.featuredImage.node.sourceUrl : null,
-      readingTime: getReadTime(node.content),
-      author: {
-        name: node.author.node.name,
-        href: "#",
-        imageUrl: node.author.node.avatar.url,
-      },
-    }
+  const posts = await Astro.glob("./*.md")
+  const allPosts = posts.sort((a, b) => {
+    return new Date(a.frontmatter.pubDate) > new Date(b.frontmatter.pubDate)
+      ? -1
+      : 1
   })
 
   // Generate pages from our array of astronauts, with 6 to a page
-  return paginate(posts, { pageSize: 6 })
+  return paginate(allPosts, { pageSize: 6 })
 }
 
 const { page } = Astro.props

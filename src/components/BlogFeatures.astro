@@ -3,30 +3,16 @@
  * Cards for the three most recent blog posts, shown on the homepage.
  */
 
-import { getRecentBlogPosts, formatDate, getReadTime } from "../lib/api"
-
 import BlogPostCard from "./BlogPostCard.astro"
 
-const nodes = await getRecentBlogPosts()
-
-const posts = nodes.edges.map(({ node }) => {
-  return {
-    title: node.title,
-    href: `/blog/${node.slug}`,
-    category: {
-      name: "",
-      href: "#",
-    },
-    date: formatDate(node.date),
-    imageUrl: node.featuredImage.node.sourceUrl,
-    readingTime: getReadTime(node.content),
-    author: {
-      name: node.author.node.name,
-      href: "#",
-      imageUrl: node.author.node.avatar.url,
-    },
-  }
-})
+const posts = await Astro.glob("./../pages/blog/*.md")
+const recentPosts = posts
+  .sort((a, b) => {
+    return new Date(a.frontmatter.pubDate) > new Date(b.frontmatter.pubDate)
+      ? -1
+      : 1
+  })
+  .slice(0, 3)
 ---
 
 <div class="relative my-24 px-8">
@@ -37,7 +23,7 @@ const posts = nodes.edges.map(({ node }) => {
       </h2>
     </div>
     <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-      {posts.map((post) => <BlogPostCard post={post} />)}
+      {recentPosts.map((post) => <BlogPostCard post={post} />)}
     </div>
   </div>
 </div>

@@ -1,11 +1,18 @@
 ---
-import { getAllBlogPostAuthors } from "../../lib/api"
+import { getAuthorData, getAuthorUrl } from "../../lib/api"
 import Layout from "../../layouts/Layout.astro"
 import Heading from "../../components/Heading.astro"
 
-const data = await getAllBlogPostAuthors()
-const authors = data.nodes.filter((node) => {
-  return node.posts.nodes.length > 0
+const authors = getAuthorData()
+const posts = await Astro.glob("./*.md")
+
+// Filter out authors without any posts
+const activeAuthors = authors.filter((author) => {
+  const authorPosts = posts.filter(
+    (post) => post.frontmatter.author === author.name
+  )
+
+  return authorPosts.length > 0
 })
 
 const title = `Blog Authors`
@@ -18,9 +25,9 @@ const title = `Blog Authors`
       class="mt-12 mb-24 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none"
     >
       {
-        authors.map((author) => (
+        activeAuthors.map((author) => (
           <div>
-            <a href={`/blog/author/${author.slug}`}>{author.name}</a>
+            <a href={getAuthorUrl(author.name)}>{author.name}</a>
           </div>
         ))
       }

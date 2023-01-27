@@ -12,7 +12,7 @@ import { GITHUB_REPO } from "../config"
 
 const title = `About DDEV`
 const repoData = await getRepoDetails(GITHUB_REPO)
-const contributorData = await getContributors()
+const contributorData = await getContributors(true)
 const sponsorData = await getSponsors()
 const releaseData = await getReleases()
 ---
