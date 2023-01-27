@@ -17,6 +17,8 @@ jobs:
         run: npm run build
   push:
     needs: build
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
     steps:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
