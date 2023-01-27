@@ -128,6 +128,8 @@ export async function getAllBlogPostAuthors() {
         nodes {
           name
           slug
+          firstName
+          description
           posts(where: {status: PUBLISH}) {
             nodes {
               id
@@ -140,6 +142,29 @@ export async function getAllBlogPostAuthors() {
       }
     }
   `)
+
+
+  const nodes = data.users.nodes;
+  const dir = path.resolve('./' + DEVELOPMENT_CACHE_DIR)
+  const authorData = nodes.map((node) => {
+    return {
+      name: node.name,
+      firstName: node.firstName,
+      description: node.description,
+      slug: node.slug,
+      avatarUrl: node.avatar.url,
+    }
+  })
+
+  if (!fs2.existsSync(dir)) {
+    fs2.mkdirSync(dir);
+  }
+
+  let filePath = dir + '/' + 'authors.json'
+
+  fs2.writeFileSync(filePath, JSON.stringify(authorData))
+
+
   return data?.users
 }
 
