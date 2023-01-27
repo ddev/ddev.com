@@ -15,13 +15,23 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: dist
   push:
     needs: build
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: "drud/ddev.com-build"
+      - uses: actions/download-artifact@v3
+        with:
+          name: build
+          path: ./
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           branch: main
-          file_pattern: "dist/*"
           commit_message: Update build.
