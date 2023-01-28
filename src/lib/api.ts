@@ -106,7 +106,7 @@ export async function getSponsors() {
  * @returns response data
  */
 export async function getContributors(includeAnonymous = false) {
-  const filename = includeAnonymous ? 'contributors-with-anon.json' : 'contributors.json'
+  const filename = 'contributors.json'
   let data
 
   const cacheValue = getCachedFile(filename);
@@ -119,12 +119,18 @@ export async function getContributors(includeAnonymous = false) {
   }
 
   if (!data) {
-    const response = await fetchContributors(includeAnonymous)
+    const response = await fetchContributors()
       .then((collectedContributors) => {
         data = collectedContributors
         storeCachedFile(filename, JSON.stringify(data))
       })
       .catch(console.error)
+  }
+
+  if (!includeAnonymous) {
+    return data.filter((contributor) => {
+      return contributor.type !== 'Anonymous'
+    });
   }
 
   return data ?? []

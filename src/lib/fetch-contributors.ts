@@ -12,8 +12,7 @@ import { GITHUB_REPO } from "../config"
  * https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#list-repository-contributors
  */
 export default async function fetchContributors(
-  includeAnonymous = false,
-  url = `https://api.github.com/repos/${GITHUB_REPO}/contributors?per_page=${pageLimit}${includeAnonymous ? '&anon=1' : ''}`,
+  url = `https://api.github.com/repos/${GITHUB_REPO}/contributors?anon=1&per_page=${pageLimit}`,
   collectedContributors = []
 ) {
   return new Promise((resolve, reject) =>
@@ -31,8 +30,7 @@ export default async function fetchContributors(
 
             if (data.length == pageLimit) {
               fetchContributors(
-                includeAnonymous,
-                `https://api.github.com/repos/${GITHUB_REPO}/contributors?per_page=${pageLimit}&page=${page}${includeAnonymous ? '&anon=1' : ''}`,
+                `https://api.github.com/repos/${GITHUB_REPO}/contributors?anon=1&per_page=${pageLimit}&page=${page}`,
                 collectedContributors
               )
                 .then(resolve)
