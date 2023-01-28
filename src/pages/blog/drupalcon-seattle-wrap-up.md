@@ -10,8 +10,6 @@ categories:
 
 Our time at [DrupalCon Seattle](https://events.drupal.org/seattle2019) strongly reinforced the core principles and values we’ve been building our tools on. We’re always excited to share updates and benefits of our DDEV local development environment and hosting platform, but even better is hearing what _you’ve_ been working on and where your interests lie. The most valuable experiences at DrupalCon were all about working together and supporting success for as many people as we can.
 
-[Join the DDEV Newsletter](http://eepurl.com/dlqkUD)
-
 ### Thank you, DrupalCon Seattle!
 
 With only two days of time on the exhibit hall floor we were bustling at the booth! Thank you to everyone who stopped by to explore and chat about your experiences with DDEV. We gave away all our t-shirts and flash-drives loaded with DDEV Quicksprint toolkits, and we doubled our contact list ?
@@ -40,7 +38,7 @@ As Dries mentioned in [his keynote](https://dri.es/state-of-drupal-presentation-
 
 Development of our [DDEV-Live hosting platform](https://ddev.com/ddev-live/) is rapidly gaining velocity thanks to our team’s hard work on the API and some exciting conversations about Kubernetes coming out of DrupalCon. We’ve also been focusing on a migration to Google Cloud services and are pleased to see all these pieces coming together into the installable platform we envisioned. We’ll be sharing hosting updates with everyone regularly over the coming months and sharing access with early adopters as services become available.
 
-Keep an eye out [here](https://ddev.com/blog/) on the blog and on [Twitter](https://twitter.com/drud) for a series of posts called “CTO’s Corner” in which we’ll dig into the architecture, open source theory, and benefits of DDEV-Live as the platform starts rolling out. [Sign up for our newsletter](http://eepurl.com/dlqkUD) to make sure you get all the updates.
+Keep an eye out [here](https://ddev.com/blog/) on the blog and on [Twitter](https://twitter.com/drud) for a series of posts called “CTO’s Corner” in which we’ll dig into the architecture, open source theory, and benefits of DDEV-Live as the platform starts rolling out. 
 
 ### DDEV ebook & training
 
@@ -49,5 +47,3 @@ Curious how you can get the most out of DDEV-Local for your projects? Our friend
 ### Next up:
 
 Kevin will be speaking on [a panel on DevTools at Boulder Startup Week](https://boulderstartupweek2019.sched.com/event/NNY7/so-you-want-to-launch-a-devtool) on May 13th! If you’re in the area or already attending the event be sure to stop by, it’s an honor to be included on this panel. For more on our developments and upcoming events, please join us:
-
-[DDEV Newsletter Sign-up](http://eepurl.com/dlqkUD)

@@ -49,6 +49,4 @@ Check out the [Getting Started](https://ddev.readthedocs.io/en/latest/users/cli-
 
 To update DDEV-Local follow the steps for [installing and updating](https://ddev.readthedocs.io/en/latest/#installation) for your operating system. We’d love to hear your feedback [in the GitHub issue queue](https://github.com/drud/ddev/issues). 
 
-[Join Newsletter](http://eepurl.com/dlqkUD)
-
-Photo “This morning at 13k feet” by S. Grandchamp. 
+Photo “This morning at 13k feet” by S. Grandchamp.

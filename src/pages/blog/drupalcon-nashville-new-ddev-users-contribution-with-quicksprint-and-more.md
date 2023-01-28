@@ -34,5 +34,3 @@ In his DrupalCon keynote, project lead, Dries Buytaert spoke about growing adopt
 ### See you soon!
 
 If we missed you at DrupalCon, we hope to see you somewhere else soon! We’ll be at [DevOps Days Boise](https://ddev.com/event/devopsdays-boise/), [Drupal Camp Asheville 2018](https://ddev.com/event/drupalcamp-asheville-2018/), [Drupal Europe](https://ddev.com/event/drupal-europe-2018/), and community events in a few other open source communities. Keep an eye on our [Events Calendar](https://ddev.com/events/) for more updates soon.
-
-[Join Newsletter](http://eepurl.com/dlqkUD)

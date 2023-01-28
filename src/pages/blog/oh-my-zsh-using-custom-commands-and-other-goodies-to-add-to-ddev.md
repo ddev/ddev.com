@@ -50,6 +50,4 @@ Now you can run `ddev zsh` and be in your familiar zsh environment (if you did t
    * Added a custom command (zsh) in .ddev/commands/web by adding a simple script ([docs](https://ddev.readthedocs.io/en/stable/users/extend/custom-commands/))
    * Added extra stuff (oh-my-zsh and .zshrc) into .ddev/homeadditions that will be added to the home directory in the web container on every `ddev start` ([docs](https://ddev.readthedocs.io/en/stable/users/extend/in-container-configuration/)).
 
-Happy customizing! If you have questions, check out our [support channels](https://ddev.readthedocs.io/en/stable/#support). Otherwise, sign up for our newsletter to stay in touch:
-
-[DDEV Newsletter Sign-up](http://eepurl.com/dlqkUD)
+Happy customizing! If you have questions, check out our [support channels](https://ddev.readthedocs.io/en/stable/#support).

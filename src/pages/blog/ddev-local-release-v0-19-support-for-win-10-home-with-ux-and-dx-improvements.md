@@ -30,6 +30,4 @@ For full details check out the [DDEV-Local v0.19 Release Notes](https://github.c
 
 We’ll be sponsoring, volunteering at, and speaking at events this summer across the US and Europe. [Check out the DDEV events calendar](https://ddev.com/events/), we’d love to meet you.
 
-[Join Newsletter](http://eepurl.com/dlqkUD)
-
 Photo by [Danilo Batista](https://unsplash.com/photos/GXzjWurMTgQ?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)

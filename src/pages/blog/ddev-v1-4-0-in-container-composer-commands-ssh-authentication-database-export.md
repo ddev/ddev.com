@@ -29,8 +29,6 @@ Congratulations and thank you! to [Mike Anello](https://twitter.com/ultimike) of
 
 Sign up for our newsletter for product and release news about our new hosting services:
 
-[Join Newsletter](http://eepurl.com/dlqkUD)
-
 ---
 
 Photo by [Holly Mandarich](https://unsplash.com/photos/wMuGk6dABR4?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)

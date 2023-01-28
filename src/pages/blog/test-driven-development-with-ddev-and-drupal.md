@@ -59,10 +59,6 @@ Read Matt Glaman’s series on test-driven development with Drupal and DDEV.
 
 **Part 3\. [Running Drupal’s Nightwatch test suite on DDEV](https://glamanate.com/blog/running-drupals-nightwatch-test-suite-ddev).** How to run Drupal’s newest testing framework: Nightwatch.js, for end-to-end tests in Node.js run against a Selenium/WebDriver server.
 
-### Sign up to the mailing list!
-
-You’ll be the first to know about tips, tutorials, and community news.
-
-[Join the DDEV Newsletter](http://eepurl.com/dlqkUD)
+---
 
 Photo by [Mike Enerio](https://unsplash.com/photos/2IkxeDKaZdY?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText).

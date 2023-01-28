@@ -43,8 +43,6 @@ We were wowed to see over 80 people went to a DDEV demo and workshop at TYPO3 De
 
 Thanks as always for your support and enthusiasm!
 
-[Join Newsletter](http://eepurl.com/dlqkUD)
-
 ---
 
 Photo by [Daniil Silantev](https://unsplash.com/photos/ioYwosPYC0U?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)

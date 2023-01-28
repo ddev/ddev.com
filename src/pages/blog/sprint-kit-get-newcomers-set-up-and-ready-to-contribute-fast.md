@@ -40,8 +40,6 @@ Getting the details of an event right is can be a thankless task, but once you g
 
 Are you running a sprint soon? We’d love to hear from you to see how we can help.
 
-[Join Newsletter](http://eepurl.com/dlqkUD)
-
 Photo credit
 
 Banner photo – Bluespark Labs “[Code Sprint](https://flic.kr/p/f8fFih)” – Drupalcon Portland 2013\. – ([CC BY 2.0](https://creativecommons.org/licenses/by/2.0/))

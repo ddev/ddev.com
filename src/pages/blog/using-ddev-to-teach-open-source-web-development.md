@@ -9,10 +9,6 @@ categories:
 
 When I heard that Oliver Hader, a [TYPO3 CMS](https://typo3.org/) core developer, was using DDEV-Local to teach web development to university students, I wanted to know more. So I sat down with him to find out about the course, his students, and how DDEV helps. It’s great to see students working with professional tools to learn industry-relevant skills.
 
-For more updates from the DDEV community, join our mailing list.
-
-[Join Newsletter](http://eepurl.com/dlqkUD)
-
 Oliver Hader lives in Bavaria, Germany. “Fifty percent of the time I work for [TYPO3 GmbH](https://typo3.com) as a core developer, doing research and development. I keep up with new developments and see how we can include and support them in TYPO3\. I also took over being the Security Team Lead at the beginning of this year. The other fifty percent of my time, I’m self-employed, working for web agencies with JavaScript development and frameworks like Angular or Polymer. I also do some consulting in software architecture on how to build flexible applications that are scalable on cloud services. So my work is a mix between consulting and development.”
 
 Oliver is motivated by his own experience as a student, even considering his busy schedule. “The teaching is another 10% on top of my schedule, which means a lot of preparation and feedback happens at the weekends. So this is 105%-110%. 🙂 I think it’s a good thing to pass on knowledge that you’ve collected, especially to let others know how they can improve make use of new technologies. I realized from my previous time of being a student, we felt ‘If we had known that earlier, it would have helped us a lot.’”

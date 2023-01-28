@@ -102,7 +102,3 @@ Kubernetes growth is unprecedented. This software really helps with sore spots p
 ### Thank you KubeCon!
 
 Open source engagement in the communities around the software we use is central to our mission with DDEV. KubeCon was a really good opportunity to hear from others and have conversations about how we can work together to continue extending Kubernetes and the projects we build with it. Thank you to the presenters, organizers, and folks we got a chance to connect with!
-
-For more on our developments and upcoming events, please sign up for our newsletter:
-
-[DDEV Newsletter Sign-up](http://eepurl.com/dlqkUD)

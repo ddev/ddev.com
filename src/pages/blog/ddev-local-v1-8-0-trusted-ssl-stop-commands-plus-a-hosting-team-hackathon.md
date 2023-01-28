@@ -55,6 +55,4 @@ Our friend Mike Anello’s DDEV book was recently featured on a “[Top 11 PHP b
 
 To receive all our most recent news and developments straight to your inbox, please join our newsletter:
 
-[DDEV Newsletter Sign-up](http://eepurl.com/dlqkUD)
-
 Photo courtesy [Elli Ludwigson](https://ddev.com/author/elli/)

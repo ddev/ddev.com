@@ -65,7 +65,7 @@ Mac and Linux users can [upgrade the same way they installed](https://ddev.readt
 
 ### Ohai DDEV-UI!
 
-Ta-da! With DDEV 1.0.0 we’re also unveiling a sneak peek at the upcoming alpha release of our DDEV-UI. Sign up for our [newsletter](http://eepurl.com/dlqkUD) to get notified about demos and a downloadable release in the upcoming weeks.
+Ta-da! With DDEV 1.0.0 we’re also unveiling a sneak peek at the upcoming alpha release of our DDEV-UI.
 
 ![](https://ddev.com/app/uploads/2018/07/ddev-gui-1024x640.jpg)
 
@@ -80,8 +80,6 @@ We hope this new UI opens up collaboration across your team. Tell us what you th
 ### Want to try DDEV-UI?
 
 We’ll have the alpha release available soon. To keep up to date, [“star” the DDEV project on GitHub](https://github.com/drud/ddev) and subscribe to our newsletter.
-
-[Join Newsletter](http://eepurl.com/dlqkUD)
 
 ---
 

@@ -18,11 +18,9 @@ For full details check out the [DDEV v1.1.0 Release Notes](https://github.com/dr
 
 ### DDEV UI is Coming soon
 
-We’re preparing the beta version of DDEV UI to come out with the next DDEV release in September. Don’t want to wait? We’re polishing DDEV UI and an alpha is nearly ready. [Subscribe to our newsletter](http://eepurl.com/dlqkUD) and we’ll notify you as soon as it’s available for testing. [Watch this video for a preview of DDEV UI](https://youtu.be/f3m%5FSQep5Aw).
+We’re preparing the beta version of DDEV UI to come out with the next DDEV release in September. Don’t want to wait? We’re polishing DDEV UI and an alpha is nearly ready. Subscribe to our newsletter and we’ll notify you as soon as it’s available for testing. [Watch this video for a preview of DDEV UI](https://youtu.be/f3m%5FSQep5Aw).
 
 As soon as the alpha is ready, we’ll invite DDEV newsletter subscribers to get a first glimpse to offer feedback on DDEV UI. We’re putting the final touches on it so you can try it out, click right from the app to give feedback, and keep pace with development thanks to auto-updating. We expect that to be early next week. Sign up and you’ll be the first to know!
-
-[Join Newsletter](http://eepurl.com/dlqkUD)
 
 ### Important notes about upgrading DDEV v1.1.0
 
@@ -83,8 +81,6 @@ Find out more about [DRUD’s hosting service](https://ddev.com/ddev-live/).
 That info is saved in the project config file, so as soon as you `ddev start`, it’s set up when you need it.
 
 There are more bug fixes, new documentation, and improvements – so please check out the [DDEV v1.1.0 Release Notes](https://github.com/drud/ddev/releases/tag/v1.1.0) for all the details.
-
-[Join Newsletter](http://eepurl.com/dlqkUD)
 
 ---
 

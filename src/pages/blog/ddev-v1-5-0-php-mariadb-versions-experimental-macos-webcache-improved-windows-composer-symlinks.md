@@ -56,8 +56,6 @@ Please feel free to tag us on twitter [@Drud](https://twitter.com/drud) and with
 
 Sign up for our newsletter for product and release news about our new hosting services:
 
-[Join Newsletter](http://eepurl.com/dlqkUD)
-
 ---
 
 Photo by [Elli Ludwigson](https://ddev.com/author/elli/)

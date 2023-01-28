@@ -39,6 +39,4 @@ I’ll show you how you can use this technique to manage risks and expectations,
 
 See you next week at DrupalCon! Also check out [where you can meet our DDEV Team](https://ddev.com/events/come-meet-the-ddev-team-at-drupalcon-nashville/) in Nashville. Stop by the booth to say hi!
 
-[Join Newsletter](http://eepurl.com/dlqkUD)
-
 Photo by [Jaromír Kavan](https://unsplash.com/photos/vv-oEGlN-4E?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/journey?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)

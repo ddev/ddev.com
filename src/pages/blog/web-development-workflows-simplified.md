@@ -38,5 +38,3 @@ Our vision for the dev-to-deploy workflow, using DDEV-Local for development, QA 
 After switching, you can focus your time and energy on improving your services and products, not on the complexity. As web developer Danita Bowman said recently, she saved time by leaving the configuration of her development environment up to DDEV-Local. “[I can handle a whole lot more than I used to be able to handle](https://ddev.com/ddev-local/saving-time-and-making-money-with-ddev/).” The time saved has turned into greater capacity and more clients for her business.
 
 That is the kind of bottom-line benefit we’re excited about. Choose a tool that you can trust, which takes care of the best practices so you can innovate and get creative.
-
-[Join Newsletter](http://eepurl.com/dlqkUD)

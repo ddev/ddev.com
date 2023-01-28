@@ -51,6 +51,4 @@ We have some great news for the DDEV community. Are you looking for hosting for 
 
 Sign up to our newsletter for product and release news.
 
-[Join our Newsletter](http://eepurl.com/dlqkUD)
-
 Photo by [Clarissa Bock](https://unsplash.com/photos/nqJwKcnfyqU?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)

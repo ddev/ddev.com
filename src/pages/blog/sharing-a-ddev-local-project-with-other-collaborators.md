@@ -85,6 +85,8 @@ Computers and mobile devices on your local network should now be able to access 
 
 ## What next?
 
-Find us and other DDEV community experts via one of our [support channels](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation).   
-Take a look around the [project on GitHub](http://github.com/drud/ddev) and feel free to contribute!   
-Please [sign up for our mailing list](http://eepurl.com/gFfwFb) or follow along on [Twitter](http://twitter.com/drud) for the latest news. 
+Find us and other DDEV community experts via one of our [support channels](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation).
+
+Take a look around the [project on GitHub](http://github.com/drud/ddev) and feel free to contribute!
+
+Please follow along on [Twitter](http://twitter.com/drud) for the latest news. 

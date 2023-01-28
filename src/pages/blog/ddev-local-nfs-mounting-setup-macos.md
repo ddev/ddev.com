@@ -20,6 +20,3 @@ OK, let’s get started. On macOS, you need to do three basic things:
 For more detail and for Windows and Linux setup do please [read the docs](https://ddev.readthedocs.io/en/stable/users/performance/#using-nfs-to-mount-the-project-into-the-container).
 
 There are also a number of debugging hints in the [debugging section of the docs](https://ddev.readthedocs.io/en/stable/users/performance/#debugging-ddev-start-failures-with-nfs%5Fmount%5Fenabled-true).
-
-Stay up to date with DDEV:  
-[Join Newsletter](http://eepurl.com/dlqkUD)
