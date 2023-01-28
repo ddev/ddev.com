@@ -1,0 +1,25 @@
+# https://docs.platform.sh/define-routes/redirects.html
+
+https://{default}/:
+  redirects:
+    paths:
+      "/meet-the-team":
+        to: "https://ddev.com/blog/authors"
+      "/author/elli":
+        to: "https://ddev.com/blog/author/elli-ludwigson"
+      "/author/heather":
+        to: "https://ddev.com/blog/author/heather-mcnamee"
+      "/author/horncologne":
+        to: "https://ddev.com/blog/author/jeffrey-a-mcguire"
+      "/author/kbridges":
+        to: "https://ddev.com/blog/author/kevin-bridges"
+      "/author/kcunningham":
+        to: "https://ddev.com/blog/author/kory-cunningham"
+      "/author/mikeanello":
+        to: "https://ddev.com/blog/author/mike-anello"
+      "/author/nmd-admin":
+        to: "https://ddev.com/blog/author/ddev"
+      "/author/rfay":
+        to: "https://ddev.com/blog/author/randy-fay"
+      "/author/rmanelius":
+        to: "https://ddev.com/blog/author/rick-manelius"
