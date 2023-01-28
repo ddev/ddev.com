@@ -4,7 +4,7 @@ pubDate: 2019-04-04
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2019/03/Static_configuration_of_webserver_and_dbserver_localhost_ports__bind_only_to_localhost__fixes__1491__fixes__941___642_too_by_rfay_·_Pull_Request__1502_·_drud_ddev.png
 categories:
-  - DDEV
+  - DevOps
 ---
 
 We’re quite proud of the automated testing setup we use to develop [DDEV-Local](https://github.com/drud/ddev). Each pushed commit to the project gets a full set of tests run on macOS, Windows with Docker-for-Windows, Windows with Docker Toolbox, and Linux (Ubuntu).
@@ -18,5 +18,3 @@ Our test suite is large and has grown over the lifespan of DDEV-Local, up to abo
 The biggest problems we have with this whole setup is it seems to push Docker to the limit, especially on Windows. So we see too often the Docker failures and hangs that users see only infrequently. Currently, this means a lot of random maintenance of Docker on the test machines. We recently found a way to make CircleCI’s macOS support work with Docker and that’s been a win, but it’s a bit costly and may not work out in the end. Upcoming features of [Appveyor](https://www.appveyor.com/), for continuous integration on Windows, will allow its use with Linux containers, which should help smooth out our process even further.
 
 Try out DDEV-Local for yourself, and consider contributing to it as an open source project! We have a [contribution guide for this project](https://github.com/drud/ddev/blob/master/CONTRIBUTING.md) as well as a [Community Guide and Code of Conduct](https://github.com/drud/community) for all of our projects.
-
-Sign up for the latest news and releases

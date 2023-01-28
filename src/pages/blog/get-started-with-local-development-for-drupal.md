@@ -5,7 +5,6 @@ author: Elli Ludwigson
 featuredImage: https://ddev.com/app/uploads/2021/03/ddevmidcamp.png
 categories:
   - Community
-  - DDEV
 ---
 
 This week in the Drupalverse we are attending MidCamp! We’re in-kind sponsors offering a [series of workshops](#schedule) to help you improve your skills with local development as well as some prizes for [the raffle](https://www.midcamp.org/2021/article/register-midcamp-and-win). MidWest Drupal Camp traditionally takes place in Chicago, but in March 2020 the organizers made a rapid shift to a virtual event, for which we are very grateful.

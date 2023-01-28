@@ -4,7 +4,7 @@ pubDate: 2019-03-28
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2019/03/Status_report___Hobobiker_com__Randy_and_Nancy_s_Big_Bike_Trip.png
 categories:
-  - DDEV
+  - Guides
 ---
 
 Much of what we do here on the DDEV team is in support of the modern projects users want to create, whether that means building out our highly flexible, customizable, Kubernetes-based hosting platform or our robust local development environment. Our goal is to support our users in as much of your work as we can, and that also means supporting many older projects.
@@ -20,7 +20,7 @@ Here’s what I’ve done to upgrade the Drupal 6 projects that I still maintain
 3. Overwrite your D6 core with the downloaded version.
 4. `ddev config --php-version=7.2`
 5. `mkdir .ddev/php and add file there called mbstring.ini` (it can be called anything ending in .ini) with these contents:  
-   `mbstring.func_overload=0  
+    `mbstring.func_overload=0  
 mbstring.encoding_translation=0  
 mbstring.http_input=pass  
 mbstring.http_output=pass>/code>`

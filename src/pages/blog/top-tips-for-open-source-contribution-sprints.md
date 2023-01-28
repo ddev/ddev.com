@@ -4,7 +4,7 @@ pubDate: 2018-03-15
 author: Jeffrey A. McGuire
 featuredImage: https://ddev.com/app/uploads/2018/03/sprint-tips_people.jpg
 categories:
-  - DDEV
+  - DevOps
 ---
 
 **_Open Source community leaders’ tips on running successful contribution sprints –_** In 2018, many people seem to understand the value FOSS delivers–technical, business, and otherwise. Improved ROI, shared risk and benefit, and not competing in IT when you’re not in the IT business all make sense. We FOSS service providers spend less time nowadays explaining how “open” and “secure” can go hand in hand, for example, and a lot more time convincing potential clients and adopters about the merits of our particular solutions. But when it comes to open source culture, there are a few areas that I find myself regularly explaining to “outsiders.” One of those is the Contribution Sprint.

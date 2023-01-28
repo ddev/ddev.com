@@ -4,7 +4,7 @@ pubDate: 2020-05-26
 author: DDEV
 featuredImage: https://ddev.com/app/uploads/2020/05/diagram.png
 categories:
-  - DDEV
+  - Guides
 ---
 
 _This is a guest post from web developer and open source contributor_ [**Dennis Ameling**](https://github.com/dennisameling)_, owner of_ [_fits4all_](https://github.com/fits4all)_. Dennis also contributed this guide to the DDEV-Local documentation! Find out_ [_more about Dennis_](https://twitter.com/dennisameling)_._
@@ -56,7 +56,7 @@ We’re ready to install DDEV! **Please note that there’s one gotcha here**: w
 
 To make things more visual, let’s take a look at the image below. Docker + DDEV will basically be running in WSL2 and expose ports to Windows. This way, you benefit from very good (Linux-based) performance while having the convenience to access your DDEV sites from within Windows.
 
-**Make sure you put your projects in the Linux filesystem (e.g. /home/LINUX_USERNAME), _not_ in the Windows filesystem (/mnt/c), for vastly superior performance.** You’ll be very, very disappointed if you put them on /mnt/c.
+**Make sure you put your projects in the Linux filesystem (e.g. /home/LINUX*USERNAME), \_not* in the Windows filesystem (/mnt/c), for vastly superior performance.** You’ll be very, very disappointed if you put them on /mnt/c.
 
 ![](https://ddev.com/app/uploads/2020/05/diagram.png)
 

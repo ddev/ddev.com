@@ -4,8 +4,7 @@ pubDate: 2020-10-28
 author: DDEV
 featuredImage: https://ddev.com/app/uploads/2020/10/Git-Flow-Benni-Blog.001-2.jpeg
 categories:
-  - CI/CD
-  - DDEV
+  - DevOps
 ---
 
 _This is a guest post from_ [_Benni Mack_](https://twitter.com/bennimack)_, CTO of the_ [_digital agency b13_](https://b13.com/)_, located in Germany. He’s been the project lead for_ [_TYPO3_](https://typo3.org/)_, an Enterprise CMS based on PHP, for the last 6 years, steering contributors and developers around the TYPO3 Ecosystem through his passion for Open Source and PHP._ This is part one of a two part series. [Find part two here](https://ddev.com/ddev-live/why-your-local-dev-environment-should-match-production/).

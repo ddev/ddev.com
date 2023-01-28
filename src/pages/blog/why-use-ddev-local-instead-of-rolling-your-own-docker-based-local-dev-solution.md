@@ -4,7 +4,7 @@ pubDate: 2022-12-22
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2020/12/DDEVDocker.png
 categories:
-  - DDEV
+  - DevOps
 ---
 
 If you know something about Docker, you know that you can throw one or two Docker images together and get yourself a working local development environment. There are plenty of nginx and php images out there on [hub.docker.com](http://hub.docker.com), and you can do lots and lots of things with them. So why use [DDEV](https://ddev.readthedocs.io), a tool that runs on Docker, when you could just roll your own Docker solution for local development? I’ll try to make a comparison. Of course I’m biased in favor of DDEV.

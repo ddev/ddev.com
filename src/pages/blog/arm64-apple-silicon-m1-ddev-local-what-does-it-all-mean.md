@@ -4,7 +4,8 @@ pubDate: 2020-11-18
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2020/11/Apple-DDEV.jpg
 categories:
-  - DDEV
+  - DevOps
+  - Performance
 ---
 
 **Update 2020-12-16:** _An Apple Silicon M1 pre-release of DDEV-Local is now available in_ [_DDEV releases_](https://github.com/drud/ddev/releases)_! There is information there on how to get the latest prerelease for Docker Desktop for Mac on M1_.

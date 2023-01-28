@@ -4,7 +4,7 @@ pubDate: 2018-07-03
 author: Elli Ludwigson
 featuredImage: https://ddev.com/app/uploads/2018/07/Fils_électriques.jpg
 categories:
-  - DDEV
+  - DevOps
 ---
 
 You need a local web server to build and maintain a website. Simple. The old standby is MAMP, so called because it gives you the full Apache MySQL PHP “AMP” stack you need to get to work … on “My” machine: My Apache, MySQL, PHP. It’s free and no-frills (the paid version gives you a couple of frills), but now you want something faster, simpler, better— we made that for you! It’s called [DDEV-Local](https://ddev.com/get-started/) and it’s a free, fully featured, robust, cross-platform, cutting edge yet no-hassle, open source MAMP alternative.

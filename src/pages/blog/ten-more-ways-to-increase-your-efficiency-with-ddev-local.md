@@ -4,7 +4,7 @@ pubDate: 2020-03-25
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2020/03/secure_cert.png
 categories:
-  - DDEV
+  - DevOps
 ---
 
 Sometimes as the releases go by not everybody ends up noticing new features in [DDEV-Local](https://ddev.com/ddev-local/). People liked it the[ last time](https://ddev.com/ddev-local/eight-more-ways-to-get-the-most-out-of-ddev-local/) we did a “remember these simple new features” article, so here comes another one:

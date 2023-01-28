@@ -4,7 +4,7 @@ pubDate: 2018-11-29
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2018/11/marius-masalar-410695-unsplash-e1543521725507.jpg
 categories:
-  - DDEV
+  - Guides
 ---
 
 [Composer](https://getcomposer.org) came into the PHP world to help with dependency-management—managing the growing network of external libraries that modern applications rely on. If you’re setting up a PHP development environment with Composer for TYPO3 or Drupal 8, DDEV-Local can help make it easier. DDEV now has built-in Composer commands so you don’t have to install Composer on your host machine. You can use Composer right in the container. Overall, our goal with DDEV is to give users ultimate flexibility, yet predictability at the same time.

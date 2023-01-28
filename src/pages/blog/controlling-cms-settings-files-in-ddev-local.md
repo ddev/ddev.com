@@ -4,7 +4,7 @@ pubDate: 2020-04-16
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2020/04/Installing_TYPO3_CMS.png
 categories:
-  - DDEV
+  - Guides
 ---
 
 One [DDEV-Local](http://github.com/drud/ddev) feature that lots of people love is DDEV’s creation and management of CMS-specific settings files. This makes starting and installing a new project a breeze, and is a fantastic time-saver for many users. People can follow one of the many DDEV-Local [Quickstart Guides](https://ddev.readthedocs.io/en/stable/users/cli-usage/#quickstart-guides) and have a project up and installed in no time.

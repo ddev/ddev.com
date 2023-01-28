@@ -4,7 +4,7 @@ pubDate: 2018-03-12
 author: Jeffrey A. McGuire
 featuredImage: https://ddev.com/app/uploads/2018/03/moren-hsu-359121-unsplash.jpg
 categories:
-  - DDEV
+  - DevOps
 ---
 
 ![](https://ddev.com/app/uploads/2018/03/joe.jpg)I wanted to know how Joe Shindelar manages to generate and deliver hundreds of hours of Drupal learning content and where DDEV fits into the picture. Joe is ‎Lead Trainer and Lead Developer at [Lullabot Education](http://lullaboteducation.com/), where they provide expert Drupal training on the e-learning site [Drupalize.me](https://drupalize.me/).

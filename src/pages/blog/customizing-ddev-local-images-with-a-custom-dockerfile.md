@@ -4,7 +4,7 @@ pubDate: 2020-04-07
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2020/04/d8composer____workspace_d8composer__-______ddev_web-build_Dockerfile-2.png
 categories:
-  - DDEV
+  - Guides
 ---
 
 Did you know that you can customize [DDEV-Local](https://ddev.com/ddev-local/) Docker images with some very simple changes? We talked about [web container customization](https://ddev.com/ddev-local/ddev-local-web-container-customization-in-v1-8-0/) a little with the release of DDEV-Local 1.8.0, and now we’re back with more details!
@@ -40,7 +40,7 @@ If you want to add files or override configuration files, it’s easy enough to 
 
 - Put the new mailhog.conf and mailhog-auth.txt into the `.ddev/web-build` directory.
 - Add a Dockerfile to .ddev/web-build that uses the Docker build ADD command to put them into place:  
-  `ARG BASE_IMAGE  
+   `ARG BASE_IMAGE  
 FROM $BASE_IMAGE ADD mailhog-auth.txt /etc  
 ADD mailhog.conf /etc/supervisor/conf.d`
 

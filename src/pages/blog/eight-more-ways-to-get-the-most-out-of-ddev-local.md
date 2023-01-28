@@ -133,8 +133,6 @@ Coming soon: We’ll be rolling out opt-in data collection and error reporting t
 
 When I come across tips and tricks from the community, I usually tweet about them. You can follow me as [@randyfay](https://twitter.com/randyfay) and the main [@drud](https://twitter.com/drud/) account where we tweet product news, tips, and other relevant info regularly. And of course, sign up to the newsletter for product updates and announcements.
 
-Sign up for the latest news and releases
-
 ---
 
 Photo by Marvin Ronsdorf on [Unsplash](https://unsplash.com/search/photos/eight?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)

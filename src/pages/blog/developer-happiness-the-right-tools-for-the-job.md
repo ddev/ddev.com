@@ -4,7 +4,7 @@ pubDate: 2018-04-09
 author: Heather McNamee
 featuredImage: https://ddev.com/app/uploads/2018/04/toolbox-2645700_1920-e1523274374612.jpg
 categories:
-  - DDEV
+  - DevOps
 ---
 
 We recently spoke with [Ryan Blyth](https://newmediadenver.com/team/ryan-blyth/), Technical Project Manager at [NEWMEDIA](https://newmediadenver.com/about/) here in Denver, Colorado. Ryan candidly shared the stresses of the web development with us and how using the right tools for the job can make you a much happier developer. Rather than the tools accommodating the way he works, Ryan often found he was organizing his day around the way his tools worked.

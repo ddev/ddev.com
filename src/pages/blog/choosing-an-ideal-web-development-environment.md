@@ -4,7 +4,9 @@ pubDate: 2018-05-29
 author: Mike Anello
 featuredImage: https://ddev.com/app/uploads/2018/05/headway-537308-unsplash-e1527604343956.jpg
 categories:
-  - DDEV
+  - DevOps
+  - Announcements
+  - Community
 ---
 
 _This is a guest post from web developer and trainer, Mike Anello of [DrupalEasy](https://www.drupaleasy.com/). Find out [more about Mike](https://ddev.com/author/mikeanello/)._

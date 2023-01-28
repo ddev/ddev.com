@@ -4,7 +4,7 @@ pubDate: 2019-03-21
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2019/03/DDEV-Data-e1553211948905.jpg
 categories:
-  - DDEV
+  - Community
 ---
 
 We introduced [opt-in instrumentation](https://ddev.readthedocs.io/en/stable/users/cli-usage/#opt-in-usage-information) using [Sentry.io](http://sentry.io) in [DDEV-Local v1.5.0](https://github.com/drud/ddev/releases) (December 2018). This feature sends some information about `ddev` usage so that we can understand our users better and help you do your best work. Now that we’re a few months in we’ve learned a number of things, and so appreciate those of you who opted-in to this feature.
@@ -28,7 +28,3 @@ Some of the most interesting data so far:
 If you’d like to browse the actual numbers, the (rough) spreadsheet data is [available here.](https://docs.google.com/spreadsheets/d/135MIJBPQifLyssM-CjxGotH3XTrtdCTkcEOb9SQOU6E/edit?usp=sharing)
 
 Again, thanks so much for using DDEV and for your many [contributions](https://github.com/drud/ddev/blob/master/CONTRIBUTING.md) to its success, whether by sending stats, suggesting features, supporting others, or [reporting issues](https://ddev.readthedocs.io/en/stable/#support). Thank you!
-
-Join our newsletter for more news and updates:
-
-Sign up for the latest news and releases

@@ -4,7 +4,7 @@ pubDate: 2019-01-16
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2019/01/EKL_20181205_13-1.jpg
 categories:
-  - DDEV
+  - Announcements
 ---
 
 We’ve just released DDEV v1.5.2! This is a minor release with a couple of very useful features. [Install or upgrade now](https://github.com/drud/ddev/releases). Here are a couple highlights:

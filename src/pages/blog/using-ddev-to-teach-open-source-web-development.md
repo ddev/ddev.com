@@ -4,7 +4,7 @@ pubDate: 2019-02-26
 author: Heather McNamee
 featuredImage: https://ddev.com/app/uploads/2019/02/jantine-doornbos-711322-unsplash-e1551235015756.jpg
 categories:
-  - DDEV
+  - DevOps
 ---
 
 When I heard that Oliver Hader, a [TYPO3 CMS](https://typo3.org/) core developer, was using DDEV-Local to teach web development to university students, I wanted to know more. So I sat down with him to find out about the course, his students, and how DDEV helps. It’s great to see students working with professional tools to learn industry-relevant skills.
@@ -51,9 +51,7 @@ The students are getting a taste of what it’s like to work in open source, but
 
 Giving students industry-standard professional tools and exposing them to open source communities is a win-win for employability and skills that will set them up for life.
 
-We love to hear stories about how you’re using DDEV. Are you using DDEV for teaching or training? Say hi to us on Twitter and tell us!
-
-[Tweet to @drud](https://twitter.com/intent/tweet?screen%5Fname=drud&ref%5Fsrc=twsrc%5Etfw)
+We love to hear stories about how you’re using DDEV. Are you using DDEV for teaching or training? Let us know!
 
 ### Try out DDEV for yourself
 

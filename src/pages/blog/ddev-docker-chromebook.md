@@ -4,18 +4,18 @@ pubDate: 2020-05-04
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2020/04/chromebook-3.jpg
 categories:
-  - DDEV
+  - Guides
 ---
 
 Updated 2021-01-25 with [input from ](https://github.com/drud/ddev/discussions/2740)[@ops-andy](https://github.com/ops-andy) (thanks!)
 
 [DDEV-Local](http://github.com/drud/ddev) and Docker work fine for local development on an inexpensive Chromebook!
 
-I’d been wanting to try out a Chromebook for DDEV-Local development for a while and I confess that I did an impulse buy on Amazon and got the 8GB[ Asus C425](https://www.asus.com/us/Laptops/ASUS-Chromebook-14-C425TA/) for $329, which is a lot less than the fancy loaded Macbook Pro I usually use. It works great, mostly because it runs pure Debian Linux in what it calls the “Terminal”.
+I’d been wanting to try out a Chromebook for DDEV-Local development for a while and I confess that I did an impulse buy on Amazon and got the 8GB[Asus C425](https://www.asus.com/us/Laptops/ASUS-Chromebook-14-C425TA/) for $329, which is a lot less than the fancy loaded Macbook Pro I usually use. It works great, mostly because it runs pure Debian Linux in what it calls the “Terminal”.
 
 Here’s the step-by-step to set up a DDEV-Local development environment:
 
-1. In Settings→Linux (Beta) “Turn on” Linux.
+1. In Settings → Linux (Beta) “Turn on” Linux.
 2. In Linux, create a password for the username you’ve created, `sudo passwd $USER`
 3. Install Docker for Linux as in the [ddev docs](https://ddev.readthedocs.io/en/stable/users/docker%5Finstallation/#linux-installation-docker-ce). You’ll be installing the _Debian_ version ([link](https://docs.docker.com/install/linux/docker-ce/debian/)).
 4. Install Linuxbrew with (`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`

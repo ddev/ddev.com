@@ -4,14 +4,12 @@ pubDate: 2018-03-01
 author: Jeffrey A. McGuire
 featuredImage: https://ddev.com/app/uploads/2018/03/Adam_Bergstein.jpeg
 categories:
-  - DDEV
+  - DevOps
 ---
 
-Adam Bergstein (aka [nerdstein,](https://twitter.com/n3rdstein) VP of Engineering at [Hook 42](http://www.hook42.com/)) has been on a long search for the ideal local development environment. Adam has a diverse set of responsibilities at work, analyzing and supporting client needs for sales and another set of needs around his deep involvement in open source software communities and cont\`ribution. You can find Adam (as I often have!) speaking at tech conferences or leading [Drupal core contribution sprints](https://2017.midcamp.org/sprints).
+Adam Bergstein (aka [nerdstein](https://twitter.com/n3rdstein), VP of Engineering at [Hook 42](http://www.hook42.com/)) has been on a long search for the ideal local development environment. Adam has a diverse set of responsibilities at work, analyzing and supporting client needs for sales and another set of needs around his deep involvement in open source software communities and cont\`ribution. You can find Adam (as I often have!) speaking at tech conferences or leading [Drupal core contribution sprints](https://2017.midcamp.org/sprints).
 
 In both situations–at work or contributing to Drupal–time is of the essence. Losing an hour or more to environment configuration and spin up for each project he worked on and for each context switch he had to make was a daily reality for Adam and he found it “massively disruptive.” That was time that would be better spent delivering value to his clients and open source projects. What was the answer? What would an ideal local development environment look like?
-
-Sign up for the latest news and releases
 
 ### What’s an ideal local development environment for Drupal?
 

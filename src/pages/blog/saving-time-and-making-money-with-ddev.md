@@ -4,7 +4,7 @@ pubDate: 2018-02-06
 author: Jeffrey A. McGuire
 featuredImage: https://ddev.com/app/uploads/2018/03/lukas-blazek-263122.jpg
 categories:
-  - DDEV
+  - DevOps
 ---
 
 ![](https://ddev.com/app/uploads/2018/03/Danita_Bowman-768x727-300x284.jpeg)

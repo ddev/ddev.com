@@ -4,14 +4,14 @@ pubDate: 2022-06-04
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2022/06/plumbing-g6c1b9a8f3_1920.jpg
 categories:
-  - DDEV
+  - DevOps
 ---
 
-**TL;DR:** _On Windows, if you use WSL2 for anything, make sure you enable “Windows Update” → “Advanced Options” -> Receive updates for other Microsoft Products” so that your WSL2 kernel gets updated, whether you’re using traditional Windows or WSL2 for development._
+**TL;DR:** _On Windows, if you use WSL2 for anything, make sure you enable “Windows Update” → “Advanced Options” → Receive updates for other Microsoft Products” so that your WSL2 kernel gets updated, whether you’re using traditional Windows or WSL2 for development._
 
 One of the great things about DDEV is that it has huge test coverage. Every PR tests a huge set of test cases on Linux (amd64 and arm64, with mutagen and without), macOS (amd64 and new M1 arm64, with mutagen and with NFS), Windows (traditional, with NFS and Mutagen). It’s a lot of testing. And because it’s such a stress test, it tends to discover things that don’t show up in some other tests, even in Docker. You’ll see lots of issues in the [docker/for-mac](https://github.com/docker/for-mac/issues?q=is%3Aissue+author%3Arfay), [docker/for-win](https://github.com/docker/for-win/issues?q=is%3Aissue+author%3Arfay), and [docker-compose](https://github.com/docker/compose/issues?q=is%3Aissue+author%3Arfay) issue queues that the DDEV testbed discovered.
 
-The other day I was deploying a brand new test runner for Windows (provided by kind community [Github Sponsors support](https://github.com/sponsors/rfay)!) and ended up with crazy results on one set of that did a `ddev import-db`
+The other day I was deploying a brand new test runner for Windows (provided by kind community [GitHub Sponsors support](https://github.com/sponsors/rfay)!) and ended up with crazy results on one set of that did a `ddev import-db`
 
 Instead of seeing the normal type of output, which comes from the linux command `pv` inside the db container, which should look like this:
 

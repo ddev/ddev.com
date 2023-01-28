@@ -4,7 +4,7 @@ pubDate: 2020-08-06
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2020/08/Screen-Shot-2020-08-04-at-11.30.47-AM-1.png
 categories:
-  - DDEV
+  - Guides
 ---
 
 WSL2 ([Windows Subsystem for Linux version 2](https://docs.microsoft.com/en-us/windows/wsl/wsl2-index)) is finally generally available on recent editions of Windows! Because of [Docker’s great support for WSL2](https://docs.docker.com/docker-for-windows/wsl/), it’s now the preferred way to run your [DDEV-Local development environment](https://ddev.com/ddev-local/) on Windows. DDEV-Local on WSL2 is as fast as DDEV-Local on Linux, but you have all the Windows niceties you love there.

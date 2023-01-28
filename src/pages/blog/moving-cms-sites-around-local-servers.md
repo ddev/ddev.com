@@ -4,9 +4,8 @@ pubDate: 2020-12-08
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2020/12/juggler-2329843_1280-e1607477143481.jpg
 categories:
-  - DDEV
+  - Guides
   - DevOps
-  - Workflow
 ---
 
 Any web developer will have to move a site from one place to another periodically, so mastering the concepts and the details are important. The details are a little different from CMS to CMS, but the big picture stays mostly the same. Please note that many people have many opinions about all of this, and some people will disapprove of what I say, but it’s intended to teach you the basic process, not the exact procedure. It also will necessarily be incomplete, since there’s no way to cover every platform or CMS, or every permutation of deployment.

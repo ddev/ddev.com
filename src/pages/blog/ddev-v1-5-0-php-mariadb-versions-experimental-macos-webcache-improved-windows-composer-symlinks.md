@@ -4,7 +4,7 @@ pubDate: 2018-12-19
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2018/12/DSC_3769-e1545284198357.jpg
 categories:
-  - DDEV
+  - Announcements
 ---
 
 We’ve just released DDEV v1.5.0! [Install or upgrade now](https://github.com/drud/ddev/releases). (Helpful hint! You can now [watch for releases on GitHub](https://help.github.com/articles/watching-and-unwatching-releases-for-a-repository/)). Here are some highlights, and a couple ways you can easily contribute:
@@ -53,8 +53,6 @@ Please feel free to tag us on twitter [@Drud](https://twitter.com/drud) and with
 > Listening to [@TalkingDrupal](https://twitter.com/TalkingDrupal?ref%5Fsrc=twsrc%5Etfw) 190 – [#DDEV](https://twitter.com/hashtag/DDEV?src=hash&ref%5Fsrc=twsrc%5Etfw) with Mike Anello of [@DrupalEasy](https://twitter.com/DrupalEasy?ref%5Fsrc=twsrc%5Etfw) ? ?<https://t.co/zltZOvtUIK> [pic.twitter.com/W3aprVd7E1](https://t.co/W3aprVd7E1)
 >
 > — DRUD Technology (@drud) [December 19, 2018](https://twitter.com/drud/status/1075391816143392769?ref%5Fsrc=twsrc%5Etfw)
-
-Sign up for our newsletter for product and release news about our new hosting services:
 
 ---
 

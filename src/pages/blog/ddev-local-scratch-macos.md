@@ -4,7 +4,7 @@ pubDate: 2018-06-14
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2018/05/maxime-le-conte-des-floris-151374-unsplash-e1526982174493.jpg
 categories:
-  - DDEV
+  - Guides
 ---
 
 **This article has been updated in 2020, please go to [DDEV-Local From Scratch on macOS.](https://ddev.com/ddev-local/watch-ddev-local-from-scratch-with-macos/)**

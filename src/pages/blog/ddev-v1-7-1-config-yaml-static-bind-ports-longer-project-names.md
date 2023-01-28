@@ -4,7 +4,7 @@ pubDate: 2019-04-08
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2019/04/EKL_20190320_0150-e1554833038556.jpg
 categories:
-  - DDEV
+  - Announcements
 ---
 
 We’ve just released [DDEV v1.7.1](https://github.com/drud/ddev/releases/tag/v1.7.1)! This release includes the ability to override a committed config.yaml, static port binds and longer project names. [Install or upgrade now](https://github.com/drud/ddev/releases). Here are a couple of highlights:
@@ -46,7 +46,5 @@ The next session of Mike Anello’s online DrupalEasy course, [Professional Loca
 Thank you very much to [akalata](https://github.com/akalata) on github for testing this release! Many of you also filed issues and helped point out important improvements.
 
 [DDEV is an open source project](https://github.com/drud/ddev/blob/master/CONTRIBUTING.md) and we very much appreciate the time our contributors give to improving the tool for everyone. Please continue to submit issues for new features and bugs, and take a look around [the DDEV issue queue](https://github.com/drud/ddev/issues) and [Stack Overflow](https://stackoverflow.com/questions/tagged/ddev) to spur your thinking!
-
-Sign up for the latest news and releases
 
 Photo courtesy [Elli Ludwigson](https://ddev.com/author/elli/)

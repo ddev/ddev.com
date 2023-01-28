@@ -4,32 +4,33 @@ pubDate: 2018-02-15
 author: Jeffrey A. McGuire
 featuredImage: undefined
 categories:
-  - DDEV
+  - Announcements
+  - Guides
 ---
 
 We’re on a mission to make it easier for developers, teams, and organizations to adopt modern container-based toolsets and workflows. To get there we’re expanding our support to new communities and platforms. Today we’re excited to announce that DDEV integrates with the TYPO3 CMS to provide a fast and robust way to work across multiple projects and across multiple operating systems. Once you have DDEV installed, you can get a new TYPO3 site up and running on your local workstation in minutes.
 
 > _“Thanks to DDEV, I can have a state-of-the-art, container-based TYPO3 CMS installation up-and-running in minutes. It is pure convenience and a joy to use, both in my day job at a digital agency and as a contributor.”_
-> 
+>
 > – Susi Moog, TYPO3 CMS core developer
 
 ## Quickstart for TYPO3 CMS on DDEV
 
 1. [Install DDEV](https://ddev.readthedocs.io/en/latest/#installation) for Mac, Linux, or Windows, as needed
-2. Follow the [DDEV + TYPO3 quickstart instructions](https://ddev.readthedocs.io/en/latest/users/cli-usage/#typo3-quickstart)  
-   1. Download TYPO3  
-   2. Configure  
+2. Follow the [DDEV + TYPO3 quickstart instructions](https://ddev.readthedocs.io/en/latest/users/cli-usage/#typo3-quickstart)
+   1. Download TYPO3
+   2. Configure
    3. Start!
 
 ### Going Further
 
 You can find all the details in our [community documentation](https://ddev.readthedocs.io/en/latest/), but we think you’ll want to know these facts to make your day easier now.
 
-* Project Info: Run \`ddev describe\` to access database credentials and other services.
-* Developer Tools: Access Mailhog, phpmyadmin, and more right out of the gates.
-* Hooks: Common tasks you need to run can be version controlled and shared.
-* List: Running two or more projects? Run \`ddev list\` to keep on top of them all.
-* Additional Services: Add new containers (e.g. Apache Solr) quickly.
+- Project Info: Run \`ddev describe\` to access database credentials and other services.
+- Developer Tools: Access Mailhog, phpmyadmin, and more right out of the gates.
+- Hooks: Common tasks you need to run can be version controlled and shared.
+- List: Running two or more projects? Run \`ddev list\` to keep on top of them all.
+- Additional Services: Add new containers (e.g. Apache Solr) quickly.
 
 ## How can we make DDEV better for your community?
 

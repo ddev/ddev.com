@@ -4,7 +4,7 @@ pubDate: 2018-11-20
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2018/11/will-echols-539053-unsplash-e1542746009659.jpg
 categories:
-  - DDEV
+  - Guides
 ---
 
 To us, the ideal local development environment should be fast and easy to use and give you what you need to get your job done. DDEV-Local’s `ddev snapshot` command helps you recover quickly, and the new \`export-db\` command makes you portable backups in a jiffy.

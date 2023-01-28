@@ -4,7 +4,7 @@ pubDate: 2020-04-03
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2020/04/d8composer_ddev_site_8037___db___db___phpMyAdmin_5_0_2.png
 categories:
-  - DDEV
+  - DevOps
 ---
 
 _Updated 2020-12-07_

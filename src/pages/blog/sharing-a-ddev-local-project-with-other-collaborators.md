@@ -4,7 +4,8 @@ pubDate: 2020-03-17
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2020/03/ngrok_page.png
 categories:
-  - DDEV
+  - Guides
+  - DevOps
 ---
 
 Even though [DDEV-Local](https://ddev.com/ddev-local/) is intended for local development on a single machine, not as a public server, there are a number of reasons you might want to expose your work in progress more broadly:
@@ -88,5 +89,3 @@ Computers and mobile devices on your local network should now be able to access 
 Find us and other DDEV community experts via one of our [support channels](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation).
 
 Take a look around the [project on GitHub](http://github.com/drud/ddev) and feel free to contribute!
-
-Please follow along on [Twitter](http://twitter.com/drud) for the latest news.

@@ -4,7 +4,7 @@ pubDate: 2018-04-05
 author: Heather McNamee
 featuredImage: https://ddev.com/app/uploads/2018/04/technology-3249920_1920.jpg
 categories:
-  - DDEV
+  - DevOps
 ---
 
 If you’re responsible for managing a web development team, you want to make it easy for your colleagues to follow best practices- from the first time to every time they set up their projects. DDEV helps reduce errors between collaborators and facilitate knowledge sharing among team members. It sets its defaults to the best practices you define, making them simply “the way you work.” The result is that building secure and reliable applications is easy and hassle-free for your team, too.

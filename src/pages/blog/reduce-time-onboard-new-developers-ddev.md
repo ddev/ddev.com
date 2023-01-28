@@ -4,7 +4,7 @@ pubDate: 2020-08-12
 author: DDEV
 featuredImage: https://ddev.com/app/uploads/2018/05/bruce-mars-548722-unsplash.jpg
 categories:
-  - DDEV
+  - DevOps
 ---
 
 Getting new developers up to speed with your procedures and their projects can be a time-consuming and complex process. Unfortunately, we’re still hearing stories about new hires taking as much 1-2 days to get their laptops properly set up and 1-2 weeks of onboarding before they can deliver code to production. In today’s competitive, fast-paced world, the amount of wasted time is untenable at best. The faster a team can deliver code to production, the better. However, you can’t cut corners without causing quality and efficiency to suffer. In this article, we’ll take a look at the process of onboarding new developers and discuss how the right development tools, like [DDEV-Local](https://ddev.com/ddev-local/), can help.

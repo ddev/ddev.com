@@ -4,7 +4,7 @@ pubDate: 2018-03-22
 author: Jeffrey A. McGuire
 featuredImage: https://ddev.com/app/uploads/2018/03/with_ddev.png
 categories:
-  - DDEV
+  - DevOps
 ---
 
 It is DDEV’s mission to create a faster, better, simpler, and more reliable web development workflow.

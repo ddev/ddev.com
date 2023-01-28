@@ -4,7 +4,7 @@ pubDate: 2018-10-12
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2018/10/clarissa-bock-418873-unsplash-e1539369093961.jpg
 categories:
-  - DDEV
+  - Announcements
 ---
 
 We’ve just released DDEV v1.3.0! Here are some highlights, and an important caveat for this update: backup your data.
@@ -48,7 +48,5 @@ Check the [Release Notes for more guidance](https://github.com/drud/ddev/release
 We have some great news for the DDEV community. Are you looking for hosting for your open source community project or event? We understand the value of open source contribution. If we can help do our part for your community, we’d love to help!
 
 [Apply here for free DDEV-Live hosting](https://goo.gl/forms/2XjlbNAIZZ4HUVlG2)
-
-Sign up to our newsletter for product and release news.
 
 Photo by [Clarissa Bock](https://unsplash.com/photos/nqJwKcnfyqU?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)

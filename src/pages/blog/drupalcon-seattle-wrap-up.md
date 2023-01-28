@@ -5,7 +5,6 @@ author: Kevin Bridges
 featuredImage: https://ddev.com/app/uploads/2019/04/IMG_20190409_152301-e1555796618534.jpg
 categories:
   - Community
-  - DDEV
 ---
 
 Our time at [DrupalCon Seattle](https://events.drupal.org/seattle2019) strongly reinforced the core principles and values we’ve been building our tools on. We’re always excited to share updates and benefits of our DDEV local development environment and hosting platform, but even better is hearing what _you’ve_ been working on and where your interests lie. The most valuable experiences at DrupalCon were all about working together and supporting success for as many people as we can.

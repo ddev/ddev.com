@@ -4,7 +4,7 @@ pubDate: 2022-10-30
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2022/10/DALL·E-2022-10-30-10.10.42.png
 categories:
-  - DDEV
+  - DevOps
 ---
 
 In 2022, users from designers to developers to testers and open source contributors have a wide variety of local development environments to chose from. Because most of the tools and platforms we use will run in many different operating systems and environments, we have the option of rolling our own, using a commercial project like [MAMP](https://www.mamp.info/en/mamp-pro/mac/) or [Local](https://localwp.com/) (for WordPress), or using one of the many Docker-based solutions like [DDEV](http://ddev.readthedocs.io), [Docksal](https://docksal.io/), or [Lando](https://lando.dev/).

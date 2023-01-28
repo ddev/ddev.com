@@ -5,12 +5,10 @@ author: Elli Ludwigson
 featuredImage: https://ddev.com/app/uploads/2021/01/Hilmar-DrupalCon-Amsterdam-by-Illek-Petr.jpg
 categories:
   - Community
-  - DDEV
+  - DevOps
 ---
 
 _Photo of Hilmar Hallbjörnsson at DrupalCon Amsterdam trivia night 2019 by [Illek Petr](https://flic.kr/p/2hD9UK1)_.
-
-_10 minute read_
 
 How often do you get to chat with a viking about web development? After [DrupalCon Europe](https://events.drupal.org/europe2020) last December a few folks got together on Zoom to emulate our usual “hallway track” coffee hour chats, and I learned that a couple friends have been leveraging [DDEV-Local](https://ddev.com/ddev-local/) to teach web development to newcomers. This is the second blog in the series, please read more about [Mauricio Dinarte giving students a quick path to success here](https://ddev.com/ddev-local/why-an-easy-start-is-important-to-teaching-web-development/).
 

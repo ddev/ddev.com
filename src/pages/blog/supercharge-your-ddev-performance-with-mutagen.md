@@ -4,10 +4,11 @@ pubDate: 2021-07-28
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2021/07/Drupal-9-Web-Install-times-seconds-less-is-better.png
 categories:
-  - DDEV
+  - Announcements
+  - Performance
 ---
 
-Ddev v1.18.0-alpha1 introduces a new performance improvement based on [Mutagen.io](http://Mutagen.io). It eliminates the required wait time when a bind-mounted file is accessed inside (or outside) the container.
+DDEV v1.18.0-alpha1 introduces a new performance improvement based on [Mutagen.io](http://Mutagen.io). It eliminates the required wait time when a bind-mounted file is accessed inside (or outside) the container.
 
 The improvements for general web activity are quite striking, as shown in the graphs below. On macOS, a Drupal 9 web installation can be twice as fast as with NFS, and many times faster than plain Docker. On traditional Windows, the speed improvement is off the chart (literally). I actually had to remove the plain Docker category because it took 20 minutes to install and so it swamped the chart and you couldn’t see the relationships of anything else.
 

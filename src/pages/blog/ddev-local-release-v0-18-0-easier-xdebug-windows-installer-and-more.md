@@ -4,7 +4,7 @@ pubDate: 2018-05-10
 author: Rick Manelius
 featuredImage: https://ddev.com/app/uploads/2018/05/woctech-chat-windows-e1525985003469.jpg
 categories:
-  - DDEV
+  - Announcements
 ---
 
 We’re happy to announce [our latest DDEV-Local release v0.18.0.](https://github.com/drud/ddev/releases/tag/v0.18.0) This includes XDebug improvements, more robust Windows support, and smoother upgrade paths. In this post, we’ll take a closer look at what we have for you in this release.
@@ -44,7 +44,5 @@ This release includes a variety of bug fixes as well. Check out the [release not
 ## Update today!
 
 To update DDEV-Local follow the steps for [installing and updating](https://ddev.readthedocs.io/en/latest/#installation) for your operating system. We’d love to hear your feedback [in the GitHub issue queue](https://github.com/drud/ddev/issues).
-
-Sign up for the latest news and releases
 
 Photo credit – Showing MS Windows on Surface Pro by WOCinTech Chat (CC BY 2.0)

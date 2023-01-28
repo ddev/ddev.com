@@ -4,7 +4,7 @@ pubDate: 2020-05-19
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2020/05/CMS-project-types.png
 categories:
-  - DDEV
+  - Community
 ---
 
 Many of you allow [DDEV-Local](https://github.com/drud/ddev) to [use telemetry to collect statistics](https://ddev.readthedocs.io/en/stable/users/cli-usage/#opt-in-usage-information) about DDEV usage. Thanks! We last shared these stats with you way back in [March, 2019](https://ddev.com/ddev-local/ddev-local-usage-statistics-updated-2019-03-21/), so it’s time for an update. Here’s a report about usage patterns from recent months.

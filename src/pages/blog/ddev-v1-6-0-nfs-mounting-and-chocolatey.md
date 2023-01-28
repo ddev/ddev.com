@@ -4,7 +4,7 @@ pubDate: 2019-02-12
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2019/02/EKL_20181203_2-e1549995318578.jpg
 categories:
-  - DDEV
+  - Announcements
 ---
 
 We’ve just released **DDEV v1.6.0**! This release includes NFS mounting and Chocolatey for Windows. [Install or upgrade now](https://github.com/drud/ddev/releases). Here are a couple of highlights:
@@ -48,7 +48,5 @@ Want to do a deep dive on DDEV-Local? Mike Anello runs a regular training on Dru
 ## Where in the world is the #DDEV team?
 
 Sign up for the DDEV newsletter below to receive a free copy of [Mike Anello’s DDEV ebook](https://www.amazon.com/Local-Development-Explained-Step-Step/dp/1731048858/ref=tmm%5Fpap%5Fswatch%5F0) and a DDEV t-shirt at one of our upcoming events! We’re headed to [Florida Drupal Camp](https://www.fldrupal.camp/), [Drupal Camp London](http://drupalcamp.london) and [DrupalCon Seattle](https://events.drupal.org/seattle2019). Follow along on [Twitter](https://twitter.com/drud) with #DDEV.
-
-Sign up for the latest news and releases
 
 Photo by [Elli Ludwigson](https://ddev.com/author/elli/)

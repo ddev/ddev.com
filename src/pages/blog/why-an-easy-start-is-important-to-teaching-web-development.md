@@ -5,7 +5,7 @@ author: Elli Ludwigson
 featuredImage: https://ddev.com/app/uploads/2021/01/40629336923_4f79c53b93_c.jpg
 categories:
   - Community
-  - DDEV
+  - DevOps
 ---
 
 _Photo of Mauricio Dinarte at DrupalCon Seattle contribution day in 2019 [by Josef Kruckenberg @dasjo](https://flic.kr/p/24UgYn2)_

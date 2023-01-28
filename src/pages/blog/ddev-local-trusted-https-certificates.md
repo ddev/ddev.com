@@ -4,7 +4,7 @@ pubDate: 2019-05-23
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2019/05/Home___umami_8_7_1.png
 categories:
-  - DDEV
+  - Guides
 ---
 
 Security is critical on the modern web, and so all sites should ideally be developed, tested, and deployed with https. But it has been hard to do that in your local development environment.

@@ -4,7 +4,7 @@ pubDate: 2018-05-22
 author: Rick Manelius
 featuredImage: https://ddev.com/app/uploads/2018/05/suganth-526334-unsplash-e1526983031730.jpg
 categories:
-  - DDEV
+  - DevOps
 ---
 
 As agency teams adopt DevOps culture and practices, their ability to achieve peak performance through continuous improvements on processes and practice becomes limited if they are unwilling to standardize tools and workflows. Having a reliable local development environment is a foundational part of that practice because it is the interface between a developer and the production system by which they are attempting to deliver value. Senior team leads see the link: as well as the time lost, effort is lost when users hit roadblocks in this process. What are the benefits and how can you decide which tool is right for your team?

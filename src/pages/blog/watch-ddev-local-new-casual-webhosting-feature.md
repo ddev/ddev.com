@@ -4,7 +4,7 @@ pubDate: 2020-12-14
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2020/12/Casual-DIY-Webhosting.png
 categories:
-  - DDEV
+  - Guides
 ---
 
 [DDEV-Local](https://github.com/drud/ddev)‘s v1.16 release has support for “[Casual webhosting](https://ddev.readthedocs.io/en/latest/users/alternate-uses/#casual-project-webosting-on-the-internet-including-lets-encrypt) including Let’s Encrypt.” DDEV users have often requested the ability to use ddev as a self-managed low-end webserver, for things like small sites or sharing pre-release code, etc, and now it has arrived.

@@ -4,7 +4,7 @@ pubDate: 2018-10-18
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2018/10/john-carlisle-539580-unsplash-e1539785420243.jpg
 categories:
-  - DDEV
+  - Guides
 ---
 
 We built [DDEV](https://ddev.com/what-is-ddev/) to make it easier for people to set up local development environments for PHP projects. When things aren’t working as expected, people need help, and we need to hear from them. We provide direct help to our community [through our documentation](https://ddev.readthedocs.io/en/latest/#support), in Slack in both the Drupal and TYPO3 communities, and on [Stack Overflow](https://stackoverflow.com/tags/ddev). It’s something we like doing because it gets us closer to our users, and we get direct feedback so we can improve our products.
@@ -60,7 +60,7 @@ It’s quick to fix, just unshare and then reshare the drive. If you haven’t a
 
 If you didn’t explicitly install [Docker Compose](https://docs.docker.com/compose/compose-file/), you’re probably not using the most up to date version. Even the standard `apt-get install docker docker-compose` will get you an incompatible version of Docker Compose.
 
-To get it set up, you have to download Docker Compose from Github and directly install it.
+To get it set up, you have to download Docker Compose from GitHub and directly install it.
 
 You’ll find out about this right away because ddev will tell you on `ddev start` or most other ddev commands. The [Docker Installation page](https://ddev.readthedocs.io/en/latest/users/docker%5Finstallation/) has details about Linux installation.
 

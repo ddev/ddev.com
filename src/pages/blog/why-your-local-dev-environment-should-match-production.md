@@ -4,8 +4,7 @@ pubDate: 2020-11-04
 author: DDEV
 featuredImage: https://ddev.com/app/uploads/2020/11/Deploy-Benni-art-from-shashank-and-Becris-on-the-noun-project.jpeg
 categories:
-  - DDEV
-  - Workflow
+  - DevOps
 ---
 
 _This is a guest post from_ [_Benni Mack_](https://twitter.com/bennimack)_, CTO of the_ [_digital agency b13_](https://b13.com/)_, located in Germany. He’s been the project lead for_ [_TYPO3_](https://typo3.org/)_, an Enterprise CMS based on PHP, for the last 6 years, steering contributors and developers around the TYPO3 Ecosystem through his passion for Open Source and PHP. This is part two of a two part series, [find part one here](https://ddev.com/ddev-local/why-developing-locally-matters/)._

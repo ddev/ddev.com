@@ -4,7 +4,7 @@ pubDate: 2018-05-08
 author: Jeffrey A. McGuire
 featuredImage: https://ddev.com/app/uploads/2018/04/brandon-hiking.png
 categories:
-  - DDEV
+  - DevOps
 ---
 
 ![](https://ddev.com/app/uploads/2018/04/brandon-williams-crazysix-247x300.png)

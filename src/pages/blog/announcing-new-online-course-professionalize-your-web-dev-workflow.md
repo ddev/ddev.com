@@ -4,7 +4,8 @@ pubDate: 2018-07-09
 author: Heather McNamee
 featuredImage: https://ddev.com/app/uploads/2018/06/alejandro-escamilla-10-unsplash.jpg
 categories:
-  - DDEV
+  - Announcements
+  - DevOps
 ---
 
 Learn how to use DDEV to streamline your web dev workflow in DrupalEasy’s new online course: “[2-hour Professional local development with DDEV.](https://ddev.com/online-course-streamline-your-web-dev-workflow/)”

@@ -4,7 +4,7 @@ pubDate: 2019-05-16
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2019/05/EKL_20190418_0240.jpg
 categories:
-  - DDEV
+  - Announcements
 ---
 
 We’ve just released [DDEV-Local v1.8.0](https://github.com/drud/ddev/releases/tag/v1.8.0)! This release includes trusted SSL, refreshed `ddev stop` behavior, and updated `ddev exec` functionality. [Install or upgrade now](https://github.com/drud/ddev/releases). Below are a couple of highlights, or you can read the [full release notes here](https://github.com/drud/ddev/releases/tag/v1.8.0).
@@ -52,7 +52,5 @@ We’ve also been doing more work as pairs to encourage frequent conversation, q
 This week we visited [Boulder Startup Week and talked about DevTools](https://boulderstartupweek2019.sched.com/event/NNY7/so-you-want-to-launch-a-devtool)! Our CTO Kevin Bridges (center in the above photo) spoke on a sold-out panel with other builders and leaders about the ins and outs of building, managing, and implementing a dev tool. Thank you very much to the other panelists and organizers, it was a great conversation!
 
 Our friend Mike Anello’s DDEV book was recently featured on a “[Top 11 PHP books of 2019](https://bookauthority.org/books/new-php-books)” list! The next session of Mike’s online DrupalEasy course, [Professional Local Development with DDEV](https://www.drupaleasy.com/ddev), is Wednesday, June 12th.
-
-To receive all our most recent news and developments straight to your inbox, please join our newsletter:
 
 Photo courtesy [Elli Ludwigson](https://ddev.com/author/elli/)

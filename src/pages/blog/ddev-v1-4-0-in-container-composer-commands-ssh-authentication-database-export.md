@@ -4,7 +4,7 @@ pubDate: 2018-11-15
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2018/11/holly-mandarich-460180-unsplash-e1542334215692.jpg
 categories:
-  - DDEV
+  - Announcements
 ---
 
 We’ve just released DDEV v1.4.0! [Install or upgrade now](https://github.com/drud/ddev/releases/tag/v1.4.0). Here are some highlights, and new commands:
@@ -26,8 +26,6 @@ For quicker backups, see also: [ddev snapshot](https://ddev.readthedocs.io/en/la
 ### Community News
 
 Congratulations and thank you! to [Mike Anello](https://twitter.com/ultimike) of DrupalEasy on the release of his new book, “Local Web Development With DDEV Explained” published by OSTraining. Learn how to [employ modern web development workflows using DDEV](https://www.ostraining.com/blog/news/local/).
-
-Sign up for our newsletter for product and release news about our new hosting services:
 
 ---
 

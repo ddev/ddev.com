@@ -4,7 +4,7 @@ pubDate: 2018-02-27
 author: Jeffrey A. McGuire
 featuredImage: https://ddev.com/app/uploads/2018/02/code_sprint_2.jpg
 categories:
-  - DDEV
+  - DevOps
 ---
 
 We want to help you have a successful contribution sprint. Getting newcomers up to speed, and everyone ready to contribute can be tricky, but it is vital to success. To help you get there we’re adding supported platforms for our DDEV Local development environment and we’re developing a Sprint Kit to give you more of the tools you need to run a brilliant sprint.

@@ -4,7 +4,7 @@ pubDate: 2018-08-15
 author: Rick Manelius
 featuredImage: https://ddev.com/app/uploads/2018/08/nasa-63029-unsplash-e1534364618963.jpg
 categories:
-  - DDEV
+  - Announcements
 ---
 
 We’ve just released DDEV v1.1.0! With database snapshotting we’re making it easier for you to avert database deletion disasters, read on for more highlights.

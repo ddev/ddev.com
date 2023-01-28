@@ -4,6 +4,7 @@ pubDate: 2018-04-04
 author: Rick Manelius
 featuredImage: https://ddev.com/app/uploads/2018/04/jaromir-kavan-296728-unsplash.jpg
 categories:
+  - Announcements
   - Community
 ---
 

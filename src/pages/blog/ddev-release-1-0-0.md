@@ -4,7 +4,7 @@ pubDate: 2018-07-20
 author: Rick Manelius
 featuredImage: https://ddev.com/app/uploads/2018/07/jason-leung-479251-unsplash-e1532107303829.jpg
 categories:
-  - DDEV
+  - Announcements
 ---
 
 We’re proud and excited to announce [DDEV 1.0.0](https://github.com/drud/ddev/releases/tag/v1.0.0). It’s been just over one year from our first public release. Releasing version 1.0.0 is a major milestone for us, as it marks a commitment from this point on to [semantic versioning](https://ddev.readthedocs.io/en/latest/#versioning). In this release, we offer you some great new features and a peek at the new DDEV UI to complement the command line interface.

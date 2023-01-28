@@ -4,7 +4,7 @@ pubDate: 2019-01-30
 author: Heather McNamee
 featuredImage: https://ddev.com/app/uploads/2019/01/mike-enerio-87665-unsplash-e1548857780487.jpg
 categories:
-  - DDEV
+  - Guides
 ---
 
 We caught up with Matt Glaman from [Commerce Guys](https://commerceguys.com/), who was first introduced to DDEV at [DrupalCamp Florida](https://www.fldrupal.camp/) 2018\. Since then, he’s been an avid DDEV user, contributing great feedback and writing [blog posts](https://glamanate.com/tags/ddev) to help other DDEV users. He wrote about learning how to use [Xdebug over the command line](https://glamanate.com/blog/xdebug-over-command-line-ddev) and even a whole series on testing, which we’re going to look at in this post.

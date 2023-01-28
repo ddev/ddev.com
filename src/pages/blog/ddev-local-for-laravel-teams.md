@@ -4,7 +4,8 @@ pubDate: 2020-09-24
 author: DDEV
 featuredImage: https://ddev.com/app/uploads/2020/09/Screen-Shot-on-2020-09-24-at-19-18-06-e1600975374486.png
 categories:
-  - DDEV
+  - DevOps
+  - Guides
 ---
 
 _This is a guest post from_ [_Sergey Fayngold_](https://github.com/NBZ4live)_, Head of Web Development at_ [_MY.GAMES_](https://my.games/) _in Amsterdam. Sergey also_ [_contributed to DDEV-Local_](https://github.com/drud/ddev/releases/tag/v1.15.0) _by adding explicit support for Laravel._
@@ -121,5 +122,3 @@ nfs_mount_enabled: false
 ## Conclusion
 
 Today, as Laravel developers, we have a lot of solutions to make our workflow more efficient and enjoyable. Now with DDEV-Local we get one tool that helps us to push our productivity and ensures comfort by committing configuration that runs the same local development environment on every team members’ machine. Get started with your own Laravel project and DDEV using the [quickstart guide](https://ddev.readthedocs.io/en/stable/users/cli-usage/#laravel-quickstart)!
-
-Sign up for the latest news and releases

@@ -4,7 +4,7 @@ pubDate: 2020-08-13
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2020/08/Screen-Shot-2020-08-04-at-5.33.27-PM.png
 categories:
-  - DDEV
+  - Guides
 ---
 
 [DDEV-Local](https://ddev.com/ddev-local/) is a local development environment based on Docker containers that gets you up and working on your project fast. Configuring Docker for local development performance is no longer a dark art when all the benefits are wrapped in a user friendly tool like DDEV-Local. When you’re ready for [additional configuration and customization](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#extending-and-customizing-environments), you wont be starting from scratch with your docker-compose.yaml and can lean on [the expertise of the DDEV community](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation).

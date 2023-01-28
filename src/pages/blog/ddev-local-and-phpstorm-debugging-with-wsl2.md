@@ -4,7 +4,7 @@ pubDate: 2020-06-17
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2020/06/phpstorm_debugging.png
 categories:
-  - DDEV
+  - Guides
 ---
 
 WSL2 with [DDEV-Local](https://ddev.com/ddev-local/) is a wonderful new world for Windows developers. The performance is incredible (on a par with native Linux installations) and the WSL2 command-line environment is fresh and clean.

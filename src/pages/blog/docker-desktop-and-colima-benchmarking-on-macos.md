@@ -4,8 +4,7 @@ pubDate: 2022-03-23
 author: Randy Fay
 featuredImage: undefined
 categories:
-  - DDEV
-  - Uncategorized
+  - Performance
 ---
 
 There’s been lots of excitement about the new docker-based performance options on macOS with DDEV lately. In DDEV v1.19 [Colima](https://github.com/abiosoft/colima) is a new option, and Colima with Mutagen enabled is screaming fast. But Docker Desktop has just released an experimental VirtioFS filesystem mounting system that is much faster than previous iterations. So I was interested in seeing how all these things compare.

@@ -4,7 +4,7 @@ pubDate: 2018-04-26
 author: Heather McNamee
 featuredImage: https://ddev.com/app/uploads/2018/04/developers-playing-in-sandboxes-e1524554749706.jpg
 categories:
-  - DDEV
+  - DevOps
 ---
 
 Developers are constantly trying new things, learning new skills and techniques. A lot of learning means trying things out, playing, and making mistakes. And there’s a lot to learn if you’re using open source CMSs with hundreds of potentially useful extensions, modules, or plugins to experiment with. In this post we’ll look at how using [DDEV-Local](https://ddev.ddev.com) can help you learn and experiment, using “sandboxed” environments where you can isolate your play … (learning!) … from your work.

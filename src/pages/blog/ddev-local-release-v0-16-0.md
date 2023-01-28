@@ -4,7 +4,7 @@ pubDate: 2018-03-29
 author: Rick Manelius
 featuredImage: https://ddev.com/app/uploads/2018/03/volcano.jpg
 categories:
-  - DDEV
+  - Announcements
 ---
 
 ![](https://ddev.com/app/uploads/2018/03/volcano-300x141.jpg)Announcing [DDEV-Local Release v0.16.0](https://github.com/drud/ddev/releases/tag/v0.16.0)! Faster default performance and a community contribution that makes users’ first-time setup smoother.

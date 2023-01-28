@@ -4,7 +4,7 @@ pubDate: 2022-05-27
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2022/05/DDEV_Platformsh.jpg
 categories:
-  - DDEV
+  - Announcements
 ---
 
 Although many of you know this, I wanted to make a formal announcement of some great news. _[Platform.sh](https://platform.sh) has stepped up to become a lead sponsor of the [DDEV open-source project](https://github.com/drud/ddev)!_

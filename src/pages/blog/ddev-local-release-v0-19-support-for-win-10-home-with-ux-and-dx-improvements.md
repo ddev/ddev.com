@@ -4,7 +4,7 @@ pubDate: 2018-05-31
 author: Rick Manelius
 featuredImage: https://ddev.com/app/uploads/2018/05/danilo-batista-334883-unsplash.jpg
 categories:
-  - DDEV
+  - Announcements
 ---
 
 We’ve just released [DDEV-Local v0.19.0](https://github.com/drud/ddev/releases/tag/v0.19.0)! This release has several user experience (UX) and developer experience (DX) improvements we think you’ll enjoy.

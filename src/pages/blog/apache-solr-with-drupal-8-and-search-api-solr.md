@@ -4,7 +4,7 @@ pubDate: 2019-12-17
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2019/12/Screenshot-2019-12-12-at-11.11.13-AM-e1611331510843.png
 categories:
-  - DDEV
+  - Guides
 ---
 
 [DDEV-Local’s](http://ddev.com/ddev-local) first official third-party service was Apache Solr, and lots of people have used it successfully over the years. But I never actually took the time to explore what was going on, and to support people who are having trouble it’s best if you actually understand the context 🙂 Since I had to do a deep dive into [DDEV’s Solr setup](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/#apache-solr) recently, here are some of the things I learned. I was mostly focused on Drupal 8, but many of the things I learned are applicable to any DDEV (or other Docker-based) Solr environment.

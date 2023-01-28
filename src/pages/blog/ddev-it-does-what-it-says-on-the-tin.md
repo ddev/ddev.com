@@ -4,7 +4,7 @@ pubDate: 2018-04-24
 author: Jeffrey A. McGuire
 featuredImage: https://ddev.com/app/uploads/2018/04/alex-burrows-drupal-mentoring.jpg
 categories:
-  - DDEV
+  - DevOps
 ---
 
 ![](https://ddev.com/app/uploads/2018/04/alex-burrows-300x300.jpg)

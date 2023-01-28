@@ -4,7 +4,7 @@ pubDate: 2020-08-27
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2020/08/Screen-Shot-2020-08-04-at-5.27.30-PM-1.png
 categories:
-  - DDEV
+  - Guides
 ---
 
 The days of print-debugging are long behind us! [Xdebug](https://xdebug.org/) and PHP IDEs have made that approach unwieldy, but often the configuration between your IDE, PHP, webserver, and Docker is challenging and fragile. Enter our open source local development environment, [DDEV-Local](https://github.com/drud/ddev).
