@@ -6,7 +6,12 @@ export interface Props {
   post: object
 }
 
-import { getAuthorUrl, getAuthorImage, formatDate } from "../lib/api"
+import {
+  getAuthorUrl,
+  getAuthorImage,
+  formatDate,
+  getCategoryUrl,
+} from "../lib/api"
 
 const { post } = Astro.props
 
@@ -29,7 +34,7 @@ const firstCategory = post.frontmatter.categories.length
   <div class="flex-1 bg-gray-100 p-6 flex flex-col justify-between">
     <div class="flex-1">
       <p class="text-sm font-mono text-indigo-600">
-        <a href={firstCategory} class="hover:underline">
+        <a href={getCategoryUrl(firstCategory)} class="hover:underline">
           {firstCategory}
         </a>
       </p>
