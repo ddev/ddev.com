@@ -2,7 +2,7 @@
 title: "Using DDEV to Teach Open Source Web Development"
 pubDate: 2019-02-26
 author: Heather McNamee
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2019/02/jantine-doornbos-711322-unsplash-e1551235015756.jpg
+featuredImage: https://ddev.com/app/uploads/2019/02/jantine-doornbos-711322-unsplash-e1551235015756.jpg
 categories:
   - DDEV
 ---

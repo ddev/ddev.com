@@ -2,7 +2,7 @@
 title: "Announcing: New online course – professionalize your web dev workflow"
 pubDate: 2018-07-09
 author: Heather McNamee
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2018/06/alejandro-escamilla-10-unsplash.jpg
+featuredImage: https://ddev.com/app/uploads/2018/06/alejandro-escamilla-10-unsplash.jpg
 categories:
   - DDEV
 ---
@@ -11,9 +11,9 @@ Learn how to use DDEV to streamline your web dev workflow in DrupalEasy’s new 
 
 [Enroll now for $75](https://www.drupaleasy.com/ddev)
 
-* July 18 (1-3pm EDT; 7-9pm CET)
-* August 22 (10am-noon EDT; 4-6pm CET)
-* September 19 (9-11am EDT; 3-5pm CET)
+- July 18 (1-3pm EDT; 7-9pm CET)
+- August 22 (10am-noon EDT; 4-6pm CET)
+- September 19 (9-11am EDT; 3-5pm CET)
 
 ### About the course
 
@@ -35,11 +35,11 @@ Mike Anello has been teaching in-person and online courses for years. This forma
 
 **What will you learn?**
 
-* DDEV-Local – installation and updating.
-* Getting existing projects running in DDEV-Local.
-* Using DDEV-Local for everyday tasks.
-* Deployment and hosting integration.
-* Tips and tricks, and getting help.
+- DDEV-Local – installation and updating.
+- Getting existing projects running in DDEV-Local.
+- Using DDEV-Local for everyday tasks.
+- Deployment and hosting integration.
+- Tips and tricks, and getting help.
 
 Requirements: The requirements for the class are the same as the for using DDEV. See [DDEV Docs: System Requirements](https://ddev.readthedocs.io/en/latest/#system-requirements).
 

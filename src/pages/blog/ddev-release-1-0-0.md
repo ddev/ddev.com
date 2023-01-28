@@ -2,7 +2,7 @@
 title: "DDEV Release 1.0.0! FQDNs, Improved Settings Management, Multi-Project Commands"
 pubDate: 2018-07-20
 author: Rick Manelius
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2018/07/jason-leung-479251-unsplash-e1532107303829.jpg
+featuredImage: https://ddev.com/app/uploads/2018/07/jason-leung-479251-unsplash-e1532107303829.jpg
 categories:
   - DDEV
 ---

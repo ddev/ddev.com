@@ -2,7 +2,7 @@
 title: "Getting started with DDEV and Composer"
 pubDate: 2018-11-29
 author: Randy Fay
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2018/11/marius-masalar-410695-unsplash-e1543521725507.jpg
+featuredImage: https://ddev.com/app/uploads/2018/11/marius-masalar-410695-unsplash-e1543521725507.jpg
 categories:
   - DDEV
 ---
@@ -37,10 +37,10 @@ Our recommended [quickstart](https://ddev.readthedocs.io/en/latest/users/cli-usa
 
 Most of the Composer features in the command line ddev app are direct analogs of Composer usage. You can prepend a Composer command with `ddev` and it works the same as the [commands in Composer](https://getcomposer.org/doc/03-cli.md). That includes
 
-* `ddev composer require`
-* `ddev composer install`
-* `ddev composer update`
-* And so forth!
+- `ddev composer require`
+- `ddev composer install`
+- `ddev composer update`
+- And so forth!
 
 The one thing that’s different is the command to create a project. If you’re familiar with Composer already, you know the [command to create a project](https://getcomposer.org/doc/03-cli.md#create-project) is this:
 
@@ -76,9 +76,9 @@ You can use DDEV with any PHP CMS or framework. We test DDEV on—and offer [Qui
 
 Also, check out these articles:
 
-* How to set up a [Docker-based development environment on macOS](https://ddev.com/ddev-local/ddev-local-scratch-macos/).
-* [Debugging Docker on Windows, Mac, and Linux](https://ddev.com/ddev-local/debugging-docker-on-windows-mac-and-linux/)
-* [DDEV v1.4 release](https://ddev.com/ddev-local/ddev-v1-4-0-in-container-composer-commands-ssh-authentication-database-export/)
+- How to set up a [Docker-based development environment on macOS](https://ddev.com/ddev-local/ddev-local-scratch-macos/).
+- [Debugging Docker on Windows, Mac, and Linux](https://ddev.com/ddev-local/debugging-docker-on-windows-mac-and-linux/)
+- [DDEV v1.4 release](https://ddev.com/ddev-local/ddev-v1-4-0-in-container-composer-commands-ssh-authentication-database-export/)
 
 [Download DDEV](https://github.com/drud/ddev)
 

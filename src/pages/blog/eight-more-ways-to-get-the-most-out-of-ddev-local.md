@@ -2,7 +2,7 @@
 title: "Eight (more) ways to get the most out of DDEV-Local"
 pubDate: 2018-12-06
 author: Randy Fay
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2018/12/marvin-ronsdorf-196913-unsplash-e1544104467254.jpg
+featuredImage: https://ddev.com/app/uploads/2018/12/marvin-ronsdorf-196913-unsplash-e1544104467254.jpg
 categories:
   - DDEV
 ---

@@ -2,7 +2,7 @@
 title: "How to setup a mac development environment with DDEV-Local"
 pubDate: 2018-06-14
 author: Randy Fay
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2018/05/maxime-le-conte-des-floris-151374-unsplash-e1526982174493.jpg
+featuredImage: https://ddev.com/app/uploads/2018/05/maxime-le-conte-des-floris-151374-unsplash-e1526982174493.jpg
 categories:
   - DDEV
 ---
@@ -43,9 +43,9 @@ In a typical web development workflow, most of the time you’re working in a re
 
 Then you’ll answer 3 questions about the project. DDEV will make a best-guess, and usually, you can just keep the defaults.
 
-* **Project name** – DDEV will base the name on the current directory name.
-* **Docroot** – Again, DDEV will make a guess from the docroot you’re currently in.
-* **Project type** – DDEV will auto-detect if you’re using a CMS, or use PHP if you’re building a custom application.
+- **Project name** – DDEV will base the name on the current directory name.
+- **Docroot** – Again, DDEV will make a guess from the docroot you’re currently in.
+- **Project type** – DDEV will auto-detect if you’re using a CMS, or use PHP if you’re building a custom application.
 
 The first time you configure a project, it will download the containers you need. In the future, it will come up even faster.
 
@@ -59,18 +59,18 @@ Otherwise, you might be loading an existing project, and you’ll want to [impor
 
 These are some good commands to know but check ddev -h to see the complete list.
 
-* `ddev list` to see what projects you have running.
-* `ddev describe` to get information about the project.
-* `ddev ssh` to SSH into the container.
-* `ddev remove` to throw away the container but not the database. Pick up your project quickly next time.
+- `ddev list` to see what projects you have running.
+- `ddev describe` to get information about the project.
+- `ddev ssh` to SSH into the container.
+- `ddev remove` to throw away the container but not the database. Pick up your project quickly next time.
 
 ### Need some help?
 
 We hope the video helps you set up your new Mac web development environment set up. If you get stuck, we’re happy to help.
 
-* [Add questions tagged “ddev” to Stack Overflow](https://stackoverflow.com/questions/tagged/ddev).
-* Join the #ddev channel in [Drupal Slack](https://drupal.slack.com/messages/C5TQRQZRR) and [TYPO3 Slack](https://typo3.slack.com/messages/C8TRNQ601) for community support.
-* [Tweet to @drud](https://twitter.com/intent/tweet?screen%5Fname=drud&ref%5Fsrc=twsrc%5Etfw)
+- [Add questions tagged “ddev” to Stack Overflow](https://stackoverflow.com/questions/tagged/ddev).
+- Join the #ddev channel in [Drupal Slack](https://drupal.slack.com/messages/C5TQRQZRR) and [TYPO3 Slack](https://typo3.slack.com/messages/C8TRNQ601) for community support.
+- [Tweet to @drud](https://twitter.com/intent/tweet?screen%5Fname=drud&ref%5Fsrc=twsrc%5Etfw)
 
 ---
 

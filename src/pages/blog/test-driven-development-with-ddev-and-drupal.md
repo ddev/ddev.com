@@ -2,7 +2,7 @@
 title: "Matt Glaman’s Guide to Test-Driven Development with DDEV and Drupal"
 pubDate: 2019-01-30
 author: Heather McNamee
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2019/01/mike-enerio-87665-unsplash-e1548857780487.jpg
+featuredImage: https://ddev.com/app/uploads/2019/01/mike-enerio-87665-unsplash-e1548857780487.jpg
 categories:
   - DDEV
 ---

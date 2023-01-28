@@ -2,7 +2,7 @@
 title: "DDEV-Local for Laravel teams"
 pubDate: 2020-09-24
 author: DDEV
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2020/09/Screen-Shot-on-2020-09-24-at-19-18-06-e1600975374486.png
+featuredImage: https://ddev.com/app/uploads/2020/09/Screen-Shot-on-2020-09-24-at-19-18-06-e1600975374486.png
 categories:
   - DDEV
 ---
@@ -25,13 +25,13 @@ Even if everything does run smoothly for a long time, you can end up with the �
 
 ### How does DDEV solve the problem?
 
-As hinted above, I was dealing with a lot of different “tools of choice” across my team to help customize them to fit our projects’ requirements. We had team members who used Laradock, others (including myself) were using Valet, and some even used plain Nginx with custom configs provided by other team members. Sometimes it was hard to help everyone solve problems specific to their tool (some I described earlier). 
+As hinted above, I was dealing with a lot of different “tools of choice” across my team to help customize them to fit our projects’ requirements. We had team members who used Laradock, others (including myself) were using Valet, and some even used plain Nginx with custom configs provided by other team members. Sometimes it was hard to help everyone solve problems specific to their tool (some I described earlier).
 
 Meanwhile, I was searching for one solution which would help to unify the experience by providing all the features they need, but still be very easy to switch to (regardless of hardware and OS) and of course easy for new team members to get up and running. And at some point I found [DDEV](https://github.com/drud/ddev) and set myself the final goal:
 
 > Cloning the project should be (almost) enough for getting up and running regardless of the skills of the team member.
 
-[DDEV-Local](https://ddev.readthedocs.io/en/stable/) combines a lot of the benefits of the other Laravel LDEs into one solution. In the context of a team, DDEV can bring additional benefits. It’s easy to learn for the members who set it up and customize it. And it’s super easy to use for the rest of the team to run multiple projects on any OS. 
+[DDEV-Local](https://ddev.readthedocs.io/en/stable/) combines a lot of the benefits of the other Laravel LDEs into one solution. In the context of a team, DDEV can bring additional benefits. It’s easy to learn for the members who set it up and customize it. And it’s super easy to use for the rest of the team to run multiple projects on any OS.
 
 After initial setup and configuration of the project, you can commit the DDEV configuration in your project repository. The next team member only need clone the repo and run `ddev start`, `ddev composer install` and `ddev exec artisan` (to run migrations, etc) inside of the project (or you can simply define a custom command that will replace them). Every team member can override parts of the config (like enabling NFS support or Xdebug) without committing it. The time between cloning and starting work on the code is reduced to almost nothing.
 

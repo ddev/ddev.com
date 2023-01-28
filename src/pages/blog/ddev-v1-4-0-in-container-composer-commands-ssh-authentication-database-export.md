@@ -2,7 +2,7 @@
 title: "DDEV v1.4.0 – In-container composer commands, SSH authentication, database export"
 pubDate: 2018-11-15
 author: Randy Fay
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2018/11/holly-mandarich-460180-unsplash-e1542334215692.jpg
+featuredImage: https://ddev.com/app/uploads/2018/11/holly-mandarich-460180-unsplash-e1542334215692.jpg
 categories:
   - DDEV
 ---

@@ -2,14 +2,14 @@
 title: "DDEV-Local Web Container Customization in v1.8.0"
 pubDate: 2019-06-03
 author: Randy Fay
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2019/05/Screen-Shot-2019-05-29-at-2.21.12-PM.png
+featuredImage: https://ddev.com/app/uploads/2019/05/Screen-Shot-2019-05-29-at-2.21.12-PM.png
 categories:
   - DDEV
 ---
 
 There’s never any end to the number of things you might need to do with the web container to make it “just right” for your project. In [DDEV-Local v1.8.0](https://github.com/drud/ddev/releases/tag/v1.8.0) you can do that much more easily than in the past. Here are a couple of examples of how you might make these modifications, and a screencast with a walkthrough:
 
-**Simple: Add webimage\_extra\_packages to config.yaml**
+**Simple: Add webimage_extra_packages to config.yaml**
 
 If you need extra packages, just find out what they are (for Debian) and add them to your .ddev/config.yaml, like
 

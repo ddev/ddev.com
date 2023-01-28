@@ -2,7 +2,7 @@
 title: "DDEV-Local Trusted HTTPS Certificates"
 pubDate: 2019-05-23
 author: Randy Fay
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2019/05/Home___umami_8_7_1.png
+featuredImage: https://ddev.com/app/uploads/2019/05/Home___umami_8_7_1.png
 categories:
   - DDEV
 ---
@@ -13,10 +13,10 @@ With [DDEV-Local](http://github.com/drud/ddev) you can use the https version of 
 
 HTTPS with DDEV-Local now works…
 
-* On macOS, Windows, and Linux
-* On Firefox, Chrome, Chromium, Safari
-* With curl on the host (macOS and Linux, not Windows)
-* With curl inside the web container
+- On macOS, Windows, and Linux
+- On Firefox, Chrome, Chromium, Safari
+- With curl on the host (macOS and Linux, not Windows)
+- With curl inside the web container
 
 There is a tiny bit of one-time setup to get your OS and browser to trust the root certificate authority that DDEV-Local uses. The 3-minute screencast below shows how installation and setup works on all 3 platforms.
 

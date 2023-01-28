@@ -2,7 +2,7 @@
 title: "Web development best practices: First time, every time."
 pubDate: 2018-04-05
 author: Heather McNamee
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2018/04/technology-3249920_1920.jpg
+featuredImage: https://ddev.com/app/uploads/2018/04/technology-3249920_1920.jpg
 categories:
   - DDEV
 ---
@@ -29,11 +29,11 @@ You can create web development environments with DDEV-Local, and we support popu
 
 DDEV-Local comes with several [useful developer tools](https://ddev.readthedocs.io/en/latest/users/developer-tools/), including a web server, a database server, debugging tools, command line tools, and dependency managers. These tools can be accessed for single commands using `ddev exec <command>` or `ddev ssh` for an interactive bash session.
 
-* MySQL Client (mysql) – Command-line interface for interacting with MySQL.
-* [Composer](https://getcomposer.org/) – Dependency Manager for PHP.
-* [Drush](http://www.drush.org/) – Command-line shell and Unix scripting interface for Drupal.
-* [WP-CLI](http://wp-cli.org/) – Command-line tools for managing WordPress installations.
-* MailHog mail catcher for email capture and review.
+- MySQL Client (mysql) – Command-line interface for interacting with MySQL.
+- [Composer](https://getcomposer.org/) – Dependency Manager for PHP.
+- [Drush](http://www.drush.org/) – Command-line shell and Unix scripting interface for Drupal.
+- [WP-CLI](http://wp-cli.org/) – Command-line tools for managing WordPress installations.
+- MailHog mail catcher for email capture and review.
 
 DDEV also makes it easier to work with your tools. For example, you can launch Sequel Pro right from the command line with `ddev sequelpro` and connect right to that project’s database. [Sequel Pro](https://www.sequelpro.com/) is a Mac database management application for working with MySQL & MariaDB databases. In a comparison of [Docker-based local Drupal development environments](https://www.drupaleasy.com/blogs/ultimike/2018/03/ddev-docksal-and-lando-comparison), Mike Anello of Drupal Easy said “I know it’s a trivial thing, but I love it so much.”
 
@@ -47,9 +47,9 @@ Prepare and install
 
 1. Prepare – Make sure your computer is ready for DDEV-Local, check, [install and/orr update the system requirements](https://ddev.readthedocs.io/en/latest/#system-requirements).
 2. [Install – Install DDEV-Local](https://ddev.readthedocs.io/en/latest/#installation).
-3. Set up your project for the first time.  
-   1. Check out your existing site to a local directory. You can follow the examples for the CMS you’re working with in the [Quickstart Guides](https://ddev.readthedocs.io/en/latest/users/cli-usage/#quickstart-guides).  
-   2. Set up a project for the first time with `ddev config`. With this one-time configuration step you add the project name, docroot, and project type.  
+3. Set up your project for the first time.
+   1. Check out your existing site to a local directory. You can follow the examples for the CMS you’re working with in the [Quickstart Guides](https://ddev.readthedocs.io/en/latest/users/cli-usage/#quickstart-guides).
+   2. Set up a project for the first time with `ddev config`. With this one-time configuration step you add the project name, docroot, and project type.
    3. If you’re already running a webserver on port 80, you’ll get an error message. Follow steps to [resolve the port conflict](https://ddev.readthedocs.io/en/latest/users/troubleshooting/#webserver-ports-are-already-occupied-by-another-webserver).
 
 ## Using DDEV-Local everyday

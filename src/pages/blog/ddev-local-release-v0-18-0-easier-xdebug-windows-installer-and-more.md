@@ -2,7 +2,7 @@
 title: "DDEV-Local Release v0.18.0 – Easier XDebug, Windows installer and more"
 pubDate: 2018-05-10
 author: Rick Manelius
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2018/05/woctech-chat-windows-e1525985003469.jpg
+featuredImage: https://ddev.com/app/uploads/2018/05/woctech-chat-windows-e1525985003469.jpg
 categories:
   - DDEV
 ---
@@ -38,12 +38,12 @@ We’re one step closer to solving a problem with a trusted hosts pattern mismat
 This release includes a variety of bug fixes as well. Check out the [release notes](https://github.com/drud/ddev/releases/tag/v0.18.0) for details. We want to say thank you to everyone who reports bugs, and tests the releases. The gratitude we get back is much appreciated!
 
 > The team at [@drud](https://twitter.com/drud?ref%5Fsrc=twsrc%5Etfw) is really on top of things – I opened a DDEV issue yesterday and there was a fix and commit for me to test this morning! Thanks, [@randyfay](https://twitter.com/randyfay?ref%5Fsrc=twsrc%5Etfw)!
-> 
+>
 > — ultimike (@ultimike) [May 9, 2018](https://twitter.com/ultimike/status/994216144046379008?ref%5Fsrc=twsrc%5Etfw)
 
 ## Update today!
 
-To update DDEV-Local follow the steps for [installing and updating](https://ddev.readthedocs.io/en/latest/#installation) for your operating system. We’d love to hear your feedback [in the GitHub issue queue](https://github.com/drud/ddev/issues). 
+To update DDEV-Local follow the steps for [installing and updating](https://ddev.readthedocs.io/en/latest/#installation) for your operating system. We’d love to hear your feedback [in the GitHub issue queue](https://github.com/drud/ddev/issues).
 
 Sign up for the latest news and releases
 

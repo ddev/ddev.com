@@ -2,7 +2,7 @@
 title: "DDEV: An alternative to MAMP for a PHP dev environment"
 pubDate: 2018-07-03
 author: Elli Ludwigson
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2018/07/Fils_électriques.jpg
+featuredImage: https://ddev.com/app/uploads/2018/07/Fils_électriques.jpg
 categories:
   - DDEV
 ---
@@ -11,12 +11,12 @@ You need a local web server to build and maintain a website. Simple. The old sta
 
 To help you evaluate what’s best for you, this second post in our [series on local development environments](https://ddev.com/ddev-local/docker-containers-vs-vms-for-quick-consistent-local-dev/) will walk through using MAMP or DDEV when:
 
-* [Planning your project](#workflow)
-* [Getting started with installation and configuration](#installation)
-* [Development and daily work](#development)
-* [Testing and troubleshooting](#testing)
-* [Sharing and collaboration](#collaboration)
-* [Deployment and project switching](#deployment)
+- [Planning your project](#workflow)
+- [Getting started with installation and configuration](#installation)
+- [Development and daily work](#development)
+- [Testing and troubleshooting](#testing)
+- [Sharing and collaboration](#collaboration)
+- [Deployment and project switching](#deployment)
 
 ## Comparing the tools
 
@@ -84,7 +84,7 @@ To get all the configuration information about your current DDEV project, just r
 
 DDEV manages the hosts file for you, making your local project URLs easier to access than manually configuring virtual hosts in MAMP or paying for MAMP Pro.
 
-If you need to [specify a PHP version in DDEV-Local](https://ddev.readthedocs.io/en/latest/users/extend/customization-extendibility/#changing-php-version), just visit the .ddev/config.yaml file in your project directory where php\_version can be set. You can also add configuration specifications for NGINIX, MySQL, services, environment variables and more by adding the appropriate files to the .ddev directory for your project.
+If you need to [specify a PHP version in DDEV-Local](https://ddev.readthedocs.io/en/latest/users/extend/customization-extendibility/#changing-php-version), just visit the .ddev/config.yaml file in your project directory where php_version can be set. You can also add configuration specifications for NGINIX, MySQL, services, environment variables and more by adding the appropriate files to the .ddev directory for your project.
 
 [Mike Anello talked about switching to DDEV](https://ddev.com/ddev-local/choosing-an-ideal-web-development-environment/) from MAMP Pro in his guest post on our blog: “In the past, MAMP Pro has been my go-to environment. It provided me with a relatively easy way to get most of what I needed: the ability to create virtual hosts and the ability to change between several versions of PHP. ” DDEV-Local gave him comparable features, while being easier, faster, and more portable.
 
@@ -144,9 +144,9 @@ You might be wondering how all this containerization fits with your Git workflow
 
 Which tool is right for you? That depends on your budget and project scope.
 
-* If you have a single project you maintain independently with little need for testing, either MAMP or DDEV would be right for you. DDEV gives you scope to grow.
-* If you need more fine-tuned environment configurations for multiple projects, MAMP Pro or DDEV will fit your needs.
-* If you need to be able to collaborate quickly and accurately with team members or contributors and speed your dev-to-deploy workflow on multiple hosts, DDEV is right for you.
+- If you have a single project you maintain independently with little need for testing, either MAMP or DDEV would be right for you. DDEV gives you scope to grow.
+- If you need more fine-tuned environment configurations for multiple projects, MAMP Pro or DDEV will fit your needs.
+- If you need to be able to collaborate quickly and accurately with team members or contributors and speed your dev-to-deploy workflow on multiple hosts, DDEV is right for you.
 
 Once you’re working on multiple projects and collaborating with multiple people your needs change, and the benefits of a Docker-based solution are more valuable.
 

@@ -2,7 +2,7 @@
 title: "Customizing DDEV-Local images with a custom Dockerfile"
 pubDate: 2020-04-07
 author: Randy Fay
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2020/04/d8composer____workspace_d8composer__-______ddev_web-build_Dockerfile-2.png
+featuredImage: https://ddev.com/app/uploads/2020/04/d8composer____workspace_d8composer__-______ddev_web-build_Dockerfile-2.png
 categories:
   - DDEV
 ---
@@ -32,15 +32,15 @@ RUN npm install --global gulp-cli`
 
 Then the `npm install` to install gulp-cli will be done (once) at build time.
 
-_**Note that the default to BASE\_IMAGE is overridden by ddev at image build time, so does not have to be maintained as versions of ddev-webserver change**_, so “drud/ddev-webserver:v1.13.1” is just a filler.
+_**Note that the default to BASE_IMAGE is overridden by ddev at image build time, so does not have to be maintained as versions of ddev-webserver change**_, so “drud/ddev-webserver:v1.13.1” is just a filler.
 
 ### Modifying configuration files
 
 If you want to add files or override configuration files, it’s easy enough to do. For example, in this[ Stack Overflow question](https://stackoverflow.com/questions/60162842/how-can-i-add-basic-authentication-to-the-mailhog-service-in-ddev-local), a user wanted to put basic authentication in front of the MailHog configuration. The easiest way to do this is to override the /etc/supervisor/conf.d/mailhog.conf. So as that answer suggests:
 
-* Put the new mailhog.conf and mailhog-auth.txt into the `.ddev/web-build` directory.
-* Add a Dockerfile to .ddev/web-build that uses the Docker build ADD command to put them into place:  
-`ARG BASE_IMAGE  
+- Put the new mailhog.conf and mailhog-auth.txt into the `.ddev/web-build` directory.
+- Add a Dockerfile to .ddev/web-build that uses the Docker build ADD command to put them into place:  
+  `ARG BASE_IMAGE  
 FROM $BASE_IMAGE ADD mailhog-auth.txt /etc  
 ADD mailhog.conf /etc/supervisor/conf.d`
 
@@ -64,10 +64,14 @@ Some PHP packages aren’t available as Debian packages, so this [Stack Overflow
 `ARG BASE_IMAGE  
 FROM $BASE_IMAGE  
 ENV PHP_VERSION=7.3  
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -o Dpkg::Options::="--force-confnew" --no-install-recommends --no-install-suggests gcc make autoconf libc-dev pkg-config php-pear php${PHP_VERSION}-dev libmcrypt-dev  
-# The "echo" below just forces accepting the "automatic" configuration, the same as hitting <RETURN>  
-RUN echo | sudo pecl install mcrypt  
-# Because php7.1-mcrypt is already installed in web container we can just copy its mcrypt.ini  
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -o Dpkg::Options::="--force-confnew" --no-install-recommends --no-install-suggests gcc make autoconf libc-dev pkg-config php-pear php${PHP_VERSION}-dev libmcrypt-dev
+
+# The "echo" below just forces accepting the "automatic" configuration, the same as hitting <RETURN>
+
+RUN echo | sudo pecl install mcrypt
+
+# Because php7.1-mcrypt is already installed in web container we can just copy its mcrypt.ini
+
 RUN cp /etc/php/7.1/mods-available/mcrypt.ini /etc/php/${PHP_VERSION}/mods-available/ && phpenmod mcrypt`
 
 ## Join the conversation!

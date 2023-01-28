@@ -2,7 +2,7 @@
 title: "Why standardization is important to teaching web development"
 pubDate: 2021-01-28
 author: Elli Ludwigson
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2021/01/Hilmar-DrupalCon-Amsterdam-by-Illek-Petr.jpg
+featuredImage: https://ddev.com/app/uploads/2021/01/Hilmar-DrupalCon-Amsterdam-by-Illek-Petr.jpg
 categories:
   - Community
   - DDEV
@@ -16,7 +16,7 @@ How often do you get to chat with a viking about web development? After [DrupalC
 
 Hilmar Hallbjörnsson has been a friendly face at Drupal events around the world for so many years we’re not sure where or when exactly we first met. Drupal GovCon? Drupal Europe? In a community fond of headwear, [Hilmar](https://www.drupal.org/u/drupalviking), aka [drupalviking](https://twitter.com/drupalviking), stands out in various horned helmets at events. He is currently living and teaching in Iceland and recently taught a web development course at [Reykjavík University](https://en.ru.is/).
 
-### How long have you been working with Drupal? 
+### How long have you been working with Drupal?
 
 I’ve been a Drupal developer for nine years now, starting back in 2011\. Before that I had written three or four CMSs on my own. After I got to know Drupal, I started crying because I realized that I would never-ever-ever have to write authentication methods again. So it was love at first sight, definitely. In the nine years since it’s just kept growing and maturing in many ways.
 
@@ -32,11 +32,11 @@ We started with Drupal, had two projects, essays, a verbal exam, and students ha
 
 ### What tools, software, guides do you offer web development students?
 
-For local development, I used [DDEV](https://github.com/drud/ddev) exclusively. Connecting and setting up everything with DDEV — that was the second time I literally cried. I used to have problems down the ying-yang; I had written five or six huge blog posts just for my own reference on setting up my work computer, to get Apache running, MySQL running, trying to configure SSL (which never worked right), trying to get the debugger running. It was a headache and a half. Then maybe a year or two years later, when I had to do it all again, everything was outdated. 
+For local development, I used [DDEV](https://github.com/drud/ddev) exclusively. Connecting and setting up everything with DDEV — that was the second time I literally cried. I used to have problems down the ying-yang; I had written five or six huge blog posts just for my own reference on setting up my work computer, to get Apache running, MySQL running, trying to configure SSL (which never worked right), trying to get the debugger running. It was a headache and a half. Then maybe a year or two years later, when I had to do it all again, everything was outdated.
 
-Almost the whole time that I’ve been working I’ve been a one man team. When you are in a bigger company you would have the DevOps expert who understands everything about Docker, and everything about what’s happening under the hood. I was always trying to understand what exactly Docker was doing at the same time as I needed to be building the site, managing clients, and umpteen other task. 
+Almost the whole time that I’ve been working I’ve been a one man team. When you are in a bigger company you would have the DevOps expert who understands everything about Docker, and everything about what’s happening under the hood. I was always trying to understand what exactly Docker was doing at the same time as I needed to be building the site, managing clients, and umpteen other task.
 
-Then I got DDEV, and being able to say \`brew install ddev\`, then just the \`ddev config\`, enter, enter, enter, then \`ddev start\`. My site is up and running! Oh, I need more memory for Maria DB? Okay, no problem, tikatikatak, \`ddev restart\`, up and running. So being able to both use it professionally and to start students on a project was great. 
+Then I got DDEV, and being able to say \`brew install ddev\`, then just the \`ddev config\`, enter, enter, enter, then \`ddev start\`. My site is up and running! Oh, I need more memory for Maria DB? Okay, no problem, tikatikatak, \`ddev restart\`, up and running. So being able to both use it professionally and to start students on a project was great.
 
 I did record a few lectures because we had a very short timeframe of three weeks so there wasn’t time to send them off to research on their own as much. I also refer students to Drupalize.me as supplementary material to the lectures.
 
@@ -48,7 +48,7 @@ As a convert from Windows, I’ve been very happy with how quick and easy gettin
 
 There is a little bit of DDEV documentation that could improve. I was trying to use Drupal Console but I couldn’t find how to initiate the Drupal Console with the command line as you would with Drush, eg \`ddev drush\`. _ed note: There’s now an_ [_answer for this on StackOverflow_](https://stackoverflow.com/questions/65400086/drupal-console-with-ddev)_, and_ [_any custom command can be added to DDEV_](https://ddev.readthedocs.io/en/stable/users/extend/custom-commands/)_._
 
-I also noticed if I was trying to debug with drush commands, [xdebug, and phpstorm](https://ddev.com/ddev-local/ddev-local-phpstorm-and-xdebug-debugging/), I had to [ssh into the web container](https://ddev.readthedocs.io/en/stable/users/cli-usage/#ssh-into-containers) and then run the commands, going into the vendor directory. It was just an unfamiliar sequence of things I had to do in order to get to the right place and run the right commands. 
+I also noticed if I was trying to debug with drush commands, [xdebug, and phpstorm](https://ddev.com/ddev-local/ddev-local-phpstorm-and-xdebug-debugging/), I had to [ssh into the web container](https://ddev.readthedocs.io/en/stable/users/cli-usage/#ssh-into-containers) and then run the commands, going into the vendor directory. It was just an unfamiliar sequence of things I had to do in order to get to the right place and run the right commands.
 
 In general, the documentation is good, but it’s very technical. It would be nice to have more visual guides rather than just text. I experience that a lot in my hobby, board games, reading and editing a lot of rule books, so I know that a user often wants a more visual explanation. It’s easy to skip over a line of text and miss something very essential. For a lot of people who are a bit less used to technical documentation it can be a hurdle to get started.
 
@@ -68,7 +68,7 @@ I’ve also done some custom CMSs with very strange customer requests. Probably 
 
 Before I graduated back in 2012, I was a teacher’s assistant. For my last year, I was the TA for people not living close to Reykjavík who had online meetings instead of in person, so virtual learning is not new to me. My professor was always saying we needed to teach more PHP, all these CMSs are based on it, and that idea just got more focused on Drupal over time.
 
-At Reykjavík University, we have a special project to culminate our studies where students work on something outside of the school, in the “real world,” instead of writing a thesis. I was working as a project manager for the Music Association of Iceland which had a very old system that needed new software, database migration, everything. I approached Reykjavík University with that project, and we were lucky enough to get a great great team of five people, four of whom were women. So, when the school project was finished we were about 85% ready to actually deploy, and that code has actually been up and running since. Very proud of that. 
+At Reykjavík University, we have a special project to culminate our studies where students work on something outside of the school, in the “real world,” instead of writing a thesis. I was working as a project manager for the Music Association of Iceland which had a very old system that needed new software, database migration, everything. I approached Reykjavík University with that project, and we were lucky enough to get a great great team of five people, four of whom were women. So, when the school project was finished we were about 85% ready to actually deploy, and that code has actually been up and running since. Very proud of that.
 
 Then this past fall I pitched a Drupal migration as a project for students and had three students the whole semester doing a Drupal 7 to Drupal 9 transformation of a site. So I was already teaching Drupal when they asked me, can you do this intensive course? Then we just gathered a bit more material and carried on. And now we are proud to say that two of the students are now employees of our company, [Um að gera](https://umadgera.is/). Even prouder that we were able to hire women in both positions.
 
@@ -82,7 +82,7 @@ At the same time, I was transitioning from functional programming to object orie
 
 ### How do you think we could unify efforts and standardize teaching Drupal? Is there an initiative for that already?
 
-If there is an initiative, I would definitely want to be a part of that. We need to have a unified process so there are various tracks to get into Drupal. Where are your skills? Every skillset is important. When we started giving people [contribution credit](https://www.drupal.org/drupalorg/contribution-credit) for documentation and contributing in other ways, not just code, that made our community much, much better. We were almost deteriorating the community by putting coders on a pedestal, and everybody else was not recognized. Having people who are specialists in QA, or who are great with writing or marketing is equally as important as writing the code itself. 
+If there is an initiative, I would definitely want to be a part of that. We need to have a unified process so there are various tracks to get into Drupal. Where are your skills? Every skillset is important. When we started giving people [contribution credit](https://www.drupal.org/drupalorg/contribution-credit) for documentation and contributing in other ways, not just code, that made our community much, much better. We were almost deteriorating the community by putting coders on a pedestal, and everybody else was not recognized. Having people who are specialists in QA, or who are great with writing or marketing is equally as important as writing the code itself.
 
 We need an initiative to address how we are teaching Drupal to the world so that any person can come in and understand how things work and how they fit in. That’s why I’m very interested in doing this, to create a solid toolbox for teachers, and to share ideas on how to teach and how to build using realistic example projects. Something you can go through from installation to completion, from a variety of angles. If you’re a site builder start here, do this. If you’re a designer, download this, follow this guide. We are drowning in work in the Drupal world, we need all the help we can get, so how about we have a great way to teach newcomers?
 

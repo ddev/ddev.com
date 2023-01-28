@@ -2,7 +2,7 @@
 title: "Ten more ways to increase your efficiency with DDEV-Local"
 pubDate: 2020-03-25
 author: Randy Fay
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2020/03/secure_cert.png
+featuredImage: https://ddev.com/app/uploads/2020/03/secure_cert.png
 categories:
   - DDEV
 ---

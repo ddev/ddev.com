@@ -2,7 +2,7 @@
 title: "DDEV v1.6.0: NFS Mounting and Chocolatey"
 pubDate: 2019-02-12
 author: Randy Fay
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2019/02/EKL_20181203_2-e1549995318578.jpg
+featuredImage: https://ddev.com/app/uploads/2019/02/EKL_20181203_2-e1549995318578.jpg
 categories:
   - DDEV
 ---
@@ -25,7 +25,7 @@ Linux or macOS via script:
 
 `curl https://raw.githubusercontent.com/drud/ddev/master/scripts/install_ddev.sh | bash`
 
-Windows: Download the ddev\_windows\_installer.v1.6.0.exe above or with Chocolatey `choco install ddev` or `choco upgrade ddev`.
+Windows: Download the ddev_windows_installer.v1.6.0.exe above or with Chocolatey `choco install ddev` or `choco upgrade ddev`.
 
 More details in the release notes:
 

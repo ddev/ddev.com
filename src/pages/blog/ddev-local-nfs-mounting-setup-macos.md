@@ -2,7 +2,7 @@
 title: "DDEV-Local NFS Mounting Setup: macOS"
 pubDate: 2019-02-13
 author: Randy Fay
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2019/02/Drupal-8-Install_-normal-mount-NFS-and-webcache-time-in-seconds-less-is-better.png
+featuredImage: https://ddev.com/app/uploads/2019/02/Drupal-8-Install_-normal-mount-NFS-and-webcache-time-in-seconds-less-is-better.png
 categories:
   - DDEV
 ---

@@ -2,7 +2,7 @@
 title: "DDEV – A local development environment that just works"
 pubDate: 2018-03-01
 author: Jeffrey A. McGuire
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2018/03/Adam_Bergstein.jpeg
+featuredImage: https://ddev.com/app/uploads/2018/03/Adam_Bergstein.jpeg
 categories:
   - DDEV
 ---
@@ -21,17 +21,17 @@ Adam has been seeking the “Holy Grail” of local Drupal development environme
 
 **The ideal local development environment should …**
 
-* **JUST WORK with as little set up as possible.**
-* **Offer easy task switching –** “I want to **avoid installing tools on my local system** that may force me to tune and/or change when switching between projects. This is a major time dump and one that seems to be a significant waste.”
-* **Perform well with no tweaking –** “I don’t want to do any additional, manual configuration it to get it to perform well.”
-* **Be destructible –** “I want the full discretion to destroy and rebuild my local environment at will. Especially if I am working on a project in which the environment is regularly changing or evolving.”
-* **Be configurable –** “No solution should make assumptions about the needs of the project.”
-* **Not make assumptions about my toolset, while also being robust and flexible –** “None of my clients use the same tools … I want the ability to rapidly use and configure the tools I need without this being an encumbering task. And, ideally, this is configuration that is persistent and can be shared across development teams.”
-* **Not make assumptions about my development workflow –** “Every team and project has adopted their own workflow … I don’t want a tool that only supports workflows defined by hosting platforms, undocumented continuous integration solutions, or poor practices carried over between vendors. … I may have preferences, but ideally, my local sandbox can support any or all of these seamlessly.”
+- **JUST WORK with as little set up as possible.**
+- **Offer easy task switching –** “I want to **avoid installing tools on my local system** that may force me to tune and/or change when switching between projects. This is a major time dump and one that seems to be a significant waste.”
+- **Perform well with no tweaking –** “I don’t want to do any additional, manual configuration it to get it to perform well.”
+- **Be destructible –** “I want the full discretion to destroy and rebuild my local environment at will. Especially if I am working on a project in which the environment is regularly changing or evolving.”
+- **Be configurable –** “No solution should make assumptions about the needs of the project.”
+- **Not make assumptions about my toolset, while also being robust and flexible –** “None of my clients use the same tools … I want the ability to rapidly use and configure the tools I need without this being an encumbering task. And, ideally, this is configuration that is persistent and can be shared across development teams.”
+- **Not make assumptions about my development workflow –** “Every team and project has adopted their own workflow … I don’t want a tool that only supports workflows defined by hosting platforms, undocumented continuous integration solutions, or poor practices carried over between vendors. … I may have preferences, but ideally, my local sandbox can support any or all of these seamlessly.”
 
 ### What about virtual machines?
 
-On his journey, he tried [VDD](https://www.drupal.org/project/vdd) (Vagrant Drupal development), DrupalVM, Acquia Dev Desktop, MAMP and its variants. And none met his requirements. In 2016, he settled on DrupalVM and [he guesses](http://nerdstein.net/blog/local-core-development-environments) it saved him “hundreds of hours.” Even still, local development with DrupalVM wasn’t a cure-all and proved to be “[overly complex](http://nerdstein.net/blog/local-core-development-environments)” for core development work. He had tried to improve things and told me he just couldn’t make it work. “It was so painful.” 
+On his journey, he tried [VDD](https://www.drupal.org/project/vdd) (Vagrant Drupal development), DrupalVM, Acquia Dev Desktop, MAMP and its variants. And none met his requirements. In 2016, he settled on DrupalVM and [he guesses](http://nerdstein.net/blog/local-core-development-environments) it saved him “hundreds of hours.” Even still, local development with DrupalVM wasn’t a cure-all and proved to be “[overly complex](http://nerdstein.net/blog/local-core-development-environments)” for core development work. He had tried to improve things and told me he just couldn’t make it work. “It was so painful.”
 
 The main issue was that he was working against the clock in a typical day, juggling lots of responsibilities. “It takes a damn long time to get something provisioned and spun up” with the VM solution. How long exactly? “It would take upwards of 20-30 mins to provision a machine. And then if it wasn’t provisioned right, or if there was configuration missed, I would have to go back and do that. I would destroy it, and rebuild it.” He said it could take anywhere from 2-3 iterations. “And that’s massively disruptive.”
 
@@ -47,7 +47,7 @@ Adam saw someone mention DDEV on Twitter and decided to try it out. “Installat
 
 brew tap drud/ddev && brew install ddev
 
-After installing DDEV-Local, Adam “was immediately impressed by the fact that it was both a global tool with commands and that it maintained a local, project-specific configuration layer. After installing the tool, I ran a few commands and ‘poof!’, a Drupal install!” 
+After installing DDEV-Local, Adam “was immediately impressed by the fact that it was both a global tool with commands and that it maintained a local, project-specific configuration layer. After installing the tool, I ran a few commands and ‘poof!’, a Drupal install!”
 
 Now Adam is using DDEV-Local for his community contribution work and it makes it way easier to collaborate with containerized development. “I’ve found DDEV works elegantly for me,” he can spin up a Drupal site, write patches, and contribute more to the community faster than before. “I can do this really elegantly, very quickly.”
 

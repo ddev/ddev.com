@@ -2,7 +2,7 @@
 title: "DDEV: It does what it says on the tin"
 pubDate: 2018-04-24
 author: Jeffrey A. McGuire
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2018/04/alex-burrows-drupal-mentoring.jpg
+featuredImage: https://ddev.com/app/uploads/2018/04/alex-burrows-drupal-mentoring.jpg
 categories:
   - DDEV
 ---

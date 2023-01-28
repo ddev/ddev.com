@@ -2,7 +2,7 @@
 title: "DrupalCon Seattle Wrap-up"
 pubDate: 2019-04-22
 author: Kevin Bridges
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2019/04/IMG_20190409_152301-e1555796618534.jpg
+featuredImage: https://ddev.com/app/uploads/2019/04/IMG_20190409_152301-e1555796618534.jpg
 categories:
   - Community
   - DDEV
@@ -21,7 +21,7 @@ Kevin, our CTO, gave a very brief talk on how having a clearly defined plan that
 > 1\. [#DevOps](https://twitter.com/hashtag/DevOps?src=hash&ref%5Fsrc=twsrc%5Etfw) is not magical fairy dust  
 > 2\. Creating a culture of safety is critical  
 > 3\. It's a work in progress! That's ok. [#drupalcon](https://twitter.com/hashtag/drupalcon?src=hash&ref%5Fsrc=twsrc%5Etfw) [#ddev](https://twitter.com/hashtag/ddev?src=hash&ref%5Fsrc=twsrc%5Etfw) [pic.twitter.com/QH7daXfh3J](https://t.co/QH7daXfh3J)
-> 
+>
 > — DRUD Technology (@drud) [April 10, 2019](https://twitter.com/drud/status/1116073579504783360?ref%5Fsrc=twsrc%5Etfw)
 
 On Thursday at DrupalCon we also gathered up a few folks who share our interest in working with [Kubernetes operators](https://coreos.com/operators/) and controllers to solve common hosting challenges as we continue building DDEV-Live hosting. As a result of this BoF there is now an active [#kubernetes channel ](https://drupal.slack.com/messages/CHTP7ELE9)in [Drupal Slack](http://drupal.org/slack) and plans for a regular special interest group (SIG) meeting. If this sounds like something you’d like to participate in, please check in that channel for news, updates, and meeting times and/or [follow us on Twitter](http://twitter.com/drud).
@@ -38,7 +38,7 @@ As Dries mentioned in [his keynote](https://dri.es/state-of-drupal-presentation-
 
 Development of our [DDEV-Live hosting platform](https://ddev.com/ddev-live/) is rapidly gaining velocity thanks to our team’s hard work on the API and some exciting conversations about Kubernetes coming out of DrupalCon. We’ve also been focusing on a migration to Google Cloud services and are pleased to see all these pieces coming together into the installable platform we envisioned. We’ll be sharing hosting updates with everyone regularly over the coming months and sharing access with early adopters as services become available.
 
-Keep an eye out [here](https://ddev.com/blog/) on the blog and on [Twitter](https://twitter.com/drud) for a series of posts called “CTO’s Corner” in which we’ll dig into the architecture, open source theory, and benefits of DDEV-Live as the platform starts rolling out. 
+Keep an eye out [here](https://ddev.com/blog/) on the blog and on [Twitter](https://twitter.com/drud) for a series of posts called “CTO’s Corner” in which we’ll dig into the architecture, open source theory, and benefits of DDEV-Live as the platform starts rolling out.
 
 ### DDEV ebook & training
 

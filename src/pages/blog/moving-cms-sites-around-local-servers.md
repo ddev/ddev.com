@@ -2,7 +2,7 @@
 title: "Moving CMS sites around (server-to-server, server-to-local, local-to-server)"
 pubDate: 2020-12-08
 author: Randy Fay
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2020/12/juggler-2329843_1280-e1607477143481.jpg
+featuredImage: https://ddev.com/app/uploads/2020/12/juggler-2329843_1280-e1607477143481.jpg
 categories:
   - DDEV
   - DevOps
@@ -14,7 +14,7 @@ Any web developer will have to move a site from one place to another periodicall
 1. **Move the code for the website**. If the site is just an HTML/JS site, you’re done. (Typically the code is checked via Git or some other source management situation, so it can be checked out in the new location.)
 2. **Move the database**, which has dynamic content in it. In many cases this is just one database, but in complex situations it could be more than one database.
 3. **Move the user-generated or dynamic files**. On Drupal, for example, the sites/default/files directory typically has all these user-generated or dynamic files. (There may be more than one directory of user-generated/dynamic files. In Drupal there may be private files in a directory outside the docroot.)
-4. **Move the exported configuration**. In Drupal 8+, for example, the config\_sync\_directory has this explicit exported configuration.
+4. **Move the exported configuration**. In Drupal 8+, for example, the config_sync_directory has this explicit exported configuration.
 5. **Build the site in the new location**. Although older sites didn’t have a build process for deployment, almost all the newer ones do. At the very minimum, this is typically a `composer install` to populate the vendor directory, which is often not checked into code. But there may be far more sophisticated requirements to the build, like an `npm install` or a `compass compile`. The basic idea is that your site may have a deployment build process which will have to be replicated in the new location.
 6. **Configure database settings files**. Normally the database credentials on one server will not be the same as on the other, so you’ll need to update the database settings as your CMS or platform requires.
 7. **Transform URLs if necessary**. Some CMSs like WordPress, Magento, and Shopware, have a tendency to bury multiple references to the site URL inside the database, so a transformation has to take place after all this is done. We wish they wouldn’t do this of course, but we have to live in the world we live in. Read about [how to transform URLs](https://ddev.com/ddev-local/sharing-a-ddev-local-project-with-other-collaborators/). You’ll need to understand how to manage this in your particular CMS, as each does it differently. (Note that in Drupal, TYPO3, and Backdrop at least, incorporating a full self-referencing URL inside dynamic content is at least a party foul, probably worse, and it ruins standard deployments.)
@@ -93,12 +93,12 @@ If you’re deploying to [Pantheon.io](http://pantheon.io) you can use the web i
 
 There is no standard for deployment or moving sites, and nothing will replace your team’s knowledge of the site and the build process.
 
-* Some teams prefer to do the build on a build machine (or in CI, or on a dev machine) and check in or push the resulting artifacts. For example, some teams will do a `composer install` and then check in the vendor directory and related artifacts.
+- Some teams prefer to do the build on a build machine (or in CI, or on a dev machine) and check in or push the resulting artifacts. For example, some teams will do a `composer install` and then check in the vendor directory and related artifacts.
 
 ### Resources:
 
-* [OSTraining](https://www.ostraining.com/) has a free YouTube class on [Moving a Drupal 8+ Site](https://www.youtube.com/playlist?list=PLtaXuX0nEZk-ow4oT3yqxmjk4IRHz4jHl). Highly recommended.
-* Many, many agency deployment strategies are home-grown and require custom scripts to push things back and forth. There are examples of scripts like this in [ddev-contrib](https://github.com/drud/ddev-contrib), see [Dump and deploy SQL from/to remote servers](https://github.com/drud/ddev-contrib/blob/master/custom-commands/dump-and-deploy-db) and [Fetch Production DB from remote server](https://github.com/drud/ddev-contrib/blob/master/custom-commands/fetchproductiondb).
+- [OSTraining](https://www.ostraining.com/) has a free YouTube class on [Moving a Drupal 8+ Site](https://www.youtube.com/playlist?list=PLtaXuX0nEZk-ow4oT3yqxmjk4IRHz4jHl). Highly recommended.
+- Many, many agency deployment strategies are home-grown and require custom scripts to push things back and forth. There are examples of scripts like this in [ddev-contrib](https://github.com/drud/ddev-contrib), see [Dump and deploy SQL from/to remote servers](https://github.com/drud/ddev-contrib/blob/master/custom-commands/dump-and-deploy-db) and [Fetch Production DB from remote server](https://github.com/drud/ddev-contrib/blob/master/custom-commands/fetchproductiondb).
 
 Sign up for the latest news and releases
 

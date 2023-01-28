@@ -2,7 +2,7 @@
 title: "ARM64! Apple Silicon! M1! DDEV-Local! What does it all mean?"
 pubDate: 2020-11-18
 author: Randy Fay
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2020/11/Apple-DDEV.jpg
+featuredImage: https://ddev.com/app/uploads/2020/11/Apple-DDEV.jpg
 categories:
   - DDEV
 ---
@@ -13,10 +13,10 @@ ARM64 is the new word of the day all over the place since Apple has switched the
 
 In this blog, we’ll take a look at these things:
 
-* What is ARM64?
-* What is Apple Silicon/Apple M1 Chip? What is Big Sur? What is Rosetta 2?
-* DDEV-Local Already Runs On ARM64 in Linux and WSL2
-* When will DDEV-Local work on Apple Silicon?
+- What is ARM64?
+- What is Apple Silicon/Apple M1 Chip? What is Big Sur? What is Rosetta 2?
+- DDEV-Local Already Runs On ARM64 in Linux and WSL2
+- When will DDEV-Local work on Apple Silicon?
 
 ## What is ARM64?
 
@@ -42,10 +42,10 @@ Thanks to incredible contributions by [Dennis Ameling](https://github.com/dennis
 
 Building DDEV-Local for ARM64 was a monumental task, and a huge demonstration of the beauty of open source. Dennis has a Surface Pro X (ARM64) that he loves and wanted to be able to develop on… So he took on the task. It involved:
 
-* Reworking all the DDEV-Local Docker images (ddev-webserver, ddev-dbserver, ddev-ssh-agent, ddev-router) so they could be built for ARM64.
-* Providing ARM64 builds of certain key upstream tools which were incorporated into Docker images or required alongside DDEV-Local, like mkcert, mailhog, and docker-gen.
-* Reworking the image build process to use Docker’s new [multi-architecture](https://www.docker.com/blog/tag/multi-architecture/) support, which allows a single image on [hub.docker.com](http://hub.docker.com) to have both AMD64 and ARM64 versions, and to pull the correct one as needed.
-* Building the DDEV-Local Go binary for AMD64.
+- Reworking all the DDEV-Local Docker images (ddev-webserver, ddev-dbserver, ddev-ssh-agent, ddev-router) so they could be built for ARM64.
+- Providing ARM64 builds of certain key upstream tools which were incorporated into Docker images or required alongside DDEV-Local, like mkcert, mailhog, and docker-gen.
+- Reworking the image build process to use Docker’s new [multi-architecture](https://www.docker.com/blog/tag/multi-architecture/) support, which allows a single image on [hub.docker.com](http://hub.docker.com) to have both AMD64 and ARM64 versions, and to pull the correct one as needed.
+- Building the DDEV-Local Go binary for AMD64.
 
 [Get the latest DDEV-Local here](https://github.com/drud/ddev/releases)
 

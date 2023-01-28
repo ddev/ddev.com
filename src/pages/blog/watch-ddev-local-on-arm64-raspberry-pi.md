@@ -2,12 +2,12 @@
 title: "Watch: DDEV-Local on ARM64 Raspberry Pi"
 pubDate: 2020-11-23
 author: Randy Fay
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2020/11/Screen-Shot-2020-11-22-at-12.38.30-PM.png
+featuredImage: https://ddev.com/app/uploads/2020/11/Screen-Shot-2020-11-22-at-12.38.30-PM.png
 categories:
   - DDEV
 ---
 
-[DDEV-Local v1.16](https://github.com/drud/ddev) now supports the ARM64 architecture on Linux and Windows WSL2\. You can read all about ARM64 and what it means to the world (and to DDEV) in the previous blog on [ARM64, Apple Silicon, and Apple’s M1 chip](https://ddev.com/ddev-local/arm64-apple-silicon-m1-ddev-local-what-does-it-all-mean/). Since I don’t have a big machine to test with, I got the ARM64-based Raspberry Pi 4 instead, and it’s actually worked out far better than I expected. It was a great way to have an ARM64 machine available for testing whenever needed during the development process… but it turns out some people might want to use a Pi as their desktop web development machine. All of features of DDEV-Local work out of the box. 
+[DDEV-Local v1.16](https://github.com/drud/ddev) now supports the ARM64 architecture on Linux and Windows WSL2\. You can read all about ARM64 and what it means to the world (and to DDEV) in the previous blog on [ARM64, Apple Silicon, and Apple’s M1 chip](https://ddev.com/ddev-local/arm64-apple-silicon-m1-ddev-local-what-does-it-all-mean/). Since I don’t have a big machine to test with, I got the ARM64-based Raspberry Pi 4 instead, and it’s actually worked out far better than I expected. It was a great way to have an ARM64 machine available for testing whenever needed during the development process… but it turns out some people might want to use a Pi as their desktop web development machine. All of features of DDEV-Local work out of the box.
 
 On this Raspberry Pi 4 I have Ubuntu 20.10, which is the first Ubuntu version to explicitly support the Raspberry Pi. I’ve previously experimented with the [64-bit Debian-10-based Raspberry Pi OS](https://www.raspberrypi.org/forums/viewtopic.php?t=275370), and it worked as expected as well, although Debian 10 doesn’t have versions of Docker and docker-compose that are as recent as I’d like.
 
@@ -19,4 +19,4 @@ Installing DDEV-Local is pretty easy and mostly just exactly what’s laid out i
 4. Install ddev using the install script ([docs](https://ddev.readthedocs.io/en/stable/#installationupgrade-script-linux-and-macos-armarm64-and-amd64-architectures)): `curl -LO [<https://raw.githubusercontent.com/drud/ddev/master/scripts/install_ddev.sh>](<https://raw.githubusercontent.com/drud/ddev/master/scripts/install_ddev.sh>) && bash install_ddev.sh`
 5. Use `ddev config` in a project and `ddev start` and `ddev launch`!
 
-I found that with just standard setup, DDEV-Local on the Raspberry Pi 4 was able to do everything it’s supposed to do, and with better performance than expected. It would certainly be possible to add faster disk or an SSD to it and make things even better. So if you need a super-low-cost development environment, or just want to see what ARM64 is all about, or if you just want to do new cool things with the Pi, here’s your chance! 
+I found that with just standard setup, DDEV-Local on the Raspberry Pi 4 was able to do everything it’s supposed to do, and with better performance than expected. It would certainly be possible to add faster disk or an SSD to it and make things even better. So if you need a super-low-cost development environment, or just want to see what ARM64 is all about, or if you just want to do new cool things with the Pi, here’s your chance!

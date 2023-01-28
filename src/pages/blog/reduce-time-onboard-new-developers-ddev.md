@@ -2,7 +2,7 @@
 title: "Reduce the Time to Onboard New Developers with DDEV"
 pubDate: 2020-08-12
 author: DDEV
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2018/05/bruce-mars-548722-unsplash.jpg
+featuredImage: https://ddev.com/app/uploads/2018/05/bruce-mars-548722-unsplash.jpg
 categories:
   - DDEV
 ---
@@ -67,5 +67,5 @@ With DDEV-Local, you can speed up developer onboarding dramatically, while ensur
 
 [Get started with DDEV-Local](https://ddev.readthedocs.io/en/stable/#intro-to-ddev-local) today and see how easy and reliable a local development environment can be.
 
-Photo credit hagman23 Pixabay   
+Photo credit hagman23 Pixabay  
 Originally published May 17, 2018

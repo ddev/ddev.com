@@ -2,7 +2,7 @@
 title: "DDEV-Local and PHPStorm Debugging with WSL2"
 pubDate: 2020-06-17
 author: Randy Fay
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2020/06/phpstorm_debugging.png
+featuredImage: https://ddev.com/app/uploads/2020/06/phpstorm_debugging.png
 categories:
   - DDEV
 ---
@@ -20,15 +20,15 @@ I tested these approaches on an 8GB Windows 10 Home VM with Docker 2.3.0.3 and D
 
 ## Basics
 
-* Start with a working DDEV-Local/WSL2 setup as described in [DDEV ❤️ WSL2: getting started](https://ddev.com/ddev-local/ddev-wsl2-getting-started/). Until that’s all working it doesn’t help to go farther.
-* If you haven’t used Xdebug with DDEV-Local and PHPStorm before, you’ll want to read the [normal instructions](https://ddev.readthedocs.io/en/stable/users/step-debugging/#step-debugging-with-ddev-and-xdebug) in the docs.
-* For good performance, you want your project to be in /home inside WSL2, which is on the Linux filesystem. Although you can certainly keep your project on the Windows filesystem and access it in WSL2 via /mnt/c, the performance is no better than native Windows. It does work though.
+- Start with a working DDEV-Local/WSL2 setup as described in [DDEV ❤️ WSL2: getting started](https://ddev.com/ddev-local/ddev-wsl2-getting-started/). Until that’s all working it doesn’t help to go farther.
+- If you haven’t used Xdebug with DDEV-Local and PHPStorm before, you’ll want to read the [normal instructions](https://ddev.readthedocs.io/en/stable/users/step-debugging/#step-debugging-with-ddev-and-xdebug) in the docs.
+- For good performance, you want your project to be in /home inside WSL2, which is on the Linux filesystem. Although you can certainly keep your project on the Windows filesystem and access it in WSL2 via /mnt/c, the performance is no better than native Windows. It does work though.
 
 ## Windows PHPStorm
 
-1. Your working project should be on the /home partition, so you’ll open it using Windows PHPStorm as `\\wsl$\Ubuntu\home\<username>\...\<projectdir>`.  
-   * On some systems and some projects it may take a very long time for PHPStorm to index the files. At one point I got frustrated and moved to a faster computer.  
-   * File changes are noticed only by polling, and PHPStorm will complain about this in the lower right, “External file changes sync may be slow”.
+1. Your working project should be on the /home partition, so you’ll open it using Windows PHPStorm as `\\wsl$\Ubuntu\home\<username>\...\<projectdir>`.
+   - On some systems and some projects it may take a very long time for PHPStorm to index the files. At one point I got frustrated and moved to a faster computer.
+   - File changes are noticed only by polling, and PHPStorm will complain about this in the lower right, “External file changes sync may be slow”.
 2. Turn off your Windows firewall temporarily. When you have everything working you can turn it back on again.
 3. Use `ddev start` and `ddev xdebug on`
 4. Click the Xdebug listen button on PHPStorm (the little phone icon) to make it start listening.

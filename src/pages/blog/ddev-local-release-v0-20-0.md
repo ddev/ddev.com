@@ -2,7 +2,7 @@
 title: "DDEV-Local Release v0.20.0 – sudo and a peek into the roadmap ahead"
 pubDate: 2018-06-27
 author: Rick Manelius
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2018/06/daniil-silantev-367138-unsplash.jpg
+featuredImage: https://ddev.com/app/uploads/2018/06/daniil-silantev-367138-unsplash.jpg
 categories:
   - DDEV
 ---
@@ -32,14 +32,14 @@ Would you like to refer someone on for training? Tech trainer Mike Anello of Dru
 We were wowed to see over 80 people went to a DDEV demo and workshop at TYPO3 Dev Days last weekend! Thank you to all who attended, and a special thank you to speakers and facilitators, Michael Oehlhof and Jigal van Hemert.
 
 > The [@drud](https://twitter.com/drud?ref%5Fsrc=twsrc%5Etfw) [#ddev](https://twitter.com/hashtag/ddev?src=hash&ref%5Fsrc=twsrc%5Etfw) talk in room [@jweilandnet](https://twitter.com/jweilandnet?ref%5Fsrc=twsrc%5Etfw) is well visited! [#t3dd18](https://twitter.com/hashtag/t3dd18?src=hash&ref%5Fsrc=twsrc%5Etfw) [pic.twitter.com/jXKms9RKui](https://t.co/jXKms9RKui)
-> 
+>
 > — T3DD (@t3dd) [June 23, 2018](https://twitter.com/t3dd/status/1010462199884779520?ref%5Fsrc=twsrc%5Etfw)
 
 ### Some recent posts we think you’ll like
 
-* We had [our very first on-site last week.](https://ddev.com/devops/onsite-collaboration-and-communication/) It was great to bring the team together, and align with our objectives for the next quarter and beyond.
-* Know someone considering a switch from virtual machines? Send them here: [Docker containers vs VMs for quick consistent local dev](https://ddev.com/ddev-local/docker-containers-vs-vms-for-quick-consistent-local-dev/)
-* Read: [Why DevOps, Containers, and Tooling Matter in Digital Transformation.](https://ddev.com/devops/why-devops-containers-and-tooling-matter-in-digital-transformation/) We can help you set up teams, processes, and integrations to help build dev-to-deploy workflows. Reply to this email if you have any questions.
+- We had [our very first on-site last week.](https://ddev.com/devops/onsite-collaboration-and-communication/) It was great to bring the team together, and align with our objectives for the next quarter and beyond.
+- Know someone considering a switch from virtual machines? Send them here: [Docker containers vs VMs for quick consistent local dev](https://ddev.com/ddev-local/docker-containers-vs-vms-for-quick-consistent-local-dev/)
+- Read: [Why DevOps, Containers, and Tooling Matter in Digital Transformation.](https://ddev.com/devops/why-devops-containers-and-tooling-matter-in-digital-transformation/) We can help you set up teams, processes, and integrations to help build dev-to-deploy workflows. Reply to this email if you have any questions.
 
 Thanks as always for your support and enthusiasm!
 

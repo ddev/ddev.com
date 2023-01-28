@@ -2,7 +2,7 @@
 title: "DDEV Release v1.2.0 – Apache support and DDEV UI Alpha"
 pubDate: 2018-09-12
 author: Kory Cunningham
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2018/09/IMG_20180910_093208.jpg
+featuredImage: https://ddev.com/app/uploads/2018/09/IMG_20180910_093208.jpg
 categories:
   - DDEV
 ---
@@ -46,7 +46,7 @@ If you’re at [Drupal Europe this week](https://ddev.com/events/see-you-at-drup
 We’ve also sent along some stickers for [TYPO3 Camp Munich](https://typo3camp-munich.de/) this weekend, so don’t miss out!
 
 > Nice [@mattLefaux](https://twitter.com/mattLefaux?ref%5Fsrc=twsrc%5Etfw) got a new laptop! First sticker? [#DDEV](https://twitter.com/hashtag/DDEV?src=hash&ref%5Fsrc=twsrc%5Etfw)! Lookin’ good, Mathias! ? Say hi to the DRUD team at [#DrupalEurope](https://twitter.com/hashtag/DrupalEurope?src=hash&ref%5Fsrc=twsrc%5Etfw) and pick up some [#stickers](https://twitter.com/hashtag/stickers?src=hash&ref%5Fsrc=twsrc%5Etfw) [pic.twitter.com/V4Wd2jMHaL](https://t.co/V4Wd2jMHaL)
-> 
+>
 > — DRUD Technology (@drud) [September 11, 2018](https://twitter.com/drud/status/1039491681840713734?ref%5Fsrc=twsrc%5Etfw)
 
 Sign up for the latest news and releases

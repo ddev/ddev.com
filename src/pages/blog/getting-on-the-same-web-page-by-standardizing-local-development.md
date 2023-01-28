@@ -2,7 +2,7 @@
 title: "Getting On the Same (Web) Page by Standardizing Local Development"
 pubDate: 2018-05-22
 author: Rick Manelius
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2018/05/suganth-526334-unsplash-e1526983031730.jpg
+featuredImage: https://ddev.com/app/uploads/2018/05/suganth-526334-unsplash-e1526983031730.jpg
 categories:
   - DDEV
 ---
@@ -45,20 +45,20 @@ The good thing is, DDEV works with you. You don’t need to rejig your repositor
 
 **DDEV is easy to install and update**
 
-* Check [the requirements](https://ddev.readthedocs.io/en/latest/#system-requirements), you’ll need Docker and Docker compose.
-* Installing is easy. There’s a Windows installer, and if you’re using Homebrew on Mac, it’s one command  
-   * `brew tap drud/ddev && brew install ddev`
-* Each time you update it, it’s as easy as it was to install. You might have already tried to build, maintain, and even ‘open source’ your own Docker-based solution. (That’s how we started DDEV actually.)
+- Check [the requirements](https://ddev.readthedocs.io/en/latest/#system-requirements), you’ll need Docker and Docker compose.
+- Installing is easy. There’s a Windows installer, and if you’re using Homebrew on Mac, it’s one command
+  - `brew tap drud/ddev && brew install ddev`
+- Each time you update it, it’s as easy as it was to install. You might have already tried to build, maintain, and even ‘open source’ your own Docker-based solution. (That’s how we started DDEV actually.)
 
 **DDEV is quick to configure**
 
-* You configure a project once by telling DDEV the name, the docroot, and the project type.
+- You configure a project once by telling DDEV the name, the docroot, and the project type.
 
 **DDEV is easy to use every day**
 
-* When you want to work on a project cd into a project directory and run `ddev start`.
-* Run `ddev list` to see the status of projects you have running, you can run multiple at once.
-* Run `ddev remove` to stop a project and remove it from the list.
+- When you want to work on a project cd into a project directory and run `ddev start`.
+- Run `ddev list` to see the status of projects you have running, you can run multiple at once.
+- Run `ddev remove` to stop a project and remove it from the list.
 
 [Try out DDEV](https://ddev.com/get-started/) and see how it works for you!
 

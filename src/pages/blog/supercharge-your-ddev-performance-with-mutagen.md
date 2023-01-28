@@ -2,7 +2,7 @@
 title: "Supercharge your DDEV performance with Mutagen"
 pubDate: 2021-07-28
 author: Randy Fay
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2021/07/Drupal-9-Web-Install-times-seconds-less-is-better.png
+featuredImage: https://ddev.com/app/uploads/2021/07/Drupal-9-Web-Install-times-seconds-less-is-better.png
 categories:
   - DDEV
 ---
@@ -25,13 +25,13 @@ A mutagen-enabled Magento2 site with all the sample data installed took 48 secon
 
 Note that there are also some risks/caveats, as seen in the [docs](https://ddev.readthedocs.io/en/latest/users/performance/#using-mutagen).
 
-* This is a brand-new feature. Your mileage may vary. Please report your experience in any of the [support channels](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation)!
-* This is mostly for macOS users. WSL2 is already the preferred environment for Windows users, but if you’re still using traditional Windows this makes a huge difference. Turning on mutagen doesn’t make sense on Linux or WSL2.
-* If your project is likely to change the same file on both the host and inside the container, you may be at risk for conflicts.
-* Massive changes to either the host or the container are the most likely to introduce issues. This integration has been tested extensively with major changes introduced by `ddev composer` and `ddev composer create` but be aware of this issue. A script that deletes huge sections of the synced data is a related behavior that should raise caution. You may want to run a `ddev mutagen sync` after manually running composer inside the container.
-* You can cause an explicit sync with`ddev mutagen sync` and see syncing status with `ddev mutagen status`. Note that both `ddev start` and `ddev stop` automatically force a mutagen sync.
-* Keep backups. Mutagen syncing is an experimental feature.
-* The mutagen integration by default does not sync VCS directories like .git into the container, but this can be changed with advanced configuration options. (This means that by default you cannot do git operations inside the container with mutagen turned on.)
+- This is a brand-new feature. Your mileage may vary. Please report your experience in any of the [support channels](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation)!
+- This is mostly for macOS users. WSL2 is already the preferred environment for Windows users, but if you’re still using traditional Windows this makes a huge difference. Turning on mutagen doesn’t make sense on Linux or WSL2.
+- If your project is likely to change the same file on both the host and inside the container, you may be at risk for conflicts.
+- Massive changes to either the host or the container are the most likely to introduce issues. This integration has been tested extensively with major changes introduced by `ddev composer` and `ddev composer create` but be aware of this issue. A script that deletes huge sections of the synced data is a related behavior that should raise caution. You may want to run a `ddev mutagen sync` after manually running composer inside the container.
+- You can cause an explicit sync with`ddev mutagen sync` and see syncing status with `ddev mutagen status`. Note that both `ddev start` and `ddev stop` automatically force a mutagen sync.
+- Keep backups. Mutagen syncing is an experimental feature.
+- The mutagen integration by default does not sync VCS directories like .git into the container, but this can be changed with advanced configuration options. (This means that by default you cannot do git operations inside the container with mutagen turned on.)
 
 Want to try it out? It’s in the new edge releases of DDEV v1.18.0, for example [v1.18.0-alpha1](https://github.com/drud/ddev/releases/tag/v1.18.0-alpha1). See the instructions on the release page; you can install it using Homebrew (macOS) or Chocolatey (Windows)
 

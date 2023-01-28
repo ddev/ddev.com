@@ -2,7 +2,7 @@
 title: "Get started with local development for Drupal"
 pubDate: 2021-03-24
 author: Elli Ludwigson
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2021/03/ddevmidcamp.png
+featuredImage: https://ddev.com/app/uploads/2021/03/ddevmidcamp.png
 categories:
   - Community
   - DDEV
@@ -20,31 +20,32 @@ In order to contribute to Drupal as an open source project or to work on any web
 
 Some background reading and additional resources:
 
-* [Why an easy start is important to teaching web development](https://www.ddev.cloud.fruitionqa.com/ddev-local/why-an-easy-start-is-important-to-teaching-web-development/) – by Drupal trainer Mauricio Dinarte aka dinarcon
-* [Why developing locally matters](https://www.ddev.cloud.fruitionqa.com/ddev-local/why-developing-locally-matters/) – by TYPO3 CMS lead developer Benni Mack
-* [Local Web Development With DDEV Explained](https://www.ostraining.com/books/local/) – by Florida Drupal Camp organizer Mike Anello
-* [Drupal Easy Professional Local Development with DDEV class](https://www.drupaleasy.com/ddev) – Taught by Mike Anello
+- [Why an easy start is important to teaching web development](https://www.ddev.cloud.fruitionqa.com/ddev-local/why-an-easy-start-is-important-to-teaching-web-development/) – by Drupal trainer Mauricio Dinarte aka dinarcon
+- [Why developing locally matters](https://www.ddev.cloud.fruitionqa.com/ddev-local/why-developing-locally-matters/) – by TYPO3 CMS lead developer Benni Mack
+- [Local Web Development With DDEV Explained](https://www.ostraining.com/books/local/) – by Florida Drupal Camp organizer Mike Anello
+- [Drupal Easy Professional Local Development with DDEV class](https://www.drupaleasy.com/ddev) – Taught by Mike Anello
 
-For MidCamp we’ll be using the latest release of the [Quicksprint package](https://github.com/drud/quicksprint#drupal-contribution-package), which you may download and install in advance or just download and wait for the workshop to walk through the details. 
+For MidCamp we’ll be using the latest release of the [Quicksprint package](https://github.com/drud/quicksprint#drupal-contribution-package), which you may download and install in advance or just download and wait for the workshop to walk through the details.
 
 ### MidCamp DDEV schedule
 
-* [Local Development Ask Me Anything](https://www.midcamp.org/2021/topic-proposal/local-development-ama) – Bring all your questions about local development! Thursday, 1:00 pm CDT [Recording here](https://youtu.be/XSo0ARqOY60)
-* [Get Started with Local Development Workshop](https://www.midcamp.org/2021/topic-proposal/get-started-local-development-workshop) – We’ll check in to understand your working environment and give guidance through the installation process for Windows (traditional or WSL2), macOS and Linux. Friday, 10:30 am CDT [Recording here](https://youtu.be/cgUMkfpmSVs)
-* [Advanced Local Development with DDEV](https://www.midcamp.org/2021/topic-proposal/advanced-local-development-ddev) – got things set up? Here’s your chance to take it further, talk about integrations, customization, and more. Friday, 1:01 pm CDT [Recording here](https://youtu.be/xNOQFps8QmQ)
+- [Local Development Ask Me Anything](https://www.midcamp.org/2021/topic-proposal/local-development-ama) – Bring all your questions about local development! Thursday, 1:00 pm CDT [Recording here](https://youtu.be/XSo0ARqOY60)
+- [Get Started with Local Development Workshop](https://www.midcamp.org/2021/topic-proposal/get-started-local-development-workshop) – We’ll check in to understand your working environment and give guidance through the installation process for Windows (traditional or WSL2), macOS and Linux. Friday, 10:30 am CDT [Recording here](https://youtu.be/cgUMkfpmSVs)
+- [Advanced Local Development with DDEV](https://www.midcamp.org/2021/topic-proposal/advanced-local-development-ddev) – got things set up? Here’s your chance to take it further, talk about integrations, customization, and more. Friday, 1:01 pm CDT [Recording here](https://youtu.be/xNOQFps8QmQ)
 
 ## The many ways to contribute to Drupal
 
-For a [non-code contribution overview](https://www.midcamp.org/2021/topic-proposal/non-code-contributions), join AmyJune on Thursday at 11 CT. Then on Saturday, join for the [first time contributor workshop](https://www.midcamp.org/2021/contribution-day) to learn more about the Drupal issue queue and how to work with others. You’ll learn more about how marketers, project managers, organizers, designers, and writers (among many others) can bring their valuable skills to the project. 
+For a [non-code contribution overview](https://www.midcamp.org/2021/topic-proposal/non-code-contributions), join AmyJune on Thursday at 11 CT. Then on Saturday, join for the [first time contributor workshop](https://www.midcamp.org/2021/contribution-day) to learn more about the Drupal issue queue and how to work with others. You’ll learn more about how marketers, project managers, organizers, designers, and writers (among many others) can bring their valuable skills to the project.
 
 Read more about [the who, how, and why of Drupal contributions](https://www.ddev.cloud.fruitionqa.com/community/florida-drupal-camp-highlights/#DrupalContribution) as presented by AmyJune at Florida Drupal Camp 2021.
 
 Get the full scope of [contribution opportunities at MidCamp](https://www.midcamp.org/2021/contribution-day) on Saturday. [Recording here.](https://youtu.be/RogFRnd-FfA)
 
-# You have a local PHP development environment!   
+# You have a local PHP development environment!
+
 What’s next?
 
-Now that you’re set up with DDEV-Local (and hopefully had a chance to try out those Drupal contributions), what else can you accomplish? Since you’re likely already tracking your project with Git, it’s easy enough to push the repository to GitHub or GitLab. From there, you can start collaborating with other folks, and reference that repository from other tools for testing, CI/CD, or push to a hosting provider. 
+Now that you’re set up with DDEV-Local (and hopefully had a chance to try out those Drupal contributions), what else can you accomplish? Since you’re likely already tracking your project with Git, it’s easy enough to push the repository to GitHub or GitLab. From there, you can start collaborating with other folks, and reference that repository from other tools for testing, CI/CD, or push to a hosting provider.
 
 DDEV offers [production hosting on DDEV-Live](https://www.ddev.cloud.fruitionqa.com/ddev-live/). You can create a new project directly in the [DDEV UI online](https://dash.ddev.cloud.fruitionqa.com/), or from the [command line](https://docs.ddev.cloud.fruitionqa.com/getting-started/), by referencing your hosted Git repository. [Read more on deploying here](https://www.ddev.cloud.fruitionqa.com/ddev-live/how-to-deploy-a-site-with-ddev/).
 

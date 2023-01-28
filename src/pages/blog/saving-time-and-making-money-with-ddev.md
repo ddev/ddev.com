@@ -2,7 +2,7 @@
 title: "Saving time and making money with DDEV"
 pubDate: 2018-02-06
 author: Jeffrey A. McGuire
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2018/03/lukas-blazek-263122.jpg
+featuredImage: https://ddev.com/app/uploads/2018/03/lukas-blazek-263122.jpg
 categories:
   - DDEV
 ---
@@ -37,21 +37,21 @@ What’s she done with the time she’s freed up? She’s gotten more clients, f
 
 I asked Danita about how things had changed for the better for her since she started using DDEV. She said things had changed quite a bit for her in the last few years. [In 2015, Danita was using MAMP](https://drupalize.me/blog/201508/meet-site-builder-danita-bowman) for local development. “It worked fine for me locally.” But using MAMP for cross-platform collaboration caused classic ‘works on my machine’ problems. “There were a couple of instances back in those days where I’d be working on the site, push it up to GitHub, my colleague would pull it back down, and it was totally different.” And by “different”, Danita means broken.
 
-Task switching with MAMP was frustrating, like when she needed to switch PHP versions. “It had its challenges,” she said diplomatically. After MAMP, she used Kalabox extensively for local development, then Lando when development ceased on Kalabox. But she was always on the lookout to try out new tools. 
+Task switching with MAMP was frustrating, like when she needed to switch PHP versions. “It had its challenges,” she said diplomatically. After MAMP, she used Kalabox extensively for local development, then Lando when development ceased on Kalabox. But she was always on the lookout to try out new tools.
 
 “Installing DDEV is easier than you’d expect,” she explains “It’s not like trying to install Grunt and Gulp and all that. The [DDEV documentation](https://ddev.readthedocs.io) has been very helpful.” In her self-deprecating way, she said, “Even I’ve been able to follow it, and that’s good!”
 
 ## Smart developers rely on others
 
-Danita’s background is like many others who’ve come to web development. “I don’t come from a coding background. I’m learning as I go.” She said in the early days, to meet clients needs, she had to learn new techniques like commerce or mapping constantly. “That’s the biggest challenge that I face.” 
+Danita’s background is like many others who’ve come to web development. “I don’t come from a coding background. I’m learning as I go.” She said in the early days, to meet clients needs, she had to learn new techniques like commerce or mapping constantly. “That’s the biggest challenge that I face.”
 
 The field of web development is getting [more complex](https://github.com/kamranahmedse/developer-roadmap). The range of tools and libraries—each with frequent changes and updates—is dizzying. These lead many developers to feel like they aren’t “experts” even when they apparently have significant experience.
 
-As DRUD’s co-founder, [Rick Manelius, said recently](https://www.lullabot.com/podcasts/drupal-voices/249-rick-manelius) “Frankly, there’s too much out there for any one person to know. Even if you’re a very senior-level person, you have to say, ‘I don’t know everything. I can’t know everything. I need to reach out and lean on friends, colleagues and other solutions to fill this gap as opposed to trying to figure it out myself.’” 
+As DRUD’s co-founder, [Rick Manelius, said recently](https://www.lullabot.com/podcasts/drupal-voices/249-rick-manelius) “Frankly, there’s too much out there for any one person to know. Even if you’re a very senior-level person, you have to say, ‘I don’t know everything. I can’t know everything. I need to reach out and lean on friends, colleagues and other solutions to fill this gap as opposed to trying to figure it out myself.’”
 
 And that’s what smart developers do. “What I like is that I don’t have to worry about all that set up,” Danita said, “I leave it all to the people who know what they’re doing.” In the coming week, she told me she would be launching a new feature on a client site. With DDEV, “It makes it a lot easier.” Danita hosts her clients’ sites on Pantheon, and the [DDEV integration with Pantheon](https://ddev.readthedocs.io/en/latest/users/providers/pantheon/) means she can quickly download and provision a site in a local, managed environment. “All I have to do is just click the button, basically. I just pull the site up to work on it and push changes up.”
 
-## Saving time and making money 
+## Saving time and making money
 
 Thanks to tools like DDEV Danita has been able to spend less time on solving problems with local development and configuration, and more time on solving problems for clients. This improved efficiency saves costs for her clients and generates more revenue for her at the same time. Reflecting on how much things have improved recently, Danita said she “almost feels guilty” charging clients when she finds ways to save time. “Almost,” she laughed.
 

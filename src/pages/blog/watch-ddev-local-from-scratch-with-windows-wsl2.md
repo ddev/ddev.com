@@ -2,7 +2,7 @@
 title: "Watch: DDEV-Local from scratch with Windows WSL2"
 pubDate: 2020-08-06
 author: Randy Fay
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2020/08/Screen-Shot-2020-08-04-at-11.30.47-AM-1.png
+featuredImage: https://ddev.com/app/uploads/2020/08/Screen-Shot-2020-08-04-at-11.30.47-AM-1.png
 categories:
   - DDEV
 ---
@@ -17,24 +17,24 @@ _Note_: One of the weaknesses of WSL2 is that PHPStorm isn’t really completely
 
 **Here’s the video table of contents (opens on YouTube):**
 
-* What is DDEV-Local? ([1:02](https://youtu.be/ZMfHaUkhfc0?t=62))
-* What is WSL2? ([2:52](https://youtu.be/ZMfHaUkhfc0?t=172))
-* Advantages and Disadvantages of WSL2 ([3:44](https://youtu.be/ZMfHaUkhfc0?t=222))
-* WSL2 Installation ([5:49](https://youtu.be/ZMfHaUkhfc0?t=349))
-* Installing Docker Desktop ([13:29](https://youtu.be/ZMfHaUkhfc0?t=809))
-* Installing Homebrew and DDEV-Local inside WSL2 ([15:22](https://youtu.be/SwahVCBTo3w?t=922))
-* Installing and using bash-completion ([19:06](https://youtu.be/ZMfHaUkhfc0?t=1146))
-* Creating a super-simple PHP project (junk project) ([20:38](https://youtu.be/ZMfHaUkhfc0?t=1234))
-* Creating a TYPO3 project with `ddev composer create` ([27:57](https://youtu.be/ZMfHaUkhfc0?t=1673))
-* Some most-important ddev commands ([32:11](https://youtu.be/ZMfHaUkhfc0?t=1931))
-* Resources and wrap-up ([36:01](https://youtu.be/ZMfHaUkhfc0?t=2161))
+- What is DDEV-Local? ([1:02](https://youtu.be/ZMfHaUkhfc0?t=62))
+- What is WSL2? ([2:52](https://youtu.be/ZMfHaUkhfc0?t=172))
+- Advantages and Disadvantages of WSL2 ([3:44](https://youtu.be/ZMfHaUkhfc0?t=222))
+- WSL2 Installation ([5:49](https://youtu.be/ZMfHaUkhfc0?t=349))
+- Installing Docker Desktop ([13:29](https://youtu.be/ZMfHaUkhfc0?t=809))
+- Installing Homebrew and DDEV-Local inside WSL2 ([15:22](https://youtu.be/SwahVCBTo3w?t=922))
+- Installing and using bash-completion ([19:06](https://youtu.be/ZMfHaUkhfc0?t=1146))
+- Creating a super-simple PHP project (junk project) ([20:38](https://youtu.be/ZMfHaUkhfc0?t=1234))
+- Creating a TYPO3 project with `ddev composer create` ([27:57](https://youtu.be/ZMfHaUkhfc0?t=1673))
+- Some most-important ddev commands ([32:11](https://youtu.be/ZMfHaUkhfc0?t=1931))
+- Resources and wrap-up ([36:01](https://youtu.be/ZMfHaUkhfc0?t=2161))
 
 **Resources for you:**
 
-* [DDEV-Local documentation](https://ddev.readthedocs.io/en/stable/).
-* [WSL2 and DDEV Installation docs](https://ddev.readthedocs.io/en/stable/#installation-or-upgrade-windows-wsl2)
-* [Support](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation): Drupal slack and TYPO3 slack #ddev, gitter #ddev, Stack Overflow, and the [DDEV-Local issue queue](https://github.com/drud/ddev/issues).
-* [DDEV-Local Project Repository](https://github.com/drud/ddev)
-* More about [PHPStorm on WSL2](https://ddev.com/ddev-local/ddev-local-and-phpstorm-debugging-with-wsl2/), with full details about how to run it.
-* Using WSL2 (and **VSCode**), [DDEV ❤️ WSL2: getting started](https://ddev.com/ddev-local/ddev-wsl2-getting-started/)
-* DDEV-Local’s counterpart, [DDEV-Live](https://ddev.com/ddev-live/https://ddev.com/ddev-live/): Includes a free 10-day trial for you to kick the tires on our hosting platform.
+- [DDEV-Local documentation](https://ddev.readthedocs.io/en/stable/).
+- [WSL2 and DDEV Installation docs](https://ddev.readthedocs.io/en/stable/#installation-or-upgrade-windows-wsl2)
+- [Support](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation): Drupal slack and TYPO3 slack #ddev, gitter #ddev, Stack Overflow, and the [DDEV-Local issue queue](https://github.com/drud/ddev/issues).
+- [DDEV-Local Project Repository](https://github.com/drud/ddev)
+- More about [PHPStorm on WSL2](https://ddev.com/ddev-local/ddev-local-and-phpstorm-debugging-with-wsl2/), with full details about how to run it.
+- Using WSL2 (and **VSCode**), [DDEV ❤️ WSL2: getting started](https://ddev.com/ddev-local/ddev-wsl2-getting-started/)
+- DDEV-Local’s counterpart, [DDEV-Live](https://ddev.com/ddev-live/https://ddev.com/ddev-live/): Includes a free 10-day trial for you to kick the tires on our hosting platform.

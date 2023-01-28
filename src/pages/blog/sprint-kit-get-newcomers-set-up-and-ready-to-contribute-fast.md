@@ -2,7 +2,7 @@
 title: "Sprint Kit – Get newcomers set-up and ready to contribute fast"
 pubDate: 2018-02-27
 author: Jeffrey A. McGuire
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2018/02/code_sprint_2.jpg
+featuredImage: https://ddev.com/app/uploads/2018/02/code_sprint_2.jpg
 categories:
   - DDEV
 ---
@@ -14,13 +14,13 @@ We want to help you have a successful contribution sprint. Getting newcomers up 
 We spoke with open source community leaders for their advice and insight on [running great contribution sprints](https://ddev.com/ddev-local/top-tips-for-open-source-contribution-sprints/). One of the most challenging parts of running a sprint is getting local workspaces set up. We’ve heard of sprints spending almost the entire first day just getting everyone set up with local development environments. It eats up time you could better spend on squashing bugs, testing patches, and reviewing issues. The technical hurdles of onboarding take time that mentors and volunteers could use elsewhere. And it’s [frustrating and demoralizing for newcomers](https://ddev.com/ddev-live/removing-the-biggest-barrier-to-contribution/), who often don’t ever end up being second-time sprinters.
 
 > “DDEV’s got your back. Go make your CMS awesome.”
-> 
+>
 > – The DDEV team
 
 You’re not running a local workspace setup sprint. You’re there to make your open source project better. We’re committed to making it easier for contributors to get set up and contributing. That’s what DDEV Local is for; it takes all the complexity out of the development environment setup. And that’s why we’re also building resources for open source leaders like our Sprint Kit.
 
-* The first part of the kit is Quicksprint. [Get Quicksprint on GitHub](https://github.com/drud/quicksprint).
-* The second part of the kit is a Sprint Guide. [Read the Brilliant Sprint Guide on GitHub](https://github.com/drud/sprint%5Fguide), and please give us your feedback and pull requests.
+- The first part of the kit is Quicksprint. [Get Quicksprint on GitHub](https://github.com/drud/quicksprint).
+- The second part of the kit is a Sprint Guide. [Read the Brilliant Sprint Guide on GitHub](https://github.com/drud/sprint%5Fguide), and please give us your feedback and pull requests.
 
 ## About [Quicksprint](https://github.com/drud/quicksprint)
 

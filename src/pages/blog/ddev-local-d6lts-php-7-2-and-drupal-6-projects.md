@@ -2,7 +2,7 @@
 title: "DDEV-Local, D6LTS, PHP 7.2, and Drupal 6 projects"
 pubDate: 2019-03-28
 author: Randy Fay
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2019/03/Status_report___Hobobiker_com__Randy_and_Nancy_s_Big_Bike_Trip.png
+featuredImage: https://ddev.com/app/uploads/2019/03/Status_report___Hobobiker_com__Randy_and_Nancy_s_Big_Bike_Trip.png
 categories:
   - DDEV
 ---
@@ -20,7 +20,7 @@ Here’s what I’ve done to upgrade the Drupal 6 projects that I still maintain
 3. Overwrite your D6 core with the downloaded version.
 4. `ddev config --php-version=7.2`
 5. `mkdir .ddev/php and add file there called mbstring.ini` (it can be called anything ending in .ini) with these contents:  
-`mbstring.func_overload=0  
+   `mbstring.func_overload=0  
 mbstring.encoding_translation=0  
 mbstring.http_input=pass  
 mbstring.http_output=pass>/code>`

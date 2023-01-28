@@ -2,7 +2,7 @@
 title: "Beware of Dirty Pipes and Docker Desktop on Windows!"
 pubDate: 2022-06-04
 author: Randy Fay
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2022/06/plumbing-g6c1b9a8f3_1920.jpg
+featuredImage: https://ddev.com/app/uploads/2022/06/plumbing-g6c1b9a8f3_1920.jpg
 categories:
   - DDEV
 ---
@@ -23,9 +23,9 @@ Instead of seeing the normal type of output, which comes from the linux command 
 It was spewing crazy output and a failure like this, obviously a horrible buffer overrun or something:
 
 ```
-↓☺↕♠►☺☺↕                                                                                                                                                           
+↓☺↕♠►☺☺↕
 �∟☺_fini_ITM_deregisterTMCloneTable_ITM_registerTMCloneTable__cxa_finalize__deregister_frame_info__register_frame_infoxt_xlate_addputsprintfhtonsgetservbyportputch
-arstrdupstrchrxtables_parse_portxt_paramsfreeoptargoptindstrcasecmpstrtoktouppertolowerlibxt_sctp_initxtables_register_matchlibxtables.so.12libc.musl-x86_64.so.1; 
+arstrdupstrchrxtables_parse_portxt_paramsfreeoptargoptindstrcasecmpstrtoktouppertolowerlibxt_sctp_initxtables_register_matchlibxtables.so.12libc.musl-x86_64.so.1;
 
 ```
 

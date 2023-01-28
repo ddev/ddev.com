@@ -2,7 +2,7 @@
 title: "Watch: DDEV-Local, PhpStorm, and Xdebug Debugging"
 pubDate: 2020-08-27
 author: Randy Fay
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2020/08/Screen-Shot-2020-08-04-at-5.27.30-PM-1.png
+featuredImage: https://ddev.com/app/uploads/2020/08/Screen-Shot-2020-08-04-at-5.27.30-PM-1.png
 categories:
   - DDEV
 ---
@@ -15,32 +15,32 @@ The combination of [PhpStorm](https://www.jetbrains.com/phpstorm/) and [DDEV-Loc
 
 What we’re doing in this tutorial:
 
-* Installing DDEV-Local ([docs](https://ddev.readthedocs.io/en/stable/#homebrewlinuxbrew-macoslinux))
-* Installing PhpStorm (we use Homebrew here, but you can install it with a download)
-* Setting a breakpoint
-* Telling PHPStorm to listen for Xdebug
-* Enabling DDEV-Local Xdebug with `ddev xdebug on`
-* Visiting a page
-* Configuring the initial popup that makes a “server” or file mapping for us
+- Installing DDEV-Local ([docs](https://ddev.readthedocs.io/en/stable/#homebrewlinuxbrew-macoslinux))
+- Installing PhpStorm (we use Homebrew here, but you can install it with a download)
+- Setting a breakpoint
+- Telling PHPStorm to listen for Xdebug
+- Enabling DDEV-Local Xdebug with `ddev xdebug on`
+- Visiting a page
+- Configuring the initial popup that makes a “server” or file mapping for us
 
 **Outline:**
 
-* Overview ([0:51](https://youtu.be/tvqwkymg6fE?t=51))
-* Installing DDEV-Local ([0:59](https://youtu.be/tvqwkymg6fE?t=59))
-* Installing PhpStorm ([1:40](https://youtu.be/tvqwkymg6fE?t=100))
-* Creating a PhpStorm project and setting a breakpoint ([2:24](https://youtu.be/tvqwkymg6fE?t=144))
-* Configure DDEV project ([3:18](https://youtu.be/tvqwkymg6fE?t=198))
-* `ddev xdebug on` ([4:12](https://youtu.be/tvqwkymg6fE?t=252))
-* Creating a PhpStorm “server” or “mapping” automatically ([5:14](https://youtu.be/tvqwkymg6fE?t=314))
-* First breakpoint! ([5:42](https://youtu.be/tvqwkymg6fE?t=342))
-* Command-line debugging ([8:00](https://youtu.be/tvqwkymg6fE?t=480))
-* Resources ([9:58](https://www.youtube.com/watch?v=tvqwkymg6fE&t=598s))
+- Overview ([0:51](https://youtu.be/tvqwkymg6fE?t=51))
+- Installing DDEV-Local ([0:59](https://youtu.be/tvqwkymg6fE?t=59))
+- Installing PhpStorm ([1:40](https://youtu.be/tvqwkymg6fE?t=100))
+- Creating a PhpStorm project and setting a breakpoint ([2:24](https://youtu.be/tvqwkymg6fE?t=144))
+- Configure DDEV project ([3:18](https://youtu.be/tvqwkymg6fE?t=198))
+- `ddev xdebug on` ([4:12](https://youtu.be/tvqwkymg6fE?t=252))
+- Creating a PhpStorm “server” or “mapping” automatically ([5:14](https://youtu.be/tvqwkymg6fE?t=314))
+- First breakpoint! ([5:42](https://youtu.be/tvqwkymg6fE?t=342))
+- Command-line debugging ([8:00](https://youtu.be/tvqwkymg6fE?t=480))
+- Resources ([9:58](https://www.youtube.com/watch?v=tvqwkymg6fE&t=598s))
 
 **Resources for you:**
 
-* DDEV-Local documentation: <https://ddev.readthedocs.io>
-* [DDEV-Local Xdebug docs](https://ddev.readthedocs.io/en/stable/users/step-debugging/) (including troubleshooting)
-* [Support docs](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation): Drupal Slack and TYPO3 Slack #ddev, gitter #ddev, Stack Overflow, and the [DDEV-Local issue queue](https://github.com/drud/ddev/issues)
-* [DDEV-Local Project Repository](https://github.com/drud/ddev)
-* More about [PHPStorm on WSL2](https://ddev.com/ddev-local/ddev-local-and-phpstorm-debugging-with-wsl2/), with full details about how to run it
-* Ready to deploy? Try out [DDEV-Live](https://ddev.com/ddev-live/) for hosting, there’s a free 10-day trial for you to kick the tires
+- DDEV-Local documentation: <https://ddev.readthedocs.io>
+- [DDEV-Local Xdebug docs](https://ddev.readthedocs.io/en/stable/users/step-debugging/) (including troubleshooting)
+- [Support docs](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation): Drupal Slack and TYPO3 Slack #ddev, gitter #ddev, Stack Overflow, and the [DDEV-Local issue queue](https://github.com/drud/ddev/issues)
+- [DDEV-Local Project Repository](https://github.com/drud/ddev)
+- More about [PHPStorm on WSL2](https://ddev.com/ddev-local/ddev-local-and-phpstorm-debugging-with-wsl2/), with full details about how to run it
+- Ready to deploy? Try out [DDEV-Live](https://ddev.com/ddev-live/) for hosting, there’s a free 10-day trial for you to kick the tires

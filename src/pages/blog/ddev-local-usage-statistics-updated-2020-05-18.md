@@ -2,7 +2,7 @@
 title: "DDEV-Local Usage Statistics (Updated 2020-05-18)"
 pubDate: 2020-05-19
 author: Randy Fay
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2020/05/CMS-project-types.png
+featuredImage: https://ddev.com/app/uploads/2020/05/CMS-project-types.png
 categories:
   - DDEV
 ---
@@ -23,7 +23,7 @@ Many of you allow [DDEV-Local](https://github.com/drud/ddev) to [use telemetry t
 
 ![CMS Project Type (combined)](https://ddev.com/app/uploads/2020/05/CMS-Project-Type-combined.png)
 
-**Top Events**: This chart shows the commands ([exec](https://ddev.readthedocs.io/en/stable/users/cli-usage/#executing-commands-in-containers), start, stop, etc) that get used most. 
+**Top Events**: This chart shows the commands ([exec](https://ddev.readthedocs.io/en/stable/users/cli-usage/#executing-commands-in-containers), start, stop, etc) that get used most.
 
 ![Top events](https://ddev.com/app/uploads/2020/05/Top-events.png)
 
@@ -31,7 +31,7 @@ Many of you allow [DDEV-Local](https://github.com/drud/ddev) to [use telemetry t
 
 ![Webserver types](https://ddev.com/app/uploads/2020/05/Webserver-types.png)
 
-**NFS Mount Enabled**: For users on Windows and macOS, using [nfs\_mount\_enabled](https://ddev.readthedocs.io/en/stable/users/performance/#using-nfs-to-mount-the-project-into-the-web-container) enables massive webserving performance with just a quick workstation setup. It looks like just under half of projects are using `nfs_mount_enabled: true` (which can be set globally as of DDEV-Local v1.14).
+**NFS Mount Enabled**: For users on Windows and macOS, using [nfs_mount_enabled](https://ddev.readthedocs.io/en/stable/users/performance/#using-nfs-to-mount-the-project-into-the-web-container) enables massive webserving performance with just a quick workstation setup. It looks like just under half of projects are using `nfs_mount_enabled: true` (which can be set globally as of DDEV-Local v1.14).
 
 ![DDEVLocal nfs_mount_enabled](https://ddev.com/app/uploads/2020/05/DDEVLocal-nfs_mount_enabled.png)
 
@@ -39,4 +39,4 @@ Many of you allow [DDEV-Local](https://github.com/drud/ddev) to [use telemetry t
 
 ![](https://ddev.com/app/uploads/2020/05/Docker-Toolbox-Windows-Usage.png)
 
-Again, thanks so much for using DDEV and for your many [contributions](https://github.com/drud/ddev/blob/master/CONTRIBUTING.md) to its success, whether by sending stats, suggesting features, supporting others, or [reporting issues](https://ddev.readthedocs.io/en/stable/#support). Thank you! 
+Again, thanks so much for using DDEV and for your many [contributions](https://github.com/drud/ddev/blob/master/CONTRIBUTING.md) to its success, whether by sending stats, suggesting features, supporting others, or [reporting issues](https://ddev.readthedocs.io/en/stable/#support). Thank you!

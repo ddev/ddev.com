@@ -2,12 +2,12 @@
 title: "DDEV-Local Usage Statistics (Updated 2019-03-21)"
 pubDate: 2019-03-21
 author: Randy Fay
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2019/03/DDEV-Data-e1553211948905.jpg
+featuredImage: https://ddev.com/app/uploads/2019/03/DDEV-Data-e1553211948905.jpg
 categories:
   - DDEV
 ---
 
-We introduced [opt-in instrumentation](https://ddev.readthedocs.io/en/stable/users/cli-usage/#opt-in-usage-information) using [Sentry.io](http://sentry.io) in [DDEV-Local v1.5.0](https://github.com/drud/ddev/releases) (December 2018). This feature sends some information about `ddev` usage so that we can understand our users better and help you do your best work. Now that we’re a few months in we’ve learned a number of things, and so appreciate those of you who opted-in to this feature. 
+We introduced [opt-in instrumentation](https://ddev.readthedocs.io/en/stable/users/cli-usage/#opt-in-usage-information) using [Sentry.io](http://sentry.io) in [DDEV-Local v1.5.0](https://github.com/drud/ddev/releases) (December 2018). This feature sends some information about `ddev` usage so that we can understand our users better and help you do your best work. Now that we’re a few months in we’ve learned a number of things, and so appreciate those of you who opted-in to this feature.
 
 If you want to try it out, please [download and set up DDEV](https://ddev.readthedocs.io/en/stable/) with your own project or one of our quickstart guides.
 

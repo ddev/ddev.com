@@ -2,7 +2,7 @@
 title: "Web Development Workflows Simplified"
 pubDate: 2018-03-22
 author: Jeffrey A. McGuire
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2018/03/with_ddev.png
+featuredImage: https://ddev.com/app/uploads/2018/03/with_ddev.png
 categories:
   - DDEV
 ---

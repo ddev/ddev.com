@@ -2,7 +2,7 @@
 title: "Choosing an ideal web development environment"
 pubDate: 2018-05-29
 author: Mike Anello
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2018/05/headway-537308-unsplash-e1527604343956.jpg
+featuredImage: https://ddev.com/app/uploads/2018/05/headway-537308-unsplash-e1527604343956.jpg
 categories:
   - DDEV
 ---
@@ -23,17 +23,17 @@ About a year ago, I decided I needed to update several of our workshops to a loc
 
 I wanted to be teaching something that students would actually want to use in their day-to-day work. I wanted to teach a tool that would provide all the benefits a modern local development environment should. So, I made a list of what I felt a professional local development environment should include:
 
-* Easy and quick installation.
-* Flexible configuration per project.
-* The same environment configuration for all developers on a team.
-* Easy-to-learn-and-use local environment management tools.
-* The ability to get up-and-running on a project quickly and easily.
-* Integration with modern hosting platforms.
+- Easy and quick installation.
+- Flexible configuration per project.
+- The same environment configuration for all developers on a team.
+- Easy-to-learn-and-use local environment management tools.
+- The ability to get up-and-running on a project quickly and easily.
+- Integration with modern hosting platforms.
 
 Combine this list with a few more items that I felt were important for teaching:
 
-* A similar, if not identical, experience regardless of the host operating system.
-* A reasonable way to manage hard drive space (as I tend to create a lot of sites on my local).
+- A similar, if not identical, experience regardless of the host operating system.
+- A reasonable way to manage hard drive space (as I tend to create a lot of sites on my local).
 
 This list is more common sense than rocket science; I think it would be pretty difficult to argue against wanting any one of these requests.
 

@@ -2,7 +2,7 @@
 title: "DDEV v1.7.1: config.*.yaml, static bind ports, longer project names"
 pubDate: 2019-04-08
 author: Randy Fay
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2019/04/EKL_20190320_0150-e1554833038556.jpg
+featuredImage: https://ddev.com/app/uploads/2019/04/EKL_20190320_0150-e1554833038556.jpg
 categories:
   - DDEV
 ---
@@ -11,7 +11,7 @@ We’ve just released [DDEV v1.7.1](https://github.com/drud/ddev/releases/tag/v1
 
 **config.\*.yaml** – If you’ve been using DDEV on a team across different operating systems you’ve experienced how wonderful it is to be able to ship your project around from Windows to Linux. But, you may have needed to override a committed config.yaml with custom configuration for your local environment. Now we have included config.\*.yaml so you can retain your custom settings while [working seamlessly on a team](https://ddev.readthedocs.io/en/latest/users/extend/customization-extendibility/#extending-configyaml-with-custom-configyaml-files).
 
-**Optional static bind ports for db and webserver containers** – Those who want the dbserver or webserver bound port to be static within a project can use host\_db\_port or host\_webserver\_port to specify it. Thanks to [tmotyl](https://github.com/tmotyl) for getting the ball rolling. [More details here](https://github.com/drud/ddev/pull/1502).
+**Optional static bind ports for db and webserver containers** – Those who want the dbserver or webserver bound port to be static within a project can use host_db_port or host_webserver_port to specify it. Thanks to [tmotyl](https://github.com/tmotyl) for getting the ball rolling. [More details here](https://github.com/drud/ddev/pull/1502).
 
 **Longer project names should be possible** – Previously, a long server name would cause the ddev-router to stop working. Now you can use a very long name with no trouble. Thank you to [janhelke](https://github.com/janhelke) for [this PR](https://github.com/drud/ddev/pull/1484)!
 
@@ -27,7 +27,7 @@ Linux or macOS via script:
 
 `curl https://raw.githubusercontent.com/drud/ddev/master/scripts/install_ddev.sh | bash`
 
-Windows: Download the ddev\_windows\_installer.v1.7.1.exe above or with Chocolatey `choco install ddev` or `choco upgrade ddev` (or `choco install ddev --version=1.7.1` while it’s in the approval process.)
+Windows: Download the ddev_windows_installer.v1.7.1.exe above or with Chocolatey `choco install ddev` or `choco upgrade ddev` (or `choco install ddev --version=1.7.1` while it’s in the approval process.)
 
 And anywhere, you can just download the tarball or zipball, untar or unzip it, and place the executable in your path where it belongs.
 

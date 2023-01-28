@@ -2,17 +2,17 @@
 title: "DDEV v1.1.0 – Snapshots, hostname removal, Drush on host, Docker 18.06"
 pubDate: 2018-08-15
 author: Rick Manelius
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2018/08/nasa-63029-unsplash-e1534364618963.jpg
+featuredImage: https://ddev.com/app/uploads/2018/08/nasa-63029-unsplash-e1534364618963.jpg
 categories:
   - DDEV
 ---
 
 We’ve just released DDEV v1.1.0! With database snapshotting we’re making it easier for you to avert database deletion disasters, read on for more highlights.
 
-* DDEV UI is coming soon. Sneak peek for our newsletter subscribers next week.
-* Important upgrade notes for DDEV v1.1.0.
-* Recover quickly with DDEV database snapshots.
-* And more news for those who use Drush, Redis, TYPO3, and Backdrop CMS.
+- DDEV UI is coming soon. Sneak peek for our newsletter subscribers next week.
+- Important upgrade notes for DDEV v1.1.0.
+- Recover quickly with DDEV database snapshots.
+- And more news for those who use Drush, Redis, TYPO3, and Backdrop CMS.
 
 For full details check out the [DDEV v1.1.0 Release Notes](https://github.com/drud/ddev/releases/tag/v1.1.0).
 
@@ -50,7 +50,7 @@ Now you can quickly create and restore [snapshots of a project database](https:/
 
 If something goes wrong, it’s a single command to revert and go back to where you were. We wanted to make it fast and easy. In the background, we’re utilizing MariaDB’s functionality directly. So we keep the integrity of that directory, and it’s fast. Quick to backup, and quick to recover when you need to.
 
-We’ve got your back, `ddev remove --remove-data` will create a snapshot by default. Want to manually make a database backup? Type `ddev snapshot` and DDEV creates a database snapshot. The snapshot is stored in the project’s .ddev/db\_snapshots directory. If and when you restore the database, use the command `ddev restore-snapshot <some name>`.
+We’ve got your back, `ddev remove --remove-data` will create a snapshot by default. Want to manually make a database backup? Type `ddev snapshot` and DDEV creates a database snapshot. The snapshot is stored in the project’s .ddev/db_snapshots directory. If and when you restore the database, use the command `ddev restore-snapshot <some name>`.
 
 When ddev makes the snapshot, it’s automatically named with the project name and timestamp. We highly recommend you rename each snapshot directory to make them easier to identify. For example, rename it something like `working_before_migration`. Then, if you need to restore the database, use the command `ddev restore-snapshot working_before_migration`.
 

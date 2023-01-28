@@ -2,7 +2,7 @@
 title: "Sandboxes – Local development environments to play in"
 pubDate: 2018-04-26
 author: Heather McNamee
-featuredImage: https://ddevdotcom.ddev.site/app/uploads/2018/04/developers-playing-in-sandboxes-e1524554749706.jpg
+featuredImage: https://ddev.com/app/uploads/2018/04/developers-playing-in-sandboxes-e1524554749706.jpg
 categories:
   - DDEV
 ---
@@ -37,8 +37,8 @@ When you follow those steps, you’ll clone your existing project, configure it 
 
 Two things to note, if you’re new to DDEV-Local:
 
-* DDEV-Local provides the web and database server for you to work on. If you already have a web server or database running on your machine you might get an error message if, for example, the localhost port 80 is in use. Follow the steps to [fix the port conflict](https://ddev.readthedocs.io/en/latest/users/troubleshooting/#webserver-ports-are-already-occupied-by-another-webserver).
-* Before importing any databases for your project, first remove its wp-config.php if using WordPress – or settings.php file in the case of Drupal 7/8, if present.
+- DDEV-Local provides the web and database server for you to work on. If you already have a web server or database running on your machine you might get an error message if, for example, the localhost port 80 is in use. Follow the steps to [fix the port conflict](https://ddev.readthedocs.io/en/latest/users/troubleshooting/#webserver-ports-are-already-occupied-by-another-webserver).
+- Before importing any databases for your project, first remove its wp-config.php if using WordPress – or settings.php file in the case of Drupal 7/8, if present.
 
 After that, making new sites is a breeze. Each time you want to set up a new site, you change to your project’s directory in your terminal, and `ddev start` to get going.
 
