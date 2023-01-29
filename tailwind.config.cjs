@@ -29,6 +29,15 @@ module.exports = {
           900: "#00192d",
         },
       },
+      // remove automatic blockquote quotes
+      typography: {
+        DEFAULT: {
+          css: {
+            "blockquote p:first-of-type::before": null,
+            "blockquote p:last-of-type::after": null,
+          },
+        },
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
