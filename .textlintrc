@@ -1,0 +1,30 @@
+{
+  "rules": {
+    "no-todo": true,
+    "terminology": {
+      "defaultTerms": true,
+      "skip": ["Image", "Code"],
+      "terms": [
+        ["(\\s)http", "HTTP"],
+        ["(\\s)https", "HTTPS"],
+        ["web-?server", "web server"]
+      ],
+      "exclude": [
+        "front[- ]end(\\w*)",
+        "back[- ]end(\\w*)",
+        "command ?line",
+        "PDF",
+        "PNG",
+        "JPG",
+        "GIF",
+        "HTML",
+        "CSS",
+        "ID",
+        "Markdown",
+        "URL",
+        "walk[- ]through",
+        "web[- ]?site(s)?"
+      ]
+    }
+  }
+}

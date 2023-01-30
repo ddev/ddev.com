@@ -8,7 +8,9 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "textlint": "./node_modules/.bin/textlint 'src/pages/**'",
+    "textlint:fix": "./node_modules/.bin/textlint 'src/pages/**' --fix"
   },
   "dependencies": {
     "@astrojs/prefetch": "^0.1.1",
@@ -42,6 +44,9 @@
     "tailwindcss": "^3.2.4"
   },
   "devDependencies": {
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "textlint": "^13.0.5",
+    "textlint-rule-no-todo": "^2.0.1",
+    "textlint-rule-terminology": "^3.0.4"
   }
 }
