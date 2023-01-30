@@ -20,49 +20,51 @@ For future updates and additional information, please check out the [DDEV projec
 3. Configure
 4. Start!
 
-### 1\. Install DDEV
+### 1. Install DDEV
 
 There are a few ways to install DDEV, including [macOS homebrew](https://ddev.readthedocs.io/en/latest/#homebrew-macos) (recommended), an [install script](https://ddev.readthedocs.io/en/latest/#installation-script-linux-and-macos), or a [manual download](https://ddev.readthedocs.io/en/latest/#manual-installation-linux-and-macos) of the binary.
 
-We keep the number of dependencies minimal by design ((mostly Docker and Docker Compose), but if you’re using Windowsyou’ll need Windows 10 Pro in order to install Docker for Windows.
+We keep the number of dependencies minimal by design (mostly Docker and Docker Compose), but if you’re using Windows you’ll need Windows 10 Pro in order to install Docker for Windows.
 
-### 2\. Clone Backdrop
+### 2. Clone Backdrop
 
-- git clone [git@github.com](mailto:git@github.com):backdrop/backdrop.git
-- cd backdrop\`
-- git checkout tags/1.9.0
+- `git clone git@github.com:backdrop/backdrop.git`
+- `cd backdrop`
+- `git checkout tags/1.9.0`
 
-### 3\. Configure
+### 3. Configure
 
-There are two options here. You can either run \`ddev configure\` and answer questions as you are prompted, or you can specify your answers using flags. This would look like the following:
+There are two options here. You can either run `ddev configure` and answer questions as you are prompted, or you can specify your answers using flags. This would look like the following:
 
-- ddev configure –sitename backdrop-demo –apptype backdrop –docroot ./
+```
+ddev configure –sitename backdrop-demo –apptype backdrop –docroot ./
+```
 
-### 4\. Start
+### 4. Start
 
-- ddev start
+Run `ddev start`.
 
-At this point, you will see containers being downloaded and spun up. Once that is complete, you should receive a message that your site is ready to go and is accessible at <http://backdrop-test.ddev.local> or [https://backdrop-test.ddev.local](http://backdrop-test.ddev.local), which will direct you to the install page. You can find the database credentials by running \`ddev describe\`.
+At this point, you will see containers being downloaded and spun up. Once that is complete, you should receive a message that your site is ready to go and is accessible at `http://backdrop-test.ddev.local` or `https://backdrop-test.ddev.local`, which will direct you to the install page. You can find the database credentials by running `ddev describe`.
 
 ### Putting It All Together
 
-The following Youtube video shows how you can go through the entire process in 1-2 minutes. If you already have DDEV installed, you could script this as follows:
+The following YouTube video shows how you can go through the entire process in 1-2 minutes. If you already have DDEV installed, you could script this as follows:
 
-- cd \~/Desktop
-- git clone [git@github.com](mailto:git@github.com):backdrop/backdrop.git
-- cd backdrop
-- git checkout tags/1.9.0
-- ddev config –sitename backdrop-demo –apptype backdrop –docroot ./
-- ddev start
+- `cd ~/Desktop`
+- `git clone git@github.com:backdrop/backdrop.git`
+- `cd backdrop`
+- `git checkout tags/1.9.0`
+- `ddev config –sitename backdrop-demo –apptype backdrop –docroot ./`
+- `ddev start`
 
 ## Going Further
 
-You can find all the details in our [community documentation](https://ddev.readthedocs.io/) and [quickstart](/quickstart), but we think you’ll want to know these facts to make your day easier now.
+You can find all the details in our [documentation](https://ddev.readthedocs.io/) and [quickstart](/quickstart), but we think you’ll want to know these facts to make your day easier now:
 
-- Project Info: Run \`ddev describe\` to access database credentials and other services.
-- Developer Tools: Access Mailhog, phpmyadmin, and more right out of the gates.
+- Project Info: Run `ddev describe` to access database credentials and other services.
+- Developer Tools: Access MailHog, phpMyAdmin, and more right out of the gates.
 - Hooks: Common tasks you need to run can be version controlled and shared.
-- List: Running two or more projects? Run \`ddev list\` to keep on top of them all.
+- List: Running two or more projects? Run `ddev list` to keep on top of them all.
 - Additional Services: Add new containers (e.g. Apache Solr) quickly.
 
 Drush in the web container is not yet supported but is a high priority. See the [Backdrop quickstart](https://ddev.readthedocs.io/en/latest/users/cli-usage/#backdrop-quickstart).

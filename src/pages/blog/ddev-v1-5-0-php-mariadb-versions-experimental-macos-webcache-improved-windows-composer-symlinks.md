@@ -1,5 +1,5 @@
 ---
-title: "DDEV v1.5.0 – PHP & MariaDB Versions, Experimental MacOS Webcache, Improved Windows Composer Symlinks"
+title: "DDEV v1.5.0 – PHP & MariaDB Versions, Experimental macOS Webcache, Improved Windows Composer Symlinks"
 pubDate: 2018-12-19
 author: Randy Fay
 featuredImage: https://ddev.com/app/uploads/2018/12/DSC_3769-e1545284198357.jpg
@@ -47,7 +47,7 @@ For full details check out the [DDEV v1.5.0 Release Notes](https://github.com/dr
 
 ### Out and About with #DDEV
 
-Please feel free to tag us on twitter [@Drud](https://twitter.com/drud) and with [#DDEV](https://twitter.com/hashtag/DDEV?src=hash) anytime you work with our local environment or hosting platform! We’re also on [GitHub](https://github.com/drud/ddev) and the conversation continues on [StackOverflow](https://stackoverflow.com/search?tab=newest&q=%23ddev).
+Please feel free to tag us on twitter [@Drud](https://twitter.com/drud) and with [#DDEV](https://twitter.com/hashtag/DDEV?src=hash) anytime you work with our local environment or hosting platform! We’re also on [GitHub](https://github.com/drud/ddev) and the conversation continues on [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=%23ddev).
 
 > "I'm a big fan of the fact that in DDEV databases are stored as [#Docker](https://twitter.com/hashtag/Docker?src=hash&ref%5Fsrc=twsrc%5Etfw) volumes… You can completely remove your containers, and keep a snapshot of your databases."  
 > Listening to [@TalkingDrupal](https://twitter.com/TalkingDrupal?ref%5Fsrc=twsrc%5Etfw) 190 – [#DDEV](https://twitter.com/hashtag/DDEV?src=hash&ref%5Fsrc=twsrc%5Etfw) with Mike Anello of [@DrupalEasy](https://twitter.com/DrupalEasy?ref%5Fsrc=twsrc%5Etfw) ? ?<https://t.co/zltZOvtUIK> [pic.twitter.com/W3aprVd7E1](https://t.co/W3aprVd7E1)

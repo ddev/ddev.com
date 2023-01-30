@@ -7,7 +7,7 @@ categories:
   - Guides
 ---
 
-DDEV-Local is a powerful local development tool that many of you are fond of for its simplicity and extensibility. Recent versions of [DDEV-Local (v1.10+)](https://ddev.readthedocs.io/en/stable/) add custom commands and loads of other goodies we’d like to show you how to use. In this screencast and tutorial, we’ll show you how to make use of DDEV-Local custom commands, adding webserver packages, and adding extras in .ddev/homeadditions to support your specific project needs.
+DDEV-Local is a powerful local development tool that many of you are fond of for its simplicity and extensibility. Recent versions of [DDEV-Local (v1.10+)](https://ddev.readthedocs.io/en/stable/) add custom commands and loads of other goodies we’d like to show you how to use. In this screencast and tutorial, we’ll show you how to make use of DDEV-Local custom commands, adding web server packages, and adding extras in .ddev/homeadditions to support your specific project needs.
 
 When in doubt, update DDEV-Local on your machine and run `ddev config` on a project before getting started with new features.
 
@@ -21,8 +21,8 @@ Watch the video below and read the detailed instructions to configure your own p
 
 ##### How to add zsh and oh-my-zsh to DDEV-Local:
 
-1. From the root of an existing project configured with DDEV-Local: Add the zsh package to the webserver container by adding `webimage_extra_packages: ["zsh"]` to the .ddev/config.yaml (or run `ddev config --webimage-extra-packages=zsh`, which does the exact same thing). If you only want zsh in the web container, you can `ddev restart` and you’re done!
-   To add a `ddev zsh` custom command to your project, place a file named “zsh’ in .ddev/commands/web/zsh with the following contents and make it executable with `chmod +x zsh`:
+1. From the root of an existing project configured with DDEV-Local: Add the zsh package to the web server container by adding `webimage_extra_packages: ["zsh"]` to the .ddev/config.yaml (or run `ddev config --webimage-extra-packages=zsh`, which does the exact same thing). If you only want zsh in the web container, you can `ddev restart` and you’re done!
+   To add a `ddev zsh` custom command to your project, place a file named “zsh’ in `.ddev/commands/web/zsh` with the following contents and make it executable with `chmod +x zsh`:
 
 #!/bin/bash
 

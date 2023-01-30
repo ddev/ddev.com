@@ -28,7 +28,7 @@ Quicksprint is a toolkit to help sprinters get new contributors started with DDE
 
 1. Gets the OS specific version of Docker installed.
 2. Installs DDEV-Local.
-3. It includes a pre-built Drupal 8 repo. Triggers DDEV to get a fresh Drupal 8 site up.
+3. It includes a pre-built Drupal 8 repository. Triggers DDEV to get a fresh Drupal 8 site up.
 
 If you’re planning a contribution sprint, use Quicksprint to produce one .zip archive that includes everything contributors need for local development.
 

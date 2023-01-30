@@ -62,7 +62,7 @@ Up until now, if you’re using [DDEV with Pantheon](https://ddev.readthedocs.io
 
 With DDEV v1.1.0 we’ve added [support for DRUD hosting](https://ddev.readthedocs.io/en/latest/users/providers/drud-s3/). Once you’re set up with `ddev config drud-s3`, a simple use of `ddev pull`, will download and import the latest backup from DRUD hosting, imports the database and files into your DDEV project.
 
-Incidentally, this uses AWS S3 Buckets. So, if you currently store the backups from your hosting provider in AWS S3, you could adapt this format to work for you. Then you can run `ddev pull against those archives and skip the manual steps to get set up and run a single command to get to work.`
+Incidentally, this uses AWS S3 Buckets. So, if you currently store the backups from your hosting provider in AWS S3, you could adapt this format to work for you. Then you can run `ddev pull` against those archives and skip the manual steps to get set up and run a single command to get to work.
 
 Find out more about [DRUD’s hosting service](https://ddev.com/ddev-live/).
 
@@ -70,17 +70,19 @@ Find out more about [DRUD’s hosting service](https://ddev.com/ddev-live/).
 
 ### More highlights from DDEV v 1.1.0
 
-**Better support for a favorite Drupal dev tool: Drush.** Drupal users will be glad to know drush now works on the host for many commands. (After you’ve done a `ddev config` and `ddev start`.) Before you would have to use `ddev exec` or `ddev ssh` to run Drush in the web container. Now, if you have Drush available on the host, you can run `drush sql-cli` or `drush cr` on the \*host\* to use Drush directly.
+**Better support for a favorite Drupal dev tool: Drush.** Drupal users will be glad to know Drush now works on the host for many commands. (After you’ve done a `ddev config` and `ddev start`.) Before you would have to use `ddev exec` or `ddev ssh` to run Drush in the web container. Now, if you have Drush available on the host, you can run `drush sql-cli` or `drush cr` on the *host* to use Drush directly.
 
 **More services!** We’ve added PHP-Redis to the web container. We heard repeatedly that not having Redis was a major hurdle for people who wanted to use DDEV. We hope this helps!
 
 **Easier to keep your projects tidy.** On some operating systems, users can get caught out and reach a limit in the number of hostnames they can have. For example, Windows has capacity for only 10 entries. Now, by default `ddev remove --remove-data` removes the hostname(s) associated with a project. When you need to, you can also manually remove hostnames from any projects that aren’t running.
 
-` sudo ddev hostname --remove-inactive`
+```
+sudo ddev hostname --remove-inactive
+```
 
 That info is saved in the project config file, so as soon as you `ddev start`, it’s set up when you need it.
 
-There are more bug fixes, new documentation, and improvements – so please check out the [DDEV v1.1.0 Release Notes](https://github.com/drud/ddev/releases/tag/v1.1.0) for all the details.
+There are more bugfixes, new documentation, and improvements – so please check out the [DDEV v1.1.0 Release Notes](https://github.com/drud/ddev/releases/tag/v1.1.0) for all the details.
 
 ---
 

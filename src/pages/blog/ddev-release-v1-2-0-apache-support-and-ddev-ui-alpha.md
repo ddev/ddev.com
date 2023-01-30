@@ -25,7 +25,7 @@ If you’re updating from a version before DDEV v1.1.0, and you have customizati
 
 With DDEV v1.2.0 we’ve introduced experimental Apache support. We want to hear directly from our users how it works in the wild. You can now run with apache-with-php-fpm (apache-fpm) or apache-with-cgi (apache-cgi).
 
-Check out [the documentation on how to change webserver type](https://ddev.readthedocs.io/en/latest/users/extend/customization-extendibility/#changing-webserver-type).
+Check out [the documentation on how to change web server type](https://ddev.readthedocs.io/en/latest/users/extend/customization-extendibility/#changing-webserver-type).
 
 ### Download DDEV UI Alpha!
 
@@ -33,7 +33,7 @@ Our mission at DRUD is to create tools and services which make it easier for you
 
 [Download DDEV UI](https://github.com/drud/ddev-ui/releases/tag/v0.4.1-alpha)
 
-Right now DDEV UI supports mac OS. We’re busy working on Windows and Linux.
+Right now DDEV UI supports macOS. We’re busy working on Windows and Linux.
 
 **Preparing the way for more DDEV UI features**
 

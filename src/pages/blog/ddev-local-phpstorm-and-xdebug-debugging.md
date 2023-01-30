@@ -7,7 +7,7 @@ categories:
   - Guides
 ---
 
-The days of print-debugging are long behind us! [Xdebug](https://xdebug.org/) and PHP IDEs have made that approach unwieldy, but often the configuration between your IDE, PHP, webserver, and Docker is challenging and fragile. Enter our open source local development environment, [DDEV-Local](https://github.com/drud/ddev).
+The days of print-debugging are long behind us! [Xdebug](https://xdebug.org/) and PHP IDEs have made that approach unwieldy, but often the configuration between your IDE, PHP, web server, and Docker is challenging and fragile. Enter our open source local development environment, [DDEV-Local](https://github.com/drud/ddev).
 
 The combination of [PhpStorm](https://www.jetbrains.com/phpstorm/) and [DDEV-Local](https://ddev.com/ddev-local/)‘s plug-and-play approach to debugging makes those configuration struggles obsolete. You can easily get a working debug environment in just a few minutes! We’ll walk you through it in this screencast using macOS. It works exactly the same on Windows or Linux, and with [WSL2 as well](https://ddev.com/ddev-local/ddev-local-and-phpstorm-debugging-with-wsl2/). After all, we want you to be successful with the tools and [workflows](https://ddev.com/ddev-live/a-git-based-workflow-from-dev-to-deploy/) you know and love.
 
@@ -15,10 +15,10 @@ The combination of [PhpStorm](https://www.jetbrains.com/phpstorm/) and [DDEV-Loc
 
 What we’re doing in this tutorial:
 
-- Installing DDEV-Local ([docs](https://ddev.readthedocs.io/en/stable/#homebrewlinuxbrew-macoslinux))
+- [Installing DDEV-Local](https://ddev.readthedocs.io/en/stable/#homebrewlinuxbrew-macoslinux)
 - Installing PhpStorm (we use Homebrew here, but you can install it with a download)
 - Setting a breakpoint
-- Telling PHPStorm to listen for Xdebug
+- Telling PhpStorm to listen for Xdebug
 - Enabling DDEV-Local Xdebug with `ddev xdebug on`
 - Visiting a page
 - Configuring the initial popup that makes a “server” or file mapping for us
@@ -42,5 +42,5 @@ What we’re doing in this tutorial:
 - [DDEV-Local Xdebug docs](https://ddev.readthedocs.io/en/stable/users/step-debugging/) (including troubleshooting)
 - [Support docs](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation): Drupal Slack and TYPO3 Slack #ddev, gitter #ddev, Stack Overflow, and the [DDEV-Local issue queue](https://github.com/drud/ddev/issues)
 - [DDEV-Local Project Repository](https://github.com/drud/ddev)
-- More about [PHPStorm on WSL2](https://ddev.com/ddev-local/ddev-local-and-phpstorm-debugging-with-wsl2/), with full details about how to run it
+- More about [PhpStorm on WSL2](https://ddev.com/ddev-local/ddev-local-and-phpstorm-debugging-with-wsl2/), with full details about how to run it
 - Ready to deploy? Try out [DDEV-Live](https://ddev.com/ddev-live/) for hosting, there’s a free 10-day trial for you to kick the tires

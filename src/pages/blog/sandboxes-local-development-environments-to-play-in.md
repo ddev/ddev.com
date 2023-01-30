@@ -23,7 +23,7 @@ Developers who use open source take a “try before you buy” approach to devel
 
 Usually, you can browse the code online without downloading anything, but you won’t get a feel for how it works until you can try it out. Many WordPress developers create websites for their plugins and themes. They provide demos you can log into, such as [WP Job Board ](https://wpjobboard.net/demo/)or the [live demo for the Boss Theme for BuddyPress](https://www.buddyboss.com/live-demo/).
 
-Similarly, the Drupal community also has an in-browser tool to test out new modules called [SimplyTest.me](https://simplytest.me/). However you may still want to download the new project, so you can install it on a specific site, and see how easy it is to integrate with your existing code base.
+Similarly, the Drupal community also has an in-browser tool to test out new modules called [SimplyTest.me](https://simplytest.me/). However you may still want to download the new project, so you can install it on a specific site, and see how easy it is to integrate with your existing codebase.
 
 You won’t know how any new module, extension, or plugin interacts with your current application until you try it out. And surprises are the last thing you want. Keep these environments isolated using container-based tools like DDEV-Local. Rick Manelius, Chief Product Officer here at DRUD said, “This is the container advantage. Spin up, test, explore, and BREAK. Because you’re using containers you’re not going to break whatever else you’re working on. It’s not like MAMP, where you tweak your PHP.ini and all of the sudden nothing else works.”
 

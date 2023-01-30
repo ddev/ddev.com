@@ -50,11 +50,11 @@ With DDEV, updates are as easy as a one-line Unix-y command or a package install
 
 In the free version, MAMP offers you a simple server stack, with few frills. Download the package and run the installer. If all you need to do is spin up a quick sandbox site here and there for testing, MAMP can be a viable solution. But as [we heard from Joe Shindelar](https://ddev.com/ddev-local/rapid-local-development-ddev/), setting up MAMP (especially for existing projects) can be a process of 20 or more steps to install, import an existing database, and configure everything to suit. Any additional tools you need will have to be installed directly on your operating system.
 
-Your mileage may vary on initial installation time for MAMP depending on the amount of troubleshooting you have to do. It’s worth it to test out your setup with a simple site in the MAMP htdocs directory to start with, just to see if the server is working. If not, you may need to adjust the ports used from MAMP’s defaults to port 80\. If you just updated MAMP, also update your mysql password in MAMP/bin/phpMyAdmin/config.inc.php. If things fail, you may wind up pushing off the start by hours or days, frustrating everyone from yourself to colleagues and clients.
+Your mileage may vary on initial installation time for MAMP depending on the amount of troubleshooting you have to do. It’s worth it to test out your setup with a simple site in the MAMP htdocs directory to start with, just to see if the server is working. If not, you may need to adjust the ports used from MAMP’s defaults to port 80. If you just updated MAMP, also update your MySQL password in `MAMP/bin/phpMyAdmin/config.inc.php`. If things fail, you may wind up pushing off the start by hours or days, frustrating everyone from yourself to colleagues and clients.
 
 ### With DDEV
 
-With DDEV-Local, you can start a basic Drupal, TYPO3 CMS, Backdrop or WordPress site in [four steps](https://ddev.com/get-started/) and a couple of minutes depending on whether you’re installing via Composer and your dependencies. There’s a lot less room for error and troubleshooting in four steps compared to 20\. There is a GUI (graphical user interface) in [the roadmap for DDEV-Local](https://github.com/drud/ddev/wiki/roadmap). In the meantime, we think we’ve already got your back when it comes to getting started quickly and easily.
+With DDEV-Local, you can start a basic Drupal, TYPO3 CMS, Backdrop or WordPress site in [four steps](https://ddev.com/get-started/) and a couple of minutes depending on whether you’re installing via Composer and your dependencies. There’s a lot less room for error and troubleshooting in four steps compared to 20. There is a GUI (graphical user interface) in [the roadmap for DDEV-Local](https://github.com/drud/ddev/wiki/roadmap). In the meantime, we think we’ve already got your back when it comes to getting started quickly and easily.
 
 To install DDEV-Local, [download the app](https://ddev.com/get-started/) and `cd` into the docroot for your project in the command line, ie `cd ~/sites/my-drupal8-site`. If you don’t have a project already, check out our [quickstart guides](https://ddev.readthedocs.io/en/latest/users/cli-usage/#quickstart-guides) to roll on something new. Then run `ddev config` and you’ll be prompted in plain English for a couple of inputs about your project. When you run `ddev start` DDEV will start up your environment and output the URL for your local project, like so: `<http://my-drupal8-site.ddev.local>`
 
@@ -84,9 +84,9 @@ To get all the configuration information about your current DDEV project, just r
 
 DDEV manages the hosts file for you, making your local project URLs easier to access than manually configuring virtual hosts in MAMP or paying for MAMP Pro.
 
-If you need to [specify a PHP version in DDEV-Local](https://ddev.readthedocs.io/en/latest/users/extend/customization-extendibility/#changing-php-version), just visit the .ddev/config.yaml file in your project directory where php_version can be set. You can also add configuration specifications for NGINIX, MySQL, services, environment variables and more by adding the appropriate files to the .ddev directory for your project.
+If you need to [specify a PHP version in DDEV-Local](https://ddev.readthedocs.io/en/latest/users/extend/customization-extendibility/#changing-php-version), just visit the `.ddev/config.yaml` file in your project directory where `php_version` can be set. You can also add configuration specifications for NGINIX, MySQL, services, environment variables and more by adding the appropriate files to the `.ddev` directory for your project.
 
-[Mike Anello talked about switching to DDEV](https://ddev.com/ddev-local/choosing-an-ideal-web-development-environment/) from MAMP Pro in his guest post on our blog: “In the past, MAMP Pro has been my go-to environment. It provided me with a relatively easy way to get most of what I needed: the ability to create virtual hosts and the ability to change between several versions of PHP. ” DDEV-Local gave him comparable features, while being easier, faster, and more portable.
+[Mike Anello talked about switching to DDEV](https://ddev.com/ddev-local/choosing-an-ideal-web-development-environment/) from MAMP Pro in his guest post on our blog: “In the past, MAMP Pro has been my go-to environment. It provided me with a relatively easy way to get most of what I needed: the ability to create virtual hosts and the ability to change between several versions of PHP.” DDEV-Local gave him comparable features, while being easier, faster, and more portable.
 
 ## Running tests, or running into trouble?
 
@@ -100,9 +100,9 @@ If everything goes haywire and you need to start over, you can remove the entire
 
 ### With DDEV
 
-If you need a local environment that just works, for free, DDEV-Local includes tools like [MailHog for email capture and review](https://ddev.readthedocs.io/en/latest/users/developer-tools/#email-capture-and-review), as well as Composer, Drush, WP-CLI, MySQL Client, and phpMyAdmin. You may also want to [enable xdebug](https://ddev.readthedocs.io/en/latest/users/step-debugging/), which is included in every DDEV project and works with your preferred IDE so you can step through your code to troubleshoot and test. Check out a [walkthrough of debugging with DDEV and PHPStorm here](https://vimeo.com/268685753).
+If you need a local environment that just works, for free, DDEV-Local includes tools like [MailHog for email capture and review](https://ddev.readthedocs.io/en/latest/users/developer-tools/#email-capture-and-review), as well as Composer, Drush, WP-CLI, MySQL Client, and phpMyAdmin. You may also want to [enable Xdebug](https://ddev.readthedocs.io/en/latest/users/step-debugging/), which is included in every DDEV project and works with your preferred IDE so you can step through your code to troubleshoot and test. Check out a [walkthrough of debugging with DDEV and PhpStorm here](https://vimeo.com/268685753).
 
-With DDEV-Local it’s a simple `ddev remove --remove-data` command to remove the project environment, including containers and the associated database. `ddev remove` will non-destructively remove the containers, leaving the database. Both options will leave the configuration files for DDEV intact in your project directory. If you need extra help, you can reach the DRUD team and the very active DDEV community [on a variety of channels](https://ddev.readthedocs.io/en/latest/#support).
+With DDEV-Local it’s a simple command—`ddev remove --remove-data`—to remove the project environment, including containers and the associated database. `ddev remove` will non-destructively remove the containers, leaving the database. Both options will leave the configuration files for DDEV intact in your project directory. If you need extra help, you can reach the DRUD team and the very active DDEV community [on a variety of channels](https://ddev.readthedocs.io/en/latest/#support).
 
 ## Collaborating or creating problems?
 
@@ -120,7 +120,7 @@ It can take hours to get two people set up with matching local environments, los
 
 With DDEV-Local on the other hand, everyone on your team can install the same tools and share project files quickly and easily. The brilliant part is that you can ship the entire project with the DDEV-Local configuration to a colleague and they can spin up the exact same environment in seconds. DDEV significantly reduces the answer space when debugging because the environment is contained and controlled with straightforward configuration files. This also makes DDEV an ideal tool for open source contribution because contributors can get on board and start working immediately during sprints.
 
-No need to think about configuration details in order to get your shared project up and running locally. When you run `ddev start` you’re already inside your project with local URLs provided to you in the command line. For more local environments, just run `ddev config` and `ddev start` in each project. To import existing files for a project that you’ve pulled from your live site, [follow a couple quick steps](https://ddev.readthedocs.io/en/latest/users/cli-usage/#importing-assets-for-an-existing-project) using `ddev import-db` and `ddev import-files`. If you’re looking for a mac OS alternative for MAMP, you should consider DDEV if you need a tool that works on other platforms too.
+No need to think about configuration details in order to get your shared project up and running locally. When you run `ddev start` you’re already inside your project with local URLs provided to you in the command line. For more local environments, just run `ddev config` and `ddev start` in each project. To import existing files for a project that you’ve pulled from your live site, [follow a couple quick steps](https://ddev.readthedocs.io/en/latest/users/cli-usage/#importing-assets-for-an-existing-project) using `ddev import-db` and `ddev import-files`. If you’re looking for a macOS alternative for MAMP, you should consider DDEV if you need a tool that works on other platforms too.
 
 ## Deployment or delays?
 
@@ -130,7 +130,7 @@ No need to think about configuration details in order to get your shared project
 
 It’s all about parity with your production environment. If you can get your configurations set in the free version of MAMP and manually update everything when new component versions come out, or if you pay for MAMP Pro, you have a fair chance of making your local development environment very similar to the live environment. Barring that, be prepared to hear (or say) “but it works on my machine!”
 
-If you’re just looking to import or export the most recent version of your database to your local environment, you will either need to open up phpMyAdmin or run mySQL commands manually.
+If you’re just looking to import or export the most recent version of your database to your local environment, you will either need to open up phpMyAdmin or run MySQL commands manually.
 
 ### With DDEV
 
@@ -138,7 +138,9 @@ DDEV gives you the ability to rapidly switch between projects with no rejiggerin
 
 You might be wondering how all this containerization fits with your Git workflow. DDEV-Local works smoothly with Git because it only adds one directory and a config file, which you can add to your .gitignore and go about your business. When you’re ready to deploy, just follow your usual workflow to build, commit and push your code, config and database to live.
 
-> “This is the container advantage. Spin up, test, explore, and BREAK. Because you’re using containers you’re not going to break whatever else you’re working on. It’s not like MAMP, where you tweak your PHP.ini and all of the sudden nothing else works.” – Rick Manelius, Chief Product Officer at DRUD
+> “This is the container advantage. Spin up, test, explore, and BREAK. Because you’re using containers you’re not going to break whatever else you’re working on. It’s not like MAMP, where you tweak your PHP.ini and all of the sudden nothing else works.”
+>
+> – Rick Manelius, Chief Product Officer at DRUD
 
 ### In conclusion
 

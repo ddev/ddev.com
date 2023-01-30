@@ -8,7 +8,7 @@ categories:
   - Performance
 ---
 
-**Update 2020-12-16:** _An Apple Silicon M1 pre-release of DDEV-Local is now available in_ [_DDEV releases_](https://github.com/drud/ddev/releases)_! There is information there on how to get the latest prerelease for Docker Desktop for Mac on M1_.
+**Update 2020-12-16:** _An Apple Silicon M1 prerelease of DDEV-Local is now available in_ [_DDEV releases_](https://github.com/drud/ddev/releases)_! There is information there on how to get the latest prerelease for Docker Desktop for Mac on M1_.
 
 ARM64 is the new word of the day all over the place since Apple has switched their hardware platform to “Apple Silicon,” which is on the ARM64 platform. Although the Apple news and benchmarks are exciting, ARM is not new, lots of devices already use it, and our [open source DDEV-Local development environment](https://github.com/drud/ddev/releases/tag/v1.16.0) already supports it on Linux and WSL2.
 
@@ -56,6 +56,6 @@ People are just starting to receive the brand new macOS machines with Apple Sili
 
 However, Docker has the same problem as everybody else with getting Docker Desktop to run on Apple Silicon (see their [announcement](https://www.docker.com/blog/apple-silicon-m1-chips-and-docker/)). As of November, 2020, Docker Desktop doesn’t run yet on Apple Silicon, but they’re promising a technical preview soon, and they’re happy with their progress on it.
 
-Besides the dependency on Docker Desktop, the only other known issue in getting DDEV working on Apple Silicon is compiling the Go binary. The current version of Go, v1.15, does not support building darwin/arm64, the name of the architecture. However, the upcoming Go v1.16 ([due in February, 2021](https://github.com/golang/go/wiki/Go-Release-Cycle)) does. And it’s available a few ways right now. Experiments with building have been successful but, of course, we can’t run on real hardware until we get it.
+Besides the dependency on Docker Desktop, the only other known issue in getting DDEV working on Apple Silicon is compiling the Go binary. The current version of Go, v1.15, does not support building Darwin/ARM64, the name of the architecture. However, the upcoming Go v1.16 ([due in February, 2021](https://github.com/golang/go/wiki/Go-Release-Cycle)) does. And it’s available a few ways right now. Experiments with building have been successful but, of course, we can’t run on real hardware until we get it.
 
 So the answer is… DDEV-Local will hopefully run on Apple Silicon Real Soon, probably just after a workable Docker Desktop is made available.

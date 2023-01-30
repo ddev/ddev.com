@@ -11,7 +11,7 @@ We’ve just released [DDEV v1.7.1](https://github.com/drud/ddev/releases/tag/v1
 
 **config.\*.yaml** – If you’ve been using DDEV on a team across different operating systems you’ve experienced how wonderful it is to be able to ship your project around from Windows to Linux. But, you may have needed to override a committed config.yaml with custom configuration for your local environment. Now we have included config.\*.yaml so you can retain your custom settings while [working seamlessly on a team](https://ddev.readthedocs.io/en/latest/users/extend/customization-extendibility/#extending-configyaml-with-custom-configyaml-files).
 
-**Optional static bind ports for db and webserver containers** – Those who want the dbserver or webserver bound port to be static within a project can use host_db_port or host_webserver_port to specify it. Thanks to [tmotyl](https://github.com/tmotyl) for getting the ball rolling. [More details here](https://github.com/drud/ddev/pull/1502).
+**Optional static bind ports for db and web server containers** – Those who want the dbserver or web server bound port to be static within a project can use `host_db_port` or `host_webserver_port` to specify it. Thanks to [tmotyl](https://github.com/tmotyl) for getting the ball rolling. [More details here](https://github.com/drud/ddev/pull/1502).
 
 **Longer project names should be possible** – Previously, a long server name would cause the ddev-router to stop working. Now you can use a very long name with no trouble. Thank you to [janhelke](https://github.com/janhelke) for [this PR](https://github.com/drud/ddev/pull/1484)!
 
@@ -43,7 +43,7 @@ The next session of Mike Anello’s online DrupalEasy course, [Professional Loca
 
 ## Contribute back to DDEV-Local
 
-Thank you very much to [akalata](https://github.com/akalata) on github for testing this release! Many of you also filed issues and helped point out important improvements.
+Thank you very much to [akalata](https://github.com/akalata) on GitHub for testing this release! Many of you also filed issues and helped point out important improvements.
 
 [DDEV is an open source project](https://github.com/drud/ddev/blob/master/CONTRIBUTING.md) and we very much appreciate the time our contributors give to improving the tool for everyone. Please continue to submit issues for new features and bugs, and take a look around [the DDEV issue queue](https://github.com/drud/ddev/issues) and [Stack Overflow](https://stackoverflow.com/questions/tagged/ddev) to spur your thinking!
 

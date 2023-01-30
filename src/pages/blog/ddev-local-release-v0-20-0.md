@@ -9,7 +9,7 @@ categories:
 
 We’re delighted to share [DDEV-Local v0.20.0](https://github.com/drud/ddev/releases/tag/v0.20.0) with you.
 
-We’ve addressed a number of bug fixes and provided a few enhancements that will improve your overall experience. Additionally, with renewed energy and ideas coming as a result of [our company onsite](https://ddev.com/devops/onsite-collaboration-and-communication/), we’ve been working away on the product vision and our [Roadmap](https://github.com/drud/ddev/wiki/Roadmap) (more to come!)
+We’ve addressed a number of bugfixes and provided a few enhancements that will improve your overall experience. Additionally, with renewed energy and ideas coming as a result of [our company onsite](https://ddev.com/devops/onsite-collaboration-and-communication/), we’ve been working away on the product vision and our [Roadmap](https://github.com/drud/ddev/wiki/Roadmap) (more to come!)
 
 ### How do you sudo?
 

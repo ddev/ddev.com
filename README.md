@@ -20,6 +20,7 @@ Run `npm run dev` or `npm run build` and see if it works or falls over.
 - [Tailwind CSS](https://tailwindcss.com)
 - [Tailwind Typography](https://tailwindcss.com/docs/typography-plugin) plugin
 - [Heroicons](https://heroicons.com)
+- [Textlint](https://textlint.github.io)
 
 ## Project Structure
 
@@ -43,6 +44,14 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`      | Preview your build locally, before deploying       |
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
 | `npm run astro --help` | Get help using the Astro CLI                       |
+
+## Textlint
+
+A basic textlint configuration lives in `.textlintrc` and runs against `src/pages/**` to try and help keep language consistent and accurate. This doesn’t yet conform to the DDEV docs [spellcheck rules](https://github.com/drud/ddev/blob/master/.spellcheck.yml) and [massive exclusion list](https://github.com/drud/ddev/blob/master/.spellcheckwordlist.txt), but ideally the two can someday converge.
+
+Textlint’s [default terminology](https://github.com/sapegin/textlint-rule-terminology/blob/master/terms.jsonc) catches a lot of accepted best practices on its own, where the only major override is to allow “website” (instead of its suggested “site”) because it’s rampant in blog posts and documentation. Same with the “front end” and “back end” conundrum and two-word “command line”.
+
+Run `npm run textlint` to check everything, and you can apply “fixable” changes using `npm run textlint:fix`. Be careful automating fixes to be sure they don’t have any unintended side effects!
 
 ## Resources
 

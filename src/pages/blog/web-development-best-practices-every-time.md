@@ -11,7 +11,7 @@ If you’re responsible for managing a web development team, you want to make it
 
 ## “Everybody knows that!” … or do they?
 
-Over the last few years co-founder of the NPM JavaScript package manager, Laurie Voss, has been [talking about the challenges new developers face,](https://youtu.be/JIJZnF%5FL5KI?t=10m18s) the “things software engineers are expected to know but are rarely told,” as he puts it. Laurie points out that in a typical conference program there are lots of talks about “the new shiny”: new tools, methods, and technologies, but hardly anything about the stuff that everybody is “supposed to know” already. And even if they’re less exciting for jaded, experienced devs, we call them “best practices” because they’ve proven themselves already, they’re valuable. He suggests some of these important techniques are related to abstracting away repetitive tasks so you can reduce errors and speed up development. “It should never take three commands run in the right order with the right argument. It should be one command that says ‘deploy the thing.’ Because you’re going to forget those arguments, you’re going to have to think about them.”
+Over the last few years co-founder of the [npm](https://www.npmjs.com) JavaScript package manager, Laurie Voss, has been [talking about the challenges new developers face,](https://youtu.be/JIJZnF%5FL5KI?t=10m18s) the “things software engineers are expected to know but are rarely told,” as he puts it. Laurie points out that in a typical conference program there are lots of talks about “the new shiny”: new tools, methods, and technologies, but hardly anything about the stuff that everybody is “supposed to know” already. And even if they’re less exciting for jaded, experienced devs, we call them “best practices” because they’ve proven themselves already, they’re valuable. He suggests some of these important techniques are related to abstracting away repetitive tasks so you can reduce errors and speed up development. “It should never take three commands run in the right order with the right argument. It should be one command that says ‘deploy the thing.’ Because you’re going to forget those arguments, you’re going to have to think about them.”
 
 ## Build and test simpler, better, faster
 
@@ -29,7 +29,7 @@ You can create web development environments with DDEV-Local, and we support popu
 
 DDEV-Local comes with several [useful developer tools](https://ddev.readthedocs.io/en/latest/users/developer-tools/), including a web server, a database server, debugging tools, command line tools, and dependency managers. These tools can be accessed for single commands using `ddev exec <command>` or `ddev ssh` for an interactive bash session.
 
-- MySQL Client (mysql) – Command-line interface for interacting with MySQL.
+- MySQL Client (`mysql`) – Command-line interface for interacting with MySQL.
 - [Composer](https://getcomposer.org/) – Dependency Manager for PHP.
 - [Drush](http://www.drush.org/) – Command-line shell and Unix scripting interface for Drupal.
 - [WP-CLI](http://wp-cli.org/) – Command-line tools for managing WordPress installations.
@@ -50,7 +50,7 @@ Prepare and install
 3. Set up your project for the first time.
    1. Check out your existing site to a local directory. You can follow the examples for the CMS you’re working with in the [Quickstart Guides](https://ddev.readthedocs.io/en/latest/users/cli-usage/#quickstart-guides).
    2. Set up a project for the first time with `ddev config`. With this one-time configuration step you add the project name, docroot, and project type.
-   3. If you’re already running a webserver on port 80, you’ll get an error message. Follow steps to [resolve the port conflict](https://ddev.readthedocs.io/en/latest/users/troubleshooting/#webserver-ports-are-already-occupied-by-another-webserver).
+   3. If you’re already running a web server on port 80, you’ll get an error message. Follow steps to [resolve the port conflict](https://ddev.readthedocs.io/en/latest/users/troubleshooting/#webserver-ports-are-already-occupied-by-another-webserver).
 
 ## Using DDEV-Local everyday
 
@@ -64,7 +64,7 @@ And if you do need to wipe out the database, you can add a flag to remove the da
 
 Anytime you want to know what a command does, check the manual pages right from the terminal. `ddev -h`.
 
-Have any questions? Ask on [StackOverflow #DDEV.](https://stackoverflow.com/questions/tagged/ddev) That’s a great place to ask questions and collaborate on answers.
+Have any questions? Ask on [Stack Overflow #DDEV.](https://stackoverflow.com/questions/tagged/ddev) That’s a great place to ask questions and collaborate on answers.
 
 **[Get started with DDEV-Local](/get-started/)**
 

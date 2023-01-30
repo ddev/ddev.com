@@ -1,5 +1,5 @@
 ---
-title: "DDEV-Local Release v0.18.0 – Easier XDebug, Windows installer and more"
+title: "DDEV-Local Release v0.18.0 – Easier Xdebug, Windows installer and more"
 pubDate: 2018-05-10
 author: Rick Manelius
 featuredImage: https://ddev.com/app/uploads/2018/05/woctech-chat-windows-e1525985003469.jpg
@@ -7,15 +7,15 @@ categories:
   - Announcements
 ---
 
-We’re happy to announce [our latest DDEV-Local release v0.18.0.](https://github.com/drud/ddev/releases/tag/v0.18.0) This includes XDebug improvements, more robust Windows support, and smoother upgrade paths. In this post, we’ll take a closer look at what we have for you in this release.
+We’re happy to announce [our latest DDEV-Local release v0.18.0.](https://github.com/drud/ddev/releases/tag/v0.18.0) This includes Xdebug improvements, more robust Windows support, and smoother upgrade paths. In this post, we’ll take a closer look at what we have for you in this release.
 
-### Massively simplified XDebug configuration
+### Massively simplified Xdebug configuration
 
-Before, in order to configure XDebug, users had to set a host IP address, change ports, etc. And these steps required a bit more command line experience. We want DDEV-Local to make local development easier so developers can ship better software faster. Tools like XDebug are an important part of that.
+Before, in order to configure Xdebug, users had to set a host IP address, change ports, etc. And these steps required a bit more command line experience. We want DDEV-Local to make local development easier so developers can ship better software faster. Tools like Xdebug are an important part of that.
 
-In the documentation, you’ll find a [tutorial on step debugging with XDebug](https://ddev.readthedocs.io/en/latest/users/step-debugging/). Randy Fay has also created a [quick screencast](https://vimeo.com/268685753?utm%5Fsource=email&utm%5Fmedium=vimeo-cliptranscode-201504&utm%5Fcampaign=28749) to show you how it works. Note that this requires Docker 18.03+
+In the documentation, you’ll find a [tutorial on step debugging with Xdebug](https://ddev.readthedocs.io/en/latest/users/step-debugging/). Randy Fay has also created a [quick screencast](https://vimeo.com/268685753?utm%5Fsource=email&utm%5Fmedium=vimeo-cliptranscode-201504&utm%5Fcampaign=28749) to show you how it works. Note that this requires Docker 18.03+
 
-[ddev v0.18.0+ step debugging with PHPStorm](https://vimeo.com/268685753) from [Randy Fay](https://vimeo.com/user5912539) on [Vimeo](https://vimeo.com).
+[ddev v0.18.0+ step debugging with PhpStorm](https://vimeo.com/268685753) from [Randy Fay](https://vimeo.com/user5912539) on [Vimeo](https://vimeo.com).
 
 ### Now featuring a Windows installer
 
@@ -35,7 +35,7 @@ You may have noticed, we’re responding to [support questions on Stack Overflow
 
 We’re one step closer to solving a problem with a trusted hosts pattern mismatch, [#608](https://github.com/drud/ddev/issues/680). Thank you to [Misterboe](https://github.com/misterboe) for [PR #808](https://github.com/drud/ddev/pull/808), and for members of the TYPO3 community providing logs and details about this issue.
 
-This release includes a variety of bug fixes as well. Check out the [release notes](https://github.com/drud/ddev/releases/tag/v0.18.0) for details. We want to say thank you to everyone who reports bugs, and tests the releases. The gratitude we get back is much appreciated!
+This release includes a variety of bugfixes as well. Check out the [release notes](https://github.com/drud/ddev/releases/tag/v0.18.0) for details. We want to say thank you to everyone who reports bugs, and tests the releases. The gratitude we get back is much appreciated!
 
 > The team at [@drud](https://twitter.com/drud?ref%5Fsrc=twsrc%5Etfw) is really on top of things – I opened a DDEV issue yesterday and there was a fix and commit for me to test this morning! Thanks, [@randyfay](https://twitter.com/randyfay?ref%5Fsrc=twsrc%5Etfw)!
 >

@@ -55,7 +55,7 @@ DDEV-Local fits in well with the tools Adam uses. For him, its killer features a
 
 ### DDEV is open source and supported
 
-Since DDEV-Local is an open source project, it’s maintained in the open on GitHub, with [contribution guidelines](https://github.com/drud/ddev/blob/master/CONTRIBUTING.md) and an issue queue. There’s also a #ddev channel on[ Drupal’s Slack team](https://www.drupal.org/slack). Adam says “People are very welcoming,” on Slack and, “they ask all the right questions.”
+Since DDEV-Local is an open source project, it’s maintained in the open on GitHub, with [contribution guidelines](https://github.com/drud/ddev/blob/master/CONTRIBUTING.md) and an issue queue. There’s also a #ddev channel on[ Drupal’s Slack team](https://www.drupal.org/slack). Adam says “People are very welcoming,” on Slack and “they ask all the right questions.”
 
 Adam has gotten fast responses every time he’s filed an issue or gotten on the DDEV team’s Slack Channel. “I try to do most of my technical work on my Linux machine, but if I’m traveling and on my Mac, they’ve resolved cross-platform issues for me.”
 

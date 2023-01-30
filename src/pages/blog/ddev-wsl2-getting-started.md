@@ -28,7 +28,7 @@ Wait, what is “WSL” anyway? It stands for the “Windows Subsystem for Linux
 - [DDEV launch command (optional) ](#ddev-launch)
 - [Working with IDEs (optional) ](#working-with-ides)
   - [VS Code](#vs-code)  
-     \* [XDebug in VS Code](#xdebug-in-vs-code)
+     \* [Xdebug in VS Code](#xdebug-in-vs-code)
   - [PhpStorm](#phpstorm)
 - [Resources](#resources)
 
@@ -70,7 +70,7 @@ To make things more visual, let’s take a look at the image below. Docker + DDE
 ### Installing the Linux version of DDEV
 
 - Open the Ubuntu 20.04 terminal from the Windows start menu.
-- Follow the [installation instructions for Linux/MacOS](https://ddev.readthedocs.io/en/stable/#homebrewlinuxbrew-macoslinux) as provided in the DDEV docs.
+- Follow the [installation instructions for Linux/macOS](https://ddev.readthedocs.io/en/stable/#homebrewlinuxbrew-macoslinux) as provided in the DDEV docs.
 - After installation, run `mkcert -install` in the Ubuntu terminal and you should see that mkcert will use your Windows CA certificates:
   - `Using the local CA at “/mnt/c/Users/YOUR_WINDOWS_USERNAME/AppData/Local/mkcert”`
 
@@ -78,7 +78,7 @@ That’s it! You have now installed DDEV on WSL2 ? Remember to run all `ddev` co
 
 ## Using DDEV
 
-Let’s try to get a DDEV site up and running using the [WordPress Quickstart](https://ddev.readthedocs.io/en/latest/users/cli-usage/#wordpress-quickstart). The first time it might take a while for the database/webserver/etc images to download, but after that you can start new instances lightning-fast. ⚡
+Let’s try to get a DDEV site up and running using the [WordPress Quickstart](https://ddev.readthedocs.io/en/latest/users/cli-usage/#wordpress-quickstart). The first time it might take a while for the database/web server/etc images to download, but after that you can start new instances lightning-fast. ⚡
 
 When navigating to <https://my-wp-bedrock-site.ddev.site>, we are presented with the WordPress installation screen:
 
@@ -103,37 +103,39 @@ VS Code has a special integration with WSL2 in its Remote Development extension 
 
 - If you open a terminal by going to Terminal in the top menu > New terminal, you are immediately in the WSL2 environment and can run commands over there, like `ddev start`.
 
-#### XDebug in VS Code
+#### Xdebug in VS Code
 
-If you want to use XDebug in VS Code, make sure you set the hostname to `0.0.0.0` and set the correct `pathMappings` for DDEV. This way, you can use XDebug like you’re used to:
+If you want to use Xdebug in VS Code, make sure you set the hostname to `0.0.0.0` and set the correct `pathMappings` for DDEV. This way, you can use Xdebug like you’re used to:
 
+```json
 {
-"version": "0.2.0",
-"configurations": [
-{
-"name": "Listen for XDebug",
-"type": "php",
-"request": "launch",
-"hostname": "0.0.0.0",
-"port": 9000,
-"pathMappings": {
-"/var/www/html": "${workspaceRoot}"
+  "configurations": [
+    {
+      "hostname": "0.0.0.0",
+      "name": "Listen for Xdebug",
+      "pathMappings": {
+        "/var/www/html": "${workspaceRoot}"
+      },
+      "port": 9000,
+      "request": "launch",
+      "type": "php"
+    },
+    {
+      "cwd": "${fileDirname}",
+      "name": "Launch currently open script",
+      "port": 9000,
+      "program": "${file}",
+      "request": "launch",
+      "type": "php"
+    }
+  ],
+  "version": "0.2.0"
 }
-},
-{
-"name": "Launch currently open script",
-"type": "php",
-"request": "launch",
-"program": "${file}",
-"cwd": "${fileDirname}",
-"port": 9000
-}
-]
-}
+```
 
 ### PhpStorm
 
-PhpStorm supports WSL2 since [its 2019.3 release](https://blog.jetbrains.com/phpstorm/2019/11/phpstorm-2019-3-release/#wsl), but the experience is not fine-tuned yet. There are two ways to use it – you can use it as a Windows app or use the Linux version of PHPStorm inside WSL2\. We’ve got it written up for you in [DDEV-Local and PHPStorm Debugging with WSL2](https://ddev.com/ddev-local/ddev-local-and-phpstorm-debugging-with-wsl2/).
+PhpStorm supports WSL2 since [its 2019.3 release](https://blog.jetbrains.com/phpstorm/2019/11/phpstorm-2019-3-release/#wsl), but the experience is not fine-tuned yet. There are two ways to use it – you can use it as a Windows app or use the Linux version of PhpStorm inside WSL2. We’ve got it written up for you in [DDEV-Local and PhpStorm Debugging with WSL2](https://ddev.com/ddev-local/ddev-local-and-phpstorm-debugging-with-wsl2/).
 
 ## Resources
 

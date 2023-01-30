@@ -15,7 +15,7 @@ We’ve just released DDEV v1.3.0! Here are some highlights, and an important ca
 
 **Clear reporting and logs for faster debugging.** We’ve made a number of changes to improve container logs format, the information provided in the logs, as well as more detailed information in the health check. Catching broken containers or broken add-on configurations will save you time when you’re debugging. Check out the release notes for more details.
 
-There are also a number of bug fixes, including paving the way for improvements for WordPress support.
+There are also a number of bugfixes, including paving the way for improvements for WordPress support.
 
 For full details check out the [DDEV v1.3.0 Release Notes](https://github.com/drud/ddev/releases/tag/v1.3.0).
 

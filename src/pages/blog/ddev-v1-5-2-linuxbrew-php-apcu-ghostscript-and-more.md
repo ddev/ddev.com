@@ -29,7 +29,7 @@ We’d love to hear from you about new features that might be most important to 
 
 ## Going places with #DDEV!
 
-Coming soon to [Florida Drupal Camp](https://www.fldrupal.camp/) and [DrupalCon Seattle](https://events.drupal.org/seattle2019): us! We’re proud to be Platinum Sponsors for Florida Drupal Camp. We’ve [proposed](https://www.fldrupal.camp/sessions/beginner-track/achieve-devops-nirvana-putting-one-foot-front-other) [sessions](https://www.fldrupal.camp/sessions/development-performance/local-development-environments-panel-discussion) and plan on spending plenty of contribution time with [DDEV](https://ddev.com/ddev-local/)\-Local and [Quicksprint](https://www.drupal.org/tools). Follow along on [Twitter](https://twitter.com/drud) and sign up for our newsletter for all the news on #DDEV.
+Coming soon to [Florida Drupal Camp](https://www.fldrupal.camp/) and [DrupalCon Seattle](https://events.drupal.org/seattle2019): us! We’re proud to be Platinum Sponsors for Florida Drupal Camp. We’ve [proposed](https://www.fldrupal.camp/sessions/beginner-track/achieve-devops-nirvana-putting-one-foot-front-other) [sessions](https://www.fldrupal.camp/sessions/development-performance/local-development-environments-panel-discussion) and plan on spending plenty of contribution time with [DDEV](https://ddev.com/ddev-local/)-Local and [Quicksprint](https://www.drupal.org/tools). Follow along on [Twitter](https://twitter.com/drud) and sign up for our newsletter for all the news on #DDEV.
 
 ---
 

@@ -19,7 +19,7 @@ Kevin, our CTO, gave a very brief talk on how having a clearly defined plan that
 
 > 1\. [#DevOps](https://twitter.com/hashtag/DevOps?src=hash&ref%5Fsrc=twsrc%5Etfw) is not magical fairy dust  
 > 2\. Creating a culture of safety is critical  
-> 3\. It's a work in progress! That's ok. [#drupalcon](https://twitter.com/hashtag/drupalcon?src=hash&ref%5Fsrc=twsrc%5Etfw) [#ddev](https://twitter.com/hashtag/ddev?src=hash&ref%5Fsrc=twsrc%5Etfw) [pic.twitter.com/QH7daXfh3J](https://t.co/QH7daXfh3J)
+> 3\. It's a work in progress! That's OK. [#drupalcon](https://twitter.com/hashtag/drupalcon?src=hash&ref%5Fsrc=twsrc%5Etfw) [#ddev](https://twitter.com/hashtag/ddev?src=hash&ref%5Fsrc=twsrc%5Etfw) [pic.twitter.com/QH7daXfh3J](https://t.co/QH7daXfh3J)
 >
 > — DRUD Technology (@drud) [April 10, 2019](https://twitter.com/drud/status/1116073579504783360?ref%5Fsrc=twsrc%5Etfw)
 

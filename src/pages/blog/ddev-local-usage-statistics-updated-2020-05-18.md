@@ -11,7 +11,7 @@ Many of you allow [DDEV-Local](https://github.com/drud/ddev) to [use telemetry t
 
 **Operating System Usage**: Because DDEV-Local [works the same](https://ddev.readthedocs.io/en/stable/#system-requirements) on macOS, Windows, and Linux, there’s a great spread of usage there. macOS is about 60% of the usage, Linux about 22%, and Windows about 18%.
 
-[![](https://ddev.com/app/uploads/2020/05/Local-OSes-1024x483.jpg)](https://ddev.com/app/uploads/2020/05/Local-OSes.jpg)
+![](https://ddev.com/app/uploads/2020/05/Local-OSes.jpg)
 
 **PHP Versions:** DDEV-Local supports [PHP versions from 5.6 through 7.4](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#changing-php-version) – you can change it easily with `ddev config --php-version=7.4`. PHP7.2 was the DDEV default for a long time, but PHP7.3 is now the default.
 
@@ -27,11 +27,11 @@ Many of you allow [DDEV-Local](https://github.com/drud/ddev) to [use telemetry t
 
 ![Top events](https://ddev.com/app/uploads/2020/05/Top-events.png)
 
-**Webserver Types**: About 75% of people use nginx with php-fpm, nearly 25% use apache with fpm, and a tiny fraction use the less performant apache-cgi.
+**Web server Types**: About 75% of people use nginx with php-fpm, nearly 25% use apache with fpm, and a tiny fraction use the less performant apache-cgi.
 
 ![Webserver types](https://ddev.com/app/uploads/2020/05/Webserver-types.png)
 
-**NFS Mount Enabled**: For users on Windows and macOS, using [nfs_mount_enabled](https://ddev.readthedocs.io/en/stable/users/performance/#using-nfs-to-mount-the-project-into-the-web-container) enables massive webserving performance with just a quick workstation setup. It looks like just under half of projects are using `nfs_mount_enabled: true` (which can be set globally as of DDEV-Local v1.14).
+**NFS Mount Enabled**: For users on Windows and macOS, using [nfs_mount_enabled](https://ddev.readthedocs.io/en/stable/users/performance/#using-nfs-to-mount-the-project-into-the-web-container) enables massive web-serving performance with just a quick workstation setup. It looks like just under half of projects are using `nfs_mount_enabled: true` (which can be set globally as of DDEV-Local v1.14).
 
 ![DDEVLocal nfs_mount_enabled](https://ddev.com/app/uploads/2020/05/DDEVLocal-nfs_mount_enabled.png)
 

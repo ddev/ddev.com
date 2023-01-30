@@ -30,10 +30,10 @@ Up through Drupal 7, all you had to do to move a site in many cases was to check
 
 **On the target server** (which can be DDEV-Local or anything else):
 
-1. Check out or update the code from your git repo or wherever it’s stored.
-2. Copy your database dump to the server and load it into the database server using a tool like mysql, for example `gzip -dc sitename.db.sql.gz | mysql <databasename>` (or on DDEV-Local `ddev import-db --src=/path/to/sitename_db.sql.gz`)
+1. Check out or update the code from your Git repository or wherever it’s stored.
+2. Copy your database dump to the server and load it into the database server using a tool like `mysql`, for example `gzip -dc sitename.db.sql.gz | mysql <databasename>` (or on DDEV-Local `ddev import-db --src=/path/to/sitename_db.sql.gz`)
 3. Copy your user-generated files tarball to the target server and untar it in the correct directory: `cd <docroot>/sites/default/files && tar -zxf /path/to/sitename_files.tar.gz`. (Or on DDEV-Local `ddev import-files --src=/path/to/sitename_files.tar.gz`)
-4. Edit your settings.php or settings.local.php (preferred) to point to the database you’ve loaded.
+4. Edit your `settings.php` or `settings.local.php` (preferred) to point to the database you’ve loaded.
 
 ### Drupal 8+ deployment: code, database, files, config, site build
 
@@ -54,22 +54,22 @@ Drupal 8+ is Drupal 7 with some extras, including copying the exported configura
 
 ### TYPO3 deployment (based on TYPO3 v10)
 
-TYPO3 is mostly the same as Drupal 7 plus a composer build, but there are often (generated) files on the local system that need to be checked into git.
+TYPO3 is mostly the same as Drupal 7 plus a composer build, but there are often (generated) files on the local system that need to be checked into Git.
 
 **On the source server** (can be DDEV-Local or anywhere else):
 
 1. Dump the database. If the source project is in DDEV-Local, this means just doing an `ddev export-db --file=/path/to/sitename.db.sql.gz` If you’re on a server or elsewhere, and assuming a single database, you can `mysqldump <databasename> | gzip >/path/to/sitename.db.sql.gz`
-2. Tar up the user-generated files: `cd public/fileadmin && tar -czf /path/to/<sitename>_fileadmin.tar.gz .` (Note that the user-generated files must _not_ be checked into git.)
-3. Verify that the `/config` and (optionally) `/var/labels` directories are checked into your git repo. These are directories which may have been created by sitebuilder actions, but they’re _code_. (Nothing else in /var should be checked in.)
+2. Tar up the user-generated files: `cd public/fileadmin && tar -czf /path/to/<sitename>_fileadmin.tar.gz .` (Note that the user-generated files must _not_ be checked into Git.)
+3. Verify that the `/config` and (optionally) `/var/labels` directories are checked into your Git repository. These are directories which may have been created by sitebuilder actions, but they’re _code_. (Nothing else in /var should be checked in.)
 4. Make sure your code has been checked in and pushed properly.
 
 **On the target server** (which can be DDEV-Local or anything else):
 
-1. Check out or update the code from your git repo or wherever it’s stored.
+1. Check out or update the code from your Git repository or wherever it’s stored.
 2. Run `composer install` (on DDEV-Local, `ddev composer install`). If there are other build activities like a `yarn install`, do those.
-3. Copy your database dump to the target server and load it into the database server using a tool like mysql, for example `gzip -dc sitename.db.sql.gz | mysql <databasename>` (or on DDEV-Local, `ddev import-db --src=/path/to/sitename_db.sql.gz`)
+3. Copy your database dump to the target server and load it into the database server using a tool like MySQL, for example `gzip -dc sitename.db.sql.gz | mysql <databasename>` (or on DDEV-Local, `ddev import-db --src=/path/to/sitename_db.sql.gz`)
 4. Copy your user-generated files tarball to the target server and untar it in the correct directory: `cd sites/default/files && tar -zxf /path/to/sitename_files.tar.gz`. (Or on DDEV-Local, `ddev import-files --src=/path/to/sitename_files.tar.gz`.)
-5. Edit your public/typo3conf/LocalConfiguration.php or public/typo3conf/AdditionalConfiguration.php (or .env file, preferred) to point to the database you’ve loaded. If the target is DDEV-Local, it will already take care of this for you.
+5. Edit your `public/typo3conf/LocalConfiguration.php` or `public/typo3conf/AdditionalConfiguration.php` (or `.env` file, preferred) to point to the database you’ve loaded. If the target is DDEV-Local, it will already take care of this for you.
 
 ### From DDEV-Live to DDEV-Local
 

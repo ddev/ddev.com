@@ -11,9 +11,9 @@ Getting new developers up to speed with your procedures and their projects can b
 
 ## Why is it important to streamline developer onboarding?
 
-When you’ve just made a bet on a talented, promising new hire, of course you don’t want to risk them making expensive mistakes. But why waste their time and your bottom line by not getting them up-and-running as fast and as well as possible? In the 2018 StackOverflow Developer Survey, more than 50,000 software developers from around the world answered the question, “[How Long Do Developers Expect New Coworkers to Take to Be Productive?](https://insights.stackoverflow.com/survey/2018#work-how-long-do-developers-expect-new-coworkers-to-take-to-be-productive)” 70% answered that it would take one month or more. We aimed to help speed that up.
+When you’ve just made a bet on a talented, promising new hire, of course you don’t want to risk them making expensive mistakes. But why waste their time and your bottom line by not getting them up-and-running as fast and as well as possible? In the 2018 Stack Overflow Developer Survey, more than 50,000 software developers from around the world answered the question, “[How Long Do Developers Expect New Coworkers to Take to Be Productive?](https://insights.stackoverflow.com/survey/2018#work-how-long-do-developers-expect-new-coworkers-to-take-to-be-productive)” 70% answered that it would take one month or more. We aimed to help speed that up.
 
-Update: While the [2020 StackOverflow survey](https://insights.stackoverflow.com/survey/2020#work-onboarding) does not have the same question, it does ask if an onboarding process exists. The chart is a bit ambiguous but suffice to say half of the respondents were unsatisfied with the lack of onboarding process, or lack of good onboarding process, at their company.
+Update: While the [2020 Stack Overflow survey](https://insights.stackoverflow.com/survey/2020#work-onboarding) does not have the same question, it does ask if an onboarding process exists. The chart is a bit ambiguous but suffice to say half of the respondents were unsatisfied with the lack of onboarding process, or lack of good onboarding process, at their company.
 
 ![Half of respondents reported having an onboarding process, one fifth reported no on boarding process](https://ddev.com/app/uploads/2018/05/Screen-Shot-2020-08-11-at-7.17.40-PM-1024x466.png)
 
@@ -49,7 +49,7 @@ Here are two ways that DDEV-Local helps get your team members on board:
 
 ### Consistency across platforms
 
-DDEV-Local offers a single, consistent set of commands when working on projects, across multiple CMSs and across all the major operating systems, no matter what deployment model a project requires. Clients with multi-site portfolios may run Drupal sites, WordPress sites, or even Node.js applications and keep everything running smoothly. DDEV-Local provides a cross-platform PHP-based development environment that works the same on macOS, Windows, and Linux. Update: In our latest [DDEV-Local release, v1.15.3](https://github.com/drud/ddev/releases/tag/v1.15.3), hundreds of tools, including Node.js, npm, Yarn, Drush, WP-CLI, and mysql are pre-installed in the web container. This means you can use DDEV-Local across your on-going projects.
+DDEV-Local offers a single, consistent set of commands when working on projects, across multiple CMSs and across all the major operating systems, no matter what deployment model a project requires. Clients with multi-site portfolios may run Drupal sites, WordPress sites, or even Node.js applications and keep everything running smoothly. DDEV-Local provides a cross-platform PHP-based development environment that works the same on macOS, Windows, and Linux. Update: In our latest [DDEV-Local release, v1.15.3](https://github.com/drud/ddev/releases/tag/v1.15.3), hundreds of tools, including Node.js, npm, Yarn, Drush, WP-CLI, and the MySQL client are pre-installed in the web container. This means you can use DDEV-Local across your on-going projects.
 
 By having a consistent approach you make it easier for team members to reuse what they learn for their first project, and apply it to the next.
 

@@ -15,7 +15,7 @@ We’re proud and excited to announce [DDEV 1.0.0](https://github.com/drud/ddev/
 
 From the start, our goal has been to make DDEV a reliable foundation for everyday creative development. Breakages hurt, and that’s why people are often hesitant about upgrades. We want our users to be confident in our tools, so making upgrades smooth, easy, and even enjoyable is an important part of that developer experience.
 
-We’ve seen the web development experience and toolset evolve in the last decade. Now your CMS is part of a complex ecosystem of libraries and tools. There’s even more pressure for developers to keep up with it all. This is what is called “dependency hell” in the [semver](https://semver.org/) specification.
+We’ve seen the web development experience and toolset evolve in the last decade. Now your CMS is part of a complex ecosystem of libraries and tools. There’s even more pressure for developers to keep up with it all. This is what is called “dependency hell” in the [SemVer](https://semver.org/) specification.
 
 Semantic versioning helps our users know when a minor version introduces functionality in a backward-compatible way, and when a major version introduces new capabilities which affect the underlying API.
 
@@ -73,7 +73,7 @@ Tools that only work with the command line exclude entire teams and individuals 
 
 Among members of a cross-disciplinary team, you might have project managers or designers who will never have a working familiarity with the command line. It’s not how they work, and it’s a big barrier for them. Certain communities also have a bias towards visual or graphical tools, for example in the WordPress community, a GUI is expected.
 
-Our mission at DRUD is to create tools and services which make it easier for your teams to collaborate and be creative. That often means developing applications and websites with multiple frameworks and CMSs in the front end with multiple hosting end-points. The last thing you want to worry about is your local development environment. DDEV is a key part of our mission. With everyone on your cross-disciplinary teams enabled with access to the same set of tools, you can ensure they deftly juggle hand-offs of multiple projects without dealing with inconsistencies and unwanted surprises.
+Our mission at DRUD is to create tools and services which make it easier for your teams to collaborate and be creative. That often means developing applications and websites with multiple frameworks and CMSs in the front end with multiple hosting endpoints. The last thing you want to worry about is your local development environment. DDEV is a key part of our mission. With everyone on your cross-disciplinary teams enabled with access to the same set of tools, you can ensure they deftly juggle hand-offs of multiple projects without dealing with inconsistencies and unwanted surprises.
 
 We hope this new UI opens up collaboration across your team. Tell us what you think!
 

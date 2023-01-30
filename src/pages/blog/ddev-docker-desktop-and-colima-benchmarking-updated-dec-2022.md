@@ -29,20 +29,20 @@ For comparison on the results between March 2022 and today:
 
 | Drupal 10 web install time in seconds | March 2022 | Dec 2022 |
 | ------------------------------------- | ---------- | -------- |
-| Colima sshfs/mutagen                  | 45         | 35       |
+| Colima sshfs/Mutagen                  | 45         | 35       |
 | Colima sshfs alone                    | 160        | 89       |
-| Docker Desktop FUSE/mutagen           | 75         | 32       |
+| Docker Desktop FUSE/Mutagen           | 75         | 32       |
 | Docker Desktop FUSE alone             | 300        | 102      |
-| Docker Desktop VirtioFS/mutagen       | 39         | 32       |
+| Docker Desktop VirtioFS/Mutagen       | 39         | 32       |
 | Docker Desktop VirtioFS alone         | 107        | 63       |
-| Colima VirtioFS/mutagen               | 27         |          |
+| Colima VirtioFS/Mutagen               | 27         |          |
 | Colima VirtioFS alone                 | 36         |          |
 
-For more raw numbers and the drush install times, [here’s the spreadsheet link](https://docs.google.com/spreadsheets/d/1GG69B94ftYlkrNeoI55eUrxLVwIVYkt4mv-R2nJx6YU/edit?usp=sharing).
+For more raw numbers and the Drush install times, [here’s the spreadsheet link](https://docs.google.com/spreadsheets/d/1GG69B94ftYlkrNeoI55eUrxLVwIVYkt4mv-R2nJx6YU/edit?usp=sharing).
 
 If you’re interested in Colima with DDEV, see the [docs](https://ddev.readthedocs.io/en/latest/users/docker%5Finstallation/#macos-installation-colima). It’s super easy to set up, and even though it’s a young project, it’s well-maintained and people have been having good experiences with it. And for those of you concerned about Docker Desktop’s new subscription license fee, it’s a great option. But as you see here, it’s a great option for other reasons.
 
-And of course, if you haven’t tried out mutagen with DDEV on macOS, it’s time. People have had great experiences, just `ddev config global --mutagen-enabled` and `ddev restart` and you’re on your way, see [DDEV docs](https://ddev.readthedocs.io/en/latest/users/performance/#using-mutagen). Although we were all worried about filesystem consistency originally, the feature has turned out to be shockingly reliable, but read the docs for caveats.
+And of course, if you haven’t tried out Mutagen with DDEV on macOS, it’s time. People have had great experiences, just `ddev config global --mutagen-enabled` and `ddev restart` and you’re on your way, see [DDEV docs](https://ddev.readthedocs.io/en/latest/users/performance/#using-mutagen). Although we were all worried about filesystem consistency originally, the feature has turned out to be shockingly reliable, but read the docs for caveats.
 
 Some takeaways from this round of testing:
 

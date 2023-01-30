@@ -19,7 +19,7 @@ Picture five, 25, or 250 people working in a space together to solve hard proble
 
 ![](https://ddev.com/app/uploads/2018/03/code_sprint_Drupal_Donetsk-1024x683.jpg)
 
-> _“New community members especially may only know one company and how things are done there. Sprints are not only about getting your hands on code. They’re about getting to know people, networking, broadening one’s horizons. More than once, I’ve seen long-pending features or bug fixes taken care of because the right people bumped into each other at a sprint. And where else could you get that much best practice knowledge all in one place?”_ – Martin Wiederkehr
+> _“New community members especially may only know one company and how things are done there. Sprints are not only about getting your hands on code. They’re about getting to know people, networking, broadening one’s horizons. More than once, I’ve seen long-pending features or bugfixes taken care of because the right people bumped into each other at a sprint. And where else could you get that much best practice knowledge all in one place?”_ – Martin Wiederkehr
 
 ### Run a brilliant sprint
 
@@ -91,7 +91,7 @@ The TYPO3 CMS community has something of a “maximalist” approach to things r
 - Set realistic expectations (not everyone will complete whatever they are working on in the sprint, post what you have done in issue at the end, even if you plan to continue later.) – Brian, Rakesh
 - Help sprinters “wear their own shoes”, that is work on something that’s right for them, whether that’s novice tasks or some area of expertise they may have. Everyone has something to contribute. – Rakesh
 
-> _“When I started my code sprinting with Drupal, I was not aware of how to create a patch file using the diff command. I went to IRC ask for the help and Daniel Wehner, started helping me. He ended up writing the exact command to create my patch file … with exact file names and everything … in IRC! LOL. Mentors are amazing.”_ – Rakesh James.
+> _“When I started my code sprinting with Drupal, I was not aware of how to create a patch file using the diff command. I went to IRC ask for the help and Daniel Wehner, started helping me. He ended up writing the exact command to create my patch file … with exact filenames and everything … in IRC! LOL. Mentors are amazing.”_ – Rakesh James.
 
 ### Planning: time & non-sprint activities
 

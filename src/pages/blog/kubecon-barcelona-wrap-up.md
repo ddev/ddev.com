@@ -71,7 +71,7 @@ As a newcomer to the professional world of I.T. and I.S. this talk relayed to me
 
 **What else about the event would you like to highlight?**
 
-It was honestly surprising to see the amount of progress in the Kubernetes ecosystem compared to the last Kubecon I attended in December 2017\. It seems now that the shift in industry use of Kubernetes has gone from working within the pre-defined boundaries of core Kubernetes to now creating custom extensions of Kubernetes concepts like custom API servers, and custom resource definitions (CRDs), along with the controllers and operators that are used to define and execute the logic for these custom resources.
+It was honestly surprising to see the amount of progress in the Kubernetes ecosystem compared to the last Kubecon I attended in December 2017\. It seems now that the shift in industry use of Kubernetes has gone from working within the predefined boundaries of core Kubernetes to now creating custom extensions of Kubernetes concepts like custom API servers, and custom resource definitions (CRDs), along with the controllers and operators that are used to define and execute the logic for these custom resources.
 
 We on the DDEV team have already started this journey as we built this iteration of DDEV-Live, so to be able to expand my existing knowledge through going to these talks was an invaluable experience. To add to this, talking to vendors in the vendor hall also gave me advantageous insight into the present state of the Kubernetes and Cloud Native business landscape.
 

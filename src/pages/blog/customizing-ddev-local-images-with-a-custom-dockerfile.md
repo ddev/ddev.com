@@ -14,9 +14,9 @@ There are two major ways to customize your DDEV-Local web image, but they’re _
 1. Add a Debian package into the image with `webimage_extra_packages` ([docs](https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/#adding-extra-debian-packages-with-webimage%5Fextra%5Fpackages-and-dbimage%5Fextra%5Fpackages)).
 2. Add an “extension” Dockerfile with free-form instructions for adding onto the container ([docs](https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/#adding-extra-dockerfiles-for-webimage-and-dbimage)).
 
-### `webimage_extra_packages` in config.yaml
+### `webimage_extra_packages` in `config.yaml`
 
-The simplest thing to do is just add new Debian packages. For example, add to the .ddev/config.yaml: `webimage_extra_packages: [redis-tools, php-yaml]`, and the “redis-tools” and “php-yaml” packages will be installed in the web container. This little addition to the container happens just once, and doesn’t slow down your `ddev start` after that.
+The simplest thing to do is just add new Debian packages. For example, add to the `.ddev/config.yaml`: `webimage_extra_packages: [redis-tools, php-yaml]`, and the “redis-tools” and “php-yaml” packages will be installed in the web container. This little addition to the container happens just once, and doesn’t slow down your `ddev start` after that.
 
 ### Simple npm install with custom Dockerfile
 
@@ -26,9 +26,11 @@ This kind of change can be done by creating a `.ddev/web-build/Dockerfile` (star
 
 So, for example, if you have a `.ddev/web-build/Dockerfile` with these contents:
 
-`ARG BASE_IMAGE  
-FROM $BASE_IMAGE  
-RUN npm install --global gulp-cli`
+```docker
+ARG BASE_IMAGE
+FROM $BASE_IMAGE
+RUN npm install --global gulp-cli
+```
 
 Then the `npm install` to install gulp-cli will be done (once) at build time.
 
@@ -38,11 +40,13 @@ _**Note that the default to BASE_IMAGE is overridden by ddev at image build time
 
 If you want to add files or override configuration files, it’s easy enough to do. For example, in this[ Stack Overflow question](https://stackoverflow.com/questions/60162842/how-can-i-add-basic-authentication-to-the-mailhog-service-in-ddev-local), a user wanted to put basic authentication in front of the MailHog configuration. The easiest way to do this is to override the /etc/supervisor/conf.d/mailhog.conf. So as that answer suggests:
 
-- Put the new mailhog.conf and mailhog-auth.txt into the `.ddev/web-build` directory.
-- Add a Dockerfile to .ddev/web-build that uses the Docker build ADD command to put them into place:  
-   `ARG BASE_IMAGE  
-FROM $BASE_IMAGE ADD mailhog-auth.txt /etc  
-ADD mailhog.conf /etc/supervisor/conf.d`
+- Put the new `mailhog.conf` and `mailhog-auth.txt` into the `.ddev/web-build` directory.
+- Add a Dockerfile to `.ddev/web-build` that uses the Docker build ADD command to put them into place:
+  ```docker
+  ARG BASE_IMAGE
+  FROM $BASE_IMAGE ADD mailhog-auth.txt /etc
+  ADD mailhog.conf /etc/supervisor/conf.d
+  ```
 
 (Caveat: This strategy only works in [DDEV-Local v1.13+](https://github.com/drud/ddev/releases))
 
@@ -52,28 +56,32 @@ But you could use this same technique for so many things. Do you need to complet
 
 The Python world uses [pip3](https://pip.pypa.io/en/stable/) to install packages, and you can do that too.
 
-This [Stack Overflow answer](https://stackoverflow.com/a/60683558/215713) goes into the details, but this Dockerfile should be a start:  
-`ARG BASE_IMAGE  
-FROM $BASE_IMAGE  
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -o Dpkg::Options::="--force-confnew" --no-install-recommends --no-install-suggests python3-pip python3-setuptools  
-RUN pip3 install mycli`
+This [Stack Overflow answer](https://stackoverflow.com/a/60683558/215713) goes into the details, but this Dockerfile should be a start:
+
+```docker
+ARG BASE_IMAGE
+FROM $BASE_IMAGE
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -o Dpkg::Options::="--force-confnew" --no-install-recommends --no-install-suggests python3-pip python3-setuptools
+RUN pip3 install mycli
+```
 
 ### pecl/pear installs
 
-Some PHP packages aren’t available as Debian packages, so this [Stack Overflow answer](https://stackoverflow.com/a/60554990/215713) shows how to install a package from the PEAR repository using a custom Dockerfile:  
-`ARG BASE_IMAGE  
-FROM $BASE_IMAGE  
-ENV PHP_VERSION=7.3  
+Some PHP packages aren’t available as Debian packages, so this [Stack Overflow answer](https://stackoverflow.com/a/60554990/215713) shows how to install a package from the PEAR repository using a custom Dockerfile:
+
+```docker
+ARG BASE_IMAGE
+FROM $BASE_IMAGE
+ENV PHP_VERSION=7.3
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -o Dpkg::Options::="--force-confnew" --no-install-recommends --no-install-suggests gcc make autoconf libc-dev pkg-config php-pear php${PHP_VERSION}-dev libmcrypt-dev
 
 # The "echo" below just forces accepting the "automatic" configuration, the same as hitting <RETURN>
-
 RUN echo | sudo pecl install mcrypt
 
 # Because php7.1-mcrypt is already installed in web container we can just copy its mcrypt.ini
-
 RUN cp /etc/php/7.1/mods-available/mcrypt.ini /etc/php/${PHP_VERSION}/mods-available/ && phpenmod mcrypt`
+```
 
 ## Join the conversation!
 
-We’d love to hear about your recipes! PR them into [ddev-contrib](http://github.com/drud/ddev-contrib), or tweet, or blog about them. Give us a holler when you do with [@drud and #DDEV](http://twitter.com/drud) on Twitter. And we’re always happy to hear from you on any of our[ support channels.](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation)
+We’d love to hear about your recipes! PR them into [ddev-contrib](http://github.com/drud/ddev-contrib), or tweet, or blog about them and give us a holler when you do. And we’re always happy to hear from you on any of our [support channels](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation).

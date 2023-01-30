@@ -19,7 +19,7 @@ It’s worth considering starting with the “reset to factory defaults” optio
 
 To backup your databases, you can db dump, but it’s easy to take a snapshot with DDEV. Run [ddev snapshot](https://ddev.readthedocs.io/en/latest/users/cli-usage/#snapshotting-and-restoring-a-database) in each project to capture your databases before doing the factory reset.
 
-Next, follow instructions for [resetting to factory defaults for Windows](https://docs.docker.com/docker-for-windows/#reset) and [for mac OS](https://docs.docker.com/docker-for-mac/#reset).
+Next, follow instructions for [resetting to factory defaults for Windows](https://docs.docker.com/docker-for-windows/#reset) and [for macOS](https://docs.docker.com/docker-for-mac/#reset).
 
 If that factory reset doesn’t resolve your issues, you can take the following steps to narrow down the problem.
 

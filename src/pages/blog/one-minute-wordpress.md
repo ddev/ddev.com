@@ -15,10 +15,10 @@ In this article, we’ll show you how to quickly get DDEV installed so that you 
 
 ### Demo Requirements
 
-DDEV is written in [Go](https://golang.org/) and leverages [Docker](https://www.docker.com/). These two choices help keep the end-user requirements down to a minimum. In short, you simply need the following:
+DDEV is written in [Go](https://golang.org/) and leverages [Docker](https://www.docker.com/). These two choices help keep the end user requirements down to a minimum. In short, you simply need the following:
 
-- git
-- docker
+- Git
+- Docker
 - a text editor
 - a terminal app
 - DDEV ([see our one-line installer](https://github.com/drud/ddev#installation-script) and [other install instructions](https://ddev.readthedocs.io/en/latest/#installation))
@@ -29,14 +29,14 @@ As of v0.3, we currently support the latest version of macOS and several popular
 
 Creating a quick, destructible WordPress site can be handy for testing new themes and plugins. Here’s how you can get one up within one minute after you’ve properly installed DDEV.
 
-1. git clone git@github.com:drud/wordpress.git (or you can pick a vanilla WordPress repo/zip)
-2. cd wordpress (or the directory of your WordPress codebase)
-3. ddev config (this is necessary so DDEV knows the application type and webroot)
-4. ddev start (this kicks off several things in the background: spinning up containers, mounting the codebase, etc.)
+1. `git clone git@github.com:drud/wordpress.git` (or you can pick a vanilla WordPress repo/zip)
+2. `cd wordpress` (or the directory of your WordPress codebase)
+3. `ddev config` (this is necessary so DDEV knows the application type and webroot)
+4. `ddev start` (this kicks off several things in the background: spinning up containers, mounting the codebase, etc.)
 5. Wait a brief moment while your environment is provisioning and then…
-6. Visit http://wordpress.ddev.local
+6. Visit `http://wordpress.ddev.local`
 
-You should hit the WordPress installer screen and then you’re off to the races! To get access to the database credentials to complete the installation, simply run \`ddev describe\`.
+You should hit the WordPress installer screen and then you’re off to the races! To get access to the database credentials to complete the installation, simply run `ddev describe`.
 
 ### A Deeper Tour
 
@@ -44,6 +44,6 @@ Once you’re able to get up and running, you can begin to explore the [addition
 
 ### Future Roadmap
 
-Coming soon on [the project roadmap](https://github.com/drud/ddev/wiki/roadmap), we will expand support to Windows, provide the ability to add additional containers to provide additional services and open the door for integration with 3rd party hosting providers in order to easily sync down content and files from the cloud. Stay tuned!
+Coming soon on [the project roadmap](https://github.com/drud/ddev/wiki/roadmap), we will expand support to Windows, provide the ability to add additional containers to provide additional services and open the door for integration with third-party hosting providers in order to easily sync down content and files from the cloud. Stay tuned!
 
 **[Get started with DDEV-Local](/get-started/) today!**
