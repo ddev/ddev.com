@@ -23,11 +23,11 @@ const { size = "normal", align = "left" } = Astro.props
             `block rounded-full relative overflow-hidden m-1 shadow-md ` +
             (size == "large" ? `w-12 h-12` : `w-8 h-8`)
           }
-          title={sponsor.handle}
-          href={sponsor.profile}
+          title={sponsor.login}
+          href={sponsor.url}
           target="_blank"
         >
-          <img src={sponsor.avatar} class="block w-full h-full" />
+          <img src={sponsor.avatarUrl} class="block w-full h-full" />
         </a>
       ))
     }

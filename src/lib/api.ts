@@ -1,21 +1,36 @@
 /**
- * Collection of content-fetching and formatting methods, mostly for
- * extracting blog-related content from WordPress via GraphQL.
+ * Collection of content-fetching and formatting methods.
  */
 
 import dotenv from "dotenv"
-import getReadingTime from 'reading-time';
 import fs2 from "fs"
 import path from 'path'
-import fetchContributors from "./fetch-contributors"
-import fetchReleases from "./fetch-releases"
 import Slugger from 'github-slugger'
-
+import { Octokit } from "octokit";
+import { GITHUB_REPO } from "../config"
 
 dotenv.config()
 
 // Project-root-relative directory for temporary data used in local development
 const DEVELOPMENT_CACHE_DIR = 'cache'
+let octokitInstance: Octokit;
+
+/**
+ * Returns an instance of Octokit, which uses the `GITHUB_TOKEN` environment
+ * variable for authentication.
+ * @returns Octokit
+ */
+const octokit = () => {
+  if (octokitInstance) {
+    return octokitInstance;
+  }
+
+  octokitInstance = new Octokit({
+    auth: process.env.GITHUB_TOKEN,
+  });
+  
+  return octokitInstance;
+}
 
 /**
  * Returns a URL-friendly slug for a given string.
@@ -94,10 +109,42 @@ export function getAuthorData() {
  * @returns response data
  */
 export async function getSponsors() {
-  // https://github.com/filiptronicek/gh-sponsors-api#notes
-  const data = await fetchLiveOrCachedJson(`https://ghs.vercel.app/sponsors/rfay`, 'sponsors.json');
+  const cacheFilename = 'sponsors.json'
+  const cachedData = getCache(cacheFilename);
 
-  return data.sponsors
+  if (cachedData) {
+    return cachedData;
+  }
+
+  const response = await octokit().graphql(`
+    query {
+      user(login: "rfay") {
+        ... on Sponsorable {
+          sponsors(first: 100) {
+            totalCount
+            nodes {
+              ... on User {
+                login
+                url
+                avatarUrl
+              }
+              ... on Organization {
+                login
+                url
+                avatarUrl
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const data = response.user.sponsors.nodes;
+
+  putCache(cacheFilename, JSON.stringify(data));
+
+  return data
 }
 
 /**
@@ -106,25 +153,21 @@ export async function getSponsors() {
  * @returns response data
  */
 export async function getContributors(includeAnonymous = false) {
-  const filename = 'contributors.json'
-  let data
+  const cacheFilename = 'contributors.json'
+  const cachedData = getCache(cacheFilename);
 
-  const cacheValue = getCachedFile(filename);
+  let data;
 
-  if (cacheValue) {
-    console.log(
-      `Loaded cached contributors.`
-    )
-    data = JSON.parse(cacheValue)
-  }
-
-  if (!data) {
-    const response = await fetchContributors()
-      .then((collectedContributors) => {
-        data = collectedContributors
-        storeCachedFile(filename, JSON.stringify(data))
-      })
-      .catch(console.error)
+  if (cachedData) {
+    data = cachedData;
+  } else {
+    const response = await octokit().paginate(`GET https://api.github.com/repos/${GITHUB_REPO}/contributors`, {
+      anon: 1,
+      per_page: 100,
+    });
+  
+    data = response;
+    putCache(cacheFilename, JSON.stringify(data));
   }
 
   if (!includeAnonymous) {
@@ -145,7 +188,19 @@ export async function getContributors(includeAnonymous = false) {
  */
 export async function getRepoDetails(name: string) {
   const slug = name.replace('/', '-')
-  return await fetchLiveOrCachedJson(`https://api.github.com/repos/${name}`, `repository-${slug}.json`);
+  const cacheFilename = `repository-${slug}.json`;
+  const cachedData = getCache(cacheFilename);
+
+  if (cachedData) {
+    return cachedData;
+  }
+
+  const response = await octokit().request(`GET https://api.github.com/repos/${name}`)
+  const data = response.data;
+
+  putCache(cacheFilename, JSON.stringify(data));
+
+  return data;
 }
 
 /**
@@ -158,34 +213,57 @@ export async function getLatestReleaseVersion() {
 }
 
 export async function getReleases() {
-  const filename = 'releases.json'
-  let data
+  const cacheFilename = 'releases.json'
+  const cachedData = getCache(cacheFilename);
 
-  const cacheValue = getCachedFile(filename);
-
-  if (cacheValue) {
-    console.log(
-      `Loaded cached releases.`
-    )
-    data = JSON.parse(cacheValue)
+  if (cachedData) {
+    return cachedData;
   }
 
-  if (!data) {
-    const response = await fetchReleases()
-      .then((collectedReleases) => {
-        data = collectedReleases
-        storeCachedFile(filename, JSON.stringify(data))
-      })
-      .catch(console.error)
-  }
+  const response = await octokit().paginate(`GET https://api.github.com/repos/${GITHUB_REPO}/releases`, {
+    per_page: 100,
+  });
 
-  return data ?? []
+  putCache(cacheFilename, JSON.stringify(response));
 
+  return response ?? []
 }
 
 /**
- * Format a date string we got via GraphQL. Used mostly for blog post listings
- * and detail pages.
+ * Returns JSON-parsed value from a cached file if it exists.
+ * @param filename Name of the file to look for in the cache directory.
+ * @returns file contents or null
+ */
+const getCache = (filename: string) => {
+  const dir = path.resolve('./' + DEVELOPMENT_CACHE_DIR)
+  const filePath = dir + '/' + filename
+  
+  if (fs2.existsSync(filePath)) {
+    const contents = fs2.readFileSync(filePath);
+    return JSON.parse(contents);
+  }
+
+  return
+}
+
+/**
+ * Write a file to the cache directory.
+ * @param filename Name of the file to write to the cache directory.
+ * @param contents Contents of the file.
+ */
+const putCache = (filename: string, contents: string) => {
+  const dir = path.resolve('./' + DEVELOPMENT_CACHE_DIR)
+  const filePath = dir + '/' + filename
+
+  if (!fs2.existsSync(dir)) {
+    fs2.mkdirSync(dir);
+  }
+
+  fs2.writeFileSync(filePath, contents)
+}
+
+/**
+ * Format a date string. Used mostly for blog post listing and detail pages.
  *
  * @param date The source date, which probably looks like `2021-01-28T13:05:28`.
  * @param customOptions Options for [Intl.DateTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat)
@@ -206,86 +284,4 @@ export const formatDate = (date: string, customOptions?: object) => {
   }
 
   return new Intl.DateTimeFormat("en-US", options).format(pubDate)
-}
-
-/**
- * Returns approximate reading time for the provided text.
- * @param text The complete text whose read time we’re evaluating.
- * @returns plain-English description of reading time, like `5 min read`
- */
-export const getReadTime = (text: string) : string => {
-  const readingTime = getReadingTime(text);
-  return readingTime.text
-}
-
-/**
- * Returns request data, preferring locally-cached JSON if it exists in order
- * to avoid excessive network requests.
- * @param url The endpoint to be fetched
- * @param filename JSON filename (`*.json`) local data should be stored in
- * @param useCache Whether to use a local cache
- * @returns array|object The decoded JSON value
- */
-const fetchLiveOrCachedJson = async (url: string, filename: string, useCache = true) => {
-  let data
-
-  if (useCache) {
-    const cacheValue = getCachedFile(filename);
-
-    if (cacheValue) {
-      console.log(
-        `Loaded cached ${filename}.`
-      )
-      data = JSON.parse(cacheValue)
-
-      return data
-    }
-  }
-
-  if (!data) {
-    console.log(
-      `Fetching ${url}.`
-    )
-
-    const response = await fetch(url)
-    const data = await response.json()
-
-    if (useCache) {
-      storeCachedFile(filename, JSON.stringify(data))
-    }
-
-    return data
-  }
-}
-
-/**
- * Returns a cached file if it exists.
- * @param filename Name of the file to look for in the cache directory.
- * @returns file contents or null
- */
-const getCachedFile = (filename: string) => {
-  const dir = path.resolve('./' + DEVELOPMENT_CACHE_DIR)
-  const filePath = dir + '/' + filename
-  
-  if (fs2.existsSync(filePath)) {
-    return fs2.readFileSync(filePath);
-  }
-
-  return
-}
-
-/**
- * Write a file to the cache directory.
- * @param filename Name of the file to write to the cache directory.
- * @param contents Contents of the file.
- */
-const storeCachedFile = (filename: string, contents: string) => {
-  const dir = path.resolve('./' + DEVELOPMENT_CACHE_DIR)
-  const filePath = dir + '/' + filename
-
-  if (!fs2.existsSync(dir)) {
-    fs2.mkdirSync(dir);
-  }
-
-  fs2.writeFileSync(filePath, contents)
 }

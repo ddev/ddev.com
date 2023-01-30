@@ -5,6 +5,8 @@ on:
   workflow_dispatch:
 jobs:
   build:
+    env:
+      TOKEN: ${{ secrets.GITHUB_TOKEN }}
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
