@@ -1,7 +1,6 @@
 ---
 import {
   formatDate,
-  getReadTime,
   getAuthorUrl,
   getAuthorImage,
   getCategoryUrl,
@@ -27,7 +26,7 @@ console.log(authorImage)
       author={frontmatter.author}
       authorUrl={getAuthorUrl(frontmatter.author)}
       authorAvatar={authorImage}
-      readTime={getReadTime(frontmatter.minutesRead)}
+      readTime={frontmatter.minutesRead}
     />
     <div class="flex">
       <div class="w-2/3">
