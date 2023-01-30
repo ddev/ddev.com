@@ -14,8 +14,6 @@ const { frontmatter, url } = Astro.props
 const { slug } = Astro.params
 
 const authorImage = getAuthorImage(frontmatter.author)
-
-console.log(authorImage)
 ---
 
 <Layout title={frontmatter.title}>
