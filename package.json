@@ -46,6 +46,7 @@
   "devDependencies": {
     "dotenv": "^16.0.3",
     "textlint": "^13.0.5",
+    "textlint-filter-rule-comments": "^1.2.2",
     "textlint-rule-no-todo": "^2.0.1",
     "textlint-rule-terminology": "^3.0.4"
   }
