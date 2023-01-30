@@ -2,7 +2,6 @@
 title: "Docker Desktop and Colima Benchmarking on macOS"
 pubDate: 2022-03-23
 author: Randy Fay
-featuredImage: undefined
 categories:
   - Performance
 ---

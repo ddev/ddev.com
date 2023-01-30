@@ -2,7 +2,6 @@
 title: "Docker Desktop Alternatives Arrive for DDEV (Colima!)"
 pubDate: 2022-03-25
 author: Randy Fay
-featuredImage: undefined
 categories:
   - Announcements
   - Devops
@@ -14,7 +13,7 @@ In v1.19, DDEV supports alternative Docker solutions for every platform, so that
 
 ## macOS: Colima
 
-On macOS, DDEV now supports [Colima](https://github.com/abiosoft/colima), a young project but one that is easy to use and fully open-source. It basically makes the *Linux* Docker daemon run in a VM on macOS, using the [Lima](https://github.com/lima-vm/lima) project and the robust open-source [Linux Docker daemon](https://github.com/moby/moby).
+On macOS, DDEV now supports [Colima](https://github.com/abiosoft/colima), a young project but one that is easy to use and fully open-source. It basically makes the _Linux_ Docker daemon run in a VM on macOS, using the [Lima](https://github.com/lima-vm/lima) project and the robust open-source [Linux Docker daemon](https://github.com/moby/moby).
 
 It’s easy to set up, and is compatible with Docker Desktop (both can be running on the same system at the same time), see [docs](https://ddev.readthedocs.io/en/stable/users/docker%5Finstallation/#macos-installation-colima).
 

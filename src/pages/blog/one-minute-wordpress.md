@@ -2,7 +2,6 @@
 title: "Spin Up a New, Local WordPress or Drupal Dev Environment Within 1 Minute With ddev!"
 pubDate: 2017-05-10
 author: Rick Manelius
-featuredImage: undefined
 categories:
   - Guides
 ---
