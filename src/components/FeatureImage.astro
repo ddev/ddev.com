@@ -1,0 +1,13 @@
+---
+export interface Props {
+  src: string
+  alt: string
+  caption?: string
+}
+
+const { src, alt, caption = "" } = Astro.props
+---
+
+<figure class="w-full mx-auto mb-24 rounded-md z-10 overflow-hidden">
+  <img src={src} alt="" />
+</figure>

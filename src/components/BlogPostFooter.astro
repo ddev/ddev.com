@@ -1,12 +1,9 @@
 ---
-import { NEXT } from "linkedom/types/shared/symbols"
-import { getAllBlogPosts } from "../lib/api"
-
 export interface Props {
-  slug: object
+  activeUrl: string
 }
 
-const { slug } = Astro.props
+const { activeUrl } = Astro.props
 
 let next, prev
 
@@ -18,7 +15,7 @@ const orderedPosts = posts.sort((a, b) => {
 })
 
 orderedPosts.forEach((post, index) => {
-  if (post.slug === slug) {
+  if (post.url === activeUrl) {
     if (posts[index - 1]) {
       prev = posts[index - 1]
     }
