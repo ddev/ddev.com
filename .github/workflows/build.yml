@@ -16,6 +16,8 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Lint
+        run: npm run textlint
       - uses: actions/upload-artifact@v3
         with:
           name: build
