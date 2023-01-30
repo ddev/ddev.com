@@ -10,8 +10,6 @@ categories:
 
 _Photo of Mauricio Dinarte at DrupalCon Seattle contribution day in 2019 [by Josef Kruckenberg @dasjo](https://flic.kr/p/24UgYn2)_
 
-_9 minute read_
-
 It’s always a joy when the planets align and connections are made! After the virtual [DrupalCon Europe](https://events.drupal.org/europe2020) in December a few folks caught up on social Zoom, where I learned that a couple of my longtime friends in the Drupal community are using [DDEV-Local](https://ddev.com/ddev-local/) to teach web development to newcomers.
 
 Mauricio Dinarte was one of my first mentors when I started learning Drupal in 2013, so it was an honor to interview him for this blog. [Mauricio](https://www.drupal.org/u/dinarcon), aka [dinarcon](https://twitter.com/dinarcon), has been doing Drupal for a decade now and teaching Drupal for half that time locally in Nicaragua as well as at Drupal Camps and Cons worldwide. This is the first blog in a set, please read more about [teaching Drupal in Iceland from Hilmar Hallbjörnsson](https://ddev.com/ddev-local/why-standardization-is-important-to-teaching-web-development/).
