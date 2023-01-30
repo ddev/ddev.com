@@ -2,7 +2,11 @@
 title: "Save-as-you-go and make backups in a jiffy with DDEV-Local"
 pubDate: 2018-11-20
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2018/11/will-echols-539053-unsplash-e1542746009659.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/11/will-echols-539053-unsplash-e1542746009659.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - Guides
 ---

@@ -2,7 +2,11 @@
 title: "DDEV-Local v1.8.0: Trusted SSL, `stop` commands, plus a hosting team hackathon"
 pubDate: 2019-05-16
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2019/05/EKL_20190418_0240.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2019/05/EKL_20190418_0240.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - Announcements
 ---

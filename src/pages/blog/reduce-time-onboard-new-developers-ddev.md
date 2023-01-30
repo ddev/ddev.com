@@ -2,7 +2,11 @@
 title: "Reduce the Time to Onboard New Developers with DDEV"
 pubDate: 2020-08-12
 author: DDEV
-featuredImage: https://ddev.com/app/uploads/2018/05/bruce-mars-548722-unsplash.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/05/bruce-mars-548722-unsplash.jpg
+  alt:
+  credit: hagman23 Pixabay
+  caption:
 categories:
   - DevOps
 ---

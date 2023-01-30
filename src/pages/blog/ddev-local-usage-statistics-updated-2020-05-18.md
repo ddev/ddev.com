@@ -2,7 +2,11 @@
 title: "DDEV-Local Usage Statistics (Updated 2020-05-18)"
 pubDate: 2020-05-19
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2020/05/CMS-project-types.png
+featureImage:
+  src: https://ddev.com/app/uploads/2020/05/CMS-project-types.png
+  alt:
+  caption:
+  credit:
 categories:
   - Community
 ---

@@ -2,7 +2,11 @@
 title: "DDEV-Local Usage Statistics (Updated 2019-03-21)"
 pubDate: 2019-03-21
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2019/03/DDEV-Data-e1553211948905.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2019/03/DDEV-Data-e1553211948905.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - Community
 ---

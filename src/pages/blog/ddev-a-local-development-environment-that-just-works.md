@@ -2,7 +2,11 @@
 title: "DDEV – A local development environment that just works"
 pubDate: 2018-03-01
 author: Jeffrey A. McGuire
-featuredImage: https://ddev.com/app/uploads/2018/03/Adam_Bergstein.jpeg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/03/Adam_Bergstein.jpeg
+  alt:
+  caption:
+  credit:
 categories:
   - DevOps
 ---

@@ -2,7 +2,11 @@
 title: "DDEV-Local and PhpStorm Debugging with WSL2"
 pubDate: 2020-06-17
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2020/06/PhpStorm_debugging.png
+featureImage:
+  src: https://ddev.com/app/uploads/2020/06/PhpStorm_debugging.png
+  alt:
+  caption:
+  credit:
 categories:
   - Guides
 ---

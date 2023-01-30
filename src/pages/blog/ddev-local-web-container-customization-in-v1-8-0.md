@@ -2,7 +2,11 @@
 title: "DDEV-Local Web Container Customization in v1.8.0"
 pubDate: 2019-06-03
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2019/05/Screen-Shot-2019-05-29-at-2.21.12-PM.png
+featureImage:
+  src: https://ddev.com/app/uploads/2019/05/Screen-Shot-2019-05-29-at-2.21.12-PM.png
+  alt:
+  caption:
+  credit:
 categories:
   - Announcements
   - Guides

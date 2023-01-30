@@ -2,7 +2,11 @@
 title: "Announcing: New online course – professionalize your web dev workflow"
 pubDate: 2018-07-09
 author: Heather McNamee
-featuredImage: https://ddev.com/app/uploads/2018/06/alejandro-escamilla-10-unsplash.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/06/alejandro-escamilla-10-unsplash.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - Announcements
   - DevOps

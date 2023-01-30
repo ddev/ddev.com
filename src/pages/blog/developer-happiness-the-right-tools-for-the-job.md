@@ -2,7 +2,11 @@
 title: "Developer Happiness: Use the Right Tools to Avoid Burnout"
 pubDate: 2018-04-09
 author: Heather McNamee
-featuredImage: https://ddev.com/app/uploads/2018/04/toolbox-2645700_1920-e1523274374612.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/04/toolbox-2645700_1920-e1523274374612.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - DevOps
 ---

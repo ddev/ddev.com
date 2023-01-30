@@ -2,7 +2,11 @@
 title: "DDEV-Local Database Management"
 pubDate: 2020-04-03
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2020/04/d8composer_ddev_site_8037___db___db___phpMyAdmin_5_0_2.png
+featureImage:
+  src: https://ddev.com/app/uploads/2020/04/d8composer_ddev_site_8037___db___db___phpMyAdmin_5_0_2.png
+  alt:
+  caption:
+  credit:
 categories:
   - DevOps
 ---

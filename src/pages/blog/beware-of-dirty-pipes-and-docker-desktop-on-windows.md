@@ -2,7 +2,11 @@
 title: "Beware of Dirty Pipes and Docker Desktop on Windows!"
 pubDate: 2022-06-04
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2022/06/plumbing-g6c1b9a8f3_1920.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2022/06/plumbing-g6c1b9a8f3_1920.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - DevOps
 ---

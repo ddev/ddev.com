@@ -2,7 +2,11 @@
 title: "Moving CMS sites around (server-to-server, server-to-local, local-to-server)"
 pubDate: 2020-12-08
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2020/12/juggler-2329843_1280-e1607477143481.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2020/12/juggler-2329843_1280-e1607477143481.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - Guides
   - DevOps

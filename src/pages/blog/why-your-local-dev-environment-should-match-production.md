@@ -2,7 +2,11 @@
 title: "Why your local dev environment should match production"
 pubDate: 2020-11-04
 author: DDEV
-featuredImage: https://ddev.com/app/uploads/2020/11/Deploy-Benni-art-from-shashank-and-Becris-on-the-noun-project.jpeg
+featureImage:
+  src: https://ddev.com/app/uploads/2020/11/Deploy-Benni-art-from-shashank-and-Becris-on-the-noun-project.jpeg
+  alt:
+  caption:
+  credit:
 categories:
   - DevOps
 ---

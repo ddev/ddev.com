@@ -2,7 +2,11 @@
 title: "DrupalCon Nashville: New DDEV Users, Contribution with Quicksprint, and more"
 pubDate: 2018-04-19
 author: Rick Manelius
-featuredImage: https://ddev.com/app/uploads/2018/04/IMG_20180410_112656.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/04/IMG_20180410_112656.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - Community
 ---

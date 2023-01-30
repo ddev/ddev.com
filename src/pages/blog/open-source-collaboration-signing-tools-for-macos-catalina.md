@@ -2,7 +2,11 @@
 title: "Open source collaboration: signing_tools for macOS Catalina"
 pubDate: 2020-05-13
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2020/05/signing.png
+featureImage:
+  src: https://ddev.com/app/uploads/2020/05/signing.png
+  alt:
+  caption:
+  credit:
 categories:
   - DevOps
 ---

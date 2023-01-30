@@ -1,13 +1,29 @@
 ---
+import { marked } from "marked"
+
 export interface Props {
   src: string
   alt: string
   caption?: string
+  credit?: string
 }
 
-const { src, alt, caption = "" } = Astro.props
+const { src, alt, caption = "", credit } = Astro.props
 ---
 
 <figure class="w-full mx-auto mb-24 rounded-md z-10 overflow-hidden">
-  <img src={src} alt="" />
+  <img src={src} alt={alt} />
+  {
+    (caption || credit) && (
+      <figcaption class="text-xs font-mono mt-2 ">
+        {caption && <span>{marked.parseInline(caption)}</span>}
+        {credit && (
+          <span class="text-gray-600">
+            {caption && ` • `}
+            {`Courtesy of ${marked.parseInline(credit)}`}
+          </span>
+        )}
+      </figcaption>
+    )
+  }
 </figure>

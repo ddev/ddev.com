@@ -2,7 +2,11 @@
 title: "Why use DDEV instead of rolling your own Docker-based local dev solution?"
 pubDate: 2022-12-22
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2020/12/DDEVDocker.png
+featureImage:
+  src: https://ddev.com/app/uploads/2020/12/DDEVDocker.png
+  alt:
+  caption:
+  credit:
 categories:
   - DevOps
 ---

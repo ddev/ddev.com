@@ -2,7 +2,11 @@
 title: "DDEV Release v1.2.0 – Apache support and DDEV UI Alpha"
 pubDate: 2018-09-12
 author: Kory Cunningham
-featuredImage: https://ddev.com/app/uploads/2018/09/IMG_20180910_093208.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/09/IMG_20180910_093208.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - Announcements
 ---

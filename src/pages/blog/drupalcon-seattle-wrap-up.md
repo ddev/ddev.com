@@ -2,7 +2,11 @@
 title: "DrupalCon Seattle Wrap-up"
 pubDate: 2019-04-22
 author: Kevin Bridges
-featuredImage: https://ddev.com/app/uploads/2019/04/IMG_20190409_152301-e1555796618534.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2019/04/IMG_20190409_152301-e1555796618534.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - Community
 ---

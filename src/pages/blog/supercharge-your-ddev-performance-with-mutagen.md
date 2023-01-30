@@ -2,7 +2,11 @@
 title: "Supercharge your DDEV performance with Mutagen"
 pubDate: 2021-07-28
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2021/07/Drupal-9-Web-Install-times-seconds-less-is-better.png
+featureImage:
+  src: https://ddev.com/app/uploads/2021/07/Drupal-9-Web-Install-times-seconds-less-is-better.png
+  alt:
+  caption:
+  credit:
 categories:
   - Announcements
   - Performance

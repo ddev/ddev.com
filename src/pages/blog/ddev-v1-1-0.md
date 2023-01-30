@@ -2,7 +2,11 @@
 title: "DDEV v1.1.0 – Snapshots, hostname removal, Drush on host, Docker 18.06"
 pubDate: 2018-08-15
 author: Rick Manelius
-featuredImage: https://ddev.com/app/uploads/2018/08/nasa-63029-unsplash-e1534364618963.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/08/nasa-63029-unsplash-e1534364618963.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - Announcements
 ---
@@ -70,7 +74,7 @@ Find out more about [DRUD’s hosting service](https://ddev.com/ddev-live/).
 
 ### More highlights from DDEV v 1.1.0
 
-**Better support for a favorite Drupal dev tool: Drush.** Drupal users will be glad to know Drush now works on the host for many commands. (After you’ve done a `ddev config` and `ddev start`.) Before you would have to use `ddev exec` or `ddev ssh` to run Drush in the web container. Now, if you have Drush available on the host, you can run `drush sql-cli` or `drush cr` on the *host* to use Drush directly.
+**Better support for a favorite Drupal dev tool: Drush.** Drupal users will be glad to know Drush now works on the host for many commands. (After you’ve done a `ddev config` and `ddev start`.) Before you would have to use `ddev exec` or `ddev ssh` to run Drush in the web container. Now, if you have Drush available on the host, you can run `drush sql-cli` or `drush cr` on the _host_ to use Drush directly.
 
 **More services!** We’ve added PHP-Redis to the web container. We heard repeatedly that not having Redis was a major hurdle for people who wanted to use DDEV. We hope this helps!
 

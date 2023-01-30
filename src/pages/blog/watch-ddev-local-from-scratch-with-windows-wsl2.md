@@ -2,7 +2,11 @@
 title: "Watch: DDEV-Local from scratch with Windows WSL2"
 pubDate: 2020-08-06
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2020/08/Screen-Shot-2020-08-04-at-11.30.47-AM-1.png
+featureImage:
+  src: https://ddev.com/app/uploads/2020/08/Screen-Shot-2020-08-04-at-11.30.47-AM-1.png
+  alt:
+  caption:
+  credit:
 categories:
   - Guides
 ---

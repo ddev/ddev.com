@@ -2,7 +2,11 @@
 title: "DDEV-Local Release v0.19.0 – Support for Win 10 Home with UX and DX improvements"
 pubDate: 2018-05-31
 author: Rick Manelius
-featuredImage: https://ddev.com/app/uploads/2018/05/danilo-batista-334883-unsplash.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/05/danilo-batista-334883-unsplash.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - Announcements
 ---

@@ -2,7 +2,11 @@
 title: "Getting started with DDEV and Composer"
 pubDate: 2018-11-29
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2018/11/marius-masalar-410695-unsplash-e1543521725507.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/11/marius-masalar-410695-unsplash-e1543521725507.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - Guides
 ---

@@ -2,7 +2,11 @@
 title: "How to setup a mac development environment with DDEV-Local"
 pubDate: 2018-06-14
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2018/05/maxime-le-conte-des-floris-151374-unsplash-e1526982174493.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/05/maxime-le-conte-des-floris-151374-unsplash-e1526982174493.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - Guides
 ---

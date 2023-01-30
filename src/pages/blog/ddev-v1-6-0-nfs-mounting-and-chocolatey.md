@@ -2,7 +2,11 @@
 title: "DDEV v1.6.0: NFS Mounting and Chocolatey"
 pubDate: 2019-02-12
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2019/02/EKL_20181203_2-e1549995318578.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2019/02/EKL_20181203_2-e1549995318578.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - Announcements
 ---

@@ -2,7 +2,11 @@
 title: "KubeCon Barcelona Wrap-up"
 pubDate: 2019-05-30
 author: Elli Ludwigson
-featuredImage: https://ddev.com/app/uploads/2019/05/KubeCon-group.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2019/05/KubeCon-group.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - Community
 ---

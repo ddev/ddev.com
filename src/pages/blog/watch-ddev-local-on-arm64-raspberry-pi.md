@@ -2,7 +2,11 @@
 title: "Watch: DDEV-Local on ARM64 Raspberry Pi"
 pubDate: 2020-11-23
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2020/11/Screen-Shot-2020-11-22-at-12.38.30-PM.png
+featureImage:
+  src: https://ddev.com/app/uploads/2020/11/Screen-Shot-2020-11-22-at-12.38.30-PM.png
+  alt:
+  caption:
+  credit:
 categories:
   - Announcements
 ---

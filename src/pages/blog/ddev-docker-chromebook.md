@@ -2,7 +2,11 @@
 title: "DDEV, Docker, Chromebook!"
 pubDate: 2020-05-04
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2020/04/chromebook-3.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2020/04/chromebook-3.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - Guides
 ---

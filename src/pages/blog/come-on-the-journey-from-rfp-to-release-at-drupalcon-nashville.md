@@ -2,7 +2,11 @@
 title: "Come on the Journey from RFP to Release at DrupalCon Nashville"
 pubDate: 2018-04-04
 author: Rick Manelius
-featuredImage: https://ddev.com/app/uploads/2018/04/jaromir-kavan-296728-unsplash.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/04/jaromir-kavan-296728-unsplash.jpg
+  alt:
+  caption:
+  credit: [Jaromír Kavan](https://unsplash.com/photos/vv-oEGlN-4E?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/journey?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)
 categories:
   - Announcements
   - Community
@@ -39,5 +43,3 @@ In [my DrupalCon presentation](https://events.drupal.org/nashville2018/sessions/
 I’ll show you how you can use this technique to manage risks and expectations, drawing on theory, other experts, and my personal experience managing web projects with budgets ranging from $2k to $2 million. I’ll demonstrate how all members of a team can collaborate on the estimation document and keep the client informed throughout the process.
 
 See you next week at DrupalCon! Also check out [where you can meet our DDEV Team](https://ddev.com/events/come-meet-the-ddev-team-at-drupalcon-nashville/) in Nashville. Stop by the booth to say hi!
-
-Photo by [Jaromír Kavan](https://unsplash.com/photos/vv-oEGlN-4E?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/journey?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)

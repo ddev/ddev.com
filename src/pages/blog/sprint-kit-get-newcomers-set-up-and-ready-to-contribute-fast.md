@@ -2,7 +2,11 @@
 title: "Sprint Kit – Get newcomers set-up and ready to contribute fast"
 pubDate: 2018-02-27
 author: Jeffrey A. McGuire
-featuredImage: https://ddev.com/app/uploads/2018/02/code_sprint_2.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/02/code_sprint_2.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - DevOps
 ---

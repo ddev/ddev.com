@@ -2,7 +2,11 @@
 title: "Install, test, repeat – Rapid local development with DDEV"
 pubDate: 2018-03-12
 author: Jeffrey A. McGuire
-featuredImage: https://ddev.com/app/uploads/2018/03/moren-hsu-359121-unsplash.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/03/moren-hsu-359121-unsplash.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - DevOps
 ---

@@ -2,7 +2,11 @@
 title: "DDEV-Local Release v0.16.0"
 pubDate: 2018-03-29
 author: Rick Manelius
-featuredImage: https://ddev.com/app/uploads/2018/03/volcano.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/03/volcano.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - Announcements
 ---

@@ -2,7 +2,11 @@
 title: "DDEV: An alternative to MAMP for a PHP dev environment"
 pubDate: 2018-07-03
 author: Elli Ludwigson
-featuredImage: https://ddev.com/app/uploads/2018/07/Fils_électriques.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/07/Fils_électriques.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - DevOps
 ---

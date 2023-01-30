@@ -2,7 +2,11 @@
 title: "Saving time and making money with DDEV"
 pubDate: 2018-02-06
 author: Jeffrey A. McGuire
-featuredImage: https://ddev.com/app/uploads/2018/03/lukas-blazek-263122.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/03/lukas-blazek-263122.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - DevOps
 ---

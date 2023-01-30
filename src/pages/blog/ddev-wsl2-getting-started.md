@@ -2,7 +2,11 @@
 title: "DDEV ❤️ WSL2: getting started"
 pubDate: 2020-05-26
 author: DDEV
-featuredImage: https://ddev.com/app/uploads/2020/05/diagram.png
+featureImage:
+  src: https://ddev.com/app/uploads/2020/05/diagram.png
+  alt:
+  caption:
+  credit:
 categories:
   - Guides
 ---

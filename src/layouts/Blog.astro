@@ -27,8 +27,13 @@ const authorImage = getAuthorImage(frontmatter.author)
       readTime={frontmatter.minutesRead}
     />
     {
-      frontmatter.featuredImage && (
-        <FeatureImage alt="" src={frontmatter.featuredImage} />
+      frontmatter.featureImage && (
+        <FeatureImage
+          src={frontmatter.featureImage.src}
+          alt={frontmatter.featureImage.alt}
+          caption={frontmatter.featureImage.caption}
+          credit={frontmatter.featureImage.credit}
+        />
       )
     }
     <div class="flex">

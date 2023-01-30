@@ -2,7 +2,11 @@
 title: "Choosing an ideal web development environment"
 pubDate: 2018-05-29
 author: Mike Anello
-featuredImage: https://ddev.com/app/uploads/2018/05/headway-537308-unsplash-e1527604343956.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/05/headway-537308-unsplash-e1527604343956.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - DevOps
   - Announcements

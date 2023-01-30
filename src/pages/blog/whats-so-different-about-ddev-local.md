@@ -2,7 +2,11 @@
 title: "What’s so different about DDEV?"
 pubDate: 2022-10-30
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2022/10/DALL·E-2022-10-30-10.10.42.png
+featureImage:
+  src: https://ddev.com/app/uploads/2022/10/DALL·E-2022-10-30-10.10.42.png
+  alt:
+  caption:
+  credit:
 categories:
   - DevOps
 ---

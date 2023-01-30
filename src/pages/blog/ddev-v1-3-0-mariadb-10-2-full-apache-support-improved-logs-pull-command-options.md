@@ -2,7 +2,11 @@
 title: "DDEV v1.3.0 – MariaDB 10.2, Full Apache Support, Improved Logs, Pull Command Options"
 pubDate: 2018-10-12
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2018/10/clarissa-bock-418873-unsplash-e1539369093961.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/10/clarissa-bock-418873-unsplash-e1539369093961.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - Announcements
 ---

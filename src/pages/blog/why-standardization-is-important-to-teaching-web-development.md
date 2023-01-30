@@ -2,7 +2,11 @@
 title: "Why standardization is important to teaching web development"
 pubDate: 2021-01-28
 author: Elli Ludwigson
-featuredImage: https://ddev.com/app/uploads/2021/01/Hilmar-DrupalCon-Amsterdam-by-Illek-Petr.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2021/01/Hilmar-DrupalCon-Amsterdam-by-Illek-Petr.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - Community
   - DevOps

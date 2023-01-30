@@ -2,7 +2,11 @@
 title: "DDEV v1.5.0 – PHP & MariaDB Versions, Experimental macOS Webcache, Improved Windows Composer Symlinks"
 pubDate: 2018-12-19
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2018/12/DSC_3769-e1545284198357.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/12/DSC_3769-e1545284198357.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - Announcements
 ---

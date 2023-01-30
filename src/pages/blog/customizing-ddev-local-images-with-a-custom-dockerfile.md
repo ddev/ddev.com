@@ -2,7 +2,11 @@
 title: "Customizing DDEV-Local images with a custom Dockerfile"
 pubDate: 2020-04-07
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2020/04/d8composer____workspace_d8composer__-______ddev_web-build_Dockerfile-2.png
+featureImage:
+  src: https://ddev.com/app/uploads/2020/04/d8composer____workspace_d8composer__-______ddev_web-build_Dockerfile-2.png
+  alt:
+  caption:
+  credit:
 categories:
   - Guides
 ---

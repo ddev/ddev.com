@@ -2,7 +2,11 @@
 title: "Watch: DDEV-Local From Scratch with macOS"
 pubDate: 2020-08-13
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2020/08/Screen-Shot-2020-08-04-at-5.33.27-PM.png
+featureImage:
+  src: https://ddev.com/app/uploads/2020/08/Screen-Shot-2020-08-04-at-5.33.27-PM.png
+  alt:
+  caption:
+  credit:
 categories:
   - Guides
 ---

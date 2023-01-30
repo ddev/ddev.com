@@ -2,7 +2,11 @@
 title: "Sandboxes – Local development environments to play in"
 pubDate: 2018-04-26
 author: Heather McNamee
-featuredImage: https://ddev.com/app/uploads/2018/04/developers-playing-in-sandboxes-e1524554749706.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/04/developers-playing-in-sandboxes-e1524554749706.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - DevOps
 ---

@@ -2,7 +2,11 @@
 title: "Top Tips for Open Source Contribution Sprints"
 pubDate: 2018-03-15
 author: Jeffrey A. McGuire
-featuredImage: https://ddev.com/app/uploads/2018/03/sprint-tips_people.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/03/sprint-tips_people.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - DevOps
 ---

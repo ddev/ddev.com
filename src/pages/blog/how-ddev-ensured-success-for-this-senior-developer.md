@@ -2,7 +2,11 @@
 title: "How DDEV ensured success for this senior developer"
 pubDate: 2018-05-08
 author: Jeffrey A. McGuire
-featuredImage: https://ddev.com/app/uploads/2018/04/brandon-hiking.png
+featureImage:
+  src: https://ddev.com/app/uploads/2018/04/brandon-hiking.png
+  alt:
+  caption:
+  credit:
 categories:
   - DevOps
 ---

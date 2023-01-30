@@ -2,7 +2,11 @@
 title: "Ten more ways to increase your efficiency with DDEV-Local"
 pubDate: 2020-03-25
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2020/03/secure_cert.png
+featureImage:
+  src: https://ddev.com/app/uploads/2020/03/secure_cert.png
+  alt:
+  caption:
+  credit:
 categories:
   - DevOps
 ---

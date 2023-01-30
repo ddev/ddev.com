@@ -2,7 +2,11 @@
 title: "DDEV-Local Release v0.18.0 – Easier Xdebug, Windows installer and more"
 pubDate: 2018-05-10
 author: Rick Manelius
-featuredImage: https://ddev.com/app/uploads/2018/05/woctech-chat-windows-e1525985003469.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/05/woctech-chat-windows-e1525985003469.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - Announcements
 ---

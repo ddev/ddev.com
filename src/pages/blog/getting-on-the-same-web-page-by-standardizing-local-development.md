@@ -2,7 +2,11 @@
 title: "Getting On the Same (Web) Page by Standardizing Local Development"
 pubDate: 2018-05-22
 author: Rick Manelius
-featuredImage: https://ddev.com/app/uploads/2018/05/suganth-526334-unsplash-e1526983031730.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/05/suganth-526334-unsplash-e1526983031730.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - DevOps
 ---

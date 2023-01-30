@@ -2,13 +2,15 @@
 title: "Why an easy start is important to teaching web development"
 pubDate: 2021-01-21
 author: Elli Ludwigson
-featuredImage: https://ddev.com/app/uploads/2021/01/40629336923_4f79c53b93_c.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2021/01/40629336923_4f79c53b93_c.jpg
+  alt:
+  caption: Photo of Mauricio Dinarte at DrupalCon Seattle contribution day in 2019.
+  credit: [Josef Kruckenberg @dasjo](https://flic.kr/p/24UgYn2)
 categories:
   - Community
   - DevOps
 ---
-
-_Photo of Mauricio Dinarte at DrupalCon Seattle contribution day in 2019 [by Josef Kruckenberg @dasjo](https://flic.kr/p/24UgYn2)_
 
 It’s always a joy when the planets align and connections are made! After the virtual [DrupalCon Europe](https://events.drupal.org/europe2020) in December a few folks caught up on social Zoom, where I learned that a couple of my longtime friends in the Drupal community are using [DDEV-Local](https://ddev.com/ddev-local/) to teach web development to newcomers.
 

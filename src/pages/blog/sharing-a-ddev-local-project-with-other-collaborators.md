@@ -2,7 +2,11 @@
 title: "DDEV share: Sharing a DDEV-Local project with other collaborators in real time"
 pubDate: 2020-03-17
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2020/03/ngrok_page.png
+featureImage:
+  src: https://ddev.com/app/uploads/2020/03/ngrok_page.png
+  alt:
+  caption:
+  credit:
 categories:
   - Guides
   - DevOps

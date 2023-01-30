@@ -2,7 +2,11 @@
 title: "Platform.sh becomes a Lead Sponsor of DDEV!"
 pubDate: 2022-05-27
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2022/05/DDEV_Platformsh.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2022/05/DDEV_Platformsh.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - Announcements
 ---

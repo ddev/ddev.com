@@ -2,7 +2,11 @@
 title: "How to use DDEV custom commands and other goodies to add zsh"
 pubDate: 2019-08-13
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2019/08/oh-my-zsh.png
+featureImage:
+  src: https://ddev.com/app/uploads/2019/08/oh-my-zsh.png
+  alt:
+  caption:
+  credit:
 categories:
   - Guides
 ---

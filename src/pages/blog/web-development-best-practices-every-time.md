@@ -2,7 +2,11 @@
 title: "Web development best practices: First time, every time."
 pubDate: 2018-04-05
 author: Heather McNamee
-featuredImage: https://ddev.com/app/uploads/2018/04/technology-3249920_1920.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2018/04/technology-3249920_1920.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - DevOps
 ---

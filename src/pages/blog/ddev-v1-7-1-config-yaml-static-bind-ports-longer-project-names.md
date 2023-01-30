@@ -2,7 +2,11 @@
 title: "DDEV v1.7.1: config.*.yaml, static bind ports, longer project names"
 pubDate: 2019-04-08
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2019/04/EKL_20190320_0150-e1554833038556.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2019/04/EKL_20190320_0150-e1554833038556.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - Announcements
 ---

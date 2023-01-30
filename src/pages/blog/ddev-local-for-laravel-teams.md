@@ -2,7 +2,11 @@
 title: "DDEV-Local for Laravel teams"
 pubDate: 2020-09-24
 author: DDEV
-featuredImage: https://ddev.com/app/uploads/2020/09/Screen-Shot-on-2020-09-24-at-19-18-06-e1600975374486.png
+featureImage:
+  src: https://ddev.com/app/uploads/2020/09/Screen-Shot-on-2020-09-24-at-19-18-06-e1600975374486.png
+  alt:
+  caption:
+  credit:
 categories:
   - DevOps
   - Guides
@@ -42,15 +46,15 @@ In the end, the switch to DDEV did save a lot of time on the team (I have not he
 
 ### 1\. Add a dedicated DB connection for DDEV
 
-Normally, you can define the values of all the DB\_\* env variables to use DDEV’s DB container (it will even be proposed by DDEV when you start your project). But you can define a DDEV DB connection in your config/database.php to make it even easier. Here is an example:
+Normally, you can define the values of all the `DB_*` environment variables to use DDEV’s DB container (it will even be proposed by DDEV when you start your project). But you can define a DDEV DB connection in your config/database.php to make it even easier. Here is an example:
 
-```
+```php
 <?php
 
 return [
-...
+    // ...
     'connections' => [
-...
+        // ...
         'ddev' => [
             'driver' => 'mysql',
             'host' => 'db',
@@ -65,7 +69,7 @@ return [
             'strict' => true,
             'engine' => null,
         ],
-...
+    // ...
 ];
 ```
 
@@ -75,7 +79,7 @@ Alternatively you can (and probably should) change the DB\_\* values in the .env
 
 Normally to execute artisan commands inside the DDEV web container you would need to use `ddev exec php artisan …`. But to make it easier for yourself and your team, you could add the following content to the `.ddev/commands/web/artisan` file:
 
-```
+```bash
 #!/bin/bash
 
 ## #ddev-generated
@@ -88,7 +92,7 @@ php artisan $@
 
 This way you can now just use `ddev artisan …`. It’s trifling, but pleasant.
 
-### 3\. Share It!
+### 3. Share It!
 
 Many of us work on more than one project. Some projects could require similar customizations (DDEV commands, nginx customization, etc). To simplify project updates, you can:
 
@@ -100,7 +104,7 @@ Many of us work on more than one project. Some projects could require similar cu
 
 In Laravel we are used to having an `.env.example`. You should do the same for your colleagues in the `.ddev` file. You can commit the `.ddev/config.local.yaml.example` with some frequently used overrides. This should make it easier for everyone to override the obvious things. Here’s the contents of my `config.local.yaml.example`:
 
-```
+```yaml
 # router_http_port: <port>  # Port to be used for http (if something else is running on default port "80")
 router_http_port: "8008"
 

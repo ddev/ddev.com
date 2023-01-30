@@ -2,7 +2,11 @@
 title: "DDEV-Local, D6LTS, PHP 7.2, and Drupal 6 projects"
 pubDate: 2019-03-28
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2019/03/Status_report___Hobobiker_com__Randy_and_Nancy_s_Big_Bike_Trip.png
+featureImage:
+  src: https://ddev.com/app/uploads/2019/03/Status_report___Hobobiker_com__Randy_and_Nancy_s_Big_Bike_Trip.png
+  alt:
+  caption:
+  credit:
 categories:
   - Guides
 ---
@@ -19,13 +23,13 @@ Here’s what I’ve done to upgrade the Drupal 6 projects that I still maintain
 2. Download the latest d6lts/drupal \[release\] (<https://github.com/d6lts/drupal/releases>) or add it to your project with Git.
 3. Overwrite your D6 core with the downloaded version.
 4. `ddev config --php-version=7.2`
-5. `mkdir .ddev/php and add file there called mbstring.ini` (it can be called anything ending in `.ini`) with these contents:  
-    ```
-    mbstring.func_overload=0
-    mbstring.encoding_translation=0
-    mbstring.http_input=pass
-    mbstring.http_output=pass
-    ```
+5. `mkdir .ddev/php and add file there called mbstring.ini` (it can be called anything ending in `.ini`) with these contents:
+   ```
+   mbstring.func_overload=0
+   mbstring.encoding_translation=0
+   mbstring.http_input=pass
+   mbstring.http_output=pass
+   ```
 6. `ddev start`
 7. Load your database and begin testing.
 8. You’ll likely want to download key modules from <https://github.com/d6lts> (use the “Find a repository” search box. But cck, panels, views are all there. I was able to find everything I needed for my smallish sites.

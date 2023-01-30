@@ -2,7 +2,11 @@
 title: "DDEV macOS Docker Desktop/Colima/Mutagen Benchmarking updated Dec 2022"
 pubDate: 2022-12-27
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2022/12/macOS-M1-vs.-Drupal-10-Web-Install.svg
+featureImage:
+  src: https://ddev.com/app/uploads/2022/12/macOS-M1-vs.-Drupal-10-Web-Install.svg
+  alt:
+  caption:
+  credit:
 categories:
   - Performance
 ---

@@ -2,7 +2,11 @@
 title: "ARM64! Apple Silicon! M1! DDEV-Local! What does it all mean?"
 pubDate: 2020-11-18
 author: Randy Fay
-featuredImage: https://ddev.com/app/uploads/2020/11/Apple-DDEV.jpg
+featureImage:
+  src: https://ddev.com/app/uploads/2020/11/Apple-DDEV.jpg
+  alt:
+  caption:
+  credit:
 categories:
   - DevOps
   - Performance
