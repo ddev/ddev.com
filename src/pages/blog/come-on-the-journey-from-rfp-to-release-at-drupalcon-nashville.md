@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2018/04/jaromir-kavan-296728-unsplash.jpg
   alt:
   caption:
-  credit: [Jaromír Kavan](https://unsplash.com/photos/vv-oEGlN-4E?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/journey?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)
+  credit: "[Jaromír Kavan](https://unsplash.com/photos/vv-oEGlN-4E?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) via [Unsplash](https://unsplash.com/search/photos/journey?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)"
 categories:
   - Announcements
   - Community
