@@ -77,7 +77,14 @@ export function getCategoryUrl(name: string) {
  */
 export function getAuthorDataByName(name: string) {
   const authorData = getAuthorData();
-  return authorData.find((author: object) => author.name == name)
+  const author = authorData.find((author: object) => author.name == name)
+
+  if (!author) {
+    console.error(`No author data found for “${name}”!`);
+    return;
+  }
+
+  return author
 }
 
 // Local reference for loaded data
