@@ -3,7 +3,7 @@ title: "DDEV: It does what it says on the tin"
 pubDate: 2018-04-24
 author: Jeffrey A. McGuire
 featureImage:
-  src: https://ddev.com/app/uploads/2018/04/alex-burrows-drupal-mentoring.jpg
+  src: /img/blog/2018/04/alex-burrows-drupal-mentoring.jpg
   alt:
   caption: “Drupal mentoring”
   credit: "[Alex Burrows](https://twitter.com/aburrows/status/913688621248630785)"
@@ -11,7 +11,7 @@ categories:
   - DevOps
 ---
 
-![](https://ddev.com/app/uploads/2018/04/alex-burrows-300x300.jpg)
+![](/img/blog/2018/04/alex-burrows.jpg)
 
 I recently spoke with Alex Burrows, CTO of the [Digidrop agency](https://digidrop.io/), based in Surrey, UK. After Alex started using DDEV, he found it was saving him time and reducing stress. It wasn’t long before he was convincing his colleagues and clients to use DDEV, too. He and his team have been happy with the switch. They’re getting their client work done faster and Alex reports that it’s also speeding up their pre-sales and discovery processes with potential new clients. Alex sums up how straightforward using DDEV is and how it meets his needs with the old UK saying, “It does what it says on the tin.”
 
@@ -43,7 +43,7 @@ Alex likes that you can get direct access to the DDEV team, for example through 
 
 He gave us a peek at his current [ddev list](https://ddev.readthedocs.io/en/latest/users/cli-usage/#listing-project-information) output showing the status of his current projects, with two more to be added soon.
 
-![](https://ddev.com/app/uploads/2018/04/alex-current-ddev-list-1024x521.png)
+![](/img/blog/2018/04/alex-current-ddev-list.png)
 
 ### Converting to DDEV
 
@@ -68,4 +68,3 @@ Alex said DDEV also speeds up deployment. “We host primarily on Platform.sh. A
 DDEV is not only helping Digidrop with local development and deployment, it’s also helping in the sales process. The agency does Drupal and WordPress development, as well as consultancy, and maintenance. “This includes rescue projects,” Alex explained how they help customers who are looking for better relationships with a new agency. “They’re looking for someone that can move them forward.” These projects come with site audits, where Digidrop investigates a potential client’s site as part of the proposal process.
 
 When they’re negotiating with potential clients and before it’s clear whether the conversation will turn into a contract and billable hours, they need to dig into existing applications to scope out how much work there is and how they would approach the project. Alex explained how they needed to “get something up really quickly,” and “evaluate what the supplied code was like, so we could give it a yay or nay on whether we wanted to take on the project. We could do this really quickly with DDEV.”
-

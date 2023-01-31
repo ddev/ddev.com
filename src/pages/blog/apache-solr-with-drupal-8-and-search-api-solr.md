@@ -3,7 +3,7 @@ title: "Apache Solr with Drupal 8 and Search API Solr"
 pubDate: 2019-12-17
 author: Randy Fay
 featureImage:
-  src: https://ddev.com/app/uploads/2019/12/Screenshot-2019-12-12-at-11.11.13-AM-e1611331510843.png
+  src: /img/blog/2019/12/screenshot-2019-12-12-at-11.11.13-am-e1611331510843.png
   alt:
   caption:
   credit:

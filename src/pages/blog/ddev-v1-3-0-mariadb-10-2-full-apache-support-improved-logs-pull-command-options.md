@@ -3,7 +3,7 @@ title: "DDEV v1.3.0 – MariaDB 10.2, Full Apache Support, Improved Logs, Pull C
 pubDate: 2018-10-12
 author: Randy Fay
 featureImage:
-  src: https://ddev.com/app/uploads/2018/10/clarissa-bock-418873-unsplash-e1539369093961.jpg
+  src: /img/blog/2018/10/clarissa-bock-418873-unsplash-e1539369093961.jpg
   alt:
   caption:
   credit: "Photo by [Clarissa Bock](https://unsplash.com/photos/nqJwKcnfyqU?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."

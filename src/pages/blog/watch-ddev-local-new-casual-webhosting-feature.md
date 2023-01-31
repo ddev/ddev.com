@@ -3,7 +3,7 @@ title: "Watch: DDEV-Local New Casual Webhosting Feature"
 pubDate: 2020-12-14
 author: Randy Fay
 featureImage:
-  src: https://ddev.com/app/uploads/2020/12/Casual-DIY-Webhosting.png
+  src: /img/blog/2020/12/casual-diy-webhosting.png
   alt:
   caption:
   credit:

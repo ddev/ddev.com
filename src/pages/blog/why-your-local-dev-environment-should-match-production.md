@@ -3,7 +3,7 @@ title: "Why your local dev environment should match production"
 pubDate: 2020-11-04
 author: DDEV
 featureImage:
-  src: https://ddev.com/app/uploads/2020/11/Deploy-Benni-art-from-shashank-and-Becris-on-the-noun-project.jpeg
+  src: /img/blog/2020/11/deploy-benni-art-from-shashank-and-becris-on-the-noun-project.jpeg
   alt:
   caption:
   credit: "Line art by [Shashank](https://thenounproject.com/term/container/597249) and [Becris](https://thenounproject.com/term/containers/1468090) via Noun Project."
@@ -61,4 +61,3 @@ DDEV-Live covers all the functionality from DDEV-Local, which already has excell
 A simple `ddev-live create site` and `ddev-live push` is all you need to [host your sites with DDEV](https://ddev.com/ddev-live/how-to-deploy-a-site-with-ddev/). They pride themselves on making tools easy first, and customizable as needed, and the hosting platform is no exception.
 
 If you’re hooked with DDEV-Local, you should give DDEV-Live a shot.
-

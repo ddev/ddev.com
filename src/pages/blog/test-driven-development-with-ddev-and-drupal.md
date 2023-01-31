@@ -3,7 +3,7 @@ title: "Matt Glaman’s Guide to Test-Driven Development with DDEV and Drupal"
 pubDate: 2019-01-30
 author: Heather McNamee
 featureImage:
-  src: https://ddev.com/app/uploads/2019/01/mike-enerio-87665-unsplash-e1548857780487.jpg
+  src: /img/blog/2019/01/mike-enerio-87665-unsplash-e1548857780487.jpg
   alt:
   caption:
   credit: "Photo by [Mike Enerio](https://unsplash.com/photos/2IkxeDKaZdY?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
@@ -17,7 +17,7 @@ Matt Glaman is an active member of the DDEV community, [Randy Fay pointed out](h
 
 ### Tell us a bit about yourself, Matt!
 
-![](https://ddev.com/app/uploads/2019/01/author-matt-glaman-e1548869414810-1024x966.jpg)
+![](/img/blog/2019/01/author-matt-glaman-e1548869414810.jpg)
 
 I’m Matt Glaman. I’ve been working with Drupal for a little over six years, now. I first got into web development so that I could make a website for our Rainbow 6 clan, back in the good old days of MSN Zone and using Tripod UK so I could get free hosting that supported PHP.
 
@@ -62,5 +62,3 @@ Read Matt Glaman’s series on test-driven development with Drupal and DDEV.
 **Part 2\. [Running Drupal’s FunctionalJavascript tests on DDEV](https://glamanate.com/blog/running-drupals-functionaljavascript-tests-ddev).** How to Chromedriver running to execute the FunctionalJavascript test suite.
 
 **Part 3\. [Running Drupal’s Nightwatch test suite on DDEV](https://glamanate.com/blog/running-drupals-nightwatch-test-suite-ddev).** How to run Drupal’s newest testing framework: Nightwatch.js, for end-to-end tests in Node.js run against a Selenium/WebDriver server.
-
-

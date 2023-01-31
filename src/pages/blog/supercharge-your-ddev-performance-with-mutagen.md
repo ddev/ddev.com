@@ -3,7 +3,7 @@ title: "Supercharge your DDEV performance with Mutagen"
 pubDate: 2021-07-28
 author: Randy Fay
 featureImage:
-  src: https://ddev.com/app/uploads/2021/07/Drupal-9-Web-Install-times-seconds-less-is-better.png
+  src: /img/blog/2021/07/drupal-9-web-install-times-seconds-less-is-better.png
   alt:
   caption:
   credit:
@@ -16,17 +16,17 @@ DDEV v1.18.0-alpha1 introduces a new performance improvement based on [Mutagen](
 
 The improvements for general web activity are quite striking, as shown in the graphs below. On macOS, a Drupal 9 web installation can be twice as fast as with NFS, and many times faster than plain Docker. On traditional Windows, the speed improvement is off the chart (literally). I actually had to remove the plain Docker category because it took 20 minutes to install and so it swamped the chart and you couldn’t see the relationships of anything else.
 
-![](https://ddev.com/app/uploads/2021/07/Drupal-9-Web-Install-times-seconds-less-is-better.png)
+![](/img/blog/2021/07/drupal-9-web-install-times-seconds-less-is-better.png)
 
 Improvements for Drush activity inside the container are similarly impressive. (Drush is the Drupal command-line tool.) Once again, the traditional Windows plain Drupal Drush install had to be removed because it made it so you couldn’t see anything else.
 
-![](https://ddev.com/app/uploads/2021/07/Drupal-9-drush-install-times-seconds-less-is-better.png)
+![](/img/blog/2021/07/drupal-9-drush-install-times-seconds-less-is-better.png)
 
 There is a cost to Mutagen – A Drupal 9 initial sync on `ddev start` and certain other activities takes a bit of time, on the order of 5-60 seconds, depending on the filesystem/operating system and depending on whether it has already been done. If you have a huge number of files (think magento2 or large Drupal or TYPO3 sites) it will be longer, but the performance result should be equivalent.
 
 A mutagen-enabled Magento2 site with all the sample data installed took 48 seconds for the initial sync (mac M1) and 12 seconds for the follow-up sync.
 
-![](https://ddev.com/app/uploads/2021/07/Drupal-9-Mutagen-Sync-time-seconds.png)
+![](/img/blog/2021/07/drupal-9-mutagen-sync-time-seconds.png)
 
 Note that there are also some risks/caveats, as seen in the [docs](https://ddev.readthedocs.io/en/latest/users/performance/#using-mutagen).
 

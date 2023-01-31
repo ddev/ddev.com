@@ -3,7 +3,7 @@ title: "Eight (more) ways to get the most out of DDEV-Local"
 pubDate: 2018-12-06
 author: Randy Fay
 featureImage:
-  src: https://ddev.com/app/uploads/2018/12/marvin-ronsdorf-196913-unsplash-e1544104467254.jpg
+  src: /img/blog/2018/12/marvin-ronsdorf-196913-unsplash-e1544104467254.jpg
   alt:
   caption:
   credit: "Photo by Marvin Ronsdorf on [Unsplash](https://unsplash.com/search/photos/eight?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
@@ -31,25 +31,27 @@ This is exactly what happened to a DDEV user recently, who exported to a .sql fi
 
 We would see the following output, explaining and showing everything you need to know about it:
 
-`Dump a database to stdout or to a file.  
-Usage:  
-ddev export-db [project] [flags]`
+```
+Dump a database to stdout or to a file.
+Usage:
+ddev export-db [project] [flags]
 
-Examples:  
-ddev export-db > \~/tmp/db.sql.gz  
-ddev export-db –gzip=false > \~/tmp/db.sql  
-ddev export-db -f \~/tmp/db.sql.gz  
-ddev export-db –gzip=false myproject > \~/tmp/myproject.sql  
-ddev export-db someproject > \~/tmp/someproject.sql
+Examples:
+ddev export-db > ~/tmp/db.sql.gz
+ddev export-db –gzip=false > ~/tmp/db.sql
+ddev export-db -f ~/tmp/db.sql.gz
+ddev export-db –gzip=false myproject > ~/tmp/myproject.sql
+ddev export-db someproject > ~/tmp/someproject.sql
 
-Flags:  
-\-f, –file string Provide the path to output the dump  
-\-z, –gzip If provided asset is an archive, provide the path to extract within the archive. (default true)  
-\-h, –help help for export-db  
-\-d, –target-db string If provided, target-db is alternate database to export (default “db”)
+Flags:
+-f, –file string Provide the path to output the dump
+-z, –gzip If provided asset is an archive, provide the path to extract within the archive. (default true)
+-h, –help help for export-db
+-d, –target-db string If provided, target-db is alternate database to export (default “db”)
 
-Global Flags:  
-\-j, –json-output If true, user-oriented output will be in JSON format.
+Global Flags:
+-j, –json-output If true, user-oriented output will be in JSON format.
+```
 
 As you can see, you can even use a `--gzip=false` flag to change the output to an .sql file instead of a .gzip file.
 

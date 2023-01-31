@@ -3,7 +3,7 @@ title: "ARM64! Apple Silicon! M1! DDEV-Local! What does it all mean?"
 pubDate: 2020-11-18
 author: Randy Fay
 featureImage:
-  src: https://ddev.com/app/uploads/2020/11/Apple-DDEV.jpg
+  src: /img/blog/2020/11/apple-ddev.jpg
   alt:
   caption:
   credit:

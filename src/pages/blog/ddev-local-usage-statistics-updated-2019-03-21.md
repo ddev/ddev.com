@@ -3,7 +3,7 @@ title: "DDEV-Local Usage Statistics (Updated 2019-03-21)"
 pubDate: 2019-03-21
 author: Randy Fay
 featureImage:
-  src: https://ddev.com/app/uploads/2019/03/DDEV-Data-e1553211948905.jpg
+  src: /img/blog/2019/03/ddev-data-e1553211948905.jpg
   alt:
   caption:
   credit:
@@ -19,15 +19,15 @@ Of course, we only have information about DDEV-Local users who have opted in, an
 
 Some of the most interesting data so far:
 
-![](https://ddev.com/app/uploads/2019/03/1-OS-1024x633.png)
+![](/img/blog/2019/03/1-os.png)
 
-![](https://ddev.com/app/uploads/2019/03/2-php-1024x633.png)
+![](/img/blog/2019/03/2-php.png)
 
-![](https://ddev.com/app/uploads/2019/03/3-CMS-1024x633.png)
+![](/img/blog/2019/03/3-cms.png)
 
-![](https://ddev.com/app/uploads/2019/03/4-Webserver-1024x633.png)
+![](/img/blog/2019/03/4-webserver.png)
 
-![](https://ddev.com/app/uploads/2019/03/5-Windows-1024x633.png)
+![](/img/blog/2019/03/5-windows.png)
 
 If you’d like to browse the actual numbers, the (rough) spreadsheet data is [available here.](https://docs.google.com/spreadsheets/d/135MIJBPQifLyssM-CjxGotH3XTrtdCTkcEOb9SQOU6E/edit?usp=sharing)
 

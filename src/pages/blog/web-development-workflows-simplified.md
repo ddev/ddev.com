@@ -3,7 +3,7 @@ title: "Web Development Workflows Simplified"
 pubDate: 2018-03-22
 author: Jeffrey A. McGuire
 featureImage:
-  src: https://ddev.com/app/uploads/2018/03/with_ddev.png
+  src: /img/blog/2018/03/with-ddev.png
   alt:
   caption:
   credit:
@@ -33,11 +33,11 @@ As of March 2018, the DDEV platform can ensure consistency from local developmen
 
 Inspired by the Web Developer Roadmap, we surveyed clients, collaborators, and colleagues to take a snapshot of the current state of hidden complexity that developers face.
 
-![](https://ddev.com/app/uploads/2018/03/without_ddev.png)
+![](/img/blog/2018/03/without-ddev.png)
 
 Our vision for the dev-to-deploy workflow, using DDEV-Local for development, QA and testing, through to hosting on DDEV-Live is all about getting the complexity of it all out of your way. We’re combining best practices with industry standard, open source tooling like Kubernetes and Docker to give you robust, reliable projects from start to finish. And you can extend or customize for your own needs–even to deploy to whatever hosting provider or deployment model makes sense for your clients. It’s open source, you can really own it.
 
-![](https://ddev.com/app/uploads/2018/03/with_ddev.png)
+![](/img/blog/2018/03/with-ddev.png)
 
 After switching, you can focus your time and energy on improving your services and products, not on the complexity. As web developer Danita Bowman said recently, she saved time by leaving the configuration of her development environment up to DDEV-Local. “[I can handle a whole lot more than I used to be able to handle](https://ddev.com/ddev-local/saving-time-and-making-money-with-ddev/).” The time saved has turned into greater capacity and more clients for her business.
 

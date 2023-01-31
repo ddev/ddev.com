@@ -3,7 +3,7 @@ title: "DDEV v1.1.0 – Snapshots, hostname removal, Drush on host, Docker 18.06
 pubDate: 2018-08-15
 author: Rick Manelius
 featureImage:
-  src: https://ddev.com/app/uploads/2018/08/nasa-63029-unsplash-e1534364618963.jpg
+  src: /img/blog/2018/08/nasa-63029-unsplash-e1534364618963.jpg
   alt:
   caption:
   credit: "Photo by [NASA](https://unsplash.com/photos/n463SoeSiVY?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/release?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)"

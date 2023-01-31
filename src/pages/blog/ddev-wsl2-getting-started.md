@@ -3,7 +3,7 @@ title: "DDEV ❤️ WSL2: getting started"
 pubDate: 2020-05-26
 author: DDEV
 featureImage:
-  src: https://ddev.com/app/uploads/2020/05/diagram.png
+  src: /img/blog/2020/05/diagram.png
   alt:
   caption:
   credit:
@@ -53,7 +53,7 @@ Next up is Docker Desktop, which uses the WSL2 backend by default [since version
 
 When you’re done, go to Docker Desktop settings > Resources > WSL integration > enable integration for your distro (now `docker` commands will be available from within your WSL2 distro):
 
-![](https://ddev.com/app/uploads/2020/05/settings.png)
+![](/img/blog/2020/05/settings.png)
 
 ## Install DDEV
 
@@ -63,7 +63,7 @@ To make things more visual, let’s take a look at the image below. Docker + DDE
 
 **Make sure you put your projects in the Linux filesystem (e.g. /home/LINUX*USERNAME), \_not* in the Windows filesystem (/mnt/c), for vastly superior performance.** You’ll be very, very disappointed if you put them on /mnt/c.
 
-![](https://ddev.com/app/uploads/2020/05/diagram.png)
+![](/img/blog/2020/05/diagram.png)
 
 ### Prepare SSL certificate (mkcert)
 
@@ -87,7 +87,7 @@ Let’s try to get a DDEV site up and running using the [WordPress Quickstart](h
 
 When navigating to <https://my-wp-bedrock-site.ddev.site>, we are presented with the WordPress installation screen:
 
-![](https://ddev.com/app/uploads/2020/05/wp_install.png)
+![](/img/blog/2020/05/wp-install.png)
 
 Fantastic! Even the SSL certificate works as expected. You’re now ready to start developing with DDEV on WSL2 ?
 
@@ -104,7 +104,7 @@ VS Code has a special integration with WSL2 in its Remote Development extension 
 - Install [VS Code + the Remote Development extension pack](https://code.visualstudio.com/docs/remote/wsl#%5Fgetting-started)
 - Open VS Code, connect to your WSL2 distro. You can now access the file system of your Linux distro from within Windows ✨
 
-![](https://ddev.com/app/uploads/2020/05/vs-code-wsl2-windows.jpg)
+![](/img/blog/2020/05/vs-code-wsl2-windows.jpg)
 
 - If you open a terminal by going to Terminal in the top menu > New terminal, you are immediately in the WSL2 environment and can run commands over there, like `ddev start`.
 

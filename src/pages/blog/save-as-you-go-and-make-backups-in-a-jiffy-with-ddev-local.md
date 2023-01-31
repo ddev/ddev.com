@@ -3,7 +3,7 @@ title: "Save-as-you-go and make backups in a jiffy with DDEV-Local"
 pubDate: 2018-11-20
 author: Randy Fay
 featureImage:
-  src: https://ddev.com/app/uploads/2018/11/will-echols-539053-unsplash-e1542746009659.jpg
+  src: /img/blog/2018/11/will-echols-539053-unsplash-e1542746009659.jpg
   alt:
   caption:
   credit: "Photo by [Will Echols](https://unsplash.com/photos/%5FRFwfvznaYM?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/road-colorado?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."

@@ -9,7 +9,7 @@ categories:
 
 As part of our ongoing mission to make it easier for individuals and teams to adopt modern, container-based toolsets and workflows, we’re expanding the number of CMSs that we support in DDEV. Today we’re thrilled to add Backdrop CMS to the list! DDEV provides a fast yet robust way to work across multiple projects across multiple operating systems. Once you have installed DDEV, it’s possible to get a new site up and running on your local workstation in minutes as we’ll show in the quick start instructions below.
 
-![](https://ddev.com/app/uploads/2018/02/Backdrop-Logo-Horizontal_0.png)
+![](/img/blog/2018/02/backdrop-logo-horizontal-0.png)
 
 ## Quick Start Guide
 

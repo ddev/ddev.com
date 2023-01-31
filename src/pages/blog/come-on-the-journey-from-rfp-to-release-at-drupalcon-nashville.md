@@ -3,7 +3,7 @@ title: "Come on the Journey from RFP to Release at DrupalCon Nashville"
 pubDate: 2018-04-04
 author: Rick Manelius
 featureImage:
-  src: https://ddev.com/app/uploads/2018/04/jaromir-kavan-296728-unsplash.jpg
+  src: /img/blog/2018/04/jaromir-kavan-296728-unsplash.jpg
   alt:
   caption:
   credit: "[Jaromír Kavan](https://unsplash.com/photos/vv-oEGlN-4E?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) via [Unsplash](https://unsplash.com/search/photos/journey?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)"
@@ -32,7 +32,7 @@ This approach assumes all the requirements can be known at the outset. As time m
 
 Steven C. McConnell, author of [Software Estimation: Demystifying the Black Art](https://www.safaribooksonline.com/library/view/software-estimation-demystifying/0735605351/) describes the challenges of estimation. He cites research that even a good estimation approach would be within 25% of the actual results 75% of the time. The risks are high. McConnell says the problem is right at the outset. “Estimates created early in a project are inherently inaccurate.” Early stage estimates happen in “the cone of uncertainty” as [he illustrates in this diagram](http://www.ewh.ieee.org/r5/central%5Ftexas/austin%5Fcs/presentations/2004.08.26.pdf).
 
-![](https://ddev.com/app/uploads/2018/04/cone-of-uncertainty-Steven-McConnell-1024x586.png)
+![](/img/blog/2018/04/cone-of-uncertainty-steven-mcconnell.png)
 
 Cone of Uncertainty, Steven C. McConnell, 10 Deadly Sins of Software Estimation.
 

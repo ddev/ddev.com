@@ -3,7 +3,7 @@ title: "DDEV-Local Release v0.20.0 – sudo and a peek into the roadmap ahead"
 pubDate: 2018-06-27
 author: Rick Manelius
 featureImage:
-  src: https://ddev.com/app/uploads/2018/06/daniil-silantev-367138-unsplash.jpg
+  src: /img/blog/2018/06/daniil-silantev-367138-unsplash.jpg
   alt:
   caption:
   credit: "Photo by [Daniil Silantev](https://unsplash.com/photos/ioYwosPYC0U?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."

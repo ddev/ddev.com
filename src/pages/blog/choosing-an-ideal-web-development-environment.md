@@ -3,7 +3,7 @@ title: "Choosing an ideal web development environment"
 pubDate: 2018-05-29
 author: Mike Anello
 featureImage:
-  src: https://ddev.com/app/uploads/2018/05/headway-537308-unsplash-e1527604343956.jpg
+  src: /img/blog/2018/05/headway-537308-unsplash-e1527604343956.jpg
   alt:
   caption:
   credit: "Photo by [Headway](https://unsplash.com/photos/5QgIuuBxKwM?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/computers?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."

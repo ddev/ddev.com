@@ -3,7 +3,7 @@ title: "DDEV, Docker, Chromebook!"
 pubDate: 2020-05-04
 author: Randy Fay
 featureImage:
-  src: https://ddev.com/app/uploads/2020/04/chromebook-3.jpg
+  src: /img/blog/2020/04/chromebook-3.jpg
   alt:
   caption:
   credit:
@@ -33,7 +33,7 @@ Here’s the step-by-step to set up a DDEV-Local development environment:
      - Find out the IP address of your Debian terminal with `ip -a | grep eth0`. You’ll see something like “inet 100.105.93.95/28 brd 100.115.92.207” and the “100.115.92.195” is what you’re after.
      - Install a Chrome extension like Host Switch Plus and configure it (Edit 2020-10-14: Host Switch Plus is no longer available, but [Livehosts](https://chrome.google.com/webstore/detail/livehosts/hdpoplemgeaioijkmoebnnjcilfjnjdi) may offer the same capability). Unfortunately the Chrome browser doesn’t innately understand how to connect to the web server running in the Debian terminal system, so we’ll use Host Switch Plus to convert `*.ddev.site` to connect to 100.115.92.195 (in my case). Here’s the configuration:
 
-![Screenshot of the "Host Switch Plus" plugin configuration panel set as described in the preceding text. Default set to "direct". Checkbox for "enable" selected. IP set to the IP you just grepped for and Domain set to *.ddev.site](https://ddev.com/app/uploads/2020/04/HostSwitchPlus.png)
+![Screenshot of the "Host Switch Plus" plugin configuration panel set as described in the preceding text. Default set to "direct". Checkbox for "enable" selected. IP set to the IP you just grepped for and Domain set to *.ddev.site](/img/blog/2020/04/hostswitchplus.png)
 
 Now you can create a project the normal way and get to work! This is the simple path to a Drupal 8 Composer build, but there are lots of other DDEV-Local [quickstart guides](https://ddev.readthedocs.io/en/stable/users/cli-usage/#quickstart-guides).
 

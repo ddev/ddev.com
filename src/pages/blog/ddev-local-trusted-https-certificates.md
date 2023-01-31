@@ -3,7 +3,7 @@ title: "DDEV-Local Trusted HTTPS Certificates"
 pubDate: 2019-05-23
 author: Randy Fay
 featureImage:
-  src: https://ddev.com/app/uploads/2019/05/Home___umami_8_7_1.png
+  src: /img/blog/2019/05/home-umami.png
   alt:
   caption:
   credit:

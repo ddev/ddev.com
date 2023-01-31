@@ -3,7 +3,7 @@ title: "How DDEV ensured success for this senior developer"
 pubDate: 2018-05-08
 author: Jeffrey A. McGuire
 featureImage:
-  src: https://ddev.com/app/uploads/2018/04/brandon-hiking.png
+  src: /img/blog/2018/04/brandon-hiking.png
   alt:
   caption:
   credit:
@@ -11,7 +11,7 @@ categories:
   - DevOps
 ---
 
-![](https://ddev.com/app/uploads/2018/04/brandon-williams-crazysix-247x300.png)
+![](/img/blog/2018/04/brandon-williams-crazysix.png)
 
 Senior developers and project leads need to nimbly move between projects as they advise sales, developer, and other teams. We spoke with Brandon Williams who gave us peek at what his typical day is like as a Technical Project Architect, and how having a reliable local development environment, like DDEV, makes a big difference to his day.
 

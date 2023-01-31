@@ -3,7 +3,7 @@ title: "Announcing: New online course – professionalize your web dev workflow"
 pubDate: 2018-07-09
 author: Heather McNamee
 featureImage:
-  src: https://ddev.com/app/uploads/2018/06/alejandro-escamilla-10-unsplash.jpg
+  src: /img/blog/2018/06/alejandro-escamilla-10-unsplash.jpg
   alt:
   caption:
   credit: "Photo by [Alejandro Escamilla on Unsplash](https://unsplash.com/@alejandroescamilla)."

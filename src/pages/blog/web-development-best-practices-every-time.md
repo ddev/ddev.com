@@ -3,7 +3,7 @@ title: "Web development best practices: First time, every time."
 pubDate: 2018-04-05
 author: Heather McNamee
 featureImage:
-  src: https://ddev.com/app/uploads/2018/04/technology-3249920_1920.jpg
+  src: /img/blog/2018/04/technology-3249920-1920.jpg
   alt:
   caption:
   credit: "Photo credit: Rawpixel"
@@ -71,4 +71,3 @@ Anytime you want to know what a command does, check the manual pages right from 
 Have any questions? Ask on [Stack Overflow #DDEV.](https://stackoverflow.com/questions/tagged/ddev) That’s a great place to ask questions and collaborate on answers.
 
 **[Get started with DDEV-Local](/get-started/)**
-

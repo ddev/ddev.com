@@ -3,7 +3,7 @@ title: "KubeCon Barcelona Wrap-up"
 pubDate: 2019-05-30
 author: Elli Ludwigson
 featureImage:
-  src: https://ddev.com/app/uploads/2019/05/KubeCon-group.jpg
+  src: /img/blog/2019/05/kubecon-group.jpg
   alt:
   caption:
   credit:
@@ -35,7 +35,9 @@ Over the last 6 months, my focus has shifted more from using Kubernetes to exten
 
 We’ve also had a lot of interest for the new [Drupal/Kubernetes SIG](https://github.com/drud/sig-drupal), where we’re starting to collaborate on creating reusable patterns that will support everyone working with Kubernetes in the Drupal community. It’s been interesting to hear how others are approaching similar problems to what we’ve seen and to combine our efforts to help builders get started more quickly in the future.
 
-**What sessions at KubeCon really struck your interest?![Nic and Jason at KubeCon](https://ddev.com/app/uploads/2019/05/KubeCon-Nic-Jason-1024x768.jpg)**
+**What sessions at KubeCon really struck your interest?**
+
+![Nic and Jason at KubeCon](/img/blog/2019/05/kubecon-nic-jason.jpg)
 
 Mo Khan gave a really good deep dive session into the [inner workings of the Kube-API](https://www.youtube.com/watch?v=-2xcNjKLU9E&list=PLj6h78yzYM2PpmMAnvpvsnR4c27wJePh3&index=249&t=0s), focusing on how authentication and authorization works, and how it could be extended. This is an area I have already been developing in and I am grateful to have gotten the chance to talk to Mo and other contributors about this rather obscure area of Kubernetes.
 
@@ -61,7 +63,7 @@ I am currently a Software Developer, having joined DDEV in December 2018\. I wor
 
 This is my second Kubecon. I previously went to Kubecon Austin in December 2017 where I got my first true exposure to Kubernetes and the cloud-native community. Since then, I can’t begin to describe how much I’ve learned about Kubernetes. My latest big project outside of my work on DDEV-Live was an automated Kubernetes microservice testing project I had to develop as a research assistant for a Ph.D research project during my last semester of college. During this time I was also working with DDEV full time, and was able to directly apply what I learned at work to this research-oriented work.
 
-**![Nic at KubeCon](https://ddev.com/app/uploads/2019/05/KubeCon-Nic-768x1024.jpg)**
+**![Nic at KubeCon](/img/blog/2019/05/kubecon-nic-768x1024.jpg)**
 
 **What sessions at KubeCon really struck your interest?**
 

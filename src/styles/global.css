@@ -23,3 +23,17 @@ footer {
 .footnotes {
   @apply border-t mt-24 pt-4 text-base;
 }
+
+.video-container {
+  @apply relative overflow-hidden w-full;
+
+  &::after {
+    @apply block;
+    content: "";
+    padding-top: 56.25%;
+  }
+
+  iframe {
+    @apply absolute top-0 left-0 w-full h-full;
+  }
+}

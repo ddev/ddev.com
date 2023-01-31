@@ -3,7 +3,7 @@ title: "Developer Happiness: Use the Right Tools to Avoid Burnout"
 pubDate: 2018-04-09
 author: Heather McNamee
 featureImage:
-  src: https://ddev.com/app/uploads/2018/04/toolbox-2645700_1920-e1523274374612.jpg
+  src: /img/blog/2018/04/toolbox-2645700-1920-e1523274374612.jpg
   alt:
   caption:
   credit: "CC0 Creative Commons Repair Tools [Vinayr16](https://pixabay.com/en/toolbox-socket-repair-tool-2645700/)"
@@ -60,4 +60,3 @@ When we hear from customers and DDEV users, they often talk about benefits of ti
 That’s what we’ve been doing as we build our dev-to-deploy suite of DDEV tools. We keep on top of new developments and security concerns and use that to inform how we build the tools so they work reliably. We aggregate all that information and apply best practices in the tool. Our platform is the industry standard open source technologies, distilled best practices, all glued together with our extensive agency, CMS, and DevOps experience. We hope knowing all of that is on your side gives you the peace of mind to on what matters.
 
 **[Get started with DDEV-Local](/get-started/)**
-

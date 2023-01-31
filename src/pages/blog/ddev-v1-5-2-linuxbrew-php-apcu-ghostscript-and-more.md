@@ -3,7 +3,7 @@ title: "DDEV v1.5.2: Linuxbrew, php-apcu, Ghostscript and more"
 pubDate: 2019-01-16
 author: Randy Fay
 featureImage:
-  src: https://ddev.com/app/uploads/2019/01/EKL_20181205_13-1.jpg
+  src: /img/blog/2019/01/ekl-20181205-13-1.jpg
   alt:
   caption:
   credit: "Photo by [Elli Ludwigson](/blog/author/elli-ludwigson)."

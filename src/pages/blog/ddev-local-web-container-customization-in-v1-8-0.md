@@ -3,7 +3,7 @@ title: "DDEV-Local Web Container Customization in v1.8.0"
 pubDate: 2019-06-03
 author: Randy Fay
 featureImage:
-  src: https://ddev.com/app/uploads/2019/05/Screen-Shot-2019-05-29-at-2.21.12-PM.png
+  src: /img/blog/2019/05/screen-shot-2019-05-29-at-2.21.12-pm.png
   alt:
   caption:
   credit:
@@ -16,7 +16,7 @@ There’s never any end to the number of things you might need to do with the we
 
 **Simple: Add webimage_extra_packages to config.yaml**
 
-If you need extra packages, just find out what they are (for Debian) and add them to your .ddev/config.yaml, like
+If you need extra packages, just find out what they are (for Debian) and add them to your `.ddev/config.yaml`, like
 
 `webimage_extra_packages: [php-yaml]`
 
@@ -28,4 +28,6 @@ For people with a need for more complex changes, copy the .ddev/web-build/Docker
 
 Thanks for your support for DDEV-Local, and we look forward to hearing what you do with these new capabilities. Please post your recipes on [Stack Overflow](https://stackoverflow.com/tags/ddev) tagged with “ddev.” Use the “question and answer” format where you answer your own question. Have fun!
 
+<div class="video-container">
 <iframe loading="lazy" width="500" height="281" src="https://www.youtube.com/embed/XD3KWlYCiCo?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>

@@ -3,7 +3,7 @@ title: "DDEV-Local, D6LTS, PHP 7.2, and Drupal 6 projects"
 pubDate: 2019-03-28
 author: Randy Fay
 featureImage:
-  src: https://ddev.com/app/uploads/2019/03/Status_report___Hobobiker_com__Randy_and_Nancy_s_Big_Bike_Trip.png
+  src: /img/blog/2019/03/drupal-status-report.png
   alt:
   caption:
   credit:

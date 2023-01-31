@@ -3,7 +3,7 @@ title: "Saving time and making money with DDEV"
 pubDate: 2018-02-06
 author: Jeffrey A. McGuire
 featureImage:
-  src: https://ddev.com/app/uploads/2018/03/lukas-blazek-263122.jpg
+  src: /img/blog/2018/03/lukas-blazek-263122.jpg
   alt:
   caption:
   credit: "[Lukas Blazek](https://unsplash.com/photos/UAvYasdkzq8?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/time?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
@@ -11,9 +11,9 @@ categories:
   - DevOps
 ---
 
-![](https://ddev.com/app/uploads/2018/03/Danita_Bowman-768x727-300x284.jpeg)
+![](/img/blog/2018/03/danita-bowman.jpeg)
 
-Danita Bowman of [DSquaredB Consulting](https://dsquaredbconsulting.com/) wears lots of hats. “My primary role is that I do everything! At her web agency, she’s responsible for web development, deployment, site maintenance, and sales, too. “So the last thing I need is more complexity.” She uses [DDEV](/quickstart) for her local development because it reflects her approach to her growing business. It helps her work smart, reducing complexity, bringing in expertise as needed, and operationalizing everything she can.
+Danita Bowman of [DSquaredB Consulting](https://dsquaredbconsulting.com/) wears lots of hats. “My primary role is that I do everything! At her web agency, she’s responsible for web development, deployment, site maintenance, and sales, too. “So the last thing I need is more complexity.” She uses DDEV for her local development because it reflects her approach to her growing business. It helps her work smart, reducing complexity, bringing in expertise as needed, and operationalizing everything she can.
 
 > Thanks to tools like DDEV Danita has been able to spend less time solving problems with local development and configuration, and more time solving problems for clients.
 

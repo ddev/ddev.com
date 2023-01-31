@@ -3,7 +3,7 @@ title: "DDEV v1.7.1: config.*.yaml, static bind ports, longer project names"
 pubDate: 2019-04-08
 author: Randy Fay
 featureImage:
-  src: https://ddev.com/app/uploads/2019/04/EKL_20190320_0150-e1554833038556.jpg
+  src: /img/blog/2019/04/ekl-20190320-0150-e1554833038556.jpg
   alt:
   caption:
   credit: "Photo courtesy [Elli Ludwigson](/blog/author/elli-ludwigson)."
@@ -50,4 +50,3 @@ The next session of Mike Anello’s online DrupalEasy course, [Professional Loca
 Thank you very much to [akalata](https://github.com/akalata) on GitHub for testing this release! Many of you also filed issues and helped point out important improvements.
 
 [DDEV is an open source project](https://github.com/drud/ddev/blob/master/CONTRIBUTING.md) and we very much appreciate the time our contributors give to improving the tool for everyone. Please continue to submit issues for new features and bugs, and take a look around [the DDEV issue queue](https://github.com/drud/ddev/issues) and [Stack Overflow](https://stackoverflow.com/questions/tagged/ddev) to spur your thinking!
-

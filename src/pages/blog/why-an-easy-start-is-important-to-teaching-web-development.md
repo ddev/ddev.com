@@ -3,7 +3,7 @@ title: "Why an easy start is important to teaching web development"
 pubDate: 2021-01-21
 author: Elli Ludwigson
 featureImage:
-  src: https://ddev.com/app/uploads/2021/01/40629336923_4f79c53b93_c.jpg
+  src: /img/blog/2021/01/40629336923-4f79c53b93-c.jpg
   alt:
   caption: Photo of Mauricio Dinarte at DrupalCon Seattle contribution day in 2019.
   credit: "[Josef Kruckenberg @dasjo](https://flic.kr/p/24UgYn2)"

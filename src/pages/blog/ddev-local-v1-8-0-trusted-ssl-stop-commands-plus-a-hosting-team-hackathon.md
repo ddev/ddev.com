@@ -3,7 +3,7 @@ title: "DDEV-Local v1.8.0: Trusted SSL, `stop` commands, plus a hosting team hac
 pubDate: 2019-05-16
 author: Randy Fay
 featureImage:
-  src: https://ddev.com/app/uploads/2019/05/EKL_20190418_0240.jpg
+  src: /img/blog/2019/05/ekl-20190418-0240.jpg
   alt:
   caption:
   credit:
@@ -49,7 +49,7 @@ Some technical highlights we had a lot of movement on were global user managemen
 
 We’ve also been doing more work as pairs to encourage frequent conversation, questioning, and combining our individual knowledge and ideas earlier in the process. It’s the varied backgrounds and perspectives of everyone on the DDEV team that really create strength when combined, so we’re eager to give everyone’s ideas a chance to surface naturally and frequently. We’re very grateful that it was possible for us to bring everyone together and look forward to the next group gathering!
 
-![Boulder Startup Week DevTools panel](https://ddev.com/app/uploads/2019/05/IMG_0160-300x245.jpg)
+![Boulder Startup Week DevTools panel](/img/blog/2019/05/img-0160.jpg)
 
 ## DDEV Events
 

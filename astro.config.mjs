@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config"
 import { existsSync } from "fs"
 import { plainTextPlugin } from "@barnabask/astro-minisearch"
 import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs"
-import image from "@astrojs/image"
+import { astroImageTools } from "astro-imagetools"
 import prefetch from "@astrojs/prefetch"
 import react from "@astrojs/react"
 import robotsTxt from "astro-robots-txt"
@@ -39,6 +39,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     react(),
+    astroImageTools,
     sitemap(),
     robotsTxt({
       sitemap: false,
@@ -53,9 +54,6 @@ export default defineConfig({
       output: "search.json",
     }),
     prefetch(),
-    image({
-      serviceEntryPoint: "@astrojs/image/sharp",
-    }),
   ],
   markdown: {
     syntaxHighlight: "shiki",

@@ -3,7 +3,7 @@ title: "Sandboxes – Local development environments to play in"
 pubDate: 2018-04-26
 author: Heather McNamee
 featureImage:
-  src: https://ddev.com/app/uploads/2018/04/developers-playing-in-sandboxes-e1524554749706.jpg
+  src: /img/blog/2018/04/developers-playing-in-sandboxes-e1524554749706.jpg
   alt:
   caption:
   credit: "[Kaboompics .com from Pexels](https://www.pexels.com/photo/little-boy-playing-in-the-sand-6459/)"

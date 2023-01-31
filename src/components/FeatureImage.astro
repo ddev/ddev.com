@@ -1,5 +1,6 @@
 ---
 import { marked } from "marked"
+import { Picture } from "astro-imagetools/components"
 
 export interface Props {
   src: string
@@ -12,8 +13,29 @@ export interface Props {
 const { src, alt, caption = "", credit, shadow = false } = Astro.props
 ---
 
-<figure class={`w-full mx-auto mb-24 rounded-md z-10`}>
-  <img src={src} alt={alt} class={`block rounded-md` + (shadow ? ` shadow-xl` : ``)} />
+<figure class={`w-full mx-auto mb-24 z-10`}>
+  {
+    src.includes(".svg") ? (
+      <img src={src} alt={alt} />
+    ) : (
+      <div
+        class={
+          `block rounded-lg overflow-hidden` + (shadow ? ` shadow-xl` : ``)
+        }
+      >
+        <Picture
+          attributes={{
+            picture: {
+              class: `block rounded-lg`,
+              style: `clip-path: inset(0% 0% 0% 0% round 0.5rem)`,
+            },
+          }}
+          src={src}
+          alt={alt}
+        />
+      </div>
+    )
+  }
   {
     (caption || credit) && (
       <figcaption class="text-sm font-mono mt-4">

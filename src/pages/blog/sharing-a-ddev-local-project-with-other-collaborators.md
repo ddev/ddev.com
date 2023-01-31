@@ -3,7 +3,7 @@ title: "DDEV share: Sharing a DDEV-Local project with other collaborators in rea
 pubDate: 2020-03-17
 author: Randy Fay
 featureImage:
-  src: https://ddev.com/app/uploads/2020/03/ngrok_page.png
+  src: /img/blog/2020/03/ngrok-page.png
   alt:
   caption:
   credit:
@@ -29,12 +29,12 @@ There are at least three different ways to share a running DDEV-Local project ou
 
 `ddev share` proxies the project via [ngrok](http://ngrok.com), and it’s by far the easiest way to solve the problem of sharing your project with others on your team or around the world. It’s built into ddev and “just works” for most people, even people who don’t sign up for a paid ngrok account. All you do is run `ddev share` and then give the resultant URL to your collaborator or use it on your mobile device. [Read the basic how-to from DrupalEasy](https://www.drupaleasy.com/blogs/ultimike/2019/06/sharing-your-ddev-local-site-public-url-using-ddev-share-and-ngrok) or run `ddev share -h` for more.
 
-There are CMSs that make this a little harder, especially WordPress and Magento 2\. Both of those only respond to a single base URL, and that URL is coded into the database, so it makes this a little harder. For both of these I recommend paying ngrok the $5/month for a[ basic plan](https://ngrok.com/pricing) so you can use a stable subdomain with ngrok.
+There are CMSs that make this a little harder, especially WordPress and Magento 2. Both of those only respond to a single base URL, and that URL is coded into the database, so it makes this a little harder. For both of these I recommend paying ngrok the $5/month for a[ basic plan](https://ngrok.com/pricing) so you can use a stable subdomain with ngrok.
 
 #### **Setting up a stable subdomain with ngrok**
 
-1. Get a paid token with at least the basic plan, and configure it. (It will be in \~/.ngrok2/ngrok.yml as authtoken.
-2. Configure ngrok_args to use a stable subdomain. In .ddev/config.yaml, ngrok_args: –subdomain wp23 will result in ngrok always using “wp23.ngrok.io” as the URL, so it’s not changing on you all the time.
+1. Get a paid token with at least the basic plan, and configure it. (It will be in `~/.ngrok2/ngrok.yml` as `authtoken`.
+2. Configure `ngrok_args` to use a stable subdomain. In `.ddev/config.yaml`, `ngrok_args: –subdomain wp23` will result in ngrok always using `wp23.ngrok.io` as the URL, so it’s not changing on you all the time.
 
 #### **WordPress: Change the URL with wp search-replace**
 
@@ -75,13 +75,15 @@ The second solution is to _not_ use \*.ddev.site as your project URLs, but to us
 
 DDEV-Local’s web container also exposes an HTTP port directly (in addition to the normal routing by name and via ddev_router). You can expose this port and it may be a useful approach in some situations.
 
-1. Add a docker-compose.localnet.yaml to your project’s .ddev directory. This example will expose HTTP on port 8080:  
-   `version: '3.6' `  
-   `services: `  
-   `web: `  
-   `ports: `  
-   `- "0.0.0.0:8080:80" `  
-   `- "0.0.0.0:8443:443"`
+1. Add a `docker-compose.localnet.yaml` to your project’s `.ddev` directory. This example will expose HTTP on port 8080:
+   ```yaml
+   version: "3.6"
+   services:
+   web:
+   ports:
+     - "0.0.0.0:8080:80"
+     - "0.0.0.0:8443:443"
+   ```
 2. `ddev start`
 3. Make sure your firewall allows access to the port on your host machine.
 4. If you’re using WordPress or Magento 2 you’ll need to change the base URL as described in the `ddev share` instructions above.

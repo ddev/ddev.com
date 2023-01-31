@@ -3,7 +3,7 @@ title: "DDEV-Local Automated Testing"
 pubDate: 2019-04-04
 author: Randy Fay
 featureImage:
-  src: https://ddev.com/app/uploads/2019/03/Static_configuration_of_webserver_and_dbserver_localhost_ports__bind_only_to_localhost__fixes__1491__fixes__941___642_too_by_rfay_·_Pull_Request__1502_·_drud_ddev.png
+  src: /img/blog/2019/03/github-checks-running.png
   alt:
   caption:
   credit:

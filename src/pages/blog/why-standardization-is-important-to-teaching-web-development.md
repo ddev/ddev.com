@@ -3,7 +3,7 @@ title: "Why standardization is important to teaching web development"
 pubDate: 2021-01-28
 author: Elli Ludwigson
 featureImage:
-  src: https://ddev.com/app/uploads/2021/01/Hilmar-DrupalCon-Amsterdam-by-Illek-Petr.jpg
+  src: /img/blog/2021/01/hilmar-drupalcon-amsterdam-by-illek-petr.jpg
   alt: Photo from behind a person on stage, in front of an audience, wearing a conference lanyard and a knitted viking helmet with horns
   caption: Hilmar Hallbjörnsson at DrupalCon Amsterdam trivia night 2019.
   credit: "Photo by [Illek Petr](https://flic.kr/p/2hD9UK1)."
@@ -55,7 +55,7 @@ In general, the documentation is good, but it’s very technical. It would be ni
 [DDEV-Live hosting](https://ddev.com/ddev-live/) would also benefit from a really clear guide: this is what you do to get up and running, and you’re done. _ed note: Once you sign up for an account on DDEV-Live there’s now a visual stepper to_ [_get started_](https://dash.ddev.com/get-started)_. More soon! please give it a try and let us know what you think._
 
 <figure>
-<img src="https://ddev.com/app/uploads/2021/01/Hilmar-by-Michael-Cannon.jpg" alt="Photo of Hilmar in a wig, with two large braids and a helmet with goat-like horns" />
+<img src="/img/blog/2021/01/hilmar-by-michael-cannon.jpg" alt="Photo of Hilmar in a wig, with two large braids and a helmet with goat-like horns" />
 <figcaption><a href="https://twitter.com/drupalviking" target="_blank">@drupalviking</a> photo by Michael Cannon</figcaption>
 </figure>
 

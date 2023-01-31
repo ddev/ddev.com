@@ -3,7 +3,7 @@ title: "DDEV v1.6.0: NFS Mounting and Chocolatey"
 pubDate: 2019-02-12
 author: Randy Fay
 featureImage:
-  src: https://ddev.com/app/uploads/2019/02/EKL_20181203_2-e1549995318578.jpg
+  src: /img/blog/2019/02/ekl-20181203-2-e1549995318578.jpg
   alt:
   caption:
   credit: "Photo by [Elli Ludwigson](/blog/author/elli-ludwigson)."
@@ -23,13 +23,20 @@ We’ve just released **DDEV v1.6.0**! This release includes NFS mounting and Ch
 
 ## To Install:
 
-macOS Homebrew and Linux Linuxbrew: `brew upgrade ddev`
+macOS Homebrew and Linux Linuxbrew: 
+
+```
+brew upgrade ddev
+```
 
 Linux or macOS via script:
 
-`curl https://raw.githubusercontent.com/drud/ddev/master/scripts/install_ddev.sh | bash`
+```
+curl https://raw.githubusercontent.com/drud/ddev/master/scripts/install_ddev.sh | bash
+```
 
-Windows: Download the ddev_windows_installer.v1.6.0.exe above or with Chocolatey `choco install ddev` or `choco upgrade ddev`.
+Windows:  
+Download the `ddev_windows_installer.v1.6.0.exe` above or with Chocolatey `choco install ddev` or `choco upgrade ddev`.
 
 More details in the release notes:
 
@@ -52,4 +59,3 @@ Want to do a deep dive on DDEV-Local? Mike Anello runs a regular training on Dru
 ## Where in the world is the #DDEV team?
 
 Sign up for the DDEV newsletter below to receive a free copy of [Mike Anello’s DDEV ebook](https://www.amazon.com/Local-Development-Explained-Step-Step/dp/1731048858/ref=tmm%5Fpap%5Fswatch%5F0) and a DDEV t-shirt at one of our upcoming events! We’re headed to [Florida Drupal Camp](https://www.fldrupal.camp/), [Drupal Camp London](http://drupalcamp.london) and [DrupalCon Seattle](https://events.drupal.org/seattle2019). Follow along on [Twitter](https://twitter.com/drud) with #DDEV.
-

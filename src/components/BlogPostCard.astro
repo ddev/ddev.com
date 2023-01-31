@@ -6,7 +6,7 @@ export interface Props {
   post: object
 }
 
-import { Picture } from "@astrojs/image/components"
+import { Picture } from "astro-imagetools/components"
 import {
   getAuthorUrl,
   getAuthorImage,
@@ -33,18 +33,29 @@ const firstCategory = post.frontmatter.categories.length
   : null
 ---
 
-<div class="flex flex-col rounded-lg overflow-hidden">
+{
+  /* `isolation: isolate` is here to convince Safari not to display un-rounded corners during animation */
+}
+<div
+  class="flex flex-col rounded-lg overflow-hidden"
+  style="isolation: isolate;"
+>
   <div class="flex-shrink-0">
     {
       featureImageUrl.includes(".svg") ? (
         <img src={featureImageUrl} alt={featureImageAlt} />
       ) : (
         <Picture
-          class="h-48 w-full object-cover"
+          attributes={{
+            picture: {
+              class: `block h-48 w-full object-cover relative`,
+            },
+          }}
           src={featureImageUrl}
           alt={featureImageAlt}
-          widths={[300, 600]}
-          aspectRatio="3:2"
+          width={600}
+          height={400}
+          fit="cover"
         />
       )
     }
@@ -66,7 +77,11 @@ const firstCategory = post.frontmatter.categories.length
       <div class="flex-shrink-0">
         <a href={authorUrl}>
           <span class="sr-only">{post.frontmatter.author}</span>
-          <img class="h-10 w-10 rounded-full" src={authorImage} alt="" />
+          <img
+            class="h-10 w-10 rounded-full"
+            src={authorImage}
+            alt={post.frontmatter.author}
+          />
         </a>
       </div>
       <div class="ml-3">

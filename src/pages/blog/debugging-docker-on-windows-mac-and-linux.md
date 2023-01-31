@@ -3,7 +3,7 @@ title: "Debugging Docker on Windows, Mac, and Linux"
 pubDate: 2018-10-18
 author: Randy Fay
 featureImage:
-  src: https://ddev.com/app/uploads/2018/10/john-carlisle-539580-unsplash-e1539785420243.jpg
+  src: /img/blog/2018/10/john-carlisle-539580-unsplash-e1539785420243.jpg
   alt:
   caption:
   credit: "Photo by [John Carlisle](https://unsplash.com/photos/l090uFWoPaI?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/wires?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."

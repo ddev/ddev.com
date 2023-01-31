@@ -3,7 +3,7 @@ title: "Why developing locally matters"
 pubDate: 2020-10-28
 author: DDEV
 featureImage:
-  src: https://ddev.com/app/uploads/2020/10/Git-Flow-Benni-Blog.001-2.jpeg
+  src: /img/blog/2020/10/git-flow-benni-blog.001-2.jpeg
   alt:
   caption:
   credit:

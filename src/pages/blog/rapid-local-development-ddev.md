@@ -3,7 +3,7 @@ title: "Install, test, repeat – Rapid local development with DDEV"
 pubDate: 2018-03-12
 author: Jeffrey A. McGuire
 featureImage:
-  src: https://ddev.com/app/uploads/2018/03/moren-hsu-359121-unsplash.jpg
+  src: /img/blog/2018/03/moren-hsu-359121-unsplash.jpg
   alt:
   caption:
   credit: "[moren hsu](https://unsplash.com/photos/VLaKsTkmVhk?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/repeat?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
@@ -11,7 +11,7 @@ categories:
   - DevOps
 ---
 
-![](https://ddev.com/app/uploads/2018/03/joe.jpg)I wanted to know how Joe Shindelar manages to generate and deliver hundreds of hours of Drupal learning content and where DDEV fits into the picture. Joe is ‎Lead Trainer and Lead Developer at [Lullabot Education](http://lullaboteducation.com/), where they provide expert Drupal training on the e-learning site [Drupalize.me](https://drupalize.me/).
+![](/img/blog/2018/03/joe.jpg)I wanted to know how Joe Shindelar manages to generate and deliver hundreds of hours of Drupal learning content and where DDEV fits into the picture. Joe is ‎Lead Trainer and Lead Developer at [Lullabot Education](http://lullaboteducation.com/), where they provide expert Drupal training on the e-learning site [Drupalize.me](https://drupalize.me/).
 
 Joe told me, “I use DDEV pretty much any time I’m working on a Drupal site on my localhost.” In his case, that means to rehearse and create course recordings, teach at in-person workshops, and to recreate training sites when supporting learners and maintaining content.
 

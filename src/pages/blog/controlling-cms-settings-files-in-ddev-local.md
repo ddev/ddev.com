@@ -3,7 +3,7 @@ title: "Controlling CMS Settings Files in DDEV-Local"
 pubDate: 2020-04-16
 author: Randy Fay
 featureImage:
-  src: https://ddev.com/app/uploads/2020/04/Installing_TYPO3_CMS.png
+  src: /img/blog/2020/04/installing-typo3-cms.png
   alt:
   caption:
   credit:

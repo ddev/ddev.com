@@ -3,7 +3,7 @@ title: "DDEV: An alternative to MAMP for a PHP dev environment"
 pubDate: 2018-07-03
 author: Elli Ludwigson
 featureImage:
-  src: https://ddev.com/app/uploads/2018/07/Fils_électriques.jpg
+  src: /img/blog/2018/07/fils-electriques.jpg
   alt:
   caption:
   credit: "Photo by WikiProfPC on [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Fils%5F%C3%A9lectriques.JPG)."
@@ -26,7 +26,7 @@ To help you evaluate what’s best for you, this second post in our [series on l
 
 MAMP is a workstation based local server environment comprised of open source components and released mostly under a GNU license for both Mac and Windows operating systems. After installing the free version of the software, you will have one Apache or NGINX server, one MySQL server, phpMyAdmin, and two versions of PHP to choose from. MAMP Pro is the paid version of MAMP with more features to allow you to work on projects in parallel with different versions of PHP, a local mailserver to test PHP scripts, and a way to manage virtual hosts.
 
-![MAMP preferences and web start page](https://ddev.com/app/uploads/2018/07/Screen-Shot-2018-06-19-at-11.17.49-PM-1024x532.png)
+![MAMP preferences and web start page](/img/blog/2018/07/screen-shot-2018-06-19-at-11.17.49-pm.png)
 
 DDEV-Local is a Docker-based local development environment written in Go and licensed under the Apache 2.0 open source license, entirely free to use, modify, and pass on to others. DDEV is available for Mac, Windows, and Linux machines. A couple simple install steps get you [four Docker containers](https://ddev.readthedocs.io/en/latest/developers/building-contributing/#docker-container-development) which contain everything the basic MAMP install gives you for an open source PHP development environment, and then some. Like MAMP Pro, DDEV allows you to run multiple versions of PHP so you can work on widely disparate projects simultaneously, plus it includes a mailserver and administration and testing tools.
 
@@ -62,7 +62,7 @@ With DDEV-Local, you can start a basic Drupal, TYPO3 CMS, Backdrop or WordPress 
 
 To install DDEV-Local, [download the app](https://ddev.com/get-started/) and `cd` into the docroot for your project in the command line, ie `cd ~/sites/my-drupal8-site`. If you don’t have a project already, check out our [quickstart guides](https://ddev.readthedocs.io/en/latest/users/cli-usage/#quickstart-guides) to roll on something new. Then run `ddev config` and you’ll be prompted in plain English for a couple of inputs about your project. When you run `ddev start` DDEV will start up your environment and output the URL for your local project, like so: `<http://my-drupal8-site.ddev.local>`
 
-![Command line installing DDEV](https://ddev.com/app/uploads/2018/07/Screen-Shot-2018-06-19-at-11.15.53-PM.png)
+![Command line installing DDEV](/img/blog/2018/07/screen-shot-2018-06-19-at-11.15.53-pm.png)
 
 Knowing where the brakes are is important too: just run `ddev stop` to spin down your environment and come back to it later or `ddev remove` to remove the containers without losing your configuration or database.
 
@@ -84,7 +84,7 @@ The paid version, MAMP Pro, on the other hand, gives you the ability to manage m
 
 To get all the configuration information about your current DDEV project, just run `ddev describe` in the command line. The output describes your project URLs, database info, PHP version, plus URLs for MailHog and phpMyAdmin.
 
-![Output on command line from running ddev describe](https://ddev.com/app/uploads/2018/07/Screen-Shot-2018-06-19-at-11.08.20-PM.png)
+![Output on command line from running ddev describe](/img/blog/2018/07/screen-shot-2018-06-19-at-11.08.20-pm.png)
 
 DDEV manages the hosts file for you, making your local project URLs easier to access than manually configuring virtual hosts in MAMP or paying for MAMP Pro.
 

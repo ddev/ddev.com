@@ -3,7 +3,7 @@ title: "DDEV v1.5.0 – PHP & MariaDB Versions, Experimental macOS Webcache, Imp
 pubDate: 2018-12-19
 author: Randy Fay
 featureImage:
-  src: https://ddev.com/app/uploads/2018/12/DSC_3769-e1545284198357.jpg
+  src: /img/blog/2018/12/dsc-3769.jpg
   alt:
   caption:
   credit: "Photo by [Elli Ludwigson](/blog/author/elli-ludwigson)."

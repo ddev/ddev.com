@@ -3,7 +3,7 @@ title: "Get started with local development for Drupal"
 pubDate: 2021-03-24
 author: Elli Ludwigson
 featureImage:
-  src: https://ddev.com/app/uploads/2021/03/ddevmidcamp.png
+  src: /img/blog/2021/03/ddevmidcamp.png
   alt:
   caption:
   credit:

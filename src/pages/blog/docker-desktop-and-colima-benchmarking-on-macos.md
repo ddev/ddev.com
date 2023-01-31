@@ -12,7 +12,7 @@ There’s been lots of excitement about the new docker-based performance options
 
 It turned out that the command-line installs basically tracked about twice as fast as the web-based installs, which was no surprise, but it probably means we don’t have to look at both of them to get a good idea of what’s going on, so I’ll show the comparison only for the command-line install, but the other graphs are in the linked spreadsheet.
 
-![](https://ddev.com/app/uploads/2022/03/macOS-M1-vs.-Drupal-drush-install-seconds.png)
+![](/img/blog/2022/03/macos-m1-vs.-drupal-drush-install-seconds.png)
 
 ([SVG higher resolution available](https://www.dropbox.com/s/47dcavi8yfdmglu/macOS%20M1%20vs.%20Drupal%20drush%20install%20%28seconds%29.svg?dl=0)) The bottom line is that Colima with Mutagen can do a D9 install in 20 seconds, which is astonishing. Colima with NFS is also really fast (just 50 seconds). Docker Desktop “bare” without NFS or Mutagen is hopelessly slow, but better with NFS and pretty good with Mutagen. The “New Virtualization” option gets the timing down to nearly where Mutagen is with Docker Desktop, and VirtioFS is better, but still nowhere near as fast as Colima with Mutagen. Docker Desktop with VirtioFS + Mutagen is screaming fast (about the same as Colima with Mutagen) but it has a big asterisk – there were loads of errors output, and VirtioFS has problems with DDEV (and lots of other things).
 

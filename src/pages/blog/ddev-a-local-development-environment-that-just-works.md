@@ -3,7 +3,7 @@ title: "DDEV – A local development environment that just works"
 pubDate: 2018-03-01
 author: Jeffrey A. McGuire
 featureImage:
-  src: https://ddev.com/app/uploads/2018/03/Adam_Bergstein.jpeg
+  src: /img/blog/2018/03/adam-bergstein.jpeg
   alt:
   caption:
   credit:
@@ -70,5 +70,3 @@ DDEV works in the open. DDEV-Local users can see [the tool’s roadmap](https://
 When it comes down to it, Adam likes DDEV because it’s easy to learn and use. He saves time every time spins up an environment and the tool gets out of the way so he can focus on contribution. When he has ideas, he can contribute and see the open roadmap. When he runs into issues he’s been met with responsive service. This gives him a feeling of being welcome in the DDEV community.
 
 **[Get started with DDEV-Local](/get-started/)**
-
-Photo Credit – Banner Photo by [Johan Mouchet](https://unsplash.com/photos/sTBdWFQKDHE?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)

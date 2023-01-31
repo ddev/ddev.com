@@ -3,7 +3,7 @@ title: "Why use DDEV instead of rolling your own Docker-based local dev solution
 pubDate: 2022-12-22
 author: Randy Fay
 featureImage:
-  src: https://ddev.com/app/uploads/2020/12/DDEVDocker.png
+  src: /img/blog/2020/12/ddevdocker.png
   alt:
   caption:
   credit:
@@ -37,7 +37,7 @@ If you know something about Docker, you know that you can throw one or two Docke
 - Composer support built into the web container and accessed with `ddev composer`.
 - [Xdebug step-debugging](https://ddev.readthedocs.io/en/stable/users/step-debugging/#step-debugging-with-ddev-and-xdebug) out of the box. Just `ddev xdebug on` and go.
 
-[![DDEV-Local, PhpStorm and Xdebug video and blog post](https://ddev.com/app/uploads/2020/12/Screen-Shot-2020-12-28-at-12.49.31-PM-1024x573.png)](https://ddev.com/ddev-local/ddev-local-phpstorm-and-xdebug-debugging/)
+[![DDEV-Local, PhpStorm and Xdebug video and blog post](/img/blog/2020/12/screen-shot-2020-12-28-at-12.49.31-pm.png)](https://ddev.com/ddev-local/ddev-local-phpstorm-and-xdebug-debugging/)
 
 - Integration with [Platform.sh](https://platform.sh), [Pantheon.io](https://ddev.readthedocs.io/en/stable/users/providers/pantheon/), Acquia Cloud.
 - `ddev share` lets you show work in progress to anyone anywhere in the world.

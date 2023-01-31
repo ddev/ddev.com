@@ -3,7 +3,7 @@ title: "DDEV-Local Release v0.18.0 – Easier Xdebug, Windows installer and more
 pubDate: 2018-05-10
 author: Rick Manelius
 featureImage:
-  src: https://ddev.com/app/uploads/2018/05/woctech-chat-windows-e1525985003469.jpg
+  src: /img/blog/2018/05/woctech-chat-windows-e1525985003469.jpg
   alt:
   caption: "Showing MS Windows on Surface Pro"
   credit: "by WOCinTech Chat (CC BY 2.0)"
@@ -48,4 +48,3 @@ This release includes a variety of bugfixes as well. Check out the [release note
 ## Update today!
 
 To update DDEV-Local follow the steps for [installing and updating](https://ddev.readthedocs.io/en/latest/#installation) for your operating system. We’d love to hear your feedback [in the GitHub issue queue](https://github.com/drud/ddev/issues).
-

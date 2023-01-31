@@ -3,7 +3,7 @@ title: "DDEV-Local NFS Mounting Setup: macOS"
 pubDate: 2019-02-13
 author: Randy Fay
 featureImage:
-  src: https://ddev.com/app/uploads/2019/02/Drupal-8-Install_-normal-mount-NFS-and-webcache-time-in-seconds-less-is-better.png
+  src: /img/blog/2019/02/drupal-8-install-normal-mount-nfs-and-webcache-time-in-seconds-less-is-better.png
   alt:
   caption:
   credit:
@@ -18,7 +18,7 @@ In the above chart are some quick performance comparisons. Here you see times fo
 
 OK, let’s get started. On macOS, you need to do three basic things:
 
-1. Give “Full Disk Access” to the terminal app you’re going to use (on macOS Mojave and later). For example, if using iTerm2, you would go to Mac preferences → Security and Privacy → Privacy and click on “Full Disk Access” at the bottom of the list and then use the “+” to add iTerm2\. This is demonstrated in the screencast below.
+1. Give “Full Disk Access” to the terminal app you’re going to use (on macOS Mojave and later). For example, if using iTerm2, you would go to Mac preferences → Security and Privacy → Privacy and click on “Full Disk Access” at the bottom of the list and then use the “+” to add iTerm2. This is demonstrated in the screencast below.
 2. Configure NFS on your machine. The simplest way to do this is by running the script [we provide for this purpose](https://raw.githubusercontent.com/drud/ddev/master/scripts/macos%5Fddev%5Fnfs%5Fsetup.sh). But it’s your machine, so you can configure it manually or however you like, as long as the directory where you have your projects is shared. The script adds /Users to /etc/exports and then enables and start the nfsd daemon. After it’s done, run `showmount -e` and you should see it exporting your /Users directory.
 3. Test and make sure it’s all working! To do this, go to a project and just `ddev debug nfsmount` to see if it’s working or not. When it is, `ddev config --nfs-mount-enabled=true` and `ddev start` and you’re off to the races.
 

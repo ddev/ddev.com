@@ -3,7 +3,7 @@ title: "Reduce the Time to Onboard New Developers with DDEV"
 pubDate: 2020-08-12
 author: DDEV
 featureImage:
-  src: https://ddev.com/app/uploads/2018/05/bruce-mars-548722-unsplash.jpg
+  src: /img/blog/2018/05/bruce-mars-548722-unsplash.jpg
   alt:
   credit: Photo by hagman23 via Pixabay.
   caption:
@@ -19,7 +19,7 @@ When you’ve just made a bet on a talented, promising new hire, of course you d
 
 Update: While the [2020 Stack Overflow survey](https://insights.stackoverflow.com/survey/2020#work-onboarding) does not have the same question, it does ask if an onboarding process exists. The chart is a bit ambiguous but suffice to say half of the respondents were unsatisfied with the lack of onboarding process, or lack of good onboarding process, at their company.
 
-![Half of respondents reported having an onboarding process, one fifth reported no on boarding process](https://ddev.com/app/uploads/2018/05/Screen-Shot-2020-08-11-at-7.17.40-PM-1024x466.png)
+![Half of respondents reported having an onboarding process, one fifth reported no on boarding process](/img/blog/2018/05/screen-shot-2020-08-11-at-7.17.40-pm.png)
 
 Five years ago, we had a constant problem when a new person came on at my old agency. A new hire would come in and everyone was running around too busy to help, but the new person still couldn’t access, download, and set up the site they were tasked to work on. Instead of getting to it, they were effectively told, “Here, wait until someone is available, and sit on your thumbs.” How demoralizing! Particularly for high achievers who want to jump in and make a big impact out of the gates. Fortunately, we knew we were on the right track with the tools we built as early versions of DDEV-Local. We got onboarding down to a where we had new developers and designers contributing their first commit to production by lunchtime on their first day. This was the benefit of having consistency in our teams and our onboarding process.
 

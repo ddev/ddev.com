@@ -3,7 +3,7 @@ title: "Top Tips for Open Source Contribution Sprints"
 pubDate: 2018-03-15
 author: Jeffrey A. McGuire
 featureImage:
-  src: https://ddev.com/app/uploads/2018/03/sprint-tips_people.jpg
+  src: /img/blog/2018/03/sprint-tips-people.jpg
   alt:
   caption:
   credit:
@@ -21,7 +21,7 @@ Contribution Sprints–aka Hackathons, Sprints, Coding Nights, and similar–are
 
 Picture five, 25, or 250 people working in a space together to solve hard problems. Their contributions will benefit anyone who uses their particular flavor of open source project. They might be hunched over laptops, coding hard; they might be slinging sticky-notes and animatedly discussing marketing messaging and promotion; or they might be building training curricula, software demos, or a thousand other possible ways to contribute to FOSS, its projects, and communities.
 
-![](https://ddev.com/app/uploads/2018/03/code_sprint_Drupal_Donetsk-1024x683.jpg)
+![](/img/blog/2018/03/code-sprint-drupal-donetsk.jpg)
 
 > _“New community members especially may only know one company and how things are done there. Sprints are not only about getting your hands on code. They’re about getting to know people, networking, broadening one’s horizons. More than once, I’ve seen long-pending features or bugfixes taken care of because the right people bumped into each other at a sprint. And where else could you get that much best practice knowledge all in one place?”_ – Martin Wiederkehr
 
@@ -37,7 +37,7 @@ Preparing this article and the Brilliant Sprint Guide, I spoke with a number of 
 
 My thanks to all of you for your help and your contributions!
 
-![](https://ddev.com/app/uploads/2018/03/sprint-tips_people-1024x352.jpg)
+![](/img/blog/2018/03/sprint-tips-people.jpg)
 
 - Heather McNamee – Open Strategy Partners – Drupal, TYPO3 CMS
 - Martin Wiederkehr – Business Manager, Team Leader, Product Owner, snowflake productions gmbh – TYPO3 CMS
@@ -62,7 +62,7 @@ The TYPO3 CMS community has something of a “maximalist” approach to things r
 
 > _“Always make sure that everything is taken care of. Nothing should concern the parti_ _cipants other than the code they’ll be working on. That includes providing accommodation, clear trav_ _el descriptions, food and beverages available around the clock, infrastructure plug-in ready, and a clear event scope defining what the goals are and what is out of that scope.”_
 
-![](https://ddev.com/app/uploads/2018/03/sprint_power-1024x681.jpg)
+![](/img/blog/2018/03/sprint-power.jpg)
 
 ### Everyone has something to contribute
 
@@ -83,7 +83,7 @@ The TYPO3 CMS community has something of a “maximalist” approach to things r
 - Delegate as much as possible. Have shared responsibilities (broken down into easy/simple to carry out tasks) for organizing, communicating, and marketing code sprints. Plan and organize for when you hand over the organization of events to the next people in the community. – Heather, Vijaya
 - In the end, it’s about a lot of work packed into a little time; do what you can to make sure everyone feels comfortable while they are there. – Martin
 
-![](https://ddev.com/app/uploads/2018/03/VijayaChandran_Mani_on_Twitter___On_my_way_to__pune__drupal_code_sprint__Fully_loaded_sprint_backlog_from__gaborhojtsy_-1024x377.jpg)
+![](/img/blog/2018/03/vijayachandran-mani-twitter.jpg)
 
 ### Welcome, help & mentoring
 
