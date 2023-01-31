@@ -13,6 +13,9 @@ import FeatureImage from "./../components/FeatureImage.astro"
 
 const { frontmatter, url } = Astro.props
 
+const hasFeatureImage =
+  Object.hasOwn(frontmatter, "featureImage") &&
+  Object.hasOwn(frontmatter.featureImage, "src")
 const authorImage = getAuthorImage(frontmatter.author)
 ---
 
@@ -27,7 +30,7 @@ const authorImage = getAuthorImage(frontmatter.author)
       readTime={frontmatter.minutesRead}
     />
     {
-      frontmatter.featureImage && (
+      hasFeatureImage && (
         <FeatureImage
           src={frontmatter.featureImage.src}
           alt={frontmatter.featureImage.alt}

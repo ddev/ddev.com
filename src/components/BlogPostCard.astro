@@ -17,6 +17,9 @@ const { post } = Astro.props
 
 const authorUrl = getAuthorUrl(post.frontmatter.author)
 const authorImage = getAuthorImage(post.frontmatter.author)
+const hasFeatureImage =
+  Object.hasOwn(post.frontmatter, "featureImage") &&
+  Object.hasOwn(post.frontmatter.featureImage, "src")
 
 const firstCategory = post.frontmatter.categories.length
   ? post.frontmatter.categories[0]
@@ -27,8 +30,8 @@ const firstCategory = post.frontmatter.categories.length
   <div class="flex-shrink-0">
     <img
       class="h-48 w-full object-cover"
-      src={post.frontmatter.featureImage.src}
-      alt=""
+      src={hasFeatureImage ? post.frontmatter.featureImage.src : ``}
+      alt={hasFeatureImage ? post.frontmatter.featureImage.alt : ``}
     />
   </div>
   <div class="flex-1 bg-gray-100 p-6 flex flex-col justify-between">
