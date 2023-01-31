@@ -17,8 +17,7 @@ const {
   noindex = false,
   nofollow = false,
 } = Astro.props
-const canonicalUrl = Astro.url.toString()
-
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site)
 import "../styles/global.css"
 ---
 
