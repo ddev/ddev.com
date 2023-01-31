@@ -53,6 +53,48 @@ Textlint’s [default terminology](https://github.com/sapegin/textlint-rule-term
 
 Run `npm run textlint` to check everything, and you can apply “fixable” changes using `npm run textlint:fix`. Be careful automating fixes to be sure they don’t have any unintended side effects!
 
+## Adding New Content
+
+### Blog Posts
+
+Use this Markdown as a template:
+
+```markdown
+---
+title: "It’s A Post!"
+pubDate: 2023-01-01
+author: Randy Fay
+featureImage:
+  src: /img/blog/kebab-case.jpg
+  alt:
+  caption:
+  credit:
+categories:
+  - DevOps
+---
+
+```
+
+Name your file with a kebab-case, URL-and-SEO-friendly slug with a `.md` extension, and drop it in the `src/pages/blog/` directory.
+
+Give it a succinct title, and if you include a feature image be sure to write descriptive alt text along with an optional caption and image credit. The `caption:` and `credit:` fields can both use Markdown, but you’ll probably need to wrap the whole value in straight quotes (`"`).
+
+Choose whichever categories apply, with special attention to the first because it’ll be displayed on post summary cards:
+
+- _Announcements_ (releases, organization news, etc.)
+- _Community_ (events, third-party developments, etc.)
+- _DevOps_ (workflows, infrastructure, etc.)
+- _Performance_ (benchmarking, tips, etc.)
+- _Guides_ (how-to style posts)
+
+> 💡 **If you’re publishing work from a new author**, add an entry for them in `src/authors.json`! The `"name"` value needs to match the one you’re using in your post frontmatter.
+
+### Pages
+
+Add a `.astro` file to the `pages/` directory, where its name will become the page slug. Use an existing page to grab and re-use whatever layout and components you can to save yourself time and encourage consistency with the rest of the site.
+
+If you need to dynamically add multiple pages, see files with brackets like `src/blog/[page].astro`, `src/blog/category/[slug].astro`, and `src/blog/author/[slug].astro` for examples.
+
 ## Resources
 
 - [Astros documentation](https://docs.astro.build)
