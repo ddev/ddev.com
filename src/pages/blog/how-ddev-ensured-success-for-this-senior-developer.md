@@ -3,7 +3,7 @@ title: "How DDEV ensured success for this senior developer"
 pubDate: 2018-05-08
 author: Jeffrey A. McGuire
 featureImage:
-  src: /img/blog/2018/04/brandon-hiking.png
+  src: /img/blog/2018/04/brandon-hiking.jpg
   alt:
   caption:
   credit:
