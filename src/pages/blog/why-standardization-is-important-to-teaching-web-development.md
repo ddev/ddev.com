@@ -4,7 +4,7 @@ pubDate: 2021-01-28
 author: Elli Ludwigson
 featureImage:
   src: https://ddev.com/app/uploads/2021/01/Hilmar-DrupalCon-Amsterdam-by-Illek-Petr.jpg
-  alt: Photo from behind a person on stage, in front of an audience, wearing a knitted viking helmet with horns and a conference lanyard
+  alt: Photo from behind a person on stage, in front of an audience, wearing a conference lanyard and a knitted viking helmet with horns
   caption: Hilmar Hallbjörnsson at DrupalCon Amsterdam trivia night 2019.
   credit: "Photo by [Illek Petr](https://flic.kr/p/2hD9UK1)."
 categories:
