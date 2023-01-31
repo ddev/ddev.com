@@ -35,7 +35,7 @@ The best day of a week at DrupalCon is always contribution day, when new contrib
 
 ### Product updates
 
-![Organizations that contribute to Drupal, Drud is highlighted for sponsoring contribution tools](/img/blog/2019/04/screen-shot-2019-04-18-at-9.28.15-am-1024x572.png)
+![Organizations that contribute to Drupal, Drud is highlighted for sponsoring contribution tools](/img/blog/2019/04/screen-shot-2019-04-18-at-9.28.15-am.png)
 
 As Dries mentioned in [his keynote](https://dri.es/state-of-drupal-presentation-april-2019) at DrupalCon, we’ve sponsored and supported the [Quicksprint package](https://github.com/drud/quicksprint) as a tool for new contributors to the Drupal project. [DDEV-Local](https://github.com/drud/ddev) has also been [added to the Drupal 8 Official Docs](https://www.drupal.org/docs/official%5Fdocs/en/%5Flocal%5Fdevelopment%5Fguide.html) to help users get started installing Drupal on their local machine. It’s been a pleasure to work with other members of the Drupal community to clarify how DDEV can help. Please drop by the [#ddev channel](https://drupal.slack.com/messages/C5TQRQZRR) in [Drupal Slack](http://drupal.org/slack) if you have questions.
 
