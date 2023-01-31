@@ -43,6 +43,7 @@
     "rehype-widont": "^0.1.1",
     "sanitize-html": "^2.8.1",
     "sass": "^1.57.1",
+    "sharp": "^0.31.3",
     "tailwindcss": "^3.2.4"
   },
   "devDependencies": {

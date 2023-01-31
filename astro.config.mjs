@@ -53,7 +53,9 @@ export default defineConfig({
       output: "search.json",
     }),
     prefetch(),
-    image(),
+    image({
+      serviceEntryPoint: "@astrojs/image/sharp",
+    }),
   ],
   markdown: {
     syntaxHighlight: "shiki",
