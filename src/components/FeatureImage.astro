@@ -6,12 +6,16 @@ export interface Props {
   alt: string
   caption?: string
   credit?: string
+  shadow?: boolean
 }
 
-const { src, alt, caption = "", credit } = Astro.props
+const { src, alt, caption = "", credit, shadow = false } = Astro.props
 ---
 
-<figure class="w-full mx-auto mb-24 rounded-md z-10 overflow-hidden">
+<figure
+  class={`w-full mx-auto mb-24 rounded-md z-10 overflow-hidden` +
+    (shadow ? ` shadow-xl` : ``)}
+>
   <img src={src} alt={alt} />
   {
     (caption || credit) && (
