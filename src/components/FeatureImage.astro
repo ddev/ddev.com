@@ -15,12 +15,12 @@ const { src, alt, caption = "", credit } = Astro.props
   <img src={src} alt={alt} />
   {
     (caption || credit) && (
-      <figcaption class="text-xs font-mono mt-2 ">
-        {caption && <span>{marked.parseInline(caption)}</span>}
+      <figcaption class="text-sm font-mono mt-2 ">
+        {caption && <span set:html={marked.parseInline(caption)} />}
         {credit && (
-          <span class="text-gray-600">
-            {caption && ` • `}
-            {`Courtesy of ${marked.parseInline(credit)}`}
+          <span class="text-gray-500">
+            {caption && <span aria-hidden="true"> ·</span>}
+            <span set:html={`Courtesy of ${marked.parseInline(credit)}`} />
           </span>
         )}
       </figcaption>

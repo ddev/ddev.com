@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2021/01/40629336923_4f79c53b93_c.jpg
   alt:
   caption: Photo of Mauricio Dinarte at DrupalCon Seattle contribution day in 2019.
-  credit: [Josef Kruckenberg @dasjo](https://flic.kr/p/24UgYn2)
+  credit: "[Josef Kruckenberg @dasjo](https://flic.kr/p/24UgYn2)"
 categories:
   - Community
   - DevOps
