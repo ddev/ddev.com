@@ -19,7 +19,7 @@
     "@astrojs/rss": "^2.0.0",
     "@astrojs/sitemap": "^1.0.1",
     "@astrojs/tailwind": "^3.0.1",
-    "@astrolib/seo": "^0.2.1",
+    "@astrolib/seo": "^0.3.0",
     "@barnabask/astro-minisearch": "^1.1.0",
     "@heroicons/react": "^2.0.13",
     "@tailwindcss/typography": "^0.5.8",
