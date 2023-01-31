@@ -7,6 +7,7 @@ featureImage:
   alt:
   caption:
   credit:
+  shadow: true
 categories:
   - Guides
   - DevOps

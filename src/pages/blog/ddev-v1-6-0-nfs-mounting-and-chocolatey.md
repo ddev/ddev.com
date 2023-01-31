@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2019/02/EKL_20181203_2-e1549995318578.jpg
   alt:
   caption:
-  credit:
+  credit: "Photo by [Elli Ludwigson](/blog/author/elli-ludwigson)."
 categories:
   - Announcements
 ---
@@ -53,4 +53,3 @@ Want to do a deep dive on DDEV-Local? Mike Anello runs a regular training on Dru
 
 Sign up for the DDEV newsletter below to receive a free copy of [Mike Anello’s DDEV ebook](https://www.amazon.com/Local-Development-Explained-Step-Step/dp/1731048858/ref=tmm%5Fpap%5Fswatch%5F0) and a DDEV t-shirt at one of our upcoming events! We’re headed to [Florida Drupal Camp](https://www.fldrupal.camp/), [Drupal Camp London](http://drupalcamp.london) and [DrupalCon Seattle](https://events.drupal.org/seattle2019). Follow along on [Twitter](https://twitter.com/drud) with #DDEV.
 
-Photo by [Elli Ludwigson](https://ddev.com/author/elli/)

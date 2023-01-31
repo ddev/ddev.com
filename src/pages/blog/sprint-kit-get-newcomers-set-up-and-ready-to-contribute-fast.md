@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2018/02/code_sprint_2.jpg
   alt:
   caption:
-  credit:
+  credit: "Bluespark Labs “[Code Sprint](https://flic.kr/p/f8fFih)” – Drupalcon Portland 2013. – ([CC BY 2.0](https://creativecommons.org/licenses/by/2.0/))"
 categories:
   - DevOps
 ---
@@ -43,7 +43,3 @@ The DDEV team has deep open source roots and has been attending and organizing e
 Getting the details of an event right is can be a thankless task, but once you get them right, you can focus on the creative and fun aspects of running a productive sprint. If it’s successful, you’ll gain new contributors, return attendees, and inspire future community leaders and contributions. That’s why we’ve written the [Sprint Guide](https://github.com/drud/sprint%5Fguide) as the first part of our Sprint Kit.
 
 Are you running a sprint soon? We’d love to hear from you to see how we can help.
-
-Photo credit
-
-Banner photo – Bluespark Labs “[Code Sprint](https://flic.kr/p/f8fFih)” – Drupalcon Portland 2013\. – ([CC BY 2.0](https://creativecommons.org/licenses/by/2.0/))

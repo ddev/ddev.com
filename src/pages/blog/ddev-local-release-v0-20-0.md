@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2018/06/daniil-silantev-367138-unsplash.jpg
   alt:
   caption:
-  credit:
+  credit: "Photo by [Daniil Silantev](https://unsplash.com/photos/ioYwosPYC0U?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - Announcements
 ---
@@ -46,7 +46,3 @@ We were wowed to see over 80 people went to a DDEV demo and workshop at TYPO3 De
 - Read: [Why DevOps, Containers, and Tooling Matter in Digital Transformation.](https://ddev.com/devops/why-devops-containers-and-tooling-matter-in-digital-transformation/) We can help you set up teams, processes, and integrations to help build dev-to-deploy workflows. Reply to this email if you have any questions.
 
 Thanks as always for your support and enthusiasm!
-
----
-
-Photo by [Daniil Silantev](https://unsplash.com/photos/ioYwosPYC0U?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)

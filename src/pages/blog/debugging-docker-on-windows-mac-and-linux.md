@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2018/10/john-carlisle-539580-unsplash-e1539785420243.jpg
   alt:
   caption:
-  credit:
+  credit: "Photo by [John Carlisle](https://unsplash.com/photos/l090uFWoPaI?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/wires?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - Guides
 ---
@@ -73,7 +73,3 @@ You’ll find out about this right away because ddev will tell you on `ddev star
 We hope this helped you resolve any of the issues you had getting Docker set up and running for DDEV. Still stuck? Reach out for [further help](https://ddev.readthedocs.io/en/latest/#support) if you need it.
 
 DDEV can make your work easier and smoother, [get started today!](https://ddev.com/get-started/)
-
----
-
-Photo by [John Carlisle](https://unsplash.com/photos/l090uFWoPaI?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/wires?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)

@@ -5,7 +5,7 @@ author: DDEV
 featureImage:
   src: https://ddev.com/app/uploads/2018/05/bruce-mars-548722-unsplash.jpg
   alt:
-  credit: hagman23 Pixabay
+  credit: Photo by hagman23 via Pixabay.
   caption:
 categories:
   - DevOps
@@ -71,5 +71,4 @@ With DDEV-Local, you can speed up developer onboarding dramatically, while ensur
 
 [Get started with DDEV-Local](https://ddev.readthedocs.io/en/stable/#intro-to-ddev-local) today and see how easy and reliable a local development environment can be.
 
-Photo credit hagman23 Pixabay  
 Originally published May 17, 2018

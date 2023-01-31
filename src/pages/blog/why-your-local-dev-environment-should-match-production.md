@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2020/11/Deploy-Benni-art-from-shashank-and-Becris-on-the-noun-project.jpeg
   alt:
   caption:
-  credit:
+  credit: "Line art by [Shashank](https://thenounproject.com/term/container/597249) and [Becris](https://thenounproject.com/term/containers/1468090) via Noun Project."
 categories:
   - DevOps
 ---
@@ -62,4 +62,3 @@ A simple `ddev-live create site` and `ddev-live push` is all you need to [host y
 
 If you’re hooked with DDEV-Local, you should give DDEV-Live a shot.
 
-Line art by [Shashank](https://thenounproject.com/term/container/597249) and [Becris](https://thenounproject.com/term/containers/1468090) on the noun project.

@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2018/05/maxime-le-conte-des-floris-151374-unsplash-e1526982174493.jpg
   alt:
   caption:
-  credit:
+  credit: "Photo by Maxime Le Conte des Floris on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - Guides
 ---
@@ -75,7 +75,3 @@ We hope the video helps you set up your new Mac web development environment set 
 - [Add questions tagged “ddev” to Stack Overflow](https://stackoverflow.com/questions/tagged/ddev).
 - Join the #ddev channel in [Drupal Slack](https://drupal.slack.com/messages/C5TQRQZRR) and [TYPO3 Slack](https://typo3.slack.com/messages/C8TRNQ601) for community support.
 - [Tweet to @drud](https://twitter.com/intent/tweet?screen%5Fname=drud&ref%5Fsrc=twsrc%5Etfw)
-
----
-
-Photo by Maxime Le Conte des Floris on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)

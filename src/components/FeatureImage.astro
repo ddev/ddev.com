@@ -12,19 +12,16 @@ export interface Props {
 const { src, alt, caption = "", credit, shadow = false } = Astro.props
 ---
 
-<figure
-  class={`w-full mx-auto mb-24 rounded-md z-10 overflow-hidden` +
-    (shadow ? ` shadow-xl` : ``)}
->
-  <img src={src} alt={alt} />
+<figure class={`w-full mx-auto mb-24 rounded-md z-10`}>
+  <img src={src} alt={alt} class={`block rounded-md` + (shadow ? ` shadow-xl` : ``)} />
   {
     (caption || credit) && (
-      <figcaption class="text-sm font-mono mt-2 ">
+      <figcaption class="text-sm font-mono mt-4">
         {caption && <span set:html={marked.parseInline(caption)} />}
         {credit && (
           <span class="text-gray-500">
-            {caption && <span aria-hidden="true"> ·</span>}
-            <span set:html={`Courtesy of ${marked.parseInline(credit)}`} />
+            {caption && <span aria-hidden="true"> </span>}
+            <span set:html={`${marked.parseInline(credit)}`} />
           </span>
         )}
       </figcaption>

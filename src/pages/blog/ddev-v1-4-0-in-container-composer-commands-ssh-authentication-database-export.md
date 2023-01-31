@@ -6,9 +6,10 @@ featureImage:
   src: https://ddev.com/app/uploads/2018/11/holly-mandarich-460180-unsplash-e1542334215692.jpg
   alt:
   caption:
-  credit:
+  credit: "Photo by [Holly Mandarich](https://unsplash.com/photos/wMuGk6dABR4?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - Announcements
+  - Community
 ---
 
 We’ve just released DDEV v1.4.0! [Install or upgrade now](https://github.com/drud/ddev/releases/tag/v1.4.0). Here are some highlights, and new commands:
@@ -31,6 +32,3 @@ For quicker backups, see also: [ddev snapshot](https://ddev.readthedocs.io/en/la
 
 Congratulations and thank you! to [Mike Anello](https://twitter.com/ultimike) of DrupalEasy on the release of his new book, “Local Web Development With DDEV Explained” published by OSTraining. Learn how to [employ modern web development workflows using DDEV](https://www.ostraining.com/blog/news/local/).
 
----
-
-Photo by [Holly Mandarich](https://unsplash.com/photos/wMuGk6dABR4?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)

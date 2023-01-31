@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2018/11/will-echols-539053-unsplash-e1542746009659.jpg
   alt:
   caption:
-  credit:
+  credit: "Photo by [Will Echols](https://unsplash.com/photos/%5FRFwfvznaYM?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/road-colorado?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - Guides
 ---
@@ -76,7 +76,3 @@ Central to the best [web development workflow](https://ddev.com/ddev-live/web-de
 New to DDEV? Set up environments in minutes, switch contexts and projects quickly, and speed your development.
 
 [Download DDEV](https://github.com/drud/ddev/releases)
-
----
-
-Photo by [Will Echols](https://unsplash.com/photos/%5FRFwfvznaYM?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/road-colorado?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)

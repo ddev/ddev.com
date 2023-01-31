@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2018/11/marius-masalar-410695-unsplash-e1543521725507.jpg
   alt:
   caption:
-  credit:
+  credit: "Photo by [Marius Masalar](https://unsplash.com/photos/rPOmLGwai2w?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - Guides
 ---
@@ -85,7 +85,3 @@ Also, check out these articles:
 - [DDEV v1.4 release](https://ddev.com/ddev-local/ddev-v1-4-0-in-container-composer-commands-ssh-authentication-database-export/)
 
 [Download DDEV](https://github.com/drud/ddev)
-
----
-
-Photo by [Marius Masalar](https://unsplash.com/photos/rPOmLGwai2w?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)

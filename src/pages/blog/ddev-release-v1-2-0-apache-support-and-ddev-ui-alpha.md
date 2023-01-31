@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2018/09/IMG_20180910_093208.jpg
   alt:
   caption:
-  credit:
+  credit: "Photo by Elli Ludwigson."
 categories:
   - Announcements
 ---
@@ -52,7 +52,3 @@ We’ve also sent along some stickers for [TYPO3 Camp Munich](https://typo3camp-
 > Nice [@mattLefaux](https://twitter.com/mattLefaux?ref%5Fsrc=twsrc%5Etfw) got a new laptop! First sticker? [#DDEV](https://twitter.com/hashtag/DDEV?src=hash&ref%5Fsrc=twsrc%5Etfw)! Lookin’ good, Mathias! ? Say hi to the DRUD team at [#DrupalEurope](https://twitter.com/hashtag/DrupalEurope?src=hash&ref%5Fsrc=twsrc%5Etfw) and pick up some [#stickers](https://twitter.com/hashtag/stickers?src=hash&ref%5Fsrc=twsrc%5Etfw) [pic.twitter.com/V4Wd2jMHaL](https://t.co/V4Wd2jMHaL)
 >
 > — DRUD Technology (@drud) [September 11, 2018](https://twitter.com/drud/status/1039491681840713734?ref%5Fsrc=twsrc%5Etfw)
-
----
-
-Photo by Elli Ludwigson

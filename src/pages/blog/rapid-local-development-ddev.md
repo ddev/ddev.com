@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2018/03/moren-hsu-359121-unsplash.jpg
   alt:
   caption:
-  credit:
+  credit: "[moren hsu](https://unsplash.com/photos/VLaKsTkmVhk?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/repeat?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - DevOps
 ---
@@ -61,8 +61,6 @@ Try DDEV today. Installation takes less than a minute. Creating a Drupal sandbox
 
 **[Get started with DDEV-Local](/get-started/)**
 
-**Photo Credits**
-
-Banner photo by [moren hsu](https://unsplash.com/photos/VLaKsTkmVhk?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/repeat?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText).
+---
 
 Photo of Joe Schindelar used with permission from [lullaboteducation.com](http://lullaboteducation.com/)

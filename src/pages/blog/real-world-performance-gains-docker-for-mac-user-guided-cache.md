@@ -13,7 +13,7 @@ Thankfully, Docker for Mac recently released a [user-guided caching feature](htt
 
 ### Implementing User-guided Caching
 
-In order to use this functionality, you need to be running Docker for Mac 17.04 Edge, which will then enter the stable branch at 17.06\. As of the time of this blog article, you will need to download the edge version [here](https://docs.docker.com/docker-for-mac/install/). Once you’ve done that, you only need to append “:cached” to the end of the mount path specified in your Docker run command. Example below:
+In order to use this functionality, you need to be running Docker for Mac 17.04 Edge, which will then enter the stable branch at 17.06\. As of the time of this blog article, you will need to download the edge version [here](https://docs.docker.com/docker-for-mac/install/). Once you’ve done that, you only need to append `:cached` to the end of the mount path specified in your Docker run command. Example below:
 
 ```
 $ docker run -v /User/host/path:/container/path:cached command

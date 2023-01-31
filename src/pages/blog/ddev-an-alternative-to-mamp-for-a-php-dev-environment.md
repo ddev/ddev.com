@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2018/07/Fils_électriques.jpg
   alt:
   caption:
-  credit:
+  credit: "Photo by WikiProfPC on [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Fils%5F%C3%A9lectriques.JPG)."
 categories:
   - DevOps
 ---
@@ -159,7 +159,3 @@ Once you’re working on multiple projects and collaborating with multiple peopl
 MAMP has been around a while. It’s familiar, it’s comfortable, it’s your old pair of jeans you don’t want to give up even though there are more holes than denim. DDEV-Local is a free alternative to MAMP. It’s easy to set up, configure and use so you don’t need to worry about the details. If you’re ready to run a robust, containerized local development environment, DDEV is worth trying today.
 
 [Try DDEV now!](https://ddev.com/get-started/)
-
----
-
-Photo by WikiProfPC on [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Fils%5F%C3%A9lectriques.JPG)

@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2018/10/clarissa-bock-418873-unsplash-e1539369093961.jpg
   alt:
   caption:
-  credit:
+  credit: "Photo by [Clarissa Bock](https://unsplash.com/photos/nqJwKcnfyqU?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - Announcements
 ---
@@ -52,5 +52,3 @@ Check the [Release Notes for more guidance](https://github.com/drud/ddev/release
 We have some great news for the DDEV community. Are you looking for hosting for your open source community project or event? We understand the value of open source contribution. If we can help do our part for your community, we’d love to help!
 
 [Apply here for free DDEV-Live hosting](https://goo.gl/forms/2XjlbNAIZZ4HUVlG2)
-
-Photo by [Clarissa Bock](https://unsplash.com/photos/nqJwKcnfyqU?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)

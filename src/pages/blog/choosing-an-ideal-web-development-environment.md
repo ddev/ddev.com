@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2018/05/headway-537308-unsplash-e1527604343956.jpg
   alt:
   caption:
-  credit:
+  credit: "Photo by [Headway](https://unsplash.com/photos/5QgIuuBxKwM?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/computers?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - DevOps
   - Announcements
@@ -56,5 +56,3 @@ Along the way, I’m happy to report that I’ve only become more and more comfo
 I’m happy to share that I’ll be providing full-day workshops at [Twin Cities Drupal Camp](https://2018.tcdrupal.org/trainings/ddev) (June 7), [DrupalCamp Asheville](https://www.drupalasheville.com/2018/friday-training#drupaleasy) (July 13), and [DrupalCamp Colorado](https://2018.drupalcampcolorado.org/) (August 3) this summer! Looking to move your local development environment to a more modern solution? This workshop will introduce students to DDEV, a Docker-powered local development environment built on modern principles and designed to be flexible, customizable, and powerful.
 
 Interested in learning about future training events? [Subscribe to the DrupalEasy Newsletter](http://eepurl.com/ukfXf) to be one of the first to know!
-
-Photo by [Headway](https://unsplash.com/photos/5QgIuuBxKwM?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/computers?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)

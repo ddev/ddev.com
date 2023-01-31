@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2018/04/toolbox-2645700_1920-e1523274374612.jpg
   alt:
   caption:
-  credit:
+  credit: "CC0 Creative Commons Repair Tools [Vinayr16](https://pixabay.com/en/toolbox-socket-repair-tool-2645700/)"
 categories:
   - DevOps
 ---
@@ -61,4 +61,3 @@ That’s what we’ve been doing as we build our dev-to-deploy suite of DDEV too
 
 **[Get started with DDEV-Local](/get-started/)**
 
-Photo credit: CC0 Creative Commons Repair Tools [Vinayr16](https://pixabay.com/en/toolbox-socket-repair-tool-2645700/)

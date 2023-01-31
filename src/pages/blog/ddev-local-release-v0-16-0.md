@@ -5,13 +5,13 @@ author: Rick Manelius
 featureImage:
   src: https://ddev.com/app/uploads/2018/03/volcano.jpg
   alt:
-  caption:
-  credit:
+  caption: “This morning at 13k feet”
+  credit: S. Grandchamp
 categories:
   - Announcements
 ---
 
-![](https://ddev.com/app/uploads/2018/03/volcano-300x141.jpg)Announcing [DDEV-Local Release v0.16.0](https://github.com/drud/ddev/releases/tag/v0.16.0)! Faster default performance and a community contribution that makes users’ first-time setup smoother.
+Announcing [DDEV-Local Release v0.16.0](https://github.com/drud/ddev/releases/tag/v0.16.0)! Faster default performance and a community contribution that makes users’ first-time setup smoother.
 
 We’re always trying to strike a balance between the amount of control we give to you, and how much we take out of your way and handle automatically so you can on with your work. We’re grateful to our users who gave us excellent feedback and ideas that have gone into this release to help keep this balance. Thank you all! We hope you’ll find your set up smoother now and your day-to-day work faster, simpler, and better with DDEV-Local.
 
@@ -53,4 +53,3 @@ Check out the [Getting Started](https://ddev.readthedocs.io/en/latest/users/cli-
 
 To update DDEV-Local follow the steps for [installing and updating](https://ddev.readthedocs.io/en/latest/#installation) for your operating system. We’d love to hear your feedback [in the GitHub issue queue](https://github.com/drud/ddev/issues).
 
-Photo “This morning at 13k feet” by S. Grandchamp.

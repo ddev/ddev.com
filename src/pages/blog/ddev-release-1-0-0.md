@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2018/07/jason-leung-479251-unsplash-e1532107303829.jpg
   alt:
   caption:
-  credit:
+  credit: "Photo by [Jason Leung](https://unsplash.com/photos/Xaanw0s0pMk?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/gift?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - Announcements
 ---
@@ -84,7 +84,3 @@ We hope this new UI opens up collaboration across your team. Tell us what you th
 ### Want to try DDEV-UI?
 
 We’ll have the alpha release available soon. To keep up to date, [“star” the DDEV project on GitHub](https://github.com/drud/ddev) and subscribe to our newsletter.
-
----
-
-Photo by [Jason Leung](https://unsplash.com/photos/Xaanw0s0pMk?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/gift?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)

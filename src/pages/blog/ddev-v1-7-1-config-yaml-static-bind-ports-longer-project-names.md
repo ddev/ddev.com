@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2019/04/EKL_20190320_0150-e1554833038556.jpg
   alt:
   caption:
-  credit:
+  credit: "Photo courtesy [Elli Ludwigson](/blog/author/elli-ludwigson)."
 categories:
   - Announcements
 ---
@@ -51,4 +51,3 @@ Thank you very much to [akalata](https://github.com/akalata) on GitHub for testi
 
 [DDEV is an open source project](https://github.com/drud/ddev/blob/master/CONTRIBUTING.md) and we very much appreciate the time our contributors give to improving the tool for everyone. Please continue to submit issues for new features and bugs, and take a look around [the DDEV issue queue](https://github.com/drud/ddev/issues) and [Stack Overflow](https://stackoverflow.com/questions/tagged/ddev) to spur your thinking!
 
-Photo courtesy [Elli Ludwigson](https://ddev.com/author/elli/)

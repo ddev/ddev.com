@@ -5,8 +5,8 @@ author: Rick Manelius
 featureImage:
   src: https://ddev.com/app/uploads/2018/05/woctech-chat-windows-e1525985003469.jpg
   alt:
-  caption:
-  credit:
+  caption: "Showing MS Windows on Surface Pro"
+  credit: "by WOCinTech Chat (CC BY 2.0)"
 categories:
   - Announcements
 ---
@@ -49,4 +49,3 @@ This release includes a variety of bugfixes as well. Check out the [release note
 
 To update DDEV-Local follow the steps for [installing and updating](https://ddev.readthedocs.io/en/latest/#installation) for your operating system. We’d love to hear your feedback [in the GitHub issue queue](https://github.com/drud/ddev/issues).
 
-Photo credit – Showing MS Windows on Surface Pro by WOCinTech Chat (CC BY 2.0)

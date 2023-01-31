@@ -5,8 +5,8 @@ author: Randy Fay
 featureImage:
   src: https://ddev.com/app/uploads/2020/12/juggler-2329843_1280-e1607477143481.jpg
   alt:
-  caption:
-  credit:
+  caption: Mass juggling image
+  credit: "[Sarah Richter](https://pixabay.com/users/sarahrichterart-1546275/?utm%5Fsource=link-attribution&utm%5Fmedium=referral&utm%5Fcampaign=image&utm%5Fcontent=2329843) via [Pixabay](https://pixabay.com/)."
 categories:
   - Guides
   - DevOps
@@ -103,6 +103,3 @@ There is no standard for deployment or moving sites, and nothing will replace yo
 - [OSTraining](https://www.ostraining.com/) has a free YouTube class on [Moving a Drupal 8+ Site](https://www.youtube.com/playlist?list=PLtaXuX0nEZk-ow4oT3yqxmjk4IRHz4jHl). Highly recommended.
 - Many, many agency deployment strategies are home-grown and require custom scripts to push things back and forth. There are examples of scripts like this in [ddev-contrib](https://github.com/drud/ddev-contrib), see [Dump and deploy SQL from/to remote servers](https://github.com/drud/ddev-contrib/blob/master/custom-commands/dump-and-deploy-db) and [Fetch Production DB from remote server](https://github.com/drud/ddev-contrib/blob/master/custom-commands/fetchproductiondb).
 
-Sign up for the latest news and releases
-
-Mass juggling image by [Sarah Richter](https://pixabay.com/users/sarahrichterart-1546275/?utm%5Fsource=link-attribution&utm%5Fmedium=referral&utm%5Fcampaign=image&utm%5Fcontent=2329843) from [Pixabay](https://pixabay.com/?utm%5Fsource=link-attribution&utm%5Fmedium=referral&utm%5Fcampaign=image&utm%5Fcontent=2329843)

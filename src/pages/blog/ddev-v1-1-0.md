@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2018/08/nasa-63029-unsplash-e1534364618963.jpg
   alt:
   caption:
-  credit:
+  credit: "Photo by [NASA](https://unsplash.com/photos/n463SoeSiVY?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/release?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)"
 categories:
   - Announcements
 ---
@@ -87,7 +87,3 @@ sudo ddev hostname --remove-inactive
 That info is saved in the project config file, so as soon as you `ddev start`, it’s set up when you need it.
 
 There are more bugfixes, new documentation, and improvements – so please check out the [DDEV v1.1.0 Release Notes](https://github.com/drud/ddev/releases/tag/v1.1.0) for all the details.
-
----
-
-Photo by [NASA](https://unsplash.com/photos/n463SoeSiVY?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/release?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)

@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2018/12/DSC_3769-e1545284198357.jpg
   alt:
   caption:
-  credit:
+  credit: "Photo by [Elli Ludwigson](/blog/author/elli-ludwigson)."
 categories:
   - Announcements
 ---
@@ -57,7 +57,3 @@ Please feel free to tag us on twitter [@Drud](https://twitter.com/drud) and with
 > Listening to [@TalkingDrupal](https://twitter.com/TalkingDrupal?ref%5Fsrc=twsrc%5Etfw) 190 – [#DDEV](https://twitter.com/hashtag/DDEV?src=hash&ref%5Fsrc=twsrc%5Etfw) with Mike Anello of [@DrupalEasy](https://twitter.com/DrupalEasy?ref%5Fsrc=twsrc%5Etfw) ? ?<https://t.co/zltZOvtUIK> [pic.twitter.com/W3aprVd7E1](https://t.co/W3aprVd7E1)
 >
 > — DRUD Technology (@drud) [December 19, 2018](https://twitter.com/drud/status/1075391816143392769?ref%5Fsrc=twsrc%5Etfw)
-
----
-
-Photo by [Elli Ludwigson](https://ddev.com/author/elli/)

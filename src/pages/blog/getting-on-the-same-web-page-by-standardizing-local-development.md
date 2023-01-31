@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2018/05/suganth-526334-unsplash-e1526983031730.jpg
   alt:
   caption:
-  credit:
+  credit: "Photo by [Suganth](https://unsplash.com/photos/hsYSrqcZ8Ds?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - DevOps
 ---
@@ -66,4 +66,3 @@ The good thing is, DDEV works with you. You don’t need to rejig your repositor
 
 [Try out DDEV](https://ddev.com/get-started/) and see how it works for you!
 
-Photo by [Suganth](https://unsplash.com/photos/hsYSrqcZ8Ds?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)

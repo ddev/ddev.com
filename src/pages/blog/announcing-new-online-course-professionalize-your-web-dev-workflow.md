@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2018/06/alejandro-escamilla-10-unsplash.jpg
   alt:
   caption:
-  credit:
+  credit: "Photo by [Alejandro Escamilla on Unsplash](https://unsplash.com/@alejandroescamilla)."
 categories:
   - Announcements
   - DevOps
@@ -55,7 +55,3 @@ Requirements: The requirements for the class are the same as the for using DDEV.
 We’ve talked to senior team leads and mentors who’ve switched to DDEV because it makes onboarding new team members easier. DDEV makes it easy to get started each time you want to launch a new project. It’s easy for those new to container-based development, and it’s flexible enough to adapt as your needs evolve. If you want to get your team up to speed, [contact us for a group discount](https://ddev.com/contact/) for this course.
 
 [Enroll now to professionalize your web dev workflow](https://www.drupaleasy.com/ddev)
-
----
-
-Photo by [Alejandro Escamilla on Unsplash](https://unsplash.com/@alejandroescamilla)

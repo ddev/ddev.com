@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2018/04/developers-playing-in-sandboxes-e1524554749706.jpg
   alt:
   caption:
-  credit:
+  credit: "[Kaboompics .com from Pexels](https://www.pexels.com/photo/little-boy-playing-in-the-sand-6459/)"
 categories:
   - DevOps
 ---
@@ -51,5 +51,3 @@ All done? Then `ddev remove` to finish up. It’s good to know that by default, 
 So next time you want to start that environment up again? You guessed it, `ddev start` is all you need.
 
 [Try DDEV-Local today.](https://ddev.com/get-started/)
-
-Photo credit: [Kaboompics .com from Pexels](https://www.pexels.com/photo/little-boy-playing-in-the-sand-6459/)

@@ -19,3 +19,7 @@ footer {
     }
   }
 }
+
+.footnotes {
+  @apply border-t mt-24 pt-4 text-base;
+}

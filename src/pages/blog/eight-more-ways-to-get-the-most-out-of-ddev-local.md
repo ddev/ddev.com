@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2018/12/marvin-ronsdorf-196913-unsplash-e1544104467254.jpg
   alt:
   caption:
-  credit:
+  credit: "Photo by Marvin Ronsdorf on [Unsplash](https://unsplash.com/search/photos/eight?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - DDEV
 ---
@@ -136,7 +136,3 @@ Coming soon: We’ll be rolling out opt-in data collection and error reporting t
 ### Want more tips? Follow us on Twitter and subscribe to the newsletter.
 
 When I come across tips and tricks from the community, I usually tweet about them. You can follow me as [@randyfay](https://twitter.com/randyfay) and the main [@drud](https://twitter.com/drud/) account where we tweet product news, tips, and other relevant info regularly. And of course, sign up to the newsletter for product updates and announcements.
-
----
-
-Photo by Marvin Ronsdorf on [Unsplash](https://unsplash.com/search/photos/eight?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)

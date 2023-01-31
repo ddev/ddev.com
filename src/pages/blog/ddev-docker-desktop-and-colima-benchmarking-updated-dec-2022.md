@@ -4,9 +4,10 @@ pubDate: 2022-12-27
 author: Randy Fay
 featureImage:
   src: https://ddev.com/app/uploads/2022/12/macOS-M1-vs.-Drupal-10-Web-Install.svg
-  alt:
+  alt: 
   caption:
   credit:
+  shadow: true
 categories:
   - Performance
 ---

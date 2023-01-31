@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2018/03/lukas-blazek-263122.jpg
   alt:
   caption:
-  credit:
+  credit: "[Lukas Blazek](https://unsplash.com/photos/UAvYasdkzq8?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/time?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - DevOps
 ---
@@ -17,7 +17,7 @@ Danita Bowman of [DSquaredB Consulting](https://dsquaredbconsulting.com/) wears 
 
 > Thanks to tools like DDEV Danita has been able to spend less time solving problems with local development and configuration, and more time solving problems for clients.
 
-DSquaredB Consulting is a small business, and most of Danita’s clients are small businesses and non-profit organizations. In 2017, 99.9% ([1](#citations)) of businesses in the United States were small businesses, and there are more than 1.5 million non-profits ([2](#citations)) in the country. Today, a lot of these organizations need web apps that solve business problems, generate revenue, and deliver services, but they run on tight budgets. Danita’s portfolio includes clients that rely on her to build their essential infrastructure, for example, fundraising sites and apps for non-profits that help in much-needed revenue generation. “It’s a lot of data management. That’s one of the reasons I use Drupal. Considering the sensitive data and transactions involved, security and reliability are more important to me than ever.”
+DSquaredB Consulting is a small business, and most of Danita’s clients are small businesses and non-profit organizations. In 2017, 99.9%[^1] of businesses in the United States were small businesses, and there are more than 1.5 million non-profits[^2] in the country. Today, a lot of these organizations need web apps that solve business problems, generate revenue, and deliver services, but they run on tight budgets. Danita’s portfolio includes clients that rely on her to build their essential infrastructure, for example, fundraising sites and apps for non-profits that help in much-needed revenue generation. “It’s a lot of data management. That’s one of the reasons I use Drupal. Considering the sensitive data and transactions involved, security and reliability are more important to me than ever.”
 
 ## Work smarter not harder
 
@@ -61,13 +61,5 @@ Thanks to tools like DDEV Danita has been able to spend less time on solving pro
 
 **[Get started with DDEV-Local](/get-started/).**
 
-——
-
-**Photo Credit**
-
-— Clock Photo by [Lukas Blazek](https://unsplash.com/photos/UAvYasdkzq8?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/time?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)
-
-**Citations**
-
-1. SBA Office of Advocacy. 2017\. United States Small Business Economic Profile. Available at: <https://www.sba.gov/sites/default/files/advocacy/United%5FStates%5F1.pdf>. \[Accessed 30 January 2018\].
-2. National Center for Charitable Statistics. 2016.Quick Facts About Nonprofits. Available at: <http://nccs.urban.org/data-statistics/quick-facts-about-nonprofits>. \[Accessed 30 January 2018\].
+[^1]: SBA Office of Advocacy. 2017. United States Small Business Economic Profile. Available at: [www.sba.gov](https://www.sba.gov/sites/default/files/advocacy/United%5FStates%5F1.pdf). \[Accessed 30 January 2018\].
+[^2]: National Center for Charitable Statistics. 2016.Quick Facts About Nonprofits. Available at: [nccs.urban.org](http://nccs.urban.org/data-statistics/quick-facts-about-nonprofits). \[Accessed 30 January 2018\].

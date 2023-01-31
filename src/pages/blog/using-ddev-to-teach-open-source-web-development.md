@@ -6,7 +6,8 @@ featureImage:
   src: https://ddev.com/app/uploads/2019/02/jantine-doornbos-711322-unsplash-e1551235015756.jpg
   alt:
   caption:
-  credit:
+  credit: "Photo by [Jantine Doornbos](https://unsplash.com/photos/xt9tb6oa42o?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
+  shadow: true
 categories:
   - DevOps
 ---
@@ -62,5 +63,3 @@ We love to hear stories about how you’re using DDEV. Are you using DDEV for te
 We have quickstart documentation for major CMSs and you can use DDEV to run other types of projects as well.
 
 [Try DDEV](https://ddev.readthedocs.io/en/latest/)
-
-Photo by [Jantine Doornbos](https://unsplash.com/photos/xt9tb6oa42o?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)

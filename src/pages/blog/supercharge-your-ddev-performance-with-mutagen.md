@@ -12,7 +12,7 @@ categories:
   - Performance
 ---
 
-DDEV v1.18.0-alpha1 introduces a new performance improvement based on [Mutagen.io](http://Mutagen.io). It eliminates the required wait time when a bind-mounted file is accessed inside (or outside) the container.
+DDEV v1.18.0-alpha1 introduces a new performance improvement based on [Mutagen](https://mutagen.io). It eliminates the required wait time when a bind-mounted file is accessed inside (or outside) the container.
 
 The improvements for general web activity are quite striking, as shown in the graphs below. On macOS, a Drupal 9 web installation can be twice as fast as with NFS, and many times faster than plain Docker. On traditional Windows, the speed improvement is off the chart (literally). I actually had to remove the plain Docker category because it took 20 minutes to install and so it swamped the chart and you couldn’t see the relationships of anything else.
 
@@ -44,4 +44,4 @@ Are you interested in the original data, or comparing it to your own? See the [s
 
 _A huge shout-out to [Tag1 Consulting](https://tag1.com), who sponsored this (very extensive) feature. Is your company interested in sponsoring DDEV features or support? Please give us a yell in any of the [support channels](https://ddev.readthedocs.io/en/latest/#support-and-user-contributed-documentation)._
 
-And of course another huge shout-out to [Mutagen.io](http://mutagen.io) and maintainer [Jacob Howard (@xenoscopic)](https://github.com/xenoscopic), on whose work this feature stands. Jacob spent lots of time with me to explain all the ins and outs, thanks! Once again, as throughout this project, DDEV stands on the shoulders of giants!
+And of course another huge shout-out to [Mutagen](https://mutagen.io) and maintainer [Jacob Howard (@xenoscopic)](https://github.com/xenoscopic), on whose work this feature stands. Jacob spent lots of time with me to explain all the ins and outs, thanks! Once again, as throughout this project, DDEV stands on the shoulders of giants!

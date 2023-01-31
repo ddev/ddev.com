@@ -6,7 +6,7 @@ featureImage:
   src: https://ddev.com/app/uploads/2018/05/danilo-batista-334883-unsplash.jpg
   alt:
   caption:
-  credit:
+  credit: "Photo by [Danilo Batista](https://unsplash.com/photos/GXzjWurMTgQ?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - Announcements
 ---
@@ -33,5 +33,3 @@ For full details check out the [DDEV-Local v0.19 Release Notes](https://github.c
 ### Events: Meet the DDEV Team
 
 We’ll be sponsoring, volunteering at, and speaking at events this summer across the US and Europe. [Check out the DDEV events calendar](https://ddev.com/events/), we’d love to meet you.
-
-Photo by [Danilo Batista](https://unsplash.com/photos/GXzjWurMTgQ?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)

@@ -5,8 +5,8 @@ author: Jeffrey A. McGuire
 featureImage:
   src: https://ddev.com/app/uploads/2018/04/alex-burrows-drupal-mentoring.jpg
   alt:
-  caption:
-  credit:
+  caption: “Drupal mentoring”
+  credit: "[Alex Burrows](https://twitter.com/aburrows/status/913688621248630785)"
 categories:
   - DevOps
 ---
@@ -69,4 +69,3 @@ DDEV is not only helping Digidrop with local development and deployment, it’s 
 
 When they’re negotiating with potential clients and before it’s clear whether the conversation will turn into a contract and billable hours, they need to dig into existing applications to scope out how much work there is and how they would approach the project. Alex explained how they needed to “get something up really quickly,” and “evaluate what the supplied code was like, so we could give it a yay or nay on whether we wanted to take on the project. We could do this really quickly with DDEV.”
 
-Photo credit: [Alex Burrows “Drupal mentoring”](https://twitter.com/aburrows/status/913688621248630785)
