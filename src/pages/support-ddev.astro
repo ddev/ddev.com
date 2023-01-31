@@ -9,6 +9,7 @@ import {
   GITHUB_URL,
 } from "../config"
 import Sponsors from "../components/Sponsors.astro"
+import { Img } from "astro-imagetools/components"
 
 const title = `Support DDEV`
 ---
@@ -35,10 +36,15 @@ const title = `Support DDEV`
         > a GitHub Issue or Pull Request.
       </p>
 
-      <img
+      <Img
         src="/img/pr.png"
         alt="Screenshot of GitHub PR #217, where @beeradb added new version notifications"
-        class="shadow-lg rounded-lg"
+        placeholder="dominantColor"
+        attributes={{
+          img: {
+            class: `shadow-lg rounded-lg`,
+          },
+        }}
       />
     </div>
 
@@ -81,10 +87,15 @@ const title = `Support DDEV`
         If you can help someone out, it helps us focus more on development.
       </p>
 
-      <img
+      <Img
         src="/img/discord.png"
         alt="Screenshot of Discord server, with several active Q&A channels"
-        class="rounded-lg"
+        placeholder="dominantColor"
+        attributes={{
+          img: {
+            class: `rounded-lg`,
+          },
+        }}
       />
     </div>
 
@@ -109,11 +120,17 @@ const title = `Support DDEV`
       </p>
 
       <figure>
-        <img
+        <Img
           src="/img/edit-docs.png"
           alt="Screenshot visually highlighting the “Edit this page” icon in the docs and pointing to its corresponding GitHub URL"
-          class="rounded-lg"
+          placeholder="dominantColor"
+          attributes={{
+            img: {
+              class: `rounded-lg`,
+            },
+          }}
         />
+
         <figcaption>
           The pencil icon in the published docs links to the relevant GitHub
           source for suggestions.
@@ -178,10 +195,15 @@ const title = `Support DDEV`
         to join us!
       </p>
 
-      <img
+      <Img
         src="/img/advisory-group-call.png"
         alt="Screenshot of an advisory group Zoom call with a grid of sixteen faces"
-        class="rounded-lg"
+        placeholder="dominantColor"
+        attributes={{
+          img: {
+            class: `rounded-lg`,
+          },
+        }}
       />
     </div>
 
