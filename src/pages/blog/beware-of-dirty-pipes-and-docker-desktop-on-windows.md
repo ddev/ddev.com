@@ -39,7 +39,7 @@ Then I proceeded down the path of contacting the maintainer of [pv](https://gith
 
 Sure enough, the problem was that the WSL2 Linux Kernel had not been properly updated, which can affect containers on all current versions of Docker Desktop. The WSL2 kernel version on that machine was 5.10.16.3, and updating the WSL2 kernel using Windows Update resolved the problem.
 
-But why wasn’t the WSL2 kernel updated automatically, you might ask? I thought MS started doing that? Well, you have to enable those updates, it doesn’t happen by default. _**You have to go to “Windows Update” → “Advanced Options” -> Receive updates for other Microsoft Products” so that your WSL2 kernel gets updated.**_
+But why wasn’t the WSL2 kernel updated automatically, you might ask? I thought MS started doing that? Well, you have to enable those updates, it doesn’t happen by default. **You have to go to _Windows Update_ → _Advanced Options_ → _Receive updates for other Microsoft Products_ so that your WSL2 kernel gets updated.**
 
 Make sure you set up your Windows system to get kernel updates, whether you’re using Docker Desktop with traditional Windows or WSL2, or using WSL2 for anything else. You don’t want Dirty Pipes!
 
