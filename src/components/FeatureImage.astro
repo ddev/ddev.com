@@ -24,6 +24,7 @@ const { src, alt, caption = "", credit, shadow = false } = Astro.props
         }
       >
         <Picture
+          format={["webp"]}
           attributes={{
             picture: {
               class: `block rounded-lg`,
