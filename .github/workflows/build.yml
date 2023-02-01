@@ -31,7 +31,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: "drud/ddev.com-build"
+          repository: "ddev/ddev.com-build"
           ref: main
           token: ${{ secrets.GH_PAT }}
       - uses: actions/download-artifact@v3
