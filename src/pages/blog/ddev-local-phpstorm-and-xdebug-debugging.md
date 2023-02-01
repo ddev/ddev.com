@@ -7,9 +7,15 @@ featureImage:
   alt:
   caption:
   credit:
+  hide: true
 categories:
   - Guides
+  - Videos
 ---
+
+<div class="video-container">
+<iframe loading="lazy" title="DDEV-Local, PhpStorm and Xdebug Debugging" width="500" height="281" src="https://www.youtube.com/embed/tvqwkymg6fE?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
 
 The days of print-debugging are long behind us! [Xdebug](https://xdebug.org/) and PHP IDEs have made that approach unwieldy, but often the configuration between your IDE, PHP, web server, and Docker is challenging and fragile. Enter our open source local development environment, [DDEV-Local](https://github.com/drud/ddev).
 

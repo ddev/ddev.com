@@ -4,6 +4,7 @@ pubDate: 2017-05-10
 author: Rick Manelius
 categories:
   - Guides
+  - Videos
 ---
 
 _Author’s Note:_ DDEV _was at version v0.3 as of the time of this writing. For updates on future releases and features, please visit and follow the_ _[DDEV project GitHub page](https://github.com/drud/ddev), visit [the project roadmap](https://github.com/drud/ddev/wiki/Roadmap), or [contact us directly](https://ddev.com/contact/). Thanks!_
@@ -37,9 +38,17 @@ Creating a quick, destructible WordPress site can be handy for testing new theme
 
 You should hit the WordPress installer screen and then you’re off to the races! To get access to the database credentials to complete the installation, simply run `ddev describe`.
 
+<div class="video-wrapper">
+<iframe src="https://www.youtube.com/embed/b-6EX3KCbnY" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+</div>
+
 ### A Deeper Tour
 
 Once you’re able to get up and running, you can begin to explore the [additional functionality](https://github.com/drud/ddev#usage) including imports, local development tools, managing multiple containers, etc. Below is a quick video tour.
+
+<div class="video-wrapper">
+<iframe loading="lazy" src="https://www.youtube.com/embed/JQrjsazBzP4" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+</div>
 
 ### Future Roadmap
 

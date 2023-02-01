@@ -9,6 +9,7 @@ featureImage:
   credit:
 categories:
   - Guides
+  - Videos
 ---
 
 DDEV-Local is a powerful local development tool that many of you are fond of for its simplicity and extensibility. Recent versions of [DDEV-Local (v1.10+)](https://ddev.readthedocs.io/en/stable/) add custom commands and loads of other goodies we’d like to show you how to use. In this screencast and tutorial, we’ll show you how to make use of DDEV-Local custom commands, adding web server packages, and adding extras in .ddev/homeadditions to support your specific project needs.

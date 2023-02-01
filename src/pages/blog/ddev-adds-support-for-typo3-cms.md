@@ -5,6 +5,7 @@ author: Jeffrey A. McGuire
 categories:
   - Announcements
   - Guides
+  - Videos
 ---
 
 We’re on a mission to make it easier for developers, teams, and organizations to adopt modern container-based toolsets and workflows. To get there we’re expanding our support to new communities and platforms. Today we’re excited to announce that DDEV integrates with the TYPO3 CMS to provide a fast and robust way to work across multiple projects and across multiple operating systems. Once you have DDEV installed, you can get a new TYPO3 site up and running on your local workstation in minutes.
@@ -38,6 +39,10 @@ We’re all open source engineers and contributors behind the scenes here. We lo
 ## DDEV + TYPO3 – Agency technology meets agency community
 
 In the interview video below, TYPO3 GmbH CEO Mathias Schreiber and DDEV CEO Steve Grandchamp sat down with Jeffrey A. “jam” McGuire recently at TYPO3 HQ in Düsseldorf, Germany, to talk about how DDEV and TYPO3 came together at just the right time to provide this needed solution to the open source community.
+
+<div class="video-container">
+<iframe title="TYPO3 CMS local development environment BETA-TEST!" width="500" height="281" src="https://www.youtube.com/embed/Xz8tE2Vzngo?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
 
 ### Tymoteusz “Tymek” Motylewski on DDEV + TYPO3 CMS
 

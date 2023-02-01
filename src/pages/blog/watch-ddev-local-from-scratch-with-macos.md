@@ -7,9 +7,15 @@ featureImage:
   alt:
   caption:
   credit:
+  hide: true
 categories:
   - Guides
+  - Videos
 ---
+
+<div class="video-container">
+<iframe loading="lazy" title="DDEV-Local from Scratch on macOS" width="500" height="281" src="https://www.youtube.com/embed/-firvjLr2hE?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
 
 [DDEV-Local](https://ddev.com/ddev-local/) is a local development environment based on Docker containers that gets you up and working on your project fast. Configuring Docker for local development performance is no longer a dark art when all the benefits are wrapped in a user friendly tool like DDEV-Local. When you’re ready for [additional configuration and customization](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#extending-and-customizing-environments), you wont be starting from scratch with your docker-compose.yaml and can lean on [the expertise of the DDEV community](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation).
 

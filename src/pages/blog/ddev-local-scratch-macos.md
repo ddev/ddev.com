@@ -1,5 +1,5 @@
 ---
-title: "How to setup a mac development environment with DDEV-Local"
+title: "How to setup a Mac development environment with DDEV-Local"
 pubDate: 2018-06-14
 author: Randy Fay
 featureImage:
@@ -9,6 +9,7 @@ featureImage:
   credit: "Photo by Maxime Le Conte des Floris on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - Guides
+  - Videos
 ---
 
 **This article has been updated in 2020, please go to [DDEV-Local From Scratch on macOS.](https://ddev.com/ddev-local/watch-ddev-local-from-scratch-with-macos/)**
@@ -18,6 +19,10 @@ In this video tutorial, we’ll show you how to use [DDEV-Local](https://ddev.co
 Using a local development environment means you’re working on your projects without risking injury to your live projects.
 
 Follow [instructions to install DDEV-Local in the docs](https://ddev.readthedocs.io/en/latest/#installation) or watch this video for an overview.
+
+<div class="video-container">
+<iframe loading="lazy" title="DDEV-Local from scratch on macOS" width="500" height="281" src="https://www.youtube.com/embed/1kG94UjS8XE?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
 
 ## How to install your Docker-based dev environment with DDEV-Local
 

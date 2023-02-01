@@ -7,9 +7,15 @@ featureImage:
   alt:
   caption:
   credit:
+  hide: true
 categories:
   - Announcements
+  - Videos
 ---
+
+<div class="video-container">
+<iframe loading="lazy" title="DDEV installation on ARM64 Raspberry Pi with Ubuntu 20.10" width="500" height="281" src="https://www.youtube.com/embed/w3XV64hBeFU?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
 
 [DDEV-Local v1.16](https://github.com/drud/ddev) now supports the ARM64 architecture on Linux and Windows WSL2\. You can read all about ARM64 and what it means to the world (and to DDEV) in the previous blog on [ARM64, Apple Silicon, and Apple’s M1 chip](https://ddev.com/ddev-local/arm64-apple-silicon-m1-ddev-local-what-does-it-all-mean/). Since I don’t have a big machine to test with, I got the ARM64-based Raspberry Pi 4 instead, and it’s actually worked out far better than I expected. It was a great way to have an ARM64 machine available for testing whenever needed during the development process… but it turns out some people might want to use a Pi as their desktop web development machine. All of features of DDEV-Local work out of the box.
 

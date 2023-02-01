@@ -10,11 +10,16 @@ featureImage:
 categories:
   - Announcements
   - Community
+  - Videos
 ---
 
 Next week, I’ll be presenting at DrupalCon Nashville. I’d be thrilled to see you at my session. Read on for a taste of what I’ll be sharing.
 
 Edited to add: The video is up and available now!
+
+<div class="video-container">
+<iframe loading="lazy" width="500" height="281" src="https://www.youtube.com/embed/2TL2cXKPtN8?feature=oembed" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+</div>
 
 [Estimates, Expectations, and Evolution During a Project’s Journey from RFP to Release](https://events.drupal.org/nashville2018/sessions/estimates-expectations-and-evolution-during-projects-journey-rfp-release)
 

@@ -72,7 +72,6 @@ featureImage:
 categories:
   - DevOps
 ---
-
 ```
 
 Name your file with a kebab-case, URL-and-SEO-friendly slug with a `.md` extension, and drop it in the `src/pages/blog/` directory.
@@ -86,6 +85,7 @@ Choose whichever categories apply, with special attention to the first because i
 - _DevOps_ (workflows, infrastructure, etc.)
 - _Performance_ (benchmarking, tips, etc.)
 - _Guides_ (how-to style posts)
+- _Videos_ (posts that include or primarily feature video content)
 
 > 💡 **If you’re publishing work from a new author**, add an entry for them in `src/authors.json`! The `"name"` value needs to match the one you’re using in your post frontmatter.
 

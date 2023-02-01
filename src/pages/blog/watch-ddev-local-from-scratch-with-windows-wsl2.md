@@ -7,9 +7,15 @@ featureImage:
   alt:
   caption:
   credit:
+  hide: true
 categories:
   - Guides
+  - Videos
 ---
+
+<div class="video-container">
+<iframe loading="lazy" title="DDEV-Local From Scratch (Windows WSL2)" width="500" height="281" src="https://www.youtube.com/embed/ZMfHaUkhfc0?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
 
 WSL2 ([Windows Subsystem for Linux version 2](https://docs.microsoft.com/en-us/windows/wsl/wsl2-index)) is finally generally available on recent editions of Windows! Because of [Docker’s great support for WSL2](https://docs.docker.com/docker-for-windows/wsl/), it’s now the preferred way to run your [DDEV-Local development environment](https://ddev.com/ddev-local/) on Windows. DDEV-Local on WSL2 is as fast as DDEV-Local on Linux, but you have all the Windows niceties you love there.
 

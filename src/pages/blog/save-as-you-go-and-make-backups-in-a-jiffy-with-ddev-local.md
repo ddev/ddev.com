@@ -9,6 +9,7 @@ featureImage:
   credit: "Photo by [Will Echols](https://unsplash.com/photos/%5FRFwfvznaYM?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/road-colorado?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - Guides
+  - Videos
 ---
 
 To us, the ideal local development environment should be fast and easy to use and give you what you need to get your job done. DDEV-Local’s `ddev snapshot` command helps you recover quickly, and the new \`export-db\` command makes you portable backups in a jiffy.
@@ -36,6 +37,10 @@ Then, down the line when you’ve done something you wish you hadn’t, just res
 And you’re back to the working version of the database you had before you mucked with it.
 
 Here’s a video showing you how to use it.
+
+<div class="video-container">
+<iframe loading="lazy" width="500" height="281" src="https://www.youtube.com/embed/Ax-HocnXNbc?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
 
 DDEV-Local snapshotting uses [mariabackup](https://mariadb.com/kb/en/library/mariabackup/) inside the database container. This is super, super fast in both directions. It’s not just a copy of the database directory, the state of the database is properly preserved. This means when you come back to work, everything is just as you left it.
 

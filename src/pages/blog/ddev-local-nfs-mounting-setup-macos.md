@@ -10,6 +10,7 @@ featureImage:
 categories:
   - Guides
   - Performance
+  - Videos
 ---
 
 In [DDEV-Local v1.6.0](https://ddev.com/ddev-local/ddev-v1-6-0-nfs-mounting-and-chocolatey/) we’ve introduced NFS mounting, which really speeds things up over standard Docker mounting. We’d love to have you try it, but it does require just a little bit of configuration on the host side.
@@ -25,3 +26,7 @@ OK, let’s get started. On macOS, you need to do three basic things:
 For more detail and for Windows and Linux setup do please [read the docs](https://ddev.readthedocs.io/en/stable/users/performance/#using-nfs-to-mount-the-project-into-the-container).
 
 There are also a number of debugging hints in the [debugging section of the docs](https://ddev.readthedocs.io/en/stable/users/performance/#debugging-ddev-start-failures-with-nfs%5Fmount%5Fenabled-true).
+
+<div class="video-container">
+<iframe loading="lazy" title="Basic ddev NFS configuration for macOS" width="500" height="281" src="https://www.youtube.com/embed/KtpXFanf8cI?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
