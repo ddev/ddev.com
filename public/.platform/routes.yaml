@@ -3,6 +3,9 @@
 https://{default}/:
   redirects:
     paths:
+      "^/ddev-local/(.*)":
+        to: "https://ddev.com/blog/$1"
+        regexp: true
       "/meet-the-team":
         to: "https://ddev.com/blog/authors"
       "/author/elli":

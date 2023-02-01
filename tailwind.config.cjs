@@ -29,7 +29,7 @@ module.exports = {
           900: "#00192d",
         },
       },
-      // remove automatic blockquote quotes
+      // remove automatic quote marks from blockquotes
       typography: {
         DEFAULT: {
           css: {
