@@ -20,11 +20,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Lint
         run: npm run textlint
-      - name: Delete previous artifacts
-        uses: jimschubert/delete-artifacts-action@v1
-        with:
-          artifact_name: build
-          min_bytes: "0"
       - uses: actions/upload-artifact@v3
         with:
           name: build
@@ -47,3 +42,8 @@ jobs:
         with:
           branch: main
           commit_message: Update build.
+      - name: Delete artifacts
+        uses: jimschubert/delete-artifacts-action@v1
+        with:
+          artifact_name: build
+          min_bytes: "0"
