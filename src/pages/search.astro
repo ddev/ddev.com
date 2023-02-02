@@ -11,7 +11,7 @@ const title = `Search`
 <script>
   import { loadIndex } from "@barnabask/astro-minisearch"
 
-  const maxResults = 20
+  const maxResults = 10
   const env = process.env.NODE_ENV || "production"
 
   // Load the statically-built file in the `dist/` directory for local development
@@ -24,6 +24,9 @@ const title = `Search`
   const searchData = await response.json()
   const searchIndex = loadIndex(searchData)
 
+  let selectedResultIndex: number = 0
+  let currentKeywords: string
+
   const getResults = (keywords: string) => {
     if (!searchIndex) {
       return []
@@ -32,8 +35,11 @@ const title = `Search`
     return searchIndex.search(keywords).slice(0, maxResults)
   }
 
-  inputElement.addEventListener("keyup", () => {
+  const updateResults = (keywords: string) => {
+    currentKeywords = keywords
     let results = getResults(inputElement.value)
+
+    selectedResultIndex = 0
 
     resultsContainer.innerHTML = results
       .map((result) => {
@@ -47,11 +53,55 @@ const title = `Search`
               result.id
             )}</div>
           </div>
-            
         </a>
       `
       })
       .join("")
+
+    focusResult()
+  }
+
+  const focusResult = () => {
+    console.log(`focusResult: ${selectedResultIndex}`)
+
+    const container = document.getElementById("results")
+    const element = container.querySelectorAll(`a`)
+
+    // TODO: don’t zoom past end
+    element[selectedResultIndex].focus()
+  }
+
+  inputElement.addEventListener("keyup", () => {
+    if (inputElement.value !== currentKeywords) {
+      updateResults(inputElement.value)
+    }
+  })
+
+  inputElement.addEventListener("search", () => {
+    if (inputElement.value !== currentKeywords) {
+      updateResults(inputElement.value)
+    }
+  })
+
+  document.addEventListener("keydown", function (event) {
+    const key = event.key
+
+    console.log(`key: ${key}`)
+
+    switch (event.key) {
+      case "ArrowUp":
+        selectedResultIndex =
+          selectedResultIndex > 1 ? selectedResultIndex - 1 : 0
+        focusResult()
+        break
+      case "ArrowDown":
+        selectedResultIndex =
+          selectedResultIndex < maxResults - 1
+            ? selectedResultIndex + 1
+            : maxResults - 1
+        focusResult()
+        break
+    }
   })
 
   /**
@@ -78,6 +128,7 @@ const title = `Search`
         id="search-keywords"
         type="search"
         class="border rounded px-4 py-2 text-lg w-full"
+        autofocus
       />
       <div id="results"></div>
     </div>
