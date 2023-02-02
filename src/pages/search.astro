@@ -24,7 +24,7 @@ const title = `Search`
   const searchData = await response.json()
   const searchIndex = loadIndex(searchData)
 
-  let selectedResultIndex: number = 0
+  let selectedResultIndex: number = -1
   let currentKeywords: string
 
   const getResults = (keywords: string) => {
@@ -39,7 +39,7 @@ const title = `Search`
     currentKeywords = keywords
     let results = getResults(inputElement.value)
 
-    selectedResultIndex = 0
+    selectedResultIndex = -1
 
     resultsContainer.innerHTML = results
       .map((result) => {
@@ -57,8 +57,6 @@ const title = `Search`
       `
       })
       .join("")
-
-    focusResult()
   }
 
   const focusResult = () => {
@@ -83,8 +81,6 @@ const title = `Search`
   document.addEventListener("keydown", function (event) {
     const key = event.key
 
-    console.log(`key: ${key}`)
-
     switch (event.key) {
       case "ArrowUp":
         selectedResultIndex =
@@ -97,6 +93,11 @@ const title = `Search`
             ? selectedResultIndex + 1
             : maxResults - 1
         focusResult()
+        break
+      case "Escape":
+        inputElement.value = ""
+        updateResults("")
+        inputElement.focus()
         break
     }
   })
