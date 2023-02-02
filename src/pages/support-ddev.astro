@@ -14,7 +14,12 @@ import { Img } from "astro-imagetools/components"
 const title = `Support DDEV`
 ---
 
-<Layout title={title}>
+<Layout
+  title={title}
+  ogImage={`/img/og-support.png`}
+  ogImageAlt={`Support DDEV title card`}
+  description={`Ways to support DDEV’s development and community.`}
+>
   <main class="max-w-4xl mx-auto mb-24">
     <Heading title={title} subtitle={`We’d love your help!`} />
     <div class="prose text-lg mt-0 mb-24">
