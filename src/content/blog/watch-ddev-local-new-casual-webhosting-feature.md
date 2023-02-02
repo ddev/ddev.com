@@ -69,8 +69,6 @@ After you have the site running, you’ll want to consider a number of other act
 
 Did you know you can now [sponsor DDEV on GitHub](https://github.com/sponsors/drud)? We’re incredibly grateful to those who have so far, and for the contributions of many users over the years. Thank you!
 
-Sign up for the latest news and releases
-
 ## Video Transcription
 
 <!-- textlint-disable -->

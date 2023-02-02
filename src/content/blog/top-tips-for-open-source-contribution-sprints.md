@@ -124,8 +124,6 @@ At DDEV, the team has deep open source roots. We are building our business on an
 - [DDEV-Local containerized local development environment](/quickstart). As of March 2018, DDEV-Local fully supports Drupal 6, 7, 8; TYPO3 CMS; Backdrop CMS, and WordPress; and can support Java applications, too.
 - Brilliant Sprint Guide [Open Source Contribution Sprint Guide on GitHub](https://github.com/drud/sprint%5Fguide) (contributions welcome!). If you’d like to know more about the nuts and bolts of setting up one of these events, check it out!
 
-Sign up for the latest news and releases
-
 ### Photo credits
 
 - Code Sprint Donetsk by Drupal Donetsk, [CC-BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/)
