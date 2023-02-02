@@ -31,7 +31,11 @@ const shouldDisplayFeatureImage =
 const authorImage = author?.data.avatarUrl
 ---
 
-<Layout title={entry.data.title}>
+<Layout
+  title={entry.data.title}
+  ogImage={hasFeatureImage ? entry.data.featureImage.src : null}
+  ogImageAlt={hasFeatureImage ? entry.data.featureImage.alt : null}
+>
   <main class="max-w-4xl mx-auto mb-24">
     <Heading
       title={entry.data.title}

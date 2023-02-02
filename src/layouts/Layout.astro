@@ -9,6 +9,8 @@ export interface Props {
   description?: string
   noindex?: boolean
   nofollow?: boolean
+  ogImage?: string
+  ogImageAlt?: string
   link?: object[]
 }
 
@@ -17,6 +19,8 @@ const {
   description = SITE_DESCRIPTION,
   noindex = false,
   nofollow = false,
+  ogImage,
+  ogImageAlt,
   link = [],
 } = Astro.props
 
@@ -44,7 +48,10 @@ import "../styles/global.css"
           title: title,
           url: canonicalUrl,
           type: `website`,
-          image: `/img/og-default.png`,
+          image: ogImage ? ogImage : `/img/og-default.png`,
+        },
+        image: {
+          alt: ogImageAlt ? ogImageAlt : `DDEV logo`,
         },
         optional: {
           description: description,
