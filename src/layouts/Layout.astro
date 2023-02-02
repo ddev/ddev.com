@@ -1,7 +1,7 @@
 ---
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
-import { AstroSeo } from "@astrolib/seo"
+import { SEO } from "astro-seo"
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config"
 
 export interface Props {
@@ -9,6 +9,7 @@ export interface Props {
   description?: string
   noindex?: boolean
   nofollow?: boolean
+  link?: object[]
 }
 
 const {
@@ -16,8 +17,12 @@ const {
   description = SITE_DESCRIPTION,
   noindex = false,
   nofollow = false,
+  link = [],
 } = Astro.props
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site)
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString()
+const pageTitle = `${title} | DDEV`
+
 import "../styles/global.css"
 ---
 
@@ -27,18 +32,27 @@ import "../styles/global.css"
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <AstroSeo
-      title={title}
+    <SEO
+      title={pageTitle}
       description={description}
       canonical={canonicalUrl}
       noindex={noindex}
       nofollow={nofollow}
+      charset={`utf-8`}
       openGraph={{
-        url: canonicalUrl,
-        title: title,
-        description: description,
-        site_name: SITE_TITLE,
-        images: [],
+        basic: {
+          title: title,
+          url: canonicalUrl,
+          type: `website`,
+          image: `/img/og-default.png`,
+        },
+        optional: {
+          description: description,
+          siteName: SITE_TITLE,
+        },
+      }}
+      extend={{
+        link: link,
       }}
     />
     <link

@@ -1,5 +1,4 @@
 ---
-import { getAllBlogPosts, formatDate, getReadTime } from "../../lib/api"
 import { getCollection } from "astro:content"
 import Layout from "../../layouts/Layout.astro"
 import BlogPostCard from "../../components/BlogPostCard.astro"
@@ -14,9 +13,17 @@ const recentPosts = posts
   .slice(0, 6)
 
 const title = `Blog Posts`
+const rssUrl = new URL(`/blog/rss.xml`, Astro.site).toString()
+const jsonUrl = new URL(`/blog/feed.json`, Astro.site).toString()
 ---
 
-<Layout title={title}>
+<Layout
+  title={title}
+  link={[
+    { rel: "alternate", href: rssUrl },
+    { rel: "alternate", href: jsonUrl },
+  ]}
+>
   <main class="max-w-4xl mx-auto">
     <Heading title={title} subtitle={`DDEV, Docker, and local development.`} />
     <div
