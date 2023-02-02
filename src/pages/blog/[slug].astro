@@ -1,6 +1,13 @@
 ---
 import { getCollection, getEntryBySlug } from "astro:content"
 import { formatDate, getCategoryUrl, getSlug } from "./../../lib/api"
+import Layout from "./../../layouts/Layout.astro"
+import PostBody from "./../../components/PostBody.astro"
+import Heading from "./../../components/Heading.astro"
+import BlogPostFooter from "./../../components/BlogPostFooter.astro"
+import FeatureImage from "./../../components/FeatureImage.astro"
+import PostUpdate from "./../../components/PostUpdate.astro"
+import { BLOG_DESCRIPTION } from "src/const"
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog")
@@ -15,13 +22,6 @@ const { Content, remarkPluginFrontmatter } = await entry.render()
 
 const author = await getEntryBySlug("authors", getSlug(entry.data.author))
 
-import Layout from "./../../layouts/Layout.astro"
-import PostBody from "./../../components/PostBody.astro"
-import Heading from "./../../components/Heading.astro"
-import BlogPostFooter from "./../../components/BlogPostFooter.astro"
-import FeatureImage from "./../../components/FeatureImage.astro"
-import PostUpdate from "./../../components/PostUpdate.astro"
-
 const hasFeatureImage =
   Object.hasOwn(entry.data, "featureImage") &&
   Object.hasOwn(entry.data.featureImage, "src")
@@ -30,12 +30,50 @@ const shouldDisplayFeatureImage =
   (!Object.hasOwn(entry.data.featureImage, "hide") ||
     entry.data.featureImage?.hide === false)
 const authorImage = author?.data.avatarUrl
+
+// Items we want to add to the JSON-LD schema specifically for blog posts
+const blogPostSchema = [
+  {
+    "@type": "Blog",
+    copyrightHolder: {
+      "@id": `${Astro.site}#identity`,
+    },
+    description: BLOG_DESCRIPTION,
+    name: `DDEV Blog`,
+    publisher: {
+      "@id": `${Astro.site}#identity`,
+    },
+    url: `${Astro.site}blog`,
+  },
+  {
+    "@type": "BlogPosting",
+    author: {
+      "@type": "Person",
+      name: author.data.name,
+    },
+    dateCreated: entry.data.pubDate,
+    dateModified: entry.data.modifiedDate
+      ? entry.data.modifiedDate
+      : entry.data.pubDate,
+    datePublished: entry.data.pubDate,
+    description: entry.data.description ?? ``,
+    headline: entry.data.title,
+    image: entry.data.featureImage.src,
+    keywords: entry.data.categories.join(","),
+    mainEntityOfPage: `${Astro.site}blog/${entry.slug}`,
+    publisher: {
+      "@id": `${Astro.site}#identity`,
+    },
+    url: `${Astro.site}blog/${entry.slug}`,
+  },
+]
 ---
 
 <Layout
   title={entry.data.title}
   ogImage={hasFeatureImage ? entry.data.featureImage.src : null}
   ogImageAlt={hasFeatureImage ? entry.data.featureImage.alt : null}
+  structuredData={blogPostSchema}
 >
   <main class="max-w-4xl mx-auto mb-24">
     <Heading

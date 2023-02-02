@@ -20,7 +20,14 @@ const getAuthorNames = () => {
 }
 
 
-// https://zod.dev/
+/**
+ * Below we’re defining schemas for our Content Collections so their
+ * frontmatter can be validated.
+ *
+ * Feature: https://docs.astro.build/en/guides/content-collections/
+ * Validation library: https://zod.dev/
+ */
+
 const authorCollection = defineCollection({
   schema: z.object({
     name: z.string(),

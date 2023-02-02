@@ -1,6 +1,6 @@
 import { getCollection } from "astro:content"
 import { marked } from "marked"
-import { SITE_DESCRIPTION } from "../../config"
+import { BLOG_DESCRIPTION } from "../../const"
 import rss from "@astrojs/rss"
 import sanitizeHtml from "sanitize-html"
 
@@ -27,7 +27,7 @@ const items = recentPosts.map((post) => {
 export const get = () =>
   rss({
     title: `DDEV Blog`,
-    description: SITE_DESCRIPTION,
+    description: BLOG_DESCRIPTION,
     site: blogUrl,
     items: items,
     customData:

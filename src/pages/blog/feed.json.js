@@ -1,6 +1,6 @@
 import { getCollection } from "astro:content"
 import { marked } from "marked"
-import { SITE_DESCRIPTION } from "../../config"
+import { BLOG_DESCRIPTION } from "../../const"
 import sanitizeHtml from "sanitize-html"
 
 const baseUrl = import.meta.env.SITE
@@ -27,7 +27,7 @@ const feedItems = recentPosts.map((post) => {
 const feed = {
   version: "https://jsonfeed.org/version/1.1",
   title: `DDEV Blog`,
-  description: SITE_DESCRIPTION,
+  description: BLOG_DESCRIPTION,
   home_page_url: blogUrl,
   feed_url: `${blogUrl}/feed.json`,
   items: feedItems,

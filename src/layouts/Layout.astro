@@ -1,8 +1,23 @@
 ---
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
+import StructuredData from "../components/meta/StructuredData.astro"
+import Icons from "../components/meta/Icons.astro"
 import { SEO } from "astro-seo"
-import { SITE_TITLE, SITE_DESCRIPTION } from "../config"
+import {
+  SITE_TITLE,
+  SITE_DESCRIPTION,
+  ORG_COUNTRY,
+  ORG_CITY,
+  ORG_STATE,
+  ORG_POSTAL_CODE,
+  ORG_STREET,
+  ORG_NAME,
+  ORG_EMAIL,
+  ORG_FOUNDED,
+  ORG_SAME_AS,
+  ORG_PHONE,
+} from "../const"
 
 export interface Props {
   title: string
@@ -12,6 +27,7 @@ export interface Props {
   ogImage?: string
   ogImageAlt?: string
   link?: object[]
+  structuredData?: object[]
 }
 
 const {
@@ -22,10 +38,53 @@ const {
   ogImage,
   ogImageAlt,
   link = [],
+  structuredData = [],
 } = Astro.props
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString()
 const pageTitle = `${title} | DDEV`
+
+let jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    ...structuredData,
+    {
+      "@type": "WebSite",
+      description: SITE_DESCRIPTION,
+      name: SITE_TITLE,
+      publisher: {
+        "@id": `${Astro.site}#identity`,
+      },
+      url: Astro.site,
+    },
+    {
+      "@id": `${Astro.site}#identity`,
+      "@type": "Organization",
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: ORG_COUNTRY,
+        addressLocality: ORG_CITY,
+        addressRegion: ORG_STATE,
+        postalCode: ORG_POSTAL_CODE,
+        streetAddress: ORG_STREET,
+      },
+      email: ORG_EMAIL,
+      foundingDate: ORG_FOUNDED,
+      image: `${Astro.site}img/og-default.png`,
+      legalName: ORG_NAME,
+      logo: {
+        "@type": "ImageObject",
+        height: 200,
+        url: `${Astro.site}logos/ddev.png`,
+        width: 852,
+      },
+      name: SITE_TITLE,
+      sameAs: ORG_SAME_AS,
+      telephone: ORG_PHONE,
+      url: Astro.site,
+    },
+  ],
+}
 
 import "../styles/global.css"
 ---
@@ -62,35 +121,10 @@ import "../styles/global.css"
         link: link,
       }}
     />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/favicon/site.webmanifest" />
-    <link
-      rel="mask-icon"
-      href="/favicon/safari-pinned-tab.svg"
-      color="#5bbad5"
-    />
-    <link rel="shortcut icon" href="/favicon/favicon.ico" />
-    <meta name="msapplication-TileColor" content="#00325a" />
-    <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
-    <meta name="theme-color" content="#5bbad5" />
+    <Icons />
     <script defer data-domain="ddev.com" src="https://plausible.io/js/script.js"
     ></script>
+    <StructuredData data={jsonLd} />
   </head>
   <body>
     <Header />

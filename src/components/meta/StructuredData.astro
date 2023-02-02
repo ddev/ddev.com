@@ -1,0 +1,10 @@
+---
+export interface Props {
+  data: object
+}
+
+const { data } = Astro.props
+const dataString = JSON.stringify(data)
+---
+
+<script type="application/ld+json" set:html={dataString}></script>

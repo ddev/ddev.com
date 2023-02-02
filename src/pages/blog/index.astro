@@ -4,6 +4,7 @@ import Layout from "../../layouts/Layout.astro"
 import BlogPostCard from "../../components/BlogPostCard.astro"
 import Heading from "../../components/Heading.astro"
 import Paging from "../../components/Paging.astro"
+import { BLOG_DESCRIPTION } from "src/const"
 
 const posts = await getCollection("blog")
 const recentPosts = posts
@@ -19,7 +20,7 @@ const jsonUrl = new URL(`/blog/feed.json`, Astro.site).toString()
 
 <Layout
   title={title}
-  description={`Posts about DDEV, Docker, and local development.`}
+  description={BLOG_DESCRIPTION}
   link={[
     { rel: "alternate", href: rssUrl },
     { rel: "alternate", href: jsonUrl },

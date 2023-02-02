@@ -7,7 +7,7 @@ import fs2 from "fs"
 import path from 'path'
 import Slugger from 'github-slugger'
 import { Octokit } from "octokit";
-import { GITHUB_REPO } from "../config"
+import { GITHUB_REPO } from "./../const"
 
 dotenv.config()
 
