@@ -11,7 +11,7 @@ categories:
   - DevOps
 ---
 
-In 2022, users from designers to developers to testers and open source contributors have a wide variety of local development environments to chose from. Because most of the tools and platforms we use will run in many different operating systems and environments, we have the option of rolling our own, using a commercial project like [MAMP](https://www.mamp.info/en/mamp-pro/mac/) or [Local](https://localwp.com/) (for WordPress), or using one of the many Docker-based solutions like [DDEV](http://ddev.readthedocs.io), [Docksal](https://docksal.io/), or [Lando](https://lando.dev/).
+In 2022, users from designers to developers to testers and open source contributors have a wide variety of local development environments to choose from. Because most of the tools and platforms we use will run in many different operating systems and environments, we have the option of rolling our own, using a commercial project like [MAMP](https://www.mamp.info/en/mamp-pro/mac/) or [Local](https://localwp.com/) (for WordPress), or using one of the many Docker-based solutions like [DDEV](http://ddev.readthedocs.io), [Docksal](https://docksal.io/), or [Lando](https://lando.dev/).
 
 **But what’s so special about DDEV**? What makes it different from other Docker-based solutions like [Lando](https://lando.dev/) or [Docksal](https://docksal.io/)? I recently spent a little time exploring several similar platforms and was impressed with what I saw, but definitely came away wanting to highlight a number of DDEV features.
 
