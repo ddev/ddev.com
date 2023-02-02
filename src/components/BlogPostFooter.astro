@@ -1,21 +1,20 @@
 ---
 export interface Props {
-  activeUrl: string
+  activeSlug: string
 }
 
-const { activeUrl } = Astro.props
+const { activeSlug } = Astro.props
+import { getCollection } from "astro:content"
 
 let next, prev
 
-const posts = await Astro.glob("./../pages/blog/*.md")
+const posts = await getCollection("blog")
 const orderedPosts = posts.sort((a, b) => {
-  return new Date(a.frontmatter.pubDate) > new Date(b.frontmatter.pubDate)
-    ? -1
-    : 1
+  return new Date(a.data.pubDate) > new Date(b.data.pubDate) ? -1 : 1
 })
 
 orderedPosts.forEach((post, index) => {
-  if (post.url === activeUrl) {
+  if (post.slug === activeSlug) {
     if (posts[index - 1]) {
       prev = posts[index - 1]
     }
@@ -31,16 +30,16 @@ orderedPosts.forEach((post, index) => {
   {
     prev && (
       <a
-        href={prev.url}
+        href={`/blog/${prev.slug}`}
         rel="prefetch"
         class="flex border items-center rounded-md w-full my-1 md:my-0 content-center justify-center md:justify-start p-4 hover:border-blue-300 hover:shadow-sm"
-        title={`Previous: ${prev.frontmatter.title}`}
+        title={`Previous: ${prev.data.title}`}
       >
         <div>
           <span class="font-mono text-sm block text-navy-300 tracking-wider">
             Previous Post
           </span>
-          <span class="py-3 md:w-full font-bold">{prev.frontmatter.title}</span>
+          <span class="py-3 md:w-full font-bold">{prev.data.title}</span>
         </div>
       </a>
     )
@@ -48,16 +47,16 @@ orderedPosts.forEach((post, index) => {
   {
     next && (
       <a
-        href={next.url}
+        href={`/blog/${next.slug}`}
         rel="prefetch"
         class="flex border items-center rounded-md w-full my-1 md:my-0 content-center justify-center md:justify-end text-right p-4 hover:border-blue-300 hover:shadow-sm"
-        title={`Next: ${next.frontmatter.title}`}
+        title={`Next: ${next.data.title}`}
       >
         <div>
           <span class="font-mono text-sm block text-navy-300 tracking-wider">
             Next Post
           </span>
-          <span class="py-3 md:w-full font-bold">{next.frontmatter.title}</span>
+          <span class="py-3 md:w-full font-bold">{next.data.title}</span>
         </div>
       </a>
     )

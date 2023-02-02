@@ -2,34 +2,33 @@
 /**
  * A single card used to represent a blog post. Should probably be placed in a flex grid.
  */
-export interface Props {
-  post: object
+import type { CollectionEntry } from "astro:content"
+interface Props {
+  post: CollectionEntry<"blog">
 }
 
+import { getEntryBySlug } from "astro:content"
 import { Picture } from "astro-imagetools/components"
-import {
-  getAuthorUrl,
-  getAuthorImage,
-  formatDate,
-  getCategoryUrl,
-} from "../lib/api"
+import { getSlug, formatDate, getCategoryUrl } from "../lib/api"
 
 const { post } = Astro.props
+const { remarkPluginFrontmatter } = await post.render()
 
-const authorUrl = getAuthorUrl(post.frontmatter.author)
-const authorImage = getAuthorImage(post.frontmatter.author)
+const author = await getEntryBySlug("authors", getSlug(post.data.author))
+const authorImage = author.data.avatarUrl
+
 const hasFeatureImage =
-  Object.hasOwn(post.frontmatter, "featureImage") &&
-  Object.hasOwn(post.frontmatter.featureImage, "src")
+  Object.hasOwn(post.data, "featureImage") &&
+  Object.hasOwn(post.data.featureImage, "src")
 
 const featureImageUrl = hasFeatureImage
-  ? post.frontmatter.featureImage.src
+  ? post.data.featureImage.src
   : `/img/generic-thumbnail.png`
 
-const featureImageAlt = hasFeatureImage ? post.frontmatter.featureImage.alt : ``
+const featureImageAlt = hasFeatureImage ? post.data.featureImage.alt : ``
 
-const firstCategory = post.frontmatter.categories.length
-  ? post.frontmatter.categories[0]
+const firstCategory = post.data.categories.length
+  ? post.data.categories[0]
   : null
 ---
 
@@ -68,35 +67,35 @@ const firstCategory = post.frontmatter.categories.length
           {firstCategory}
         </a>
       </p>
-      <a href={post.url} class="block mt-2">
+      <a href={`/blog/${post.slug}`} class="block mt-2">
         <p class="text-xl font-semibold text-gray-900">
-          {post.frontmatter.title}
+          {post.data.title}
         </p>
       </a>
     </div>
     <div class="mt-6 flex items-center">
       <div class="flex-shrink-0">
-        <a href={authorUrl}>
-          <span class="sr-only">{post.frontmatter.author}</span>
+        <a href={`/blog/author/${author.slug}`}>
+          <span class="sr-only">{post.data.author}</span>
           <img
             class="h-10 w-10 rounded-full"
             src={authorImage}
-            alt={post.frontmatter.author}
+            alt={post.data.author}
           />
         </a>
       </div>
       <div class="ml-3">
         <p class="text-sm font-medium text-gray-900">
-          <a href={authorUrl} class="hover:underline">
-            {post.frontmatter.author}
+          <a href={`/blog/author/${author.slug}`} class="hover:underline">
+            {post.data.author}
           </a>
         </p>
         <div class="flex space-x-1 text-sm text-gray-500">
-          <time datetime={post.frontmatter.pubDate}
-            >{formatDate(post.frontmatter.pubDate)}</time
+          <time datetime={post.data.pubDate}
+            >{formatDate(post.data.pubDate)}</time
           >
           <span aria-hidden="true"> &middot;</span>
-          <span> {post.frontmatter.minutesRead}</span>
+          <span> {remarkPluginFrontmatter.minutesRead}</span>
         </div>
       </div>
     </div>

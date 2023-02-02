@@ -1,15 +1,15 @@
 ---
-import { getAuthorData, getAuthorUrl } from "../../lib/api"
+import { getCollection } from "astro:content"
 import Layout from "../../layouts/Layout.astro"
 import Heading from "../../components/Heading.astro"
 
-const authors = getAuthorData()
-const posts = await Astro.glob("./*.md")
+const authors = await getCollection("authors")
+const posts = await getCollection("blog")
 
 // Filter out authors without any posts
 const activeAuthors = authors.filter((author) => {
   const authorPosts = posts.filter(
-    (post) => post.frontmatter.author === author.name
+    (post) => post.data.author === author.data.name
   )
 
   return authorPosts.length > 0
@@ -27,7 +27,7 @@ const title = `Blog Authors`
       {
         activeAuthors.map((author) => (
           <div>
-            <a href={getAuthorUrl(author.name)}>{author.name}</a>
+            <a href={`/blog/author/${author.slug}`}>{author.data.name}</a>
           </div>
         ))
       }

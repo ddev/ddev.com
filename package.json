@@ -9,8 +9,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "textlint": "./node_modules/.bin/textlint 'src/pages/**'",
-    "textlint:fix": "./node_modules/.bin/textlint 'src/pages/**' --fix"
+    "textlint": "./node_modules/.bin/textlint 'src/content/**'",
+    "textlint:fix": "./node_modules/.bin/textlint 'src/content/**' --fix"
   },
   "dependencies": {
     "@astrojs/prefetch": "^0.1.2",

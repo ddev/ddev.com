@@ -8,7 +8,7 @@ featureImage:
   caption:
   credit: "Photo by Marvin Ronsdorf on [Unsplash](https://unsplash.com/search/photos/eight?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
-  - DDEV
+  - DevOps
 ---
 
 (Updated 2020-02-05)
@@ -17,9 +17,9 @@ In this post, I’m going to give you a quick overview of some tips, tricks, and
 
 [Download DDEV](https://github.com/drud/ddev)
 
-### Using a new ddev command? Check the help `<command> -h`.
+### Using a new `ddev` command? Check the help `<command> -h`.
 
-If you’re using new ddev command, always make sure to check out the help available. Type `ddev <command> -h`. for example, `ddev describe -h`.
+If you’re using new `ddev` command, always make sure to check out the help available. Type `ddev <command> -h`. for example, `ddev describe -h`.
 
 This will bring up help that explains what that command does, how to use it, examples, and any flags available. You might come across things that even work differently than expected.
 

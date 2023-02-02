@@ -1,5 +1,6 @@
 ---
 import { getSlug } from "../../../lib/api"
+import { getCollection } from "astro:content"
 import Layout from "../../../layouts/Layout.astro"
 import BlogPostCard from "../../../components/BlogPostCard.astro"
 
@@ -8,9 +9,9 @@ import BlogPostCard from "../../../components/BlogPostCard.astro"
  * https://docs.astro.build/en/reference/api-reference/#getstaticpaths
  */
 export async function getStaticPaths() {
-  const posts = await Astro.glob("./../*.md")
+  const posts = await getCollection("blog")
   const categories = [
-    ...new Set(posts.map((post) => post.frontmatter.categories).flat()),
+    ...new Set(posts.map((post) => post.data.categories).flat()),
   ]
 
   return categories.map((category) => {
@@ -21,12 +22,9 @@ export async function getStaticPaths() {
       props: {
         name: category,
         posts: posts
-          .filter((post) => post.frontmatter.categories.includes(category))
+          .filter((post) => post.data.categories.includes(category))
           .sort((a, b) => {
-            return new Date(a.frontmatter.pubDate) >
-              new Date(b.frontmatter.pubDate)
-              ? -1
-              : 1
+            return new Date(a.data.pubDate) > new Date(b.data.pubDate) ? -1 : 1
           }),
       },
     }

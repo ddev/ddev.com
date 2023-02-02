@@ -3,17 +3,16 @@ import Layout from "../../layouts/Layout.astro"
 import BlogPostCard from "../../components/BlogPostCard.astro"
 import Heading from "../../components/Heading.astro"
 import Paging from "../../components/Paging.astro"
+import { getCollection } from "astro:content"
 
 /**
  * Tell Astro to build routes for paginated blog post listings.
  * https://docs.astro.build/en/reference/api-reference/#getstaticpaths
  */
 export async function getStaticPaths({ paginate }) {
-  const posts = await Astro.glob("./*.md")
+  const posts = await getCollection("blog")
   const allPosts = posts.sort((a, b) => {
-    return new Date(a.frontmatter.pubDate) > new Date(b.frontmatter.pubDate)
-      ? -1
-      : 1
+    return new Date(a.data.pubDate) > new Date(b.data.pubDate) ? -1 : 1
   })
 
   // Generate pages from our array of astronauts, with 6 to a page

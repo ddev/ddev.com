@@ -1,5 +1,4 @@
 import { defineConfig } from "astro/config"
-import { existsSync } from "fs"
 import { plainTextPlugin } from "@barnabask/astro-minisearch"
 import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs"
 import { astroImageTools } from "astro-imagetools"
@@ -11,31 +10,9 @@ import sitemap from "@astrojs/sitemap"
 import tailwind from "@astrojs/tailwind"
 import widont from "rehype-widont"
 
-/**
- * A tiny custom plugin that dynamically designates layouts for Markdown files.
- * Right now this means appending `layout: @layouts/Blog.astro` to our blog posts
- * so we don’t need to do that with each file.
- */
-function defaultLayoutPlugin() {
-  const layouts = new Set()
-  return function (tree, file) {
-    const fileName = file.history[0]
-    const directory = fileName.split("/").slice(-2)[0]
-    const layout =
-      directory.charAt(0).toUpperCase() + directory.slice(1) + ".astro"
-    if (layouts.has(layout) || existsSync(`./src/layouts/${layout}`)) {
-      layouts.add(layout)
-      file.data.astro.frontmatter.layout = `@layouts/${layout}`
-    }
-  }
-}
-
 // https://astro.build/config
 export default defineConfig({
   site: "https://ddev.com/",
-  markdown: {
-    remarkPlugins: [remarkReadingTime],
-  },
   integrations: [
     tailwind(),
     react(),
@@ -61,7 +38,7 @@ export default defineConfig({
     shikiConfig: {
       theme: "nord",
     },
-    remarkPlugins: [defaultLayoutPlugin, remarkReadingTime],
+    remarkPlugins: [remarkReadingTime],
     rehypePlugins: [
       widont,
       plainTextPlugin({

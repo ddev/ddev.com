@@ -1,16 +1,15 @@
 ---
 import { getAllBlogPosts, formatDate, getReadTime } from "../../lib/api"
+import { getCollection } from "astro:content"
 import Layout from "../../layouts/Layout.astro"
 import BlogPostCard from "../../components/BlogPostCard.astro"
 import Heading from "../../components/Heading.astro"
 import Paging from "../../components/Paging.astro"
 
-const posts = await Astro.glob("./*.md")
+const posts = await getCollection("blog")
 const recentPosts = posts
   .sort((a, b) => {
-    return new Date(a.frontmatter.pubDate) > new Date(b.frontmatter.pubDate)
-      ? -1
-      : 1
+    return new Date(a.data.pubDate) > new Date(b.data.pubDate) ? -1 : 1
   })
   .slice(0, 6)
 

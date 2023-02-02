@@ -43,72 +43,12 @@ export function getSlug(value: string) {
 }
 
 /**
- * Returns the URL for an author’s detail page.
- * @param name The author’s full name
- * @returns root-relative path
- */
-export function getAuthorUrl(name: string) {
-  return `/blog/author/${getSlug(name)}`;
-}
-
-/**
- * Returns the URL for an author’s avatar image.
- * @param name The author’s full name
- * @returns absolute URL
- */
-export function getAuthorImage(name: string) {
-  const authorData = getAuthorDataByName(name);
-  return authorData?.avatarUrl
-}
-
-/**
  * Returns the URL for a category’s listing page.
  * @param name The full category name
  * @returns root-relative path
  */
 export function getCategoryUrl(name: string) {
   return `/blog/category/${getSlug(name)}`
-}
-
-/**
- * Returns author detail from the JSON blob for a given author.
- * @param name The author’s full name
- * @returns object
- */
-export function getAuthorDataByName(name: string) {
-  const authorData = getAuthorData();
-  const author = authorData.find((author: object) => author.name == name)
-
-  if (!author) {
-    console.error(`No author data found for “${name}”!`);
-    return;
-  }
-
-  return author
-}
-
-// Local reference for loaded data
-let authorData: Array<object>
-
-/**
- * Gets data for the JSON blob at `src/authors.json`.
- * @returns array
- */
-export function getAuthorData() {
-  const dir = path.resolve('./src/')
-  const filePath = dir + '/authors.json'
-  
-  if (authorData) {
-    return authorData
-  } else if (fs2.existsSync(filePath)) {
-    const data = fs2.readFileSync(filePath)
-    authorData = JSON.parse(data);
-    return authorData;
-  } else {
-    console.log(`Author data not found in ${filePath}!`)
-  }
-
-  return
 }
 
 /**

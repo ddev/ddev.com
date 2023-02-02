@@ -44,10 +44,12 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`      | Preview your build locally, before deploying       |
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
 | `npm run astro --help` | Get help using the Astro CLI                       |
+| `npm run textlint`     | Run textlint on content collections                |
+| `npm run textlint:fix` | Apply fixable updates to resolve texlint errors    |
 
 ## Textlint
 
-A basic textlint configuration lives in `.textlintrc` and runs against `src/pages/**` to try and help keep language consistent and accurate. This doesn’t yet conform to the DDEV docs [spellcheck rules](https://github.com/drud/ddev/blob/master/.spellcheck.yml) and [massive exclusion list](https://github.com/drud/ddev/blob/master/.spellcheckwordlist.txt), but ideally the two can someday converge.
+A basic textlint configuration lives in `.textlintrc` and runs against `src/content/**` to try and help keep language consistent and accurate. This doesn’t yet conform to the DDEV docs [spellcheck rules](https://github.com/drud/ddev/blob/master/.spellcheck.yml) and [massive exclusion list](https://github.com/drud/ddev/blob/master/.spellcheckwordlist.txt), but ideally the two can someday converge.
 
 Textlint’s [default terminology](https://github.com/sapegin/textlint-rule-terminology/blob/master/terms.jsonc) catches a lot of accepted best practices on its own, where the only major override is to allow “website” (instead of its suggested “site”) because it’s rampant in blog posts and documentation. Same with the “front end” and “back end” conundrum and two-word “command line”.
 
@@ -74,7 +76,7 @@ categories:
 ---
 ```
 
-Name your file with a kebab-case, URL-and-SEO-friendly slug with a `.md` extension, and drop it in the `src/pages/blog/` directory.
+Name your file with a kebab-case, URL-and-SEO-friendly slug with a `.md` extension, and drop it in the `src/content/blog/` directory.
 
 Give it a succinct title, and if you include a feature image be sure to write descriptive alt text along with an optional caption and image credit. The `caption:` and `credit:` fields can both use Markdown, but you’ll probably need to wrap the whole value in straight quotes (`"`).
 
@@ -87,7 +89,7 @@ Choose whichever categories apply, with special attention to the first because i
 - _Guides_ (how-to style posts)
 - _Videos_ (posts that include or primarily feature video content)
 
-> 💡 **If you’re publishing work from a new author**, add an entry for them in `src/authors.json`! The `"name"` value needs to match the one you’re using in your post frontmatter.
+> 💡 **If you’re publishing work from a new author**, add an entry for them in `src/content/authors/`! The `"name"` value needs to match the one you’re using in your post frontmatter.
 
 ### Pages
 
