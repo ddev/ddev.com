@@ -63,7 +63,7 @@ I am currently a Software Developer, having joined DDEV in December 2018\. I wor
 
 This is my second Kubecon. I previously went to Kubecon Austin in December 2017 where I got my first true exposure to Kubernetes and the cloud-native community. Since then, I can’t begin to describe how much I’ve learned about Kubernetes. My latest big project outside of my work on DDEV-Live was an automated Kubernetes microservice testing project I had to develop as a research assistant for a Ph.D research project during my last semester of college. During this time I was also working with DDEV full time, and was able to directly apply what I learned at work to this research-oriented work.
 
-**![Nic at KubeCon](/img/blog/2019/05/kubecon-nic-768x1024.jpg)**
+**![Nic at KubeCon](/img/blog/2019/05/kubecon-nic.jpg)**
 
 **What sessions at KubeCon really struck your interest?**
 
