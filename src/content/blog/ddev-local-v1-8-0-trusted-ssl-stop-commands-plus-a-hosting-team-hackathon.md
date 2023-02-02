@@ -6,7 +6,7 @@ featureImage:
   src: /img/blog/2019/05/ekl-20190418-0240.jpg
   alt:
   caption:
-  credit:
+  credit: "Photo courtesy of [Elli Ludwigson](/blog/author/elli-ludwigson)."
 categories:
   - Announcements
 ---
@@ -56,5 +56,3 @@ We’ve also been doing more work as pairs to encourage frequent conversation, q
 This week we visited [Boulder Startup Week and talked about DevTools](https://boulderstartupweek2019.sched.com/event/NNY7/so-you-want-to-launch-a-devtool)! Our CTO Kevin Bridges (center in the above photo) spoke on a sold-out panel with other builders and leaders about the ins and outs of building, managing, and implementing a dev tool. Thank you very much to the other panelists and organizers, it was a great conversation!
 
 Our friend Mike Anello’s DDEV book was recently featured on a “[Top 11 PHP books of 2019](https://bookauthority.org/books/new-php-books)” list! The next session of Mike’s online DrupalEasy course, [Professional Local Development with DDEV](https://www.drupaleasy.com/ddev), is Wednesday, June 12th.
-
-Photo courtesy [Elli Ludwigson](https://ddev.com/author/elli/)
