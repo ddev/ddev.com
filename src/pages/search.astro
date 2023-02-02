@@ -62,12 +62,9 @@ const title = `Search`
   }
 
   const focusResult = () => {
-    console.log(`focusResult: ${selectedResultIndex}`)
-
     const container = document.getElementById("results")
     const element = container.querySelectorAll(`a`)
 
-    // TODO: don’t zoom past end
     element[selectedResultIndex].focus()
   }
 
