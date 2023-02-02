@@ -1,6 +1,7 @@
 ---
 title: "Eight (more) ways to get the most out of DDEV-Local"
 pubDate: 2018-12-06
+modifiedDate: 2020-02-05
 author: Randy Fay
 featureImage:
   src: /img/blog/2018/12/marvin-ronsdorf-196913-unsplash-e1544104467254.jpg
@@ -10,8 +11,6 @@ featureImage:
 categories:
   - DevOps
 ---
-
-(Updated 2020-02-05)
 
 In this post, I’m going to give you a quick overview of some tips, tricks, and a couple of cool geeky features DDEV-Local users often overlook. From the start, we’ve had a vision of building a dev-to-deploy toolset. We started with DDEV-Local to give you a stable, reliable, universal local development environment. To create a “just works” experience meant we’ve made some assumptions so you can get started quickly. On the other hand, DDEV also gives power users the flexibility to adapt and change the tools—even on a per-project basis—to suit their needs. So, if you’re brand new to using DDEV-Local, there might be things you’ve missed.
 

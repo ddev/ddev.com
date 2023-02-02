@@ -1,6 +1,8 @@
 ---
 title: "DDEV, Docker, Chromebook!"
 pubDate: 2020-05-04
+modifiedDate: 2021-01-25
+modifiedComment: "Updated with [input from](https://github.com/drud/ddev/discussions/2740) [@ops-andy](https://github.com/ops-andy) (thanks!)"
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/04/chromebook-3.jpg
@@ -10,8 +12,6 @@ featureImage:
 categories:
   - Guides
 ---
-
-Updated 2021-01-25 with [input from](https://github.com/drud/ddev/discussions/2740)[@ops-andy](https://github.com/ops-andy) (thanks!)
 
 [DDEV-Local](http://github.com/drud/ddev) and Docker work fine for local development on an inexpensive Chromebook!
 

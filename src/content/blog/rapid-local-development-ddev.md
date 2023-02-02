@@ -11,7 +11,9 @@ categories:
   - DevOps
 ---
 
-![](/img/blog/2018/03/joe.jpg)I wanted to know how Joe Shindelar manages to generate and deliver hundreds of hours of Drupal learning content and where DDEV fits into the picture. Joe is ‎Lead Trainer and Lead Developer at [Lullabot Education](http://lullaboteducation.com/), where they provide expert Drupal training on the e-learning site [Drupalize.me](https://drupalize.me/).
+![](/img/blog/2018/03/joe.jpg)
+
+I wanted to know how Joe Shindelar manages to generate and deliver hundreds of hours of Drupal learning content and where DDEV fits into the picture. Joe is Lead Trainer and Lead Developer at [Lullabot Education](http://lullaboteducation.com/), where they provide expert Drupal training on the e-learning site [Drupalize.me](https://drupalize.me/).
 
 Joe told me, “I use DDEV pretty much any time I’m working on a Drupal site on my localhost.” In his case, that means to rehearse and create course recordings, teach at in-person workshops, and to recreate training sites when supporting learners and maintaining content.
 

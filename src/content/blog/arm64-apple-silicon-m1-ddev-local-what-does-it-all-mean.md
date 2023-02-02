@@ -1,6 +1,8 @@
 ---
 title: "ARM64! Apple Silicon! M1! DDEV-Local! What does it all mean?"
 pubDate: 2020-11-18
+modifiedDate: 2020-12-16
+modifiedComment: "An Apple Silicon M1 prerelease [is now available](ttps://github.com/drud/ddev/releases)! See the release notes for installation details."
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/11/apple-ddev.jpg
@@ -11,8 +13,6 @@ categories:
   - DevOps
   - Performance
 ---
-
-**Update 2020-12-16:** _An Apple Silicon M1 prerelease of DDEV-Local is now available in_ [_DDEV releases_](https://github.com/drud/ddev/releases)_! There is information there on how to get the latest prerelease for Docker Desktop for Mac on M1_.
 
 ARM64 is the new word of the day all over the place since Apple has switched their hardware platform to “Apple Silicon,” which is on the ARM64 platform. Although the Apple news and benchmarks are exciting, ARM is not new, lots of devices already use it, and our [open source DDEV-Local development environment](https://github.com/drud/ddev/releases/tag/v1.16.0) already supports it on Linux and WSL2.
 

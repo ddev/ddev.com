@@ -1,6 +1,7 @@
 ---
 title: "DDEV-Local Database Management"
 pubDate: 2020-04-03
+modifiedDate: 2020-12-07
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/04/d8composer-phpmyadmin.png
@@ -11,8 +12,6 @@ featureImage:
 categories:
   - DevOps
 ---
-
-_Updated 2020-12-07_
 
 [DDEV-Local](http://github.com/drud/ddev) provides lots and lots of flexibility for you in managing your databases between your local development, staging and production environments. Most people know about `ddev import-db` and `ddev export-db` but those tools now have more flexibility and there are plenty of other adaptable ways to work with your databases.
 

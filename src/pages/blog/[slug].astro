@@ -20,6 +20,7 @@ import PostBody from "./../../components/PostBody.astro"
 import Heading from "./../../components/Heading.astro"
 import BlogPostFooter from "./../../components/BlogPostFooter.astro"
 import FeatureImage from "./../../components/FeatureImage.astro"
+import PostUpdate from "./../../components/PostUpdate.astro"
 
 const hasFeatureImage =
   Object.hasOwn(entry.data, "featureImage") &&
@@ -53,6 +54,14 @@ const authorImage = author?.data.avatarUrl
           caption={entry.data.featureImage.caption}
           credit={entry.data.featureImage.credit}
           shadow={entry.data.featureImage.shadow}
+        />
+      )
+    }
+    {
+      entry.data.modifiedDate && (
+        <PostUpdate
+          date={entry.data.modifiedDate}
+          comment={entry.data.modifiedComment}
         />
       )
     }
