@@ -43,7 +43,7 @@ _**Note that the default to BASE_IMAGE is overridden by ddev at image build time
 
 ### Modifying configuration files
 
-If you want to add files or override configuration files, it’s easy enough to do. For example, in this[ Stack Overflow question](https://stackoverflow.com/questions/60162842/how-can-i-add-basic-authentication-to-the-mailhog-service-in-ddev-local), a user wanted to put basic authentication in front of the MailHog configuration. The easiest way to do this is to override the /etc/supervisor/conf.d/mailhog.conf. So as that answer suggests:
+If you want to add files or override configuration files, it’s easy enough to do. For example, in this[ Stack Overflow question](https://stackoverflow.com/questions/60162842/how-can-i-add-basic-authentication-to-the-mailhog-service-in-ddev-local), a user wanted to put basic authentication in front of the MailHog configuration. The easiest way to do this is to override the `/etc/supervisor/conf.d/mailhog.conf`. So as that answer suggests:
 
 - Put the new `mailhog.conf` and `mailhog-auth.txt` into the `.ddev/web-build` directory.
 - Add a Dockerfile to `.ddev/web-build` that uses the Docker build ADD command to put them into place:
