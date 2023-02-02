@@ -95,7 +95,7 @@ Now I can go to the Search API configuration at `/admin/config/search/search-api
 ## Resources
 
 - DDEV-Local’s [regular Solr documentation](https://ddev.readthedocs.io/en/latest/users/extend/additional-services/#apache-solr) has been updated to match this tutorial. It’s slightly less verbose than this blog post and tries to be a bit less Drupal-oriented.
-- DDEV-Local’s suggested [starter docker-compose.solr.yaml](https://github.com/drud/ddev/blob/master/pkg/servicetest/testdata/TestServices/docker-compose.solr.yaml) configuration file has been updated with more comments and hopefully a predictable usage.
+- DDEV-Local’s suggested [starter docker-compose.solr.yaml](https://github.com/ddev/ddev/blob/master/pkg/servicetest/testdata/TestServices/docker-compose.solr.yaml) configuration file has been updated with more comments and hopefully a predictable usage.
 - @mglaman’s [writeup on multiple Solr cores](https://glamanate.com/blog/using-multiple-solr-cores-ddev) explains that subject. It does require a more in-depth understanding of docker-solr.
 - [Docker Solr repository](https://github.com/docker-solr/docker-solr), [Docker Hub](https://hub.docker.com/%5F/solr/), [README](https://github.com/docker-solr/docker-solr/blob/master/README.md), [solr_precreate script](https://github.com/docker-solr/docker-solr/blob/master/scripts/solr-precreate)
-- For TYPO3 Solr support, an approach using TYPO3’s Solr extension is in [ddev-contrib](https://github.com/drud/ddev-contrib), [TYPO3-specific Apache Solr Integration for DDEV-Local](https://github.com/drud/ddev-contrib/tree/master/docker-compose-services/typo3-solr).
+- For TYPO3 Solr support, an approach using TYPO3’s Solr extension is in [ddev-contrib](https://github.com/ddev/ddev-contrib), [TYPO3-specific Apache Solr Integration for DDEV-Local](https://github.com/ddev/ddev-contrib/tree/master/docker-compose-services/typo3-solr).

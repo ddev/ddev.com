@@ -98,7 +98,7 @@ It’s easy to change the PHP versions on a per-project basis either in the conf
 
 Check the docs on how to [change the PHP versions](https://ddev.readthedocs.io/en/latest/users/extend/customization-extendibility/#changing-php-version).
 
-DDEV-Local directly supports versions from 5.6 through 7.4, and you can even go back farther into the past using the [Old PHP recipe in github.com/drud/ddev-contrib](https://github.com/drud/ddev-contrib/tree/master/docker-compose-services/old%5Fphp).
+DDEV-Local directly supports versions from 5.6 through 7.4, and you can even go back farther into the past using the [Old PHP recipe in github.com/ddev/ddev-contrib](https://github.com/ddev/ddev-contrib/tree/master/docker-compose-services/old%5Fphp).
 
 ### Windows users: make sure to remove inactive hostnames
 

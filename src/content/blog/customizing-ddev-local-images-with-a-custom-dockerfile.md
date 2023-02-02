@@ -89,4 +89,4 @@ RUN cp /etc/php/7.1/mods-available/mcrypt.ini /etc/php/${PHP_VERSION}/mods-avail
 
 ## Join the conversation!
 
-We’d love to hear about your recipes! PR them into [ddev-contrib](http://github.com/drud/ddev-contrib), or tweet, or blog about them and give us a holler when you do. And we’re always happy to hear from you on any of our [support channels](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation).
+We’d love to hear about your recipes! PR them into [ddev-contrib](http://github.com/ddev/ddev-contrib), or tweet, or blog about them and give us a holler when you do. And we’re always happy to hear from you on any of our [support channels](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation).

@@ -47,7 +47,9 @@ Meanwhile, adoption of Docker and containerized development was snowballing. Fro
 
 Adam saw someone mention DDEV on Twitter and decided to try it out. “Installation was a breeze.” If you meet the [system requirements](https://ddev.readthedocs.io/en/latest/#system-requirements), then [DDEV installation](https://ddev.readthedocs.io/en/latest/#installation) is a one-line command:
 
+```
 brew tap drud/ddev && brew install ddev
+```
 
 After installing DDEV-Local, Adam “was immediately impressed by the fact that it was both a global tool with commands and that it maintained a local, project-specific configuration layer. After installing the tool, I ran a few commands and ‘poof!’, a Drupal install!”
 
