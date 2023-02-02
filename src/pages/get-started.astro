@@ -14,7 +14,10 @@ const codeTheme = "nord"
 const latestRelease = await getLatestReleaseVersion()
 ---
 
-<Layout title={title}>
+<Layout
+  title={title}
+  description={`Start here if you want to give DDEV a try!`}
+>
   <main class="max-w-4xl mx-auto mb-24">
     <Heading title={title} subtitle={`Install and start using DDEV.`} />
     <div class="prose mb-16">
@@ -545,7 +548,7 @@ const latestRelease = await getLatestReleaseVersion()
             </a>
           </Fragment>
         </Tabs>
-      
+
         <p>Confirm that you’ve now got DDEV installed: 🎉</p>
         <Terminal>
           <Code

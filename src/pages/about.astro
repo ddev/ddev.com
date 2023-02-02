@@ -17,7 +17,10 @@ const sponsorData = await getSponsors()
 const releaseData = await getReleases()
 ---
 
-<Layout title={title}>
+<Layout
+  title={title}
+  description={`A brief look at DDEV’s backstory and contributors.`}
+>
   <main class="max-w-4xl mx-auto mb-24">
     <Heading title={`The Story of DDEV`} />
     <div class="flex">

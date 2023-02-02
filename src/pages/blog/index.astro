@@ -19,6 +19,7 @@ const jsonUrl = new URL(`/blog/feed.json`, Astro.site).toString()
 
 <Layout
   title={title}
+  description={`Posts about DDEV, Docker, and local development.`}
   link={[
     { rel: "alternate", href: rssUrl },
     { rel: "alternate", href: jsonUrl },
