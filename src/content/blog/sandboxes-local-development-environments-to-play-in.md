@@ -49,5 +49,3 @@ After that, making new sites is a breeze. Each time you want to set up a new sit
 All done? Then `ddev remove` to finish up. It’s good to know that by default, [ddev remove is not destructive](https://ddev.readthedocs.io/en/latest/users/cli-usage/#removing-a-project), it removes the container but not the database. (Though you can add the `--remove-data` flag to destroy the data if you need to.)
 
 So next time you want to start that environment up again? You guessed it, `ddev start` is all you need.
-
-[Try DDEV-Local today.](https://ddev.com/get-started/)

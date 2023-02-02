@@ -59,7 +59,5 @@ And that’s what smart developers do. “What I like is that I don’t have to 
 
 Thanks to tools like DDEV Danita has been able to spend less time on solving problems with local development and configuration, and more time on solving problems for clients. This improved efficiency saves costs for her clients and generates more revenue for her at the same time. Reflecting on how much things have improved recently, Danita said she “almost feels guilty” charging clients when she finds ways to save time. “Almost,” she laughed.
 
-**[Get started with DDEV-Local](/get-started/).**
-
 [^1]: SBA Office of Advocacy. 2017. United States Small Business Economic Profile. Available at: [www.sba.gov](https://www.sba.gov/sites/default/files/advocacy/United%5FStates%5F1.pdf). \[Accessed 30 January 2018\].
 [^2]: National Center for Charitable Statistics. 2016.Quick Facts About Nonprofits. Available at: [nccs.urban.org](http://nccs.urban.org/data-statistics/quick-facts-about-nonprofits). \[Accessed 30 January 2018\].

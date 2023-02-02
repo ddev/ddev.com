@@ -59,10 +59,6 @@ I asked Joe, what would he do if he could get more of his time back.“Focus on 
 
 DDEV is one tool that helps Joe speed up content development and testing, so he can reclaim some time to do more of what he loves.
 
-Try DDEV today. Installation takes less than a minute. Creating a Drupal sandbox is a matter of answering a few questions.
-
-**[Get started with DDEV-Local](/get-started/)**
-
 ---
 
 Photo of Joe Schindelar used with permission from [lullaboteducation.com](http://lullaboteducation.com/)

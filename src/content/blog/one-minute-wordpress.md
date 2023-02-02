@@ -53,5 +53,3 @@ Once you’re able to get up and running, you can begin to explore the [addition
 ### Future Roadmap
 
 Coming soon on [the project roadmap](https://github.com/drud/ddev/wiki/roadmap), we will expand support to Windows, provide the ability to add additional containers to provide additional services and open the door for integration with third-party hosting providers in order to easily sync down content and files from the cloud. Stay tuned!
-
-**[Get started with DDEV-Local](/get-started/) today!**

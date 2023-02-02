@@ -69,5 +69,3 @@ And if you do need to wipe out the database, you can add a flag to remove the da
 Anytime you want to know what a command does, check the manual pages right from the terminal. `ddev -h`.
 
 Have any questions? Ask on [Stack Overflow #DDEV.](https://stackoverflow.com/questions/tagged/ddev) That’s a great place to ask questions and collaborate on answers.
-
-**[Get started with DDEV-Local](/get-started/)**

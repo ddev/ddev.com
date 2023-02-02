@@ -71,5 +71,3 @@ You’ll find out about this right away because ddev will tell you on `ddev star
 ### So how did it go? Tell us!
 
 We hope this helped you resolve any of the issues you had getting Docker set up and running for DDEV. Still stuck? Reach out for [further help](https://ddev.readthedocs.io/en/latest/#support) if you need it.
-
-DDEV can make your work easier and smoother, [get started today!](https://ddev.com/get-started/)

@@ -41,6 +41,4 @@ He likes that DDEV is open source. “You have the benefit of more people and a 
 
 Brandon emphasized the simplicity of using DDEV. “If you need to get something spun up and work on it, you can do it fairly easily without a lot of trouble. And just get the work done.” With DDEV, “you can focus on building the products, rather than supporting building the products.”
 
-Brandon is looking forward to [DrupalCamp Colorado](https://2018.drupalcampcolorado.org/) in August 2018\. And so is the DDEV team! See you there!
-
-[Get started with DDEV](https://ddev.com/get-started/)
+Brandon is looking forward to [DrupalCamp Colorado](https://2018.drupalcampcolorado.org/) in August 2018. And so is the DDEV team! See you there!

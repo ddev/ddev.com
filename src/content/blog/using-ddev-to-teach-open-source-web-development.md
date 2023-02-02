@@ -57,9 +57,3 @@ The students are getting a taste of what it’s like to work in open source, but
 Giving students industry-standard professional tools and exposing them to open source communities is a win-win for employability and skills that will set them up for life.
 
 We love to hear stories about how you’re using DDEV. Are you using DDEV for teaching or training? Let us know!
-
-### Try out DDEV for yourself
-
-We have quickstart documentation for major CMSs and you can use DDEV to run other types of projects as well.
-
-[Try DDEV](https://ddev.readthedocs.io/en/latest/)

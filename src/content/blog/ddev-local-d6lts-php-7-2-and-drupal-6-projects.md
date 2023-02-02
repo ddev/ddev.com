@@ -40,5 +40,3 @@ If you’re successful with your site (likely!) then you will have a D6 site tha
 [DDEV](https://github.com/drud/ddev) makes maintaining sites easy, just as in this case. You can have multiple CMSs, multiple PHP versions, and even both Apache and Nginx, all running at the same time on different sites, with basically no configuration. I found updating and testing these D6 sites to be a breeze.
 
 And of course, if I had known that D6 support would last this long and be of such high quality, it would have made a very significant difference in some decisions I made in 2015 and some things would have been much easier. Thanks to those D6LTS vendors for taking on the challenge and sticking with it, and especially to MyDropWizard for taking the challenge to an even higher level.
-
-[Download DDEV-Local](https://ddev.readthedocs.io/en/stable/)

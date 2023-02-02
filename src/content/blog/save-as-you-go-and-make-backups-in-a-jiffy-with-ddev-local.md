@@ -73,11 +73,3 @@ To restore an SQL dump like that on the host you would use this command:
 `ddev import-db --src=.tarballs/db.YYYYMMDD.sql.gz`
 
 A text-format database dump created with either this technique or `ddev export-db` can typically be restored on any MySQL/MariaDB server without trouble. It’s not as fast as `ddev snapshot`, and the restore is much slower. But it’s portable.
-
-## Try out DDEV today!
-
-Central to the best [web development workflow](https://ddev.com/ddev-live/web-development-workflows-simplified/) is the interface you touch every day: your local development environment. We think it should be reliable and “just work.” A big part of that is being able to take creative risks in a safe way and keep your data backed up. We hope this article gives you an idea of how you can make the most of DDEV-Local.
-
-New to DDEV? Set up environments in minutes, switch contexts and projects quickly, and speed your development.
-
-[Download DDEV](https://github.com/drud/ddev/releases)

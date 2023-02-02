@@ -57,5 +57,3 @@ What did you think when you heard about DDEV? “The idea sounded interesting an
 “Virtual machines take up too much space. Every VirtualBox reserves a space on my system–20 or 30 GB sometimes–and the space is permanently reserved. At some point, they just eat up my hard drive.
 
 **“I am working on switching my whole team Vagrant + VirtualBox to DDEV at Macopedia asap. You should try it today.”**
-
-**[Get started with DDEV-Local](/get-started/)**

@@ -45,10 +45,4 @@ You will need to do this because you will not be able to restore your snapshots 
 
 This also means databases from earlier versions of DDEV before v.1.1.0 can’t be migrated to Docker volumes because the migration process uses snapshots. So migrate first to v1.2.0, then use v.1.3.0, and check out the release notes to see how to load the data from a backup.
 
-Check the [Release Notes for more guidance](https://github.com/drud/ddev/releases/tag/v1.3.0).
-
-### Apply for free DDEV-Live hosting!
-
-We have some great news for the DDEV community. Are you looking for hosting for your open source community project or event? We understand the value of open source contribution. If we can help do our part for your community, we’d love to help!
-
-[Apply here for free DDEV-Live hosting](https://goo.gl/forms/2XjlbNAIZZ4HUVlG2)
+Check the [release notes](https://github.com/drud/ddev/releases/tag/v1.3.0) for more guidance.

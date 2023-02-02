@@ -72,5 +72,3 @@ Drush in the web container is not yet supported but is a high priority. See the 
 ## How Can We Make It Better?
 
 We love your feedback because it helps us learn what features are making an impact and what opportunities lay ahead of us. You can find us active in our [GitHub issue queue](https://github.com/drud/ddev/issues), in the [#ddev channel](https://drupal.slack.com/messages/C5TQRQZRR) in the Drupal Community Slack, or on [Twitter](https://twitter.com/drud).
-
-**[Get started with DDEV-Local](/get-started/)**

@@ -80,7 +80,3 @@ Among members of a cross-disciplinary team, you might have project managers or d
 Our mission at DRUD is to create tools and services which make it easier for your teams to collaborate and be creative. That often means developing applications and websites with multiple frameworks and CMSs in the front end with multiple hosting endpoints. The last thing you want to worry about is your local development environment. DDEV is a key part of our mission. With everyone on your cross-disciplinary teams enabled with access to the same set of tools, you can ensure they deftly juggle hand-offs of multiple projects without dealing with inconsistencies and unwanted surprises.
 
 We hope this new UI opens up collaboration across your team. Tell us what you think!
-
-### Want to try DDEV-UI?
-
-We’ll have the alpha release available soon. To keep up to date, [“star” the DDEV project on GitHub](https://github.com/drud/ddev) and subscribe to our newsletter.

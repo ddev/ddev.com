@@ -44,6 +44,4 @@ While the Drupal 8 site install time represents an extremely taxing process, itâ
 
 While these gains are certainly impressive, itâ€™s just one of many performance enhancements being worked on by the Docker for Mac team in order to ensure macOS users have a performant experience while using containers for local development. See [their detailed overview](https://docs.docker.com/docker-for-mac/osxfs/#performance-issues-solutions-and-roadmap) for more information.
 
-Until then, Drupal, WordPress, TYPO3 CMS, and Backdrop CMS developers can start benefiting from this today by [downloading DDEV](https://github.com/drud/ddev/releases).
-
-**[Get started with DDEV-Local](/get-started/) today!**
+Until then, Drupal, WordPress, TYPO3 CMS, and Backdrop CMS developers can [start benefiting from this today](/get-started).
