@@ -3,7 +3,7 @@ title: "What’s so different about DDEV?"
 pubDate: 2022-10-30
 author: Randy Fay
 featureImage:
-  src: /img/blog/2022/10/dall-e-2022-10-30-10.10.42.png
+  src: /img/blog/2022/10/whats-so-different.jpg
   alt:
   caption:
   credit:

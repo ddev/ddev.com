@@ -3,7 +3,7 @@ title: "DDEV-Local for Laravel teams"
 pubDate: 2020-09-24
 author: DDEV
 featureImage:
-  src: /img/blog/2020/09/screen-shot-on-2020-09-24-at-19-18-06-e1600975374486.png
+  src: /img/blog/2020/09/ddev-laravel.png
   alt:
   caption:
   credit:
