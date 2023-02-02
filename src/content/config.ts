@@ -1,7 +1,26 @@
 import { z, defineCollection } from 'astro:content'
+import fs2 from "fs"
+import glob from "glob"
+
+const allowedCategories = ['Announcements', 'Community', 'DevOps', 'Performance', 'Guides', 'Videos']
+
+/**
+ * Quick and dirty method that returns full names of all existing authors.
+ * @returns array of `name` values from author entry frontmatter
+ */
+const getAuthorNames = () => {
+  const files = glob.sync(`./src/content/authors/*.md`)
+  const authorNames = files.map((file) => {
+    const contents = fs2.readFileSync(file, "utf-8");
+    const result = contents.match(new RegExp("name: (.*)"))
+    return result[1];
+  })
+
+  return authorNames;
+}
+
 
 // https://zod.dev/
-
 const authorCollection = defineCollection({
   schema: z.object({
     name: z.string(),
@@ -10,13 +29,11 @@ const authorCollection = defineCollection({
   })
 });
 
-
-// TODO: require author to be existing author entry
 const blogCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     pubDate: z.date(),
-    author: z.string(),
+    author: z.enum(getAuthorNames()),
     featureImage: z.object({
       src: z.string(),
       alt: z.nullable(z.string()).optional(),
@@ -25,7 +42,7 @@ const blogCollection = defineCollection({
       shadow: z.boolean().optional(),
       hide: z.boolean().optional(),
     }).optional(),
-    categories: z.array(z.enum(['Announcements', 'Community', 'DevOps', 'Performance', 'Guides', 'Videos'])),
+    categories: z.array(z.enum(allowedCategories)),
   })
 });
 
