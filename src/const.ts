@@ -17,3 +17,4 @@ export const ORG_EMAIL = 'support@localdev.foundation'
 export const ORG_PHONE = '(970) 462-7450'
 export const ORG_FOUNDED = '2021-09-02'
 export const ORG_SAME_AS = ["https://github.com/ddev", "https://localdev.foundation"]
+export const BLOG_DESCRIPTION = `Posts about DDEV, Docker, and local development.`
