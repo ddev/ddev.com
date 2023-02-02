@@ -72,6 +72,11 @@ export default function searchIndex(config) {
           const data = fs.readFileSync(file, "utf-8")
           const { document: postDocument } = parseHTML(data)
 
+          const ogTitleTag = postDocument.querySelector(
+            "meta[property='og:title']"
+          )
+          const ogTitleValue = ogTitleTag.getAttribute("content")
+
           const robotsTag = postDocument.querySelector("meta[name=robots]")
           const robotsValue = robotsTag.getAttribute("content")
 
@@ -91,7 +96,7 @@ export default function searchIndex(config) {
 
           items.push({
             url: url,
-            title: postDocument.title,
+            title: ogTitleValue,
             text: postContent,
           })
         }
