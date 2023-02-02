@@ -58,7 +58,9 @@ const blogPostSchema = [
     datePublished: entry.data.pubDate,
     description: entry.data.description ?? ``,
     headline: entry.data.title,
-    image: entry.data.featureImage.src,
+    image: hasFeatureImage
+      ? entry.data.featureImage.src
+      : `/img/og-default.png`,
     keywords: entry.data.categories.join(","),
     mainEntityOfPage: `${Astro.site}blog/${entry.slug}`,
     publisher: {
