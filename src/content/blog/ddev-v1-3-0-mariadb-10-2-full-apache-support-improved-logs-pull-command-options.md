@@ -1,11 +1,11 @@
 ---
 title: "DDEV v1.3.0 – MariaDB 10.2, Full Apache Support, Improved Logs, Pull Command Options"
 pubDate: 2018-10-12
+summary: Apache support for Windows, better logging, improvements to the pull command and upcoming Wordpress support.
 author: Randy Fay
 featureImage:
   src: /img/blog/2018/10/clarissa-bock-418873-unsplash-e1539369093961.jpg
-  alt:
-  caption:
+  alt: Photograph of a jagged landscape of rocks, trees, mountains, and snow against a cloudy blue sky and mirrored in Lake Isabelle
   credit: "Photo by [Clarissa Bock](https://unsplash.com/photos/nqJwKcnfyqU?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - Announcements

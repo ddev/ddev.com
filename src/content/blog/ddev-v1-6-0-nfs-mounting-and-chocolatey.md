@@ -1,11 +1,11 @@
 ---
 title: "DDEV v1.6.0: NFS Mounting and Chocolatey"
 pubDate: 2019-02-12
+summary: v1.6.0 release highlights.
 author: Randy Fay
 featureImage:
   src: /img/blog/2019/02/ekl-20181203-2-e1549995318578.jpg
-  alt:
-  caption:
+  alt: Photo of winter haze in the mountains, with snowy tree lines and a winding road curving across the foreground of the frame
   credit: "Photo by [Elli Ludwigson](/blog/author/elli-ludwigson)."
 categories:
   - Announcements
@@ -23,7 +23,7 @@ We’ve just released **DDEV v1.6.0**! This release includes NFS mounting and Ch
 
 ## To Install:
 
-macOS Homebrew and Linux Linuxbrew: 
+macOS Homebrew and Linux Linuxbrew:
 
 ```
 brew upgrade ddev

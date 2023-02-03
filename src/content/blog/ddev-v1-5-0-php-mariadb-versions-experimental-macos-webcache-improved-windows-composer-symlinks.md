@@ -1,11 +1,11 @@
 ---
 title: "DDEV v1.5.0 – PHP & MariaDB Versions, Experimental macOS Webcache, Improved Windows Composer Symlinks"
 pubDate: 2018-12-19
+summary: v1.5.0 release highlights.
 author: Randy Fay
 featureImage:
   src: /img/blog/2018/12/dsc-3769.jpg
-  alt:
-  caption:
+  alt: Long photograph of a clearing that becomes a tree line that climbs to snowy mountain peaks that mark a sharp horizon against a pale blue sky
   credit: "Photo by [Elli Ludwigson](/blog/author/elli-ludwigson)."
 categories:
   - Announcements
@@ -13,21 +13,25 @@ categories:
 
 We’ve just released DDEV v1.5.0! [Install or upgrade now](https://github.com/drud/ddev/releases). (Helpful hint! You can now [watch for releases on GitHub](https://help.github.com/articles/watching-and-unwatching-releases-for-a-repository/)). Here are some highlights, and a couple ways you can easily contribute:
 
-**Support for MariaDB v10.1 & v10.2** – MariaDB 10.1 is available with “mariadb_version: 10.1” in your .ddev/config.yaml, or run:
+**Support for MariaDB v10.1 & v10.2** – MariaDB 10.1 is available with “mariadb_version: 10.1” in your `.ddev/config.yaml`, or run:
 
-`ddev config --mariadb-version=10.1`
+```
+ddev config --mariadb-version=10.1
+```
 
 This will help [TYPO3](https://typo3.org/) v8 users who can’t run MariaDB 10.2\. See [the pull request here](https://github.com/drud/ddev/pull/1318) for more info.
 
 **Support for PHP v7.3** – PHP 7.3 was just released and is supported in this version of DDEV-Local. To specify this version of PHP (or any version) use “php_version: 7.3” in your .ddev/config.yaml or run:
 
-`ddev config --php-version=7.3`
+```
+ddev config --php-version=7.3
+```
 
 Please remember that there is not yet a php-memcached for PHP 7.3.
 
-**Speed up DDEV-Local with webcaching** – For macOS users, there is now an experimental webcache strategy to help large CMS projects like Drupal8 or TYPO3 run faster. If you set “webcache_enabled: true” in the config.yaml DDEV will start a caching container so that actual webserving happens on a much faster filesystem.
+**Speed up DDEV-Local with webcaching** – For macOS users, there is now an experimental webcache strategy to help large CMS projects like Drupal8 or TYPO3 run faster. If you set `webcache_enabled: true` in the `config.yaml` file, DDEV will start a caching container so that actual webserving happens on a much faster filesystem.
 
-As this is an experimental feature, we would really like to hear your feedback! There are some small hiccups involved; \`ddev start\` may take longer because your entire project must be pushed into the webcache container. Hint: clean up your db_snapshots before you run \`ddev start\`. After this everything will load very fast locally!
+As this is an experimental feature, we would really like to hear your feedback! There are some small hiccups involved; `ddev start` may take longer because your entire project must be pushed into the webcache container. Hint: clean up your db_snapshots before you run `ddev start`. After this everything will load very fast locally!
 
 A big shout out to Drud team member [@cweagans](https://github.com/cweagans) for the original [docker-bg-sync](https://github.com/cweagans/docker-bg-sync) that we forked and used to implement this! Thank you Cameron!
 

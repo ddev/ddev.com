@@ -1,11 +1,11 @@
 ---
 title: "Debugging Docker on Windows, Mac, and Linux"
 pubDate: 2018-10-18
+summary: Guide to troubleshooting Docker-related issues on your operating system.
 author: Randy Fay
 featureImage:
   src: /img/blog/2018/10/john-carlisle-539580-unsplash-e1539785420243.jpg
-  alt:
-  caption:
+  alt: Close-up, shallow-focus photo of a switch board with colorful knobs and wires
   credit: "Photo by [John Carlisle](https://unsplash.com/photos/l090uFWoPaI?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/wires?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - Guides
@@ -32,7 +32,7 @@ If that factory reset doesn’t resolve your issues, you can take the following 
 Docker needs to be able to a few things for DDEV to work:
 
 Can Docker mount the project code directory from the host into the container? The project code directory is usually somewhere in a subdirectory of your home directory.  
-Can Docker mount \~/.ddev for SSL cert cache and import-db?  
+Can Docker mount `~/.ddev` for SSL cert cache and import-db?  
 Can Docker access TCP ports on the host to serve HTTP and HTTPS? These are ports 80 and 443 by default, but they can be changed on a per-project basis.
 
 To conduct a check to see is all working as expected, we’ve come up with a single Docker command that will typically tell if there’s a problem that will prevent DDEV from running. This command here is designed to work on all Docker installs.

@@ -1,11 +1,11 @@
 ---
-title: "DDEV v1.4.0 – In-container composer commands, SSH authentication, database export"
+title: "DDEV v1.4.0 – In-container Composer commands, SSH authentication, database export"
 pubDate: 2018-11-15
+summary: Release notes for DDEV v.1.4.0, and Mike Anello’s new book!
 author: Randy Fay
 featureImage:
   src: /img/blog/2018/11/holly-mandarich-460180-unsplash-e1542334215692.jpg
-  alt:
-  caption:
+  alt: Photograph of a snowy foreground that winds away into trees, rock, and a mountainous horizon on a clear day
   credit: "Photo by [Holly Mandarich](https://unsplash.com/photos/wMuGk6dABR4?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - Announcements

@@ -1,12 +1,11 @@
 ---
 title: "DDEV ❤️ WSL2: getting started"
 pubDate: 2020-05-26
+summary: Guide for working with DDEV in Windows using WSL2.
 author: DDEV
 featureImage:
   src: /img/blog/2020/05/diagram.png
-  alt:
-  caption:
-  credit:
+  alt: Infrastructure diagram of the relationship between Windows and the Windows Subsystem for Linux (WSL2)
   shadow: true
 categories:
   - Guides

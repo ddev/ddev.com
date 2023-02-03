@@ -1,11 +1,11 @@
 ---
 title: "DDEV v1.5.2: Linuxbrew, php-apcu, Ghostscript and more"
 pubDate: 2019-01-16
+summary: v1.5.2 release highlights.
 author: Randy Fay
 featureImage:
   src: /img/blog/2019/01/ekl-20181205-13-1.jpg
-  alt:
-  caption:
+  alt: Long photo of trees working up a mountainside in varying bands of green, blue, and white
   credit: "Photo by [Elli Ludwigson](/blog/author/elli-ludwigson)."
 categories:
   - Announcements

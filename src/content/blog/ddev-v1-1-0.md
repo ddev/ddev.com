@@ -1,11 +1,11 @@
 ---
 title: "DDEV v1.1.0 – Snapshots, hostname removal, Drush on host, Docker 18.06"
 pubDate: 2018-08-15
+summary: Announcement and upgrade notes for v1.1.0.
 author: Rick Manelius
 featureImage:
   src: /img/blog/2018/08/nasa-63029-unsplash-e1534364618963.jpg
-  alt:
-  caption:
+  alt: Photograph of a NASA space shuttle rocketing away from its launch pad at night, vehicle and facility and smoke plumes all illuminated by the white glare of its propulsion and mirrored by the water just beyond
   credit: "Photo by [NASA](https://unsplash.com/photos/n463SoeSiVY?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/release?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)"
 categories:
   - Announcements
@@ -28,9 +28,9 @@ As soon as the alpha is ready, we’ll invite DDEV newsletter subscribers to get
 
 ### Important notes about upgrading DDEV v1.1.0
 
-**Do you need to upgrade Docker?** Due to a serious Docker bug in 18.03, DDEV requires Docker 18.06\. So before you update DDEV, upgrade Docker if you haven’t already.
+**Do you need to upgrade Docker?** Due to a serious Docker bug in 18.03, DDEV requires Docker 18.06. So before you update DDEV, upgrade Docker if you haven’t already.
 
-**Do you have customized docker-compose.\*.yaml files in your projects?** If so, you’ll need to manually update each to read `version: '3.6'`
+**Do you have customized `docker-compose.*.yaml` files in your projects?** If so, you’ll need to manually update each to read `version: '3.6'`
 
 We’re testing and updating any files we include within DDEV by default, but you’re likely to be adding extensions, services, and customizations. When there are new versions of Docker and Docker Compose you’ll need to update those customizations too. Because the docker-compose version has been updated to 3.6, it’s time to update.
 
@@ -42,7 +42,7 @@ Follow these steps for each project.
 
 Check out the [DDEV v1.1.0 Release Notes](https://github.com/drud/ddev/releases/tag/v1.1.0) for more details.
 
-**A note about database migration.** Also, you’ll notice the first time you run `ddev start` your project database will get migrated from the \~/.ddev directory into a Docker volume. The old `~/.ddev/<project>/mysql` will be renamed to `~/.ddev/<project>/mysql.bak`.
+**A note about database migration.** Also, you’ll notice the first time you run `ddev start` your project database will get migrated from the `~/.ddev` directory into a Docker volume. The old `~/.ddev/<project>/mysql` will be renamed to `~/.ddev/<project>/mysql.bak`.
 
 We used to move the database because when users reinstalled Docker, it could kill your data. The good news is that Docker has matured in its stability to a point where we can trust the Docker volumes, even on upgrades.
 
@@ -86,4 +86,4 @@ sudo ddev hostname --remove-inactive
 
 That info is saved in the project config file, so as soon as you `ddev start`, it’s set up when you need it.
 
-There are more bugfixes, new documentation, and improvements – so please check out the [DDEV v1.1.0 Release Notes](https://github.com/drud/ddev/releases/tag/v1.1.0) for all the details.
+There are more bugfixes, new documentation, and improvements, so please check out the [DDEV v1.1.0 Release Notes](https://github.com/drud/ddev/releases/tag/v1.1.0) for all the details.
