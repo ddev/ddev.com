@@ -98,7 +98,11 @@ const featuredSponsors = [
           href={sponsor.url}
           target="_blank"
         >
-          <img src={sponsor.logo} class="block w-auto h-full" />
+          <img
+            src={sponsor.logo}
+            class="block w-auto h-full"
+            alt={`${sponsor.name} logo`}
+          />
         </a>
       ))
     }
