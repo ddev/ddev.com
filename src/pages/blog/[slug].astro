@@ -56,7 +56,7 @@ const blogPostSchema = [
       ? entry.data.modifiedDate
       : entry.data.pubDate,
     datePublished: entry.data.pubDate,
-    description: entry.data.description ?? ``,
+    description: entry.data.summary ?? ``,
     headline: entry.data.title,
     image: hasFeatureImage
       ? entry.data.featureImage.src
@@ -73,6 +73,7 @@ const blogPostSchema = [
 
 <Layout
   title={entry.data.title}
+  description={entry.data.summary ? entry.data.summary : null}
   ogImage={hasFeatureImage ? entry.data.featureImage.src : null}
   ogImageAlt={hasFeatureImage ? entry.data.featureImage.alt : null}
   structuredData={blogPostSchema}

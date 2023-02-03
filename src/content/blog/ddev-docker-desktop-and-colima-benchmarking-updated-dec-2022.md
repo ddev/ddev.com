@@ -1,5 +1,6 @@
 ---
 title: "DDEV macOS Docker Desktop/Colima/Mutagen Benchmarking updated Dec 2022"
+summary: "Comparison of Drupal install performance on macOS using Docker Desktop and Colima, with and without Mutagen."
 pubDate: 2022-12-27
 author: Randy Fay
 featureImage:
