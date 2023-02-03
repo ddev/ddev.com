@@ -65,6 +65,7 @@ Use this Markdown as a template:
 ---
 title: "It’s A Post!"
 pubDate: 2023-01-01
+summary:
 author: Randy Fay
 featureImage:
   src: /img/blog/kebab-case.jpg
