@@ -1,7 +1,8 @@
 ---
 import { getContributors } from "../lib/api.js"
-import Sponsors from "./Sponsors.astro"
+import { Img } from "astro-imagetools/components"
 import FeaturedSponsors from "./FeaturedSponsors.astro"
+import Sponsors from "./Sponsors.astro"
 
 const contributors = await getContributors()
 ---
@@ -26,7 +27,18 @@ const contributors = await getContributors()
             href={contributor.html_url}
             target="_blank"
           >
-            <img src={contributor.avatar_url} class="block w-full h-full" />
+            <Img
+              src={contributor.avatar_url}
+              alt={`${contributor.login} GitHub avatar`}
+              width={100}
+              height={100}
+              breakpoints={{ count: 1, maxWidth: 100 }}
+              attributes={{
+                img: {
+                  class: `block w-full h-full`,
+                },
+              }}
+            />
           </a>
         ))
       }
