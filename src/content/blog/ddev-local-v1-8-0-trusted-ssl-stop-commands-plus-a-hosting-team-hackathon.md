@@ -1,11 +1,11 @@
 ---
 title: "DDEV-Local v1.8.0: Trusted SSL, `stop` commands, plus a hosting team hackathon"
 pubDate: 2019-05-16
+summary: DDEV-Local release notes, contributor appreciation, and DDEV-Live announcements.
 author: Randy Fay
 featureImage:
   src: /img/blog/2019/05/ekl-20190418-0240.jpg
-  alt:
-  caption:
+  alt: High-altitude photo of trees in the foreground, set against blue and tan mountains that stretch into the horizon
   credit: "Photo courtesy of [Elli Ludwigson](/blog/author/elli-ludwigson)."
 categories:
   - Announcements

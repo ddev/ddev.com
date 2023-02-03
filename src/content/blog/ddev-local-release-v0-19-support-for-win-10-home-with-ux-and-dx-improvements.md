@@ -1,11 +1,11 @@
 ---
 title: "DDEV-Local Release v0.19.0 – Support for Win 10 Home with UX and DX improvements"
 pubDate: 2018-05-31
+summary: Improvements to user and developer experience.
 author: Rick Manelius
 featureImage:
   src: /img/blog/2018/05/danilo-batista-334883-unsplash.jpg
-  alt:
-  caption:
+  alt: Wide photo of a kite centered in frame, against a vast, cloudless blue sky
   credit: "Photo by [Danilo Batista](https://unsplash.com/photos/GXzjWurMTgQ?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - Announcements

@@ -1,10 +1,11 @@
 ---
 title: "DDEV-Local Release v0.16.0"
 pubDate: 2018-03-29
+summary: Improved performance, smoother setup, and more!
 author: Rick Manelius
 featureImage:
   src: /img/blog/2018/03/volcano.jpg
-  alt:
+  alt: High-altitude photograph of the sun just breaking the horizon and bathing whispy clouds in gold light, with sharp mountain peaks soaring through the still-dim-and-foggy lower half of the frame
   caption: “This morning at 13k feet”
   credit: S. Grandchamp
 categories:

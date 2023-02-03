@@ -1,12 +1,11 @@
 ---
 title: "DDEV-Local Trusted HTTPS Certificates"
 pubDate: 2019-05-23
+summary: The importance of local HTTPS, and how to take advantage of it with v1.8.0+.
 author: Randy Fay
 featureImage:
   src: /img/blog/2019/05/home-umami.png
-  alt:
-  caption:
-  credit:
+  alt: Tightly-cropped screenshot of a browser at a `.ddev.local` project URL with a secure HTTPS connection
   shadow: true
 categories:
   - Guides

@@ -2,11 +2,10 @@
 title: "DDEV-Local NFS Mounting Setup: macOS"
 pubDate: 2019-02-13
 author: Randy Fay
+summary: Comparing traditional Docker mounting performance vs. NFS on macOS, Windows, and Linux.
 featureImage:
   src: /img/blog/2019/02/drupal-8-install-normal-mount-nfs-and-webcache-time-in-seconds-less-is-better.png
-  alt:
-  caption:
-  credit:
+  alt: Grouped bar chart comparing Drupal 8 install times on macOS, Windows, and Linux, using normal mount, NFS, and webcache
 categories:
   - Guides
   - Performance

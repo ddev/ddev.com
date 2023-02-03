@@ -2,11 +2,10 @@
 title: "Watch: DDEV-Local, PhpStorm, and Xdebug Debugging"
 pubDate: 2020-08-27
 author: Randy Fay
+summary: Video walkthrough of debugging with PhpStorm and Xdebug.
 featureImage:
   src: /img/blog/2020/08/screen-shot-2020-08-04-at-5.27.30-pm-1.png
-  alt:
-  caption:
-  credit:
+  alt: Still from video title matching this post, with the subtitle “No fiddling. No configuration. No php.ini”
   hide: true
 categories:
   - Guides

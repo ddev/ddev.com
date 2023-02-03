@@ -1,12 +1,11 @@
 ---
 title: "DDEV-Local Usage Statistics (Updated 2019-03-21)"
 pubDate: 2019-03-21
+summary: Usage statistics highlighting operating system, PHP version, project type, web server type, and Windows Docker providers.
 author: Randy Fay
 featureImage:
   src: /img/blog/2019/03/ddev-data-e1553211948905.jpg
-  alt:
-  caption:
-  credit:
+  alt: "Four separate pie charts: Operating System, PHP version, CMS project type, and Webserver type"
 categories:
   - Community
 ---
@@ -19,15 +18,15 @@ Of course, we only have information about DDEV-Local users who have opted in, an
 
 Some of the most interesting data so far:
 
-![](/img/blog/2019/03/1-os.png)
+![Operating System pie chart: macOS 58.6%, Linux 24.3%, Windows 17.1%](/img/blog/2019/03/1-os.png)
 
-![](/img/blog/2019/03/2-php.png)
+![PHP version pie chart: 7.2 68.9%, 7.0 10.4%, 5.6 8.6%, 7.1 6.1%, 7.3 6.1%](/img/blog/2019/03/2-php.png)
 
-![](/img/blog/2019/03/3-cms.png)
+![CMS project type pie chart: TYPO3 40.5%, Dupral 8 26.9%, PHP 19.6%, Drupal 7 8.6%, WordPress 3.4%, Drupal 6 0.8%, Backdrop 0.2%](/img/blog/2019/03/3-cms.png)
 
-![](/img/blog/2019/03/4-webserver.png)
+![Webserver type pie chart: nginx-fpm 79.6%, apache-fpm 17.6%, apache-cgi 2.7%](/img/blog/2019/03/4-webserver.png)
 
-![](/img/blog/2019/03/5-windows.png)
+![Docker usage on Windows pie chart: Docker for Windows 90.5%, Docker Toolbox 9.5%](/img/blog/2019/03/5-windows.png)
 
 If you’d like to browse the actual numbers, the (rough) spreadsheet data is [available here.](https://docs.google.com/spreadsheets/d/135MIJBPQifLyssM-CjxGotH3XTrtdCTkcEOb9SQOU6E/edit?usp=sharing)
 

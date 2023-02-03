@@ -2,12 +2,11 @@
 title: "DDEV-Local Database Management"
 pubDate: 2020-04-03
 modifiedDate: 2020-12-07
+summary: A detailed look at using DDEV to work with databases.
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/04/d8composer-phpmyadmin.png
-  alt:
-  caption:
-  credit:
+  alt: Tightly-cropped screenshot of phpMyAdmin running on a `.ddev.site` domain in a browser window
   shadow: true
 categories:
   - DevOps

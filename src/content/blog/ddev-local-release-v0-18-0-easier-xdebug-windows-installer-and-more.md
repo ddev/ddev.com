@@ -2,9 +2,10 @@
 title: "DDEV-Local Release v0.18.0 – Easier Xdebug, Windows installer and more"
 pubDate: 2018-05-10
 author: Rick Manelius
+summary: Improved Xdebug configuration, a Windows installer, and a smoother upgrade experience.
 featureImage:
   src: /img/blog/2018/05/woctech-chat-windows-e1525985003469.jpg
-  alt:
+  alt: Close-up photograph of hands typing on a Surface Pro atop a small round table that also holds a paper cup emblazoned with Microsoft’s logo
   caption: "Showing MS Windows on Surface Pro"
   credit: "by WOCinTech Chat (CC BY 2.0)"
 categories:

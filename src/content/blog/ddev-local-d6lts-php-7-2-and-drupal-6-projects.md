@@ -1,12 +1,11 @@
 ---
 title: "DDEV-Local, D6LTS, PHP 7.2, and Drupal 6 projects"
 pubDate: 2019-03-28
+summary: Running Drupal 6 in 2019 with DDEV and PHP 7.2.
 author: Randy Fay
 featureImage:
   src: /img/blog/2019/03/drupal-status-report.png
-  alt:
-  caption:
-  credit:
+  alt: Screenshot of Drupal’s in-browser status report, emphasizing Drupal 6.49 and PHP 7.2.12
   shadow: true
 categories:
   - Guides
@@ -16,12 +15,12 @@ Much of what we do here on the DDEV team is in support of the modern projects us
 
 Although the [Drupal](http://drupal.org) project officially discontinued all forms of support for Drupal 6 (D6) in February 2016 (six months after the release of Drupal 8), a couple of vendors signed up to continue support for D6 and they’ve done an absolutely stupendous job, exceeding everyone’s expectations. The original idea was that they’d deal with security fixes only, mostly backporting issues found in current Drupal versions. But they also supported and made public quite a number of key modules.
 
-And then the big deal: PHP 5.6 went End-Of-Life at the end of December, 2018, meaning no more support for \*it\*. _And_ PHP 5.6 was the highest version of PHP that D6 could run on. Amazingly though, one of the D6LTS maintainers, [myDropWizard](https://www.mydropwizard.com/drupal-6-lts), came out with versions of D6 and many modules that are compatible with PHP 7.2\. It’s a game-changer that nobody expected, and was \*not\* a part of the original plan.
+And then the big deal: PHP 5.6 went End-Of-Life at the end of December, 2018, meaning no more support for it. _And_ PHP 5.6 was the highest version of PHP that D6 could run on. Amazingly though, one of the D6LTS maintainers, [myDropWizard](https://www.mydropwizard.com/drupal-6-lts), came out with versions of D6 and many modules that are compatible with PHP 7.2. It’s a game-changer that nobody expected, and was _not_ a part of the original plan.
 
 Here’s what I’ve done to upgrade the Drupal 6 projects that I still maintain:
 
 1. Check out the project.
-2. Download the latest d6lts/drupal \[release\] (<https://github.com/d6lts/drupal/releases>) or add it to your project with Git.
+2. Download the latest d6lts/drupal [release](https://github.com/d6lts/drupal/releases) or add it to your project with Git.
 3. Overwrite your D6 core with the downloaded version.
 4. `ddev config --php-version=7.2`
 5. `mkdir .ddev/php and add file there called mbstring.ini` (it can be called anything ending in `.ini`) with these contents:

@@ -1,11 +1,11 @@
 ---
 title: "DDEV Release 1.0.0! FQDNs, Improved Settings Management, Multi-Project Commands"
 pubDate: 2018-07-20
+summary: Semantic versioning, new features, and more!
 author: Rick Manelius
 featureImage:
   src: /img/blog/2018/07/jason-leung-479251-unsplash-e1532107303829.jpg
-  alt:
-  caption:
+  alt: Photo of confetti with an extremely shallow depth of field
   credit: "Photo by [Jason Leung](https://unsplash.com/photos/Xaanw0s0pMk?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/gift?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - Announcements
@@ -71,7 +71,7 @@ Mac and Linux users can [upgrade the same way they installed](https://ddev.readt
 
 Ta-da! With DDEV 1.0.0 we’re also unveiling a sneak peek at the upcoming alpha release of our DDEV-UI.
 
-![](/img/blog/2018/07/ddev-gui.jpg)
+![Screenshot of a DDEV-UI window displaying projects on macOS](/img/blog/2018/07/ddev-gui.jpg)
 
 Tools that only work with the command line exclude entire teams and individuals from collaborating, so we have always intended to provide a GUI which complemented the command-line interface we provide with DDEV.
 

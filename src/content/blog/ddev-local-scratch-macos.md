@@ -1,11 +1,11 @@
 ---
 title: "How to setup a Mac development environment with DDEV-Local"
 pubDate: 2018-06-14
+summary: Guide to setting up DDEV for local development on a Mac.
 author: Randy Fay
 featureImage:
   src: /img/blog/2018/05/maxime-le-conte-des-floris-151374-unsplash-e1526982174493.jpg
-  alt:
-  caption:
+  alt: Architectural photo of angular glass planes against a cloudy blue sky
   credit: "Photo by Maxime Le Conte des Floris on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - Guides
