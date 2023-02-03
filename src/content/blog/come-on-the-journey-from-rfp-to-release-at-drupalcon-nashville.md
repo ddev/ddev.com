@@ -1,11 +1,11 @@
 ---
 title: "Come on the Journey from RFP to Release at DrupalCon Nashville"
 pubDate: 2018-04-04
+summary: Rick will be presenting on project estimates and expectations at DrupalCon Nashville.
 author: Rick Manelius
 featureImage:
   src: /img/blog/2018/04/jaromir-kavan-296728-unsplash.jpg
-  alt:
-  caption:
+  alt: Top-down aerial photograph of a road snaking through lush, green terrain alongside a winding river
   credit: "[Jaromír Kavan](https://unsplash.com/photos/vv-oEGlN-4E?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) via [Unsplash](https://unsplash.com/search/photos/journey?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)"
 categories:
   - Announcements

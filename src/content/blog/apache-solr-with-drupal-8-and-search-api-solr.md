@@ -1,12 +1,11 @@
 ---
 title: "Apache Solr with Drupal 8 and Search API Solr"
 pubDate: 2019-12-17
+summary: Setting up DDEV to run an Apache Solr server for Drupal 8.
 author: Randy Fay
 featureImage:
   src: /img/blog/2019/12/screenshot-2019-12-12-at-11.11.13-am-e1611331510843.png
-  alt:
-  caption:
-  credit:
+  alt: Tightly-cropped screenshot of a web GUI displaying `ddev_solr` server’s indexing progress
   shadow: true
 categories:
   - Guides
@@ -26,7 +25,7 @@ The big-picture job that we have to do with Solr and DDEV-Local (with _any_ CMS 
 
 For Drupal 8, the [Search API Solr](https://www.drupal.org/project/search%5Fapi%5Fsolr) module adds the Solr piece to Search API module. It has very explicit [installation instructions](https://git.drupalcode.org/project/search%5Fapi%5Fsolr/blob/8.x-3.x/INSTALL.md) on how to set up Solr and configure it, but they assume a bare-metal Solr server, rather than docker-solr.
 
-DDEV-Local’s strategy is to use a single-core Docker Solr in a docker-compose.solr.yaml file, so I’ll walk through what I learned there piece by piece.
+DDEV-Local’s strategy is to use a single-core Docker Solr in a `docker-compose.solr.yaml` file, so I’ll walk through what I learned there piece by piece.
 
 Some assumptions:
 

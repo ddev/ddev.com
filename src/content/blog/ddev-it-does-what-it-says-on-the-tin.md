@@ -1,17 +1,18 @@
 ---
 title: "DDEV: It does what it says on the tin"
 pubDate: 2018-04-24
+summary: An interview with Alex Burrows about how DDEV fits into a varied and efficient workflow.
 author: Jeffrey A. McGuire
 featureImage:
   src: /img/blog/2018/04/alex-burrows-drupal-mentoring.jpg
-  alt:
+  alt: Wide photograph of people seated around tables in a large conference room, laptops out, with a few others standing around in the midst of discussion
   caption: “Drupal mentoring”
   credit: "[Alex Burrows](https://twitter.com/aburrows/status/913688621248630785)"
 categories:
   - DevOps
 ---
 
-![](/img/blog/2018/04/alex-burrows.jpg)
+![Headshot of Alex Burrows](/img/blog/2018/04/alex-burrows.jpg)
 
 I recently spoke with Alex Burrows, CTO of the [Digidrop agency](https://digidrop.io/), based in Surrey, UK. After Alex started using DDEV, he found it was saving him time and reducing stress. It wasn’t long before he was convincing his colleagues and clients to use DDEV, too. He and his team have been happy with the switch. They’re getting their client work done faster and Alex reports that it’s also speeding up their pre-sales and discovery processes with potential new clients. Alex sums up how straightforward using DDEV is and how it meets his needs with the old UK saying, “It does what it says on the tin.”
 
@@ -43,7 +44,7 @@ Alex likes that you can get direct access to the DDEV team, for example through 
 
 He gave us a peek at his current [ddev list](https://ddev.readthedocs.io/en/latest/users/cli-usage/#listing-project-information) output showing the status of his current projects, with two more to be added soon.
 
-![](/img/blog/2018/04/alex-current-ddev-list.png)
+![Tightly-cropped and partially-redacted screenshot of Alex’s long `ddev list` output](/img/blog/2018/04/alex-current-ddev-list.png)
 
 ### Converting to DDEV
 

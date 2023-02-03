@@ -1,12 +1,11 @@
 ---
 title: "DDEV – A local development environment that just works"
 pubDate: 2018-03-01
+summary: Why Adam Bergstein prefers DDEV as a local development tool.
 author: Jeffrey A. McGuire
 featureImage:
   src: /img/blog/2018/03/adam-bergstein.jpeg
-  alt:
-  caption:
-  credit:
+  alt: Photograph of Adam Bergstein
 categories:
   - DevOps
 ---
@@ -67,8 +66,4 @@ Adam has gotten fast responses every time he’s filed an issue or gotten on the
 
 DDEV works in the open. DDEV-Local users can see [the tool’s roadmap](https://github.com/drud/ddev/wiki/Roadmap) on GitHub and understand when and how their requests are handled. As Adam said in his post, he has been “helping discuss the future of the product.” He feels like he’s listened to and finds it gratifying that improvements have been made based directly on his suggestions. Adam said, “They do a good job of keeping the product relevant for the work I’m doing.”
 
-### Try out DDEV-Local today
-
 When it comes down to it, Adam likes DDEV because it’s easy to learn and use. He saves time every time spins up an environment and the tool gets out of the way so he can focus on contribution. When he has ideas, he can contribute and see the open roadmap. When he runs into issues he’s been met with responsive service. This gives him a feeling of being welcome in the DDEV community.
-
-**[Get started with DDEV-Local](/get-started/)**

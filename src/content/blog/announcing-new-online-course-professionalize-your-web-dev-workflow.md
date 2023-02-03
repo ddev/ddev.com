@@ -1,11 +1,11 @@
 ---
 title: "Announcing: New online course – professionalize your web dev workflow"
 pubDate: 2018-07-09
+summary: DrupalEasy is offering a new course on DDEV development.
 author: Heather McNamee
 featureImage:
   src: /img/blog/2018/06/alejandro-escamilla-10-unsplash.jpg
-  alt:
-  caption:
+  alt: Photograph of wooden desktop with notebook, laptop, phone, and espresso
   credit: "Photo by [Alejandro Escamilla on Unsplash](https://unsplash.com/@alejandroescamilla)."
 categories:
   - Announcements

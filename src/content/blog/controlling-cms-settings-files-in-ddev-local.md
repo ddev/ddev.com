@@ -1,12 +1,11 @@
 ---
 title: "Controlling CMS Settings Files in DDEV-Local"
 pubDate: 2020-04-16
+summary: How to work with DDEV’s CMS-specific settings.
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/04/installing-typo3-cms.png
-  alt:
-  caption:
-  credit:
+  alt: Screenshot of a browser with a TYPO3 install in progress, with emphasis on a button that reads “No problems detected, continue with installation”
   shadow: true
 categories:
   - Guides

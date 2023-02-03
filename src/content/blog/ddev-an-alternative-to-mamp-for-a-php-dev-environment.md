@@ -1,11 +1,11 @@
 ---
 title: "DDEV: An alternative to MAMP for a PHP dev environment"
 pubDate: 2018-07-03
+summary: A thorough comparison of local development with MAMP and DDEV.
 author: Elli Ludwigson
 featureImage:
   src: /img/blog/2018/07/fils-electriques.jpg
-  alt:
-  caption:
+  alt: Close-up photograph of a colorful tangle of wires
   credit: "Photo by WikiProfPC on [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Fils%5F%C3%A9lectriques.JPG)."
 categories:
   - DevOps

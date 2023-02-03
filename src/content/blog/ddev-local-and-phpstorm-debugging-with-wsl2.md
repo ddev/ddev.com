@@ -1,12 +1,11 @@
 ---
 title: "DDEV-Local and PhpStorm Debugging with WSL2"
 pubDate: 2020-06-17
+summary: Guide to PhpStorm configuration and debugging in Windows using WSL2.
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/06/phpstorm-debugging.png
-  alt:
-  caption:
-  credit:
+  alt: Tightly-cropped screenshot of step-debugging in progress with PhpStorm, with source code in one pane and debug variables in another
   shadow: true
 categories:
   - Guides

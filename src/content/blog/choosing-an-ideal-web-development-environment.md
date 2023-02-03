@@ -1,11 +1,11 @@
 ---
 title: "Choosing an ideal web development environment"
 pubDate: 2018-05-29
+summary: A reflection on local development experience and what’s made DDEV a good choice.
 author: Mike Anello
 featureImage:
   src: /img/blog/2018/05/headway-537308-unsplash-e1527604343956.jpg
-  alt:
-  caption:
+  alt: Photograph of two people at a conference desk, with laptops and notebooks out, cropped to emphasize a man’s hands gesturing in the foreground
   credit: "Photo by [Headway](https://unsplash.com/photos/5QgIuuBxKwM?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/computers?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - DevOps

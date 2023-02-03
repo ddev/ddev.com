@@ -1,14 +1,13 @@
 ---
 title: "DDEV, Docker, Chromebook!"
 pubDate: 2020-05-04
+summary: Lessons learned running DDEV on an inexpensive Chromebook.
 modifiedDate: 2021-01-25
 modifiedComment: "Updated with [input from](https://github.com/drud/ddev/discussions/2740) [@ops-andy](https://github.com/ops-andy) (thanks!)"
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/04/chromebook-3.jpg
-  alt:
-  caption:
-  credit:
+  alt: Photograph of Randy’s Chromebook where DDEV’s busy running a triumphant Composer install.
 categories:
   - Guides
 ---

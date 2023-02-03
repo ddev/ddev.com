@@ -1,12 +1,11 @@
 ---
 title: "Beware of Dirty Pipes and Docker Desktop on Windows!"
 pubDate: 2022-06-04
+summary: A warning for Windows about a Linux vulnerability, with appreciation for testing.
 author: Randy Fay
 featureImage:
   src: /img/blog/2022/06/plumbing-g6c1b9a8f3-1920.jpg
-  alt:
-  caption:
-  credit:
+  alt: Close-up photograph of two wonderfully-worn wrenches clamped onto a pipe that’s floating in mid-air
 categories:
   - DevOps
 ---

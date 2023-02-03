@@ -1,12 +1,11 @@
 ---
 title: "Customizing DDEV-Local images with a custom Dockerfile"
 pubDate: 2020-04-07
+summary: How you can use a custom Dockerfile to tailor DDEV’s images, complete with examples.
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/04/d8composer.png
-  alt:
-  caption:
-  credit:
+  alt: Tightly-cropped screenshot of a Dockerfile in an IDE.
   shadow: true
 categories:
   - Guides

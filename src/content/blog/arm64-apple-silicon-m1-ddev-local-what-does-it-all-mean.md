@@ -1,14 +1,13 @@
 ---
 title: "ARM64! Apple Silicon! M1! DDEV-Local! What does it all mean?"
 pubDate: 2020-11-18
+summary: A look at Apple’s new chip architecture and what it means for DDEV.
 modifiedDate: 2020-12-16
 modifiedComment: "An Apple Silicon M1 prerelease [is now available](ttps://github.com/drud/ddev/releases)! See the release notes for installation details."
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/11/apple-ddev.jpg
-  alt:
-  caption:
-  credit:
+  alt: Apple M1 logo and DDEV logo side by side
 categories:
   - DevOps
   - Performance

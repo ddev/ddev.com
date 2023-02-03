@@ -1,6 +1,7 @@
 ---
 title: "DDEV Adds Support for TYPO3 CMS"
 pubDate: 2018-02-15
+summary: How to take advantage of DDEV’s new support for TYPO3.
 author: Jeffrey A. McGuire
 categories:
   - Announcements
