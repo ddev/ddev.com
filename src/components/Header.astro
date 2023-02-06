@@ -9,9 +9,16 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/solid/index.js"
 <header class="w-full p-8">
   <nav
     class="flex justify-between items-center content-center max-w-4xl mx-auto"
+    aria-label="Main"
   >
-    <a href="/" class="relative -ml-2">
-      <img class="h-8 w-auto sm:h-10" src="/logos/ddev.svg" alt="DDEV logo" />
+    <a href="/" class="relative block cursor-pointer -ml-2">
+      <span class="sr-only">DDEV logo</span>
+      <img
+        class="h-8 w-auto sm:h-10"
+        src="/logos/ddev.svg"
+        alt="DDEV logo"
+        aria-hidden="true"
+      />
     </a>
     <div class="w-2/3 flex justify-end">
       <ul class="flex">
@@ -34,9 +41,9 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/solid/index.js"
           >
         </li>
       </ul>
-      <a href="/search" class="ml-4"
-        ><MagnifyingGlassIcon className="w-6 h-6" />
-        <span class="hidden">Search</span>
+      <a href="/search" class="ml-4">
+        <span class="sr-only">Search</span>
+        <MagnifyingGlassIcon className="w-6 h-6" aria-hidden={true} />
       </a>
     </div>
   </nav>
