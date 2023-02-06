@@ -1,17 +1,17 @@
 ---
 title: "Saving time and making money with DDEV"
 pubDate: 2018-02-06
+summary: Danita Bowman on how DDEV helps her work more efficiently with her consultancy.
 author: Jeffrey A. McGuire
 featureImage:
   src: /img/blog/2018/03/lukas-blazek-263122.jpg
-  alt:
-  caption:
+  alt: Shallow focus closeup photo of a hand holding a small white alarm clock, facing the camera, against a white background
   credit: "[Lukas Blazek](https://unsplash.com/photos/UAvYasdkzq8?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/time?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - DevOps
 ---
 
-![](/img/blog/2018/03/danita-bowman.jpeg)
+![Danita Bowman headshot](/img/blog/2018/03/danita-bowman.jpeg)
 
 Danita Bowman of [DSquaredB Consulting](https://dsquaredbconsulting.com/) wears lots of hats. “My primary role is that I do everything! At her web agency, she’s responsible for web development, deployment, site maintenance, and sales, too. “So the last thing I need is more complexity.” She uses DDEV for her local development because it reflects her approach to her growing business. It helps her work smart, reducing complexity, bringing in expertise as needed, and operationalizing everything she can.
 

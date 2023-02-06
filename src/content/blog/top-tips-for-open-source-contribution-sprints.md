@@ -1,12 +1,11 @@
 ---
 title: "Top Tips for Open Source Contribution Sprints"
 pubDate: 2018-03-15
+summary: An overview of open source development sprints and what can make them most effective.
 author: Jeffrey A. McGuire
 featureImage:
   src: /img/blog/2018/03/sprint-tips-people.jpg
-  alt:
-  caption:
-  credit:
+  alt: An array of headshots, each in a hexagonal frame
 categories:
   - DevOps
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Real World Performance Gains Using Docker for Mac’s User-guided Cache"
 pubDate: 2017-06-08
+summary: A look at macOS user-guided caching for improved Docker performance.
 author: Rick Manelius
 categories:
   - Performance

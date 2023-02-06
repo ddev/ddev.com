@@ -1,12 +1,11 @@
 ---
 title: "Watch: DDEV-Local from scratch with Windows WSL2"
 pubDate: 2020-08-06
+summary: Screencast guide to running DDEV on Windows with WSL2.
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/08/screen-shot-2020-08-04-at-11.30.47-am-1.png
-  alt:
-  caption:
-  credit:
+  alt: Screen grab of video’s title frame
   hide: true
 categories:
   - Guides

@@ -1,11 +1,11 @@
 ---
 title: "Sandboxes – Local development environments to play in"
 pubDate: 2018-04-26
+summary: How to play and learn safely using DDEV as a local sandbox environment.
 author: Heather McNamee
 featureImage:
   src: /img/blog/2018/04/developers-playing-in-sandboxes-e1524554749706.jpg
-  alt:
-  caption:
+  alt: Shallow-focus closeup photo of a toddler kneeling in a sandbox with brightly-colored little buckets
   credit: "[Kaboompics .com from Pexels](https://www.pexels.com/photo/little-boy-playing-in-the-sand-6459/)"
 categories:
   - DevOps

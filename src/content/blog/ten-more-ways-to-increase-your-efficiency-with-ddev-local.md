@@ -1,12 +1,11 @@
 ---
 title: "Ten more ways to increase your efficiency with DDEV-Local"
 pubDate: 2020-03-25
+summary: DDEV usage and feature highlight.
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/03/secure-cert.png
-  alt:
-  caption:
-  credit:
+  alt: Extreme closeup screenshot of a browser with a `.ddev.site` emphasizing “Connection is secure”
   shadow: true
 categories:
   - DevOps

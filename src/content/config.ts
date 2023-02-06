@@ -46,7 +46,7 @@ const blogCollection = defineCollection({
     author: z.enum(getAuthorNames()),
     featureImage: z.object({
       src: z.string(),
-      alt: z.nullable(z.string()).optional(),
+      alt: z.nullable(z.string()),
       caption: z.nullable(z.string()).optional(),
       credit: z.nullable(z.string()).optional(),
       shadow: z.boolean().optional(),

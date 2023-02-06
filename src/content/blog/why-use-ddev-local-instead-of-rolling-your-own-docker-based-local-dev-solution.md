@@ -1,18 +1,17 @@
 ---
 title: "Why use DDEV instead of rolling your own Docker-based local dev solution?"
 pubDate: 2022-12-22
+summary: The benefits of using DDEV instead of a custom Docker setup for local development.
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/12/ddevdocker.png
-  alt:
-  caption:
-  credit:
+  alt: DDEV and Docker logos side by side, with the words “and/or” between them
   shadow: true
 categories:
   - DevOps
 ---
 
-If you know something about Docker, you know that you can throw one or two Docker images together and get yourself a working local development environment. There are plenty of nginx and php images out there on [hub.docker.com](http://hub.docker.com), and you can do lots and lots of things with them. So why use [DDEV](https://ddev.readthedocs.io), a tool that runs on Docker, when you could just roll your own Docker solution for local development? I’ll try to make a comparison. Of course I’m biased in favor of DDEV.
+If you know something about Docker, you know that you can throw one or two Docker images together and get yourself a working local development environment. There are plenty of nginx and PHP images out there on [hub.docker.com](https://hub.docker.com), and you can do lots and lots of things with them. So why use [DDEV](https://ddev.readthedocs.io), a tool that runs on Docker, when you could just roll your own Docker solution for local development? I’ll try to make a comparison. Of course I’m biased in favor of DDEV.
 
 ### **Custom Docker or docker-compose solution:**
 

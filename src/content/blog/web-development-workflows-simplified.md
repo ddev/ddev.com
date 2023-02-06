@@ -1,12 +1,11 @@
 ---
 title: "Web Development Workflows Simplified"
 pubDate: 2018-03-22
+summary: A look at how DDEV simplifies developer workflows admist a vast landscape of tools and options.
 author: Jeffrey A. McGuire
 featureImage:
   src: /img/blog/2018/03/with-ddev.png
-  alt:
-  caption:
-  credit:
+  alt: Chart depicting an organization of DDEV users and platforms
 categories:
   - DevOps
 ---
@@ -15,7 +14,7 @@ It is DDEV’s mission to create a faster, better, simpler, and more reliable we
 
 Kamran Ahmed’s [Roadmap to becoming a web developer in 2018](https://github.com/kamranahmedse/developer-roadmap) gives a bird’s eye view of the sprawling list of technologies a web developer needs to learn and be aware of to master web development today. From scripting languages to package managers, and front-end frameworks to task runners, the back-end and front-end roadmaps for web developers are increasingly interconnected and complex. The map splits out into the specialist branches Front-end, Back-end, and DevOps.
 
-It’s clear that no one person could get experience in tools and skills identified across the entire map. The speed at which everything changes even leaves many specialists exasperated. Frank Chimero, a web developer with 20 years experience building websites, says he[ feels as confused as a newcomer](https://frankchimero.com/writing/everything-easy-is-hard-again/). “I wonder if I have twenty years of experience making websites, or if it is really five years of experience, repeated four times.” He said, “Last month, I had to install a package manager to install a package manager.”
+It’s clear that no one person could get experience in tools and skills identified across the entire map. The speed at which everything changes even leaves many specialists exasperated. Frank Chimero, a web developer with 20 years experience building websites, says he [feels as confused as a newcomer](https://frankchimero.com/writing/everything-easy-is-hard-again/). “I wonder if I have twenty years of experience making websites, or if it is really five years of experience, repeated four times.” He said, “Last month, I had to install a package manager to install a package manager.”
 
 ## Simplify Web Development and Deployment with DDEV-Local and DDEV-Live
 

@@ -1,11 +1,11 @@
 ---
 title: "Using DDEV to Teach Open Source Web Development"
 pubDate: 2019-02-26
+summary: How Olivar Hader uses DDEV to teach web development to university students.
 author: Heather McNamee
 featureImage:
   src: /img/blog/2019/02/jantine-doornbos-711322-unsplash-e1551235015756.jpg
-  alt:
-  caption:
+  alt: Shallow focus photo of a laptop running a code editor with CSS on the screen
   credit: "Photo by [Jantine Doornbos](https://unsplash.com/photos/xt9tb6oa42o?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
   shadow: true
 categories:

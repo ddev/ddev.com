@@ -1,12 +1,11 @@
 ---
 title: "Why developing locally matters"
 pubDate: 2020-10-28
+summary: Benni Mack on the importance of version control and local development.
 author: DDEV
 featureImage:
   src: /img/blog/2020/10/git-flow-benni-blog.001-2.jpeg
-  alt:
-  caption:
-  credit:
+  alt: Illustration with post title and arrows with circles depicting a stylized flow
 categories:
   - DevOps
 ---

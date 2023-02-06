@@ -1,12 +1,11 @@
 ---
 title: "Supercharge your DDEV performance with Mutagen"
 pubDate: 2021-07-28
+summary: Overview of DDEV v1.18.0-alpha1’s Mutagen-powered performance boost.
 author: Randy Fay
 featureImage:
   src: /img/blog/2021/07/drupal-9-web-install-times-seconds-less-is-better.png
-  alt:
-  caption:
-  credit:
+  alt: Chart depicting Drupal 9 install times without NFS, with NFS, and with Mutagen on macOS, Windows, and Linux
 categories:
   - Announcements
   - Performance
@@ -24,7 +23,7 @@ Improvements for Drush activity inside the container are similarly impressive. (
 
 There is a cost to Mutagen – A Drupal 9 initial sync on `ddev start` and certain other activities takes a bit of time, on the order of 5-60 seconds, depending on the filesystem/operating system and depending on whether it has already been done. If you have a huge number of files (think magento2 or large Drupal or TYPO3 sites) it will be longer, but the performance result should be equivalent.
 
-A mutagen-enabled Magento2 site with all the sample data installed took 48 seconds for the initial sync (mac M1) and 12 seconds for the follow-up sync.
+A Mutagen-enabled Magento2 site with all the sample data installed took 48 seconds for the initial sync (mac M1) and 12 seconds for the follow-up sync.
 
 ![](/img/blog/2021/07/drupal-9-mutagen-sync-time-seconds.png)
 

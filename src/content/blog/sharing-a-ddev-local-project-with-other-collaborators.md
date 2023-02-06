@@ -1,12 +1,11 @@
 ---
 title: "DDEV share: Sharing a DDEV-Local project with other collaborators in real time"
 pubDate: 2020-03-17
+summary: How to share a local DDEV project with others.
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/03/ngrok-page.png
-  alt:
-  caption:
-  credit:
+  alt: Cropped browser screenshot of a site, emphasizing the `.ngrok.io` domain name
   shadow: true
 categories:
   - Guides

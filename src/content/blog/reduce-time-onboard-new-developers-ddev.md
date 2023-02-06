@@ -1,10 +1,11 @@
 ---
 title: "Reduce the Time to Onboard New Developers with DDEV"
 pubDate: 2020-08-12
+summary: How DDEV can make a positive impact on developer onboarding.
 author: DDEV
 featureImage:
   src: /img/blog/2018/05/bruce-mars-548722-unsplash.jpg
-  alt:
+  alt: A man with coiffed hair leans out from a train with backpack in hand, smiling toward an unknown source of amusement out of frame toward the front of the train
   credit: Photo by hagman23 via Pixabay.
   caption:
 categories:

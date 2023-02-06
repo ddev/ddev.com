@@ -1,11 +1,11 @@
 ---
 title: "Matt Glaman’s Guide to Test-Driven Development with DDEV and Drupal"
 pubDate: 2019-01-30
+summary: Exploration of test-driven Drupal development using DDEV.
 author: Heather McNamee
 featureImage:
   src: /img/blog/2019/01/mike-enerio-87665-unsplash-e1548857780487.jpg
-  alt:
-  caption:
+  alt: Rusty-hued closeup photograph of tracks running through a train yard
   credit: "Photo by [Mike Enerio](https://unsplash.com/photos/2IkxeDKaZdY?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - Guides
@@ -17,7 +17,7 @@ Matt Glaman is an active member of the DDEV community, [Randy Fay pointed out](h
 
 ### Tell us a bit about yourself, Matt!
 
-![](/img/blog/2019/01/author-matt-glaman-e1548869414810.jpg)
+![Matt Glaman seated at a table with coffee, smiling and looking off frame](/img/blog/2019/01/author-matt-glaman-e1548869414810.jpg)
 
 I’m Matt Glaman. I’ve been working with Drupal for a little over six years, now. I first got into web development so that I could make a website for our Rainbow 6 clan, back in the good old days of MSN Zone and using Tripod UK so I could get free hosting that supported PHP.
 

@@ -1,12 +1,11 @@
 ---
 title: "Watch: DDEV-Local From Scratch with macOS"
 pubDate: 2020-08-13
+summary: Screencast guide to running DDEV on macOS.
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/08/screen-shot-2020-08-04-at-5.33.27-pm.png
-  alt:
-  caption:
-  credit:
+  alt: Screen grab of video’s title frame
   hide: true
 categories:
   - Guides

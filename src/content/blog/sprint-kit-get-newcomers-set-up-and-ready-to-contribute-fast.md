@@ -1,11 +1,11 @@
 ---
 title: "Sprint Kit – Get newcomers set-up and ready to contribute fast"
 pubDate: 2018-02-27
+summary: We’re offering a Quicksprint kit to get DDEV and Drupal 8 running quickly.
 author: Jeffrey A. McGuire
 featureImage:
   src: /img/blog/2018/02/code-sprint-2.jpg
-  alt:
-  caption:
+  alt: Photo of nine developers seated with laptops around a conference table
   credit: "Bluespark Labs “[Code Sprint](https://flic.kr/p/f8fFih)” – Drupalcon Portland 2013. – ([CC BY 2.0](https://creativecommons.org/licenses/by/2.0/))"
 categories:
   - DevOps

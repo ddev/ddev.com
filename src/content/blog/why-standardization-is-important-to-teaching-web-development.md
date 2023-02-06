@@ -1,6 +1,7 @@
 ---
 title: "Why standardization is important to teaching web development"
 pubDate: 2021-01-28
+summary: Hilmar Hallbjörnsson on teaching open source web development.
 author: Elli Ludwigson
 featureImage:
   src: /img/blog/2021/01/hilmar-drupalcon-amsterdam-by-illek-petr.jpg
@@ -12,7 +13,7 @@ categories:
   - DevOps
 ---
 
-How often do you get to chat with a viking about web development? After [DrupalCon Europe](https://events.drupal.org/europe2020) last December a few folks got together on Zoom to emulate our usual “hallway track” coffee hour chats, and I learned that a couple friends have been leveraging [DDEV-Local](https://ddev.com/ddev-local/) to teach web development to newcomers. This is the second blog in the series, please read more about [Mauricio Dinarte giving students a quick path to success here](https://ddev.com/ddev-local/why-an-easy-start-is-important-to-teaching-web-development/).
+How often do you get to chat with a viking about web development? After [DrupalCon Europe](https://events.drupal.org/europe2020) last December a few folks got together on Zoom to emulate our usual “hallway track” coffee hour chats, and I learned that a couple friends have been leveraging [DDEV-Local](https://ddev.com/ddev-local/) to teach web development to newcomers. This is the second blog in the series, please read more about [Mauricio Dinarte giving students a quick path to success here](/blog/why-an-easy-start-is-important-to-teaching-web-development).
 
 Hilmar Hallbjörnsson has been a friendly face at Drupal events around the world for so many years we’re not sure where or when exactly we first met. Drupal GovCon? Drupal Europe? In a community fond of headwear, [Hilmar](https://www.drupal.org/u/drupalviking), aka [drupalviking](https://twitter.com/drupalviking), stands out in various horned helmets at events. He is currently living and teaching in Iceland and recently taught a web development course at [Reykjavík University](https://en.ru.is/).
 

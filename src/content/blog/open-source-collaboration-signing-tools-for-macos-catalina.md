@@ -1,12 +1,11 @@
 ---
 title: "Open source collaboration: signing_tools for macOS Catalina"
 pubDate: 2020-05-13
+summary: The tools behind DDEV’s code signing on macOS Catalina.
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/05/signing.png
-  alt:
-  caption:
-  credit:
+  alt: Partially-redacted terminal screenshot of macOS signing process, with emphasis on “Package Approved”
 categories:
   - DevOps
 ---

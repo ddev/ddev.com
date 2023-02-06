@@ -1,10 +1,11 @@
 ---
 title: "Why an easy start is important to teaching web development"
 pubDate: 2021-01-21
+summary: An interview with Mauricio Dinarte about teaching Drupal and React to newcomers, and where DDEV fits in.
 author: Elli Ludwigson
 featureImage:
   src: /img/blog/2021/01/40629336923-4f79c53b93-c.jpg
-  alt:
+  alt: Three people seated at a round conference table looking together at a laptop
   caption: Photo of Mauricio Dinarte at DrupalCon Seattle contribution day in 2019.
   credit: "[Josef Kruckenberg @dasjo](https://flic.kr/p/24UgYn2)"
 categories:

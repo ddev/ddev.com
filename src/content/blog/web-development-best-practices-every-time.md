@@ -1,11 +1,11 @@
 ---
 title: "Web development best practices: First time, every time."
 pubDate: 2018-04-05
+summary: Tips for efficient web development team workflows.
 author: Heather McNamee
 featureImage:
   src: /img/blog/2018/04/technology-3249920-1920.jpg
-  alt:
-  caption:
+  alt: Closeup photo of a hand hovering above a laptop keyboard with a site mockup on-screen
   credit: "Photo credit: Rawpixel"
 categories:
   - DevOps

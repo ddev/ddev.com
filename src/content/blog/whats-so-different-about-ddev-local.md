@@ -1,12 +1,11 @@
 ---
 title: "What’s so different about DDEV?"
 pubDate: 2022-10-30
+summary: What makes DDEV stand out among other local development tools.
 author: Randy Fay
 featureImage:
   src: /img/blog/2022/10/whats-so-different.jpg
-  alt:
-  caption:
-  credit:
+  alt: AI-generated planetscape with faint Lando, Mamp, Docksal, DDEV, and Local logos
 categories:
   - DevOps
 ---

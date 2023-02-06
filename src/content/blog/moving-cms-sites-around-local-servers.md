@@ -1,10 +1,11 @@
 ---
 title: "Moving CMS sites around (server-to-server, server-to-local, local-to-server)"
 pubDate: 2020-12-08
+summary: Moving PHP-based, database-driven sites from one server to another, with examples for Drupal and TYPO3.
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/12/juggler-2329843-1280-e1607477143481.jpg
-  alt:
+  alt: Photograph of a sea of people juggling, with very little of a field visible between legs and a blue sky filled with all kinds of objects
   caption: Mass juggling image
   credit: "[Sarah Richter](https://pixabay.com/users/sarahrichterart-1546275/?utm%5Fsource=link-attribution&utm%5Fmedium=referral&utm%5Fcampaign=image&utm%5Fcontent=2329843) via [Pixabay](https://pixabay.com/)."
 categories:
