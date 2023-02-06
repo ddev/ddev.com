@@ -1,15 +1,15 @@
 ---
 title: "Get started with local development for Drupal"
 pubDate: 2021-03-24
+summary: MidCamp workshop schedule and resources for local Drupal development with DDEV.
 author: Elli Ludwigson
 featureImage:
   src: /img/blog/2021/03/ddevmidcamp.png
-  alt:
-  caption:
-  credit:
+  alt: DDEV and MidCamp logos side by side
   shadow: true
 categories:
   - Community
+  - Announcements
 ---
 
 This week in the Drupalverse we are attending MidCamp! We’re in-kind sponsors offering a [series of workshops](#schedule) to help you improve your skills with local development as well as some prizes for [the raffle](https://www.midcamp.org/2021/article/register-midcamp-and-win). MidWest Drupal Camp traditionally takes place in Chicago, but in March 2020 the organizers made a rapid shift to a virtual event, for which we are very grateful.

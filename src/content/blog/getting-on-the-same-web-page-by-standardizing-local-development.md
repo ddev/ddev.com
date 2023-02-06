@@ -1,11 +1,11 @@
 ---
 title: "Getting On the Same (Web) Page by Standardizing Local Development"
 pubDate: 2018-05-22
+summary: Standarizing team development workflows for continuous improvement, and where DDEV can fit in.
 author: Rick Manelius
 featureImage:
   src: /img/blog/2018/05/suganth-526334-unsplash-e1526983031730.jpg
-  alt:
-  caption:
+  alt: Carefully-composed photo of several tracks curving through a train yard, with yellow rails streaking horizontally through the frame
   credit: "Photo by [Suganth](https://unsplash.com/photos/hsYSrqcZ8Ds?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - DevOps

@@ -1,11 +1,11 @@
 ---
 title: "Developer Happiness: Use the Right Tools to Avoid Burnout"
 pubDate: 2018-04-09
+summary: Ryan Blyth about developer stressors and how choosing tools like DDEV can be important.
 author: Heather McNamee
 featureImage:
   src: /img/blog/2018/04/toolbox-2645700-1920-e1523274374612.jpg
-  alt:
-  caption:
+  alt: Shallow-focus photo of several rows of socket wrench fittings
   credit: "CC0 Creative Commons Repair Tools [Vinayr16](https://pixabay.com/en/toolbox-socket-repair-tool-2645700/)"
 categories:
   - DevOps
@@ -13,7 +13,7 @@ categories:
 
 We recently spoke with [Ryan Blyth](https://newmediadenver.com/team/ryan-blyth/), Technical Project Manager at [NEWMEDIA](https://newmediadenver.com/about/) here in Denver, Colorado. Ryan candidly shared the stresses of the web development with us and how using the right tools for the job can make you a much happier developer. Rather than the tools accommodating the way he works, Ryan often found he was organizing his day around the way his tools worked.
 
-DDEV was spun out of NEWMEDIA in 2016\. It’s is the agency where DDEV’s founders developed and solidified many of the best practices baked into the services and tools we now offer as DDEV.
+DDEV was spun out of NEWMEDIA in 2016. It’s is the agency where DDEV’s founders developed and solidified many of the best practices baked into the services and tools we now offer as DDEV.
 
 ### The ‘Developer Happiness’ factor
 

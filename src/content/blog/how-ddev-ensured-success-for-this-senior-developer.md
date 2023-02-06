@@ -1,17 +1,16 @@
 ---
 title: "How DDEV ensured success for this senior developer"
 pubDate: 2018-05-08
+summary: Brandon Williams on how DDEV has been useful for his work at Interpersonal Frequency.
 author: Jeffrey A. McGuire
 featureImage:
   src: /img/blog/2018/04/brandon-hiking.jpg
-  alt:
-  caption:
-  credit:
+  alt: Brandon stands in the rocky foreground high in a mountainscape that stretches into the horizon
 categories:
   - DevOps
 ---
 
-![](/img/blog/2018/04/brandon-williams-crazysix.png)
+![Brandon Williams in a boat, smiling and holding a fish](/img/blog/2018/04/brandon-williams-crazysix.png)
 
 Senior developers and project leads need to nimbly move between projects as they advise sales, developer, and other teams. We spoke with Brandon Williams who gave us peek at what his typical day is like as a Technical Project Architect, and how having a reliable local development environment, like DDEV, makes a big difference to his day.
 

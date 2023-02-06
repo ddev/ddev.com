@@ -1,6 +1,7 @@
 ---
 title: "Docker Desktop Alternatives Arrive for DDEV (Colima!)"
 pubDate: 2022-03-25
+summary: The pros and cons of DDEV’s new support for Colima.
 author: Randy Fay
 categories:
   - Announcements

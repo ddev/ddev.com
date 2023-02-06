@@ -1,6 +1,7 @@
 ---
 title: "Docker Desktop and Colima Benchmarking on macOS"
 pubDate: 2022-03-23
+summary: Speed comparison of macOS Docker filesystems using Docker Desktop and Colima.
 author: Randy Fay
 categories:
   - Performance

@@ -1,11 +1,11 @@
 ---
 title: "Getting started with DDEV and Composer"
 pubDate: 2018-11-29
+summary: Using DDEV v1.4’s bundled Composer.
 author: Randy Fay
 featureImage:
   src: /img/blog/2018/11/marius-masalar-410695-unsplash-e1543521725507.jpg
-  alt:
-  caption:
+  alt: Shallow-focus close-up photo of annotated sheet music
   credit: "Photo by [Marius Masalar](https://unsplash.com/photos/rPOmLGwai2w?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - Guides

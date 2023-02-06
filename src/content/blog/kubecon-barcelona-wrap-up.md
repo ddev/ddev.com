@@ -1,12 +1,11 @@
 ---
 title: "KubeCon Barcelona Wrap-up"
 pubDate: 2019-05-30
+summary: Interview with DDEV team members at KubeCon Barcelona.
 author: Elli Ludwigson
 featureImage:
   src: /img/blog/2019/05/kubecon-group.jpg
-  alt:
-  caption:
-  credit:
+  alt: Three men with conference lanyards in Barcelona
 categories:
   - Community
 ---

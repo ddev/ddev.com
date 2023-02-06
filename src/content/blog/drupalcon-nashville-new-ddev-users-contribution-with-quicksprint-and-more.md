@@ -1,12 +1,11 @@
 ---
 title: "DrupalCon Nashville: New DDEV Users, Contribution with Quicksprint, and more"
 pubDate: 2018-04-19
+summary: Thoughts on DrupalCon Nashville with almost the whole DDEV team.
 author: Rick Manelius
 featureImage:
   src: /img/blog/2018/04/img-20180410-112656.jpg
-  alt:
-  caption:
-  credit:
+  alt: Several people in drud.com t-shirts talk with conference attendees
 categories:
   - Community
 ---
@@ -17,7 +16,7 @@ Showing off [DDEV-Local](https://github.com/drud/ddev) to all comers, we gleaned
 
 We came out of the week with our heads full of ideas from the dozens of presentations, BoFs, and conversations we were part of about improving the development workflow and especially centering on a local development solution for Drupal. A special shout-out here to Jeff Geerling, who also did [a comparison of Drupal local development environments](https://www.jeffgeerling.com/blog/2018/drupal-fastest-improving-evaluator-experience) and how the evaluator experience could be improved. This lead to a few BoFs and lots of discussions. We’re excited to see this happen, too!
 
-![](/img/blog/2018/04/img-20180409-175423-e1524156375826.jpg)
+![The DDEV booth at DrupalCon Nashville](/img/blog/2018/04/img-20180409-175423-e1524156375826.jpg)
 
 ### Quicker Sprinting with DDEV Quicksprint!
 

@@ -1,12 +1,11 @@
 ---
 title: "DrupalCon Seattle Wrap-up"
 pubDate: 2019-04-22
+summary: Thoughts after a bustling DrupalCon Seattle.
 author: Kevin Bridges
 featureImage:
   src: /img/blog/2019/04/img-20190409-152301-e1555796618534.jpg
-  alt:
-  caption:
-  credit:
+  alt: Close-up photo of conference booth table with DDEV stickers, pins, and fidget spinners
 categories:
   - Community
 ---

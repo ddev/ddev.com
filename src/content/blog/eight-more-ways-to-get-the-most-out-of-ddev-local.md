@@ -2,11 +2,11 @@
 title: "Eight (more) ways to get the most out of DDEV-Local"
 pubDate: 2018-12-06
 modifiedDate: 2020-02-05
+summary: A look at some useful and often-overlooked DDEV features.
 author: Randy Fay
 featureImage:
   src: /img/blog/2018/12/marvin-ronsdorf-196913-unsplash-e1544104467254.jpg
-  alt:
-  caption:
+  alt: Top-down photo of the numbered lanes on a running track
   credit: "Photo by Marvin Ronsdorf on [Unsplash](https://unsplash.com/search/photos/eight?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - DevOps
