@@ -2,7 +2,7 @@
 title: "DDEV ❤️ WSL2: getting started"
 pubDate: 2020-05-26
 summary: Guide for working with DDEV in Windows using WSL2.
-author: DDEV
+author: Dennis Ameling
 featureImage:
   src: /img/blog/2020/05/diagram.png
   alt: Infrastructure diagram of the relationship between Windows and the Windows Subsystem for Linux (WSL2)
@@ -10,8 +10,6 @@ featureImage:
 categories:
   - Guides
 ---
-
-_This is a guest post from web developer and open source contributor_ [**Dennis Ameling**](https://github.com/dennisameling)_, owner of_ [_fits4all_](https://github.com/fits4all)_. Dennis also contributed this guide to the DDEV-Local documentation! Find out_ [_more about Dennis_](https://twitter.com/dennisameling)_._
 
 **_Note: The current instructions for WSL2 setup are [in the DDEV docs](https://ddev.readthedocs.io/en/latest/users/install/ddev-installation/#windows-wsl2) and have been refined over the years._**
 

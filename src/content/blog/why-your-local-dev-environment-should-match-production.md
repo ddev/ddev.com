@@ -2,7 +2,7 @@
 title: "Why your local dev environment should match production"
 pubDate: 2020-11-04
 summary: Benni Mack on the importance of environmental parity.
-author: DDEV
+author: Benni Mack
 featureImage:
   src: /img/blog/2020/11/deploy-benni-art-from-shashank-and-becris-on-the-noun-project.jpeg
   alt: Illustration of post title interspersed with stylized line drawings of shipping containers
@@ -10,10 +10,6 @@ featureImage:
 categories:
   - DevOps
 ---
-
-_This is a guest post from [Benni Mack](https://twitter.com/bennimack), CTO of the [digital agency b13](https://b13.com/), located in Germany. He’s been the project lead for [TYPO3](https://typo3.org/), an Enterprise CMS based on PHP, for the last 6 years, steering contributors and developers around the TYPO3 Ecosystem through his passion for Open Source and PHP. This is part two of a two part series, [find part one here](https://ddev.com/ddev-local/why-developing-locally-matters/)._
-
-### Recap: A local development environment
 
 In my previous blog post, I mentioned my road to a proper local development environment with Git, and a deployment strategy. Read all about it [here](https://ddev.com/ddev-local/why-developing-locally-matters/) to get a grip on why you should start setting up a local development environment too.
 

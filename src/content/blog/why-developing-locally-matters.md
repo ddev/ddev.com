@@ -2,17 +2,13 @@
 title: "Why developing locally matters"
 pubDate: 2020-10-28
 summary: Benni Mack on the importance of version control and local development.
-author: DDEV
+author: Benni Mack
 featureImage:
   src: /img/blog/2020/10/git-flow-benni-blog.001-2.jpeg
   alt: Illustration with post title and arrows with circles depicting a stylized flow
 categories:
   - DevOps
 ---
-
-_This is a guest post from_ [_Benni Mack_](https://twitter.com/bennimack)_, CTO of the_ [_digital agency b13_](https://b13.com/)_, located in Germany. He’s been the project lead for_ [_TYPO3_](https://typo3.org/)_, an Enterprise CMS based on PHP, for the last 6 years, steering contributors and developers around the TYPO3 Ecosystem through his passion for Open Source and PHP._ This is part one of a two part series. [Find part two here](https://ddev.com/ddev-live/why-your-local-dev-environment-should-match-production/).
-
-## Introduction
 
 I’ve been a web developer for over 20 years, in which time my work shifted from HTML-only to dynamically built websites with PHP, Java, Ruby, and JavaScript. Especially with PHP and other non-compiled programming languages, it was an “easy fix” to work directly on the production web server to see my changes – even when those changes weren’t working. However, our company b13 shifted to using [Git as a Version Control System (VCS)](https://git-scm.com/) in 2012, and looking back, I have no regrets about making that change. Here are a few WHYs on the power of a good development setup for myself and my company.
 

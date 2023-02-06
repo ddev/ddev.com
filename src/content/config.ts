@@ -32,7 +32,7 @@ const authorCollection = defineCollection({
   schema: z.object({
     name: z.string(),
     firstName: z.string(),
-    avatarUrl: z.string(),
+    avatarUrl: z.string().optional(),
   })
 });
 

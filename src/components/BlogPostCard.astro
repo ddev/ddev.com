@@ -15,7 +15,7 @@ const { post } = Astro.props
 const { remarkPluginFrontmatter } = await post.render()
 
 const author = await getEntryBySlug("authors", getSlug(post.data.author))
-const authorImage = author.data.avatarUrl
+const authorImage = author.data.avatarUrl ?? null
 
 const hasFeatureImage =
   Object.hasOwn(post.data, "featureImage") &&
@@ -74,17 +74,21 @@ const firstCategory = post.data.categories.length
       </a>
     </div>
     <div class="mt-6 flex items-center">
-      <div class="flex-shrink-0">
-        <a href={`/blog/author/${author.slug}`}>
-          <span class="sr-only">{post.data.author}</span>
-          <img
-            class="h-10 w-10 rounded-full"
-            src={authorImage}
-            alt={post.data.author}
-          />
-        </a>
-      </div>
-      <div class="ml-3">
+      {
+        authorImage && (
+          <div class="flex-shrink-0">
+            <a href={`/blog/author/${author.slug}`}>
+              <span class="sr-only">{post.data.author}</span>
+              <img
+                class="h-10 w-10 rounded-full"
+                src={authorImage}
+                alt={post.data.author}
+              />
+            </a>
+          </div>
+        )
+      }
+      <div class={authorImage ? `ml-3` : ``}>
         <p class="text-sm font-medium text-gray-900">
           <a href={`/blog/author/${author.slug}`} class="hover:underline">
             {post.data.author}

@@ -1,7 +1,6 @@
 ---
 name: Randy Fay
 firstName: Randy
-description:
 avatarUrl: http://2.gravatar.com/avatar/eaa4a82dca6b5d2d0b58e784231caf3a?s=96&d=mm&r=g
 ---
 

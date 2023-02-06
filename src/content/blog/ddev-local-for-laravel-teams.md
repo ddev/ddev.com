@@ -2,7 +2,7 @@
 title: "DDEV-Local for Laravel teams"
 pubDate: 2020-09-24
 summary: Sergey Fayngold on Laravel teams working with DDEV.
-author: DDEV
+author: Sergey Fayngold
 featureImage:
   src: /img/blog/2020/09/ddev-laravel.png
   alt: Illustration of intertwined DDEV and Laravel logos
@@ -10,8 +10,6 @@ categories:
   - DevOps
   - Guides
 ---
-
-_This is a guest post from [Sergey Fayngold](https://github.com/NBZ4live), Head of Web Development at [MY.GAMES](https://my.games/) in Amsterdam. Sergey also [contributed to DDEV-Local](https://github.com/drud/ddev/releases/tag/v1.15.0) by adding explicit Laravel support._
 
 In terms of local development environments (LDE), Laravel does have a lot of options. We have Homestead, Valet, Laradock, etc (In general, any PHP LDE can be tweaked to support [Laravel](https://laravel.com/)). They all do the job in their scopes. Now it’s also possible to work on Laravel with [DDEV-Local](https://ddev.com/ddev-local/), an open source, Docker-based LDE. So why consider one more option?
 
