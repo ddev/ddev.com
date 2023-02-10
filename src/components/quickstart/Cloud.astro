@@ -6,10 +6,9 @@ import CommunityCTA from "./CommunityCTA.astro"
 
 export interface Props {
   latestVersion: string
-  codeTheme: string
 }
 
-const { latestVersion, codeTheme } = Astro.props
+const { latestVersion } = Astro.props
 ---
 
 <div class="prose">
@@ -48,6 +47,7 @@ const { latestVersion, codeTheme } = Astro.props
             to include these two lines in the “features” section:
             <Code
               code={`"features": {\n    "ghcr.io/devcontainers/features/docker-in-docker:1": {},\n    "ghcr.io/drud/ddev/install-ddev:latest": {}\n},`}
+              theme="nord"
               lang="json"
             />
           </li>
