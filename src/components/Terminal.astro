@@ -16,7 +16,6 @@ import { Code } from "astro/components"
 export interface Props {
   code: string
   codeTheme?: string
-  codeLang?: string
   type?:
     | "default"
     | "powershell"
@@ -26,7 +25,7 @@ export interface Props {
     | "ubuntu"
 }
 
-const { code, codeLang, codeTheme = "nord", type = "default" } = Astro.props
+const { code, codeTheme = "nord", type = "default" } = Astro.props
 ---
 
 <style is:global lang="postcss">
@@ -79,6 +78,6 @@ const { code, codeLang, codeTheme = "nord", type = "default" } = Astro.props
     )}
   </div>
   <div class="overflow-hidden my-0">
-    <Code code={code} theme={codeTheme} lang={codeLang} />
+    <Code code={String(code)} theme={codeTheme} />
   </div>
 </div>
