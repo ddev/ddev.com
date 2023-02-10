@@ -1,0 +1,185 @@
+---
+import Terminal from "@components/Terminal.astro"
+import CommunityCTA from "./CommunityCTA.astro"
+
+export interface Props {
+  latestVersion: string
+}
+
+const { latestVersion } = Astro.props
+---
+
+<div class="prose">
+  <p class="text-gray-600 mb-16">
+    We’ll use WSL2 with Docker inside since it’s the fastest and most
+    straightforward of <a
+      href="https://ddev.readthedocs.io/en/latest/users/install/docker-installation/#windows"
+      >several options</a
+    >.
+  </p>
+
+  <h2 class="text-3xl mt-24">
+    <small class="block font-mono text-xs text-gray-500">1/3</small>Install WSL2
+    with Ubuntu
+  </h2>
+
+  <p>Run the following in a PowerShell v5 terminal:</p>
+
+  <Terminal type="powershell" code={`> wsl --install`} />
+
+  <p>You’ll probably need to reboot.</p>
+
+  <p>
+    Visit the Microsoft Store and install the updated “Windows Subsystem for
+    Linux” and click “Open”. It will likely prompt you for a username and
+    password for the Ubuntu WSL2 instance it creates.
+  </p>
+
+  <p>Verify that you now have an Ubuntu distro set as default:</p>
+
+  <Terminal
+    type="powershell"
+    code={`> wsl -l -v\n  NAME                   STATE           VERSION\n* Ubuntu-20.04           Stopped         2`}
+  />
+</div>
+
+<div class="prose">
+  <h2 class="text-3xl mt-24">
+    <small class="block font-mono text-xs text-gray-500">2/3</small>Run the
+    Install Script
+  </h2>
+
+  <p>Run the following in an administrative PowerShell:</p>
+
+  <Terminal
+    type="powershell"
+    code={`> Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;\niex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/drud/ddev/master/scripts/install_ddev_wsl2_docker_inside.ps1'))`}
+  />
+
+  <p>
+    In the “Ubuntu” terminal app or Windows Terminal, confirm that DDEV is
+    installed: 🎉
+  </p>
+  <Terminal
+    type="powershell-ubuntu"
+    code={`$ ddev -v\nddev version ${latestVersion}`}
+  />
+</div>
+
+<div class="prose">
+  <h2 class="text-3xl mt-24">
+    <small class="block font-mono text-xs text-gray-500">3/3</small>Create a
+    Project
+  </h2>
+
+  <p>Navigate to a project you’d like to spin up with DDEV:</p>
+  <Terminal type="powershell-ubuntu" code={`$ cd ~/dev/my-project`} />
+
+  <p>
+    Initialize the project by running the <a
+      href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#config"
+      target="_blank"
+      ><code>ddev config</code>
+    </a> command:
+  </p>
+  <Terminal type="powershell-ubuntu" code={`$ ddev config`} />
+
+  <p>
+    Start the project for the first time. You’ll use the same command to start
+    it later, too!
+  </p>
+  <Terminal type="powershell-ubuntu" code={`$ ddev start`} />
+
+  <p>
+    If it’s a Composer project, you may also need to run <a
+      href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#composer"
+      target="_blank"
+      ><code>ddev composer install</code>
+    </a>.
+  </p>
+</div>
+
+<div class="prose">
+  <h2 class="text-3xl mt-24">Explore & Enjoy!</h2>
+
+  <p>
+    Take a peek at your project’s new <code>.ddev/</code> directory. You can add
+    this to your repo to share your DDEV config, edit <code
+      >.ddev/ddev.yaml</code
+    > to change <a
+      href="https://ddev.readthedocs.io/en/latest/users/configuration/config/"
+      target="_blank">project options</a
+    >, or even go about your business and pretend this folder doesn’t exist.
+  </p>
+
+  <p>
+    Run the <a
+      href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#help"
+      target="_blank"
+      >help command
+    </a> (or plain <code>ddev</code>) to see the actions you can take with the
+    CLI:
+  </p>
+
+  <Terminal type="powershell-ubuntu" code={`$ ddev -h`} />
+
+  <p>
+    Use the <a
+      href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#describe"
+      target="_blank"
+      >describe command
+    </a> to see a project’s parts and database connection details:
+  </p>
+
+  <Terminal type="powershell-ubuntu" code={`$ ddev describe`} />
+
+  <p>
+    If you’re done working on a project and want to shut it down without
+    removing anything, use the <a
+      href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#stop"
+      target="_blank"
+      >stop command
+    </a>:
+  </p>
+
+  <Terminal type="powershell-ubuntu" code={`$ ddev stop`} />
+
+  <p>
+    If you were just kicking the tires and you want to permanently delete the
+    project and its resources without touching your code, run the <a
+      href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#delete"
+      target="_blank"
+      >delete command
+    </a>:
+  </p>
+
+  <Terminal type="powershell-ubuntu" code={`$ ddev delete`} />
+
+  <p>
+    DDEV will remove everything it created for the project and have no memory of
+    its existence.
+  </p>
+
+  <p>
+    To uninstall DDEV, first clean up its Docker bits and delete its files from
+    your system:
+  </p>
+
+  <Terminal
+    type="powershell-ubuntu"
+    code={`$ ddev clean --all\n$ ddev hostname --remove-inactive\n$ rm -r ~/.ddev`}
+  />
+
+  <p>
+    Remove the <code>ddev</code> binary from the WSL2 distro:
+  </p>
+
+  <Terminal type="powershell-ubuntu" code={`$ sudo rm /usr/bin/ddev`} />
+
+  <p>
+    Lastly, remove DDEV from Windows by visiting <i>Add or remove programs</i>,
+    finding “DDEV Local”, and choosing <i>Uninstall</i>.
+  </p>
+
+  <CommunityCTA />
+</div>

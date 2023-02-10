@@ -11,8 +11,12 @@ import {
   MinusIcon,
   StopIcon,
 } from "@heroicons/react/24/outline/index.js"
+import { Code } from "astro/components"
 
 export interface Props {
+  code: string
+  codeTheme?: string
+  codeLang?: string
   type?:
     | "default"
     | "powershell"
@@ -22,7 +26,7 @@ export interface Props {
     | "ubuntu"
 }
 
-const { type = "default" } = Astro.props
+const { code, codeLang, codeTheme = "nord", type = "default" } = Astro.props
 ---
 
 <style is:global lang="postcss">
@@ -75,6 +79,6 @@ const { type = "default" } = Astro.props
     )}
   </div>
   <div class="overflow-hidden my-0">
-    <slot />
+    <Code code={code} theme={codeTheme} lang={codeLang} />
   </div>
 </div>
