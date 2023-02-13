@@ -1,13 +1,14 @@
 ---
+import AppLogos from "@components/AppLogos.astro"
+import Benefits from "@components/Benefits.astro"
+import BlogFeatures from "@components/BlogFeatures.astro"
+import Contributors from "@components/Contributors.astro"
+import Features from "@components/Features.astro"
+import Hero from "@components/Hero.astro"
 import Layout from "../layouts/Layout.astro"
-import Features from "../components/Features.astro"
-import Hero from "../components/Hero.astro"
-import SoftwareLogos from "../components/SoftwareLogos.astro"
-import Benefits from "../components/Benefits.astro"
-import AppLogos from "../components/AppLogos.astro"
-import BlogFeatures from "../components/BlogFeatures.astro"
-import FeaturedRepos from "../components/FeaturedRepos.astro"
-import Contributors from "../components/Contributors.astro"
+import RepoCard from "@components/RepoCard.astro"
+import SoftwareLogos from "@components/SoftwareLogos.astro"
+import { GITHUB_REPO } from "../const"
 ---
 
 <Layout title={`Docker-based local development environments in minutes.`}>
@@ -23,6 +24,25 @@ import Contributors from "../components/Contributors.astro"
     <AppLogos />
     <BlogFeatures />
     <Contributors />
-    <FeaturedRepos />
+    <div>
+      <div class="max-w-4xl mx-auto py-24 px-6 lg:px-0">
+        <div
+          class="grid gap-x-6 gap-y-8 md:gap-y-12 grid-cols-1 md:grid-cols-3"
+        >
+          <RepoCard
+            name={GITHUB_REPO}
+            description="Official DDEV development and issues."
+          />
+          <RepoCard
+            name="ddev/ddev-contrib"
+            description="Vetted, user-contributed recipes for using and extending DDEV."
+          />
+          <RepoCard
+            name="ddev/awesome-ddev"
+            description="External resources, blog posts, recipes, screencasts, and more."
+          />
+        </div>
+      </div>
+    </div>
   </main>
 </Layout>
