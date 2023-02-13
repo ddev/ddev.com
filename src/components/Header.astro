@@ -3,8 +3,64 @@
  * Global site header.
  */
 import { GITHUB_URL, DOCUMENTATION_URL } from "../const"
-import { MagnifyingGlassIcon } from "@heroicons/react/24/solid/index.js"
+import {
+  MagnifyingGlassIcon,
+  Bars2Icon,
+  XMarkIcon,
+} from "@heroicons/react/24/solid/index.js"
 ---
+
+<script>
+  const menuToggle = document.getElementById("mobile-trigger")
+  const menuClose = document.getElementById("mobile-close")
+  const menuContainer = document.getElementById("mobile-menu")
+  let expanded = false
+
+  const initListeners = () => {
+    menuToggle.addEventListener("click", () => {
+      toggleMenu()
+    })
+
+    menuClose.addEventListener("click", () => {
+      toggleMenu(true)
+    })
+
+    window.addEventListener(
+      "resize",
+      (event) => {
+        let width = document.body.clientWidth
+        if (width > 1024) {
+          toggleMenu(true)
+        }
+      },
+      true
+    )
+  }
+
+  const toggleMenu = (forceClosed?: boolean) => {
+    if (expanded || forceClosed) {
+      menuContainer.classList.remove("open")
+      expanded = false
+    } else {
+      menuContainer.classList.add("open")
+      expanded = true
+    }
+  }
+
+  if (menuToggle && menuClose && menuContainer) {
+    initListeners()
+  }
+</script>
+
+<style type="postcss">
+  .menu {
+    @apply hidden absolute top-0 right-0 max-w-full bg-white px-8 py-4 z-30 text-center shadow-2xl rounded-lg m-3;
+
+    &.open {
+      @apply block;
+    }
+  }
+</style>
 
 <header class="w-full p-8">
   <nav
@@ -20,8 +76,8 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/solid/index.js"
         aria-hidden="true"
       />
     </a>
-    <div class="w-2/3 flex justify-end">
-      <ul class="flex">
+    <div class="w-2/3 flex justify-end items-center">
+      <ul class="hidden lg:flex">
         <li class="mx-4">
           <a class="font-bold" href="/get-started" rel="prefetch">Get Started</a
           >
@@ -41,10 +97,60 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/solid/index.js"
           >
         </li>
       </ul>
-      <a href="/search" class="ml-4">
+      <a href="/search" class="ml-4 p-1">
         <span class="sr-only">Search</span>
-        <MagnifyingGlassIcon className="w-6 h-6" aria-hidden={true} />
+        <MagnifyingGlassIcon className="w-6 h-6 " aria-hidden={true} />
       </a>
+      <button id="mobile-trigger" class="flex lg:hidden ml-6 p-1">
+        <span class="sr-only">Menu</span>
+        <Bars2Icon className="w-6 h-6 " />
+      </button>
+    </div>
+    <div id="mobile-menu" class="menu">
+      <div class="flex w-full justify-end mb-2">
+        <button id="mobile-close" class="flex p-2 py-3 -mr-4">
+          <span class="sr-only">Close</span>
+          <XMarkIcon className="w-6 h-6 " />
+        </button>
+      </div>
+
+      <ul>
+        <li>
+          <a
+            class="font-bold block py-3 px-4 text-lg border-t border-dotted"
+            href="/get-started"
+            rel="prefetch">Get Started</a
+          >
+        </li>
+        <li>
+          <a
+            class="font-bold block py-3 px-4 text-lg border-t border-dotted"
+            href={DOCUMENTATION_URL}
+            target="_blank">Docs</a
+          >
+        </li>
+        <li>
+          <a
+            class="font-bold block py-3 px-4 text-lg border-t border-dotted"
+            href="/blog"
+            rel="prefetch">Blog</a
+          >
+        </li>
+        <li>
+          <a
+            class="font-bold block py-3 px-4 text-lg border-t border-dotted"
+            href={GITHUB_URL}
+            target="_blank">GitHub</a
+          >
+        </li>
+        <li>
+          <a
+            class="font-bold block py-3 px-4 text-lg border-t border-dotted"
+            href="/support-ddev"
+            rel="prefetch">❤️ Support DDEV</a
+          >
+        </li>
+      </ul>
     </div>
   </nav>
 </header>
