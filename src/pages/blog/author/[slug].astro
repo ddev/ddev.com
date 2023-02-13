@@ -39,14 +39,14 @@ const { Content } = await author.render()
   description={`List of blog posts by ${author.data.name}.`}
 >
   <main class="max-w-4xl mx-auto mb-24">
-    <div class="flex space-x-12 py-24">
+    <div class="lg:flex lg:space-x-12 py-24 px-6 lg:px-0">
       <h1 class="font-bold text-4xl">{author.data.name}</h1>
-      <div class="prose">
+      <div class="prose mt-6 lg:mt-0">
         <Content />
       </div>
     </div>
 
-    <h2 class="text-base font-mono text-navy-300">
+    <h2 class="text-base font-mono text-navy-300 px-6 lg:px-0">
       {author.data.firstName || author.data.name}’s {
         posts.length == 1 ? `Post` : `Posts`
       }
