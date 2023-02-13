@@ -47,6 +47,7 @@
     "tailwindcss": "^3.2.4"
   },
   "devDependencies": {
+    "@types/marked": "^4.0.8",
     "dotenv": "^16.0.3",
     "textlint": "^13.0.5",
     "textlint-filter-rule-comments": "^1.2.2",
