@@ -26,13 +26,15 @@ orderedPosts.forEach((post, index) => {
 })
 ---
 
-<nav class="max-w-4xl mx-auto md:flex md:gap-2 md:columns-3 mt-32 py-4">
+<nav
+  class="max-w-4xl mx-auto px-6 lg:px-0 md:flex md:gap-2 md:columns-3 mt-32 py-4"
+>
   {
     prev && (
       <a
         href={`/blog/${prev.slug}`}
         rel="prefetch"
-        class="flex border items-center rounded-md w-full my-1 md:my-0 content-center justify-center md:justify-start p-4 hover:border-blue-300 hover:shadow-sm"
+        class="flex border items-center rounded-md w-full my-1 md:my-0 content-center justify-start md:justify-start p-4 hover:border-blue-300 hover:shadow-sm"
         title={`Previous: ${prev.data.title}`}
       >
         <div>
@@ -49,7 +51,7 @@ orderedPosts.forEach((post, index) => {
       <a
         href={`/blog/${next.slug}`}
         rel="prefetch"
-        class="flex border items-center rounded-md w-full my-1 md:my-0 content-center justify-center md:justify-end text-right p-4 hover:border-blue-300 hover:shadow-sm"
+        class="flex border items-center rounded-md w-full my-1 md:my-0 content-center justify-start md:justify-end md:text-right p-4 hover:border-blue-300 hover:shadow-sm"
         title={`Next: ${next.data.title}`}
       >
         <div>

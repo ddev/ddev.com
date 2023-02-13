@@ -23,8 +23,8 @@ const releaseData = await getReleases()
 >
   <main class="max-w-4xl mx-auto mb-24">
     <Heading title={`The Story of DDEV`} />
-    <div class="flex">
-      <div class="w-2/3">
+    <div class="lg:flex">
+      <div class="px-6 lg:px-0 lg:w-2/3">
         <PostBody>
           <p>
             DDEV is a local development environment for web developers. It
@@ -67,33 +67,33 @@ const releaseData = await getReleases()
           </p>
         </PostBody>
       </div>
-      <div class="w-1/3 pl-16">
-        <ul>
-          <li class="mb-4">
+      <div class="mt-16 lg:mt-0 lg:w-1/3 lg:pl-16">
+        <ul class="flex flex-wrap lg:block">
+          <li class="mb-4 p-6 lg:p-0">
             <span class="text-5xl font-thin"
               >{parseInt(5000).toLocaleString("en-US")}+</span
             >
             <span class="block font-mono text-sm">active users</span>
           </li>
-          <li class="mb-4">
+          <li class="mb-4 p-6 lg:p-0">
             <span class="text-5xl font-thin"
               >{parseInt(releaseData.length).toLocaleString("en-US")}</span
             >
             <span class="block font-mono text-sm">releases</span>
           </li>
-          <li class="mb-4">
+          <li class="mb-4 p-6 lg:p-0">
             <span class="text-5xl font-thin"
               >{parseInt(contributorData.length).toLocaleString("en-US")}</span
             >
             <span class="block font-mono text-sm">contributors</span>
           </li>
-          <li class="mb-4">
+          <li class="mb-4 p-6 lg:p-0">
             <span class="text-5xl font-thin"
               >{parseInt(sponsorData.length).toLocaleString("en-US")}</span
             >
             <span class="block font-mono text-sm">sponsors</span>
           </li>
-          <li>
+          <li class="p-6 lg:p-0">
             <span class="text-5xl font-thin"
               >{
                 parseInt(repoData.stargazers_count).toLocaleString("en-US")
