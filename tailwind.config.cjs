@@ -30,13 +30,17 @@ module.exports = {
           900: "#00192d",
         },
       },
-      // remove automatic quote marks from blockquotes
       typography: {
         DEFAULT: {
           css: {
+            // remove automatic quote marks from blockquotes
             "blockquote p:first-of-type::before": null,
             "blockquote p:last-of-type::after": null,
+            // remove automatic backticks that surround inline code blocks
+            "code::before": null,
+            "code::after": null,
           },
+          code: {},
         },
       },
     },
