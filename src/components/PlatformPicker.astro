@@ -113,7 +113,7 @@ const { heading, inputName = "platform" } = Astro.props
   }
 </script>
 
-<div class="choose">
+<div class="choose px-6 lg:px-0">
   {heading && <h2>{heading}</h2>}
   <div class="choose-platform flex">
     <div class="w-full">
@@ -128,7 +128,7 @@ const { heading, inputName = "platform" } = Astro.props
         class="block w-full text-center border-y border-l rounded-l py-4 select-none cursor-pointer"
         for="platform-mac"
       >
-        <span class="inline-block w-4 h-4 relative" style="top: 2px"
+        <span class="hidden md:inline-block w-4 h-4 relative" style="top: 2px"
           ><Icon name="Apple" />
         </span>
         Mac</label
@@ -146,7 +146,7 @@ const { heading, inputName = "platform" } = Astro.props
         class="block w-full text-center border-y border-l py-4 select-none cursor-pointer"
         for="platform-windows"
       >
-        <span class="inline-block w-4 h-4 relative" style="top: 2px"
+        <span class="hidden md:inline-block w-4 h-4 relative" style="top: 2px"
           ><Icon name="Windows" />
         </span>
         Windows</label
@@ -164,7 +164,7 @@ const { heading, inputName = "platform" } = Astro.props
         class="block w-full text-center border-y border-l py-4 select-none cursor-pointer"
         for="platform-linux"
       >
-        <span class="inline-block w-4 h-4 relative" style="top: 2px"
+        <span class="hidden md:inline-block w-4 h-4 relative" style="top: 2px"
           ><Icon name="Linux" />
         </span>
 
@@ -183,7 +183,7 @@ const { heading, inputName = "platform" } = Astro.props
         class="block w-full text-center border-y border-x rounded-r py-4 select-none cursor-pointer"
         for="platform-cloud"
       >
-        <span class="inline-block w-4 h-4 relative" style="top: 2px"
+        <span class="hidden md:inline-block w-4 h-4 relative" style="top: 2px"
           ><CloudIcon />
         </span>
 

@@ -23,24 +23,26 @@ const latestRelease = await getLatestReleaseVersion()
       <PlatformPicker heading={`Choose your platform:`} />
     </div>
 
-    {/* Mac instructions */}
-    <div data-platform="mac" class="hidden">
-      <Mac latestVersion={latestRelease} />
-    </div>
+    <div class="px-6 lg:px-0">
+      {/* Mac instructions */}
+      <div data-platform="mac" class="hidden">
+        <Mac latestVersion={latestRelease} />
+      </div>
 
-    {/* Windows instructions */}
-    <div data-platform="windows" class="hidden">
-      <Windows latestVersion={latestRelease} />
-    </div>
+      {/* Windows instructions */}
+      <div data-platform="windows" class="hidden">
+        <Windows latestVersion={latestRelease} />
+      </div>
 
-    {/* Linux instructions */}
-    <div data-platform="linux" class="hidden">
-      <Linux latestVersion={latestRelease} />
-    </div>
+      {/* Linux instructions */}
+      <div data-platform="linux" class="hidden">
+        <Linux latestVersion={latestRelease} />
+      </div>
 
-    {/* Cloud instructions */}
-    <div data-platform="cloud" class="hidden">
-      <Cloud latestVersion={latestRelease} />
+      {/* Cloud instructions */}
+      <div data-platform="cloud" class="hidden">
+        <Cloud latestVersion={latestRelease} />
+      </div>
     </div>
   </main>
 </Layout>

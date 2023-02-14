@@ -7,7 +7,7 @@ export interface Props {
   title: string
   // Smaller text to be displayed beneath the primary heading
   subtitle?: string
-  // A pre-formatted date string (used for blog posts)
+  // A preformatted date string (used for blog posts)
   date?: string
   // Human-formatted name for the page author (used for blog posts)
   author?: string
@@ -27,7 +27,7 @@ const { title, subtitle, date, author, authorUrl, authorAvatar, readTime } =
   <h1 class="font-bold text-4xl">{title}</h1>
   {subtitle && <p class="text-2xl text-gray-600 my-4">{subtitle}</p>}
 
-  <div class="flex items-center content-center my-6 font-mono">
+  <div class="md:flex md:items-center md:content-center my-6 font-mono">
     {
       author && (
         <div class="flex items-center content-center mr-2">
@@ -48,12 +48,15 @@ const { title, subtitle, date, author, authorUrl, authorAvatar, readTime } =
         </div>
       )
     }
-    <p class="">
+    <p class="mt-4 md:mt-0">
       {
         date && (
           <span>
             {" "}
-            <span aria-hidden="true"> ·</span>
+            <span aria-hidden="true" class="hidden md:inline">
+              {" "}
+              ·
+            </span>
             {date}
           </span>
         )
