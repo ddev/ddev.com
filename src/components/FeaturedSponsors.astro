@@ -85,13 +85,13 @@ const featuredSponsors = [
 
 <div class="relative">
   <div
-    class={`flex flex-wrap space-x-12 space-y-12 -mt-12 justify-center items-center content-center`}
+    class={`flex flex-wrap space-y-12 -mt-12 justify-center items-center content-center`}
   >
     {
       featuredSponsors.map((sponsor) => (
         <a
           class={
-            `block relative overflow-hidden cursor-pointer h-12` +
+            `block relative overflow-hidden cursor-pointer h-12 mx-6` +
             (sponsor.hasOwnProperty("class") ? ` ` + sponsor.class : ``)
           }
           title={sponsor.name}
