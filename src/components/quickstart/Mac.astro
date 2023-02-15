@@ -1,6 +1,6 @@
 ---
 import Terminal from "@components/Terminal.astro"
-import { Tabs } from "astro-tabs"
+import Tabs from "@components/Tabs.astro"
 import CommunityCTA from "./CommunityCTA.astro"
 
 export interface Props {
@@ -24,10 +24,8 @@ const { latestVersion } = Astro.props
   </h2>
 </div>
 
-<Tabs class="-mx-4 mb-6" style="max-width: 41.5rem;">
-  <Fragment slot="tab-1">Homebrew</Fragment>
-  <Fragment slot="tab-2">Download</Fragment>
-  <Fragment slot="panel-1">
+<Tabs order={["Homebrew", "Download"]}>
+  <Fragment slot="Homebrew">
     <div class="prose py-5">
       <p>
         With <a href="https://brew.sh" target="_blank">Homebrew</a> installed, you
@@ -36,7 +34,7 @@ const { latestVersion } = Astro.props
       <Terminal code={`→ brew install homebrew/cask/docker`} />
     </div>
   </Fragment>
-  <Fragment slot="panel-2">
+  <Fragment slot="Download">
     <div class="prose py-5">
       <p>
         Download and run the <a
@@ -57,15 +55,13 @@ const { latestVersion } = Astro.props
   </h2>
 </div>
 
-<Tabs class="-mx-4 mb-6" style="max-width: 41.5rem;">
-  <Fragment slot="tab-1">Homebrew</Fragment>
-  <Fragment slot="tab-2">Install Script</Fragment>
-  <Fragment slot="panel-1">
+<Tabs order={["Homebrew", "Install Script"]}>
+  <Fragment slot="Homebrew">
     <div class="prose py-5">
       <Terminal code={`→ brew install drud/ddev/ddev`} />
     </div>
   </Fragment>
-  <Fragment slot="panel-2">
+  <Fragment slot="Install Script">
     <div class="prose py-5">
       <Terminal
         code={`→ curl -fsSL https://raw.githubusercontent.com/drud/ddev/master/scripts/install_ddev.sh | bash`}
@@ -184,15 +180,13 @@ const { latestVersion } = Astro.props
     Then remove the <code>ddev</code> binary however you installed it:
   </p>
 
-  <Tabs class="-mx-4 -mt-4" style="max-width: 41.5rem;">
-    <Fragment slot="tab-1">Homebrew</Fragment>
-    <Fragment slot="tab-2">Install Script</Fragment>
-    <Fragment slot="panel-1">
+  <Tabs order={["Homebrew", "Install Script"]}>
+    <Fragment slot="Homebrew">
       <div class="prose py-5">
         <Terminal code={`→ brew uninstall ddev`} />
       </div>
     </Fragment>
-    <Fragment slot="panel-2">
+    <Fragment slot="Install Script">
       <div class="prose py-5">
         <Terminal code={`→ rm /usr/local/bin/ddev`} />
       </div>

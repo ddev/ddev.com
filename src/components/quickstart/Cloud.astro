@@ -1,6 +1,6 @@
 ---
 import Terminal from "@components/Terminal.astro"
-import { Tabs } from "astro-tabs"
+import Tabs from "@components/Tabs.astro"
 import { Code } from "astro/components"
 import CommunityCTA from "./CommunityCTA.astro"
 
@@ -14,10 +14,8 @@ const { latestVersion } = Astro.props
 <div class="prose">
   <h2 class="text-3xl mt-24">Launch with a Provider</h2>
 
-  <Tabs class="-mx-4 mb-6" style="max-width: 41.5rem;">
-    <Fragment slot="tab-1">Gitpod</Fragment>
-    <Fragment slot="tab-2">GitHub Codespaces</Fragment>
-    <Fragment slot="panel-1">
+  <Tabs order={["Gitpod", "GitHub Codespaces"]}>
+    <Fragment slot="Gitpod">
       <div class="prose pt-5">
         <p>
           <a href="https://www.gitpod.io/docs/getting-started" target="_blank"
@@ -30,11 +28,11 @@ const { latestVersion } = Astro.props
         ><img
           src="/img/open-in-gitpod.svg"
           alt="Open in Gitpod"
-          class="drop-shadow-sm mb-4"
+          class="drop-shadow-sm pb-4 my-4"
         />
       </a>
     </Fragment>
-    <Fragment slot="panel-2">
+    <Fragment slot="GitHub Codespaces">
       <div class="prose py-5">
         <ol>
           <li>
@@ -66,7 +64,7 @@ const { latestVersion } = Astro.props
         ><img
           src="https://github.com/codespaces/badge.svg"
           alt="Open in GitHub Codespaces"
-          class="mb-4"
+          class="pb-4 my-4"
         />
       </a>
     </Fragment>

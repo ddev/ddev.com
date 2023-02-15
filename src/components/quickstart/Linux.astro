@@ -1,6 +1,6 @@
 ---
 import Terminal from "@components/Terminal.astro"
-import { Tabs } from "astro-tabs"
+import Tabs from "@components/Tabs.astro"
 import CommunityCTA from "./CommunityCTA.astro"
 
 export interface Props {
@@ -16,12 +16,8 @@ const { latestVersion } = Astro.props
     Docker
   </h2>
 
-  <Tabs class="-mx-4 mb-6" style="max-width: 41.5rem;">
-    <Fragment slot="tab-1">Ubuntu</Fragment>
-    <Fragment slot="tab-2">CentOS</Fragment>
-    <Fragment slot="tab-3">Debian</Fragment>
-    <Fragment slot="tab-4">Fedora</Fragment>
-    <Fragment slot="panel-1">
+  <Tabs order={["Ubuntu", "CentOS", "Debian", "Fedora"]}>
+    <Fragment slot="Ubuntu">
       <div class="prose py-5">
         <p>
           Follow the <a
@@ -35,7 +31,7 @@ const { latestVersion } = Astro.props
         />
       </div>
     </Fragment>
-    <Fragment slot="panel-2">
+    <Fragment slot="CentOS">
       <div class="prose py-5">
         <p>
           Follow the <a
@@ -50,7 +46,7 @@ const { latestVersion } = Astro.props
         />
       </div>
     </Fragment>
-    <Fragment slot="panel-3">
+    <Fragment slot="Debian">
       <div class="prose py-5">
         <p>
           Follow the <a
@@ -65,7 +61,7 @@ const { latestVersion } = Astro.props
         />
       </div>
     </Fragment>
-    <Fragment slot="panel-4">
+    <Fragment slot="Fedora">
       <div class="prose py-5">
         <p>
           Follow the <a
