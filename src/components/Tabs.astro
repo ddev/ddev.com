@@ -39,10 +39,18 @@ order.map((label) => {
   }
 
   .tab {
-    @apply px-3 py-1 border-transparent leading-none font-mono font-bold text-sm rounded-full text-blue-600 hover:underline hover:text-blue-700 hover:border-transparent;
+    @apply px-3 py-1 leading-none font-mono font-bold text-sm text-gray-500 hover:text-black;
+
+    span {
+      @apply border-dotted border-b border-gray-400;
+    }
 
     &.active {
-      @apply underline;
+      @apply text-black;
+
+      span {
+        @apply border-solid border-black;
+      }
     }
   }
 
@@ -110,7 +118,7 @@ order.map((label) => {
             id={`tab-${tab.uid}`}
             class={`tab` + (index === 0 ? ` active` : ``)}
           >
-            {tab.label}
+            <span>{tab.label}</span>
           </button>
         ))
       }
