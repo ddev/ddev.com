@@ -1,5 +1,5 @@
 ---
-title: "Spin Up a New, Local WordPress or Drupal Dev Environment Within 1 Minute With ddev!"
+title: "Spin Up a New, Local WordPress or Drupal Dev Environment Within 1 Minute With DDEV!"
 pubDate: 2017-05-10
 summary: Getting WordPress or Drupal quickly running locally with DDEV.
 author: Rick Manelius

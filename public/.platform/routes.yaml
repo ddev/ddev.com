@@ -14,3 +14,5 @@ https://{default}/:
         to: "https://ddev.com/blog/author/randy-fay"
       "/author/rmanelius":
         to: "https://ddev.com/blog/author/rick-manelius"
+      "/author/rmanelius":
+        to: "https://ddev.com/blog/author/rick-manelius"
