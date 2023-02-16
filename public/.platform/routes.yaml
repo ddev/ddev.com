@@ -3,9 +3,16 @@
 https://{default}/:
   redirects:
     paths:
-      "^/ddev-local/(.*)":
-        to: "https://ddev.com/blog/$1"
-        regexp: true
+      "/ddev-local/ddev-wsl2-getting-started/":
+        to: "https://ddev.readthedocs.io/en/latest/users/install/ddev-installation/#windows-wsl2"
+      "/ddev-local/apache-solr-with-drupal-8-and-search-api-solr/":
+        to: "https://github.com/ddev/ddev-drupal9-solr"
+      "/ddev-local/ddev-local-web-container-customization-in-v1-8-0/":
+        to: "https://ddev.readthedocs.io/en/latest/users/extend/customizing-images/"
+      "/ddev-local/ddev-local-nfs-mounting-setup-macos/":
+        to: "https://ddev.readthedocs.io/en/latest/users/install/performance/#nfs"
+      "/ddev-local":
+        to: "https://ddev.com/blog"
       "/meet-the-team":
         to: "https://ddev.com/blog/authors"
       "/author/heather":
@@ -16,3 +23,6 @@ https://{default}/:
         to: "https://ddev.com/blog/author/rick-manelius"
       "/author/rmanelius":
         to: "https://ddev.com/blog/author/rick-manelius"
+      "^/ddev-local/(.*)":
+        to: "https://ddev.com/blog/$1"
+        regexp: true
