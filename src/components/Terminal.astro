@@ -32,6 +32,14 @@ const { code, codeTheme = "nord", type = "default" } = Astro.props
   .terminal-wrapper {
     @apply rounded-lg;
     background: #2e3440;
+
+    pre {
+      @apply font-normal overflow-x-auto px-4 py-2 font-mono bg-transparent rounded-t-none;
+
+       code {
+        color: #d8dee9;
+       }
+    }
   }
 
   .terminal-wrapper .top-bar {
@@ -78,6 +86,6 @@ const { code, codeTheme = "nord", type = "default" } = Astro.props
     )}
   </div>
   <div class="overflow-hidden my-0">
-    <Code code={String(code)} theme={codeTheme} />
+    <pre><code tabindex="0" set:html={String(code)} /></pre>
   </div>
 </div>
