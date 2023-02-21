@@ -152,10 +152,19 @@ export async function getRepoDetails(name: string) {
 
 /**
  * Gets the most recent `ddev/ddev` tag name, like `v1.21.4`.
+ *
+ * @param stable Whether to return stable releases only (`true` by default).
  * @returns tag name
  */
-export async function getLatestReleaseVersion() {
-  const data = await getReleases()
+export async function getLatestReleaseVersion(stable = true) {
+  let data = await getReleases()
+
+  if (stable) {
+    data = data.filter((release) => {
+      return !release.draft && !release.prerelease;
+    })
+  }
+
   return data[0].tag_name;
 }
 
