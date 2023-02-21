@@ -1,6 +1,8 @@
 ---
 title: "Customizing DDEV-Local images with a custom Dockerfile"
 pubDate: 2020-04-07
+modifiedDate: 2023-02-21
+modifiedComment: Prepended `.ddev/web-build/` to the `mailhog.conf` example, as the `ADD` directive must be project-root relative.
 summary: How you can use a custom Dockerfile to tailor DDEV’s images, complete with examples.
 author: Randy Fay
 featureImage:
@@ -49,7 +51,7 @@ If you want to add files or override configuration files, it’s easy enough to 
   ```docker
   ARG BASE_IMAGE
   FROM $BASE_IMAGE ADD mailhog-auth.txt /etc
-  ADD mailhog.conf /etc/supervisor/conf.d
+  ADD .ddev/web-build/mailhog.conf /etc/supervisor/conf.d
   ```
 
 (Caveat: This strategy only works in [DDEV-Local v1.13+](https://github.com/ddev/ddev/releases))
@@ -83,7 +85,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -o Dpkg:
 RUN echo | sudo pecl install mcrypt
 
 # Because php7.1-mcrypt is already installed in web container we can just copy its mcrypt.ini
-RUN cp /etc/php/7.1/mods-available/mcrypt.ini /etc/php/${PHP_VERSION}/mods-available/ && phpenmod mcrypt`
+RUN cp /etc/php/7.1/mods-available/mcrypt.ini /etc/php/${PHP_VERSION}/mods-available/ && phpenmod mcrypt
 ```
 
 ## Join the conversation!
