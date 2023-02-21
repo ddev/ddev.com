@@ -12,7 +12,10 @@ const { latestVersion } = Astro.props
 ---
 
 <div class="prose">
-  <h2 class="text-3xl mt-24">Launch with a Provider</h2>
+  <h2 class="text-3xl mt-24">
+    <small class="block font-mono text-xs text-gray-500">1/2</small>Launch a
+    Provider &amp; Install DDEV
+  </h2>
 
   <Tabs order={["Gitpod", "GitHub Codespaces"]}>
     <Fragment slot="Gitpod">
@@ -78,6 +81,44 @@ const { latestVersion } = Astro.props
 </div>
 
 <div class="prose">
+  <h2 class="text-3xl mt-24">
+    <small class="block font-mono text-xs text-gray-500">2/2</small>Create a
+    Project
+  </h2>
+
+  <p>
+    Initialize the DDEV project by running the <a
+      href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#config"
+      target="_blank"
+      ><code>ddev config</code>
+    </a> command:
+  </p>
+  <Terminal code={`→ ddev config`} />
+
+  <p>
+    Start the project for the first time. You’ll use the same command to start
+    it later, too!
+  </p>
+  <Terminal code={`→ ddev start`} />
+
+  <p>
+    If it’s a Composer project, you may also need to run <a
+      href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#composer"
+      target="_blank"
+      ><code>ddev composer install</code>
+    </a>.
+  </p>
+
+  <p>
+    Now run the <a
+      href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#launch"
+      target="_blank">launch command</a
+    > to open your project in a browser:
+  </p>
+  <Terminal code={`→ ddev launch`} />
+</div>
+
+<div class="prose">
   <h2 class="text-3xl mt-24">Explore & Enjoy!</h2>
 
   <p>
@@ -110,6 +151,28 @@ const { latestVersion } = Astro.props
   </p>
 
   <Terminal code={`→ ddev describe`} />
+
+  <p>
+    If you’re done working on a project and want to shut it down without
+    removing anything, use the <a
+      href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#stop"
+      target="_blank"
+      >stop command
+    </a>:
+  </p>
+
+  <Terminal code={`→ ddev stop`} />
+
+  <p>
+    If you were just kicking the tires and you want to permanently delete the
+    project and its resources without touching your code, run the <a
+      href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#delete"
+      target="_blank"
+      >delete command
+    </a>:
+  </p>
+
+  <Terminal code={`→ ddev delete`} />
 
   <CommunityCTA />
 </div>
