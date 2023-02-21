@@ -42,8 +42,8 @@ _Note_: One of the weaknesses of WSL2 is that PhpStorm isn’t really completely
 
 - [DDEV-Local documentation](https://ddev.readthedocs.io/en/stable/).
 - [WSL2 and DDEV Installation docs](https://ddev.readthedocs.io/en/stable/#installation-or-upgrade-windows-wsl2)
-- [Support](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation): Drupal slack and TYPO3 slack #ddev, gitter #ddev, Stack Overflow, and the [DDEV-Local issue queue](https://github.com/drud/ddev/issues).
-- [DDEV-Local Project Repository](https://github.com/drud/ddev)
+- [Support](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation): Drupal slack and TYPO3 slack #ddev, gitter #ddev, Stack Overflow, and the [DDEV-Local issue queue](https://github.com/ddev/ddev/issues).
+- [DDEV-Local Project Repository](https://github.com/ddev/ddev)
 - More about [PhpStorm on WSL2](https://ddev.com/ddev-local/ddev-local-and-phpstorm-debugging-with-wsl2/), with full details about how to run it.
 - Using WSL2 (and **VS Code**), [DDEV ❤️ WSL2: getting started](https://ddev.com/ddev-local/ddev-wsl2-getting-started/)
 - DDEV-Local’s counterpart, [DDEV-Live](https://ddev.com/ddev-live/https://ddev.com/ddev-live/): Includes a free 10-day trial for you to kick the tires on our hosting platform.

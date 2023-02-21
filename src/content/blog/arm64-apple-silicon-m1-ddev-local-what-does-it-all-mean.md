@@ -3,7 +3,7 @@ title: "ARM64! Apple Silicon! M1! DDEV-Local! What does it all mean?"
 pubDate: 2020-11-18
 summary: A look at Apple’s new chip architecture and what it means for DDEV.
 modifiedDate: 2020-12-16
-modifiedComment: "An Apple Silicon M1 prerelease [is now available](ttps://github.com/drud/ddev/releases)! See the release notes for installation details."
+modifiedComment: "An Apple Silicon M1 prerelease [is now available](ttps://github.com/ddev/ddev/releases)! See the release notes for installation details."
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/11/apple-ddev.jpg
@@ -13,7 +13,7 @@ categories:
   - Performance
 ---
 
-ARM64 is the new word of the day all over the place since Apple has switched their hardware platform to “Apple Silicon,” which is on the ARM64 platform. Although the Apple news and benchmarks are exciting, ARM is not new, lots of devices already use it, and our [open source DDEV-Local development environment](https://github.com/drud/ddev/releases/tag/v1.16.0) already supports it on Linux and WSL2.
+ARM64 is the new word of the day all over the place since Apple has switched their hardware platform to “Apple Silicon,” which is on the ARM64 platform. Although the Apple news and benchmarks are exciting, ARM is not new, lots of devices already use it, and our [open source DDEV-Local development environment](https://github.com/ddev/ddev/releases/tag/v1.16.0) already supports it on Linux and WSL2.
 
 In this blog, we’ll take a look at these things:
 
@@ -40,7 +40,7 @@ Apple’s new **Big Sur** version of macOS (aka macOS version 11) has just been 
 
 ## DDEV-Local Already Runs On ARM64 in Linux and WSL2
 
-**[DDEV-Local v1.16](https://github.com/drud/ddev/releases/tag/v1.16.0) already runs on ARM64 computers** where Docker is available. This includes Windows WSL2 on Windows ARM64 machines like the Surface Pro X, and also native Linux ARM64 machines like the Raspberry Pi (64-bit), Pinebook Pro, or Amazon EC2 ARM64 machines.
+**[DDEV-Local v1.16](https://github.com/ddev/ddev/releases/tag/v1.16.0) already runs on ARM64 computers** where Docker is available. This includes Windows WSL2 on Windows ARM64 machines like the Surface Pro X, and also native Linux ARM64 machines like the Raspberry Pi (64-bit), Pinebook Pro, or Amazon EC2 ARM64 machines.
 
 Thanks to incredible contributions by [Dennis Ameling](https://github.com/dennisameling) leading this transition, nearly all the features of DDEV-Local are available in ARM64 machines, and these features are also tested on Travis-CI, which has ARM64 testing available (testing _also_ set up by Dennis!)
 
@@ -51,7 +51,7 @@ Building DDEV-Local for ARM64 was a monumental task, and a huge demonstration of
 - Reworking the image build process to use Docker’s new [multi-architecture](https://www.docker.com/blog/tag/multi-architecture/) support, which allows a single image on [hub.docker.com](http://hub.docker.com) to have both AMD64 and ARM64 versions, and to pull the correct one as needed.
 - Building the DDEV-Local Go binary for AMD64.
 
-[Get the latest DDEV-Local here](https://github.com/drud/ddev/releases)
+[Get the latest DDEV-Local here](https://github.com/ddev/ddev/releases)
 
 ## When will DDEV-Local Work on Apple Silicon?
 

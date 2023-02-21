@@ -38,7 +38,7 @@ RUN npm install --global gulp-cli
 
 Then the `npm install` to install gulp-cli will be done (once) at build time.
 
-_**Note that the default to BASE_IMAGE is overridden by ddev at image build time, so does not have to be maintained as versions of ddev-webserver change**_, so “drud/ddev-webserver:v1.13.1” is just a filler.
+_**Note that the default to BASE_IMAGE is overridden by ddev at image build time, so does not have to be maintained as versions of ddev-webserver change**_, so ddev/ddev-webserver:v1.13.1” is just a filler.
 
 ### Modifying configuration files
 
@@ -52,7 +52,7 @@ If you want to add files or override configuration files, it’s easy enough to 
   ADD mailhog.conf /etc/supervisor/conf.d
   ```
 
-(Caveat: This strategy only works in [DDEV-Local v1.13+](https://github.com/drud/ddev/releases))
+(Caveat: This strategy only works in [DDEV-Local v1.13+](https://github.com/ddev/ddev/releases))
 
 But you could use this same technique for so many things. Do you need to completely override the /etc/php/7.3/fpm/php-fpm.conf file? Do it. Do you need to completely revamp the entire nginx configuration directory? Now you can do it. You can also add scripts into the container or even Linux binaries. And you can check the whole thing into your project so that other members of your team automatically have it.
 

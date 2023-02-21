@@ -37,7 +37,7 @@ Note that there are also some risks/caveats, as seen in the [docs](https://ddev.
 - Keep backups. Mutagen syncing is an experimental feature.
 - The Mutagen integration by default does not sync VCS directories like `.git` into the container, but this can be changed with advanced configuration options. (This means that by default you cannot do Git operations inside the container with Mutagen turned on.)
 
-Want to try it out? It’s in the new edge releases of DDEV v1.18.0, for example [v1.18.0-alpha1](https://github.com/drud/ddev/releases/tag/v1.18.0-alpha1). See the instructions on the release page; you can install it using Homebrew (macOS) or Chocolatey (Windows)
+Want to try it out? It’s in the new edge releases of DDEV v1.18.0, for example [v1.18.0-alpha1](https://github.com/ddev/ddev/releases/tag/v1.18.0-alpha1). See the instructions on the release page; you can install it using Homebrew (macOS) or Chocolatey (Windows)
 
 Are you interested in the original data, or comparing it to your own? See the [spreadsheet and charts](https://docs.google.com/spreadsheets/d/16WaJGYQkFiYKuvBregwM-2XF-CxF77diOEnLWZR7EIM/edit?usp=sharing).
 

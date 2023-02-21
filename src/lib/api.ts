@@ -130,7 +130,7 @@ export async function getContributors(includeAnonymous = false) {
  * Gets repository details from GitHub.
  * https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#get-a-repository
  * 
- * @param name The name of the repository, like `drud/ddev`.
+ * @param name The name of the repository, like `ddev/ddev`.
  * @returns response data
  */
 export async function getRepoDetails(name: string) {
@@ -151,7 +151,7 @@ export async function getRepoDetails(name: string) {
 }
 
 /**
- * Gets the most recent `drud/ddev` tag name, like `v1.21.4`.
+ * Gets the most recent `ddev/ddev` tag name, like `v1.21.4`.
  * @returns tag name
  */
 export async function getLatestReleaseVersion() {

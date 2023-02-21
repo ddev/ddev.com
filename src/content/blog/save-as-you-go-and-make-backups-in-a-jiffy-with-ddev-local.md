@@ -16,7 +16,7 @@ To us, the ideal local development environment should be fast and easy to use an
 
 Here’s how to easily save and restore databases with DDEV-Local, so you can recover if something goes wrong or you change your mind about the development direction you’re going.
 
-[Download DDEV](https://github.com/drud/ddev/releases)
+[Download DDEV](https://github.com/ddev/ddev/releases)
 
 ## Using `ddev snapshot` to save-as-you-go
 

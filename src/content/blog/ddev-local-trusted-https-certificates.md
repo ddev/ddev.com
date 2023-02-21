@@ -13,7 +13,7 @@ categories:
 
 Security is critical on the modern web, and so all sites should ideally be developed, tested, and deployed with HTTPS. But it has been hard to do that in your local development environment.
 
-With [DDEV-Local](http://github.com/drud/ddev) you can use the HTTPS version of your project in a browser that trusts your project and you don’t have to click through the nasty security warning this had triggered previously.
+With [DDEV-Local](http://github.com/ddev/ddev) you can use the HTTPS version of your project in a browser that trusts your project and you don’t have to click through the nasty security warning this had triggered previously.
 
 HTTPS with DDEV-Local now works…
 

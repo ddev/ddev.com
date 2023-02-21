@@ -38,11 +38,11 @@ The [minimum requirements to run DDEV-Local ](https://ddev.readthedocs.io/en/lat
 
 You can install DDEV-Local with [Homebrew](https://brew.sh/), and if you’re using Mac it’s a handy way to install.
 
-`brew tap drud/ddev && brew install ddev`
+`brew tap ddev/ddev && brew install ddev`
 
 **Option 2: Install the DDEV binary with a script**
 
-`curl https://raw.githubusercontent.com/drud/ddev/master/install_ddev.sh | bash`
+`curl https://raw.githubusercontent.com/ddev/ddev/master/install_ddev.sh | bash`
 
 You run the same script later to upgrade.
 

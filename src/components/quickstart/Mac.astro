@@ -58,13 +58,13 @@ const { latestVersion } = Astro.props
 <Tabs order={["Homebrew", "Install Script"]}>
   <Fragment slot="Homebrew">
     <div class="prose py-5">
-      <Terminal code={`→ brew install drud/ddev/ddev`} />
+      <Terminal code={`→ brew install ddev/ddev/ddev`} />
     </div>
   </Fragment>
   <Fragment slot="Install Script">
     <div class="prose py-5">
       <Terminal
-        code={`→ curl -fsSL https://raw.githubusercontent.com/drud/ddev/master/scripts/install_ddev.sh | bash`}
+        code={`→ curl -fsSL https://raw.githubusercontent.com/ddev/ddev/master/scripts/install_ddev.sh | bash`}
       />
     </div>
   </Fragment>

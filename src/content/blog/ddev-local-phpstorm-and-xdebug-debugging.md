@@ -16,7 +16,7 @@ categories:
 <iframe loading="lazy" title="DDEV-Local, PhpStorm and Xdebug Debugging" width="500" height="281" src="https://www.youtube.com/embed/tvqwkymg6fE?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </div>
 
-The days of print-debugging are long behind us! [Xdebug](https://xdebug.org/) and PHP IDEs have made that approach unwieldy, but often the configuration between your IDE, PHP, web server, and Docker is challenging and fragile. Enter our open source local development environment, [DDEV-Local](https://github.com/drud/ddev).
+The days of print-debugging are long behind us! [Xdebug](https://xdebug.org/) and PHP IDEs have made that approach unwieldy, but often the configuration between your IDE, PHP, web server, and Docker is challenging and fragile. Enter our open source local development environment, [DDEV-Local](https://github.com/ddev/ddev).
 
 The combination of [PhpStorm](https://www.jetbrains.com/phpstorm/) and [DDEV-Local](https://ddev.com/ddev-local/)‘s plug-and-play approach to debugging makes those configuration struggles obsolete. You can easily get a working debug environment in just a few minutes! We’ll walk you through it in this screencast using macOS. It works exactly the same on Windows or Linux, and with [WSL2 as well](https://ddev.com/ddev-local/ddev-local-and-phpstorm-debugging-with-wsl2/). After all, we want you to be successful with the tools and [workflows](https://ddev.com/ddev-live/a-git-based-workflow-from-dev-to-deploy/) you know and love.
 
@@ -49,7 +49,7 @@ What we’re doing in this tutorial:
 
 - DDEV-Local documentation: <https://ddev.readthedocs.io>
 - [DDEV-Local Xdebug docs](https://ddev.readthedocs.io/en/stable/users/step-debugging/) (including troubleshooting)
-- [Support docs](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation): Drupal Slack and TYPO3 Slack #ddev, gitter #ddev, Stack Overflow, and the [DDEV-Local issue queue](https://github.com/drud/ddev/issues)
-- [DDEV-Local Project Repository](https://github.com/drud/ddev)
+- [Support docs](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation): Drupal Slack and TYPO3 Slack #ddev, gitter #ddev, Stack Overflow, and the [DDEV-Local issue queue](https://github.com/ddev/ddev/issues)
+- [DDEV-Local Project Repository](https://github.com/ddev/ddev)
 - More about [PhpStorm on WSL2](https://ddev.com/ddev-local/ddev-local-and-phpstorm-debugging-with-wsl2/), with full details about how to run it
 - Ready to deploy? Try out [DDEV-Live](https://ddev.com/ddev-live/) for hosting, there’s a free 10-day trial for you to kick the tires

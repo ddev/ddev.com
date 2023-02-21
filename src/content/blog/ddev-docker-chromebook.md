@@ -3,7 +3,7 @@ title: "DDEV, Docker, Chromebook!"
 pubDate: 2020-05-04
 summary: Lessons learned running DDEV on an inexpensive Chromebook.
 modifiedDate: 2021-01-25
-modifiedComment: "Updated with [input from](https://github.com/drud/ddev/discussions/2740) [@ops-andy](https://github.com/ops-andy) (thanks!)"
+modifiedComment: "Updated with [input from](https://github.com/ddev/ddev/discussions/2740) [@ops-andy](https://github.com/ops-andy) (thanks!)"
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/04/chromebook-3.jpg
@@ -12,7 +12,7 @@ categories:
   - Guides
 ---
 
-[DDEV-Local](http://github.com/drud/ddev) and Docker work fine for local development on an inexpensive Chromebook!
+[DDEV-Local](http://github.com/ddev/ddev) and Docker work fine for local development on an inexpensive Chromebook!
 
 I’d been wanting to try out a Chromebook for DDEV-Local development for a while and I confess that I did an impulse buy on Amazon and got the 8GB [Asus C425](https://www.asus.com/us/Laptops/ASUS-Chromebook-14-C425TA/) for $329, which is a lot less than the fancy loaded MacBook Pro I usually use. It works great, mostly because it runs pure Debian Linux in what it calls the “Terminal”.
 
@@ -22,7 +22,7 @@ Here’s the step-by-step to set up a DDEV-Local development environment:
 2. In Linux, create a password for the username you’ve created by running `sudo passwd $USER`.
 3. Install Docker for Linux as in the [DDEV docs](https://ddev.readthedocs.io/en/stable/users/docker%5Finstallation/#linux-installation-docker-ce). You’ll be installing the [_Debian_ version](https://docs.docker.com/install/linux/docker-ce/debian/).
 4. Install Linuxbrew by running `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`.
-5. Install DDEV and docker-compose by running `brew tap drud/ddev && brew install ddev docker-compose`.
+5. Install DDEV and docker-compose by running `brew tap ddev/ddev && brew install ddev docker-compose`.
 6. Add your user to the “docker” group by running `sudo usermod -aG docker $USER`.
 7. Reboot the Debian container by running `sudo reboot`, then open “Terminal” again. You should be able to run `docker ps` successfully.
 8. Allow DDEV to bind to all interfaces by running `ddev config global --router-bind-all-interfaces`.
@@ -57,4 +57,4 @@ Some comments about working with the Asus Chromebook:
 
 Since we’re in the era of Linux laptops with Chromebooks and WSL2, we’ll soon be doing a full writeup on how to use DDEV-Local with WSL2. It’s crazy fast.
 
-Where do _you_ run DDEV? If you have a unique setup, consider sharing the specs and adding a link in our [community repository](https://github.com/drud/awesome-ddev) so others can check it out too!
+Where do _you_ run DDEV? If you have a unique setup, consider sharing the specs and adding a link in our [community repository](https://github.com/ddev/awesome-ddev) so others can check it out too!

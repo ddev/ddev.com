@@ -29,7 +29,7 @@ Even if everything does run smoothly for a long time, you can end up with the �
 
 As hinted above, I was dealing with a lot of different “tools of choice” across my team to help customize them to fit our projects’ requirements. We had team members who used Laradock, others (including myself) were using Valet, and some even used plain Nginx with custom configs provided by other team members. Sometimes it was hard to help everyone solve problems specific to their tool (some I described earlier).
 
-Meanwhile, I was searching for one solution which would help to unify the experience by providing all the features they need, but still be very easy to switch to (regardless of hardware and OS) and of course easy for new team members to get up and running. And at some point I found [DDEV](https://github.com/drud/ddev) and set myself the final goal:
+Meanwhile, I was searching for one solution which would help to unify the experience by providing all the features they need, but still be very easy to switch to (regardless of hardware and OS) and of course easy for new team members to get up and running. And at some point I found [DDEV](https://github.com/ddev/ddev) and set myself the final goal:
 
 > Cloning the project should be (almost) enough for getting up and running regardless of the skills of the team member.
 

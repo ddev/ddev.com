@@ -49,7 +49,7 @@ All commands are run from the root of the project, from a terminal:
 
 ## Textlint
 
-A basic textlint configuration lives in `.textlintrc` and runs against `src/content/**` to try and help keep language consistent and accurate. This doesn’t yet conform to the DDEV docs [spellcheck rules](https://github.com/drud/ddev/blob/master/.spellcheck.yml) and [massive exclusion list](https://github.com/drud/ddev/blob/master/.spellcheckwordlist.txt), but ideally the two can someday converge.
+A basic textlint configuration lives in `.textlintrc` and runs against `src/content/**` to try and help keep language consistent and accurate. This doesn’t yet conform to the DDEV docs [spellcheck rules](https://github.com/ddev/ddev/blob/master/.spellcheck.yml) and [massive exclusion list](https://github.com/ddev/ddev/blob/master/.spellcheckwordlist.txt), but ideally the two can someday converge.
 
 Textlint’s [default terminology](https://github.com/sapegin/textlint-rule-terminology/blob/master/terms.jsonc) catches a lot of accepted best practices on its own, where the only major override is to allow “website” (instead of its suggested “site”) because it’s rampant in blog posts and documentation. Same with the “front end” and “back end” conundrum and two-word “command line”.
 

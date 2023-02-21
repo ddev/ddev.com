@@ -28,7 +28,7 @@ After watching this tutorial, you’ll be able to run websites on your computer 
 - [Using the CLI](https://ddev.readthedocs.io/en/stable/users/cli-usage/)
 - [Drupal 9 Quickstart](https://ddev.readthedocs.io/en/stable/users/cli-usage/#drupal-9-quickstart)
 - Support: Drupal Slack and TYPO3 Slack, Gitter, Stack Overflow: See [Support docs](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation).
-- [DDEV-Local Project Repository](https://github.com/drud/ddev) and issue queue
+- [DDEV-Local Project Repository](https://github.com/ddev/ddev) and issue queue
 - DDEV also builds a container-based hosting platform, [DDEV-Live](https://ddev.com/ddev-live/). There’s a free 10-day trial for you to kick the tires.
 
 **Here’s the video table of contents (opens in YouTube):**
