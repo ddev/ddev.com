@@ -26,6 +26,26 @@ export interface Props {
 }
 
 const { code, codeTheme = "nord", type = "default" } = Astro.props
+
+const promptSymbols = {
+  default: '→',
+  powershell: '>',
+  "powershell-ubuntu": '$',
+  "admin-powershell": '>',
+  "windows-terminal": '>',
+  ubuntu: '$',
+}
+
+/**
+ * Wraps each instance of the symbol appearing as the first character of a line in a code snippet.
+ */
+const wrapPromptSymbol = (code: string, symbol: string) => {
+  // Escape the dollar sign
+  let searchSymbol = (symbol === '$') ? '\\$' : symbol;
+
+  const search = new RegExp(`^${searchSymbol} `, "gm")
+  return code.replaceAll(search, `<span class="prompt">${symbol} </span>`)
+}
 ---
 
 <style is:global lang="postcss">
@@ -38,6 +58,10 @@ const { code, codeTheme = "nord", type = "default" } = Astro.props
 
        code {
         color: #d8dee9;
+
+        .prompt {
+          @apply select-none text-slate-400;
+        }
        }
     }
   }
@@ -86,6 +110,6 @@ const { code, codeTheme = "nord", type = "default" } = Astro.props
     )}
   </div>
   <div class="overflow-hidden my-0">
-    <pre><code tabindex="0" set:html={String(code)} /></pre>
+    <pre><code tabindex="0" set:html={wrapPromptSymbol(String(code), promptSymbols[type])} /></pre>
   </div>
 </div>
