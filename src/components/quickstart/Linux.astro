@@ -96,7 +96,7 @@ const { latestVersion } = Astro.props
       <div class="prose py-5">
         <Terminal
           type="ubuntu"
-          code={`$ curl -fsSL https://apt.fury.io/ddev/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null\n$ echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://apt.fury.io/drud/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list\n$ sudo apt update && sudo apt install -y ddev
+          code={`$ curl -fsSL https://apt.fury.io/ddev/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null\n$ echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://apt.fury.io/ddev/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list\n$ sudo apt update && sudo apt install -y ddev
 `}
         />
       </div>
@@ -105,7 +105,7 @@ const { latestVersion } = Astro.props
       <div class="prose py-5">
         <Terminal
           type="ubuntu"
-          code={`$ echo '[ddev]\nname=DDEV Repo\nbaseurl=https://yum.fury.io/drud/\nenabled=1\ngpgcheck=0' | sudo tee -a /etc/yum.repos.d/ddev.repo\n$ sudo dnf install --refresh ddev`}
+          code={`$ echo '[ddev]\nname=DDEV Repo\nbaseurl=https://yum.fury.io/ddev/\nenabled=1\ngpgcheck=0' | sudo tee -a /etc/yum.repos.d/ddev.repo\n$ sudo dnf install --refresh ddev`}
         />
       </div>
     </Fragment>
@@ -113,7 +113,7 @@ const { latestVersion } = Astro.props
       <div class="prose py-5">
         <Terminal
           type="ubuntu"
-          code={`$ curl -fsSL https://apt.fury.io/ddev/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null\n$ echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://apt.fury.io/drud/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list\n$ sudo apt update && sudo apt install -y ddev
+          code={`$ curl -fsSL https://apt.fury.io/ddev/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null\n$ echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://apt.fury.io/ddev/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list\n$ sudo apt update && sudo apt install -y ddev
 `}
         />
       </div>
@@ -122,7 +122,7 @@ const { latestVersion } = Astro.props
       <div class="prose py-5">
         <Terminal
           type="ubuntu"
-          code={`$ echo '[ddev]\nname=DDEV Repo\nbaseurl=https://yum.fury.io/drud/\nenabled=1\ngpgcheck=0' | sudo tee -a /etc/yum.repos.d/ddev.repo\n$ sudo dnf install --refresh ddev`}
+          code={`$ echo '[ddev]\nname=DDEV Repo\nbaseurl=https://yum.fury.io/ddev/\nenabled=1\ngpgcheck=0' | sudo tee -a /etc/yum.repos.d/ddev.repo\n$ sudo dnf install --refresh ddev`}
         />
       </div>
     </Fragment>
