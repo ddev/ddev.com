@@ -11,6 +11,13 @@ const { latestVersion } = Astro.props
 ---
 
 <div class="prose">
+  <p class="text-gray-600 mb-16">
+    We’ll install Docker and DDEV with your package manager, as detailed in the <a
+      href="https://ddev.readthedocs.io/en/latest/users/install/ddev-installation/"
+      >Linux installation docs</a
+    >.
+  </p>
+
   <h2 class="text-3xl mt-24">
     <small class="block font-mono text-xs text-gray-500">1/3</small>Install
     Docker
@@ -84,19 +91,42 @@ const { latestVersion } = Astro.props
     <small class="block font-mono text-xs text-gray-500">2/3</small>Install DDEV
   </h2>
 
-  <p>Download and execute the install script:</p>
-
-  <Terminal
-    type="ubuntu"
-    code={`$ curl -fsSL https://raw.githubusercontent.com/ddev/ddev/master/scripts/install_ddev.sh | bash`}
-  />
-
-  <p>
-    💡 You can <a
-      href="https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#linux"
-      >use your distro’s package manager</a
-    > if you’d rather!
-  </p>
+  <Tabs order={["Ubuntu", "CentOS", "Debian", "Fedora"]}>
+    <Fragment slot="Ubuntu">
+      <div class="prose py-5">
+        <Terminal
+          type="ubuntu"
+          code={`$ curl -fsSL https://apt.fury.io/ddev/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null\n$ echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://apt.fury.io/drud/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list\n$ sudo apt update && sudo apt install -y ddev
+`}
+        />
+      </div>
+    </Fragment>
+    <Fragment slot="CentOS">
+      <div class="prose py-5">
+        <Terminal
+          type="ubuntu"
+          code={`$ echo '[ddev]\nname=DDEV Repo\nbaseurl=https://yum.fury.io/drud/\nenabled=1\ngpgcheck=0' | sudo tee -a /etc/yum.repos.d/ddev.repo\n$ sudo dnf install --refresh ddev`}
+        />
+      </div>
+    </Fragment>
+    <Fragment slot="Debian">
+      <div class="prose py-5">
+        <Terminal
+          type="ubuntu"
+          code={`$ curl -fsSL https://apt.fury.io/ddev/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null\n$ echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://apt.fury.io/drud/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list\n$ sudo apt update && sudo apt install -y ddev
+`}
+        />
+      </div>
+    </Fragment>
+    <Fragment slot="Fedora">
+      <div class="prose py-5">
+        <Terminal
+          type="ubuntu"
+          code={`$ echo '[ddev]\nname=DDEV Repo\nbaseurl=https://yum.fury.io/drud/\nenabled=1\ngpgcheck=0' | sudo tee -a /etc/yum.repos.d/ddev.repo\n$ sudo dnf install --refresh ddev`}
+        />
+      </div>
+    </Fragment>
+  </Tabs>
 
   <p>In the Terminal app, confirm that DDEV is installed: 🎉</p>
   <Terminal type="ubuntu" code={`$ ddev -v\nddev version ${latestVersion}`} />
