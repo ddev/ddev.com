@@ -23,8 +23,7 @@ const { latestVersion } = Astro.props
           > using Gitpod and install DDEV:
         </p>
         <Terminal
-          type="ubuntu"
-          code={`$ curl -fsSL https://apt.fury.io/ddev/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null\n$ echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://apt.fury.io/ddev/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list\n$ sudo apt update && sudo apt install -y ddev
+          code={`→ curl -fsSL https://apt.fury.io/ddev/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null\n→ echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://apt.fury.io/ddev/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list\n→ sudo apt update && sudo apt install -y ddev
 `}
         />
       </div>
