@@ -1,6 +1,7 @@
 # https://docs.platform.sh/define-routes/redirects.html
 
 https://{default}/:
+  type: upstream
   redirects:
     paths:
       "/ddev-local/ddev-wsl2-getting-started/":
