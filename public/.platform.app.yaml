@@ -1,4 +1,4 @@
-name: ddev.com-front-end
+name: ddev-dotcom-static
 type: "nodejs:16"
 web:
   locations:
