@@ -3,7 +3,7 @@ type: "nodejs:16"
 web:
   locations:
     "/":
-      root: "/"
+      root: ""
       index: ["index.html"]
       scripts: false
       allow: true
@@ -11,6 +11,5 @@ web:
       rules:
         \.(css|js|gif|jpe?g|png|svg|webm)$:
           expires: 4w
-
   commands:
     start: sleep infinity
