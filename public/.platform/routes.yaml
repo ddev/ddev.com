@@ -21,8 +21,6 @@ https://{default}/:
         to: "https://ddev.com/blog/author/randy-fay"
       "/author/rmanelius":
         to: "https://ddev.com/blog/author/rick-manelius"
-      "/author/rmanelius":
-        to: "https://ddev.com/blog/author/rick-manelius"
       "^/ddev-local/(.*)":
         to: "https://ddev.com/blog/$1"
         regexp: true
