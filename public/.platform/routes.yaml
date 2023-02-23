@@ -25,3 +25,6 @@ https://{default}/:
       "^/ddev-local/(.*)":
         to: "https://ddev.com/blog/$1"
         regexp: true
+"https://www.{default}/":
+  type: redirect
+  to: "https://{default}/"
