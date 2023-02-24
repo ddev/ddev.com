@@ -2,6 +2,7 @@
 
 https://{default}/:
   type: upstream
+  upstream: "ddev-dotcom-static:http"
   redirects:
     paths:
       "/ddev-local/ddev-wsl2-getting-started/":
