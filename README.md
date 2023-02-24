@@ -98,7 +98,7 @@ Add a `.astro` file to the `pages/` directory, where its name will become the pa
 
 If you need to dynamically add multiple pages, see files with brackets like `src/blog/[page].astro`, `src/blog/category/[slug].astro`, and `src/blog/author/[slug].astro` for examples.
 
-## Build and Deployment Flow
+## Build & Deployment
 
 The site needs to be generated using this source code, and the resulting static files (in the `dist/` directory) need to be hosted somewhere.
 
