@@ -121,5 +121,5 @@ Lastly, Platform.sh must have a GitHub token with `admin:repo_hook`, `read:org`,
 
 ## Resources
 
-- [Astros documentation](https://docs.astro.build)
+- [Astro documentation](https://docs.astro.build)
 - [Astro Discord server](https://astro.build/chat)
