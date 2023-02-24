@@ -1,0 +1,251 @@
+---
+/**
+ * This is a styled terminal that animates screens of output for demonstration.
+ * It’s vanilla JavaScript that uses a chain of recursive `setTimeout()` methods
+ * to append and reset some `innterHTML`. (Avoid `setInterval()`, which may let
+ * things drift out of sync!)
+ */
+---
+
+<script>
+  /**
+   * A complete terminal example or animation.
+   */
+  interface Screen {
+    clumps: Clump[]
+    output: string
+  }
+
+  /**
+   * A subset of lines within a screen, grouped by animation type and timing.
+   */
+  interface Clump {
+    transition: "type" | "roll" | "show"
+    lines: number
+    wait?: number
+  }
+
+  /**
+   * Output and animation settings for the things we want to show in the terminal.
+   */
+  const screens: Screen[] = [
+    {
+      clumps: [
+        { transition: "type", lines: 1, wait: 1000 },
+        { transition: "roll", lines: 2, wait: 1000 },
+        { transition: "roll", lines: 4, wait: 1000 },
+        { transition: "show", lines: 2 },
+      ],
+      output: `ddev start
+
+Starting my-project...
+Container ddev-my-project-web  Running
+Container ddev-my-project-dba  Running
+Container ddev-my-project-db  Running
+Container ddev-router  Running
+<span class="text-green-500">Successfully started my-project</span>
+<span class="text-green-500">Project can be reached at https://my-project.ddev.site https://127.0.0.1:51046</span>`,
+    },
+    {
+      clumps: [
+        { transition: "type", lines: 1, wait: 250 },
+        { transition: "show", lines: 27 },
+      ],
+      output: `ddev describe
+┌─────────────────────────────────────────────────────────────────────────────────────┐
+│ Project: my-project ~/dev/my-project https://my-project.ddev.site                   │
+│ Docker environment: docker 20.10.21                                                 │
+├────────────┬──────┬────────────────────────────────────────────┬────────────────────┤
+│ SERVICE    │ STAT │ URL/PORT                                   │ INFO               │
+├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
+│ web        │ <span class="text-green-500">OK</span>   │ https://my-project.ddev.site               │ php PHP8.1         │
+│            │      │ InDocker: ddev-my-project-web:443,80,8025  │ nginx-fpm          │
+│            │      │ Host: localhost:51046,51047                │ docroot:''         │
+│            │      │                                            │ NodeJS:16          │
+├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
+│ db         │ <span class="text-green-500">OK</span>   │ InDocker: ddev-my-project-db:3306          │ mysql:8.0          │
+│            │      │ Host: localhost:51045                      │ User/Pass: 'db/db' │
+│            │      │                                            │ or 'root/root'     │
+├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
+│ PHPMyAdmin │ <span class="text-green-500">OK</span>   │ https://my-project.ddev.site:8037          │                    │
+│            │      │ InDocker: ddev-my-project-dba:80,80        │                    │
+│            │      │ \`ddev launch -p\`                           │                    │
+├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
+│ Mailhog    │      │ MailHog: https://my-project.ddev.site:8026 │                    │
+│            │      │ \`ddev launch -m\`                           │                    │
+├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
+│ All URLs   │      │ https://my-project.ddev.site,              │                    │
+│            │      │ https://127.0.0.1:51046,                   │                    │
+│            │      │ http://my-project.ddev.site,               │                    │
+│            │      │ http://127.0.0.1:51047                     │                    │
+└────────────┴──────┴────────────────────────────────────────────┴────────────────────┘`,
+    },
+  ]
+
+  // Element whose inner HTML will be our terminal output
+  const stage = document.getElementById("animation-stage")
+
+  // Seconds to wait after animation’s finished, before moving on to the next screen
+  const secondsBetweenScreens = 5
+
+  // Milliseconds between characters when “typing” in a line
+  const typeCharacterDelay = 35
+
+  // Initialize state variables
+  let currentScreenIndex: number,
+    currentClumpIndex: number,
+    currentScreen: Screen,
+    currentClump: Clump,
+    currentClumpLine: number,
+    currentLine: number,
+    outputLines: string[],
+    currentChar: number
+
+  /**
+   * Handle the next thing: next line in the clump, next clump, or next screen.
+   */
+  const next = () => {
+    if (currentClumpLine < currentClump.lines) {
+      // If we have unhandled lines in this clump, proceed to the next line
+      nextLine()
+    } else if (currentClumpIndex < currentScreen.clumps.length - 1) {
+      // If we have unhandled clumps in this creen, proceed to the next clump
+      nextClump(currentClump.wait ?? 0)
+    } else {
+      // Proceed to the next screen
+      nextScreen()
+    }
+  }
+
+  /**
+   * Set the imaginary playhead to the beginning of a screen and get ready to play.
+   */
+  const initScreen = (activeIndex = 0) => {
+    currentScreenIndex = activeIndex
+    currentScreen = screens[currentScreenIndex]
+    currentClumpIndex = 0
+    currentClump = currentScreen.clumps[currentClumpIndex]
+    currentLine = 0
+    currentClumpLine = 0
+    outputLines = currentScreen.output.split("\n")
+    resetOutput()
+  }
+
+  /**
+   * Recursive method for introducing each character of a line before continuing.
+   */
+  const typeInText = (callback: Function) => {
+    const chars = outputLines[currentLine].split("")
+
+    if (currentChar < chars.length) {
+      setTimeout(() => {
+        appendOutput(chars[currentChar])
+        currentChar += 1
+        typeInText(callback)
+      }, typeCharacterDelay)
+    } else {
+      appendOutput("\n")
+      callback()
+    }
+  }
+
+  /**
+   * Transition the next line to the displayed output.
+   */
+  const nextLine = () => {
+    if (currentClump.transition === "type") {
+      currentChar = 0
+      typeInText(() => {
+        currentClumpLine += 1
+        currentLine += 1
+        next()
+      })
+    } else if (currentClump.transition === "roll") {
+      // show + delay
+      appendOutput(outputLines[currentLine] + "\n")
+      currentClumpLine += 1
+      currentLine += 1
+      setTimeout(next, 100)
+    } else if (currentClump.transition === "show") {
+      // show + no delay
+      appendOutput(outputLines[currentLine] + "\n")
+      currentClumpLine += 1
+      currentLine += 1
+      next()
+    }
+  }
+
+  /**
+   * Advance to the next clump after the given duration.
+   */
+  const nextClump = (duration: number) => {
+    setTimeout(() => {
+      currentClumpIndex += 1
+      currentClump = currentScreen.clumps[currentClumpIndex]
+      currentClumpLine = 0
+      next()
+    }, duration)
+  }
+
+  /**
+   * Advance to the next screen after a predefined duration.
+   */
+  const nextScreen = () => {
+    setTimeout(() => {
+      if (currentScreenIndex < screens.length - 1) {
+        currentScreenIndex += 1
+      } else {
+        currentScreenIndex = 0
+      }
+
+      initScreen(currentScreenIndex)
+      next()
+    }, secondsBetweenScreens * 1000)
+  }
+
+  /**
+   * Clear the displayed output.
+   */
+  const resetOutput = () => {
+    stage.innerHTML = ""
+  }
+
+  /**
+   * Append the given string to the displayed output.
+   */
+  const appendOutput = (value: string) => {
+    stage.innerHTML += value
+  }
+
+  /**
+   * On load, initialize the first screen and start playing.
+   */
+  window.addEventListener("load", () => {
+    initScreen(0)
+    next()
+  })
+</script>
+
+<style is:global lang="postcss">
+  .terminal-wrapper {
+    @apply rounded-lg;
+    background: #2e3440;
+  }
+
+  .prose .terminal-wrapper pre {
+    @apply my-0;
+  }
+</style>
+
+<div class="terminal-wrapper shadow-lg">
+  <div class={`top-bar flex p-3 space-x-2 rounded-t-lg`}>
+    <div class="block rounded-full bg-slate-500 w-3 h-3"></div>
+    <div class="block rounded-full bg-slate-500 w-3 h-3"></div>
+    <div class="block rounded-full bg-slate-500 w-3 h-3"></div>
+  </div>
+  <div class="overflow-hidden my-0">
+    <div class="h-full p-4 text-slate-300 text-xs" style="height: 540px;">
+      <pre><span class="select-none text-slate-400">→ </span><span id="animation-stage" /></pre>
+    </div>
+  </div>
+</div>
