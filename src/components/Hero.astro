@@ -3,10 +3,18 @@
  * The large, leading copy and image used on the homepage.
  */
 import CtaButton from "../components/CtaButton.astro"
+---
 
-const panels = [
-  {
-    output: `→ ddev start
+<script>
+  const screens = [
+    {
+      clumps: [
+        { transition: "type", lines: 1, wait: 1000 },
+        { transition: "roll", lines: 2, wait: 1000 },
+        { transition: "roll", lines: 4, wait: 1000 },
+        { transition: "roll", lines: 2 },
+      ],
+      output: `ddev start
 
 Starting my-project...
 Container ddev-my-project-web  Running
@@ -15,9 +23,13 @@ Container ddev-my-project-db  Running
 Container ddev-router  Running
 Successfully started my-project
 Project can be reached at https://my-project.ddev.site https://127.0.0.1:51046`,
-  },
-  {
-    output: `→ ddev describe
+    },
+    {
+      clumps: [
+        { transition: "type", lines: 1, wait: 250 },
+        { transition: "show", lines: 27 },
+      ],
+      output: `ddev describe
 ┌─────────────────────────────────────────────────────────────────────────────────────┐
 │ Project: my-project ~/dev/my-project https://my-project.ddev.site                   │
 │ Docker environment: docker 20.10.21                                                 │
@@ -45,28 +57,119 @@ Project can be reached at https://my-project.ddev.site https://127.0.0.1:51046`,
 │            │      │ http://my-project.ddev.site,               │                    │
 │            │      │ http://127.0.0.1:51047                     │                    │
 └────────────┴──────┴────────────────────────────────────────────┴────────────────────┘`,
-  },
-]
----
+    },
+  ]
+
+  // Element whose inner HTML will be our terminal output
+  const stage = document.getElementById("animation-stage")
+  // Seconds to wait after animation’s finished, before moving on to the next screen
+  const pause = 5
+
+  let activeScreen = 0
+  let currentClump = 0
+  let currentScreen = screens[activeScreen]
+  let currentLine = 0
+
+  /**
+   * Kick off the whole show.
+   */
+  const play = () => {
+    playNextClump()
+  }
+
+  /**
+   * Transition in the next clump.
+   */
+  const playNextClump = () => {
+    let outputLines = currentScreen.output.split("\n")
+    let clump = currentScreen.clumps[currentClump]
+    let clumpLine = 0
+
+    // Animate in each line in the clump
+    const player = setInterval(
+      () => {
+        if (clumpLine < clump.lines) {
+          if (clump.transition === "type") {
+            typeInText(outputLines[currentLine])
+            clumpLine += 1
+            currentLine += 1
+          } else if (clump.transition === "roll") {
+            stage.innerHTML += outputLines[currentLine] + "\n"
+            clumpLine += 1
+            currentLine += 1
+          } else if (clump.transition === "show") {
+            while (clumpLine < clump.lines) {
+              stage.innerHTML += outputLines[currentLine] + "\n"
+              clumpLine += 1
+              currentLine += 1
+            }
+          }
+        } else {
+          clearInterval(player)
+
+          if (currentClump === currentScreen.clumps.length - 1) {
+            pauseAndAdvance()
+          } else {
+            pauseAndContinue(clump.wait ?? 0)
+          }
+        }
+      },
+      clump.transition === "type" ? 1000 : 100
+    )
+  }
+
+  const typeInText = (text: string) => {
+    const chars = text.split("")
+    let currentChar = 0
+
+    const player = setInterval(() => {
+      if (currentChar < chars.length) {
+        stage.innerHTML += chars[currentChar]
+        currentChar += 1
+      } else {
+        clearInterval(player)
+        stage.innerHTML += "\n"
+      }
+    }, 35)
+  }
+
+  /**
+   * Wait a moment, then continue transitioning in the next clump.
+   */
+  const pauseAndContinue = (duration: number) => {
+    // console.log(`pauseAndContinue()`)
+    const pauser = setTimeout(() => {
+      currentClump += 1
+      playNextClump()
+    }, duration)
+  }
+
+  /**
+   * Wait a moment, then show the next screen.
+   */
+  const pauseAndAdvance = () => {
+    // console.log(`pauseAndAdvance()`)
+    const pauser = setTimeout(() => {
+      if (activeScreen < screens.length - 1) {
+        activeScreen += 1
+      } else {
+        activeScreen = 0
+      }
+      currentClump = 0
+      currentScreen = screens[activeScreen]
+      currentLine = 0
+      stage.innerHTML = ""
+      play()
+    }, pause * 1000)
+  }
+
+  window.addEventListener("load", play())
+</script>
 
 <style is:global lang="postcss">
   .terminal-wrapper {
     @apply rounded-lg;
     background: #2e3440;
-  }
-
-  .terminal-wrapper .top-bar {
-    &.powershell {
-      @apply justify-between text-white;
-      background: #1f2023;
-    }
-    &.powershell-ubuntu {
-      @apply justify-between text-white;
-      background: #1f2023;
-    }
-    &.ubuntu {
-      @apply justify-end;
-    }
   }
 
   .prose .terminal-wrapper pre {
@@ -109,7 +212,7 @@ Project can be reached at https://my-project.ddev.site https://127.0.0.1:51046`,
         </div>
         <div class="overflow-hidden my-0">
           <div class="h-full p-4 text-slate-300 text-xs" style="height: 540px;">
-            <pre>{panels[0].output}</pre>
+            <pre><span class="select-none text-slate-400">→ </span><span id="animation-stage" /></pre>
           </div>
         </div>
       </div>
