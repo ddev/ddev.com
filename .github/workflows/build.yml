@@ -41,7 +41,7 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           branch: main
-          commit_message: Update build.
+          commit_message: ddev.com-front-end@${{ github.sha }}
       - name: Delete artifacts
         uses: jimschubert/delete-artifacts-action@v1
         with:
