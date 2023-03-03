@@ -20,6 +20,11 @@ footer {
   }
 }
 
+/* Alt text styling for a not-yet-loaded image */
+img {
+  @apply font-mono text-sm text-gray-500;
+}
+
 .footnotes {
   @apply border-t mt-24 pt-4 text-base;
 }
