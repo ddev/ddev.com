@@ -106,8 +106,8 @@ On every push to the `main` branch, the following happens in order:
 
 1. GitHub Actions builds and tests the site using [this workflow](https://github.com/ddev/ddev.com-front-end/blob/main/.github/workflows/build.yml).
 2. If the build doesn’t encounter any errors, it’ll store the generated static files in an artifact and then commit them to the [ddev/ddev.com-build](https://github.com/ddev/ddev.com-build) repository.
-    - Files in this project’s `public/` directory get copied into the built `dist/`, which is how we get [`.platform.app.yaml`](https://github.com/ddev/ddev.com-front-end/blob/main/public/.platform.app.yaml) and [`.platform/routes.yaml`](https://github.com/ddev/ddev.com-front-end/blob/main/public/.platform/routes.yaml) into the root of `ddev/ddev.com-build`.
-3. [Platform.sh will](https://platform.sh) respond to a `ddev/ddev.com-build` webhook and pull the latest files into a deployment.
+    - Files in this project’s `public/` directory get copied into the built `dist/`, which is how we get [`_redirects`](https://github.com/ddev/ddev.com-front-end/blob/main/public/_redirects) into the root of `ddev/ddev.com-build`.
+3. [Cloudflare Pages](https://pages.cloudflare.com) responds to a `ddev/ddev.com-build` webhook and pulls the latest files into a deployment.
 
 ### Secrets
 
