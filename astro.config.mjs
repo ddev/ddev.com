@@ -19,13 +19,7 @@ export default defineConfig({
     astroImageTools,
     sitemap(),
     robotsTxt({
-      sitemap: false,
-      policy: [
-        {
-          disallow: "/",
-          userAgent: "*",
-        },
-      ],
+      sitemap: true,
     }),
     searchIndex({
       output: "search.json",
