@@ -3,7 +3,9 @@
 /ddev-local/ddev-local-web-container-customization-in-v1-8-0/ https://ddev.readthedocs.io/en/latest/users/extend/customizing-images/ 301
 /ddev-local/ddev-local-nfs-mounting-setup-macos/ https://ddev.readthedocs.io/en/latest/users/install/performance/#nfs 301
 /ddev-local /blog 301
+/ddev-local/ /blog 301
 /meet-the-team /blog/authors 301
+/meet-the-team/ /blog/authors 301
 /author/heather /blog/author/heather-mcnamee 301
 /author/rfay /blog/author/randy-fay 301
 /author/rmanelius /blog/author/rick-manelius 301
