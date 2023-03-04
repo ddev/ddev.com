@@ -28,6 +28,7 @@ export interface Props {
   ogImageAlt?: string
   link?: object[]
   structuredData?: object[]
+  is404?: boolean
 }
 
 const {
@@ -39,6 +40,7 @@ const {
   ogImageAlt,
   link = [],
   structuredData = [],
+  is404 = false
 } = Astro.props
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString()
@@ -124,6 +126,14 @@ import "../styles/global.css"
     <Icons />
     <script defer data-domain="ddev.com" src="https://plausible.io/js/script.js"
     ></script>
+    {
+      is404 && (
+        <script is:inline>
+          window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
+        </script>
+        <script is:inline>plausible("404",{ props: { path: document.location.pathname } });</script>
+      )
+    }
     <StructuredData data={jsonLd} />
   </head>
   <body>
