@@ -7,6 +7,7 @@ import {
   DOCUMENTATION_URL,
   DISCORD_URL,
   COPYRIGHT_HOLDER,
+  MASTODON_URL,
   TWITTER_URL,
   GITHUB_URL,
 } from "../const"
@@ -30,12 +31,18 @@ const navigation = {
       href: DISCORD_URL,
     },
     {
+      name: "Mastodon",
+      href: MASTODON_URL,
+      me: true
+    },
+    {
       name: "Twitter",
       href: TWITTER_URL,
     },
     {
       name: "GitHub",
       href: GITHUB_URL,
+      me: true
     },
   ],
 }
@@ -99,6 +106,7 @@ const navigation = {
               class={`text-gray-500 hover:text-black ${
                 item.name == "Discord" ? `w-5` : `w-6`
               }`}
+              rel={item.hasOwnProperty('me') && item.me ? 'me' : null}
             >
               <span class="sr-only">{item.name}</span>
               <Icon name={item.name} aria-hidden="true" />
