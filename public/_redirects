@@ -10,3 +10,4 @@
 /author/rfay /blog/author/randy-fay 301
 /author/rmanelius /blog/author/rick-manelius 301
 /ddev-local/:slug /blog/:slug 301
+/ddev-local/:slug/ /blog/:slug 301
