@@ -11,4 +11,4 @@
 /author/rmanelius /blog/author/rick-manelius 301
 /ddev-local/:slug /blog/:slug 301
 /ddev-local/:slug/ /blog/:slug 301
-/install.sh https://github.com/ddev/ddev/blob/master/scripts/install_ddev.sh 302
+/install.sh https://raw.githubusercontent.com/ddev/ddev/master/scripts/install_ddev.sh 302
