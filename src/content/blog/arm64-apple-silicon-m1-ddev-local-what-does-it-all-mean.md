@@ -3,7 +3,7 @@ title: "ARM64! Apple Silicon! M1! DDEV! What does it all mean?"
 pubDate: 2020-11-18
 summary: A look at Apple’s new chip architecture and what it means for DDEV.
 modifiedDate: 2023-03-12
-modifiedComment: "DDEV has now been fully native compatible for more than two years, so it seemed time to update this blog post."
+modifiedComment: "We’ve updated this post to reflect the continued support for Apple silicon since it was first published."
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/11/apple-ddev.jpg
