@@ -1,5 +1,7 @@
 # ddev.com Front End
 
+This is a quick test to see whether branches get built.
+
 This repository’s source code is for [ddev.com](https://ddev.com)’s statically-generated front end. It’s built with [Astro](https://astro.build), a modern static site generator with all the development fancy you’d hope for but that only ships what’s necessary for the visitor. It helps us keep things organized, maintainable, and fast for visitors.
 
 Most pages are built using plain old Astro components, while blog posts are sourced from local Markdown.
