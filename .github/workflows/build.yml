@@ -34,7 +34,6 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: "ddev/ddev.com-build"
-          ref: main
           token: ${{ secrets.GH_PAT }}
       - uses: actions/download-artifact@v3
         with:
