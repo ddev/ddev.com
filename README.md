@@ -102,12 +102,10 @@ If you need to dynamically add multiple pages, see files with brackets like `src
 
 The site needs to be generated using this source code, and the resulting static files (in the `dist/` directory) need to be hosted somewhere.
 
-On every push to the `main` branch, the following happens in order:
+On every push to the `main` branch, the following happens:
 
-1. GitHub Actions builds and tests the site using [this workflow](https://github.com/ddev/ddev.com-front-end/blob/main/.github/workflows/build.yml).
-2. If the build doesn’t encounter any errors, it’ll store the generated static files in an artifact and then commit them to the [ddev/ddev.com-build](https://github.com/ddev/ddev.com-build) repository.
-    - Files in this project’s `public/` directory get copied into the built `dist/`, which is how we get [`_redirects`](https://github.com/ddev/ddev.com-front-end/blob/main/public/_redirects) into the root of `ddev/ddev.com-build`.
-3. [Cloudflare Pages](https://pages.cloudflare.com) responds to a `ddev/ddev.com-build` webhook and pulls the latest files into a deployment.
+- GitHub Actions tests the site using [this workflow](https://github.com/ddev/ddev.com-front-end/blob/main/.github/workflows/test.yml).
+- [Cloudflare Pages](https://pages.cloudflare.com) runs `npm run build` on the branch, and deploys the resulting output from `dist/`.
 
 ### Secrets
 
@@ -115,9 +113,7 @@ While you’re developing locally, you’ll need to supply a **classic** GitHub 
 
 GitHub supplies its own private `GITHUB_TOKEN` in the GitHub Actions build environment.
 
-For build step 2 to succeed, a [`GH_PAT` secret must exist](https://github.com/ddev/ddev.com-front-end/blob/main/.github/workflows/build.yml#L36) that gives GitHub Actions permission to commit files to the private `ddev/ddev.com-build` repository.
-
-Lastly, Platform.sh must have a GitHub token with `admin:repo_hook`, `read:org`, and `repo` permissions in order to read the `ddev/ddev.com-build` and coordinate deployments.
+Cloudflare Pages must have a `GITHUB_TOKEN` environment variable with `read:org`, `read:project`, `read:user`, and `repo` permissions.
 
 ## Resources
 
