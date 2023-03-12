@@ -41,6 +41,12 @@ jobs:
           name: build
           path: ./
       - uses: stefanzweifel/git-auto-commit-action@v4
+        if: ${{ github.event_name == 'pull_request' }}
+        with:
+          branch: ${{ github.ref }}
+          commit_message: ddev.com-front-end@${{ github.sha }}
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        if: ${{ github.event_name != 'pull_request' }}
         with:
           branch: ${{ github.ref_name }}
           commit_message: ddev.com-front-end@${{ github.sha }}
