@@ -49,4 +49,4 @@ Building DDEV for ARM64 was a monumental task, and a huge demonstration of the b
 - Reworking the image build process to use Docker’s new [multi-architecture](https://www.docker.com/blog/tag/multi-architecture/) support, which allows a single image on [hub.docker.com](http://hub.docker.com) to have both AMD64 and ARM64 versions, and to pull the correct one as needed.
 - Building the DDEV Go binary for AMD64.
 
-**The good news for all of us is that DDEV is incredibly performant running natively on Apple Silicon.. and works great everywhere else too.**
+**The good news for all of us is that DDEV is incredibly performant running natively on Apple Silicon, and it works great everywhere else too.**
