@@ -1,6 +1,6 @@
 # ddev.com Front End
 
-Source code for [ddev.com](https://ddev.com)’s statically-generated front end, built with [Astro](https://astro.build) to keep things organized, maintainable, and fast.
+Source code for [ddev.com](https://ddev.com)’s static front end, built with [Astro](https://astro.build) to keep things organized, maintainable, and fast.
 
 ## Overview
 
@@ -33,8 +33,8 @@ Most pages are built with [Astro components](https://docs.astro.build/en/core-co
 - **`astro.config.mjs`** – Astro configuration.
 - **`package.json`** – standard file that details the project’s packages and versions.
 - **`README.md`** – you are here! 👋
-- **`tailwind.config.cjs` – [configuration for Tailwind](https://tailwindcss.com/docs/configuration) and the Tailwind Typography plugin we’re using.
-- **`tsconfig.json` – [TypeScript configuration](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
+- **`tailwind.config.cjs`** – [configuration for Tailwind](https://tailwindcss.com/docs/configuration) and the Tailwind Typography plugin we’re using.
+- **`tsconfig.json`** – [TypeScript configuration](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
 
 ## Development
 
