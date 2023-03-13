@@ -1,20 +1,10 @@
 # ddev.com Front End
 
-This repository’s source code is for [ddev.com](https://ddev.com)’s statically-generated front end. It’s built with [Astro](https://astro.build), a modern static site generator with all the development fancy you’d hope for but that only ships what’s necessary for the visitor. It helps us keep things organized, maintainable, and fast for visitors.
+Source code for [ddev.com](https://ddev.com)’s statically-generated front end, built with [Astro](https://astro.build) to keep things organized, maintainable, and fast.
 
-Most pages are built using plain old Astro components, while blog posts are sourced from local Markdown.
+## Overview
 
-## Setup
-
-The project includes an `.nvmrc` file, so if you have `nvm` installed you can run `nvm use` to make sure you’re running an appropriate Node.js version.
-
-After that, run `npm install` to set up the project’s dependencies. Then you can run any of the [commands](#commands) below.
-
-> 💡 There’s also a `.prettierrc` file in the project that’ll save you formatting time and keep things consistent if you’re using Prettier in your editor or IDE.
-
-Run `npm run dev` or `npm run build` and see if it works or falls over.
-
-## Ingredients
+### Main Ingredients
 
 - [Astro](https://astro.build)
 - [Tailwind CSS](https://tailwindcss.com)
@@ -22,17 +12,33 @@ Run `npm run dev` or `npm run build` and see if it works or falls over.
 - [Heroicons](https://heroicons.com)
 - [Textlint](https://textlint.github.io)
 
-## Project Structure
+### Project Structure
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+The file structure follows a typical Astro [project layout](https://docs.astro.build/en/core-concepts/project-structure/).
 
-There’s nothing special about `src/components/`, but that’s where we like to put any Astro/React/Vue/Svelte/Preact components.
+Most pages are built with [Astro components](https://docs.astro.build/en/core-concepts/astro-components/), while blog posts and authors are sourced from local Markdown that’s validated with tidy schemas we get using [content collections](https://docs.astro.build/en/guides/content-collections/).
 
-Any static assets, like images, can be placed in the `public/` directory.
+- **`cache/`** – custom, project-specific folder for caching GitHub responses in local developent in order to reduce API calls.
+- **`public/`** – images and Cloudflare Pages redirect file that will be copied verbatim into the generated `dist/` directory.
+- **`src/`** – components, layouts, styles, and supporting TypeScript/JavaScript.
+  - **`components/`** – indiviaul `.astro` components used in pages. (You can also use [components for UI frameworks](https://docs.astro.build/en/core-concepts/framework-components/) like Vue, React, and Svelte!)
+  - **`content/`** – configuration and Markdown for the blog’s [content collections](https://docs.astro.build/en/guides/content-collections/).
+  - **`layouts/`** – contains the single component we use for every page.
+  - **`lib/`** – TypeScript and JavaScript for supporting content: fetching data from GitHub, building the search index, injecting read time into frontmatter, and handling common formatting.
+  - **`pages/`** – `.astro` pages whose filenames directly translate into routes for the site.
+  - **`styles/`** – global PostCSS that’s not already handled by the [Tailwind plugin](https://docs.astro.build/en/guides/integrations-guide/tailwind/).
+- **`.env.example`** – file you’ll want to rename `.env` and populate for a new environment.
+- **`.nvmrc`** – Node.js version to support `nvm use`.
+- **`.prettierrc`** – rules for [Prettier](https://prettier.io) code formatting.
+- **`astro.config.mjs`** – Astro configuration.
+- **`package.json`** – standard file that details the project’s packages and versions.
+- **`README.md`** – you are here! 👋
+- **`tailwind.config.cjs` – [configuration for Tailwind](https://tailwindcss.com/docs/configuration) and the Tailwind Typography plugin we’re using.
+- **`tsconfig.json` – [TypeScript configuration](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
 
-You’ll also see a `lib/` directory with common methods for fetching and formatting content.
+## Development
 
-## Commands
+### Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -47,19 +53,30 @@ All commands are run from the root of the project, from a terminal:
 | `npm run textlint`     | Run textlint on content collections                |
 | `npm run textlint:fix` | Apply fixable updates to resolve texlint errors    |
 
-## Textlint
+### Local Development Setup
 
-A basic textlint configuration lives in `.textlintrc` and runs against `src/content/**` to try and help keep language consistent and accurate. This doesn’t yet conform to the DDEV docs [spellcheck rules](https://github.com/ddev/ddev/blob/master/.spellcheck.yml) and [massive exclusion list](https://github.com/ddev/ddev/blob/master/.spellcheckwordlist.txt), but ideally the two can someday converge.
+Check out the project in your favorite Node.js environment, ideally running [`nvm`](https://github.com/nvm-sh/nvm). We’ll install dependencies, add a GitHub API key, and run a local dev server with a hot-reloading browser URL.
 
-Textlint’s [default terminology](https://github.com/sapegin/textlint-rule-terminology/blob/master/terms.jsonc) catches a lot of accepted best practices on its own, where the only major override is to allow “website” (instead of its suggested “site”) because it’s rampant in blog posts and documentation. Same with the “front end” and “back end” conundrum and two-word “command line”.
+1. Run `nvm use` to make sure you’re running an appropriate Node.js version.
+2. Run `npm install` to set up the project’s dependencies.
+3. Run `cp .env.example .env` to create a `.env` file for environment variables.  
+  (Don’t check this in!)
+4. Create a [classic GitHub access token](https://github.com/settings/tokens) with the following scopes: `repo`, `read:org`, `read:user`, and `read:project`.
+5. Add the GitHub token to `.env`’s `GITHUB_TOKEN=` value.
+6. Run `npm run dev` to run Astro’s dev server.
+7. Visit the URL in your console. (Probably `http://127.0.0.1:3000/`.) The site will automatically refresh as you work on it, displaying errors in the relevant console (terminal or browser console.)
 
-Run `npm run textlint` to check everything, and you can apply “fixable” changes using `npm run textlint:fix`. Be careful automating fixes to be sure they don’t have any unintended side effects!
+To generate a static copy of the site, run `npm run build`. The contents of the `dist/` folder are exactly what get [deployed to Cloudflare Pages](#build--deployment).
 
-## Adding New Content
+## Managing Content
+
+The site’s content lives in either `.astro` components that resemble souped-up HTML, or Markdown files organized into schema-validated [content collections](https://docs.astro.build/en/guides/content-collections/).
 
 ### Blog Posts
 
-Use this Markdown as a template:
+Blog posts are Markdown files with frontmatter that live in `src/content/blog/`.
+
+To add a new blog post, use this Markdown as a template:
 
 ```markdown
 ---
@@ -98,22 +115,29 @@ Add a `.astro` file to the `pages/` directory, where its name will become the pa
 
 If you need to dynamically add multiple pages, see files with brackets like `src/blog/[page].astro`, `src/blog/category/[slug].astro`, and `src/blog/author/[slug].astro` for examples.
 
+### Textlint
+
+A basic textlint configuration lives in `.textlintrc` and runs against `src/content/**` to try and help keep language consistent and accurate. This doesn’t yet conform to the DDEV docs [spellcheck rules](https://github.com/ddev/ddev/blob/master/.spellcheck.yml) and [massive exclusion list](https://github.com/ddev/ddev/blob/master/.spellcheckwordlist.txt), but ideally the two can someday converge.
+
+Textlint’s [default terminology](https://github.com/sapegin/textlint-rule-terminology/blob/master/terms.jsonc) catches a lot of accepted best practices on its own, where the only major override is to allow “website” (instead of its suggested “site”) because it’s rampant in blog posts and documentation. Same with the “front end” and “back end” conundrum and two-word “command line”.
+
+Run `npm run textlint` to check everything, and you can apply “fixable” changes using `npm run textlint:fix`. Be careful automating fixes to be sure they don’t have any unintended side effects!
+
 ## Build & Deployment
 
-The site needs to be generated using this source code, and the resulting static files (in the `dist/` directory) need to be hosted somewhere.
+For the site to exist at `ddev.com`, it needs to be built and hosted somewhere. Cloudflare Pages responds to commits in order to build and deploy the site.
 
 On every push to the `main` branch, the following happens:
 
 - GitHub Actions tests the site using [this workflow](https://github.com/ddev/ddev.com-front-end/blob/main/.github/workflows/test.yml).
-- [Cloudflare Pages](https://pages.cloudflare.com) runs `npm run build` on the branch, and deploys the resulting output from `dist/`.
+- [Cloudflare Pages](https://pages.cloudflare.com) runs `npm run build`, and deploys the resulting output from `dist/`.
+  - Cloudflare Pages is also configured to build previews for branches on this repository. It will automatically add a comment with the build status and eventual URL(s) to any PR.
 
 ### Secrets
 
-While you’re developing locally, you’ll need to supply a **classic** GitHub personal access token Octokit can use to make REST and GraphQL API requests. Copy `.env.example` to `.env`, add this after `GITHUB_TOKEN=`, and don’t check it in!
+The site [uses Octokit to make REST and GraphQL API requests](https://github.com/ddev/ddev.com-front-end/blob/main/src/lib/api.ts) for repository and contribution details from github.com. It needs an API token to authenticate these requests to function and avoid hitting quota limits.
 
-GitHub supplies its own private `GITHUB_TOKEN` in the GitHub Actions build environment.
-
-Cloudflare Pages must have a `GITHUB_TOKEN` environment variable with `read:org`, `read:project`, `read:user`, and `repo` permissions.
+GitHub supplies its own private `GITHUB_TOKEN` in the GitHub Actions build environment. In any other environment, including local development, you’ll need to populate a `GITHUB_TOKEN` environment variable with a **classic** GitHub personal access token that has `repo`, `read:org`, `read:user`, and `read:project` scopes.
 
 ## Resources
 
