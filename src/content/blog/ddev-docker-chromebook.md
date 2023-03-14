@@ -12,11 +12,11 @@ categories:
   - Guides
 ---
 
-[DDEV-Local](http://github.com/ddev/ddev) and Docker work fine for local development on an inexpensive Chromebook!
+[DDEV](http://github.com/ddev/ddev) and Docker work fine for local development on an inexpensive Chromebook!
 
-I’d been wanting to try out a Chromebook for DDEV-Local development for a while and I confess that I did an impulse buy on Amazon and got the 8GB [Asus C425](https://www.asus.com/us/Laptops/ASUS-Chromebook-14-C425TA/) for $329, which is a lot less than the fancy loaded MacBook Pro I usually use. It works great, mostly because it runs pure Debian Linux in what it calls the “Terminal”.
+I’d been wanting to try out a Chromebook for DDEV development for a while and I confess that I did an impulse buy on Amazon and got the 8GB [Asus C425](https://www.asus.com/us/Laptops/ASUS-Chromebook-14-C425TA/) for $329, which is a lot less than the fancy loaded MacBook Pro I usually use. It works great, mostly because it runs pure Debian Linux in what it calls the “Terminal”.
 
-Here’s the step-by-step to set up a DDEV-Local development environment:
+Here’s the step-by-step to set up a DDEV development environment:
 
 1. In _Settings_ → _Linux (Beta)_, “Turn on” Linux.
 2. In Linux, create a password for the username you’ve created by running `sudo passwd $USER`.
@@ -34,7 +34,7 @@ Here’s the step-by-step to set up a DDEV-Local development environment:
 
 ![Screenshot of the "Host Switch Plus" plugin configuration panel set as described in the preceding text. Default set to "direct". Checkbox for "enable" selected. IP set to the IP you just grepped for and Domain set to *.ddev.site](/img/blog/2020/04/hostswitchplus.png)
 
-Now you can create a project the normal way and get to work! This is the simple path to a Drupal 8 Composer build, but there are lots of other DDEV-Local [quickstart guides](https://ddev.readthedocs.io/en/stable/users/cli-usage/#quickstart-guides).
+Now you can create a project the normal way and get to work! This is the simple path to a Drupal 8 Composer build, but there are lots of other DDEV [quickstart guides](https://ddev.readthedocs.io/en/stable/users/cli-usage/#quickstart-guides).
 
 - `mkdir -p ~/workspace/d8composer && cd ~/workspace/d8composer`
 - `ddev config --project-type=drupal8 --docroot=web --create-docroot`
@@ -55,6 +55,6 @@ Some comments about working with the Asus Chromebook:
   - `sudo apt-get install libnss3`
   - Download [JetBrains Toolbox for Linux](https://www.jetbrains.com/toolbox-app/) and install and run it, then use it to fetch and install PhpStorm.
 
-Since we’re in the era of Linux laptops with Chromebooks and WSL2, we’ll soon be doing a full writeup on how to use DDEV-Local with WSL2. It’s crazy fast.
+Since we’re in the era of Linux laptops with Chromebooks and WSL2, we’ll soon be doing a full writeup on how to use DDEV with WSL2. It’s crazy fast.
 
 Where do _you_ run DDEV? If you have a unique setup, consider sharing the specs and adding a link in our [community repository](https://github.com/ddev/awesome-ddev) so others can check it out too!

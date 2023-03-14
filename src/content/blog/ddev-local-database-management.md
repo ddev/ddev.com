@@ -1,5 +1,5 @@
 ---
-title: "DDEV-Local Database Management"
+title: "DDEV Database Management"
 pubDate: 2020-04-03
 modifiedDate: 2020-12-07
 summary: A detailed look at using DDEV to work with databases.
@@ -12,15 +12,15 @@ categories:
   - DevOps
 ---
 
-[DDEV-Local](http://github.com/ddev/ddev) provides lots and lots of flexibility for you in managing your databases between your local development, staging and production environments. Most people know about `ddev import-db` and `ddev export-db` but those tools now have more flexibility and there are plenty of other adaptable ways to work with your databases.
+[DDEV](http://github.com/ddev/ddev) provides lots and lots of flexibility for you in managing your databases between your local development, staging and production environments. Most people know about `ddev import-db` and `ddev export-db` but those tools now have more flexibility and there are plenty of other adaptable ways to work with your databases.
 
 Remember, you can run `ddev [command] --help` for more info on many of the topics below.
 
 **Many database backends**: You can use a vast array of different database types, including MariaDB from 5.5 through 10.4 and MySQL from 5.5 through 8.0 ([docs](https://ddev.readthedocs.io/en/stable/users/extend/database%5Ftypes/#database-server-types)). Note that if you want to _change_ database type, especially to downgrade, you need to export your database and then `ddev delete` the project (to kill off the existing database), make the change to a new db type, start again, and import.
 
-**Default database**: DDEV-Local creates a default database named “db” and default permissions for the “db” user with password “db”, and it’s on the (inside Docker) hostname “db”.
+**Default database**: DDEV creates a default database named “db” and default permissions for the “db” user with password “db”, and it’s on the (inside Docker) hostname “db”.
 
-**Extra databases**: In [DDEV-Local v1.13+](https://github.com/ddev/ddev/releases) you can easily create and populate other databases as well. For example, `ddev import-db --target-db=backend --src=backend.sql.gz` will create the database named “backend” with permissions for that same “db” user and import from the backend.sql.gz dumpfile.
+**Extra databases**: In [DDEV v1.13+](https://github.com/ddev/ddev/releases) you can easily create and populate other databases as well. For example, `ddev import-db --target-db=backend --src=backend.sql.gz` will create the database named “backend” with permissions for that same “db” user and import from the backend.sql.gz dumpfile.
 
 **Exporting extra databases**: You can export in the same way: `ddev export-db -f mysite.sql.gz` will export your default database (“db”). `ddev export-db --target-db=backend -f backend-export.sql.gz` will dump the database named “backend”.
 
@@ -46,4 +46,4 @@ I like to name my snapshots so I can find them later, so `ddev snapshot --name=t
   - `cp .ddev/commands/host/mysqlworkbench.example .ddev/commands/host/mysqlworkbench && chmod +x .ddev/commands/host/mysqlworkbench`
   - and then `ddev mysqlworkbench`
 
-What are your favorite DDEV-Local database tweaks, hacks, approaches, strategies? We’d love to hear about them [on Twitter](https://twitter.com/ddev) ([tag #ddev](https://twitter.com/hashtag/ddev?src=hashtag%5Fclick)) or any of our [support channels](https://ddev.readthedocs.io/en/stable/#support). Join the conversation!
+What are your favorite DDEV database tweaks, hacks, approaches, strategies? We’d love to hear about them [on Twitter](https://twitter.com/ddev) ([tag #ddev](https://twitter.com/hashtag/ddev?src=hashtag%5Fclick)) or any of our [support channels](https://ddev.readthedocs.io/en/stable/#support). Join the conversation!

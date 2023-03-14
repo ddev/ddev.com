@@ -1,5 +1,5 @@
 ---
-title: "DDEV share: Sharing a DDEV-Local project with other collaborators in real time"
+title: "DDEV share: Sharing a DDEV project with other collaborators in real time"
 pubDate: 2020-03-17
 summary: How to share a local DDEV project with others.
 author: Randy Fay
@@ -12,13 +12,13 @@ categories:
   - DevOps
 ---
 
-Even though [DDEV-Local](https://ddev.com/ddev-local/) is intended for local development on a single machine, not as a public server, there are a number of reasons you might want to expose your work in progress more broadly:
+Even though [DDEV](https://ddev.com/ddev-local/) is intended for local development on a single machine, not as a public server, there are a number of reasons you might want to expose your work in progress more broadly:
 
 - Testing with a mobile device
 - Sharing on a local network so that everybody on the local network can see your project
 - Some CI applications
 
-There are at least three different ways to share a running DDEV-Local project outside the local developer machine:
+There are at least three different ways to share a running DDEV project outside the local developer machine:
 
 1. `ddev share` (using ngrok to share over the internet)
 2. Local name resolution and sharing the project on the local network
@@ -37,7 +37,7 @@ There are CMSs that make this a little harder, especially WordPress and Magento 
 
 #### **WordPress: Change the URL with wp search-replace**
 
-WordPress only has the one base URL, but the wp command is built into DDEV-Local’s web container.
+WordPress only has the one base URL, but the wp command is built into DDEV’s web container.
 
 This set of steps assumes an ngrok subdomain of “wp23” and a starting URL of `https://wordpress.ddev.site`.
 
@@ -72,7 +72,7 @@ The second solution is to _not_ use \*.ddev.site as your project URLs, but to us
 
 ## **3\. Exposing just a port from the host**
 
-DDEV-Local’s web container also exposes an HTTP port directly (in addition to the normal routing by name and via ddev_router). You can expose this port and it may be a useful approach in some situations.
+DDEV’s web container also exposes an HTTP port directly (in addition to the normal routing by name and via ddev_router). You can expose this port and it may be a useful approach in some situations.
 
 1. Add a `docker-compose.localnet.yaml` to your project’s `.ddev` directory. This example will expose HTTP on port 8080:
    ```yaml

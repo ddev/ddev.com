@@ -11,7 +11,7 @@ categories:
   - Guides
 ---
 
-[Composer](https://getcomposer.org) came into the PHP world to help with dependency-management—managing the growing network of external libraries that modern applications rely on. If you’re setting up a PHP development environment with Composer for TYPO3 or Drupal 8, DDEV-Local can help make it easier. DDEV now has built-in Composer commands so you don’t have to install Composer on your host machine. You can use Composer right in the container. Overall, our goal with DDEV is to give users ultimate flexibility, yet predictability at the same time.
+[Composer](https://getcomposer.org) came into the PHP world to help with dependency-management—managing the growing network of external libraries that modern applications rely on. If you’re setting up a PHP development environment with Composer for TYPO3 or Drupal 8, DDEV can help make it easier. DDEV now has built-in Composer commands so you don’t have to install Composer on your host machine. You can use Composer right in the container. Overall, our goal with DDEV is to give users ultimate flexibility, yet predictability at the same time.
 
 [Download DDEV](https://github.com/ddev/ddev)
 
@@ -29,7 +29,7 @@ Before [the DDEV 1.4 release](https://ddev.com/ddev-local/ddev-v1-4-0-in-contain
 
 We noticed more and more of our Windows users sharing workarounds [in our community](https://ddev.readthedocs.io/en/latest/#support), such as Slack and [Stack Overflow](https://stackoverflow.com/questions/tagged/ddev). We realized how we could make this a lot easier, and in DDEV 1.4, we released several improvements to make the experience better, particularly for Windows users.
 
-The new Composer command in DDEV-Local simplifies the use of Composer, and allows you to create and manage projects without having Composer installed on your host machine.
+The new Composer command in DDEV simplifies the use of Composer, and allows you to create and manage projects without having Composer installed on your host machine.
 
 As a bonus, we also changed Composer cache; now it resides in a shared Docker volume, making it much faster to do in-container Composer builds.
 

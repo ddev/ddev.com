@@ -1,5 +1,5 @@
 ---
-title: "Save-as-you-go and make backups in a jiffy with DDEV-Local"
+title: "Save-as-you-go and make backups in a jiffy with DDEV"
 pubDate: 2018-11-20
 summary: Working fluidly with DDEV’s database snapshots and backsups.
 author: Randy Fay
@@ -12,17 +12,17 @@ categories:
   - Videos
 ---
 
-To us, the ideal local development environment should be fast and easy to use and give you what you need to get your job done. DDEV-Local’s `ddev snapshot` command helps you recover quickly, and the new \`export-db\` command makes you portable backups in a jiffy.
+To us, the ideal local development environment should be fast and easy to use and give you what you need to get your job done. DDEV’s `ddev snapshot` command helps you recover quickly, and the new \`export-db\` command makes you portable backups in a jiffy.
 
-Here’s how to easily save and restore databases with DDEV-Local, so you can recover if something goes wrong or you change your mind about the development direction you’re going.
+Here’s how to easily save and restore databases with DDEV, so you can recover if something goes wrong or you change your mind about the development direction you’re going.
 
 [Download DDEV](https://github.com/ddev/ddev/releases)
 
 ## Using `ddev snapshot` to save-as-you-go
 
-Software and web development is about continuously solving problems and trying new things. You want to be able to take risks, but _calculated_ risks. You can’t eliminate mistakes, but you can make it easier to recover and learn from them. Use DDEV-Local’s snapshot command to capture where you are now with your project. You’ll have the peace of mind you need to keep going. There’s no risk of losing work, you can come back to this point at any time.
+Software and web development is about continuously solving problems and trying new things. You want to be able to take risks, but _calculated_ risks. You can’t eliminate mistakes, but you can make it easier to recover and learn from them. Use DDEV’s snapshot command to capture where you are now with your project. You’ll have the peace of mind you need to keep going. There’s no risk of losing work, you can come back to this point at any time.
 
-To save a version of your DDEV-Local database use one quick command:
+To save a version of your DDEV database use one quick command:
 
 `ddev snapshot`
 
@@ -42,15 +42,15 @@ Here’s a video showing you how to use it.
 <iframe loading="lazy" width="500" height="281" src="https://www.youtube.com/embed/Ax-HocnXNbc?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </div>
 
-DDEV-Local snapshotting uses [mariabackup](https://mariadb.com/kb/en/library/mariabackup/) inside the database container. This is super, super fast in both directions. It’s not just a copy of the database directory, the state of the database is properly preserved. This means when you come back to work, everything is just as you left it.
+DDEV snapshotting uses [mariabackup](https://mariadb.com/kb/en/library/mariabackup/) inside the database container. This is super, super fast in both directions. It’s not just a copy of the database directory, the state of the database is properly preserved. This means when you come back to work, everything is just as you left it.
 
-**Important:** DDEV snapshot isn’t backward-compatible. Snapshots from previous versions of DDEV cannot be restored with v1.3 or higher because the mariabackup included with MariaDB 10.2 is not compatible with earlier backups. There’s an easy workaround to fix this [explained in the DDEV-Local documentation](https://ddev.readthedocs.io/en/latest/users/troubleshooting/#cant-restore-snapshot-created-before-ddev-v13).
+**Important:** DDEV snapshot isn’t backward-compatible. Snapshots from previous versions of DDEV cannot be restored with v1.3 or higher because the mariabackup included with MariaDB 10.2 is not compatible with earlier backups. There’s an easy workaround to fix this [explained in the DDEV documentation](https://ddev.readthedocs.io/en/latest/users/troubleshooting/#cant-restore-snapshot-created-before-ddev-v13).
 
 ## Backing up with `ddev export-db` and with `mysqldump`
 
 The `ddev snapshot` command is a great way to make a quick dump of your database, but it’s not as portable as a text-based database dump. With the recent release of DDEV v1.4, we introduced the [ddev export-db](https://ddev.readthedocs.io/en/latest/users/cli-usage/#exporting-a-database) command.
 
-On the command line, DDEV-Local has always had `[ddev import-db](https://ddev.readthedocs.io/en/latest/users/cli-usage/#importing-a-database)` but until now we didn’t have the correlating export option. Now you can!
+On the command line, DDEV has always had `[ddev import-db](https://ddev.readthedocs.io/en/latest/users/cli-usage/#importing-a-database)` but until now we didn’t have the correlating export option. Now you can!
 
 Run this command to create a text-based database dump:
 

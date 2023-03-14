@@ -36,7 +36,7 @@ If you know something about Docker, you know that you can throw one or two Docke
 - Composer support built into the web container and accessed with `ddev composer`.
 - [Xdebug step-debugging](https://ddev.readthedocs.io/en/stable/users/step-debugging/#step-debugging-with-ddev-and-xdebug) out of the box. Just `ddev xdebug on` and go.
 
-[![DDEV-Local, PhpStorm and Xdebug video and blog post](/img/blog/2020/12/screen-shot-2020-12-28-at-12.49.31-pm.png)](/blog/ddev-local-phpstorm-and-xdebug-debugging)
+[![DDEV, PhpStorm and Xdebug video and blog post](/img/blog/2020/12/screen-shot-2020-12-28-at-12.49.31-pm.png)](/blog/ddev-local-phpstorm-and-xdebug-debugging)
 
 - Integration with [Platform.sh](https://platform.sh), [Pantheon.io](https://ddev.readthedocs.io/en/stable/users/providers/pantheon/), Acquia Cloud.
 - `ddev share` lets you show work in progress to anyone anywhere in the world.
