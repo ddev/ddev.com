@@ -1,5 +1,5 @@
 ---
-title: "DDEV-Local and PhpStorm Debugging with WSL2"
+title: "DDEV and PhpStorm Debugging with WSL2"
 pubDate: 2020-06-17
 summary: Guide to PhpStorm configuration and debugging in Windows using WSL2.
 author: Randy Fay
@@ -11,21 +11,21 @@ categories:
   - Guides
 ---
 
-WSL2 with [DDEV-Local](https://ddev.com/ddev-local/) is a wonderful new world for Windows developers. The performance is incredible (on a par with native Linux installations) and the WSL2 command-line environment is fresh and clean.
+WSL2 with [DDEV](https://ddev.com/ddev-local/) is a wonderful new world for Windows developers. The performance is incredible (on a par with native Linux installations) and the WSL2 command-line environment is fresh and clean.
 
-As noted in the [WSL2 blog article](https://ddev.com/ddev-local/ddev-wsl2-getting-started/), Visual Studio Code is doing great with WSL2, but PhpStorm is lagging a bit behind. However, it is possible right now to use PhpStorm with DDEV-Local on WSL2 in two different ways:
+As noted in the [WSL2 blog article](https://ddev.com/ddev-local/ddev-wsl2-getting-started/), Visual Studio Code is doing great with WSL2, but PhpStorm is lagging a bit behind. However, it is possible right now to use PhpStorm with DDEV on WSL2 in two different ways:
 
 1. Running PhpStorm in Windows as usual, opening the project on the WSL2 filesystem at `\\wsl$\<distro>` PhpStorm is slow to index files and is slow to respond to file changes in this mode.
 2. Enabling X11 on Windows and running PhpStorm inside WSL2 as a Linux app. PhpStorm works fine this way, but it’s yet another complexity to manage and requires enabling X11 (easy) on your Windows system.
 
 We’ll walk through both of these approaches.
 
-I tested these approaches on an 8GB Windows 10 Home VM with Docker 2.3.0.3 and DDEV-Local v1.14.2 and the Ubuntu 20.04 distro.
+I tested these approaches on an 8GB Windows 10 Home VM with Docker 2.3.0.3 and DDEV v1.14.2 and the Ubuntu 20.04 distro.
 
 ## Basics
 
-- Start with a working DDEV-Local/WSL2 setup as described in [DDEV ❤️ WSL2: getting started](https://ddev.com/ddev-local/ddev-wsl2-getting-started/). Until that’s all working it doesn’t help to go farther.
-- If you haven’t used Xdebug with DDEV-Local and PhpStorm before, you’ll want to read the [normal instructions](https://ddev.readthedocs.io/en/stable/users/step-debugging/#step-debugging-with-ddev-and-xdebug) in the docs.
+- Start with a working DDEV/WSL2 setup as described in [DDEV ❤️ WSL2: getting started](https://ddev.com/ddev-local/ddev-wsl2-getting-started/). Until that’s all working it doesn’t help to go farther.
+- If you haven’t used Xdebug with DDEV and PhpStorm before, you’ll want to read the [normal instructions](https://ddev.readthedocs.io/en/stable/users/step-debugging/#step-debugging-with-ddev-and-xdebug) in the docs.
 - For good performance, you want your project to be in /home inside WSL2, which is on the Linux filesystem. Although you can certainly keep your project on the Windows filesystem and access it in WSL2 via /mnt/c, the performance is no better than native Windows. It does work though.
 
 ## Windows PhpStorm

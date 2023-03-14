@@ -1,5 +1,5 @@
 ---
-title: "How to setup a Mac development environment with DDEV-Local"
+title: "How to set up a Mac development environment with DDEV"
 pubDate: 2018-06-14
 summary: Guide to setting up DDEV for local development on a Mac.
 author: Randy Fay
@@ -12,31 +12,31 @@ categories:
   - Videos
 ---
 
-**This article has been updated in 2020, please go to [DDEV-Local From Scratch on macOS.](https://ddev.com/ddev-local/watch-ddev-local-from-scratch-with-macos/)**
+**This article was updated in 2020, please go to [DDEV From Scratch on macOS.](https://ddev.com/ddev-local/watch-ddev-local-from-scratch-with-macos/)**
 
-In this video tutorial, we’ll show you how to use [DDEV-Local](https://ddev.com/what-is-ddev/) to set up a PHP development environment from scratch on macOS.
+In this video tutorial, we’ll show you how to use [DDEV](https://ddev.com/what-is-ddev/) to set up a PHP development environment from scratch on macOS.
 
 Using a local development environment means you’re working on your projects without risking injury to your live projects.
 
-Follow [instructions to install DDEV-Local in the docs](https://ddev.readthedocs.io/en/latest/#installation) or watch this video for an overview.
+Follow [instructions to install DDEV in the docs](https://ddev.readthedocs.io/en/latest/#installation) or watch this video for an overview.
 
 <div class="video-container">
-<iframe loading="lazy" title="DDEV-Local from scratch on macOS" width="500" height="281" src="https://www.youtube.com/embed/1kG94UjS8XE?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<iframe loading="lazy" title="DDEV from scratch on macOS" width="500" height="281" src="https://www.youtube.com/embed/1kG94UjS8XE?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </div>
 
-## How to install your Docker-based dev environment with DDEV-Local
+## How to install your Docker-based dev environment with DDEV
 
-These are notes from the [video tutorial](https://www.youtube.com/watch?v=1kG94UjS8XE). You can also check out the detailed [install DDEV-Local instructions in the docs.](https://ddev.readthedocs.io/en/latest/#installation)
+These are notes from the [video tutorial](https://www.youtube.com/watch?v=1kG94UjS8XE). You can also check out the detailed [install DDEV instructions in the docs.](https://ddev.readthedocs.io/en/latest/#installation)
 
 ### First: [Install Docker for Mac](https://docs.docker.com/docker-for-mac/install/)
 
-The [minimum requirements to run DDEV-Local ](https://ddev.readthedocs.io/en/latest/#system-requirements)are Docker and Docker Compose, which comes bundled with Docker for Mac and Windows. DDEV-Local pretty much works anywhere Docker will run.
+The [minimum requirements to run DDEV ](https://ddev.readthedocs.io/en/latest/#system-requirements)are Docker and Docker Compose, which comes bundled with Docker for Mac and Windows. DDEV pretty much works anywhere Docker will run.
 
 ### Next: [Install DDEV](https://ddev.readthedocs.io/en/latest/#installation)
 
 **Option 1: With Homebrew**
 
-You can install DDEV-Local with [Homebrew](https://brew.sh/), and if you’re using Mac it’s a handy way to install.
+You can install DDEV with [Homebrew](https://brew.sh/), and if you’re using Mac it’s a handy way to install.
 
 `brew tap ddev/ddev && brew install ddev`
 

@@ -1,5 +1,5 @@
 ---
-title: "Eight (more) ways to get the most out of DDEV-Local"
+title: "Eight (more) ways to get the most out of DDEV"
 pubDate: 2018-12-06
 modifiedDate: 2020-02-05
 summary: A look at some useful and often-overlooked DDEV features.
@@ -12,7 +12,7 @@ categories:
   - DevOps
 ---
 
-In this post, I’m going to give you a quick overview of some tips, tricks, and a couple of cool geeky features DDEV-Local users often overlook. From the start, we’ve had a vision of building a dev-to-deploy toolset. We started with DDEV-Local to give you a stable, reliable, universal local development environment. To create a “just works” experience meant we’ve made some assumptions so you can get started quickly. On the other hand, DDEV also gives power users the flexibility to adapt and change the tools—even on a per-project basis—to suit their needs. So, if you’re brand new to using DDEV-Local, there might be things you’ve missed.
+In this post, I’m going to give you a quick overview of some tips, tricks, and a couple of cool geeky features DDEV users often overlook. From the start, we’ve had a vision of building a dev-to-deploy toolset. We started with DDEV to give you a stable, reliable, universal local development environment. To create a “just works” experience meant we’ve made some assumptions so you can get started quickly. On the other hand, DDEV also gives power users the flexibility to adapt and change the tools—even on a per-project basis—to suit their needs. So, if you’re brand new to using DDEV, there might be things you’ve missed.
 
 [Download DDEV](https://github.com/ddev/ddev)
 
@@ -58,7 +58,7 @@ Always start by checking the help files as you’re learning DDEV!
 
 ### Something everyone should know: `ddev poweroff`
 
-I never tire of reminding DDEV-Local users that the `ddev poweroff` and its neighbor `ddev stop` are your friends. They don’t destroy anything unless you ask them to. This is useful because if you keep a number of Docker containers running and neglect to remove them, you’ll run out of memory for Docker.
+I never tire of reminding DDEV users that the `ddev poweroff` and its neighbor `ddev stop` are your friends. They don’t destroy anything unless you ask them to. This is useful because if you keep a number of Docker containers running and neglect to remove them, you’ll run out of memory for Docker.
 
 Docker can become unpredictable when you near the memory limit. To avoid causing strange behavior in Docker, I like to keep my memory usage low. By default, it’s set to a limit of 2 GB, and you can have several projects running no problem. Once I get close to that limit, I just dump everything with `ddev poweroff`, secure in the knowledge that my containers are removed, not eating memory, and my data is intact.
 
@@ -98,11 +98,11 @@ It’s easy to change the PHP versions on a per-project basis either in the conf
 
 Check the docs on how to [change the PHP versions](https://ddev.readthedocs.io/en/latest/users/extend/customization-extendibility/#changing-php-version).
 
-DDEV-Local directly supports versions from 5.6 through 7.4, and you can even go back farther into the past using the [Old PHP recipe in github.com/ddev/ddev-contrib](https://github.com/ddev/ddev-contrib/tree/master/docker-compose-services/old%5Fphp).
+DDEV directly supports versions from 5.6 through 7.4, and you can even go back farther into the past using the [Old PHP recipe in github.com/ddev/ddev-contrib](https://github.com/ddev/ddev-contrib/tree/master/docker-compose-services/old%5Fphp).
 
 ### Windows users: make sure to remove inactive hostnames
 
-This is an obscure issue you can run into if you’re working on lots of projects at once on Windows and do not use the default domain (ddev.site). In Windows, there’s a limit of 10 hostnames pointing to one IP address. When you run into that problem, you’ll see that DDEV-Local is working perfectly fine, but your project site won’t load because the next (11th) hostname won’t resolve in the web browser.
+This is an obscure issue you can run into if you’re working on lots of projects at once on Windows and do not use the default domain (ddev.site). In Windows, there’s a limit of 10 hostnames pointing to one IP address. When you run into that problem, you’ll see that DDEV is working perfectly fine, but your project site won’t load because the next (11th) hostname won’t resolve in the web browser.
 
 It used to be that users had to manually add hostnames to the “etc/hosts” file—and that was a bit of a pain. So in the background, DDEV takes care of this for you. However, it’s so trivial to set up projects in DDEV, each with their own hostname, that you could quickly run into this limit.
 
@@ -120,7 +120,7 @@ This command outputs the fully preprocessed docker-compose configuration of the 
 
 ### JSON output for geeks
 
-This is a cool feature fellow geeks will appreciate. You can get JSON output from any command. We use this output from DDEV to feed data to [DDEV-UI](https://github.com/ddev/ddev-ui/releases), our GUI version of DDEV-Local built for those whose working style is better suited to using a friendly graphical user interface.
+This is a cool feature fellow geeks will appreciate. You can get JSON output from any command. We use this output from DDEV to feed data to [DDEV-UI](https://github.com/ddev/ddev-ui/releases), our GUI version of DDEV built for those whose working style is better suited to using a friendly graphical user interface.
 
 To get the JSON output on the command line, add this global flag to any command: `-j` or `--json-output`. for example:
 

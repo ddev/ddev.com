@@ -11,9 +11,9 @@ categories:
   - Videos
 ---
 
-DDEV-Local is a powerful local development tool that many of you are fond of for its simplicity and extensibility. Recent versions of [DDEV-Local (v1.10+)](https://ddev.readthedocs.io/en/stable/) add custom commands and loads of other goodies we’d like to show you how to use. In this screencast and tutorial, we’ll show you how to make use of DDEV-Local custom commands, adding web server packages, and adding extras in `.ddev/homeadditions` to support your specific project needs.
+DDEV is a powerful local development tool that many of you are fond of for its simplicity and extensibility. Recent versions of [DDEV (v1.10+)](https://ddev.readthedocs.io/en/stable/) add custom commands and loads of other goodies we’d like to show you how to use. In this screencast and tutorial, we’ll show you how to make use of DDEV custom commands, adding web server packages, and adding extras in `.ddev/homeadditions` to support your specific project needs.
 
-When in doubt, update DDEV-Local on your machine and run `ddev config` on a project before getting started with new features.
+When in doubt, update DDEV on your machine and run `ddev config` on a project before getting started with new features.
 
 As an example, and since there are many folks who absolutely love [zsh](https://www.zsh.org/) and [Oh My Zsh](https://ohmyz.sh/) (an alternative Unix shell and an accompanying framework), we’ll demonstrate these features by showing you how to add zsh and Oh My Zsh to a DDEV project. We’re going to do three things to demonstrate this:
 
@@ -27,9 +27,9 @@ Watch the video below and read the detailed instructions to configure your own p
 <iframe width="560" height="315" src="https://www.youtube.com/embed/eyhzszuF9Rg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
-## How to add zsh and Oh My Zsh to DDEV-Local
+## How to add zsh and Oh My Zsh to DDEV
 
-1. From the root of an existing project configured with DDEV-Local: Add the zsh package to the web server container by adding `webimage_extra_packages: ["zsh"]` to the `.ddev/config.yaml` file (or run `ddev config --webimage-extra-packages=zsh`, which does the exact same thing). If you only want zsh in the web container, you can `ddev restart` and you’re done!
+1. From the root of an existing project configured with DDEV: Add the zsh package to the web server container by adding `webimage_extra_packages: ["zsh"]` to the `.ddev/config.yaml` file (or run `ddev config --webimage-extra-packages=zsh`, which does the exact same thing). If you only want zsh in the web container, you can `ddev restart` and you’re done!
 2. To add a `ddev zsh` custom command to your project, place a file named “zsh” in `.ddev/commands/web/zsh` with the following contents and make it executable with `chmod +x zsh`:
 
     ```

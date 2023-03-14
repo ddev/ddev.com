@@ -1,5 +1,5 @@
 ---
-title: "Watch: DDEV-Local New Casual Webhosting Feature"
+title: "Watch: DDEV New Casual Webhosting Feature"
 pubDate: 2020-12-14
 summary: Video overview of DDEV’s casual hosting setup.
 author: Randy Fay
@@ -13,14 +13,14 @@ categories:
 ---
 
 <div class="video-container">
-<iframe loading="lazy" title="DDEV-Local Casual Webhosting" width="500" height="281" src="https://www.youtube.com/embed/beC46R_61gw?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<iframe loading="lazy" title="DDEV Casual Webhosting" width="500" height="281" src="https://www.youtube.com/embed/beC46R_61gw?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </div>
 
-[DDEV-Local](https://github.com/ddev/ddev)‘s v1.16 release has support for “[Casual webhosting](https://ddev.readthedocs.io/en/latest/users/alternate-uses/#casual-project-webosting-on-the-internet-including-lets-encrypt) including Let’s Encrypt.” DDEV users have often requested the ability to use DDEV as a self-managed low-end web server, for things like small sites or sharing prerelease code, etc., and now it has arrived.
+[DDEV](https://github.com/ddev/ddev)‘s v1.16 release has support for “[Casual webhosting](https://ddev.readthedocs.io/en/latest/users/alternate-uses/#casual-project-webosting-on-the-internet-including-lets-encrypt) including Let’s Encrypt.” DDEV users have often requested the ability to use DDEV as a self-managed low-end web server, for things like small sites or sharing prerelease code, etc., and now it has arrived.
 
 ## Why “Casual Webhosting”?
 
-Ever since the beginning of DDEV-Local, folks have found its simplicity and per-project configuration to be delightful, and have wanted that for simple hosting as well. Now you can set up a site just the way you do on your local machine, with the same commands and capabilities, and set up as many projects on it as you want to.
+Ever since the beginning of DDEV, folks have found its simplicity and per-project configuration to be delightful, and have wanted that for simple hosting as well. Now you can set up a site just the way you do on your local machine, with the same commands and capabilities, and set up as many projects on it as you want to.
 
 ## Caveats
 
@@ -28,7 +28,7 @@ We call it “casual” and “experimental” for a reason. It’s unknown how 
 
 I personally have three trivial sites running on this casual webhosting setup on a $5/month Linode server, and have had no problems so far. (See [randyfay.com](http://randyfay.com) for the list of sites).
 
-Note that if you just want to show a site to your colleagues or customers, you might get by just fine with the `ddev share` command, which requires [no setup at all](https://ddev.com/ddev-local/sharing-a-ddev-local-project-with-other-collaborators/). And if you want a managed service, consider [DDEV-Live](https://ddev.com/ddev-live/) with included [Preview](https://ddev.com/ddev-live/what-is-ddev-preview/) features or [Pantheon](https://ddev.readthedocs.io/en/latest/users/providers/pantheon/).
+Note that if you just want to show a site to your colleagues or customers, you might get by just fine with the `ddev share` command, which requires [no setup at all](https://ddev.com/ddev-local/sharing-a-ddev-local-project-with-other-collaborators/). 
 
 [Read the Casual Webhosting docs](https://ddev.readthedocs.io/en/latest/users/alternate-uses/#casual-project-webosting-on-the-internet-including-lets-encrypt)
 
@@ -39,7 +39,7 @@ Note that if you just want to show a site to your colleagues or customers, you m
 
 ## Server setup
 
-1. Spin up a server. I recommend using Ubuntu 20.04, which has usable Docker and Docker-compose repositories out of the box. Install DDEV-Local with homebrew or the `install_ddev.sh` script ([read the full docs here](https://ddev.readthedocs.io/en/latest/users/alternate-uses/#casual-project-webosting-on-the-internet-including-lets-encrypt) and [watch the video](https://youtu.be/beC46R%5F61gw), too).
+1. Spin up a server. I recommend using Ubuntu 20.04, which has usable Docker and Docker-compose repositories out of the box. Install DDEV with homebrew or the `install_ddev.sh` script ([read the full docs here](https://ddev.readthedocs.io/en/latest/users/alternate-uses/#casual-project-webosting-on-the-internet-including-lets-encrypt) and [watch the video](https://youtu.be/beC46R%5F61gw), too).
 2. Point DNS to both the server and a test version of the site. Your server should have a name but it doesn’t completely matter. But do point a domain to your site, for example `test.<yoursite>.com` will let you verify that everything is working.
 3. Set up a firewall and enable HTTP, HTTPS, and SSH traffic, `ufw allow 80 && ufw allow 443 && ufw allow 22 && ufw enable`.
 4. Create your sudo-privileged user (`useradd -m <username>`; `usermod -aG sudo <username>`) and set up for SSH.
