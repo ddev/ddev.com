@@ -19,7 +19,7 @@ I wrote about performance comparisons between [Docker Desktop](https://www.docke
 
 As usual, the command-line installs basically tracked about twice as fast as the web-based installs, which was no surprise, so I didn’t include charts for them, although they’re available in the source data.
 
-![](https://ddev.com//app/uploads/2022/12/macOS-M1-vs.-Drupal-10-Web-Install.svg)
+![Bar chart: “macOS M1 vs. Drupal 10 Web Install (seconds)”](/img/blog/2022/12/macos-m1-vs.-drupal-10-web-install.svg)
 
 _The bottom line is that any setup with Mutagen can do a D10 install in 25-40 seconds, which is astonishing (there was a time that it took 5-6 minutes on most platforms)._ And even without Mutagen, the VirtioFS mounts can do it in 60-80 seconds on both Docker Desktop and Colima.
 
