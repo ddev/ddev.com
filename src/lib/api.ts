@@ -84,10 +84,31 @@ export async function getSponsors() {
           }
         }
       }
+      organization(login: "ddev") {
+        ... on Sponsorable {
+          sponsors(first: 100) {
+            totalCount
+            nodes {
+              ... on User {
+                login
+                url
+                avatarUrl
+              }
+              ... on Organization {
+                login
+                url
+                avatarUrl
+              }
+            }
+          }
+        }
+      }
     }
   `)
 
-  const data = response.user.sponsors.nodes;
+  const rfayData = response.user.sponsors.nodes;
+  const orgData = response.organization.sponsors.nodes;
+  const data = [ ...rfayData, ...orgData ];
 
   putCache(cacheFilename, JSON.stringify(data));
 
