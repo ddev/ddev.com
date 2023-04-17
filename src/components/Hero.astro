@@ -2,11 +2,14 @@
 /**
  * The large, leading copy and image used on the homepage.
  */
-import CtaButton from "../components/CtaButton.astro"
+import Badge from "@components/Badge.astro"
+import CtaButton from "@components/CtaButton.astro"
+import Icon from "@components/Icon.astro"
 import AnimatedTerminal from "./AnimatedTerminal.astro"
+import { CloudIcon } from "@heroicons/react/24/solid/index.js"
 ---
 
-<div class="mt-12 py-32 relative overflow-x-hidden">
+<div class="mt-12 pt-24 pb-32 relative overflow-x-hidden">
   <div class="z-10 max-w-4xl mx-auto relative">
     <div class="max-w-2xl px-6 lg:px-0">
       <h1 class="text-5xl font-bold">
@@ -28,6 +31,33 @@ import AnimatedTerminal from "./AnimatedTerminal.astro"
           target="_blank"
         />
       </div>
+    </div>
+
+    <div class="mt-4 text-slate-500 max-w-2xl px-6 lg:px-0">
+      <ul class="flex flex-wrap space-x-7 justify-center md:justify-start">
+        <li class="whitespace-nowrap my-1">
+          <span class="w-4 h-4 inline-block mr-1 relative top-[2px]"
+            ><Icon name="Apple" />
+          </span>
+          macOS <Badge>M1</Badge><Badge>M2</Badge><Badge>Intel</Badge>
+        </li>
+        <li class="whitespace-nowrap my-1">
+          <span class="w-4 h-4 inline-block mr-1 relative top-[2px]"
+            ><Icon name="Windows" />
+          </span>Windows
+        </li>
+        <li class="whitespace-nowrap my-1">
+          <span class="w-4 h-4 inline-block mr-1 relative top-[2px]"
+            ><Icon name="Linux" />
+          </span>Linux
+        </li>
+        <li class="whitespace-nowrap my-1">
+          <span class="w-4 h-4 inline-block mr-1 relative top-[2px]"
+            ><CloudIcon />
+          </span>Cloud
+          <Badge>Codespaces</Badge><Badge>Gitpod</Badge>
+        </li>
+      </ul>
     </div>
   </div>
 
