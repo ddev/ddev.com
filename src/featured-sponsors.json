@@ -3,98 +3,108 @@
     "name": "Platform.sh",
     "type": "major",
     "logo": "/logos/platform.sh.svg",
-    "squareLogo": "/logos/platform.sh.svg",
+    "squareLogo": "/logos/platform.sh-square.svg",
     "url": "https://platform.sh"
   },
   {
     "name": "Tag1",
     "type": "standard",
     "logo": "/logos/tag1.svg",
-    "squareLogo": "/logos/tag1.svg",
+    "squareLogo": "/logos/tag1-square.svg",
     "url": "https://tag1.com"
   },
   {
     "name": "Agaric",
     "type": "standard",
     "logo": "/logos/agaric.svg",
-    "squareLogo": "/logos/agaric.svg",
-    "url": "https://agaric.coop/"
+    "squareLogo": "/logos/agaric-square.svg",
+    "url": "https://agaric.coop/",
+    "github": "agaric"
   },
   {
     "name": "b13",
     "type": "standard",
     "logo": "/logos/b13.svg",
     "squareLogo": "/logos/b13.svg",
-    "url": "https://b13.com/"
+    "url": "https://b13.com/",
+    "github": "b13"
   },
   {
     "name": "Gizra",
     "type": "standard",
     "logo": "/logos/gizra.svg",
     "squareLogo": "/logos/gizra.svg",
-    "url": "https://gizra.com/"
+    "url": "https://gizra.com/",
+    "github": "gizra"
   },
   {
     "name": "Oliver Wand",
     "type": "standard",
     "logo": "/logos/oliver-wand.jpg",
     "squareLogo": "/logos/oliver-wand.jpg",
-    "url": "https://github.com/wandoliver"
+    "url": "https://github.com/wandoliver",
+    "github": "wandoliver"
   },
   {
     "name": "Centarro",
     "type": "standard",
     "logo": "/logos/centarro.svg",
-    "squareLogo": "/logos/centarro.svg",
-    "url": "https://www.centarro.io/"
+    "squareLogo": "/logos/centarro-square.svg",
+    "url": "https://www.centarro.io/",
+    "github": "centarro"
   },
   {
     "name": "DrupalEasy",
     "type": "standard",
     "logo": "/logos/drupaleasy.png",
-    "squareLogo": "/logos/drupaleasy.png",
+    "squareLogo": "/logos/drupaleasy-square.svg",
     "url": "https://www.drupaleasy.com/"
   },
   {
     "name": "Redfin Solutions",
     "type": "standard",
     "logo": "/logos/redfin-solutions.svg",
-    "squareLogo": "/logos/redfin-solutions.svg",
-    "url": "https://redfinsolutions.com/"
+    "squareLogo": "/logos/redfin-solutions-square.svg",
+    "url": "https://redfinsolutions.com/",
+    "github": "redfinsolutions"
   },
   {
     "name": "MacStadium",
     "type": "standard",
     "logo": "/logos/mac-stadium.svg",
-    "squareLogo": "/logos/mac-stadium.svg",
+    "squareLogo": "/logos/mac-stadium-square.svg",
     "url": "https://www.macstadium.com"
   },
   {
     "name": "Lullabot",
     "type": "standard",
     "logo": "/logos/lullabot.svg",
-    "squareLogo": "/logos/lullabot.svg",
-    "url": "https://www.lullabot.com"
+    "squareLogo": "/logos/lullabot-square.svg",
+    "url": "https://www.lullabot.com",
+    "github": "Lullabot"
   },
   {
     "name": "Craft CMS",
     "type": "standard",
     "logo": "/logos/craft-cms.svg",
-    "squareLogo": "/logos/craft-cms.svg",
-    "url": "https://craftcms.com/"
+    "squareLogo": "/logos/craft-cms-square.svg",
+    "url": "https://craftcms.com/",
+    "github": "craftcms"
   },
   {
     "name": "undpaul",
     "type": "standard",
     "logo": "/logos/undpaul.svg",
-    "squareLogo": "/logos/undpaul.svg",
-    "url": "https://undpaul.de"
+    "squareLogo": "/logos/undpaul-square.svg",
+    "url": "https://undpaul.de",
+    "github": "undpaul"
   },
   {
     "name": "1xINTERNET",
     "type": "standard",
     "logo": "/logos/1xinternet.svg",
-    "squareLogo": "/logos/1xinternet.svg",
-    "url": "https://1xinternet.de"
+    "squareLogo": "/logos/1xinternet-square.svg",
+    "url": "https://1xinternet.de",
+    "github": "1xINTERNET"
   }
 ]
