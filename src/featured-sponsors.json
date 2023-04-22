@@ -1,0 +1,100 @@
+[
+  {
+    "name": "Platform.sh",
+    "type": "major",
+    "logo": "/logos/platform.sh.svg",
+    "squareLogo": "/logos/platform.sh.svg",
+    "url": "https://platform.sh"
+  },
+  {
+    "name": "Tag1",
+    "type": "standard",
+    "logo": "/logos/tag1.svg",
+    "squareLogo": "/logos/tag1.svg",
+    "url": "https://tag1.com"
+  },
+  {
+    "name": "Agaric",
+    "type": "standard",
+    "logo": "/logos/agaric.svg",
+    "squareLogo": "/logos/agaric.svg",
+    "url": "https://agaric.coop/"
+  },
+  {
+    "name": "b13",
+    "type": "standard",
+    "logo": "/logos/b13.svg",
+    "squareLogo": "/logos/b13.svg",
+    "url": "https://b13.com/"
+  },
+  {
+    "name": "Gizra",
+    "type": "standard",
+    "logo": "/logos/gizra.svg",
+    "squareLogo": "/logos/gizra.svg",
+    "url": "https://gizra.com/"
+  },
+  {
+    "name": "Oliver Wand",
+    "type": "standard",
+    "logo": "/logos/oliver-wand.jpg",
+    "squareLogo": "/logos/oliver-wand.jpg",
+    "url": "https://github.com/wandoliver"
+  },
+  {
+    "name": "Centarro",
+    "type": "standard",
+    "logo": "/logos/centarro.svg",
+    "squareLogo": "/logos/centarro.svg",
+    "url": "https://www.centarro.io/"
+  },
+  {
+    "name": "DrupalEasy",
+    "type": "standard",
+    "logo": "/logos/drupaleasy.png",
+    "squareLogo": "/logos/drupaleasy.png",
+    "url": "https://www.drupaleasy.com/"
+  },
+  {
+    "name": "Redfin Solutions",
+    "type": "standard",
+    "logo": "/logos/redfin-solutions.svg",
+    "squareLogo": "/logos/redfin-solutions.svg",
+    "url": "https://redfinsolutions.com/"
+  },
+  {
+    "name": "MacStadium",
+    "type": "standard",
+    "logo": "/logos/mac-stadium.svg",
+    "squareLogo": "/logos/mac-stadium.svg",
+    "url": "https://www.macstadium.com"
+  },
+  {
+    "name": "Lullabot",
+    "type": "standard",
+    "logo": "/logos/lullabot.svg",
+    "squareLogo": "/logos/lullabot.svg",
+    "url": "https://www.lullabot.com"
+  },
+  {
+    "name": "Craft CMS",
+    "type": "standard",
+    "logo": "/logos/craft-cms.svg",
+    "squareLogo": "/logos/craft-cms.svg",
+    "url": "https://craftcms.com/"
+  },
+  {
+    "name": "undpaul",
+    "type": "standard",
+    "logo": "/logos/undpaul.svg",
+    "squareLogo": "/logos/undpaul.svg",
+    "url": "https://undpaul.de"
+  },
+  {
+    "name": "1xINTERNET",
+    "type": "standard",
+    "logo": "/logos/1xinternet.svg",
+    "squareLogo": "/logos/1xinternet.svg",
+    "url": "https://1xinternet.de"
+  }
+]

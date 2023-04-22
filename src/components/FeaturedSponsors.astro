@@ -1,86 +1,30 @@
 ---
-const featuredSponsors = [
-  {
-    name: "Platform.sh",
-    logo: "/logos/platform.sh.svg",
-    url: "https://platform.sh",
-    class: "mt-12 h-11",
-  },
-  {
-    name: "Tag1",
-    logo: "/logos/tag1.svg",
-    url: "https://tag1.com",
-    class: "h-9",
-  },
-  {
-    name: "Agaric",
-    logo: "/logos/agaric.svg",
-    url: "https://agaric.coop/",
-  },
-  {
-    name: "b13",
-    logo: "/logos/b13.svg",
-    url: "https://b13.com/",
-  },
-  {
-    name: "Gizra",
-    logo: "/logos/gizra.svg",
-    url: "https://gizra.com/",
-  },
-  {
-    name: "Oliver Wand",
-    logo: "/logos/oliver-wand.jpg",
-    url: "https://github.com/wandoliver",
-    class: "h-12 w-12",
-  },
-  {
-    name: "Centarro",
-    logo: "/logos/centarro.svg",
-    url: "https://www.centarro.io/",
-  },
-  {
-    name: "DrupalEasy",
-    logo: "/logos/drupaleasy.png",
-    url: "https://www.drupaleasy.com/",
-    class: "h-10",
-  },
-  {
-    name: "Redfin Solutions",
-    logo: "/logos/redfin-solutions.svg",
-    url: "https://redfinsolutions.com/",
-    class: "h-16 w-16",
-  },
-  {
-    name: "MacStadium",
-    logo: "/logos/mac-stadium.svg",
-    url: "https://www.macstadium.com",
-    class: "h-15",
-  },
-  {
-    name: "Lullabot",
-    logo: "/logos/lullabot.svg",
-    url: "https://www.lullabot.com",
-    class: "h-9",
-  },
-  {
-    name: "Craft CMS",
-    logo: "/logos/craft-cms.svg",
-    url: "https://craftcms.com/",
-    class: "h-11",
-  },
-  {
-    name: "undpaul",
-    logo: "/logos/undpaul.svg",
-    url: "https://undpaul.de",
-    class: "h-9",
-  },
-  {
-    name: "1xINTERNET",
-    logo: "/logos/1xinternet.svg",
-    url: "https://1xinternet.de",
-    class: "h-11",
-  },
-]
+import featuredSponsors from "../featured-sponsors.json"
+
+/**
+ * Sketchy array of classes that should be applied to specific logos
+ * in this context. Match the name from `featured-sponsors.json` if
+ * you need to add one.
+ */
+const nudges = {
+  "Platform.sh": "mt-12 h-11",
+  Tag1: "h-9",
+  "Oliver Wand": "h-12 w-12",
+  DrupalEasy: "h-10",
+  "Redfin Solutions": "h-16 w-16",
+  MacStadium: "h-15",
+  Lullabot: "h-9",
+  "Craft CMS": "h-11",
+  undpaul: "h-9",
+  "1xINTERNET": "h-11",
+}
+
+// Add class property to relevant sponsor objects
+featuredSponsors.map((sponsor) => {
+  if (sponsor.name in nudges) {
+    sponsor.class = nudges[sponsor.name]
+  }
+})
 ---
 
 <div class="relative">
