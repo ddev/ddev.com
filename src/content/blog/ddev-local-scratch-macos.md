@@ -12,9 +12,9 @@ categories:
   - Videos
 ---
 
-**This article was updated in 2020, please go to [DDEV From Scratch on macOS.](https://ddev.com/ddev-local/watch-ddev-local-from-scratch-with-macos/)**
+**This article was updated in 2020, please go to [DDEV From Scratch on macOS.](https://ddev.com/blog/watch-ddev-local-from-scratch-with-macos/)**
 
-In this video tutorial, we’ll show you how to use [DDEV](https://ddev.com/what-is-ddev/) to set up a PHP development environment from scratch on macOS.
+In this video tutorial, we’ll show you how to use DDEV to set up a PHP development environment from scratch on macOS.
 
 Using a local development environment means you’re working on your projects without risking injury to your live projects.
 
