@@ -10,9 +10,9 @@ categories:
   - DevOps
 ---
 
-As Apple has ratcheted up the pressure on developers with new security requirements, we wanted the users of [DDEV](http://ddev.com/ddev-local) to have command-line tools they could depend on without macOS randomly disabling them and making life difficult. It’s been a challenging task, with Apple first requiring code signing and then later increasing the requirement to notarization (actually submitting the binary to Apple for review).
+As Apple has ratcheted up the pressure on developers with new security requirements, we wanted the users of DDEV to have command-line tools they could depend on without macOS randomly disabling them and making life difficult. It’s been a challenging task, with Apple first requiring code signing and then later increasing the requirement to notarization (actually submitting the binary to Apple for review).
 
-Along the way, we noticed that we needed to do the exact same thing for our DDEV binaries, and we noticed that it was getting more and more complex. So we split out the logic scripts into their own repository, [ddev/signing_tools](http://github.com/ddev/signing%5Ftools), and fashioned our build processes to use that for signing and notarization.
+Along the way, we noticed that we needed to do the exact same thing for our DDEV binaries, and we noticed that it was getting more and more complex. So we split out the logic scripts into their own repository, [ddev/signing_tools](https://github.com/ddev/signing%5Ftools), and fashioned our build processes to use that for signing and notarization.
 
 If you have binaries that you need to run on macOS Catalina and above, you can use these same tools. [macos_sign.sh](https://github.com/ddev/signing%5Ftools/blob/master/macos%5Fsign.sh) and [macos_notarize.sh](https://github.com/ddev/signing%5Ftools/blob/master/macos%5Fnotarize.sh) do the job shown, and can be incorporated into most any CI/CD system.
 
