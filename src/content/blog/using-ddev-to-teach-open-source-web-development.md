@@ -46,7 +46,7 @@ It seemed like there had to be a better way to do it. “DDEV eases the pain of 
 
 The biggest advantage comes from using containers. “That’s something I really wanted to have,” consistent environments means it’s easier to troubleshoot. “All the software and plugins are the same for everyone. If someone has an error we’re talking about the same environment.”
 
-“Using DDEV it’s pretty easy to use a full blown web application. Everything that’s required is defined in that DDEV container. And I can continue evaluating their projects.” For teachers looking at how to ease the pain of [setting local development environments for newcomers](https://ddev.com/ddev-live/removing-the-biggest-barrier-to-contribution/), that is really great to hear.
+“Using DDEV it’s pretty easy to use a full blown web application. Everything that’s required is defined in that DDEV container. And I can continue evaluating their projects.” For teachers looking at how to ease the pain of setting local development environments for newcomers, that is really great to hear.
 
 “The good thing about using DDEV is that the students can share their projects very easily. They have the .ddev configuration file and they are using PHP Composer where they can define the package states of the extensions. This means, whenever there’s a problem or they have a question on their application, I can check out that repository, and give them feedback to solve the problem.”
 

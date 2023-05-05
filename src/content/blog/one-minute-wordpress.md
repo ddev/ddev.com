@@ -8,7 +8,7 @@ categories:
   - Videos
 ---
 
-_Author’s Note:_ DDEV _was at version v0.3 as of the time of this writing. For updates on future releases and features, please visit and follow the_ _[DDEV project GitHub page](https://github.com/ddev/ddev), visit [the project roadmap](https://github.com/ddev/ddev/wiki/Roadmap), or [contact us directly](https://ddev.com/contact/). Thanks!_
+_Author’s Note: DDEV was at version v0.3 as of the time of this writing. For updates on future releases and features, please visit and follow the [DDEV project GitHub page](https://github.com/ddev/ddev)._
 
 Local development can be a frustrating experience. Rather than developers being able to focus 100% of their effort and energy on their goals (e.g. building websites and delivering value to their customers), there is a considerable amount of overhead associated with setting up and maintaining the infrastructure, tooling, and workflows necessary to quickly and easily manage multiple websites. DDEV is the first of several products that DDEV will be releasing in order to improve the overall experience from development to deployment and hosting.
 

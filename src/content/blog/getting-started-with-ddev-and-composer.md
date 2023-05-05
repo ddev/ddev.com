@@ -17,7 +17,7 @@ categories:
 
 ### Composer for PHP dependency management
 
-As [web development evolved](https://ddev.com/devops/dev-to-deploy-the-evolution-landscape-of-modern-web-development/) in the decade after PHP appeared, different web development communities began to share resources, libraries, and tools in true open source fashion. This made building applications faster but posed a new problem. This network of interconnected libraries meant any given web application could have a (potentially large) number of dependencies. What version of which library does this particular project need? How can we keep them updated?
+As web development evolved in the decade after PHP appeared, different web development communities began to share resources, libraries, and tools in true open source fashion. This made building applications faster but posed a new problem. This network of interconnected libraries meant any given web application could have a (potentially large) number of dependencies. What version of which library does this particular project need? How can we keep them updated?
 
 Enter Composer, the dependency manager that [took its inspiration](https://getcomposer.org/doc/00-intro.md) from dependency managers like npm. Unlike some others, Composer works on a per-project basis, pulling in the correct version of the correct libraries from repositories like Packagist, [the main Composer repository](https://getcomposer.org/doc/01-basic-usage.md#packagist).
 
