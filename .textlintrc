@@ -30,6 +30,13 @@
         "front[- ]end(\\w*)",
         "web[- ]?site(s)?"
       ]
+    },
+    "stop-words": {
+      "defaultWords": false,
+      "words": [
+        ["just"],
+        ["simply"]
+      ],
     }
   }
 }
