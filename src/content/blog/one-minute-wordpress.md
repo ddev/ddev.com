@@ -16,7 +16,7 @@ In this article, we’ll show you how to quickly get DDEV installed so that you 
 
 ### Demo Requirements
 
-DDEV is written in [Go](https://golang.org/) and leverages [Docker](https://www.docker.com/). These two choices help keep the end user requirements down to a minimum. In short, you simply need the following:
+DDEV is written in [Go](https://golang.org/) and leverages [Docker](https://www.docker.com/). These two choices help keep the end user requirements down to a minimum. In short, you need the following:
 
 - Git
 - Docker
@@ -37,7 +37,7 @@ Creating a quick, destructible WordPress site can be handy for testing new theme
 5. Wait a brief moment while your environment is provisioning and then…
 6. Visit `http://wordpress.ddev.local`
 
-You should hit the WordPress installer screen and then you’re off to the races! To get access to the database credentials to complete the installation, simply run `ddev describe`.
+You should hit the WordPress installer screen and then you’re off to the races! To get access to the database credentials to complete the installation, run `ddev describe`.
 
 <div class="video-wrapper">
 <iframe src="https://www.youtube.com/embed/b-6EX3KCbnY" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
