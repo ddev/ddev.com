@@ -58,7 +58,7 @@ Also, you might get these following error messages.
 - `invalid mount config for type "bind": bind mount source path does not exist: <some path>` means the host filesystem isn’t successfully shared into the Docker container.
 - “The path … is not shared and is not known to Docker”: Visit Docker’s preferences/settings->File sharing and share the appropriate path or drive.
 
-It’s quick to fix, just unshare and then reshare the drive. If you haven’t already, consider resetting Docker to factory defaults. This often helps in this situation because Docker goes through the whole authentication process again.
+It’s quick to fix: unshare and then reshare the drive. If you haven’t already, consider resetting Docker to factory defaults. This often helps in this situation because Docker goes through the whole authentication process again.
 
 ### On Linux only: Watch out for the out of date Docker Compose!
 

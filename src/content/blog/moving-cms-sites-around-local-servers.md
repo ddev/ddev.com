@@ -15,8 +15,8 @@ categories:
 
 Any web developer will have to move a site from one place to another periodically, so mastering the concepts and the details are important. The details are a little different from CMS to CMS, but the big picture stays mostly the same. Please note that many people have many opinions about all of this, and some people will disapprove of what I say, but it’s intended to teach you the basic process, not the exact procedure. It also will necessarily be incomplete, since there’s no way to cover every platform or CMS, or every permutation of deployment.
 
-1. **Move the code for the website**. If the site is just an HTML/JS site, you’re done. (Typically the code is checked via Git or some other source management situation, so it can be checked out in the new location.)
-2. **Move the database**, which has dynamic content in it. In many cases this is just one database, but in complex situations it could be more than one database.
+1. **Move the code for the website**. If the site is an HTML/JS site, you’re done. (Typically the code is checked via Git or some other source management situation, so it can be checked out in the new location.)
+2. **Move the database**, which has dynamic content in it. In many cases this is one database, but in complex situations it could be more than one database.
 3. **Move the user-generated or dynamic files**. On Drupal, for example, the sites/default/files directory typically has all these user-generated or dynamic files. (There may be more than one directory of user-generated/dynamic files. In Drupal there may be private files in a directory outside the docroot.)
 4. **Move the exported configuration**. In Drupal 8+, for example, the config_sync_directory has this explicit exported configuration.
 5. **Build the site in the new location**. Although older sites didn’t have a build process for deployment, almost all the newer ones do. At the very minimum, this is typically a `composer install` to populate the vendor directory, which is often not checked into code. But there may be far more sophisticated requirements to the build, like an `npm install` or a `compass compile`. The basic idea is that your site may have a deployment build process which will have to be replicated in the new location.
@@ -29,8 +29,8 @@ Up through Drupal 7, all you had to do to move a site in many cases was to check
 
 **On the source server** (can be [DDEV](https://ddev.readthedocs.io/en/stable/) or anywhere else):
 
-1. Dump the database. If the source project is in DDEV, this means just doing an `ddev export-db --file=/path/to/sitename.db.sql.gz` If you’re on a server or elsewhere, and assuming a single database, you can `mysqldump <databasename> | gzip >/path/to/sitename.db.sql.gz`
-2. Tar up the user-generated files: `cd <docroot>/sites/default/files && tar -czf /path/to/sitename_files.tar.gz .`
+1. Dump the database. If the source project is in DDEV, this means running `ddev export-db --file=/path/to/sitename.db.sql.gz`. If you’re on a server or elsewhere, and assuming a single database, you can run `mysqldump <databasename> | gzip >/path/to/sitename.db.sql.gz`.
+2. Tar up the user-generated files: `cd <docroot>/sites/default/files && tar -czf /path/to/sitename_files.tar.gz .`.
 3. Make sure your code has been checked in and pushed properly.
 
 **On the target server** (which can be DDEV or anything else):
@@ -63,9 +63,9 @@ TYPO3 is mostly the same as Drupal 7 plus a composer build, but there are often 
 
 **On the source server** (can be DDEV or anywhere else):
 
-1. Dump the database. If the source project is in DDEV, this means just doing an `ddev export-db --file=/path/to/sitename.db.sql.gz` If you’re on a server or elsewhere, and assuming a single database, you can `mysqldump <databasename> | gzip >/path/to/sitename.db.sql.gz`
-2. Tar up the user-generated files: `cd public/fileadmin && tar -czf /path/to/<sitename>_fileadmin.tar.gz .` (Note that the user-generated files must _not_ be checked into Git.)
-3. Verify that the `/config` and (optionally) `/var/labels` directories are checked into your Git repository. These are directories which may have been created by sitebuilder actions, but they’re _code_. (Nothing else in /var should be checked in.)
+1. Dump the database. If the source project is in DDEV, this means running `ddev export-db --file=/path/to/sitename.db.sql.gz`. If you’re on a server or elsewhere, and assuming a single database, you can `mysqldump <databasename> | gzip >/path/to/sitename.db.sql.gz`.
+2. Tar up the user-generated files: `cd public/fileadmin && tar -czf /path/to/<sitename>_fileadmin.tar.gz .`. (The user-generated files must _not_ be checked into Git.)
+3. Verify that the `/config` and (optionally) `/var/labels` directories are checked into your Git repository. These are directories which may have been created by sitebuilder actions, but they’re _code_. (Nothing else in `/var` should be checked in.)
 4. Make sure your code has been checked in and pushed properly.
 
 **On the target server** (which can be DDEV or anything else):
@@ -78,7 +78,7 @@ TYPO3 is mostly the same as Drupal 7 plus a composer build, but there are often 
 
 ### From DDEV to Pantheon
 
-If you’re deploying to [Pantheon.io](http://pantheon.io) you can use the web interface to upload the database and files under “Database / Files” → “Import”. Just use `ddev export-db --file=/path/to/<site>_db.sql.gz` for the database and `cd <docroot>/sites/default/files && tar -czf /path/to/<sitename>_files.tar.gz .` to create a files tarball and upload them. Advanced users can also use the “terminus” tool, which is bundled in the web container and already authenticated if you’ve done a `ddev auth pantheon` with [our integration](https://ddev.readthedocs.io/en/stable/users/providers/pantheon/). So `ddev ssh` and use terminus to upload.
+If you’re deploying to [Pantheon.io](http://pantheon.io) you can use the web interface to upload the database and files under “Database / Files” → “Import”. Run `ddev export-db --file=/path/to/<site>_db.sql.gz` for the database and `cd <docroot>/sites/default/files && tar -czf /path/to/<sitename>_files.tar.gz .` to create a files tarball and upload them. Advanced users can also use the “terminus” tool, which is bundled in the web container and already authenticated if you’ve done a `ddev auth pantheon` with [our integration](https://ddev.readthedocs.io/en/stable/users/providers/pantheon/). So `ddev ssh` and use terminus to upload.
 
 ### Complexities and Alternatives
 

@@ -24,11 +24,11 @@ You can use these together (add packages with `webimage_extra_packages` and also
 
 ### `webimage_extra_packages` in `config.yaml`
 
-The simplest thing to do is just add new Debian packages. For example, add to the `.ddev/config.yaml`: `webimage_extra_packages: [redis-tools, php8.1-yaml]`, and the “redis-tools” and “php8.1-yaml” packages will be installed in the web container. This little addition to the container happens just once, and doesn’t slow down your `ddev start` after that.
+The simplest thing to do is add new Debian packages. For example, add to the `.ddev/config.yaml`: `webimage_extra_packages: [redis-tools, php8.1-yaml]`, and the “redis-tools” and “php8.1-yaml” packages will be installed in the web container. This little addition to the container happens once, and doesn’t slow down your `ddev start` after that.
 
 ### Simple npm install with custom Dockerfile
 
-Sometimes, though, people need to do things that are not just Debian apt package management changes. For example, you might want to override a configuration file with a replacement, or you might want to use npm to install something that is not managed with Debian’s package system.
+Sometimes, though, people need to do things that are more specific than changing Debian apt packages. For example, you might want to override a configuration file with a replacement, or you might want to use npm to install something that is not managed with Debian’s package system.
 
 This kind of change can be done by creating a `.ddev/web-build/Dockerfile` (start by copying `.ddev/web-build/Dockerfile.example`).
 
@@ -71,10 +71,10 @@ Some PHP packages aren’t available as Debian packages, so this [Stack Overflow
 ```docker
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -o Dpkg::Options::="--force-confnew" --no-install-recommends --no-install-suggests gcc make autoconf libc-dev pkg-config php-pear php${DDEV_PHP_VERSION}-dev libmcrypt-dev
 
-# The "echo" below just forces accepting the "automatic" configuration, the same as hitting <RETURN>
+# The "echo" below forces accepting the "automatic" configuration, the same as hitting <RETURN>
 RUN echo | sudo pecl install mcrypt
 
-# Because php7.1-mcrypt is already installed in web container we can just copy its mcrypt.ini
+# Because php7.1-mcrypt is already installed in web container, we can copy its `mcrypt.ini`
 RUN cp /etc/php/7.1/mods-available/mcrypt.ini /etc/php/${DDEV_PHP_VERSION}/mods-available/ && phpenmod mcrypt
 ```
 

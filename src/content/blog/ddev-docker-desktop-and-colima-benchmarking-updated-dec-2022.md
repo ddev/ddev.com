@@ -46,7 +46,7 @@ For more raw numbers and the Drush install times, [here’s the spreadsheet link
 
 If you’re interested in Colima with DDEV, see the [docs](https://ddev.readthedocs.io/en/latest/users/docker%5Finstallation/#macos-installation-colima). It’s super easy to set up, and even though it’s a young project, it’s well-maintained and people have been having good experiences with it. And for those of you concerned about Docker Desktop’s new subscription license fee, it’s a great option. But as you see here, it’s a great option for other reasons.
 
-And of course, if you haven’t tried out Mutagen with DDEV on macOS, it’s time. People have had great experiences, just `ddev config global --mutagen-enabled` and `ddev restart` and you’re on your way, see [DDEV docs](https://ddev.readthedocs.io/en/latest/users/performance/#using-mutagen). Although we were all worried about filesystem consistency originally, the feature has turned out to be shockingly reliable, but read the docs for caveats.
+And of course, if you haven’t tried out Mutagen with DDEV on macOS, it’s time. Run `ddev config global --mutagen-enabled` and `ddev restart` and you’re on your way, see [DDEV docs](https://ddev.readthedocs.io/en/latest/users/performance/#using-mutagen). Although we were all worried about filesystem consistency originally, the feature has turned out to be shockingly reliable, but read the docs for caveats.
 
 Some takeaways from this round of testing:
 

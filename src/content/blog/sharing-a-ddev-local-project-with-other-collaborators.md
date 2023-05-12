@@ -22,11 +22,11 @@ There are at least three different ways to share a running DDEV project outside 
 
 1. `ddev share` (using ngrok to share over the internet)
 2. Local name resolution and sharing the project on the local network
-3. Sharing just the HTTP port of the local machine on the local network
+3. Sharing the HTTP port of the local machine on the local network
 
 ## **1\. Using `ddev share` to share project (easiest)**
 
-`ddev share` proxies the project via [ngrok](http://ngrok.com), and it’s by far the easiest way to solve the problem of sharing your project with others on your team or around the world. It’s built into ddev and “just works” for most people, even people who don’t sign up for a paid ngrok account. All you do is run `ddev share` and then give the resultant URL to your collaborator or use it on your mobile device. [Read the basic how-to from DrupalEasy](https://www.drupaleasy.com/blogs/ultimike/2019/06/sharing-your-ddev-local-site-public-url-using-ddev-share-and-ngrok) or run `ddev share -h` for more.
+`ddev share` proxies the project via [ngrok](http://ngrok.com), and it’s by far the easiest way to solve the problem of sharing your project with others on your team or around the world. It’s built into DDEV and works for most people even without a paid ngrok account. Run `ddev share` and give the resultant URL to your collaborator or use it on your mobile device. [Read the basic how-to from DrupalEasy](https://www.drupaleasy.com/blogs/ultimike/2019/06/sharing-your-ddev-local-site-public-url-using-ddev-share-and-ngrok) or run `ddev share -h` for more.
 
 There are CMSs that make this a little harder, especially WordPress and Magento 2. Both of those only respond to a single base URL, and that URL is coded into the database, so it makes this a little harder. For both of these I recommend paying ngrok the $5/month for a[ basic plan](https://ngrok.com/pricing) so you can use a stable subdomain with ngrok.
 
@@ -70,7 +70,7 @@ The second solution is to _not_ use \*.ddev.site as your project URLs, but to us
 4. Make sure your firewall allows access from your local network to the main interface you’re using. In the example here you should be able to ping 192.168.5.101 and `curl [<http://192.168.5.101>](<http://192.168.5.101>)` and get an answer in each case.
 5. If you’re using WordPress or Magento 2 you’ll need to change the base URL as described in the `ddev share` instructions above.
 
-## **3\. Exposing just a port from the host**
+## **3\. Exposing a port from the host**
 
 DDEV’s web container also exposes an HTTP port directly (in addition to the normal routing by name and via ddev_router). You can expose this port and it may be a useful approach in some situations.
 

@@ -17,9 +17,9 @@ In terms of local development environments (LDE), Laravel does have a lot of opt
 
 When you do set up an LDE individually, in most cases you want something that does the job with the least amount of effort to install and maintain it. As a Laravel developer, the first choice might be [Laravel Valet](https://laravel.com/docs/valet) (on Mac) or [Homestead](https://laravel.com/docs/homestead), which are official Laravel tools and are mentioned in the [Laravel documentation](https://laravel.com/docs).
 
-But when teams come together, a debate occurs about “what/how to use local development for the particular project/s.” At this point, worlds collide. Everyone is used to their own toolchain, might have a different OS, each project might have special requirements. All of this could become a “Holy War of Local Development Environments” inside the team or lead to everyone just using the tools they are familiar with.
+But when teams come together, a debate occurs about “what/how to use local development for the particular project/s.” At this point, worlds collide. Everyone is used to their own toolchain, might have a different OS, each project might have special requirements. All of this could become a “Holy War of Local Development Environments” inside the team or lead to everyone using the tools they are familiar with.
 
-For a long time I have had the opinion that there is no need for big holy wars (debate yes, but not wars) about which tools are better. And, people should not be forced into using certain hardware, OS, IDE, etc. If a team member is productive in VS Code, then why force this person to use PhpStorm? (Just an example).
+For a long time I have had the opinion that there is no need for big holy wars (debate yes, but not wars) about which tools are better. And, people should not be forced into using certain hardware, OS, IDE, etc. If a team member is productive in VS Code, for example, why force this person to use PhpStorm?
 
 But in terms of LDE, if a team comes together and some team members use Valet on Mac, others prefer Laradock on Linux instead, and the Windows users go with Homestead, you could end up having to learn all of them to help solve problems with other team members’ preferred tool in the context of the project. Especially if the project has additional requirements like FQDN for SSO, custom Nginx configuration, etc.
 
@@ -35,7 +35,7 @@ Meanwhile, I was searching for one solution which would help to unify the experi
 
 [DDEV](https://ddev.readthedocs.io/en/stable/) combines a lot of the benefits of the other Laravel LDEs into one solution. In the context of a team, DDEV can bring additional benefits. It’s easy to learn for the members who set it up and customize it. And it’s super easy to use for the rest of the team to run multiple projects on any OS.
 
-After initial setup and configuration of the project, you can commit the DDEV configuration in your project repository. The next team member only need clone the repository and run `ddev start`, `ddev composer install` and `ddev exec artisan` (to run migrations, etc) inside of the project (or you can simply define a custom command that will replace them). Every team member can override parts of the config (like enabling NFS support or Xdebug) without committing it. The time between cloning and starting work on the code is reduced to almost nothing.
+After initial setup and configuration of the project, you can commit the DDEV configuration in your project repository. The next team member only need clone the repository and run `ddev start`, `ddev composer install` and `ddev exec artisan` (to run migrations, etc) inside of the project (or you can define a custom command that will replace them). Every team member can override parts of the config (like enabling NFS support or Xdebug) without committing it. The time between cloning and starting work on the code is reduced to almost nothing.
 
 In the end, the switch to DDEV did save a lot of time on the team (I have not heard about any LDE problems, since we switched 😀 ). That’s also the reason why I decided to [“officially” add Laravel to DDEV](https://ddev.readthedocs.io/en/stable/users/cli-usage/#laravel-quickstart) as a contribution to the open source project.
 
@@ -87,7 +87,7 @@ Normally to execute artisan commands inside the DDEV web container you would nee
 php artisan $@
 ```
 
-This way you can now just use `ddev artisan …`. It’s trifling, but pleasant.
+This way you can now run `ddev artisan …`. It’s trifling, but pleasant.
 
 ### 3. Share It!
 

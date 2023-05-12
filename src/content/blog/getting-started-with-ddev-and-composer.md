@@ -23,7 +23,7 @@ Enter Composer, the dependency manager that [took its inspiration](https://getco
 
 Composer is the recommended way to develop for both TYPO3 CMS and Drupal 8, but it still causes issues, particularly for Windows users. Now with DDEV’s support for Composer, you don’t even have to install Composer on your local machine. You’ll get a more predictable experience and have one less thing to worry about.
 
-## Using Composer and DDEV together just got better
+## Composer and DDEV are better together
 
 Before [the DDEV 1.4 release](https://ddev.com/ddev-local/ddev-v1-4-0-in-container-composer-commands-ssh-authentication-database-export/), our instructions were written assuming the typical user was a Mac or Linux user with Composer installed. It didn’t work well for lots of Windows users. The fundamental “gotcha” that proved most challenging for Windows users was that even if they get PHP and Composer set up properly on their Windows machine, they still ran into trouble when they ran the `composer create-project` command
 

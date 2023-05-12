@@ -30,7 +30,7 @@ The snapshot is automatically named with the project name and timestamp. Make it
 
 `ddev snapshot --name=before-mucking`
 
-Then, down the line when you’ve done something you wish you hadn’t, just restore it with:
+Then, down the line when you’ve done something you wish you hadn’t, restore it with:
 
 `ddev restore-snapshot before-mucking`
 
@@ -42,7 +42,7 @@ Here’s a video showing you how to use it.
 <iframe loading="lazy" width="500" height="281" src="https://www.youtube.com/embed/Ax-HocnXNbc?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </div>
 
-DDEV snapshotting uses [mariabackup](https://mariadb.com/kb/en/library/mariabackup/) inside the database container. This is super, super fast in both directions. It’s not just a copy of the database directory, the state of the database is properly preserved. This means when you come back to work, everything is just as you left it.
+DDEV snapshotting uses [mariabackup](https://mariadb.com/kb/en/library/mariabackup/) inside the database container. This is super, super fast in both directions. It’s not a copy of the database directory, the state of the database is properly preserved. This means when you come back to work, everything is as you left it.
 
 **Important:** DDEV snapshot isn’t backward-compatible. Snapshots from previous versions of DDEV cannot be restored with v1.3 or higher because the mariabackup included with MariaDB 10.2 is not compatible with earlier backups. There’s an easy workaround to fix this [explained in the DDEV documentation](https://ddev.readthedocs.io/en/latest/users/troubleshooting/#cant-restore-snapshot-created-before-ddev-v13).
 

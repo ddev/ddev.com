@@ -11,7 +11,7 @@ categories:
   - DevOps
 ---
 
-If you know something about Docker, you know that you can throw one or two Docker images together and get yourself a working local development environment. There are plenty of nginx and PHP images out there on [hub.docker.com](https://hub.docker.com), and you can do lots and lots of things with them. So why use [DDEV](https://ddev.readthedocs.io), a tool that runs on Docker, when you could just roll your own Docker solution for local development? I’ll try to make a comparison. Of course I’m biased in favor of DDEV.
+If you know something about Docker, you know that you can throw one or two Docker images together and get yourself a working local development environment. There are plenty of nginx and PHP images out there on [hub.docker.com](https://hub.docker.com), and you can do lots and lots of things with them. So why use [DDEV](https://ddev.readthedocs.io), a tool that runs on Docker, when you could roll your own Docker solution for local development? I’ll try to make a comparison. Of course I’m biased in favor of DDEV.
 
 ### **Custom Docker or docker-compose solution:**
 
@@ -34,7 +34,7 @@ If you know something about Docker, you know that you can throw one or two Docke
 - Run or start as many projects as you want to, all at the same time, depending on the resources you have available. Each project can have different PHP version, use apache instead of nginx, etc.
 - ssh integration (ssh-agent bundled so you can use your keys inside the container for accessing hosts or private composer repositories.
 - Composer support built into the web container and accessed with `ddev composer`.
-- [Xdebug step-debugging](https://ddev.readthedocs.io/en/stable/users/step-debugging/#step-debugging-with-ddev-and-xdebug) out of the box. Just `ddev xdebug on` and go.
+- [Xdebug step-debugging](https://ddev.readthedocs.io/en/stable/users/step-debugging/#step-debugging-with-ddev-and-xdebug) out of the box. Run `ddev xdebug on` and go.
 
 [![DDEV, PhpStorm and Xdebug video and blog post](/img/blog/2020/12/screen-shot-2020-12-28-at-12.49.31-pm.png)](/blog/ddev-local-phpstorm-and-xdebug-debugging)
 
@@ -44,7 +44,7 @@ If you know something about Docker, you know that you can throw one or two Docke
 - Extensive customization available, including [maintained add-ons with automated tests](https://ddev.readthedocs.io/en/latest/users/extend/additional-services/).
 - Custom commands based on shell scripts, that can be added as team needs grow.
 - Outstanding open-source community with [support in many channels](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation).
-- **Team lead gets the day off**! This is perhaps the biggest of the many benefits of DDEV, and perhaps the most important. When you use a standardized, supported solution, your team leads don’t spend all their time helping everybody else keep the development environment going. It’s the same on every platform, project configurations get checked in, and mostly people just work on things instead of spending their time keeping the environment going (or extending it).
+- **Team lead gets the day off**! This is perhaps the biggest of the many benefits of DDEV, and perhaps the most important. When you use a standardized, supported solution, your team leads don’t spend all their time helping everybody else keep the development environment going. It’s the same on every platform, project configurations get checked in, and mostly people work on things instead of spending their time keeping the environment going (or extending it).
 
 There are significant benefits of building and maintaining your own Docker-based dev environment, but I think you’ll have more free time with DDEV!
 

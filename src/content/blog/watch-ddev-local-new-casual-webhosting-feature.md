@@ -20,7 +20,7 @@ categories:
 
 ## Why “Casual Webhosting”?
 
-Ever since the beginning of DDEV, folks have found its simplicity and per-project configuration to be delightful, and have wanted that for simple hosting as well. Now you can set up a site just the way you do on your local machine, with the same commands and capabilities, and set up as many projects on it as you want to.
+Ever since the beginning of DDEV, folks have found its simplicity and per-project configuration to be delightful, and have wanted that for simple hosting as well. Now you can set up a site the way you do on your local machine, with the same commands and capabilities, and set up as many projects on it as you want to.
 
 ## Caveats
 
@@ -28,7 +28,7 @@ We call it “casual” and “experimental” for a reason. It’s unknown how 
 
 I personally have three trivial sites running on this casual webhosting setup on a $5/month Linode server, and have had no problems so far. (See [randyfay.com](http://randyfay.com) for the list of sites).
 
-Note that if you just want to show a site to your colleagues or customers, you might get by just fine with the `ddev share` command, which requires [no setup at all](https://ddev.com/ddev-local/sharing-a-ddev-local-project-with-other-collaborators/). 
+If you want to show a site to your colleagues or customers, you might get by fine with the `ddev share` command, which requires [no setup at all](https://ddev.com/ddev-local/sharing-a-ddev-local-project-with-other-collaborators/).
 
 [Read the Casual Webhosting docs](https://ddev.readthedocs.io/en/latest/users/alternate-uses/#casual-project-webosting-on-the-internet-including-lets-encrypt)
 
@@ -50,7 +50,7 @@ Note that if you just want to show a site to your colleagues or customers, you m
 2. Install Docker ([docs](https://ddev.readthedocs.io/en/stable/users/docker%5Finstallation/#linux-installation-docker-and-docker-compose) : `sudo apt-get update && sudo apt-get install [docker.io](<http://docker.io>) docker-compose`). Don’t forget the post-install action required of adding your user to the Docker group, `sudo usermod -aG docker $USER`.
 3. Check out the site code.
 4. `cd` into your project and `ddev config`, then `ddev config --additional-fqdns=test.your.fqdn`
-5. `ddev config global --router-bind-all-interfaces --omit-containers=dba,ddev-ssh-agent --use-hardened-images --use-letsencrypt [-letsencrypt-email=you@example.com](<mailto:--letsencrypt-email=you@example.com>)` will set DDEV to listen on all interfaces (not just localhost), not install phpMyAdmin or the ssh-agent, use the hardened images, and configure Let’s Encrypt.
+5. `ddev config global --router-bind-all-interfaces --omit-containers=dba,ddev-ssh-agent --use-hardened-images --use-letsencrypt [-letsencrypt-email=you@example.com](<mailto:--letsencrypt-email=you@example.com>)` will set DDEV to listen on all interfaces (not only localhost), not install phpMyAdmin or the ssh-agent, use the hardened images, and configure Let’s Encrypt.
 6. `ddev start`
 7. Import site user-generated files with `ddev import-files` or rsync or any other way you want to do it.
 8. Import site database with `ddev import-db`
