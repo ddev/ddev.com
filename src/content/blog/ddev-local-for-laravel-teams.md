@@ -17,9 +17,9 @@ In terms of local development environments (LDE), Laravel does have a lot of opt
 
 When you do set up an LDE individually, in most cases you want something that does the job with the least amount of effort to install and maintain it. As a Laravel developer, the first choice might be [Laravel Valet](https://laravel.com/docs/valet) (on Mac) or [Homestead](https://laravel.com/docs/homestead), which are official Laravel tools and are mentioned in the [Laravel documentation](https://laravel.com/docs).
 
-But when teams come together, a debate occurs about “what/how to use local development for the particular project/s.” At this point, worlds collide. Everyone is used to their own toolchain, might have a different OS, each project might have special requirements. All of this could become a “Holy War of Local Development Environments” inside the team or lead to everyone just using the tools they are familiar with.
+But when teams come together, a debate occurs about “what/how to use local development for the particular project/s.” At this point, worlds collide. Everyone is used to their own toolchain, might have a different OS, each project might have special requirements. All of this could become a “Holy War of Local Development Environments” inside the team or lead to everyone using the tools they are familiar with.
 
-For a long time I have had the opinion that there is no need for big holy wars (debate yes, but not wars) about which tools are better. And, people should not be forced into using certain hardware, OS, IDE, etc. If a team member is productive in VS Code, then why force this person to use PhpStorm? (Just an example).
+For a long time I have had the opinion that there is no need for big holy wars (debate yes, but not wars) about which tools are better. And, people should not be forced into using certain hardware, OS, IDE, etc. If a team member is productive in VS Code, for example, why force this person to use PhpStorm?
 
 But in terms of LDE, if a team comes together and some team members use Valet on Mac, others prefer Laradock on Linux instead, and the Windows users go with Homestead, you could end up having to learn all of them to help solve problems with other team members’ preferred tool in the context of the project. Especially if the project has additional requirements like FQDN for SSO, custom Nginx configuration, etc.
 
@@ -87,7 +87,7 @@ Normally to execute artisan commands inside the DDEV web container you would nee
 php artisan $@
 ```
 
-This way you can now just use `ddev artisan …`. It’s trifling, but pleasant.
+This way you can now run `ddev artisan …`. It’s trifling, but pleasant.
 
 ### 3. Share It!
 

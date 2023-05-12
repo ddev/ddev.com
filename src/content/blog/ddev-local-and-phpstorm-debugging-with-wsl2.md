@@ -47,7 +47,7 @@ I tested these approaches on an 8GB Windows 10 Home VM with Docker 2.3.0.3 and D
 2. Temporarily disable your Windows firewall. You can re-enable it after you get everything working.
 3. In the WSL2 terminal `export DISPLAY=$(awk '/^nameserver/ {print $2; exit;}' </etc/resolv.conf):0.0` (You’ll want to add this to your .profile in WSL2). This sets the X11 DISPLAY variable to point to your Windows host side. Microsoft has future plans to support this natively.
 4. `sudo apt-get update && sudo apt-get install libatk1.0 libatk-bridge2.0 libxtst6 libxi6 libpangocairo-1.0 libcups2 libnss3 xdg-utils x11-apps`
-5. run `xeyes` – you should see the classic X11 play app “xeyes” on the screen. <ctrl-c> to exit. This is just a test to make sure X11 is working.
+5. run `xeyes` – you should see the classic X11 play app “xeyes” on the screen. <ctrl-c> to exit. This is a quick test to make sure X11 is working.
 6. Download and un-tar PhpStorm for Linux from <https://www.jetbrains.com/PhpStorm/download/#section=linux> – you need the _Linux_ app.
 7. Run `bin/PhpStorm.sh &`
 8. In PhpStorm, under Help→ Edit Custom VM Options, add an additional line: `-Djava.net.preferIPv4Stack=true` This makes PhpStorm listen for Xdebug using IPV4; for some reason the Linux version of PhpStorm defaults to using only IPV6.

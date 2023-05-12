@@ -28,9 +28,9 @@ Remember, you can run `ddev [command] --help` for more info on many of the topic
 
 I like to name my snapshots so I can find them later, so `ddev snapshot --name=two-dbs` would make a snapshot named “two-dbs” in the `.ddev/db_snapshots` directory. It includes the entire state of the db server, so in the case of our two databases above, both databases and the system level “mysql” database will all be snapshotted. Then if you want to delete everything with `ddev delete -O` (omitting the snapshot since we have one already), and then `ddev start` again, we can `ddev restore-snapshot two-dbs` and we’ll be right back where we were.
 
-**`ddev mysql`**: `ddev mysql` gives you direct access to the MySQL client in the db container. I like to use it for lots of things because I like the command line. I might just `ddev mysql` and give an interactive command like `DROP DATABASE backend;`. Or `SHOW TABLES;`. You can also do things like `` echo "SHOW TABLES;" | ddev mysql or `ddev mysql -uroot -proot` `` to get root privileges.
+**`ddev mysql`**: `ddev mysql` gives you direct access to the MySQL client in the db container. I like to use it for lots of things because I like the command line. I might run `ddev mysql` and give an interactive command like `DROP DATABASE backend;`. Or `SHOW TABLES;`. You can also do things like `` echo "SHOW TABLES;" | ddev mysql or `ddev mysql -uroot -proot` `` to get root privileges.
 
-**MySQL client in containers**: Both the web and db containers have the `mysql` client all set up and configured, so you can just `ddev ssh` or `ddev ssh -s db` and then use `mysql` however you choose to.
+**MySQL client in containers**: Both the web and db containers have the `mysql` client all set up and configured, so you can run `ddev ssh` or `ddev ssh -s db` and then use `mysql` however you choose to.
 
 **`mysqldump`**: The web and db containers also have `mysqldump` so you can use it any way you want inside there. I like to `ddev ssh` (into the web container) and then `mkdir /var/www/html/.tarballs` and `mysqldump db >/var/www/html/.tarballs/db.sql` or `mysqldump db | gzip >/var/www/html/.tarballs/db.sql.gz` (Because `/var/www/html` is mounted into the container from your project root, the `.tarballs` folder will also show up in the root of the project on the host.)
 
@@ -42,7 +42,7 @@ I like to name my snapshots so I can find them later, so `ddev snapshot --name=t
   - Choose a static `host_db_port` for your project. For example `host_db_port: 59002` (each project’s db port has to be different). (`ddev start` to make it take effect)
   - Use the “database” tool to create a source from “localhost”, with type “mysql” and the port you chose, credentials username: db and password: db
   - Explore away!
-- There’s a sample custom command that will run the free [mysqlworkbench](https://dev.mysql.com/downloads/workbench/) GUI database explorer on macOS, Windows or Linux. You just have to:
+- There’s a sample custom command that will run the free [mysqlworkbench](https://dev.mysql.com/downloads/workbench/) GUI database explorer on macOS, Windows or Linux:
   - `cp .ddev/commands/host/mysqlworkbench.example .ddev/commands/host/mysqlworkbench && chmod +x .ddev/commands/host/mysqlworkbench`
   - and then `ddev mysqlworkbench`
 

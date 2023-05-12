@@ -12,7 +12,7 @@ categories:
   - DevOps
 ---
 
-In this post, I’m going to give you a quick overview of some tips, tricks, and a couple of cool geeky features DDEV users often overlook. From the start, we’ve had a vision of building a dev-to-deploy toolset. We started with DDEV to give you a stable, reliable, universal local development environment. To create a “just works” experience meant we’ve made some assumptions so you can get started quickly. On the other hand, DDEV also gives power users the flexibility to adapt and change the tools—even on a per-project basis—to suit their needs. So, if you’re brand new to using DDEV, there might be things you’ve missed.
+In this post, I’m going to give you a quick overview of some tips, tricks, and a couple of cool geeky features DDEV users often overlook. From the start, we’ve had a vision of building a dev-to-deploy toolset. We started with DDEV to give you a stable, reliable, universal local development environment. To create a smooth experience, we’ve made some assumptions so you can get started quickly. DDEV also gives power users the flexibility to adapt and change the tools—even on a per-project basis—to suit their needs. So, if you’re brand new to using DDEV, there might be things you’ve missed.
 
 [Download DDEV](https://github.com/ddev/ddev)
 
@@ -60,7 +60,7 @@ Always start by checking the help files as you’re learning DDEV!
 
 I never tire of reminding DDEV users that the `ddev poweroff` and its neighbor `ddev stop` are your friends. They don’t destroy anything unless you ask them to. This is useful because if you keep a number of Docker containers running and neglect to remove them, you’ll run out of memory for Docker.
 
-Docker can become unpredictable when you near the memory limit. To avoid causing strange behavior in Docker, I like to keep my memory usage low. By default, it’s set to a limit of 2 GB, and you can have several projects running no problem. Once I get close to that limit, I just dump everything with `ddev poweroff`, secure in the knowledge that my containers are removed, not eating memory, and my data is intact.
+Docker can become unpredictable when you near the memory limit. To avoid causing strange behavior in Docker, I like to keep my memory usage low. By default, it’s set to a limit of 2 GB, and you can have several projects running no problem. Once I get close to that limit, I dump everything with `ddev poweroff`, secure in the knowledge that my containers are removed, not eating memory, and my data is intact.
 
 When you run `ddev stop` from the working directory (or `ddev stop <project1> <project2>` DDEV removes the containers, but it does not remove the data. Check out the docs on [removing a project.](https://ddev.readthedocs.io/en/stable/users/cli-usage/#removing-projects-from-ddev-local)
 

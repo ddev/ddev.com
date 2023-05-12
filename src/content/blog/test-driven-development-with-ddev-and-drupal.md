@@ -41,11 +41,11 @@ So I decided to write about how DDEV can make life easier.
 
 ### “Making life easier,” that’s what DDEV is aiming for! Tell us what you used for development before DDEV, and why you switched?
 
-Before DDEV I managed my own tooling called [platform-docker](https://github.com/mglaman/platform-docker). This was before Lando, Docksal, DDEV, and such. DrupalVM had just come out. I had been using Vagrant based tools but kept running out of disk space due to the sheer size of each VM required to meet client requirements. Then I found out about DDEV at Florida DrupalCamp 2018.
+Before DDEV I managed my own tooling called [platform-docker](https://github.com/mglaman/platform-docker). This was before Lando, Docksal, DDEV, and such. DrupalVM had recently come out. I had been using Vagrant based tools but kept running out of disk space due to the sheer size of each VM required to meet client requirements. Then I found out about DDEV at Florida DrupalCamp 2018.
 
 I was glad I could finally drop my own blob of tooling and use a shared tool. I got sick of having to not only manage client sites but also manage my own tooling. I also stopped having to cycle through new projects. I would only have to spin up a new environment once every few months.
 
-I switched to DDEV so that I could just contribute to a tool and have what goodies I liked and take in goodies from others. We have also made DDEV our official local stack tool at Commerce Guys. It has allowed us to streamline local environments without any issues. We have projects set up for testing and Blackfire.io so everyone can do performance profiling.
+I switched to DDEV so that I could contribute to a tool and have what goodies I liked and take in goodies from others. We have also made DDEV our official local stack tool at Commerce Guys. It has allowed us to streamline local environments without any issues. We have projects set up for testing and Blackfire.io so everyone can do performance profiling.
 
 ### Thanks, Matt!
 

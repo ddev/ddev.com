@@ -50,7 +50,7 @@ You run the same script later to upgrade.
 
 In a typical web development workflow, most of the time you’re working in a repository that includes the web root for your PHP application or website. So the first thing is to cd to change directory so you’re inside that project folder or docroot.
 
-Then you’ll answer 3 questions about the project. DDEV will make a best-guess, and usually, you can just keep the defaults.
+Then you’ll answer 3 questions about the project. DDEV will make a best-guess, and usually, you can keep the defaults.
 
 - **Project name** – DDEV will base the name on the current directory name.
 - **Docroot** – Again, DDEV will make a guess from the docroot you’re currently in.

@@ -18,7 +18,7 @@ When in doubt, update DDEV on your machine and run `ddev config` on a project be
 As an example, and since there are many folks who absolutely love [zsh](https://www.zsh.org/) and [Oh My Zsh](https://ohmyz.sh/) (an alternative Unix shell and an accompanying framework), we’ll demonstrate these features by showing you how to add zsh and Oh My Zsh to a DDEV project. We’re going to do three things to demonstrate this:
 
 - Add the zsh Debian package into the web container with `webimage_extra_packages`
-- Add a custom command that works just like `ddev ssh`, but it’s going to be `ddev zsh`
+- Add a custom command that works like `ddev ssh`, but it’s going to be `ddev zsh`
 - Add all the scaffolding for Oh My Zsh in the home directory for lovers of Oh My Zsh
 
 Watch the video below and read the detailed instructions to configure your own project:
@@ -45,7 +45,7 @@ Watch the video below and read the detailed instructions to configure your own p
     Now you can run `ddev zsh` and be in your familiar zsh environment (if you did the `ddev restart` after adding the package in step 1.
 3. If zsh is all you want, copy your favorite `.zshrc` into `.ddev/homeadditions` for your project and zsh will be set up with your `.zshrc` every time you start the project. You’re done now.
 4. Now to add all the goodies that make [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) work:
-    1. If you already have a `~/.oh-my-zsh` and `~/.zshrc`, you probably can just copy those into `.ddev/homeadditions` and they will be added on every `ddev start`.
+    1. If you already have a `~/.oh-my-zsh` and `~/.zshrc`, you can probably copy those into `.ddev/homeadditions` and they will be added when you run `ddev start`.
     2. Otherwise, create the `.oh-my-zsh` like this:
     3. `cd .ddev/homeadditions`
     4. `curl -Lo install.sh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh`

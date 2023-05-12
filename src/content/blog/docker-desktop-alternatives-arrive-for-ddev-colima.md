@@ -37,13 +37,13 @@ It’s easy to set up, and is compatible with Docker Desktop (both can be runnin
 
 ## Windows WSL2: Docker Inside WSL2 Distro
 
-On Windows, WSL2 is by far the preferred way to run DDEV, as it’s perhaps a hundred times faster than running DDEV on traditional Windows. However, since WSL2 came out, the recommended installation procedure has used Docker Desktop (Windows), with its excellent WSL2 integration. However, it turns out that just installing the Linux version of Docker inside the WSL2 distro is at least equivalent in terms of performance, and probably more reliable.
+On Windows, WSL2 is by far the preferred way to run DDEV, as it’s perhaps a hundred times faster than running DDEV on traditional Windows. However, since WSL2 came out, the recommended installation procedure has used Docker Desktop (Windows), with its excellent WSL2 integration. However, it turns out that installing the Linux version of Docker inside the WSL2 distro is at least equivalent in terms of performance, and probably more reliable.
 
 In v1.19 the [docs provide instructions](https://ddev.readthedocs.io/en/stable/users/docker%5Finstallation/#windows-installation-wsl2-with-docker-linux-installed-inside) on the simple technique of installing inside the WSL2 distro. This will be the recommended standard technique in v1.20 and forward, and it works great now.
 
 If you install Docker inside the WSL2 distro, you do not need Docker Desktop at all, and there are no license fees, and everything is open-source. I know of no downside to this approach.
 
-## Linux: Just Do What You’ve Always Done
+## Linux: Do What You’ve Always Done
 
 On Linux, the solution has always been open-source and there is no license fee (see [docs](https://ddev.readthedocs.io/en/stable/users/docker%5Finstallation/#linux-installation-docker)). (Note that Docker has recently introduced Docker Desktop for Linux… I’m sure this works, but it will then involve closed-source and license fees.)
 

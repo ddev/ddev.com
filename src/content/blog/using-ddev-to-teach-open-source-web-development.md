@@ -30,7 +30,7 @@ They work on projects around content management, which fits well with their over
 
 Since the coursework is project-based, there’s no final exam. For their grade, students complete a project and document their approach. “They write about what went wrong and what went well, design patterns, and their initial plan of what they wanted to achieve.”
 
-In the process, they create extensions, build websites and applications. That’s how they’re assessed. “If they created cool software, that’s a good thing. If the application is complex enough, that’s a good thing … It’s really focused on practical work, and not just learning for one exam and forgetting everything.”
+In the process, they create extensions, build websites and applications. That’s how they’re assessed. “If they created cool software, that’s a good thing. If the application is complex enough, that’s a good thing … It’s really focused on practical work, not learning for one exam and forgetting everything.”
 
 “I get them to work as a team, in groups of 4-5 people, rather than taking a teacher/student approach. When I get feedback from students, they tell me they like this practical approach, especially the aspects of collaboration. They learn how to work together.”
 
