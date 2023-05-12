@@ -18,7 +18,7 @@ categories:
 
 The days of print-debugging are long behind us! [Xdebug](https://xdebug.org/) and PHP IDEs have made that approach unwieldy, but often the configuration between your IDE, PHP, web server, and Docker is challenging and fragile. Enter our open source local development environment, [DDEV](https://github.com/ddev/ddev).
 
-The combination of [PhpStorm](https://www.jetbrains.com/phpstorm/) and [DDEV](https://ddev.com/ddev-local/)‘s plug-and-play approach to debugging makes those configuration struggles obsolete. You can easily get a working debug environment in just a few minutes! We’ll walk you through it in this screencast using macOS. It works exactly the same on Windows or Linux, and with [WSL2 as well](https://ddev.com/ddev-local/ddev-local-and-phpstorm-debugging-with-wsl2/). After all, we want you to be successful with the tools and workflows you know and love.
+The combination of [PhpStorm](https://www.jetbrains.com/phpstorm/) and [DDEV](https://ddev.com/ddev-local/)‘s plug-and-play approach to debugging makes those configuration struggles obsolete. You can get a working debug environment in a few minutes! We’ll walk you through it in this screencast using macOS. It works exactly the same on Windows or Linux, and with [WSL2 as well](https://ddev.com/ddev-local/ddev-local-and-phpstorm-debugging-with-wsl2/). After all, we want you to be successful with the tools and workflows you know and love.
 
 ## Debugging in your local development environment
 
