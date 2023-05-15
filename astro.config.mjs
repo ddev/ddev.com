@@ -17,7 +17,19 @@ export default defineConfig({
     tailwind(),
     react(),
     astroImageTools,
-    sitemap(),
+    sitemap({
+      serialize(item) {
+        if (
+          item.url.endsWith(".json/") ||
+          item.url.endsWith(".svg/") ||
+          item.url.endsWith(".xml/")
+        ) {
+          // Don’t index sitemaps or generated SVG, which come with `/` route endings here
+          return undefined
+        }
+        return item
+      },
+    }),
     robotsTxt({
       sitemap: true,
     }),
