@@ -1,7 +1,8 @@
+import { astroImageTools } from "astro-imagetools"
 import { defineConfig } from "astro/config"
 import { plainTextPlugin } from "@barnabask/astro-minisearch"
 import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs"
-import { astroImageTools } from "astro-imagetools"
+import image from "@astrojs/image"
 import prefetch from "@astrojs/prefetch"
 import react from "@astrojs/react"
 import robotsTxt from "astro-robots-txt"
@@ -37,6 +38,9 @@ export default defineConfig({
       output: "search.json",
     }),
     prefetch(),
+    image({
+      serviceEntryPoint: "@astrojs/image/sharp",
+    }),
   ],
   markdown: {
     syntaxHighlight: "shiki",

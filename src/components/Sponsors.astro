@@ -7,7 +7,7 @@
  */
 
 import { getSponsors } from "../lib/api"
-import { Img } from "astro-imagetools/components"
+import { Image } from "@astrojs/image/components"
 import featuredSponsors from "../featured-sponsors.json"
 
 export interface Props {
@@ -90,17 +90,12 @@ gitHubSponsors.forEach((gitHubSponsor) => {
             />
           )}
           {!sponsor.imageUrl.includes(".svg") && (
-            <Img
+            <Image
               src={sponsor.imageUrl}
               alt={sponsor.imageAlt}
               width={100}
               height={100}
-              breakpoints={{ count: 1, maxWidth: 100 }}
-              attributes={{
-                img: {
-                  class: `block w-full h-full`,
-                },
-              }}
+              class={`block w-full h-full`}
             />
           )}
         </a>
