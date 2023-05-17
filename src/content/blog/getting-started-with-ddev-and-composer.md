@@ -25,7 +25,7 @@ Composer is the recommended way to develop for both TYPO3 CMS and Drupal 8, but 
 
 ## Composer and DDEV are better together
 
-Before [the DDEV 1.4 release](https://ddev.com/ddev-local/ddev-v1-4-0-in-container-composer-commands-ssh-authentication-database-export/), our instructions were written assuming the typical user was a Mac or Linux user with Composer installed. It didn’t work well for lots of Windows users. The fundamental “gotcha” that proved most challenging for Windows users was that even if they get PHP and Composer set up properly on their Windows machine, they still ran into trouble when they ran the `composer create-project` command
+Before the DDEV 1.4 release, our instructions were written assuming the typical user was a Mac or Linux user with Composer installed. It didn’t work well for lots of Windows users. The fundamental “gotcha” that proved most challenging for Windows users was that even if they get PHP and Composer set up properly on their Windows machine, they still ran into trouble when they ran the `composer create-project` command.
 
 We noticed more and more of our Windows users sharing workarounds [in our community](https://ddev.readthedocs.io/en/latest/#support), such as Slack and [Stack Overflow](https://stackoverflow.com/questions/tagged/ddev). We realized how we could make this a lot easier, and in DDEV 1.4, we released several improvements to make the experience better, particularly for Windows users.
 
