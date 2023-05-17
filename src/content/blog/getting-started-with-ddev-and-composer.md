@@ -82,4 +82,3 @@ Also, check out these articles:
 
 - How to set up a [Docker-based development environment on macOS](https://ddev.com/blog/ddev-local-scratch-macos/).
 - [Debugging Docker on Windows, Mac, and Linux](https://ddev.com/blog/debugging-docker-on-windows-mac-and-linux/)
-- [DDEV v1.4 release](https://ddev.com/blog/ddev-v1-4-0-in-container-composer-commands-ssh-authentication-database-export/)

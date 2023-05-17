@@ -24,7 +24,7 @@ It’s easy to set up, and is compatible with Docker Desktop (both can be runnin
 
 **Advantages of Colima:**
 
-- It seems to be the best-performing solution for macOS by far (with Mutagen enabled), see [performance comparison](https://ddev.com/blog/docker-desktop-and-colima-benchmarking-on-macos/).
+- It seems to be the best-performing solution for macOS by far with Mutagen enabled.
 - It’s fully open-source
 - No license fees
 - Installation and startup can be automated.
