@@ -1,19 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro"
-import Heading from "../components/Heading.astro"
-import CtaButton from "../components/CtaButton.astro"
+import Heading from "@components/Heading.astro"
+import CtaButton from "@components/CtaButton.astro"
 import {
   GITHUB_ISSUES_URL,
   DISCORD_URL,
   DOCUMENTATION_URL,
   GITHUB_URL,
 } from "../const"
-import Sponsors from "../components/Sponsors.astro"
+import Sponsors from "@components/Sponsors.astro"
 import { Image } from "@astrojs/image/components"
-import prImage from "../../public/img/pr.png"
-import discordImage from "../../public/img/discord.png"
-import docsImage from "../../public/img/edit-docs.png"
-import advisoryImage from "../../public/img/advisory-group-call.png"
+import prImage from "@assets/pr.png"
+import discordImage from "@assets/discord.png"
+import docsImage from "@assets/edit-docs.png"
+import advisoryImage from "@assets/advisory-group-call.png"
 
 const title = `Support DDEV`
 ---

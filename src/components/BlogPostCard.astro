@@ -8,7 +8,7 @@ interface Props {
 }
 
 import { getEntryBySlug } from "astro:content"
-import { Picture } from "astro-imagetools/components"
+import { Picture } from "@astrojs/image/components"
 import { getSlug, formatDate, getCategoryUrl } from "../lib/api"
 
 const { post } = Astro.props
@@ -40,25 +40,17 @@ const firstCategory = post.data.categories.length
   style="isolation: isolate;"
 >
   <div class="flex-shrink-0">
-    {
-      featureImageUrl.includes(".svg") ? (
-        <img src={featureImageUrl} alt={featureImageAlt} />
-      ) : (
-        <Picture
-          attributes={{
-            picture: {
-              class: `block h-48 w-full object-cover relative`,
-            },
-          }}
-          format={["webp"]}
-          src={featureImageUrl}
-          alt={featureImageAlt}
-          width={600}
-          height={400}
-          fit="cover"
-        />
-      )
-    }
+    <Picture
+      format={["webp"]}
+      src={featureImageUrl}
+      alt={featureImageAlt}
+      aspectRatio={9/6}
+      widths={[600]}
+      width={600}
+      height={400}
+      fit="cover"
+      class="block h-48 w-full object-cover relative"
+    />
   </div>
   <div class="flex-1 bg-gray-100 p-6 flex flex-col justify-between">
     <div class="flex-1">

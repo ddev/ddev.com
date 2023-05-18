@@ -1,6 +1,7 @@
 ---
 import { marked } from "marked"
-import { Picture } from "astro-imagetools/components"
+import { Picture } from "@astrojs/image/components"
+import sizeOf from "image-size"
 
 export interface Props {
   src: string
@@ -11,13 +12,13 @@ export interface Props {
 }
 
 const { src, alt, caption = "", credit, shadow = false } = Astro.props
+
+const imageDimensions = sizeOf(`public${src}`)
+
 ---
 
 <figure class={`w-full mx-auto mb-24 z-10 px-6 lg:px-0`}>
-  {
-    src.includes(".svg") ? (
-      <img src={src} alt={alt} />
-    ) : (
+
       <div
         class={
           `block rounded-lg overflow-hidden` + (shadow ? ` shadow-xl` : ``)
@@ -25,19 +26,17 @@ const { src, alt, caption = "", credit, shadow = false } = Astro.props
       >
         <Picture
           format={["webp"]}
+          widths={[1800]}
           breakpoints={{ count: 3, maxWidth: 1800 }}
-          attributes={{
-            picture: {
-              class: `block rounded-lg`,
-              style: `clip-path: inset(0% 0% 0% 0% round 0.5rem)`,
-            },
-          }}
+          aspectRatio={imageDimensions.width / imageDimensions.height}
+          width={imageDimensions.width}
+          height={imageDimensions.height}
+          class="block rounded-lg"
+          style="clip-path: inset(0% 0% 0% 0% round 0.5rem)"
           src={src}
           alt={alt}
         />
       </div>
-    )
-  }
   {
     (caption || credit) && (
       <figcaption class="text-sm font-mono mt-4">

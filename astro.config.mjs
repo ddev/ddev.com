@@ -17,7 +17,6 @@ export default defineConfig({
   integrations: [
     tailwind(),
     react(),
-    astroImageTools,
     sitemap({
       serialize(item) {
         if (
