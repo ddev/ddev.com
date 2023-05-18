@@ -1,6 +1,7 @@
 ---
 title: "Why use DDEV instead of rolling your own Docker-based local dev solution?"
 pubDate: 2022-12-22
+modifiedDate: 2023-05-18
 summary: The benefits of using DDEV instead of a custom Docker setup for local development.
 author: Randy Fay
 featureImage:
@@ -11,7 +12,7 @@ categories:
   - DevOps
 ---
 
-If you know something about Docker, you know that you can throw one or two Docker images together and get yourself a working local development environment. There are plenty of nginx and PHP images out there on [hub.docker.com](https://hub.docker.com), and you can do lots and lots of things with them. So why use [DDEV](https://ddev.readthedocs.io), a tool that runs on Docker, when you could roll your own Docker solution for local development? I’ll try to make a comparison. Of course I’m biased in favor of DDEV.
+If you know something about Docker, you know that you can throw one or two Docker images together and get yourself a working local development environment. There are plenty of nginx and PHP images out there on [hub.docker.com](https://hub.docker.com), and you can do lots and lots of things with them. So why use [DDEV](https://ddev.readthedocs.io), a tool that runs on Docker, when you could roll your own Docker solution for local development? I’ll try to make a comparison. Of course, I’m biased in favor of DDEV.
 
 ### **Custom Docker or docker-compose solution:**
 
@@ -25,9 +26,9 @@ If you know something about Docker, you know that you can throw one or two Docke
 
 - [Open-source project](https://github.com/ddev/ddev) with no vendor lock-in.
 - Has already undergone more than 6 years of development, adding requested features and collaborating with community contributors. [Sponsor DDEV on GitHub!](https://github.com/sponsors/ddev)
-- Explicit support for [many CMS types](https://ddev.readthedocs.io/en/stable/users/cli-usage/#quickstart-guides), including Drupal, Backdrop, TYPO3, Magento, Laravel, WordPress, Shopware and generic PHP or non-PHP projects. DDEV will set up beginning settings files for you so you’re set up in moments, but you can [turn feature that off](https://ddev.com/ddev-local/controlling-cms-settings-files-in-ddev-local/) when you don’t need it.
-- Support for nearly all versions of both MySQL and MariaDB.
-- Support for macOS, Windows, WSL2, Linux, both AMD64 and ARM64 architectures, great for diverse teams.
+- Explicit support for [many CMS types](https://ddev.readthedocs.io/en/stable/users/cli-usage/#quickstart-guides), including Drupal, Backdrop, TYPO3, Magento, Laravel, WordPress, Shopware and generic PHP, HTML, Javascript, and Python projects. DDEV will set up basic settings files for you so you’re set up in moments, but you can [turn feature that off](https://ddev.com/ddev-local/controlling-cms-settings-files-in-ddev-local/) when you don’t need it.
+- Support for nearly all versions of both MySQL, MariaDB, and PostgreSQL.
+- Native support for macOS (Apple Silicon and Intel), Windows, WSL2, Linux, both AMD64 and ARM64 architectures, great for diverse teams.
 - Out-of-the-box support for both Nginx and Apache and PHP 5.6-8.2.
 - Trusted HTTPS for every project.
 - Import, export, and snapshot databases.
@@ -35,6 +36,7 @@ If you know something about Docker, you know that you can throw one or two Docke
 - ssh integration (ssh-agent bundled so you can use your keys inside the container for accessing hosts or private composer repositories.
 - Composer support built into the web container and accessed with `ddev composer`.
 - [Xdebug step-debugging](https://ddev.readthedocs.io/en/stable/users/step-debugging/#step-debugging-with-ddev-and-xdebug) out of the box. Run `ddev xdebug on` and go.
+- Add-ons for facilities not built into core DDEV, like Elasticsearch, Apache Solr, Redis, and lots more.
 
 [![DDEV, PhpStorm and Xdebug video and blog post](/img/blog/2020/12/screen-shot-2020-12-28-at-12.49.31-pm.png)](/blog/ddev-local-phpstorm-and-xdebug-debugging)
 
