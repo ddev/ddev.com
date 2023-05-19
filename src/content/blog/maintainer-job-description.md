@@ -3,10 +3,6 @@ title: "Recruiting DDEV Open Source Project Maintainers"
 pubDate: 2023-05-19
 summary: The DDEV community is seeking paid maintainers to boost the project's sustainability and growth.
 author: Randy Fay
-featureImage:
-  src: /img/blog/2020/12/ddevdocker.png
-  alt: DDEV and Docker logos side by side, with the words “and/or” between them
-  shadow: true
 categories:
   - Announcements
 ---
@@ -45,7 +41,7 @@ The DDEV community is seeking dedicated and experienced individuals to become a 
 
 - Proven experience with open source project maintenance or similar roles.
 - Strong knowledge of the DDEV project and its technology stack.
-- Excellent coding skills in Go, with a strong understanding of Linux, Docker, and shell scripting.
+- Excellent coding skills in Go, with a strong understanding of Linux, Docker, database technologies, and shell scripting.
 - Understanding of software development best practices.
 - Strong problem-solving skills and the ability to handle complex technical challenges.
 - Excellent communication and mentoring skills, with the ability to work well with a diverse community and foster a culture of learning and growth.
