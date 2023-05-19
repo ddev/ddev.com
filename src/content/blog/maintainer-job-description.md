@@ -8,7 +8,7 @@ featureImage:
   alt: DDEV and Docker logos side by side, with the words “and/or” between them
   shadow: true
 categories:
-  - jobs
+  - Announcements
 ---
 
 **Job Title:** DDEV Open Source Project Maintainer
