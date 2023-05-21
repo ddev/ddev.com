@@ -1,6 +1,6 @@
 ---
-title: "Recruiting DDEV Open Source Project Maintainers"
-pubDate: 2023-05-19
+title: "We're Recruiting DDEV Open Source Project Maintainers"
+pubDate: 2023-05-21
 summary: The DDEV community is seeking paid maintainers to boost the project's sustainability and growth.
 author: Randy Fay
 featureImage:
@@ -10,11 +10,11 @@ categories:
   - Announcements
 ---
 
-## DDEV Open Source Project Maintainer
+We're recruiting DDEV Open Source Project Maintainers, both paid and volunteer positions! If you've ever considered becoming a more-involved contributor/maintainer on the project you love, we'd love to talk with you. DDEV needs to become more sustainable, with a larger group of maintainers, and we want to grow into that.
 
-### Job Description
+### Maintainer Job Description
 
-The DDEV community is seeking dedicated and experienced individuals to become a maintainers of the [DDEV open source project](https://ddev.com). This role requires a deep understanding of the DDEV project, excellent coding skills, and the ability to work collaboratively with a diverse and passionate community.
+The DDEV community is seeking dedicated and experienced individuals to become a maintainers of the [DDEV open source project](https://ddev.com). This role requires a deep understanding of the DDEV project, great coding skills, and the ability to work collaboratively with a diverse and passionate community. 
 
 ### Responsibilities
 
@@ -44,8 +44,8 @@ The DDEV community is seeking dedicated and experienced individuals to become a 
 
 - Proven experience with open source project maintenance or similar roles.
 - Strong knowledge of the DDEV project and its technology stack.
-- Excellent coding skills in Go, with a strong understanding of Linux, Docker, database technologies, and shell scripting.
-- Understanding of software development best practices.
+- Growing coding skills in Go, with a strong understanding of Linux, Docker, database technologies, and shell scripting.
+- Understanding and commitment to software development best practices.
 - Strong problem-solving skills and the ability to handle complex technical challenges.
 - Excellent communication and mentoring skills, with the ability to work well with a diverse community and foster a culture of learning and growth.
 - Strong understanding of software security practices.
@@ -59,7 +59,8 @@ This individual should be passionate about the benefits of open source, and comm
 
 While maintainers may work on the project on a volunteer basis, the community has made clear its intent to create paid positions for the right candidates and to raise the requisite funding for these positions. Compensation will be commensurate with experience and the level of commitment.
 
-### About DDEV
+### How to Apply
 
-[DDEV](https://ddev.com) is an open source tool that makes it simple to get local PHP development environments up and running within minutes. It's powerful and flexible as a result of its per-project environment configurations, which can be extended, versioned, and shared. In short, DDEV aims to allow development teams to use Docker in their workflow without the complexities of bespoke configuration.
+You don't actually "apply", you grow into these positions. But if becoming a maintainer is interesting to you, let's talk about it and make a plan! We'll mentor you, give you responsibilities commensurate with your capabililties, and help you grow into the role. If you're a PHP developer, you can learn go enough to make significant contributions in a modest amount of time. But perhaps most of the DDEV project is a variety of miscellaneous technologies that you may already have experience with. And understanding the web developer is a fundamental part of DDEV, so if you're a web developer you're already part of the way there. 
 
+Drop by [Discord](https://discord.gg/hCZFfAMc5k), the [issue queue](https://github.com/ddev/ddev/issues) or send an email to `randy (at) localdev.foundation`. We'd love to talk with you about it!
