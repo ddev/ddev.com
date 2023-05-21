@@ -7,7 +7,7 @@ featureImage:
     src: /img/blog/2023/05/diverse-group-of-people-sitting-at-table-working.jpg
     alt: Image of a diverse group of maintainers sitting at a table maintaining DDEV
 categories:
-  - Announcements
+  - Community
 ---
 
 We're recruiting DDEV Open Source Project Maintainers, both paid and volunteer positions! If you've ever considered becoming a more-involved contributor/maintainer on the project you love, we'd love to talk with you. DDEV needs to become more sustainable, with a larger group of maintainers, and we want to grow into that.
