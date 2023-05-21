@@ -4,7 +4,7 @@ pubDate: 2023-05-21
 summary: The DDEV community is seeking paid maintainers to boost the project's sustainability and growth.
 author: Randy Fay
 featureImage:
-    src: /img/blog/2023/05/diverse_group_of_people_sitting_at_a_table_working.png
+    src: /img/blog/2023/05/diverse-group-of-people-sitting-at-table-working.jpg
     alt: Image of a diverse group of maintainers sitting at a table maintaining DDEV
 categories:
   - Announcements
