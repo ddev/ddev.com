@@ -3,35 +3,31 @@ title: "What Makes DDEV So Valuable?"
 pubDate: 2023-05-24
 summary: "Why is DDEV so valuable to teams, organizations, and individuals?"
 author: Randy Fay
-#featureImage:
-#    src: /img/blog/2023/05/diverse-group-of-people-sitting-at-table-working.jpg
-#    alt: Image of a diverse group of maintainers sitting at a table maintaining DDEV
+featureImage:
+    src: /img/blog/2023/05/developers-at-table.png
+    alt: Image of a team of web developers working together at a table and delighting in the project they have in front of them
 categories:
   - Community
 ---
 
-We're preparing to do a fund drive for the DDEV Project, and want to make sure that we explain clearly to potential funders and donors what makes it worth putting actual money into. This article is an attempt to explain that. 
-
-DDEV stands out as a comprehensive solution to the challenges of local web development. It not only offers a pre-configured, containerized environment that takes away the complexities of setting up and managing local development systems but also brings unique attributes that make local web development a breeze.
-
-DDEV distinguishes itself through its powerful, open source, Docker-based local development solution. This solution is versatile, able to adapt to various platforms and technologies, and highly efficient, saving users significant time that might be spent on building and maintaining custom Docker environments.
+The DDEV project is committed to setting itself to be sustainable for the long term, assuring that your investment in the project will last. In order to do that, we're doing a fund drive, explaining to teams, organizations, and individuals why it's important to financially support the project. Our key priority right now is adding an additional paid maintainer and a documentation/marketing maintainer. We'll be whispering in your ear about this initiative.
 
 ## What Sets DDEV Apart
 
-- **Simplicity and Speed**: DDEV is designed to get you up and running quickly. Installation is easy on every supported OS, and adding it to a new project can take as little as ten seconds. This allows developers to focus more on coding and less on configuration. It's fast to install, fast to start using, fast to use on a new project, and does superbly fast webserving.
+- **Installation**: DDEV is easy to install. It's a single binary backed by Docker providers everywhere.
+- **Project Setup**: Adding DDEV to a project is as easy as `ddev config` and can take as little as a minute.
+- **Reliability**: DDEV's behavior is predictable and reliable. Automated testing on all supported platforms and manual testing of every new feature make it rock solid.
+- **Multiple OS/Architecture Support**: Even if your team members use macOS (Apple Silicon or Intel), Windows WSL2, Linux, and traditional Windows you can expect consistent behavior across all these environments for the entire team.
+- **Team Consistency**: Teams typically check in the DDEV configuration, meaning that team members can just check out the project and `ddev start` and they'll have everything running right away in less than a minute.
+- **Webserver and Database Support**: Out of the box, DDEV supports Nginx and Apache webservers, and directly supports MariaDB, MySQL, and PostgreSQL databases.
+- **Add-On Ecosystem**: A huge number of non-core features are supported via add-ons, including Apache Solr, Elasticsearch, and dozens of others. There are officially supported add-ons and a large number contributed and maintained by the community.
+- **Community**: DDEV's friendly and active community meets in Discord, the GitHub issue queue, and Stack Overflow. People from many different CMS and framework communities have years of experience and help each other.
+- **Support**: DDEV's support is world-class and very active. Questions in the issue queue are often answered in minutes. Problems in Discord are often discussed and resolved very, very quickly. Bugs get early attention.
+- **Maintenance**: Careful maintenance means that new upstream capabilities (PHP versions, other tool changes) and upstream bugs get resolved and tested soon. Extensive automated testing means that upstream problems are detected quickly.
+- **Open Source**: DDEV is completely Free and Open Source Software (FOSS). It also can work with FOSS Docker providers on every platform, so you're not tied to closed-source commercial solutions like Docker Desktop, although Docker Desktop is fully supported.
 
-- **Multi-project and Multi-technology Support**: Unlike many local development environments that are tied to specific platforms or technologies, DDEV is versatile, allowing you to run multiple projects concurrently with different technology stacks, and supports multiple OSs and architectures, including macOS (Apple Silicon and Intel), Linux, Windows WSL2 and traditional Windows. Team members can have different computers and still work consistently on the same projects. One developer can have ten projects running at the same time, with each using different setups, including different PHP or Python versions, different Node.js versions, different databases, and different web servers.
-
-- **Consistency Across Teams**: Most teams check in and manage their DDEV configuration. This reduces discrepancies and eliminates "works on my machine" problems, enhancing team collaboration and making it easier to onboard new team members. Your configuration is checked in and managed for the entire team. Onboarding of new members often takes only a few minutes, even with diverse operating systems and hardware.
-
-- **Customization and Flexibility**: DDEV comes pre-configured for many common types of projects, but also supports customized configurations. This versatility enables it to accommodate any specific project needs, giving you the freedom to tailor your environment as you wish. An [entire selection of add-ons](https://ddev.readthedocs.io/en/latest/users/extend/additional-services/) is maintained by the team and the community to extend DDEV with technologies not built into the core product.
-
-- **Built-in web server and Database Services**: With DDEV, there's no need to install and configure web servers or database services manually. Everything you need is included and pre-configured, ready to go when you need it, supporting both Nginx and Apache, along with MariaDB, MySQL, and PostgreSQL.
-
-- **Community and Support**: DDEV's great strength is its community - YOU. Its strength has always been community input and iteration. And we provide world-class support, including comprehensive documentation, tutorials, and an active, engaged community. This ensures our users are never left in the dark and can make the most out of our platform.
-- 
-- **Maintenance**: When a new computer architecture or a new PHP version or a new database version comes along, DDEV is right there with you, making sure you have the tools you need. 
-
-Feedback and testimonials from our users — ranging from web agencies and organizations to individual developers — attest to the transformative impact of DDEV. It's more than a tool; it's a game-changer in web development, empowering developers and teams to streamline their workflows, reduce friction, and foster more creativity and innovation. By offering this powerful, free solution, DDEV reaffirms its commitment to the global developer community.
+DDEV does its absolute best to make sure local development works on your project every time. How much time, energy, and money does that save your organization? How much would you have to spend to achieve this same result? We ask you to calculate that number for yourself. 
 
 To explore DDEV's strengths in more technical detail, see [What's so different about DDEV](whats-so-different-about-ddev-local.md).
+
+To discuss how your you, your team, or your organization can get involved with funding DDEV, email `randy (at) localdev.foundation` or visit the [GitHub Sponsors page](https://github.com/sponsors/ddev).
