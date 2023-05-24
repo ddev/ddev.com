@@ -10,7 +10,7 @@ categories:
   - Community
 ---
 
-The DDEV project is committed to setting itself to be sustainable for the long term, assuring that your investment in the project will last. In order to do that, we're doing a fund drive, explaining to teams, organizations, and individuals why it's important to financially support the project. Our key priority right now is adding another paid maintainer and a documentation/marketing maintainer. We'll be whispering in your ear about this initiative.
+The DDEV project is committed to setting itself to be sustainable for the long term, assuring that your investment in the project will last. In order to do that, we're doing a fund drive, explaining to teams, organizations, and individuals why it's important to financially support the project. Our key priority right now is adding [another paid maintainer](recruiting-maintainers.md) and a documentation/marketing maintainer. We'll be be updating you regularly about this initiative.
 
 ## What Sets DDEV Apart
 
@@ -26,8 +26,8 @@ The DDEV project is committed to setting itself to be sustainable for the long t
 - **Maintenance**: Careful maintenance means that new upstream capabilities (PHP versions, other tool changes) and upstream bugs get resolved and tested soon. Extensive automated testing means that upstream problems are detected quickly.
 - **Open Source**: DDEV is completely Free and Open Source Software (FOSS). It also can work with FOSS Docker providers on every platform, so you're not tied to closed-source commercial solutions like Docker Desktop, although Docker Desktop is fully supported.
 
-DDEV does its absolute best to make sure local development works on your project every time. How much time, energy, and money does that save your organization? How much would you have to spend to achieve this same result? We ask you to calculate that number for yourself. 
+**We invite you to calculate the value DDEV brings to your work and consider making a financial contribution to support the project.** DDEV consistently delivers on the promise of making local development work for your projects, every time. How much time, energy, and resources do you save by using DDEV as opposed to maintaining your own solution or using an alternate? What would it cost to achieve the same efficiency and consistency without DDEV? Please calculate that value for yourself as you're considering how to financially support the project.
 
 To explore DDEV's strengths in more technical detail, see [What's so different about DDEV](whats-so-different-about-ddev-local.md).
 
-To discuss how your you, your team, or your organization can get involved with funding DDEV, email `randy (at) localdev.foundation` or visit the [GitHub Sponsors page](https://github.com/sponsors/ddev).
+Ready to be part of our journey together? Let's discuss how you, your team, or your organization can contribute to funding DDEV. Contact randy (at) localdev.foundation or visit our  [GitHub Sponsors page](https://github.com/sponsors/ddev).
