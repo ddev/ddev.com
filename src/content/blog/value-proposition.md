@@ -1,7 +1,7 @@
 ---
-title: "What Makes DDEV So Valuable?"
+title: "Why Should We Support DDEV Financially?"
 pubDate: 2023-05-24
-summary: "Why is DDEV so valuable to teams, organizations, and individuals?"
+summary: "Explaining the value of DDEV that makes financial support of the project worth doing"
 author: Randy Fay
 featureImage:
     src: /img/blog/2023/05/developers-at-table.png
@@ -10,7 +10,7 @@ categories:
   - Community
 ---
 
-The DDEV project is committed to setting itself to be sustainable for the long term, assuring that your investment in the project will last. In order to do that, we're doing a fund drive, explaining to teams, organizations, and individuals why it's important to financially support the project. Our key priority right now is adding an additional paid maintainer and a documentation/marketing maintainer. We'll be whispering in your ear about this initiative.
+The DDEV project is committed to setting itself to be sustainable for the long term, assuring that your investment in the project will last. In order to do that, we're doing a fund drive, explaining to teams, organizations, and individuals why it's important to financially support the project. Our key priority right now is adding another paid maintainer and a documentation/marketing maintainer. We'll be whispering in your ear about this initiative.
 
 ## What Sets DDEV Apart
 
@@ -18,8 +18,8 @@ The DDEV project is committed to setting itself to be sustainable for the long t
 - **Project Setup**: Adding DDEV to a project is as easy as `ddev config` and can take as little as a minute.
 - **Reliability**: DDEV's behavior is predictable and reliable. Automated testing on all supported platforms and manual testing of every new feature make it rock solid.
 - **Multiple OS/Architecture Support**: Even if your team members use macOS (Apple Silicon or Intel), Windows WSL2, Linux, and traditional Windows you can expect consistent behavior across all these environments for the entire team.
-- **Team Consistency**: Teams typically check in the DDEV configuration, meaning that team members can just check out the project and `ddev start` and they'll have everything running right away in less than a minute.
-- **Webserver and Database Support**: Out of the box, DDEV supports Nginx and Apache webservers, and directly supports MariaDB, MySQL, and PostgreSQL databases.
+- **Team Consistency**: Teams typically check in the DDEV configuration, meaning that team members can check out the project and `ddev start` and they'll have everything running right away in less than a minute.
+- **Web server and Database Support**: Out of the box, DDEV supports Nginx and Apache webservers, and directly supports MariaDB, MySQL, and PostgreSQL databases.
 - **Add-On Ecosystem**: A huge number of non-core features are supported via add-ons, including Apache Solr, Elasticsearch, and dozens of others. There are officially supported add-ons and a large number contributed and maintained by the community.
 - **Community**: DDEV's friendly and active community meets in Discord, the GitHub issue queue, and Stack Overflow. People from many different CMS and framework communities have years of experience and help each other.
 - **Support**: DDEV's support is world-class and very active. Questions in the issue queue are often answered in minutes. Problems in Discord are often discussed and resolved very, very quickly. Bugs get early attention.
