@@ -10,7 +10,7 @@ categories:
   - Community
 ---
 
-The DDEV project is committed to setting itself to be sustainable for the long term, assuring that your investment in the project will last. In order to do that, we're doing a fund drive, explaining to teams, organizations, and individuals why it's important to financially support the project. Our key priority right now is adding [another paid maintainer](recruiting-maintainers.md) and a documentation/marketing maintainer. We'll be be updating you regularly about this initiative.
+The DDEV project is committed to setting itself to be sustainable for the long term. We know that your choice of a tool is a signficant investment of resources, and we want your choice to last and be rewarding for the long term. In order to ensure that, we're doing a fund drive, explaining to teams, organizations, and individuals why it's important to financially support the project. Our key priority right now is adding [another paid maintainer](recruiting-maintainers.md) and a documentation/marketing maintainer. We'll be be updating you regularly about this initiative.
 
 ## What Sets DDEV Apart
 
