@@ -106,7 +106,7 @@ import "../styles/global.css"
       charset={`utf-8`}
       openGraph={{
         basic: {
-          title: title,
+          title: title !== '' ? title : 'DDEV',
           url: canonicalUrl,
           type: `website`,
           image: ogImage ? ogImage : `${Astro.site}img/og-default.png`,
