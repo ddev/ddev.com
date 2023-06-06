@@ -88,6 +88,14 @@ let jsonLd = {
   ],
 }
 
+const ensureAbsoluteUrl = (url: string) => {
+  if (url.startsWith('/')) {
+    return `${Astro.site}${url.slice(1)}`
+  }
+
+  return url;
+}
+
 import "../styles/global.css"
 ---
 
@@ -109,7 +117,7 @@ import "../styles/global.css"
           title: title !== '' ? title : 'DDEV',
           url: canonicalUrl,
           type: `website`,
-          image: ogImage ? ogImage : `${Astro.site}img/og-default.png`,
+          image: ensureAbsoluteUrl(ogImage ? ogImage : `${Astro.site}img/og-default.png`),
         },
         image: {
           alt: ogImageAlt ? ogImageAlt : `DDEV logo`,
