@@ -44,7 +44,7 @@ const {
 } = Astro.props
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString()
-const pageTitle = `${title} | DDEV`
+const pageTitle = title !== '' ? `${title} | DDEV` : 'DDEV'
 
 let jsonLd = {
   "@context": "https://schema.org",
