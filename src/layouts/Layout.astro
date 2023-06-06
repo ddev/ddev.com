@@ -109,7 +109,7 @@ import "../styles/global.css"
           title: title,
           url: canonicalUrl,
           type: `website`,
-          image: ogImage ? ogImage : `/img/og-default.png`,
+          image: ogImage ? ogImage : `${Astro.site}img/og-default.png`,
         },
         image: {
           alt: ogImageAlt ? ogImageAlt : `DDEV logo`,
