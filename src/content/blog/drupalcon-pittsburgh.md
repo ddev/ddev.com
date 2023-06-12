@@ -33,7 +33,7 @@ To me the most awesome thing about this is that the Drupal community takes perso
 
 ## Getting to Drupalcon by Bike
 
-My wife Nancy Lewis and I [traveled to Drupalcon by bicycle](https://www.thedroptimes.com/31933/cycling-drupalers) from Washington, DC. It was amazing to ride on the C&O Canal Towpath and the Great Allegheny Passage "GAP" trail. Such amazing history riding along beautiful dirt paths. 
+My wife Nancy Lewis and I [traveled to Drupalcon by bicycle](https://www.thedroptimes.com/31933/cycling-drupalers) from Washington, DC. It was amazing to ride on the C&O Canal Towpath and the Great Allegheny Passage "GAP" trail. Such amazing history riding along beautiful dirt paths. Thanks to all of you DDEV folk for being patient with me for slow responses as we were gone those two weeks.
 
 Here are a few of pictures from the trip, [or browse more of them](https://photos.app.goo.gl/9o5Pv8oDL6NJnQEaA):
 
