@@ -138,6 +138,8 @@ The site [uses Octokit to make REST and GraphQL API requests](https://github.com
 
 GitHub supplies its own private `GITHUB_TOKEN` in the GitHub Actions build environment. In any other environment, including local development, you’ll need to populate a `GITHUB_TOKEN` environment variable with a **classic** GitHub personal access token that has `repo`, `read:org`, `read:user`, and `read:project` scopes.
 
+A valid Personal Access Token (PAT) must also be supplied to [Cloudflare](https://dash.cloudflare.com/2aecb1c6b99f9d2274b12efc45152be2/pages/view/ddev-com-front-end/settings/environment-variables).
+
 ## Resources
 
 - [Astro documentation](https://docs.astro.build)
