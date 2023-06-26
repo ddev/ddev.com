@@ -97,6 +97,8 @@ Name your file with a kebab-case, URL-and-SEO-friendly slug with a `.md` extensi
 
 Give it a succinct title, and if you include a feature image be sure to write descriptive alt text along with an optional caption and image credit. The `caption:` and `credit:` fields can both use Markdown, but you’ll probably need to wrap the whole value in straight quotes (`"`).
 
+The Astro build doesn’t do any fancy image sizing or optimization, so be sure any images you add are production-ready: an appropriate format for the image type (JPEG, PNG, or SVG), with size no larger than ~1–2MB and dimensions no greater than 2000px or so. Use an app like [ImageOptim](https://imageoptim.com) to quickly apply lossless compression.
+
 Choose whichever categories apply, with special attention to the first because it’ll be displayed on post summary cards:
 
 - _Announcements_ (releases, organization news, etc.)
@@ -121,6 +123,38 @@ A basic textlint configuration lives in `.textlintrc` and runs against `src/cont
 Textlint’s [default terminology](https://github.com/sapegin/textlint-rule-terminology/blob/master/terms.jsonc) catches a lot of accepted best practices on its own, where the only major override is to allow “website” (instead of its suggested “site”) because it’s rampant in blog posts and documentation. Same with the “front end” and “back end” conundrum and two-word “command line”.
 
 Run `npm run textlint` to check everything, and you can apply “fixable” changes using `npm run textlint:fix`. Be careful automating fixes to be sure they don’t have any unintended side effects!
+
+### Sponsor Management
+
+The `src/featured-sponsors.json` file is used for manually curating prominent sponsors.
+
+While it’s a bit of a pain and [still relies on coercion](https://github.com/ddev/ddev.com-front-end/blob/main/src/components/FeaturedSponsors.astro#L4-L20) in some places, it lets us collect pristine, brand-friendly resources in one place and use them in different contexts.
+
+It’s used to display sponsor details in a few places:
+
+1. The [homepage](https://ddev.com) “Featured Sponsors” list.
+2. The leading bubbles on the [Support DDEV page](https://ddev.com/support-ddev/)’s “Sponsor Development” grid.
+3. The [procedurally-generated](https://github.com/ddev/ddev.com-front-end/blob/main/src/pages/resources/featured-sponsors.svg.js) featured sponsors [SVG](https://ddev.com/resources/featured-sponsors.svg) used in the [main project readme](https://github.com/ddev/ddev#wonderful-sponsors).
+
+If you’re adding a new item to the array, choose whichever position it should appear in and use the following format:
+
+```json
+{
+  "name": "Platform.sh",
+  "type": "major",
+  "logo": "/logos/platform.sh.svg",
+  "squareLogo": "/logos/platform.sh-square.svg",
+  "url": "https://platform.sh",
+  "github": "platformsh",
+},
+```
+
+- **name** – the human-friendly organization name. (Be sure this is formatted exactly as it’s used on the website or GitHub profile!)
+- **type** – can be `"major"` or `"standard"` depending on contribution level. (Not currently used but can affect styling later.)
+- **logo** – absolute, webroot-relative path for a logo you’ve added to the `public/logos/` directory. Make sure this is a clean, optimized vector SVG file unless it’s a person’s headshot. (Again, follow the organization’s brand guide wherever possible!)
+- **squareLogo** – a square variant of the organization’s logo, to be used in places like the [Support DDEV](https://ddev.com/support-ddev/) layout. No need to add this if `logo` is already square.
+- **url** – organization’s website URL.
+- **github** – optional GitHub username when relevant, which can be used to make sure the sponsor doesn’t appear twice in a list—as seen in the [Sponsors.astro](https://github.com/ddev/ddev.com-front-end/blob/main/src/components/Sponsors.astro#L53) component.
 
 ## Build & Deployment
 
