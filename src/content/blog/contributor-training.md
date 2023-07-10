@@ -30,7 +30,7 @@ As we announced in [Recruiting Contributors and Maintainers](recruiting-maintain
 
 Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or CEST. The trainings will be recorded for everybody's benefit. *Sign up on the simple form below to get the calendar invite with zoom link.*
 
-| Date                                                                                                                         | Description                                                                                     |
+| Training Date                                                                                                                | Description                                                                                     |
 |------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
 | [2023-07-11](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20230711T08&p1=75&ah=1) | **Testing DDEV Features**: DDEV v1.22.0 is about to come out, here's how to help.               |
 | [2023-07-18](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20230711T08&p1=75&ah=1) | **Maintain and Improve the Docs**: Documentation is a huge job, here's how to help              |
