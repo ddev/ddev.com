@@ -10,9 +10,6 @@ categories:
   - Community
 ---
 
-TODO: New image for blog
-
-
 **TL;DR: Sign up for contributor training** on the form below to get the calendar invite with zoom link.
 
 As we announced in [Recruiting Contributors and Maintainers](recruiting-maintainers.md) we're actively trying to increase the DDEV community of contributors and maintainers. To do that, we're going to start a series of trainings, and we'd love to have you come. The trainings will include information on how to contribute by:
