@@ -13,7 +13,7 @@ categories:
 TODO: New image for blog
 
 
-**TL;DR: Sign up for contributor training** on the form below to get the calendar invite with zoom.
+**TL;DR: Sign up for contributor training** on the form below to get the calendar invite with zoom link.
 
 As we announced in [Recruiting Contributors and Maintainers](recruiting-maintainers.md) we're actively trying to increase the DDEV community of contributors and maintainers. To do that, we're going to start a series of trainings, and we'd love to have you come. The trainings will include information on how to contribute by:
 
@@ -31,7 +31,7 @@ As we announced in [Recruiting Contributors and Maintainers](recruiting-maintain
 * Participate in marketing strategy and implementation
 * Build and improve Docker images
 
-Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or CEST. The trainings will be recorded for everybody's benefit. *Sign up on [this simple form](https://forms.gle/QeCpw1e6Yotyo8fo7) to get the calendar invite with zoom link.*
+Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or CEST. The trainings will be recorded for everybody's benefit. *Sign up on the simple form below to get the calendar invite with zoom link.*
 
 | Date                                                                                                                         | Description                                                                                     |
 |------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
@@ -45,6 +45,6 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 
 
 
-Sign up on [this simple form](https://forms.gle/QeCpw1e6Yotyo8fo7) to get the calendar invite with zoom link. Drop by [Discord](https://discord.gg/hCZFfAMc5k) or send an email to `randy (at) localdev.foundation` if you want to talk more.
+Sign up on the simple form below to get the calendar invite with zoom link. Drop by [Discord](https://discord.gg/hCZFfAMc5k) or send an email to `randy (at) localdev.foundation` if you want to talk more.
 
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfEnj9ATnRc2G__Qx7ZWq039y3ER8UVx2utgkH6v4Ef50x4vw/viewform?embedded=true" width="640" height="1835" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
