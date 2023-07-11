@@ -33,7 +33,7 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 | Training Date                                                                                                                | Description                                                                                     |
 |------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
 | [2023-07-11](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20230711T08&p1=75&ah=1) | **Testing DDEV Features**: DDEV v1.22.0 is about to come out, here's how to help.               |
-| [2023-07-18](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20230711T08&p1=75&ah=1) | **Maintain and Improve the Docs**: Documentation is a huge job, here's how to help              |
+| [2023-07-18](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20230718T08&p1=75&ah=1) | **Maintain and Improve the Docs**: Documentation is a huge job, here's how to help              |
 | [2023-07-25](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20230725T08&p1=75&ah=1) | **Setting up a Go Dev Environment**: It's easy to build and test with Go, here's how.           |
 | [2023-08-08](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20230808T08&p1=75&ah=1) | **Running Automated Tests Locally**: You can run DDEV's tests from command line or IDE.         |
 | [2023-08-15](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20230815T08&p1=75&ah=1) | **Maintain and improve ddev.com**: Everybody can fix or improve ddev.com.                       |
@@ -41,7 +41,6 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 | [2023-08-29](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20230829T08&p1=75&ah=1) | **Building and pushing an improved Docker image**: When DDEV needs a new image, what do you do? |
 
 
-
-Sign up on the simple form below to get the calendar invite with zoom link. Drop by [Discord](https://discord.gg/hCZFfAMc5k) or send an email to `randy (at) localdev.foundation` if you want to talk more.
+Sign up on the simple form below to get the calendar invite with Zoom link. Drop by [Discord](https://discord.gg/hCZFfAMc5k) or send an email to `randy (at) localdev.foundation` if you want to talk more.
 
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfEnj9ATnRc2G__Qx7ZWq039y3ER8UVx2utgkH6v4Ef50x4vw/viewform?embedded=true" width="640" height="1835" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
