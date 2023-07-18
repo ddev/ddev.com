@@ -36,13 +36,13 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 | Training Date | Description and Recording                                                                                                                                                                                           |
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 2023-07-11    | [Testing DDEV Features, testing DDEV v1.22.0 prereleases, how to help](https://www.dropbox.com/scl/fi/8epf3vqrp6f5rf7w7up7l/20230711_contributor_training_testing_release.mp4?rlkey=s8zd82uc7a33kke9ksiqsi1yb&dl=0) |
+| 2023-07-18    | [Maintaining and Improving the Docs](https://www.dropbox.com/scl/fi/2d5qryxzgwa5zat9xz056/20230718_contributor_traiing_docs.mp4?rlkey=senzp6l6j8zq52vd4y74uhqfy&dl=0)                                                                                                                                                                              |
 
 
 **Upcoming Trainings:**
 
 | Training Date                                                                                                                | Description                                                                                     |
 |------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| [2023-07-18](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20230718T08&p1=75&ah=1) | **Maintain and Improve the Docs**: Documentation is a huge job, here's how to help              |
 | [2023-07-25](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20230725T08&p1=75&ah=1) | **Setting up a Go Dev Environment**: It's easy to build and test with Go, here's how.           |
 | [2023-08-08](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20230808T08&p1=75&ah=1) | **Running Automated Tests Locally**: You can run DDEV's tests from command line or IDE.         |
 | [2023-08-15](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20230815T08&p1=75&ah=1) | **Maintain and improve ddev.com**: Everybody can fix or improve ddev.com.                       |
