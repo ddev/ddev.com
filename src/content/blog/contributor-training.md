@@ -1,6 +1,7 @@
 ---
 title: "DDEV Contributor Live Training"
 pubDate: 2023-07-09
+modifiedDate: 2023-07-20
 summary: Live contributor training is available for those who want to learn to contribute and maintain DDEV.
 author: Randy Fay
 #featureImage:
