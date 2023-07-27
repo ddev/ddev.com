@@ -1,0 +1,88 @@
+---
+import type { CollectionEntry } from "astro:content"
+import { DateTime, Settings } from "luxon"
+import { VideoCameraIcon } from "@heroicons/react/24/outline/index.js"
+
+Settings.defaultZone = "utc"
+
+export interface Props {
+  sessions: CollectionEntry<"trainings">[]
+}
+
+const { sessions } = Astro.props
+---
+
+<div class="overflow-x-auto">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Topic</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        sessions.map(
+          ({
+            body,
+            data: { title, sessionStart, sessionMinutes, recordingUrl },
+          }) => {
+            // Session start time (UTC)
+            const dt = DateTime.fromISO(sessionStart)
+            // Session start time (U.S. Mountain)
+            const dtRandy = dt.setZone("America/Denver")
+            // Title text to reiterate date + time
+            const timeString = `${sessionMinutes} minutes on ${dtRandy.toLocaleString(
+              DateTime.DATE_MED_WITH_WEEKDAY
+            )} at ${dtRandy.toLocaleString(DateTime.TIME_WITH_SHORT_OFFSET)}`
+
+            // Description and date for generated timeanddate.com link
+            const urlDescription = encodeURI(
+              `DDEV Contributor Training: ${title}`
+            )
+            const urlDate = dtRandy.toFormat("kkkkLLdd'T'HH")
+
+            return (
+              <tr>
+                <td title={timeString}>
+                  <a
+                    href={`https://www.timeanddate.com/worldclock/fixedtime.html?msg=${urlDescription}&iso=${urlDate}&p1=75&ah=1`}
+                    target="_blank"
+                  >
+                    {dt.toFormat("kkkk-LL-dd")}
+                  </a>
+                </td>
+                <td>
+                  <b>{title}</b>
+                  {body && <div class="opacity-75">{body}</div>}
+                </td>
+                <td class="text-right">
+                  {dt.diffNow("days").as("days") > 0 && (
+                    <button
+                      data-session={`${title} on ${dt.toFormat("kkkk-LL-dd")}`}
+                      class="register inline-block font-medium leading-tight border-b-2 hover:border-gray-500 pb-0.5 mx-2"
+                    >
+                      Register
+                    </button>
+                  )}
+                  {recordingUrl && (
+                    <a
+                      href={recordingUrl}
+                      class="whitespace-nowrap no-underline border-b-2 hover:border-gray-500 pb-0.5 mx-2"
+                      target="_blank"
+                      title="View Recording"
+                    >
+                      Recording
+                      <VideoCameraIcon className="w-4 h-4 inline-block" />
+                    </a>
+                  )}
+                </td>
+              </tr>
+            )
+          }
+        )
+      }
+    </tbody>
+  </table>
+</div>
