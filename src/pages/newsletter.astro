@@ -2,28 +2,25 @@
 import Layout from "../layouts/Layout.astro"
 import Heading from "../components/Heading.astro"
 import CtaButton from "../components/CtaButton.astro"
-// import {
-//   GITHUB_ISSUES_URL,
-//   DISCORD_URL,
-//   DOCUMENTATION_URL,
-//   GITHUB_URL,
-// } from "../const"
-// import Sponsors from "../components/Sponsors.astro"
-import { Img } from "astro-imagetools/components"
+// import { Img } from "astro-imagetools/components"
 
-const title = `Form`
+const title = `Newsletter Signup`
 
+// To update with new form contents:
+// * replace the contents starting with <!-- Note : with the new form contents
+// Remove the two META lines at the top of the form
+// Change the <script> tag to <script is:inline>
+// Note that the URL in the form generator in Zoho must match the actual URL here, or else use "*" there
 ---
 
 <Layout
     title={title}
-    ogImage={`/img/og-support.png`}
-    ogImageAlt={`Support DDEV title card`}
-    description={`Ways to support DDEV’s development and community.`}
+    // ogImage={`/img/og-support.png`}
+    ogImageAlt={`Sign up for DDEV Newsletter`}
+    description={`Sign up for DDEV Newsletter.`}
 >
   <main class="max-w-4xl mx-auto mb-24">
-    <Heading title={title} subtitle={`We’d love your help!`} />
-
+    <Heading title={title} subtitle={`Newsletter Signup`} />
     <!-- Note :
        - You can modify the font style and form style to suit your website.
        - Code lines with comments Do not remove this code are required for the form to work properly, make sure that you do not remove these lines of code.
@@ -274,4 +271,3 @@ const title = `Form`
       </form>
     </div>
   </main>
-</Layout>
