@@ -1,9 +1,29 @@
 ---
-// import Layout from "../layouts/Layout.astro"
-// import Heading from "../components/Heading.astro"
-// import PostBody from "../components/PostBody.astro"
+import Layout from "../layouts/Layout.astro"
+import Heading from "../components/Heading.astro"
+import CtaButton from "../components/CtaButton.astro"
+// import {
+//   GITHUB_ISSUES_URL,
+//   DISCORD_URL,
+//   DOCUMENTATION_URL,
+//   GITHUB_URL,
+// } from "../const"
+// import Sponsors from "../components/Sponsors.astro"
+import { Img } from "astro-imagetools/components"
+
+const title = `Form`
 
 ---
+
+<Layout
+    title={title}
+    ogImage={`/img/og-support.png`}
+    ogImageAlt={`Support DDEV title card`}
+    description={`Ways to support DDEV’s development and community.`}
+>
+  <main class="max-w-4xl mx-auto mb-24">
+    <Heading title={title} subtitle={`We’d love your help!`} />
+
 <!-- Note :
    - You can modify the font style and form style to suit your website.
    - Code lines with comments Do not remove this code are required for the form to work properly, make sure that you do not remove these lines of code.
@@ -253,3 +273,5 @@
     </script>
   </form>
 </div>
+  </main>
+</Layout>
