@@ -1,24 +1,3 @@
----
-import Layout from "../layouts/Layout.astro"
-import Heading from "../components/Heading.astro"
-import PostBody from "../components/PostBody.astro"
-import {
-  getRepoDetails,
-  getContributors,
-  getSponsors,
-  getReleases,
-} from "../lib/api"
-import { GITHUB_REPO } from "../const"
-
-const title = `Contributor Training Signup`
-
----
-
-<Layout
-  title={title}
-  description={`Contributor Training Signup`}
->
-
   <!-- Note :
    - You can modify the font style and form style to suit your website.
    - Code lines with comments Do not remove this code are required for the form to work properly, make sure that you do not remove these lines of code.
@@ -268,4 +247,3 @@ const title = `Contributor Training Signup`
       </script>
     </form>
   </div>
-</Layout>
