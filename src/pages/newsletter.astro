@@ -4,7 +4,7 @@ import Heading from "../components/Heading.astro"
 import CtaButton from "../components/CtaButton.astro"
 // import { Img } from "astro-imagetools/components"
 
-const title = `Newsletter Signup`
+const title = `Newsletter`
 
 // To update with new form contents:
 // * replace the contents starting with <!-- Note : with the new form contents
@@ -15,12 +15,12 @@ const title = `Newsletter Signup`
 
 <Layout
     title={title}
-    // ogImage={`/img/og-support.png`}
-    ogImageAlt={`Sign up for DDEV Newsletter`}
-    description={`Sign up for DDEV Newsletter.`}
+    description={`Sign up for our newsletter.`}
 >
   <main class="max-w-4xl mx-auto mb-24">
-    <Heading title={title} subtitle={`Newsletter Signup`} />
+    <Heading title={`Sign up for our newsletter`} />
+
+    This is a low-volume newsletter, usually just once a month. We'd love to be able to keep in touch with you.
 
     <!-- NEW FORM GOES BELOW HERE -->
 
@@ -188,7 +188,7 @@ const title = `Newsletter Signup`
             .zcwf_lblLeft .zcwf_col_help {width: 40%;}
           }
         </style>
-        <div class='zcwf_title' style='max-width: 600px;color: black; font-family:Arial;'>Newsletter Signup</div>
+        <!--<div class='zcwf_title' style='max-width: 600px;color: black; font-family:Arial;'>Newsletter Signup</div>-->
         <div class='zcwf_row'><div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='First_Name'>First Name</label></div><div class='zcwf_col_fld'><input type='text' id='First_Name' name='First Name' maxlength='40'></input><div class='zcwf_col_help'></div></div></div>
         <div class='zcwf_row'><div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Last_Name'>Last Name<span style='color:red;'>*</span></label></div><div class='zcwf_col_fld'><input type='text' id='Last_Name' name='Last Name' maxlength='80'></input><div class='zcwf_col_help'></div></div></div>
         <div class='zcwf_row'><div class='zcwf_col_lab' style='font-size:12px; font-family: Arial;'><label for='Email'>Email</label></div><div class='zcwf_col_fld'><input type='text' ftype='email' id='Email' name='Email' maxlength='100'></input><div class='zcwf_col_help'></div></div></div>
