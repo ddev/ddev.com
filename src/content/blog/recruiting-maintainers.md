@@ -63,4 +63,4 @@ While maintainers may work on the project on a volunteer basis, the community ha
 
 You don't actually "apply," you grow into these positions. But if becoming a maintainer is interesting to you, let's talk about it and make a plan! We'll mentor you, give you responsibilities commensurate with your capabililties, and help you grow into the role. If you're a PHP developer, you can learn go enough to make significant contributions in a modest amount of time. But perhaps most of the DDEV project is a variety of miscellaneous technologies that you may already have experience with. And understanding the web developer is a fundamental part of DDEV, so if you're a web developer you're already part of the way there. 
 
-Drop by [Discord](https://discord.gg/hCZFfAMc5k), the [issue queue](https://github.com/ddev/ddev/issues) or send an email to `randy (at) localdev.foundation`. We'd love to talk with you about it!
+Drop by [Discord](https://discord.gg/hCZFfAMc5k), the [issue queue](https://github.com/ddev/ddev/issues) or send an email to `randy.fay (at) ddev.com`. We'd love to talk with you about it!
