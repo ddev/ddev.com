@@ -25,6 +25,8 @@ const navigation = {
     { name: "About", href: "/about" },
     { name: "Contributing", href: "/support-ddev" },
     { name: "Blog", href: "/blog" },
+    { name: "Foundation", href: "/foundation" },
+    { name: "Newsletter", href: "/newsletter"},
   ],
   social: [
     {
@@ -45,17 +47,6 @@ const navigation = {
       href: GITHUB_URL,
       me: true
     },
-  ],
-  organization: [
-    {
-      name: "Foundation",
-      href: "/foundation",
-    },
-    {
-      name: "Newsletter",
-      href: "/newsletter",
-    },
-
   ],
 }
 ---
@@ -108,23 +99,6 @@ const navigation = {
             <ul class="mt-4 space-y-4">
               {
                 navigation.social.map((item) => (
-                    <li>
-                      <a href={item.href} class="text-base" rel="prefetch">
-                        {item.name}
-                      </a>
-                    </li>
-                ))
-              }
-            </ul>
-          </div>
-
-          <div class="mt-12 md:mt-0">
-            <h2 class="text-sm font-mono text-navy-300 tracking-wider">
-              Organization
-            </h2>
-            <ul class="mt-4 space-y-4">
-              {
-                navigation.organization.map((item) => (
                     <li>
                       <a href={item.href} class="text-base" rel="prefetch">
                         {item.name}
