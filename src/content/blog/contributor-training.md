@@ -57,6 +57,6 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 | [2023-10-31](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20231031T08&p1=75&ah=1) | **Measuring and Analyzing Contributor Data with Amplitude**                                     |
 | [2023-11-07](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20231107T08&p1=75&ah=1) | **DDEV Add-ons: Creating, Maintaining, Testing**                                                |
 
-Sign up on the simple form below to get the calendar invite with Zoom link. Drop by [Discord](https://discord.gg/hCZFfAMc5k) or send an email to `randy (at) localdev.foundation` if you want to talk more.
+Sign up on the simple form below to get the calendar invite with Zoom link. Drop by [Discord](https://discord.gg/hCZFfAMc5k) or send an email to `randy.fay (at) ddev.com` if you want to talk more.
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfEnj9ATnRc2G__Qx7ZWq039y3ER8UVx2utgkH6v4Ef50x4vw/viewform?embedded=true" width="640" height="1835" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<script id='formScript5879720000000512073' src='https://crm.zoho.com/crm/WebFormServeServlet?rid=d761f49b3421baca337046aa6e88b35792eb01f83d92a9e1912e01c21b14e7dfgide888d842d2182432c1bf117aecd6280f1bf0b73e665551779217573985104582&script=$sYG'></script>

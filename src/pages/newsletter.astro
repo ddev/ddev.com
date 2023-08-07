@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Heading from "../components/Heading.astro"
+import CtaButton from "../components/CtaButton.astro"
+// import { Img } from "astro-imagetools/components"
+
+const title = `Newsletter`
+
+// To update with new form contents:
+// * replace the contents starting with <!-- Note : with the new form contents
+// Remove the two META lines at the top of the form
+// Change the <script> tag to <script is:inline>
+// Note that the URL in the form generator in Zoho must match the actual URL here, or else use "*" there
+---
+
+<Layout
+    title={title}
+    description={`Sign up for our newsletter.`}
+>
+  <main class="max-w-4xl mx-auto mb-24">
+    <Heading title={`Sign up for our newsletter`} />
+
+    This is a low-volume newsletter, usually just once a month. We'd love to be able to keep in touch with you.
+
+    <!-- NEW FORM GOES BELOW HERE -->
+
+    <script id='formScript5879720000000512037' src='https://crm.zoho.com/crm/WebFormServeServlet?rid=d761f49b3421baca337046aa6e88b357c00ca36d6d951c2b6cd512fb5452c9edgide888d842d2182432c1bf117aecd6280f1bf0b73e665551779217573985104582&script=$sYG'></script>
+
+    <!--NEW FORM ENDS HERE-->
+
+  </main>
