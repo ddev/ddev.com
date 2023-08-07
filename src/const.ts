@@ -5,6 +5,7 @@ export const GITHUB_URL = 'https://github.com/ddev/ddev';
 export const GITHUB_ISSUES_URL = 'https://github.com/ddev/ddev/issues';
 export const DOCUMENTATION_URL = 'https://ddev.readthedocs.io/';
 export const DISCORD_URL = 'https://discord.gg/hCZFfAMc5k';
+export const EMAIL_URL = "mailto:support%40ddev.com"
 export const COPYRIGHT_HOLDER = 'DDEV Foundation'
 export const MASTODON_URL = 'https://fosstodon.org/@ddev'
 export const TWITTER_URL = 'https://twitter.com/search?q=%23ddev&src=typd&f=live'
