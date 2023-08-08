@@ -39,6 +39,7 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 | 2023-07-11    | [Testing DDEV Features, testing DDEV v1.22.0 prereleases, how to help](https://www.dropbox.com/scl/fi/8epf3vqrp6f5rf7w7up7l/20230711_contributor_training_testing_release.mp4?rlkey=s8zd82uc7a33kke9ksiqsi1yb&dl=0) |
 | 2023-07-18    | [Maintaining and Improving the Docs](https://www.dropbox.com/scl/fi/2d5qryxzgwa5zat9xz056/20230718_contributor_traiing_docs.mp4?rlkey=senzp6l6j8zq52vd4y74uhqfy&dl=0)                                               |
 | 2023-07-25    | [Setting up a Go Development Environment](https://www.dropbox.com/scl/fi/gka3bwm3pwpchryg50l0t/20230725_contributor_training_go_environment.mp4?rlkey=3hlhugszdxi4hm6rmwlw28r5f&dl=0)                               |
+| 2023-08-08    | [Running Automated Tests Locally](https://www.dropbox.com/scl/fi/952kiwyqb60613plctr7f/2023-08-08_contributor_training_running_tests.mp4?rlkey=14t3xj6es707osboxc6c4n6a1&dl=0)                                         |
 
 
 
@@ -46,7 +47,6 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 
 | Training Date                                                                                                                | Description                                                                                     |
 |------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| [2023-08-08](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20230808T08&p1=75&ah=1) | **Running Automated Tests Locally**: You can run DDEV's tests from command line or IDE.         |
 | [2023-08-15](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20230815T08&p1=75&ah=1) | **Maintain and improve ddev.com**: Everybody can fix or improve ddev.com.                       |
 | [2023-08-22](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20230822T08&p1=75&ah=1) | **Supporting others: How can I help?**: Giving support in Discord, issue queue, Stack Overflow  |
 | [2023-08-29](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20230829T08&p1=75&ah=1) | **Building and pushing an improved Docker image**: When DDEV needs a new image, what do you do? |
@@ -56,7 +56,8 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 | [2023-09-26](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20230926T08&p1=75&ah=1) | **DDEV Automated Tests and How to Improve Them**                                                |
 | [2023-10-31](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20231031T08&p1=75&ah=1) | **Measuring and Analyzing Contributor Data with Amplitude**                                     |
 | [2023-11-07](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20231107T08&p1=75&ah=1) | **DDEV Add-ons: Creating, Maintaining, Testing**                                                |
+| [2023-11-14](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20231114T08&p1=75&ah=1) | **DDEV Hosting Providers: Creating, Maintaining, Testing**                                      |
 
-Sign up on the simple form below to get the calendar invite with Zoom link. Drop by [Discord](https://discord.gg/hCZFfAMc5k) or send an email to `randy.fay (at) ddev.com` if you want to talk more.
+Sign up on the simple form below to get the calendar invite with Zoom link. Drop by [Discord](https://discord.gg/hCZFfAMc5k) or send [an email](mailto:support%40ddev.com) if you want to talk more.
 
 <script id='formScript5879720000000512073' src='https://crm.zoho.com/crm/WebFormServeServlet?rid=d761f49b3421baca337046aa6e88b35792eb01f83d92a9e1912e01c21b14e7dfgide888d842d2182432c1bf117aecd6280f1bf0b73e665551779217573985104582&script=$sYG'></script>
