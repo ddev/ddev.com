@@ -31,7 +31,7 @@ const { latestVersion } = Astro.props
         With <a href="https://brew.sh" target="_blank">Homebrew</a> installed, you
         can install Docker Desktop with one command:
       </p>
-      <Terminal code={`→ brew install homebrew/cask/docker`} />
+      <Terminal code={`→ brew install --cask docker`} />
     </div>
   </Fragment>
   <Fragment slot="Download">
@@ -53,7 +53,7 @@ const { latestVersion } = Astro.props
   </p>
 
   <p>Confirm that you’ve now got a Docker provider:</p>
-  <Terminal code={`→ docker -v\nDocker version 20.10.21, build baeda1f`} />
+  <Terminal code={`→ docker -v\nDocker version 24.0.5, build ced0996`} />
 
   <h2 class="text-3xl mt-24">
     <small class="block font-mono text-xs text-gray-500">2/3</small>Install DDEV
