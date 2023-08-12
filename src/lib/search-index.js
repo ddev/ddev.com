@@ -77,13 +77,13 @@ export default function searchIndex(config) {
           )
           const ogTitleValue = ogTitleTag.getAttribute("content")
 
-          const robotsTag = postDocument.querySelector("meta[name=robots]")
-          const robotsValue = robotsTag.getAttribute("content")
-
-          if (robotsValue.includes("noindex")) {
-            // Don’t include `noindex` pages in search results
-            continue
-          }
+          // const robotsTag = postDocument.querySelector("meta[name=robots]")
+          // const robotsValue = robotsTag.getAttribute("content")
+          //
+          // if (robotsValue.includes("noindex")) {
+          //   // Don’t include `noindex` pages in search results
+          //   continue
+          // }
 
           const mainTag = postDocument.querySelector("main")
           // Use the inner *text* from the `<main>` tag for the search index

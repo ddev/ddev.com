@@ -1,0 +1,20 @@
+---
+import Layout from "./Layout.astro"
+import { SITE_TITLE } from "../const"
+
+const frontmatter = Astro.props.frontmatter
+const title = frontmatter.title || 'DDEV'
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString()
+const ogImage = frontmatter.ogImage || `${Astro.site}img/og-default.png`
+const ogImageAlt = frontmatter.ogImageAlt || 'DDEV logo'
+const description = frontmatter.description || SITE_TITLE
+
+// import "../styles/global.css"
+import "../styles/markdown-styles.css"
+---
+
+<Layout>
+    <main>
+        <slot />
+    </main>
+</Layout>

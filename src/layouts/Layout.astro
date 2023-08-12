@@ -3,7 +3,6 @@ import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
 import StructuredData from "../components/meta/StructuredData.astro"
 import Icons from "../components/meta/Icons.astro"
-import { SEO } from "astro-seo"
 import {
   SITE_TITLE,
   SITE_DESCRIPTION,
@@ -105,32 +104,7 @@ import "../styles/global.css"
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <SEO
-      title={pageTitle}
-      description={description}
-      canonical={canonicalUrl}
-      noindex={noindex}
-      nofollow={nofollow}
-      charset={`utf-8`}
-      openGraph={{
-        basic: {
-          title: title !== '' ? title : 'DDEV',
-          url: canonicalUrl,
-          type: `website`,
-          image: ensureAbsoluteUrl(ogImage ? ogImage : `${Astro.site}img/og-default.png`),
-        },
-        image: {
-          alt: ogImageAlt ? ogImageAlt : `DDEV logo`,
-        },
-        optional: {
-          description: description,
-          siteName: SITE_TITLE,
-        },
-      }}
-      extend={{
-        link: link,
-      }}
-    />
+
     <Icons />
     <script defer data-domain="ddev.com" src="https://plausible.io/js/script.js"
     ></script>
