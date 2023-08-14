@@ -8,7 +8,7 @@ image: "/images/foundation/ddev-foundation-logo.png"
 
 The DDEV Foundation, a Colorado (USA) nonprofit corporation, is the developer of [DDEV](https://ddev.com). It was formerly named the Localdev Foundation. It serves as the fiscal entity for the project and owns the bank account, etc. For more, see [About DDEV](/about).
 
-The DDEV Foundation will be applying for US 501(c)(3) non-profit status in 2023.
+The DDEV Foundation has applied for US 501(c)(3) non-profit status.
 
 ### Where does the money go?
 
@@ -16,16 +16,15 @@ DDEV Foundation funds are used for infrastructure costs and to pay part-time and
 
 ### Contact the DDEV Foundation
 
-Contact [support](mailto:support%40ddev.com)
+Contact [support](mailto:support%40ddev.com).
 
 ### Snail Mail and Phone:
 
-DDEV Foundation
-848 Montclair Dr
-Palisade, CO 81526
-USA
+DDEV Foundation  
+848 Montclair Dr  
+Palisade, CO 81526  
+USA  
 +1 970-462-7450
-
 
 ### Colorado nonprofit corporation registration
 

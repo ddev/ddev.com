@@ -9,12 +9,20 @@ const ogImage = frontmatter.ogImage || `${Astro.site}img/og-default.png`
 const ogImageAlt = frontmatter.ogImageAlt || 'DDEV logo'
 const description = frontmatter.description || SITE_TITLE
 
-// import "../styles/global.css"
-import "../styles/markdown-styles.css"
+import "../styles/global.css"
+import Heading from "../components/Heading.astro";
+import PostBody from "../components/PostBody.astro";
 ---
 
 <Layout>
-    <main>
-        <slot />
+    <main class="max-w-4xl mx-auto mb-24">
+        <Heading title={title} />
+        <div class="lg:flex">
+            <div class="px-6 lg:px-0 lg:w-2/3">
+                <PostBody>
+                    <slot />
+                </PostBody>
+            </div>
+        </div>
     </main>
 </Layout>
