@@ -4,17 +4,17 @@ import { SITE_TITLE } from "../const"
 
 const frontmatter = Astro.props.frontmatter
 const title = frontmatter.title || 'DDEV'
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString()
-const ogImage = frontmatter.ogImage || `${Astro.site}img/og-default.png`
-const ogImageAlt = frontmatter.ogImageAlt || 'DDEV logo'
 const description = frontmatter.description || SITE_TITLE
 
 import "../styles/global.css"
 import Heading from "../components/Heading.astro";
 import PostBody from "../components/PostBody.astro";
 ---
-
-<Layout>
+<Layout
+    title={title}
+    description={`A brief look at DDEV’s backstory and contributors.`}
+    noindex={false}
+>
     <main class="max-w-4xl mx-auto mb-24">
         <Heading title={title} />
         <div class="lg:flex">
