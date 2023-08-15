@@ -8,10 +8,26 @@
   },
   {
     "name": "Tag1",
-    "type": "standard",
+    "type": "major",
     "logo": "/logos/tag1.svg",
     "squareLogo": "/logos/tag1-square.svg",
     "url": "https://tag1.com"
+  },
+  {
+    "name": "1xINTERNET",
+    "type": "major",
+    "logo": "/logos/1xinternet.svg",
+    "squareLogo": "/logos/1xinternet-square.svg",
+    "url": "https://1xinternet.de",
+    "github": "1xINTERNET"
+  },
+  {
+    "name": "i-gelb",
+    "type": "major",
+    "logo": "/logos/i-gelb.svg",
+    "squareLogo": "/logos/i-gelb-square.svg",
+    "url": "https://i-gelb.net",
+    "github": "i-gelb"
   },
   {
     "name": "Agaric",
@@ -98,13 +114,5 @@
     "squareLogo": "/logos/undpaul-square.svg",
     "url": "https://undpaul.de",
     "github": "undpaul"
-  },
-  {
-    "name": "1xINTERNET",
-    "type": "standard",
-    "logo": "/logos/1xinternet.svg",
-    "squareLogo": "/logos/1xinternet-square.svg",
-    "url": "https://1xinternet.de",
-    "github": "1xINTERNET"
   }
 ]
