@@ -1,5 +1,5 @@
 ---
-title: "DDEV for Laravel teams"
+title: "DDEV for Laravel Teams"
 pubDate: 2020-09-24
 summary: Sergey Fayngold on Laravel teams working with DDEV.
 author: Sergey Fayngold
