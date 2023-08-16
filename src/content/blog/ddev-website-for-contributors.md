@@ -81,7 +81,7 @@ The content attempts to follow Astro conventions, follow DRY principle, and be s
 
 ## Submitting Changes
 
-Typo corrections can be done directly from GitHub UI.
+Typo corrections can be done directly from the GitHub UI similarly to [fixing the docs](https://ddev.readthedocs.io/en/stable/developers/testing-docs/#fix-docs-using-web-browser).
 
 Otherwise, use a pull request like you would with DDEV or any other project. (Fork, change, submit pull request.)
 
