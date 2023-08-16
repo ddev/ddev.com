@@ -75,7 +75,7 @@ The content attempts to follow Astro conventions, follow DRY principle, and be s
    - Bonus: the `cache/` directory.
 4. Development server vs. building.
    - Cloudflare pages builds _static_ output (no SSR).
-   - Run locally for previewing and instant feedback, but [production and preview branches](https://dash.cloudflare.com/2aecb1c6b99f9d2274b12efc45152be2/pages/view/ddev-com-front-end) are built automatically (similar to Netlify and Vercel).
+   - Run locally for previewing and instant feedback, but production and preview branches are built automatically (similar to Netlify and Vercel).
 
 ![Automatic PR comment with Cloudflare Pages build status and link](https://doc.mattstein.com/uploads/5b87aed9-2683-4df3-9ef6-00e1b1ddb68d.png)
 
