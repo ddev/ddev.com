@@ -8,7 +8,7 @@ categories:
   - Guides
 ---
 
-The following is based on [Matt Stein's presentation outline](https://doc.mattstein.com/s/-BQQaSLJd) for the August 15, 2023 DDEV contributor training. Recordings of all past sessions can be found in the blog post [DDEV Contributor Live Training.](/blog/contributor-training)
+The following is based on [Matt Stein's presentation outline](https://doc.mattstein.com/s/-BQQaSLJd) for the August 15, 2023 DDEV contributor training. Recordings of all past sessions can be found in the blog post [DDEV Contributor Live Training](/blog/contributor-training).
 
 ## Welcome!
 
