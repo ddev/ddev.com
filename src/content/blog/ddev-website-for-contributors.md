@@ -33,7 +33,7 @@ Rebuilt + migrated earlier this year to [Astro](https://astro.build)!
   - Friendly to Markdown-writers.
   - Key feature: [Astro components](https://docs.astro.build/en/core-concepts/astro-components/)!
     - `.astro`, or BYO UI framework (Vue, React, Svelte, etc.).
-    - Or no UI framework!
+    - Or no UI framework; only ship what’s necessary for the viewer.
     - [“island architecture”](https://docs.astro.build/en/concepts/islands/)
   - HTML and simple components.
   - Markdown content collections.
