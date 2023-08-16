@@ -34,7 +34,7 @@ Rebuilt + migrated earlier this year to [Astro](https://astro.build)!
   - Key feature: [Astro components](https://docs.astro.build/en/core-concepts/astro-components/)!
     - `.astro`, or BYO UI framework (Vue, React, Svelte, etc.).
     - Or no UI framework!
-    - “island architecture”
+    - [“island architecture”](https://docs.astro.build/en/concepts/islands/)
   - HTML and simple components.
   - Markdown content collections.
   - [Tailwind CSS](https://tailwindcss.com) + [Tailwind Typography](https://tailwindcss.com/docs/typography-plugin).
