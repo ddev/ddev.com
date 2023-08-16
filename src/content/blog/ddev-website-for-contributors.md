@@ -3,9 +3,6 @@ title: "DDEV Website for Contributors"
 pubDate: 2023-08-15
 summary: Matt Stein on maintaining and improving ddev.com.
 author: Matt Stein
-#featureImage:
-#  src:
-#  alt:
 categories:
   - Community
   - Guides
