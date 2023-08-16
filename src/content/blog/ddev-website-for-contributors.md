@@ -26,7 +26,7 @@ I’d like to show you how ddev.com is put together so you can swoop in and impr
 
 Rebuilt + migrated earlier this year to [Astro](https://astro.build)!
 
-- Hat tip Mayank.
+- Hat tip Mayank for sharing Astro with me.
 - Fun to build with!
 - Static site generator that sits in a nice front-end sweet spot.
   - Flat file + fully accessible to front-end developers in a public repository.
