@@ -8,7 +8,7 @@ author: Randy Fay
 #    src: /img/blog/2023/05/diverse-group-of-people-sitting-at-table-working.jpg
 #    alt: Image of a diverse group of maintainers sitting at a table maintaining DDEV
 categories:
-  - Community
+  - Guides
 ---
 
 From time to time, Apple Silicon DDEV users encounter an image or a Node.js package that is not available for the Mac's native architecture (variously called ARM64 or `aarch64`). These result in errors like: "Could not open '/lib64/ld-linux-x86-64.so.2': No such file or directory".
