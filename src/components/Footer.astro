@@ -124,7 +124,7 @@ const navigation = {
               href={item.href}
               target="_blank"
               class={`text-gray-500 hover:text-black ${
-                item.name == "Discord" ? `w-5` : `w-6`
+                ["Discord", "X"].includes(item.name) ? `w-5` : `w-6`
               }`}
               rel={item.hasOwnProperty('me') && item.me ? 'me' : null}
             >
