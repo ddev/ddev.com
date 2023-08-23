@@ -11,7 +11,7 @@ categories:
   - Community
 ---
 
-From time to time, Apple Silicon DDEV users encounter an image or a Node.js package that is not available for the Mac's native architecture (variously called arm64 or aarch64). These result in errors like: "Could not open '/lib64/ld-linux-x86-64.so.2': No such file or directory".
+From time to time, Apple Silicon DDEV users encounter an image or a Node.js package that is not available for the Mac's native architecture (variously called ARM64 or `aarch64`). These result in errors like: "Could not open '/lib64/ld-linux-x86-64.so.2': No such file or directory".
 
 Emulation of Docker images has been pretty scary and unreliable since the Apple Silicon macs came out, but there is some hope. 
 
@@ -38,7 +38,7 @@ This was the easiest to use and most performant of the options.
 
 This is about the same, but you have to toggle some non-default settings. 
 
-First, in the Docker Desktop UI under "Features in Development", enable "Use Rosetta for x86/amd64 emulation on Apple Silicon". Obviously you have to have Rosetta enabled for this to work, and Docker Desktop may impose other requirements. This probably only works on Ventura and higher.
+First, in the Docker Desktop UI under "Features in Development", enable "Use Rosetta for `x86/amd64` emulation on Apple Silicon". Obviously you have to have Rosetta enabled for this to work, and Docker Desktop may impose other requirements. This probably only works on Ventura and higher.
 
 Then:
 
@@ -49,7 +49,7 @@ export DOCKER_DEFAULT_PLATFORM=linux/amd64
 ddev start
 ```
 
-## 3. Use [Colima](https://github.com/abiosoft/colima) with an amd64 setting
+## 3. Use [Colima](https://github.com/abiosoft/colima) with an AMD64 setting
 
 ```
 ddev poweroff
@@ -58,11 +58,11 @@ colima start amd64 --arch x86_64 --cpu 4 --memory 6 --disk 100 --vm-type=qemu --
 ddev start
 ```
 
-This will start a new Colima profile with the amd64 architecture. It does not affect an existing (default) Colima profile.
+This will start a new Colima profile with the AMD64 architecture. It does not affect an existing (default) Colima profile.
 
 ## Switching between Docker providers
 
-You can actually have all these running at the same time, although it doesn't make any sense to do so. Each has a separate "docker context" and you can switch between them using the `docker context` command. For example, `docker context use colima-amd64` will use the amd64 Colima profile we created. `docker context use orbstack` will switch to OrbStack. And `docker context use desktop-linux` will switch to Docker Desktop. Use `docker context ls` to see what's set up on your system.
+You can actually have all these running at the same time, although it doesn't make any sense to do so. Each has a separate Docker context and you can switch between them using the `docker context` command. For example, `docker context use colima-amd64` will use the AMD64 Colima profile we created. `docker context use orbstack` will switch to OrbStack. And `docker context use desktop-linux` will switch to Docker Desktop. Use `docker context ls` to see what's set up on your system.
 
 ## Keep in touch! 
 
