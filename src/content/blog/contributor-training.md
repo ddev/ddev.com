@@ -4,9 +4,9 @@ pubDate: 2023-07-09
 modifiedDate: 2023-08-23
 summary: Live contributor training is available for those who want to learn to contribute and maintain DDEV.
 author: Randy Fay
-#featureImage:
-#    src: /img/blog/2023/05/diverse-group-of-people-sitting-at-table-working.jpg
-#    alt: Image of a diverse group of maintainers sitting at a table maintaining DDEV
+featureImage:
+  src: /img/blog/2023/08/contributors-working.png
+  alt: Contributors working together on DDEV
 categories:
   - Community
 ---
