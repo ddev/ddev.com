@@ -1,14 +1,18 @@
 ---
 title: "DDEV Website for Contributors"
 pubDate: 2023-08-15
+modifiedDate: 2023-08-23
 summary: Matt Stein on maintaining and improving ddev.com.
 author: Matt Stein
+featureImage:
+  src: /img/blog/2023/08/cloudflare-deploying-pages.png
+  alt: Deploying to ddev.com
 categories:
   - Community
   - Guides
 ---
 
-The following is based on [Matt Stein's presentation outline](https://doc.mattstein.com/s/-BQQaSLJd) for the August 15, 2023 DDEV contributor training. Recordings of all past sessions can be found in the blog post [DDEV Contributor Live Training](/blog/contributor-training).
+The following is based on [Matt Stein's presentation outline](https://doc.mattstein.com/s/-BQQaSLJd) for the August 15, 2023 DDEV contributor training. Recordings of all past sessions can be found in the blog post [DDEV Contributor Live Training](/blog/contributor-training). This post was prepared (Thanks!) by [Kristin Wiseman](https://github.com/kristin-wiseman).
 
 ## Welcome!
 
