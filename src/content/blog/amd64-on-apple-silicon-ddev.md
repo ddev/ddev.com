@@ -4,9 +4,9 @@ pubDate: 2023-08-23
 # modifiedDate: 2023-07-23
 summary: You might be able to run a DDEV project requiring Intel AMD64 on your Apple Silicon Mac
 author: Randy Fay
-#featureImage:
-#    src: /img/blog/2023/05/diverse-group-of-people-sitting-at-table-working.jpg
-#    alt: Image of a diverse group of maintainers sitting at a table maintaining DDEV
+featureImage:
+    src: /img/blog/2023/08/intel-on-apple.png
+    alt: Intel and Apple on Apple Silicon
 categories:
   - Guides
 ---
