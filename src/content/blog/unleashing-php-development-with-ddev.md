@@ -44,6 +44,6 @@ A [Tweet from Randy Fay](https://twitter.com/randyfay/status/1686789600906276872
 ## A Clarion Call to Other Companies
 If there’s one message I'd like to impart to fellow developers and executives, it's this: Supporting tools like DDEV is not merely an act of gratitude; it's an investment. An investment in smoother workflows, satisfied developers, and a more collaborative tech ecosystem.
 
-To Randy and all DDEV contributors: What you've created is nothing short of phenomenal. You've empowered companies like ours to focus on what we do best while making local environment configurations a thing of the past. Our support was not just overdue; it was our way of betting on a brighter future.
+To Randy and all DDEV contributors: What you've created is nothing short of phenomenal. You've empowered companies like ours to focus on what we do best while making local environment configurations a thing of the past. Our support was not merely overdue; it was our way of betting on a brighter future.
 
 In closing, for all PHP developers and agencies out there, I highly recommend trying DDEV if you haven’t already. It's a tool with the potential to transform your development processes and one that deserves your support.
