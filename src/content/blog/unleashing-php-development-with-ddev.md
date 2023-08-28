@@ -12,6 +12,8 @@ categories:
   - Community
 ---
 
+*This guest post is by DDEV community member and [i-gelb](https://i-gelb.net) CTO [Lasse Blomenkemper](/blog/author/lasse-blomenkemper/).*
+
 There's a saying: "You never change things by fighting the existing reality. To change something, build a new model that makes the existing model obsolete." For us, DDEV is that new model. I've observed firsthand the transformative effect DDEV has had on our development processes; it's been a game-changer.
 
 ## The Old Way: Every Developer for Themselves
