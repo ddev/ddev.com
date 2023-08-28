@@ -1,7 +1,7 @@
 ---
-title: "Unleashing PHP Development with DDEV: The Power of Upstream Support"
+title: "Why Our Agency Became a Major Supporter of DDEV ... and Yours Should Too"
 pubDate: 2023-08-27
-summary: Discover how DDEV revolutionized local environments and enables robust remote collaboration.
+summary: Discover how DDEV revolutionized local environments and enables robust remote collaboration, and how your company can benefit from supporting DDEV.
 author: Lasse Blomenkemper
 featureImage:
    src: /img/blog/2023/08/google-deepmind-ebMFfR2uuJ0-unsplash.jpg
