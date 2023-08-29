@@ -1,5 +1,5 @@
 ---
-title: "Why Our Agency Became a Major Supporter of DDEV ... and Yours Should Too"
+title: "Why Our Agency Became a Major Supporter of DDEV and Yours Should Too"
 pubDate: 2023-08-27
 summary: Discover how DDEV revolutionized local environments and enables robust remote collaboration, and how your company can benefit from supporting DDEV.
 author: Lasse Blomenkemper
