@@ -43,12 +43,12 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 | 2023-08-15    | [Maintain and improve ddev.com](https://www.dropbox.com/scl/fi/up13ll31115zo997kqzac/2023-08-15_contributor_training_maintain_ddev.com.mp4?rlkey=uff5jra0dp524utuigv9j6399&dl=0) see [outline](https://doc.mattstein.com/s/-BQQaSLJd) and [blog post](https://ddev.com/blog/ddev-website-for-contributors/)                               |
 | 2023-08-22    | [Supporting others: How can I help?](https://www.dropbox.com/scl/fi/iiu0ywf3h958wcqchykk4/2023-08-22_contributor_training_support.mp4?rlkey=ujqml1hfwbfyutwizy2jmlet9&dl=0) see [blog](https://ddev.com/blog/how-to-give-and-get-community-support/)                                                                                      |
 | 2023-08-29    | [Building and pushing an improved Docker image](https://www.dropbox.com/scl/fi/rylo13nfjqasu4fkckeiq/2023-08-29_contributor_training_building_pushing_docker_image.mp4?rlkey=ckqhocebjw8vhc80geb13x2fc&dl=0) see [outline](https://randyfay.notion.site/Building-and-pushing-DDEV-s-Docker-images-dba76bf9b5ad4c2aafe47017a13105c3?pvs=4) |
+| 2023-09-05    | [Marketing: How can I help?](https://www.dropbox.com/scl/fi/5az16wfshgipi641r5ew8/2023-09-05_contributor_training_marketing.mp4?rlkey=9ykeuvy2bp90fjymva7hckqju&dl=0) |
 
 **Upcoming Trainings:**
 
 | Training Date                                                                                                                | Description                                                                                     |
 |------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| [2023-09-05](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20230905T08&p1=75&ah=1) | **Participating in Marketing**: How can I help?                                                 |
 | [2023-09-12](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20230912T08&p1=75&ah=1) | **DDEV Architecture: Go, Docker, and Linux, Oh My**                                             |
 | [2023-09-19](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20230919T08&p1=75&ah=1) | **DDEV Testing Infrastructure**                                                                 |
 | [2023-09-26](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20230926T08&p1=75&ah=1) | **DDEV Automated Tests and How to Improve Them**                                                |
