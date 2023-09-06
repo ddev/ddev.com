@@ -22,8 +22,8 @@ const jsonUrl = new URL(`/blog/feed.json`, Astro.site).toString()
   title={title}
   description={BLOG_DESCRIPTION}
   link={[
-    { rel: "alternate", href: rssUrl },
-    { rel: "alternate", href: jsonUrl },
+    { rel: "alternate", href: rssUrl, type: "application/rss+xml" },
+    { rel: "alternate", href: jsonUrl, type: "application/json" },
   ]}
 >
   <main class="max-w-4xl mx-auto">

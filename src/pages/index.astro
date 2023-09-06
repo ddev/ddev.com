@@ -18,8 +18,8 @@ const jsonUrl = new URL(`/blog/feed.json`, Astro.site).toString()
   title={``}
   description={`Local development environments in seconds. Customize, share, and extend with ease.`}
   link={[
-    { rel: "alternate", href: rssUrl },
-    { rel: "alternate", href: jsonUrl },
+    { rel: "alternate", href: rssUrl, type: "application/rss+xml" },
+    { rel: "alternate", href: jsonUrl, type: "application/json" },
   ]}
 >
   <main>
@@ -54,5 +54,6 @@ const jsonUrl = new URL(`/blog/feed.json`, Astro.site).toString()
         </div>
       </div>
     </div>
+    <p>Subscribe to our <a href={rssUrl}>RSS feed</a>.</p>
   </main>
 </Layout>
