@@ -9,9 +9,19 @@ import Layout from "../layouts/Layout.astro"
 import RepoCard from "@components/RepoCard.astro"
 import SoftwareLogos from "@components/SoftwareLogos.astro"
 import { GITHUB_REPO } from "../const"
+
+const rssUrl = new URL(`/blog/rss.xml`, Astro.site).toString()
+const jsonUrl = new URL(`/blog/feed.json`, Astro.site).toString()
 ---
 
-<Layout title={``} description={`Local development environments in seconds. Customize, share, and extend with ease.`}>
+<Layout
+  title={``}
+  description={`Local development environments in seconds. Customize, share, and extend with ease.`}
+  link={[
+    { rel: "alternate", href: rssUrl, type: "application/rss+xml" },
+    { rel: "alternate", href: jsonUrl, type: "application/json" },
+  ]}
+>
   <main>
     <Hero />
 
