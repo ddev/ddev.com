@@ -10,22 +10,22 @@ export interface Props {
 const { latestVersion } = Astro.props
 ---
 
-<div class="prose">
-  <p class="text-gray-600 mb-16">
+<div class="prose dark:text-slate-400">
+  <p class="text-gray-600 mb-16 dark:text-slate-400">
     We’ll install Docker and DDEV with your package manager, as detailed in the <a
       href="https://ddev.readthedocs.io/en/latest/users/install/ddev-installation/"
       >Linux installation docs</a
     >.
   </p>
 
-  <h2 class="text-3xl mt-24">
+  <h2 class="text-3xl mt-24 dark:text-white">
     <small class="block font-mono text-xs text-gray-500">1/3</small>Install
     Docker
   </h2>
 
   <Tabs order={["Ubuntu", "CentOS", "Debian", "Fedora"]}>
     <Fragment slot="Ubuntu">
-      <div class="prose py-5">
+      <div class="prose py-5 dark:text-slate-400">
         <p>
           Follow the <a
             href="https://docs.docker.com/engine/install/ubuntu/"
@@ -39,7 +39,7 @@ const { latestVersion } = Astro.props
       </div>
     </Fragment>
     <Fragment slot="CentOS">
-      <div class="prose py-5">
+      <div class="prose py-5 dark:text-slate-400">
         <p>
           Follow the <a
             href="https://docs.docker.com/engine/install/centos/"
@@ -54,7 +54,7 @@ const { latestVersion } = Astro.props
       </div>
     </Fragment>
     <Fragment slot="Debian">
-      <div class="prose py-5">
+      <div class="prose py-5 dark:text-slate-400">
         <p>
           Follow the <a
             href="https://docs.docker.com/engine/install/debian/"
@@ -69,7 +69,7 @@ const { latestVersion } = Astro.props
       </div>
     </Fragment>
     <Fragment slot="Fedora">
-      <div class="prose py-5">
+      <div class="prose py-5 dark:text-slate-400">
         <p>
           Follow the <a
             href="https://docs.docker.com/engine/install/fedora/"
@@ -87,13 +87,13 @@ const { latestVersion } = Astro.props
 </div>
 
 <div class="prose">
-  <h2 class="text-3xl mt-24">
+  <h2 class="text-3xl mt-24 dark:text-white">
     <small class="block font-mono text-xs text-gray-500">2/3</small>Install DDEV
   </h2>
 
   <Tabs order={["Ubuntu", "CentOS", "Debian", "Fedora"]}>
     <Fragment slot="Ubuntu">
-      <div class="prose py-5">
+      <div class="prose py-5 dark:text-slate-400">
         <Terminal
           type="ubuntu"
           code={`$ curl -fsSL https://pkg.ddev.com/apt/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null\n$ echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://pkg.ddev.com/apt/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list\n$ sudo apt update && sudo apt install -y ddev
@@ -102,7 +102,7 @@ const { latestVersion } = Astro.props
       </div>
     </Fragment>
     <Fragment slot="CentOS">
-      <div class="prose py-5">
+      <div class="prose py-5 dark:text-slate-400">
         <Terminal
           type="ubuntu"
           code={`$ echo '[ddev]\nname=DDEV Repo\nbaseurl=https://pkg.ddev.com/yum/\nenabled=1\ngpgcheck=0' | sudo tee -a /etc/yum.repos.d/ddev.repo\n$ sudo dnf install --refresh ddev`}
@@ -110,7 +110,7 @@ const { latestVersion } = Astro.props
       </div>
     </Fragment>
     <Fragment slot="Debian">
-      <div class="prose py-5">
+      <div class="prose py-5 dark:text-slate-400">
         <Terminal
           type="ubuntu"
           code={`$ curl -fsSL https://pkg.ddev.com/apt/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null\n$ echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://pkg.ddev.com/apt/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list\n$ sudo apt update && sudo apt install -y ddev
@@ -119,7 +119,7 @@ const { latestVersion } = Astro.props
       </div>
     </Fragment>
     <Fragment slot="Fedora">
-      <div class="prose py-5">
+      <div class="prose py-5 dark:text-slate-400">
         <Terminal
           type="ubuntu"
           code={`$ echo '[ddev]\nname=DDEV Repo\nbaseurl=https://pkg.ddev.com/yum/\nenabled=1\ngpgcheck=0' | sudo tee -a /etc/yum.repos.d/ddev.repo\n$ sudo dnf install --refresh ddev`}
@@ -133,7 +133,7 @@ const { latestVersion } = Astro.props
 </div>
 
 <div class="prose">
-  <h2 class="text-3xl mt-24">
+  <h2 class="text-3xl mt-24 dark:text-white">
     <small class="block font-mono text-xs text-gray-500">3/3</small>Create a
     Project
   </h2>
@@ -174,7 +174,7 @@ const { latestVersion } = Astro.props
 </div>
 
 <div class="prose">
-  <h2 class="text-3xl mt-24">Explore & Enjoy!</h2>
+  <h2 class="text-3xl mt-24 dark:text-white">Explore & Enjoy!</h2>
 
   <p>
     Take a peek at your project’s new <code>.ddev/</code> directory. You can add

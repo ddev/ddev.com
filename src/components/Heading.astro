@@ -24,8 +24,8 @@ const { title, subtitle, date, author, authorUrl, authorAvatar, readTime } =
 ---
 
 <div class="my-24 px-6 lg:px-0">
-  <h1 class="font-bold text-4xl">{title}</h1>
-  {subtitle && <p class="text-2xl text-gray-600 my-4">{subtitle}</p>}
+  <h1 class="font-bold text-4xl dark:text-white">{title}</h1>
+  {subtitle && <p class="text-2xl text-gray-600 my-4 dark:text-slate-400">{subtitle}</p>}
 
   <div class="md:flex md:items-center md:content-center my-6 font-mono">
     {
@@ -41,14 +41,14 @@ const { title, subtitle, date, author, authorUrl, authorAvatar, readTime } =
             </div>
           )}
           {author && (
-            <div class={authorAvatar ? `ml-1` : ``}>
+            <div class={authorAvatar ? `ml-1 dark:text-white` : ``}>
               <a href={authorUrl}>{author}</a>
             </div>
           )}
         </div>
       )
     }
-    <p class="mt-4 md:mt-0">
+    <p class="mt-4 md:mt-0 dark:text-white">
       {
         date && (
           <span>

@@ -118,7 +118,9 @@ order.map((label) => {
             id={`tab-${tab.uid}`}
             class={`tab` + (index === 0 ? ` active` : ``)}
           >
-            <span>{tab.label}</span>
+            <span
+            class={"dark:text-slate-200"}
+            >{tab.label}</span>
           </button>
         ))
       }

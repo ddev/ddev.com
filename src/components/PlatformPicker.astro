@@ -113,8 +113,8 @@ const { heading, inputName = "platform" } = Astro.props
   }
 </script>
 
-<div class="choose px-6 lg:px-0">
-  {heading && <h2>{heading}</h2>}
+<div class="choose px-6 lg:px-0 dark:text-slate-400">
+  {heading && <h2 class="dark:text-white">{heading}</h2>}
   <div class="choose-platform flex">
     <div class="w-full">
       <input
