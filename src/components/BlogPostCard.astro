@@ -60,15 +60,15 @@ const firstCategory = post.data.categories.length
       )
     }
   </div>
-  <div class="flex-1 bg-gray-100 p-6 flex flex-col justify-between">
+  <div class="flex-1 bg-gray-100 p-6 flex flex-col justify-between dark:bg-slate-600">
     <div class="flex-1">
-      <p class="text-sm font-mono text-indigo-600">
+      <p class="text-sm font-mono text-indigo-600 dark:text-cyan-300">
         <a href={getCategoryUrl(firstCategory)} class="hover:underline">
           {firstCategory}
         </a>
       </p>
       <a href={`/blog/${post.slug}`} class="block mt-2">
-        <p class="text-xl font-semibold text-gray-900">
+        <p class="text-xl font-semibold text-gray-900 dark:text-white">
           {post.data.title}
         </p>
       </a>
@@ -89,7 +89,7 @@ const firstCategory = post.data.categories.length
         )
       }
       <div class={authorImage ? `ml-3` : ``}>
-        <p class="text-sm font-medium text-gray-900">
+        <p class="text-sm font-medium text-gray-900 dark:text-white">
           <a href={`/blog/author/${author.slug}`} class="hover:underline">
             {post.data.author}
           </a>

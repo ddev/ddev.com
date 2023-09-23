@@ -14,6 +14,7 @@ const { latestVersion } = Astro.props
     We’ll use WSL2 with Docker inside since it’s the fastest and most
     straightforward of <a
       href="https://ddev.readthedocs.io/en/latest/users/install/docker-installation/#windows"
+      class="dark:text-white"
       >several options</a
     >.
   </p>
@@ -43,7 +44,7 @@ const { latestVersion } = Astro.props
   />
 </div>
 
-<div class="prose">
+<div class="prose dark:text-slate-400">
   <h2 class="text-3xl mt-24 dark:text-white">
     <small class="block font-mono text-xs text-gray-500">2/3</small>Run the
     Install Script
@@ -66,7 +67,7 @@ const { latestVersion } = Astro.props
   />
 </div>
 
-<div class="prose">
+<div class="prose dark:text-slate-400">
   <h2 class="text-3xl mt-24 dark:text-white">
     <small class="block font-mono text-xs text-gray-500">3/3</small>Create a
     Project
@@ -79,6 +80,7 @@ const { latestVersion } = Astro.props
     Initialize the project by running the <a
       href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#config"
       target="_blank"
+      class="dark:text-white"
       ><code>ddev config</code>
     </a> command:
   </p>
@@ -94,6 +96,7 @@ const { latestVersion } = Astro.props
     If it’s a Composer project, you may also need to run <a
       href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#composer"
       target="_blank"
+      class="dark:text-white"
       ><code>ddev composer install</code>
     </a>.
   </p>
@@ -101,22 +104,26 @@ const { latestVersion } = Astro.props
   <p>
     Now run the <a
       href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#launch"
-      target="_blank">launch command</a
+      target="_blank"
+      class="dark:text-white"
+      >launch command</a
     > to open your project in a browser:
   </p>
   <Terminal type="powershell-ubuntu" code={`$ ddev launch`} />
 </div>
 
-<div class="prose">
+<div class="prose dark:text-slate-400">
   <h2 class="text-3xl mt-24 dark:text-white">Explore & Enjoy!</h2>
 
   <p>
-    Take a peek at your project’s new <code>.ddev/</code> directory. You can add
-    this to your repo to share your DDEV config, edit <code
+    Take a peek at your project’s new <code class="dark:text-white">.ddev/</code> directory. You can add
+    this to your repo to share your DDEV config, edit <code class="dark:text-white"
       >.ddev/ddev.yaml</code
     > to change <a
       href="https://ddev.readthedocs.io/en/latest/users/configuration/config/"
-      target="_blank">project options</a
+      target="_blank"
+      class="dark:text-white"
+      >project options</a
     >, or even go about your business and pretend this folder doesn’t exist.
   </p>
 
@@ -124,8 +131,9 @@ const { latestVersion } = Astro.props
     Run the <a
       href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#help"
       target="_blank"
+      class="dark:text-white"
       >help command
-    </a> (or plain <code>ddev</code>) to see the actions you can take with the
+    </a> (or plain <code class="dark:text-white">ddev</code>) to see the actions you can take with the
     CLI:
   </p>
 
@@ -135,6 +143,7 @@ const { latestVersion } = Astro.props
     Use the <a
       href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#describe"
       target="_blank"
+      class="dark:text-white"
       >describe command
     </a> to see a project’s parts and database connection details:
   </p>
@@ -146,6 +155,7 @@ const { latestVersion } = Astro.props
     removing anything, use the <a
       href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#stop"
       target="_blank"
+      class="dark:text-white"
       >stop command
     </a>:
   </p>
@@ -157,6 +167,7 @@ const { latestVersion } = Astro.props
     project and its resources without touching your code, run the <a
       href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#delete"
       target="_blank"
+      class="dark:text-white"
       >delete command
     </a>:
   </p>
@@ -179,7 +190,7 @@ const { latestVersion } = Astro.props
   />
 
   <p>
-    Remove the <code>ddev</code> binary from the WSL2 distro:
+    Remove the <code class="dark:text-white">ddev</code> binary from the WSL2 distro:
   </p>
 
   <Terminal type="powershell-ubuntu" code={`$ sudo rm /usr/bin/ddev`} />

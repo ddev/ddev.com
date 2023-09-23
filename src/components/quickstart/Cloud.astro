@@ -11,7 +11,7 @@ export interface Props {
 const { latestVersion } = Astro.props
 ---
 
-<div class="prose">
+<div class="prose dark:text-slate-400">
   <h2 class="text-3xl mt-24 dark:text-white">
     <small class="block font-mono text-xs text-gray-500">1/2</small>Launch a
     Provider &amp; Install DDEV
@@ -19,10 +19,11 @@ const { latestVersion } = Astro.props
 
   <Tabs order={["Gitpod", "GitHub Codespaces"]}>
     <Fragment slot="Gitpod">
-      <div class="prose pt-5">
+      <div class="prose pt-5 dark:text-slate-400">
         <p>
           <a href="https://www.gitpod.io/docs/getting-started" target="_blank"
-            >Open any repository</a
+          class="dark:text-white"  
+          >Open any repository</a
           > using Gitpod and install DDEV:
         </p>
         <Terminal
@@ -43,11 +44,12 @@ const { latestVersion } = Astro.props
         <ol>
           <li>
             <a href="https://github.com/codespaces/new"
+              class="dark:text-white"
               >Create a new codespace</a
             > for your project or open an existing one.
           </li>
           <li>
-            Edit the project’s <code>.devcontainer/devcontainer.json</code> file
+            Edit the project’s <code class="dark:text-white">.devcontainer/devcontainer.json</code> file
             to include these two lines in the “features” section:
             <Code
               code={`"features": {\n    "ghcr.io/devcontainers/features/docker-in-docker:2": {},\n    "ghcr.io/ddev/ddev/install-ddev:latest": {}\n},`}
@@ -67,6 +69,7 @@ const { latestVersion } = Astro.props
       </div>
       <a
         href="https://github.com/codespaces/new?hide_repo_select=true&ref=20221220_codespaces&repo=80927419&machine=basicLinux32gb&location=WestUs2"
+        class="dark:text-white"
         ><img
           src="https://github.com/codespaces/badge.svg"
           alt="Open in GitHub Codespaces"
@@ -80,7 +83,7 @@ const { latestVersion } = Astro.props
   <Terminal code={`→ ddev -v\nddev version ${latestVersion}`} />
 </div>
 
-<div class="prose">
+<div class="prose dark:text-slate-400">
   <h2 class="text-3xl mt-24 dark:text-white">
     <small class="block font-mono text-xs text-gray-500">2/2</small>Create a
     Project
@@ -90,7 +93,8 @@ const { latestVersion } = Astro.props
     Initialize the DDEV project by running the <a
       href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#config"
       target="_blank"
-      ><code>ddev config</code>
+      class="dark:text-white"
+      ><code class="dark:text-white">ddev config</code>
     </a> command:
   </p>
   <Terminal code={`→ ddev config`} />
@@ -105,29 +109,34 @@ const { latestVersion } = Astro.props
     If it’s a Composer project, you may also need to run <a
       href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#composer"
       target="_blank"
-      ><code>ddev composer install</code>
+      class="dark:text-white"
+      ><code class="dark:text-white">ddev composer install</code>
     </a>.
   </p>
 
   <p>
     Now run the <a
       href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#launch"
-      target="_blank">launch command</a
+      target="_blank"
+      class="dark:text-white"
+      >launch command</a
     > to open your project in a browser:
   </p>
   <Terminal code={`→ ddev launch`} />
 </div>
 
-<div class="prose">
+<div class="prose dark:text-slate-400">
   <h2 class="text-3xl mt-24 dark:text-white">Explore & Enjoy!</h2>
 
   <p>
-    Take a peek at your project’s new <code>.ddev/</code> directory. You can add
-    this to your repo to share your DDEV config, edit <code
+    Take a peek at your project’s new <code class="dark:text-white">.ddev/</code> directory. You can add
+    this to your repo to share your DDEV config, edit <code class="dark:text-white"
       >.ddev/ddev.yaml</code
     > to change <a
       href="https://ddev.readthedocs.io/en/latest/users/configuration/config/"
-      target="_blank">project options</a
+      target="_blank"
+      class="dark:text-white"
+      >project options</a
     >, or even go about your business and pretend this folder doesn’t exist.
   </p>
 
@@ -135,8 +144,9 @@ const { latestVersion } = Astro.props
     Run the <a
       href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#help"
       target="_blank"
+      class="dark:text-white"
       >help command
-    </a> (or plain <code>ddev</code>) to see the actions you can take with the
+    </a> (or plain <code class="dark:text-white">ddev</code>) to see the actions you can take with the
     CLI:
   </p>
 
@@ -146,6 +156,7 @@ const { latestVersion } = Astro.props
     Use the <a
       href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#describe"
       target="_blank"
+      class="dark:text-white"
       >describe command
     </a> to see a project’s parts and database connection details:
   </p>
@@ -157,6 +168,7 @@ const { latestVersion } = Astro.props
     removing anything, use the <a
       href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#stop"
       target="_blank"
+      class="dark:text-white"
       >stop command
     </a>:
   </p>
@@ -168,6 +180,7 @@ const { latestVersion } = Astro.props
     project and its resources without touching your code, run the <a
       href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#delete"
       target="_blank"
+      class="dark:text-white"
       >delete command
     </a>:
   </p>
