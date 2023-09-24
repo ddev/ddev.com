@@ -10,8 +10,8 @@ export interface Props {
 const { latestVersion } = Astro.props
 ---
 
-<div class="prose">
-  <p class="text-gray-600 mb-16">
+<div class="prose dark:prose-invert">
+  <p class="text-gray-600 mb-16 dark:text-slate-400">
     We’ll install Docker and DDEV with your package manager, as detailed in the <a
       href="https://ddev.readthedocs.io/en/latest/users/install/ddev-installation/"
       >Linux installation docs</a
@@ -25,11 +25,12 @@ const { latestVersion } = Astro.props
 
   <Tabs order={["Ubuntu", "CentOS", "Debian", "Fedora"]}>
     <Fragment slot="Ubuntu">
-      <div class="prose py-5">
+      <div class="prose py-5 dark:prose-invert">
         <p>
           Follow the <a
             href="https://docs.docker.com/engine/install/ubuntu/"
-            target="_blank">instructions on docs.docker.com</a
+            target="_blank"
+            >instructions on docs.docker.com</a
           >:
         </p>
         <Terminal
@@ -39,11 +40,12 @@ const { latestVersion } = Astro.props
       </div>
     </Fragment>
     <Fragment slot="CentOS">
-      <div class="prose py-5">
+      <div class="prose py-5 dark:prose-invert">
         <p>
           Follow the <a
             href="https://docs.docker.com/engine/install/centos/"
-            target="_blank">instructions on docs.docker.com</a
+            target="_blank"
+            >instructions on docs.docker.com</a
           >:
         </p>
 
@@ -54,11 +56,12 @@ const { latestVersion } = Astro.props
       </div>
     </Fragment>
     <Fragment slot="Debian">
-      <div class="prose py-5">
+      <div class="prose py-5 dark:prose-invert">
         <p>
           Follow the <a
             href="https://docs.docker.com/engine/install/debian/"
-            target="_blank">instructions on docs.docker.com</a
+            target="_blank" 
+            >instructions on docs.docker.com</a
           >:
         </p>
 
@@ -69,11 +72,12 @@ const { latestVersion } = Astro.props
       </div>
     </Fragment>
     <Fragment slot="Fedora">
-      <div class="prose py-5">
+      <div class="prose py-5 dark:prose-invert">
         <p>
           Follow the <a
             href="https://docs.docker.com/engine/install/fedora/"
-            target="_blank">instructions on docs.docker.com</a
+            target="_blank"
+            >instructions on docs.docker.com</a
           >:
         </p>
 
@@ -86,14 +90,14 @@ const { latestVersion } = Astro.props
   </Tabs>
 </div>
 
-<div class="prose">
+<div class="prose dark:prose-invert">
   <h2 class="text-3xl mt-24">
     <small class="block font-mono text-xs text-gray-500">2/3</small>Install DDEV
   </h2>
 
   <Tabs order={["Ubuntu", "CentOS", "Debian", "Fedora"]}>
     <Fragment slot="Ubuntu">
-      <div class="prose py-5">
+      <div class="prose py-5 dark:prose-invert">
         <Terminal
           type="ubuntu"
           code={`$ curl -fsSL https://pkg.ddev.com/apt/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null\n$ echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://pkg.ddev.com/apt/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list\n$ sudo apt update && sudo apt install -y ddev
@@ -102,7 +106,7 @@ const { latestVersion } = Astro.props
       </div>
     </Fragment>
     <Fragment slot="CentOS">
-      <div class="prose py-5">
+      <div class="prose py-5 dark:prose-invert">
         <Terminal
           type="ubuntu"
           code={`$ echo '[ddev]\nname=DDEV Repo\nbaseurl=https://pkg.ddev.com/yum/\nenabled=1\ngpgcheck=0' | sudo tee -a /etc/yum.repos.d/ddev.repo\n$ sudo dnf install --refresh ddev`}
@@ -110,7 +114,7 @@ const { latestVersion } = Astro.props
       </div>
     </Fragment>
     <Fragment slot="Debian">
-      <div class="prose py-5">
+      <div class="prose py-5 dark:prose-invert">
         <Terminal
           type="ubuntu"
           code={`$ curl -fsSL https://pkg.ddev.com/apt/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null\n$ echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://pkg.ddev.com/apt/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list\n$ sudo apt update && sudo apt install -y ddev
@@ -119,7 +123,7 @@ const { latestVersion } = Astro.props
       </div>
     </Fragment>
     <Fragment slot="Fedora">
-      <div class="prose py-5">
+      <div class="prose py-5 dark:prose-invert">
         <Terminal
           type="ubuntu"
           code={`$ echo '[ddev]\nname=DDEV Repo\nbaseurl=https://pkg.ddev.com/yum/\nenabled=1\ngpgcheck=0' | sudo tee -a /etc/yum.repos.d/ddev.repo\n$ sudo dnf install --refresh ddev`}
@@ -132,7 +136,7 @@ const { latestVersion } = Astro.props
   <Terminal type="ubuntu" code={`$ ddev -v\nddev version ${latestVersion}`} />
 </div>
 
-<div class="prose">
+<div class="prose dark:prose-invert">
   <h2 class="text-3xl mt-24">
     <small class="block font-mono text-xs text-gray-500">3/3</small>Create a
     Project
@@ -159,7 +163,7 @@ const { latestVersion } = Astro.props
   <p>
     If it’s a Composer project, you may also need to run <a
       href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#composer"
-      target="_blank"
+      target="_blank" 
       ><code>ddev composer install</code>
     </a>.
   </p>
@@ -167,13 +171,14 @@ const { latestVersion } = Astro.props
   <p>
     Now run the <a
       href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#launch"
-      target="_blank">launch command</a
+      target="_blank" 
+      >launch command</a
     > to open your project in a browser:
   </p>
   <Terminal type="ubuntu" code={`$ ddev launch`} />
 </div>
 
-<div class="prose">
+<div class="prose dark:prose-invert">
   <h2 class="text-3xl mt-24">Explore & Enjoy!</h2>
 
   <p>
@@ -182,7 +187,8 @@ const { latestVersion } = Astro.props
       >.ddev/ddev.yaml</code
     > to change <a
       href="https://ddev.readthedocs.io/en/latest/users/configuration/config/"
-      target="_blank">project options</a
+      target="_blank"
+      >project options</a
     >, or even go about your business and pretend this folder doesn’t exist.
   </p>
 

@@ -10,8 +10,8 @@ export interface Props {
 const { latestVersion } = Astro.props
 ---
 
-<div class="prose">
-  <p class="text-gray-600 mb-16">
+<div class="prose dark:prose-invert">
+  <p class="text-gray-600 mb-16 dark:text-slate-400">
     We’ll use Docker Desktop since it’s the most straightforward of <a
       href="https://ddev.readthedocs.io/en/latest/users/install/docker-installation/#macos"
       >several options</a
@@ -26,7 +26,7 @@ const { latestVersion } = Astro.props
 
 <Tabs order={["Homebrew", "Download"]}>
   <Fragment slot="Homebrew">
-    <div class="prose py-5">
+    <div class="prose py-5 dark:prose-invert">
       <p>
         With <a href="https://brew.sh" target="_blank">Homebrew</a> installed, you
         can install Docker Desktop with one command:
@@ -35,7 +35,7 @@ const { latestVersion } = Astro.props
     </div>
   </Fragment>
   <Fragment slot="Download">
-    <div class="prose py-5">
+    <div class="prose py-5 dark:prose-invert">
       <p>
         Download and run the <a
           href="https://www.docker.com/products/docker-desktop"
@@ -46,7 +46,7 @@ const { latestVersion } = Astro.props
   </Fragment>
 </Tabs>
 
-<div class="prose">
+<div class="prose dark:prose-invert">
   <p>
     Launch Docker Desktop, accept the license agreement, and make sure Docker is
     started and running.
@@ -62,12 +62,12 @@ const { latestVersion } = Astro.props
 
 <Tabs order={["Homebrew", "Install Script"]}>
   <Fragment slot="Homebrew">
-    <div class="prose py-5">
+    <div class="prose py-5 dark:prose-invert">
       <Terminal code={`→ brew install ddev/ddev/ddev`} />
     </div>
   </Fragment>
   <Fragment slot="Install Script">
-    <div class="prose py-5">
+    <div class="prose py-5 dark:prose-invert">
       <Terminal
         code={`→ curl -fsSL https://ddev.com/install.sh | bash`}
       />
@@ -75,7 +75,7 @@ const { latestVersion } = Astro.props
   </Fragment>
 </Tabs>
 
-<div class="prose">
+<div class="prose dark:prose-invert">
   <p>Confirm that you’ve now got DDEV installed: 🎉</p>
   <Terminal code={`→ ddev -v\nddev version ${latestVersion}`} />
 
@@ -119,7 +119,7 @@ const { latestVersion } = Astro.props
   <Terminal code={`→ ddev launch`} />
 </div>
 
-<div class="prose">
+<div class="prose dark:prose-invert">
   <h2 class="text-3xl mt-24">Explore & Enjoy!</h2>
 
   <p>
@@ -128,7 +128,8 @@ const { latestVersion } = Astro.props
       >.ddev/ddev.yaml</code
     > to change <a
       href="https://ddev.readthedocs.io/en/latest/users/configuration/config/"
-      target="_blank">project options</a
+      target="_blank"
+      >project options</a
     >, or even go about your business and pretend this folder doesn’t exist.
   </p>
 
@@ -190,17 +191,17 @@ const { latestVersion } = Astro.props
   />
 
   <p>
-    Then remove the <code>ddev</code> binary however you installed it:
+    Then remove the <codes>ddev</code> binary however you installed it:
   </p>
 
   <Tabs order={["Homebrew", "Install Script"]}>
     <Fragment slot="Homebrew">
-      <div class="prose py-5">
+      <div class="prose py-5 dark:prose-invert">
         <Terminal code={`→ brew uninstall ddev`} />
       </div>
     </Fragment>
     <Fragment slot="Install Script">
-      <div class="prose py-5">
+      <div class="prose py-5 dark:prose-invert">
         <Terminal code={`→ rm /usr/local/bin/ddev`} />
       </div>
     </Fragment>

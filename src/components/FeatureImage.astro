@@ -40,10 +40,10 @@ const { src, alt, caption = "", credit, shadow = false } = Astro.props
   }
   {
     (caption || credit) && (
-      <figcaption class="text-sm font-mono mt-4">
+      <figcaption class="text-sm font-mono mt-4 dark:text-slate-400">
         {caption && <span set:html={marked.parseInline(caption)} />}
         {credit && (
-          <span class="text-gray-500">
+          <span class="text-gray-500 dark:text-slate-400">
             {caption && <span aria-hidden="true"> </span>}
             <span set:html={`${marked.parseInline(credit)}`} />
           </span>

@@ -11,7 +11,7 @@ export interface Props {
 const { latestVersion } = Astro.props
 ---
 
-<div class="prose">
+<div class="prose dark:prose-invert">
   <h2 class="text-3xl mt-24">
     <small class="block font-mono text-xs text-gray-500">1/2</small>Launch a
     Provider &amp; Install DDEV
@@ -19,10 +19,10 @@ const { latestVersion } = Astro.props
 
   <Tabs order={["Gitpod", "GitHub Codespaces"]}>
     <Fragment slot="Gitpod">
-      <div class="prose pt-5">
+      <div class="prose pt-5 dark:prose-invert">
         <p>
-          <a href="https://www.gitpod.io/docs/getting-started" target="_blank"
-            >Open any repository</a
+          <a href="https://www.gitpod.io/docs/getting-started" target="_blank" 
+          >Open any repository</a
           > using Gitpod and install DDEV:
         </p>
         <Terminal
@@ -39,7 +39,7 @@ const { latestVersion } = Astro.props
       </a>
     </Fragment>
     <Fragment slot="GitHub Codespaces">
-      <div class="prose py-5">
+      <div class="prose py-5 dark:prose-invert">
         <ol>
           <li>
             <a href="https://github.com/codespaces/new"
@@ -80,7 +80,7 @@ const { latestVersion } = Astro.props
   <Terminal code={`→ ddev -v\nddev version ${latestVersion}`} />
 </div>
 
-<div class="prose">
+<div class="prose dark:prose-invert">
   <h2 class="text-3xl mt-24">
     <small class="block font-mono text-xs text-gray-500">2/2</small>Create a
     Project
@@ -112,22 +112,23 @@ const { latestVersion } = Astro.props
   <p>
     Now run the <a
       href="https://ddev.readthedocs.io/en/latest/users/usage/commands/#launch"
-      target="_blank">launch command</a
+      target="_blank"
+      >launch command</a
     > to open your project in a browser:
   </p>
   <Terminal code={`→ ddev launch`} />
 </div>
 
-<div class="prose">
+<div class="prose dark:prose-invert">
   <h2 class="text-3xl mt-24">Explore & Enjoy!</h2>
 
   <p>
     Take a peek at your project’s new <code>.ddev/</code> directory. You can add
-    this to your repo to share your DDEV config, edit <code
-      >.ddev/ddev.yaml</code
-    > to change <a
+    this to your repo to share your DDEV config, edit <code>.ddev/ddev.yaml</code> to change <a
       href="https://ddev.readthedocs.io/en/latest/users/configuration/config/"
-      target="_blank">project options</a
+      target="_blank"
+      
+      >project options</a
     >, or even go about your business and pretend this folder doesn’t exist.
   </p>
 

@@ -54,7 +54,7 @@ import {
 
 <style type="postcss">
   .menu {
-    @apply hidden absolute top-0 right-0 max-w-full bg-white px-8 py-4 z-30 text-center shadow-2xl rounded-lg m-3;
+    @apply hidden absolute top-0 right-0 max-w-full bg-white px-8 py-4 z-30 text-center shadow-2xl rounded-lg m-3 dark:bg-slate-800 dark:text-white;
 
     &.open {
       @apply block;
@@ -69,56 +69,61 @@ import {
   >
     <a href="/" class="relative block cursor-pointer -ml-2">
       <span class="sr-only">DDEV logo</span>
-      <img
-        class="h-8 w-auto sm:h-10"
-        src="/logos/ddev.svg"
-        alt="DDEV logo"
-        aria-hidden="true"
-      />
+      <picture>
+        <source
+          srcset="/logos/dark-ddev.svg" 
+           media="(prefers-color-scheme: dark)">
+        <img
+          class="h-8 w-auto sm:h-10" 
+          src="/logos/ddev.svg"
+          alt="DDEV logo"
+          aria-hidden="true"
+        />
+      </picture>
     </a>
     <div class="w-2/3 flex justify-end items-center">
       <ul class="hidden lg:flex">
         <li class="mx-4">
           <a
-            class="font-bold whitespace-nowrap"
+            class="font-bold whitespace-nowrap dark:text-white"
             href="/get-started"
             rel="prefetch">Get Started</a
           >
         </li>
         <li class="mx-4">
           <a
-            class="font-bold whitespace-nowrap"
+            class="font-bold whitespace-nowrap dark:text-white"
             href={DOCUMENTATION_URL}
             target="_blank">Docs</a
           >
         </li>
         <li class="mx-4">
-          <a class="font-bold whitespace-nowrap" href="/blog" rel="prefetch"
+          <a class="font-bold whitespace-nowrap dark:text-white" href="/blog" rel="prefetch"
             >Blog</a
           >
         </li>
         <li class="mx-4">
           <a
-            class="font-bold whitespace-nowrap"
+            class="font-bold whitespace-nowrap dark:text-white"
             href={GITHUB_URL}
             target="_blank">GitHub</a
           >
         </li>
         <li class="mx-4">
           <a
-            class="font-bold whitespace-nowrap"
+            class="font-bold whitespace-nowrap dark:text-white"
             href="/support-ddev"
             rel="prefetch">❤️ Support DDEV</a
           >
         </li>
       </ul>
-      <a href="/search" class="ml-4 p-1">
+      <a href="/search" class="ml-4 p-1 dark:text-white">
         <span class="sr-only">Search</span>
         <MagnifyingGlassIcon className="w-6 h-6 " aria-hidden={true} />
       </a>
       <button id="mobile-trigger" class="flex lg:hidden ml-6 p-1">
         <span class="sr-only">Menu</span>
-        <Bars2Icon className="w-6 h-6 " />
+        <Bars2Icon className="w-6 h-6 dark:text-white" />
       </button>
     </div>
     <div id="mobile-menu" class="menu">

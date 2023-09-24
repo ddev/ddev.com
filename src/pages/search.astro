@@ -46,10 +46,10 @@ const title = `Search`
         return `
         <a href="${
           result.id
-        }" class="border rounded w-full flex items-center content-center my-2 p-4 hover:shadow-sm hover:border-blue-300">
-          <h2 class="font-bold block w-3/4">${result.title}</h2>
+        }" class="border rounded w-full flex items-center content-center my-2 p-4 hover:shadow-sm hover:border-blue-300 dark:border-slate-700">
+          <h2 class="font-bold block w-3/4 dark:text-white">${result.title}</h2>
           <div class="block w-1/4 text-right">
-            <div class="inline-block text-sm font-mono">${getResultLabelFromPath(
+            <div class="inline-block text-sm font-mono dark:text-slate-500">${getResultLabelFromPath(
               result.id
             )}</div>
           </div>
@@ -130,7 +130,7 @@ const title = `Search`
       <input
         id="search-keywords"
         type="search"
-        class="border rounded px-4 py-2 text-lg w-full"
+        class="border rounded px-4 py-2 text-lg w-full dark:bg-transparent dark:border-slate-700 dark:text-white"
         autofocus
       />
       <div id="results"></div>

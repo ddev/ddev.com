@@ -7,15 +7,16 @@ import featuredSponsors from "../featured-sponsors.json"
  * you need to add one.
  */
 const nudges = {
-  "Platform.sh": "mt-12 h-11",
+  "Platform.sh": "mt-12 h-11 dark:invert",
   Tag1: "h-9",
   "Oliver Wand": "h-12 w-12",
-  DrupalEasy: "h-10",
+  DrupalEasy: "h-10 dark:invert",
+  b13: "dark:invert",
   "Redfin Solutions": "h-16 w-16",
   MacStadium: "h-15",
   Lullabot: "h-9",
   "Craft CMS": "h-11",
-  undpaul: "h-9",
+  undpaul: "h-9 dark:invert",
   "1xINTERNET": "h-11",
 }
 
@@ -42,11 +43,16 @@ featuredSponsors.map((sponsor) => {
           href={sponsor.url}
           target="_blank"
         >
+        <picture>
+          <source 
+            srcset={sponsor.darklogo} 
+            media="(prefers-color-scheme: dark)">
           <img
-            src={sponsor.logo}
-            class="block w-auto h-full"
-            alt={`${sponsor.name} logo`}
+              src={sponsor.logo}
+              class="block w-auto h-full"
+              alt={`${sponsor.name} logo`}
           />
+        </picture>
         </a>
       ))
     }

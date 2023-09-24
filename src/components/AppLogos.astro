@@ -20,7 +20,7 @@ const logos = [
         logos.map((logo) => (
           <div class="px-12 py-6">
             <img
-              class={["h-12", ...logo.extraClasses].join(" ")}
+              class={["h-12 dark:invert", ...logo.extraClasses].join(" ")}
               src={logo.src}
               alt={`${logo.name} logo`}
             />

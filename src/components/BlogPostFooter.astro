@@ -34,14 +34,14 @@ orderedPosts.forEach((post, index) => {
       <a
         href={`/blog/${prev.slug}`}
         rel="prefetch"
-        class="flex border items-center rounded-md w-full my-1 md:my-0 content-center justify-start md:justify-start p-4 hover:border-blue-300 hover:shadow-sm"
+        class="flex border items-center rounded-md w-full my-1 md:my-0 content-center justify-start md:justify-start p-4 hover:border-blue-300 hover:shadow-sm dark:border-slate-700"
         title={`Previous: ${prev.data.title}`}
       >
         <div>
-          <span class="font-mono text-sm block text-navy-300 tracking-wider">
+          <span class="font-mono text-sm block text-navy-300 tracking-wider dark:text-slate-500">
             Previous Post
           </span>
-          <span class="py-3 md:w-full font-bold">{prev.data.title}</span>
+          <span class="py-3 md:w-full font-bold dark:text-slate-400">{prev.data.title}</span>
         </div>
       </a>
     )
@@ -51,14 +51,14 @@ orderedPosts.forEach((post, index) => {
       <a
         href={`/blog/${next.slug}`}
         rel="prefetch"
-        class="flex border items-center rounded-md w-full my-1 md:my-0 content-center justify-start md:justify-end md:text-right p-4 hover:border-blue-300 hover:shadow-sm"
+        class="flex border items-center rounded-md w-full my-1 md:my-0 content-center justify-start md:justify-end md:text-right p-4 hover:border-blue-300 hover:shadow-sm dark:border-slate-700"
         title={`Next: ${next.data.title}`}
       >
         <div>
-          <span class="font-mono text-sm block text-navy-300 tracking-wider">
+          <span class="font-mono text-sm block text-navy-300 tracking-wider dark:text-slate-500">
             Next Post
           </span>
-          <span class="py-3 md:w-full font-bold">{next.data.title}</span>
+          <span class="py-3 md:w-full font-bold dark:text-slate-400">{next.data.title}</span>
         </div>
       </a>
     )

@@ -52,7 +52,7 @@ const navigation = {
 }
 ---
 
-<footer>
+<footer class="dark:bg-transparent">
   <div class="max-w-4xl mx-auto py-12 px-6 lg:px-0 lg:py-16">
     <div class="pb-8 xl:grid xl:grid-cols-3 xl:gap-8">
       <div class="grid grid-cols-auto gap-8 xl:col-span-4">
@@ -67,7 +67,7 @@ const navigation = {
                   <li>
                     <a
                       href={item.href}
-                      class="text-base external-link"
+                      class="text-base external-link dark:text-white"
                       target="_blank"
                     >
                       {item.name}
@@ -81,7 +81,7 @@ const navigation = {
             <h2 class="text-sm font-mono text-navy-300 tracking-wider">
               Product
             </h2>
-            <ul class="mt-4 space-y-4">
+            <ul class="mt-4 space-y-4 dark:text-white">
               {
                 navigation.product.map((item) => (
                   <li>
@@ -97,7 +97,7 @@ const navigation = {
             <h2 class="text-sm font-mono text-navy-300 tracking-wider">
               Social
             </h2>
-            <ul class="mt-4 space-y-4">
+            <ul class="mt-4 space-y-4 dark:text-white">
               {
                 navigation.social.map((item) => (
                     <li>
@@ -113,7 +113,7 @@ const navigation = {
       </div>
     </div>
     <div
-      class="mt-8 border-t border-gray-300 pt-8 md:flex md:items-center md:justify-between"
+      class="mt-8 border-t border-gray-300 pt-8 md:flex md:items-center md:justify-between dark:border-slate-700"
     >
       <div
         class="flex space-x-6 md:order-2 items-center justify-center content-center"
@@ -135,7 +135,7 @@ const navigation = {
         }
       </div>
       <p
-        class="mt-8 text-sm text-gray-600 font-mono text-center md:text-left md:mt-0 md:order-1"
+        class="mt-8 text-sm text-gray-600 font-mono text-center md:text-left md:mt-0 md:order-1 dark:text-white"
       >
         &copy; {new Date().getFullYear()}
         {COPYRIGHT_HOLDER}

@@ -17,9 +17,9 @@ const { date, comment } = Astro.props
 </style>
 
 <aside
-  class="updated-comment w-full rounded-lg text-sm p-6 -mt-8 mb-12 shadow-xl"
+  class="updated-comment w-full rounded-lg text-sm p-6 -mt-8 mb-12 shadow-xl dark:bg-slate-600"
 >
-  <p class="text-navy-500 font-mono uppercase text-xs tracking-wide">
+  <p class="text-navy-500 font-mono uppercase text-xs tracking-wide dark:text-slate-400">
     <b>Updated {formatDate(date, { month: "long" })}</b>
   </p>
   {comment && <div class="mt-2" set:html={marked.parse(comment)} />}
