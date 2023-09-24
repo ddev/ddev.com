@@ -46,21 +46,29 @@ order.map((label) => {
     }
 
     &.active {
-      @apply text-black;
+      @apply text-black dark:text-gray-300;
 
       span {
-        @apply border-solid border-black;
+        @apply border-solid border-black dark:text-gray-300;
       }
     }
   }
 
   .panel {
-    @apply hidden px-4 rounded-lg shadow-xl;
+    @apply hidden px-4 rounded-lg shadow-xl dark:bg-transparent dark:shadow-slate-900/50;
 
     &.active {
       @apply block;
     }
   }
+  @media (prefers-color-scheme: dark) {
+    .panel.active {
+      @apply dark:bg-slate-600;
+      box-shadow: none;
+    }
+
+  }
+
 </style>
 
 <script>
@@ -118,9 +126,7 @@ order.map((label) => {
             id={`tab-${tab.uid}`}
             class={`tab` + (index === 0 ? ` active` : ``)}
           >
-            <span
-            class={"dark:text-slate-200"}
-            >{tab.label}</span>
+            <span>{tab.label}</span>
           </button>
         ))
       }

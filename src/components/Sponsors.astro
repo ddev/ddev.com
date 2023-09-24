@@ -86,7 +86,7 @@ gitHubSponsors.forEach((gitHubSponsor) => {
               alt={sponsor.imageAlt}
               width={100}
               height={100}
-              class={`block w-full h-full`}
+              class={`block w-full h-full  dark:bg-white`}
             />
           )}
           {!sponsor.imageUrl.includes(".svg") && (
@@ -98,7 +98,7 @@ gitHubSponsors.forEach((gitHubSponsor) => {
               breakpoints={{ count: 1, maxWidth: 100 }}
               attributes={{
                 img: {
-                  class: `block w-full h-full`,
+                  class: `block w-full h-full dark:bg-white`,
                 },
               }}
             />
