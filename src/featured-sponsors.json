@@ -3,6 +3,7 @@
     "name": "Platform.sh",
     "type": "major",
     "logo": "/logos/platform.sh.svg",
+    "darklogo": "/logos/platform.sh.svg",
     "squareLogo": "/logos/platform.sh-square.svg",
     "url": "https://platform.sh"
   },
@@ -10,6 +11,7 @@
     "name": "Tag1",
     "type": "major",
     "logo": "/logos/tag1.svg",
+    "darklogo": "/logos/dark-tag1.svg",
     "squareLogo": "/logos/tag1-square.svg",
     "url": "https://tag1.com"
   },
@@ -17,6 +19,7 @@
     "name": "1xINTERNET",
     "type": "major",
     "logo": "/logos/1xinternet.svg",
+    "darklogo": "/logos/1xinternet.svg",
     "squareLogo": "/logos/1xinternet-square.svg",
     "url": "https://1xinternet.de",
     "github": "1xINTERNET"
@@ -25,6 +28,7 @@
     "name": "i-gelb",
     "type": "major",
     "logo": "/logos/i-gelb.svg",
+    "darklogo": "/logos/dark-i-gelb.svg",
     "squareLogo": "/logos/i-gelb-square.svg",
     "url": "https://i-gelb.net",
     "github": "i-gelb"
@@ -33,6 +37,7 @@
     "name": "Agaric",
     "type": "standard",
     "logo": "/logos/agaric.svg",
+    "darklogo": "/logos/agaric.svg",
     "squareLogo": "/logos/agaric-square.svg",
     "url": "https://agaric.coop/",
     "github": "agaric"
@@ -41,6 +46,7 @@
     "name": "b13",
     "type": "standard",
     "logo": "/logos/b13.svg",
+    "darklogo": "/logos/b13.svg",
     "squareLogo": "/logos/b13.svg",
     "url": "https://b13.com/",
     "github": "b13"
@@ -49,6 +55,7 @@
     "name": "Gizra",
     "type": "standard",
     "logo": "/logos/gizra.svg",
+    "darklogo": "/logos/gizra.svg",
     "squareLogo": "/logos/gizra.svg",
     "url": "https://gizra.com/",
     "github": "gizra"
@@ -57,6 +64,7 @@
     "name": "Oliver Wand",
     "type": "standard",
     "logo": "/logos/oliver-wand.jpg",
+    "darklogo": "/logos/oliver-wand.jpg",
     "squareLogo": "/logos/oliver-wand.jpg",
     "url": "https://github.com/wandoliver",
     "github": "wandoliver"
@@ -65,6 +73,7 @@
     "name": "Centarro",
     "type": "standard",
     "logo": "/logos/centarro.svg",
+    "darklogo": "/logos/centarro.svg",
     "squareLogo": "/logos/centarro-square.svg",
     "url": "https://www.centarro.io/",
     "github": "centarro"
@@ -73,6 +82,7 @@
     "name": "DrupalEasy",
     "type": "standard",
     "logo": "/logos/drupaleasy.png",
+    "darklogo": "/logos/drupaleasy.png",
     "squareLogo": "/logos/drupaleasy-square.svg",
     "url": "https://www.drupaleasy.com/"
   },
@@ -80,6 +90,7 @@
     "name": "Redfin Solutions",
     "type": "standard",
     "logo": "/logos/redfin-solutions.svg",
+    "darklogo": "/logos/dark-redfin-solutions.svg",
     "squareLogo": "/logos/redfin-solutions-square.svg",
     "url": "https://redfinsolutions.com/",
     "github": "redfinsolutions"
@@ -88,6 +99,7 @@
     "name": "MacStadium",
     "type": "standard",
     "logo": "/logos/mac-stadium.svg",
+    "darklogo": "/logos/dark-mac-stadium.svg",
     "squareLogo": "/logos/mac-stadium-square.svg",
     "url": "https://www.macstadium.com"
   },
@@ -95,6 +107,7 @@
     "name": "Lullabot",
     "type": "standard",
     "logo": "/logos/lullabot.svg",
+    "darklogo": "/logos/dark-lullabot.svg",
     "squareLogo": "/logos/lullabot-square.svg",
     "url": "https://www.lullabot.com",
     "github": "Lullabot"
@@ -103,6 +116,7 @@
     "name": "Craft CMS",
     "type": "standard",
     "logo": "/logos/craft-cms.svg",
+    "darklogo": "/logos/craft-cms.svg",
     "squareLogo": "/logos/craft-cms-square.svg",
     "url": "https://craftcms.com/",
     "github": "craftcms"
@@ -111,6 +125,7 @@
     "name": "undpaul",
     "type": "standard",
     "logo": "/logos/undpaul.svg",
+    "darklogo": "/logos/undpaul.svg",
     "squareLogo": "/logos/undpaul-square.svg",
     "url": "https://undpaul.de",
     "github": "undpaul"
