@@ -11,7 +11,7 @@ export interface Props {
 const { latestVersion } = Astro.props
 ---
 
-<div class="prose dark:text-slate-400">
+<div class="prose dark:prose-invert">
   <h2 class="text-3xl mt-24 dark:text-white">
     <small class="block font-mono text-xs text-gray-500">1/2</small>Launch a
     Provider &amp; Install DDEV
@@ -19,10 +19,9 @@ const { latestVersion } = Astro.props
 
   <Tabs order={["Gitpod", "GitHub Codespaces"]}>
     <Fragment slot="Gitpod">
-      <div class="prose pt-5 dark:text-slate-400">
+      <div class="prose pt-5 dark:prose-invert">
         <p>
-          <a href="https://www.gitpod.io/docs/getting-started" target="_blank"
-          class="dark:text-white"  
+          <a href="https://www.gitpod.io/docs/getting-started" target="_blank" 
           >Open any repository</a
           > using Gitpod and install DDEV:
         </p>
@@ -40,16 +39,15 @@ const { latestVersion } = Astro.props
       </a>
     </Fragment>
     <Fragment slot="GitHub Codespaces">
-      <div class="prose py-5 dark:text-slate-400">
+      <div class="prose py-5 dark:prose-invert">
         <ol>
           <li>
             <a href="https://github.com/codespaces/new"
-              class="dark:text-white"
               >Create a new codespace</a
             > for your project or open an existing one.
           </li>
           <li>
-            Edit the project’s <code class="dark:text-white">.devcontainer/devcontainer.json</code> file
+            Edit the project’s <code>.devcontainer/devcontainer.json</code> file
             to include these two lines in the “features” section:
             <Code
               code={`"features": {\n    "ghcr.io/devcontainers/features/docker-in-docker:2": {},\n    "ghcr.io/ddev/ddev/install-ddev:latest": {}\n},`}
@@ -83,7 +81,7 @@ const { latestVersion } = Astro.props
   <Terminal code={`→ ddev -v\nddev version ${latestVersion}`} />
 </div>
 
-<div class="prose dark:text-slate-400">
+<div class="prose dark:prose-invert">
   <h2 class="text-3xl mt-24 dark:text-white">
     <small class="block font-mono text-xs text-gray-500">2/2</small>Create a
     Project
@@ -125,7 +123,7 @@ const { latestVersion } = Astro.props
   <Terminal code={`→ ddev launch`} />
 </div>
 
-<div class="prose dark:text-slate-400">
+<div class="prose dark:prose-invert">
   <h2 class="text-3xl mt-24 dark:text-white">Explore & Enjoy!</h2>
 
   <p>
