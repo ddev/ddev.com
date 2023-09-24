@@ -69,12 +69,17 @@ import {
   >
     <a href="/" class="relative block cursor-pointer -ml-2">
       <span class="sr-only">DDEV logo</span>
-      <img
-        class="h-8 w-auto sm:h-10 dark:invert" 
-        src="/logos/ddev.svg"
-        alt="DDEV logo"
-        aria-hidden="true"
-      />
+      <picture>
+        <source
+          srcset="/logos/dark-ddev.svg" 
+           media="(prefers-color-scheme: dark)">
+        <img
+          class="h-8 w-auto sm:h-10" 
+          src="/logos/ddev.svg"
+          alt="DDEV logo"
+          aria-hidden="true"
+        />
+      </picture>
     </a>
     <div class="w-2/3 flex justify-end items-center">
       <ul class="hidden lg:flex">
