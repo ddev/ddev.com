@@ -1,0 +1,27 @@
+---
+import Layout from "./Layout.astro"
+import { SITE_TITLE } from "../const"
+
+const frontmatter = Astro.props.frontmatter
+const title = frontmatter.title || 'DDEV'
+const description = frontmatter.description || SITE_TITLE
+
+import "../styles/global.css"
+import Heading from "../components/Heading.astro";
+import PostBody from "../components/PostBody.astro";
+---
+<Layout
+    title={title}
+    description={description}
+>
+    <main class="max-w-4xl mx-auto mb-24">
+        <Heading title={title} />
+        <div class="lg:flex">
+            <div class="px-6 lg:px-0 lg:w-2/3">
+                <PostBody>
+                    <slot />
+                </PostBody>
+            </div>
+        </div>
+    </main>
+</Layout>
