@@ -43,7 +43,7 @@ But first, what do maintainers do? Why are they so busy? Why is it important to 
 
 **Current Funding**:
 
-- [**Platform.sh](http://Platform.sh)** pays Randy’s salary and provides benefits to him as an employee. That is an amazing benefit for this community and goes a long way! THANK YOU!
+- **[Platform.sh](http://Platform.sh)** pays Randy’s salary and provides benefits to him as an employee. That is an amazing benefit for this community and goes a long way! THANK YOU!
 - **Major sponsors [Tag1](https://tag1.com/), [1xInternet](https://1xinternet.de/), and [i-gelb](https://i-gelb.net/)** together account for USD$2000/month in funding. THANK YOU!
 - **Many other agencies and individuals** via GitHub Sponsors account for about USD$1500. THANK YOU!
 
