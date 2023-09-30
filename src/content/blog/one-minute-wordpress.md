@@ -30,7 +30,7 @@ As of v0.3, we currently support the latest version of macOS and several popular
 
 Creating a quick, destructible WordPress site can be handy for testing new themes and plugins. Here’s how you can get one up within one minute after you’ve properly installed DDEV.
 
-1. `git clone git@github.com:ddev/wordpress.git` (or you can pick a vanilla WordPress repo/zip)
+1. `git clone git@github.com:ddev/wordpress.git` (or you can pick a vanilla WordPress repo/ZIP)
 2. `cd wordpress` (or the directory of your WordPress codebase)
 3. `ddev config` (this is necessary so DDEV knows the application type and webroot)
 4. `ddev start` (this kicks off several things in the background: spinning up containers, mounting the codebase, etc.)
