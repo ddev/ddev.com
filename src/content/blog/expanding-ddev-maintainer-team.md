@@ -51,7 +51,7 @@ But first, what do maintainers do? Why are they so busy? Why is it important to 
 
 ### What is the Current Maintainership Situation?
 
-Currently **[Randy Fay](https://github.com/rfay), [Simon Gilli](https://github.com/gilbertsoft) and [Stas Zuk](https://github.com/stasadev)** have maintainer privileges. Simon has made enormous contributions over the years and knows how to handle most maintainer roles. He has been periodically paid by the DDEV Foundation for his work, but his available time is sometimes spotty. Stas is new to the role after many, many important contributions. Financial arrangements are pending.
+Currently **[Randy Fay](https://github.com/rfay), [Simon Gilli](https://github.com/gilbertsoft) and [Stas Zhuk](https://github.com/stasadev)** have maintainer privileges. Simon has made enormous contributions over the years and knows how to handle most maintainer roles. He has been periodically paid by the DDEV Foundation for his work, but his available time is sometimes spotty. Stas is new to the role after many, many important contributions. Financial arrangements are pending.
 
 ### What is the DDEV Foundation?
 
