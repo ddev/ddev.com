@@ -73,10 +73,7 @@ const { title, subtitle, date, author, authorUrl, authorAvatar, readTime, editUr
     </p>
     {
       editUrl && (
-        <span class="dark:text-white">
-            <span aria-hidden="true"> · </span>
-          </span>
-        <a class="flex dark:text-white pl-2" href={editUrl} target="_blank">
+        <a class="flex dark:text-white pl-1 sm:pl-4" href={editUrl} target="_blank">
         <svg
           aria-hidden="true"
           focusable="false"
