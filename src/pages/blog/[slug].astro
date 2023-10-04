@@ -7,7 +7,7 @@ import Heading from "./../../components/Heading.astro"
 import BlogPostFooter from "./../../components/BlogPostFooter.astro"
 import FeatureImage from "./../../components/FeatureImage.astro"
 import PostUpdate from "./../../components/PostUpdate.astro"
-import { BLOG_DESCRIPTION } from "src/const"
+import { BLOG_DESCRIPTION, GITHUB_URL_WEBSITE } from "src/const"
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog")
@@ -86,6 +86,7 @@ const blogPostSchema = [
       authorUrl={`/blog/author/${author.slug}`}
       authorAvatar={authorImage}
       readTime={remarkPluginFrontmatter.minutesRead}
+      editUrl={GITHUB_URL_WEBSITE+`/`+entry.slug+`.md`}
     />
     {
       hasFeatureImage && shouldDisplayFeatureImage && (
