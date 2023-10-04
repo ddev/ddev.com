@@ -32,6 +32,7 @@ footer {
   footer {
     ul a[target="_blank"] {
       &::after {
+        opacity: 1;
         filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg)
           brightness(119%) contrast(119%);
       }
