@@ -16,6 +16,6 @@ web_extra_exposed_ports:
     https_port: 9999
 
 web_extra_daemons:
-  - name: "astro dev"
+  - name: "astro"
     command: "npm run dev"
     directory: /var/www/html
