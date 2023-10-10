@@ -14,3 +14,8 @@ web_extra_exposed_ports:
     container_port: 4321
     http_port: 9998
     https_port: 9999
+
+web_extra_daemons:
+  - name: "astro dev"
+    command: "npm run dev"
+    directory: /var/www/html
