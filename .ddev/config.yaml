@@ -10,7 +10,7 @@ nodejs_version: "18"
 
 ## This was meant to allow us to run ddev npm run dev - But it won't work.
 web_extra_exposed_ports:
-  - name: node-astro
+  - name: astro-preview
     container_port: 4321
     http_port: 9998
     https_port: 9999
