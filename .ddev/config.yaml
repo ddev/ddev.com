@@ -1,3 +1,4 @@
+name: ddev-astrosite
 type: php
 docroot: dist
 webserver_type: nginx-fpm
@@ -8,14 +9,26 @@ use_dns_when_possible: true
 web_environment: []
 nodejs_version: "18"
 
-## This was meant to allow us to run ddev npm run dev - But it won't work.
 web_extra_exposed_ports:
-  - name: astro-preview
-    container_port: 4321
-    http_port: 9998
-    https_port: 9999
+- name: astro-dev
+  container_port: 4321
+  http_port: 4322
+  https_port: 4321
 
+# The extra -- is a vite item
+# https://github.com/vitejs/vite/discussions/3396
 web_extra_daemons:
-  - name: "astro"
-    command: "npm run dev"
+  - name: astro-dev-deamon
+    command: "npm run dev -- --host"
     directory: /var/www/html
+hooks:
+  post-start:
+    - exec: echo '================================================================================='
+    - exec: echo '                                  NOTICE'
+    - exec: echo '================================================================================='
+    - exec: echo 'The node.js container is ready.
+    - exec: echo
+    - exec: echo 'By default it will be available at port 4321 - {ddev-url}:4321'
+    - exec: echo "Use ddev describe to confirm if this doesn't work."
+    - exec: echo 'Check the status of startup by running "ddev logs --follow --time"'
+    - exec: echo '================================================================================='
