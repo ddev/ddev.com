@@ -64,7 +64,6 @@ All commands are run from the root of the project, from a terminal:
 #### DDev setup
 
 Ddev already has all the dependencies included.
-Check out the project in your favorite Node.js environment, ideally running [`nvm`](https://github.com/nvm-sh/nvm). We’ll install dependencies, add a GitHub API key, and run a local dev server with a hot-reloading browser URL.
 
 1. Run `ddev start && ddev npm install` set up the project’s dependencies.
 3. `npm run build` can be found at the base URL and `npm run dev` is found at URL:4321. Dev has Vite HMR(hot module reloading) among other features. The site will automatically refresh as you work on it, displaying errors in the relevant console (terminal or browser).
