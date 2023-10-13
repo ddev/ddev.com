@@ -78,7 +78,7 @@ Check out the project in your favorite Node.js environment, ideally running [`nv
 1. Run `nvm use` to make sure you’re running an appropriate Node.js version.
 2. Run `npm install` to set up the project’s dependencies.
 3. Run `npm run dev` to start Astro’s dev server.
-4. Visit the URL displayed in your terminal. (Probably `http://127.0.0.1:3000/`.) The site will automatically refresh as you work on it, displaying errors in the relevant console (terminal or browser).
+4. Visit the URL displayed in your terminal. (Probably `http://127.0.0.1:4321/`.) The site will automatically refresh as you work on it, displaying errors in the relevant console (terminal or browser).
 
 To generate a static copy of the site, run `npm run build`. The contents of the `dist/` folder are exactly what get [deployed to Cloudflare Pages](#build--deployment). You can preview locally by running `npm run preview` or using a tool like [`serve`](https://www.npmjs.com/package/serve).
 ## Managing Content
