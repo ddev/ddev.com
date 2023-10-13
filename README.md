@@ -38,6 +38,7 @@ Most pages are built with [Astro components](https://docs.astro.build/en/core-co
 
 ## Development
 
+Development can be way in two differnet ways. One can eithe install ddev and or just adding node and nvm to the host Operating System.
 ### Commands
 
 All commands are run from the root of the project, from a terminal:
@@ -53,20 +54,34 @@ All commands are run from the root of the project, from a terminal:
 | `npm run textlint`     | Run textlint on content collections                |
 | `npm run textlint:fix` | Apply fixable updates to resolve texlint errors    |
 
+
+
 ### Local Development Setup
+
+1. Run `cp .env.example .env` to create a `.env` file for environment variables. (Don’t check this in!)
+2. Create a [classic GitHub access token](https://github.com/settings/tokens) with these scopes: `repo`, `read:org`, `read:user`, and `read:project`.
+3. Paste the GitHub token after `.env`’s `GITHUB_TOKEN=`.
+
+#### DDev setup
+
+Ddev already has all the dependencies included.
+Check out the project in your favorite Node.js environment, ideally running [`nvm`](https://github.com/nvm-sh/nvm). We’ll install dependencies, add a GitHub API key, and run a local dev server with a hot-reloading browser URL.
+
+1. Run `ddev start && ddev npm install` set up the project’s dependencies.
+3. `npm run build` can be found at the base URL and `npm run dev` is found at URL:4321. Dev has Vite HMR(hot module reloading) among other features. The site will automatically refresh as you work on it, displaying errors in the relevant console (terminal or browser).
+
+To generate a static copy of the site, run `ddev npm run build`. The contents of the `dist/` folder are exactly what get [deployed to Cloudflare Pages](#build--deployment). You can preview locally by running `ddev npm run preview` or using a tool like [`serve`](https://www.npmjs.com/package/serve).
+
+#### General setup
 
 Check out the project in your favorite Node.js environment, ideally running [`nvm`](https://github.com/nvm-sh/nvm). We’ll install dependencies, add a GitHub API key, and run a local dev server with a hot-reloading browser URL.
 
 1. Run `nvm use` to make sure you’re running an appropriate Node.js version.
 2. Run `npm install` to set up the project’s dependencies.
-3. Run `cp .env.example .env` to create a `.env` file for environment variables. (Don’t check this in!)
-4. Create a [classic GitHub access token](https://github.com/settings/tokens) with these scopes: `repo`, `read:org`, `read:user`, and `read:project`.
-5. Paste the GitHub token after `.env`’s `GITHUB_TOKEN=`.
-6. Run `npm run dev` to start Astro’s dev server.
-7. Visit the URL displayed in your terminal. (Probably `http://127.0.0.1:3000/`.) The site will automatically refresh as you work on it, displaying errors in the relevant console (terminal or browser).
+3. Run `npm run dev` to start Astro’s dev server.
+4. Visit the URL displayed in your terminal. (Probably `http://127.0.0.1:3000/`.) The site will automatically refresh as you work on it, displaying errors in the relevant console (terminal or browser).
 
 To generate a static copy of the site, run `npm run build`. The contents of the `dist/` folder are exactly what get [deployed to Cloudflare Pages](#build--deployment). You can preview locally by running `npm run preview` or using a tool like [`serve`](https://www.npmjs.com/package/serve).
-
 ## Managing Content
 
 The site’s content lives in either `.astro` components that resemble souped-up HTML, or Markdown files organized into schema-validated [content collections](https://docs.astro.build/en/guides/content-collections/).

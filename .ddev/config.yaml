@@ -1,4 +1,4 @@
-name: ddev-astrosite
+name: astrosite
 type: php
 docroot: dist
 webserver_type: nginx-fpm
@@ -9,26 +9,27 @@ use_dns_when_possible: true
 web_environment: []
 nodejs_version: "18"
 
+# 4321 is Astro Vite default
 web_extra_exposed_ports:
 - name: astro-dev
   container_port: 4321
   http_port: 4322
   https_port: 4321
 
-# The extra -- is a vite item
+# The extra -- is a Vite item
 # https://github.com/vitejs/vite/discussions/3396
 web_extra_daemons:
   - name: astro-dev-deamon
     command: "npm run dev -- --host"
     directory: /var/www/html
-# hooks:
-#   post-start:
-#     - exec: echo '================================================================================='
-#     - exec: echo '                                  NOTICE'
-#     - exec: echo '================================================================================='
-#     - exec: echo 'The node.js container is ready.
-#     - exec: echo
-#     - exec: echo 'By default it will be available at port 4321 - {ddev-url}:4321'
-#     - exec: echo "Use ddev describe to confirm if this doesn't work."
-#     - exec: echo 'Check the status of startup by running "ddev logs --follow --time"'
-#     - exec: echo '================================================================================='
+hooks:
+  post-start:
+    - exec: echo '================================================================================='
+    - exec: echo '                                  NOTICE'
+    - exec: echo '================================================================================='
+    - exec: echo 'The Astro dev container is ready.'
+    - exec: echo
+    - exec: echo "By default it will be available at port 4321 - URL:4321"
+    - exec: echo "Use ddev describe to confirm if this doesn't work."
+    - exec: echo 'Check the status of startup by running "ddev logs --follow --time"'
+    - exec: echo '================================================================================='

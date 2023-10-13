@@ -12,11 +12,11 @@ import widont from "rehype-widont"
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://ddev.com.ddev.site",
+  site: "https://ddev.com",
   vite: {
     server: {
       host: true, // leave this unchanged for DDEV!
-      port: 4321,
+    // port: 4321, // astro default
     // strictPort: true,
     // origin: 'https://ddev.com.ddev.site'
   }},
