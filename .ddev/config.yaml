@@ -21,14 +21,14 @@ web_extra_daemons:
   - name: astro-dev-deamon
     command: "npm run dev -- --host"
     directory: /var/www/html
-hooks:
-  post-start:
-    - exec: echo '================================================================================='
-    - exec: echo '                                  NOTICE'
-    - exec: echo '================================================================================='
-    - exec: echo 'The node.js container is ready.
-    - exec: echo
-    - exec: echo 'By default it will be available at port 4321 - {ddev-url}:4321'
-    - exec: echo "Use ddev describe to confirm if this doesn't work."
-    - exec: echo 'Check the status of startup by running "ddev logs --follow --time"'
-    - exec: echo '================================================================================='
+# hooks:
+#   post-start:
+#     - exec: echo '================================================================================='
+#     - exec: echo '                                  NOTICE'
+#     - exec: echo '================================================================================='
+#     - exec: echo 'The node.js container is ready.
+#     - exec: echo
+#     - exec: echo 'By default it will be available at port 4321 - {ddev-url}:4321'
+#     - exec: echo "Use ddev describe to confirm if this doesn't work."
+#     - exec: echo 'Check the status of startup by running "ddev logs --follow --time"'
+#     - exec: echo '================================================================================='
