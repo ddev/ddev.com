@@ -38,7 +38,6 @@ Most pages are built with [Astro components](https://docs.astro.build/en/core-co
 
 ## Development
 
-Development can be way in two differnet ways. One can eithe install ddev and or just adding node and nvm to the host Operating System.
 ### Commands
 
 All commands are run from the root of the project, from a terminal:
