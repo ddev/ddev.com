@@ -356,7 +356,9 @@ Example repository: [mandrasch/ddev-craftcms-vite](https://github.com/mandrasch/
 
 ### Drupal?
 
-I found this https://www.drupal.org/project/vite plugin, 
+I found this https://www.drupal.org/project/vite plugin, but could not find more info regarding DDEV usage.
+
+TODO: Ask community?
 
 #### Laravel
 
