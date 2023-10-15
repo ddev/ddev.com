@@ -1,4 +1,3 @@
-name: astrosite
 type: php
 docroot: dist
 webserver_type: nginx-fpm
@@ -19,7 +18,7 @@ web_extra_exposed_ports:
 # The extra -- is a Vite item
 # https://github.com/vitejs/vite/discussions/3396
 web_extra_daemons:
-  - name: astro-dev-deamon
+  - name: astro-dev-daemon
     command: "npm run dev -- --host"
     directory: /var/www/html
 hooks:
