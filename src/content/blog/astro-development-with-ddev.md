@@ -52,7 +52,7 @@ After looking at the Discord Support queue and testing a vareity of contributed 
     }},
     
     ```
-    That allows docker to reach into vite. It's the equivalent of '0.0.0.0'
+    That exposes vite dev server to Docker. It's the equivalent of '0.0.0.0'
 
 3. Let DDev know which port to listen to.
     ```
