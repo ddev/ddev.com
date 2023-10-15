@@ -24,19 +24,19 @@ This guide will highlight what was required to add DDev to an Astro project.
 
 It's worth mentioning Astro uses Vite as is bundler so this steps would be very similar for Vite and may help with rollup among others.
 
-The instructions below assume you have ddev and docker installed and globally avaliable.
+The instructions below assume you have ddev and Docker installed and globally avaliable.
 
 ## 1. Run `ddev config`
 
 For the purposes of ddev.com the project name could be left as the default as that will inherit the name  of the folder ddev is in.
 
-Astro by default saves it builds on the dist directory so our docroot location was set to dist. This will allow you to browse the build on the default https://<projectname>.ddev.site url.
+Astro by default saves it builds on the dist directory so our docroot location was set to dist. This will allow you to browse the build on the default https://<projectname>.ddev.site URL.
 
 DDev currently uses the PHP project type as the custom catch it all. So for anything that does not fit inside the other CMSs PHP can be chosen.
 
 ## 1. Vite in DDev
 
-There are a couple of ways one could run Vite in docker.
+There are a couple of ways one could run Vite in DDev.
 In fact there are a couple of contributed plugins that help with this though they tend to assume you are running Vite in its stock configuration.
 
 After looking at the Discord Support queue and testing a vareity of contributed plugins I came a cross a few tips that could help regardless of the bundler/tool but specific to Vite in this case.
