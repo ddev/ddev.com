@@ -5,7 +5,7 @@ pubDate: 2023-10-17
 summary: How to run Astro, Vite and other npm packages with DDev
 author: Bernardo Martinez
 featureImage:
-    src: /img/blog/2023/08/intel-on-apple.png
+    src: /img/blog/2023/10/astroonddev.png
     alt: Astro image
 categories:
   - Guides
@@ -16,7 +16,7 @@ From time to time, you may need to add frontend tooling to a project or that mig
 
 DDev.com is an [Astro](https://astro.build/) website. Astro is fantastic tool that provides a low-entry barrier for developers looking to contribute features, issues and more. Among its benefits are its low hosting cost and ease of use for frontend devs.
 
-That said, for a while the website lacked did not use ddev. Adding ddev provides an example for those looking to add ddev to such projects and it makes it easier for those using ddev to contribute.
+That said, for a while the website did not use DDev. Adding DDev provides an example for those looking to add DDev to such projects and it makes easier for those using it to contribute.
 
 As of this article there are two ways to setup your local development on ddev.com. With DDev and without DDev. Whichever is easier and more covinient to you.
 
@@ -32,7 +32,7 @@ For the purposes of ddev.com the project name could be left as the default as th
 
 Astro by default saves it builds on the dist directory so our docroot location was set to dist. This will allow you to browse the build on the default https://<projectname>.ddev.site url.
 
-DDev currently uses the PHP project type as the custom catch it all. So for anything that does not fit inside the other CMS's PHP can be chosen.
+DDev currently uses the PHP project type as the custom catch it all. So for anything that does not fit inside the other CMSs PHP can be chosen.
 
 ## 1. Vite in DDev
 
@@ -66,32 +66,33 @@ After looking at the Discord Support queue and testing a vareity of contributed 
     The code above allows ddev to map port 4321 to the container `ddev describe` provides additional info.
 
 
-4. Don't create conflicts npm without ddev. If one adds ddev to a project it should still be easy for those that don't have it to compile the project and compile it without it. One way to ensure this happens is to allow Astro Vite to run on its default port or swap it if is busy. I could have pinned the port to 4321 but that could generate conflicts.
+## Extra info 
 
 
-5. Because it be nice to have astro dev running in the background. I added an daemon that runs `npm run dev -- --host`.
+1. As a reminder, avoid creating conflicts on local setups without DDev. If one adds DDev to a project it should still be easy for those that don't use it to compile the project without conflicts. One way to avoid it, is to allow Astro Vite to run on its default port, Vite will use a different port if the default is busy. However if I pinned the port to 4321 that won't happen. In other words, don't pin the port. 
+
+
+2. Because it can be tiresome to type `npm run dev -- --host`. I added a daemon that runs it.
 
     ```
     web_extra_daemons:
-      - name: astro-dev-deamon
+      - name: astro-dev-daemon
         command: "npm run dev -- --host"
         directory: /var/www/html
 
     ```
 
-    This makes it so once the container starts and all the npm packagesa are installed one can go to https://<projectname>.ddev.site:4321 and have HMR(Hot module reloading)
-    among other features.
+    The daemon allows us to reach https://<projectname>.ddev.site:4321 and have HMR(Hot module reloading) among other features. At any point in time.
 
-## Extra info
-  As I was looking for ways to fix my bad gateway and 404 error messages. I remember a project that used DDev and Storybook. It did not help much with my Vite issue but it inspired the Notice on the config.yml.
+3. As I was looking for ways to fix my bad gateway and 404 error messages. I remember a project that used [DDev and Storybook](https://github.com/cosmicdreams/drupal-storybook/blob/main/.ddev/config.yaml). It did not help much with my Vite issue but it inspired the Notice on the config.yml.
 
 ## In Summary:
 
 1. Make sure Vite or any other tool is listening on all interfaces.
-2. Find the default port for said tool and map it to ddev config.yml file. 
+2. Find the default port for said tool and map it to DDev config.yml file. 
   (Astro Vite is 4231 and Vite is 3000, so it could be different for you.)
 3. Use ddev logs --follow --time to debug issues.
-4. Add a daemon to have a dev server it on demand.
+4. Add a daemon to have a dev server on demand.
 5. Look at the support queue of the tool and ddev for other tips and tricks.
 
 
