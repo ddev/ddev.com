@@ -91,6 +91,8 @@
     "name": "mobilistics",
     "type": "standard",
     "logo": "/logos/mobilistics.svg",
+    "darklogo": "/logos/mobilistics-dark.svg",
+    "squareLogo": "/logos/mobilistics-square.svg",
     "url": "https://mobilistics.de/",
     "github": "mobilistics"
   },
