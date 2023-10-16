@@ -1,7 +1,7 @@
 ---
 title: "Expanding the DDEV maintainer team - how we'll fund it"
 pubDate: 2023-09-28
-modifiedDate: 2023-09-28
+modifiedDate: 2023-10-16
 summary: Why is DDEV adding a new full-time maintainer, and how do the finances work?
 author: Randy Fay
 featureImage:
@@ -37,7 +37,7 @@ But first, what do maintainers do? Why are they so busy? Why is it important to 
 
 **Randy is not forever**: Although I love DDEV and its community we are all finite, so the time will come that I either temporarily or permanently can’t carry on. That means we need a strong maintainer presence besides me.  (In fact in the short term I plan to be bike touring in Patagonia in December 2023 and January 2024 with limited access to the internet.)
 
-**The community and its needs are growing**: More CMSs have adopted DDEV as their go-to local development environment. That means we have new and different users with new and different needs. What fun! So great! But this will eventually strain our current abilities to support.
+**The community and its needs are growing**: More CMSs have adopted DDEV as their go-to local development environment (Silverstripe this year, Craft CMS last year, etc.). That means we have new and different users with new and different needs. What fun! So great! But this will eventually strain our current abilities to support.
 
 ### What is DDEV’s Current Funding Situation and What are the Goals?
 
@@ -51,7 +51,7 @@ But first, what do maintainers do? Why are they so busy? Why is it important to 
 
 ### What is the Current Maintainership Situation?
 
-Currently **[Randy Fay](https://github.com/rfay), [Simon Gilli](https://github.com/gilbertsoft) and [Stas Zhuk](https://github.com/stasadev)** have maintainer privileges. Simon has made enormous contributions over the years and knows how to handle most maintainer roles. He has been periodically paid by the DDEV Foundation for his work, but his available time is sometimes spotty. Stas is new to the role after many, many important contributions. Financial arrangements are pending.
+Currently **[Randy Fay](https://github.com/rfay), [Simon Gilli](https://github.com/gilbertsoft) and [Stas Zhuk](https://github.com/stasadev)** have maintainer privileges. Simon has made enormous contributions over the years and knows how to handle most maintainer roles. He has been periodically paid by the DDEV Foundation for his work, but his available time is sometimes spotty. Stas is new to the role after many, many important contributions and thanks to your contributions he is already being paid for part-time work.
 
 ### What is the DDEV Foundation?
 
