@@ -80,6 +80,12 @@ Check out the project in your favorite Node.js environment, ideally running [`nv
 4. Visit the URL displayed in your terminal. (Probably `http://localhost:4321/`.) The site will automatically refresh as you work on it, displaying errors in the relevant console (terminal or browser).
 
 To generate a static copy of the site, run `npm run build`. The contents of the `dist/` folder are exactly what get [deployed to Cloudflare Pages](#build--deployment). You can preview locally by running `npm run preview` or using a tool like [`serve`](https://www.npmjs.com/package/serve).
+
+
+#### Switching from without Ddev to with DDev local environment.
+
+Make sure to delete your node vendor folder everytime you switch and run npm install. The change in architecture can create odd issues otherwise.
+
 ## Managing Content
 
 The site’s content lives in either `.astro` components that resemble souped-up HTML, or Markdown files organized into schema-validated [content collections](https://docs.astro.build/en/guides/content-collections/).
