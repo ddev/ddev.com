@@ -84,7 +84,17 @@
     "logo": "/logos/drupaleasy.png",
     "darklogo": "/logos/drupaleasy.png",
     "squareLogo": "/logos/drupaleasy-square.svg",
-    "url": "https://www.drupaleasy.com/"
+    "url": "https://www.drupaleasy.com/",
+    "github": "drupaleasy"
+  },
+  {
+    "name": "mobilistics",
+    "type": "standard",
+    "logo": "/logos/mobilistics.svg",
+    "darklogo": "/logos/mobilistics-dark.svg",
+    "squareLogo": "/logos/mobilistics-square.svg",
+    "url": "https://mobilistics.de/",
+    "github": "mobilistics"
   },
   {
     "name": "Redfin Solutions",
