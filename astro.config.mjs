@@ -9,11 +9,13 @@ import searchIndex from "./src/lib/search-index.js"
 import sitemap from "@astrojs/sitemap"
 import tailwind from "@astrojs/tailwind"
 import widont from "rehype-widont"
+import astroExpressiveCode from 'astro-expressive-code'
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://ddev.com/",
   integrations: [
+    astroExpressiveCode(),
     tailwind(),
     react(),
     astroImageTools,
