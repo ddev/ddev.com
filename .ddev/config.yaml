@@ -3,7 +3,7 @@ docroot: dist
 webserver_type: nginx-fpm
 additional_hostnames: []
 additional_fqdns: []
-performance_mode: none
+performance_mode: mutagen # Important to avoid EPERM errors
 use_dns_when_possible: true
 web_environment: []
 nodejs_version: "20"
@@ -17,10 +17,10 @@ web_extra_exposed_ports:
 
 # The extra -- in `npm run dev -- --host` is a Vite requirement
 # https://github.com/vitejs/vite/discussions/3396
-# web_extra_daemons:
-#   - name: astro-dev-extra
-#     command: "npm run dev -- --host"
-#     directory: /var/www/html
+web_extra_daemons:
+  - name: astro-dev-daemon
+    command: "npm run dev -- --host"
+    directory: /var/www/html
 hooks:
   post-start:
     - exec-host: echo -e "                                  NOTICE                                        \n

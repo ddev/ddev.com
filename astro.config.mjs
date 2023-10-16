@@ -16,11 +16,6 @@ export default defineConfig({
   vite: {
     server: {
       host: true, // leave this unchanged for DDEV!
-      cors: false,
-      fs: {
-         // Allow serving files from one level up to the project root
-        strict: false 
-      },
   }},
   integrations: [
     tailwind(),
