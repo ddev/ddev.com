@@ -14,6 +14,9 @@ import astroExpressiveCode from 'astro-expressive-code'
 const frameCodeOptions = {
   // Configures the plugin.
   extractFileNameFromCode: false,
+  styleOverrides: {
+    shadowColor: 'transparent',
+  },
 }
 
 /** @type {import('astro-expressive-code').AstroExpressiveCodeOptions} */
@@ -21,6 +24,8 @@ const astroExpressiveCodeOptions = {
   // Configures the plugin.
   theme: 'nord',
   frames: frameCodeOptions,
+  // useThemedSelectionColors: false,
+  // textMarkers: false,
   useThemedScrollbars: false,
 }
 
