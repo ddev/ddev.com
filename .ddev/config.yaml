@@ -7,6 +7,7 @@ performance_mode: mutagen # Important to avoid EPERM errors
 use_dns_when_possible: true
 web_environment: []
 nodejs_version: "20"
+disable_upload_dirs_warning: true
 
 # 4321 is Astro Vite default
 web_extra_exposed_ports:
