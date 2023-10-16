@@ -27,6 +27,6 @@ hooks:
                          =================================================================================\n
                          =================================================================================\n
                           The Astro dev container is ready \n
-                          By default it will be available at port 4321 - URL:4321 \n
+                          By default it will be available at ${DDEV_PRIMARY_URL}:4321 \n
                           Use ddev describe to confirm if this doesn't work. \n
                           Check the startup status by running ddev logs --follow --time \n"
