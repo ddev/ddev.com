@@ -11,11 +11,24 @@ import tailwind from "@astrojs/tailwind"
 import widont from "rehype-widont"
 import astroExpressiveCode from 'astro-expressive-code'
 
+const frameCodeOptions = {
+  // Configures the plugin.
+  extractFileNameFromCode: false,
+}
+
+/** @type {import('astro-expressive-code').AstroExpressiveCodeOptions} */
+const astroExpressiveCodeOptions = {
+  // Configures the plugin.
+  theme: 'nord',
+  frames: frameCodeOptions,
+  useThemedScrollbars: false,
+}
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://ddev.com/",
   integrations: [
-    astroExpressiveCode(),
+    astroExpressiveCode(astroExpressiveCodeOptions),
     tailwind(),
     react(),
     astroImageTools,
@@ -41,11 +54,7 @@ export default defineConfig({
     prefetch(),
   ],
   markdown: {
-    syntaxHighlight: "shiki",
     // https://github.com/shikijs/shiki/blob/main/docs/languages.md
-    shikiConfig: {
-      theme: "nord",
-    },
     remarkPlugins: [remarkReadingTime],
     rehypePlugins: [
       widont,
