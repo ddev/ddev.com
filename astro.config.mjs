@@ -16,9 +16,11 @@ export default defineConfig({
   vite: {
     server: {
       host: true, // leave this unchanged for DDEV!
-    // port: 4321, // astro default
-    // strictPort: true,
-    // origin: 'https://ddev.com.ddev.site'
+      cors: false,
+      fs: {
+         // Allow serving files from one level up to the project root
+        strict: false 
+      },
   }},
   integrations: [
     tailwind(),

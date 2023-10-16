@@ -65,7 +65,7 @@ All commands are run from the root of the project, from a terminal:
 
 DDev already has all the dependencies included.
 
-1. Run `ddev start && ddev npm install` set up the project’s dependencies.
+1. Run `ddev start && ddev npm cache clean --force  && ddev npm install ` set up the project’s dependencies.
 3. `ddev npm run build` can be found at the base URL and `ddev npm run dev` is found at https://<projectname>.ddev.site:4321. Dev has Vite HMR(hot module reloading) among other features. The site will automatically refresh as you work on it, displaying errors in the relevant console (terminal or browser).
 
 To generate a static copy of the site, run `ddev npm run build`. The contents of the `dist/` folder are exactly what get [deployed to Cloudflare Pages](#build--deployment). You can preview locally by running `ddev npm run preview` or using a tool like [`serve`](https://www.npmjs.com/package/serve).
