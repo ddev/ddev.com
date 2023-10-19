@@ -20,7 +20,7 @@ web_extra_exposed_ports:
 # https://github.com/vitejs/vite/discussions/3396
 web_extra_daemons:
   - name: astro-dev-daemon
-    command: "npm run dev -- --host"
+    command: "sleep 3 && npm run dev -- --host" # sleep avoids race conditions
     directory: /var/www/html
 hooks:
   post-start:
