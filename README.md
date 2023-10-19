@@ -61,30 +61,30 @@ All commands are run from the root of the project, from a terminal:
 2. Create a [classic GitHub access token](https://github.com/settings/tokens) with these scopes: `repo`, `read:org`, `read:user`, and `read:project`.
 3. Paste the GitHub token after `.env`’s `GITHUB_TOKEN=`.
 
-#### DDev setup
+#### DDEV setup
 
-DDev already has all the dependencies included.
+DDEV already has all the dependencies included.
 
-1. Run `ddev start && ddev npm install ` set up the project’s dependencies. If it fails then run `ddev npm cache clean --force && ddev npm install && ddev restart`. 
-3. `ddev npm run build` can be found at the base URL and `ddev npm run dev` is found at https://<projectname>.ddev.site:4321. Dev has Vite HMR(hot module reloading) among other features. The site will automatically refresh as you work on it, displaying errors in the relevant console (terminal or browser).
+1. Run `ddev start && ddev npm install` set up the project’s dependencies. If it fails then run `ddev npm cache clean --force && ddev npm install && ddev restart`. 
+3. `ddev npm run build` can be found at https://<projectname>.ddev.site and `ddev npm run dev` is found at https://<projectname>.ddev.site:4321.The dev server has Vite HMR (hot module reloading) among other features. The site will automatically refresh as you work on it, displaying errors in the relevant terminal or browser console.
 
 To generate a static copy of the site, run `ddev npm run build`. The contents of the `dist/` folder are exactly what get [deployed to Cloudflare Pages](#build--deployment). You can preview locally by running `ddev npm run preview` or using a tool like [`serve`](https://www.npmjs.com/package/serve). 
 
-#### Without DDev setup
+#### Setup without DDEV
 
 Check out the project in your favorite Node.js environment, ideally running [`nvm`](https://github.com/nvm-sh/nvm). We’ll install dependencies, add a GitHub API key, and run a local dev server with a hot-reloading browser URL.
 
 1. Run `nvm use` to make sure you’re running an appropriate Node.js version.
 2. Run `npm install` to set up the project’s dependencies.
 3. Run `npm run dev` to start Astro’s dev server.  If it fails then run `npm cache clean --force && npm install && npm run dev`. 
-4. Visit the URL displayed in your terminal. (Probably `http://localhost:4321/`.) The site will automatically refresh as you work on it, displaying errors in the relevant console (terminal or browser).
+4. Visit the URL displayed in your terminal. (Probably `http://localhost:4321/`.) The site will automatically refresh as you work on it, displaying errors in the relevant terminal or browser console.
 
 To generate a static copy of the site, run `npm run build`. The contents of the `dist/` folder are exactly what get [deployed to Cloudflare Pages](#build--deployment). You can preview locally by running `npm run preview` or using a tool like [`serve`](https://www.npmjs.com/package/serve).
 
 
-#### Switching from without Ddev to with DDev local environment.
+#### Switching from Without DDEV to with DDEV
 
-Make sure to delete your node vendor folder everytime you switch and run npm install. The change in architecture can create odd issues otherwise.
+Make sure to delete your `node_modules/` directory and run `npm install`. The change in architecture can create odd issues otherwise.
 
 ## Managing Content
 
