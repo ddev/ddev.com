@@ -3,6 +3,9 @@ title: "Introducing New DDEV Maintainer Stas Zhuk"
 pubDate: 2023-10-24
 summary: Introducing New Maintainer Stas Zhuk
 author: Randy Fay
+featureImage:
+  src: /img/blog/2023/10/stas-bench-cropped.jpg
+  alt: Stas Zhuk, DDEV Maintainer
 categories:
   - Community
 ---
