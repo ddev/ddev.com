@@ -1,5 +1,5 @@
 ---
-title: "How to Give and Get Community Support"
+title: "Introducing New DDEV Maintainer Stas Zhuk"
 pubDate: 2023-10-24
 summary: Introducing New Maintainer Stas Zhuk
 author: Randy Fay
