@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg2"
+   width="170.66667"
+   height="170.66667"
+   viewBox="0 0 170.66667 170.66667"
+   sodipodi:docname="drop_sizes.ai"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath16">
+      <path
+         d="M 0,128 H 128 V 0 H 0 Z"
+         id="path14" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath24">
+      <path
+         d="M 0,128 H 128 V 0 H 0 Z"
+         id="path22" />
+    </clipPath>
+    <linearGradient
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="0"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0,125.99951,125.99951,0,64,1)"
+       spreadMethod="pad"
+       id="linearGradient50">
+      <stop
+         style="stop-opacity:1;stop-color:#6243a4"
+         offset="0"
+         id="stop44" />
+      <stop
+         style="stop-opacity:1;stop-color:#47abe4"
+         offset="0.63924314"
+         id="stop46" />
+      <stop
+         style="stop-opacity:1;stop-color:#47abe4"
+         offset="1"
+         id="stop48" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1" />
+  <g
+     id="g8"
+     inkscape:groupmode="layer"
+     inkscape:label="drop_sizes"
+     transform="matrix(1.3333333,0,0,-1.3333333,0,170.66667)">
+    <g
+       id="g10">
+      <g
+         id="g12"
+         clip-path="url(#clipPath16)">
+        <g
+           id="g18">
+          <g
+             id="g20" />
+          <g
+             id="g30">
+            <g
+               clip-path="url(#clipPath24)"
+               opacity="0"
+               id="g28">
+              <path
+                 d="M 128,0 H 0 v 128 h 128 z"
+                 style="fill:#ec008c;fill-opacity:1;fill-rule:nonzero;stroke:none"
+                 id="path26" />
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       id="g32">
+      <g
+         id="g34">
+        <g
+           id="g40">
+          <g
+             id="g42">
+            <path
+               d="M 63.015,125.906 C 61.931,124.702 45.879,106.728 33.638,85.577 v 0 L 64,107.946 C 77.139,91.404 95.951,63.693 95.951,45.266 v 0 C 95.951,27.645 81.62,13.315 64.003,13.315 v 0 c -17.618,0 -31.954,14.33 -31.954,31.951 v 0 c 0,17.614 14.336,31.949 31.951,31.949 v 0 c 3.401,0 6.157,2.756 6.157,6.157 v 0 c 0,3.401 -2.756,6.158 -6.157,6.158 v 0 C 39.555,89.53 19.735,69.71 19.735,45.266 v 0 C 19.735,20.817 39.555,1 64,1 v 0 c 24.407,0 44.266,19.857 44.266,44.266 v 0 c 0,32.22 -41.512,78.678 -43.279,80.64 v 0 L 64.003,127 Z"
+               style="fill:url(#linearGradient50);stroke:none"
+               id="path52" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

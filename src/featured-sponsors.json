@@ -34,6 +34,14 @@
     "github": "i-gelb"
   },
   {
+    "name": "Amazee.io",
+    "type": "major",
+    "logo": "/logos/amazee-io-Mirantis-Logo-Black-White-IO.svg",
+    "squareLogo": "/logos/amazee-io-square.svg",
+    "url": "https://amazee.io/",
+    "github": "amazee.io"
+  },
+  {
     "name": "Agaric",
     "type": "standard",
     "logo": "/logos/agaric.svg",
@@ -41,14 +49,6 @@
     "squareLogo": "/logos/agaric-square.svg",
     "url": "https://agaric.coop/",
     "github": "agaric"
-  },
-  {
-    "name": "Amazee.io",
-    "type": "standard",
-    "logo": "/logos/amazee-io-Mirantis-Logo-Black-White-IO.svg",
-    "squareLogo": "/logos/amazee-io-square.svg",
-    "url": "https://amazee.io/",
-    "github": "amazee.io"
   },
   {
     "name": "b13",
@@ -103,6 +103,14 @@
     "squareLogo": "/logos/mobilistics-square.svg",
     "url": "https://mobilistics.de/",
     "github": "mobilistics"
+  },
+  {
+    "name": "optasy",
+    "type": "standard",
+    "logo": "/logos/optasy_full_logo.svg",
+    "squareLogo": "/logos/optasy_square.svg",
+    "url": "https://www.optasy.com/",
+    "github": "OPTASY"
   },
   {
     "name": "Redfin Solutions",
