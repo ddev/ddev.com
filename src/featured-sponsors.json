@@ -43,6 +43,14 @@
     "github": "agaric"
   },
   {
+    "name": "Amazee.io",
+    "type": "standard",
+    "logo": "/logos/amazee-io-Mirantis-Logo-Black-White-IO.svg",
+    "squareLogo": "/logos/amazee-io-square.svg",
+    "url": "https://amazee.io/",
+    "github": "amazee.io"
+  },
+  {
     "name": "b13",
     "type": "standard",
     "logo": "/logos/b13.svg",
