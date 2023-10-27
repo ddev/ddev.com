@@ -37,6 +37,7 @@
     "name": "Amazee.io",
     "type": "major",
     "logo": "/logos/amazee-io-Mirantis-Logo-Black-White-IO.svg",
+    "darklogo": "/logos/amazee-io-mirantis-darkmode.svg",
     "squareLogo": "/logos/amazee-io-square.svg",
     "url": "https://amazee.io/",
     "github": "amazee.io"
@@ -108,6 +109,7 @@
     "name": "optasy",
     "type": "standard",
     "logo": "/logos/optasy-full.svg",
+    "darklogo": "/logos/optasy-darkmode.svg",
     "squareLogo": "/logos/optasy-square.svg",
     "url": "https://www.optasy.com/",
     "github": "OPTASY"
