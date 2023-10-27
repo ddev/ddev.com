@@ -107,8 +107,8 @@
   {
     "name": "optasy",
     "type": "standard",
-    "logo": "/logos/optasy_full_logo.svg",
-    "squareLogo": "/logos/optasy_square.svg",
+    "logo": "/logos/optasy-full.svg",
+    "squareLogo": "/logos/optasy-square.svg",
     "url": "https://www.optasy.com/",
     "github": "OPTASY"
   },
