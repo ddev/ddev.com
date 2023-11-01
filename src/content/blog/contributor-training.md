@@ -47,12 +47,12 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 | 2023-09-12    | [DDEV Architecture: Go, Docker Compose, Containers](https://www.dropbox.com/scl/fi/rh7o01yc4uriittvth9wp/2023-09-12_DDEV_architecture.mp4?rlkey=f44r4kyhq7flfwbcody3omcs0&dl=0), see [outline](https://randyfay.notion.site/Contributor-Training-DDEV-Architecture-72968891333c4c4b936c09cf7d1e0a80?pvs=4)                                |
 | 2023-09-19    | [DDEV Testing Infrastructure](https://www.dropbox.com/scl/fi/tg5qfkmjcgzckx8z5i5t6/2023-09-19_Testing_Infrastructure.mp4?rlkey=cuemz2fafaltj2dtsgepld9t7&dl=0), see [outline](https://randyfay.notion.site/Contributor-Training-Testing-Infrastructure-804600e2b19d4d46903d868bc3a0701a?pvs=4)                                            |
 | 2023-09-26    | DDEV Automated Tests and How to Improve Them, Randy forgot to record! but see [outline](https://randyfay.notion.site/Contributor-Training-Automated-tests-d238854dff384fa6b640592feb04b14e?pvs=4)                                                                                                                                         |
+| 2023-10-31    | [Measuring and Analyzing User Data with Amplitude](https://www.dropbox.com/scl/fi/xqx3ne70y8oojypr2g2m3/2023-10-31_Amplitude_analytics.mp4?rlkey=eg8hwh0o5sog7e46pl424ntbp&dl=0) see [outline](https://randyfay.notion.site/Contributor-Training-Amplitude-Analytics-71202feb067741fca72b68c6641adc41?pvs=4)                                                                                                         |
 
 **Upcoming Trainings:**
 
 | Training Date                                                                                                                | Description                                                                                     |
 |------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| [2023-10-31](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20231031T08&p1=75&ah=1) | **Measuring and Analyzing Contributor Data with Amplitude**                                     |
 | [2023-11-07](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20231107T08&p1=75&ah=1) | **DDEV Add-ons: Creating, Maintaining, Testing**                                                |
 | [2023-11-14](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20231114T08&p1=75&ah=1) | **DDEV Hosting Providers: Creating, Maintaining, Testing**                                      |
 
