@@ -356,7 +356,7 @@ Vite also has a list of integrations here:
 
 But how do we use these integrations with DDEV?
 
-The main goal for us is the same as above - we need to use Vite from https://your-project.ddev.site:5173/, not from http://localhost:5173. So adding the `server`-settings to `vite.config.js` is necessary in all cases.
+The main goal for us is the same as above - we need to use Vite from https://your-project.ddev.site:5173/, not from http://localhost:5173. So adding the `server` settings to `vite.config.js` is necessary in all cases.
 
 ```
 # .ddev/config.yaml
