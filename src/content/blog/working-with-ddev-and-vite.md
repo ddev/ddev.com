@@ -206,7 +206,7 @@ See Vites [Server Options](https://vitejs.dev/config/server-options.html) for al
 
 ### Test it
 
-Now we need a little test webpage.
+Now we need a little test web page.
 
 Let's create the `src/main.js` as our entry file:
 
