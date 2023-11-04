@@ -17,6 +17,8 @@ Vite is a popular web development tool that serves your JavaScript and CSS code 
 
 How can we use Vite within DDEV?
 
+This articles sums up my current personal experience working with Vite and DDEV. I hope it will be a good introduction to start working with Vite and DDEV. 
+
 Vite is written in NodeJS. 
 
 DDEV already has built-in support for [NodeJS](https://ddev.readthedocs.io/en/latest/users/usage/cli/#nodejs-npm-nvm-and-yarn). 
@@ -473,9 +475,8 @@ I created a first quick & dirty demo with CraftCMS, in which I use another port 
 - [config/vite.php](https://github.com/mandrasch/ddev-craftcms-vite/blob/main/config/vite.php)
 - [vite.config.js](https://github.com/mandrasch/ddev-craftcms-vite/blob/main/vite.config.js)
 
-I guess this could be improved a lot ;-)
+I guess this could be improved a lot ;-) See [DDEV Installation: Codespaces](https://ddev.readthedocs.io/en/latest/users/install/ddev-installation/#github-codespaces) for more information.
 
 #### Gitpod 
 
 I couldn't find a resource where Vite was used with DDEV in Gitpod. Happy to update this section as well with more resources!
-
