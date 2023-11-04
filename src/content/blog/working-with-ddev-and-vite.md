@@ -17,7 +17,7 @@ Vite is a popular web development tool that serves your JavaScript and CSS code 
 
 How can we use Vite within DDEV?
 
-This articles sums up my current personal experience working with Vite and DDEV. I hope it will be a good introduction to start working with Vite and DDEV. 
+This articles sums up my current personal experience. I hope it will be a helpful  introduction to get started working with Vite and DDEV. 
 
 Vite is written in NodeJS. 
 
