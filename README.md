@@ -53,19 +53,38 @@ All commands are run from the root of the project, from a terminal:
 | `npm run textlint`     | Run textlint on content collections                |
 | `npm run textlint:fix` | Apply fixable updates to resolve texlint errors    |
 
+
+
 ### Local Development Setup
+
+1. Run `cp .env.example .env` to create a `.env` file for environment variables. (Don’t check this in!)
+2. Create a [classic GitHub access token](https://github.com/settings/tokens) with these scopes: `repo`, `read:org`, `read:user`, and `read:project`.
+3. Paste the GitHub token after `.env`’s `GITHUB_TOKEN=`.
+
+#### DDEV setup
+
+DDEV already has all the dependencies included.
+
+1. Run `ddev start && ddev npm install` to set up the project’s dependencies. Then `ddev npm run build`. If anything fails then run `ddev npm cache clean --force && ddev npm install && ddev restart`. This should be a one time setup.
+3. `ddev npm run build` can be found at https://<projectname>.ddev.site and `ddev npm run dev` is found at https://<projectname>.ddev.site:4321.The dev server has Vite HMR (hot module reloading) among other features. The site will automatically refresh as you work on it, displaying errors in the relevant terminal or browser console.
+
+To generate a static copy of the site, run `ddev npm run build`. The contents of the `dist/` folder are exactly what get [deployed to Cloudflare Pages](#build--deployment). You can preview locally by running `ddev npm run preview` or using a tool like [`serve`](https://www.npmjs.com/package/serve). 
+
+#### Setup without DDEV
 
 Check out the project in your favorite Node.js environment, ideally running [`nvm`](https://github.com/nvm-sh/nvm). We’ll install dependencies, add a GitHub API key, and run a local dev server with a hot-reloading browser URL.
 
 1. Run `nvm use` to make sure you’re running an appropriate Node.js version.
 2. Run `npm install` to set up the project’s dependencies.
-3. Run `cp .env.example .env` to create a `.env` file for environment variables. (Don’t check this in!)
-4. Create a [classic GitHub access token](https://github.com/settings/tokens) with these scopes: `repo`, `read:org`, `read:user`, and `read:project`.
-5. Paste the GitHub token after `.env`’s `GITHUB_TOKEN=`.
-6. Run `npm run dev` to start Astro’s dev server.
-7. Visit the URL displayed in your terminal. (Probably `http://127.0.0.1:3000/`.) The site will automatically refresh as you work on it, displaying errors in the relevant console (terminal or browser).
+3. Run `npm run dev` to start Astro’s dev server.  If it fails then run `npm cache clean --force && npm install && npm run dev`. 
+4. Visit the URL displayed in your terminal. (Probably `http://localhost:4321/`.) The site will automatically refresh as you work on it, displaying errors in the relevant terminal or browser console.
 
 To generate a static copy of the site, run `npm run build`. The contents of the `dist/` folder are exactly what get [deployed to Cloudflare Pages](#build--deployment). You can preview locally by running `npm run preview` or using a tool like [`serve`](https://www.npmjs.com/package/serve).
+
+
+#### Switching from Without DDEV to with DDEV
+
+Make sure to delete your `node_modules/` directory and run `ddev npm install`. The change in architecture can create odd issues otherwise.
 
 ## Managing Content
 

@@ -1,0 +1,33 @@
+type: php
+docroot: dist
+webserver_type: nginx-fpm
+additional_hostnames: []
+additional_fqdns: []
+performance_mode: mutagen # Important to avoid EPERM errors
+use_dns_when_possible: true
+web_environment: []
+nodejs_version: "20"
+disable_upload_dirs_warning: true
+
+# 4321 is Astro Vite default
+web_extra_exposed_ports:
+- name: astro-dev
+  container_port: 4321
+  http_port: 4322
+  https_port: 4321
+
+# The extra -- in `npm run dev -- --host` is a Vite requirement
+# https://github.com/vitejs/vite/discussions/3396
+web_extra_daemons:
+  - name: astro-dev-daemon
+    command: "sleep 3 && npm run dev -- --host" # sleep avoids race conditions
+    directory: /var/www/html
+hooks:
+  post-start:
+    - exec-host: echo -e "                                  NOTICE                                        \n
+                         =================================================================================\n
+                         =================================================================================\n
+                          The Astro dev container is ready \n
+                          By default it will be available at ${DDEV_PRIMARY_URL}:4321 \n
+                          Use ddev describe to confirm if this doesn't work. \n
+                          Check the startup status by running ddev logs --follow --time \n"

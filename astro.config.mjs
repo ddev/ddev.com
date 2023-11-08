@@ -12,7 +12,11 @@ import widont from "rehype-widont"
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://ddev.com/",
+  site: "https://ddev.com",
+  vite: {
+    server: {
+      host: true, // leave this unchanged for DDEV!
+  }},
   integrations: [
     tailwind(),
     react(),
