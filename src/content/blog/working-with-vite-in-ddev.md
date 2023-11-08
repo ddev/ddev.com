@@ -2,7 +2,7 @@
 title: "Working with Vite in DDEV - an introduction"
 pubDate: 2023-11-08
 modifiedDate: 2023-11-08
-summary: How to work with Vite in DDEV?
+summary: Working with Vite in DDEV
 author: Matthias Andrasch
 featureImage:
   src: /img/blog/2023/11/working-with-vite-in-ddev.png
@@ -11,25 +11,17 @@ categories:
   - Guides
 ---
 
-## Working with Vite in DDEV
+## Using Vite with DDEV
 
 Vite is a popular web development tool that serves your JavaScript and CSS code in a clever way: Instead of bundling everything like webpack, it uses a technique called "hot module reloading". This enables the ability to instantly update and show your changes in the browser while you're working on your project. 
 
 This articles sums up my current personal experience. I hope it will be a helpful introduction to get started with Vite. Happy to hear your feedback!
 
-How can we use Vite within DDEV?
-
 Vite is written in NodeJS. DDEV already has built-in support for [NodeJS](https://ddev.readthedocs.io/en/latest/users/usage/cli/#nodejs-npm-nvm-and-yarn). 
-
-You can set the NodeJS version in `.ddev/config.yaml` for each project ([docs](https://ddev.readthedocs.io/en/latest/users/configuration/config/#nodejs_version)):
-
-```
-nodejs_version: "18"
-```
 
 In order to use Vite in our DDEV projects, we need to do two things:
 
-1. Expose Vites development server port (default: `5173`)
+1. Expose Vite's development server port (default: `5173`)
 2. Adjust the Vite config to use DDEVs project URL, e.g. `https://test-vite.ddev.site:5173`.
 
 ### A simple example
@@ -39,13 +31,12 @@ Let's try it out with a simple example project. We will use Vite v4 for this.
 First we create a new DDEV project called `test-vite`: 
 
 ```
-mkdir test-vite
-cd test-vite
+mkdir test-vite && cd test-vite
 ddev config --project-type=php
 ddev start
 ```
 
-Now we can create a simple package.json file. A quick reminder: Every npm command needs to be executed within the DDEV Docker containers for the project. Therefore we always need to use `ddev npm` (or `ddev yarn`).
+Now we can create a simple package.json file. A quick reminder: Every npm command needs to be executed within the DDEV web container, so we use `ddev npm` (or `ddev yarn`).
 
 ```bash
 ddev npm init -y
@@ -57,7 +48,7 @@ Afterwards we simply install [Vite](https://www.npmjs.com/package/vite) as devel
 ddev npm i vite --save-dev
 ```
 
-_For more advanced examples, check out Vites guide [Scaffolding Your First Vite Project](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)._
+_For more advanced examples, check out Vite's guide [Scaffolding Your First Vite Project](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)._
 
 We add these script commands to the package.json:
 
@@ -100,7 +91,7 @@ The final `package.json` is as follows:
 
 Now Vite is almost ready to go. But there are two important steps ahead of us.
 
-### 1. Expose the vite port
+### Expose the vite port
 
 Vite is installed within DDEV, but we can't access it from outside of the Docker container yet. We need to expose port `5173` of the DDEV project.
 
@@ -149,7 +140,7 @@ A `ddev restart` is necessary after changing the config.yaml file.
 
 You can check the exposed ports with `ddev describe` after the restart.
 
-_Note: In other projects you might come across docker-compose-files in the .ddev/-folder which also take care of exposing the vite port. If you use `web_extra_exposed_ports`, you don't need these files._
+_Note: In other tutorials or projects you may come across docker-compose-files in the .ddev/-folder which also take care of exposing the vite port. If you use `web_extra_exposed_ports`, you don't need these files._
 
 ### 2. Adjust the Vite config
 
@@ -194,11 +185,11 @@ export default defineConfig({
 Technical explanation:
 
 - We need to define an entry file to let vite know where to start, this is done in `rollupOptions`. 
-- Also we need to tell vite to respond to all network request, not only the ones addressed to http://localhost:5173. This is done via `host: '0.0.0.0'`. You could also use `true`.
+- Also we need to tell vite to respond to all network request, not only the ones addressed to http://localhost:5173. This is done via `host: '0.0.0.0'`.
 - The strict port setting is also necessary, because we only exposed port 5173. Without `strictPort: true`, Vite will use other ports like 5174 or 5175 if 5173 is already occupied.
 - Another important part is to let Vite know from where to load Vite-controlled assets like images referenced in CSS. This is done via `server.origin`. <br> _(DDEV automatically provides environment variables via the regular `process.env` variable. The variable `process.env.DDEV_PRIMARY_URL` will have the value `https://test-vite.ddev.site` in our demo project. We use it to set the correct `server.origin` dynamically.)_
 
-See Vites [Server Options](https://vitejs.dev/config/server-options.html) for all settings.
+See Vite's [Server Options](https://vitejs.dev/config/server-options.html) for all settings.
 
 ### Test it
 
@@ -266,7 +257,7 @@ You can also open https://test-vite.ddev.site:5173/@vite/client and https://test
 
 ### Test with an image
 
-Vite also optimizes images referenced in CSS. These are also loaded from Vites dev server for local production.
+Vite also optimizes images referenced in CSS. These are also loaded from Vite's dev server for local production.
 
 Download the [DDEV Logo](https://github.com/ddev/ddev/blob/master/docs/content/developers/logos/2x/Logo_w_text%402x.png) to `src/images/ddev.png`.
 
@@ -342,7 +333,7 @@ This is the point where PHP libraries and CMS integrations come into play which 
 
 ### Integrate Vite into a framework / CMS
 
-You can read Vites official guide for backend integration here: 
+You can read Vite's official guide for backend integration here: 
 
 - https://vitejs.dev/guide/backend-integration.html
 
@@ -397,7 +388,7 @@ Example repositories:
 
 #### Drupal
 
-I found this plugin:
+I found this module:
 
 - https://www.drupal.org/project/vite
 
@@ -407,7 +398,7 @@ But I could not find more info regarding DDEV usage. Happy to update this sectio
 
 Since June 2022 [Vite is the default bundler for Laravel](https://laravel-news.com/vite-is-the-default-frontend-asset-bundler-for-laravel-applications), replacing Laravel Mix (Webpack).
 
-Laravels Vite integration is a bit special, because it has its own npm integration with a so called `hot` file. 
+Laravel's Vite integration is a bit special, because it has its own npm integration with a so called `hot` file. 
 
 You need to change the `vite.config.js` like this:
 
