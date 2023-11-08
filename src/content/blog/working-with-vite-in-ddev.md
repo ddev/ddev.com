@@ -142,7 +142,7 @@ You can check the exposed ports with `ddev describe` after the restart.
 
 _Note: In other tutorials or projects you may come across docker-compose-files in the .ddev/-folder which also take care of exposing the vite port. If you use `web_extra_exposed_ports`, you don't need these files._
 
-### 2. Adjust the Vite config
+### Adjust the Vite config
 
 The last step is to adjust the Vite config to let it know that it will run on `https://test-vite.ddev.site:5173`.
 
