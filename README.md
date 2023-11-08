@@ -134,7 +134,7 @@ It’s used to display sponsor details in a few places:
 
 1. The [homepage](https://ddev.com) “Featured Sponsors” list.
 2. The leading bubbles on the [Support DDEV page](https://ddev.com/support-ddev/)’s “Sponsor Development” grid.
-3. The [procedurally-generated](https://github.com/ddev/ddev.com-front-end/blob/main/src/pages/resources/featured-sponsors.svg.js) featured sponsors [SVG](https://ddev.com/resources/featured-sponsors.svg) used in the [main project readme](https://github.com/ddev/ddev#wonderful-sponsors).
+3. The [procedurally-generated](https://github.com/ddev/ddev.com-front-end/blob/main/src/pages/resources/featured-sponsors.svg.js) featured sponsors [light](https://ddev.com/resources/featured-sponsors.svg) and [dark](https://ddev.com/resources/featured-sponsors-darkmode.svg) SVG images used in the [main project readme](https://github.com/ddev/ddev#wonderful-sponsors).
 
 If you’re adding a new item to the array, choose whichever position it should appear in and use the following format:
 

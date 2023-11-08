@@ -3,7 +3,7 @@
     "name": "Platform.sh",
     "type": "major",
     "logo": "/logos/platform.sh.svg",
-    "darklogo": "/logos/platform.sh.svg",
+    "darklogo": "/logos/platform.sh-darkmode.svg",
     "squareLogo": "/logos/platform.sh-square.svg",
     "url": "https://platform.sh"
   },
@@ -55,7 +55,7 @@
     "name": "b13",
     "type": "standard",
     "logo": "/logos/b13.svg",
-    "darklogo": "/logos/b13.svg",
+    "darklogo": "/logos/b13-darkmode.svg",
     "squareLogo": "/logos/b13.svg",
     "url": "https://b13.com/",
     "github": "b13"
@@ -91,7 +91,7 @@
     "name": "DrupalEasy",
     "type": "standard",
     "logo": "/logos/drupaleasy.png",
-    "darklogo": "/logos/drupaleasy.png",
+    "darklogo": "/logos/drupaleasy-darkmode.png",
     "squareLogo": "/logos/drupaleasy-square.svg",
     "url": "https://www.drupaleasy.com/",
     "github": "drupaleasy"
@@ -153,7 +153,7 @@
     "name": "undpaul",
     "type": "standard",
     "logo": "/logos/undpaul.svg",
-    "darklogo": "/logos/undpaul.svg",
+    "darklogo": "/logos/undpaul-darkmode.svg",
     "squareLogo": "/logos/undpaul-square.svg",
     "url": "https://undpaul.de",
     "github": "undpaul"
