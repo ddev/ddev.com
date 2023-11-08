@@ -42,7 +42,7 @@ Now we can create a simple package.json file. A quick reminder: Every npm comman
 ddev npm init -y
 ```
 
-Afterwards we simply install [Vite](https://www.npmjs.com/package/vite) as development dependency:
+Afterwards we install [Vite](https://www.npmjs.com/package/vite) as development dependency:
 
 ```bash
 ddev npm i vite --save-dev
