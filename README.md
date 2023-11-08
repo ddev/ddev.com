@@ -84,7 +84,7 @@ To generate a static copy of the site, run `npm run build`. The contents of the 
 
 #### Switching from Without DDEV to with DDEV
 
-Make sure to delete your `node_modules/` directory and run `npm install`. The change in architecture can create odd issues otherwise.
+Make sure to delete your `node_modules/` directory and run `ddev npm install`. The change in architecture can create odd issues otherwise.
 
 ## Managing Content
 
