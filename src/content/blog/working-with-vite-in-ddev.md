@@ -1,27 +1,25 @@
 ---
-title: "Working with Vite and DDEV - an introduction"
-pubDate: 2023-10-28
-modifiedDate: 2023-10-28
+title: "Working with Vite in DDEV - an introduction"
+pubDate: 2023-11-08
+modifiedDate: 2023-11-08
 summary: How to work with Vite in DDEV?
 author: Matthias Andrasch
 featureImage:
-  src: /img/blog/2023/08/contributors-working.png
-  alt: Contributors working together on DDEV
+  src: /img/blog/2023/11/working-with-vite-in-ddev.png
+  alt: Working with Vite in DDEV
 categories:
-  - Community
+  - Guides
 ---
 
-## Working with DDEV and vite
+## Working with Vite in DDEV
 
 Vite is a popular web development tool that serves your JavaScript and CSS code in a clever way: Instead of bundling everything like webpack, it uses a technique called "hot module reloading". This enables the ability to instantly update and show your changes in the browser while you're working on your project. 
 
+This articles sums up my current personal experience. I hope it will be a helpful introduction to get started with Vite. Happy to hear your feedback!
+
 How can we use Vite within DDEV?
 
-This articles sums up my current personal experience. I hope it will be a helpful  introduction to get started working with Vite and DDEV. 
-
-Vite is written in NodeJS. 
-
-DDEV already has built-in support for [NodeJS](https://ddev.readthedocs.io/en/latest/users/usage/cli/#nodejs-npm-nvm-and-yarn). 
+Vite is written in NodeJS. DDEV already has built-in support for [NodeJS](https://ddev.readthedocs.io/en/latest/users/usage/cli/#nodejs-npm-nvm-and-yarn). 
 
 You can set the NodeJS version in `.ddev/config.yaml` for each project ([docs](https://ddev.readthedocs.io/en/latest/users/configuration/config/#nodejs_version)):
 
@@ -47,23 +45,19 @@ ddev config --project-type=php
 ddev start
 ```
 
-We create a simple package.json file for this tutorial. 
-
-_For more advanced examples, check out Vites guide [Scaffolding Your First Vite Project](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)._
-
-A quick reminder: Every npm command needs to be executed within the DDEV Docker containers for the project. Therefore we always need to use `ddev npm` (or `ddev yarn`).
-
-Let's create a simple package.json file:
+Now we can create a simple package.json file. A quick reminder: Every npm command needs to be executed within the DDEV Docker containers for the project. Therefore we always need to use `ddev npm` (or `ddev yarn`).
 
 ```bash
 ddev npm init -y
 ```
 
-Afterwards we install [Vite](https://www.npmjs.com/package/vite) as development dependency:
+Afterwards we simply install [Vite](https://www.npmjs.com/package/vite) as development dependency:
 
 ```bash
 ddev npm i vite --save-dev
 ```
+
+_For more advanced examples, check out Vites guide [Scaffolding Your First Vite Project](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)._
 
 We add these script commands to the package.json:
 
@@ -78,7 +72,7 @@ We add these script commands to the package.json:
 An we also need to add the type property:
 
 ```json
-type: "module"
+"type": "module"
 ```
 
 The final `package.json` is as follows:
@@ -104,7 +98,7 @@ The final `package.json` is as follows:
 }
 ```
 
-Now Vite is almost ready to go. But there is one important step ahead of us.
+Now Vite is almost ready to go. But there are two important steps ahead of us.
 
 ### 1. Expose the vite port
 
@@ -393,9 +387,7 @@ Also you might need to change the `isDev()` function.
 
 #### CraftCMS 
 
-The Vite plugin by nystudio107 has official DDEV support. 
-
-Here is a guide to change `vite.config.js` and `config/vite.php` accordingly: [Using DDEV](https://nystudio107.com/docs/vite/#using-ddev)
+The [Vite plugin by nystudio107](https://nystudio107.com/docs/vite/) has official DDEV support. Here is a guide to change `vite.config.js` and `config/vite.php` accordingly: [Using DDEV](https://nystudio107.com/docs/vite/#using-ddev).
 
 _Note: You don't need to use the docker-compose-file for exposing the ports if you already used `web_extra_exposed_ports`._
 
