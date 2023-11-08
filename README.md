@@ -1,6 +1,21 @@
-# ddev.com Front End
+# ddev.com Front End <!-- omit in toc -->
 
 Source code for [ddev.com](https://ddev.com)’s static front end, built with [Astro](https://astro.build) to keep things organized, maintainable, and fast.
+
+- [Overview](#overview)
+  - [Main Ingredients](#main-ingredients)
+  - [Project Structure](#project-structure)
+- [Development](#development)
+  - [Commands](#commands)
+  - [Local Development Setup](#local-development-setup)
+- [Managing Content](#managing-content)
+  - [Blog Posts](#blog-posts)
+  - [Pages](#pages)
+  - [Textlint](#textlint)
+  - [Sponsor Management](#sponsor-management)
+- [Build \& Deployment](#build--deployment)
+  - [Secrets](#secrets)
+- [Resources](#resources)
 
 ## Overview
 
