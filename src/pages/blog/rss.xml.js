@@ -5,7 +5,7 @@ import rss from "@astrojs/rss"
 import sanitizeHtml from "sanitize-html"
 
 const baseUrl = import.meta.env.SITE
-const blogUrl = `${baseUrl}blog`
+const blogUrl = `${baseUrl}/blog`
 const posts = await getCollection("blog")
 
 // Get the 50 most recent blog posts
