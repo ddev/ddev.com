@@ -30,7 +30,6 @@ const items = recentPosts.map((post) => {
     title: post.data.title,
     description: post.data.summary,
     categories: post.data.categories,
-    author: post.data.author,
     content: postContent,
     pubDate: post.data.pubDate,
   }
