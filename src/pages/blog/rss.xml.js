@@ -7,6 +7,17 @@ const baseUrl = import.meta.env.SITE
 const blogUrl = `${baseUrl}/blog`
 const posts = await getCollection("blog")
 
+/**
+ * Replace root-relative links with absolute ones.
+ * @param text
+ * @returns
+ */
+const ensureAbsoluteUrls = (text) => {
+  return text
+    .replaceAll('href="/', `href="${baseUrl}/`)
+    .replaceAll('src="/', `src="${baseUrl}/`)
+}
+
 // Get the 50 most recent blog posts
 const recentPosts = posts
   .sort((a, b) => {
@@ -23,7 +34,7 @@ const items = recentPosts.map((post) => {
     }">`
   }
 
-  postContent += marked.parse(post.body)
+  postContent += ensureAbsoluteUrls(marked.parse(post.body))
 
   return {
     link: `${blogUrl}/${post.slug}`,
@@ -48,6 +59,7 @@ export const get = () =>
     },
     customData: `
       <language>en-us</language>
+      <atom:link href="${baseUrl}/blog/rss.xml" rel="self" type="application/rss+xml" />
       <lastBuildDate>${buildDate}</lastBuildDate>
       <webfeeds:icon>${baseUrl}/favicon/icon.svg</webfeeds:icon>
       <webfeeds:cover image="${baseUrl}/img/og-default.png" />
