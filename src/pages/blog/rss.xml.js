@@ -2,11 +2,21 @@ import { getCollection } from "astro:content"
 import { marked } from "marked"
 import { BLOG_DESCRIPTION } from "../../const"
 import rss from "@astrojs/rss"
-import sanitizeHtml from "sanitize-html"
 
 const baseUrl = import.meta.env.SITE
 const blogUrl = `${baseUrl}/blog`
 const posts = await getCollection("blog")
+
+/**
+ * Replace root-relative links with absolute ones.
+ * @param text
+ * @returns
+ */
+const ensureAbsoluteUrls = (text) => {
+  return text
+    .replaceAll('href="/', `href="${baseUrl}/`)
+    .replaceAll('src="/', `src="${baseUrl}/`)
+}
 
 // Get the 50 most recent blog posts
 const recentPosts = posts
@@ -16,13 +26,27 @@ const recentPosts = posts
   .slice(0, 50)
 
 const items = recentPosts.map((post) => {
+  let postContent = ""
+
+  if (post.data.featureImage) {
+    postContent += `<img src="${baseUrl}${post.data.featureImage.src}" alt="${
+      post.data.featureImage.alt ?? ""
+    }">`
+  }
+
+  postContent += ensureAbsoluteUrls(marked.parse(post.body))
+
   return {
     link: `${blogUrl}/${post.slug}`,
     title: post.data.title,
-    content: sanitizeHtml(marked.parse(post.body)),
+    description: post.data.summary,
+    categories: post.data.categories,
+    content: postContent,
     pubDate: post.data.pubDate,
   }
 })
+
+const buildDate = new Date().toUTCString()
 
 export const get = () =>
   rss({
@@ -30,8 +54,17 @@ export const get = () =>
     description: BLOG_DESCRIPTION,
     site: blogUrl,
     items: items,
-    customData:
-      `<language>en-us</language><lastBuildDate>` +
-      new Date().toUTCString() +
-      `</lastBuildDate>`,
+    xmlns: {
+      webfeeds: "http://webfeeds.org/rss/1.0",
+      atom: "http://www.w3.org/2005/Atom",
+    },
+    customData: `
+      <language>en-us</language>
+      <atom:link href="${baseUrl}/blog/rss.xml" rel="self" type="application/rss+xml" />
+      <lastBuildDate>${buildDate}</lastBuildDate>
+      <webfeeds:icon>${baseUrl}/favicon/icon.svg</webfeeds:icon>
+      <webfeeds:cover image="${baseUrl}/img/og-default.png" />
+      <webfeeds:accentColor>02A8E2</webfeeds:accentColor>
+      <webfeeds:logo>${baseUrl}/favicon/type-only.svg</webfeeds:logo>
+    `,
   })
