@@ -56,6 +56,7 @@ export const get = () =>
     items: items,
     xmlns: {
       webfeeds: "http://webfeeds.org/rss/1.0",
+      atom: "http://www.w3.org/2005/Atom",
     },
     customData: `
       <language>en-us</language>
