@@ -306,3 +306,8 @@ In a nutshell, AM:A, combined with DDEV, took my Drupal 7 site to an estimated 8
 Now, I'm down to re-creating less than 20 Views, tweaking some page layouts, and fixing a handful of menu links. Thanks to AM:A, I'm set to get this site live in about one-third of the time it would have taken me otherwise. 
 
 Looking back, my Drupal 7 site went from zero to a shaky 65% after a grueling 100 hours of traditional manual migration. But a spur-of-the-moment afternoon with AM:A? That changed everything. The site will be ready well before the delivery deadline. AM:A didn't just guide me through migration; it gave pre-migration advice, post-migration troubleshooting tips, and organized the content in a way that saved me from a lot of guesswork. Turns out, a little procrastination and the right tool can really pay off for anyone looking to upgrade their Drupal 7 site to D9/10. [Acquia Migrate: Accelerate](https://www.drupal.org/project/acquia_migrate) really smoothed out the bumps in the migration road for me.
+
+## Additional Notes
+
+- On Windows Terminal WSL2, the GUI is *much* faster than the CLI of `drush ama:`. GUI took 1 minute to import 1,500 files, the CLI took 9 minutes!
+- The the DDEV `nginx-site2-d9.conf` NGINX config had to be modified to serve generated images. [NGINX configuration options can interfere with generated thumbnails and image styles for uploaded images](https://www.drupal.org/project/drupal/issues/3120676#comment-15294229).
