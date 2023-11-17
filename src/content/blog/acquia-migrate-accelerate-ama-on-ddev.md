@@ -268,7 +268,7 @@ AM:A provided an intuitive GUI and guidance for migrating my site from D7 to D9.
 | Text Formats      | yes       | yes               | *D9 AM:A* migrated all Text Formats. Advised me that [Token Filter](https://www.drupal.org/project/token_filter) should be installed, or its usage reevaluated, if it is still needed. It turns out I was no longer using it in any content types, so I removed it.<br><br>*D10 traditional* migrated all of my text formats, but I was unable to get CKEditor 5 working properly. <br><br>Both methods advised me on dangerous issues such as PHP Filter. |
 ---
 ### Conclusion - AM:A is worth it for my use case
-AM:A is superior to the method I've been referring to as *traditional migration*. The clear drawback of AM:A, as of this writing, is that it only supports migration to D9, a product already at its End of Life. I have yet to attempt upgrading or migrating this AM:A instance from D9 to D10. I'm hopeful that the community will collaborate to [make AM:A compatible with D10](https://www.drupal.org/project/acquia_migrate/issues/3399733). .
+AM:A is superior to the method I've been referring to as *traditional migration*. The clear drawback of AM:A, as of this writing, is that it only supports migration to D9, a product already at its End of Life. I have yet to attempt upgrading or migrating this AM:A instance from D9 to D10. I'm hopeful that the community will collaborate to [make AM:A compatible with D10](https://www.drupal.org/project/acquia_migrate/issues/3399733).
 
 I’ll be proceeding with the AM:A-migrated version of this site, as the benefits significantly outweigh the drawbacks: 
 
