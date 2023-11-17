@@ -72,7 +72,7 @@ cp -r ~/my-drupal7-source-files/ d7/
 ...etc...
 ```
 
-Create the DDEV project (*still within the newly created ddev-ama-project directory*). 
+Create the DDEV project (*still within the newly created `ddev-ama-project` directory*). 
 - For maximum compatibility we are using `php7.4`. You could use `php8.1`, but you will likely encounter errors on your Drupal 7 site. We can always [reconfigure DDEV later](#additional-notes-andtips) to use `php8.1` for the migrated D9 site after our AM:A migration is complete.
 - We are adding two hostnames; `d7ama-www` for **Drupal 7**, and `d9ama-www` for **Drupal 9**.
 
