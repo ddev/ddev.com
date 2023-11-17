@@ -1,7 +1,7 @@
 ---
 title: "Migrating Drupal 7 to Drupal 9 with Acquia Accelerate: Migrate (AM:A)"
-pubDate: 2023-11-13
-modifiedDate: 2023-11-13
+pubDate: 2023-11-16
+modifiedDate: 2023-11-16
 summary: "Tony Groff on Migrating Drupal 7 to Drupal 9 using Acquia Accelerate: Migrate (AM:A) with DDEV."
 author: Tony Groff
 featureImage:
@@ -11,26 +11,26 @@ categories:
   - Guides
 ---
 
-This walkthrough is based on the blog post [Acquia Migrate: Accelerate — now open source!](https://dev.acquia.com/blog/acquia-migrate-accelerate-now-open-source) by [Wim Leers'](https://dev.acquia.com/person/employee/wim-leers).
+This walkthrough is based on the blog post [Acquia Migrate: Accelerate — now open source!](https://dev.acquia.com/blog/acquia-migrate-accelerate-now-open-source) by [Wim Leers](https://dev.acquia.com/person/employee/wim-leers).
 
 ## Overview
-Migrating your Drupal 7 site may be easier than you thought with the help of [Acquia Migrate: Accelerate](https://www.drupal.org/project/acquia_migrate) (*AM:A as I'll refer to it from here forward*). 
+Migrating your Drupal 7 site may be easier than you expect with the help of [Acquia Migrate: Accelerate](https://www.drupal.org/project/acquia_migrate) (*AM:A as I'll refer to it from here forward*). 
 
 From the [project page](https://www.drupal.org/project/acquia_migrate) of Acquia Migrate: Accelerate (AM:A) 
 <blockquote> Acquia Migrate: Accelerate aims to capture the Drupal community's expertise for Drupal 7 → 9 migrations in recommendations, makes it easy to generate a Drupal 9 project based on any existing Drupal 7 site and start migrating with a powerful UI (and equivalent CLI):
 </blockquote>
 
-In brief, [Acquia](https://www.acquia.com/) has open sourced their [Drupal migration solution, Acauia Migrate: Accelerate (AM:A)](https://www.acquia.com/products/drupal-cloud/acquia-migrate-accelerate). The general availability of this tool encapsulates years of refined Drupal 7 migration expertise, marking a significant advancement for the community. By making this advanced migration tool accessible to a broader audience, it strengthens the overall ecosystem, empowers developers, and bolsters Drupal's viability.
+In brief, [Acquia](https://www.acquia.com/) has open sourced their [Drupal migration solution, Acauia Migrate: Accelerate (AM:A)](https://www.acquia.com/products/drupal-cloud/acquia-migrate-accelerate). The general availability of this tool encapsulates years of refined Drupal migration expertise, marking a significant advancement for the community. By making this advanced migration tool accessible to a broader audience, it strengthens the overall ecosystem, empowers developers, and bolsters Drupal's viability.
 
-My Drupal migration journey started a few months ago with no Drupal 8+ knowledge whatsoever. It took me about 100 hours to migrate my slightly complex Drupal 7 website of *(12 custom content types, 200 custom fields, 2,500 images and documents, and a few hundred pages)*, to a 65% functional Drupal 10 site. Comparatively in a single afternoon I was able to get an 80% functional Drupal 9 website with AM:A. I hope this illustrates the power of AM:A. 
+My Drupal migration odyssey began a few months ago with no Drupal 8+ knowledge whatsoever. It took me about 100 hours to migrate my slightly complex Drupal 7 website of *(12 custom content types, 200 custom fields, 2,500 images and documents, and a few hundred pages)*, to a 65% functional Drupal 10 site. Comparatively in a single afternoon I was able to get an 80% functional Drupal 9 website with AM:A. I hope this illustrates the power of AM:A. 
 
-[Details are below comparing the *learn-everything-from-scratch* traditional migration from Drupal 7 to Drupal 10, and the same site migration with AM:A to Drupal 9](#comparing-traditional-migration-in-d10-to-amad9).
+[A table below compares the *learn-everything-from-scratch "traditional"* migration from Drupal 7 to Drupal 10, to the same site migration with AM:A to Drupal 9](#comparing-traditional-migration-in-d10-to-amad9).
 
-Drupal 9 is the only tested path at the time of this posting. [Drupal 9 was EoL on November 1st, 2023](https://www.drupal.org/psa-2023-11-01), and [Drupal 7 will be EoL on January 5th, 2025](https://www.drupal.org/psa-2023-06-07). The community can work together to make AM:A compatible with a direct to Drupal 10 migration path. Here's [the issue on drupal.org](https://www.drupal.org/project/acquia_migrate/issues/3399733) if you can help test this with D10. 
+Drupal 9 is the only tested path at the time of this posting. [Drupal 9 was EoL on November 1st, 2023](https://www.drupal.org/psa-2023-11-01), and [Drupal 7 will be EoL on January 5th, 2025](https://www.drupal.org/psa-2023-06-07). The community can work together to make AM:A compatible with a direct to Drupal 10 migration path. Here's [the issue on drupal.org](https://www.drupal.org/project/acquia_migrate/issues/3399733) if you can help move this forward with D10. 
 
 ## Getting Started
 
-Wim's [original walkthrough](https://dev.acquia.com/blog/acquia-migrate-accelerate-now-open-source) expects both the D7 and the new D9 site to be on the same host. I found it simpler to keep this on a single DDEV instance rather than create multiple DDEV projects.
+Wim's [original walkthrough](https://dev.acquia.com/blog/acquia-migrate-accelerate-now-open-source) expects both the D7 and the new D9 site to be on the same host. I found it simpler to keep everything on a single DDEV instance, rather than create multiple DDEV projects, because this allows `ddev snapshot` to save and restore multiple databases in this project all at once. 
 
 ### System Information
 
@@ -73,7 +73,7 @@ cp -r ~/my-drupal7-source-files/ d7/
 ```
 
 Create the DDEV project (*still within the newly created ddev-ama-project directory*). 
-- For maximum compatibility we are using `php7.4`. You may use `php8.1`, but you will likely encounter errors on your Drupal 7 site. We can always reconfigure DDEV later to use `php8.1` for the migrated D9 site after our AM:A migration is complete.
+- For maximum compatibility we are using `php7.4`. You could use `php8.1`, but you will likely encounter errors on your Drupal 7 site. We can always [reconfigure DDEV later](#additional-notes-andtips) to use `php8.1` for the migrated D9 site after our AM:A migration is complete.
 - We are adding two hostnames; `d7ama-www` for **Drupal 7**, and `d9ama-www` for **Drupal 9**.
 
 ```
@@ -117,7 +117,7 @@ The new Drupal 9 site scaffolding has been created with information from your Dr
 ddev ssh
 ```
 
-**The command above logs you into the `/var/www/html/d7` directory, you need to change to the `/var/www/html/d9` directory.** Change directories to the new `d9` installation to accomplish the following: 
+**The command above logs you into the <mark>`/var/www/html/d7`</mark> directory, you need to change to the <mark>`/var/www/html/d9`</mark> directory** to accomplish the following: 
 
 - Install the D9 site within our single DDEV project. 
 - Create the D9 DDEV database named: `dbd9`.
@@ -181,17 +181,17 @@ Change line #12 of `nginx-site2-d9.conf` to your D9 site URL:
 server_name d9ama-www.ddev.site;
 ```
 
-<mark>**Save `nginx-site2-d9.conf` changes and restart DDEV**</mark>. DDEV must be restarted to serve the new D9 docroot. Until it's restarted, DDEV will continue to serve the D7 site at all configured project URLs.
+<mark>**Save `nginx-site2-d9.conf` changes and restart DDEV**</mark>. DDEV must be restarted to serve the new D9 docroot. Until it's restarted DDEV will continue to serve the D7 site at all configured project URLs.
 ```
 ddev restart
 ```
 
 Visit your newly created site AM:A site, and rejoice! 
-[https://d9ama-www.ddev.site](https://d9ama-www.ddev.site)
+[https://d9ama-www.ddev.site](https://d9ama-www.ddev.site) *(If you still see the old D7 site at this new D9 URL check your spelling to ensure the hostnames are correct.)*
 
 ## Acquia Migrate: Accelerate (AM:A) Configuration Page
 
-Proceed with AM:A configuration, after Step 2 below you can refresh the browser page to see each item get crossed off the list as the requirements are met.
+Proceed with AM:A configuration, after *Step 2*  below you can refresh the browser page to see each item crossed off the list as the requirements are met.
 
 ![Acquia Migrate: Accelerate (AM:A) Ready For Configuration! ](/img/blog/2023/11/ddev-ama-blog-4-ama-is-ready.png)
 
@@ -219,7 +219,7 @@ $databases['migrate']['default'] = array (
 ```
 *(Refresh your browser, and ~~Configure your source database~~ should now be checked off with a strikethrough.)*
 
-4. **Configure your files directory**. Add this below your recently added database information in `settings.php` to match your use case.
+4. **Configure your files directory**. Add this below your recently added database information in `d9/docroot/sites/default/settings.php` to match your use case.
 ```
 // The directory specified here must contain the directory specified in the
 // "file_public_path" Drupal 7 variable. Usually: "sites/default/files".
@@ -234,68 +234,70 @@ $settings['migrate_source_base_path'] = '/var/www/html/d7';
 5. **Create matching files directory.** My specific instance required modifying my files directory to a non-default directory, your’s may not have this requirement.
 *(Refresh your browser, and ~~Create matching files directory~~ should now be checked off with a strikethrough.)*
 
-6. **Choose which data to import from your source site.** Click the link to begin your migration journey and following the specific recommendations for your site! 
+6. **Choose which data to import from your source site.** Click the link to begin your migration journey following the specific AM:A recommendations for your site! 
 
 ![Acquia Migrate: Accelerate (AM:A) Choose which data to import from your source site! ](/img/blog/2023/11/ddev-ama-blog-5-ama-check-and-ready.png)
 
 ## Your AM:A Journey Begins Now!
 
-Off you go! Best of luck on your migration!
+Off you go! Best of luck on your migration! [Check out additional notes and tips below](#additional-notes-andtips) for more.
 
 ![Your AM:A Journey Begins Now! ](/img/blog/2023/11/ddev-ama-blog-6-ama-dashboard.png)
 
 ---
 
 ## My personal experience and observations.
-AM:A provided an intuitive GUI and guidance while migrating my site. AM:A arranged the site structure based on dependencies. An obvious content dependency example would be to migrate Taxonomy before *any* content if your pages or articles use Taxonomy Tags. Another example is that *Public Files* should be migrated before any content; how can we link the files to the content if the files aren't there yet? You get the idea - the traditional method of migration offered no such assistance, and will allow you to stumble indefinitely until you figure out which migrations are dependant on others. Knowledge of migration dependencies may not be a concern for seasoned Drupalers, but for the average [Ambitious Site Builder](https://dri.es/drupal-is-for-ambitious-site-builders) starting from square one, this was a **huge** stumbling block which I never fully overcame. Below is a brief overview comparing my migration method results.
+AM:A provided an intuitive GUI and guidance for migrating my site from D7 to D9. AM:A arranged the site structure based on dependencies. An obvious content dependency example would be that Taxonomy should be migrated before *any* content if your pages or articles use Taxonomy Tags. Another example is that *Public Files* should be migrated before *any* content; how can we link files to content if the files don't exist yet? You get the idea - the traditional method of migration offered no such assistance, and will allow you to stumble indefinitely until you figure out which migrations are dependant on others. Knowledge of migration dependencies may not be a concern for seasoned Drupalers, but for the average [Ambitious Site Builder](https://dri.es/drupal-is-for-ambitious-site-builders) starting from square one, this was a **huge** stumbling block which I never fully overcame. Below is a brief overview comparing my migration method results.
 
 ### Comparing Traditional migration in D10 to AM:A D9
 
 | D7 Module/Feature | D9 (AM:A) | D10 (Traditional) | Notes |
 |-------------------|-----------|-------------------|-------|
-| Technical Debt    | yes       | no                | *D9 AM:A* offered intelligent actionable messages, and warnings about missing text formats on revisions, broken files, etc. These messages allowed me to fix the issues on the D7 site before migrating them to the new D9 site.<br><br>*D10 traditional* migrated broken fields, images, etc. Cryptic messages in my dblog would still appear for missing fields in my new D10 site, etc. |
-| Basic Page        | yes       | yes               | Both methods migrated all Basic Page content and revisions with no issues. |
-| Article           | yes       | yes               | Both methods migrated all Article content and revisions with no issues. |
-| Views             | no        | yes               | *D9 AM:A* did not migrate any Views.<br><br>*D10 traditional* successfully migrated all Views. |
-| Webform           | yes       | partial           | *D9 AM:A* migrated all Webforms and previous submissions in full.<br><br>*D10 traditional* only migrated the Webform itself, I was unable to bring in the previous Webform submissions, likely due to my own lack of knowledge. |
-| Page Manager      | no        | yes               | *D9 AM:A* did not acknowledge, nor offer to migrate Page Manager pages.<br><br>*D10 traditional* method, with an [experimental module](https://www.drupal.org/project/page_manager_migration), was able to bring over at least the list of links, and basic structure, of all of CTools Page Manager Pages. |
-| Menu Items        | yes       | yes               | *D9 AM:A* included [Migrate Magician](https://www.drupal.org/docs/contributed-modules/migrate-magician).<br><br>*D10 traditional* after I found [Migrate Magician](https://www.drupal.org/docs/contributed-modules/migrate-magician) myself, the migration worked equally well into D10. |
-| Files             | yes       | yes               | *D9 AM:A* migrated files to Media.<br><br>*D10 traditional* left the files as traditional files. |
-| Images            | yes       | yes               | *D9 AM:A* migrated images to Media.<br><br>*D10 traditional* left the images as traditional files. |
-| Path Redirect     | yes       | no                | *D9 AM:A* migrated all Path Redirects flawlessly.<br><br>*D10 traditional* method handled this poorly, and also created hundreds of other redirects I did not want or need. |
-| URL aliases       | yes       | no                | *D9 AM:A* migrated all URL Aliases flawlessly, *and* notified me of broken aliases that I was able to fix in D7 before migrating.<br><br>*D10 traditional* method migrated or created only 40 aliases that were not even part of my original D7 site, weird. |
-| Text Formats      | yes       | yes               | *D9 AM:A* migrated all Text Formats. Advised me that [Token Filter](https://www.drupal.org/project/token_filter) should be installed or it's usage reevaluated if it was still needed. Turns out I was no longer using it in any content types, so I removed it.<br><br>*D10 traditional* migrated all of my text formats, but I was unable to get CKEditor 5 working properly. <br><br>Both methods advised me on dangerous issues such as PHP Filter. |
-
+| Technical Debt    | yes       | **no**                | *D9 AM:A* offered intelligent actionable messages, and warnings about missing text formats on revisions, missing files, etc. These messages allowed me to fix the issues on the D7 site before migrating to the new D9 site.<br><br>*D10 traditional* migrated broken fields, missing entity references, missing images, etc. Cryptic messages would still appear for all these issues in my new D10 site  `dblog`. |
+| Users           | yes       | yes               | Both methods migrated all 7 users and roles successfully. |
+| Basic Page<br><br>Article        | yes <br><br>yes       | yes <br><br>yes               | Both methods migrated all Basic Page and Article content and revisions with no issues. <br><br>*D9 AM:A* included revisions without the option to exclude.<br><br> The *D10 traditional* method allowed for easier revision exclusion.  |
+| Blocks           | yes       | yes               | Both methods migrated all block content successfully. |
+| Views             | **no**        | yes               | *D9 AM:A* did not migrate any Views.<br><br>*D10 traditional* successfully migrated all Views. |
+| Webform           | yes       | **partial**           | *D9 AM:A* migrated all Webforms and previous submissions in full.<br><br>*D10 traditional* only migrated the Webforms themselves. I was unable to migrate the previous history of Webform submissions, likely due to my own lack of knowledge. |
+| Page Manager      | **no**        | yes               | *D9 AM:A* did not acknowledge, nor offer to migrate Page Manager pages.<br><br>*D10 traditional* method, with an [experimental module](https://www.drupal.org/project/page_manager_migration), was able to bring over at least the list of links, and basic structure, of all of CTools Page Manager Pages. |
+| Menu Items        | yes       | yes               | *D9 AM:A* included [Migrate Magician](https://www.drupal.org/docs/contributed-modules/migrate-magician).<br><br>*D10 traditional* migration worked equally as well after I struggled to find [Migrate Magician](https://www.drupal.org/docs/contributed-modules/migrate-magician). |
+| Files             | yes       | yes               | *D9 AM:A* migrated files to **Media**.<br><br>*D10 traditional* kept files as **traditional files**. |
+| Images            | yes       | yes               | *D9 AM:A* migrated images to **Media**.<br><br>*D10 traditional* kept images as **traditional image files**. |
+| Path Redirect     | yes       | **no**                | *D9 AM:A* migrated all Path Redirects beautifully.<br><br>*D10 traditional* method handled this poorly, and created hundreds of other redirects I did not want or need. |
+| URL aliases       | yes       | **no**                | *D9 AM:A* migrated all URL Aliases perfectly, *and* notified me of broken aliases, which I then was able to fix in D7 before migrating.<br><br>*D10 traditional* method migrated or created only 40 aliases that were not even part of my original D7 site, weird. |
+| Text Formats      | yes       | yes               | *D9 AM:A* migrated all Text Formats. Advised me that [Token Filter](https://www.drupal.org/project/token_filter) should be installed, or its usage reevaluated, if it is still needed. It turns out I was no longer using it in any content types, so I removed it.<br><br>*D10 traditional* migrated all of my text formats, but I was unable to get CKEditor 5 working properly. <br><br>Both methods advised me on dangerous issues such as PHP Filter. |
+---
 ### Conclusion - AM:A is worth it for my use case
-AM:A is superior to the method I've been referring to as *traditional migration*. The obvious drawback is that AM:A, as of this posting, only migrates to D9, which is an already End of Life product. I have not yet tried to upgrade or migrate this AM:A instance from D9 to D10. I hope the community can pull together to [get AM:A working with D10](https://www.drupal.org/project/acquia_migrate/issues/3399733). 
+AM:A is superior to the method I've been referring to as *traditional migration*. The clear drawback of AM:A, as of this writing, is that it only supports migration to D9, a product already at its End of Life. I have yet to attempt upgrading or migrating this AM:A instance from D9 to D10. I'm hopeful that the community will collaborate to [make AM:A compatible with D10](https://www.drupal.org/project/acquia_migrate/issues/3399733). .
 
-I'll be moving forward with the AM:A migrated version of this site because the following benefits outweigh the drawbacks: 
+I’ll be proceeding with the AM:A-migrated version of this site, as the benefits significantly outweigh the drawbacks: 
 
 ### Benefits of AM:A for my use case
-- Technical Debt: I've cleaned up so much junk from the 10 year old D7, I'm happy to see my dblog free of errors! 
-- Webform: forms and previous submissions were flawlessly migrated, which is an important feature on the site.
+- Technical Debt: I've cleaned up so much junk from the 10 year old D7, I'm happy to see my `dblog` nearly free of errors! 
+- Webform: forms and previous submissions were flawlessly migrated, which is an important feature for this client on this site.
 - Media system: I prefer to use the new Media system over the old basic Files system.
-- URL Aliases and Path Redirects: What's the point of migrating a site if all of the search engine mojo you've build over the past 10 years is annihilated? This benefit alone encourages me to stick with the AM:A method.
-- Text Formats: AM:A migrated text formats, and nicely configured the WYSIWYG interface, the traditional migration method was a bit of a mess for me.
+- URL Aliases and Path Redirects: What's the point of migrating a site if all of the search engine mojo you've built over the past 10 years is annihilated? This benefit alone encourages me to stick with the AM:A version.
+- Text Formats: AM:A successfully migrated text formats and properly configured the WYSIWYG editor. In contrast, the traditional migration method resulted in complications that I couldn't fully resolve.
 
 ### Drawbacks of AM:A for my use case
 
-These two drawbacks are worth the additional work it will take to re-create them. The Views and Pages were 10 years old, I welcome the opportunity to reevaluate and improve these within D9/D10.
+The effort required to recreate the Views and Pages, which are a decade old, is justified by the drawbacks. This presents a welcome opportunity to reassess and enhance them within the D9/D10 framework.
 
 - Views not migrated: I'll have to re-create my Views.
 - Page Manager not migrated: I'll need to re-create some landing pages.
-
+- *Maybe I can export these from my D10 version and import them into the D9 to D10 version?*
+---
 ## Additional information about this site migration, and my personal Drupal experience
 
-I first wrote the following essay, which inspired the full blog post. I hope it helps others like me who want to do Drupal again, but may be hesitant.
+*(I first wrote the following essay, which inspired this full blog post. I hope it helps others like me who want to do Drupal again, but may be hesitant.)*
 
-Since 2009, I've been independently developing websites using Drupal for a variety of clients, including non-profits, small businesses, and corporations. My transition to Drupal was prompted by a significant project's failure with another CMS, leading to a successful rebuild in Drupal that salvaged both the project and client relationship.
+Since 2009, I've been independently developing websites using Drupal for a variety of clients, including non-profits, small businesses, and corporations. My transition to Drupal was prompted by a significant project's failure with another CMS, leading to a successful rebuild in Drupal that salvaged both the project and client relationship. Shortly therafter I experienced the Drupal community live in person at [DrupalCon Chicago](https://chicago2011.drupal.org/), I was hooked on Drupal!
 
 Over the years, life changes have led me to reduce my workload, focusing on essential maintenance and steering clients towards simpler, user-friendly SaaS solutions. Despite this, I've remained connected to the Drupal community, maintaining my [Drupal Association](https://www.drupal.org/association/support) membership and staying updated, primarily through DriesNotes. A mention by Dries in 2022 about [Ambitious Site Builders](https://dri.es/drupal-is-for-ambitious-site-builders) resonated with me, reigniting my enthusiasm for Drupal and leading me to delve deeper into the latest developments through articles and podcasts. This rekindled excitement brought back memories of my early days in Drupal development.
 
 I started migrating this Drupal site in June 2023, drawing on my extensive experience with Drupal 6 and 7. Despite my initial reluctance to adapt to Drupal 8 and newer versions, my commitment as the sole web developer for a longstanding client encouraged me to stay open to the evolving landscape of Drupal. Now in my mid-40s, I faced the challenge of relearning and adapting to these updates, balancing my deep familiarity with earlier versions against the need to stay current in a rapidly changing field.
 
-Alright, Drupal, my first CMS love, we've been through thick and thin. It's time to give you another shot. Can a solo developer like me still create impressive modern websites with Drupal? Maybe, starting with straightforward D10 install and a content copy-paste from the old site? Sounds easy, but…what about the complex entity references, taxonomies, and custom Webforms? I considered using Feeds for a csv export - it worked well in the past for D7. But when I tried Feeds export/import with D10, it was a bit of a hassle, hardly better than a simple copy-paste. So, I decided to dive into the world of migration.
+Alright, Drupal, my first CMS love, we've been through thick and thin. It's time to give you another shot. Can a solo developer like me still create impressive modern websites with Drupal? Maybe, starting with straightforward D10 install and a content copy-paste from the old site? Sounds workable, but…what about the complex entity references, taxonomies, and custom Webforms? I considered using Feeds for a csv export - it worked well in the past for D7. But when I tried Feeds export/import with D10, it was a bit of a hassle, hardly better than a simple copy-paste. So, I decided to dive into the world of migration.
 
 I immersed myself in [every resource published](https://udrupal.com/talks) by [Mauricio Dinarte (dinarcon)](https://www.drupal.org/u/dinarcon). After an intense 100-hour learning spree, I managed to migrate about 65% of the Drupal 7 site to Drupal 10, using tools like [migmag](https://www.drupal.org/project/migmag), [migrate_plus](https://www.drupal.org/project/migrate_plus), and [webform_migrate](https://www.drupal.org/project/webform_migrate). It wasn't smooth sailing, though - with several parts not working right, I wondered if starting over on a clean Drupal 10 install would've actually been easier. But with a few months left until the promised delivery date, I decided to hold off and weigh my options.
 
@@ -305,9 +307,13 @@ In a nutshell, AM:A, combined with DDEV, took my Drupal 7 site to an estimated 8
 
 Now, I'm down to re-creating less than 20 Views, tweaking some page layouts, and fixing a handful of menu links. Thanks to AM:A, I'm set to get this site live in about one-third of the time it would have taken me otherwise. 
 
-Looking back, my Drupal 7 site went from zero to a shaky 65% after a grueling 100 hours of traditional manual migration. But a spur-of-the-moment afternoon with AM:A? That changed everything. The site will be ready well before the delivery deadline. AM:A didn't just guide me through migration; it gave pre-migration advice, post-migration troubleshooting tips, and organized the content in a way that saved me from a lot of guesswork. Turns out, a little procrastination and the right tool can really pay off for anyone looking to upgrade their Drupal 7 site to D9/10. [Acquia Migrate: Accelerate](https://www.drupal.org/project/acquia_migrate) really smoothed out the bumps in the migration road for me.
+Looking back, my Drupal 7 site went from zero to a shaky 65% after a grueling 100 hours of traditional manual migration. But a spur-of-the-moment afternoon with AM:A? That changed everything. The site will be ready well before the delivery deadline. AM:A didn't just guide me through migration; it gave pre-migration advice, post-migration troubleshooting tips, and organized the content in a way that saved me from a lot of guesswork. Turns out, a little procrastination and the right tool could pay off for anyone looking to upgrade their Drupal 7 site to D9/10. [Acquia Migrate: Accelerate](https://www.drupal.org/project/acquia_migrate) really smoothed out the bumps in the migration road for me.
 
-## Additional Notes
+---
+## Additional Notes and Tips
 
-- On Windows Terminal WSL2, the GUI is *much* faster than the CLI of `drush ama:`. GUI took 1 minute to import 1,500 files, the CLI took 9 minutes!
+- On Windows Terminal WSL2, the GUI is *much* faster than the CLI of `drush ama:`. The AM:A website GUI took 1 minute to import 1,500 files, the CLI in WSL2 took 9 minutes!
+- `ddev snapshot` is your friend, use it as you progress and modify your D7 database. If something goes wrong you can `ddev snapshot restore` to the most recent good snapshot. I saved snapshots about every 20% as the migration progressed such as `ddev snapshot --name ama-project-20-percent`, etc.
 - The the DDEV `nginx-site2-d9.conf` NGINX config had to be modified to serve generated images. [NGINX configuration options can interfere with generated thumbnails and image styles for uploaded images](https://www.drupal.org/project/drupal/issues/3120676#comment-15294229).
+- `ddev config --php-version=8.1` will change the PHP version of the project at any time if you want to experiment with updating D9 or D10, be aware this change will introduce php errors on your D7 site. 
+- Here's a [Gist of Drush scripts for cleaning up various Drupal 7 database issues](https://gist.github.com/RowboTony/acf9ee5afb78b6a29a7a763f56d1fb11) which may be helpful *(as-is, no guarantee or warranty)*.
