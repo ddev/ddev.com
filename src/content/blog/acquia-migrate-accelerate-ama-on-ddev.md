@@ -111,7 +111,7 @@ app:new:from:drupal7 \
 
 The new Drupal 9 site scaffolding has been created with information from your Drupal 7 site!
 
-<mark>**Important**</mark> - SSH into the DDEV container to installing the D9 site.
+<mark>**Important**</mark> - SSH into the DDEV container to install the D9 site.
 
 ```
 ddev ssh
