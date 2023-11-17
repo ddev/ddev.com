@@ -91,8 +91,8 @@ ddev import-db --file=../drupal7-www-database.sql
 
 ![ddev ama-project created](/img/blog/2023/11/ddev-ama-blog-1-project-created.png)
 
-Wow! My Drupal 7 site is already working in DDEV! Open the URL and check it out!
-[https://d7ama-www.ddev.site](https://d7ama-www.ddev.site)
+Wow! My Drupal 7 site is already working in DDEV! Open the URL and check it out - 
+[https://d7ama-www.ddev.site](https://d7ama-www.ddev.site).
 
 ### Install and configure the Drupal 9 site to prepare for AM:A
 
