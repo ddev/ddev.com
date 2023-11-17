@@ -1,7 +1,7 @@
 ---
 title: "Migrating Drupal 7 to Drupal 9 with Acquia Accelerate: Migrate (AM:A)"
-pubDate: 2023-11-16
-modifiedDate: 2023-11-16
+pubDate: 2023-11-17
+modifiedDate: 2023-11-17
 summary: "Tony Groff on Migrating Drupal 7 to Drupal 9 using Acquia Accelerate: Migrate (AM:A) with DDEV."
 author: Tony Groff
 featureImage:
@@ -270,10 +270,10 @@ AM:A provided an intuitive GUI and guidance for migrating my site from D7 to D9.
 ### Conclusion - AM:A is worth it for my use case
 AM:A is superior to the method I've been referring to as *traditional migration*. The clear drawback of AM:A, as of this writing, is that it only supports migration to D9, a product already at its End of Life. I have yet to attempt upgrading or migrating this AM:A instance from D9 to D10. I'm hopeful that the community will collaborate to [make AM:A compatible with D10](https://www.drupal.org/project/acquia_migrate/issues/3399733).
 
-I’ll be proceeding with the AM:A-migrated version of this site, as the benefits significantly outweigh the drawbacks: 
+I’ll be proceeding with the AM:A-migrated version of this site, as the benefits significantly outweigh the drawbacks. 
 
 ### Benefits of AM:A for my use case
-- Technical Debt: I've cleaned up so much junk from the 10 year old D7, I'm happy to see my `dblog` nearly free of errors! 
+- Technical Debt: I've cleaned up so much junk from the decade old D7, I'm happy to see my `dblog` nearly free of errors! 
 - Webform: forms and previous submissions were flawlessly migrated, which is an important feature for this client on this site.
 - Media system: I prefer to use the new Media system over the old basic Files system.
 - URL Aliases and Path Redirects: What's the point of migrating a site if all of the search engine mojo you've built over the past 10 years is annihilated? This benefit alone encourages me to stick with the AM:A version.
@@ -281,11 +281,11 @@ I’ll be proceeding with the AM:A-migrated version of this site, as the benefit
 
 ### Drawbacks of AM:A for my use case
 
-The effort required to recreate the Views and Pages, which are a decade old, is justified by the drawbacks. This presents a welcome opportunity to reassess and enhance them within the D9/D10 framework.
+The effort required to recreate the Views and Pages is justified despite the drawbacks. This presents a welcome opportunity to reassess and enhance them within the D9/D10 framework.
 
-- Views not migrated: I'll have to re-create my Views.
+- Views not migrated: I'll have to re-create my Views. [views_migration](https://www.drupal.org/project/views_migration) is D9 compatible and should work, but was not included in the default AM:A installation.
 - Page Manager not migrated: I'll need to re-create some landing pages.
-- *Maybe I can export these from my D10 version and import them into the D9 to D10 version?*
+
 ---
 ## Additional information about this site migration, and my personal Drupal experience
 
