@@ -96,7 +96,7 @@ Wow! My Drupal 7 site is already working in DDEV! Open the URL and check it out 
 
 ### Install and configure the Drupal 9 site to prepare for AM:A
 
-We will use the conveniently included version of [ACLI](https://docs.acquia.com/acquia-cli/) within the DDEV `web` container to generate a new Drupal 9 site (*you can also omit all parameters and be prompted for answers instead if you prefer*). The important consideration, for DDEV, is explicitly using `php8.1` to run this `acli` command. Otherwise, the `acli` command will fail to run on the container's version of `php7.4`. 
+We will use the conveniently included version of [ACLI](https://docs.acquia.com/acquia-cli/) within the DDEV `web` container to generate a new Drupal 9 site (*you can also omit all parameters and be prompted for answers instead if you prefer*). The important consideration, for DDEV, is explicitly using `php8.1` to run this `acli` command. Otherwise, the `acli` command will fail to run on the currently configured version of `php7.4`. 
 
 Run the following command:
 
