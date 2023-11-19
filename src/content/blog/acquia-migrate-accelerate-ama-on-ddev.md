@@ -303,11 +303,35 @@ I immersed myself in [every resource published](https://udrupal.com/talks) by [M
 
 Six weeks later, [AM:A](https://www.drupal.org/project/acquia_migrate) was released, and I thought to myself “*what is this new devilry?*”. Could AM:A be as good as it appeared, or would it be more hours wasted? I decided to give it a single afternoon to prove it’s worth, and it did. 
 
-In a nutshell, AM:A, combined with DDEV, took my Drupal 7 site to an estimated 80% migration completion. Just a few bits and pieces left - Views, Page Manager, and the theme. (*I'm half-tempted to throw in [Drupal Retrofit](https://mglaman.dev/blog/retrofit-running-legacy-drupal-7-code-your-drupal-10-site) and wrap it up in one epic marathon weekend!*). Everything's there: blocks, content, entity references, data fields, even the file system is smoothly transitioned to the new Media system!
+In a nutshell, AM:A, combined with DDEV, took my Drupal 7 site to an estimated 80% migration completion. Only a few bits and pieces left - Views, Page Manager, and the theme. (*I'm half-tempted to throw in [Drupal Retrofit](https://mglaman.dev/blog/retrofit-running-legacy-drupal-7-code-your-drupal-10-site) and wrap it up in one epic marathon weekend!*). Everything's there: blocks, content, entity references, data fields, even the file system is smoothly transitioned to the new Media system!
 
 Now, I'm down to re-creating less than 20 Views, tweaking some page layouts, and fixing a handful of menu links. Thanks to AM:A, I'm set to get this site live in about one-third of the time it would have taken me otherwise. 
 
-Looking back, my Drupal 7 site went from zero to a shaky 65% after a grueling 100 hours of traditional manual migration. But a spur-of-the-moment afternoon with AM:A? That changed everything. The site will be ready well before the delivery deadline. AM:A didn't just guide me through migration; it gave pre-migration advice, post-migration troubleshooting tips, and organized the content in a way that saved me from a lot of guesswork. Turns out, a little procrastination and the right tool could pay off for anyone looking to upgrade their Drupal 7 site to D9/10. [Acquia Migrate: Accelerate](https://www.drupal.org/project/acquia_migrate) really smoothed out the bumps in the migration road for me.
+Looking back, my Drupal 7 site went from zero to a shaky 65% after a grueling 100 hours of traditional manual migration. But a spur-of-the-moment afternoon with AM:A? That changed everything. The site will be ready well before the delivery deadline. AM:A not only guided me through migration; it provided pre-migration advice, post-migration troubleshooting tips, and organized the content in a way that saved me from a lot of guesswork. Turns out, a little procrastination and the right tool could
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Overview](#overview)
+- [Getting Started](#getting-started)
+  - [System Information](#system-information)
+  - [Creating the DDEV project](#creating-the-ddev-project)
+  - [Install and configure the Drupal 9 site to prepare for AM:A](#install-and-configure-the-drupal-9-site-to-prepare-for-ama)
+  - [Install and configure Acquia Migrate: Accelerate (AM:A)](#install-and-configure-acquia-migrate-accelerate-ama)
+  - [Logout of the `ddev ssh` session, and modify the DDEV project to serve a second URL for the d9 site:](#marklogout-of-the-ddev-ssh-sessionmark-and-modify-the-ddev-project-to-serve-a-second-url-for-the-d9-site)
+- [Acquia Migrate: Accelerate (AM:A) Configuration Page](#acquia-migrate-accelerate-ama-configuration-page)
+- [Your AM:A Journey Begins Now!](#your-ama-journey-begins-now)
+- [My personal experience and observations.](#my-personal-experience-and-observations)
+  - [Comparing Traditional migration in D10 to AM:A D9](#comparing-traditional-migration-in-d10-to-ama-d9)
+  - [Conclusion - AM:A is worth it for my use case](#conclusion---ama-is-worth-it-for-my-use-case)
+  - [Benefits of AM:A for my use case](#benefits-of-ama-for-my-use-case)
+  - [Drawbacks of AM:A for my use case](#drawbacks-of-ama-for-my-use-case)
+- [Additional information about this site migration, and my personal Drupal experience](#additional-information-about-this-site-migration-and-my-personal-drupal-experience)
+- [Additional Notes and Tips](#additional-notes-and-tips)
+
+<!-- /code_chunk_output -->
+
+ pay off for anyone looking to upgrade their Drupal 7 site to D9/10. [Acquia Migrate: Accelerate](https://www.drupal.org/project/acquia_migrate) really smoothed out the bumps in the migration road for me.
 
 ---
 ## Additional Notes and Tips
@@ -317,3 +341,4 @@ Looking back, my Drupal 7 site went from zero to a shaky 65% after a grueling 10
 - The the DDEV `nginx-site2-d9.conf` NGINX config had to be modified to serve generated images. [NGINX configuration options can interfere with generated thumbnails and image styles for uploaded images](https://www.drupal.org/project/drupal/issues/3120676#comment-15294229).
 - `ddev config --php-version=8.1` will change the PHP version of the project at any time if you want to experiment with updating D9 or D10, be aware this change will introduce php errors on your D7 site. 
 - Here's a [Gist of Drush scripts for cleaning up various Drupal 7 database issues](https://gist.github.com/RowboTony/acf9ee5afb78b6a29a7a763f56d1fb11) which may be helpful *(as-is, no guarantee or warranty)*.
+
