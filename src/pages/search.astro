@@ -43,9 +43,10 @@ const title = `Search`
 
     resultsContainer.innerHTML = results
       .map((result) => {
+        let resulturl = window.location.origin + result.id
         return `
         <a href="${
-          result.id
+          resulturl
         }" class="border rounded w-full flex items-center content-center my-2 p-4 hover:shadow-sm hover:border-blue-300 dark:border-slate-700">
           <h2 class="font-bold block w-3/4 dark:text-white">${result.title}</h2>
           <div class="block w-1/4 text-right">
