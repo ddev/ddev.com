@@ -152,7 +152,7 @@ vendor/bin/drush state:set --input-format=json acquia_migrate.initial_info - < a
 ```
 *(the above provides all the metadata to the AM:A Drupal module's Module Auditor UI by storing it in Drupal's state )*
 
-### <mark>Logout of the `ddev ssh` session</mark>, and modify the DDEV project to serve a second URL for the d9 site:
+### <mark>Log out of the `ddev ssh` session</mark>, and modify the DDEV project to serve a second URL for the d9 site:
 
 ```
 logout
