@@ -293,6 +293,14 @@ The effort required to recreate the Views and Pages is justified despite the dra
 - **Views not migrated:** I'll have to recreate my Views. [views_migration](https://www.drupal.org/project/views_migration) is D9 compatible and should work, but was not included in the default AM:A installation.
 - **Page Manager not migrated:** I'll need to reevaluate and recreate some landing pages with the help of [page_manager_migration](https://www.drupal.org/project/page_manager_migration), or change to more a modern [Layout Builder](https://www.drupal.org/docs/8/core/modules/layout-builder) solution.
 
+### Next Steps: Theming, Views, Page Layout
+
+![Acquia Migrate: Accelerate (AM:A) - 98% complete! ](/img/blog/2023/11/ddev-ama-blog-7-ama-finished.png)
+
+I’m pleased with the 98.92% data migration and have the content necessary to move forward. However, I’m also feeling burned out on this site. As satisfying as the migration results are, the site ultimately requires Drupal 10 before going live. I’m taking a few weeks off to consider the next steps for theming, Views, and page layouts.
+
+I’m torn between investing time in coaxing [AM:A to work with Drupal 10](https://www.drupal.org/project/acquia_migrate/issues/3399733), then making another attempt at the migration as AM:A to D10. Or continuing to migrate the current AM:A D9 site to D10. I plan to update this blog post as needed and encourage others to contribute, correct, and enhance this information - [Support DDEV](https://ddev.com/support-ddev/#file-an-issue-or-pr)!  
+
 ---
 
 ## Additional information about this site migration, and my personal Drupal experience
