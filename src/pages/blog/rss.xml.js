@@ -29,9 +29,11 @@ const items = recentPosts.map((post) => {
   let postContent = ""
 
   if (post.data.featureImage) {
-    postContent += `<img src="${baseUrl}${post.data.featureImage.src}" alt="${
-      post.data.featureImage.alt ?? ""
-    }">`
+    postContent += ensureAbsoluteUrls(
+      `<img src="${post.data.featureImage.src}" alt="${
+        post.data.featureImage.alt ?? ""
+      }">`
+    )
   }
 
   postContent += ensureAbsoluteUrls(marked.parse(post.body))
