@@ -5,7 +5,7 @@ modifiedDate: 2023-11-22
 summary: "Tony Groff on Migrating Drupal 7 to Drupal 9 using Acquia Migrate: Accelerate (AM:A) with DDEV."
 author: Tony Groff
 featureImage:
-  src: https://www.drupal.org/files/project-images/ama-live-updates.gif
+  src: /img/blog/2023/11/ddev-ama-blog-0-feature.png
   alt: Acquia Migrate Accelerate Dashboard
 categories:
   - Guides
