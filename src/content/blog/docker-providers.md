@@ -20,6 +20,8 @@ Each of DDEV’s officially supported Docker providers has full automated testin
 
 **A credit before we get down to the differences:** We want to thank Docker, Inc. for their amazing maintenance of a groundbreaking open-source product, as well as all their commercial products. Each of the Docker providers below incorporates the open-source Docker/Moby project, presenting it in different ways. And Docker provides the [hub.docker.com](https://hub.docker.com) registry, where all of DDEV's Docker images are served from. And they grant DDEV membership in their [Docker Sponsored Open Source Program](https://www.docker.com/community/open-source/application/), which saves the DDEV Foundation money and also means that there are no rate limits on your usage of DDEV Docker images. Thank you, Docker!
 
+Want to know more about how Docker works and what Docker images and containers are? It's a deep rabbit-hole, but it's fun! [DDEV's usage is explained in the docs](https://ddev.readthedocs.io/en/latest/users/usage/architecture/#container-architecture) and [Docker's introduction](https://docs.docker.com/get-started/overview/) is another entrypoint for you.
+
 macOS Docker installation for each of these is [in the docs](https://ddev.readthedocs.io/en/latest/users/install/docker-installation/#macos); the Docker providers and their differences are shown here:
 
 | Provider                                                          | Advantages                                      | Disadvantages                                       | Open Source? | Free? |
@@ -60,3 +62,15 @@ Traditional Windows users have only the Docker Desktop option, and nearly everyo
 ![Donut chart depicting the last 7 days of macOS Docker Platform usage, led by almost three quarters Docker Desktop, then Colima, and a sliver of OrbStack](/img/blog/2023/11/macOS_Docker_Platform.png)
 
 ![Donut chart depicting the last day of WSL2 Docker Platform usage, with slightly more than half using WSL2 and slightly less than half using Docker Desktop](/img/blog/2023/11/WSL2_Docker_Platform.png)
+
+## Ready to Try Out All of These?
+
+You can easily try out any of these Docker providers without breaking anything. In general, follow these steps:
+
+1. Run `ddev poweroff`
+2. Stop your current Docker provider.
+3. Start the one you're testing.
+4. Optionally change the Docker context to the one you want to use. For example, `docker context use rancher-desktop` or `docker context use orbstack`.
+5. If `docker ps` doesn't have an error you're ready to do. Start a DDEV project and explore.
+
+This technique won't break anything on your system, assuming you have a little disk space available and follow that path.
