@@ -12,9 +12,9 @@ categories:
   - DevOps
 ---
 
-Some projects might require you to add front-end tooling. Or the whole project might be based around client-side frameworks. DDEV provides an npm command out of the box, simplifying docker development. I will be using this website as an example.
+Some projects might require you to add front-end tooling. Or the whole project might be based around client-side frameworks. DDEV provides an npm command out of the box, simplifying Docker development. I will be using this website as an example.
 
-DDEV.com is an [Astro](https://astro.build/) website. Astro is fantastic tool that packed with features that provide a low-entry barrier for developers looking to contribute features, issues and more. Among it's highlights are its low hosting cost, file-based routing, and extensive markdown support.
+DDEV.com is an [Astro](https://astro.build/) website. Astro is fantastic tool that packed with features that provide a low-entry barrier for developers looking to contribute features, issues and more. Among it's highlights are its low hosting cost, file-based routing, and extensive Markdown support.
 
 That said, for a while this website did not use DDEV. Adding DDEV makes it easier for those with the tool to contribute PRs, but also provides an example on how other projects can take advantage of it.
 
@@ -85,7 +85,7 @@ After looking at the Discord Support queue and testing a variety of contributed 
 
 3. As I was looking for ways to fix my bad gateway and 404 error messages. I remember a project that used [DDEV and Storybook](https://github.com/cosmicdreams/drupal-storybook/blob/main/.DDEV/config.yaml). It did not help much with my Vite issue but it inspired the Notice on the config.yml.
 
-4. if you see an error like EPERM: Operation not permitted it might be because of a file system issue. Make sure mutagen or other alternatives are working correctly. 
+4. if you see an error like EPERM: Operation not permitted it might be because of a file system issue. Make sure Mutagen or other alternatives are working correctly. 
 
 ## In Summary:
 
