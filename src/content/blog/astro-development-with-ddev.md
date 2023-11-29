@@ -95,6 +95,7 @@ After looking at the Discord Support queue and testing a variety of contributed 
 3. Use DDEV logs --follow --time to debug issues.
 4. Add a daemon to have a dev server on demand.
 5. Look at the support queue of the tool and DDEV for other tips and tricks.
+6. Feel free to look at this [website](https://github.com/ddev/ddev.com/blob/main/.ddev/config.yaml) config first and reverse engineer your approach if that's easier.
 
 
 ## Keep in touch!
