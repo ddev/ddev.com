@@ -13,12 +13,18 @@ categories:
   - Performance
 ---
 
-Docker providers for macOS have been getting better and faster (mostly) over time. It's time to take a look and see what is happening with performance.
+## Background
 
-I used mostly the same technique as in [December 2022](/blog/ddev-docker-desktop-and-colima-benchmarking-updated-dec-2022/) and previous tests.
+Docker providers for macOS have been getting better and faster (mostly) over time, and [DDEV has just added OrbStack and Rancher Desktop to its officially supported providers](/blog/docker-providers). It's time to take a look and see what is happening with DDEV and Docker provider performance.
+
+This test used an update of the same technique as used [December 2022](/blog/ddev-docker-desktop-and-colima-benchmarking-updated-dec-2022/).
 
 
-The test does a Drupal 10 web install (details below), because it's a heavy test that exercises the database and filesystem extensiively. 
+## Test Methodology
+
+The test does a Drupal 10 web install (details below), because it's a heavy PHP-access process that exercises both the database and filesystem extensively. 
+
+## Results: OrbStack Wins!
 
 We'll start with Mutagen enabled (`ddev config --performance-mode=mutagen`), which is the default for macOS. You'll see that OrbStack has the fastest setup, but that all five of the configurations are in a similar range. You would probably be happy with any of them.
 
@@ -28,16 +34,23 @@ Now, with Mutagen disabled (`ddev config --performance-mode=none`), OrbStack is 
 
 ![macOS Docker provider performance without Mutagen - OrbStack way faster, Colima way too slow](/img/blog/2023/11/d10_web_install_no_mutagen.svg)
 
+**I should note that I'm super happy with DDEV and all of these Docker Providers and the crazy-wonderful [Mutagen](https://mutagen.io) project that have brought such great improvements in performance.** Circa 2018, a Drupal web installation without NFS or Mutagen could take 7 minutes. Now it's 30 seconds or less. That's amazing.
 
-## The Test
+## Details
 
-I used the[ddev-puppeteer](https://github.com/ddev/ddev-puppeteer) project to run the tests. Want to try it against your system or configuration? I'd love to hear your results.
+I used the [ddev-puppeteer](https://github.com/ddev/ddev-puppeteer) project to run the tests. Want to try it against your system or configuration? I'd love to hear your results.
 
 See the [spreadsheet with the raw data](https://docs.google.com/spreadsheets/d/14d79oUItssfB1_spUjjGOPkhumARXyhF0DNBK1kp2KA/edit?usp=sharing)
 
-* Drupal 10.1.6 with drush (`ddev composer create drupal/recommended-project && ddev composer require drush/drush`)
+* DDEV v1.22.5
+* Drupal 10.1.6 with drush (`ddev config --project-type=drupal10 --docroot=web --create-docroot && ddev composer create drupal/recommended-project -y && ddev composer require drush/drush && ddev start`)
 * PHP 8.1
 * MacBook Air (M1, 2020), 16GB RAM, plugged in
 * Docker Desktop 4.25.2
 * Colima v0.6.6, Lima v0.18.0, QEMU 8.1.3 (`colima start qemutest --cpu 4 --memory 6 --disk 100 --dns=1.1.1.1 --vm-type=qemu --mount-type=sshfs` and `colima start vztest --cpu=4 --memory=6 --disk=100 --mount-type=virtiofs`)
 * Rancher Desktop 1.11.0
+
+
+## Summary
+
+You'll probably like any of these Docker providers with DDEV (using Mutagen) based on your choice of performance, maintenance characteristics, and open-source vs. commercial products. My own experience at this point is that OrbStack is providing an outstanding product at a modest price, and is also providing great support and reliable updates. The 
