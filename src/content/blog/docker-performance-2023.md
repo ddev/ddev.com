@@ -15,7 +15,7 @@ categories:
 
 ## Background
 
-Docker providers for macOS have been getting better and faster (mostly) over time, and [DDEV has just added OrbStack and Rancher Desktop to its officially supported providers](/blog/docker-providers). It's time to take a look and see what is happening with DDEV and Docker provider performance.
+Docker providers for macOS have been getting better and faster (mostly) over time, and [DDEV has recently added OrbStack and Rancher Desktop to its officially supported providers](/blog/docker-providers). It's time to take a look and see what is happening with DDEV and Docker provider performance.
 
 This test used an update of the same technique as used [December 2022](/blog/ddev-docker-desktop-and-colima-benchmarking-updated-dec-2022/).
 
@@ -43,7 +43,7 @@ I used the [ddev-puppeteer](https://github.com/ddev/ddev-puppeteer) project to r
 See the [spreadsheet with the raw data](https://docs.google.com/spreadsheets/d/14d79oUItssfB1_spUjjGOPkhumARXyhF0DNBK1kp2KA/edit?usp=sharing)
 
 * DDEV v1.22.5
-* Drupal 10.1.6 with drush (`ddev config --project-type=drupal10 --docroot=web --create-docroot && ddev composer create drupal/recommended-project -y && ddev composer require drush/drush && ddev start`)
+* Drupal 10.1.6 with Drush (`ddev config --project-type=drupal10 --docroot=web --create-docroot && ddev composer create drupal/recommended-project -y && ddev composer require drush/drush && ddev start`)
 * PHP 8.1
 * MacBook Air (M1, 2020), 16GB RAM, plugged in
 * Docker Desktop 4.25.2
