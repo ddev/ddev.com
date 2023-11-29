@@ -49,8 +49,8 @@ See the [spreadsheet with the raw data](https://docs.google.com/spreadsheets/d/1
 * Docker Desktop 4.25.2
 * Colima v0.6.6, Lima v0.18.0, QEMU 8.1.3 (`colima start qemutest --cpu 4 --memory 6 --disk 100 --dns=1.1.1.1 --vm-type=qemu --mount-type=sshfs` and `colima start vztest --cpu=4 --memory=6 --disk=100 --mount-type=virtiofs`)
 * Rancher Desktop 1.11.0
-
+* OrbStack 1.1.0
 
 ## Summary
 
-You'll probably like any of these Docker providers with DDEV (using Mutagen) based on your choice of performance, maintenance characteristics, and open-source vs. commercial products. My own experience at this point is that OrbStack is providing an outstanding product at a modest price, and is also providing great support and reliable updates. The 
+You'll probably like any of these Docker providers with DDEV (using Mutagen) based on your choice of performance, maintenance characteristics, and open-source vs. commercial products. My own experience at this point is that OrbStack is providing an outstanding product at a modest price, and is also providing great support and reliable updates. The [DDEV Providers Announcement](blog/docker-performance-2023) explains how you can test out any of these without breaking anything on your system.
