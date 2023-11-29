@@ -53,4 +53,4 @@ See the [spreadsheet with the raw data](https://docs.google.com/spreadsheets/d/1
 
 ## Summary
 
-You'll probably like any of these Docker providers with DDEV (using Mutagen) based on your choice of performance, maintenance characteristics, and open-source vs. commercial products. My own experience at this point is that OrbStack is providing an outstanding product at a modest price, and is also providing great support and reliable updates. The [DDEV Providers Announcement](/blog/docker-performance-2023) explains how you can test out any of these without breaking anything on your system.
+You'll probably like any of these Docker providers with DDEV (using Mutagen) based on your choice of performance, maintenance characteristics, and open-source vs. commercial products. My own experience at this point is that OrbStack is providing an outstanding product at a modest price, and is also providing great support and reliable updates. The [DDEV Providers Announcement](/blog/docker-providers) explains how you can test out any of these without breaking anything on your system.
