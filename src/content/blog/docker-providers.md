@@ -1,7 +1,7 @@
 ---
 title: "New DDEV Docker Providers for macOS"
 pubDate: 2023-11-29
-modifiedDate: 2023-11-29
+#modifiedDate: 2023-11-29
 summary: "DDEV now supports OrbStack and Rancher Desktop as Docker Providers. And what is a Docker Provider anyway?"
 author: "Randy Fay"
 featureImage:
@@ -43,7 +43,7 @@ All of the Docker Providers on every platform (except Linux) are actually wrappe
 
 The idea of Docker is that everything happens inside a container, which you can think of as a little, separate computer. You can have as many of them as you want, and they can be created and destroyed easily.
 
-DDEV’s Docker images and containers are the same on every operating system, except that we build separate images for each [processor architecture](blog/arm64-apple-silicon-m1-ddev-local-what-does-it-all-mean/) (ARM64 = Apple Silicon, and AMD64 = Intel). So mostly all the work is done inside the container, and the containers/images behave the same. And DDEV’s main code is written in Golang, which is compiled natively into a single binary on every platform. Of course that sounds simple, but it’s not all that simple. Building all those images has quite a history, and of course Docker providers that ought to behave the same everywhere don’t actually, so there are workarounds in many places. (But you don’t have to worry about them _using_ DDEV!)
+DDEV’s Docker images and containers are the same on every operating system, except that we build separate images for each [processor architecture](blog/arm64-apple-silicon-m1-ddev-local-what-does-it-all-mean/) (ARM64 is mostly Apple Silicon, but other computers like [Rasberry Pi](/blog/watch-ddev-local-on-arm64-raspberry-pi/) as well, and AMD64 is Intel). So mostly all the work is done inside the container, and the containers/images behave the same. And DDEV’s main code is written in Golang, which is compiled natively into a single binary on every platform. Of course that sounds simple, but it’s not all that simple. Building all those images has quite a history, and of course Docker providers that ought to behave the same everywhere don’t actually, so there are workarounds in many places. (But you don’t have to worry about them _using_ DDEV!)
 
 ## What are the Docker Providers on other Operating Systems?
 
@@ -63,14 +63,14 @@ Traditional Windows users have only the Docker Desktop option, and nearly everyo
 
 ![Donut chart depicting the last day of WSL2 Docker Platform usage, with slightly more than half using WSL2 and slightly less than half using Docker Desktop](/img/blog/2023/11/WSL2_Docker_Platform.png)
 
-## Ready to Try Out All of These?
+## Ready to Try These Out?
 
-You can easily try out any of these Docker providers without breaking anything. In general, follow these steps:
+You can easily try out any of these Docker providers without breaking anything. The environments are completely separate. In general, follow these steps:
 
 1. Run `ddev poweroff`
 2. Stop your current Docker provider.
 3. Start the one you're testing.
 4. Optionally change the Docker context to the one you want to use. For example, `docker context use rancher-desktop` or `docker context use orbstack`.
-5. If `docker ps` doesn't have an error you're ready to do. Start a DDEV project and explore.
+5. If `docker ps` doesn't have an error you're ready to go. Start a DDEV project and explore.
 
 This technique won't break anything on your system, assuming you have a little disk space available and follow that path.
