@@ -39,7 +39,9 @@ All of the Docker Providers on every platform (except Linux) are actually wrappe
 
 ## How can DDEV support all these providers?
 
-The idea of Docker is that everything happens inside a container, which you can think of as a little, separate computer. So the Docker images and containers used by DDEV are the same on every operating system, except that we build separate images for each [processor architecture](blog/arm64-apple-silicon-m1-ddev-local-what-does-it-all-mean/) (ARM64 - Apple Silicon, and AMD64 - Intel). So mostly all the work is done inside the container, and the containers/images behave the same. And DDEV’s main code is written in Golang, which is compiled natively into a single binary on every platform. Of course that sounds simple, but it’s not all that simple. Building all those images has quite a history, and of course Docker providers that ought to behave the same everywhere don’t actually, so there are workarounds in many places.
+The idea of Docker is that everything happens inside a container, which you can think of as a little, separate computer. You can have as many of them as you want, and they can be created and destroyed easily.
+
+DDEV’s Docker images and containers are the same on every operating system, except that we build separate images for each [processor architecture](blog/arm64-apple-silicon-m1-ddev-local-what-does-it-all-mean/) (ARM64 = Apple Silicon, and AMD64 = Intel). So mostly all the work is done inside the container, and the containers/images behave the same. And DDEV’s main code is written in Golang, which is compiled natively into a single binary on every platform. Of course that sounds simple, but it’s not all that simple. Building all those images has quite a history, and of course Docker providers that ought to behave the same everywhere don’t actually, so there are workarounds in many places. (But you don’t have to worry about them _using_ DDEV!)
 
 ## What are the Docker Providers on other Operating Systems?
 
