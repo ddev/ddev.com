@@ -17,12 +17,27 @@ Docker providers for macOS have been getting better and faster (mostly) over tim
 
 I used mostly the same technique as in [December 2022](/blog/ddev-docker-desktop-and-colima-benchmarking-updated-dec-2022/) and previous tests.
 
-Some text before the image
 
-![macOS Docker provider performance without Mutagen](/img/blog/2023/11/d10_web_install_no_mutagen.svg)
+The test does a Drupal 10 web install (details below), because it's a heavy test that exercises the database and filesystem extensiively. 
 
-some text
+We'll start with Mutagen enabled (`ddev config --performance-mode=mutagen`), which is the default for macOS. You'll see that OrbStack has the fastest setup, but that all five of the configurations are in a similar range. You would probably be happy with any of them.
 
-![macOS Docker provider performance without Mutagen](/img/blog/2023/11/d10_web_install_mutagen.svg)
+![macOS Docker provider performance with Mutagen - OrbStack faster but all configurations probably fine](/img/blog/2023/11/d10_web_install_mutagen.svg)
 
-some more text
+Now, with Mutagen disabled (`ddev config --performance-mode=none`), OrbStack is by far the fastest, with Docker Desktop coming next and Rancher Desktop and Colima (both configurations) looking pretty sluggish. It's possible that OrbStack could be used without Mutagen, but I don't have any experience with that. Colima with SSHFS definitely cannot be used without Mutagen due to consistency problems with SSHFS.
+
+![macOS Docker provider performance without Mutagen - OrbStack way faster, Colima way too slow](/img/blog/2023/11/d10_web_install_no_mutagen.svg)
+
+
+## The Test
+
+I used the[ddev-puppeteer](https://github.com/ddev/ddev-puppeteer) project to run the tests. Want to try it against your system or configuration? I'd love to hear your results.
+
+See the [spreadsheet with the raw data](https://docs.google.com/spreadsheets/d/14d79oUItssfB1_spUjjGOPkhumARXyhF0DNBK1kp2KA/edit?usp=sharing)
+
+* Drupal 10.1.6 with drush (`ddev composer create drupal/recommended-project && ddev composer require drush/drush`)
+* PHP 8.1
+* MacBook Air (M1, 2020), 16GB RAM, plugged in
+* Docker Desktop 4.25.2
+* Colima v0.6.6, Lima v0.18.0, QEMU 8.1.3 (`colima start qemutest --cpu 4 --memory 6 --disk 100 --dns=1.1.1.1 --vm-type=qemu --mount-type=sshfs` and `colima start vztest --cpu=4 --memory=6 --disk=100 --mount-type=virtiofs`)
+* Rancher Desktop 1.11.0

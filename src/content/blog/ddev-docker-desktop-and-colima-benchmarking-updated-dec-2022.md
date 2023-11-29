@@ -11,7 +11,7 @@ categories:
   - Performance
 ---
 
-I wrote about performance comparisons between [Docker Desktop](https://www.docker.com/products/docker-desktop/) and [Colima](https://github.com/abiosoft/colima) on macOS both with and without [Mutagen](https://ddev.readthedocs.io/en/latest/users/install/performance/#mutagen) in [March, 2022](https://ddev.com/ddev-local/docker-desktop-and-colima-benchmarking-on-macos/), and wanted to update the numbers. Things are looking great everywhere. There are now many more permutations, though. Colima has 9p and VirtioFS file mounting, and Docker Desktop’s VirtioFS implementation now works well (and is fast!).
+I wrote about performance comparisons between [Docker Desktop](https://www.docker.com/products/docker-desktop/) and [Colima](https://github.com/abiosoft/colima) on macOS both with and without [Mutagen](https://ddev.readthedocs.io/en/latest/users/install/performance/#mutagen) in March, 2022, and wanted to update the numbers. Things are looking great everywhere. There are now many more permutations, though. Colima has 9p and VirtioFS file mounting, and Docker Desktop’s VirtioFS implementation now works well (and is fast!).
 
 (**Edited 2022-12-28**: Colima version 0.5.2 solved a couple of significant performance problems with VirtioFS mounting, so I updated the fantastic numbers and removed the caveat about `ddev import-db` being slow.)
 
