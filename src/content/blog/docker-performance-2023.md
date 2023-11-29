@@ -19,10 +19,10 @@ I used mostly the same technique as in [December 2022](/blog/ddev-docker-desktop
 
 Some text before the image
 
-![macOS Docker provider performance without Mutagen](/img/blog/2023/11/Drupal_10_Web_Install_With_Mutagen.svg)
+![macOS Docker provider performance without Mutagen](/img/blog/2023/11/d10_web_install_no_mutagen.svg)
 
 some text
 
-![macOS Docker provider performance without Mutagen](/img/blog/2023/11/Drupal_10_Web_Install_Without_Mutagen.svg)
+![macOS Docker provider performance without Mutagen](/img/blog/2023/11/d10_web_install_mutagen.svg)
 
 some more text
