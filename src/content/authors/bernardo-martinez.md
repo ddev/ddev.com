@@ -4,4 +4,4 @@ firstName: Bernardo
 avatarUrl: https://2.gravatar.com/avatar/2798cb634ac4f9c15d702b5a35417dbd8faffad84b7afe0b3d8143d9b076b042??s=96&d=mm&r=g
 ---
 
-[Bernardo](https://github.com/bmartinez287) works as a front-end developer web developer. He has worked on a wide range of software engineering tasks, but has lately specialized in CMS-based development primarily Drupal and WordPress. He enjoys running, and hiking among other outdoor adventures. After years of Drupal work, he's delighted to actively contribute back to open source and empower others to do the so.
+[Bernardo](https://github.com/bmartinez287) works as a front-end web developer. His computer science background has led him on a wide range of software engineering tasks (devOps, sysadmin, mobile dev, qa). That said, on the last 5 years he has specialized in CMS-based development primarily Drupal and WordPress. He enjoys Crosfit and running among other outdoor adventures. After years of Drupal work, he's delighted to actively contribute back to open source and empower others to do the so.
