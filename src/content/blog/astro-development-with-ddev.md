@@ -63,7 +63,7 @@ After looking at the Discord Support queue and testing a variety of contributed 
       https_port: 4321
 
     ```
-    The code above allows DDEV to map port 4321 to the container `DDEV describe` providing additional info.
+    The code above allows DDEV to map port 4321 to the container.
 
 ## Extra info
 
