@@ -77,7 +77,7 @@ This technique won't break anything on your system, assuming you have a little d
 
 ## Switching to a New Docker Provider with DDEV
 
-If you've tried out a new Docker provider and just want to switch, use [this tip from the FAQ](https://ddev.readthedocs.io/en/latest/users/usage/faq/#how-can-i-migrate-from-one-docker-provider-to-another).
+If you've tried out a new Docker provider and have decided to switch, use [this tip from the FAQ](https://ddev.readthedocs.io/en/latest/users/usage/faq/#how-can-i-migrate-from-one-docker-provider-to-another).
 
 The bottom line is:
 
