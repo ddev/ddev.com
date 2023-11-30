@@ -1,7 +1,7 @@
 ---
 title: "New DDEV Docker Providers for macOS"
 pubDate: 2023-11-29
-#modifiedDate: 2023-11-29
+modifiedDate: 2023-11-30
 summary: "DDEV now supports OrbStack and Rancher Desktop as Docker Providers. And what is a Docker Provider anyway?"
 author: "Randy Fay"
 featureImage:
@@ -74,3 +74,15 @@ You can easily try out any of these Docker providers without breaking anything. 
 5. If `docker ps` doesn't have an error you're ready to go. Start a DDEV project and explore.
 
 This technique won't break anything on your system, assuming you have a little disk space available and follow that path.
+
+## Switching to a New Docker Provider with DDEV
+
+If you've tried out a new Docker provider and just want to switch, use [this tip from the FAQ](https://ddev.readthedocs.io/en/latest/users/usage/faq/#how-can-i-migrate-from-one-docker-provider-to-another).
+
+The bottom line is:
+
+* On the old Docker Provider, `ddev snapshot --all` will create database snapshots of all your registered projects (the ones that show up in `ddev list`). 
+* Then stop the old Docker Provider and start the new one.
+* `ddev snapshot restore --latest` in each of your projects will restore the database snapshots.
+
+Note that OrbStack has built-in migration from Docker Desktop; it prompts you at install time. I haven't tried that out.
