@@ -34,6 +34,10 @@ Our basic plan is the route marked in yellow "True Carretera Austral" on [A Guid
 
 We're looking forward to having you along with us. Thanks for your support of DDEV and the DDEV community! We'll be back at the end of January, 2024.
 
+## Stay in Touch!
+
+The DDEV community will be going strong as usual. Join us to give and receive support [in Discord](https://discord.gg/hCZFfAMc5k) and [the issue queue](https://github.com/ddev/ddev/issues). 
+
 ## Making DDEV Sustainable in the Long Term
 
 Don't forget that one of DDEV's big goals is financial and community sustainability over the long term. We all know no individual will be around forever, and we want our favorite projects and communities to continue on even when change is all around us. [Join us in working toward that sustainabililty goal](/support-ddev/#sponsor-development).
