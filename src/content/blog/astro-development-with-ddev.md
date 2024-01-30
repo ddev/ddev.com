@@ -2,7 +2,7 @@
 title: "Astro development with DDEV"
 pubDate: 2023-11-30
 # modifiedDate: 2023-07-23
-summary: How to run Astro, Vite and other npm packages with DDEV
+summary: How to run DDEV.com locally using DDEV, Astro and Vite
 author: Bernardo Martinez
 featureImage:
     src: /img/blog/2023/10/astroonddev.png
