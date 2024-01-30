@@ -18,7 +18,7 @@ DDEV.com is an [Astro](https://astro.build/) website. Astro is fantastic tool th
 
 That said, for a while this website did not use DDEV. Adding DDEV makes it easier for those with the tool to contribute PRs, but also provides an example on how other projects can take advantage of it.
 
-As of this article, there are two ways to setup your local development on DDEV.com. With DDEV and without DDEV. Whichever is easier and more convenient for you.
+Now there are two ways to set up local development for DDEV.com. You can do it with `npm` on the host, or use DDEV itself.
 
 This guide will highlight what was required to add DDEV to an Astro project. It's meant to provide you with some background as well as tips along the way. That said, feel free to look at this [website](https://github.com/ddev/ddev.com/blob/main/.ddev/config.yaml) config first and reverse engineer your approach if that's easier.
 
