@@ -12,63 +12,63 @@ categories:
   - DevOps
 ---
 
-Some projects might require you to add front-end tooling. Or the whole project might be based around client-side frameworks. DDEV provides an npm command out of the box, simplifying Docker development. I will be using this website as an example.
-
 DDEV.com is an [Astro](https://astro.build/) website. Astro is fantastic static website tool that is packed with features that provides a low-entry barrier for developers looking to contribute features, issues and more. Among its highlights are its low hosting cost, file-based routing, and extensive Markdown support.
 
-That said, for a while this website did not use DDEV. Adding DDEV makes it easier for those with the tool to contribute PRs, but also provides an example on how other projects can take advantage of it.
-
-Now there are two ways to set up local development for DDEV.com. You can do it with `npm` on the host, or use DDEV itself.
-
-This guide will highlight what was required to add DDEV to an Astro project. It's meant to provide you with some background as well as tips along the way. That said, feel free to look at this [website](https://github.com/ddev/ddev.com/blob/main/.ddev/config.yaml) config first and reverse engineer your approach if that's easier.
-
-It's worth mentioning Astro uses Vite as its bundler so these steps would be very similar for any projects that might use Vite.
+This guide will highlight what was required to add DDEV to an Astro project. Astro uses Vite as its bundler so these steps would be very similar for any Vite projects.
 
 The instructions below assume you have DDEV and Docker installed and globally available.
 
-## 1. Run `ddev config`
+## 1. Type
 
-For the purposes of ddev.com the project name could be left as the default as that will inherit the name of the folder ddev is in.
+```
+ddev config --project-type=php --doctroot=dist --create-doctroot
+```
 
-Astro by default saves it builds on the dist directory so our docroot/web folder was set to dist. This will allow you to browse the build on the default https://<projectname>.ddev.site URL.
+Astro by default saves it builds on the dist directory so our docroot/web folder was set to dist.
 
-DDEV currently uses the PHP project type as the custom catch-it-all. So for anything that does not fit inside the other CMSs PHP can be chosen.
+PHP is the general purpose project type.
 
-## 1. Vite in DDEV
+## 2. Vite in DDEV
 
-There are a couple of ways one could run Vite in DDEV.
-In fact, there are a couple of contributed plugins that help with this though they tend to assume you are running Vite in its stock configuration.
+### 1. Make sure Vite is running and listening in all interfaces. 
+By default, it does http://localhost:4321/ in astro or http://localhost:3000/ without astro.
 
-After looking at the Discord Support queue and testing a variety of contributed plugins I came across a few tips that could help regardless of the bundler/tool, but specific to Vite in this case.
+```
+npm run dev -- --host
+```
 
+Note: Don't forget the extra `--`.
 
-1. Make sure Vite is running and listening in all interfaces. By default, it does http://localhost:4321/ in astro or http://localhost:3000/ if vanilla Vite is run. By running it with the `npm run dev -- --host` one can expose it to the host. Note: Don't forget the extra `--` is not a typo though it's kind of unique.
+### 2. Add the following on the astro.config.mjs or in the vite config file. 
 
-2. Additionally one has to add the following on the astro.config.mjs or in the vite config file. Inside export default defineConfig make sure to add.
-    ```
+Inside export default defineConfig make sure to add.
+
+```
     vite: {
       server: {
         host: true, // leave this unchanged for DDEV!
     }},
-    
-    ```
-    That exposes Vite dev server to Docker. It's the equivalent of '0.0.0.0'
+```
 
-3. Let DDEV know which port to listen to.
-    ```
+That exposes Vite dev server to Docker. It's the equivalent of '0.0.0.0'
+
+### 3. Let DDEV know which port to listen to.
+
+```
+
     web_extra_exposed_ports:
     - name: astro-dev
       container_port: 4321
       http_port: 4322
       https_port: 4321
+```
 
-    ```
-    The code above allows DDEV to map port 4321 to the container.
+The code above allows DDEV to map port 4321 to the container.
 
 ## Extra info
 
 
-1. As a reminder, avoid creating conflicts on local setups without DDEV. If one adds DDEV to a project it should still be easy for those that don't use it to compile the project without conflicts. One way to avoid it is to allow Astro Vite to run on its default port, Vite will use a different port if the default is busy. However, if I pinned the port to 4321 that won't happen. In other words, don't pin the port.
+1. Avoid creating conflicts on local setups without DDEV. If one adds DDEV to a project it should still be easy for those that don't use it to compile the project without conflicts. One way to avoid it is to allow Astro Vite to run on its default port, Vite will use a different port if the default is busy. However, if I pinned the port to 4321 that won't happen. In other words, don't pin the port.
 
 
 2. It can be tiresome to type `npm run dev -- --host` all the time. Hence, I added a daemon that runs it.
