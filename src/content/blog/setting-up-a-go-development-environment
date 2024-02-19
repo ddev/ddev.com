@@ -76,7 +76,7 @@ DDEV comes with a launch.json prebuilt for you. It includes the config that migh
 
 A this point Randy replies to a question that came in regards to (Min 42:55) https://ddev.readthedocs.io/en/latest/ vs https://ddev.readthedocs.io/en/stable/. The difference is that stable is the last stable release and latest is the latest commit.
 
-The most important GO files are in pkg/ddevapp (Min 44:26), the ones in cmd are the ones associated with a command and the pkg Go files are functionality.
+The most important GO files are in pkg/ddevapp (Min 44:26), the ones in cmd are the ones associated with a commands and the pkg Go files are functionality.
 
 [Cobra](https://cobra.dev/) (Min 45:00) is the library used for command flags and arguments. A lot of the commands in the cmd directory are just an implementation that calls other things.
 
