@@ -34,7 +34,7 @@ Randy usually symlinks the built binary version. To run a new compiled binary on
 gotmpt/bin/darkin_arm64/ddev --version
 ```
 
-If we want to avoid prefixing ddev with its built path instructions are included at (Min 17:37). `ddev --version` tells describes which binary version is actively used.
+If we want to avoid prefixing ddev with its built path instructions are included at (Min 17:37). `ddev --version` describes which binary version is actively used.
 
 At (Min 21:22) a question comes in regarding the makedocs file and its role.
 
@@ -54,17 +54,16 @@ make golangci-lint
 ```
 `golangci-lint` is the tool used on DDEV CI/CD for incoming pull requests.
 
-For new incoming issues (Min 31:34) and featured pull requests Randy recommends starting with an issue as maintainers add context surrounding their concerns or approach with said pull request.
+For new incoming issues (Min 31:34) and featured pull requests Randy recommends starting with an issue as maintainers add context surrounding their concerns and approach with any given pull request.
 
 [DDEV Docs development tab](https://ddev.readthedocs.io/en/latest/developers/) (Min 32:20) includes plenty of tips and insights.
 
 [GOLand](https://www.jetbrains.com/go/) debugging insights (Min 33:39). At this point Randy showed us a demo on how to run `ddev/cmd/debug-config-yml.go` by first running main.go and then setting the working directory to match an active ddev project.
 
-VSCode Go debugging might require a couple of add-ons (Min37:50). The following extensions are mentioned. 
-[Go](https://marketplace.visualstudio.com/items?itemName=golang.Go) by Go team at Google.
-DDEV comes with a launch.json for you. It includes the config that might be found in Goland UI but for VsCode. The one item Randy usually has to change is the working directory (Min 39:57). After which he showed a similar example of how to debug with VSCode and Go.
+VSCode Go debugging might require a couple of add-ons (Min37:50). The following extension is mentioned, [Go](https://marketplace.visualstudio.com/items?itemName=golang.Go) by the Go team at Google.
+DDEV comes with a launch.json prebuilt for you. It includes the config that might be found in Goland UI but for VsCode. The one item Randy usually has to change is the working directory (Min 39:57). After which he showed an example on how to debug Go in VSCode.
 
-A this point Randy reads a question that came in regards to (Min 42:55) https://ddev.readthedocs.io/en/latest/ vs https://ddev.readthedocs.io/en/stable/. The difference is that stable is the last stable release and latest is the latest commit.
+A this point Randy replies to a question that came in regards to (Min 42:55) https://ddev.readthedocs.io/en/latest/ vs https://ddev.readthedocs.io/en/stable/. The difference is that stable is the last stable release and latest is the latest commit.
 
 The most important GO files are in pkg/ddevapp (Min 44:26), the ones in cmd are the ones associated with a command and the pkg Go files are functionality. ddevapp includes the start functionality.
 
