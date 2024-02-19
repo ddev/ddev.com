@@ -1,6 +1,6 @@
 ---
 title: "Astro development with DDEV"
-pubDate: 2023-11-30
+pubDate: 2024-12-20
 # modifiedDate: 2023-07-23
 summary: How to run ddev.com locally using DDEV, Astro and Vite
 author: Bernardo Martinez
