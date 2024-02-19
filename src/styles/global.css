@@ -62,3 +62,8 @@ img {
     @apply absolute top-0 left-0 w-full h-full;
   }
 }
+
+/* DarkMode for mark*/
+mark {
+  @apply dark:bg-[blue]
+}
