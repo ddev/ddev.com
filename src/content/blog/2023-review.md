@@ -25,10 +25,18 @@ categories:
 
 * 2023 DDEV Releases and features:
   * [So many releases!](https://github.com/ddev/ddev/releases)
-* Features:
-  * DDEV Add-ons: `ddev get --list` now shows 20 official add-ons (15 last year). And `ddev get --list --all` shows another 70 unofficial add-ons incubating or serving special interests (13 last year).
+* New features:
+  * DDEV Add-ons: `ddev get --list` now shows 20 official add-ons (15 last year). And `ddev get --list --all` shows another 70 unofficial add-ons incubating or serving special interests (13 last year). Improved `ddev get --installed` and `ddev get --remove` and `ddev get --version` options.
+  * Mutagen enabled by default on macOS and Windows
+  * Traefik router enabled by default, with full configuration options.
   * We kept up-to-date with so many upstream changes, including PHP and database versions.
-  * TODO: List some features
+  * Platform.sh "Upsun" hosting integration
+  * Acquia integration no longer requires editing the `acquia.yaml` file.
+  * Amazee Lagoon hosting integration
+  * DBeaver database browser support
+  * `ddev_version_constraint` ability to require specific version
+  * Experimental Python/Django4 support
+  * Hundreds of incremental improvements, docs improvements, and bugfixes.
 * All of DDEV's repositories and identity were changed to lose the "drud" name.
 * The Localdev Foundation was renamed to [DDEV Foundation](https://ddev.com/foundation), with Platform.sh generously licensing the DDEV trademark.
 * The DDEV Foundation applied for US 501(c)(3) nonprofit status, which means it will not have to pay taxes and that US contributions to it can be tax-deductible.
@@ -40,22 +48,20 @@ categories:
 * Project adoption: DDEV was adopted as "official" or "preferred" local development environment by Ibexa and Drupal.
 * Python/Django4 support: Although this significant feature was added, at the request of Platform.sh, it hasn't gotten any real traction or users at this point.
 * Marketing and Communications:
-  * Matt Stein converted the old WordPress ddev.com website into a static Astro site and did astonishing work with easy introductions to using DDEV.
-  * DDEV has a CRM with contact management (and 362 contacts)
-  * It has a monthly newsletter
-  * Randy was a featured speaker at Craft CMS's Dot All conference in Barcelona
-  * It has a monthly newsletter
-  * Randy was a featured speaker at Craft CMS's Dot All conference in Barcelona
-  * Randy presented multiple BoF sessions at both Drupalcon NA (Pittsburgh) and Drupalcon EU (Lille)
-  * Mike Anello interviewed Randy for [DrupalEasy Podcast S15E1 - Randy Fay - DDEV project governance and health](https://www.drupaleasy.com/podcast/2023/06/drupaleasy-podcast-s15e1-randy-fay-ddev-project-governance-and-health)
+  * Matt Stein created a completely new ddev.com using Astro and even imported/converted the old WordPress content. He did astonishing work with easy animated introductions to using DDEV.
+  * DDEV has a CRM with contact management (and 362 contacts).
+  * We have a monthly newsletter.
+  * Randy was a featured speaker at Craft CMS's Dot All conference in Barcelona.
+  * Randy presented multiple BoF sessions at both Drupalcon NA (Pittsburgh) and Drupalcon EU (Lille).
+  * Mike Anello interviewed Randy for [DrupalEasy Podcast S15E1 - Randy Fay - DDEV project governance and health](https://www.drupaleasy.com/podcast/2023/06/drupaleasy-podcast-s15e1-randy-fay-ddev-project-governance-and-health).
 
 * Maintainers:
-  * [Stas Zhuk](./introducing-maintainer-stas.md) became a fully-privileged maintainer (part-time, paid)
+  * [Stas Zhuk](./introducing-maintainer-stas.md) became a fully-privileged maintainer (part-time, paid).
   * Matt Stein made incredible advances for ddev.com and for the docs while he had availability to do so, but has stepped back (mostly) into the background now. He remains a fully-privileged maintainer.
   * Simon Gilli stepped away from the project, and we have lost contact with him.
 
-* DDEV's testing infrastructure has been improved with newer Mac arm64 machines, and is now testing Rancher Desktop and OrbStack as well as Docker Desktop and Colima.
-* Randy was awarded the Drupal community's prestigious [Aaron Winborn award](https://www.google.com/url?q=https://www.drupal.org/community/cwg/blog/2023-aaron-winborn-award-winner-randy-fay&sa=D&source=editors&ust=1709057329318244&usg=AOvVaw1AS_YeIN66FQ32WiH7uRpZ).
+* DDEV's testing infrastructure has been improved with newer Mac arm64 machines, and is now testing Rancher Desktop and OrbStack as well as Docker Desktop and Colima. (We test every commit on macOS with Docker Desktop, Rancher Desktop, Colima QEMU, Colima VZ, Orbstack, and WSL2 with both Docker Desktop and docker-ce. On traditional WIndows we test with Docker Desktop, on Linux with docker-ce (on both amd64 and arm64 architectures)).
+* Randy was awarded the Drupal community's prestigious [Aaron Winborn award](https://www.drupal.org/community/cwg/blog/2023-aaron-winborn-award-winner-randy-fay).
 * Randy [went biking for two months](./randy-in-patagonia.md) in Patagonian Chile and the project continued on as normal! Thanks to all of you!
 
 ## Statistics for the year
