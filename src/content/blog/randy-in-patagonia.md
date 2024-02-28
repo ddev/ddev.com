@@ -11,6 +11,9 @@ categories:
   - Community
 ---
 
+TL;DR: Watch Randy's slideshow about this trip:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5zPWGRfNW-k?si=uk_ejG-2kqA8rt28" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 Some of you know that my wife Nancy and I have done lots of pretty ambitious bike touring over the last 20 years or so. From 2006-2009, [we rode 14,000 miles
 ](https://hobobiker.com)(22,000 km) through the Americas from near the Arctic Ocean in Canada to Puerto Montt in Patagonian Chile, South America.  
 
