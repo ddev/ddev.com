@@ -19,7 +19,7 @@ categories:
 * The DDEV Advisory Group meets bimonthly, giving direction and input to the project.
 * I am incredibly thankful to [Platform.sh](https://www.google.com/url?q=http://platform.sh&sa=D&source=editors&ust=1709057329315905&usg=AOvVaw2eb-PA6xOwDsirb4rsWx3I) for the financial support that makes it possible to support DDEV at this level. Platform’s willingness to allow me to set my own agenda, work schedule and vacation schedule is amazing, and ensures my happy future.
 * The TYPO3, Drupal, Silverstripe, Craft CMS and other communities have been incredibly involved and supportive. And they've turned into self-support communities. I often wake up to find that significant issues have been solved while I was sleeping.
-* DDEV is built on the shoulders of open-source giants. Of course the entire Debian project, the golang ecosystem, PHP packaging by deb.sury.org, XDebug development and support by Derick Rethans, Mutagen, and Lima, Rancher Desktop, etc.
+* DDEV is built on the shoulders of open-source giants. Of course the entire Debian project, the golang ecosystem, PHP packaging by deb.sury.org, Xdebug development and support by Derick Rethans, Mutagen, and Lima, Rancher Desktop, etc.
 
 ## Accomplishments for 2023
 
@@ -60,7 +60,7 @@ categories:
   * Matt Stein made incredible advances for ddev.com and for the docs while he had availability to do so, but has stepped back (mostly) into the background now. He remains a fully-privileged maintainer.
   * Simon Gilli stepped away from the project, and we have lost contact with him.
 
-* DDEV's testing infrastructure has been improved with newer Mac arm64 machines, and is now testing Rancher Desktop and OrbStack as well as Docker Desktop and Colima. (We test every commit on macOS with Docker Desktop, Rancher Desktop, Colima QEMU, Colima VZ, Orbstack, and WSL2 with both Docker Desktop and docker-ce. On traditional WIndows we test with Docker Desktop, on Linux with docker-ce (on both amd64 and arm64 architectures)).
+* DDEV's testing infrastructure has been improved with newer Mac ARM64 machines, and is now testing Rancher Desktop and OrbStack as well as Docker Desktop and Colima. (We test every commit on macOS with Docker Desktop, Rancher Desktop, Colima QEMU, Colima VZ, Orbstack, and WSL2 with both Docker Desktop and docker-ce. On traditional WIndows we test with Docker Desktop, on Linux with docker-ce (on both AMD64 and ARM64 architectures)).
 * Randy was awarded the Drupal community's prestigious [Aaron Winborn award](https://www.drupal.org/community/cwg/blog/2023-aaron-winborn-award-winner-randy-fay).
 * Randy [went biking for two months](./randy-in-patagonia.md) in Patagonian Chile and the project continued on as normal! Thanks to all of you!
 
