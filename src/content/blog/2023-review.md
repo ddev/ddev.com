@@ -1,12 +1,13 @@
 ---
 title: "DDEV Project 2023 Review"
-pubDate: 2024-02-28
+pubDate: 2024-02-29
 #modifiedDate: 2024-03-01
 summary: Looking back at 2023 for the DDEV project
 author: Randy Fay
 featureImage:
   src: /img/blog/2024/02/ddev-usage-pie-chart-20240229.png
   alt: DDEV usage as of 2024-02-29
+  credit: Amplitude report of DDEV weekly users, most recent week. Includes only opted-in users with version v1.22.0+
 categories:
   - Community
 ---
