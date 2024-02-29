@@ -75,3 +75,14 @@ categories:
 
 * Loss of maintainers: It's completely normal for maintainers to come and go, and they should be able to do so. For example, Matt Stein found that he needed additional income and had accomplished his key goals with DDEV documentation and stepped back a bit. However, we completely lost prolific long-term maintainer Simon Gilli, and we don't even know how or why. The internet can be a strange place.
 * Project governance: The DDEV project has been very clearly a "benevolent dictatorship" but it needs a clearer path to community governance.
+* Support load: We have world-class support, better than most commercial products. But as the community grows, we could get overwhelmed with our current approach. We have probably doubled the number of users in the last year based on usage figures below. Still, the total support load is modest most days in Discord and other places.
+
+## Current Usage Statistics
+
+We gather usage information via Amplitude from people who opt in; we don't know what percentage of users opt in.
+
+Our current breakdown for v1.22.0+ is shown here, about 10,000 weekly users:
+
+![Amplitude Stats 2024-02-29](/public/img/blog/2024/02/ddev-usage-pie-chart-20240229.png)
+
+In addition, there are probably about 1000 users using versions prior to v1.22, based on Segment.io reports (the previous telemetry technique).
