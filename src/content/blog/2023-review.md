@@ -81,7 +81,7 @@ categories:
 
 We gather usage information via Amplitude from people who opt in; we don't know what percentage of users opt in.
 
-Our current breakdown for v1.22.0+ is shown here, about 10,000 weekly users:
+Our current breakdown for v1.22.0+ is shown here, about 10,000 weekly users, about doubling in the past year.
 
 ![Amplitude Stats 2024-02-29](/public/img/blog/2024/02/ddev-usage-pie-chart-20240229.png)
 
