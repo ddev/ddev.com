@@ -69,15 +69,14 @@ categories:
 * [Amplitude](https://www.google.com/url?q=https://analytics.amplitude.com/ddev/dashboard/jhv7ksg&sa=D&source=editors&ust=1709057329318855&usg=AOvVaw3-YdyXb3I3dwogT7_sTXul) shows about 8000 active weekly DDEV users, up at least 3000 in the last year.
 * 225 [total contributors to DDEV](https://www.google.com/url?q=https://github.com/drud/ddev/graphs/contributors&sa=D&source=editors&ust=1709057329319044&usg=AOvVaw264MR7wU2vWx4uZ0BnaqG0)
 * [422 answers](https://www.google.com/url?q=https://stackoverflow.com/users/215713/rfay?tab%3Danswers%26sort%3Dnewest&sa=D&source=editors&ust=1709057329319223&usg=AOvVaw3XRNxgfJgWIhOzCG-WiPgs) now on Stack Overflow, was 213, reputation increased to 10,750, which means it's easier to edit and support existing questions and answers as things change.
+* **10,000** Weekly users:
+  We gather usage information via Amplitude from people who opt in; we don't know what percentage of users opt in.
 
+  Our current breakdown for v1.22.0+ is shown here, about 10,000 weekly users, about doubling in the past year.
 
-We gather usage information via Amplitude from people who opt in; we don't know what percentage of users opt in.
-
-Our current breakdown for v1.22.0+ is shown here, about 10,000 weekly users, about doubling in the past year.
-
-![Amplitude Stats 2024-02-29](/img/blog/2024/02/ddev-usage-pie-chart-20240229.png)
-
-In addition, there are probably about 1000 users using versions prior to v1.22, based on Segment.io reports (the previous telemetry technique).
+  ![Amplitude Stats 2024-02-29](/img/blog/2024/02/ddev-usage-pie-chart-20240229.png)
+  
+  In addition, there are probably about 1000 users using versions prior to v1.22, based on Segment.io reports (the previous telemetry technique).
 
 ## Issue and Concerns
 
