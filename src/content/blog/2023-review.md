@@ -16,7 +16,7 @@ categories:
 
 * The DDEV Community is awesome, providing a great and supportive environment to work in, and contributing regularly to every facet of the project. DDEV exists and is able to help people only because of this great community.
 * The DDEV Advisory Group meets bimonthly, giving direction and input to the project.
-* I am incredibly thankful to [Platform.sh](https://www.google.com/url?q=http://platform.sh&sa=D&source=editors&ust=1709057329315905&usg=AOvVaw2eb-PA6xOwDsirb4rsWx3I) for the financial support that makes it possible to support DDEV at this level. Platform’s willingness to allow me to set my own agenda, work schedule and vacation schedule is amazing, and ensures my happy future.
+* I am incredibly thankful to [Platform.sh](https://platform.sh) for the financial support that makes it possible to support DDEV at this level. Platform’s willingness to allow me to set my own agenda, work schedule and vacation schedule is amazing, and ensures my happy future.
 * The TYPO3, Drupal, Silverstripe, Craft CMS and other communities have been incredibly involved and supportive. And they've turned into self-support communities. I often wake up to find that significant issues have been solved while I was sleeping.
 * DDEV is built on the shoulders of open-source giants. Of course the entire Debian project, the golang ecosystem, PHP packaging by deb.sury.org, Xdebug development and support by Derick Rethans, Mutagen, and Lima, Rancher Desktop, etc.
 
