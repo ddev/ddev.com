@@ -65,7 +65,6 @@ categories:
 ## Statistics for the year
 
 * DDEV: [594 PRs merged](https://github.com/ddev/ddev/pulls?q=is%3Apr+merged%3A2023-01-01..2023-12-31). Issues and PRs in many other DDEV repos not shown here.
-* [Amplitude](https://app.amplitude.com/analytics/ddev/dashboard/jhv7ksg) shows about 8000 active weekly DDEV users, up at least 3000 in the last year.
 * 225 [total contributors to DDEV](https://github.com/ddev/ddev/graphs/contributors).
 * [261 answers](https://stackoverflow.com/users/215713/rfay?tab=answers&sort=newest) now on Stack Overflow, was 213, reputation increased to 10,910, which means it's easier to edit and support existing questions and answers as things change.
 * **10,000** Weekly users:
