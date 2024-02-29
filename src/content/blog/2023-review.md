@@ -16,8 +16,8 @@ categories:
 
 * The DDEV Community is awesome, providing a great and supportive environment to work in, and contributing regularly to every facet of the project. DDEV exists and is able to help people only because of this great community.
 * The DDEV Advisory Group meets bimonthly, giving direction and input to the project.
-* I am incredibly thankful to [Platform.sh](https://platform.sh) for the financial support that makes it possible to support DDEV at this level. Platform’s willingness to allow me to set my own agenda, work schedule and vacation schedule is amazing, and ensures my happy future.
-* The TYPO3, Drupal, Silverstripe, Craft CMS and other communities have been incredibly involved and supportive. And they've turned into self-support communities. I often wake up to find that significant issues have been solved while I was sleeping.
+* We are incredibly thankful to [Platform.sh](https://platform.sh) for the financial support that makes it possible to support DDEV at this level. Platform’s willingness to allow Randy to set his own agenda, work schedule and vacation schedule is amazing, and ensures his happy future.
+* The TYPO3, Drupal, Silverstripe, Craft CMS and other communities have been incredibly involved and supportive. And they've turned into self-support communities. Randy often wake up to find that significant issues have been solved while he was sleeping.
 * DDEV is built on the shoulders of open-source giants. Of course the entire Debian project, the golang ecosystem, PHP packaging by deb.sury.org, Xdebug development and support by Derick Rethans, Mutagen, and Lima, Rancher Desktop, etc.
 
 ## Accomplishments for 2023
@@ -39,7 +39,7 @@ categories:
 * All of DDEV's repositories and identity were changed to lose the "drud" name.
 * The Localdev Foundation was renamed to [DDEV Foundation](https://ddev.com/foundation), with Platform.sh generously licensing the DDEV trademark.
 * The DDEV Foundation applied for US 501(c)(3) nonprofit status, which means it will not have to pay taxes and that US contributions to it can be tax-deductible.
-* Hours tracked in recent months: I tracked 1,623 hours in the first 11 months of 2023 (December was unpaid), about 147 hours/month. My commitment to Platform.sh is about 125 hours/month.
+* Randy's hours tracked in recent months: 1,623 hours in the first 11 months of 2023 (December was unpaid), about 147 hours/month. My commitment to Platform.sh is about 125 hours/month.
 * DDEV Finances are in a separate report.
 * **Advisory Group**: The DDEV Advisory Group is performing its function as a guiding light for the project. Even though it does not have formal power, its concerns are normally implemented.
 * **New explicitly-supported project types**: [Silverstripe](https://www.silverstripe.org/), Python, Django4.
