@@ -40,7 +40,6 @@ categories:
 * The Localdev Foundation was renamed to [DDEV Foundation](https://ddev.com/foundation), with Platform.sh generously licensing the DDEV trademark.
 * The DDEV Foundation applied for US 501(c)(3) nonprofit status, which means it will not have to pay taxes and that US contributions to it can be tax-deductible.
 * Randy's hours tracked in recent months: 1,623 hours in the first 11 months of 2023 (December was unpaid), about 147 hours/month. My commitment to Platform.sh is about 125 hours/month.
-* DDEV Finances are in a separate report.
 * **Advisory Group**: The DDEV Advisory Group is performing its function as a guiding light for the project. Even though it does not have formal power, its concerns are normally implemented.
 * **New explicitly-supported project types**: [Silverstripe](https://www.silverstripe.org/), Python, Django4.
 * **New hosting integrations**: Amazee.io Lagoon. (Acquia and Platform.sh were also updated)
@@ -77,6 +76,15 @@ categories:
   ![Amplitude Stats 2024-02-29](/img/blog/2024/02/ddev-usage-pie-chart-20240229.png)
   
   In addition, there are probably about 1000 users using versions prior to v1.22, based on Segment.io reports (the previous telemetry technique).
+
+## DDEV Foundation Financial Overview
+
+The full 2023 financial report will be in the March 6 [DDEV Advisory Group Meeting Notes](https://github.com/orgs/ddev/discussions/5757), but highlights are:
+
+* **Total income of the DDEV Foundation: USD$47,729**
+* **Total expenses: USD$45,171.** $35,236 of that was for paid maintainers, $2566 for equipment purchase, $3115 for 2022 corporate taxes, $2038 for upstream support.
+* Monthly income ranges from $2000 to $6800. The higher months are often from companies catching up or making annual support payments.
+* Randy receives no income from the DDEV Foundation; his salary is paid by Platform.sh (thanks!).
 
 ## Issue and Concerns
 
