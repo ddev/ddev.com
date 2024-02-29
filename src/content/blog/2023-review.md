@@ -5,7 +5,7 @@ pubDate: 2024-02-28
 summary: Looking back at 2023 for the DDEV project
 author: Randy Fay
 featureImage:
-  src: /public/img/blog/2024/02/ddev-usage-pie-chart-20240229.png
+  src: /img/blog/2024/02/ddev-usage-pie-chart-20240229.png
   alt: DDEV usage as of 2024-02-29
 categories:
   - Community
@@ -81,6 +81,6 @@ We gather usage information via Amplitude from people who opt in; we don't know 
 
 Our current breakdown for v1.22.0+ is shown here, about 10,000 weekly users, about doubling in the past year.
 
-![Amplitude Stats 2024-02-29](/var/www/html/public/img/blog/2024/02/ddev-usage-pie-chart-20240229.png)
+![Amplitude Stats 2024-02-29](/img/blog/2024/02/ddev-usage-pie-chart-20240229.png)
 
 In addition, there are probably about 1000 users using versions prior to v1.22, based on Segment.io reports (the previous telemetry technique).
