@@ -46,17 +46,18 @@ categories:
 * **Project adoption**: DDEV was adopted as "official" or "preferred" local development environment by Ibexa and Drupal.
 * **Python/Django4** support: Although this significant feature was added, at the request of Platform.sh, it hasn't gotten any real traction or users at this point.
 * **Marketing and Communications**:
-  * Matt Stein created a completely new ddev.com using Astro and even imported/converted the old WordPress content. He did astonishing work with easy animated introductions to using DDEV.
+  * **Matt Stein** created a **completely new ddev.com** using Astro and even imported/converted the old WordPress content. He did astonishing work with easy animated introductions to using DDEV. In addition to a major new site, he made it so [others can easily contribute](https://ddev.com/blog/ddev-website-for-contributors/) content to it. Because it's a static site no privileges are required, it's all PRs on GitHub, which can easily be reviewed.
   * DDEV has a CRM with contact management (and 362 contacts).
   * We have a monthly newsletter.
   * Randy was a featured speaker at Craft CMS's Dot All conference in Barcelona.
   * Randy presented multiple BoF sessions at both Drupalcon NA (Pittsburgh) and Drupalcon EU (Lille).
   * Mike Anello interviewed Randy for [DrupalEasy Podcast S15E1 - Randy Fay - DDEV project governance and health](https://www.drupaleasy.com/podcast/2023/06/drupaleasy-podcast-s15e1-randy-fay-ddev-project-governance-and-health).
 
-* Maintainers:
+* Contributors and Maintainers:
+  * **Contributor and Maintainer Training**: A key focus of the year was to enable and train people to contribute to the project. We had many [Contributor Live Training](https://ddev.com/blog/contributor-training/) events, almost all recorded. In the process, we updated many docs, and many people contributed additional documentation.
   * **[Stas Zhuk](/blog/introducing-maintainer-stas/)** became a fully-privileged maintainer (part-time, paid).
   * **Matt Stein** made incredible advances for ddev.com and for the docs while he had availability to do so, but has stepped back (mostly) into the background now. He remains a fully-privileged maintainer.
-  * **Simon Gilli** stepped away from the project, and we have lost contact with him.
+  * **Simon Gilli** stepped away from the project, and we have lost contact with him. It is normal for contributors and maintainers to ebb and flow, but we're very sorry to have lost touch with Simon. However, we recognize that we need to keep encouraging new contributors to balance the natural ebb and flow.
 
 * DDEV's **testing infrastructure** has been improved with newer Mac ARM64 machines, and is now testing Rancher Desktop and OrbStack as well as Docker Desktop and Colima. (We test every commit on macOS with Docker Desktop, Rancher Desktop, Colima QEMU, Colima VZ, Orbstack, and WSL2 with both Docker Desktop and docker-ce. On traditional WIndows we test with Docker Desktop, on Linux with docker-ce (on both AMD64 and ARM64 architectures)).
 * Randy was awarded the Drupal community's prestigious [Aaron Winborn award](https://www.drupal.org/community/cwg/blog/2023-aaron-winborn-award-winner-randy-fay).
