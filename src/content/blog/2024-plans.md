@@ -35,12 +35,12 @@ At the DDEV Advisory Group's annual review/planning meeting on March 6, 2024, we
 
 ## Architecture
 
-* **Discuss breaking up ddev-webserver** into multiple images/containers
+* **Discuss breaking up `ddev-webserver`** into multiple images/containers
   * The base image could be smaller
   * PHP could be a separate image/container
   * Apache and Nginx versions could be separate images
-* **Add swapability of webserver**: Currently we have Apache and Nginx built-in, but people periodically ask for Caddy, etc.
-* **Allow other back-ends (like node.js and frankenphp)** in addition to current php-fpm and gunicorn. Make them swappable so that future back-ends could easily be accommodated.
+* **Add swapability of the web server component**: Currently we have Apache and Nginx built-in, but people periodically ask for Caddy, etc.
+* **Allow other back-ends (like Node.js and frankenphp)** in addition to current php-fpm and gunicorn. Make them swappable so that future back-ends could easily be accommodated.
 
 ## Future possibilities
 
