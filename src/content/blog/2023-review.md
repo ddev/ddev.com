@@ -1,7 +1,7 @@
 ---
 title: "DDEV Project 2023 Review"
 pubDate: 2024-02-29
-#modifiedDate: 2024-03-01
+modifiedDate: 2024-03-01
 summary: Looking back at 2023 for the DDEV project
 author: Randy Fay
 featureImage:
