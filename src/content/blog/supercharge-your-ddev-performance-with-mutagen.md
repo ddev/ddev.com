@@ -27,7 +27,7 @@ A Mutagen-enabled Magento2 site with all the sample data installed took 48 secon
 
 ![](/img/blog/2021/07/drupal-9-mutagen-sync-time-seconds.png)
 
-Note that there are also some risks/caveats, as seen in the [docs](https://ddev.readthedocs.io/en/latest/users/performance/#using-mutagen).
+Note that there are also some risks/caveats, as seen in the [docs](https://ddev.readthedocs.io/en/stable/users/performance/#using-mutagen).
 
 - This is a brand-new feature. Your mileage may vary. Please report your experience in any of the [support channels](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation)!
 - This is mostly for macOS users. WSL2 is already the preferred environment for Windows users, but if you’re still using traditional Windows this makes a huge difference. Turning on Mutagen doesn’t make sense on Linux or WSL2.
@@ -41,6 +41,6 @@ Want to try it out? It’s in the new edge releases of DDEV v1.18.0, for example
 
 Are you interested in the original data, or comparing it to your own? See the [spreadsheet and charts](https://docs.google.com/spreadsheets/d/16WaJGYQkFiYKuvBregwM-2XF-CxF77diOEnLWZR7EIM/edit?usp=sharing).
 
-_A huge shout-out to [Tag1 Consulting](https://tag1.com), who sponsored this (very extensive) feature. Is your company interested in sponsoring DDEV features or support? Please give us a yell in any of the [support channels](https://ddev.readthedocs.io/en/latest/#support-and-user-contributed-documentation)._
+_A huge shout-out to [Tag1 Consulting](https://tag1.com), who sponsored this (very extensive) feature. Is your company interested in sponsoring DDEV features or support? Please give us a yell in any of the [support channels](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation)._
 
 And of course another huge shout-out to [Mutagen](https://mutagen.io) and maintainer [Jacob Howard (@xenoscopic)](https://github.com/xenoscopic), on whose work this feature stands. Jacob spent lots of time with me to explain all the ins and outs, thanks! Once again, as throughout this project, DDEV stands on the shoulders of giants!

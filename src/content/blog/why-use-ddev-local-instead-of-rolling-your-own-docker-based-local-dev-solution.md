@@ -43,7 +43,7 @@ If you know something about Docker, you know that you can throw one or two Docke
 - Integration with [Platform.sh](https://platform.sh), [Pantheon.io](https://ddev.readthedocs.io/en/stable/users/providers/pantheon/), Acquia Cloud.
 - `ddev share` lets you show work in progress to anyone anywhere in the world.
 - Respect for other tools and production environments: DDEV doesn’t reconfigure your computer or require exact versions of Docker, etc.
-- Extensive customization available, including [maintained add-ons with automated tests](https://ddev.readthedocs.io/en/latest/users/extend/additional-services/).
+- Extensive customization available, including [maintained add-ons with automated tests](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/).
 - Custom commands based on shell scripts, that can be added as team needs grow.
 - Outstanding open-source community with [support in many channels](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation).
 - **Team lead gets the day off**! This is perhaps the biggest of the many benefits of DDEV, and perhaps the most important. When you use a standardized, supported solution, your team leads don’t spend all their time helping everybody else keep the development environment going. It’s the same on every platform, project configurations get checked in, and mostly people work on things instead of spending their time keeping the environment going (or extending it).
