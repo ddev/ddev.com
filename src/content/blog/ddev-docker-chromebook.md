@@ -34,7 +34,7 @@ Here’s the step-by-step to set up a DDEV development environment:
 
 ![Screenshot of the "Host Switch Plus" plugin configuration panel set as described in the preceding text. Default set to "direct". Checkbox for "enable" selected. IP set to the result from `ip -a | grep eth0`, and Domain set to `*.ddev.site`](/img/blog/2020/04/hostswitchplus.png)
 
-Now you can create a project the normal way and get to work! This is the simple path to a Drupal 8 Composer build, but there are lots of other DDEV [quickstart guides](https://ddev.readthedocs.io/en/stable/users/cli-usage/#quickstart-guides).
+Now you can create a project the normal way and get to work! This is the simple path to a Drupal 8 Composer build, but there are lots of other DDEV [quickstart guides](https://ddev.readthedocs.io/en/stable/users/quickstart/).
 
 - `mkdir -p ~/workspace/d8composer && cd ~/workspace/d8composer`
 - `ddev config --project-type=drupal8 --docroot=web --create-docroot`

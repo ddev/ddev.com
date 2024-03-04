@@ -11,7 +11,7 @@ categories:
   - Guides
 ---
 
-One [DDEV](http://github.com/ddev/ddev) feature that lots of people love is DDEV’s creation and management of CMS-specific settings files. This makes starting and installing a new project a breeze, and is a fantastic time-saver for many users. People can follow one of the many DDEV [Quickstart Guides](https://ddev.readthedocs.io/en/stable/users/cli-usage/#quickstart-guides) and have a project up and installed in no time.
+One [DDEV](http://github.com/ddev/ddev) feature that lots of people love is DDEV’s creation and management of CMS-specific settings files. This makes starting and installing a new project a breeze, and is a fantastic time-saver for many users. People can follow one of the many DDEV [Quickstart Guides](https://ddev.readthedocs.io/en/stable/users/quickstart/) and have a project up and installed in no time.
 
 To make this happen, DDEV does a quite a bit of settings management for explicitly supported CMSs. DDEV will:
 
