@@ -27,7 +27,7 @@ At the DDEV Advisory Group's 2-hour [annual review/planning meeting on March 6, 
 
 ## Features
 
-* **Explicit [Upsun](https://upsun.com/)** by Platform.sh support, probably meaning an add-on for it, at least supporting the documented target CMSs.
+* **Explicit support for [Upsun](https://upsun.com/ by Platform.sh)**, which probably means creating an Add-on for it, but at least supporting the documented target CMSes.
 * **Improve xhprof usage**. The [ddev-xhgui](https://github.com/tyler36/ddev-xhgui) add-on has demonstrated how much better the xhprof experience can be in DDEV. We would like to incorporate the ddev-xhgui work into DDEV core and make the great experience available to everyone without an add-on.
 * **Refactor configuration code** to promote consistent handling of config (global and project) and generated docs. Currently, there is a lot of technical debt in the handling of project and global configuration, with code often repeated for each setup. This can be reworked and give consistent approach to these, while removing much code. This could include using Viper for configuration, which would allow environmental overrides, etc.
 * **Node.js back-end**: DDEV already has lots of support for Node.js in many contexts, but it would be great to have the ability to replace php-fpm with a node server, and this is already not hard to do, but would be great as a DDEV feature.
@@ -39,9 +39,9 @@ At the DDEV Advisory Group's 2-hour [annual review/planning meeting on March 6, 
   * The base image could be smaller
   * PHP could be a separate image/container
   * Apache and Nginx versions could be separate images
-* **Add swapability of the web server component**: Currently we have Apache and Nginx built-in, but people periodically ask for Caddy, etc.
-* **Allow other back-ends (like Node.js and frankenphp)** in addition to current php-fpm and gunicorn. Make them swappable so that future back-ends could easily be accommodated.
+* **Make web server component swapable**: Currently we have Apache and Nginx built-in, but people periodically ask for Caddy, etc.
+* **Support more back-ends (like Node.js and frankenphp)** in addition to the current php-fpm and gunicorn. Make them swappable so that future back-ends could easily be accommodated.
 
 ## Future possibilities
 
-* **TUI or GUI** (Text-UI or GUI). People have often suggested that a UI other than the command-line would make the tool more accessible to less-technical users. In the distant past we even had a [React-based GUI wrapper](https://github.com/ddev/ddev-ui), but it didn't have tests and was not really maintainable. Still, the idea of making DDEV more accessible to a different audience comes up regularly
+* **TUI or GUI** (Text User Interface or Graphical User Interface). People have often suggested that a user interface other than the command-line would make the tool more accessible to less-technical users. In the distant past we even had a [React-based GUI wrapper](https://github.com/ddev/ddev-ui), but it didn't have tests and was not really maintainable. Still, the idea of making DDEV more accessible to a different audience comes up regularly
