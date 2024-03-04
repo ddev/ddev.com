@@ -12,7 +12,7 @@ categories:
   - Community
 ---
 
-At the DDEV Advisory Group's 2-hour [annual review/planning meeting on March 6, 2024](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Advisory+Group&iso=20240306T09&p1=75&ah=2), we'll talk about plans and priorities for 2024. These have been discussed previously in the [DDEV 2024 Priorities discussion](https://github.com/orgs/ddev/discussions/5720) but in getting ready for the meeting it seems like a good time to propose them in a more cohesive fashion. (Everyone is welcome to the meeting. The Zoom link is announced in [discord](https://discord.com/channels/664580571770388500/1068592494184501349/1213180991133192302) or email [support](mailto:support%40ddev.com) for a calendar invitation or the zoom link.)
+At the DDEV Advisory Group's 2-hour [annual review/planning meeting on March 6, 2024](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Advisory+Group&iso=20240306T09&p1=75&ah=2), we'll talk about plans and priorities for 2024. These have been discussed previously in the [DDEV 2024 Priorities discussion](https://github.com/orgs/ddev/discussions/5720) but in getting ready for the meeting it seems like a good time to propose them in a more cohesive fashion. (Everyone is welcome to the meeting. The Zoom link is announced in [Discord](https://discord.com/channels/664580571770388500/1068592494184501349/1213180991133192302) or email [support](mailto:support%40ddev.com) for a calendar invitation or the zoom link.)
 
 ## Community
 
@@ -27,7 +27,7 @@ At the DDEV Advisory Group's 2-hour [annual review/planning meeting on March 6, 
 
 ## Features
 
-* **Explicit support for [Upsun](https://upsun.com/ by Platform.sh)**, which probably means creating an add-on for it, but at least supporting the documented target CMSes.
+* **Explicit support for [Upsun by Platform.sh](https://upsun.com/)**, which probably means creating an add-on for it, but at least supporting the documented target CMSes.
 * **Improve xhprof usage**. The [ddev-xhgui](https://github.com/tyler36/ddev-xhgui) add-on has demonstrated how much better the xhprof experience can be in DDEV. We would like to incorporate the ddev-xhgui work into DDEV core and make the great experience available to everyone without an add-on.
 * **Refactor configuration code** to promote consistent handling of config (global and project) and generated docs. Currently, there is a lot of technical debt in the handling of project and global configuration, with code often repeated for each setup. This can be reworked and give consistent approach to these, while removing much code. This could include using Viper for configuration, which would allow environmental overrides, etc.
 * **Node.js back-end**: DDEV already has lots of support for Node.js in many contexts, but it would be great to have the ability to replace php-fpm with a node server, and this is already not hard to do, but would be great as a DDEV feature.
@@ -40,8 +40,8 @@ At the DDEV Advisory Group's 2-hour [annual review/planning meeting on March 6, 
   * PHP could be a separate image/container
   * Apache and Nginx versions could be separate images
 * **Make web server component swapable**: Currently we have Apache and Nginx built-in, but people periodically ask for Caddy, etc.
-* **Support more back-ends (like Node.js and frankenphp)** in addition to the current php-fpm and gunicorn. Make them swappable so that future back-ends could easily be accommodated.
+* **Support more back-ends (like Node.js and FrankenPHP)** in addition to the current PHP-FPM and Gunicorn. Make them swappable so that future back-ends could easily be accommodated.
 
 ## Future possibilities
 
-* **TUI or GUI** (Text User Interface or Graphical User Interface). People have often suggested that a user interface other than the command-line would make the tool more accessible to less-technical users. In the distant past we even had a [React-based GUI wrapper](https://github.com/ddev/ddev-ui), but it didn't have tests and was not really maintainable. Still, the idea of making DDEV more accessible to a different audience comes up regularly
+* **TUI or GUI** (Text User Interface or Graphical User Interface). People have often suggested that a user interface other than the command-line would make the tool more accessible to less-technical users. In the distant past we even had a [React-based GUI wrapper](https://github.com/ddev/ddev-ui), but it didn't have tests and was not really maintainable. Still, the idea of making DDEV more accessible to a different audience comes up regularly.

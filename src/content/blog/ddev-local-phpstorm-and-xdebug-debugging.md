@@ -49,6 +49,6 @@ What we’re doing in this tutorial:
 
 - DDEV documentation: <https://ddev.readthedocs.io>
 - [DDEV Xdebug docs](https://ddev.readthedocs.io/en/stable/users/step-debugging/) (including troubleshooting)
-- [Support docs](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation): Drupal Slack and TYPO3 Slack #ddev, gitter #ddev, Stack Overflow, and the [DDEV issue queue](https://github.com/ddev/ddev/issues)
+- [Support docs](https://ddev.readthedocs.io/en/stable/users/support/): Drupal Slack and TYPO3 Slack #ddev, gitter #ddev, Stack Overflow, and the [DDEV issue queue](https://github.com/ddev/ddev/issues)
 - [DDEV Project Repository](https://github.com/ddev/ddev)
 - More about [PhpStorm on WSL2](https://ddev.com/ddev-local/ddev-local-and-phpstorm-debugging-with-wsl2/), with full details about how to run it

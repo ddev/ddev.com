@@ -11,7 +11,7 @@ categories:
   - Guides
 ---
 
-One [DDEV](http://github.com/ddev/ddev) feature that lots of people love is DDEV’s creation and management of CMS-specific settings files. This makes starting and installing a new project a breeze, and is a fantastic time-saver for many users. People can follow one of the many DDEV [Quickstart Guides](https://ddev.readthedocs.io/en/stable/users/cli-usage/#quickstart-guides) and have a project up and installed in no time.
+One [DDEV](http://github.com/ddev/ddev) feature that lots of people love is DDEV’s creation and management of CMS-specific settings files. This makes starting and installing a new project a breeze, and is a fantastic time-saver for many users. People can follow one of the many DDEV [Quickstart Guides](https://ddev.readthedocs.io/en/stable/users/quickstart/) and have a project up and installed in no time.
 
 To make this happen, DDEV does a quite a bit of settings management for explicitly supported CMSs. DDEV will:
 
@@ -30,4 +30,4 @@ This really helps new users and people who are kicking the tires on a CMS. Plus 
 
 Is DDEV currently missing explicit support for your CMS? So far we have many flavors of TYPO3, Drupal, Magento, and WordPress available. There are feature requests for support for [Shopware](https://github.com/ddev/ddev/issues/1988), [Mautic](https://github.com/ddev/ddev/issues/2154), and some others. If you’d like DDEV settings support for your CMS, [open an issue](https://github.com/ddev/ddev/issues/new/choose), we love to hear from you!
 
-We want DDEV to meet the needs of your team and your workflow, so please continue to [tell us](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation) how these approaches work out for you and your team. We’d be happy to host guest posts here on the blog from you about how your team shares projects and on-boards new team members using DDEV, or, post on your own blog and we can link to it on the DDEV community resources repository, [awesome-ddev](http://github.com/ddev/awesome-ddev)!
+We want DDEV to meet the needs of your team and your workflow, so please continue to [tell us](https://ddev.readthedocs.io/en/stable/users/support/) how these approaches work out for you and your team. We’d be happy to host guest posts here on the blog from you about how your team shares projects and on-boards new team members using DDEV, or, post on your own blog and we can link to it on the DDEV community resources repository, [awesome-ddev](http://github.com/ddev/awesome-ddev)!

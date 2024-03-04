@@ -21,7 +21,7 @@ But first, what do maintainers do? Why are they so busy? Why is it important to 
 
 **Everything is always changing**! You live there. You know that everything is constantly in flux today’s software world. In this past week, Node.js changed its installation technique and injected a 60-second wait (and deprecation notice) on the old one. And Magento 2 obsoleted support for Elasticsearch in many configurations. And the upstream support for putting artifacts links on PRs broke (again). This is all normal. But this kind of constant rot means that if DDEV were left unmaintained for 4-6 months you wouldn’t like it any more. We wouldn’t want that!
 
-**You always want more**! It’s a busy world, and DDEV’s many features are always inspiring people to ask for more features. We love to delegate these to multiple maintainers as the DDEV [Add-on system](https://ddev.readthedocs.io/en/latest/users/extend/additional-services/) has done, but there are many, many cases where a wonderful feature request means changes to DDEV core.
+**You always want more**! It’s a busy world, and DDEV’s many features are always inspiring people to ask for more features. We love to delegate these to multiple maintainers as the DDEV [Add-on system](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/) has done, but there are many, many cases where a wonderful feature request means changes to DDEV core.
 
 **Quality means careful review and incubation**: You love the quality and reliability of DDEV, but that comes from maintainers and contributors carefully watching what goes in, coaching contributors, and making sure that what goes in only makes the project better. With few exceptions, every PR is carefully tested manually and is covered by automated tests as well.
 

@@ -11,7 +11,7 @@ categories:
   - Guides
 ---
 
-We built DDEV to make it easier for people to set up local development environments for PHP projects. When things aren’t working as expected, people need help, and we need to hear from them. We provide direct help to our community [through our documentation](https://ddev.readthedocs.io/en/latest/#support), in Slack in both the Drupal and TYPO3 communities, and on [Stack Overflow](https://stackoverflow.com/tags/ddev). It’s something we like doing because it gets us closer to our users, and we get direct feedback so we can improve our products.
+We built DDEV to make it easier for people to set up local development environments for PHP projects. When things aren’t working as expected, people need help, and we need to hear from them. We provide direct help to our community [through our documentation](https://ddev.readthedocs.io/en/stable/users/support/), in Slack in both the Drupal and TYPO3 communities, and on [Stack Overflow](https://stackoverflow.com/tags/ddev). It’s something we like doing because it gets us closer to our users, and we get direct feedback so we can improve our products.
 
 Over the year since DDEV’s first public release, we’ve started to see patterns and common problems. One thing we noticed is a significant share of the advice we offer to users is helping them get Docker working right on their machines. Especially on Windows and Linux. Docker works for most people out of the box with no trouble, yet a few things have a tendency to trip people up.
 
@@ -21,7 +21,7 @@ In this article, we’re going to help you quickly resolve your Docker problems 
 
 It’s worth considering starting with the “reset to factory defaults” option for Docker. Taking this step can solve most problems you’ll run into on Docker for Windows and Docker for Mac. However, there’s a caveat: it will destroy your databases currently imported into your projects. So you must back them up if you need to.
 
-To backup your databases, you can db dump, but it’s easy to take a snapshot with DDEV. Run [ddev snapshot](https://ddev.readthedocs.io/en/latest/users/cli-usage/#snapshotting-and-restoring-a-database) in each project to capture your databases before doing the factory reset.
+To backup your databases, you can db dump, but it’s easy to take a snapshot with DDEV. Run [ddev snapshot](https://ddev.readthedocs.io/en/stable/users/cli-usage/#snapshotting-and-restoring-a-database) in each project to capture your databases before doing the factory reset.
 
 Next, follow instructions for [resetting to factory defaults for Windows](https://docs.docker.com/docker-for-windows/#reset) and [for macOS](https://docs.docker.com/docker-for-mac/#reset).
 
@@ -31,8 +31,8 @@ If that factory reset doesn’t resolve your issues, you can take the following 
 
 Docker needs to be able to a few things for DDEV to work:
 
-Can Docker mount the project code directory from the host into the container? The project code directory is usually somewhere in a subdirectory of your home directory.  
-Can Docker mount `~/.ddev` for SSL cert cache and import-db?  
+Can Docker mount the project code directory from the host into the container? The project code directory is usually somewhere in a subdirectory of your home directory.
+Can Docker mount `~/.ddev` for SSL cert cache and import-db?
 Can Docker access TCP ports on the host to serve HTTP and HTTPS? These are ports 80 and 443 by default, but they can be changed on a per-project basis.
 
 To conduct a check to see is all working as expected, we’ve come up with a single Docker command that will typically tell if there’s a problem that will prevent DDEV from running. This command here is designed to work on all Docker installs.
@@ -43,7 +43,7 @@ Use your terminal to execute this command in your project directory. If you’re
 
 If that fails you may get an error which you can troubleshoot. Here are some of the most common errors we see reported from users, and how to resolve them.
 
-- “port is already allocated”: See [how to eliminate port conflicts](https://ddev.readthedocs.io/en/latest/users/troubleshooting/#webserver-ports-are-already-occupied-by-another-webserver).
+- “port is already allocated”: See [how to eliminate port conflicts](https://ddev.readthedocs.io/en/stable/users/troubleshooting/#webserver-ports-are-already-occupied-by-another-webserver).
 - “Error response from daemon: Get https://registry-1.docker.io/v2/” – Docker may not be running so try restarting it. Or you may not have any access to the internet.
 - “403 authentication required” when trying to `ddev start`: Try `docker logout` and do it again. Docker authentication is _not_ required for any normal ddev action.
 
@@ -66,8 +66,8 @@ If you didn’t explicitly install [Docker Compose](https://docs.docker.com/comp
 
 To get it set up, you have to download Docker Compose from GitHub and directly install it.
 
-You’ll find out about this right away because ddev will tell you on `ddev start` or most other ddev commands. The [Docker Installation page](https://ddev.readthedocs.io/en/latest/users/docker%5Finstallation/) has details about Linux installation.
+You’ll find out about this right away because ddev will tell you on `ddev start` or most other ddev commands. The [Docker Installation page](https://ddev.readthedocs.io/en/stable/users/docker%5Finstallation/) has details about Linux installation.
 
 ### So how did it go? Tell us!
 
-We hope this helped you resolve any of the issues you had getting Docker set up and running for DDEV. Still stuck? Reach out for [further help](https://ddev.readthedocs.io/en/latest/#support) if you need it.
+We hope this helped you resolve any of the issues you had getting Docker set up and running for DDEV. Still stuck? Reach out for [further help](https://ddev.readthedocs.io/en/stable/users/support/) if you need it.

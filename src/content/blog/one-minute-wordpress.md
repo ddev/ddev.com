@@ -22,7 +22,7 @@ DDEV is written in [Go](https://golang.org/) and leverages [Docker](https://www.
 - Docker
 - a text editor
 - a terminal app
-- DDEV ([see our one-line installer](https://github.com/ddev/ddev#installation-script) and [other install instructions](https://ddev.readthedocs.io/en/latest/#installation))
+- DDEV ([see our one-line installer](https://github.com/ddev/ddev#installation-script) and [other install instructions](https://ddev.readthedocs.io/en/stable/#installation))
 
 As of v0.3, we currently support the latest version of macOS and several popular Linux distributions (Ubuntu, Debian, and Fedora). Support for Windows is on its way (UPDATE: [experimental support is here](https://github.com/ddev/ddev/issues/196#issuecomment-300178008)) and we will gladly respond to issues for other distributions if they are surfaced in the issue queues.
 

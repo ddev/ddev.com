@@ -45,7 +45,7 @@ This set of steps assumes an ngrok subdomain of “wp23” and a starting URL of
 2. Make a backup of your database with `ddev export-db` or `ddev shapshot`
 3. Edit `wp-config-ddev.php` (or whatever your config is) to change `WP_HOME`, for example, `define('WP_HOME', '[<https://wp23.ngrok.io>](<https://wp23.ngrok.io/>)');`
 4. `ddev ssh`
-5. `wp search-replace [<https://wordpress.ddev.site>](<https://wordpress.ddev.site/>) [<https://wp23.ngrok.io>](<https://wp23.ngrok.io/>)`  
+5. `wp search-replace [<https://wordpress.ddev.site>](<https://wordpress.ddev.site/>) [<https://wp23.ngrok.io>](<https://wp23.ngrok.io/>)`
    (assuming your project is configured for `https://wordpress.ddev.site` and your `ngrok_args` are configured for the wp23 subdomain)
 6. Now `ddev share`
 
@@ -92,6 +92,6 @@ Computers and mobile devices on your local network should now be able to access 
 
 ## What next?
 
-Find us and other DDEV community experts via one of our [support channels](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation).
+Find us and other DDEV community experts via one of our [support channels](https://ddev.readthedocs.io/en/stable/users/support/).
 
 Take a look around the [project on GitHub](http://github.com/ddev/ddev) and feel free to contribute!

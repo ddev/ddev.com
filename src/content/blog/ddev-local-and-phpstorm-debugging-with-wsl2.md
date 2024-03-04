@@ -58,4 +58,4 @@ I tested these approaches on an 8GB Windows 10 Home VM with Docker 2.3.0.3 and D
 13. Visit the project with a web browser or curl. You should get a popup asking for mapping of the host-side files to the in-container files. You’ll want to make sure that `/home/<you>/.../<yourproject>` gets mapped to `/var/www/html`
 14. Debugging should be working! You can step through your code, set breakpoints, view variables, etc.
 
-We look forward to your feedback as you start using PhpStorm with WSL2! We’re listening in [many support channels](https://ddev.readthedocs.io/en/stable/#support) and are happy to work with you and learn from you.
+We look forward to your feedback as you start using PhpStorm with WSL2! We’re listening in [many support channels](https://ddev.readthedocs.io/en/stable/users/support/) and are happy to work with you and learn from you.

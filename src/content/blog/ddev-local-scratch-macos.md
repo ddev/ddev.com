@@ -18,7 +18,7 @@ In this video tutorial, we’ll show you how to use DDEV to set up a PHP develop
 
 Using a local development environment means you’re working on your projects without risking injury to your live projects.
 
-Follow [instructions to install DDEV in the docs](https://ddev.readthedocs.io/en/latest/#installation) or watch this video for an overview.
+Follow [instructions to install DDEV in the docs](https://ddev.readthedocs.io/en/stable/#installation) or watch this video for an overview.
 
 <div class="video-container">
 <iframe loading="lazy" title="DDEV from scratch on macOS" width="500" height="281" src="https://www.youtube.com/embed/1kG94UjS8XE?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
@@ -26,13 +26,13 @@ Follow [instructions to install DDEV in the docs](https://ddev.readthedocs.io/en
 
 ## How to install your Docker-based dev environment with DDEV
 
-These are notes from the [video tutorial](https://www.youtube.com/watch?v=1kG94UjS8XE). You can also check out the detailed [install DDEV instructions in the docs.](https://ddev.readthedocs.io/en/latest/#installation)
+These are notes from the [video tutorial](https://www.youtube.com/watch?v=1kG94UjS8XE). You can also check out the detailed [install DDEV instructions in the docs.](https://ddev.readthedocs.io/en/stable/#installation)
 
 ### First: [Install Docker for Mac](https://docs.docker.com/docker-for-mac/install/)
 
-The [minimum requirements to run DDEV ](https://ddev.readthedocs.io/en/latest/#system-requirements)are Docker and Docker Compose, which comes bundled with Docker for Mac and Windows. DDEV pretty much works anywhere Docker will run.
+The [minimum requirements to run DDEV ](https://ddev.readthedocs.io/en/stable/#system-requirements)are Docker and Docker Compose, which comes bundled with Docker for Mac and Windows. DDEV pretty much works anywhere Docker will run.
 
-### Next: [Install DDEV](https://ddev.readthedocs.io/en/latest/#installation)
+### Next: [Install DDEV](https://ddev.readthedocs.io/en/stable/#installation)
 
 **Option 1: With Homebrew**
 
@@ -64,7 +64,7 @@ When you’re done, DDEV outputs a URL with the link to quickly view your site i
 
 If this is a first-time project based on a PHP CMS like TYPO3 CMS or Drupal, you would have to go through the installation steps to set up the site.
 
-Otherwise, you might be loading an existing project, and you’ll want to [import an existing database](https://ddev.readthedocs.io/en/latest/users/cli-usage/#database-imports).
+Otherwise, you might be loading an existing project, and you’ll want to [import an existing database](https://ddev.readthedocs.io/en/stable/users/cli-usage/#database-imports).
 
 These are some good commands to know but check ddev -h to see the complete list.
 

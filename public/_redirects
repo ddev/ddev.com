@@ -1,8 +1,8 @@
 /install.sh https://raw.githubusercontent.com/ddev/ddev/master/scripts/install_ddev.sh 302
-/ddev-local/ddev-wsl2-getting-started/ https://ddev.readthedocs.io/en/latest/users/install/ddev-installation/#windows-wsl2 301
+/ddev-local/ddev-wsl2-getting-started/ https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#windows 301
 /ddev-local/apache-solr-with-drupal-8-and-search-api-solr/ https://github.com/ddev/ddev-drupal9-solr 301
-/ddev-local/ddev-local-web-container-customization-in-v1-8-0/ https://ddev.readthedocs.io/en/latest/users/extend/customizing-images/ 301
-/ddev-local/ddev-local-nfs-mounting-setup-macos/ https://ddev.readthedocs.io/en/latest/users/install/performance/#nfs 301
+/ddev-local/ddev-local-web-container-customization-in-v1-8-0/ https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/ 301
+/ddev-local/ddev-local-nfs-mounting-setup-macos/ https://ddev.readthedocs.io/en/stable/users/install/performance/#nfs 301
 /ddev-local /blog 301
 /ddev-local/ /blog 301
 /meet-the-team /blog/authors 301

@@ -37,7 +37,7 @@ Meanwhile, I was searching for one solution which would help to unify the experi
 
 After initial setup and configuration of the project, you can commit the DDEV configuration in your project repository. The next team member only need clone the repository and run `ddev start`, `ddev composer install` and `ddev exec artisan` (to run migrations, etc) inside of the project (or you can define a custom command that will replace them). Every team member can override parts of the config (like enabling NFS support or Xdebug) without committing it. The time between cloning and starting work on the code is reduced to almost nothing.
 
-In the end, the switch to DDEV did save a lot of time on the team (I have not heard about any LDE problems, since we switched 😀 ). That’s also the reason why I decided to [“officially” add Laravel to DDEV](https://ddev.readthedocs.io/en/stable/users/cli-usage/#laravel-quickstart) as a contribution to the open source project.
+In the end, the switch to DDEV did save a lot of time on the team (I have not heard about any LDE problems, since we switched 😀 ). That’s also the reason why I decided to [“officially” add Laravel to DDEV](https://ddev.readthedocs.io/en/stable/users/quickstart/#laravel) as a contribution to the open source project.
 
 ## Additional tips for Laravel + DDEV
 
@@ -122,4 +122,4 @@ nfs_mount_enabled: false
 
 ## Conclusion
 
-Today, as Laravel developers, we have a lot of solutions to make our workflow more efficient and enjoyable. Now with DDEV we get one tool that helps us to push our productivity and ensures comfort by committing configuration that runs the same local development environment on every team members’ machine. Get started with your own Laravel project and DDEV using the [quickstart guide](https://ddev.readthedocs.io/en/stable/users/cli-usage/#laravel-quickstart)!
+Today, as Laravel developers, we have a lot of solutions to make our workflow more efficient and enjoyable. Now with DDEV we get one tool that helps us to push our productivity and ensures comfort by committing configuration that runs the same local development environment on every team members’ machine. Get started with your own Laravel project and DDEV using the [quickstart guide](https://ddev.readthedocs.io/en/stable/users/quickstart/#laravel)!

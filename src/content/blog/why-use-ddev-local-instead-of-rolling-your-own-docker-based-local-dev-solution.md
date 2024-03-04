@@ -26,7 +26,7 @@ If you know something about Docker, you know that you can throw one or two Docke
 
 - [Open-source project](https://github.com/ddev/ddev) with no vendor lock-in.
 - Has already undergone more than 6 years of development, adding requested features and collaborating with community contributors. [Sponsor DDEV on GitHub!](https://github.com/sponsors/ddev)
-- Explicit support for [many CMS types](https://ddev.readthedocs.io/en/stable/users/cli-usage/#quickstart-guides), including Drupal, Backdrop, TYPO3, Magento, Laravel, WordPress, Shopware and generic PHP, HTML, JavaScript, and Python projects. DDEV will set up basic settings files for you so you’re set up in moments, but you can [turn feature that off](https://ddev.com/ddev-local/controlling-cms-settings-files-in-ddev-local/) when you don’t need it.
+- Explicit support for [many CMS types](https://ddev.readthedocs.io/en/stable/users/quickstart/), including Drupal, Backdrop, TYPO3, Magento, Laravel, WordPress, Shopware and generic PHP, HTML, JavaScript, and Python projects. DDEV will set up basic settings files for you so you’re set up in moments, but you can [turn feature that off](https://ddev.com/ddev-local/controlling-cms-settings-files-in-ddev-local/) when you don’t need it.
 - Support for nearly all versions of both MySQL, MariaDB, and PostgreSQL.
 - Native support for macOS (Apple Silicon and Intel), Windows, WSL2, Linux, both AMD64 and ARM64 architectures, great for diverse teams.
 - Out-of-the-box support for both Nginx and Apache and PHP 5.6-8.2.
@@ -43,9 +43,9 @@ If you know something about Docker, you know that you can throw one or two Docke
 - Integration with [Platform.sh](https://platform.sh), [Pantheon.io](https://ddev.readthedocs.io/en/stable/users/providers/pantheon/), Acquia Cloud.
 - `ddev share` lets you show work in progress to anyone anywhere in the world.
 - Respect for other tools and production environments: DDEV doesn’t reconfigure your computer or require exact versions of Docker, etc.
-- Extensive customization available, including [maintained add-ons with automated tests](https://ddev.readthedocs.io/en/latest/users/extend/additional-services/).
+- Extensive customization available, including [maintained add-ons with automated tests](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/).
 - Custom commands based on shell scripts, that can be added as team needs grow.
-- Outstanding open-source community with [support in many channels](https://ddev.readthedocs.io/en/stable/#support-and-user-contributed-documentation).
+- Outstanding open-source community with [support in many channels](https://ddev.readthedocs.io/en/stable/users/support/).
 - **Team lead gets the day off**! This is perhaps the biggest of the many benefits of DDEV, and perhaps the most important. When you use a standardized, supported solution, your team leads don’t spend all their time helping everybody else keep the development environment going. It’s the same on every platform, project configurations get checked in, and mostly people work on things instead of spending their time keeping the environment going (or extending it).
 
 There are significant benefits of building and maintaining your own Docker-based dev environment, but I think you’ll have more free time with DDEV!

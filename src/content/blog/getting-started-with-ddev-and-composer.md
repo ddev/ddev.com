@@ -27,7 +27,7 @@ Composer is the recommended way to develop for both TYPO3 CMS and Drupal 8, but 
 
 Before the DDEV 1.4 release, our instructions were written assuming the typical user was a Mac or Linux user with Composer installed. It didn’t work well for lots of Windows users. The fundamental “gotcha” that proved most challenging for Windows users was that even if they get PHP and Composer set up properly on their Windows machine, they still ran into trouble when they ran the `composer create-project` command.
 
-We noticed more and more of our Windows users sharing workarounds [in our community](https://ddev.readthedocs.io/en/latest/#support), such as Slack and [Stack Overflow](https://stackoverflow.com/questions/tagged/ddev). We realized how we could make this a lot easier, and in DDEV 1.4, we released several improvements to make the experience better, particularly for Windows users.
+We noticed more and more of our Windows users sharing workarounds [in our community](https://ddev.readthedocs.io/en/stable/users/support/), such as Slack and [Stack Overflow](https://stackoverflow.com/questions/tagged/ddev). We realized how we could make this a lot easier, and in DDEV 1.4, we released several improvements to make the experience better, particularly for Windows users.
 
 The new Composer command in DDEV simplifies the use of Composer, and allows you to create and manage projects without having Composer installed on your host machine.
 
@@ -37,7 +37,7 @@ As a bonus, we also changed Composer cache; now it resides in a shared Docker vo
 
 The new `ddev composer` feature is a wrapper on Composer that does everything inside the container, eliminating the need to install Composer on the host. If you’ve used Composer before, it will seem pretty familiar, but there’s an important difference to note.
 
-Our recommended [quickstart](https://ddev.readthedocs.io/en/latest/users/cli-usage/#quickstart-guides) techniques for both [TYPO3 CMS](https://ddev.readthedocs.io/en/latest/users/cli-usage/#typo3-quickstart) and [Drupal 8](https://ddev.readthedocs.io/en/latest/users/cli-usage/#drupal-8-quickstart) use Composer to create projects. You can also check out the docs on using the command line interface for [ddev and Composer](https://ddev.readthedocs.io/en/latest/users/developer-tools/#ddev-and-composer).
+Our recommended [quickstart](https://ddev.readthedocs.io/en/stable/users/quickstart/) techniques for both [TYPO3 CMS](https://ddev.readthedocs.io/en/stable/users/quickstart/#typo3) and [Drupal 8](https://ddev.readthedocs.io/en/stable/users/quickstart/#drupal) use Composer to create projects. You can also check out the docs on using the command line interface for [ddev and Composer](https://ddev.readthedocs.io/en/stable/users/developer-tools/#ddev-and-composer).
 
 Most of the Composer features in the command line ddev app are direct analogs of Composer usage. You can prepend a Composer command with `ddev` and it works the same as the [commands in Composer](https://getcomposer.org/doc/03-cli.md). That includes
 
@@ -50,7 +50,7 @@ The one thing that’s different is the command to create a project. If you’re
 
 `composer create-project`
 
-In ddev, you run this command: `ddev composer create`. For example, our [TYPO3 quickstart](https://ddev.readthedocs.io/en/latest/users/cli-usage/#typo3-quickstart) recommends you run this command:
+In ddev, you run this command: `ddev composer create`. For example, our [TYPO3 quickstart](https://ddev.readthedocs.io/en/stable/users/quickstart/#typo3) recommends you run this command:
 
 `ddev composer create typo3/cms-base-distribution ^9`
 
@@ -58,9 +58,9 @@ The standard Composer command requires that you are creating a project in a comp
 
 In fact, if you do attempt to run `ddev composer create-project` you’ll get a friendly reminder that this command is unsupported, and ddev will tell you to use `ddev composer create` for basic project creation.
 
-Another thing you can do is execute Composer in other directories within the container. [SSH into a container](https://ddev.readthedocs.io/en/latest/users/cli-usage/#ssh-into-containers) to open an interactive bash shell session to the container. Then you can use Composer ‘natively’ ([see the docs](https://ddev.readthedocs.io/en/latest/users/developer-tools/#ddev-and-composer)). You can end the native Composer session by typing `exit`.
+Another thing you can do is execute Composer in other directories within the container. [SSH into a container](https://ddev.readthedocs.io/en/stable/users/cli-usage/#ssh-into-containers) to open an interactive bash shell session to the container. Then you can use Composer ‘natively’ ([see the docs](https://ddev.readthedocs.io/en/stable/users/developer-tools/#ddev-and-composer)). You can end the native Composer session by typing `exit`.
 
-As the [documentation on ddev and Composer explains](https://ddev.readthedocs.io/en/latest/users/developer-tools/#ddev-and-composer), ddev will execute the Composer command at the project root in the web container, passing all arguments and flags to Composer, as the examples here show.
+As the [documentation on ddev and Composer explains](https://ddev.readthedocs.io/en/stable/users/developer-tools/#ddev-and-composer), ddev will execute the Composer command at the project root in the web container, passing all arguments and flags to Composer, as the examples here show.
 
 `ddev composer create drupal-composer/drupal-project:8.x-dev --stability dev --no-interaction`
 
@@ -76,7 +76,7 @@ Each of these examples shows that the Composer commands will work, passing all o
 
 Composer is a great solution for dependency management in PHP, but it’s still not consistently applied across operating systems. Reduce friction in your development workflows by setting up consistent versions of Composer and PHP on your local development environment and your host with DDEV, our containerized Docker-based dev-to-deploy solution.
 
-You can use DDEV with any PHP CMS or framework. We test DDEV on—and offer [Quickstart guides](https://ddev.readthedocs.io/en/latest/users/cli-usage/#quickstart-guides) for— Drupal, WordPress, TYPO3 CMS, and Backdrop CMS. Composer is the recommended way to develop with TYPO3 CMS and Drupal.
+You can use DDEV with any PHP CMS or framework. We test DDEV on—and offer [Quickstart guides](https://ddev.readthedocs.io/en/stable/users/quickstart/) for— Drupal, WordPress, TYPO3 CMS, and Backdrop CMS. Composer is the recommended way to develop with TYPO3 CMS and Drupal.
 
 Also, check out these articles:
 

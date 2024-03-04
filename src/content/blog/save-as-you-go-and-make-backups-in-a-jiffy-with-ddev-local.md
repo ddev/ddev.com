@@ -44,13 +44,13 @@ Here’s a video showing you how to use it.
 
 DDEV snapshotting uses [mariabackup](https://mariadb.com/kb/en/library/mariabackup/) inside the database container. This is super, super fast in both directions. It’s not a copy of the database directory, the state of the database is properly preserved. This means when you come back to work, everything is as you left it.
 
-**Important:** DDEV snapshot isn’t backward-compatible. Snapshots from previous versions of DDEV cannot be restored with v1.3 or higher because the mariabackup included with MariaDB 10.2 is not compatible with earlier backups. There’s an easy workaround to fix this [explained in the DDEV documentation](https://ddev.readthedocs.io/en/latest/users/troubleshooting/#cant-restore-snapshot-created-before-ddev-v13).
+**Important:** DDEV snapshot isn’t backward-compatible. Snapshots from previous versions of DDEV cannot be restored with v1.3 or higher because the mariabackup included with MariaDB 10.2 is not compatible with earlier backups. There’s an easy workaround to fix this [explained in the DDEV documentation](https://ddev.readthedocs.io/en/stable/users/troubleshooting/#cant-restore-snapshot-created-before-ddev-v13).
 
 ## Backing up with `ddev export-db` and with `mysqldump`
 
-The `ddev snapshot` command is a great way to make a quick dump of your database, but it’s not as portable as a text-based database dump. With the recent release of DDEV v1.4, we introduced the [ddev export-db](https://ddev.readthedocs.io/en/latest/users/cli-usage/#exporting-a-database) command.
+The `ddev snapshot` command is a great way to make a quick dump of your database, but it’s not as portable as a text-based database dump. With the recent release of DDEV v1.4, we introduced the [ddev export-db](https://ddev.readthedocs.io/en/stable/users/cli-usage/#exporting-a-database) command.
 
-On the command line, DDEV has always had `[ddev import-db](https://ddev.readthedocs.io/en/latest/users/cli-usage/#importing-a-database)` but until now we didn’t have the correlating export option. Now you can!
+On the command line, DDEV has always had `[ddev import-db](https://ddev.readthedocs.io/en/stable/users/cli-usage/#importing-a-database)` but until now we didn’t have the correlating export option. Now you can!
 
 Run this command to create a text-based database dump:
 
