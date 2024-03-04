@@ -12,7 +12,7 @@ categories:
   - Community
 ---
 
-At the DDEV Advisory Group's annual review/planning meeting on March 6, 2024, we'll talk about plans and priorities for 2024. These have been discussed previously in the [DDEV 2024 Priorities discussion](https://github.com/orgs/ddev/discussions/5720) but in getting ready for the meeting it seems like a good time to propose them in a more cohesive fashion.
+At the DDEV Advisory Group's 2-hour [annual review/planning meeting on March 6, 2024](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Advisory+Group&iso=20240306T09&p1=75&ah=2), we'll talk about plans and priorities for 2024. These have been discussed previously in the [DDEV 2024 Priorities discussion](https://github.com/orgs/ddev/discussions/5720) but in getting ready for the meeting it seems like a good time to propose them in a more cohesive fashion. (Everyone is welcome to the meeting. The Zoom link is announced in [discord](https://discord.com/channels/664580571770388500/1068592494184501349/1213180991133192302) or email [support](mailto:support%40ddev.com) for a calendar invitation or the zoom link.)
 
 ## Community
 
@@ -28,7 +28,7 @@ At the DDEV Advisory Group's annual review/planning meeting on March 6, 2024, we
 ## Features
 
 * **Explicit [Upsun](https://upsun.com/)** by Platform.sh support, probably meaning an add-on for it, at least supporting the documented target CMSs.
-* **Improve xhprof usage**. The [ddev-xhgui](https://github.com/ddev/ddev-xhgui) add-on has demonstrated how much better the xhprof experience can be in DDEV. We would like to incorporate the ddev-xhgui work into DDEV core and make the great experience available to everyone without an add-on.
+* **Improve xhprof usage**. The [ddev-xhgui](https://github.com/tyler36/ddev-xhgui) add-on has demonstrated how much better the xhprof experience can be in DDEV. We would like to incorporate the ddev-xhgui work into DDEV core and make the great experience available to everyone without an add-on.
 * **Refactor configuration code** to promote consistent handling of config (global and project) and generated docs. Currently, there is a lot of technical debt in the handling of project and global configuration, with code often repeated for each setup. This can be reworked and give consistent approach to these, while removing much code. This could include using Viper for configuration, which would allow environmental overrides, etc.
 * **Node.js back-end**: DDEV already has lots of support for Node.js in many contexts, but it would be great to have the ability to replace php-fpm with a node server, and this is already not hard to do, but would be great as a DDEV feature.
 * **Add-on Registry**: The available DDEV Add-ons have expanded enormously since the launch of this feature. We probably need something fancier then `ddev get --list` to show and explain them. This can be API-based and should work fine.
