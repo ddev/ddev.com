@@ -11,7 +11,7 @@ categories:
   - Guides
 ---
 
-We built DDEV to make it easier for people to set up local development environments for PHP projects. When things aren’t working as expected, people need help, and we need to hear from them. We provide direct help to our community [through our documentation](https://ddev.readthedocs.io/en/stable/#support), in Slack in both the Drupal and TYPO3 communities, and on [Stack Overflow](https://stackoverflow.com/tags/ddev). It’s something we like doing because it gets us closer to our users, and we get direct feedback so we can improve our products.
+We built DDEV to make it easier for people to set up local development environments for PHP projects. When things aren’t working as expected, people need help, and we need to hear from them. We provide direct help to our community [through our documentation](https://ddev.readthedocs.io/en/stable/users/support/), in Slack in both the Drupal and TYPO3 communities, and on [Stack Overflow](https://stackoverflow.com/tags/ddev). It’s something we like doing because it gets us closer to our users, and we get direct feedback so we can improve our products.
 
 Over the year since DDEV’s first public release, we’ve started to see patterns and common problems. One thing we noticed is a significant share of the advice we offer to users is helping them get Docker working right on their machines. Especially on Windows and Linux. Docker works for most people out of the box with no trouble, yet a few things have a tendency to trip people up.
 
@@ -70,4 +70,4 @@ You’ll find out about this right away because ddev will tell you on `ddev star
 
 ### So how did it go? Tell us!
 
-We hope this helped you resolve any of the issues you had getting Docker set up and running for DDEV. Still stuck? Reach out for [further help](https://ddev.readthedocs.io/en/stable/#support) if you need it.
+We hope this helped you resolve any of the issues you had getting Docker set up and running for DDEV. Still stuck? Reach out for [further help](https://ddev.readthedocs.io/en/stable/users/support/) if you need it.

@@ -27,7 +27,7 @@ Composer is the recommended way to develop for both TYPO3 CMS and Drupal 8, but 
 
 Before the DDEV 1.4 release, our instructions were written assuming the typical user was a Mac or Linux user with Composer installed. It didn’t work well for lots of Windows users. The fundamental “gotcha” that proved most challenging for Windows users was that even if they get PHP and Composer set up properly on their Windows machine, they still ran into trouble when they ran the `composer create-project` command.
 
-We noticed more and more of our Windows users sharing workarounds [in our community](https://ddev.readthedocs.io/en/stable/#support), such as Slack and [Stack Overflow](https://stackoverflow.com/questions/tagged/ddev). We realized how we could make this a lot easier, and in DDEV 1.4, we released several improvements to make the experience better, particularly for Windows users.
+We noticed more and more of our Windows users sharing workarounds [in our community](https://ddev.readthedocs.io/en/stable/users/support/), such as Slack and [Stack Overflow](https://stackoverflow.com/questions/tagged/ddev). We realized how we could make this a lot easier, and in DDEV 1.4, we released several improvements to make the experience better, particularly for Windows users.
 
 The new Composer command in DDEV simplifies the use of Composer, and allows you to create and manage projects without having Composer installed on your host machine.
 

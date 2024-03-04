@@ -34,11 +34,11 @@ Watch the video below and read the detailed instructions to configure your own p
 
     ```
     #!/bin/bash
- 
+
     ## Description: ssh into web container using zsh
     ## Usage: zsh [flags] [args]
     ## Example: "ddev zsh"
- 
+
     zsh $@
     ```
 
@@ -60,4 +60,4 @@ Watch the video below and read the detailed instructions to configure your own p
 - Added a custom command (zsh) in `.ddev/commands/web` by adding a simple script ([docs](https://ddev.readthedocs.io/en/stable/users/extend/custom-commands/))
 - Added extra stuff (`oh-my-zsh` and `.zshrc`) into `.ddev/homeadditions` that will be added to the home directory in the web container on every `ddev start` ([docs](https://ddev.readthedocs.io/en/stable/users/extend/in-container-configuration/)).
 
-Happy customizing! If you have questions, check out our [support channels](https://ddev.readthedocs.io/en/stable/#support).
+Happy customizing! If you have questions, check out our [support channels](https://ddev.readthedocs.io/en/stable/users/support/).
