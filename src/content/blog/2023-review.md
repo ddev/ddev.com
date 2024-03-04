@@ -1,12 +1,12 @@
 ---
 title: "DDEV Project 2023 Review"
 pubDate: 2024-02-29
-#modifiedDate: 2024-03-01
+modifiedDate: 2024-03-04
 summary: Looking back at 2023 for the DDEV project
 author: Randy Fay
 featureImage:
   src: /img/blog/2024/02/developers-happy.png
-  alt: DDEV usage as of 2024-02-29
+  alt: A DDEV 'tip of the day' saying 'DDEV's goal is to make developers happy. We hope you're happy today.'
   credit: Tip of the day from DDEV. We take this seriously!
 categories:
   - Community
@@ -58,6 +58,7 @@ categories:
   * **[Stas Zhuk](/blog/introducing-maintainer-stas/)** became a fully-privileged maintainer (part-time, paid).
   * **Matt Stein** made incredible advances for ddev.com and for the docs while he had availability to do so, but has stepped back (mostly) into the background now. He remains a fully-privileged maintainer.
   * **Simon Gilli** stepped away from the project, and we have lost contact with him. It is normal for contributors and maintainers to ebb and flow, but we're very sorry to have lost touch with Simon. However, we recognize that we need to keep encouraging new contributors to balance the natural ebb and flow.
+  * **Mike Anello** became a signer with full authority on the DDEV Foundation bank account. Although a tiny step, it means that if something happened to Randy it would not mean financial distress for the foundation. Thanks, Mike!
 
 * DDEV's **testing infrastructure** has been improved with newer Mac ARM64 machines, and is now testing Rancher Desktop and OrbStack as well as Docker Desktop and Colima. (We test every commit on macOS with Docker Desktop, Rancher Desktop, Colima QEMU, Colima VZ, Orbstack, and WSL2 with both Docker Desktop and docker-ce. On traditional WIndows we test with Docker Desktop, on Linux with docker-ce (on both AMD64 and ARM64 architectures)).
 * Randy was awarded the Drupal community's prestigious [Aaron Winborn award](https://www.drupal.org/community/cwg/blog/2023-aaron-winborn-award-winner-randy-fay).
