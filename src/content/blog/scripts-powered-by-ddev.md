@@ -12,7 +12,7 @@ When I joined, the plugins team was maintaining a huge codebase of custom Docker
 problems with their approach:
 
 - These custom Docker images were very difficult to maintain, and they were duplicated all over different repositories.
-- They lacked needed developer features like xdebug, logging, filesystem synchronization, or having several instances running at the same time without any conflict.
+- They lacked needed developer features like Xdebug, logging, filesystem synchronization, or having several instances running at the same time without any conflict.
 - They lacked configuration options for changing things like PHP or MariaDB versions, nginx or apache, etc, on the fly. Any configuration change would need recreate the image.
 
 Working with those custom Docker images was a terrible experience and it made me realize how well done DDEV is designed and how good it works. The solution to this problem was
@@ -32,7 +32,7 @@ to my surprise. Yes, "it seems to work fine, but we already have something that 
 
 I later realized that this was a common human behavior: aversion to change or resistance to trying something new. After all, they were accustomed to working with those custom Docker images.
 
-From their perspective, the images simply functioned. Facing a half-hour wait for an image rebuild to experiment with a different PHP version was deemed a disruption to business. Their stance was, "It's not ideal, but that's the way things are.".
+From their perspective, the images did the job. Facing a half-hour wait for an image rebuild to experiment with a different PHP version was deemed a disruption to business. Their stance was, "It's not ideal, but that's the way things are.".
 
 Some, however, attempted DDEV but found themselves disoriented by its distinct operation, configuration options, and the overall idea of a project residing within a container.
 
