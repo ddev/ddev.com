@@ -45,21 +45,34 @@ It would be great to have a tool that could do all these operations automaticall
 thanks to the command line capabilities that DDEV offer, it would be totally possible to do. Because DDEV is fully managed using the command line, and it offers a lot options.
 Too many options, perhaps, for a newbie. But all these command line options give the flexibility that is needed for building a strong script program that runs powered by DDEV.
 
-I started, then, working in such a tool. I built it using PHP with the help of Symfony packages, and distributing the binary using Phar. The tool's focus was to automate
-the most common operations that one needs to do for managing a local shop system. The tool was abstracting the differences between each shop system, and in turn giving
-a common interface of commands, which accept their own set of options.
+I started, then, working in such a tool, which I visualized as a local shop manager (lsm) with the following set of goals:
+
+- Each needed operation would translate in a command for lsm, like: initialize the containers, install the shop in the containers, remove them, download a specific version of the plugin, install the plugin, uninstall the plugin, configure the plugin, etc...
+- Strong focus in flexibility, with a lot of settings supported and that each command can declare. All the settings will be provided in a yaml file, or by CLI arguments.
+- Provide as many default settings values as possible to ensure that lsm works in most of the cases out of the box.
+- Total abstraction from the shop systems: the workflow for managing a shop (magento, woocomerce, prestashop, etc...) would be exactly the same regardless which shop is being managed. So the end users need to learn one workflow of lsm commands and they can then manage all the shops.
+- Make the tool as easy to use as possible, with an independent documentation. Starting with a 'help' command that can describe all the other commands and the options that are accepted.
+- Built with latests PHP features, using Symfony project when needed (yaml...), PHPUnit...
+- Use Phar format for distributing the lsm tool, which also has its own version lifecycle and self-update options.
+- Possibility of having several instances installed at the same time without any conflict.
+
+Under the hood, every command is retrieving the settings from the environment, doing necessary changes using PHP (change folders, create files...), and then calling the appropriate ddev command for the real action: config, start, stop, export-db, import-db, exec, share, composer... The tool abstracts DDEV for most of the users, because they do not need to use the ddev CLI tool for most of the operations...
+
+As an example, consider the steps for installing a shop, like for example [shopware](https://ddev.readthedocs.io/en/latest/users/quickstart/#shopware).
+The lpm tool, and due to business needs, has to support all (recent) versions of this shop. And for ensuring that the installation always works the tool needs to set the versions of the dependencies of shopware, like PHP or mariadb, before running the ddev commands, like 'config', for each major version (sometimes, even minor version) of the shop. The user has the need of installing a shop locally, and lpm provides a command for that. The user does not care about how the shop is installed or the differences between different shop versions.
+
+So, lsm offers to the users a simplified and more focused experience compared to DDEV's experience: DDEV is the general tool that can achieve everything. On the other hand, lsm, powered by DDEV, is the specific tool for doing specific operations. For most of the users, lsm is enough. For most advanced users, lsm is a first step in using DDEV.
 
 ## The result
 
-It was now much easy to operate with all the shops we support, which are indeed very different each from each other. A dev only needed to learn a few commands which are common
-for all shops. This translated into a notoriously improve in the team's productivity. Many of the problems that, before, may took a lot of time, now they were gone or reduced
-drastically. This was specially noticeable when other members of the organization needed to use a local shop for a few tests. Using this tool was really much faster
-and productive than having to deal with the old way based on custom Docker images.
+It was now much easy to operate with all the shops we support, which are indeed very different each from each other. A user only needed to learn a few commands which are common for all shops. This translated into a notoriously improve in the team's productivity. Many of the problems that, before, may took a lot of time, now they were gone or reduced drastically. This was specially noticeable when other members of the organization needed to use a local shop for a few tests. Using this tool was really much faster and productive than having to deal with the old way based on custom Docker images. Having to install locally a shop was not longer a headache.
 
-And this success was due to DDEV's flexibility and design, because is not only a tool that you can use by your own, but it can also be the core of a more sophisticated tool widely
-used within your organization.
+The feedback was mostly positive, and feedback also helped to develop lsm further and support more and more shops and features. To this day, there has been 26 releases and almost 400 commits, after a year and a half of internal development.
+
+I consider it a success, and I wanted to share it with you. And this success was due to DDEV's flexibility and design, because is not only a tool that you can use by your own, but it can also be the core of a more sophisticated tool widely used within your organization.
 
 ## In conclusion
 
-Developers are humans and, as such, they are skeptical to changes or new tools. Introducing DDEV in a stablish team can be challenging. But building a tool on top of DDEV, in a way that
-it focus on automating the most common operations, can be a game changer. It worked for my team, and it can work for your team too.
+Introducing DDEV in a stablish team can be challenging. Some team members may see DDEV as a complex tool to use, with many options and features. Some even may feel lazy about having to learn a new tool, or convinced that the way things are is good enough. Focusing in simplifying the user experience and automating the most common operations can be a game changer and even change the minds of most senior developers in the team.
+DDEV's command line interface is flexible enough for allowing more focused tools to be built on top of it.
+It worked for my team, and it can work for your team too.
