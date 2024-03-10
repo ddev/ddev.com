@@ -1,5 +1,6 @@
 export const SITE_TITLE = 'DDEV';
 export const SITE_DESCRIPTION = 'Docker-based local PHP development environments.';
+export const STORE_URL = 'https://ddev.threadless.com';
 export const GITHUB_REPO = 'ddev/ddev';
 export const GITHUB_URL = 'https://github.com/ddev/ddev';
 export const GITHUB_URL_WEBSITE = 'https://github.com/ddev/ddev.com/tree/main/src/content/blog';
