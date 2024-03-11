@@ -11,6 +11,7 @@ import {
   MASTODON_URL,
   X_URL,
   GITHUB_URL,
+  STORE_URL,
 } from "../const"
 
 import Icon from "./Icon.astro"
@@ -24,6 +25,7 @@ const navigation = {
   ],
   product: [
     { name: "About", href: "/about" },
+    { name: "Swag Shop", href: STORE_URL, target: "_blank"},
     { name: "Contributing", href: "/support-ddev" },
     { name: "Contributor Live Training", href: "/blog/contributor-training"},
     { name: "Blog", href: "/blog" },
@@ -85,11 +87,19 @@ const navigation = {
             <ul class="mt-4 space-y-4 dark:text-white">
               {
                 navigation.product.map((item) => (
+                  item.target == "undefined" ?
                   <li>
                     <a href={item.href} class="text-base" rel="prefetch">
                       {item.name}
                     </a>
                   </li>
+                  :
+                  <li>
+                    <a href={item.href} class="text-base" rel="prefetch" target={item.target}>
+                      {item.name}
+                    </a>
+                  </li>
+
                 ))
               }
             </ul>
@@ -102,7 +112,7 @@ const navigation = {
               {
                 navigation.social.map((item) => (
                     <li>
-                      <a href={item.href} class="text-base" rel="prefetch">
+                      <a href={item.href} class="text-base" rel="prefetch" target="_blank">
                         {item.name}
                       </a>
                     </li>
