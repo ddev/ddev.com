@@ -1,96 +1,92 @@
 ---
 title: "Setting up a Go Development Environment"
-pubDate: 2024-02-20
-summary: "DDEV Contributor Live Training: Setting up a Go environment."
+pubDate: 2024-03-15
+summary: "DDEV Contributor Live Training: Setting up a Go Development Environment."
 author: Bernardo Martinez
 featureImage:
-   src: /img/blog/2023/08/google-deepmind-ebMFfR2uuJ0-unsplash.jpg
-   alt: An artist’s illustration of artificial intelligence (AI). This illustration depicts language models which generate text.
-   credit: "Photo by Google DeepMind on [Unsplash](https://unsplash.com/photos/a-couple-of-pieces-of-luggage-sitting-on-top-of-each-other-ebMFfR2uuJ0)."
+   src: /img/blog/2024/03/Go-Logo_Aqua.svg
+   alt: Golang Logo.
 categories:
   - Guides
   - Community
 ---
 
-Released July 25 2023, [the recording of setting up a go development environment](https://www.dropbox.com/scl/fi/gka3bwm3pwpchryg50l0t/20230725_contributor_training_go_environment.mp4?rlkey=3hlhugszdxi4hm6rmwlw28r5f&e=1&dl=0) a DDEV Contributor Live Training includes a collection of insights summarized in this blog post. The (Min digit) syntax added below provides the minute on which each subject is covered on the recording.
+The DDEV Community has regular contributor training sessions, and in July, 2023 we talked about setting up a Go (Golang) development environment for DDEV. This blog summarizes [the contributor training session](https://youtu.be/IjrJw0Ay-dk). The (Min digit) syntax added below provides the minute on which each subject is covered on the recording.
 
-## Installing Go on different Operation Systems (Min 10:51)
-Randy used macOS and recommended homebrew as the tool to manage Go updates.
+## Installing Go on different Operation Systems ([Min 10:51](https://youtu.be/IjrJw0Ay-dk?t=647))
+
+Randy used macOS and recommended Homebrew as the tool to manage Go updates.
+
 The first command recommended was
 
 ```
 brew install go golangci-lint
 ```
 
-DDEV uses [make](https://www.gnu.org/software/make/) (Min 13:32) to build is binary. Make is already included on macOS.
+DDEV uses [make](https://www.gnu.org/software/make/) ([Min 13:32](https://youtu.be/IjrJw0Ay-dk?t=810)) to build its binary. Make is included with the macOS Command-Line Tools for XCode and can be installed with `xcode-select --install`, but that is already required to install Homebrew, so should already be installed.
 
-## Clonning [DDEV](https://github.com/ddev/ddev) repository (Min 15:30)
+## Cloning [DDEV](https://github.com/ddev/ddev) repository ([Min 15:30](https://youtu.be/IjrJw0Ay-dk?t=932))
 
- Run `make` to create a new binary. The DDEV makefile will automatically detect your host OS and build the appropriate binary. That said, one can provide a parameter to build others. As an example, `make darkin_amd64` builds the amd64 binary.
+ Check out the `ddev` repository with `git clone git@github.com:ddev/ddev -o upstream`. Run `make` to create a new binary. The DDEV Makefile will automatically detect your host OS and build the appropriate binary. However, one can provide a parameter to build others. As an example, `make darwin_amd64` builds the macOS AMD64 binary.
 
-At (Min 16:30) the makefile located on the projects root is lightly explained.
+At ([Min 16:30](https://youtu.be/IjrJw0Ay-dk?t=982)) the Makefile located in the root of the DDEV project is lightly explained.
 
-Randy usually symlinks the built binary version. To run a new compiled binary one starts by typing its fully qualified path. For example:
-
-```
-gotmpt/bin/darkin_arm64/ddev --version
-```
-
-If we want to avoid prefixing ddev with its built path instructions are included at (Min 17:37). `ddev --version` describes which binary version is actively used.
-
-## Mkdocs question its role (Min 21:22)
+Randy usually symlinks the built binary version to a place inside the `$PATH`, but to run a newly compiled binary one can specify its fully qualified path. For example:
 
 ```
-make makedocs
+./.gotmp/bin/darwin_arm64/ddev --version
 ```
+
+If we want to avoid prefixing ddev with its built path instructions are included at ([Min 17:37](https://youtu.be/IjrJw0Ay-dk?t=1056)). `ddev --version` describes which binary version is currently used; it's selected by your `$PATH`.
+
+## The role of `mkdocs` ([Min 21:22)https://youtu.be/IjrJw0Ay-dk?t=1276))
+
+`mkdocs` can be tested with `make makedocs`
 
 Makedocs is used for previewing and contributing to the docs. It's named makedocs but it's not related to the make tool or compiling the binary.
 
-## Randy IDE of choice is Goland (Min 23:50)
+You can preview a built version of the docs you're working with using `make mkdocs-serve`.
 
-Very similar to PHPStorm. Made by the JetBrains team.
+## Randy IDE of choice is Goland ([Min 23:50](https://youtu.be/IjrJw0Ay-dk?t=1547))
 
-One fantastic thing about Go is that there is only one way to format it (Min 26:10). It always uses tabs and the same indentation. It all follows the standards set by gofmt.
+Goland is very similar to PHPStorm and of course is made by the same JetBrains company.
 
+One fantastic thing about Go is that there is only one way to format it ([Min 26:10](https://youtu.be/IjrJw0Ay-dk?t=1576)). It always uses tabs and the same indentation. It all follows the standards set by `gofmt`.
 
-## Debugging DDEV Go code (Min 28:17)
+## Debugging DDEV Go Code ([Min 28:17](https://youtu.be/IjrJw0Ay-dk?t=1699))
 
-If any given IDE does not lint the code make sure to run the command below.
-```
-make golangci-lint
-```
+To verify formatting and static analysis use `make golangci-lint`
+
 `golangci-lint` is the tool used on DDEV CI/CD for incoming pull requests.
 
-For new incoming issues and featured pull requests (Min 31:34) Randy recommends starting with an issue as maintainers add context surrounding their concerns and approach with any given pull request.
+For new feature-based pull requests ([Min 31:34](https://youtu.be/IjrJw0Ay-dk?t=1892)) Randy recommends starting with an issue to explain to maintainers the context surrounding their concerns before beginning a PR.
 
-[DDEV Docs development tab](https://ddev.readthedocs.io/en/latest/developers/) (Min 32:20) includes plenty of tips and insights.
+The [DDEV Docs development tab](https://ddev.readthedocs.io/en/latest/developers/) ([Min 32:20](https://youtu.be/IjrJw0Ay-dk?t=1938)) includes plenty of tips and insights.
 
-#### [GOLand](https://www.jetbrains.com/go/) debugging insights (Min 33:39) 
+#### [GOLand](https://www.jetbrains.com/go/) debugging insights ([Min 33:39](https://youtu.be/IjrJw0Ay-dk?t=2014))
 
 At this point Randy showed us a demo on how to run `ddev/cmd/debug-config-yml.go` by first running main.go and then setting the working directory to match an active ddev project.
 
-#### VSCode Go debugging might require a couple of add-ons (Min37:50)
+#### VSCode Go debugging ([Min 37:50](https://youtu.be/IjrJw0Ay-dk?t=2268))
 
 The following extension is mentioned, [Go](https://marketplace.visualstudio.com/items?itemName=golang.Go) by the Go team at Google.
-DDEV comes with a launch.json prebuilt for you. It includes the config that might be found in Goland UI but for VsCode. The one item Randy usually has to change is the working directory (Min 39:57). After which he showed an example on how to debug Go in VSCode.
 
-A this point Randy replies to a question that came in regards to (Min 42:55) https://ddev.readthedocs.io/en/latest/ vs https://ddev.readthedocs.io/en/stable/. The difference is that stable is the last stable release and latest is the latest commit.
+DDEV comes with a launch.json prebuilt for you. It includes the config that might be found in Goland UI but for VsCode. The one item Randy usually has to change is the working directory ([Min 39:57](https://youtu.be/IjrJw0Ay-dk?t=2395)). He then showed an example on how to debug Go in VSCode.
 
-The most important GO files are in pkg/ddevapp (Min 44:26), the ones in cmd are the ones associated with a commands and the pkg Go files are functionality.
+The most important GO files are in pkg/ddevapp ([Min 44:26](https://youtu.be/IjrJw0Ay-dk?t=2660)), the ones in cmd are the ones associated with a commands and the pkg Go files are functionality.
 
-[Cobra](https://cobra.dev/) (Min 45:00) is the library used for command flags and arguments. A lot of the commands in the cmd directory are just an implementation that calls other things.
+[Cobra](https://cobra.dev/) is the library used for command flags and arguments. A lot of the commands in the cmd directory are just an implementation that calls other things.
 
-If as a user one discovers DDEV has a typo or something annoying that and you would like to contribute it back, make sure to take advantage of the find search tool on the IDE's.
+At ([Min 49:43](https://youtu.be/IjrJw0Ay-dk?t=2977)) a question arose from a user's ability to get VSCode Go working:
 
-At (Min 49:43) a question arose from a user's ability to get VSCode Go working
 ```
 "cwd":"${workspaceRoot}/../d9simple"
 ```
 The issue was that "d9simple" is a placeholder string that needs to point to a real DDEV directory.
 
-At (Min 50:50) we can see a walkthrough of running Go tests in VSCode.
+At ([Min 50:50](https://youtu.be/IjrJw0Ay-dk?t=3048)) we can see a walkthrough of running Go tests in VSCode.
 
-devcontainer.json (Min 58:35) is a file for Github codespaces.
+devcontainer.json ([Min 58:35](https://youtu.be/IjrJw0Ay-dk?t=3507)) is a file for Github Codespaces.
 
-## Keep in touch! 
+## Keep in touch!
  Join us in [Discord](https://discord.gg/hCZFfAMc5k) or [open an issue](https://github.com/ddev/ddev/issues) or send [an email](mailto:support%40ddev.com) if you have success (or failure 😀).
