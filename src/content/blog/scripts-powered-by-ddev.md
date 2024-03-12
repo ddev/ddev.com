@@ -7,7 +7,7 @@ categories:
   - Ideas
   - Inspirational
 ---
-In the company where I work nowadays we develop plugins for several shop systems like WooCommerce, Magento, Shopware, Prestashop, and other not that known shop systems.
+In the company where I currently work we develop plugins for several "shop" systems including WooCommerce, Magento, Shopware, Prestashop, and other less-known systems.
 When I joined, the plugins team was maintaining a huge codebase of custom Docker images. After a few days using them, and after a few years using DDEV, I noticed quite a few
 problems with their approach:
 
