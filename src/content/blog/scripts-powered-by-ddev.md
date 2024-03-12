@@ -24,7 +24,7 @@ for a few years, I had a good reputation and most of the developers gave DDEV a 
 of the developers really enjoyed DDEV and clearly saw its potential: it was much better their previous local environment and they were more productive. It didn't take long before DDEV
 was the official tool to use in any new project.
 
-However, this time was different. I did not have any reputation as I was new in the job, so all I had was my enthusiasm about DDEV and the conviction that it was a better solution
+This time I had more trouble. I was new to the job and did not have an established reputation, so all I had was my enthusiasm about DDEV and the conviction that it was a better solution.
 for managing all the shop systems locally.
 
 I then prepared a demo of how DDEV works using one of our shop systems, and showing the capabilities that DDEV offered. The reaction that I got from the developer team was very mild,
