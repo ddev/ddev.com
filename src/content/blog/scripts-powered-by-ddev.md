@@ -65,7 +65,7 @@ lsm offers a simplified and more focused experience compared to DDEV's out-of-th
 
 It is now much easier to operate with all the shops we support, which are indeed very different each from each other. A user only needs to learn a few commands, and they are common for all shops. This translates into significantly improves team productivity. Many of the problems that previously took a lot of time are gone or reduced significantly. This was particularly noticeable when members of the organization needed to use a local shop for a few tests. Using this tool was really much faster than having to deal with the old custom Docker images. Installing a shop locally was no longer a headache.
 
-The feedback was mostly positive, and feedback also helped to develop lsm further and support more and more shops and features. To this day, there has been 26 releases and almost 400 commits, after a year and a half of internal development.
+The feedback was mostly positive, and feedback helped to push along lsm's development to support more and more shops and features. There have been 26 releases and almost 400 commits after a year and a half of internal development.
 
 I consider it a success, and I wanted to share it with you. And this success was due to DDEV's flexibility and design, because is not only a tool that you can use by your own, but it can also be the core of a more sophisticated tool widely used within your organization.
 
