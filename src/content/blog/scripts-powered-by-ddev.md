@@ -26,8 +26,7 @@ was the official tool to use in any new project.
 
 This time I had more trouble. I was new to the job and did not have an established reputation, so all I had was my enthusiasm about DDEV and the conviction that it was a better solution.
 
-I then prepared a demo of how DDEV works using one of our shop systems, and showing the capabilities that DDEV offered. The reaction that I got from the developer team was very mild,
-to my surprise. Yes, "it seems to work fine, but we already have something that _works_ _fine_". Those were the kind of comments I received.
+I prepared a demo of how DDEV works using one of our shop systems, showed the capabilities that DDEV offered. The reaction that I got from the developer team was not what I had hopeed Yes, "it seems to work fine, but we already have something that _works_ _fine_". 
 
 I later realized that this was a common human behavior: aversion to change or resistance to trying something new. After all, they were accustomed to working with those custom Docker images.
 
