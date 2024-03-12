@@ -18,11 +18,11 @@ problems with their approach:
 Working with those custom Docker images was a terrible experience and it made me realize how well done DDEV is designed and how good it works. The solution to this problem was
 clear: I had to introduce DDEV in my new team.
 
-Thankfully, I had experience doing the same before. Indeed, in my previous job, a Drupal focused web agency, I wanted to introduce DDEV 4 years prior in time. Back then, most of the developers
-would offer resistance, specially senior developers which do not like anyone to tell them how to do their job or which tools to use. However, being around in that company
+Thankfully, I had experience with this. In my previous job, a Drupal-focused web agency, I introduced DDEV to the team. Back then, most of the developers
+offered some resistance, especially senior developers who don't like anyone telling them how to do their job or which tools to use. However, after being around in that company
 for a few years, I had a good reputation and most of the developers gave DDEV a try. After the usual problems that occur when you try something for the first time, most
-of the developers really enjoyed DDEV and clearly saw its potential: it was much better local environment and they were more productive. It would not take much long time after DDEV
-was officially the tool to use by default in any new project inside the company.
+of the developers really enjoyed DDEV and clearly saw its potential: it was much better their previous local environment and they were more productive. It didn't take long before DDEV
+was the official tool to use in any new project.
 
 However, this time was different. I did not have any reputation as I was new in the job, so all I had was my enthusiasm about DDEV and the conviction that it was a better solution
 for managing all the shop systems locally.
