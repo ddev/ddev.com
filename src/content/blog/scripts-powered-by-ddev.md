@@ -71,6 +71,6 @@ I consider it a success, and I wanted to share it with you. And this success was
 
 ## In conclusion
 
-Introducing DDEV in a stablish team can be challenging. Some team members may see DDEV as a complex tool to use, with many options and features. Some even may feel lazy about having to learn a new tool, or convinced that the way things are is good enough. Focusing in simplifying the user experience and automating the most common operations can be a game changer and even change the minds of most senior developers in the team.
+Introducing DDEV to an establishd team can be challenging. Some team members may see DDEV as a complex tool to use, with many options and features. Some even may feel lazy about having to learn a new tool, or convinced that the way things are is good enough. Focusing on simplifying the user experience and automating the most common operations can be a game changer and can even change the minds of most senior developers in the team.
 DDEV's command line interface is flexible enough for allowing more focused tools to be built on top of it.
 It worked for my team, and it can work for your team too.
