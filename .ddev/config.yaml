@@ -32,12 +32,12 @@ web_extra_daemons:
 hooks:
   post-start:
     - exec: bash -c 'while [ ! -f /var/tmp/npminstalldone ]; do sleep 1; done'
-    - exec: npm run build
+    - exec: bash -c 'if [ ! -d /var/www/html/dist ]; then npm run build; fi'
     - exec: echo -e "                                  NOTICE                                        \n
                          =================================================================================\n
                          =================================================================================\n
                           The Astro dev container is ready \n
                           By default it will be available at ${DDEV_PRIMARY_URL}:4321 \n
                           Use ddev describe to confirm if this doesn't work. \n
-                          Check the startup status by running ddev logs --follow --time \n"
+                          Check the startup status by running ddev logs --follow --time \n
 
