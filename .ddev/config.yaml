@@ -10,6 +10,7 @@ use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
 nodejs_version: "20"
+omit_containers: ["db"]
 disable_upload_dirs_warning: true
 web_extra_exposed_ports:
     - name: astro-dev
@@ -32,3 +33,4 @@ hooks:
                           The Astro dev container is ready \n
                           Hot Module Reloadin (HMR) is avaliable at \e[32m${DDEV_PRIMARY_URL}:4321\e[0m \n
                           To troubleshoot any isues run \e[35mddev describe\e[0m or \e[35mddev logs --follow --time\e[0m \n"
+                          
