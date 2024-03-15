@@ -10,6 +10,7 @@ use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
 nodejs_version: "20"
+omit_containers: ["db"]
 disable_upload_dirs_warning: true
 web_extra_exposed_ports:
     - name: astro-dev
