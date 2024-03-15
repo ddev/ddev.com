@@ -10,19 +10,12 @@ use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
 nodejs_version: "20"
+disable_upload_dirs_warning: true
 web_extra_exposed_ports:
     - name: astro-dev
       container_port: 4321
       http_port: 4322
       https_port: 4321
-web_extra_daemons:
-    - name: astro-dev-daemon
-      command: sleep 3 && npm run dev -- --host
-      directory: /var/www/html
-disable_upload_dirs_warning: true
-
-# Key features of DDEV's config.yaml:
-
 # The extra -- in `npm run dev -- --host` is a Vite requirement
 # https://github.com/vitejs/vite/discussions/3396
 web_extra_daemons:
@@ -39,4 +32,3 @@ hooks:
                           The Astro dev container is ready \n
                           Hot Module Reloadin (HMR) is avaliable at \e[32m${DDEV_PRIMARY_URL}:4321\e[0m \n
                           To troubleshoot any isues run \e[35mddev describe\e[0m or \e[35mddev logs --follow --time\e[0m \n"
-
