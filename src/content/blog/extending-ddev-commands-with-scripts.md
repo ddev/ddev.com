@@ -1,6 +1,6 @@
 ---
 title: "Reaching new audiences with scripts wrapping DDEV commands"
-pubDate: 2024-02-29
+pubDate: 2024-03-20
 summary: Introduce DDEV in your team by leveraging its scripting capabilities.
 author: Alberto G. Viu
 categories:
