@@ -33,4 +33,3 @@ hooks:
                           The Astro dev container is ready \n
                           Hot Module Reloadin (HMR) is avaliable at \e[32m${DDEV_PRIMARY_URL}:4321\e[0m \n
                           To troubleshoot any isues run \e[35mddev describe\e[0m or \e[35mddev logs --follow --time\e[0m \n"
-                          
