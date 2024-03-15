@@ -1,11 +1,10 @@
 ---
-title: "Reaching new audiences with scripts powered by DDEV"
+title: "Reaching new audiences with scripts wrapping DDEV commands"
 pubDate: 2024-02-29
 summary: Introduce DDEV in your team by leveraging its scripting capabilities.
 author: Alberto G. Viu
 categories:
-  - Ideas
-  - Inspirational
+  - Guides
 ---
 In the company where I currently work we develop plugins for several "shop" systems including WooCommerce, Magento, Shopware, Prestashop, and other less-known systems.
 When I joined, the plugins team was maintaining a huge codebase of custom Docker images. After a few days using them, and after a few years using DDEV, I noticed quite a few
