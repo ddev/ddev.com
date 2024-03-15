@@ -49,7 +49,7 @@ You can preview a built version of the docs you're working with using `make mkdo
 
 ## Randy IDE of choice is Goland ([Min 23:50](https://youtu.be/IjrJw0Ay-dk?t=1547))
 
-Goland is very similar to PHPStorm and of course is made by the same JetBrains company.
+Goland is very similar to PhpStorm and of course is made by the same JetBrains company.
 
 One fantastic thing about Go is that there is only one way to format it ([Min 26:10](https://youtu.be/IjrJw0Ay-dk?t=1576)). It always uses tabs and the same indentation. It all follows the standards set by `gofmt`.
 
@@ -75,7 +75,7 @@ DDEV comes with a launch.json prebuilt for you. It includes the config that migh
 
 The most important GO files are in pkg/ddevapp ([Min 44:26](https://youtu.be/IjrJw0Ay-dk?t=2660)), the ones in cmd are the ones associated with a commands and the pkg Go files are functionality.
 
-[Cobra](https://cobra.dev/) is the library used for command flags and arguments. A lot of the commands in the cmd directory are just an implementation that calls other things.
+[Cobra](https://cobra.dev/) is the library used for command flags and arguments. A lot of the commands in the cmd directory are an implementation that calls upon other things.
 
 At ([Min 49:43](https://youtu.be/IjrJw0Ay-dk?t=2977)) a question arose from a user's ability to get VSCode Go working:
 
@@ -86,7 +86,7 @@ The issue was that "d9simple" is a placeholder string that needs to point to a r
 
 At ([Min 50:50](https://youtu.be/IjrJw0Ay-dk?t=3048)) we can see a walkthrough of running Go tests in VSCode.
 
-devcontainer.json ([Min 58:35](https://youtu.be/IjrJw0Ay-dk?t=3507)) is a file for Github Codespaces.
+devcontainer.json ([Min 58:35](https://youtu.be/IjrJw0Ay-dk?t=3507)) is a file for GitHub Codespaces.
 
 ## Keep in touch!
  Join us in [Discord](https://discord.gg/hCZFfAMc5k) or [open an issue](https://github.com/ddev/ddev/issues) or send [an email](mailto:support%40ddev.com) if you have success (or failure 😀).
