@@ -1,12 +1,16 @@
 ---
-title: "Reaching new audiences with scripts wrapping DDEV commands"
-pubDate: 2024-03-20
-summary: Introduce DDEV in your team by leveraging its scripting capabilities.
+title: "Team-specific scripts can make DDEV accessible to new teams"
+pubDate: 2024-03-24
+summary: Introduce DDEV to your team by leveraging its scripting capabilities.
 author: Alberto G. Viu
+featureImage:
+  src: /img/blog/2024/03/new-developer-brings-ddev.png
+  alt: Introducing DDEV to a new team isn't always easy!
+  credit: 'Ideogram.ai: A new software developer brings a scroll with "DDEV" on it into a room full of young, diverse but intimidating software developers.'
 categories:
   - Guides
 ---
-In the company where I currently work we develop plugins for several "shop" systems including WooCommerce, Magento, Shopware, Prestashop, and other less-known systems.
+In the company where I currently work we develop plugins for several "shop" systems, including WooCommerce, Magento, Shopware, Prestashop, and other lesser-known systems.
 When I joined, the plugins team was maintaining a huge codebase of custom Docker images. After a few days using them, and after a few years using DDEV, I noticed quite a few
 problems with their approach:
 
