@@ -79,6 +79,10 @@ There is one DNS server configuration that disallows looking up any hostname tha
 
 However, if you don't have control of your router, there's another easy fix, and that is to use a trusted DNS server outside your network. To do this, you would change your DNS server on your computer to `1.1.1.1` for Cloudflare's public DNS server, or `8.8.8.8` for Google's public DNS. Those will both do ordinary DNS resolution.
 
+## How can I tell if `ddev.site` name resolution is broken?
+
+Try `ping -c 1 xxx.ddev.site`. It it pings `127.0.0.1` and gets a response, then either  `xxx.ddev.site` name resolution is working or you have added it to your hosts file.
+
 
 ## What about using `additional_fqdns` in DDEV configuration?
 
