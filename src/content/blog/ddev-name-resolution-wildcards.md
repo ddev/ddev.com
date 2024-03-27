@@ -5,9 +5,9 @@ pubDate: 2024-03-27
 summary: How hostname name resolution works in a DDEV environment, including how wildcards work
 author: Randy Fay
 featureImage:
-#  src: /img/blog/2024/03/2024-ddev.png
-#  alt: 2024 DDEV Plans
-#  credit: 'Ideogram.ai: the words "2024" and "DDEV" next to each other'
+  src: /img/blog/2024/03/2024-ddev.png
+  alt: Hostname resolution with DDEV
+  credit: 'Ideogram.ai: the words "2024" and "DDEV" next to each other'
 categories:
   - Guides
 ---
