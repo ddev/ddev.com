@@ -53,7 +53,7 @@ However, wildcards don't work in `/etc/hosts` so DDEV has no way to provide a re
 ## Can I stop using the regular DNS setup with `ddev.site`?
 
 Of course. There are two easy ways:
-1. `use_dns_when_possible: false`: Just turn off the use of DNS in your `.ddev/config.yaml`.
+1. `use_dns_when_possible: false`: Turn off the use of DNS in your `.ddev/config.yaml`.
 2. Use a different `project_tld`. For example, if you use `project_tld: example.site` then DDEV will try to make your projects `<projectname>.example.site`. Since that is not resolvable, DDEV will resort to using hosts file manipulation.
 
 
