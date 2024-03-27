@@ -12,7 +12,7 @@ categories:
   - Guides
 ---
 
-A very cool thing about DDEV is that you don’t need to think about IP addresses or https or name resolution most of the time. Some of you will never need to. And you don't have to understand teh rest of this article to use DDEV.
+A very cool thing about DDEV is that you don’t need to think about IP addresses or HTTPS or name resolution most of the time. Some of you will never need to. And you don't have to understand teh rest of this article to use DDEV.
 
 This article attempts to unwind what DDEV does for you, and what to do when things require a bit more effort.
 
@@ -22,17 +22,17 @@ The first thing to understand is the structure of a URL used by your browser. A 
 
 When your browser gets a URL, no matter how it gets it, and you want to display the page at that URL, the browser has to parse the URL, then turn the hostname into an IP address so it can find its way to it on the internet, then do the proper HTTP request to the internet site, including the URI. The key thing for us right now is that it has to look up that hostname.
 
-Normally with a DDEV local development project, we'll see URLs like `https://something.ddev.site`. It's all done like that so that your local project will work with real URLs and real HTTPS, and essentially behave just like a real site. In the past, local development environments often used URLs like `http://127.0.0.1:2302/somesite, which isn't easy to look at and definitely doesn't behave the same in the browser as a "real" URL.
+Normally with a DDEV local development project, we'll see URLs like `https://something.ddev.site`. It's all done like that so that your local project will work with real URLs and real HTTPS, and essentially behave like a real site. In the past, local development environments often used URLs like `http://127.0.0.1:2302/somesite, which isn't easy to look at and definitely doesn't behave the same in the browser as a "real" URL.
 
 ## How DDEV hostnames get resolved
 
-But DDEV URLs have to have hostnames in them that a browser can resolve. How do we get that? How can we get a url like `https://something.ddev.site`?
+But DDEV URLs have to have hostnames in them that a browser can resolve. How do we get that? How can we get a URL like `https://something.ddev.site`?
 
-When a browser tries to resolve `https://something.ddev.site` it looks up the hostname `something.ddev.site`. Normally that's just a lookup in the DNS (Domain Name System) world. You don't have to know about DNS to understand that. The browser asks the internet "What does `something.ddev.site` resolve to, and the internet DNS system says "Oh, anything with `ddev.site` has the IP address `127.0.0.1`". So the browser nows to connect to your local machine (which is what `127.0.0.1` or `localhost` always means). This process is invisible to you, and works because the DDEV project maintains the DNS records for `ddev.site` on the internet. You don't have to know it and you don't have to think about it.
+When a browser tries to resolve `https://something.ddev.site` it looks up the hostname `something.ddev.site`. Normally that's a lookup in the DNS (Domain Name System) world. You don't have to know about DNS to understand that. The browser asks the internet "What does `something.ddev.site` resolve to, and the internet DNS system says "Oh, anything with `ddev.site` has the IP address `127.0.0.1`". So the browser nows to connect to your local machine (which is what `127.0.0.1` or `localhost` always means). This process is invisible to you, and works because the DDEV project maintains the DNS records for `ddev.site` on the internet. You don't have to know it and you don't have to think about it.
 
 ## What is `ddev.site` and where does it come from?
 
-`ddev.site` and everything under it, like `you.ddev.site` and `something.else.entirely.ddev.site` are all (when you have working internet) records in the Domain Name System, maintained by the DDEV project. You don't have to think about them. You can `ping -c 1 something.ddev.site` and it will just `ping 127.0.0.1`. 
+`ddev.site` and everything under it, like `you.ddev.site` and `something.else.entirely.ddev.site` are all (when you have working internet) records in the Domain Name System, maintained by the DDEV project. You don't have to think about them. You can `ping -c 1 something.ddev.site` and it will show that it is pinging `127.0.0.1`
 
 ## What happens when you don't have internet?
 
@@ -50,7 +50,7 @@ DDEV supports wildcards in `additional_hostnames` in your `.ddev/config.yaml`. F
 
 However, wildcards don't work in `/etc/hosts` so DDEV has no way to provide a resolvable set of hostnames when you don't have internet work working DNS. As a result, you'll need to use explicit hostnames in this situation. For example, use `additional_hostnames: [a.anything,a.b.anything]`
 
-## Can I just stop using the regular DNS setup with `ddev.site`?
+## Can I stop using the regular DNS setup with `ddev.site`?
 
 Of course. There are two easy ways:
 1. `use_dns_when_possible: false`: Just turn off the use of DNS in your `.ddev/config.yaml`.
@@ -67,7 +67,7 @@ Yes, this is exactly the same. Normally you would have every DDEV-related domain
 
 ## Can I set up my own domain in DNS like `ddev.site`?
 
-Yes, if you have the ability to configure an internet DNS zone, you can set it up just like `ddev.site` is set up, resolving to `127.0.0.1` and with a wildcard that resovles to `127.0.0.1`.
+Yes, if you have the ability to configure an internet DNS zone, you can set it up the same way `ddev.site` is set up, resolving to `127.0.0.1` and with a wildcard that resovles to `127.0.0.1`.
 
 ## What happens on WSL2 and why do I have to take action on the Windows side?
 
