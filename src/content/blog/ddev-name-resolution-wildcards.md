@@ -20,7 +20,9 @@ This article attempts to unwind what DDEV does for you in name resolution, and w
 
 ## Name resolution for browsers and URLs
 
+<!-- textlint-disable -->
 The first thing to understand is the structure of a URL used by your browser. A URL like `https://www.google.com/`/search?q=nothing` is structured with 3 main parts, the protocol (usually `https`), the hostname (like `www.google.com`), and the URI, (like `/search?q=nothing`). Every URL that your browser can visit has at least the protocol and the hostname. Sometimes the protocol is hidden implying the default `https`. The URI may be the default "front page".
+<!-- textlint-enable -->
 
 When your browser gets a URL, no matter how it gets it, and you want to display the page at that URL, the browser has to parse the URL, then turn the hostname into an IP address so it can find its way to it on the internet, then do the proper HTTP request to the internet site, including the URI. The key thing for us right now is that it has to look up that hostname.
 
