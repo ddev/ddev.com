@@ -18,3 +18,5 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run textlint
+      - name: Builds the site
+        run: npm run build
