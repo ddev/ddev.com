@@ -5,16 +5,18 @@ pubDate: 2024-03-30
 summary: How hostname name resolution works in a DDEV environment, including how wildcards work and how DNS is involved
 author: Randy Fay
 featureImage:
-  src: /img/blog/2024/03/2024-ddev.png
+  src: /img/blog/2024/03/ddev-name-resolution.png
   alt: Hostname resolution with DDEV
-  credit: 'Ideogram.ai: the words "2024" and "DDEV" next to each other'
+  credit: 'Ideogram.ai: Create An illustration showing a simplified and stylized representation of the internet with various devices (computers, tablets, and smartphones) displaying local development websites, all connected by dotted lines to a central server labeled "DDEV". The server has a large, glowing globe above it, symbolizing global DNS, with several dotted lines branching off to represent the resolution of wildcard hostnames. The background is digital and abstract, suggesting connectivity and network infrastructure.'
 categories:
   - Guides
 ---
 
 A very cool thing about DDEV is that you don’t need to think about IP addresses or HTTPS or name resolution most of the time. Some of you will never need to. And you don't have to understand teh rest of this article to use DDEV.
 
-This article attempts to unwind what DDEV does for you, and what to do when things require a bit more effort.
+**Most of you will never need to understand anything in this article.**
+
+This article attempts to unwind what DDEV does for you in name resolution, and what to do when things require a bit more effort.
 
 ## Name resolution for browsers and URLs
 
