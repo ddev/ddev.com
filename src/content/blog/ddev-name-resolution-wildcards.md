@@ -88,7 +88,7 @@ Try `ping -c 1 xxx.ddev.site`. It it pings `127.0.0.1` and gets a response, then
 
 DDEV provides `additional_hostnames`, which works nicely almost always, but also `additional_fqdns`.  With a setting like `additional_fqdns: [one.two.example.com]` a DDEV project will respond to `https://one.two.example.com`, but DDEV will need to add `one.two.example.com` to the hosts file for it to work.  The [docs](https://ddev.readthedocs.io/en/stable/users/configuration/config/#additional_hostnames) explain how to use it and what the consequences are.
 
-Be exceptionally careful with "masking" real sites this way. It can really confuse you to add `additional_hostnames: [www.google.com]` to your configuration, because DDEV will then put `www.google.com` into your hosts file and you'll no longer be able to get to Google.
+Be exceptionally careful with "masking" real sites this way. It can really confuse you to add `additional_fqdns: [www.google.com]` to your configuration, because DDEV will then put `www.google.com` into your hosts file and you'll no longer be able to get to Google.
 
 ## Keep in touch!
 
