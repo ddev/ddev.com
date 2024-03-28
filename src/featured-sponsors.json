@@ -61,15 +61,6 @@
     "github": "b13"
   },
   {
-    "name": "Gizra",
-    "type": "standard",
-    "logo": "/logos/gizra.svg",
-    "darklogo": "/logos/gizra.svg",
-    "squareLogo": "/logos/gizra.svg",
-    "url": "https://gizra.com/",
-    "github": "gizra"
-  },
-  {
     "name": "Fame Helsinki",
     "type": "standard",
     "logo": "/logos/fame-logo.svg",
@@ -77,6 +68,15 @@
     "squareLogo": "/logos/fame-square.svg",
     "url": "https://fame.fi/",
     "github": "FameHelsinki"
+  },
+  {
+    "name": "Gizra",
+    "type": "standard",
+    "logo": "/logos/gizra.svg",
+    "darklogo": "/logos/gizra.svg",
+    "squareLogo": "/logos/gizra.svg",
+    "url": "https://gizra.com/",
+    "github": "gizra"
   },
   {
     "name": "Oliver Wand",
