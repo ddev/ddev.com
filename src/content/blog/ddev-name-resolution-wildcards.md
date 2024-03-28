@@ -1,8 +1,8 @@
 ---
-title: "DDEV Name Resolution, Wildcards, Working Offline"
-pubDate: 2024-03-27
-#modifiedDate: 2024-03-03
-summary: How hostname name resolution works in a DDEV environment, including how wildcards work
+title: "Hostnames and Wildcards and DDEV, Oh My!"
+pubDate: 2024-03-30
+#modifiedDate: 2024-04-03
+summary: How hostname name resolution works in a DDEV environment, including how wildcards work and how DNS is involved
 author: Randy Fay
 featureImage:
   src: /img/blog/2024/03/2024-ddev.png
@@ -23,6 +23,8 @@ The first thing to understand is the structure of a URL used by your browser. A 
 When your browser gets a URL, no matter how it gets it, and you want to display the page at that URL, the browser has to parse the URL, then turn the hostname into an IP address so it can find its way to it on the internet, then do the proper HTTP request to the internet site, including the URI. The key thing for us right now is that it has to look up that hostname.
 
 Normally with a DDEV local development project, we'll see URLs like `https://something.ddev.site`. It's all done like that so that your local project will work with real URLs and real HTTPS, and essentially behave like a real site. In the past, local development environments often used URLs like `http://127.0.0.1:2302/somesite, which isn't easy to look at and definitely doesn't behave the same in the browser as a "real" URL.
+
+DDEV's `ddev-router` uses the hostname in the URL to determine which project will receive an HTTP request from your browser, which is why you can have so many different projects with different hostnames on one computer.
 
 ## How DDEV hostnames get resolved
 
