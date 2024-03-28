@@ -77,7 +77,7 @@ On WSL2, when you don't have internet, or your DNS is broken, or you're using a 
 
 There is one DNS server configuration that disallows looking up any hostname that resolves to `127.0.0.1`. It's called preventing [DNS Rebinding](https://en.wikipedia.org/wiki/DNS_rebinding), and it happens most often to European users who have Fritzbox routers. The fix for this is covered in the [DDEV Docs](https://ddev.readthedocs.io/en/stable/users/usage/troubleshooting/#dns-rebinding-prohibited-mostly-on-fritzbox-routers) and it's easy and will make your life much easier.
 
-However, if you don't have control of your router, there's another easy fix, and that is to use a trusted DNS server outside your network. To do this, you would change your DNS server on your computer to `1.1.1.1` for Cloudflare's public DNS server, or `8.8.8.8` for Google's public DNS. Those will both do ordinary DNS resolution.
+However, if you don't have control of your router, there's another easy fix, and that is to use a trusted DNS server outside your network. To do this, you would change your DNS server on your computer to `1.1.1.1` for Cloudflare's public DNS server, or `8.8.8.8` for Google's public DNS. Those will both do ordinary DNS resolution. There are lots of articles on the internet explaining how to change your computer's DNS servers, [here's one of them](https://www.hellotech.com/guide/for/how-to-change-dns-server-windows-mac). Unless you're on a corporate network with private DNS, this is unlikely to cause you any trouble and may resolve other difficulties, like removing some advertisements.
 
 ## How can I tell if `ddev.site` name resolution is broken?
 
