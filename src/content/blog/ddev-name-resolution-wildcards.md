@@ -1,7 +1,7 @@
 ---
 title: "Hostnames and Wildcards and DDEV, Oh My!"
-pubDate: 2024-03-30
-#modifiedDate: 2024-04-03
+pubDate: 2024-03-28
+modifiedDate: 2024-03-29
 summary: How hostname name resolution works in a DDEV environment, including how wildcards work and how DNS is involved
 author: Randy Fay
 featureImage:
@@ -87,8 +87,7 @@ However, if you don't have control over your router, there's another easy fix, a
 
 ## How can I tell if `ddev.site` name resolution is broken?
 
-Try `ping -c 1 xxx.ddev.site`. If it pings `127.0.0.1` and gets a response, then either `xxx.ddev.site` name resolution is working or you have added it to your hosts file.
-
+Try `ping -c 1 test.ddev.site`. If it doesn't ping `127.0.0.1`, it is broken. Please see the [above](#no-matter-what-ddev-always-wants-to-edit-my-hosts-file-no-dns-rebinding) for troubleshooting and resolution.
 
 ## What about using `additional_fqdns` in DDEV configuration?
 
