@@ -1,7 +1,7 @@
 ---
 title: "Hostnames and Wildcards and DDEV, Oh My!"
 pubDate: 2024-03-28
-modifiedDate: 2024-30-29
+modifiedDate: 2024-03-29
 summary: How hostname name resolution works in a DDEV environment, including how wildcards work and how DNS is involved
 author: Randy Fay
 featureImage:
