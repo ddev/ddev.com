@@ -27,7 +27,7 @@ But first, what do maintainers do? Why are they so busy? Why is it important to 
 
 **Test infrastructure has to be maintained**: You know from your own work that test infrastructure and the tests themselves require extensive maintenance. DDEV runs tests on all supported operating systems and architectures and Docker providers. That’s a *lot* of tests, meaning hours of tests for every push, and of course there are flaky tests to improve and Windows machines to reboot when they fail.
 
-**Onboarding and Support**: This is a wide-open Free and Open Source project. We want every contributor to have a great experience, and we want everybody to be free to contribute. But this means mentoring, and [contributor training](https://ddev.com/blog/contributor-training/). And support. Support all the time. It’s amazing how many people do not need support, but there is lots to be done every day in the [issue queue](https://github.com/ddev/ddev/issues), [Discord](https://discord.gg/hCZFfAMc5k), Slack, and [Stack Overflow](https://stackoverflow.com/tags/ddev). It’s mostly maintainers that do this support, but it’s a great community and everybody is encouraged to help.
+**Onboarding and Support**: This is a wide-open Free and Open Source project. We want every contributor to have a great experience, and we want everybody to be free to contribute. But this means mentoring, and [contributor training](https://ddev.com/blog/contributor-training/). And support. Support all the time. It’s amazing how many people do not need support, but there is lots to be done every day in the [issue queue](https://github.com/ddev/ddev/issues), [Discord](https://discord.gg/5wjP76mBJD), Slack, and [Stack Overflow](https://stackoverflow.com/tags/ddev). It’s mostly maintainers that do this support, but it’s a great community and everybody is encouraged to help.
 
 **Documentation**: You know how docs are always needing more help and they’re affected by all the factors above.
 
@@ -65,7 +65,7 @@ No funding to the DDEV Foundation goes to Randy.
 - **Smaller amounts** from individuals or agencies are easier to handle via [GitHub Sponsors](https://github.com/sponsors/ddev).
 - **Your contributions in all other ways are so welcome**! Financial is a topic for this blog, but the bottom line is that we’re a community working together by helping each other. Thank you!
 
-**Do you want to talk more? Drop by [Discord](https://discord.gg/hCZFfAMc5k) or send [an email](mailto:support%40ddev.com)**
+**Do you want to talk more? Drop by [Discord](https://discord.gg/5wjP76mBJD) or send [an email](mailto:support%40ddev.com)**
 
 **Have you [signed up for the monthly DDEV newsletter](https://ddev.com/newsletter/)?**
 

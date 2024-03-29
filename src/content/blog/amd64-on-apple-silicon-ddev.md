@@ -66,4 +66,4 @@ You can actually have all these running at the same time, although it doesn't ma
 
 ## Keep in touch! 
 
-I'd love to hear your experience. Join us in [Discord](https://discord.gg/hCZFfAMc5k) or [open an issue](https://github.com/ddev/ddev/issues) or send [an email](mailto:support%40ddev.com) if you have success (or failure 😀).
+I'd love to hear your experience. Join us in [Discord](https://discord.gg/5wjP76mBJD) or [open an issue](https://github.com/ddev/ddev/issues) or send [an email](mailto:support%40ddev.com) if you have success (or failure 😀).

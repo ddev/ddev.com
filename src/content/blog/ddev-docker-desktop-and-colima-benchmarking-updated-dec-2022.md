@@ -59,4 +59,4 @@ Some takeaways from this round of testing:
 
 Congratulations to the [Colima](https://github.com/abiosoft/colima), [Lima](https://github.com/lima-vm/lima), and [Docker Desktop](https://www.docker.com/products/docker-desktop/), and [Mutagen](https://mutagen.io) teams for an amazing year of progress!
 
-Interested in engaging more with the DDEV community? Catch us in the [Discord Server](https://discord.gg/hCZFfAMc5k), on [Stack Overflow](https://stackoverflow.com/tags/ddev), and in the [Issue Queue on GitHub](https://github.com/ddev/ddev/issues). We’d love to have you. Interested in knowing more about DDEV? It’s quick and easy to start up in the [docs](https://ddev.readthedocs.io/en/stable/).
+Interested in engaging more with the DDEV community? Catch us in the [Discord Server](https://discord.gg/5wjP76mBJD), on [Stack Overflow](https://stackoverflow.com/tags/ddev), and in the [Issue Queue on GitHub](https://github.com/ddev/ddev/issues). We’d love to have you. Interested in knowing more about DDEV? It’s quick and easy to start up in the [docs](https://ddev.readthedocs.io/en/stable/).

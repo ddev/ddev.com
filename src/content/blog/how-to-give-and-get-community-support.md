@@ -49,5 +49,5 @@ This includes being respectful of language differences. Try not to use metaphors
 ## Venues for Giving and Receiving Support
 - The [DDEV Docs](https://ddev.readthedocs.io/en/stable/) are a great place to start looking for answers to straightforward questions.
 - Subscribe to the [issue queue on GitHub](https://github.com/ddev/ddev/issues).
-- On [DDEV's Discord](https://discord.gg/hCZFfAMc5k), try to use #support where possible, or use threads elsewhere.
+- On [DDEV's Discord](https://discord.gg/5wjP76mBJD), try to use #support where possible, or use threads elsewhere.
 - The [DDEV tag on Stack Overflow](https://stackoverflow.com/tags/ddev) is a great place for long-term storage of obscure answers or complicated questions. When somebody figures out the answer to an important question, try to get it written up there.
