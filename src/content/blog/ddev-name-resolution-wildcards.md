@@ -87,7 +87,7 @@ However, if you don't have control over your router, there's another easy fix, a
 
 ## How can I tell if `ddev.site` name resolution is broken?
 
-Try `ping -c 1 t.e.s.t.ddev.site`. If it doesn't ping `127.0.0.1`, it is broken. Please see the last question for help troubleshooting.
+Try `ping -c 1 test.ddev.site`. If it doesn't ping `127.0.0.1`, it is broken. Please see the [above](#no-matter-what-ddev-always-wants-to-edit-my-hosts-file-no-dns-rebinding) for troubleshooting and resolution.
 
 ## What about using `additional_fqdns` in DDEV configuration?
 
