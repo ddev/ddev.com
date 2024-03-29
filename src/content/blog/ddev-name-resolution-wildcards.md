@@ -98,4 +98,4 @@ Be exceptionally careful with "masking" real sites this way. It can be really co
 
 ## Keep in touch!
 
-I'd love to hear your experience. Join us in [Discord](https://discord.gg/hCZFfAMc5k) or [open an issue](https://github.com/ddev/ddev/issues) or send [an email](mailto:support%40ddev.com) if you have success (or failure 😀). We're always trying to make DDEV better for you.
+I'd love to hear your experience. Join us in [Discord](https://discord.gg/5wjP76mBJD) or [open an issue](https://github.com/ddev/ddev/issues) or send [an email](mailto:support%40ddev.com) if you have success (or failure 😀). We're always trying to make DDEV better for you.

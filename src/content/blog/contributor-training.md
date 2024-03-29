@@ -60,6 +60,6 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 
 Contributor training for 2023 is complete now, but we'll be starting again in 2024. Watch this space!
 
-Sign up on the simple form below to get the calendar invite with Zoom link. Drop by [Discord](https://discord.gg/hCZFfAMc5k) or send [an email](mailto:support%40ddev.com) if you want to talk more.
+Sign up on the simple form below to get the calendar invite with Zoom link. Drop by [Discord](https://discord.gg/5wjP76mBJD) or send [an email](mailto:support%40ddev.com) if you want to talk more.
 
 <script id='formScript5879720000000512073' src='https://crm.zoho.com/crm/WebFormServeServlet?rid=d761f49b3421baca337046aa6e88b35792eb01f83d92a9e1912e01c21b14e7dfgide888d842d2182432c1bf117aecd6280f1bf0b73e665551779217573985104582&script=$sYG'></script>

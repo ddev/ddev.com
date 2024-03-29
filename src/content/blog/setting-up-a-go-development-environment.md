@@ -89,4 +89,4 @@ At ([Min 50:50](https://youtu.be/IjrJw0Ay-dk?t=3048)) we can see a walkthrough o
 devcontainer.json ([Min 58:35](https://youtu.be/IjrJw0Ay-dk?t=3507)) is a file for GitHub Codespaces.
 
 ## Keep in touch!
- Join us in [Discord](https://discord.gg/hCZFfAMc5k) or [open an issue](https://github.com/ddev/ddev/issues) or send [an email](mailto:support%40ddev.com) if you have success (or failure 😀).
+ Join us in [Discord](https://discord.gg/5wjP76mBJD) or [open an issue](https://github.com/ddev/ddev/issues) or send [an email](mailto:support%40ddev.com) if you have success (or failure 😀).
