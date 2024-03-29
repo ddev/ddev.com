@@ -9,7 +9,7 @@ import {
   GITHUB_URL,
 } from "../const"
 import Sponsors from "../components/Sponsors.astro"
-import { Img } from "astro-imagetools/components"
+import { Image } from "astro:assets"
 
 const title = `Support DDEV`
 ---
@@ -52,15 +52,13 @@ const title = `Support DDEV`
           > a GitHub Issue or Pull Request.
         </p>
 
-        <Img
+        <Image
           src="/img/pr.png"
           alt="Screenshot of GitHub PR #217, where @beeradb added new version notifications"
-          placeholder="dominantColor"
-          attributes={{
-            img: {
-              class: `shadow-lg rounded-lg`,
-            },
-          }}
+          class="rounded-lg"
+          width={600}
+          height={400}
+          loading="lazy"
         />
       </div>
 
@@ -104,15 +102,13 @@ const title = `Support DDEV`
           development.
         </p>
 
-        <Img
+        <Image
           src="/img/discord.png"
           alt="Screenshot of Discord server, with several active Q&A channels"
-          placeholder="dominantColor"
-          attributes={{
-            img: {
-              class: `rounded-lg`,
-            },
-          }}
+          class="rounded-lg"
+          width={600}
+          height={400}
+          loading="lazy"
         />
       </div>
 
@@ -137,15 +133,13 @@ const title = `Support DDEV`
         </p>
 
         <figure>
-          <Img
+          <Image
             src="/img/edit-docs.png"
             alt="Screenshot visually highlighting the “Edit this page” icon in the docs and pointing to its corresponding GitHub URL"
-            placeholder="dominantColor"
-            attributes={{
-              img: {
-                class: `rounded-lg`,
-              },
-            }}
+            class="rounded-lg"
+            width={600}
+            height={400}
+            loading="lazy"
           />
 
           <figcaption>
@@ -213,15 +207,13 @@ const title = `Support DDEV`
           to join us!
         </p>
 
-        <Img
+        <Image
           src="/img/advisory-group-call.png"
           alt="Screenshot of an advisory group Zoom call with a grid of sixteen faces"
-          placeholder="dominantColor"
-          attributes={{
-            img: {
-              class: `rounded-lg`,
-            },
-          }}
+          class="rounded-lg"
+          width={600}
+          height={400}
+          loading="lazy"
         />
       </div>
 

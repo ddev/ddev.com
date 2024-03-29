@@ -1,6 +1,7 @@
 ---
 import { marked } from "marked"
-import { Picture } from "astro-imagetools/components"
+// import { Picture } from "astro-imagetools/components"
+import { Picture } from 'astro:assets'
 
 export interface Props {
   src: string
@@ -24,16 +25,11 @@ const { src, alt, caption = "", credit, shadow = false } = Astro.props
         }
       >
         <Picture
-          format={["webp"]}
-          breakpoints={{ count: 3, maxWidth: 1800 }}
-          attributes={{
-            picture: {
-              class: `block rounded-lg`,
-              style: `clip-path: inset(0% 0% 0% 0% round 0.5rem)`,
-            },
-          }}
+          class= "block rounded-lg"
           src={src}
           alt={alt}
+          width={600}
+          height={400}
         />
       </div>
     )

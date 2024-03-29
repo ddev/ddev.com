@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config"
 import { plainTextPlugin } from "@barnabask/astro-minisearch"
 import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs"
-import { astroImageTools } from "astro-imagetools"
+// import { astroImageTools } from "astro-imagetools"
 import prefetch from "@astrojs/prefetch"
 import react from "@astrojs/react"
 import robotsTxt from "astro-robots-txt"
@@ -20,7 +20,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     react(),
-    astroImageTools,
+    // astroImageTools,
     sitemap({
       serialize(item) {
         if (
