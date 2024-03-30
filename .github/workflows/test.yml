@@ -24,4 +24,4 @@ jobs:
       - name: Lint
         run: npm run textlint
       - name: Install, build, and upload your site output
-        run: withastro/action@v2
+        uses: withastro/action@v2
