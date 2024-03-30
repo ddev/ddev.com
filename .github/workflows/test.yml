@@ -5,6 +5,14 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+
+# Allow this job to clone the repo and create a page deployment
+permissions:
+  contents: read
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   build:
     timeout-minutes: 15
@@ -18,3 +26,5 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run textlint
+      - name: Install, build, and upload your site output
+        uses: withastro/action@v2
