@@ -12,15 +12,14 @@ const { latestVersion } = Astro.props
 
 <div class="prose dark:prose-invert">
   <p class="text-gray-600 mb-16 dark:text-slate-400">
-    We’ll use Docker Desktop since it’s the most straightforward of <a
+    We’ll use Orbstack since it’s the most straightforward of <a
       href="https://ddev.readthedocs.io/en/stable/users/install/docker-installation/#macos"
       >several options</a
     >.
   </p>
 
   <h2 class="text-3xl mt-24">
-    <small class="block font-mono text-xs text-gray-500">1/3</small>Install
-    Docker
+    <small class="block font-mono text-xs text-gray-500">1/3</small>Install Orbstack Docker Provider
   </h2>
 </div>
 
@@ -29,17 +28,17 @@ const { latestVersion } = Astro.props
     <div class="prose py-5 dark:prose-invert">
       <p>
         With <a href="https://brew.sh" target="_blank">Homebrew</a> installed, you
-        can install Docker Desktop with one command:
+        can install Orbstack with one command:
       </p>
-      <Terminal code={`→ brew install --cask docker`} />
+      <Terminal code={`→ brew install orbstack docker`} />
     </div>
   </Fragment>
   <Fragment slot="Download">
     <div class="prose py-5 dark:prose-invert">
       <p>
         Download and run the <a
-          href="https://www.docker.com/products/docker-desktop"
-          target="_blank">Docker Desktop installer</a
+          href="https://orbstack.dev/download"
+          target="_blank">Orbstack installer</a
         >.
       </p>
     </div>
@@ -48,12 +47,11 @@ const { latestVersion } = Astro.props
 
 <div class="prose dark:prose-invert">
   <p>
-    Launch Docker Desktop, accept the license agreement, and make sure Docker is
-    started and running.
+    Launch Orbstack, accept the license agreement.
   </p>
 
-  <p>Confirm that you’ve now got a Docker provider:</p>
-  <Terminal code={`→ docker -v\nDocker version 24.0.5, build ced0996`} />
+  <p>Confirm that you now have a Docker provider:</p>
+  <Terminal code={`→ docker version`} />
 
   <h2 class="text-3xl mt-24">
     <small class="block font-mono text-xs text-gray-500">2/3</small>Install DDEV
