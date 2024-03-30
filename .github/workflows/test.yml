@@ -5,6 +5,11 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+
+# Allow this job to clone the repo and create a page deployment
+permissions:
+  contents: read
+
 jobs:
   build:
     timeout-minutes: 15
@@ -18,5 +23,5 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run textlint
-      - name: Builds the site
-        run: npm run build
+      - name: Install, build, and upload your site output
+        run: withastro/action@v2
