@@ -1,4 +1,4 @@
-# ddev.com Front End
+# ddev.com Astro code
 
 Source code for [ddev.com](https://ddev.com)’s static front end, built with [Astro](https://astro.build) to keep things organized, maintainable, and fast.
 
