@@ -1,12 +1,13 @@
 ---
 title: "Save-as-you-go and make backups in a jiffy with DDEV"
 pubDate: 2018-11-20
-summary: Working fluidly with DDEV’s database snapshots and backsups.
+modifiedDate: 2024-03-31
+summary: Working fluidly with DDEV’s database snapshots and backups.
 author: Randy Fay
 featureImage:
-  src: /img/blog/2018/11/will-echols-539053-unsplash-e1542746009659.jpg
-  alt: Pale photo of a snowy mountainscape
-  credit: "Photo by [Will Echols](https://unsplash.com/photos/%5FRFwfvznaYM?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/road-colorado?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
+  src: /img/blog/2024/03/database-backup.png
+  alt: Back up DDEV databases quickly and easily on the command line.
+  credit: "ideogram.ai: Back up DDEV databases quickly and easily on the command line."
 categories:
   - Guides
   - Videos
@@ -16,7 +17,7 @@ To us, the ideal local development environment should be fast and easy to use an
 
 Here’s how to easily save and restore databases with DDEV, so you can recover if something goes wrong or you change your mind about the development direction you’re going.
 
-[Download DDEV](https://github.com/ddev/ddev/releases)
+[Install DDEV](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/)
 
 ## Using `ddev snapshot` to save-as-you-go
 
@@ -42,29 +43,33 @@ Here’s a video showing you how to use it.
 <iframe loading="lazy" width="500" height="281" src="https://www.youtube.com/embed/Ax-HocnXNbc?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </div>
 
-DDEV snapshotting uses [mariabackup](https://mariadb.com/kb/en/library/mariabackup/) inside the database container. This is super, super fast in both directions. It’s not a copy of the database directory, the state of the database is properly preserved. This means when you come back to work, everything is as you left it.
+DDEV snapshotting uses native hot backup tools for MariaDB, MySQL, and PostgreSQL inside the database container. This is super, super fast in both directions. It’s not a copy of the database directory, the state of the database is properly preserved. This means when you come back to work, everything is as you left it.
 
-**Important:** DDEV snapshot isn’t backward-compatible. Snapshots from previous versions of DDEV cannot be restored with v1.3 or higher because the mariabackup included with MariaDB 10.2 is not compatible with earlier backups. There’s an easy workaround to fix this [explained in the DDEV documentation](https://ddev.readthedocs.io/en/stable/users/troubleshooting/#cant-restore-snapshot-created-before-ddev-v13).
+**Important:** DDEV snapshotas are per-database type and version. Snapshots from MariaDB 10.11 can't be used with MySQL 8.0 for example.
 
 ## Backing up with `ddev export-db` and with `mysqldump`
 
 The `ddev snapshot` command is a great way to make a quick dump of your database, but it’s not as portable as a text-based database dump. With the recent release of DDEV v1.4, we introduced the [ddev export-db](https://ddev.readthedocs.io/en/stable/users/cli-usage/#exporting-a-database) command.
 
-On the command line, DDEV has always had `[ddev import-db](https://ddev.readthedocs.io/en/stable/users/cli-usage/#importing-a-database)` but until now we didn’t have the correlating export option. Now you can!
-
 Run this command to create a text-based database dump:
 
-`ddev export-db`
+```
+ddev export-db --file=/tmp/db.sql --gzip=false
+```
 
-[Check out the documentation](https://ddev.readthedocs.io/en/stable/users/cli-usage/#exporting-a-database) for examples of how you can use options to output to a file, for example:
+[Check out the documentation](https://ddev.readthedocs.io/en/stable/users/cli-usage/#exporting-a-database) for examples of how you can use options to output to a file. Or just type:
 
-`ddev export-db -f /tmp/db.sql.gz`
+```
+ddev help export-db
+```
+
+for a set of examples.
 
 Another way you can backup your data with DDEV is by using `ddev ssh` or `ddev ssh -s db` doing a database dump using the MySQL client. Here’s an example of how you can do that:
 
 ```
 ddev ssh
-mkdir /var/www/html/.tarballs
+mkdir -p /var/www/html/.tarballs
 mysqldump db | gzip >/var/www/html/.tarballs/db.YYYYMMDD.sql.gz
 ```
 
@@ -72,4 +77,8 @@ To restore an SQL dump like that on the host you would use this command:
 
 `ddev import-db --src=.tarballs/db.YYYYMMDD.sql.gz`
 
-A text-format database dump created with either this technique or `ddev export-db` can typically be restored on any MySQL/MariaDB server without trouble. It’s not as fast as `ddev snapshot`, and the restore is much slower. But it’s portable.
+A text-format database dump created with either this technique or `ddev export-db` can typically be restored on any MySQL/MariaDB server without trouble. It’s not as fast as `ddev snapshot`, and the restore is much slower. But it’s much more portable.
+
+See the [docs](https://ddev.readthedocs.io/en/stable/users/usage/database-management/) for everything there is to know about database management.
+
+And join us in the [issue queue](https://github.com/ddev/ddev/issues), [Discord](https://discord.gg/5wjP76mBJD), [Stack Overflow](https://stackoverflow.com/tags/ddev) with your questions, comments, and suggestions.
