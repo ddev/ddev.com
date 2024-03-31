@@ -1,5 +1,5 @@
 import fs2 from "fs"
-import glob from "glob"
+import { glob } from "glob"
 import { getSearchIndex } from "@barnabask/astro-minisearch"
 import { fileURLToPath } from "node:url"
 import { parseHTML } from "linkedom"
@@ -62,46 +62,44 @@ export default function searchIndex(config) {
         const fullDir = fileURLToPath(new URL("./", dir))
 
         // Find all the HTML files Astro just generated
-        // const files = glob.sync(`${fullDir}**/*.html`)
+        const files = glob.sync(`${fullDir}**/*.html`)
 
         const output = config.output
 
         let items = []
 
-        // for (const file of files) {
-        //   const data = fs.readFileSync(file, "utf-8")
-        //   const { document: postDocument } = parseHTML(data)
+        for (const file of files) {
+          const data = fs.readFileSync(file, "utf-8")
+          const { document: postDocument } = parseHTML(data)
 
-        //   const ogTitleTag = postDocument.querySelector(
-        //     "meta[property='og:title']"
-        //   )
-        //   const ogTitleValue = ogTitleTag.getAttribute("content")
+          const ogTitleTag = postDocument.querySelector(
+            "meta[property='og:title']"
+          )
+          const ogTitleValue = ogTitleTag.getAttribute("content")
 
-        //   const robotsTag = postDocument.querySelector("meta[name=robots]")
-        //   const robotsValue = robotsTag.getAttribute("content")
+          const robotsTag = postDocument.querySelector("meta[name=robots]")
+          const robotsValue = robotsTag.getAttribute("content")
 
-        //   if (robotsValue.includes("noindex")) {
-        //     // Don’t include `noindex` pages in search results
-        //     continue
-        //   }
+          if (robotsValue.includes("noindex")) {
+            // Don’t include `noindex` pages in search results
+            continue
+          }
 
-        //   const mainTag = postDocument.querySelector("main")
-        //   // Use the inner *text* from the `<main>` tag for the search index
-        //   const postContent = mainTag.innerText
+          const mainTag = postDocument.querySelector("main")
+          // Use the inner *text* from the `<main>` tag for the search index
+          const postContent = mainTag.innerText
 
-        //   const canonicalTag = postDocument.querySelector("link[rel=canonical]")
-        //   const url = canonicalTag
-        //     .getAttribute("href")
-        //     .replace(astroConfig.site, "/")
+          const canonicalTag = postDocument.querySelector("link[rel=canonical]")
+          const url = canonicalTag
+            .getAttribute("href")
+            .replace(astroConfig.site, "/")
 
-        //   items.push({
-        //     url: url,
-        //     title: ogTitleValue,
-        //     text: postContent,
-        //   })
-        // }
-
-        // console.log(items)
+          items.push({
+            url: url,
+            title: ogTitleValue,
+            text: postContent,
+          })
+        }
 
         // Generate the index in the format we need
         let index = await getSearchIndex(items)

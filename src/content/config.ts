@@ -1,6 +1,6 @@
 import { defineCollection, z} from 'astro:content'
 import fs2 from "fs"
-import Glob from 'glob'
+import { glob } from "glob"
 
 const allowedCategories = ['Announcements', 'Community', 'DevOps', 'Performance', 'Guides', 'Videos']
 
@@ -8,20 +8,16 @@ const allowedCategories = ['Announcements', 'Community', 'DevOps', 'Performance'
  * Quick and dirty method that returns full names of all existing authors.
  * @returns array of `name` values from author entry frontmatter
  */
-// const getAuthorNames = () => {
-//   const files = new Glob(`./src/content/authors/*.md`)
-//   const authorNames = files.map((file) => {
-//     const contents = fs2.readFileSync(file, "utf-8");
-//     const result = contents.match(new RegExp("name: (.*)"))
-//     return result[1];
-//   })
+const getAuthorNames = () => {
+  const files = glob.sync(`./src/content/authors/*.md`)
+  const authorNames = files.map((file) => {
+    const contents = fs2.readFileSync(file, "utf-8");
+    const result = contents.match(new RegExp("name: (.*)"))
+    return result[1];
+  })
 
-//   return authorNames;
-// }
-// const getAuthorNames = () => {
-//   const names = await getCollection('authors', ({ data }));
-// }
-
+  return authorNames;
+}
 
 /**
  * Below we’re defining schemas for our Content Collections so their
@@ -46,9 +42,7 @@ const blogCollection = defineCollection({
     pubDate: z.date(),
     modifiedDate: z.date().optional(),
     modifiedComment: z.string().optional(),
-    // author: z.enum(getAuthorNames()),
-    author: z.string(),
-    // author: z.array(reference('authors')),
+    author: z.enum(getAuthorNames()),
     featureImage: z.object({
       src: z.string(),
       alt: z.nullable(z.string()),
