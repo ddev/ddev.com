@@ -9,9 +9,7 @@ interface Props {
 }
 
 import { getEntryBySlug } from "astro:content"
-// import { Picture } from "astro-imagetools/components"
 import { getSlug, formatDate, getCategoryUrl } from "../lib/api"
-import Image from "astro/components/Image.astro"
 
 const { post } = Astro.props
 const { remarkPluginFrontmatter } = await post.render()

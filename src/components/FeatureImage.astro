@@ -1,6 +1,5 @@
 ---
 import { marked } from "marked"
-// import { Picture } from "astro-imagetools/components"
 import { Picture } from 'astro:assets'
 
 export interface Props {
@@ -28,8 +27,8 @@ const { src, alt, caption = "", credit, shadow = false } = Astro.props
           class= "block rounded-lg"
           src={src}
           alt={alt}
-          width={600}
-          height={400}
+          width={900}
+          height={500}
         />
       </div>
     )
