@@ -1,7 +1,7 @@
 ---
 title: "Save-as-you-go and make backups in a jiffy with DDEV"
 pubDate: 2018-11-20
-modifiedDate: 2024-03-31
+modifiedDate: 2024-04-03
 summary: Working fluidly with DDEV’s database snapshots and backups.
 author: Randy Fay
 featureImage:
@@ -49,7 +49,7 @@ DDEV snapshotting uses native hot backup tools for MariaDB, MySQL, and PostgreSQ
 
 ## Backing up with `ddev export-db` and with `mysqldump`
 
-The `ddev snapshot` command is a great way to make a quick dump of your database, but it’s not as portable as a text-based database dump. With the recent release of DDEV v1.4, we introduced the [ddev export-db](https://ddev.readthedocs.io/en/stable/users/cli-usage/#exporting-a-database) command.
+The `ddev snapshot` command is a great way to make a quick dump of your database, but it’s not as portable as a text-based database dump. The [ddev export-db](https://ddev.readthedocs.io/en/stable/users/usage/commands/#export-db) command.
 
 Run this command to create a text-based database dump:
 
@@ -57,13 +57,36 @@ Run this command to create a text-based database dump:
 ddev export-db --file=/tmp/db.sql --gzip=false
 ```
 
-[Check out the documentation](https://ddev.readthedocs.io/en/stable/users/cli-usage/#exporting-a-database) for examples of how you can use options to output to a file. Or just type:
+Don't forget that every DDEV command has help with examples, so using `ddev help export-db` we get:
 
 ```
-ddev help export-db
-```
+$ ddev help export-db
+Dump a database to a file or to stdout.
 
-for a set of examples.
+Usage:
+  ddev export-db [project] [flags]
+
+Examples:
+  $ ddev export-db --file=/tmp/db.sql.gz
+  $ ddev export-db -f /tmp/db.sql.gz
+  $ ddev export-db --gzip=false --file /tmp/db.sql
+  $ ddev export-db > /tmp/db.sql.gz
+  $ ddev export-db --gzip=false > /tmp/db.sql
+  $ ddev export-db --database=additional_db --file=.tarballs/additional_db.sql.gz
+  $ ddev export-db my-project --gzip=false --file=/tmp/my_project.sql
+
+
+Flags:
+      --bzip2             Use bzip2 compression
+  -d, --database string   Target database to export from (default "db")
+  -f, --file string       Path to a SQL dump file to export to
+  -z, --gzip              Use gzip compression (default true)
+  -h, --help              help for export-db
+      --xz                Use xz compression
+
+Global Flags:
+  -j, --json-output   If true, user-oriented output will be in JSON format.
+```
 
 Another way you can backup your data with DDEV is by using `ddev ssh` or `ddev ssh -s db` doing a database dump using the MySQL client. Here’s an example of how you can do that:
 
