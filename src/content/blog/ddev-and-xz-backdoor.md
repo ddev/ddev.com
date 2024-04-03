@@ -1,8 +1,8 @@
 ---
 title: "Was DDEV Affected by the xz Backdoor?"
 pubDate: 2024-04-03
-#modifiedDate: 2024-03-03
-summary: DDEV was not affected by the xz backdoor
+modifiedDate: 2024-04-03
+summary: DDEV was not affected by the xz backdoor.
 author: Randy Fay
 featureImage:
   src: /img/blog/2024/04/xz-backdoor.png
