@@ -33,8 +33,9 @@ const feed = {
   items: feedItems,
 }
 
-export async function get({ params, request }) {
-  return {
-    body: JSON.stringify(feed),
-  }
+export async function GET(context) {
+  return Response.json({
+    success: true,
+    result: feed
+  })
 }

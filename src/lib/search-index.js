@@ -1,5 +1,5 @@
 import fs2 from "fs"
-import glob from "glob"
+import { glob } from "glob"
 import { getSearchIndex } from "@barnabask/astro-minisearch"
 import { fileURLToPath } from "node:url"
 import { parseHTML } from "linkedom"
@@ -100,8 +100,6 @@ export default function searchIndex(config) {
             text: postContent,
           })
         }
-
-        // console.log(items)
 
         // Generate the index in the format we need
         let index = await getSearchIndex(items)

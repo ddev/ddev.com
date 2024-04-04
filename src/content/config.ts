@@ -1,6 +1,6 @@
-import { z, defineCollection } from 'astro:content'
+import { defineCollection, z} from 'astro:content'
 import fs2 from "fs"
-import glob from "glob"
+import { glob } from "glob"
 
 const allowedCategories = ['Announcements', 'Community', 'DevOps', 'Performance', 'Guides', 'Videos']
 
@@ -18,7 +18,6 @@ const getAuthorNames = () => {
 
   return authorNames;
 }
-
 
 /**
  * Below we’re defining schemas for our Content Collections so their

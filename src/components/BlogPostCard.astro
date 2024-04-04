@@ -3,12 +3,12 @@
  * A single card used to represent a blog post. Should probably be placed in a flex grid.
  */
 import type { CollectionEntry } from "astro:content"
+import { Picture } from 'astro:assets'
 interface Props {
   post: CollectionEntry<"blog">
 }
 
 import { getEntryBySlug } from "astro:content"
-import { Picture } from "astro-imagetools/components"
 import { getSlug, formatDate, getCategoryUrl } from "../lib/api"
 
 const { post } = Astro.props
@@ -45,17 +45,11 @@ const firstCategory = post.data.categories.length
         <img src={featureImageUrl} alt={featureImageAlt} />
       ) : (
         <Picture
-          attributes={{
-            picture: {
-              class: `block h-48 w-full object-cover relative`,
-            },
-          }}
-          format={["webp"]}
+          class="block h-48 w-full object-cover relative",
           src={featureImageUrl}
           alt={featureImageAlt}
           width={600}
           height={400}
-          fit="cover"
         />
       )
     }

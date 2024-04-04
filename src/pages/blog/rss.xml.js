@@ -50,8 +50,8 @@ const items = recentPosts.map((post) => {
 
 const buildDate = new Date().toUTCString()
 
-export const get = () =>
-  rss({
+export async function GET(context) {
+  return rss({
     title: `DDEV Blog`,
     description: BLOG_DESCRIPTION,
     site: blogUrl,
@@ -70,3 +70,4 @@ export const get = () =>
       <webfeeds:logo>${baseUrl}/favicon/type-only.svg</webfeeds:logo>
     `,
   })
+}
