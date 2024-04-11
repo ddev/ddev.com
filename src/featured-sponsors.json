@@ -61,6 +61,15 @@
     "github": "b13"
   },
   {
+    "name": "Cambrico",
+    "type": "standard",
+    "logo": "/logos/logo-cambrico-color-light-mode_con-nombre.svg",
+    "darklogo": "/logos/logo-cambrico-color-dark-mode_con-nombre.svg",
+    "squareLogo": "/logos/logo-cambrico-color-light-mode_con-nombre.svg",
+    "url": "https://cambrico.net/",
+    "github": "Cambrico"
+  },
+  {
     "name": "Fame Helsinki",
     "type": "standard",
     "logo": "/logos/fame-logo.svg",
