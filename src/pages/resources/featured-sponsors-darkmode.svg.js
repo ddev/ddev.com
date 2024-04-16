@@ -1,6 +1,7 @@
 import featuredSponsors from "../../featured-sponsors.json"
+import fs from "fs"
+import path from "path"
 import sizeOf from "image-size"
-import {encode} from 'node-base64-image';
 
 const baseUrl = import.meta.env.SITE
 
@@ -67,7 +68,7 @@ const buildResponse = () => {
   images.map((image) => {
     response += `
       <a xlink:href="${image.url}" target="_blank">
-        <image href="${encode(image.path)}" x="${image.x}" y="${image.y}" height="${image.height}" width="${image.width}" />
+        <image href="${imgToBase64(image.path)}" x="${image.x}" y="${image.y}" height="${image.height}" width="${image.width}" />
       </a>
     `
   })
@@ -75,6 +76,16 @@ const buildResponse = () => {
   response += `</svg>`
 
   return response;
+}
+
+function imgToBase64(filePath) {
+  let extname = path.extname(filePath).slice(1) || 'png';
+
+  if (extname === 'svg') {
+    extname = "svg+xml"
+  }
+
+  return 'data:image/' + extname + ';base64,' + fs.readFileSync(filePath).toString('base64');
 }
 
 /**
@@ -117,8 +128,6 @@ const getScaledImageDimensions = (width, height) => {
   return [w, h];
 }
 
-export async function get({ params, request }) {
-  return {
-    body: buildResponse(),
-  }
+export async function GET({ params, request }) {
+  return new Response(buildResponse())
 }
