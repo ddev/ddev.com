@@ -1,6 +1,6 @@
 import featuredSponsors from "../../featured-sponsors.json"
 import sizeOf from "image-size"
-import {encode} from 'node-base64-image';
+import base64Img from "base64-img"
 
 const baseUrl = import.meta.env.SITE
 
@@ -67,7 +67,7 @@ const buildResponse = () => {
   images.map((image) => {
     response += `
       <a xlink:href="${image.url}" target="_blank">
-        <image href="${encode(image.path)}" x="${image.x}" y="${image.y}" height="${image.height}" width="${image.width}" />
+        <image href="${base64Img.base64Sync(image.path)}" x="${image.x}" y="${image.y}" height="${image.height}" width="${image.width}" />
       </a>
     `
   })
@@ -117,8 +117,6 @@ const getScaledImageDimensions = (width, height) => {
   return [w, h];
 }
 
-export async function get({ params, request }) {
-  return {
-    body: buildResponse(),
-  }
+export async function GET({ params, request }) {
+  return new Response(buildResponse())
 }
