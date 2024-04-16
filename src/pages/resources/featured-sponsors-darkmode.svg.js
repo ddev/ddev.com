@@ -1,6 +1,6 @@
 import featuredSponsors from "../../featured-sponsors.json"
+import fs from "fs"
 import sizeOf from "image-size"
-import base64Img from "base64-img"
 
 const baseUrl = import.meta.env.SITE
 
@@ -67,7 +67,7 @@ const buildResponse = () => {
   images.map((image) => {
     response += `
       <a xlink:href="${image.url}" target="_blank">
-        <image href="${base64Img.base64Sync(image.path)}" x="${image.x}" y="${image.y}" height="${image.height}" width="${image.width}" />
+        <image href="${svgToBase64(image.path)}" x="${image.x}" y="${image.y}" height="${image.height}" width="${image.width}" />
       </a>
     `
   })
@@ -75,6 +75,10 @@ const buildResponse = () => {
   response += `</svg>`
 
   return response;
+}
+
+function svgToBase64(filePath) {
+  return "data:image/svg+xml;base64," + Buffer.from(fs.readFileSync(filePath)).toString('base64');
 }
 
 /**

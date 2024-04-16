@@ -28,7 +28,6 @@
     "astro-robots-txt": "^1.0.0",
     "astro-seo": "^0.8.0",
     "autoprefixer": "^10.4.16",
-    "base64-img": "^1.0.4",
     "github-slugger": "^2.0.0",
     "glob": "^10.3.10",
     "image-size": "^1.0.2",
