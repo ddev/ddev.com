@@ -362,7 +362,7 @@ CMS integrations for Vite can use different approaches.
 
 Some have official support for Docker and DDEV, others may need a little bit of tweaking.
 
-### List of CMS integrations
+### List of PHP CMS integrations
 
 Here is a list of example integrations I know so far.
 
@@ -463,3 +463,7 @@ I guess this could be improved a lot ;-) See [DDEV Installation: Codespaces](htt
 #### Gitpod
 
 I couldn't find a resource where Vite was used with DDEV in Gitpod. Happy to update this section as well with more resources!
+
+### NodeJS
+
+Andy Blum wrote the awesome article [Node.js Development with DDEV](https://www.lullabot.com/articles/nodejs-development-ddev) which explains proxying requests to the correct ports of NodeJS projects running in the web container. This enables use cases like running a classic PHP backend with a NodeJS hosted frontend (on another subdomain of the DDEV project), it's especially great for headless CMS projects.
