@@ -27,6 +27,7 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run textlint
+      # Remove this when https://github.com/withastro/action/pull/52 is merged
       - name: Remove yarn.lock because it breaks withastro/action@v2
         run: find node_modules -name "yarn.lock" -exec rm -f {} +
       - name: Install, build, and upload your site output
