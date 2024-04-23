@@ -12,19 +12,25 @@ permissions:
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  NODE_VERSION: 20
 
 jobs:
   build:
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ${{ env.NODE_VERSION }}
       - name: Install dependencies
         run: npm ci
       - name: Lint
         run: npm run textlint
+      # Remove this when https://github.com/withastro/action/pull/52 is merged
+      - name: Remove yarn.lock because it breaks withastro/action@v2
+        run: find node_modules -name "yarn.lock" -exec rm -f {} +
       - name: Install, build, and upload your site output
         uses: withastro/action@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
