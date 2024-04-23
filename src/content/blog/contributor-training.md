@@ -64,7 +64,7 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 | 2024-06-05    | Traefik Router Configuration and Possibilities            |
 | 2024-06-12    | Advanced DDEV Add-On Techniques                           |
 | 2024-06-19    | DDEV automated tests and how to improve them              |
-| 2024-06-26    | Name Resolution and Debugging in DDEV                     |
+| 2024-06-26    | Hostname Resolution and Debugging in DDEV                 |
 | 2024-07-10    | Using AI in DDEV Development (Continue.dev, etc.)         |
 | 2024-07-17    | Interpreting `ddev debug test` To Support Users           |
 | 2024-07-24    | XDebug: Understanding, Using, and Sorting Out Problems    |
