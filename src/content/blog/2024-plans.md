@@ -1,7 +1,7 @@
 ---
 title: "DDEV Project 2024 Plans"
 pubDate: 2024-03-03
-#modifiedDate: 2024-03-03
+modifiedDate: 2024-04-23
 summary: Looking forward to 2024 with the DDEV Project
 author: Randy Fay
 featureImage:
@@ -27,7 +27,7 @@ At the DDEV Advisory Group's 2-hour [annual review/planning meeting on March 6, 
 
 ## Features
 
-* **Explicit support for [Upsun by Platform.sh](https://upsun.com/)**, which probably means creating an add-on for it, but at least supporting the documented target CMSes.
+* **Explicit support for [Upsun by Platform.sh](https://upsun.com/)**, which probably means creating an add-on for it, but at least supporting the documented target CMSes. (Update 2024-04-23: Upsun work will be deferred to Q4 when the Upsun usage is increased. In Q2 we'll catch up on ddev/ddev-platformsh maintenance and try to add explicit testing for Ibexa, Pimcore, Magento2ce, Shopware6)
 * **Improve xhprof usage**. The [ddev-xhgui](https://github.com/tyler36/ddev-xhgui) add-on has demonstrated how much better the xhprof experience can be in DDEV. We would like to incorporate the ddev-xhgui work into DDEV core and make the great experience available to everyone without an add-on.
 * **Refactor configuration code** to promote consistent handling of config (global and project) and generated docs. Currently, there is a lot of technical debt in the handling of project and global configuration, with code often repeated for each setup. This can be reworked and give consistent approach to these, while removing much code. This could include using Viper for configuration, which would allow environmental overrides, etc.
 * **Node.js back-end**: DDEV already has lots of support for Node.js in many contexts, but it would be great to have the ability to replace php-fpm with a node server, and this is already not hard to do, but would be great as a DDEV feature.
