@@ -71,6 +71,8 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 | 2024-07-31    | Implementing a New DDEV Project Type                      |
 | 2024-08-07    | Managing and Maintaining DDEV Docs (Readthedocs.io, etc.) |
 | 2024-08-14    | Using Tmate to Debug GitHub Workflows                     |
+| 2024-08-21    | Using WSL2 with DDEV                                      |
+| 2024-08-28    | Git for Fun and Profit                                    |
 
 
 
