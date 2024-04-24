@@ -55,29 +55,25 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 **Upcoming Trainings:**
 
 
-| Training Date | Description                                               |
-|---------------|-----------------------------------------------------------|
-| 2024-05-08    | Go Development Environment with Goland or vscode          |
-| 2024-05-15    | Debugging DDEV Go Code: Commands and Tests                |
-| 2024-05-22    | XDebug: Understanding, Using, and Sorting Out Problems    |
-| 2024-05-29    | DDEV Docker Architecture, including build stages          |
-| 2024-06-05    | Traefik Router Configuration and Possibilities            |
-| 2024-06-12    | Advanced DDEV Add-On Techniques                           |
-| 2024-06-19    | DDEV automated tests and how to improve them              |
-| 2024-06-26    | Hostname Resolution and Debugging in DDEV                 |
-| 2024-07-10    | Using AI in DDEV Development (Continue.dev, etc.)         |
-| 2024-07-17    | Interpreting `ddev debug test` To Support Users           |
-| 2024-07-24    | Maintaining DDEV Docker Images                            |
-| 2024-07-31    | Implementing a New DDEV Project Type                      |
-| 2024-08-07    | Managing and Maintaining DDEV Docs (Readthedocs.io, etc.) |
-| 2024-08-14    | Using Tmate to Debug GitHub Workflows                     |
-| 2024-08-21    | Using WSL2 with DDEV                                      |
-| 2024-08-28    | Git for Fun and Profit                                    |
-| 2024-09-11    | Making Your Own `ddev share` Variant                      |
-
-
-
-                                   |
+| Training Date                                                                                                                | Description                                               |
+|------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|
+| [2024-05-08](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240508T08&p1=75&ah=1) | Go Development Environment with Goland or vscode          |
+| [2024-05-15](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240515T08&p1=75&ah=1) | Debugging DDEV Go Code: Commands and Tests                |
+| [2024-05-22](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240522T08&p1=75&ah=1) | XDebug: Understanding, Using, and Sorting Out Problems    |
+| [2024-05-29](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240529T08&p1=75&ah=1) | DDEV Docker Architecture, including build stages          |
+| [2024-06-05](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240605T08&p1=75&ah=1) | Traefik Router Configuration and Possibilities            |
+| [2024-06-12](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240612T08&p1=75&ah=1) | Advanced DDEV Add-On Techniques                           |
+| [2024-06-19](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240619T08&p1=75&ah=1) | DDEV automated tests and how to improve them              |
+| [2024-06-26](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240626T08&p1=75&ah=1) | Hostname Resolution and Debugging in DDEV                 |
+| [2024-07-10](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240710T08&p1=75&ah=1) | Using AI in DDEV Development (Continue.dev, etc.)         |
+| [2024-07-17](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240717T08&p1=75&ah=1) | Interpreting `ddev debug test` To Support Users           |
+| [2024-07-24](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240724&p1=75&ah=1)    | Maintaining DDEV Docker Images                            |
+| [2024-07-31](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240731&p1=75&ah=1)    | Implementing a New DDEV Project Type                      |
+| [2024-08-07](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240807T08&p1=75&ah=1) | Managing and Maintaining DDEV Docs (Readthedocs.io, etc.) |
+| [2024-08-14](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240814T08&p1=75&ah=1) | Using Tmate to Debug GitHub Workflows                     |
+| [2024-08-21](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240821T08&p1=75&ah=1) | Using WSL2 with DDEV                                      |
+| [2024-08-28](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240828T08&p1=75&ah=1) | Git for Fun and Profit                                    |
+| [2024-09-11](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240911T08&p1=75&ah=1) | Making Your Own `ddev share` Variant                      |
 
 Sign up on the simple form below to get the calendar invite with Zoom link. Drop by [Discord](https://discord.gg/5wjP76mBJD) or send [an email](mailto:support%40ddev.com) if you want to talk more.
 
