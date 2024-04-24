@@ -59,7 +59,7 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 |---------------|-----------------------------------------------------------|
 | 2024-05-08    | Go Development Environment with Goland or vscode          |
 | 2024-05-15    | Debugging DDEV Go Code: Commands and Tests                |
-| 2024-05-22    | Maintaining DDEV Docker Images                            |
+| 2024-05-22    | XDebug: Understanding, Using, and Sorting Out Problems    |
 | 2024-05-29    | DDEV Docker Architecture, including build stages          |
 | 2024-06-05    | Traefik Router Configuration and Possibilities            |
 | 2024-06-12    | Advanced DDEV Add-On Techniques                           |
@@ -67,12 +67,13 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 | 2024-06-26    | Hostname Resolution and Debugging in DDEV                 |
 | 2024-07-10    | Using AI in DDEV Development (Continue.dev, etc.)         |
 | 2024-07-17    | Interpreting `ddev debug test` To Support Users           |
-| 2024-07-24    | XDebug: Understanding, Using, and Sorting Out Problems    |
+| 2024-07-24    | Maintaining DDEV Docker Images                            |
 | 2024-07-31    | Implementing a New DDEV Project Type                      |
 | 2024-08-07    | Managing and Maintaining DDEV Docs (Readthedocs.io, etc.) |
 | 2024-08-14    | Using Tmate to Debug GitHub Workflows                     |
 | 2024-08-21    | Using WSL2 with DDEV                                      |
 | 2024-08-28    | Git for Fun and Profit                                    |
+| 2024-09-11    | Making Your Own `ddev share` Variant                      |
 
 
 
