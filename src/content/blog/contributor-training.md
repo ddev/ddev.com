@@ -57,7 +57,6 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 
 | Training Date                                                                                                                | Description                                               |
 |------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|
-| [2024-05-08](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240508T08&p1=75&ah=1) | Go Development Environment with Goland or vscode          |
 | [2024-05-15](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240515T08&p1=75&ah=1) | Debugging DDEV Go Code: Commands and Tests                |
 | [2024-05-22](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240522T08&p1=75&ah=1) | XDebug: Understanding, Using, and Sorting Out Problems    |
 | [2024-05-29](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240529T08&p1=75&ah=1) | DDEV Docker Architecture, including build stages          |
@@ -74,6 +73,7 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 | [2024-08-21](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240821T08&p1=75&ah=1) | Using WSL2 with DDEV                                      |
 | [2024-08-28](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240828T08&p1=75&ah=1) | Git for Fun and Profit                                    |
 | [2024-09-11](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240911T08&p1=75&ah=1) | Making Your Own `ddev share` Variant                      |
+| [2024-09-18](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240918T08&p1=75&ah=1) | Go Development Environment with Goland or vscode          |
 
 Sign up on the simple form below to get the calendar invite with Zoom link. Drop by [Discord](https://discord.gg/5wjP76mBJD) or send [an email](mailto:support%40ddev.com) if you want to talk more.
 
