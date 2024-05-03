@@ -35,7 +35,7 @@ const { latestVersion } = Astro.props
         </p>
         <Terminal
           type="ubuntu"
-          code={`$ sudo apt-get update\n$ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`}
+          code={`$ sudo apt-get update\n$ sudo apt-get install curl docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`}
         />
       </div>
     </Fragment>
@@ -67,7 +67,7 @@ const { latestVersion } = Astro.props
 
         <Terminal
           type="ubuntu"
-          code={`$ sudo apt-get remove docker docker-engine docker.io containerd runc\n$ sudo apt-get update\n$ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`}
+          code={`$ sudo apt-get remove docker docker-engine docker.io containerd runc\n$ sudo apt-get update\n$ sudo apt-get install curl docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`}
         />
       </div>
     </Fragment>
@@ -100,7 +100,7 @@ const { latestVersion } = Astro.props
       <div class="prose py-5 dark:prose-invert">
         <Terminal
           type="ubuntu"
-          code={`$ sudo apt update && sudo apt install -y curl\n$ curl -fsSL https://pkg.ddev.com/apt/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null\n$ echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://pkg.ddev.com/apt/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list\n$ sudo apt update && sudo apt install -y ddev
+          code={`$ curl -fsSL https://pkg.ddev.com/apt/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null\n$ echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://pkg.ddev.com/apt/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list\n$ sudo apt update && sudo apt install -y ddev
 `}
         />
       </div>
@@ -117,7 +117,7 @@ const { latestVersion } = Astro.props
       <div class="prose py-5 dark:prose-invert">
         <Terminal
           type="ubuntu"
-          code={`$ sudo apt update && sudo apt install -y curl\n$ curl -fsSL https://pkg.ddev.com/apt/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null\n$ echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://pkg.ddev.com/apt/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list\n$ sudo apt update && sudo apt install -y ddev
+          code={`$ curl -fsSL https://pkg.ddev.com/apt/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null\n$ echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://pkg.ddev.com/apt/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list\n$ sudo apt update && sudo apt install -y ddev
 `}
         />
       </div>
