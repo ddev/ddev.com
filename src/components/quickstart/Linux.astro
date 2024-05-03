@@ -100,7 +100,7 @@ const { latestVersion } = Astro.props
       <div class="prose py-5 dark:prose-invert">
         <Terminal
           type="ubuntu"
-          code={`$ curl -fsSL https://pkg.ddev.com/apt/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null\n$ echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://pkg.ddev.com/apt/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list\n$ sudo apt update && sudo apt install -y ddev
+          code={`$ sudo apt update && sudo apt install -y curl\n$ curl -fsSL https://pkg.ddev.com/apt/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null\n$ echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://pkg.ddev.com/apt/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list\n$ sudo apt update && sudo apt install -y ddev
 `}
         />
       </div>
@@ -117,7 +117,7 @@ const { latestVersion } = Astro.props
       <div class="prose py-5 dark:prose-invert">
         <Terminal
           type="ubuntu"
-          code={`$ curl -fsSL https://pkg.ddev.com/apt/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null\n$ echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://pkg.ddev.com/apt/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list\n$ sudo apt update && sudo apt install -y ddev
+          code={`$ sudo apt update && sudo apt install -y curl\n$ curl -fsSL https://pkg.ddev.com/apt/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null\n$ echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://pkg.ddev.com/apt/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list\n$ sudo apt update && sudo apt install -y ddev
 `}
         />
       </div>
