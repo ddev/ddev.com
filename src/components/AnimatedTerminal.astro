@@ -33,14 +33,13 @@
       clumps: [
         { transition: "type", lines: 1, wait: 1000 },
         { transition: "roll", lines: 2, wait: 1000 },
-        { transition: "roll", lines: 4, wait: 1000 },
+        { transition: "roll", lines: 3, wait: 1000 },
         { transition: "show", lines: 2 },
       ],
       output: `ddev start
 
 Starting my-project...
 Container ddev-my-project-web  Running
-Container ddev-my-project-dba  Running
 Container ddev-my-project-db  Running
 Container ddev-router  Running
 <span class="text-green-500">Successfully started my-project</span>
@@ -49,31 +48,28 @@ Container ddev-router  Running
     {
       clumps: [
         { transition: "type", lines: 1, wait: 250 },
-        { transition: "show", lines: 28 },
+        { transition: "show", lines: 25 },
       ],
       output: `ddev describe
 ┌─────────────────────────────────────────────────────────────────────────────────────┐
 │ Project: my-project ~/dev/my-project https://my-project.ddev.site                   │
-│ Docker platform: docker-desktop                                                   │
-│ Router: traefik                                                 │
+│ Docker platform: docker-desktop                                                     │
+│ Router: traefik                                                                     │
 ├────────────┬──────┬────────────────────────────────────────────┬────────────────────┤
 │ SERVICE    │ STAT │ URL/PORT                                   │ INFO               │
 ├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
-│ web        │ <span class="text-green-500">OK</span>   │ https://my-project.ddev.site               │ php PHP8.1         │
+│ web        │ <span class="text-green-500">OK</span>   │ https://my-project.ddev.site               │ php PHP8.3         │
 │            │      │ InDocker: ddev-my-project-web:443,80,8025  │ nginx-fpm          │
-│            │      │ Host: localhost:51046,51047                │ docroot:''         │
-│            │      │                                            │ NodeJS:16          │
+│            │      │ Host: 127.0.0.1:51046,51047                │ docroot:''         │
+│            │      │                                            │ Perf mode: none    │
+│            │      │                                            │ NodeJS:20          │
 ├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
 │ db         │ <span class="text-green-500">OK</span>   │ InDocker: ddev-my-project-db:3306          │ mysql:8.0          │
-│            │      │ Host: localhost:51045                      │ User/Pass: 'db/db' │
+│            │      │ Host: 127.0.0.1:51045                      │ User/Pass: 'db/db' │
 │            │      │                                            │ or 'root/root'     │
 ├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
-│ PHPMyAdmin │ <span class="text-green-500">OK</span>   │ https://my-project.ddev.site:8037          │                    │
-│            │      │ InDocker: ddev-my-project-dba:80,80        │                    │
-│            │      │ \`ddev launch -p\`                           │                    │
-├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
-│ Mailhog    │      │ MailHog: https://my-project.ddev.site:8026 │                    │
-│            │      │ \`ddev launch -m\`                           │                    │
+│ Mailpit    │      │ Mailpit: https://my-project.ddev.site:8026 │                    │
+│            │      │ \`ddev mailpit\`                             │                    │
 ├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
 │ All URLs   │      │ https://my-project.ddev.site,              │                    │
 │            │      │ https://127.0.0.1:51046,                   │                    │
