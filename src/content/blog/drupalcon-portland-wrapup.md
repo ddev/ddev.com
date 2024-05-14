@@ -15,7 +15,7 @@ We go to Drupalcons because they're a great way to stay in touch with one of our
 
 **Drupal 11**: Drupal is about to release its newest version, Drupal 11. DDEV already has explicit support for Drupal 11, but there have been some late frictions with requirements like Sqlite 3.45 and Yarn v4. However, DDEV has them all supported.
 
-**Drupal Starshot**: The founder of Drupal, Dries Buytaert, did his regular "Driesnote" and launched a new initiative called "[Starshot](https://www.drupal.org/starshot)" to build a more usable out-of-the-box experience with Drupal. This initiative will proceed in parallel with normal Drupal core development and may have an impact on DDEV support for Drupal.
+**Drupal Starshot**: The founder of Drupal, Dries Buytaert, did his regular "Driesnote" and launched a new initiative called "[Starshot](https://www.drupal.org/starshot)" to build a more usable out-of-the-box experience with Drupal. This initiative will proceed in parallel with normal Drupal core development and may have an impact on DDEV's Drupal support, as Drupal 11 has also forced us to be ready for new requirements.
 
 **60% DDEV Drupal Usage**: The annual [Drupal Developer Survey](https://www.ironstar.io/devsurvey24/) was released in a Birds-of-a-feature (BoF) session. 60% of survey respondents reported using DDEV, compared to 42% in 2023. Many of you know that DDEV was chosen as Drupal's recommended local development solution in the last year.
 
