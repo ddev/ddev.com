@@ -25,7 +25,7 @@ We go to Drupalcons because they're a great way to stay in touch with one of our
 
 **BoFs on DDEV**: "Birds-of-a-Feather" sessions, or BoFs, are small, informal sessions that do not require going through the session submission process.
   * [Bernardo Martinez](https://github.com/bmartinez287) presented his **From Lando to DDEV** again, explaining to Lando folks what the process and needs are to move. (See his [Midcamp recording](https://www.midcamp.org/2024/topic-proposal/lando-ddev-side-side-migration).)
-  * In **DDEV From the Beginning** we worked with folks who had never installed or used DDEV before. The conference WIFI was predictably bad, but people got started anyway.
+  * In **DDEV From the Beginning** we worked with folks who had never installed or used DDEV before. The conference Wi-Fi was predictably bad, but people got started anyway.
   * In **Create a DDEV Add-on in 20 Minutes** we did in fact create a simple add-on. Several of the participants followed along and actually pushed to GitHub a real add-on that deployed custom commands, and they did it from scratch in the time we had for the session.
   * **DDEV Office Hours** was just for people to talk about DDEV issues, hopes, dreams, frictions, and it was a pleasure to talk with people.
   * **Make Your Own DDEV Hosting Provider** went great - several of the participants succeeded in creating a real working hosting provider that used SSH to access a server, dump the database, create a tarball of files, and download the result and load it into their local project. And we did that in the course of less than an your.
