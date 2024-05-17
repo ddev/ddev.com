@@ -5,6 +5,9 @@ pubDate: 2024-05-17
 summary: Debugging Golang applications using Goland or Vscode
 author: Randy Fay
 featureImage:
+  src: /img/blog/2018/11/marius-masalar-410695-unsplash-e1543521725507.jpg
+  alt: Shallow-focus close-up photo of annotated sheet music
+
   #src: /img/blog/2024/03/2024-ddev.png
   #alt: Debugging Golang Applications
   credit: 'Ideogram.ai: '
