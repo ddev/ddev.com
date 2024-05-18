@@ -40,7 +40,7 @@ Once you've have your IDE working, you can start debugging.
   * Change its name to the command you want to work on, like `ddev list`
   * Change the "Program Arguments" to the arguments to `ddev`, like `list`
   * Change the "Working Directory" to a valid DDEV project
-* Set a breakpoint by clicking by a line, for example in `list.go`
+* Set a breakpoint by clicking to the left of a line, for example in `cmd/ddev/cmd/list.go`
 * Click the `Run` or `Debug` button on the top bar.
 
 ### Debug a Test in the `pkg` directory
@@ -51,7 +51,7 @@ In DDEV, the tests in the `pkg` directory have no dependencies, you can just run
 
 * Find a test you want to run.
 * Click the arrowhead (run) or "bug" (debug) symbol next to the test
-* Or right click on a `*_test.go` file to run all the tests in the file.
+* Or right-click on a `*_test.go` file to run all the tests in the file.
 
 ### Debug a test in the `cmd` directory
 
@@ -59,4 +59,14 @@ In the `cmd` directory most tests actually *run* the `ddev` binary, so you'll ne
 
 Otherwise, everything is the same. Just click the arrowhead or the "bug" beside a test and let it run.
 
+## Visual Studio Code (vscode) Debugging
 
+Vscode debugging is a bit more tweaky. It seems that for commands, you need to configure what you want to use in the launch.json. DDEV code comes with a built-in launch.json, which you can copy-and-paste as needed. For example:
+
+* In DDEV's `launch.json` edit the configuration `debug ddev start` to set the `cwd` to a valid path to a DDEV project.
+* Set a breakpoint in `cmd/ddev/cmd/start.go`
+* Click the triangle/bug icon at the left to "Run and Debug"
+* Select "debug ddev start"
+* Click the green arrowhead to the left of "debug ddev start"
+* `ddev start` will happen, and it will stop at the line where you set the breakpoint.
+* Classic debugger behavior is available, either with icons or function keys, and you can examine variable values as you go.
