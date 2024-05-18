@@ -74,6 +74,10 @@ Vscode debugging is a bit more tweaky. It seems that for commands, you need to c
 
 Running tests is almost exactly the same as in Goland. Right-click the arrow next to the test function and choose "Run" or "Debug". The same caveats apply for `cmd` tests, you need `ddev` built from the same code in your `$PATH`.
 
+## Working in Gitpod
+
+Every DDEV PR and the main page has a launcher for Gitpod. Gitpod is just a Linux-based vscode development environment in the cloud, in a browser. You can do everything you would want to do with it that you could do with vscode locally. If you click the "Launch in Gitpod" button on any PR, that PR will be set up for you automatically in Gitpod, with all vscode extensions already loaded, and with DDEV already compiled.
+
 ## Contributions welcome!
 
 When you try this out in your own environment, you'll certainly have suggestions to improve it. Please do a PR to this blog adding your techniques. Info and a training session on how to do a PR to anything in ddev.com is at [DDEV Website For Contributors](ddev-website-for-contributors.md).
