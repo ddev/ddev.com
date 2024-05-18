@@ -5,12 +5,9 @@ pubDate: 2024-05-17
 summary: Debugging Golang applications using Goland or Vscode
 author: Randy Fay
 featureImage:
-  src: /img/blog/2018/11/marius-masalar-410695-unsplash-e1543521725507.jpg
-  alt: Shallow-focus close-up photo of annotated sheet music
-
-  #src: /img/blog/2024/03/2024-ddev.png
-  #alt: Debugging Golang Applications
-  credit: 'Ideogram.ai: '
+  src: /img/blog/2024/05/golang-nerd-banner.png
+  alt: Golang Gopher teaching Go
+  credit: 'Golang logo from https://blog.golang.org/go-brand and Gopher Nerd by Nats Romanova, https://github.com/GolangUA/gopher-logos/blob/master/README.md'
 categories:
   - Guides
 ---
@@ -63,6 +60,8 @@ Otherwise, everything is the same. Just click the arrowhead or the "bug" beside 
 
 Vscode debugging is a bit more tweaky. It seems that for commands, you need to configure what you want to use in the launch.json. DDEV code comes with a built-in launch.json, which you can copy-and-paste as needed. For example:
 
+### Running or debugging a simple command like `ddev list`
+
 * In DDEV's `launch.json` edit the configuration `debug ddev start` to set the `cwd` to a valid path to a DDEV project.
 * Set a breakpoint in `cmd/ddev/cmd/start.go`
 * Click the triangle/bug icon at the left to "Run and Debug"
@@ -70,3 +69,13 @@ Vscode debugging is a bit more tweaky. It seems that for commands, you need to c
 * Click the green arrowhead to the left of "debug ddev start"
 * `ddev start` will happen, and it will stop at the line where you set the breakpoint.
 * Classic debugger behavior is available, either with icons or function keys, and you can examine variable values as you go.
+
+### Running a test
+
+Running tests is almost exactly the same as in Goland. Right-click the arrow next to the test function and choose "Run" or "Debug". The same caveats apply for `cmd` tests, you need `ddev` built from the same code in your `$PATH`.
+
+## Contributions welcome!
+
+When you try this out in your own environment, you'll certainly have suggestions to improve it. Please do a PR to this blog adding your techniques. Info and a training session on how to do a PR to anything in ddev.com is at [DDEV Website For Contributors](ddev-website-for-contributors.md).
+
+And join us most Wednesdays for [DDEV Live Contributor Training](contributor-training.md).
