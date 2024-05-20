@@ -1,7 +1,7 @@
 ---
 title: "Working with Vite in DDEV - an introduction"
 pubDate: 2023-11-08
-modifiedDate: 2024-04-20
+modifiedDate: 2024-05-20
 summary: Working with Vite in DDEV
 author: Matthias Andrasch
 featureImage:
@@ -398,30 +398,52 @@ But I could not find more info regarding DDEV usage. Happy to update this sectio
 
 Since June 2022 [Vite is the default bundler for Laravel](https://laravel-news.com/vite-is-the-default-frontend-asset-bundler-for-laravel-applications), replacing Laravel Mix (Webpack).
 
-Laravel's Vite integration is a bit special, because it has its own npm integration with a so called `hot` file.
-
-You need to change the `vite.config.js` like this:
+First, expose the port via `.ddev/config.yaml` and run `ddev restart`:
 
 ```
- server: {
-    // respond to all hosts
-    host: '0.0.0.0',
-    strictPort: true,
-    port: 5173,
-    hmr: {
-        // Force the Vite client to connect via SSL
-        // This will also force a "https://" URL in the public/hot file
-        protocol: 'wss',
-        // The host where the Vite dev server can be accessed
-        // This will also force this host to be written to the public/hot file
-        host: `${process.env.DDEV_HOSTNAME}`
+# .ddev/config.yaml
+web_extra_exposed_ports:
+  - name: node-vite
+    container_port: 5173
+    http_port: 5172
+    https_port: 5173
+```
+
+Afterwards, you just need to change the `vite.config.js` like this:
+
+```
+import { defineConfig } from 'vite';
+import laravel from 'laravel-vite-plugin';
+
+const port = 5173;
+const origin = `${process.env.DDEV_PRIMARY_URL}:${port}`;
+
+export default defineConfig({
+    plugins: [
+        laravel({
+            input: ['resources/css/app.css', 'resources/js/app.js'],
+            refresh: true,
+        }),
+    ],
+    server: {
+        // respond to all network requests
+        host: '0.0.0.0',
+        port: port,
+        strictPort: true,
+        // Defines the origin of the generated asset URLs during development,
+        // this will also be used for the public/hot file (Vite devserver URL)
+        origin: origin
     }
-},
+});
 ```
+
+The devserver can be started via `ddev npm run dev`.
 
 Example repository:
 
 - [mandrasch/ddev-laravel-vite](https://github.com/mandrasch/ddev-laravel-vite)
+
+Note: Laravel's Vite integration is a bit special, because it has its own npm integration with a so called `public/hot` file.
 
 #### TYPO3
 
