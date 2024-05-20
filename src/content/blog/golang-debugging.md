@@ -2,7 +2,7 @@
 title: "Debugging Golang (Go) Applications"
 pubDate: 2024-05-17
 # modifiedDate: 2024-04-23
-summary: Debugging Golang applications using Goland or Vscode
+summary: Debugging Golang applications using GoLand or VS Code
 author: Randy Fay
 featureImage:
   src: /img/blog/2024/05/golang-nerd-banner.png
@@ -21,8 +21,8 @@ First, you need some of the basics:
 * Install `go`, `make`, and `delve` (needed for Visual Studio Code only)
   * On macOS: `brew install golang delve` (`make` is already provided by Apple's Xcode command-line tools)
   * WSL2/Linux: `sudo snap install --classic go && sudo apt update && sudo apt install -y build-essential clang ccache`
-* Install your IDE, Goland or vscode. On Windows/WSL2 most people install each of these on the Windows side, although they can be run inside WSL2 using the Linux versions.
-* For Goland, nothing further is required, but on vscode you'll need to install the [golang go](https://marketplace.visualstudio.com/items?itemName=golang.go) extension.
+* Install your IDE, [GoLand](https://www.jetbrains.com/go/) or [VS Code](https://code.visualstudio.com/). On Windows/WSL2 most people install each of these on the Windows side, although they can be run inside WSL2 using the Linux versions.
+* For GoLand, nothing further is required, but on VS Code you'll need to install the [golang go](https://marketplace.visualstudio.com/items?itemName=golang.go) extension.
 
 Once you've have your IDE working, you can start debugging.
 
@@ -30,9 +30,9 @@ Once you've have your IDE working, you can start debugging.
 
 ### Debug a simple command like `ddev list`
 
-* Open `main.go` in Goland
+* Open `main.go` in GoLand
 * Right-click on `main.go` in the left pane (`cmd/ddev/main.go`) and click `Run`
-* Goland will create a "Run/Debug Configuration" named `go build main.go`
+* GoLand will create a "Run/Debug Configuration" named `go build main.go`
 * Edit the configuration:
   * Change its name to the command you want to work on, like `ddev list`
   * Change the "Program Arguments" to the arguments to `ddev`, like `list`
@@ -52,13 +52,13 @@ In DDEV, the tests in the `pkg` directory have no dependencies, you can just run
 
 ### Debug a test in the `cmd` directory
 
-In the `cmd` directory most tests actually *run* the `ddev` binary, so you'll need to make sure that the `ddev` in the PATH is the one that represents the code you're testing. For example, `TestDebugMigrateDatabase` in `cmd\ddev\cmd\debug-migrate-database_test.go` actually executes `ddev debug migrate-database`, so if you don't have the right `ddev` in your PATH, your test is not valid.
+In the `cmd` directory most tests actually *run* the `ddev` binary, so you'll need to make sure that the `ddev` in the `$PATH` is the one that represents the code you're testing. For example, `TestDebugMigrateDatabase` in `cmd\ddev\cmd\debug-migrate-database_test.go` actually executes `ddev debug migrate-database`, so if you don't have the right `ddev` in your `$PATH`, your test is not valid.
 
 Otherwise, everything is the same. Just click the arrowhead or the "bug" beside a test and let it run.
 
-## Visual Studio Code (vscode) Debugging
+## Visual Studio Code (VS Code) Debugging
 
-Vscode debugging is a bit more tweaky. It seems that for commands, you need to configure what you want to use in the launch.json. DDEV code comes with a built-in launch.json, which you can copy-and-paste as needed. For example:
+VS Code debugging is a bit more tweaky. It seems that for commands, you need to configure what you want to use in the launch.json. DDEV code comes with a built-in launch.json, which you can copy-and-paste as needed. For example:
 
 ### Running or debugging a simple command like `ddev list`
 
@@ -72,11 +72,11 @@ Vscode debugging is a bit more tweaky. It seems that for commands, you need to c
 
 ### Running a test
 
-Running tests is almost exactly the same as in Goland. Right-click the arrow next to the test function and choose "Run" or "Debug". The same caveats apply for `cmd` tests, you need `ddev` built from the same code in your `$PATH`.
+Running tests is almost exactly the same as in GoLand. Right-click the arrow next to the test function and choose "Run" or "Debug". The same caveats apply for `cmd` tests, you need `ddev` built from the same code in your `$PATH`.
 
 ## Working in Gitpod
 
-Every DDEV PR and the main page has a launcher for Gitpod. Gitpod is just a Linux-based vscode development environment in the cloud, in a browser. You can do everything you would want to do with it that you could do with vscode locally. If you click the "Launch in Gitpod" button on any PR, that PR will be set up for you automatically in Gitpod, with all vscode extensions already loaded, and with DDEV already compiled.
+Every DDEV PR and the main page has a launcher for Gitpod. Gitpod is just a Linux-based VS Code development environment in the cloud, in a browser. You can do everything you would want to do with it that you could do with VS Code locally. If you click the "Launch in Gitpod" button on any PR, that PR will be set up for you automatically in Gitpod, with all VS Code extensions already loaded, and with DDEV already compiled.
 
 ## Contributions welcome!
 
