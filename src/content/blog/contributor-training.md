@@ -11,13 +11,13 @@ categories:
   - Community
 ---
 
-**TL;DR: Sign up for contributor training** on the form below to get the calendar invite with zoom link.
+**TL;DR: Sign up for contributor training** at [DDEV Live Event meetup group](https://www.meetup.com/ddev-events/) to get invitations to trainings.
 
 As we announced in [Recruiting Contributors and Maintainers](/blog/recruiting-maintainers/) we're actively trying to increase the DDEV community of contributors and maintainers. To do that, we're going to start a series of trainings, and we'd love to have you come. The trainings will include information on how to contribute by:
 
 * Involvement in the issue queue and Discord channel
 * Creating pull requests to solve known problems or provide new features
-* Test new prereleases
+* Test new pre-releases
 * Understand basic Go programming techniques
 * Set up a Go development environment using Goland or Vscode
 * Run automated tests on your own machine
