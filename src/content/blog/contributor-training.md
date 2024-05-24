@@ -17,7 +17,7 @@ As we announced in [Recruiting Contributors and Maintainers](/blog/recruiting-ma
 
 * Involvement in the issue queue and Discord channel
 * Creating pull requests to solve known problems or provide new features
-* Test new pre-releases
+* Test new prereleases
 * Understand basic Go programming techniques
 * Set up a Go development environment using Goland or Vscode
 * Run automated tests on your own machine
