@@ -76,8 +76,9 @@ WSL2 is a complex networking environment, and it's made more complex by the fact
 
 As a result of the complexity, there's an additional set of [WSL2 Xdebug debugging instructions](https://ddev.readthedocs.io/en/stable/users/debugging-profiling/step-debugging/#wsl2-xdebug-troubleshooting) in the docs.
 
-Remember that if you're one of the very unusual people who runs the Linux version your IDE inside WSL2, you'll be using `ddev config global --xdebug-ide-location=wsl2`. This is quite unusual. 
+Remember that if you're one of the very unusual people who runs the Linux version your IDE inside WSL2, you'll be using `ddev config global --xdebug-ide-location=wsl2`. This is quite unusual.
 
+On any platform you can use `DDEV_DEBUG=true ddev start` and it will explain to you where `host.docker.internal` comes from with an explanation like this: `host.docker.internal='172.22.192.1' because IsWSL2 and !IsDockerDesktop; received from ip -4 route show default`. This can be especially helpful on WSL2.
 
 ## Contributions welcome!
 
