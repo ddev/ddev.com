@@ -36,6 +36,29 @@ In general, that's all you have to know. The exact details for PhpStorm and Visu
 
 ## How Xdebug works
 
+Xdebug is a network protocol. When `php` or `php-fpm` is executed and Xdebug is enabled in it, it will try to contact the IDE specified in the PHP setting `xdebug.client_host`. On DDEV this value is automatically set to `host.docker.internal`, and DDEV tries to make sure that `host.docker.internal` is set appropriately inside the `ddev-webserver` container on all platforms and Docker providers.
+
+If you have `ddev xdebug on` and you execute PHP code, normally by visiting a URL in your project, the `php` process will attempt to contact the IDE using `host.docker.internal` and port 9003. If there are appropriate path mappings in the IDE, and the IDE is listening, everything "just works" from there.
+
+## Demonstrating Xdebug's behavior
+
+You can easily test this out using the handy network utility `nc` or `netcat`. 
+
+On your host workstation (the same place your IDE is running) you can 
+```
+nc -l 0.0.0.0 9003
+```
+
+(note that different versions of `netcat/nc` may take slightly different arguments.)
+
+If you then visit your project, for example with `ddev exec curl localhost` or `curl https://<project>.ddev.site` you'll see something like this pop up in the `nc` session:
+
+```xml
+476<?xml version="1.0" encoding="iso-8859-1"?>
+<init xmlns="urn:debugger_protocol_v1" xmlns:xdebug="https://xdebug.org/dbgp/xdebug" fileuri="file:///var/www/html/web/index.php" language="PHP" xdebug:language_version="8.2.19" protocol_version="1.0" appid="5089"><engine version="3.2.2"><![CDATA[Xdebug]]></engine><author><![CDATA[Derick Rethans]]></author><url><![CDATA[https://xdebug.org]]></url><copyright><![CDATA[Copyright (c) 2002-2023 by Derick Rethans]]></copyright></init>
+```
+
+That's exactly what your IDE seems in the same situation.
 
 ## Troubleshooting
 
