@@ -58,16 +58,29 @@ If you then visit your project, for example with `ddev exec curl localhost` or `
 <init xmlns="urn:debugger_protocol_v1" xmlns:xdebug="https://xdebug.org/dbgp/xdebug" fileuri="file:///var/www/html/web/index.php" language="PHP" xdebug:language_version="8.2.19" protocol_version="1.0" appid="5089"><engine version="3.2.2"><![CDATA[Xdebug]]></engine><author><![CDATA[Derick Rethans]]></author><url><![CDATA[https://xdebug.org]]></url><copyright><![CDATA[Copyright (c) 2002-2023 by Derick Rethans]]></copyright></init>
 ```
 
-That's exactly what your IDE seems in the same situation.
+That's exactly what your IDE receives from PHP in the same situation.
 
 ## Troubleshooting
 
+There is an extensive set of [troubleshooting instructions](https://ddev.readthedocs.io/en/stable/users/debugging-profiling/step-debugging/#troubleshooting-xdebug) in the DDEV docs, but remember that for most people there are most-common reasons for trouble:
+
+1. Your website is not executing the code where you have the breakpoint set, so it doesn't stop at your breakpoint. (Avoid this one by telling your IDE to stop at the first line no matter what, or by settings a breakpoint at the first line of your index.php.)
+2. You do not have your IDE set up to map your code to the code in the container successfully. Your `index.php` path on the workstation host should map to the path inside the container (often something like `/var/www/html/web/index.php`)
+3. You forgot to `ddev xdebug enable` or forgot to have your IDE listen for Xdebug.
+
+You may have problems beyond those in some environments, and they are often firewall-related. They can be sorted out by temporarily disabling your firewall and testing simple connectivity from the DDEV web container to the IDE. For example, make your IDE listen, then `ddev ssh` and `telnet host.docker.internal 9003`. If you get a connection there, and then *do not* get a connection when you tell your IDE to stop listening, you likely have all the networking problems sorted out.
 
 ### WSL2 Complexities and Troubleshooting
+
+WSL2 is a complex networking environment, and it's made more complex by the fact that most developers run their IDE on the Windows side, while running DDEV in WSL2. That means that DDEV has to figure out how to set `host.docker.internal` to the right IP address for your Windows IDE. DDEV tries hard and usually succeeds!
+
+As a result of the complexity, there's an additional set of [WSL2 Xdebug debugging instructions](https://ddev.readthedocs.io/en/stable/users/debugging-profiling/step-debugging/#wsl2-xdebug-troubleshooting) in the docs.
+
+Remember that if you're one of the very unusual people who runs the Linux version your IDE inside WSL2, you'll be using `ddev config global --xdebug-ide-location=wsl2`. This is quite unusual. 
 
 
 ## Contributions welcome!
 
-When you try this out in your own environment, you'll certainly have suggestions to improve it. Please do a PR to this blog adding your techniques. Info and a training session on how to do a PR to anything in ddev.com is at [DDEV Website For Contributors](ddev-website-for-contributors.md).
+We always love to hear your experiences with DDEV, so please do a PR to this blog adding your experience. Info and a training session on how to do a PR to anything in ddev.com is at [DDEV Website For Contributors](ddev-website-for-contributors.md). And if you can improve the DDEV docs, click the pencil at the top of any docs page to add your suggestion.
 
-And join us most Wednesdays for [DDEV Live Contributor Training](contributor-training.md).
+And join us most Wednesdays for [DDEV Live Contributor Training](https://www.meetup.com/ddev-events/). Past trainings are recorded at [contributor training](/blog/contributor-training).
