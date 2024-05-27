@@ -64,7 +64,7 @@ That's exactly what your IDE receives from PHP in the same situation.
 
 There is an extensive set of [troubleshooting instructions](https://ddev.readthedocs.io/en/stable/users/debugging-profiling/step-debugging/#troubleshooting-xdebug) in the DDEV docs, but remember that for most people there are most-common reasons for trouble:
 
-1. Your website is not executing the code where you have the breakpoint set, so it doesn't stop at your breakpoint. (Avoid this one by telling your IDE to stop at the first line no matter what, or by settings a breakpoint at the first line of your index.php.)
+1. Your website is not executing the code where you have the breakpoint set, so it doesn't stop at your breakpoint. (Avoid this one by telling your IDE to stop at the first line no matter what, or by settings a breakpoint at the first line of your `index.php`.)
 2. You do not have your IDE set up to map your code to the code in the container successfully. Your `index.php` path on the workstation host should map to the path inside the container (often something like `/var/www/html/web/index.php`)
 3. You forgot to `ddev xdebug enable` or forgot to have your IDE listen for Xdebug.
 
@@ -82,6 +82,6 @@ On any platform you can use `DDEV_DEBUG=true ddev start` and it will explain to 
 
 ## Contributions welcome!
 
-We always love to hear your experiences with DDEV, so please do a PR to this blog adding your experience. Info and a training session on how to do a PR to anything in ddev.com is at [DDEV Website For Contributors](ddev-website-for-contributors.md). And if you can improve the DDEV docs, click the pencil at the top of any docs page to add your suggestion.
+We always love to hear your experiences with DDEV, so please do a PR to this blog adding your experience. Info and a training session on how to do a PR to anything in ddev.com is at [DDEV Website For Contributors](/blog/ddev-website-for-contributors/). And if you can improve the DDEV docs, click the pencil at the top of any docs page to add your suggestion.
 
 And join us most Wednesdays for [DDEV Live Contributor Training](https://www.meetup.com/ddev-events/). Past trainings are recorded at [contributor training](/blog/contributor-training).
