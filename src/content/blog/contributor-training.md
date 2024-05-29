@@ -1,7 +1,7 @@
 ---
 title: "DDEV Contributor Live Training"
 pubDate: 2023-07-09
-modifiedDate: 2024-04-24
+modifiedDate: 2024-05-27
 summary: Live contributor training is available for those who want to learn to contribute and maintain DDEV.
 author: Randy Fay
 featureImage:
@@ -11,7 +11,7 @@ categories:
   - Community
 ---
 
-**TL;DR: Sign up for contributor training** on the form below to get the calendar invite with zoom link.
+**TL;DR: Sign up for contributor training** at [DDEV Live Event meetup group](https://www.meetup.com/ddev-events/) to get invitations to trainings.
 
 As we announced in [Recruiting Contributors and Maintainers](/blog/recruiting-maintainers/) we're actively trying to increase the DDEV community of contributors and maintainers. To do that, we're going to start a series of trainings, and we'd love to have you come. The trainings will include information on how to contribute by:
 
@@ -51,30 +51,25 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 | 2023-11-07    | [DDEV Add-ons: Creating, maintaining, testing](https://www.dropbox.com/scl/fi/bnvlv7zswxwm8ix1s5u4t/2023-11-07_DDEV_Add-ons.mp4?rlkey=5cma8s11pscxq0skawsoqrscp&dl=0) see [outline](https://randyfay.notion.site/Contributor-Training-Add-ons-creating-maintaining-testing-1040f7d007c94bef8669a400a2437c98?pvs=4)                        |
 | 2023-11-14    | [DDEV Hosting Providers: Creating, Maintaining, Using](https://www.dropbox.com/scl/fi/yjgdjkiwwr4egyaewj40e/2023-11-14_DDEV_provider_integrations.mp4?rlkey=4ygpjaopgp2xbdswptsnzf50u&dl=0), see [outline](https://randyfay.notion.site/Contributor-Training-Provider-integrations-fb9676ca17d64fe6bf16a6b5b1622ccb?pvs=4).               |
 | 2024-05-15    | [Debugging DDEV Go Code: Commands and Tests](https://www.youtube.com/watch?v=E-AEzC1p76E), see [blog](/blog/golang-debugging).                                                                                                                                                                                                            |
+| 2024-05-22    | [Xdebug and DDEV, How it works and Troubleshooting](https://www.youtube.com/watch?v=4MrwXTaHfnc), see [blog](/blog/xdebug-debugging).                                                                                                                                                                                                     |
 
 <a name="upcoming-trainings"></a>
 **Upcoming Trainings:**
 
+* DDEV Docker Architecture, including build stages
+* Traefik Router Configuration and Possibilities
+* Advanced DDEV Add-On Techniques
+* DDEV automated tests and how to improve them
+* Hostname Resolution and Debugging in DDEV
+* Using AI in DDEV Development (Continue.dev, etc.)
+* Interpreting `ddev debug test` To Support Users
+* Maintaining DDEV Docker Images
+* Implementing a New DDEV Project Type
+* Managing and Maintaining DDEV Docs (Readthedocs.io, etc.)
+* Using Tmate to Debug GitHub Workflows
+* Using WSL2 with DDEV
+* Git for Fun and Profit
+* Making Your Own `ddev share` Variant
+* Go Development Environment with Goland or vscode
 
-| Training Date                                                                                                                | Description                                               |
-|------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|
-| [2024-05-22](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240522T08&p1=75&ah=1) | XDebug: Understanding, Using, and Sorting Out Problems    |
-| [2024-05-29](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240529T08&p1=75&ah=1) | DDEV Docker Architecture, including build stages          |
-| [2024-06-05](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240605T08&p1=75&ah=1) | Traefik Router Configuration and Possibilities            |
-| [2024-06-12](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240612T08&p1=75&ah=1) | Advanced DDEV Add-On Techniques                           |
-| [2024-06-19](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240619T08&p1=75&ah=1) | DDEV automated tests and how to improve them              |
-| [2024-06-26](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240626T08&p1=75&ah=1) | Hostname Resolution and Debugging in DDEV                 |
-| [2024-07-10](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240710T08&p1=75&ah=1) | Using AI in DDEV Development (Continue.dev, etc.)         |
-| [2024-07-17](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240717T08&p1=75&ah=1) | Interpreting `ddev debug test` To Support Users           |
-| [2024-07-24](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240724&p1=75&ah=1)    | Maintaining DDEV Docker Images                            |
-| [2024-07-31](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240731&p1=75&ah=1)    | Implementing a New DDEV Project Type                      |
-| [2024-08-07](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240807T08&p1=75&ah=1) | Managing and Maintaining DDEV Docs (Readthedocs.io, etc.) |
-| [2024-08-14](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240814T08&p1=75&ah=1) | Using Tmate to Debug GitHub Workflows                     |
-| [2024-08-21](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240821T08&p1=75&ah=1) | Using WSL2 with DDEV                                      |
-| [2024-08-28](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240828T08&p1=75&ah=1) | Git for Fun and Profit                                    |
-| [2024-09-11](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240911T08&p1=75&ah=1) | Making Your Own `ddev share` Variant                      |
-| [2024-09-18](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Contributor+Training&iso=20240918T08&p1=75&ah=1) | Go Development Environment with Goland or vscode          |
-
-Sign up on the simple form below to get the calendar invite with Zoom link. Drop by [Discord](https://discord.gg/5wjP76mBJD) or send [an email](mailto:support%40ddev.com) if you want to talk more.
-
-<script id='formScript5879720000000512073' src='https://crm.zoho.com/crm/WebFormServeServlet?rid=d761f49b3421baca337046aa6e88b35792eb01f83d92a9e1912e01c21b14e7dfgide888d842d2182432c1bf117aecd6280f1bf0b73e665551779217573985104582&script=$sYG'></script>
+Please join the [DDEV Live Event meetup](https://www.meetup.com/ddev-events/) to get notified about upcoming trainings. Drop by [Discord](https://discord.gg/5wjP76mBJD) or send [an email](mailto:support%40ddev.com) if you want to talk more.
