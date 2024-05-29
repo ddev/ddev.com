@@ -475,7 +475,7 @@ I experimented with Gitpod support for Vite in these demo projects, see:
 - [mandrasch/ddev-laravel-vite](https://github.com/mandrasch/ddev-laravel-vite)
 - [mandrasch/ddev-craftcms-vite](https://github.com/mandrasch/ddev-craftcms-vite)
 
-Note: On Gitpod, DDEVs router is not used - therefore some adjustments are needed. Exposing the port does not work via `.ddev/config.yaml`, instead you can use a docker compose file. See `docker-compose.vite-workaround.yaml` in the demo repositories.
+Note: On Gitpod, DDEVs router is not used - therefore some adjustments are needed. Exposing the port does not work via `.ddev/config.yaml`, instead you can use a docker-compose-file. See `docker-compose.vite-workaround.yaml` in the demo repositories.
 
 See [DDEV Installation: Gitpod](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#gitpod) for more information.
 
@@ -486,7 +486,7 @@ I experimented with Codespaces support for Vite in these demo projects, see:
 - [mandrasch/ddev-laravel-vite](https://github.com/mandrasch/ddev-laravel-vite)
 - [mandrasch/ddev-craftcms-vite](https://github.com/mandrasch/ddev-craftcms-vite)
 
-Note: On Codespaces, DDEVs router is not used - therefore some adjustments are needed. Exposing the port does not work via `.ddev/config.yaml`, instead you can use a docker compose file. See `docker-compose.vite-workaround.yaml` in the demo repositories.
+Note: On Codespaces, DDEVs router is not used - therefore some adjustments are needed. Exposing the port does not work via `.ddev/config.yaml`, instead you can use a docker-compose-file. See `docker-compose.vite-workaround.yaml` in the demo repositories.
 
 See [DDEV Installation: Codespaces](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#github-codespaces) for more information.
 
