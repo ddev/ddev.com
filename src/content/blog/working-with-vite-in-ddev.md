@@ -36,7 +36,7 @@ This needs a `ddev restart` afterwards to apply changes.
 
 2.) Adjust the Vite config to use DDEVs project URL, e.g. `https://test-vite.ddev.site:5173`:
 
-```
+```js
 import { defineConfig } from 'vite'
 const port = 5173;
 const origin = `${process.env.DDEV_PRIMARY_URL}:${port}`;
