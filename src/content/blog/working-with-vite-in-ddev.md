@@ -21,10 +21,47 @@ Vite is written in NodeJS. DDEV already has built-in support for [NodeJS](https:
 
 In order to use Vite in our DDEV projects, we need to do two things:
 
-1. Expose Vite's development server port (default: `5173`)
-2. Adjust the Vite config to use DDEVs project URL, e.g. `https://test-vite.ddev.site:5173`.
+1.) Expose Vite's development server port (default: `5173`):
 
-### A simple example
+```yaml
+# .ddev/config.yaml
+web_extra_exposed_ports:
+  - name: vite
+    container_port: 5173
+    http_port: 5172
+    https_port: 5173
+```
+
+This needs a `ddev restart` afterwards to apply changes.
+
+2.) Adjust the Vite config to use DDEVs project URL, e.g. `https://test-vite.ddev.site:5173`:
+
+```
+import { defineConfig } from 'vite'
+const port = 5173;
+const origin = `${process.env.DDEV_PRIMARY_URL}:${port}`;
+
+export default defineConfig({
+  
+  // Your settings
+  // ...
+
+  // Adjust Vites dev server to work with DDEV
+  // https://vitejs.dev/config/server-options.html
+  server: {
+    // respond to all network requests:
+    host: '0.0.0.0',
+    port: port,
+    strictPort: true,
+    // Defines the origin of the generated asset URLs during development
+    origin: origin
+  },
+})
+```
+
+Some more customizations might be needed depending on your CMS / framework, see [List of PHP CMS integrations](/#list-of-php-cmsintegrations) below.
+
+### A plain PHP example
 
 Let's try it out with a simple example project. We will use Vite v4 for this.
 
