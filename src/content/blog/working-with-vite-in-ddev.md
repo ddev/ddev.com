@@ -505,23 +505,27 @@ Example repository for idleberg/php-wordpress-vite-assets, quick & dirty:
 
 - [mandrasch/ddev-wp-vite-demo](https://github.com/mandrasch/ddev-wp-vite-demo)
 
-#### GitHub Codespaces
-
-Another special case is GitHub Codespaces. This is a bit tricky because DDEVs router will not be used in Codespace environments.
-
-Therefore some adjustments are needed.
-
-I created a first quick & dirty demo with CraftCMS, in which I use another port (5174) for Vite when Codespaces is detected:
-
-- [Setup in Codespaces](https://github.com/mandrasch/ddev-craftcms-vite/tree/main#1-setup-in-codespaces)
-- [config/vite.php](https://github.com/mandrasch/ddev-craftcms-vite/blob/main/config/vite.php)
-- [vite.config.js](https://github.com/mandrasch/ddev-craftcms-vite/blob/main/vite.config.js)
-
-I guess this could be improved a lot ;-) See [DDEV Installation: Codespaces](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#github-codespaces) for more information.
-
 #### Gitpod
 
-I couldn't find a resource where Vite was used with DDEV in Gitpod. Happy to update this section as well with more resources!
+I experimented with Gitpod support for Vite in these demo projects, see:
+
+- [mandrasch/ddev-laravel-vite](https://github.com/mandrasch/ddev-laravel-vite)
+- [mandrasch/ddev-craftcms-vite](https://github.com/mandrasch/ddev-craftcms-vite)
+
+Note: On Gitpod, DDEVs router is not used - therefore some adjustments are needed. Exposing the port does not work via `.ddev/config.yaml`, instead you can use a docker-compose-file. See `docker-compose.vite-workaround.yaml` in the demo repositories.
+
+See [DDEV Installation: Gitpod](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#gitpod) for more information.
+
+#### GitHub Codespaces
+
+I experimented with Codespaces support for Vite in these demo projects, see:
+
+- [mandrasch/ddev-laravel-vite](https://github.com/mandrasch/ddev-laravel-vite)
+- [mandrasch/ddev-craftcms-vite](https://github.com/mandrasch/ddev-craftcms-vite)
+
+Note: On Codespaces, DDEVs router is not used - therefore some adjustments are needed. Exposing the port does not work via `.ddev/config.yaml`, instead you can use a docker-compose-file. See `docker-compose.vite-workaround.yaml` in the demo repositories.
+
+See [DDEV Installation: Codespaces](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#github-codespaces) for more information.
 
 ### NodeJS
 
