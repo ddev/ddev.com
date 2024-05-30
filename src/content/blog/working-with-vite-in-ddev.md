@@ -59,7 +59,7 @@ export default defineConfig({
 })
 ```
 
-Some more customizations might be needed depending on your CMS / framework, see [List of PHP CMS integrations](/#list-of-php-cmsintegrations) below.
+Some more customizations might be needed depending on your CMS / framework, see [List of PHP CMS integrations](#list-of-php-cmsintegrations) below.
 
 ### A plain PHP example
 
