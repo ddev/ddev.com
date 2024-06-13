@@ -28,7 +28,7 @@ All currently maintained MariaDB server versions got this breaking change, inclu
 
 You can read the details in the innocently titled article [MariaDB Dump File Compatibility Change](https://mariadb.org/mariadb-dump-file-compatibility-change/)
 
-## What does it mean To my DDEV projects?
+## What does it mean to my DDEV projects?
 
 ### DDEV v1.23.1
 
