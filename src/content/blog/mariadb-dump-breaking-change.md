@@ -65,7 +65,7 @@ In DDEV v1.23.2:
 
 ## Links
 
-* DDEV issue [ddev import-db fails with "Error: Unknown command '\-'" bec...](https://github.com/ddev/ddev/issues/6249)
+* DDEV issue [ddev import-db fails with "Error: Unknown command '\-'" because of new directive in mariadb-dump output](https://github.com/ddev/ddev/issues/6249)
 * [MariaDB Dump File Compatibility Change](https://mariadb.org/mariadb-dump-file-compatibility-change/)
 * MariaDB Issue [MariaDB 10.6.18 seems to generate invalid SQL dumps](https://jira.mariadb.org/browse/MDEV-34183)
 * [DDEV's MySQL Client Builder](https://github.com/ddev/mysql-client-build/)
