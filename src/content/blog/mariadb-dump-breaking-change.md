@@ -6,8 +6,8 @@ summary: What is the breaking change in Mariadb-dump (mysqldump) and what does i
 author: Randy Fay
 featureImage:
   src: /img/blog/2024/06/weeping-sea-lion.png
-  alt: 2024 DDEV Plans
-  credit: 'Dall-E: '
+  alt: "Dall-E: an image of a seal posed and crying with big tear drops, something like the MariaDB logo"
+  credit: 'Dall-E: an image of a seal posed and crying with big tear drops, something like the MariaDB logo'
 categories:
   - Community
 ---
@@ -69,7 +69,7 @@ In DDEV v1.23.2:
 * [MariaDB Dump File Compatibility Change](https://mariadb.org/mariadb-dump-file-compatibility-change/)
 * MariaDB Issue [MariaDB 10.6.18 seems to generate invalid SQL dumps](https://jira.mariadb.org/browse/MDEV-34183)
 * [DDEV's MySQL Client Builder](https://github.com/ddev/mysql-client-build/)
-* [MySQL Client Build system](https://github.com/ddev/mysql-client-build/)
+* [MySQL Client build tool](https://github.com/ddev/mysql-client-build/)
 
 ## Don't forget to help us maintain all this!
 
