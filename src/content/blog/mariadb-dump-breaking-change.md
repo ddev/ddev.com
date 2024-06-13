@@ -9,7 +9,7 @@ featureImage:
   alt: "Dall-E: an image of a seal posed and crying with big tear drops, something like the MariaDB logo"
   credit: 'Dall-E: an image of a seal posed and crying with big tear drops, something like the MariaDB logo'
 categories:
-  - Community
+  - DevOps
 ---
 
 ## What happened with MariaDB and MysqlDump?
