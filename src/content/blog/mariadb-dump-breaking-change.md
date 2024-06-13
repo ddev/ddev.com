@@ -49,7 +49,7 @@ We think we have worked around the majority of these cases in DDEV v1.23.2, see 
 But:
 
 * If your server is running MySQL and your local is running MariaDB, you'll want to start using MySQL. For example, `ddev debug migrate-database mysql:5.7`.
-* If your server is running MariaDB and gets updated to have the new dump format, and you do a `ddev pull` or similar download of the dump file, you'll want to make sure you're using v1.23.2 and a matchine database version.
+* If your server is running MariaDB and gets updated to have the new dump format, and you do a `ddev pull` or similar download of the dump file, you'll want to make sure you're using v1.23.2 and a matching database version.
 * If you *push* your database dump to a server (this is unusual), please use `ddev export-db` to obtain it. `ddev export-db` removes the offending directive fromm the file.
 
 ## What has DDEV done to mitigate the damage in v1.23.2?
