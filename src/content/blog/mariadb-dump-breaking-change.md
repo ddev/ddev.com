@@ -18,7 +18,7 @@ On May 17, 2024, MariaDB responded to a security issue by creating a new directi
 
 `/*!999999\- enable the sandbox mode */`
 
-This directive/content is incompatible with all versions of the `mysql` or `mariadb` database client from all vendors from before the May 17, 2024 date. 
+This directive/content is incompatible with all versions of the `mysql` or `mariadb` database client from all vendors before the May 17, 2024 date.
 
 Trying to import a database dump created by `mariadb-dump` (usually aliased to `mysqldump`) in one of the new versions of their product results in:
 
@@ -46,9 +46,9 @@ However, there are many uses of DDEV where the PHP code on the `ddev-webserver` 
 
 ## DDEV v1.23.2
 
-We think we have worked around the majority of these cases in DDEV v1.23.2, see the next section.
+We think we have worked around the majority of these cases in DDEV v1.23.2. See the [next section](#what-has-ddev-done-to-mitigate-the-damage-inv1232).
 
-But:
+However, be aware:
 
 * If your server is running MySQL and your local is running MariaDB, you'll want to start using MySQL. For example, `ddev debug migrate-database mysql:5.7`.
 * If your server is running MariaDB and gets updated to have the new dump format, and you do a `ddev pull` or similar download of the dump file, you'll want to make sure you're using DDEV v1.23.2 and a matching database version.
