@@ -46,6 +46,12 @@ However, there are many uses of DDEV where the PHP code on the `ddev-webserver` 
 
 We think we have worked around the majority of these cases in DDEV v1.23.2, see below.
 
+But:
+
+* If your server is running MySQL and your local is running MariaDB, you'll want to start using MySQL. For example, `ddev debug migrate-database mysql:5.7`.
+* If your server is running MariaDB and gets updated to have the new dump format, and you do a `ddev pull` or similar download of the dump file, you'll want to make sure you're using v1.23.2 and a matchine database version.
+* If you *push* your database dump to a server (this is unusual), please use `ddev export-db` to obtain it. `ddev export-db` removes the offending directive fromm the file.
+
 ## What has DDEV done to mitigate the damage in v1.23.2?
 
 In DDEV v1.23.2:
@@ -54,6 +60,8 @@ In DDEV v1.23.2:
 * If you're using database type `mariadb` (the default database) the `mariadb`/`mysql` and `mariadb-dump`/`mysqldump` clients on `ddev-webserver` are the *new* ones, that know what to do with the new directive.
 * If you're using database type `mysql` (in any version) then the `mysql` and `mysqldump` are built from source and installed so that they match the server versions.
 * We designed a complete build-from-source system to build the matching MySQL clients so they could be installed in `ddev-webserver`.  You can see this and contribute to it at https://github.com/ddev/mysql-client-build/.
+* For those who end up with trouble inside the `ddev-webserver` even after all this, there is a hidden version of the pre-change `mysql` and `mysqldump` commands in `/usr/local/mysql-old/bin`, so users of things like `drush` could use `PATH=/usr/local/mysql-old/bin:$PATH drush sql-dump` for example, and if the tool uses `mysqldump` it will use the old one. *We don't know of any instances where you will need to do this in v1.23.2, we just bundled that in there as a fail-safe.*
+* Some of our automated tests broke because they used the default `mariadb:10.11`, and they pushed to a database server running MySQL 5.7. TestPushLagoon and TestPushAcquia had to be adjusted this way. 
 
 ## Links
 
@@ -61,6 +69,12 @@ In DDEV v1.23.2:
 * [MariaDB Dump File Compatibility Change](https://mariadb.org/mariadb-dump-file-compatibility-change/)
 * MariaDB Issue [MariaDB 10.6.18 seems to generate invalid SQL dumps](https://jira.mariadb.org/browse/MDEV-34183)
 * [DDEV's MySQL Client Builder](https://github.com/ddev/mysql-client-build/)
+* [MySQL Client Build system](https://github.com/ddev/mysql-client-build/)
 
 ## Don't forget to help us maintain all this!
 
+Do you wonder how much effort it took to mitigate all this, or wonder how you could have handled it for your project? 
+
+It took a lot. Thanks to all of you who participated in the various issues and reviewed the PRs.
+
+Please sign up your organization (and yourself) to [support DDEV's financial sustainability](https://ddev.com/support-ddev/#sponsor-development). We all have an obligation to support the many open-source projects that we depend on, and try to make them last.
