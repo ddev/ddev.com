@@ -12,13 +12,13 @@ categories:
   - DevOps
 ---
 
-## What happened with MariaDB and MysqlDump?
+## What happened with MariaDB and the `mysqldump`/`mariadb-dump` tool?
 
 On May 17, 2024, MariaDB responded to a security issue by creating a new directive in the output of `mariadb-dump`/`mysqldump`. This new directive looks like this in the dump file:
 
 `/*!999999\- enable the sandbox mode */`
 
-This directive/content is incompatible with all versions of the `mysql` or `mariadb` database client from all vendors from before that May 17, 2024. 
+This directive/content is incompatible with all versions of the `mysql` or `mariadb` database client from all vendors from before the May 17, 2024 date. 
 
 Trying to import a database dump created by `mariadb-dump` (usually aliased to `mysqldump`) in one of the new versions of their product results in:
 
@@ -28,11 +28,13 @@ All currently maintained MariaDB server versions contain this breaking change, i
 
 You can read about the details in this innocently titled article: [MariaDB Dump File Compatibility Change](https://mariadb.org/mariadb-dump-file-compatibility-change/)
 
+The bottom line: **After 15 years of maintaining mostly-compatible client-side tools our friends at MariaDB and MySQL have completely diverged, and we need to make sure we understand that.**
+
 ## What does it mean to my DDEV projects?
 
 ### DDEV v1.23.1
 
-If you are using DDEV v1.23.1, we mitigated this problem at some levels by updating the DDEV v1.23.1 `ddev-dbserver` image. This solved a number of problems related to `ddev import-db` and `ddev export-db` because the format used was the new (breaking-change) MariaDB format. If you see this on `ddev import-db` or `ddev export-db` you can update to the newer version using the appropriate command below:
+In DDEV v1.23.1 we mitigated this problem to a certain extent by updating the DDEV v1.23.1 `ddev-dbserver` image. This solved a number of problems related to `ddev import-db` and `ddev export-db` because the format used was the new (breaking-change) MariaDB format. If you see the import failure when you do `ddev import-db` or `ddev export-db` you can update to the newer version using the appropriate command below:
 
 ```
 docker pull ddev/ddev-dbserver-mariadb-10.11:v1.23.1
@@ -44,7 +46,7 @@ However, there are many uses of DDEV where the PHP code on the `ddev-webserver` 
 
 ## DDEV v1.23.2
 
-We think we have worked around the majority of these cases in DDEV v1.23.2, see below.
+We think we have worked around the majority of these cases in DDEV v1.23.2, see the next section.
 
 But:
 
@@ -55,11 +57,11 @@ But:
 ## What has DDEV done to mitigate the damage in v1.23.2?
 
 * `ddev import-db` and `ddev export-db` remove the directive to make sure imports and exports are safe.
-* If you're using database type `mariadb` (the default database) the `mariadb`/`mysql` and `mariadb-dump`/`mysqldump` clients on `ddev-webserver` are the *new* ones, that know what to do with the new directive.
-* If you're using database type `mysql` (in any version) then the `mysql` and `mysqldump` are built from source and installed so that they match the server versions.
-* We designed a complete build-from-source system to build the matching MySQL clients so they could be installed in `ddev-webserver`.  You can see this and contribute to it at https://github.com/ddev/mysql-client-build/.
-* For those who end up with trouble inside the `ddev-webserver` even after all this, there is a hidden version of the pre-change `mysql` and `mysqldump` commands in `/usr/local/mysql-old/bin`, so users of things like `drush` could use `PATH=/usr/local/mysql-old/bin:$PATH drush sql-dump` for example, and if the tool uses `mysqldump` it will use the old one. *We don't know of any instances where you will need to do this in v1.23.2, we just bundled that in there as a fail-safe.*
-* Some of our automated tests broke because they used the default `mariadb:10.11`, and they pushed to a database server running MySQL 5.7. TestPushLagoon and TestPushAcquia had to be adjusted this way. 
+* If you're using the (default) database type `mariadb`, the `mariadb`/`mysql` and `mariadb-dump`/`mysqldump` clients on `ddev-webserver` are the *new* ones from MariaDB, and they know what to do with the new directive.
+* If you're using any version of the `mysql` database type then `mysql` and `mysqldump` are built from MySQL source and are automatically installed so that they match the server versions.
+* We've designed a complete build-from-source system to match the MySQL clients so they could be installed in `ddev-webserver`. You can take a look at [mysql-client-build](https://github.com/ddev/mysql-client-build/) and contribute to it.
+* For those who end up with trouble inside the `ddev-webserver` even after all this, there is a hidden version of the pre-change `mysql` and `mysqldump` commands in `/usr/local/mariadb-old/bin`, so users of tools that use `mysql` and `mysqldump` directly could use `PATH=/usr/local/mariadb-old/bin:$PATH some-tool some-command` for example, and if the tool uses `mysqldump` it will use the old one. *We don't know of any instances where you will need to do this in v1.23.2, we just bundled these in case people still needed a workaround.*
+* Some of our automated tests broke because they used the default `mariadb:10.11` locally, but they pushed to a database server running MySQL 5.7. `TestPushLagoon` and `TestPushAcquia` had to be adjusted this way. 
 
 ## Links
 
