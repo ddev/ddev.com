@@ -30,8 +30,37 @@ You can read the details in the innocently titled article [MariaDB Dump File Com
 
 ## What does it mean To my DDEV projects?
 
+### DDEV v1.23.1
 
+If you are using DDEV v1.23.1, we mitigated this problem at some levels by updating the DDEV v1.23.1 `ddev-dbserver` image. This solved a number of problems related to `ddev import-db` and `ddev export-db` because the format used was the new (breaking-change) MariaDB format. If you see this on `ddev import-db` or `ddev export-db` you can update to the newer version using the appropriate command below:
 
-## What has DDEV done to mitigate the damage?
+```
+docker pull ddev/ddev-dbserver-mariadb-10.11:v1.23.1
+docker pull ddev/ddev-dbserver-mariadb-10.6:v1.23.1
+docker pull ddev/ddev-dbserver-mariadb-10.5:v1.23.1
+```
+
+However, there are many uses of DDEV where the PHP code on the `ddev-webserver` uses either the `mysql`/`mariadb` client or the `mysqldump`/`mariadb-dump` clients to manipulate the database. Drupal's `drush` and Craft CMS's database dump techniques do this, along with WordPress `wp-cli` database dumps. These situation can fail in DDEV v1.23.1 because the version of the client on `ddev-webserver` is the one widely available on Debian/Ubuntu, which is an older version of the MariaDB client.
+
+## DDEV v1.23.2
+
+We think we have worked around the majority of these cases in DDEV v1.23.2, see below.
+
+## What has DDEV done to mitigate the damage in v1.23.2?
+
+In DDEV v1.23.2:
+
+* `ddev import-db` and `ddev export-db` remove the directive to make safe imports and exports.
+* If you're using database type `mariadb` (the default database) the `mariadb`/`mysql` and `mariadb-dump`/`mysqldump` clients on `ddev-webserver` are the *new* ones, that know what to do with the new directive.
+* If you're using database type `mysql` (in any version) then the `mysql` and `mysqldump` are built from source and installed so that they match the server versions.
+* We designed a complete build-from-source system to build the matching MySQL clients so they could be installed in `ddev-webserver`.  You can see this and contribute to it at https://github.com/ddev/mysql-client-build/.
 
 ## Links
+
+* DDEV issue [ddev import-db fails with "Error: Unknown command '\-'" bec...](https://github.com/ddev/ddev/issues/6249)
+* [MariaDB Dump File Compatibility Change](https://mariadb.org/mariadb-dump-file-compatibility-change/)
+* MariaDB Issue [MariaDB 10.6.18 seems to generate invalid SQL dumps](https://jira.mariadb.org/browse/MDEV-34183)
+* [DDEV's MySQL Client Builder](https://github.com/ddev/mysql-client-build/)
+
+## Don't forget to help us maintain all this!
+
