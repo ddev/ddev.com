@@ -14,7 +14,7 @@ categories:
 
 ## What happened with MariaDB and MysqlDump?
 
-On May 17, 2024, MariaDB responded to a security issue by creating a new directive in the output of `mariadb-dump`/`mysqldump`. This new directive in the dump file looks like this:
+On May 17, 2024, MariaDB responded to a security issue by creating a new directive in the output of `mariadb-dump`/`mysqldump`. This new directive looks like this in the dump file:
 
 `/*!999999\- enable the sandbox mode */`
 
@@ -24,9 +24,9 @@ Trying to import a database dump created by `mariadb-dump` (usually aliased to `
 
 `ERROR at line 1: Unknown command '\-'`
 
-All currently maintained MariaDB server versions got this breaking change, including 10.5.25, 10.6.18, 10.11.8, 11.0.6, 11.1.5, 11.2.4 and 11.4.2.
+All currently maintained MariaDB server versions contain this breaking change, including 10.5.25, 10.6.18, 10.11.8, 11.0.6, 11.1.5, 11.2.4 and 11.4.2.
 
-You can read the details in the innocently titled article [MariaDB Dump File Compatibility Change](https://mariadb.org/mariadb-dump-file-compatibility-change/)
+You can read about the details in this innocently titled article: [MariaDB Dump File Compatibility Change](https://mariadb.org/mariadb-dump-file-compatibility-change/)
 
 ## What does it mean to my DDEV projects?
 
@@ -40,7 +40,7 @@ docker pull ddev/ddev-dbserver-mariadb-10.6:v1.23.1
 docker pull ddev/ddev-dbserver-mariadb-10.5:v1.23.1
 ```
 
-However, there are many uses of DDEV where the PHP code on the `ddev-webserver` uses either the `mysql`/`mariadb` client or the `mysqldump`/`mariadb-dump` clients to manipulate the database. Drupal's `drush` and Craft CMS's database dump techniques do this, along with WordPress `wp-cli` database dumps. These situation can fail in DDEV v1.23.1 because the version of the client on `ddev-webserver` is the one widely available on Debian/Ubuntu, which is an older version of the MariaDB client.
+However, there are many uses of DDEV where the PHP code on the `ddev-webserver` uses either the `mysql`/`mariadb` or the `mysqldump`/`mariadb-dump` client to manipulate the database. Drupal's `drush` and Craft CMS's database dump techniques do this, along with WordPress `wp-cli` database dumps. These situation can fail in DDEV v1.23.1 because the version of the client on `ddev-webserver` is the one widely available on Debian/Ubuntu, which is an older version of the MariaDB client.
 
 ## DDEV v1.23.2
 
@@ -49,14 +49,12 @@ We think we have worked around the majority of these cases in DDEV v1.23.2, see 
 But:
 
 * If your server is running MySQL and your local is running MariaDB, you'll want to start using MySQL. For example, `ddev debug migrate-database mysql:5.7`.
-* If your server is running MariaDB and gets updated to have the new dump format, and you do a `ddev pull` or similar download of the dump file, you'll want to make sure you're using v1.23.2 and a matching database version.
-* If you *push* your database dump to a server (this is unusual), please use `ddev export-db` to obtain it. `ddev export-db` removes the offending directive fromm the file.
+* If your server is running MariaDB and gets updated to have the new dump format, and you do a `ddev pull` or similar download of the dump file, you'll want to make sure you're using DDEV v1.23.2 and a matching database version.
+* If you *push* your database dump to a server, which is unusual, please use `ddev export-db` to obtain it. `ddev export-db` removes the offending directive from the file.
 
 ## What has DDEV done to mitigate the damage in v1.23.2?
 
-In DDEV v1.23.2:
-
-* `ddev import-db` and `ddev export-db` remove the directive to make safe imports and exports.
+* `ddev import-db` and `ddev export-db` remove the directive to make sure imports and exports are safe.
 * If you're using database type `mariadb` (the default database) the `mariadb`/`mysql` and `mariadb-dump`/`mysqldump` clients on `ddev-webserver` are the *new* ones, that know what to do with the new directive.
 * If you're using database type `mysql` (in any version) then the `mysql` and `mysqldump` are built from source and installed so that they match the server versions.
 * We designed a complete build-from-source system to build the matching MySQL clients so they could be installed in `ddev-webserver`.  You can see this and contribute to it at https://github.com/ddev/mysql-client-build/.
@@ -73,7 +71,7 @@ In DDEV v1.23.2:
 
 ## Don't forget to help us maintain all this!
 
-Do you wonder how much effort it took to mitigate all this, or wonder how you could have handled it for your project? 
+Do you wonder how much effort it took to mitigate all this, or wonder how you could have handled it for your projects on your own? 
 
 It took a lot. Thanks to all of you who participated in the various issues and reviewed the PRs.
 
