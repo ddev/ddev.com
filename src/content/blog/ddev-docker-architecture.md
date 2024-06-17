@@ -31,7 +31,7 @@ DDEV's Docker builds typically squash all the layers together after they're buil
 
 DDEV's images and containers are all in the [containers](https://github.com/ddev/ddev/tree/master/containers) directory:
 
-* **[`ddev-webserver`](https://github.com/ddev/ddev/tree/master/containers/ddev-webserver)** which runs the webserver (`nginx` or `apache`), the `php-fpm`, and `mailpit`. It's also what most people customize or use when they're using `ddev exec`. As an image, `ddev-webserver` is a child of [`ddev-php-base`](https://github.com/ddev/ddev/tree/master/containers/ddev-php-base), which is not run directly as a container.
+* **[`ddev-web server`](https://github.com/ddev/ddev/tree/master/containers/ddev-webserver)** which runs the web server (`nginx` or `apache`), the `php-fpm`, and `mailpit`. It's also what most people customize or use when they're using `ddev exec`. As an image, `ddev-webserver` is a child of [`ddev-php-base`](https://github.com/ddev/ddev/tree/master/containers/ddev-php-base), which is not run directly as a container.
   * `ddev-webserver` is based on Debian 12 Bookworm, the current stable version of Debian. Keeping up with the latest Debian version means that we can support current technologies and packages.
   * Why is `ddev-webserver` so big? It's big! Since DDEV is a tool for local developers, the goal is always to make things work well for the developer. We always try to keep the size down, but it's a balancing act. For example, the webserver includes all locales, so that people all over the world in all locales can use it without alteration.
   * **Customization:** Each project can [customize the web image](https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/) with `webimage_extra_packages` or `.ddev/web-build/Dockerfile.*`.
@@ -55,7 +55,7 @@ And of course additional Debian packages can be added easily with `webimage_extr
 
 ## Maintaining and updating DDEV Docker images
 
-DDEV's images are built in standard ways with a full `make` and Dockerfile setup. They can be built locally for experimentation, but normally we push them with a [standardized GitHub Actions workflow](https://ddev.readthedocs.io/en/stable/developers/release-management/#pushing-docker-images-with-the-github-actions-workflow)
+DDEV's images are built-in standard ways with a full `make` and Dockerfile setup. They can be built locally for experimentation, but normally we push them with a [standardized GitHub Actions workflow](https://ddev.readthedocs.io/en/stable/developers/release-management/#pushing-docker-images-with-the-github-actions-workflow)
 
 If you build your own `ddev-webserver` for example, you can build it with local changes using `cd containers/ddev-webserver && make VERSION=someversion` and then update the [versionconstants.go webtag](https://github.com/ddev/ddev/blob/master/pkg/versionconstants/versionconstants.go#L14) to refer to `someversion`.
 
