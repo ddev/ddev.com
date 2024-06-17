@@ -70,6 +70,15 @@
     "github": "Cambrico"
   },
   {
+    "name": "Centarro",
+    "type": "standard",
+    "logo": "/logos/centarro-logo-text-light.svg",
+    "darklogo": "/logos/centarro-logo-text-dark.svg",
+    "squareLogo": "/logos/centarro-logo-light.svg",
+    "url": "https://centarro.io/",
+    "github": "centarro"
+  },
+  {
     "name": "Fame Helsinki",
     "type": "standard",
     "logo": "/logos/fame-logo.svg",
