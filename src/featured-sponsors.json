@@ -16,15 +16,6 @@
     "url": "https://tag1.com"
   },
   {
-    "name": "1xINTERNET",
-    "type": "major",
-    "logo": "/logos/1xinternet.svg",
-    "darklogo": "/logos/1xinternet.svg",
-    "squareLogo": "/logos/1xinternet-square.svg",
-    "url": "https://1xinternet.de",
-    "github": "1xINTERNET"
-  },
-  {
     "name": "i-gelb",
     "type": "major",
     "logo": "/logos/i-gelb.svg",
@@ -34,8 +25,26 @@
     "github": "i-gelb"
   },
   {
-    "name": "Amazee.io",
+    "name": "Open Strategy Partners",
     "type": "major",
+    "logo": "/logos/OSP_logo_black_RGB.svg",
+    "darklogo": "/logos/OSP_logo_white_RGB.svg",
+    "squareLogo": "/logos/OSP_logo_black_RGB.svg",
+    "url": "https://openstrategypartners.com/",
+    "github": "open-strategy-partners"
+  },
+  {
+    "name": "1xINTERNET",
+    "type": "standard",
+    "logo": "/logos/1xinternet.svg",
+    "darklogo": "/logos/1xinternet.svg",
+    "squareLogo": "/logos/1xinternet-square.svg",
+    "url": "https://1xinternet.de",
+    "github": "1xINTERNET"
+  },
+  {
+    "name": "Amazee.io",
+    "type": "standard",
     "logo": "/logos/amazee-io-Mirantis-Logo-Black-White-IO.svg",
     "darklogo": "/logos/amazee-io-mirantis-darkmode.svg",
     "squareLogo": "/logos/amazee-io-square.svg",
@@ -97,15 +106,6 @@
     "github": "gizra"
   },
   {
-    "name": "Oliver Wand",
-    "type": "standard",
-    "logo": "/logos/oliver-wand.jpg",
-    "darklogo": "/logos/oliver-wand.jpg",
-    "squareLogo": "/logos/oliver-wand.jpg",
-    "url": "https://github.com/wandoliver",
-    "github": "wandoliver"
-  },
-  {
     "name": "Centarro",
     "type": "standard",
     "logo": "/logos/centarro.svg",
@@ -131,6 +131,15 @@
     "squareLogo": "/logos/mobilistics-square.svg",
     "url": "https://mobilistics.de/",
     "github": "mobilistics"
+  },
+  {
+    "name": "Oliver Wand",
+    "type": "standard",
+    "logo": "/logos/oliver-wand.jpg",
+    "darklogo": "/logos/oliver-wand.jpg",
+    "squareLogo": "/logos/oliver-wand.jpg",
+    "url": "https://github.com/wandoliver",
+    "github": "wandoliver"
   },
   {
     "name": "optasy",
