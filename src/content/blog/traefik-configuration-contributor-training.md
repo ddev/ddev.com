@@ -18,12 +18,23 @@ Here's our June 19, 2024 [Contributor Training](/blog/category/training) on how 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9f9Zbze7VP8?si=D9hywble6WqdqVa5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-## What is Traefik?
+## What is Traefik and the `ddev-router`?
 
-routing, TLS, mention old
+Today's `ddev-router` is based on the very popular upstream open-source [Traefik Proxy](https://traefik.io/traefik/). Only a single router runs to route to all of your DDEV projects that are running at any given time. (The older `nginx-proxy` version of `ddev-router` has been deprecated and will be removed in DDEV v1.24.)
+
+The router's basic jobs are 
+* to accept incoming HTTP and HTTPS traffic and route it to where it will be handled. (In DDEV this is done via the hostname.)
+* to terminate TLS/SSL for HTTPS traffic. This is normally done via the local development `mkcert` certificate authority (CA) but DDEV also supports custom certificates and Let's Encrypt.
 
 ## Configuration Components
-Static configuration, routers, middlewares, services
+
+One of the great things about Traefik is its excellent community and [configuration documentation](https://doc.traefik.io/traefik/getting-started/configuration-overview/).
+
+The components of the configuration are:
+
+* **Static configuration**: This is the basic configuration that the Traefik process runs with at startup, and it can only by changed by restarting `ddev-router`, typically with a `ddev poweroff` and `ddev start`. Static configuration includes things like logging levels, plugins, and Let's Encrypt configuration. It's rarely changed by DDEV users.
+* 
+* , routers, middlewares, services
 
 ## "File" configuration, not "Docker" configuration
 
