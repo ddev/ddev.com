@@ -1,7 +1,7 @@
 ---
-title: "Open source collaboration: signing_tools for macOS Catalina"
+title: "Open source collaboration: signing_tools for macOS"
 pubDate: 2020-05-13
-summary: The tools behind DDEV’s code signing on macOS Catalina.
+summary: The tools behind DDEV’s code signing on macOS.
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/05/signing.png

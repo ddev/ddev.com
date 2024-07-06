@@ -4,6 +4,7 @@ pubDate: 2023-08-24
 summary: Randy Fay's advice for giving and receiving support in the DDEV community
 author: Randy Fay
 categories:
+  - Training
   - Community
 ---
 

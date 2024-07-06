@@ -2,7 +2,7 @@ import { defineCollection, z} from 'astro:content'
 import fs2 from "fs"
 import { glob } from "glob"
 
-const allowedCategories = ['Announcements', 'Community', 'DevOps', 'Performance', 'Guides', 'Videos']
+const allowedCategories = ['Announcements', 'Community', 'DevOps', 'Performance', 'Guides', 'Training', 'Videos']
 
 /**
  * Quick and dirty method that returns full names of all existing authors.

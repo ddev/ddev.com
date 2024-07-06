@@ -9,6 +9,8 @@ featureImage:
   alt: Xdebug logo
   credit: 'Xdebug logo from https://en.m.wikipedia.org/wiki/File:Xdebug_Logo.svg'
 categories:
+  - Training
+  - Videos
   - Guides
 ---
 
