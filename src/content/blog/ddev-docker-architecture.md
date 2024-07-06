@@ -8,6 +8,8 @@ featureImage:
   src: /img/blog/2024/06/container-diagram.png
   alt: DDEV Container Architecture
 categories:
+  - Training
+  - Videos
   - Guides
 ---
 

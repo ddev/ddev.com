@@ -8,8 +8,11 @@ featureImage:
   src: /img/blog/2023/08/contributors-working.png
   alt: Contributors working together on DDEV
 categories:
+  - Training
   - Community
 ---
+
+**[See blogs and videos of past trainings](/blog/category/training)**
 
 **TL;DR: Sign up for contributor training** at [DDEV Live Event meetup group](https://www.meetup.com/ddev-events/) to get invitations to trainings.
 

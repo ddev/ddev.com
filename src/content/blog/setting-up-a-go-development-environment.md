@@ -7,6 +7,8 @@ featureImage:
    src: /img/blog/2024/03/Go-Logo_Aqua.svg
    alt: Golang Logo.
 categories:
+  - Training
+  - Videos
   - Guides
   - Community
 ---

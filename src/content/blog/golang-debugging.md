@@ -9,6 +9,8 @@ featureImage:
   alt: Golang Gopher teaching Go
   credit: 'Golang logo from https://blog.golang.org/go-brand and Gopher Nerd by Nats Romanova, https://github.com/GolangUA/gopher-logos/blob/master/README.md'
 categories:
+  - Training
+  - Videos
   - Guides
 ---
 
