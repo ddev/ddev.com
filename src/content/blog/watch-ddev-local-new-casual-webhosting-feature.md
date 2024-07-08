@@ -51,7 +51,7 @@ If you want to show a site to your colleagues or customers, you might get by fin
 2. Install Docker ([docs](https://ddev.readthedocs.io/en/stable/users/install/docker-installation/#linux). Don’t forget the post-install action required of adding your user to the Docker group, `sudo usermod -aG docker $USER`.
 3. Check out the site code.
 4. `cd` into your project and `ddev config`, then `ddev config --additional-fqdns=test.your.fqdn`
-5. `ddev config global --router-bind-all-interfaces --omit-containers=dba,ddev-ssh-agent --use-hardened-images --use-letsencrypt --letsencrypt-email=you@example.com` will set DDEV to listen on all interfaces (not only localhost), use the hardened images, and configure Let’s Encrypt.
+5. `ddev config global --router-bind-all-interfaces --omit-containers=ddev-ssh-agent --use-hardened-images --performance-mode=none --use-letsencrypt --letsencrypt-email=you@example.com` will set DDEV to listen on all interfaces (not only localhost), use the hardened images, and configure Let’s Encrypt.
 6. `ddev start`
 7. Import site user-generated files with `ddev import-files` or rsync or any other way you want to do it.
 8. Import site database with `ddev import-db`
