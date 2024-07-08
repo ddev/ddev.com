@@ -1,7 +1,7 @@
 ---
 title: "Eight (more) ways to get the most out of DDEV"
 pubDate: 2018-12-06
-modifiedDate: 2020-02-05
+modifiedDate: 2024-07-06
 summary: A look at some useful and often-overlooked DDEV features.
 author: Randy Fay
 featureImage:
@@ -126,7 +126,7 @@ To get the JSON output on the command line, add this global flag to any command:
 
 `ddev describe -j`
 
-I’ve seen this used in some creative ways. In one case, I saw someone use JSON output to find the port that MySQL was using on the host. For another example, you could grab the HTTP URL and launch it automatically. If you have ideas and you’re playing with DDEV JSON output in your projects, [ping us on Twitter,](https://twitter.com/drud) we’d love to hear your ideas.
+I’ve seen this used in some creative ways. In one case, I saw someone use JSON output to find the port that MySQL was using on the host. For another example, you could grab the HTTP URL and launch it automatically. If you have ideas and you’re playing with DDEV JSON output in your projects, join us in [Discord](https://discord.com/invite/5wjP76mBJD), we’d love to hear your ideas.
 
 ### Thanks for your feedback!
 
@@ -136,4 +136,4 @@ Coming soon: We’ll be rolling out opt-in data collection and error reporting t
 
 ### Want more tips? Follow us on Twitter and subscribe to the newsletter.
 
-When I come across tips and tricks from the community, I usually tweet about them. You can follow me as [@randyfay](https://twitter.com/randyfay) and the main [@drud](https://twitter.com/drud/) account where we tweet product news, tips, and other relevant info regularly. And of course, sign up to the newsletter for product updates and announcements.
+When I come across tips and tricks from the community, I usually tweet about them. You can follow me as [@randyfay](https://twitter.com/randyfay).
