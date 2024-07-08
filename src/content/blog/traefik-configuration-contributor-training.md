@@ -114,27 +114,23 @@ The components of DDEV's Traefik configuration are:
 
 Many non-DDEV uses of Traefik use the "docker" provider, which can automatically listen to activity inside the docker world. That feature enables a Traefik process to automatically listen to what's going on and automatically discover docker services with particular tags on them. However, it means that the Traefik container must have the Docker socket mounted into it, which is a massive security concern. As a result, DDEV uses the *file* provider, and pushes the needed (generated) files into the `ddev-router` container for Traefik to use.
 
-This means that many tutorials you may find which use the "docker" provider will be misleading. 
+This means that some tutorials you may find which use the "docker" provider will be misleading. 
 
-## Traefik 
+## Traefik Dashboard
 
-Graphical representation at http://127.0.0.1:10999
+DDEV provides the Traefik dashboard graphical representation at http://127.0.0.1:10999. This link is shown at the bottom of `ddev list`.
 
+## Experimenting with dynamic configuration
 
-## Experimenting with configuration
-
-Experimentation is easier to do inside the container, editing /mnt/ddev-global-cache/traefik/config
-
-## Example: http→https redirection middleware
+When you're trying to understand how dynamic configuration works, it's handy to make changes interactively. I sometimes use two terminal windows, one where I run `docker exec -it ddev-router bash` and `cd config` to get into the dynamic configuration directory. In the other I run `docker logs -f ddev-router` to see the various things that traefik is trying to tell me. I can edit the configuration files to my heart's delight inside the container, and see everything that's happening in the logs. And when I'm done, a simple `ddev start` will replace any of my edits with the original files from my project. 
 
 ## Casual Hosting
 
-- What is Let’s Encrypt?
-- DNS must be pointed properly
-- Provisional instructions: https://ddev--6317.org.readthedocs.build/en/6317/users/topics/hosting/
-- Debugging with `docker logs -f ddev-router`
-- Removing the acme.json file
-- Setting caServer to Staging if rate limited
+DDEV can be configured for ["casual hosting"](https://ddev.readthedocs.io/en/stable/users/topics/hosting/), meaning live-on-the-internet hosting of websites. It works fine, and people use it for staging sites, demonstrating current status to stakeholders, and even live hosting. I have been running a few small sites on a $20 Linode server for several years without trouble. But these sites do not have specific performance requirements and don't get a lot of traffic. Although "casual hosting" works fine, DDEV and its Docker images are designed for local development use, both from a performance and a security perspective, so your mileage may vary.
+
+"Casual hosting" even encompasses using [Let's Encrypt](https://letsencrypt.org/) to get free "real" TLS/SSL certificates. 
+
+In DDEV v1.23.4+ Casual hosting will be possible using Traefik, but until that release it requires the deprecated nginx-proxy router. The new capabilities use Traefik features, and were just [pulled into DDEV HEAD recently](https://github.com/ddev/ddev/pull/6317). 
 
 ## Contributions welcome!
 
