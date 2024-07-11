@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Heading from "../components/Heading.astro"
+
+const title = `Survey`
+---
+
+<Layout
+    title={title}
+    description={`Thanks for helping with a small survey`}
+>
+  <main class="max-w-4xl mx-auto mb-24">
+    <Heading title={`Thanks for helping with a small survey`} />
+
+    <!-- NEW FORM GOES BELOW HERE -->
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdd8UEl6rXpspJEhUdGZrqmBnP_iY-openbJEkYm0Y4j9Dm7g/viewform?embedded=true" width="640" height="859" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+    <!--NEW FORM ENDS HERE-->
+
+  </main>
