@@ -3,6 +3,7 @@ import { plainTextPlugin } from "@barnabask/astro-minisearch"
 import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs"
 import prefetch from "@astrojs/prefetch"
 import react from "@astrojs/react"
+import rehypeAstroRelativeMarkdownLinks from "astro-rehype-relative-markdown-links";
 import robotsTxt from "astro-robots-txt"
 import searchIndex from "./src/lib/search-index.js"
 import sitemap from "@astrojs/sitemap"
@@ -54,6 +55,7 @@ export default defineConfig({
         removeEmoji: false,
         headingTags: ["h2", "h3"],
       }),
+      rehypeAstroRelativeMarkdownLinks,
     ],
   },
   image: {

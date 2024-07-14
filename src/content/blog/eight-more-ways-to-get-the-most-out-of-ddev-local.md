@@ -22,7 +22,7 @@ If you’re using new `ddev` command, always make sure to check out the help ava
 
 This will bring up help that explains what that command does, how to use it, examples, and any flags available. You might come across things that even work differently than expected.
 
-Take, for example, the database export command, `ddev export -db`. which we highlighted [in a previous blog post on making backups in DDEV](https://ddev.com/ddev-local/save-as-you-go-and-make-backups-in-a-jiffy-with-ddev-local/). In DDEV, we set it up to export a .gzip file, because it seemed efficient for most users. However, if you were expecting it to export the same as a mysqldump command you’d be looking for a text dump.
+Take, for example, the database export command, `ddev export -db`. which we highlighted [in a previous blog post on making backups in DDEV](save-as-you-go-and-make-backups-in-a-jiffy-with-ddev-local.md). In DDEV, we set it up to export a .gzip file, because it seemed efficient for most users. However, if you were expecting it to export the same as a mysqldump command you’d be looking for a text dump.
 
 This is exactly what happened to a DDEV user recently, who exported to a .sql file, and they couldn’t import it because it was a .gzip archive. So if we started with the help files, using:
 
@@ -76,7 +76,7 @@ This will help you keep Docker running smoothly.
 
 ### What’s your DDEV project up to? Check the logs.
 
-DDEV’s logs feature is useful to show you what your project is up to. It could be useful when you’re [debugging issues with Docker and DDEV](https://ddev.com/ddev-local/debugging-docker-on-windows-mac-and-linux/), too. Check out the docs on [log access](https://ddev.readthedocs.io/en/stable/users/cli-usage/#log-access). Run `ddev logs` command to easily view logs from the web container. To follow the log in real time, use this command from within the project root folder:
+DDEV’s logs feature is useful to show you what your project is up to. It could be useful when you’re [debugging issues with Docker and DDEV](debugging-docker-on-windows-mac-and-linux.md), too. Check out the docs on [log access](https://ddev.readthedocs.io/en/stable/users/cli-usage/#log-access). Run `ddev logs` command to easily view logs from the web container. To follow the log in real time, use this command from within the project root folder:
 
 `ddev logs -f`
 

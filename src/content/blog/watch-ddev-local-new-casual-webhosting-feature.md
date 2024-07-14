@@ -29,7 +29,7 @@ We call it “casual” and “experimental” for a reason. It’s unknown how 
 
 I personally have a few trivial sites running on this casual webhosting setup on a single $20/month Linode server, and have had no problems in the four years years I've been running them. (See [randyfay.com](http://randyfay.com) for the list of sites).
 
-If you want to show a site to your colleagues or customers, you might get by fine with the `ddev share` command, which requires [no setup at all](https://ddev.com/ddev-local/sharing-a-ddev-local-project-with-other-collaborators/).
+If you want to show a site to your colleagues or customers, you might get by fine with the `ddev share` command, which requires [no setup at all](sharing-a-ddev-local-project-with-other-collaborators.md).
 
 [Read the Casual Webhosting docs](https://ddev.readthedocs.io/en/stable/users/topics/hosting/)
 

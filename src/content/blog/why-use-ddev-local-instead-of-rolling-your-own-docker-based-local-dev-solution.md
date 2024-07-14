@@ -26,7 +26,7 @@ If you know something about Docker, you know that you can throw one or two Docke
 
 - [Open-source project](https://github.com/ddev/ddev) with no vendor lock-in.
 - Has already undergone more than 6 years of development, adding requested features and collaborating with community contributors. [Sponsor DDEV on GitHub!](https://github.com/sponsors/ddev)
-- Explicit support for [many CMS types](https://ddev.readthedocs.io/en/stable/users/quickstart/), including Drupal, Backdrop, TYPO3, Magento, Laravel, WordPress, Shopware and generic PHP, HTML, JavaScript, and Python projects. DDEV will set up basic settings files for you so you’re set up in moments, but you can [turn feature that off](https://ddev.com/ddev-local/controlling-cms-settings-files-in-ddev-local/) when you don’t need it.
+- Explicit support for [many CMS types](https://ddev.readthedocs.io/en/stable/users/quickstart/), including Drupal, Backdrop, TYPO3, Magento, Laravel, WordPress, Shopware and generic PHP, HTML, JavaScript, and Python projects. DDEV will set up basic settings files for you so you’re set up in moments, but you can [turn feature that off](controlling-cms-settings-files-in-ddev-local.md) when you don’t need it.
 - Support for nearly all versions of both MySQL, MariaDB, and PostgreSQL.
 - Native support for macOS (Apple Silicon and Intel), Windows, WSL2, Linux, both AMD64 and ARM64 architectures, great for diverse teams.
 - Out-of-the-box support for both Nginx and Apache and PHP 5.6-8.2.
@@ -38,7 +38,7 @@ If you know something about Docker, you know that you can throw one or two Docke
 - [Xdebug step-debugging](https://ddev.readthedocs.io/en/stable/users/step-debugging/#step-debugging-with-ddev-and-xdebug) out of the box. Run `ddev xdebug on` and go.
 - Add-ons for facilities not built into core DDEV, like Elasticsearch, Apache Solr, Redis, and lots more.
 
-[![DDEV, PhpStorm and Xdebug video and blog post](/img/blog/2020/12/screen-shot-2020-12-28-at-12.49.31-pm.png)](/blog/ddev-local-phpstorm-and-xdebug-debugging)
+[![DDEV, PhpStorm and Xdebug video and blog post](/img/blog/2020/12/screen-shot-2020-12-28-at-12.49.31-pm.png)](ddev-local-phpstorm-and-xdebug-debugging.md)
 
 - Integration with [Platform.sh](https://platform.sh), [Pantheon.io](https://ddev.readthedocs.io/en/stable/users/providers/pantheon/), Acquia Cloud.
 - `ddev share` lets you show work in progress to anyone anywhere in the world.

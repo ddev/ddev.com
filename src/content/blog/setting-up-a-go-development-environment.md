@@ -41,7 +41,7 @@ Randy usually symlinks the built binary version to a place inside the `$PATH`, b
 
 If we want to avoid prefixing ddev with its built path instructions are included at ([Min 17:37](https://youtu.be/IjrJw0Ay-dk?t=1056)). `ddev --version` describes which binary version is currently used; it's selected by your `$PATH`.
 
-## The role of `mkdocs` ([Min 21:22)https://youtu.be/IjrJw0Ay-dk?t=1276))
+## The role of `mkdocs` ([Min 21:22](https://youtu.be/IjrJw0Ay-dk?t=1276))
 
 `mkdocs` can be tested with `make makedocs`
 

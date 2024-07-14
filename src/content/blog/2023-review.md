@@ -37,7 +37,7 @@ categories:
   * Experimental Python/Django4 support.
   * Hundreds of incremental improvements, docs improvements, and bugfixes.
 * All of DDEV's repositories and identity were changed to lose the "drud" name.
-* The Localdev Foundation was renamed to [DDEV Foundation](https://ddev.com/foundation), with Platform.sh generously licensing the DDEV trademark.
+* The Localdev Foundation was renamed to [DDEV Foundation](/foundation), with Platform.sh generously licensing the DDEV trademark.
 * The DDEV Foundation applied for US 501(c)(3) nonprofit status, which means it will not have to pay taxes and that US contributions to it can be tax-deductible.
 * Randy's hours tracked in recent months: 1,623 hours in the first 11 months of 2023 (December was unpaid), about 147 hours/month. My commitment to Platform.sh is about 125 hours/month.
 * **Advisory Group**: The DDEV Advisory Group is performing its function as a guiding light for the project. Even though it does not have formal power, its concerns are normally implemented.
@@ -46,7 +46,7 @@ categories:
 * **Project adoption**: DDEV was adopted as "official" or "preferred" local development environment by Ibexa and Drupal.
 * **Python/Django4** support: Although this significant feature was added, at the request of Platform.sh, it hasn't gotten any real traction or users at this point.
 * **Marketing and Communications**:
-  * **Matt Stein** created a **completely new ddev.com** using Astro and even imported/converted the old WordPress content. He did astonishing work with easy animated introductions to using DDEV. In addition to a major new site, he made it so [others can easily contribute](https://ddev.com/blog/ddev-website-for-contributors/) content to it. Because it's a static site no privileges are required, it's all PRs on GitHub, which can easily be reviewed.
+  * **Matt Stein** created a **completely new ddev.com** using Astro and even imported/converted the old WordPress content. He did astonishing work with easy animated introductions to using DDEV. In addition to a major new site, he made it so [others can easily contribute](ddev-website-for-contributors.md) content to it. Because it's a static site no privileges are required, it's all PRs on GitHub, which can easily be reviewed.
   * DDEV has a CRM with contact management (and 362 contacts).
   * We have a monthly newsletter.
   * Randy was a featured speaker at Craft CMS's Dot All conference in Barcelona.
@@ -54,15 +54,15 @@ categories:
   * Mike Anello interviewed Randy for [DrupalEasy Podcast S15E1 - Randy Fay - DDEV project governance and health](https://www.drupaleasy.com/podcast/2023/06/drupaleasy-podcast-s15e1-randy-fay-ddev-project-governance-and-health).
 
 * Contributors and Maintainers:
-  * **Contributor and Maintainer Training**: A key focus of the year was to enable and train people to contribute to the project. We had many [Contributor Live Training](https://ddev.com/blog/contributor-training/) events, almost all recorded. In the process, we updated many docs, and many people contributed additional documentation.
-  * **[Stas Zhuk](/blog/introducing-maintainer-stas/)** became a fully-privileged maintainer (part-time, paid).
+  * **Contributor and Maintainer Training**: A key focus of the year was to enable and train people to contribute to the project. We had many [Contributor Live Training](contributor-training.md) events, almost all recorded. In the process, we updated many docs, and many people contributed additional documentation.
+  * **[Stas Zhuk](introducing-maintainer-stas.md)** became a fully-privileged maintainer (part-time, paid).
   * **Matt Stein** made incredible advances for ddev.com and for the docs while he had availability to do so, but has stepped back (mostly) into the background now. He remains a fully-privileged maintainer.
   * **Simon Gilli** stepped away from the project, and we have lost contact with him. It is normal for contributors and maintainers to ebb and flow, but we're very sorry to have lost touch with Simon. However, we recognize that we need to keep encouraging new contributors to balance the natural ebb and flow.
   * **Mike Anello** became a signer with full authority on the DDEV Foundation bank account. Although a tiny step, it means that if something happened to Randy it would not mean financial distress for the foundation. Thanks, Mike!
 
 * DDEV's **testing infrastructure** has been improved with newer Mac ARM64 machines, and is now testing Rancher Desktop and OrbStack as well as Docker Desktop and Colima. (We test every commit on macOS with Docker Desktop, Rancher Desktop, Colima QEMU, Colima VZ, Orbstack, and WSL2 with both Docker Desktop and docker-ce. On traditional WIndows we test with Docker Desktop, on Linux with docker-ce (on both AMD64 and ARM64 architectures)).
 * Randy was awarded the Drupal community's prestigious [Aaron Winborn award](https://www.drupal.org/community/cwg/blog/2023-aaron-winborn-award-winner-randy-fay).
-* Randy [went biking for two months](/blog/randy-in-patagonia/) in Patagonian Chile and the project continued on as normal! Thanks to all of you!
+* Randy [went biking for two months](randy-in-patagonia.md) in Patagonian Chile and the project continued on as normal! Thanks to all of you!
 
 ## Statistics for the year
 

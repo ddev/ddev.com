@@ -84,6 +84,6 @@ On any platform you can use `DDEV_DEBUG=true ddev start` and it will explain to 
 
 ## Contributions welcome!
 
-We always love to hear your experiences with DDEV, so please do a PR to this blog adding your experience. Info and a training session on how to do a PR to anything in ddev.com is at [DDEV Website For Contributors](/blog/ddev-website-for-contributors/). And if you can improve the DDEV docs, click the pencil at the top of any docs page to add your suggestion.
+We always love to hear your experiences with DDEV, so please do a PR to this blog adding your experience. Info and a training session on how to do a PR to anything in ddev.com is at [DDEV Website For Contributors](ddev-website-for-contributors.md). And if you can improve the DDEV docs, click the pencil at the top of any docs page to add your suggestion.
 
-And join us most Wednesdays for [DDEV Live Contributor Training](https://www.meetup.com/ddev-events/). Past trainings are recorded at [contributor training](/blog/contributor-training).
+And join us most Wednesdays for [DDEV Live Contributor Training](https://www.meetup.com/ddev-events/). Past trainings are recorded at [contributor training](contributor-training.md).

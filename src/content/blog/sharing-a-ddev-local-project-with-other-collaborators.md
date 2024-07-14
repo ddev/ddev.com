@@ -12,7 +12,7 @@ categories:
   - DevOps
 ---
 
-Even though [DDEV](https://ddev.com/ddev-local/) is intended for local development on a single machine, not as a public server, there are a number of reasons you might want to expose your work in progress more broadly:
+Even though [DDEV](https://github.com/ddev/ddev) is intended for local development on a single machine, not as a public server, there are a number of reasons you might want to expose your work in progress more broadly:
 
 - Testing with a mobile device
 - Sharing on a local network so that everybody on the local network can see your project

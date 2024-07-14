@@ -48,7 +48,7 @@ Unless you use Homebrew, you probably don't have the affected version on your ho
 
 For me, the story here isn't about the vulnerability that didn't actually make it into the real world, but about the open-source story behind it. A small project with an overworked maintainer and insufficient community support got a new maintainer who spent two years gaining trust and then essentially took over the project and released code that had been carefully placed over that whole time. We all know that we depend on hundreds of these projects. 
 
-DDEV is one of those tiny projects that you depend on! You know that we've been working on [building our maintainer team](https://ddev.com/blog/expanding-ddev-maintainer-team) and [training contributors](https://ddev.com/blog/contributor-training/). We absolutely need to continue **building DDEV's financial stability** and **train contributors and maintainers**. Please:
+DDEV is one of those tiny projects that you depend on! You know that we've been working on [building our maintainer team](expanding-ddev-maintainer-team.md) and [training contributors](contributor-training.md). We absolutely need to continue **building DDEV's financial stability** and **train contributors and maintainers**. Please:
 
 * Join us in [financially supporting the project](https://github.com/sponsors/ddev). You or your company can support us directly (we invoice for support, accept funds many ways) or you can support via GitHub Sponsors.
 * Join us as we restart the Contributor Training in coming months. We need lots of competent eyes on the project.
@@ -62,5 +62,4 @@ DDEV is one of those tiny projects that you depend on! You know that we've been 
 * [Arch Linux information](https://archlinux.org/news/the-xz-package-has-been-backdoored/).
 
 
-Thanks to all of you for working toward realizing our goal of a sustainable project! For more information about how you can support the project, the various ways are explained in [sponsors page](https://github.com/sponsors/ddev). See more about our long-term financial goals at [Expanding the DDEV maintainer team - how we'll fund it](/blog/expanding-ddev-maintainer-team).
-
+Thanks to all of you for working toward realizing our goal of a sustainable project! For more information about how you can support the project, the various ways are explained in [sponsors page](https://github.com/sponsors/ddev). See more about our long-term financial goals at [Expanding the DDEV maintainer team - how we'll fund it](expanding-ddev-maintainer-team.md).

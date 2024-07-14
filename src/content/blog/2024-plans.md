@@ -16,7 +16,7 @@ At the DDEV Advisory Group's 2-hour [annual review/planning meeting on March 6, 
 
 ## Community
 
-* **Continue the Contributor Training initiative**. In 2023 we had weekly [contributor training sessions](/blog/contributor-training) and they were a great way to put into practice our priority of making DDEV support and enhancement available to all community members.
+* **Continue the Contributor Training initiative**. In 2023 we had weekly [contributor training sessions](contributor-training.md) and they were a great way to put into practice our priority of making DDEV support and enhancement available to all community members.
 * **Continue outstanding user support** even with growth of our user base. In the past year the weekly users of DDEV about doubled, from about 5000 to 10,000 or more. This means increased support, and we want to continue our level of support in all the [support venues](https://ddev.readthedocs.io/en/stable/users/support/), but this likely means finding more community members to be first-line support instead of Randy and Stas often having to be there first (although we love helping!).
 * **Improve governance strategy for DDEV Foundation**.  Discuss governance with the community and consider raising the authority level of the advisory group, or  create another type of board. Make sure financial controls are obvious and adequate.
 

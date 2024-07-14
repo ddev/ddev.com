@@ -11,7 +11,7 @@ categories:
   - Guides
 ---
 
-WSL2 with [DDEV](https://ddev.com/ddev-local/) is a wonderful new world for Windows developers. The performance is incredible (on a par with native Linux installations) and the WSL2 command-line environment is fresh and clean.
+WSL2 with [DDEV](https://github.com/ddev/ddev) is a wonderful new world for Windows developers. The performance is incredible (on a par with native Linux installations) and the WSL2 command-line environment is fresh and clean.
 
 As noted in the [WSL2 blog article](https://ddev.com/ddev-local/ddev-wsl2-getting-started/), Visual Studio Code is doing great with WSL2, but PhpStorm is lagging a bit behind. However, it is possible right now to use PhpStorm with DDEV on WSL2 in two different ways:
 

@@ -23,7 +23,7 @@ We plan to be on our bikes all of December and January, returning home at the en
 
 ## What does this mean to DDEV? Will we be OK?
 
-Are you asking "What happens to DDEV?" - Well we've been [working on that](https://ddev.com/blog/expanding-ddev-maintainer-team) for a couple of years now. Thanks to the DDEV community's generous support, we have an additional, highly skilled maintainer, [Stas Zhuk](https://ddev.com/blog/introducing-maintainer-stas/) and of course we are a community all the time, supporting one another. I'll be checking in when I can, but there isn't really any internet between towns in Patagonia, and we'll be riding and camping a lot. You will be in great hands with Stas and the community.
+Are you asking "What happens to DDEV?" - Well we've been [working on that](expanding-ddev-maintainer-team.md) for a couple of years now. Thanks to the DDEV community's generous support, we have an additional, highly skilled maintainer, [Stas Zhuk](introducing-maintainer-stas.md) and of course we are a community all the time, supporting one another. I'll be checking in when I can, but there isn't really any internet between towns in Patagonia, and we'll be riding and camping a lot. You will be in great hands with Stas and the community.
 
 ## How Can I Follow Along?
 
