@@ -106,15 +106,6 @@
     "github": "gizra"
   },
   {
-    "name": "Centarro",
-    "type": "standard",
-    "logo": "/logos/centarro.svg",
-    "darklogo": "/logos/centarro.svg",
-    "squareLogo": "/logos/centarro-square.svg",
-    "url": "https://www.centarro.io/",
-    "github": "centarro"
-  },
-  {
     "name": "DrupalEasy",
     "type": "standard",
     "logo": "/logos/drupaleasy.png",
