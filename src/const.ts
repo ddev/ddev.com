@@ -1,5 +1,5 @@
 export const SITE_TITLE = 'DDEV';
-export const SITE_DESCRIPTION = 'Docker-based local PHP development environments.';
+export const SITE_DESCRIPTION = 'Docker-based local PHP+Node.js web development environments.';
 export const STORE_URL = 'https://ddev.threadless.com';
 export const GITHUB_REPO = 'ddev/ddev';
 export const GITHUB_URL = 'https://github.com/ddev/ddev';
@@ -14,7 +14,8 @@ export const X_URL = 'https://twitter.com/search?q=%23ddev&src=typd&f=live'
 export const ORG_STREET = '848 Montclair Dr'
 export const ORG_CITY = 'Palisade'
 export const ORG_STATE = 'Colorado'
-export const ORG_POSTAL_CODE = '97702'
+export const ORG_STATE_BR = 'CO'
+export const ORG_POSTAL_CODE = '81526'
 export const ORG_COUNTRY = 'US'
 export const ORG_NAME = 'DDEV Foundation'
 export const ORG_EMAIL = 'support@localdev.foundation'

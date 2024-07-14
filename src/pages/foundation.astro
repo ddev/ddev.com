@@ -3,11 +3,22 @@ import Layout from "../layouts/Layout.astro"
 import Heading from "../components/Heading.astro"
 import PostBody from "../components/PostBody.astro"
 
+import {
+  ORG_NAME,
+  ORG_STREET,
+  ORG_CITY,
+  ORG_STATE_BR,
+  ORG_POSTAL_CODE,
+  ORG_COUNTRY,
+  ORG_PHONE,
+  EMAIL_URL,
+} from "../const"
+
 const title = `DDEV Foundation`
 ---
 
 <Layout
-    title={title}
+  title={title}
 >
   <main class="max-w-4xl mx-auto mb-24">
     <Heading title={`DDEV Foundation`} />
@@ -24,24 +35,24 @@ const title = `DDEV Foundation`
           <h2>Where does the money go?</h2>
 
           <p>
-          DDEV Foundation funds are used for infrastructure costs and to pay part-time and full-time maintainers. Lead Maintainer Randy Fay does not receive any of the funds as his salary is paid by lead sponsor Platform.sh.
+            DDEV Foundation funds are used for infrastructure costs and to pay part-time and full-time maintainers. Lead Maintainer Randy Fay does not receive any of the funds as his salary is paid by lead sponsor Platform.sh.
           </p>
 
           <h2>Contact the DDEV Foundation</h2>
 
-          <p>Contact <a href="mailto: support%40ddev.com">support</a></p>
+          <p>Contact <a href="{EMAIL_URL}">support</a>.</p>
 
           <h2>Snail Mail and Phone:</h2>
 
-          DDEV Foundation<br />
-          848 Montclair Dr<br />
-          Palisade, CO 81526<br />
-          USA<br />
-          +1 970-462-7450<br /><br />
+          {ORG_NAME}<br />
+          {ORG_STREET}<br />
+          {ORG_CITY}, {ORG_STATE_BR}&nbsp;{ORG_POSTAL_CODE}<br />
+          {ORG_COUNTRY}<br />
+          {ORG_PHONE}<br />
 
-
-            <h2>Colorado [nonprofit corporation registration</h2>
-          <p>  Review our <a href="https://www.sos.state.co.us/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20211820326&entityId2=20211820326&fileId=20211820326&srchTyp=ENTITY">Colorado nonprofit corporation registration</a>.
+          <h2>Colorado nonprofit corporation registration</h2>
+          <p>
+            Review our <a href="https://www.sos.state.co.us/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20211820326&entityId2=20211820326&fileId=20211820326&srchTyp=ENTITY">Colorado nonprofit corporation registration</a>.
           </p>
 
         </PostBody>
