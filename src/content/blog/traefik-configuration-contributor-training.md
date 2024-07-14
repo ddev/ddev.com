@@ -16,7 +16,9 @@ DDEV's **router** is the system component that accepts HTTP and HTTPS requests a
 
 Here's our June 19, 2024 [Contributor Training](/blog/category/training) on how the Traefik router works in DDEV:
 
+<div class="video-container">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9f9Zbze7VP8?si=D9hywble6WqdqVa5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 ## What is Traefik and the `ddev-router`?
 
