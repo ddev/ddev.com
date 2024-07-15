@@ -43,7 +43,7 @@ const title = `Search`
 
     resultsContainer.innerHTML = results
       .map((result) => {
-        let resulturl = window.location.origin + result.id
+        let resulturl = window.location.origin + result.id.replace(/^\/+/, '/');
         return `
         <a href="${
           resulturl
