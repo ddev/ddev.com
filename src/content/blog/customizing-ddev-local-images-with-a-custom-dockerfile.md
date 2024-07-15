@@ -13,7 +13,7 @@ categories:
   - Guides
 ---
 
-Did you know that you can customize [DDEV](https://ddev.com/ddev-local/) Docker images with some very simple changes?
+Did you know that you can customize [DDEV](https://github.com/ddev/ddev) Docker images with some very simple changes?
 
 There are two major ways to customize your DDEV web image:
 

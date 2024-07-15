@@ -12,7 +12,7 @@ categories:
   - Guides
 ---
 
-The following is based on [Matt Stein's presentation outline](https://doc.mattstein.com/s/-BQQaSLJd) for the August 15, 2023 DDEV contributor training. Recordings of all past sessions can be found in the blog post [DDEV Contributor Live Training](/blog/contributor-training). This post was prepared (Thanks!) by [Kristin Wiseman](https://github.com/kristin-wiseman).
+The following is based on [Matt Stein's presentation outline](https://doc.mattstein.com/s/-BQQaSLJd) for the August 15, 2023 DDEV contributor training. Recordings of all past sessions can be found in the blog post [DDEV Contributor Live Training](contributor-training.md). This post was prepared (Thanks!) by [Kristin Wiseman](https://github.com/kristin-wiseman).
 
 ## Welcome!
 
@@ -52,30 +52,30 @@ If you’re comfortable with _all_ of those things, you could make a big dent in
 
 ## Local Setup
 
-Clone <https://github.com/ddev/ddev.com-front-end>.
+Clone <https://github.com/ddev/ddev.com>.
 
 Add a GitHub key to `.env`.
 
 ## Where Content Lives
 
-> 💡 Consider reading [the readme](https://github.com/ddev/ddev.com-front-end/blob/main/README.md) and especially the [Astro docs](https://docs.astro.build/en/getting-started/).
+> 💡 Consider reading [the readme](https://github.com/ddev/ddev.com/blob/main/README.md) and especially the [Astro docs](https://docs.astro.build/en/getting-started/).
 
 Markdown, component markup, TypeScript constants, and a JSON blob.
 
-1. Astro components in the [`src/pages/`](https://github.com/ddev/ddev.com-front-end/tree/main/src/pages) directory.
-   - Start with [404](https://github.com/ddev/ddev.com-front-end/blob/main/src/pages/404.astro) + [homepage](https://github.com/ddev/ddev.com-front-end/blob/main/src/pages/index.astro).
-2. Content collections in [`src/content/`](https://github.com/ddev/ddev.com-front-end/tree/main/src/content).
-3. Constants in [`src/const.ts`](https://github.com/ddev/ddev.com-front-end/blob/main/src/const.ts).
-4. Custom sponsor blob in [`src/featured-sponsors.json`](https://github.com/ddev/ddev.com-front-end/blob/main/src/featured-sponsors.json).
+1. Astro components in the [`src/pages/`](https://github.com/ddev/ddev.com/tree/main/src/pages) directory.
+   - Start with [404](https://github.com/ddev/ddev.com/blob/main/src/pages/404.astro) + [homepage](https://github.com/ddev/ddev.com/blob/main/src/pages/index.astro).
+2. Content collections in [`src/content/`](https://github.com/ddev/ddev.com/tree/main/src/content).
+3. Constants in [`src/const.ts`](https://github.com/ddev/ddev.com/blob/main/src/const.ts).
+4. Custom sponsor blob in [`src/featured-sponsors.json`](https://github.com/ddev/ddev.com/blob/main/src/featured-sponsors.json).
    - See featured-sponsors.svg in the [ddev/ddev readme](https://github.com/ddev/ddev).
 
 ## How Content is Presented
 
 The content attempts to follow Astro conventions, follow DRY principle, and be sparing with additional complexity.
 
-1. [Astro config](https://github.com/ddev/ddev.com-front-end/blob/main/astro.config.mjs).
-2. [PostCSS](https://github.com/ddev/ddev.com-front-end/blob/main/postcss.config.cjs) + [Tailwind](https://github.com/ddev/ddev.com-front-end/blob/main/tailwind.config.cjs) + [Tailwind Typography](https://github.com/ddev/ddev.com-front-end/blob/main/tailwind.config.cjs#L48)
-3. [`src/lib/api.ts`](https://github.com/ddev/ddev.com-front-end/blob/main/src/lib/api.ts).
+1. [Astro config](https://github.com/ddev/ddev.com/blob/main/astro.config.mjs).
+2. [PostCSS](https://github.com/ddev/ddev.com/blob/main/postcss.config.cjs) + [Tailwind](https://github.com/ddev/ddev.com/blob/main/tailwind.config.cjs) + [Tailwind Typography](https://github.com/ddev/ddev.com/blob/main/tailwind.config.cjs#L48)
+3. [`src/lib/api.ts`](https://github.com/ddev/ddev.com/blob/main/src/lib/api.ts).
    - Bonus: the `cache/` directory.
 4. Development server vs. building.
    - Cloudflare pages builds _static_ output (no SSR).
@@ -92,7 +92,7 @@ Otherwise, use a pull request like you would with DDEV or any other project. (Fo
 ## Extra Topics Covered in the Training
 
 - Astro plugins we’re using.
-- [Textlint](https://github.com/ddev/ddev.com-front-end/blob/main/.textlintrc).
+- [Textlint](https://github.com/ddev/ddev.com/blob/main/.textlintrc).
 
 
 Credit to [Kristin](https://www.drupal.org/u/kwiseman) and [Bernardo](https://www.drupal.org/u/bernardm28) for adapting the original outline for the DDEV blog.

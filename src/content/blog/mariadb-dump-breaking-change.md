@@ -77,4 +77,4 @@ Do you wonder how much effort it took to mitigate all this, or wonder how you co
 
 It took a lot. Thanks to all of you who participated in the various issues and reviewed the PRs.
 
-Please sign up your organization (and yourself) to [support DDEV's financial sustainability](https://ddev.com/support-ddev/#sponsor-development). We all have an obligation to support the many open-source projects that we depend on, and try to make them last.
+Please sign up your organization (and yourself) to [support DDEV's financial sustainability](/support-ddev/#sponsor-development). We all have an obligation to support the many open-source projects that we depend on, and try to make them last.

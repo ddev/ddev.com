@@ -11,7 +11,7 @@ categories:
   - Guides
 ---
 
-In terms of local development environments (LDE), Laravel does have a lot of options. We have Homestead, Valet, Laradock, etc (In general, any PHP LDE can be tweaked to support [Laravel](https://laravel.com/)). They all do the job in their scopes. Now it’s also possible to work on Laravel with [DDEV](https://ddev.com/ddev-local/), an open source, Docker-based LDE. So why consider one more option?
+In terms of local development environments (LDE), Laravel does have a lot of options. We have Homestead, Valet, Laradock, etc (In general, any PHP LDE can be tweaked to support [Laravel](https://laravel.com/)). They all do the job in their scopes. Now it’s also possible to work on Laravel with [DDEV](https://github.com/ddev/ddev), an open source, Docker-based LDE. So why consider one more option?
 
 > “Everyone should use the tools that push their productivity the most” — This is an important point for many developers and teams. And a lot of different tools are available; users have lots of choice.
 

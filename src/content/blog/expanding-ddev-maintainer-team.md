@@ -13,11 +13,11 @@ categories:
 
 ## Why does DDEV want to hire another full-time maintainer?
 
-A few months ago we published [Recruiting Maintainers](https://ddev.com/blog/recruiting-maintainers/). But why are we wanting another full-time maintainer?
+A few months ago we published [Recruiting Maintainers](recruiting-maintainers.md). But why are we wanting another full-time maintainer?
 
 ### What Do Maintainers Do?
 
-But first, what do maintainers do? Why are they so busy? Why is it important to the DDEV community? There’s a more formal description of a maintainer’s job in [Recruiting Maintainers](https://ddev.com/blog/recruiting-maintainers/), but the shorter answer:
+But first, what do maintainers do? Why are they so busy? Why is it important to the DDEV community? There’s a more formal description of a maintainer’s job in [Recruiting Maintainers](recruiting-maintainers.md), but the shorter answer:
 
 **Everything is always changing**! You live there. You know that everything is constantly in flux today’s software world. In this past week, Node.js changed its installation technique and injected a 60-second wait (and deprecation notice) on the old one. And Magento 2 obsoleted support for Elasticsearch in many configurations. And the upstream support for putting artifacts links on PRs broke (again). This is all normal. But this kind of constant rot means that if DDEV were left unmaintained for 4-6 months you wouldn’t like it any more. We wouldn’t want that!
 
@@ -27,7 +27,7 @@ But first, what do maintainers do? Why are they so busy? Why is it important to 
 
 **Test infrastructure has to be maintained**: You know from your own work that test infrastructure and the tests themselves require extensive maintenance. DDEV runs tests on all supported operating systems and architectures and Docker providers. That’s a *lot* of tests, meaning hours of tests for every push, and of course there are flaky tests to improve and Windows machines to reboot when they fail.
 
-**Onboarding and Support**: This is a wide-open Free and Open Source project. We want every contributor to have a great experience, and we want everybody to be free to contribute. But this means mentoring, and [contributor training](https://ddev.com/blog/contributor-training/). And support. Support all the time. It’s amazing how many people do not need support, but there is lots to be done every day in the [issue queue](https://github.com/ddev/ddev/issues), [Discord](https://discord.gg/5wjP76mBJD), Slack, and [Stack Overflow](https://stackoverflow.com/tags/ddev). It’s mostly maintainers that do this support, but it’s a great community and everybody is encouraged to help.
+**Onboarding and Support**: This is a wide-open Free and Open Source project. We want every contributor to have a great experience, and we want everybody to be free to contribute. But this means mentoring, and [contributor training](contributor-training.md). And support. Support all the time. It’s amazing how many people do not need support, but there is lots to be done every day in the [issue queue](https://github.com/ddev/ddev/issues), [Discord](https://discord.gg/5wjP76mBJD), Slack, and [Stack Overflow](https://stackoverflow.com/tags/ddev). It’s mostly maintainers that do this support, but it’s a great community and everybody is encouraged to help.
 
 **Documentation**: You know how docs are always needing more help and they’re affected by all the factors above.
 
@@ -55,7 +55,7 @@ Currently **[Randy Fay](https://github.com/rfay), [Simon Gilli](https://github.c
 
 ### What is the DDEV Foundation?
 
-**The [DDEV Foundation](https://ddev.com/foundation)** is the “fiscal entity” that is used for DDEV funding and is used to pay contributors. It is a [Colorado, USA nonprofit](https://www.sos.state.co.us/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20211820326&entityId2=20211820326&fileId=20211820326&srchTyp=ENTITY). It owns the bank account. The DDEV Foundation applied in 2023 for US 501(c)(3) nonprofit status, but that usually takes between 18 months and years to get sorted out with the US IRS.
+**The [DDEV Foundation](/foundation)** is the “fiscal entity” that is used for DDEV funding and is used to pay contributors. It is a [Colorado, USA nonprofit](https://www.sos.state.co.us/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20211820326&entityId2=20211820326&fileId=20211820326&srchTyp=ENTITY). It owns the bank account. The DDEV Foundation applied in 2023 for US 501(c)(3) nonprofit status, but that usually takes between 18 months and years to get sorted out with the US IRS.
 
 No funding to the DDEV Foundation goes to Randy.
 
@@ -67,6 +67,4 @@ No funding to the DDEV Foundation goes to Randy.
 
 **Do you want to talk more? Drop by [Discord](https://discord.gg/5wjP76mBJD) or send [an email](mailto:support%40ddev.com)**
 
-**Have you [signed up for the monthly DDEV newsletter](https://ddev.com/newsletter/)?**
-
-
+**Have you [signed up for the monthly DDEV newsletter](/newsletter)?**

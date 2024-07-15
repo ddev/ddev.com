@@ -299,7 +299,7 @@ The effort required to recreate the Views and Pages is justified despite the dra
 
 I’m pleased with the 98.92% data migration and have the content necessary to move forward. However, I’m also feeling burned out on this site. As satisfying as the migration results are, the site ultimately requires Drupal 10 before going live. I’m taking a few weeks off to consider the next steps for theming, Views, and page layouts.
 
-I’m torn between investing time in coaxing [AM:A to work with Drupal 10](https://www.drupal.org/project/acquia_migrate/issues/3399733), then making another attempt at the migration as AM:A to D10. Or continuing to migrate the current AM:A D9 site to D10. I plan to update this blog post as needed and encourage others to contribute, correct, and enhance this information - [Support DDEV](https://ddev.com/support-ddev/#file-an-issue-or-pr)!  
+I’m torn between investing time in coaxing [AM:A to work with Drupal 10](https://www.drupal.org/project/acquia_migrate/issues/3399733), then making another attempt at the migration as AM:A to D10. Or continuing to migrate the current AM:A D9 site to D10. I plan to update this blog post as needed and encourage others to contribute, correct, and enhance this information - [Support DDEV](/support-ddev/#file-an-issue-or-pr)!  
 
 ---
 
@@ -333,4 +333,3 @@ Looking back, my Drupal 7 site went from zero to a shaky 65% after a grueling 10
 - The the DDEV `nginx-site2-d9.conf` NGINX config had to be modified to serve generated images. [NGINX configuration options can interfere with generated thumbnails and image styles for uploaded images](https://www.drupal.org/project/drupal/issues/3120676#comment-15294229).
 - `ddev config --php-version=8.1` will change the PHP version of the project at any time if you want to experiment with updating D9 or D10, be aware this change will introduce php errors on your D7 site. 
 - Here's a [Gist of Drush scripts for cleaning up various Drupal 7 database issues](https://gist.github.com/RowboTony/acf9ee5afb78b6a29a7a763f56d1fb11) which may be helpful *(as-is, no guarantee or warranty)*.
-

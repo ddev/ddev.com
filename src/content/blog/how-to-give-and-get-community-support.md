@@ -8,7 +8,7 @@ categories:
   - Community
 ---
 
-This week's [DDEV Contributor Training](/blog/contributor-training) centered on the topic of support in the DDEV community: specifically why we support each other, tips for asking and answering questions, and venues for giving and receiving support. This post was prepared (Thanks!) by [Kristin Wiseman](https://github.com/kristin-wiseman) from the original [presentation outline](https://randyfay.notion.site/How-to-give-and-get-community-support-ad54b5a9bd0143f7ab5d2685fd88ba44).
+This week's [DDEV Contributor Training](contributor-training.md) centered on the topic of support in the DDEV community: specifically why we support each other, tips for asking and answering questions, and venues for giving and receiving support. This post was prepared (Thanks!) by [Kristin Wiseman](https://github.com/kristin-wiseman) from the original [presentation outline](https://randyfay.notion.site/How-to-give-and-get-community-support-ad54b5a9bd0143f7ab5d2685fd88ba44).
 
 ## Why Should We Give and Receive Community Support?
 

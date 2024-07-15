@@ -21,7 +21,7 @@ Most pages are built with [Astro components](https://docs.astro.build/en/core-co
 - **`cache/`** – custom, project-specific folder for caching GitHub responses in local developent to reduce API calls.
 - **`public/`** – images and [redirects](https://developers.cloudflare.com/pages/platform/redirects) that will be copied verbatim into the generated `dist/` directory.
 - **`src/`** – components, layouts, styles, and supporting TypeScript/JavaScript.
-  - **`components/`** – indiviaul `.astro` components used in pages. (You can also use [components for UI frameworks](https://docs.astro.build/en/core-concepts/framework-components/) like Vue, React, and Svelte!)
+  - **`components/`** – individual `.astro` components used in pages. (You can also use [components for UI frameworks](https://docs.astro.build/en/core-concepts/framework-components/) like Vue, React, and Svelte!)
   - **`content/`** – configuration and Markdown for the blog’s [content collections](https://docs.astro.build/en/guides/content-collections/).
   - **`layouts/`** – contains the single component we use for every page.
   - **`lib/`** – helper code for fetching data from GitHub, building the search index, injecting read time into frontmatter, and handling common formatting.
@@ -51,7 +51,7 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
 | `npm run astro --help` | Get help using the Astro CLI                       |
 | `npm run textlint`     | Run textlint on content collections                |
-| `npm run textlint:fix` | Apply fixable updates to resolve texlint errors    |
+| `npm run textlint:fix` | Apply fixable updates to resolve textlint errors   |
 
 
 
@@ -149,13 +149,13 @@ Run `npm run textlint` to check everything, and you can apply “fixable” chan
 
 The `src/featured-sponsors.json` file is used for manually curating prominent sponsors.
 
-While it’s a bit of a pain and [still relies on coercion](https://github.com/ddev/ddev.com-front-end/blob/main/src/components/FeaturedSponsors.astro#L4-L20) in some places, it lets us collect pristine, brand-friendly resources in one place and use them in different contexts.
+While it’s a bit of a pain and [still relies on coercion](https://github.com/ddev/ddev.com/blob/main/src/components/FeaturedSponsors.astro#L4-L20) in some places, it lets us collect pristine, brand-friendly resources in one place and use them in different contexts.
 
 It’s used to display sponsor details in a few places:
 
 1. The [homepage](https://ddev.com) “Featured Sponsors” list.
 2. The leading bubbles on the [Support DDEV page](https://ddev.com/support-ddev/)’s “Sponsor Development” grid.
-3. The [procedurally-generated](https://github.com/ddev/ddev.com-front-end/blob/main/src/pages/resources/featured-sponsors.svg.js) featured sponsors [light](https://ddev.com/resources/featured-sponsors.svg) and [dark](https://ddev.com/resources/featured-sponsors-darkmode.svg) SVG images used in the [main project readme](https://github.com/ddev/ddev#wonderful-sponsors).
+3. The [procedurally-generated](https://github.com/ddev/ddev.com/blob/main/src/pages/resources/featured-sponsors.svg.js) featured sponsors [light](https://ddev.com/resources/featured-sponsors.svg) and [dark](https://ddev.com/resources/featured-sponsors-darkmode.svg) SVG images used in the [main project readme](https://github.com/ddev/ddev#wonderful-sponsors).
 
 If you’re adding a new item to the array, choose whichever position it should appear in and use the following format:
 
@@ -175,7 +175,7 @@ If you’re adding a new item to the array, choose whichever position it should 
 - **logo** – absolute, webroot-relative path for a logo you’ve added to the `public/logos/` directory. Make sure this is a clean, optimized vector SVG file unless it’s a person’s headshot. (Again, follow the organization’s brand guide wherever possible!)
 - **squareLogo** – a square variant of the organization’s logo, to be used in places like the [Support DDEV](https://ddev.com/support-ddev/) layout. No need to add this if `logo` is already square.
 - **url** – organization’s website URL.
-- **github** – optional GitHub username when relevant, which can be used to make sure the sponsor doesn’t appear twice in a list—as seen in the [Sponsors.astro](https://github.com/ddev/ddev.com-front-end/blob/main/src/components/Sponsors.astro#L53) component.
+- **github** – optional GitHub username when relevant, which can be used to make sure the sponsor doesn’t appear twice in a list—as seen in the [Sponsors.astro](https://github.com/ddev/ddev.com/blob/main/src/components/Sponsors.astro#L53) component.
 
 ## Build & Deployment
 
@@ -183,13 +183,13 @@ For the site to exist at `ddev.com`, it needs to be built and hosted somewhere. 
 
 On every push to the `main` branch, the following happens:
 
-- GitHub Actions tests the site using [this workflow](https://github.com/ddev/ddev.com-front-end/blob/main/.github/workflows/test.yml).
+- GitHub Actions tests the site using [this workflow](https://github.com/ddev/ddev.com/blob/main/.github/workflows/test.yml).
 - [Cloudflare Pages](https://pages.cloudflare.com) runs `npm run build`, and deploys the resulting output from `dist/`.
   - Cloudflare Pages is also configured to build previews for branches on this repository. It will automatically add a comment with the build status and eventual URL(s) to any PR.
 
 ### Secrets
 
-The site [uses Octokit to make REST and GraphQL API requests](https://github.com/ddev/ddev.com-front-end/blob/main/src/lib/api.ts) for repository and contribution details from github.com. It needs an API token to authenticate these requests to function and avoid hitting quota limits.
+The site [uses Octokit to make REST and GraphQL API requests](https://github.com/ddev/ddev.com/blob/main/src/lib/api.ts) for repository and contribution details from github.com. It needs an API token to authenticate these requests to function and avoid hitting quota limits.
 
 GitHub supplies its own private `GITHUB_TOKEN` in the GitHub Actions build environment. In any other environment, including local development, you’ll need to populate a `GITHUB_TOKEN` environment variable with a **classic** GitHub personal access token that has `repo`, `read:org`, `read:user`, and `read:project` scopes.
 
