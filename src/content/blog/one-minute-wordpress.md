@@ -39,7 +39,7 @@ Creating a quick, destructible WordPress site can be handy for testing new theme
 
 You should hit the WordPress installer screen and then you’re off to the races! To get access to the database credentials to complete the installation, run `ddev describe`.
 
-<div class="video-wrapper">
+<div class="video-container">
 <iframe src="https://www.youtube.com/embed/b-6EX3KCbnY" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 </div>
 
@@ -47,7 +47,7 @@ You should hit the WordPress installer screen and then you’re off to the races
 
 Once you’re able to get up and running, you can begin to explore the [additional functionality](https://github.com/ddev/ddev#usage) including imports, local development tools, managing multiple containers, etc. Below is a quick video tour.
 
-<div class="video-wrapper">
+<div class="video-container">
 <iframe loading="lazy" src="https://www.youtube.com/embed/JQrjsazBzP4" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
 </div>
 

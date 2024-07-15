@@ -15,7 +15,9 @@ categories:
 
 At the simplest conceptual level, DDEV is a wrapper on Docker and `docker-compose`. Here's our [Contributor Training](contributor-training.md) explaining how we use Docker in DDEV, including the Docker images and containers and how they're related.
 
+<div class="video-container">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ee1YFvATQKw?si=2Fovta2MheJJdG-T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 ## What is a Docker Image? What is a Docker Container?
 

@@ -18,7 +18,9 @@ PHP developers have long had a variety of complications using Xdebug. It's a net
 
 Here's a recording of our [Xdebug contributor Training](https://www.meetup.com/ddev-events/events/301101460/) walking through DDEV and Xdebug. Please sign up on the [meetup](https://www.meetup.com/ddev-events/) so you'll get notified of future trainings.
 
+<div class="video-container">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4MrwXTaHfnc?si=nwocfW8FjXitbtSa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 First of all, congratulations for making step-debugging a priority. It's my opinion that step-debugging is one of the very first things to learn in any language or environment that we undertake. 
 
