@@ -126,6 +126,7 @@ Choose whichever categories apply, with special attention to the first because i
 - _DevOps_ (workflows, infrastructure, etc.)
 - _Performance_ (benchmarking, tips, etc.)
 - _Guides_ (how-to style posts)
+- _TechNotes_ (more technical code-level discussions)
 - _Training_ (contributor training)
 - _Videos_ (posts that include or primarily feature video content)
 
