@@ -24,13 +24,13 @@ Without healthchecks, containers will show up as ready when they're actually not
 
 ### Avoiding CPU and battery usage
 
-There is one more key trick DDEV does with its healthchecks. During startup, we want to find out as quickly as possible when the container is healthy, so that the start can continue immediately. So we want to test quickly until it's ready. However, after that, not much goes wrong, so we have a tricky healthcheck script that, once the `web` or `db` container has become healthy, slows down the checks to about 60 seconds each. Essentially, if a healthy status has already been detected, the healthcheck script [sleeps 60 seconds](https://github.com/ddev/ddev/blob/master/containers/ddev-webserver/ddev-webserver-base-scripts/healthcheck.sh#L9-L21) to prevent another check from happening, slowing down the checking process and avoiding unnecessary use of CPU and battery.
+There is one more key trick DDEV does with its healthchecks. During startup, we want to find out as quickly as possible when the container is healthy, so that the start can continue immediately. So we want to test quickly until it's ready. However, after that, not much goes wrong, so we have a tricky healthcheck script that, once the `web` or `db` container has become healthy, slows down the checks to about 60 seconds each. Essentially, if a healthy status has already been detected, the healthcheck script [sleeps 60 seconds](https://github.com/ddev/ddev/blob/5c546c28e1c71b26b7cfb8a683e21a190a2f49dc/containers/ddev-webserver/ddev-webserver-base-scripts/healthcheck.sh#L9-L21) to prevent another check from happening, slowing down the checking process and avoiding unnecessary use of CPU and battery.
 
 ## How can extra services like add-ons use Healthchecks?
 
 Most extra services added by add-ons should have healthchecks, so that other services (like the web container) don't try to use them before they are ready. Almost all of the java-based services like `solr` and `elasticsearch` need this desperately, because it takes them quite a while to come up, and if PHP code tries to use them before they're ready, things go wrong.
 
-The [ddev-solr](https://github.com/ddev/ddev-solr) add-on's [healthcheck](https://github.com/ddev/ddev-solr/blob/main/docker-compose.solr.yaml#L44-L45) waits until the Apache SOLR server on port 8983 responds successfully to a request by using
+The [ddev-solr](https://github.com/ddev/ddev-solr) add-on's [healthcheck](https://github.com/ddev/ddev-solr/blob/5acc8b9decbd154891e25c90413aee3008b42280/docker-compose.solr.yaml#L44-L45) waits until the Apache SOLR server on port 8983 responds successfully to a request by using
 
 ```yaml
     healthcheck:
@@ -58,7 +58,7 @@ healthcheck:
   start_interval: 5s
 ```
 
-* `test` is either built into the Docker image or added in the `docker-compose` recipe. In most DDEV core images, it's specified in the Dockerfile, and it's usually in the form of a script, for example, `ddev-webserver`'s [healthcheck.sh](https://github.com/ddev/ddev/blob/master/containers/ddev-webserver/ddev-webserver-base-scripts/healthcheck.sh).
+* `test` is either built into the Docker image or added in the `docker-compose` recipe. In most DDEV core images, it's specified in the Dockerfile, and it's usually in the form of a script, for example, `ddev-webserver`'s [healthcheck.sh](https://github.com/ddev/ddev/blob/5c546c28e1c71b26b7cfb8a683e21a190a2f49dc/containers/ddev-webserver/ddev-webserver-base-scripts/healthcheck.sh).
 * `interval` and `start_interval` are how often the `test` script or command should be run while we're waiting. Most of our containers are set for 1 second, meaning, that if we keep trying every second on failure. `start_interval` is an override of `interval` for use in the `start_period`, but it can only be used where the Docker server is v25 or greater, so we can't use it consistently yet, as some Docker providers used with DDEV are not to v25 yet.
 * `timeout` is how long the system should wait for the `test` before giving up and trying again. 
 * `retries` is how many times it will try the `test` before declaring the container `unhealthy`.
@@ -88,6 +88,6 @@ Yes, it's confusing. I wrote this tech note because I have already struggled wit
 
 ## Contributions welcome!
 
-Your suggestions to improve this tech note are welcome. You can do a PR to this blog adding your techniques. Info and a training session on how to do a PR to anything in ddev.com is at [DDEV Website For Contributors](/blog/ddev-website-for-contributors/).
+Your suggestions to improve this tech note are welcome. You can do a PR to this blog adding your techniques. Info and a training session on how to do a PR to anything in ddev.com is at [DDEV Website For Contributors](ddev-website-for-contributors.md).
 
-Join us for the next [DDEV Live Contributor Training](/blog/contributor-training/). Sign up at [DDEV Live Events Meetup](https://www.meetup.com/ddev-events/events/).
+Join us for the next [DDEV Live Contributor Training](contributor-training.md). Sign up at [DDEV Live Events Meetup](https://www.meetup.com/ddev-events/events/).
