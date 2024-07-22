@@ -28,25 +28,32 @@ The basics of craating a DDEV Add-on are super easy, you can click a button on t
 
 ## Creating an additional service
 
-## Customizing and add-on without "taking it over"
-  * `docker-compose.<name>_extra.yaml`
-  * `config.name_extra.yaml` (and remember override possibility)
 
-## Checking in add-ons
+## Interacting with users during `install.yaml` installs
 
-## Creating `bats` tests (see )
+## Checking required version of DDEV
 
-- Creating bats tests
-- Debugging bats tests in GitHub Actions runs with tmate
-- Interacting with users during install.yaml installs
-- Checking required version of DDEV
-- Yaml reading and usage (yaml_read_files)
+## Reading and using YAML files, including config.yaml (yaml_read_files)
+
+
+## Tips from previous trainings
+
+There was a [previous training in November, 2023](https://youtu.be/TmXqQe48iqE) that covered many topics on add-ons. There you can learn about creating and testing add-ons.
+
+### Checking in add-ons
+
+### Creating and debugging `bats` tests (see previous https://youtu.be/TmXqQe48iqE)
+
+### Customizing and add-on without "taking it over"
+* `docker-compose.<name>_extra.yaml`
+* `config.name_extra.yaml` (and remember override possibility)
 
 
 ## Resources
 
 - Resources:
   - [DDEV docs](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/) on add-ons
+  - [Previous Add-on Training](https://youtu.be/TmXqQe48iqE)
   - `docker-compose.*.yaml` [docs](https://ddev.readthedocs.io/en/stable/users/extend/custom-compose-files/)
   - ddev-addon-template [README](https://github.com/ddev/ddev-addon-template)
   - Learn by studying other add-ons. Official ones at `ddev get --list` and all at `ddev get --list --all`
