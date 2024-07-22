@@ -22,9 +22,57 @@ Here's our July 10, 2024 [Contributor Training](/blog/category/training) on Adva
 
 The basics of craating a DDEV Add-on are super easy, you can click a button on the Add-on template and you're off and running. There are more details in the [Add-on Template](https://github.com/ddev/ddev-addon-template) and in the [DDEV docs](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/#creating-an-additional-service-for-ddev-get).
 
+
+
+## Adding project (or global) custom commands
+
+And add-on can easily add a global custom command. People have made add-ons specifically to add just one global custom command. It seems like a waste, but it's not. It gives your custom command a home, and issue queue, and an upgrade path. 
+
+An example of a project that does lots of this is `ddev-drupal-contrib`, which installs several specialized web custom commands, see [install.yaml](https://github.com/ddev/ddev-drupal-contrib/blob/b5c14f339d46cfd8f7631d3701f597bcd3eba6d9/install.yaml#L2-L11).
+
+```yaml
+project_files:
+  - commands/web/eslint
+  - commands/web/expand-composer-json
+  - commands/web/nightwatch
+  - commands/web/phpcbf
+  - commands/web/phpcs
+  - commands/web/phpunit
+  - commands/web/poser
+  - commands/web/stylelint
+  - commands/web/symlink-project
+```
+
+You can just as easily add to the `global_files` section in the same way, but it usually makes more sense to add commands to the project, since the add-on's scope is project-level. [`ddev-platformsh`](https://github.com/ddev/ddev-platformsh) installs a helper command globally:
+
+```yaml
+global_files:
+  - commands/web/platform
+```
+
+## Adding a `Dockerfile.<add-on-name>`
+
+If your `install.yaml` needs to change basic `ddev-webserver` characteristics, it can add a `.ddev/web-build/Dockerfile.<add-on-name>`.
+
+[`envsa/ddev-pnpm`](https://github.com/envsa/ddev-pnpm/blob/main/install.yaml#L11-L13) does exactly this:
+
+```yaml
+project_files:
+  - commands/web/pnpm
+  - web-build/Dockerfile.pnpm
+```
+
 ## Altering the behavior of `ddev-webserver` with additional `config.*.yaml`
 
+An add-on can deliver both project and global configuration, and can add to or replace almost anything. For example, the [`justafish/ddev-drupal-core-dev`](https://github.com/justafish/ddev-drupal-core-dev) add-on installs a `config.ddev-drupal-core-dev.yaml` that does a few things, including:
+
+```yaml
+webimage_extra_packages: ["chromium-driver"]
+```
+
 ## Altering the behavior of `ddev-webserver` with `docker-compose.*.yaml`
+
+
 
 ## Creating an additional service
 
