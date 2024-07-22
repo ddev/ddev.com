@@ -64,6 +64,7 @@ healthcheck:
 * `start_period` is probably the most important for DDEV. If we set the `start_period` to a reasonable value, we can give up waiting for the container at that point:
     > start period provides initialization time for containers that need time to bootstrap. Probe failure during that period will not be counted towards the maximum number of retries. However, if a health check succeeds during the start period, the container is considered started and all consecutive failures will be counted towards the maximum number of retries.
 
+While `start_period` is a good gauge of how long we should wait... its default is zero, so if an add-on service does not provide it, it's zero. However, the default for `interval` is 30s, and the default for `retries` is 3, so in that situation, assuming that the `test` fails right away, it should be 90s before the container is declared unhealthy. (However, in Docker v25+, `start_interval` defaults to 5s, which is a very different situation, possibly resulting in only 15s before reporting `unhealthy`.)
 
 ## How long does DDEV wait for the services to become healthy?
 
