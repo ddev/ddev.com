@@ -20,19 +20,22 @@ Here's our July 10, 2024 [Contributor Training](/blog/category/training) on Adva
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DzFa6CiHxzs?si=cMMx19RcIwQm23gs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
-Creating a DDEV Add-on is super easy, click a button on the [Add-on Template](https://github.com/ddev/ddev-addon-template) and you're off and running.
+The basics of craating a DDEV Add-on are super easy, you can click a button on the Add-on template and you're off and running. There are more details in the [Add-on Template](https://github.com/ddev/ddev-addon-template) and in the [DDEV docs](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/#creating-an-additional-service-for-ddev-get).
 
-But a good add-on needs tests, and there are more sophisticated things you can do. We'll cover:
+## Altering the behavior of `ddev-webserver` with additional `config.*.yaml`
 
+## Altering the behavior of `ddev-webserver` with `docker-compose.*.yaml`
 
-- Basics:
-  - Creating an add-on
-  - Altering web container behavior with a `docker-compose.*.yaml`
-  - Creating a 3rd-party docker-compose service
-- Customizing an add-on without "taking it over"
-  - docker-compose.name_extra.yaml
-  - config.name_extra.yaml
-- Checking in Add-ons in .ddev
+## Creating an additional service
+
+## Customizing and add-on without "taking it over"
+  * `docker-compose.<name>_extra.yaml`
+  * `config.name_extra.yaml` (and remember override possibility)
+
+## Checking in add-ons
+
+## Creating `bats` tests (see )
+
 - Creating bats tests
 - Debugging bats tests in GitHub Actions runs with tmate
 - Interacting with users during install.yaml installs
