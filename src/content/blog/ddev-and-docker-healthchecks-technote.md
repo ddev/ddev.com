@@ -83,7 +83,7 @@ Some people have huge databases to restore using `snapshot restore`, so
 
 ## Isn't this all a little confusing?
 
-Yes, it's confusing. I wrote this tech note because I have already struggled with doing this wrong more than once, and am in the process of fixing the code yet another time in [default_container_timeout not working](https://github.com/ddev/ddev/issues/5133). The key confusion for me has been the idea of `timeout` in Docker, which is "when to give up on the healthcheck command", and the idea of `default_container_timeout` in DDEV, which is "how long should I wait for the container to become ready". For DDEV, the idea most closely related to "how long should I wait" is the `start_period` in Docker Compose.
+Yes, it's confusing. I wrote this tech note because I have already struggled with doing this wrong more than once, and am in the process of fixing the code yet another time in [fix: default_container_timeout should work right, fixes #5133 again](https://github.com/ddev/ddev/pull/6415). The key confusion for me has been the idea of `timeout` in Docker, which is "when to give up on the healthcheck command", and the idea of `default_container_timeout` in DDEV, which is "how long should I wait for the container to become ready". For DDEV, the idea most closely related to "how long should I wait" is the `start_period` in Docker Compose.
 
 ## Contributions welcome!
 
