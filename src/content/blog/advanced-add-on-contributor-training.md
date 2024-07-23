@@ -20,15 +20,14 @@ Here's our July 10, 2024 [Contributor Training](/blog/category/training) on Adva
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DzFa6CiHxzs?si=cMMx19RcIwQm23gs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
-The basics of craating a DDEV Add-on are super easy, you can click a button on the Add-on template and you're off and running. There are more details in the [Add-on Template](https://github.com/ddev/ddev-addon-template) and in the [DDEV docs](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/#creating-an-additional-service-for-ddev-get).
-
+The basics of creating a DDEV Add-on are super easy, you can click a button on the Add-on template and you're off and running. There are more details in the [Add-on Template](https://github.com/ddev/ddev-addon-template), in the [DDEV docs](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/#creating-an-additional-service-for-ddev-get), and in the [original add-on training](https://www.youtube.com/watch?v=TmXqQe48iqE).
 
 
 ## Adding project (or global) custom commands
 
-And add-on can easily add a global custom command. People have made add-ons specifically to add just one global custom command. It seems like a waste, but it's not. It gives your custom command a home, and issue queue, and an upgrade path. 
+An add-on can easily add a global custom command. People have made add-ons specifically to add just one global custom command. It seems like a waste, but it's not. It gives your custom command(s) a home, an issue queue, and an upgrade path. 
 
-An example of a project that does lots of this is `ddev-drupal-contrib`, which installs several specialized web custom commands, see [install.yaml](https://github.com/ddev/ddev-drupal-contrib/blob/b5c14f339d46cfd8f7631d3701f597bcd3eba6d9/install.yaml#L2-L11).
+An example of a project that does lots of this is [`ddev-drupal-contrib`](https://github.com/ddev/ddev-drupal-contrib), which installs several specialized web custom commands, see [install.yaml](https://github.com/ddev/ddev-drupal-contrib/blob/b5c14f339d46cfd8f7631d3701f597bcd3eba6d9/install.yaml#L2-L11).
 
 ```yaml
 project_files:
@@ -43,7 +42,7 @@ project_files:
   - commands/web/symlink-project
 ```
 
-You can just as easily add to the `global_files` section in the same way, but it usually makes more sense to add commands to the project, since the add-on's scope is project-level. [`ddev-platformsh`](https://github.com/ddev/ddev-platformsh) installs a helper command globally:
+You can add to the `global_files` section in the same way, but it usually makes more sense to add commands to the project, since the add-on's scope is project-level. [`ddev-platformsh`](https://github.com/ddev/ddev-platformsh) installs a helper command globally:
 
 ```yaml
 global_files:
