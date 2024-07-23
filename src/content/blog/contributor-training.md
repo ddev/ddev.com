@@ -1,7 +1,7 @@
 ---
 title: "DDEV Contributor Live Training"
 pubDate: 2023-07-09
-modifiedDate: 2024-05-27
+modifiedDate: 2024-07-23
 summary: Live contributor training is available for those who want to learn to contribute and maintain DDEV.
 author: Randy Fay
 featureImage:
@@ -51,16 +51,17 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 | 2023-09-19    | [DDEV Testing Infrastructure](https://www.dropbox.com/scl/fi/tg5qfkmjcgzckx8z5i5t6/2023-09-19_Testing_Infrastructure.mp4?rlkey=cuemz2fafaltj2dtsgepld9t7&dl=0), see [outline](https://randyfay.notion.site/Contributor-Training-Testing-Infrastructure-804600e2b19d4d46903d868bc3a0701a?pvs=4)                                            |
 | 2023-09-26    | DDEV Automated Tests and How to Improve Them, Randy forgot to record! but see [outline](https://randyfay.notion.site/Contributor-Training-Automated-tests-d238854dff384fa6b640592feb04b14e?pvs=4)                                                                                                                                         |
 | 2023-10-31    | [Measuring and Analyzing User Data with Amplitude](https://www.dropbox.com/scl/fi/xqx3ne70y8oojypr2g2m3/2023-10-31_Amplitude_analytics.mp4?rlkey=eg8hwh0o5sog7e46pl424ntbp&dl=0) see [outline](https://randyfay.notion.site/Contributor-Training-Amplitude-Analytics-71202feb067741fca72b68c6641adc41?pvs=4)                              |
-| 2023-11-07    | [DDEV Add-ons: Creating, maintaining, testing](https://youtu.be/TmXqQe48iqE) see [outline](https://randyfay.notion.site/Contributor-Training-Add-ons-creating-maintaining-testing-1040f7d007c94bef8669a400a2437c98?pvs=4)                        |
+| 2023-11-07    | [DDEV Add-ons: Creating, maintaining, testing](https://youtu.be/TmXqQe48iqE) see [outline](https://randyfay.notion.site/Contributor-Training-Add-ons-creating-maintaining-testing-1040f7d007c94bef8669a400a2437c98?pvs=4)                                                                                                                 |
 | 2023-11-14    | [DDEV Hosting Providers: Creating, Maintaining, Using](https://www.dropbox.com/scl/fi/yjgdjkiwwr4egyaewj40e/2023-11-14_DDEV_provider_integrations.mp4?rlkey=4ygpjaopgp2xbdswptsnzf50u&dl=0), see [outline](https://randyfay.notion.site/Contributor-Training-Provider-integrations-fb9676ca17d64fe6bf16a6b5b1622ccb?pvs=4).               |
 | 2024-05-15    | [Debugging DDEV Go Code: Commands and Tests](https://www.youtube.com/watch?v=E-AEzC1p76E), see [blog](golang-debugging.md).                                                                                                                                                                                                               |
 | 2024-05-22    | [Xdebug and DDEV, How it works and Troubleshooting](https://www.youtube.com/watch?v=4MrwXTaHfnc), see [blog](xdebug-debugging.md)                                                                                                                                                                                                         |
 | 2024-06-04    | [DDEV Docker Architecture](ddev-docker-architecture.md)                                                                                                                                                                                                                                                                                   |
+| 2024-06-19    | [Traefik Router Configuration and Possibilities](traefik-configuration-contributor-training.md)                                                                                                                                                                                                                                           |
+| 2024-07-10    | [Advanced Add-on Techniques](advanced-add-on-contributor-training.md)                                                                                                                                                                                                                                                                     |
 
 <a name="upcoming-trainings"></a>
 **Upcoming Trainings:**
 
-* Advanced DDEV Add-On Techniques, including automated testing and debugging tests
 * DDEV automated tests and how to improve them
 * Hostname Resolution and Debugging in DDEV
 * Using AI in DDEV Development (Continue.dev, etc.)

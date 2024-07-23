@@ -28,7 +28,7 @@ The basics of creating a DDEV Add-on are super easy, you can click a button on t
 
 ## Adding project (or global) custom commands
 
-An add-on can easily add a global custom command. People have made add-ons specifically to add just one global custom command. It seems like a waste, but it's not. It gives your custom command(s) a home, an issue queue, and an upgrade path. 
+An add-on can easily add one or more project custom commands. People have made add-ons specifically to add just one project custom command. It seems like a waste, but it's not. It gives your custom command(s) a home, an issue queue, and an upgrade path. 
 
 An example of a project that does lots of this is [`ddev-drupal-contrib`](https://github.com/ddev/ddev-drupal-contrib), which installs several specialized web custom commands, see [install.yaml](https://github.com/ddev/ddev-drupal-contrib/blob/b5c14f339d46cfd8f7631d3701f597bcd3eba6d9/install.yaml#L2-L11).
 
