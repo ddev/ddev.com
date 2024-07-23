@@ -133,25 +133,51 @@ Some add-ons may require a specific version of DDEV. In DDEV v1.23.4 it will be 
 
 ## Reading and using YAML files, including config.yaml (yaml_read_files)
 
+`ddev get` can read the contents of arbitrary YAML files, see [docs](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/#template-action-replacements-advanced).
+
+For example, in `ddev-platformsh` the `.platform.app.yaml` is read into the `platformapp` variable, and other files are read as well, see [https://github.com/ddev/ddev-platformsh/blob/bb7365e30ae68797602dd0f648bf16bb46cd62b3/install.yaml#L330-L333](install.yaml):
+
+```yaml
+yaml_read_files:
+  platformapp: .platform.app.yaml
+  services: .platform/services.yaml
+  routes: .platform/routes.yaml
+```
+
+The `platformapp` variable is then used like this in the `install.yaml`:
+```yaml
+  - |
+    #ddev-nodisplay
+    #ddev-description:check project type
+    {{ if not (hasPrefix  "php" .platformapp.type) }}
+      printf "\n\nUnsupported application type {{ .platformapp.type }}.\nOnly php applications are currently supported." >&2
+      exit 5
+    {{ end }}
+```
+
+In addition, the `~/.ddev/global_config.yaml` is read into the variable `DdevGlobalConfig`, and the project `.ddev/config.yaml` is loaded into the variable `DdevProjectConfig`, so any element of the global or project configuration can be used in the process of a complex `install.yaml` as well.
 
 ## Tips from previous trainings
 
-There was a [previous training in November, 2023](https://youtu.be/TmXqQe48iqE) that covered many topics on add-ons. There you can learn about creating and testing add-ons.
+A [previous training in November, 2023](https://youtu.be/TmXqQe48iqE) covered many add-on topics, including testing with `bats` and debugging your tests. There you can learn about creating and testing add-ons.
 
 ### Checking in add-ons
 
-### Creating and debugging `bats` tests (see previous https://youtu.be/TmXqQe48iqE)
+Most teams choose to check in their project `.ddev` directory, and this is recommended. All metadata and other files for an add-on are stored in the `.ddev` directory, so this works fine. When it's time to update an add-on with `ddev get some/add-on`, do that, check in the result, and create a pull request.
 
 ### Customizing and add-on without "taking it over"
-* `docker-compose.<name>_extra.yaml`
-* `config.name_extra.yaml` (and remember override possibility)
 
+There are times that you need to override the configuration provided by an add-on. Don't forget that you can do it without editing add-on files, thus making it possible to update the add-on without having to re-add your edits, etc. 
+
+You can add a `.ddev/docker-compose.<add-on-name>_extra.yaml` to add `docker-compose` capabilities, for example to change the `image` tag used by the add-on. 
+
+And of course you can add a `config.<add-on-name>_extra.yaml` to override what the `config.<add-on-name>.yaml` may have done.
 
 ## Resources
 
 - Resources:
   - [DDEV docs](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/) on add-ons
-  - [Previous Add-on Training](https://youtu.be/TmXqQe48iqE)
+  - [Previous Add-on Training](https://www.youtube.com/watch?v=TmXqQe48iqE)
   - `docker-compose.*.yaml` [docs](https://ddev.readthedocs.io/en/stable/users/extend/custom-compose-files/)
   - ddev-addon-template [README](https://github.com/ddev/ddev-addon-template)
   - Learn by studying other add-ons. Official ones at `ddev get --list` and all at `ddev get --list --all`
