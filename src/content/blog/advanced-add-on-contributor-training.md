@@ -72,14 +72,64 @@ webimage_extra_packages: ["chromium-driver"]
 
 ## Altering the behavior of `ddev-webserver` with `docker-compose.*.yaml`
 
+Although the most common use of adding a `docker-compose.*.yaml` is to add a new service (below) it is often used to change the behavior of the web service. 
 
+For example, [`ddev-proxysupport`](https://github.com/ddev/ddev-proxy-support/blob/7c8a91fb020bf2df62418730352d3db5a1ca76e3/docker-compose.proxy-support.yaml#L3-L10) sets arguments for the `build`stage inside the web container.
 
-## Creating an additional service
+## Creating an additional service using a `docker-compose.*.yaml`
 
+One of the most common add-on uses is to create a new service, like `mongo` or `elasticsearch` or `solr`. You can look at many of the official add-ons to see how this is done.
+
+Examples:
+
+* [ddev-solr](https://github.com/ddev/ddev-solr/docker-compose.solr.yaml)
+* [ddev-memcached](https://github.com/ddev/ddev-memcached/blob/main/docker-compose.memcached.yaml)
+
+See the [general docs on extra services](https://ddev.readthedocs.io/en/stable/users/extend/custom-compose-files/#third-party-services-may-need-to-trust-ddev-webserver)
 
 ## Interacting with users during `install.yaml` installs
 
+Although unusual, it is sometimes useful to interact with the user during the `ddev get` process. For example, [`ddev-platformsh`](https://github.com/ddev/ddev-platformsh) checks to make sure that the `PLATFORMSH_CLI_TOKEN` has been properly configured, and, if not, requests it and configures it:
+
+```yaml
+    #ddev-nodisplay
+    if ( {{ contains "PLATFORMSH_CLI_TOKEN" (list .DdevGlobalConfig.web_environment | toString) }} || {{ contains "PLATFORMSH_CLI_TOKEN" (list .DdevProjectConfig.web_environment | toString) }} ); then
+      echo "Using existing PLATFORMSH_CLI_TOKEN."
+    else
+      printf "\n\nPlease enter your platform.sh token: "
+    fi
+
+  - |
+    #ddev-nodisplay
+    #ddev-description:Setting PLATFORMSH_CLI_TOKEN
+    if !( {{ contains "PLATFORMSH_CLI_TOKEN" (list .DdevGlobalConfig.web_environment | toString) }} || {{ contains "PLATFORMSH_CLI_TOKEN" (list .DdevProjectConfig.web_environment | toString) }} ); then
+      read token
+      # Put the token into the global web environment
+      ddev config global --web-environment-add PLATFORMSH_CLI_TOKEN=${token}
+      echo "PLATFORMSH_CLI_TOKEN set globally"
+    fi
+```
+
 ## Checking required version of DDEV
+
+Some add-ons may require a specific version of DDEV. In DDEV v1.23.4 it will be possible to just specify a `ddev_version_constrant` in the `install.yaml`, but for now there are two other techniques:
+
+1. Check for the existence of a DDEV "capability" using `ddev debug capapbilities`. For example:
+
+  ```yaml
+  pre_install_actions:
+    # Make sure we have a ddev version that can support what we do here
+    - |
+      #ddev-nodisplay
+      #ddev-description:Checking DDEV version
+      (ddev debug capabilities | grep multiple-upload-dirs >/dev/null) || (echo "Please upgrade DDEV to v1.22+ for appropriate capabilities" && false)
+  ```
+
+2. Add a `ddev_version_constraint` to a `config.<add-on-name>.yaml`. This will only fail at `ddev start` time, so is less pleasant. But a `config.<add-on-name>.yaml` might have:
+
+  ```yaml
+  ddev_version_constraint: ">=v1.23.0"
+  ```
 
 ## Reading and using YAML files, including config.yaml (yaml_read_files)
 
