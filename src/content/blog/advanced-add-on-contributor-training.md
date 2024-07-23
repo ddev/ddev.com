@@ -113,7 +113,7 @@ Although unusual, it is sometimes useful to interact with the user during the `d
 
 Some add-ons may require a specific version of DDEV. In DDEV v1.23.4 it will be possible to just specify a `ddev_version_constrant` in the `install.yaml`, but for now there are two other techniques:
 
-1. Check for the existence of a DDEV "capability" using `ddev debug capapbilities`. For example:
+1. Check for the existence of a DDEV "capability" using `ddev debug capabilities`. For example:
 
   ```yaml
   pre_install_actions:
@@ -164,7 +164,7 @@ A [previous training in November, 2023](https://youtu.be/TmXqQe48iqE) covered ma
 
 Most teams choose to check in their project `.ddev` directory, and this is recommended. All metadata and other files for an add-on are stored in the `.ddev` directory, so this works fine. When it's time to update an add-on with `ddev get some/add-on`, do that, check in the result, and create a pull request.
 
-### Customizing and add-on without "taking it over"
+### Customizing an add-on without "taking it over"
 
 There are times that you need to override the configuration provided by an add-on. Don't forget that you can do it without editing add-on files, thus making it possible to update the add-on without having to re-add your edits, etc. 
 
