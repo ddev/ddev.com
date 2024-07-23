@@ -4,9 +4,12 @@ pubDate: 2024-07-23
 # modifiedDate: 2024-07-23
 summary: Advanced Add-On Techniques for Contributors
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2024/07/traefik.logo.png
-#  alt: Traefik Configuration for DDEV
+featureImage:
+  src: /img/blog/2024/07/add-on-puzzle-pieces.png
+  alt: Add-on puzzle pieces
+  credit: "Ideogram.ai: Create a banner image for a tech blog, featuring three colorful puzzle pieces labeled 'Solr', 'Memcached', and 'Elasticsearch'"
+  shadow: true
+  hidden: true
 categories:
   - Training
   - Guides
