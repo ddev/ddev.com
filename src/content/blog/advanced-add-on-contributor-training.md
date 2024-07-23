@@ -73,7 +73,7 @@ webimage_extra_packages: ["chromium-driver"]
 
 Although the most common use of adding a `docker-compose.*.yaml` is to add a new service (below) it is often used to change the behavior of the web service. 
 
-For example, [`ddev-proxysupport`](https://github.com/ddev/ddev-proxy-support/blob/7c8a91fb020bf2df62418730352d3db5a1ca76e3/docker-compose.proxy-support.yaml#L3-L10) sets arguments for the `build`stage inside the web container.
+For example, [`ddev-proxy-support`](https://github.com/ddev/ddev-proxy-support/blob/7c8a91fb020bf2df62418730352d3db5a1ca76e3/docker-compose.proxy-support.yaml#L3-L10) sets arguments for the `build` stage inside the web container.
 
 ## Creating an additional service using a `docker-compose.*.yaml`
 
@@ -81,16 +81,19 @@ One of the most common add-on uses is to create a new service, like `mongo` or `
 
 Examples:
 
-* [ddev-solr](https://github.com/ddev/ddev-solr/docker-compose.solr.yaml)
+* [ddev-solr](https://github.com/ddev/ddev-solr/blob/main/docker-compose.solr.yaml)
 * [ddev-memcached](https://github.com/ddev/ddev-memcached/blob/main/docker-compose.memcached.yaml)
 
-See the [general docs on extra services](https://ddev.readthedocs.io/en/stable/users/extend/custom-compose-files/#third-party-services-may-need-to-trust-ddev-webserver)
+See the [general docs on extra services](https://ddev.readthedocs.io/en/stable/users/extend/custom-compose-files/#third-party-services-may-need-to-trust-ddev-webserver).
 
 ## Interacting with users during `install.yaml` installs
 
 Although unusual, it is sometimes useful to interact with the user during the `ddev get` process. For example, [`ddev-platformsh`](https://github.com/ddev/ddev-platformsh) checks to make sure that the `PLATFORMSH_CLI_TOKEN` has been properly configured, and, if not, requests it and configures it:
 
 ```yaml
+pre_install_actions:
+  # Get PLATFORMSH_CLI_TOKEN from user if we don't have it yet
+  - |
     #ddev-nodisplay
     if ( {{ contains "PLATFORMSH_CLI_TOKEN" (list .DdevGlobalConfig.web_environment | toString) }} || {{ contains "PLATFORMSH_CLI_TOKEN" (list .DdevProjectConfig.web_environment | toString) }} ); then
       echo "Using existing PLATFORMSH_CLI_TOKEN."
@@ -111,7 +114,7 @@ Although unusual, it is sometimes useful to interact with the user during the `d
 
 ## Checking required version of DDEV
 
-Some add-ons may require a specific version of DDEV. In DDEV v1.23.4 it will be possible to just specify a `ddev_version_constrant` in the `install.yaml`, but for now there are two other techniques:
+Some add-ons may require a specific version of DDEV. In DDEV v1.23.4 it will be possible to just specify a `ddev_version_constraint` in the `install.yaml`, but for now there are two other techniques:
 
 1. Check for the existence of a DDEV "capability" using `ddev debug capabilities`. For example:
 
@@ -134,7 +137,7 @@ Some add-ons may require a specific version of DDEV. In DDEV v1.23.4 it will be 
 
 `ddev get` can read the contents of arbitrary YAML files, see [docs](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/#template-action-replacements-advanced).
 
-For example, in `ddev-platformsh` the `.platform.app.yaml` is read into the `platformapp` variable, and other files are read as well, see [https://github.com/ddev/ddev-platformsh/blob/bb7365e30ae68797602dd0f648bf16bb46cd62b3/install.yaml#L330-L333](install.yaml):
+For example, in `ddev-platformsh` the `.platform.app.yaml` is read into the `platformapp` variable, and other files are read as well, see [install.yaml](https://github.com/ddev/ddev-platformsh/blob/bb7365e30ae68797602dd0f648bf16bb46cd62b3/install.yaml#L330-L333):
 
 ```yaml
 yaml_read_files:
@@ -145,6 +148,7 @@ yaml_read_files:
 
 The `platformapp` variable is then used like this in the `install.yaml`:
 ```yaml
+pre_install_actions:
   - |
     #ddev-nodisplay
     #ddev-description:check project type
