@@ -14,6 +14,8 @@ categories:
 
 [Diffy](https://diffy.websote) is a visual regression testing tool that allows you to take screenshots of your website and compare them so you know exactly what pages got changed and where. We decided to build DDEV integration so it is possible to take screenshots from the local website, upload them to Diffy, and then compare them with screenshots from other environments.
 
+To see the integration running live visit https://docs.diffy.website/features/local-development-ddev.
+
 Architecturally integration consists of:
 
 * Docker container with preinstalled node and Chrome 111
