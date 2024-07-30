@@ -181,12 +181,11 @@ And of course you can add a `config.<add-on-name>_extra.yaml` to override what t
 
 ## Resources
 
-- Resources:
-  - [DDEV docs](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/) on add-ons
-  - [Previous Add-on Training](https://www.youtube.com/watch?v=TmXqQe48iqE)
-  - `docker-compose.*.yaml` [docs](https://ddev.readthedocs.io/en/stable/users/extend/custom-compose-files/)
-  - ddev-addon-template [README](https://github.com/ddev/ddev-addon-template)
-  - Learn by studying other add-ons. Official ones at `ddev get --list` and all at `ddev get --list --all`
+- [DDEV docs](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/) on add-ons
+- [Previous Add-on Training](https://www.youtube.com/watch?v=TmXqQe48iqE)
+- `docker-compose.*.yaml` [docs](https://ddev.readthedocs.io/en/stable/users/extend/custom-compose-files/)
+- ddev-addon-template [README](https://github.com/ddev/ddev-addon-template)
+- Learn by studying other add-ons. Official ones at `ddev get --list` and all at `ddev get --list --all`
 
 ## Contributions welcome!
 
