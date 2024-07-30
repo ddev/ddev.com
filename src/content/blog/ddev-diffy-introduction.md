@@ -29,7 +29,7 @@ To download the app we use `install.yaml` post_install_actions:
 ```
 - wget https://github.com/DiffyWebsite/diffy-worker/archive/refs/heads/main.zip
 - unzip main.zip
-- rm main.zip
+- rm -f main.zip
 ```
 
 ## App configuration
@@ -46,6 +46,11 @@ This is very non-trivial task that we got help from one of the maintainers Stas 
 We want to run npm install inside of the container and not on the host. We accomplished it by adding `post-start` hook and specifying the service where to run the command.
 For that we created `config.diffy.yaml` and had instructions there. Pay attention that it is specified as `project_files` in install.yaml file.
 
+## Docker container "diffy" user
+For security reasons it is important not to run all the processes in our container as root user. For that we create a user "diffy" and then run all the commands as this user. 
+
+This is accomplished by extending main container (see ["build" section](https://github.com/DiffyWebsite/ddev-diffy/blob/main/docker-compose.diffy.yaml#L7)) and here are [commands to create the user](https://github.com/DiffyWebsite/ddev-diffy/blob/main/diffy/Dockerfile).
+
 ## Building Docker container for multiple architectures
 We follow DDEV path to build the docker container for multiple architectures:
 ```
@@ -53,6 +58,6 @@ docker buildx build --push --platform $(BUILD_ARCHS) -t $(DOCKER_REPO):$(VERSION
 ```
 See [Makefile](https://github.com/DiffyWebsite/diffy-worker/blob/main/docker/Makefile) and [Readme](https://github.com/DiffyWebsite/diffy-worker) for more details.
 
-The biggest roadblock I had with the container is that default shell from ubuntu:22.04 is “dash”. So we had to replace it with bash to make node installed and used properly. After doing that installation of node with nvm became possible that simplifies Dockerfile a lot. And still we had to link node / npm executables to /usr/bin manually to make sure 100% they can be found properly.
+The biggest roadblock I had with the container is that default shell from ubuntu:22.04 is “dash”. So we had to replace it with bash to make node installed and used properly. Also pay attention that we install node with "n" so it is installed to `/usr/local/bin/node` so it is accessible for everyone.
 
 I would like to thank Randy and Stas as lot for their constant support in this project.
