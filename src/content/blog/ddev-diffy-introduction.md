@@ -52,7 +52,7 @@ For security reasons it is important not to run all the processes in our contain
 This is accomplished by extending main container (see ["build" section](https://github.com/DiffyWebsite/ddev-diffy/blob/main/docker-compose.diffy.yaml#L7)) and here are [commands to create the user](https://github.com/DiffyWebsite/ddev-diffy/blob/main/diffy/Dockerfile).
 
 ## Building Docker container for multiple architectures
-We follow DDEV path to build the docker container for multiple architectures:
+We follow DDEV path to build the Docker container for multiple architectures:
 ```
 docker buildx build --push --platform $(BUILD_ARCHS) -t $(DOCKER_REPO):$(VERSION) --label "build-info=$(DOCKER_REPO):$(VERSION) commit=$(shell git describe --tags --always) built $$(date) by $$(id -un) on $$(hostname)" --label "maintainer=Diffy <info@diffy.website>" $(DOCKER_ARGS) .
 ```
