@@ -59,7 +59,7 @@ make push VERSION=20240730_rfay_webserver_arch DOCKER_ORG=randyfay
 
 ## Pushing using the GitHub Actions Workflow
 
-Rather than tying up your computer for all the time it takes to do a push, you can use the GitHub Actions workflow. For example, with `ddev/ddev` we can go to`https://github.com/ddev/ddev/actions/workflows/push-tagged-image.yml` and choose what image to push and what branch to push it from. You can also do this from your fork if you [configure](https://ddev.readthedocs.io/en/stable/developers/release-management/#github-actions-required-secrets) the `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN` secrets for your fork.
+Rather than tying up your computer for all the time it takes to do a push, you can use the GitHub Actions workflow. For example, with `ddev/ddev` we can go to `https://github.com/ddev/ddev/actions/workflows/push-tagged-image.yml` and choose what image to push and what branch to push it from. You can also do this from your fork if you [configure](https://ddev.readthedocs.io/en/stable/developers/release-management/#github-actions-required-secrets) the `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN` secrets for your fork.
 
 If it helps you and you are a known entity, we can also give you permissions on [ddev-test/ddev](https://github.com/ddev-test/ddev) so that you can do this, but it's probably easier to push to your own `hub.docker.com` repository.
 
