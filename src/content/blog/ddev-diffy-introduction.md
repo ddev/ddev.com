@@ -5,7 +5,7 @@ modifiedDate: 2024-08-03
 summary: My experience building an addon for DDEV
 author: Yuri Gerasymov
 featureImage:
-  src: /img/blog/2024/03/2024-ddev.png
+  src: /img/blog/2024/08/ddev+diffy.png
   alt: DDEV and Diffy integration
   credit: 'Ideogram.ai: the words "2024" and "DDEV" next to each other'
 categories:
@@ -14,7 +14,7 @@ categories:
 
 [Diffy](https://diffy.websote) is a visual regression testing tool that allows you to take screenshots of your website and compare them so you know exactly what pages got changed and where. We decided to build DDEV integration so it is possible to take screenshots from the local website, upload them to Diffy, and then compare them with screenshots from other environments.
 
-To see the integration running live visit https://docs.diffy.website/features/local-development-ddev.
+Watch [3 mins video](https://www.loom.com/share/1944eb3462934279a175e65e16e715ed) or read [documentation](https://docs.diffy.website/features/local-development-ddev).
 
 Architecturally integration consists of:
 
