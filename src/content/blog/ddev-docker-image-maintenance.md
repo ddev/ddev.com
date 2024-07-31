@@ -23,7 +23,7 @@ DDEV depends on a [few critical Docker images](https://github.com/ddev/ddev/tree
 
 ## Building images locally for testing your changes
 
-As a prerequisite to building multi-architecture Docker images, do `docker buildx create —use`, which sets up `docker buildx` to do that. 
+As a prerequisite to building multi-architecture Docker images, do `docker buildx create --use`, which sets up `docker buildx` to do that. 
 
 After that, assuming that you are working on a branch called `YYMMDD_youruid_branch_description`, like `20240730_rfay_webserver_arch` and you need to build a new `ddev-webserver` image to support it, use
 
@@ -87,7 +87,7 @@ When your project starts up it will actually build this into the image. You can 
 
 ### Adding conditional layers in Golang code
 
-DDEV's golang code adds a few layers to the images at the first `ddev start` on a project. You can see all of these consolidated in a project in the `.ddev/.webimageBuild/Dockerfile` (which is not something you will ever change, it's a generated file). That's where things like the matching in-container Linux user and group are added, and a few other things. You can see how DDEV adds these layers in [WriteBuildDockerfile()](https://github.com/ddev/ddev/blob/c2aca52a18687e678086dd232573cf51914dba56/pkg/ddevapp/config.go#L1113). It's unusual to do things with images this way, but some problems do require logic during the Golang processes.
+DDEV's Golang code adds a few layers to the images at the first `ddev start` on a project. You can see all of these consolidated in a project in the `.ddev/.webimageBuild/Dockerfile` (which is not something you will ever change, it's a generated file). That's where things like the matching in-container Linux user and group are added, and a few other things. You can see how DDEV adds these layers in [WriteBuildDockerfile()](https://github.com/ddev/ddev/blob/c2aca52a18687e678086dd232573cf51914dba56/pkg/ddevapp/config.go#L1113). It's unusual to do things with images this way, but some problems do require logic during the Golang processes.
 
 ## Running and improving the image-based tests
 
@@ -109,7 +109,7 @@ There are hundreds of Golang-based tests as well, some of which do a good job ex
 ## Resources
 
 - [Release Management and Docker Images](https://ddev.readthedocs.io/en/stable/developers/release-management/)
-- [DDEV Docker Architecture](https://ddev.com/blog/ddev-docker-architecture) contributor training.
+- [DDEV Docker Architecture](ddev-docker-architecture.md) contributor training.
 - [Contributor Training on Add-Ons](advanced-add-on-contributor-training.md) (covers `bats` usage)
 
 ## Contributions welcome!
