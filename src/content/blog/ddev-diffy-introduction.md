@@ -1,15 +1,15 @@
 ---
-title: "Diffy integration with DDEV"
+title: "Diffy: Anatomy of an Advanced DDEV Add-on"
 pubDate: 2024-08-03
 modifiedDate: 2024-08-03
-summary: My experience building an add-on for DDEV
+summary: Some advanced topics: saving configuration variables, "npm install" inside of the container, building container for multiple architectures
 author: Yuri Gerasymov
 featureImage:
   src: /img/blog/2024/08/ddev+diffy.png
   alt: DDEV and Diffy integration
-  credit: 'Ideogram.ai: the words "2024" and "DDEV" next to each other'
+  credit: ''
 categories:
-  - Announcements
+  - TechNotes
 ---
 
 [Diffy](https://diffy.website) is a visual regression testing tool that allows you to take screenshots of your website and compare them so you know exactly what pages got changed and where. We decided to build DDEV integration so it is possible to take screenshots from the local website, upload them to Diffy, and then compare them with screenshots from other environments.
@@ -40,11 +40,11 @@ First we check if variables are set and if they are not — we request the value
 
 Pay attention that ‘{{ }}’ are [go templates](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/#template-action-replacements-advanced) and not bash code.
 But this is not the end — also, we need to copy the values of these variables into .env file for the app. So the app can access them.
-This is very non-trivial task that we got help from one of the maintainers [Stas Zhuk](introducing-maintainer-stas.md). It has a lot of go template code, and we run it in [post_install_action](https://github.com/DiffyWebsite/ddev-diffy/blob/c6b1e2dedf6b1c5e186d357fd000ce1a568f70e5/install.yaml#L55).
+This is very non-trivial task that we got help from one of the maintainers [Stas Zhuk](introducing-maintainer-stas.md). It has a lot of go template code, and we run it in [post_install_actions](https://github.com/DiffyWebsite/ddev-diffy/blob/c6b1e2dedf6b1c5e186d357fd000ce1a568f70e5/install.yaml#L55).
 
 ## Run npm install
 We want to run npm install inside of the container and not on the host. We accomplished it by adding `post-start` hook and specifying the service where to run the command.
-For that we created `config.diffy.yaml` and had instructions there. Pay attention that it is specified as `project_files` in install.yaml file.
+For that we created `config.diffy.yaml` and had instructions there. Pay attention that it is specified as `project_files` in `install.yaml` file.
 
 ## Docker container "diffy" user
 For security reasons it is important not to run all the processes in our container as root user. For that we create a user "diffy" and then run all the commands as this user. 
