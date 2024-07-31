@@ -28,7 +28,7 @@ The basics of creating a DDEV Add-on are super easy, you can click a button on t
 
 ## Adding project (or global) custom commands
 
-An add-on can easily add one or more project custom commands. People have made add-ons specifically to add just one project custom command. It seems like a waste, but it's not. It gives your custom command(s) a home, an issue queue, and an upgrade path. 
+An add-on can easily add one or more project custom commands. People have made add-ons specifically to add just one project custom command. It seems like a waste, but it's not. It gives your custom command(s) a home, an issue queue, and an upgrade path.
 
 An example of a project that does lots of this is [`ddev-drupal-contrib`](https://github.com/ddev/ddev-drupal-contrib), which installs several specialized web custom commands, see [install.yaml](https://github.com/ddev/ddev-drupal-contrib/blob/b5c14f339d46cfd8f7631d3701f597bcd3eba6d9/install.yaml#L2-L11).
 
@@ -74,7 +74,7 @@ webimage_extra_packages: ["chromium-driver"]
 
 ## Altering the behavior of `ddev-webserver` with `docker-compose.*.yaml`
 
-Although the most common use of adding a `docker-compose.*.yaml` is to add a new service (below) it is often used to change the behavior of the web service. 
+Although the most common use of adding a `docker-compose.*.yaml` is to add a new service (below) it is often used to change the behavior of the web service.
 
 For example, [`ddev-proxy-support`](https://github.com/ddev/ddev-proxy-support/blob/7c8a91fb020bf2df62418730352d3db5a1ca76e3/docker-compose.proxy-support.yaml#L3-L10) sets arguments for the `build` stage inside the web container.
 
@@ -117,9 +117,15 @@ pre_install_actions:
 
 ## Checking required version of DDEV
 
-Some add-ons may require a specific version of DDEV. In DDEV v1.23.4 it will be possible to just specify a `ddev_version_constraint` in the `install.yaml`, but for now there are two other techniques:
+Some add-ons may require a specific version of DDEV.
 
-1. Check for the existence of a DDEV "capability" using `ddev debug capabilities`. For example:
+1. Add a `ddev_version_constraint` to the `install.yaml`. This [version constraint](https://github.com/Masterminds/semver#checking-version-constraints) will be validated against the running DDEV executable and prevent add-on from being installed if it doesn't validate. Available with DDEV v1.23.4+, and works only for DDEV v1.23.4+ binaries:
+
+  ```yaml
+  ddev_version_constraint: '>= v1.23.4'
+  ```
+
+2. Check for the existence of a DDEV "capability" using `ddev debug capabilities`. For example:
 
   ```yaml
   pre_install_actions:
@@ -130,7 +136,7 @@ Some add-ons may require a specific version of DDEV. In DDEV v1.23.4 it will be 
       (ddev debug capabilities | grep multiple-upload-dirs >/dev/null) || (echo "Please upgrade DDEV to v1.22+ for appropriate capabilities" && false)
   ```
 
-2. Add a `ddev_version_constraint` to a `config.<add-on-name>.yaml`. This will only fail at `ddev start` time, so is less pleasant. But a `config.<add-on-name>.yaml` might have:
+3. Add a `ddev_version_constraint` to a `config.<add-on-name>.yaml`. This will only fail at `ddev start` time, so is less pleasant. But a `config.<add-on-name>.yaml` might have:
 
   ```yaml
   ddev_version_constraint: ">=v1.23.0"
@@ -173,9 +179,9 @@ Most teams choose to check in their project `.ddev` directory, and this is recom
 
 ### Customizing an add-on without "taking it over"
 
-There are times that you need to override the configuration provided by an add-on. Don't forget that you can do it without editing add-on files, thus making it possible to update the add-on without having to re-add your edits, etc. 
+There are times that you need to override the configuration provided by an add-on. Don't forget that you can do it without editing add-on files, thus making it possible to update the add-on without having to re-add your edits, etc.
 
-You can add a `.ddev/docker-compose.<add-on-name>_extra.yaml` to add `docker-compose` capabilities, for example to change the `image` tag used by the add-on. 
+You can add a `.ddev/docker-compose.<add-on-name>_extra.yaml` to add `docker-compose` capabilities, for example to change the `image` tag used by the add-on.
 
 And of course you can add a `config.<add-on-name>_extra.yaml` to override what the `config.<add-on-name>.yaml` may have done.
 
