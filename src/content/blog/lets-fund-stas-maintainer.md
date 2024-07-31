@@ -17,7 +17,7 @@ We all want DDEV to be fully maintained at the level you depend on. Now is the t
 
 **Stas' Role as DDEV Maintainer**: In November, 2023, we [introduced Stas to the community](introducing-maintainer-stas.md) as our second maintainer. Since then, he's done amazing things, working as a part-time paid maintainer. He knows how all the testing and other infrastructure works, has mastered the Golang and Docker codebase, and has contributed hundreds of bugfixes, features, and documentation improvements. As of today, he has contributed [211 commits](https://github.com/ddev/ddev/graphs/contributors) to the master branch of the `ddev/ddev` project alone, second only through the whole history of DDEV to yours truly. Take a look at his [600+](https://github.com/stasadev?tab=overview&from=2024-07-01&to=2024-07-31&org=ddev) contributions to the DDEV org **just in 2024**. He maintains add-ons, supports new contributors, answers questions in Discord, Slack, the issue queue, and Stack Overflow.
 
-**Why is DDEV Maintenance Important?** You and DDEV are in engulfed in a maelstrom of change. Upstream technologies change on your weekly. Things break from all directions. If DDEV weren't cared for daily, it would fail to serve you within a pretty short time. 
+**Why is DDEV Maintenance Important?** You and DDEV are in engulfed in a maelstrom of change. Upstream technologies change on you weekly. Things break from all directions. If DDEV weren't cared for daily, it would fail to serve you within a pretty short time. 
 
 * PHP 8.4 support was added today to DDEV HEAD (along with versions 5.6-8.3!). 
 * Drupal 11 is coming out this week. DDEV has already had support for some time. 
