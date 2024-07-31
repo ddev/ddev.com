@@ -4,13 +4,11 @@ pubDate: 2024-07-31
 # modifiedDate: 2024-07-23
 summary: "Let's fully fund DDEv maintainer Stas Zhuk"
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2024/07/image-maintenance.png
-#  alt: "a banner image showing a carved stone image being maintained by a number of workmen"
-#  credit: "ChatGPT: A banner image showing a carved stone image being maintained by a number of workmen"
-#categories:
-#  - Training
-#  - Guides
+featureImage:
+  src: /img/blog/2023/10/stas-bench-cropped.jpg
+  alt: Stas Zhuk, DDEV Maintainer
+categories:
+  - Announcements
 ---
 
 We all want DDEV to be fully maintained at the level you depend on. Now is the time to fully fund maintainer Stas Zhuk so that he does not have to take on other client work. 
