@@ -97,7 +97,6 @@ Although unusual, it is sometimes useful to interact with the user during the `d
 pre_install_actions:
   # Get PLATFORMSH_CLI_TOKEN from user if we don't have it yet
   - |
-    #ddev-nodisplay
     if ( {{ contains "PLATFORMSH_CLI_TOKEN" (list .DdevGlobalConfig.web_environment | toString) }} || {{ contains "PLATFORMSH_CLI_TOKEN" (list .DdevProjectConfig.web_environment | toString) }} ); then
       echo "Using existing PLATFORMSH_CLI_TOKEN."
     else
@@ -105,7 +104,6 @@ pre_install_actions:
     fi
 
   - |
-    #ddev-nodisplay
     #ddev-description:Setting PLATFORMSH_CLI_TOKEN
     if !( {{ contains "PLATFORMSH_CLI_TOKEN" (list .DdevGlobalConfig.web_environment | toString) }} || {{ contains "PLATFORMSH_CLI_TOKEN" (list .DdevProjectConfig.web_environment | toString) }} ); then
       read token
@@ -131,7 +129,6 @@ Some add-ons may require a specific version of DDEV.
   pre_install_actions:
     # Make sure we have a ddev version that can support what we do here
     - |
-      #ddev-nodisplay
       #ddev-description:Checking DDEV version
       (ddev debug capabilities | grep multiple-upload-dirs >/dev/null) || (echo "Please upgrade DDEV to v1.22+ for appropriate capabilities" && false)
   ```
@@ -159,7 +156,6 @@ The `platformapp` variable is then used like this in the `install.yaml`:
 ```yaml
 pre_install_actions:
   - |
-    #ddev-nodisplay
     #ddev-description:check project type
     {{ if not (hasPrefix  "php" .platformapp.type) }}
       printf "\n\nUnsupported application type {{ .platformapp.type }}.\nOnly php applications are currently supported." >&2
