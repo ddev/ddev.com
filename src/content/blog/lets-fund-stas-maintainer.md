@@ -1,7 +1,7 @@
 ---
 title: "Let's Fully Fund Maintainer Stas"
-pubDate: 2024-07-31
-# modifiedDate: 2024-07-23
+pubDate: 2024-08-01
+# modifiedDate: 2024-08-01
 summary: "Let's fully fund DDEV maintainer Stas Zhuk"
 author: Randy Fay
 featureImage:
