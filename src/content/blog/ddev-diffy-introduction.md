@@ -27,10 +27,11 @@ Let’s go through the way integration is built.
 ## Download node app
 To download the app we use `install.yaml` post_install_actions:
 ```
-- wget https://github.com/DiffyWebsite/diffy-worker/archive/refs/heads/main.zip
-- unzip main.zip
-- rm -f main.zip
+- rm -rf diffy-worker && mkdir diffy-worker
+- docker run -it --rm -v ./diffy-worker:/diffy-worker --user $DDEV_UID:$DDEV_GID ddev/ddev-utilities bash -c "cd /diffy-worker && wget -qO- https://github.com/DiffyWebsite/diffy-worker/archive/refs/heads/main.tar.gz | tar xz --strip-components=1"
 ```
+
+This is a particularly interesting approach as we use `ddev-utilities` to download the code and unpack it.
 
 ## App configuration
 App requires an API key from the service and also project ID. This is a pretty interesting setup that we borrowed from the Platformsh project.
@@ -47,9 +48,9 @@ We want to run npm install inside of the container and not on the host. We accom
 For that we created `config.diffy.yaml` and had instructions there. Pay attention that it is specified as `project_files` in `install.yaml` file.
 
 ## Docker container "diffy" user
-For security reasons it is important not to run all the processes in our container as root user. For that we create a user "diffy" and then run all the commands as this user. 
+For security reasons it is important not to run all the processes in our container as root user. For that we create specify a user to run all commands in the container.
 
-This is accomplished by extending main container (see ["build" section](https://github.com/DiffyWebsite/ddev-diffy/blob/c6b1e2dedf6b1c5e186d357fd000ce1a568f70e5/docker-compose.diffy.yaml#L7-L13)) and here are [commands to create the user](https://github.com/DiffyWebsite/ddev-diffy/blob/main/diffy/Dockerfile).
+See `user: '$DDEV_UID:$DDEV_GID'` in [docker-compose.diffy.yaml](https://github.com/DiffyWebsite/ddev-diffy/blob/fd3ed9b44fdaab67f7428a17800602c90737b4fa/docker-compose.diffy.yaml#L7) and the way we download the code above.
 
 ## Building Docker container for multiple architectures
 We follow DDEV path to build the Docker container for multiple architectures:
