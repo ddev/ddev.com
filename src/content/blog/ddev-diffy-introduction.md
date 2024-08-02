@@ -47,10 +47,12 @@ This is very non-trivial task that we got help from one of the maintainers [Stas
 We want to run npm install inside of the container and not on the host. We accomplished it by adding `post-start` hook and specifying the service where to run the command.
 For that we created `config.diffy.yaml` and had instructions there. Pay attention that it is specified as `project_files` in `install.yaml` file.
 
-## Docker container "diffy" user
+## Docker container user
 For security reasons it is important not to run all the processes in our container as root user. For that we create specify a user to run all commands in the container.
 
-See `user: '$DDEV_UID:$DDEV_GID'` in [docker-compose.diffy.yaml](https://github.com/DiffyWebsite/ddev-diffy/blob/fd3ed9b44fdaab67f7428a17800602c90737b4fa/docker-compose.diffy.yaml#L7) and the way we download the code above.
+See `user: '$DDEV_UID:$DDEV_GID'` in [docker-compose.diffy.yaml](https://github.com/DiffyWebsite/ddev-diffy/blob/e49bb8c01ba6eff88d2d29496e81643f373b2c9b/docker-compose.diffy.yaml#L6) and the way we download the code above.
+
+Another interesting trick is that if that user tries to run `npm install` system will populate `~/.cache` folder with some files. But as the user doesn't not exist we need to ensure that `/.cache` folder is available and writeable. For that we create it in the [container itself](https://github.com/DiffyWebsite/diffy-worker/blob/4f533962a574bf86ea986b1c080e4bb7e0773ed5/docker/Dockerfile#L28).
 
 ## Building Docker container for multiple architectures
 We follow DDEV path to build the Docker container for multiple architectures:
