@@ -2,7 +2,7 @@
 title: "Diffy: Anatomy of an Advanced DDEV Add-on"
 pubDate: 2024-08-03
 modifiedDate: 2024-08-03
-summary: Some advanced topics: saving configuration variables, "npm install" inside of the container, building container for multiple architectures
+summary: 'Some advanced topics: saving configuration variables, "npm install" inside of the container, building container for multiple architectures'
 author: Yuri Gerasymov
 featureImage:
   src: /img/blog/2024/08/ddev+diffy.png
