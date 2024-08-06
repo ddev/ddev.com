@@ -499,6 +499,14 @@ export default defineConfig({
 
 The devserver can be started via `ddev npm run dev`.
 
+If you want to run this in the background as a daemon, edit your config.yaml and add the this:
+```
+web_extra_daemons:
+  - name: vite
+    command: bash -c 'npm install && npm run dev -- --host'
+    directory: /var/www/html
+```
+
 Example repository:
 
 - [mandrasch/ddev-laravel-vite](https://github.com/mandrasch/ddev-laravel-vite)
