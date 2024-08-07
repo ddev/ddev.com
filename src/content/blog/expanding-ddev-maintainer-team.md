@@ -1,7 +1,7 @@
 ---
 title: "Expanding the DDEV maintainer team - how we'll fund it"
 pubDate: 2023-09-28
-modifiedDate: 2023-10-16
+modifiedDate: 2024-07-31
 summary: Why is DDEV adding a new full-time maintainer, and how do the finances work?
 author: Randy Fay
 featureImage:
@@ -44,10 +44,10 @@ But first, what do maintainers do? Why are they so busy? Why is it important to 
 **Current Funding**:
 
 - **[Platform.sh](http://Platform.sh)** pays Randy’s salary and provides benefits to him as an employee. That is an amazing benefit for this community and goes a long way! THANK YOU!
-- **Major sponsors [Tag1](https://tag1.com/), [1xInternet](https://1xinternet.de/), and [i-gelb](https://i-gelb.net/)** together account for USD$2000/month in funding. THANK YOU!
+- **Major sponsors [Tag1](https://tag1.com/), and [i-gelb](https://i-gelb.net/)** together account for USD$1500/month in funding. THANK YOU!
 - **Many other agencies and individuals** via GitHub Sponsors account for about USD$1500. THANK YOU!
 
-**Funding Goal**: Our goal is salary for a full-time paid maintainer, estimated at about USD$10,000/month or USD$120,000/year. Thanks you we’re already about 35% of the way there!
+**Funding Goal**: Our goal is salary for a full-time paid maintainer, estimated at about USD$7,000/month or USD$84,000/year. Thanks you we’re already about 50% of the way there!
 
 ### What is the Current Maintainership Situation?
 
@@ -55,7 +55,7 @@ Currently **[Randy Fay](https://github.com/rfay), [Simon Gilli](https://github.c
 
 ### What is the DDEV Foundation?
 
-**The [DDEV Foundation](/foundation)** is the “fiscal entity” that is used for DDEV funding and is used to pay contributors. It is a [Colorado, USA nonprofit](https://www.sos.state.co.us/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20211820326&entityId2=20211820326&fileId=20211820326&srchTyp=ENTITY). It owns the bank account. The DDEV Foundation applied in 2023 for US 501(c)(3) nonprofit status, but that usually takes between 18 months and years to get sorted out with the US IRS.
+**The [DDEV Foundation](/foundation)** is the “fiscal entity” that is used for DDEV funding and is used to pay contributors. It is a certified [US 501(c)(3) nonprofit](501c3.md). The DDEV Foundation owns the bank account.
 
 No funding to the DDEV Foundation goes to Randy.
 
