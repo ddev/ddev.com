@@ -11,11 +11,13 @@ categories:
   - TechNotes
 ---
 
-[Diffy](https://diffy.website) is a visual regression testing tool that allows you to take screenshots of your website and compare them so you know exactly what pages got changed and where. We decided to build DDEV integration so it is possible to take screenshots from the local website, upload them to Diffy, and then compare them with screenshots from other environments.
+[Diffy](https://diffy.website) is a visual regression testing tool that allows you to take screenshots of your website and compare them so you know exactly what pages got changed and where. We decided to build DDEV integration so it is possible to take screenshots from the local website, upload them to Diffy, and then compare them with screenshots from other environments.
+
+The `ddev-diffy` add-on is at [github.com/DiffyWebsite/ddev-diffy](https://github.com/DiffyWebsite/ddev-diffy) and can be installed with the instructions there, including `ddev get DiffyWebsite/ddev-diffy`. It does require a Diffy API key to operate.
 
 Watch [7 mins video](https://www.loom.com/share/a3b750e32581458f9d2271969bba1bb8) or read [documentation](https://docs.diffy.website/features/local-development/ddev-add-on).
 
-Architecturally integration consists of:
+Architecturally, integration consists of:
 
 * Docker container with preinstalled node and Chrome 111
 * Node.js app that runs Chrome
