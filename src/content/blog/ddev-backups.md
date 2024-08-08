@@ -4,20 +4,15 @@ pubDate: 2024-08-10
 #modifiedDate: 2024-04-20
 summary: Backing Up DDEV Projects
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2024/03/2024-ddev.png
-#  alt: 2024 DDEV Plans
-#  credit: 'Ideogram.ai: the words "2024" and "DDEV" next to each other'
+featureImage:
+  src: /img/blog/2024/08/elephant-walking-backwards.png
+  alt: Elephant walking backwards, 'backing up'
+  credit: 'ChatGPT: An elephant walking backward, with a sign saying "backing up"'
 categories:
   - DevOps
 ---
 
-TODO: 
-* add links to all the commands
-* Add links to other resources like "files in .ddev"
-* featureImage
-
-People sometimes ask how they should back up local DDEV projects.
+People sometimes ask how they should back up local DDEV projects. We can do it easily, as most projects are just files in your project directory. Databases have just a bit more work to do.
 
 PHP web projects typically consist of three or four components:
 
@@ -28,9 +23,9 @@ PHP web projects typically consist of three or four components:
 
 We need a backup strategy for each of these. 
 
-**First, do have a trusted local backup solution.** Time Machine on macOS can work wonderfully for many people, and there are lots of other solutions out there. However, databases have not traditionally been good with backups because they are often not consistent during the backup process, so we need to do something different with them.
+**Choose a trusted local backup solution.** Time Machine on macOS can work wonderfully for many people, and there are lots of other solutions out there. However, databases have not traditionally been good with backups because they are often not consistent during the backup process, so we need to do something different with them.
 
-**Second, my general strategy is to try not to rely on my local computer anyway.** I try to push code and config to my Git provider (GitHub, GitLab, etc.) and make sure I know how to recreate user-generated files. Make sure your database contents are accessible from upstream sources like production, or keep good snapshots or exports.
+**But try not to rely on the local computer anyway.** I try to push code and config to my Git provider (GitHub, GitLab, etc.) and make sure I know how to recreate any user-generated files. Make sure your database contents are accessible from upstream sources like production, or keep good snapshots or exports.
 
 **Databases** need an extra step for safety. In general, don't do work on a database that cannot be recreated by code (with migrations, for example). But most of us want to have a database quickly available as a good place to start from. Since databases are typically in a binary format that can't reliably be backed up, we need a good way to make a copy. DDEV has two great ways to turn databases into files, `ddev snapshot` and `ddev export-db`.
 
@@ -50,7 +45,7 @@ If you prefer a text-based database backup, you could do this:
 ```yaml
 hooks:
   pre-stop:
-    - exec-host: "mkdir -p .tarballs && ddev export-db --file=db.$(date +"%Y%m%d%H%M%S").sql.gz"
+    - exec-host: 'mkdir -p .tarballs && ddev export-db --file=.tarballs/db.$(date +"%Y%m%d%H%M%S").sql.gz'
 ```
 
 **PHP Code and Configuration** are text files that should be under control of your Git environment. The easy answer for those is to always keep them pushed up to your Git provider. Work on a branch and a new commit up to your branch regularly, so you could start afresh on any computer any time. This is a wonderful thing about source control!
