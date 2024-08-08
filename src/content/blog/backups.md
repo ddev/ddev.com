@@ -1,6 +1,6 @@
 ---
 title: "Backing Up DDEV Projects"
-pubDate: 2024-04-20
+pubDate: 2024-08-10
 #modifiedDate: 2024-04-20
 summary: Backing Up DDEV Projects
 author: Randy Fay
@@ -15,8 +15,9 @@ categories:
 TODO: 
 * add links to all the commands
 * Add links to other resources like "files in .ddev"
+* featureImage
 
-People occasionally ask how they should back up local DDEV projects.
+People sometimes ask how they should back up local DDEV projects.
 
 PHP web projects typically consist of three or four components:
 * One or more databases
@@ -28,7 +29,7 @@ We need a strategy for each of these.
 
 First, do have a trusted local backup solution. Time Machine on macOS can work wonderfully for many people, and there are lots of other solutions out there. However, databases have not traditionally been good with backups because they are often not consistent during the backup process, so we need to do something different with them.
 
-Second, try not to rely on your local computer. Push code and config to your Git provider (GitHub, GitLab, etc) and make sure you know how to recreate user-generated files. Make sure your database contents are accessible from upstream sources like production, or keep good snapshots or exports. 
+Second, try not to rely on your local computer. Push code and config to your Git provider (GitHub, GitLab, etc.) and make sure you know how to recreate user-generated files. Make sure your database contents are accessible from upstream sources like production, or keep good snapshots or exports. 
 
 **Databases** need an extra step for safety. In general, don't do work on a database that cannot be recreated by code (vy migrations, for example). But most of us want to have a database quickly available as a good place to start from. DDEV has two great ways to turn databases into files, `ddev snapshot` and `ddev export-db`. 
 
