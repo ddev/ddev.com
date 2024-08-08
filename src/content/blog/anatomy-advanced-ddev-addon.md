@@ -1,19 +1,21 @@
 ---
 title: "Diffy: Anatomy of an Advanced DDEV Add-on"
-pubDate: 2024-08-07
-summary: Lessons learned running DDEV on an inexpensive Chromebook.
-modifiedDate: 2024-08-07
+# pubDate: 2024-08-07
+summary: Custom container built for multiple architectures. Download the app and run "npm install" in the container.
+# modifiedDate: 2024-08-07
 author: Yuri Gerasymov
 featureImage:
   src: /img/blog/2024/08/dismantled-camera.jpeg
-  alt: Microsoft image creator.
+  alt: Microsoft image creator: dismantled photo camera.
 categories:
   - TechNotes
 ---
 
 [Diffy](https://diffy.website) is a visual regression testing tool that allows you to take screenshots of your website and compare them so you know exactly what pages got changed and where. We decided to build DDEV integration so it is possible to take screenshots from the local website, upload them to Diffy, and then compare them with screenshots from other environments.
 
-The `ddev-diffy` add-on is at [github.com/DiffyWebsite/ddev-diffy](https://github.com/DiffyWebsite/ddev-diffy) and can be installed with the instructions there, including `ddev get DiffyWebsite/ddev-diffy`. It does require a Diffy API key to operate.
+The `ddev-diffy` add-on is at [github.com/DiffyWebsite/ddev-diffy](https://github.com/DiffyWebsite/ddev-diffy).
+
+Add-on can be installed with a simple `ddev get DiffyWebsite/ddev-diffy`. Check the [introduction blog post](ddev-diffy-introduction.md) about the installation.
 
 Watch [7 mins video](https://www.loom.com/share/a3b750e32581458f9d2271969bba1bb8) or read [documentation](https://docs.diffy.website/features/local-development/ddev-add-on).
 
