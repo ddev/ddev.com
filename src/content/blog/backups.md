@@ -31,7 +31,7 @@ First, do have a trusted local backup solution. Time Machine on macOS can work w
 
 Second, try not to rely on your local computer. Push code and config to your Git provider (GitHub, GitLab, etc.) and make sure you know how to recreate user-generated files. Make sure your database contents are accessible from upstream sources like production, or keep good snapshots or exports. 
 
-**Databases** need an extra step for safety. In general, don't do work on a database that cannot be recreated by code (vy migrations, for example). But most of us want to have a database quickly available as a good place to start from. DDEV has two great ways to turn databases into files, `ddev snapshot` and `ddev export-db`. 
+**Databases** need an extra step for safety. In general, don't do work on a database that cannot be recreated by code (with migrations, for example). But most of us want to have a database quickly available as a good place to start from. DDEV has two great ways to turn databases into files, `ddev snapshot` and `ddev export-db`. 
 
 * `ddev snapshot`, optionally with a `name` argument, takes a binary copy of all of your databases (most projects have just one) and saves it into the `.ddev/db_snapshots` directory as a gzipped binary file. You can snapshot all your registered projects with `ddev snapshot -a`.
 
