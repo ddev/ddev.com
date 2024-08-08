@@ -1,12 +1,12 @@
 ---
 title: "Diffy: Anatomy of an Advanced DDEV Add-on"
-# pubDate: 2024-08-07
+pubDate: 2024-08-08
 summary: Custom container built for multiple architectures. Download the app and run "npm install" in the container.
-# modifiedDate: 2024-08-07
 author: Yuri Gerasymov
 featureImage:
   src: /img/blog/2024/08/dismantled-camera.jpeg
-  alt: Microsoft image creator: dismantled photo camera.
+  alt: "Microsoft image creator: dismantled photo camera."
+  credit: "Microsoft image creator: dismantled photo camera."
 categories:
   - TechNotes
 ---
@@ -17,7 +17,9 @@ The `ddev-diffy` add-on is at [github.com/DiffyWebsite/ddev-diffy](https://githu
 
 Add-on can be installed with a simple `ddev get DiffyWebsite/ddev-diffy`. Check the [introduction blog post](ddev-diffy-introduction.md) about the installation.
 
-Watch [7 mins video](https://www.loom.com/share/a3b750e32581458f9d2271969bba1bb8) or read [documentation](https://docs.diffy.website/features/local-development/ddev-add-on).
+Check our [documentation](https://docs.diffy.website/features/local-development/ddev-add-on).
+
+<div style="position: relative; padding-bottom: 64.5933014354067%; height: 0;"><iframe src="https://www.loom.com/embed/a3b750e32581458f9d2271969bba1bb8?sid=7abe431c-5d39-42c2-916a-f3669f0ea724" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 Architecturally, integration consists of:
 

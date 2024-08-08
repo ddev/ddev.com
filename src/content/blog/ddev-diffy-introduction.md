@@ -1,13 +1,12 @@
 ---
 title: "Introduction: The Diffy DDEV plugin"
-# pubDate: 2024-08-07
-# (modifiedDate: 2024-08-07)
+pubDate: 2024-08-08
 summary: Visual regression testing tool Diffy got DDEV integration!
 author: Yuri Gerasymov
 featureImage:
   src: /img/blog/2024/08/camera-and-laptop.jpeg
-  alt: DDEV and Diffy integration
-credit: Microsoft image creator: camera and laptop.
+  alt: "Microsoft image creator: camera and laptop"
+  credit: "Microsoft image creator: camera and laptop"
 categories:
   - Announcements
 ---
