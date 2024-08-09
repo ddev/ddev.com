@@ -1,6 +1,6 @@
 ---
 title: "Introduction: The Diffy DDEV plugin"
-pubDate: 2024-08-08
+pubDate: 2024-08-09
 summary: Visual regression testing tool Diffy got DDEV integration!
 author: Yuri Gerasymov
 featureImage:
