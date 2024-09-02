@@ -95,18 +95,18 @@ const { latestVersion } = Astro.props
     <small class="block font-mono text-xs text-gray-500">2/4</small>Install DDEV
   </h2>
 
-  <Tabs order={["Ubuntu", "CentOS", "Debian", "Fedora"]}>
-    <Fragment slot="Ubuntu">
+  <Tabs order={["Debian/Ubuntu","CentOS", "Fedora"]}>
+    <Fragment slot="Debian/Ubuntu">
       <div class="prose py-5 dark:prose-invert">
         <Terminal
           type="ubuntu"
-          code={`→ sudo install -m 0755 -d /etc/apt/keyrings
-→ curl -fsSL https://pkg.ddev.com/apt/gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/ddev.gpg > /dev/null
-→ sudo chmod a+r /etc/apt/keyrings/ddev.gpg
-→ sudo sh -c 'echo ""'
-→ echo "deb [signed-by=/etc/apt/keyrings/ddev.gpg] https://pkg.ddev.com/apt/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list >/dev/null
-→ sudo sh -c 'echo ""'
-→ sudo apt-get update && sudo apt-get install -y ddev
+          code={`$ sudo install -m 0755 -d /etc/apt/keyrings
+$ curl -fsSL https://pkg.ddev.com/apt/gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/ddev.gpg > /dev/null
+$ sudo chmod a+r /etc/apt/keyrings/ddev.gpg
+$ sudo sh -c 'echo ""'
+$ echo "deb [signed-by=/etc/apt/keyrings/ddev.gpg] https://pkg.ddev.com/apt/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list >/dev/null
+$ sudo sh -c 'echo ""'
+$ sudo apt-get update && sudo apt-get install -y ddev
 `}
         />
       </div>
@@ -119,15 +119,7 @@ const { latestVersion } = Astro.props
         />
       </div>
     </Fragment>
-    <Fragment slot="Debian">
-      <div class="prose py-5 dark:prose-invert">
-        <Terminal
-          type="ubuntu"
-          code={`$ curl -fsSL https://pkg.ddev.com/apt/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null\n$ echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://pkg.ddev.com/apt/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list\n$ sudo apt update && sudo apt install -y ddev
-`}
-        />
-      </div>
-    </Fragment>
+
     <Fragment slot="Fedora">
       <div class="prose py-5 dark:prose-invert">
         <Terminal
@@ -138,21 +130,19 @@ const { latestVersion } = Astro.props
     </Fragment>
   </Tabs>
 
-  <p>In the Terminal app, confirm that DDEV is installed: 🎉</p>
-  <Terminal type="ubuntu" code={`$ ddev -v\nddev version ${latestVersion}`} />
 </div>
 
 
 <div class="prose dark:prose-invert">
   <p>Confirm that you’ve now got DDEV installed: 🎉</p>
-  <Terminal code={`→ ddev -v\nddev version ${latestVersion}`} />
+  <Terminal code={`$ ddev -v\nddev version ${latestVersion}`} />
 
   <h2 class="text-3xl mt-24">
     <small class="block font-mono text-xs text-gray-500">3/4</small>Run `mkcert -install`
   </h2>
 
   <p>Running `mkcert -install` is a one-time operation. It allows your browser to trust the HTTPS/TLS certificates served by DDEV.</p>
-  <Terminal code={`→ mkcert -install
+  <Terminal code={`$ mkcert -install
 Created a new local CA 💥
 The local CA is now installed in the system trust store! ⚡️
 The local CA is now installed in the Firefox and/or Chrome/Chromium trust store (requires browser restart)! 🦊`} />
