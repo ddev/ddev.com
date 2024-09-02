@@ -100,7 +100,13 @@ const { latestVersion } = Astro.props
       <div class="prose py-5 dark:prose-invert">
         <Terminal
           type="ubuntu"
-          code={`$ curl -fsSL https://pkg.ddev.com/apt/gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/ddev.gpg > /dev/null\n$ echo "deb [signed-by=/etc/apt/trusted.gpg.d/ddev.gpg] https://pkg.ddev.com/apt/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list\n$ sudo apt update && sudo apt install -y ddev
+          code={`→ sudo install -m 0755 -d /etc/apt/keyrings
+→ curl -fsSL https://pkg.ddev.com/apt/gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/ddev.gpg > /dev/null
+→ sudo chmod a+r /etc/apt/keyrings/ddev.gpg
+→ sudo sh -c 'echo ""'
+→ echo "deb [signed-by=/etc/apt/keyrings/ddev.gpg] https://pkg.ddev.com/apt/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list >/dev/null
+→ sudo sh -c 'echo ""'
+→ sudo apt-get update && sudo apt-get install -y ddev
 `}
         />
       </div>
@@ -146,7 +152,7 @@ const { latestVersion } = Astro.props
   </h2>
 
   <p>Running `mkcert -install` is a one-time operation. It allows your browser to trust the HTTPS/TLS certificates served by DDEV.</p>
-  <Terminal code={`→ $ mkcert -install
+  <Terminal code={`→ mkcert -install
 Created a new local CA 💥
 The local CA is now installed in the system trust store! ⚡️
 The local CA is now installed in the Firefox and/or Chrome/Chromium trust store (requires browser restart)! 🦊`} />
