@@ -29,6 +29,10 @@ module.exports = {
           800: "#001f38",
           900: "#00192d",
         },
+        code: {
+          light: "#818b981f",
+          dark: "#2e3440ff",
+        }
       },
       typography: {
         DEFAULT: {
@@ -45,5 +49,24 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    function ({ addBase, theme }) {
+      addBase({
+        // GitHub style for inline code blocks
+        'code': {
+          padding: '.2em .4em',
+          margin: '0',
+          borderRadius: '6px',
+          fontWeight: '500 !important',
+          backgroundColor: theme('colors.code.light'),
+        },
+        '@media (prefers-color-scheme: dark)': {
+          'code': {
+            backgroundColor: theme('colors.code.dark'),
+          }
+        },
+      });
+    },
+  ],
 }
