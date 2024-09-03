@@ -1,0 +1,104 @@
+---
+import Terminal from "@components/Terminal.astro"
+const { itemNumber, terminalType, terminalSymbol } = Astro.props;
+---
+
+<div class="prose dark:prose-invert">
+  <h2 class="text-3xl mt-24">
+    <small class="block font-mono text-xs text-gray-500">{itemNumber}</small>Create a
+    Project
+  </h2>
+
+  <p>Navigate to a project you’d like to spin up with DDEV:</p>
+  <Terminal type={terminalType} code={`${terminalSymbol} cd ~/dev/my-project`} />
+
+  <p>
+    Initialize the project by running the <a
+      href="https://ddev.readthedocs.io/en/stable/users/usage/commands/#config"
+      target="_blank"
+      ><code>ddev config</code></a>
+    command:
+  </p>
+  <Terminal type={terminalType} code={`${terminalSymbol} ddev config`} />
+
+  <p>
+    Start the project for the first time. You’ll use the same command to start
+    it later, too!
+  </p>
+  <Terminal type={terminalType} code={`${terminalSymbol} ddev start`} />
+
+  <p>
+    If it’s a Composer project, you may also need to run <a
+      href="https://ddev.readthedocs.io/en/stable/users/usage/commands/#composer"
+      target="_blank"
+      ><code>ddev composer install</code></a>.
+  </p>
+
+  <p>
+    Now run the <a
+      href="https://ddev.readthedocs.io/en/stable/users/usage/commands/#launch"
+      target="_blank">launch command</a
+    > to open your project in a browser:
+  </p>
+  <Terminal type={terminalType} code={`${terminalSymbol} ddev launch`} />
+</div>
+
+<div class="prose dark:prose-invert">
+  <h2 class="text-3xl mt-24">Explore & Enjoy!</h2>
+
+  <p>
+    Take a peek at your project’s new <code>.ddev/</code> directory. You can add
+    this to your repo to share your DDEV config, edit <code
+      >.ddev/config.yaml</code
+    > to change <a
+      href="https://ddev.readthedocs.io/en/stable/users/configuration/config/"
+      target="_blank"
+      >project options</a
+    >, or even go about your business and pretend this folder doesn’t exist.
+  </p>
+
+  <p>
+    Run the <a
+      href="https://ddev.readthedocs.io/en/stable/users/usage/commands/#help"
+      target="_blank"
+      >help command</a>
+    (or plain <code>ddev</code>) to see the actions you can take with the CLI:
+  </p>
+
+  <Terminal type={terminalType} code={`${terminalSymbol} ddev -h`} />
+
+  <p>
+    Use the <a
+      href="https://ddev.readthedocs.io/en/stable/users/usage/commands/#describe"
+      target="_blank"
+      >describe command</a>
+    to see a project’s parts and database connection details:
+  </p>
+
+  <Terminal type={terminalType} code={`${terminalSymbol} ddev describe`} />
+
+  <p>
+    If you’re done working on a project and want to shut it down without
+    removing anything, use the <a
+      href="https://ddev.readthedocs.io/en/stable/users/usage/commands/#stop"
+      target="_blank"
+      >stop command</a>:
+  </p>
+
+  <Terminal type={terminalType} code={`${terminalSymbol} ddev stop`} />
+
+  <p>
+    If you were just kicking the tires and you want to permanently delete the
+    project and its resources without touching your code, run the <a
+      href="https://ddev.readthedocs.io/en/stable/users/usage/commands/#delete"
+      target="_blank"
+      >delete command</a>:
+  </p>
+
+  <Terminal type={terminalType} code={`${terminalSymbol} ddev delete`} />
+
+  <p>
+    DDEV will remove everything it created for the project and have no memory of
+    its existence.
+  </p>
+</div>
