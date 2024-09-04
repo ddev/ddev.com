@@ -555,7 +555,7 @@ There is also an article on velir.com: [How to Run Headless Drupal and NextJS on
 
 ### DDEV addons
 
-- [ddev-vite-sidecar](https://github.com/s2b/ddev-vite-sidecar) is a simple addon for zero-config integration of Vite into your DDEV projects. The Vite development server is exposed as a https://vite.* subdomain to your project's main domain, which means that no ports need to be exposed to the host system.
+- [ddev-vite-sidecar](https://github.com/s2b/ddev-vite-sidecar) is a simple addon for (almost) zero-config integration of Vite into your DDEV projects. The Vite development server is exposed as a https://vite.* subdomain to your project's main domain, which means that no ports need to be exposed to the host system.
   
 - Kudos to torenware, who created the first ever DDEV addon for Vite, [ddev-viteserve](https://github.com/torenware/ddev-viteserve). It's currently not maintained. 
 
