@@ -19,7 +19,7 @@ This articles sums up my current personal experience. I hope it will be a helpfu
 
 Vite is written in NodeJS. DDEV already has built-in support for [NodeJS](https://ddev.readthedocs.io/en/stable/users/usage/cli/#nodejs-npm-nvm-and-yarn).
 
-In order to use Vite in our DDEV projects, we need to do two things:
+In order to use Vite in our DDEV projects, we generally need to do two things:
 
 1. Expose Vite's development server port (default: `5173`):
 
@@ -59,7 +59,17 @@ In order to use Vite in our DDEV projects, we need to do two things:
     })
     ```
 
-Some more customizations might be needed depending on your CMS / framework, see [List of PHP CMS integrations](#list-of-php-cmsintegrations) below.
+    Please make sure your project runs on `https://` and mkcert was executed once as describe in [DDEV installation docs](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/).
+
+Some more customizations might be needed depending on your CMS / framework, see [List of PHP CMS integrations](#list-of-php-cmsintegrations) below. You can also use a [DDEV addon](#ddev-addons).
+
+**Table of contents**
+
+- [A plain PHP example](#a-plain-php-example)
+- [PHP CMS / framework integration](#php-framework--cms-integration)
+- [NodeJS project integration](#nodejs-integration)
+- [DDEV addons](#ddev-addons)
+- [Further resources](#further-resources)
 
 ### A plain PHP example
 
@@ -368,7 +378,7 @@ You could now parse the `dist/manifest.json` file dynamically in PHP and get the
 
 This is the point where PHP libraries and CMS integrations come into play which handle this for us. In most cases, you won't need to write this integration yourself (see below).
 
-### Integrate Vite into a framework / CMS
+###  PHP framework / CMS integration
 
 You can read Vite's official guide for backend integration here:
 
@@ -488,11 +498,13 @@ Florian Geierstanger made a first demo publicly available:
 
 - https://github.com/fgeierst/typo3-vite-demo
 
-This lead to the development of vite-asset-collector by Simon Praetorius:
+This lead to the development of further tools by Simon Praetorius:
 
-- https://github.com/s2b/vite-asset-collector
+- Extension ["vite-asset-collector"](https://github.com/s2b/vite-asset-collector): 
+- Vite Plugin ["vite-plugin-typo3"](https://github.com/s2b/vite-plugin-typo3) 
+- DDEV Add-On ["ddev-vite-sidecar"](https://github.com/s2b/ddev-vite-sidecar)
 
-The usage with DDEV is documented [here](https://github.com/s2b/vite-asset-collector/blob/main/Documentation/DdevSetup.md).
+The usage of "vite-asset-collector" with DDEV is documented [here](https://docs.typo3.org/p/praetorius/vite-asset-collector/main/en-us/Installation/Index.html#installation-1). The [TYPO3 Slack](https://typo3.org/community/meet/chat-slack) has a Vite channel if you have questions or need support.
 
 #### WordPress
 
@@ -527,6 +539,21 @@ Note: On Codespaces, DDEVs router is not used - therefore some adjustments are n
 
 See [DDEV Installation: Codespaces](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#github-codespaces) for more information.
 
-### NodeJS
+### NodeJS integration
 
 Andy Blum wrote the awesome article [Node.js Development with DDEV](https://www.lullabot.com/articles/nodejs-development-ddev) which explains proxying requests to the correct ports of NodeJS projects running in the web container. This enables use cases like running a classic PHP backend with a NodeJS hosted frontend (on another subdomain of the DDEV project), it's especially great for headless CMS projects.
+
+There is also an article on velir.com: [How to Run Headless Drupal and NextJS on DDEV](https://www.velir.com/ideas/2024/05/13/how-to-run-headless-drupal-and-nextjs-on-ddev)
+
+### DDEV addons
+
+- [ddev-vite-sidecar](https://github.com/s2b/ddev-vite-sidecar) is a simple addon for zero-config integration of Vite into your DDEV projects. The Vite development server is exposed as a https://vite.* subdomain to your project's main domain, which means that no ports need to be exposed to the host system.
+  
+- Kudos to torenware, who created the first ever DDEV addon for Vite, [ddev-viteserve](https://github.com/torenware/ddev-viteserve). It's currently not maintained. 
+
+
+### Further resources
+
+- [How we use DDEV, Vite and Tailwind with Craft CMS](https://www.viget.com/articles/how-we-use-ddev-vite-and-tailwind-with-craft-cms/) - viget.com
+
+You wrote about DDEV and Vite or published a video? Please let us know!
