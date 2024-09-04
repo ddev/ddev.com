@@ -61,12 +61,20 @@ In order to use Vite in our DDEV projects, we generally need to do two things:
 
     Please make sure your project runs on `https://` and mkcert was executed once as describe in [DDEV installation docs](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/).
 
-Some more customizations might be needed depending on your CMS / framework, see [List of PHP CMS integrations](#list-of-php-cmsintegrations) below. You can also use a [DDEV addon](#ddev-addons).
+Some more customizations might be needed depending on your CMS / framework, see [List of PHP CMS integrations](#list-of-php-cms-integrations) below. You can also use a [DDEV addon](#ddev-addons).
 
 **Table of contents**
 
 - [A plain PHP example](#a-plain-php-example)
 - [PHP CMS / framework integration](#php-framework--cms-integration)
+  - [General PHP examples](#general-php-examples)
+  - [CraftCMS](#craftcms)
+  - [Drupal](#drupal)
+  - [Laravel](#laravel)
+  - [TYPO3](#typo3)
+  - [WordPress](#wordpress)
+  - [Gitpod](#gitpod)
+  - [GitHub Codespaces](#github-codespaces)
 - [NodeJS project integration](#nodejs-integration)
 - [DDEV addons](#ddev-addons)
 - [Further resources](#further-resources)
@@ -415,7 +423,7 @@ Here is a list of example integrations I know so far.
 
 _**Did I miss an integration? Please let me know!**_
 
-#### General PHP example
+#### General PHP examples
 
 André Felipe has published https://github.com/andrefelipe/vite-php-setup as general example for Vite in PHP projects.
 
