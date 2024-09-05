@@ -442,7 +442,9 @@ _Note: You don't need to use the docker-compose-file for exposing the ports if y
 
 Example repositories:
 
+- [vigetlabs/craft-site-starter](https://github.com/vigetlabs/craft-site-starter)
 - [mandrasch/ddev-craftcms-vite](https://github.com/mandrasch/ddev-craftcms-vite)
+
 
 #### Drupal
 
