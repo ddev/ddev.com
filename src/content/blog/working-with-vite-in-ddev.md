@@ -389,7 +389,7 @@ You could now parse the `dist/manifest.json` file dynamically in PHP and get the
 
 This is the point where PHP libraries and CMS integrations come into play which handle this for us. In most cases, you won't need to write this integration yourself (see below).
 
-###  PHP framework / CMS integration
+###  PHP CMS / framework integration
 
 You can read Vite's official guide for backend integration here:
 
@@ -550,11 +550,15 @@ Note: On Codespaces, DDEVs router is not used - therefore some adjustments are n
 
 See [DDEV Installation: Codespaces](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#github-codespaces) for more information.
 
-### NodeJS integration
+### NodeJS / headless projects
 
-Andy Blum wrote the awesome article [Node.js Development with DDEV](https://www.lullabot.com/articles/nodejs-development-ddev) which explains proxying requests to the correct ports of NodeJS projects running in the web container. This enables use cases like running a classic PHP backend with a NodeJS hosted frontend (on another subdomain of the DDEV project), it's especially great for headless CMS projects.
+Andy Blum wrote the awesome article [Node.js Development with DDEV](https://www.lullabot.com/articles/nodejs-development-ddev) which explains proxying requests to the correct ports of NodeJS projects running in the web container. He is using the NodeJS CMS Keystone in combination with SvelteKit (NodeJS framework) for the frontend in his tutorial - all in one DDEV project.
 
-There is also an article on velir.com: [How to Run Headless Drupal and NextJS on DDEV](https://www.velir.com/ideas/2024/05/13/how-to-run-headless-drupal-and-nextjs-on-ddev)
+This approach also enables use cases like running a classic PHP backend in combination with a NodeJS hosted frontend (on another subdomain of the same DDEV project). It's especially great for headless CMS projects. 
+
+There is an article on velir.com: [How to Run Headless Drupal and NextJS on DDEV](https://www.velir.com/ideas/2024/05/13/how-to-run-headless-drupal-and-nextjs-on-ddev). And here is a [demo repository](https://github.com/mandrasch/ddev-laravel-breeze-sveltekit) for Laravel Breeze (PHP) and SvelteKit (NodeJS) within one DDEV project (monorepo). 
+
+But you can also use a separate DDEV project for frontend - and another one for backend of course. See [communication between DDEV projects](https://ddev.readthedocs.io/en/stable/users/usage/faq/#communicate-via-https).
 
 ### DDEV addons
 
