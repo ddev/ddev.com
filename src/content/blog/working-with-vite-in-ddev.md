@@ -1,7 +1,7 @@
 ---
 title: "Working with Vite in DDEV - an introduction"
 pubDate: 2023-11-08
-modifiedDate: 2024-05-30
+modifiedDate: 2024-09-05
 summary: Working with Vite in DDEV
 author: Matthias Andrasch
 featureImage:
