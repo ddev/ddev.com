@@ -34,7 +34,7 @@ This articles sums up my current personal experience. I hope it will be a helpfu
 - [DDEV addons](#ddevaddons)
 - [Further resources](#furtherresources)
 
-## General usage
+### General usage
 
 Vite is written in NodeJS. DDEV already has built-in support for [NodeJS](https://ddev.readthedocs.io/en/stable/users/usage/cli/#nodejs-npm-nvm-and-yarn).
 
