@@ -59,7 +59,7 @@ In order to use Vite in our DDEV projects, we generally need to do two things:
     })
     ```
 
-    Please make sure your project runs on `https://` and mkcert was executed once as describe in [DDEV installation docs](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/).
+    This guide assumes your project runs on `https://`. If you can not access the HTTPS version of your project, please see [DDEV installation docs](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/).
 
 Some more customizations might be needed depending on your CMS / framework, see [List of PHP CMS integrations](#list-of-php-cms-integrations) below. You can also use a [DDEV addon](#ddev-addons).
 
