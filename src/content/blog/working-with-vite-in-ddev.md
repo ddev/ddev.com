@@ -17,6 +17,25 @@ Vite is a popular web development tool that serves your JavaScript and CSS code 
 
 This articles sums up my current personal experience. I hope it will be a helpful introduction to get started with Vite. Happy to hear your feedback!
 
+**Table of contents**
+
+- [General usage](#generalusage)
+- [A plain PHP example](#a-plain-phpexample)
+- [PHP CMS / framework integration](#php-cms--frameworkintegration)
+  - [General PHP examples](#general-phpexamples)
+  - [CraftCMS](#craftcms)
+  - [Drupal](#drupal)
+  - [Laravel](#laravel)
+  - [TYPO3](#typo3)
+  - [WordPress](#wordpress)
+  - [Gitpod](#gitpod)
+  - [GitHub Codespaces](#githubcodespaces)
+- [NodeJS / headless projects](#nodejs--headlessprojects)
+- [DDEV addons](#ddevaddons)
+- [Further resources](#furtherresources)
+
+## General usage
+
 Vite is written in NodeJS. DDEV already has built-in support for [NodeJS](https://ddev.readthedocs.io/en/stable/users/usage/cli/#nodejs-npm-nvm-and-yarn).
 
 In order to use Vite in our DDEV projects, we generally need to do two things:
@@ -61,23 +80,7 @@ In order to use Vite in our DDEV projects, we generally need to do two things:
 
     This guide assumes your project runs on `https://`. If you can not access the HTTPS version of your project, please see [DDEV installation docs](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/).
 
-Some more customizations might be needed depending on your CMS / framework, see [List of PHP CMS integrations](#list-of-php-cms-integrations) below. You can also use a [DDEV addon](#ddev-addons).
-
-**Table of contents**
-
-- [A plain PHP example](#a-plain-php-example)
-- [PHP CMS / framework integration](#php-framework--cms-integration)
-  - [General PHP examples](#general-php-examples)
-  - [CraftCMS](#craftcms)
-  - [Drupal](#drupal)
-  - [Laravel](#laravel)
-  - [TYPO3](#typo3)
-  - [WordPress](#wordpress)
-  - [Gitpod](#gitpod)
-  - [GitHub Codespaces](#github-codespaces)
-- [NodeJS project integration](#nodejs-integration)
-- [DDEV addons](#ddev-addons)
-- [Further resources](#further-resources)
+Some more customizations might be needed depending on your CMS / framework, see [PHP CMS / framework integration](#php-cms--frameworkintegration) below. You can also use a [DDEV addon](#ddevaddons).
 
 ### A plain PHP example
 
