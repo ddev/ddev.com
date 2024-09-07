@@ -1,7 +1,7 @@
 ---
 title: "Working with Vite in DDEV - an introduction"
 pubDate: 2023-11-08
-modifiedDate: 2024-05-30
+modifiedDate: 2024-09-05
 summary: Working with Vite in DDEV
 author: Matthias Andrasch
 featureImage:
@@ -17,9 +17,28 @@ Vite is a popular web development tool that serves your JavaScript and CSS code 
 
 This articles sums up my current personal experience. I hope it will be a helpful introduction to get started with Vite. Happy to hear your feedback!
 
+**Table of contents**
+
+- [General usage](#generalusage)
+- [A plain PHP example](#a-plain-phpexample)
+- [PHP CMS / framework integration](#php-cms--frameworkintegration)
+  - [General PHP examples](#general-phpexamples)
+  - [CraftCMS](#craftcms)
+  - [Drupal](#drupal)
+  - [Laravel](#laravel)
+  - [TYPO3](#typo3)
+  - [WordPress](#wordpress)
+  - [Gitpod](#gitpod)
+  - [GitHub Codespaces](#githubcodespaces)
+- [NodeJS / headless projects](#nodejs--headlessprojects)
+- [DDEV addons](#ddevaddons)
+- [Further resources](#furtherresources)
+
+### General usage
+
 Vite is written in NodeJS. DDEV already has built-in support for [NodeJS](https://ddev.readthedocs.io/en/stable/users/usage/cli/#nodejs-npm-nvm-and-yarn).
 
-In order to use Vite in our DDEV projects, we need to do two things:
+In order to use Vite in our DDEV projects, we generally need to do two things:
 
 1. Expose Vite's development server port (default: `5173`):
 
@@ -59,7 +78,9 @@ In order to use Vite in our DDEV projects, we need to do two things:
     })
     ```
 
-Some more customizations might be needed depending on your CMS / framework, see [List of PHP CMS integrations](#list-of-php-cmsintegrations) below.
+    This guide assumes your project runs on `https://`. If you can not access the HTTPS version of your project, please see [DDEV installation docs](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/).
+
+Some more customizations might be needed depending on your CMS / framework, see [PHP CMS / framework integration](#php-cms--frameworkintegration) below. You can also use a [DDEV addon](#ddevaddons).
 
 ### A plain PHP example
 
@@ -368,7 +389,7 @@ You could now parse the `dist/manifest.json` file dynamically in PHP and get the
 
 This is the point where PHP libraries and CMS integrations come into play which handle this for us. In most cases, you won't need to write this integration yourself (see below).
 
-### Integrate Vite into a framework / CMS
+###  PHP CMS / framework integration
 
 You can read Vite's official guide for backend integration here:
 
@@ -405,7 +426,7 @@ Here is a list of example integrations I know so far.
 
 _**Did I miss an integration? Please let me know!**_
 
-#### General PHP example
+#### General PHP examples
 
 André Felipe has published https://github.com/andrefelipe/vite-php-setup as general example for Vite in PHP projects.
 
@@ -422,6 +443,8 @@ _Note: You don't need to use the docker-compose-file for exposing the ports if y
 Example repositories:
 
 - [mandrasch/ddev-craftcms-vite](https://github.com/mandrasch/ddev-craftcms-vite)
+- [vigetlabs/craft-site-starter](https://github.com/vigetlabs/craft-site-starter)
+
 
 #### Drupal
 
@@ -488,11 +511,13 @@ Florian Geierstanger made a first demo publicly available:
 
 - https://github.com/fgeierst/typo3-vite-demo
 
-This lead to the development of vite-asset-collector by Simon Praetorius:
+This lead to the development of further tools by Simon Praetorius:
 
-- https://github.com/s2b/vite-asset-collector
+- Extension ["vite-asset-collector"](https://github.com/s2b/vite-asset-collector): 
+- Vite Plugin ["vite-plugin-typo3"](https://github.com/s2b/vite-plugin-typo3) 
+- DDEV Add-On ["ddev-vite-sidecar"](https://github.com/s2b/ddev-vite-sidecar)
 
-The usage with DDEV is documented [here](https://github.com/s2b/vite-asset-collector/blob/main/Documentation/DdevSetup.md).
+The usage of "vite-asset-collector" with DDEV is documented [here](https://docs.typo3.org/p/praetorius/vite-asset-collector/main/en-us/Installation/Index.html#installation-1). The [TYPO3 Slack](https://typo3.org/community/meet/chat-slack) has a Vite channel if you have questions or need support.
 
 #### WordPress
 
@@ -527,6 +552,25 @@ Note: On Codespaces, DDEVs router is not used - therefore some adjustments are n
 
 See [DDEV Installation: Codespaces](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#github-codespaces) for more information.
 
-### NodeJS
+### NodeJS / headless projects
 
-Andy Blum wrote the awesome article [Node.js Development with DDEV](https://www.lullabot.com/articles/nodejs-development-ddev) which explains proxying requests to the correct ports of NodeJS projects running in the web container. This enables use cases like running a classic PHP backend with a NodeJS hosted frontend (on another subdomain of the DDEV project), it's especially great for headless CMS projects.
+Andy Blum wrote the awesome article [Node.js Development with DDEV](https://www.lullabot.com/articles/nodejs-development-ddev) which explains proxying requests to the correct ports of NodeJS projects running in the web container. He is using the NodeJS CMS Keystone in combination with SvelteKit (NodeJS framework) for the frontend in his tutorial - all in one DDEV project.
+
+This approach also enables use cases like running a classic PHP backend in combination with a NodeJS hosted frontend (on another subdomain of the same DDEV project). It's especially great for headless CMS projects. 
+
+There is an article on velir.com: [How to Run Headless Drupal and NextJS on DDEV](https://www.velir.com/ideas/2024/05/13/how-to-run-headless-drupal-and-nextjs-on-ddev). And here is a [demo repository](https://github.com/mandrasch/ddev-laravel-breeze-sveltekit) for Laravel Breeze (PHP) and SvelteKit (NodeJS) within one DDEV project (monorepo). 
+
+But you can also use a separate DDEV project for frontend - and another one for backend of course. See [communication between DDEV projects](https://ddev.readthedocs.io/en/stable/users/usage/faq/#communicate-via-https).
+
+### DDEV addons
+
+- [ddev-vite-sidecar](https://github.com/s2b/ddev-vite-sidecar) is a simple addon for (almost) zero-config integration of Vite into your DDEV projects. The Vite development server is exposed as a https://vite.* subdomain to your project's main domain, which means that no ports need to be exposed to the host system.
+  
+- Kudos to torenware, who created the first ever DDEV addon for Vite, [ddev-viteserve](https://github.com/torenware/ddev-viteserve). It's currently not maintained. 
+
+
+### Further resources
+
+- [How we use DDEV, Vite and Tailwind with Craft CMS](https://www.viget.com/articles/how-we-use-ddev-vite-and-tailwind-with-craft-cms/) - viget.com
+
+You wrote about DDEV and Vite or published a video? Please let us know!
