@@ -24,7 +24,7 @@ On GitHub Actions this is already possible though [ddev/github-action-setup-ddev
 Many of you might be familiar with Docker in Docker (DinD). With DinD, Docker can run inside
 the GitLab Runner using the Docker executor.
 
-To run DDEV, a Docker image with DDEV installed ([ochorocho/ddev-gitlab-ci](https://github.com/ochorocho/ddev-gitlab-ci)) 
+To run DDEV, a Docker image with DDEV installed ([ddev/ddev-gitlab-ci](https://github.com/ddev/ddev-gitlab-ci)) 
 and additional configuration is required.
 
 Depending on your setup it requires different steps.
@@ -34,9 +34,9 @@ Depending on your setup it requires different steps.
 
 On GitHub, you'll find tested configuration examples for
 
-* [gitlab.com](https://github.com/ochorocho/ddev-gitlab-ci/blob/main/docs/gitlab-com.md)
-* [Docker in Docker](https://github.com/ochorocho/ddev-gitlab-ci/blob/main/docs%2Fdocker.md)
-* [Docker in Podman](https://github.com/ochorocho/ddev-gitlab-ci/blob/main/docs/podman.md)
+* [gitlab.com](https://github.com/ddev/ddev-gitlab-ci/blob/main/docs/gitlab-com.md)
+* [Docker in Docker](https://github.com/ddev/ddev-gitlab-ci/blob/main/docs%2Fdocker.md)
+* [Docker in Podman](https://github.com/ddev/ddev-gitlab-ci/blob/main/docs/podman.md)
 
 Once you configured the runner correctly and extended the `.gitlab-ci.yml` with a dedicated
 DDEV job you are good to go.
