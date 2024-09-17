@@ -11,7 +11,7 @@ categories:
   - Guides
 ---
 
-From time to time, Apple Silicon DDEV users encounter an image or a Node.js package that is not available for the Mac's native architecture (variously called ARM64 or `aarch64`). These result in errors like: "Could not open '/lib64/ld-linux-x86-64.so.2': No such file or directory" or "the chromium binary is not available for arm64".
+From time to time, Apple Silicon DDEV users encounter an image or a Node.js package that is not available for the Mac's native architecture (variously called ARM64 or `aarch64`). These result in errors like: "Could not open '/lib64/ld-linux-x86-64.so.2': No such file or directory" or "the chromium binary is not available for ARM64".
 
 Emulation of Docker images has been pretty scary and unreliable since the Apple Silicon macs came out, but there is some hope. 
 
@@ -42,7 +42,7 @@ This was the easiest to use and most performant of the options.
 
 This is about the same, but you have to toggle some non-default settings. 
 
-You **must** enable "Use Rosetta for x86_64/amd64 emulation on Apple Silicon" in the "General" section of Docker Desktop's settings. This is well down the list of checkboxes, you have to scroll to get down there.
+You **must** enable "Use Rosetta for `x86_64/amd64` emulation on Apple Silicon" in the "General" section of Docker Desktop's settings. This is well down the list of checkboxes, you have to scroll to get down there.
 
 Then:
 
