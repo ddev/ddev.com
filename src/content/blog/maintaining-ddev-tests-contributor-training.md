@@ -46,7 +46,12 @@ Demonstrations of stepping through a test in the debugger are below.
 
 ### Flaky tests
 
-Flaky tests are the worst, because they may depend on the execution environment, or some other test may have polluted the environment, or they may happen in particular network situations. 
+Flaky tests are the worst, because they may depend on the execution environment, or some other test may have polluted the environment, or they may happen in particular network situations.
+
+* Review the test output from Buildkite or GitHub workflow to try to understand what's actually going on. There may be an earlier error that's reported that causes the actual failure.
+* Try to run it manually, perhaps step-debugging and introducing slower execution.
+* Try to run it on Gitpod, which is a more similar environment.
+* Try to run it using [tmate](https://github.com/mxschmitt/action-tmate) on the GitHub workflow, which is as close as you can get to the real test environment. (Tmate is built into each of the DDEV test workflows.)
 
 ### Fragile or brittle tests
 
@@ -54,37 +59,56 @@ Fragile and brittle tests may be a result of specific expectations in the code, 
 
 ### Slow tests
 
-The easiest place to look at slow tests is a full buildkite test run, which shows the timing for each test. 
+The easiest place to look at slow tests is a full buildkite test run, which shows the timing for each test. In some cases, the timing is essential, for example, where we test every single database type and version and capability in [TestDdevAllDatabases](https://github.com/ddev/ddev/blob/507cfca2508b97786b80e8b8c83ea17f5c0fea20/pkg/ddevapp/ddevapp_test.go#L1652-L1893). But in many cases, we do too much and it doesn't all have to be done. We can *skip* the test in some environments (this one gets skipped on Lima and Colima). And we can do a limited selection of the most important test targets (this one does only `postgres:14`, `mariadb:10.11`, `mariadb:10.6`, `mariadb:10.4`, `mysql:8.0`, `mysql:5.7` when `GOTEST_SHORT=true`).
+
+* Does the test need to be run on this target system?
+* Do all the permutations need to be done?
+* Does DDEV need to be stopped and started over and over again?
+* Are we waiting too long for something, wasting time?
 
 ## Possible infrastructure test improvements
 
-## Running and debugging tests individually in Goland
+* Could we run most PR tests only on Linux and macOS arm64, and then cover other platforms on the default branch? Sometimes errors sneak in that way and the default branch tests have to be watched closely, but most of the time if it works on macOS and Linux it's "good enough".
+* It's possibly time to completely drop macOS AMD64 testing.
+* Is it time to add Windows/WSL2 ARM64 testing?
+* The carbon costs of all this testing are non-trivial and should be considered.
+* Could we run at least tests in parallel? What would be the implications? In current HEAD DDEV knows how to open new ports if the default ports are occupied. However, sharing a single `ddev-router` would still be problematic.
+* The output of our tests is really hard to read.
 
-## Running and debugging tests individually in Visual Studio Code (vscode)
-**Flaky tests and fragile tests**.
+## Running and debugging tests individually
 
-- Try to recreate the situation locally
-- Add more output to figure out what’s going on.
-- Don’t run the test on a platform if it doesn’t add value. Example: [TestComposerVersionConfig](https://github.com/ddev/ddev/blob/c37da314af81d48db54fa774a975f1b68acc4409/pkg/ddevapp/config_test.go#L1119-L1122).
+* [Setting up a Go Development Environment](setting-up-a-go-development-environment.md) has more hints about overall setup. Mostly there's nothing to do but run Goland and make sure that the Settings->Go->GOROOT is set correctly. `go env GOROOT` will show the correct directory.
+* To save time, make sure the environment variable `GOTEST_SHORT=true`, or set it to a useful value for TestDdevFullSiteSetup. These values are in the [TestSites array](https://github.com/ddev/ddev/blob/507cfca2508b97786b80e8b8c83ea17f5c0fea20/pkg/ddevapp/ddevapp_test.go#L42-L365). For example, GOTEST_SHORT=12 is for Drupal 10. If you don't set this, the test runner will spends lots of time downloading test tarballs that you don't need to wait for.
+* If you're running one of the `cmd` tests (mostly named something like `TestCmd*`, and all located in the `cmd` directory) then make sure that the related `ddev` binary from the same code is first in your `$PATH` so that you don't get confused about the behavior. Remember that those tests actually execute the `ddev` binary externally, rather than doing critical actions themselves.
 
-**Slow tests**
+### Running on the command line
 
-- Figure out why (doing too many things? Too many starts and stops? Can it do less? Is the actual test valid?) Example: [TestDdevXhprofEnabled](https://github.com/ddev/ddev/blob/7d895537ad4046a7a5159665924ed69b23288bcc/pkg/ddevapp/ddevapp_test.go#L1067) see [PR](https://github.com/ddev/ddev/pull/5378).
+You can run a specific test with invocations like this:
 
-**Big Infra Test Improvements (and problems)**
+```bash
+make testpkg TESTARGS="-count=1 -run TestDdevImportFiles"
+make testcmd TESTARGS="-count=1 -run TestCustomCommands"
+make test TESTARGS="-count=1 -run TestDdevImportFiles"
+```
 
-- Could we run most tests only on Linux and macOS arm64?
-- Really not all are needed, and some could be factored out/retired/consolidated
-- Add Windows ARM64 testing?
-- Spend more testing time on more important platforms, like macOS arm64.
-- Carbon costs
-- Could we run tests in parallel? What would be the implications.
+The `testpkg` and `testcmd` `make` targets are just shortcuts telling it not to look everywhere, but you can use `make test` and let it look everywhere if you're willing to wait. 
 
-**Running Individual Tests**
+`-count=1` means not to cache test results, which can be very confusing.
 
-- export GOTEST_SHORT=true or export GOTEST_SHORT=12
-- The built `ddev` binary should be in PATH if running a test in cmd
-- `make testpkg TESTARGS="-count=1 -run TestDdevAllDatabases"`
+The tests to run (`-run TestDdevImportFiles`) is a regular expression, so you can run multiple tests with `make testpkg TESTARGS="-run TestDdevImport"` or `make testpkg TESTARGS='-run "Test.*Import"'` or `make testpkg TESTARGS='-run "Test.*Import(DB|Files)"'`
+
+### Running in Goland
+
+My basic approach in Goland is to run the test first, then to step-debug through it. So I visit the function, maybe [TestDdevImportFiles]() and click the arrowhead next to it:
+
+![img.png](../../../public/img/blog/2024/09/goland-run-image.png)
+
+If it passes or fails, I'll likely click on a line to create a breakpoint and then step-debug through it by clicking on the arrowhead icon and select to debug it:
+
+![img.png](../../../public/img/blog/2024/09/goland-debug-image.png)
+
+### Running in Visual Studio Code (vscode)
+
 
 **Exercises**:
 
