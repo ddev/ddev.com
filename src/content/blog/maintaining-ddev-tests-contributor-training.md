@@ -4,9 +4,9 @@ pubDate: 2024-09-18
 # modifiedDate: 2024-07-23
 summary: Contributor training on maintaining and debugging DDEV automated tests.
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2024/07/new.png
-#  alt: new
+featureImage:
+  src: /img/blog/2024/09/maintaining-tests.png
+  alt: abstract view of DDEV automated tests
 categories:
   - Training
   - Guides
@@ -32,9 +32,9 @@ Golang tests are in files named `*_test.go` and the tests themselves are functio
 
 ## How many tests are there? How many lines of test code?
 
-According to cloc there are currently 22,322 lines of go code: (`cloc ./pkg ./cmd --include-lang=Go --not-match-f='.*_test\.go$'`) and 14,853 lines of go test code (*_test.go): `cloc ./pkg ./cmd --include-lang=Go --match-f='.*_test\.go$’`)
+According to cloc there are currently 22,322 lines of go code: (`cloc ./pkg ./cmd --include-lang=Go --not-match-f='.*_test\.go$'`) and 14,853 lines of go test code (*_test.go): (`cloc ./pkg ./cmd --include-lang=Go --match-f='.*_test\.go$’`)
 
-## What should a maintainer work on?
+## What should a contributor work on?
 
 ### Debugging broken tests
 
@@ -50,9 +50,11 @@ Flaky tests are the worst, because they may depend on the execution environment,
 
 ### Fragile or brittle tests
 
-Fragile and brittle tests may be a result of specific expectations in the code, for example, looking for a particular string instead of a more general expectation. Sometimes these can be understood by looking through the test run.
+Fragile and brittle tests may be a result of specific expectations in the code, for example, looking for a particular string instead of a more general expectation. Sometimes these can be understood by looking through the test run. Often the test needs to be restructured, or the expectation can be turned into a regular expression instead of a specific literal expectation.
 
 ### Slow tests
+
+The easiest place to look at slow tests is a full buildkite test run, which shows the timing for each test. 
 
 ## Possible infrastructure test improvements
 
