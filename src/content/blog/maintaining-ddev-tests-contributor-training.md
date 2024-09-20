@@ -67,7 +67,7 @@ The easiest place to look at slow tests is a full buildkite test run, which show
 
 ## Possible infrastructure test improvements
 
-* Could we run most PR tests only on Linux and macOS arm64, and then cover other platforms on the default branch? Sometimes errors sneak in that way and the default branch tests have to be watched closely, but most of the time if it works on macOS and Linux it's "good enough".
+* Could we run most PR tests only on Linux and macOS ARM64, and then cover other platforms on the default branch? Sometimes errors sneak in that way and the default branch tests have to be watched closely, but most of the time if it works on macOS and Linux it's "good enough".
 * It's possibly time to completely drop macOS AMD64 testing.
 * Is it time to add Windows/WSL2 ARM64 testing?
 * The carbon costs of all this testing are non-trivial and should be considered.
