@@ -16,9 +16,8 @@ categories:
 Here's our September 18, 2024 [Contributor Training](/blog/category/training) on maintaining DDEV automated tests:
 
 <div class="video-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_0K5MiUIWZg?si=q0qwW8TmFSXIDKC3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TGNDBzNsF6I?si=My_NAUVP5HXR6ikQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
-
 
 ## DDEV's Automated Tests
 
