@@ -23,15 +23,15 @@ Here's our September 18, 2024 [Contributor Training](/blog/category/training) on
 
 DDEV has three main types of tests:
 
-- Go “pkg” tests, that don’t use an external ddev binary. These are mostly a "pure" form of Go test. There are both end-to-end tests and some unit tests.
-- Go “cmd” tests that rely on a matching external ddev binary. These are almost scripted tests, written in Go, but calling out to execute the `ddev` binary and exercise it. 
+- Go “pkg” tests, that don’t use an external `ddev` binary. These are mostly a "pure" form of Go test. There are both end-to-end tests and some unit tests.
+- Go “cmd” tests that rely on a matching external `ddev` binary. These are almost scripted tests, written in Go, but calling out to execute the `ddev` binary and exercise it. 
 - Container tests written using bats (bash).
 
-Golang tests are in files named `*_test.go` and the tests themselves are functions named `Test*`.  For example the test [TestConfigFunctionality](https://github.com/ddev/ddev/blob/master/pkg/ddevapp/config_test.go#L1458) is in the file [config_test.go](https://github.com/ddev/ddev/blob/master/pkg/ddevapp/config_test.go).
+Golang tests are in files named `*_test.go` and the tests themselves are functions named `Test*`.  For example the test [TestConfigFunctionality](https://github.com/ddev/ddev/blob/507cfca2508b97786b80e8b8c83ea17f5c0fea20/pkg/ddevapp/config_test.go#L1458) is in the file [config_test.go](https://github.com/ddev/ddev/blob/master/pkg/ddevapp/config_test.go).
 
 ## How many tests are there? How many lines of test code?
 
-According to cloc there are currently 22,322 lines of go code: (`cloc ./pkg ./cmd --include-lang=Go --not-match-f='.*_test\.go$'`) and 14,853 lines of go test code (*_test.go): (`cloc ./pkg ./cmd --include-lang=Go --match-f='.*_test\.go$’`)
+According to cloc there are currently 22,322 lines of go code: (`cloc ./pkg ./cmd --include-lang=Go --not-match-f='.*_test\.go$'`) and 14,853 lines of go test code (*_test.go): (`cloc ./pkg ./cmd --include-lang=Go --match-f='.*_test\.go$'`)
 
 ## What should a contributor work on?
 
@@ -77,8 +77,8 @@ The easiest place to look at slow tests is a full buildkite test run, which show
 ## Running and debugging tests individually
 
 * [Setting up a Go Development Environment](setting-up-a-go-development-environment.md) has more hints about overall setup. Mostly there's nothing to do but run Goland and make sure that the Settings->Go->GOROOT is set correctly. `go env GOROOT` will show the correct directory.
-* To save time, make sure the environment variable `GOTEST_SHORT=true`, or set it to a useful value for TestDdevFullSiteSetup. These values are in the [TestSites array](https://github.com/ddev/ddev/blob/507cfca2508b97786b80e8b8c83ea17f5c0fea20/pkg/ddevapp/ddevapp_test.go#L42-L365). For example, GOTEST_SHORT=12 is for Drupal 10. If you don't set this, the test runner will spends lots of time downloading test tarballs that you don't need to wait for.
-* If you're running one of the `cmd` tests (mostly named something like `TestCmd*`, and all located in the `cmd` directory) then make sure that the related `ddev` binary from the same code is first in your `$PATH` so that you don't get confused about the behavior. Remember that those tests actually execute the `ddev` binary externally, rather than doing critical actions themselves.
+* To save time, make sure to define the environment variable `GOTEST_SHORT=true`, or set it to a useful value for TestDdevFullSiteSetup. These values are in the [TestSites array](https://github.com/ddev/ddev/blob/507cfca2508b97786b80e8b8c83ea17f5c0fea20/pkg/ddevapp/ddevapp_test.go#L42-L365). For example, `GOTEST_SHORT=12` is for Drupal 10. If you don't set this, the test runner will spend lots of time downloading test tarballs that you don't need to wait for.
+* If you're running one of the “cmd” tests (mostly named something like `TestCmd*`, and all located in the `cmd` directory) then make sure that the related `ddev` binary from the same code is first in your `$PATH` so that you don't get confused about the behavior. Remember that those tests actually execute the `ddev` binary externally, rather than doing critical actions themselves.
 
 ### Running on the command line
 
@@ -96,9 +96,9 @@ The `testpkg` and `testcmd` `make` targets are just shortcuts telling it not to 
 
 The tests to run (`-run TestDdevImportFiles`) is a regular expression, so you can run multiple tests with `make testpkg TESTARGS="-run TestDdevImport"` or `make testpkg TESTARGS='-run "Test.*Import"'` or `make testpkg TESTARGS='-run "Test.*Import(DB|Files)"'`
 
-### Running in Goland
+### Running in GoLand
 
-My basic approach in Goland is to run the test first, then to step-debug through it. So I visit the function, maybe [TestDdevImportFiles]() and click the arrowhead next to it:
+My basic approach in GoLand is to run the test first, then to step-debug through it. So I visit the function, maybe [TestDdevImportFiles](https://github.com/ddev/ddev/blob/e5006cd8ccac9df2f4f4c3ad51c12cc06641ce67/pkg/ddevapp/ddevapp_test.go#L2606) and click the arrowhead next to it:
 
 ![img.png](../../../public/img/blog/2024/09/goland-run-image.png)
 
@@ -106,14 +106,14 @@ If it passes or fails, I'll likely click on a line to create a breakpoint and th
 
 ![img.png](../../../public/img/blog/2024/09/goland-debug-image.png)
 
-### Running in Visual Studio Code (vscode)
+### Running in Visual Studio Code (VS Code)
 
 
 **Exercises**:
 
-- Run tests manually both on Goland and vscode
-- Find a heavy test and discuss how it can be improved. For example, look at [buildkite test](https://buildkite.com/ddev/ddev-macos-amd64-mutagen/builds/5288#018ace86-3250-4f5b-a5d7-5bb9b09cd9df). or [buildkite docker-ce](https://buildkite.com/ddev/wsl2-docker-inside/builds/2443#018acec4-6d27-44fe-8573-2e0a5080dc21).
-- Look at a flaky test, [TestGetLocalHTTPResponse](https://buildkite.com/ddev/wsl2-docker-desktop/builds/5077#018acfa3-f71f-4b7b-bb92-16c4b9a88de1) (not so flaky any more, but first “real” test in the series
+- Run tests manually both on GoLand and VS Code.
+- Find a heavy test and discuss how it can be improved. For example, look at [buildkite test](https://buildkite.com/ddev/ddev-macos-amd64-mutagen/builds/5288#018ace86-3250-4f5b-a5d7-5bb9b09cd9df) or [buildkite docker-ce](https://buildkite.com/ddev/wsl2-docker-inside/builds/2443#018acec4-6d27-44fe-8573-2e0a5080dc21).
+- Look at a flaky test, [TestGetLocalHTTPResponse](https://buildkite.com/ddev/wsl2-docker-desktop/builds/5077#018acfa3-f71f-4b7b-bb92-16c4b9a88de1) (not so flaky any more, but first “real” test in the series.)
 
 ## Resources
 
@@ -123,6 +123,6 @@ If it passes or fails, I'll likely click on a line to create a breakpoint and th
 
 ## Contributions welcome!
 
-Your suggestions to improve this blog are welcome. You can do a PR to this blog adding your techniques. Info and a training session on how to do a PR to anything in ddev.com is at [DDEV Website For Contributors](/blog/ddev-website-for-contributors/).
+Your suggestions to improve this blog are welcome. You can do a PR to this blog adding your techniques. Info and a training session on how to do a PR to anything in ddev.com is at [DDEV Website For Contributors](ddev-website-for-contributors.md).
 
 Join us for the next [DDEV Live Contributor Training](/blog/contributor-training/). Sign up at [DDEV Live Events Meetup](https://www.meetup.com/ddev-events/events/).
