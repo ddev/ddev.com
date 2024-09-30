@@ -12,13 +12,6 @@ categories:
   - Community
 ---
 
-- [ ]  So many people thankful for and excited about DDEV
-- [ ]  Thanks to [Platform.sh](http://Platform.sh) for getting me there and Mentoring ticket
-- [ ]  Things I learned
-    - [ ]  ddev composer doesn’t work with joachim scaffolding template
-    - [ ]  `composer update --lock`
-    - [ ]  Ultimike’s approach to vscode
-
 I spent the last week in Barcelona, Spain for DrupalCon Barcelona. It was so great to meet old friends and new, and to workk with all to integrate new contributors to Drupal.
 
 ## BoFs (Birds-of-a-feature) sessions
@@ -48,11 +41,19 @@ A key inspiration, though, was the idea of having organizations sponsor sections
 
 I think DDEV could do this same thing, and our favorite agency, CMS, and hosting provider partners could sponsor DDEV features so they could be properly maintained over the long term.
 
+## Things I Learned
+
+* `ddev composer` doesn't work right when there are multiple `composer.json`. For most projects, there is one main `composer.json` which can be specified with DDEV's `composer_root` directive, but in projects set up with the [joachim-n/drupal-core-development-project](https://github.com/joachim-n/drupal-core-development-project) there is a main `composer.json` and then also the one in `repos/drupal`, which is usually the one that might change if you're working on Drupal core. In this situation, it's important to either change `composer_root` to `repos/drupal` or to `ddev ssh` and `cd repos/drupal` and do composer activities there.
+* When you need only to update the hash in the `composer.json` the technique is to use `composer update --lock`.
+* Some people using Visual Studio Code ("vs code") have been using the [Remote Explorer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer) and [Devcontainers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extensions to work inside DDEV's web container instead of using the traditional DDEV approaches on the host. [Mike Anello](https://www.drupaleasy.com/) has been promoting this technique in his outstanding long-form training sessions, so I was super interested in trying it out. Instead of using `ddev xdebug on` you use `enable_xdebug`. Instead of `ddev exec phpcs` or `ddev exec phpstan` you directly use `phpcs` or `phpstan`. It's a fascinating approach, and has some strengths and some frictions compared to the traditional approach. (Note that the fantastic [Visual Studio Code DDEV Manager](https://marketplace.visualstudio.com/items?itemName=biati.ddev-manager) extension is not used at all here, and actually can break things.)
+
 ## People are so thankful!
 
 I can't tell you how many people came up to me just to thank me for DDEV. They're so happy they've made that transition, and so pleased with DDEV.
 
-## 
+## Thanks to sponsors!
+
+Thank you to DDEV's lead sponsor [Platform.sh](https://platform.sh) for getting me to Barcelona and to the [Drupal Association](https://www.drupal.org/association) and conference organizer [Kuoni Tumlare](https://www.kuonitumlare.com/) for the complimentary mentoring ticket that also helped reduce costs for all.
 
 **Is your organization budgeting for next year?** Please remember DDEV!
 
