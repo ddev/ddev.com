@@ -27,7 +27,7 @@ categories:
 **DDEV Notes from around the web:**
 
 - **[Using DDEV in GitLab CI Tests](https://ddev.com/blog/ddev-in-gitlab-ci)** - Jochen Roth sorted out the difficulty and made this available to all. (Note that lots of people use DDEV for automated tests of their websites in GitHub Workflows using the [github-action-setup-ddev action](https://github.com/ddev/github-action-setup-ddev).)
-- **[Install Prestashop in DDEV](https://misterdigital.es/instalar-prestashop-en-ddev/)** (in Spanish, but Google Translate makes it very accessible)
+- **[Install Prestashop in DDEV](https://misterdigital.es/instalar-prestashop-en-ddev/)** (in Spanish, but Google Translate makes it very accessible).
 - **[CraftCMS Launchpad](https://craftcms-launchpad.mandrasch.eu/)** by prolific contributor [@mandrasch](https://mandrasch.dev/). Interactive CraftCMS demos in your browser, powered by DDEV.
 - **[DDEV Vite Sidecar add-on](https://github.com/s2b/ddev-vite-sidecar)** by @s2b. A fresh approach to Vite with DDEV. (See also the authoritative and maintained summary of Vite approaches on [ddev.com](https://ddev.com/blog/working-with-vite-in-ddev/).)
 - **[WSL2 with DDEV And Drupal](https://www.drupal.org/docs/develop/local-server-setup/windows-development-environment/installing-drupal-with-ddev-in-wsl2-on-windows)** on drupal.org: This outstanding and detailed explanation is a gift to anybody using WSL2 and Drupal.
@@ -43,4 +43,4 @@ categories:
 
 Want to keep up as the month goes along? Follow our [blog](https://ddev.com/blog/), [LinkedIn](https://www.linkedin.com/company/ddev-foundation), [Mastodon](https://fosstodon.org/@ddev), [X,](https://x.com/randyfay) and join us on [Discord](https://discord.gg/5wjP76mBJD). And of course email us any time, you can reply to this email. If you didn’t get this newsletter in your own inbox, you can. Sign up at https://ddev.com/newsletter.
 
-Happy October from Randy Fay, DDEV Project Lead
+Happy October from Randy Fay, DDEV Project Lead.
