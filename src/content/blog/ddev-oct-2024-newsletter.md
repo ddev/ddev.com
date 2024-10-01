@@ -15,24 +15,24 @@ categories:
 
 **Happy October from DDEV**! I just got back from DrupalCon Barcelona and things are finally starting to cool down here in Palisade, Colorado, USA.
 
-**Podcast**! [Chad Carlson](https://www.linkedin.com/in/chadwcarlson/) of [DDEV Lead Sponsor](https://ddev.com/blog/platform-sh-becomes-a-lead-sponsor-of-ddev/) [Platform.sh](http://Platform.sh) had me on the Change Mode podcast and we had loads of fun. Learn more about the history of DDEV (and my TRS-80 Model 1 Level 2) on the [Change Mode Podcast](https://www.podcastics.com/podcast/episode/chmod-106-code-community-and-ddev-randy-fays-journey-311577/).
+**Podcast**! [Chad Carlson](https://www.linkedin.com/in/chadwcarlson/) of [DDEV Lead Sponsor](https://ddev.com/blog/platform-sh-becomes-a-lead-sponsor-of-ddev/) [Platform.sh](https://Platform.sh) had me on the Change Mode podcast and we had loads of fun. Learn more about the history of DDEV (and my TRS-80 Model 1 Level 2) on the [Change Mode Podcast](https://www.podcastics.com/podcast/episode/chmod-106-code-community-and-ddev-randy-fays-journey-311577/).
 
-**DrupalCon Barcelona**: I got to see lots of friends old and new in Barcelona. Four training sessions, a full-day contribution mentoring session, and loads of fun. [**Read about it on ddev.com](https://ddev.com/blog/drupalcon-barcelona-2024).**
+**DrupalCon Barcelona**: I got to see lots of friends old and new in Barcelona. Four training session BoFs, a full-day contribution mentoring session, and loads of fun. **[Read about it on ddev.com](https://ddev.com/blog/drupalcon-barcelona-2024).**
 
 **Join us for Contributor Training**
-* October 9: [**Supporting users using `ddev debug test` and other tools**](https://www.meetup.com/ddev-events/events/303503564)
-* October 23: [**Using Tmate to Debug GitHub Workflows**](https://www.meetup.com/ddev-events/events/303503674)
+* October 9: **[Supporting users using `ddev debug test` and other tools](https://www.meetup.com/ddev-events/events/303503564)**
+* October 23: **[Using Tmate to Debug GitHub Workflows**](https://www.meetup.com/ddev-events/events/303503674)**
 
 **GitHub Codespaces is working well with DDEV**: We used to add a lot of caveats about Codespaces, but it was fixed with new workaround and the [DDEV docs](https://ddev.readthedocs.io/en/latest/users/install/ddev-installation/#ddev-installation-codespaces) say how to do it. Give it a try!
 
 **DDEV Notes from around the web:**
 
-- [**Using DDEV in GitLab CI Tests**](https://ddev.com/blog/ddev-in-gitlab-ci) - Jochen Roth sorted out the difficulty and made this available to all. (Note that lots of people use DDEV for automated tests of their websites in GitHub Workflows using the [github-action-setup-ddev action](https://github.com/ddev/github-action-setup-ddev).)
-- [**Install Prestashop in DDEV**](https://misterdigital.es/instalar-prestashop-en-ddev/) (in Spanish, but Google Translate makes it very accessible)
-- [**CraftCMS Launchpad**](https://craftcms-launchpad.mandrasch.eu/) by prolific contributor [@mandrasch](https://mandrasch.dev/). Interactive CraftCMS demos in your browser, powered by DDEV.
-- [**DDEV Vite Sidecar add-on**](https://github.com/s2b/ddev-vite-sidecar) by @s2b. A fresh approach to Vite with DDEV. (See also the authoritative and maintained summary of Vite approaches on [ddev.com](https://ddev.com/blog/working-with-vite-in-ddev/).)
-- [**WSL2 with DDEV And Drupal**](https://www.drupal.org/docs/develop/local-server-setup/windows-development-environment/installing-drupal-with-ddev-in-wsl2-on-windows)** on drupal.org: This outstanding and detailed explanation is a gift to anybody using WSL2 and Drupal.
-- [**How We Contributed a Quality of Life Improvement to DDEV**](https://www.velir.com/ideas/2024/09/17/how-we-contributed-a-quality-of-life-improvement-to-ddev) by [Kevin Quillen](https://kevinquillen.com/). An inspiration for anybody who wants to scratch an itch on DDEV!
+- **[Using DDEV in GitLab CI Tests](https://ddev.com/blog/ddev-in-gitlab-ci)** - Jochen Roth sorted out the difficulty and made this available to all. (Note that lots of people use DDEV for automated tests of their websites in GitHub Workflows using the [github-action-setup-ddev action](https://github.com/ddev/github-action-setup-ddev).)
+- **[Install Prestashop in DDEV](https://misterdigital.es/instalar-prestashop-en-ddev/)** (in Spanish, but Google Translate makes it very accessible)
+- **[CraftCMS Launchpad](https://craftcms-launchpad.mandrasch.eu/)** by prolific contributor [@mandrasch](https://mandrasch.dev/). Interactive CraftCMS demos in your browser, powered by DDEV.
+- **[DDEV Vite Sidecar add-on](https://github.com/s2b/ddev-vite-sidecar)** by @s2b. A fresh approach to Vite with DDEV. (See also the authoritative and maintained summary of Vite approaches on [ddev.com](https://ddev.com/blog/working-with-vite-in-ddev/).)
+- **[WSL2 with DDEV And Drupal](https://www.drupal.org/docs/develop/local-server-setup/windows-development-environment/installing-drupal-with-ddev-in-wsl2-on-windows)** on drupal.org: This outstanding and detailed explanation is a gift to anybody using WSL2 and Drupal.
+- **[How We Contributed a Quality of Life Improvement to DDEV](https://www.velir.com/ideas/2024/09/17/how-we-contributed-a-quality-of-life-improvement-to-ddev)** by [Kevin Quillen](https://kevinquillen.com/). An inspiration for anybody who wants to scratch an itch on DDEV!
 
 **DDEV on Windows ARM64** (the [Qualcomm Snapdragon Windows Copilot](https://www.qualcomm.com/news/onq/2024/06/what-on-earth-is-a-copilot-plus-pc) machines you’ve been hearing about.) I bought a Microsoft Surface Laptop on my own dime to see how it would do with DDEV, and it’s great on WSL2, not ready for traditional Windows. The [preferred install technique](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#windows) (docker-ce inside WSL2) works fine except that it stumbles installing `ddev.exe` on the Windows side. I hope to spend some time on the open [Windows ARM64 issue](https://github.com/ddev/ddev/issues/6344) before I need to decide whether to send it back or not. Overall, it’s a delightful machine and does great with DDEV.
 
