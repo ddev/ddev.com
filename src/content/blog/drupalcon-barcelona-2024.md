@@ -6,8 +6,8 @@ summary: DDEV happenings at DrupalCon Barcelona
 author: Randy Fay
 featureImage:
   src: /img/blog/2024/10/drupalcon-barcelona-mentors.jpg
-  alt: DrupalCon Barcelona Mentors
-  credit: "Paul Johnson"
+  alt: Mentors on Contribution Day at DrupalCon Barcelona
+  credit: "Photo of DrupalCon Barcelona Contribution Day Mentors by Paul Johnson"
 categories:
   - Community
 ---
