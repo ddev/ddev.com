@@ -4,10 +4,9 @@ pubDate: 2024-10-01
 #modifiedDate: 2024-09-06
 summary: DDEV October 2024 Newsletter
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2024/09/ddev-blog.png
-#  alt: DDEV running in the GitLab Pipeline
-#  credit: "[Milad Fakurian](https://unsplash.com/de/@fakurian) (Background)"
+featureImage:
+  src: /img/blog/2024/10/mount-garfield-palisade.jpg
+  alt: Mount Garfield above Palisade
 categories:
   - Community
 ---
