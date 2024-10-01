@@ -1,13 +1,13 @@
 ---
 title: "DrupalCon Barcelona Wrap-up"
-pubDate: 2024-09-30
+pubDate: 2024-10-01
 #modifiedDate: 2024-09-06
 summary: DDEV happenings at DrupalCon Barcelona
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2024/09/ddev-blog.png
-#  alt: DDEV running in the GitLab Pipeline
-#  credit: "[Milad Fakurian](https://unsplash.com/de/@fakurian) (Background)"
+featureImage:
+  src: /img/blog/2024/10/drupalcon-barcelona-mentors.jpg
+  alt: DrupalCon Barcelona Mentors
+  credit: "Paul Johnson"
 categories:
   - Community
 ---
