@@ -43,3 +43,5 @@ categories:
 **THANKS to all of you who are supporting DDEV’s path to sustainability** and who have gotten your organizations to do so.
 
 Want to keep up as the month goes along? Follow our [blog](https://ddev.com/blog/), [LinkedIn](https://www.linkedin.com/company/ddev-foundation), [Mastodon](https://fosstodon.org/@ddev), [X,](https://x.com/randyfay) and join us on [Discord](https://discord.gg/5wjP76mBJD). And of course email us any time, you can reply to this email. If you didn’t get this newsletter in your own inbox, you can. Sign up at https://ddev.com/newsletter.
+
+Happy October from Randy Fay, DDEV Project Lead
