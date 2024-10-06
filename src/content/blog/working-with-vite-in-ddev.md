@@ -575,7 +575,7 @@ There is also the possibility to automatically start Vite when you start a DDEV 
 
 Please beware: Autostart can complicate things a bit, it's a technique for advanced usage.
 
-Some developers like having it run in a background daemon, others like putting it in the post-start hook. That way it runs automatically, but the output & errors are still visible in the terminal.
+Some developers like having it run in a background daemon, others like putting it in the [post-start hook](https://ddev.readthedocs.io/en/stable/users/configuration/hooks/). When it is started via post-start hook, the output & errors are still visible in the terminal.
 
 If you want to run Vite in the background as a daemon via [web_extra_daemons](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#running-extra-daemons-in-the-web-container), edit your config.yaml like this ("ddev restart" needed):
 
@@ -586,7 +586,7 @@ web_extra_daemons:
     directory: /var/www/html
 ```
 
-Afterwards, Vite dev server errors are only visible via "ddev logs" if you run Vite as daemon. A real-life example can be found here: [github.com/ddev/ddev.com](https://github.com/ddev/ddev.com). 
+If you use this, the Vite dev server errors are only visible via "ddev logs". A real-life example can be found here: [github.com/ddev/ddev.com](https://github.com/ddev/ddev.com). 
 
 You can also use supervisor tools like pm2 in this article: [Node.js Development with DDEV - lullabot.com](https://www.lullabot.com/articles/nodejs-development-ddev).
 
