@@ -1,7 +1,7 @@
 ---
 title: "Working with Vite in DDEV - an introduction"
 pubDate: 2023-11-08
-modifiedDate: 2024-09-05
+modifiedDate: 2024-06-10
 summary: Working with Vite in DDEV
 author: Matthias Andrasch
 featureImage:
@@ -32,6 +32,7 @@ This articles sums up my current personal experience. I hope it will be a helpfu
   - [GitHub Codespaces](#githubcodespaces)
 - [NodeJS / headless projects](#nodejs--headlessprojects)
 - [DDEV addons](#ddevaddons)
+- [Advanced: Autostart Vite](#advancedautostartvite)
 - [Further resources](#furtherresources)
 
 ### General usage
@@ -568,6 +569,34 @@ But you can also use a separate DDEV project for frontend - and another one for 
   
 - Kudos to torenware, who created the first ever DDEV addon for Vite, [ddev-viteserve](https://github.com/torenware/ddev-viteserve). It's currently not maintained. 
 
+### Advanced: Autostart Vite
+
+There is also the possibility to automatically start Vite when you start a DDEV project.
+
+Please beware: Autostart can complicate things a bit, it's a technique for advanced usage.
+
+Some developers like having it run in a background daemon, others like putting it in the [post-start hook](https://ddev.readthedocs.io/en/stable/users/configuration/hooks/). When it is started via post-start hook, the output & errors are still visible in the terminal.
+
+Edit your .ddev/config.yaml like this and execute a command within the DDEV web container on project start, a "ddev restart" is needed afterwards:
+
+```yaml
+hooks:
+  post-start:
+    - exec: "npm run dev"
+```
+
+If you want to run Vite in the background as a daemon via [web_extra_daemons](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#running-extra-daemons-in-the-web-container), edit your config.yaml like this ("ddev restart" needed):
+
+```yaml
+web_extra_daemons:
+  - name: vite
+    command: bash -c 'npm install && npm run dev -- --host'
+    directory: /var/www/html
+```
+
+If you use this, the Vite dev server errors are only visible via "ddev logs". A real-life example can be found here: [github.com/ddev/ddev.com](https://github.com/ddev/ddev.com). 
+
+You can also use supervisor tools like pm2 in this article: [Node.js Development with DDEV - lullabot.com](https://www.lullabot.com/articles/nodejs-development-ddev).
 
 ### Further resources
 
