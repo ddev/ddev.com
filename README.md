@@ -182,6 +182,9 @@ If you’re adding a new item to the array, choose whichever position it should 
 
 Any redirect can be added to ddev.com by editing `public/_redirects`. This can be useful to provide short redirects in a variety of contexts. Redirects can be to local URLs or to DDEV docs, for example.
 
+* Most redirects should be listed as `301` for a permanent redirect.
+* Short links can be prefixed with `/s` to imply their nature. For example, `/s/port-conflict`
+
 ## Build & Deployment
 
 For the site to exist at `ddev.com`, it needs to be built and hosted somewhere. Cloudflare Pages responds to commits in order to build and deploy the site.
