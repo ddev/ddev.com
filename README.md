@@ -178,6 +178,10 @@ If you’re adding a new item to the array, choose whichever position it should 
 - **url** – organization’s website URL.
 - **github** – optional GitHub username when relevant, which can be used to make sure the sponsor doesn’t appear twice in a list—as seen in the [Sponsors.astro](https://github.com/ddev/ddev.com/blob/main/src/components/Sponsors.astro#L53) component.
 
+## Redirects
+
+Any redirect can be added to ddev.com by editing `public/_redirects`. This can be useful to provide short redirects in a variety of contexts. Redirects can be to local URLs or to DDEV docs, for example.
+
 ## Build & Deployment
 
 For the site to exist at `ddev.com`, it needs to be built and hosted somewhere. Cloudflare Pages responds to commits in order to build and deploy the site.
