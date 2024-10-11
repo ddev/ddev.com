@@ -32,18 +32,28 @@
     {
       clumps: [
         { transition: "type", lines: 1, wait: 1000 },
-        { transition: "roll", lines: 2, wait: 1000 },
+        { transition: "roll", lines: 4, wait: 1000 },
+        { transition: "roll", lines: 6, wait: 1000 },
         { transition: "roll", lines: 3, wait: 1000 },
-        { transition: "show", lines: 2 },
+        { transition: "show", lines: 3 },
       ],
       output: `ddev start
 
 Starting my-project...
-Container ddev-my-project-web  Running
-Container ddev-my-project-db  Running
-Container ddev-router  Running
+Building project images...
+<span class="text-green-500">Project images built in 1s.</span>
+ Network ddev-my-project_default  Created
+ Container ddev-my-project-web  Created
+ Container ddev-my-project-db  Created
+ Container ddev-my-project-web  Started
+ Container ddev-my-project-db  Started
+Waiting for containers to become ready: [web db] 
+Starting ddev-router if necessary...
+ Container ddev-router  Created
+ Container ddev-router  Started
 <span class="text-green-500">Successfully started my-project</span>
-<span class="text-green-500">Project can be reached at https://my-project.ddev.site https://127.0.0.1:51046</span>`,
+<span class="text-green-500">Your project can be reached at https://my-project.ddev.site</span>
+<span class="text-green-500">See 'ddev describe' for alternate URLs.</span>`,
     },
     {
       clumps: [
@@ -59,12 +69,12 @@ Container ddev-router  Running
 │ SERVICE    │ STAT │ URL/PORT                                   │ INFO               │
 ├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
 │ web        │ <span class="text-green-500">OK</span>   │ https://my-project.ddev.site               │ php PHP8.3         │
-│            │      │ InDocker: ddev-my-project-web:443,80,8025  │ nginx-fpm          │
+│            │      │ InDocker: web:443,80,8025                  │ nginx-fpm          │
 │            │      │ Host: 127.0.0.1:51046,51047                │ docroot:''         │
 │            │      │                                            │ Perf mode: none    │
 │            │      │                                            │ NodeJS:20          │
 ├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
-│ db         │ <span class="text-green-500">OK</span>   │ InDocker: ddev-my-project-db:3306          │ mysql:8.0          │
+│ db         │ <span class="text-green-500">OK</span>   │ InDocker: db:3306                          │ mysql:8.0          │
 │            │      │ Host: 127.0.0.1:51045                      │ User/Pass: 'db/db' │
 │            │      │                                            │ or 'root/root'     │
 ├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
