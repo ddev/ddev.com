@@ -60,8 +60,8 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 | 2024-07-10    | [Advanced Add-on Techniques](advanced-add-on-contributor-training.md)                                                                                                                                                                                                                                                                     |
 | 2024-07-24    | [DDEV Docker Image Maintenance](ddev-docker-image-maintenance.md)                                                                                                                                                                                                                                                                         |
 | 2024-09-18    | [Maintaining DDEV Automated Tests](maintaining-ddev-tests-contributor-training.md)                                                                                                                                                                                                                                                        |
+| 2024-10-12    | [Using `ddev debug test` to support others](ddev-debug-test-contributor-training.md)                                                                                                                                                                                                                                                      |
 
-| 2024-10-12    | [Using `ddev debug test` to support others](ddev-debug-test-contributor-training.md)                                                                                                                                                                                                                                                        |
 <a name="upcoming-trainings"></a>
 **Upcoming Trainings:**
 
