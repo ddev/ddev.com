@@ -4,9 +4,9 @@ pubDate: 2024-10-17
 #modifiedDate: 2024-10-17
 summary: DDEV's v1.23.5 release has support for automatically assigning ports when the default ports are already in use, automatically setting the timezone in the web container, and many other goodies
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2024/10/mount-garfield-palisade.jpg
-#  alt: Mount Garfield above Palisade
+featureImage:
+  src: /img/blog/2024/10/DDEV-v1.23.5.png
+  alt: DDEV v1.23.5 release announcement
 categories:
   - Announcements
 ---
