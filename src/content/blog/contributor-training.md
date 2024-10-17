@@ -1,7 +1,7 @@
 ---
 title: "DDEV Contributor Live Training"
 pubDate: 2023-07-09
-modifiedDate: 2024-09-19
+modifiedDate: 2024-10-17
 summary: Live contributor training is available for those who want to learn to contribute and maintain DDEV.
 author: Randy Fay
 featureImage:
@@ -61,12 +61,12 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 | 2024-07-24    | [DDEV Docker Image Maintenance](ddev-docker-image-maintenance.md)                                                                                                                                                                                                                                                                         |
 | 2024-09-18    | [Maintaining DDEV Automated Tests](maintaining-ddev-tests-contributor-training.md)                                                                                                                                                                                                                                                        |
 
+| 2024-10-12    | [Using `ddev debug test` to support others](ddev-debug-test-contributor-training.md)                                                                                                                                                                                                                                                        |
 <a name="upcoming-trainings"></a>
 **Upcoming Trainings:**
 
 * Hostname Resolution and Debugging in DDEV
-* Using AI in DDEV Development (Continue.dev, etc.)
-* Interpreting `ddev debug test` To Support Users
+* Using AI in DDEV Development (ChatGPT, Continue.dev, etc.)
 * Implementing a New DDEV Project Type
 * Managing and Maintaining DDEV Docs (Readthedocs.io, etc.)
 * Using Tmate to Debug GitHub Workflows
