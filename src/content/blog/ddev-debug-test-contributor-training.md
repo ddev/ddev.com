@@ -2,11 +2,11 @@
 title: "Contributor Training: Using `ddev debug test` to support others"
 pubDate: 2024-10-12
 # modifiedDate: 2024-10-12
-summary: Contributor training on interpreting and using `ddev debug test` to help support others.
+summary: Contributor training - interpreting and using `ddev debug test` to support others.
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2024/09/maintaining-tests.png
-#  alt: abstract view of DDEV automated tests
+featureImage:
+  src: /img/blog/2024/10/ddev-debug-test-banner.png
+  alt: Using `ddev debug test` to support others
 categories:
   - Training
   - Guides
