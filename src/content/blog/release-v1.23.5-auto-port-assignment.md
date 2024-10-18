@@ -30,6 +30,6 @@ I'm happy to announce that [DDEV v1.23.5](https://github.com/ddev/ddev/releases/
 
 You'll find loads more in the [release notes](https://github.com/ddev/ddev/releases/tag/v1.23.5), but I just wanted to stop by and say thank you to our wonderful community for continuing to shape DDEV and its future.
 
-Our next release is planned to be a major release, v1.24.0, and will have PHP 8.4.0 and will change the default PHP version for new projects to PHP 8.3. We expect to hae MySQL 8.4 in there as well.
+Our next release is planned to be a major release, v1.24.0, and will have PHP 8.4.0 and will change the default PHP version for new projects to PHP 8.3. We expect to have MySQL 8.4 in there as well.
 
 Follow our [blog](https://ddev.com/blog/), [LinkedIn](https://www.linkedin.com/company/ddev-foundation), [Mastodon](https://fosstodon.org/@ddev), [X,](https://x.com/randyfay) and join us on [Discord](https://discord.gg/5wjP76mBJD). And we'd love to have you sign up for the [monthly newsletter](/newsletter).
