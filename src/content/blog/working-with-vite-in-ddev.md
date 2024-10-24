@@ -1,7 +1,7 @@
 ---
 title: "Working with Vite in DDEV - an introduction"
 pubDate: 2023-11-08
-modifiedDate: 2024-06-10
+modifiedDate: 2024-24-10
 summary: Working with Vite in DDEV
 author: Matthias Andrasch
 featureImage:
@@ -449,11 +449,27 @@ Example repositories:
 
 #### Drupal
 
-I found this module:
+[Andrew Morton](https://github.com/mortona42) gave some information about the current state, thanks very much! 
 
-- https://www.drupal.org/project/vite
-
-But I could not find more info regarding DDEV usage. Happy to update this section with a better link / suggestion!
+> Vite module: [https://www.drupal.org/project/vite](https://www.drupal.org/project/vite)
+> 
+> This uses Vite's manifest.json to map enabled Drupal library files to the compiled versions in /dist, or to the vite server in dev mode.
+> 
+> Here is a theme I contributed, with instructions for how to set it up with DDEV in the readme files. I'm trying to detail all the configuration possibilities we might need, with defaults that should work out of the box.
+> 
+> [https://www.drupal.org/project/unocss_starter](https://www.drupal.org/project/unocss_starter) (uses Vite)
+> 
+<!-- textlint-disable -->
+> I'm blogging about the process here: [https://www.drupalarchitect.info/projects/unocss-starter-theme](https://www.drupalarchitect.info/projects/unocss-starter-theme)
+> 
+> There are a handful of devs working on using Vite to bundle assets multiple modules/themes in Drupal. Looks like Vite and Foxy are becoming the leading solutions.
+>
+> [https://www.drupal.org/project/foxy](https://www.drupal.org/project/foxy)
+> 
+> Working POC: [https://github.com/darvanen/drupal-js](https://github.com/darvanen/drupal-js)
+> 
+> I think we'll be seeing a lot of new things in 
+this area over the next year.
 
 #### Laravel
 
