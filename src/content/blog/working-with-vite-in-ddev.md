@@ -455,9 +455,9 @@ Example repositories:
 > 
 > This uses Vite's manifest.json to map enabled Drupal library files to the compiled versions in /dist, or to the vite server in dev mode.
 > 
-> Here is a theme I contributed, with instructions for how to set it up with DDEV in the readme files. I'm trying to detail all the configuration possibilities we might need, with defaults that should work out of the box
+> Here is a theme I contributed, with instructions for how to set it up with DDEV in the readme files. I'm trying to detail all the configuration possibilities we might need, with defaults that should work out of the box.
 > 
-> https://www.drupal.org/project/unocss_starter. (uses Vite)
+> https://www.drupal.org/project/unocss_starter (uses Vite)
 > 
 > I'm blogging about the process here: https://www.drupalarchitect.info/projects/unocss-starter-theme
 > 
