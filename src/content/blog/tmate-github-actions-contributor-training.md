@@ -4,9 +4,9 @@ pubDate: 2024-10-23
 # modifiedDate: 2024-10-23
 summary: Contributor training - Using tmate to debug and experiment with GitHub Actions.
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2024/10/ddev-debug-test-banner.png
-#  alt: Tmate for debugging
+featureImage:
+  src: /img/blog/2024/10/github-actions-tmate-debugging.png
+  alt: Detective Inspector studying GitHub tests
 categories:
   - Training
   - Guides
