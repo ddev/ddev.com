@@ -30,8 +30,35 @@ Often it's hard to understand what has happened with an test because all we see 
 ## Alternatives to Tmate
 
 1. We normally will try to understand a test failure by running it locally.
-2. Running in a similar Linux/AMD64 system like GitPod is a pretty easy option. 
-3. [nektos/act](https://github.com/nektos/act) is another recommended competitor to Tmate. It uses Docker and a Docker image to run an action on your local machine. I haven't had luck with it when I've tried it.
+2. Running in a similar Linux/AMD64 system like Gitpod is a pretty easy option. 
+3. [nektos/act](https://github.com/nektos/act) is another recommended competitor to Tmate. It uses Docker and a Docker image to run an action on your local machine. I haven't had luck with it when I've tried it. Stas's remarks:
+    - act is useful to run simple jobs, for example, I want to test a GitHub API call using `actions/github-script`.
+    - The most important thing is to choose [the right image](https://github.com/nektos/act/issues/2219) for each specific job to make it work.
+    - I remove everything from `.github/workflows/test.yml`, leaving only code related to the job I want to test:
+
+    ```yaml
+    jobs:
+      build:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Get my GitHub repositories
+            uses: actions/github-script@v7
+            with:
+              github-token: ${{ secrets.GITHUB_TOKEN }}
+              script: |
+                const { data } = await github.rest.search.repos({q: 'user:stasadev'})
+                console.log(data)
+                const fs = require('fs');
+                fs.writeFileSync('data.json', JSON.stringify(data, null, 2)); 
+    ```
+
+    And then I can run `act` in the project root:
+
+    ```bash
+    act -P ubuntu-latest=catthehacker/ubuntu:act-latest --bind --job build -s GITHUB_TOKEN=my_token
+    ```
+
+    It prints out the contents of the `data` in my terminal, and writes it to `data.json` in the current directory, which makes it much easier to debug.
 
 ## Security Concerns
 
@@ -55,7 +82,7 @@ In the [detached example](https://github.com/rfay/tmate-demos/blob/main/.github/
 
 ### Failure Example
 
-Often we have a complex step and want to be able to debug it if it fails. For this we can used `if failed()`, as shown in the [failure example](https://github.com/rfay/tmate-demos/blob/main/.github/workflows/on_fail.yaml). Tmate kicks in automatically if the step *before* it fails. It would be nicer if it kicked in on any failure, but it just kicks in when the step before fails.
+Often we have a complex step and want to be able to debug it if it fails. For this we can used `if: ${{ failure() }}`, as shown in the [failure example](https://github.com/rfay/tmate-demos/blob/main/.github/workflows/on_fail.yaml). Tmate kicks in automatically if the step *before* it fails. It would be nicer if it kicked in on any failure, but it just kicks in when the step before fails.
 
 ### Workflow Dispatch Example
 
