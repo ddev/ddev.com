@@ -459,6 +459,7 @@ Example repositories:
 > 
 > [https://www.drupal.org/project/unocss_starter](https://www.drupal.org/project/unocss_starter) (uses Vite)
 > 
+<!-- textlint-disable -->
 > I'm blogging about the process here: [https://www.drupalarchitect.info/projects/unocss-starter-theme](https://www.drupalarchitect.info/projects/unocss-starter-theme)
 > 
 > There are a handful of devs working on using Vite to bundle assets multiple modules/themes in Drupal. Looks like Vite and Foxy are becoming the leading solutions.
