@@ -16,7 +16,7 @@ categories:
 Here's our October 23, 2024 [Contributor Training](/blog/category/training) on using `ddev debug test` to help other users:
 
 <div class="video-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cXsCX2pBPkA?si=QgjPRkHMZUIKH2jc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ABg6Oz4WCIM?si=NuslbR5FA9YpV0Tk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 ## What is Tmate?
