@@ -15,6 +15,18 @@ dotenv.config()
 const DEVELOPMENT_CACHE_DIR = 'cache'
 let octokitInstance: Octokit;
 
+// Define variable if GITHUB_TOKEN is set and not empty
+const githubTokenIsSet: boolean = (() => {
+  if(process.env.hasOwnProperty('GITHUB_TOKEN') === false || process.env.GITHUB_TOKEN === ''){
+    // add warning for production builds
+    if(import.meta.env.MODE === 'production'){
+      console.warn('GITHUB_TOKEN not set or empty. You can ignore this warning for local development.');
+    }
+    return false;
+  }
+  return true;
+})();
+
 /**
  * Returns an instance of Octokit, which uses the `GITHUB_TOKEN` environment
  * variable for authentication.
@@ -56,6 +68,11 @@ export function getCategoryUrl(name: string) {
  * @returns response data
  */
 export async function getSponsors() {
+ 
+  if(!githubTokenIsSet){
+    return [];
+  }
+
   const cacheFilename = 'sponsors.json'
   const cachedData = getCache(cacheFilename);
 
@@ -121,6 +138,11 @@ export async function getSponsors() {
  * @returns response data
  */
 export async function getContributors(includeAnonymous = false) {
+
+  if(!githubTokenIsSet){
+    return [];
+  }
+
   const cacheFilename = 'contributors.json'
   const cachedData = getCache(cacheFilename);
 
@@ -155,6 +177,11 @@ export async function getContributors(includeAnonymous = false) {
  * @returns response data
  */
 export async function getRepoDetails(name: string) {
+
+  if(!githubTokenIsSet){
+    return [];
+  }
+
   const slug = name.replace('/', '-')
   const cacheFilename = `repository-${slug}.json`;
   const cachedData = getCache(cacheFilename);
@@ -178,6 +205,11 @@ export async function getRepoDetails(name: string) {
  * @returns tag name
  */
 export async function getLatestReleaseVersion(stable = true) {
+
+  if(!githubTokenIsSet){
+    return [];
+  }
+
   let data = await getReleases()
 
   if (stable) {
@@ -190,6 +222,11 @@ export async function getLatestReleaseVersion(stable = true) {
 }
 
 export async function getReleases() {
+
+  if(!githubTokenIsSet){
+    return [];
+  }
+
   const cacheFilename = 'releases.json'
   const cachedData = getCache(cacheFilename);
 
