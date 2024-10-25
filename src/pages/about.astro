@@ -96,7 +96,7 @@ const releaseData = await getReleases()
           <li class="p-6 lg:p-0">
             <span class="text-5xl font-thin"
               >{
-                parseInt(repoData.stargazers_count).toLocaleString("en-US")
+                parseInt(repoData.stargazers_count || 0).toLocaleString("en-US")
               }</span
             >
             <span class="block font-mono text-sm">GitHub stars</span>
