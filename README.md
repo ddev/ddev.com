@@ -57,10 +57,6 @@ All commands are run from the root of the project, from a terminal:
 
 ### Local Development Setup
 
-1. Run `cp .env.example .env` to create a `.env` file for environment variables. (Don’t check this in!)
-2. Create a [classic GitHub access token](https://github.com/settings/tokens) with these scopes: `repo`, `read:org`, `read:user`, and `read:project`.
-3. Paste the GitHub token after `.env`’s `GITHUB_TOKEN=`.
-
 #### DDEV setup
 
 DDEV already has all the dependencies included.
@@ -82,6 +78,17 @@ Check out the project in your favorite Node.js environment, ideally running [`nv
 
 To generate a static copy of the site, run `npm run build`. The contents of the `dist/` folder are exactly what get [deployed to Cloudflare Pages](#build--deployment). You can preview locally by running `npm run preview` or using a tool like [`serve`](https://www.npmjs.com/package/serve).
 
+#### GitHub Token
+
+This step is not required if you just want to contribute a blog post to ddev.com. 
+
+Contributors, sponsors, releases and more data about DDEV is retrieved dynamically from the GitHub API. To test this, please follow these steps:
+
+1. Run `cp .env.example .env` to create a `.env` file for environment variables. (Don’t check this in!)
+2. Create a [classic GitHub access token](https://github.com/settings/tokens) with these scopes: `repo`, `read:org`, `read:user`, and `read:project`.
+3. Paste the GitHub token after `.env`’s `GITHUB_TOKEN=`.
+
+There is a local `cache/` to reduce API calls.
 
 #### Switching from Without DDEV to with DDEV
 
