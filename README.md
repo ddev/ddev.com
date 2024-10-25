@@ -66,10 +66,11 @@ All commands are run from the root of the project, from a terminal:
 DDEV already has all the dependencies included.
 
 1. Run `ddev start` to start and set up the project’s dependencies.
+2. Open https://<projectname>.ddev.site:4321 in your browser
 
 To rebuild a static copy of the site, run `ddev npm run build`. The contents of the `dist/` folder are what gets [deployed to Cloudflare Pages](#build--deployment) and can be found at https://<projectname>.ddev.site. The dev server runs on a web_extra_daemons, it includes Vite HMR (hot module reloading) among other features and it can be found at https://<projectname>.ddev.site:4321.
 
-Troubleshooting steps
+Troubleshooting steps: Check `ddev logs`. 
 
 #### Setup without DDEV
 
