@@ -31,34 +31,7 @@ Often it's hard to understand what has happened with an test because all we see 
 
 1. We normally will try to understand a test failure by running it locally.
 2. Running in a similar Linux/AMD64 system like Gitpod is a pretty easy option. 
-3. [nektos/act](https://github.com/nektos/act) is another recommended competitor to Tmate. It uses Docker and a Docker image to run an action on your local machine. I haven't had luck with it when I've tried it. Stas's remarks:
-    - act is useful to run simple jobs, for example, I want to test a GitHub API call using `actions/github-script`.
-    - The most important thing is to choose [the right image](https://github.com/nektos/act/issues/2219) for each specific job to make it work.
-    - I remove everything from `.github/workflows/test.yml`, leaving only code related to the job I want to test:
-
-    ```yaml
-    jobs:
-      build:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Get my GitHub repositories
-            uses: actions/github-script@v7
-            with:
-              github-token: ${{ secrets.GITHUB_TOKEN }}
-              script: |
-                const { data } = await github.rest.search.repos({q: 'user:stasadev'})
-                console.log(data)
-                const fs = require('fs');
-                fs.writeFileSync('data.json', JSON.stringify(data, null, 2)); 
-    ```
-
-    And then I can run `act` in the project root:
-
-    ```bash
-    act -P ubuntu-latest=catthehacker/ubuntu:act-latest --bind --job build -s GITHUB_TOKEN=my_token
-    ```
-
-    It prints out the contents of the `data` in my terminal, and writes it to `data.json` in the current directory, which makes it much easier to debug.
+3. [nektos/act](https://github.com/nektos/act) is another recommended competitor to Tmate. It uses Docker and a Docker image to run an action on your local machine. I haven't had luck with it when I've tried it. See Stas's experience with `act` [below](#how-to-useact).
 
 ## Security Concerns
 
@@ -87,6 +60,104 @@ Often we have a complex step and want to be able to debug it if it fails. For th
 ### Workflow Dispatch Example
 
 The [Workflow Dispatch](https://github.com/rfay/tmate-demos/blob/main/.github/workflows/workflow_dispatch.yaml) is one of my favorite techniques, because you can easily restart the workflow as many times as you like, and choosing whether to invoke Tmate is just a click of a checkbox.
+
+## How to Use Act
+
+[nektos/act](https://github.com/nektos/act) offers a way to locally simulate GitHub Actions workflows.
+
+In this example `.github/workflows/jekyll-gh-pages.yml`, we deploy Jekyll to GitHub Pages with dynamic addition of JSON data to the website. Our focus is to debug the API call to GitHub using JavaScript:
+
+```yaml
+name: Deploy Jekyll with GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Get GitHub repositories
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { data } = await github.rest.search.repos({q: 'user:stasadev'})
+            console.log(data)
+            const fs = require('fs');
+            fs.writeFileSync('data.json', JSON.stringify(data, null, 2)); 
+      - name: Add JSON files to the site
+        run: |
+          cat data.json | sudo tee ./_site/data.json
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
+
+1. Simplify the workflow file `.github/workflows/jekyll-gh-pages.yml` by removing unrelated code to focus on testing the API call:
+
+    ```yaml
+    jobs:
+      build:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Get my GitHub repositories
+            uses: actions/github-script@v7
+            with:
+              github-token: ${{ secrets.GITHUB_TOKEN }}
+              script: |
+                const { data } = await github.rest.search.repos({q: 'user:stasadev'})
+                console.log(data)
+                const fs = require('fs');
+                fs.writeFileSync('data.json', JSON.stringify(data, null, 2)); 
+    ```
+
+    This workflow retrieves repositories for a specified user, writes them to `data.json`, and outputs the result with `console.log()`.
+
+2. Run the workflow locally with `act` in your project's root directory:
+
+    ```bash
+    act -P ubuntu-latest=catthehacker/ubuntu:act-latest \
+        --bind \
+        --job build \
+        -s GITHUB_TOKEN=my_token
+    ```
+
+    * `-P ubuntu-latest=catthehacker/ubuntu:act-latest`: Specifies the Docker image to use for the `ubuntu-latest` environment. If not specified, `act` uses the default image from its `.actrc` file (see [GitHub issue](https://github.com/nektos/act/issues/2219) for more details).
+    * `--bind`: Mounts the current working directory into the container, allowing files generated in the container (like `data.json`) to be accessible in the host file system.
+    * `--job build`: Tells `act` to run only the `build` job from the workflow.
+    * `-s GITHUB_TOKEN=my_token`: Sets a secret (`GITHUB_TOKEN`) for the workflow, where `my_token` should be replaced with a valid GitHub token for authentication.
+
+The primary advantage of using `act` in this context is the ability to efficiently debug API calls locally in just a few seconds, without the need to commit changes, push them to GitHub, and wait for the workflow to complete, which typically takes several minutes.
 
 ## Contributions welcome!
 
