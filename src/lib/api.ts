@@ -4,28 +4,33 @@
 
 import dotenv from "dotenv"
 import fs2 from "fs"
-import path from 'path'
-import Slugger from 'github-slugger'
-import { Octokit } from "octokit";
+import path from "path"
+import Slugger from "github-slugger"
+import { Octokit } from "octokit"
 import { GITHUB_REPO } from "./../const"
 
 dotenv.config()
 
 // Project-root-relative directory for temporary data used in local development
-const DEVELOPMENT_CACHE_DIR = 'cache'
-let octokitInstance: Octokit;
+const DEVELOPMENT_CACHE_DIR = "cache"
+let octokitInstance: Octokit
 
 // Define variable if GITHUB_TOKEN is set and not empty
 const githubTokenIsSet: boolean = (() => {
-  if(process.env.hasOwnProperty('GITHUB_TOKEN') === false || process.env.GITHUB_TOKEN === ''){
+  if (
+    process.env.hasOwnProperty("GITHUB_TOKEN") === false ||
+    process.env.GITHUB_TOKEN === ""
+  ) {
     // add warning for production builds
-    if(import.meta.env.MODE === 'production'){
-      console.warn('GITHUB_TOKEN not set or empty. You can ignore this warning for local development.');
+    if (import.meta.env.MODE === "production") {
+      console.warn(
+        "GITHUB_TOKEN not set or empty. You can ignore this warning for local development."
+      )
     }
-    return false;
+    return false
   }
-  return true;
-})();
+  return true
+})()
 
 /**
  * Returns an instance of Octokit, which uses the `GITHUB_TOKEN` environment
@@ -34,14 +39,14 @@ const githubTokenIsSet: boolean = (() => {
  */
 const octokit = () => {
   if (octokitInstance) {
-    return octokitInstance;
+    return octokitInstance
   }
 
   octokitInstance = new Octokit({
     auth: process.env.GITHUB_TOKEN,
-  });
-  
-  return octokitInstance;
+  })
+
+  return octokitInstance
 }
 
 /**
@@ -50,8 +55,8 @@ const octokit = () => {
  * @returns string
  */
 export function getSlug(value: string) {
-  const slugger = new Slugger();
-  return slugger.slug(value);
+  const slugger = new Slugger()
+  return slugger.slug(value)
 }
 
 /**
@@ -68,16 +73,15 @@ export function getCategoryUrl(name: string) {
  * @returns response data
  */
 export async function getSponsors() {
- 
-  if(!githubTokenIsSet){
-    return [];
+  if (!githubTokenIsSet) {
+    return []
   }
 
-  const cacheFilename = 'sponsors.json'
-  const cachedData = getCache(cacheFilename);
+  const cacheFilename = "sponsors.json"
+  const cachedData = getCache(cacheFilename)
 
   if (cachedData) {
-    return cachedData;
+    return cachedData
   }
 
   const response = await octokit().graphql(`
@@ -123,11 +127,11 @@ export async function getSponsors() {
     }
   `)
 
-  const rfayData = response.user.sponsors.nodes;
-  const orgData = response.organization.sponsors.nodes;
-  const data = [ ...rfayData, ...orgData ];
+  const rfayData = response.user.sponsors.nodes
+  const orgData = response.organization.sponsors.nodes
+  const data = [...rfayData, ...orgData]
 
-  putCache(cacheFilename, JSON.stringify(data));
+  putCache(cacheFilename, JSON.stringify(data))
 
   return data
 }
@@ -138,32 +142,34 @@ export async function getSponsors() {
  * @returns response data
  */
 export async function getContributors(includeAnonymous = false) {
-
-  if(!githubTokenIsSet){
-    return [];
+  if (!githubTokenIsSet) {
+    return []
   }
 
-  const cacheFilename = 'contributors.json'
-  const cachedData = getCache(cacheFilename);
+  const cacheFilename = "contributors.json"
+  const cachedData = getCache(cacheFilename)
 
-  let data;
+  let data
 
   if (cachedData) {
-    data = cachedData;
+    data = cachedData
   } else {
-    const response = await octokit().paginate(`GET https://api.github.com/repos/${GITHUB_REPO}/contributors`, {
-      anon: 1,
-      per_page: 100,
-    });
-  
-    data = response;
-    putCache(cacheFilename, JSON.stringify(data));
+    const response = await octokit().paginate(
+      `GET https://api.github.com/repos/${GITHUB_REPO}/contributors`,
+      {
+        anon: 1,
+        per_page: 100,
+      }
+    )
+
+    data = response
+    putCache(cacheFilename, JSON.stringify(data))
   }
 
   if (!includeAnonymous) {
     return data.filter((contributor) => {
-      return contributor.type !== 'Anonymous'
-    });
+      return contributor.type !== "Anonymous"
+    })
   }
 
   return data ?? []
@@ -172,30 +178,31 @@ export async function getContributors(includeAnonymous = false) {
 /**
  * Gets repository details from GitHub.
  * https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#get-a-repository
- * 
+ *
  * @param name The name of the repository, like `ddev/ddev`.
  * @returns response data
  */
 export async function getRepoDetails(name: string) {
-
-  if(!githubTokenIsSet){
-    return [];
+  if (!githubTokenIsSet) {
+    return []
   }
 
-  const slug = name.replace('/', '-')
-  const cacheFilename = `repository-${slug}.json`;
-  const cachedData = getCache(cacheFilename);
+  const slug = name.replace("/", "-")
+  const cacheFilename = `repository-${slug}.json`
+  const cachedData = getCache(cacheFilename)
 
   if (cachedData) {
-    return cachedData;
+    return cachedData
   }
 
-  const response = await octokit().request(`GET https://api.github.com/repos/${name}`)
-  const data = response.data;
+  const response = await octokit().request(
+    `GET https://api.github.com/repos/${name}`
+  )
+  const data = response.data
 
-  putCache(cacheFilename, JSON.stringify(data));
+  putCache(cacheFilename, JSON.stringify(data))
 
-  return data;
+  return data
 }
 
 /**
@@ -205,40 +212,41 @@ export async function getRepoDetails(name: string) {
  * @returns tag name
  */
 export async function getLatestReleaseVersion(stable = true) {
-
-  if(!githubTokenIsSet){
-    return [];
+  if (!githubTokenIsSet) {
+    return []
   }
 
   let data = await getReleases()
 
   if (stable) {
     data = data.filter((release) => {
-      return !release.draft && !release.prerelease;
+      return !release.draft && !release.prerelease
     })
   }
 
-  return data[0].tag_name;
+  return data[0].tag_name
 }
 
 export async function getReleases() {
-
-  if(!githubTokenIsSet){
-    return [];
+  if (!githubTokenIsSet) {
+    return []
   }
 
-  const cacheFilename = 'releases.json'
-  const cachedData = getCache(cacheFilename);
+  const cacheFilename = "releases.json"
+  const cachedData = getCache(cacheFilename)
 
   if (cachedData) {
-    return cachedData;
+    return cachedData
   }
 
-  const response = await octokit().paginate(`GET https://api.github.com/repos/${GITHUB_REPO}/releases`, {
-    per_page: 100,
-  });
+  const response = await octokit().paginate(
+    `GET https://api.github.com/repos/${GITHUB_REPO}/releases`,
+    {
+      per_page: 100,
+    }
+  )
 
-  putCache(cacheFilename, JSON.stringify(response));
+  putCache(cacheFilename, JSON.stringify(response))
 
   return response ?? []
 }
@@ -249,12 +257,12 @@ export async function getReleases() {
  * @returns file contents or null
  */
 const getCache = (filename: string) => {
-  const dir = path.resolve('./' + DEVELOPMENT_CACHE_DIR)
-  const filePath = dir + '/' + filename
-  
+  const dir = path.resolve("./" + DEVELOPMENT_CACHE_DIR)
+  const filePath = dir + "/" + filename
+
   if (fs2.existsSync(filePath)) {
-    const contents = fs2.readFileSync(filePath);
-    return JSON.parse(contents);
+    const contents = fs2.readFileSync(filePath)
+    return JSON.parse(contents)
   }
 
   return
@@ -266,11 +274,11 @@ const getCache = (filename: string) => {
  * @param contents Contents of the file.
  */
 const putCache = (filename: string, contents: string) => {
-  const dir = path.resolve('./' + DEVELOPMENT_CACHE_DIR)
-  const filePath = dir + '/' + filename
+  const dir = path.resolve("./" + DEVELOPMENT_CACHE_DIR)
+  const filePath = dir + "/" + filename
 
   if (!fs2.existsSync(dir)) {
-    fs2.mkdirSync(dir);
+    fs2.mkdirSync(dir)
   }
 
   fs2.writeFileSync(filePath, contents)
@@ -286,15 +294,15 @@ const putCache = (filename: string, contents: string) => {
 export const formatDate = (date: string, customOptions?: object) => {
   const pubDate = new Date(date)
   const defaultOptions = {
-      timeZone: "UTC",
-      month: "short",
-      day: "numeric",
-      year: "numeric",
+    timeZone: "UTC",
+    month: "short",
+    day: "numeric",
+    year: "numeric",
   }
 
   const options = {
     ...defaultOptions,
-    ...customOptions
+    ...customOptions,
   }
 
   return new Intl.DateTimeFormat("en-US", options).format(pubDate)
