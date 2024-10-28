@@ -61,6 +61,7 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 | 2024-07-24    | [DDEV Docker Image Maintenance](ddev-docker-image-maintenance.md)                                                                                                                                                                                                                                                                         |
 | 2024-09-18    | [Maintaining DDEV Automated Tests](maintaining-ddev-tests-contributor-training.md)                                                                                                                                                                                                                                                        |
 | 2024-10-12    | [Using `ddev debug test` to support others](ddev-debug-test-contributor-training.md)                                                                                                                                                                                                                                                      |
+| 2024-10-23    | [Tmate for Debugging GitHub Actions Workflows](tmate-github-actions-contributor-training.md)                                                                                                                                                                                                                                              |
 
 <a name="upcoming-trainings"></a>
 **Upcoming Trainings:**
@@ -69,7 +70,6 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 * Using AI in DDEV Development (ChatGPT, Continue.dev, etc.)
 * Implementing a New DDEV Project Type
 * Managing and Maintaining DDEV Docs (Readthedocs.io, etc.)
-* Using Tmate to Debug GitHub Workflows
 * Using WSL2 with DDEV
 * Git for Fun and Profit
 * Making Your Own `ddev share` Variant
