@@ -13,6 +13,28 @@ categories:
 
 **Happy November from DDEV**! It's a beautiful fall here, but things are cooling down. We live in an agricultural area, so the first freeze is always an event.
 
+**It's Maintainer [Stas Zhuk]'s first anniversary as a full DDEV maintainer!**. I asked him to share what he's most proud of this year. I know how amazingly grateful I am to work alongside him and to such an amazingly capable (and fully privileged) co-maintainer:
+
+> It's been a great year working as an official DDEV maintainer.
+
+> One thing I'm proud of is improving the `ddev composer create` command to work just like `composer create-project`. Even though I've done a lot with Composer as PHP developer, I still learned new things while working on this.
+
+> I'm also proud of adding support for `.ddev/.env.*` files in add-ons. It seemed simple at first, but it was connected to so many other parts of the code. It took a few months and many changes to get it right.
+
+> Another feature I worked on is `ddev config --nodejs-version auto`. This helped me better understand how `ddev start` really works. There's so much going on behind the scenes, more than just a `docker-compose up`.
+
+> When I started using DDEV, I already knew a bit about Docker, but I've learned a lot more by working on DDEV's Docker networks. I've made a lot of PRs to improve this.
+
+> I also had my first experience with Docker multi-stage builds in DDEV. We use it to compile Xdebug for some PHP versions, and it was fun to learn.
+
+> The `ddev launch :port` feature has been really useful. It's hard to imagine that DDEV didn't have it before.
+
+> I recently added automatic timezone detection in the web container. It seems like a small thing, but it has a big impact on simplicity and is very convenient for developers.
+
+> Finally, the upcoming `ddev cd` feature is something I’m excited about. I used to have a custom Bash script for this, but now it will be built into DDEV, with autocomplete.
+
+**Advisory Group Meeting Wednesday**: All are invited to the DDEV Advisory Group meeting Wednesday, November 6, 9am US MT, 5PM CET. [Meetup link](https://www.meetup.com/ddev-events/events/303197392/?eventOrigin=group_events_list) or [Zoom link](https://us02web.zoom.us/j/7315692237?pwd=RHR6NUkwb0g5WXIzS2NOcXRucCthZz09&omn=89153105842), passcode "12345" if you need it.
+
 **Contributor Trainings From October (Recordings and Blogs)**
 
 * [Supporting people using `ddev debug test` and other tools](ddev-debug-test-contributor-training.md)
@@ -25,10 +47,11 @@ categories:
 - **[Open source maintainers underpaid, swamped by security, going gray](https://www.theregister.com/2024/09/18/open_source_maintainers_underpaid/)** We all need to be working on this class of problem!
 - **[Sponsor MacStadium's Open-Source Spotlight on DDEV](https://www.macstadium.com/blog/mac-open-source-hosting-spotlight-ddev)**
 - **[Vite in Practice (TYPO3)](https://docs.typo3.org/p/praetorius/vite-asset-collector/main/en-us/)**
-- **[Working with Vite in DDEV](https://ddev.com/blog/working-with-vite-in-ddev/)** continues to be updated and maintained by the fabulous @m_andrash.
-- 
+- **[Working with Vite in DDEV](https://ddev.com/blog/working-with-vite-in-ddev/)** continues to be updated and maintained by the fabulous [Matthias Andrasch](https://dev.to/mandrasch).
 
-**Fully funding Maintainer Stas**: Our key financial goal is to [fully fund @stasadev so he can work exclusively on DDEV](https://ddev.com/blog/lets-fund-stas-maintainer/). We’re about 30% of the way to that goal, but apparently due to market conditions, have been going backward in recent months. We need about $3700/month in increased pledges from organizations and individuals. See [Full information about supporting DDEV](https://github.com/sponsors/ddev). We’re happy to invoice you, happy to [do a call discussing this](https://cal.com/randyfay/30min), and would love it if you’d include DDEV in your 2025 budgeting process. (Our current status: We receive about $4000-$5000/month, spend about $6000/month. Bank balance is about $13,000, down from $15,000 last month.)
+**Upcoming Major Release v1.24.0** will change the defaults for new projects. PHP will be 8.3, Node.JS will be v22. There will be a few new features, but I don't think any other major changes in behavior.
+
+**Fully funding Maintainer Stas**: *We need your help and your organization's help! Let me know if you need help getting this into your 2025 budget!* Our key financial goal is to [fully fund @stasadev so he can work exclusively on DDEV](https://ddev.com/blog/lets-fund-stas-maintainer/). We’re about 30% of the way to that goal, but apparently due to market conditions, have been going backward in recent months. We need about $3700/month in increased pledges from organizations and individuals. See [Full information about supporting DDEV](https://github.com/sponsors/ddev). We’re happy to invoice you, happy to [do a call discussing this](https://cal.com/randyfay/30min), and would love it if you’d include DDEV in your 2025 budgeting process. (Our current status: We receive about $4000-$5000/month, spend about $6000/month. Bank balance is about $13,000, down from $15,000 last month.)
 
 **THANKS to all of you who are supporting DDEV’s path to sustainability** and who have gotten your organizations to do so.
 
