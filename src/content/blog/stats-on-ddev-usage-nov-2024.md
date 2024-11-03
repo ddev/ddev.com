@@ -63,7 +63,7 @@ It seems that 81.5% of you have gotten new Macs now!
 
 ## Add-on Usage
 
-As you know, the DDEV Add-on ecosystem has been a tremendous success, because people can scratch their own itch and the community can maintain add-ons that they need. Here are the most popular ones, excluding PhpMyAdmin, which had by far the most usage (3 times the usage of the redis add-on).
+As you know, the DDEV Add-on ecosystem has been a tremendous success, because people can scratch their own itch and the community can maintain add-ons that they need. Here are the most popular ones, excluding phpMyAdmin, which had by far the most usage (3 times the usage of the redis add-on).
 
 ![Add-On Usage](/img/blog/2024/11/add-ons-excluding-phpmyadmin.png)
 
