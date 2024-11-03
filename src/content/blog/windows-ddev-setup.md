@@ -13,9 +13,9 @@ categories:
 
 I've recently set up a few Windows machines for DDEV maintenance and development, and wanted to share how I do it. It's surprisingly easy. My approach here is opinionated, but it works for me. You'll do things a little differently I'm sure.
 
-Two recent Windows machines I set up were the new ARM64/Qualcomm/CoPilot variety. They were excellent and fast and had great battery life. There's very little I had to do differently with them, but I'll mention in the steps when there was something different. (I was surprised by the lack of a fingerprint sensor on both, but the Windows Hello facial recognition was quite fast. There is no ARM64 Discord app, and the AMD64 one had horrific performance.)
+Two recent Windows machines I set up were the new ARM64/Qualcomm/CoPilot variety. They were excellent and fast and had great battery life. There's very little I had to do differently with them, but I'll mention in the steps when there was something different. (I was surprised by the lack of a fingerprint sensor on both, but the "Windows Hello" facial recognition was quite fast. There is no ARM64 Discord app, and the AMD64 one had horrific performance.)
 
-1. Remove unwanted applications. I usually start by removing a bunch of bloatware. 
+1. Remove unwanted applications like Solitaire and MS Office. I usually start by removing a bunch of bloatware. 
 2. Do all Windows updates. 
 3. Turn off the `System` -> `Notifications` -> `Additional settings` that cause the “Windows experience” prompts after upgrade. 
 4. Enable Windows Update->Advanced Options->Receive updates for other Microsoft Products. Amazingly, this is not on by default, and you might have an old WSL2 kernel! (See [Beware of Dirty Pipes](beware-of-dirty-pipes-and-docker-desktop-on-windows.md).)
@@ -37,14 +37,14 @@ Two recent Windows machines I set up were the new ARM64/Qualcomm/CoPilot variety
 9. In Windows Explorer, add my WSL2 home directory to favorites by copying it into the favorites area.
 10. Run the [DDEV WSL2 install script](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#wsl2-docker-ce-inside-install-script).
     * On ARM64 this will fail the Chocolatey installation because Chocolatey doesn't plan to support ARM64. But you can ignore the failure; the script continues on anyway.
-    * On ARM64, consider `choco uninstall -y mkcert gsudo` so that DDEV can get the native versions of each of these.
+    * On ARM64, `choco uninstall -y mkcert gsudo` so that the DDEV installer can get the native versions of each of these.
     * On ARM64, install the Windows-side DDEV from the installer in the [DDEV releases](https://github.com/ddev/ddev/releases). We'll probably discontinue documenting the Chocolatey install technique in the future.)
 11. Install and test the fantastic [1Password ssh agent](https://developer.1password.com/docs/ssh/agent/).
 12. On Windows PowerShell `ssh git@github.com git@github.com` to verify that the 1Password SSH agent is working. If it says "PTY Allocation Failed", just hit `<RETURN>` and ignore it. You should get the confirmation message from GitHub.
 13. 1Password WSL2 adaptation:
     `sudo ln -s /mnt/c/WINDOWS/System32/OpenSSH//ssh.exe /usr/local/bin/ssh && sudo ln -s /mnt/c/WINDOWS/System32/OpenSSH//ssh-add.exe /usr/local/bin/ssh-add` (Makes ssh use `ssh.exe` on Windows and the 1Password SSH and Git integrations then work great. This assumes that `/usr/local/bin` in your PATH comes before `/usr/bin`)
 14. If you have a `dotfiles` repository (containing your shared `.bash_profile`, `.zshrc`, etc.) clone it into your projects directory on WSL2 your WSL2 home directory.
-15. Check out DDEV.
+15. Check out DDEV's code. `mkdir -p ~/workspace && cd ~/workspace && git clone -o upstream git@github.com:ddev/ddev`
 16. `echo "capath=/etc/ssl/certs/" >>~/.curlrc` to make Curl work right with `mkcert`.
 17. GoLand setup:
     - Set GOROOT to /snap/go
