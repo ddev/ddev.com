@@ -13,7 +13,7 @@ categories:
 
 **Happy November from DDEV**! It's a beautiful fall here, but things are cooling down. We live in an agricultural area, so the first freeze is always an event.
 
-**It's Maintainer [Stas Zhuk]'s first anniversary as a full DDEV maintainer!**. I asked him to share what he's most proud of this year. I know how amazingly grateful I am to work alongside him and to such an amazingly capable (and fully privileged) co-maintainer:
+**It's Maintainer [Stas Zhuk]'s first anniversary as a full DDEV maintainer!**. I asked him to share what he's most proud of this year. I know how amazingly grateful I am to work alongside him and to such an amazingly capable co-maintainer who has full privileges on all things DDEV.
 
 > It's been a great year working as an official DDEV maintainer.
 
@@ -43,7 +43,7 @@ categories:
 **DDEV Notes from around the web:**
 
 - **[DDEV Release v1.23.5 Announcement](https://ddev.com/blog/release-v1235-auto-port-assignment). Lots of goodies in this latest release, including automatic port assignment and automatic time zone detection.
-- **[Mauricio Dinarte (@dinarcon)'s DrupalCon presentation on DDEV](https://www.youtube.com/watch?v=nPJC7BbiGNw&list=PLpeDXSh4nHjQOfQV-BUgoxHXlr4tHlhPO&index=16&pp=iAQB)**
+- **[Mauricio Dinarte's (@dinarcon) DrupalCon presentation on DDEV](https://www.youtube.com/watch?v=nPJC7BbiGNw&list=PLpeDXSh4nHjQOfQV-BUgoxHXlr4tHlhPO&index=16&pp=iAQB)**
 - **[Open source maintainers underpaid, swamped by security, going gray](https://www.theregister.com/2024/09/18/open_source_maintainers_underpaid/)** We all need to be working on this class of problem!
 - **[Sponsor MacStadium's Open-Source Spotlight on DDEV](https://www.macstadium.com/blog/mac-open-source-hosting-spotlight-ddev)**
 - **[Vite in Practice (TYPO3)](https://docs.typo3.org/p/praetorius/vite-asset-collector/main/en-us/)**
