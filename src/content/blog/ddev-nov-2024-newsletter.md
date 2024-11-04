@@ -42,7 +42,7 @@ categories:
 
 **DDEV Notes from around the web:**
 
-- **[DDEV Release v1.23.5 Announcement](https://ddev.com/blog/release-v1235-auto-port-assignment).** Lots of goodies in this latest release, including automatic port assignment and automatic time zone detection.
+- **[DDEV Release v1.23.5 Announcement](release-v1.23.5-auto-port-assignment.md).** Lots of goodies in this latest release, including automatic port assignment and automatic time zone detection.
 - **[Mauricio Dinarte's (@dinarcon) DrupalCon presentation on DDEV](https://www.youtube.com/watch?v=nPJC7BbiGNw&list=PLpeDXSh4nHjQOfQV-BUgoxHXlr4tHlhPO&index=16&pp=iAQB)**
 - **[Open source maintainers underpaid, swamped by security, going gray](https://www.theregister.com/2024/09/18/open_source_maintainers_underpaid/)** We all need to be working on this class of problem!
 - **[Sponsor MacStadium's Open-Source Spotlight on DDEV](https://www.macstadium.com/blog/mac-open-source-hosting-spotlight-ddev)**
@@ -51,7 +51,7 @@ categories:
 
 **Upcoming Major Release v1.24.0** will change the defaults for new projects. PHP will be 8.3, Node.js will be v22. There will be a few new features, but I don't think any other major changes in behavior.
 
-**Fully funding Maintainer Stas**: *We need your help and your organization's help! Let me know if you need help getting this into your 2025 budget!* Our key financial goal is to [fully fund @stasadev so he can work exclusively on DDEV](https://ddev.com/blog/lets-fund-stas-maintainer/). We’re about 30% of the way to that goal, but apparently due to market conditions, have been going backward in recent months. We need about $3700/month in increased pledges from organizations and individuals. See [Full information about supporting DDEV](https://github.com/sponsors/ddev). We’re happy to invoice you, happy to [do a call discussing this](https://cal.com/randyfay/30min), and would love it if you’d include DDEV in your 2025 budgeting process. (Our current status: We receive about $4000-$5000/month, spend about $6000/month. Bank balance is about $13,000, down from $15,000 last month.)
+**Fully funding Maintainer Stas**: *We need your help and your organization's help! Let me know if you need help getting this into your 2025 budget!* Our key financial goal is to [fully fund @stasadev so he can work exclusively on DDEV](lets-fund-stas-maintainer.md). We’re about 30% of the way to that goal, but apparently due to market conditions, have been going backward in recent months. We need about $3700/month in increased pledges from organizations and individuals. See [Full information about supporting DDEV](https://github.com/sponsors/ddev). We’re happy to invoice you, happy to [do a call discussing this](https://cal.com/randyfay/30min), and would love it if you’d include DDEV in your 2025 budgeting process. (Our current status: We receive about $4000-$5000/month, spend about $6000/month. Bank balance is about $9,000, down from $13,000 last month.)
 
 **THANKS to all of you who are supporting DDEV’s path to sustainability** and who have gotten your organizations to do so.
 
