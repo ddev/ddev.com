@@ -42,7 +42,7 @@ categories:
 
 **DDEV Notes from around the web:**
 
-- **[DDEV Release v1.23.5 Announcement](https://ddev.com/blog/release-v1235-auto-port-assignment).** Lots of goodies in this latest release, including automatic port assignment and automatic time zone detection.
+- **[DDEV Release v1.23.5 Announcement](release-v1.23.5-auto-port-assignment.md).** Lots of goodies in this latest release, including automatic port assignment and automatic time zone detection.
 - **[Mauricio Dinarte's (@dinarcon) DrupalCon presentation on DDEV](https://www.youtube.com/watch?v=nPJC7BbiGNw&list=PLpeDXSh4nHjQOfQV-BUgoxHXlr4tHlhPO&index=16&pp=iAQB)**
 - **[Open source maintainers underpaid, swamped by security, going gray](https://www.theregister.com/2024/09/18/open_source_maintainers_underpaid/)** We all need to be working on this class of problem!
 - **[Sponsor MacStadium's Open-Source Spotlight on DDEV](https://www.macstadium.com/blog/mac-open-source-hosting-spotlight-ddev)**
