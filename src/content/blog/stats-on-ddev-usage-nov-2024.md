@@ -11,7 +11,7 @@ categories:
   - Community
 ---
 
-Here's an updated review of some DDEV usage stats. It's always fun to see some of these. Most of these charts are number from the past 7 days. And they are LIVE stats as you view.
+Here's an updated review of some DDEV usage stats. It's always fun to see some of these. Most of these charts are from the past 7 days (Oct 28 - Nov 3, 2024). And check out the LIVE stats link below each chart.
 
 ## DDEV Environments
 
