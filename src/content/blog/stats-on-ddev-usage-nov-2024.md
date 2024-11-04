@@ -104,7 +104,7 @@ Now that the Traefik router has been standard for two major versions, there's ve
 
 ## Explore them yourself!
 
-You can explore these yourself, ask for permission.** If you're a known community member I'll happily add your access to Amplitude to explore. There are many more things that can be done with this. See [Amplitude Contributor Training](amplitude-ddev-analytics-contributor-training.md).
+**You can explore these yourself, ask for permission.** If you're a known community member I'll happily add your access to Amplitude to explore. There are many more things that can be done with this. See [Amplitude Contributor Training](amplitude-ddev-analytics-contributor-training.md).
 
 **THANKS to all of you who are supporting DDEV’s path to sustainability** and who have gotten your organizations to do so. 13,600 or so of you are using this tool and ecosystem weekly, about 55 of you are financially supporting its sustainability. Time to [step up](https://github.com/sponsors/ddev) if you're not in those 55! We need you in the same way you need us.
 
