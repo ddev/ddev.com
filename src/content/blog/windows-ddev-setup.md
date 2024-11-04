@@ -32,8 +32,8 @@ Two recent Windows machines I set up were the new ARM64/Qualcomm/CoPilot variety
 7. Windows Terminal is a fantastic terminal and is installed by default these days. I always set it up early with "Default Terminal Application: Windows Terminal" and "Interaction->Automatically Copy Selection to Clipboard", and set Ubuntu as default, and have it auto-start on login. 
 8. Once Ubuntu is installed:
     -  `sudo apt update && sudo apt install -y apt-transport-https autojump build-essential ca-certificates ccache clang curl dirmngr etckeeper expect git gnupg jq libcurl4-gnutls-dev libnss3-tools lsb-release mariadb-client nagios-plugins net-tools postgresql-client unzip vim xdg-utils zip && sudo apt upgrade -y`
-      -  `sudo snap install --classic go`
-	    -  `sudo snap install ngrok and ngrok config add-authtoken <token>`
+    -  `sudo snap install --classic go`
+    -  `sudo snap install ngrok and ngrok config add-authtoken <token>`
 9. In Windows Explorer, add my WSL2 home directory to favorites by copying it into the favorites area.
 10. Run the [DDEV WSL2 install script](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#wsl2-docker-ce-inside-install-script).
     * On ARM64 this will fail the Chocolatey installation because Chocolatey doesn't plan to support ARM64. But you can ignore the failure; the script continues on anyway.
@@ -43,7 +43,7 @@ Two recent Windows machines I set up were the new ARM64/Qualcomm/CoPilot variety
 12. On Windows PowerShell `ssh git@github.com git@github.com` to verify that the 1Password SSH agent is working. If it says "PTY Allocation Failed", just hit `<RETURN>` and ignore it. You should get the confirmation message from GitHub.
 13. 1Password WSL2 adaptation:
     `sudo ln -s /mnt/c/WINDOWS/System32/OpenSSH/ssh.exe /usr/local/bin/ssh && sudo ln -s /mnt/c/WINDOWS/System32/OpenSSH/ssh-add.exe /usr/local/bin/ssh-add` (Makes ssh use `ssh.exe` on Windows and the 1Password SSH and Git integrations then work great. This assumes that `/usr/local/bin` in your PATH comes before `/usr/bin`)
-14. If you have a `dotfiles` repository (containing your shared `.bash_profile`, `.zshrc`, etc.) clone it in WSL2 .
+14. If you have a `dotfiles` repository (containing your shared `.bash_profile`, `.zshrc`, etc.) clone it in WSL2.
 15. Check out DDEV's code. `mkdir -p ~/workspace && cd ~/workspace && git clone -o upstream git@github.com:ddev/ddev`
 16. `echo "capath=/etc/ssl/certs/" >>~/.curlrc` to make Curl work right with `mkcert`.
 17. GoLand setup:
