@@ -88,7 +88,7 @@ export async function getSponsors() {
     query {
       user(login: "rfay") {
         ... on Sponsorable {
-          sponsors(first: 100) {
+          sponsors(first: 100, isActive: true) {
             totalCount
             nodes {
               ... on User {
@@ -107,7 +107,7 @@ export async function getSponsors() {
       }
       organization(login: "ddev") {
         ... on Sponsorable {
-          sponsors(first: 100) {
+          sponsors(first: 100, isActive: true) {
             totalCount
             nodes {
               ... on User {
