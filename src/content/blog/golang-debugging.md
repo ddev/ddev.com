@@ -1,7 +1,7 @@
 ---
 title: "Debugging Golang (Go) Applications"
 pubDate: 2024-05-17
-# modifiedDate: 2024-04-23
+modifiedDate: 2024-11-08
 summary: Debugging Golang applications using GoLand or VS Code
 author: Randy Fay
 featureImage:
