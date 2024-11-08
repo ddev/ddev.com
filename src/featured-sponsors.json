@@ -5,7 +5,8 @@
     "logo": "/logos/platform.sh.svg",
     "darklogo": "/logos/platform.sh-darkmode.svg",
     "squareLogo": "/logos/platform.sh-square.svg",
-    "url": "https://platform.sh"
+    "url": "https://platform.sh",
+    "isLeading": true
   },
   {
     "name": "Tag1",
@@ -13,7 +14,8 @@
     "logo": "/logos/tag1.svg",
     "darklogo": "/logos/dark-tag1.svg",
     "squareLogo": "/logos/tag1-square.svg",
-    "url": "https://tag1.com"
+    "url": "https://tag1.com",
+    "isLeading": false
   },
   {
     "name": "i-gelb",
@@ -22,7 +24,8 @@
     "darklogo": "/logos/dark-i-gelb.svg",
     "squareLogo": "/logos/i-gelb-square.svg",
     "url": "https://i-gelb.net",
-    "github": "i-gelb"
+    "github": "i-gelb",
+    "isLeading": false
   },
   {
     "name": "Open Strategy Partners",

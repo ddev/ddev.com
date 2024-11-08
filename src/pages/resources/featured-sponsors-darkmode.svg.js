@@ -7,17 +7,19 @@ const baseUrl = import.meta.env.SITE
 
 // Width of the composed SVG
 const overallWidth = 814
-// Maximum height a darklogo may have
+// Maximum height and width for leading sponsors
+const leadingMaxHeight = 70
+const leadingMaxWidth = 250
+// Maximum height and width for regular sponsors
 const maxHeight = 50
-// Maximum width a darklogo may have
 const maxWidth = 200
-// Horizontal padding between darklogos
+// Horizontal padding between logos
 const xPadding = 40
-// Vertical padding between rows of darklogos
+// Vertical padding between rows of logos
 const yPadding = 20
 
 /**
- * Build an SVG response body with rows of evenly-spaced sponsor darklogos wrapped in anchors.
+ * Build an SVG response body with rows of evenly-spaced sponsor logos wrapped in anchors.
  * @returns string
  */
 const buildResponse = () => {
@@ -28,17 +30,23 @@ const buildResponse = () => {
   let rowCount = 1
 
   featuredSponsors.map((sponsor, index) => {
-    const dimensions = sizeOf("./public/" + sponsor.darklogo)
+    // Check if the sponsor is a leading sponsor
+    const isLeading = sponsor.isLeading === true
 
-    let [w, h] = getScaledImageDimensions(dimensions.width, dimensions.height)
+    // Set dimensions based on whether it's a leading sponsor
+    const maxRowHeight = isLeading ? leadingMaxHeight : maxHeight
+    const maxRowWidth = isLeading ? leadingMaxWidth : maxWidth
+
+    const dimensions = sizeOf("./public/" + sponsor.darklogo)
+    let [w, h] = getScaledImageDimensions(dimensions.width, dimensions.height, maxRowHeight, maxRowWidth)
 
     if (currentX + w + xPadding > overallWidth) {
       currentX = 0
-      currentY += maxHeight + yPadding
+      currentY += maxRowHeight + yPadding
       rowCount += 1
     }
 
-    let yOffset = (maxHeight - h) / 2
+    let yOffset = (maxRowHeight - h) / 2
 
     images.push({
       href: baseUrl + sponsor.darklogo,
@@ -53,7 +61,7 @@ const buildResponse = () => {
     currentX += w + xPadding
   })
 
-  totalHeight = (maxHeight + yPadding) * rowCount
+  totalHeight = currentY + (rowCount === 1 ? leadingMaxHeight : maxHeight) + yPadding
 
   let response = `
     <svg
@@ -79,53 +87,54 @@ const buildResponse = () => {
 }
 
 function imgToBase64(filePath) {
-  let extname = path.extname(filePath).slice(1) || 'png';
+  let extname = path.extname(filePath).slice(1) || 'png'
 
   if (extname === 'svg') {
     extname = "svg+xml"
   }
 
-  return 'data:image/' + extname + ';base64,' + fs.readFileSync(filePath).toString('base64');
+  return 'data:image/' + extname + ';base64,' + fs.readFileSync(filePath).toString('base64')
 }
 
 /**
- * Take the original width and height of an image and proportionally scale it
- * for optical balance in this layout.
+ * Proportionally scales the image dimensions based on the provided max height and width.
  * @param {*} width
  * @param {*} height
+ * @param {*} maxRowHeight
+ * @param {*} maxRowWidth
  * @returns [w, h]
  */
-const getScaledImageDimensions = (width, height) => {
+const getScaledImageDimensions = (width, height, maxRowHeight, maxRowWidth) => {
   let h = height
   let w = width
   const ratio = w / h
 
   if (ratio < 1) {
-    h = maxHeight
-    w = (maxHeight / height) * width
+    h = maxRowHeight
+    w = (maxRowHeight / height) * width
   }
 
   if (ratio === 1) {
-    h = maxHeight
-    w = maxHeight
+    h = maxRowHeight
+    w = maxRowHeight
   }
 
   if (ratio > 1) {
-    h = maxHeight
-    w = (maxHeight / height) * width
+    h = maxRowHeight
+    w = (maxRowHeight / height) * width
   }
 
   if (ratio > 2) {
-    h = maxHeight * 0.75
-    w = ((maxHeight * 0.75) / height) * width
+    h = maxRowHeight * 0.75
+    w = ((maxRowHeight * 0.75) / height) * width
   }
 
   if (ratio > 3) {
-    w = maxWidth
-    h = (maxWidth / width) * height
+    w = maxRowWidth
+    h = (maxRowWidth / width) * height
   }
 
-  return [w, h];
+  return [w, h]
 }
 
 export async function GET({ params, request }) {

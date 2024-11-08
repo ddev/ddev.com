@@ -7,9 +7,11 @@ const baseUrl = import.meta.env.SITE
 
 // Width of the composed SVG
 const overallWidth = 814
-// Maximum height a logo may have
+// Maximum height and width for leading sponsors
+const leadingMaxHeight = 70
+const leadingMaxWidth = 250
+// Maximum height and width for regular sponsors
 const maxHeight = 50
-// Maximum width a logo may have
 const maxWidth = 200
 // Horizontal padding between logos
 const xPadding = 40
@@ -25,17 +27,57 @@ const buildResponse = () => {
   let totalHeight = 0
   let currentX = 0
   let currentY = 0
-  let rowCount = 1
 
-  featuredSponsors.map((sponsor, index) => {
+  // Separate leading sponsors and regular sponsors
+  const leadingSponsors = featuredSponsors.filter(sponsor => sponsor.isLeading)
+  const regularSponsors = featuredSponsors.filter(sponsor => !sponsor.isLeading)
+
+  console.log("Rendering leading sponsors row...")
+
+  // Render leading sponsors row with larger dimensions
+  leadingSponsors.forEach(sponsor => {
     const dimensions = sizeOf("./public/" + sponsor.logo)
-
-    let [w, h] = getScaledImageDimensions(dimensions.width, dimensions.height)
+    const [w, h] = getScaledImageDimensions(dimensions.width, dimensions.height, leadingMaxHeight, leadingMaxWidth)
 
     if (currentX + w + xPadding > overallWidth) {
+      // Move to the next row if we exceed the overall width
+      currentX = 0
+      currentY += leadingMaxHeight + yPadding
+      console.log("Row break for leading sponsors, Y position updated to:", currentY)
+    }
+
+    let yOffset = (leadingMaxHeight - h) / 2
+
+    images.push({
+      href: baseUrl + sponsor.logo,
+      path: `./public/${sponsor.logo}`,
+      x: currentX,
+      y: currentY + yOffset,
+      height: h,
+      width: w,
+      url: sponsor.url,
+    })
+
+    console.log(`Placed leading sponsor: ${sponsor.name}, Width: ${w}, Height: ${h}, X: ${currentX}, Y: ${currentY + yOffset}`)
+
+    currentX += w + xPadding
+  })
+
+  // Enforce row break after leading sponsors
+  currentY += leadingMaxHeight + yPadding
+  currentX = 0  // Reset X for the next row
+  console.log("Starting new row for regular sponsors, Y position updated to:", currentY)
+
+  // Render regular sponsors with regular dimensions
+  regularSponsors.forEach(sponsor => {
+    const dimensions = sizeOf("./public/" + sponsor.logo)
+    const [w, h] = getScaledImageDimensions(dimensions.width, dimensions.height, maxHeight, maxWidth)
+
+    if (currentX + w + xPadding > overallWidth) {
+      // Move to the next row if we exceed the overall width
       currentX = 0
       currentY += maxHeight + yPadding
-      rowCount += 1
+      console.log("Row break for regular sponsors, Y position updated to:", currentY)
     }
 
     let yOffset = (maxHeight - h) / 2
@@ -50,11 +92,14 @@ const buildResponse = () => {
       url: sponsor.url,
     })
 
+    console.log(`Placed regular sponsor: ${sponsor.name}, Width: ${w}, Height: ${h}, X: ${currentX}, Y: ${currentY + yOffset}`)
+
     currentX += w + xPadding
   })
 
-  totalHeight = (maxHeight + yPadding) * rowCount
+  totalHeight = currentY + maxHeight + yPadding
 
+  // Generate SVG content
   let response = `
     <svg
       width="${overallWidth}"
@@ -65,7 +110,7 @@ const buildResponse = () => {
     >
   `
 
-  images.map((image) => {
+  images.map(image => {
     response += `
       <a xlink:href="${image.url}" target="_blank">
         <image href="${imgToBase64(image.path)}" x="${image.x}" y="${image.y}" height="${image.height}" width="${image.width}" />
@@ -79,53 +124,31 @@ const buildResponse = () => {
 }
 
 function imgToBase64(filePath) {
-  let extname = path.extname(filePath).slice(1) || 'png';
+  let extname = path.extname(filePath).slice(1) || 'png'
 
   if (extname === 'svg') {
     extname = "svg+xml"
   }
 
-  return 'data:image/' + extname + ';base64,' + fs.readFileSync(filePath).toString('base64');
+  return 'data:image/' + extname + ';base64,' + fs.readFileSync(filePath).toString('base64')
 }
 
 /**
- * Take the original width and height of an image and proportionally scale it
- * for optical balance in this layout.
+ * Scales image dimensions based on provided max height and width.
  * @param {*} width
  * @param {*} height
+ * @param {*} maxRowHeight
+ * @param {*} maxRowWidth
  * @returns [w, h]
  */
-const getScaledImageDimensions = (width, height) => {
-  let h = height
-  let w = width
-  const ratio = w / h
-
-  if (ratio < 1) {
-    h = maxHeight
-    w = (maxHeight / height) * width
+const getScaledImageDimensions = (width, height, maxRowHeight, maxRowWidth) => {
+  let h = maxRowHeight
+  let w = (maxRowHeight / height) * width
+  if (w > maxRowWidth) {
+    w = maxRowWidth
+    h = (maxRowWidth / width) * height
   }
-
-  if (ratio === 1) {
-    h = maxHeight
-    w = maxHeight
-  }
-
-  if (ratio > 1) {
-    h = maxHeight
-    w = (maxHeight / height) * width
-  }
-
-  if (ratio > 2) {
-    h = maxHeight * 0.75
-    w = ((maxHeight * 0.75) / height) * width
-  }
-
-  if (ratio > 3) {
-    w = maxWidth
-    h = (maxWidth / width) * height
-  }
-
-  return [w, h];
+  return [w, h]
 }
 
 export async function GET({ params, request }) {
