@@ -1,7 +1,7 @@
 ---
 title: "Debugging Golang (Go) Applications"
 pubDate: 2024-05-17
-# modifiedDate: 2024-04-23
+modifiedDate: 2024-11-08
 summary: Debugging Golang applications using GoLand or VS Code
 author: Randy Fay
 featureImage:
@@ -41,6 +41,7 @@ Once you've have your IDE working, you can start debugging.
   * Change its name to the command you want to work on, like `ddev list`
   * Change the "Program Arguments" to the arguments to `ddev`, like `list`
   * Change the "Working Directory" to a valid DDEV project
+  * (optional) If you need to override the version of the built `ddev` you can add `-ldflags " -extldflags -static -X 'github.com/ddev/ddev/pkg/versionconstants.DdevVersion=v1.23.5-goland'"` to "Go tool arguments" - version `v1.23.5-goland` can be whatever you need.
 * Set a breakpoint by clicking to the left of a line, for example in `cmd/ddev/cmd/list.go`
 * Click the `Run` or `Debug` button on the top bar.
 
