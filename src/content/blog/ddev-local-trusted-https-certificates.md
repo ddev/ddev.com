@@ -5,7 +5,7 @@ summary: The importance of local HTTPS, and how to take advantage of it with v1.
 author: Randy Fay
 featureImage:
   src: /img/blog/2019/05/home-umami.png
-  alt: Tightly-cropped screenshot of a browser at a `.ddev.local` project URL with a secure HTTPS connection
+  alt: Screenshot of a browser showing a DDEV project with a secure HTTPS connection
   shadow: true
 categories:
   - Guides
