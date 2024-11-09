@@ -85,64 +85,43 @@ export async function getSponsors() {
   }
 
   const response = await octokit().graphql(`
-  query {
-    user(login: "rfay") {
-      ... on Sponsorable {
+    query CombinedSponsors {
+      org: organization(login: "ddev") {
         sponsors(first: 100) {
-          totalCount
           nodes {
             ... on User {
               login
               url
               avatarUrl
-              sponsorshipForViewerIsActive
             }
             ... on Organization {
               login
               url
               avatarUrl
-              sponsorshipForViewerIsActive
             }
           }
         }
       }
-    }
-    organization(login: "ddev") {
-      ... on Sponsorable {
+      user: user(login: "rfay") {
         sponsors(first: 100) {
-          totalCount
           nodes {
             ... on User {
               login
               url
               avatarUrl
-              sponsorshipForViewerIsActive
             }
             ... on Organization {
               login
               url
               avatarUrl
-              sponsorshipForViewerIsActive
             }
           }
         }
       }
     }
-  }
-`);
+  `)
 
-// Filter for active sponsors
-  const activeSponsors = {
-    rfay: response.user.sponsors.nodes.filter(sponsor => sponsor.sponsorshipForViewerIsActive),
-    ddev: response.organization.sponsors.nodes.filter(sponsor => sponsor.sponsorshipForViewerIsActive),
-  };
-
-  const rfayData = activeSponsors.rfay.nodes
-  const orgData = activeSponsors.ddev.nodes
-  const data = [...rfayData, ...orgData]
-  
-  console.log("rfayData", rfayData)
-  console.log("orgData", orgData)
+  const data = response
 
   putCache(cacheFilename, JSON.stringify(data))
 
