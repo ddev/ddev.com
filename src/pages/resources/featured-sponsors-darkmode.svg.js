@@ -9,48 +9,53 @@ const baseUrl = import.meta.env.SITE
 const overallWidth = 814
 // Maximum height a logo may have
 const maxHeight = 50
-// Lead sponsor height (50% larger than regular sponsors)
-const leadSponsorHeight = maxHeight
+// Lead sponsor height (doubled from regular sponsors)
+const leadSponsorHeight = maxHeight * 2
 // Maximum width a logo may have
 const maxWidth = 200
-// Lead sponsor maximum width (50% larger than regular sponsors)
-const leadSponsorMaxWidth = maxWidth
+// Lead sponsor maximum width (doubled from regular sponsors)
+const leadSponsorMaxWidth = maxWidth * 2
 // Horizontal padding between logos
 const xPadding = 40
 // Vertical padding between rows of logos
 const yPadding = 20
 // Additional padding below lead sponsors
-const leadSponsorBottomPadding = 0
+const leadSponsorBottomPadding = 80
 
 const buildResponse = () => {
-  // Debug the full featuredSponsors array
-  console.log('All sponsors:', featuredSponsors.map(s => ({ name: s.name, isLeading: s.isLeading })))
-
   let images = []
-  let currentY = 0
+  let currentY = 30
 
   // First process lead sponsors
   const leadSponsors = featuredSponsors.filter(sponsor => sponsor.isLeading === true)
   const regularSponsors = featuredSponsors.filter(sponsor => sponsor.isLeading !== true)
 
-  console.log('Lead sponsors:', leadSponsors.map(s => s.name))
-  console.log('Regular sponsors count:', regularSponsors.length)
+  console.log("Processing lead sponsors")
 
   // Handle lead sponsors (centered, own row)
   if (leadSponsors.length > 0) {
-    console.log('Processing lead sponsors')
     // Get dimensions for lead sponsors
     const leadSponsorInfo = leadSponsors.map(sponsor => {
-      const dimensions = sizeOf("./public/" + sponsor.darkLogo)
-      console.log(`Lead sponsor ${sponsor.name} original dimensions:`, dimensions)
-      const [width, height] = getScaledImageDimensions(
-          dimensions.width,
-          dimensions.height,
-          true // isLeadSponsor
-      )
-      console.log(`Lead sponsor ${sponsor.name} scaled dimensions: ${width}x${height}`)
-      return { sponsor, width, height }
-    })
+      // Ensure we have a valid logo path
+      const logoPath = sponsor.darkLogo ? `./public${sponsor.darkLogo}` : null
+      if (!logoPath) {
+        console.error(`Missing logo path for sponsor: ${sponsor.name}`)
+        return null
+      }
+
+      try {
+        const dimensions = sizeOf(logoPath)
+        const [width, height] = getScaledImageDimensions(
+            dimensions.width,
+            dimensions.height,
+            true
+        )
+        return { sponsor, width, height, logoPath }
+      } catch (error) {
+        console.error(`Error processing logo for ${sponsor.name}:`, error)
+        return null
+      }
+    }).filter(Boolean) // Remove any null entries
 
     // Calculate total width including padding between lead sponsors
     const totalLeadWidth = leadSponsorInfo.reduce((sum, info, index) => {
@@ -59,13 +64,12 @@ const buildResponse = () => {
 
     // Center the lead sponsors
     let startX = (overallWidth - totalLeadWidth) / 2
-    console.log('Lead sponsors centered at X:', startX)
 
     // Place lead sponsors
-    leadSponsorInfo.forEach(({ sponsor, width, height }) => {
+    leadSponsorInfo.forEach(({ sponsor, width, height, logoPath }) => {
       images.push({
         href: baseUrl + sponsor.darkLogo,
-        path: `./public/${sponsor.darkLogo}`,
+        path: logoPath,
         x: startX,
         y: currentY + (leadSponsorHeight - height) / 2,
         height,
@@ -77,40 +81,48 @@ const buildResponse = () => {
       startX += width + xPadding
     })
 
-    // Move down past lead sponsor row with extra padding
     currentY += leadSponsorHeight + leadSponsorBottomPadding
-  } else {
-    console.log('No lead sponsors found')
   }
 
   // Now process regular sponsors
   let currentX = 0
   regularSponsors.forEach((sponsor) => {
-    const dimensions = sizeOf("./public/" + sponsor.darkLogo)
-    let [width, height] = getScaledImageDimensions(
-        dimensions.width,
-        dimensions.height,
-        false
-    )
-
-    // Start new row if needed
-    if (currentX + width > overallWidth) {
-      currentX = 0
-      currentY += maxHeight + yPadding
+    // Ensure we have a valid logo path
+    const logoPath = sponsor.darkLogo ? `./public${sponsor.darkLogo}` : null
+    if (!logoPath) {
+      console.error(`Missing logo path for sponsor: ${sponsor.name}`)
+      return
     }
 
-    images.push({
-      href: baseUrl + sponsor.darkLogo,
-      path: `./public/${sponsor.darkLogo}`,
-      x: currentX,
-      y: currentY + (maxHeight - height) / 2,
-      height,
-      width,
-      url: sponsor.url,
-      isLead: false
-    })
+    try {
+      const dimensions = sizeOf(logoPath)
+      let [width, height] = getScaledImageDimensions(
+          dimensions.width,
+          dimensions.height,
+          false
+      )
 
-    currentX += width + xPadding
+      // Start new row if needed
+      if (currentX + width > overallWidth) {
+        currentX = 0
+        currentY += maxHeight + yPadding
+      }
+
+      images.push({
+        href: baseUrl + sponsor.darkLogo,
+        path: logoPath,
+        x: currentX,
+        y: currentY + (maxHeight - height) / 2,
+        height,
+        width,
+        url: sponsor.url,
+        isLead: false
+      })
+
+      currentX += width + xPadding
+    } catch (error) {
+      console.error(`Error processing logo for ${sponsor.name}:`, error)
+    }
   })
 
   // Calculate total height needed
