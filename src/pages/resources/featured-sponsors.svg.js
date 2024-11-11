@@ -10,17 +10,17 @@ const overallWidth = 814
 // Maximum height a logo may have
 const maxHeight = 50
 // Lead sponsor height (50% larger than regular sponsors)
-const leadSponsorHeight = maxHeight * 1.5
+const leadSponsorHeight = maxHeight
 // Maximum width a logo may have
 const maxWidth = 200
 // Lead sponsor maximum width (50% larger than regular sponsors)
-const leadSponsorMaxWidth = maxWidth * 1.5
+const leadSponsorMaxWidth = maxWidth
 // Horizontal padding between logos
 const xPadding = 40
 // Vertical padding between rows of logos
 const yPadding = 20
 // Additional padding below lead sponsors
-const leadSponsorBottomPadding = 60
+const leadSponsorBottomPadding = 0
 
 const buildResponse = () => {
   // Debug the full featuredSponsors array
