@@ -85,41 +85,35 @@ export async function getSponsors() {
   }
 
   const response = await octokit().graphql(`
-    query {
-      user(login: "rfay") {
-        ... on Sponsorable {
-          sponsors(first: 100) {
-            totalCount
-            nodes {
-              ... on User {
-                login
-                url
-                avatarUrl
-              }
-              ... on Organization {
-                login
-                url
-                avatarUrl
-              }
+    query CombinedSponsors {
+      org: organization(login: "ddev") {
+        sponsors(first: 100) {
+          nodes {
+            ... on User {
+              login
+              url
+              avatarUrl
+            }
+            ... on Organization {
+              login
+              url
+              avatarUrl
             }
           }
         }
       }
-      organization(login: "ddev") {
-        ... on Sponsorable {
-          sponsors(first: 100) {
-            totalCount
-            nodes {
-              ... on User {
-                login
-                url
-                avatarUrl
-              }
-              ... on Organization {
-                login
-                url
-                avatarUrl
-              }
+      user: user(login: "rfay") {
+        sponsors(first: 100) {
+          nodes {
+            ... on User {
+              login
+              url
+              avatarUrl
+            }
+            ... on Organization {
+              login
+              url
+              avatarUrl
             }
           }
         }
@@ -127,13 +121,21 @@ export async function getSponsors() {
     }
   `)
 
-  const rfayData = response.user.sponsors.nodes
-  const orgData = response.organization.sponsors.nodes
-  const data = [...rfayData, ...orgData]
+  // Combine sponsors from both sources and remove duplicates
+  const allSponsors = [
+    ...response.org.sponsors.nodes,
+    ...response.user.sponsors.nodes
+  ].reduce((unique, sponsor) => {
+    // Use login as unique identifier
+    if (!unique.some(item => item.login === sponsor.login)) {
+      unique.push(sponsor)
+    }
+    return unique
+  }, [])
 
-  putCache(cacheFilename, JSON.stringify(data))
+  putCache(cacheFilename, JSON.stringify(allSponsors))
 
-  return data
+  return allSponsors
 }
 
 /**

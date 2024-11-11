@@ -34,24 +34,6 @@
     "github": "open-strategy-partners"
   },
   {
-    "name": "1xINTERNET",
-    "type": "standard",
-    "logo": "/logos/1xinternet.svg",
-    "darklogo": "/logos/1xinternet.svg",
-    "squareLogo": "/logos/1xinternet-square.svg",
-    "url": "https://1xinternet.de",
-    "github": "1xINTERNET"
-  },
-  {
-    "name": "Amazee.io",
-    "type": "standard",
-    "logo": "/logos/amazee-io-Mirantis-Logo-Black-White-IO.svg",
-    "darklogo": "/logos/amazee-io-mirantis-darkmode.svg",
-    "squareLogo": "/logos/amazee-io-square.svg",
-    "url": "https://amazee.io/",
-    "github": "amazee.io"
-  },
-  {
     "name": "Agaric",
     "type": "standard",
     "logo": "/logos/agaric.svg",
@@ -104,15 +86,6 @@
     "squareLogo": "/logos/gizra.svg",
     "url": "https://gizra.com/",
     "github": "gizra"
-  },
-  {
-    "name": "DrupalEasy",
-    "type": "standard",
-    "logo": "/logos/drupaleasy.png",
-    "darklogo": "/logos/drupaleasy-darkmode.png",
-    "squareLogo": "/logos/drupaleasy-square.svg",
-    "url": "https://www.drupaleasy.com/",
-    "github": "drupaleasy"
   },
   {
     "name": "mobilistics",
@@ -175,14 +148,5 @@
     "squareLogo": "/logos/craft-cms-square.svg",
     "url": "https://craftcms.com/",
     "github": "craftcms"
-  },
-  {
-    "name": "undpaul",
-    "type": "standard",
-    "logo": "/logos/undpaul.svg",
-    "darklogo": "/logos/undpaul-darkmode.svg",
-    "squareLogo": "/logos/undpaul-square.svg",
-    "url": "https://undpaul.de",
-    "github": "undpaul"
   }
 ]
