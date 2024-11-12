@@ -7,8 +7,7 @@ import featuredSponsors from "../featured-sponsors.json"
  * you need to add one.
  */
 const nudges = {
-  "Platform.sh": "mt-12 h-11",
-  Tag1: "h-9",
+  Tag1: "h-9 self-center", // Added self-center to align it vertically
   "Oliver Wand": "h-12 w-12",
   DrupalEasy: "h-10",
   "Redfin Solutions": "h-16 w-16",
@@ -19,41 +18,69 @@ const nudges = {
   "1xINTERNET": "h-11",
 }
 
+// Separate lead sponsors from regular sponsors
+const leadSponsors = featuredSponsors.filter(sponsor => sponsor.isLeading === true)
+const regularSponsors = featuredSponsors.filter(sponsor => sponsor.isLeading !== true)
+
 // Add class property to relevant sponsor objects
-featuredSponsors.map((sponsor) => {
+regularSponsors.map((sponsor) => {
   if (sponsor.name in nudges) {
     sponsor.class = nudges[sponsor.name]
   }
 })
 ---
 
-<div class="relative">
+<div class="relative flex flex-col items-center space-y-12">
+  {/* Lead Sponsors Section */}
+  {leadSponsors.length > 0 && (
+      <div class="w-full flex justify-center pb-8 border-b border-gray-200 dark:border-white">
+        {leadSponsors.map((sponsor) => (
+            <a
+                class="block relative overflow-hidden cursor-pointer h-16 mx-6"
+                title={sponsor.name}
+                href={sponsor.url}
+                target="_blank"
+            >
+              <picture>
+                <source
+                    srcset={sponsor.darklogo}
+                    media="(prefers-color-scheme: dark)">
+                <img
+                    src={sponsor.logo}
+                    class="block w-auto h-full"
+                    alt={`${sponsor.name} logo`}
+                />
+              </picture>
+            </a>
+        ))}
+      </div>
+  )}
+
+  {/* Regular Sponsors Section */}
   <div
-    class={`flex flex-wrap space-y-12 -mt-12 justify-center items-center content-center`}
+      class="flex flex-wrap gap-y-12 justify-center items-center"
   >
-    {
-      featuredSponsors.map((sponsor) => (
+    {regularSponsors.map((sponsor) => (
         <a
-          class={
-            `block relative overflow-hidden cursor-pointer h-12 mx-6` +
-            (sponsor.hasOwnProperty("class") ? ` ` + sponsor.class : ``)
-          }
-          title={sponsor.name}
-          href={sponsor.url}
-          target="_blank"
+            class={
+                `block relative overflow-hidden cursor-pointer h-12 mx-6` +
+                (sponsor.hasOwnProperty("class") ? ` ` + sponsor.class : ``)
+            }
+            title={sponsor.name}
+            href={sponsor.url}
+            target="_blank"
         >
-        <picture>
-          <source 
-            srcset={sponsor.darklogo} 
-            media="(prefers-color-scheme: dark)">
-          <img
-              src={sponsor.logo}
-              class="block w-auto h-full"
-              alt={`${sponsor.name} logo`}
-          />
-        </picture>
+          <picture>
+            <source
+                srcset={sponsor.darklogo}
+                media="(prefers-color-scheme: dark)">
+            <img
+                src={sponsor.logo}
+                class="block w-auto h-full"
+                alt={`${sponsor.name} logo`}
+            />
+          </picture>
         </a>
-      ))
-    }
+    ))}
   </div>
 </div>

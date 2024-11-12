@@ -9,52 +9,126 @@ const baseUrl = import.meta.env.SITE
 const overallWidth = 814
 // Maximum height a logo may have
 const maxHeight = 50
+// Lead sponsor height (doubled from regular sponsors)
+const leadSponsorHeight = maxHeight * 2
 // Maximum width a logo may have
 const maxWidth = 200
+// Lead sponsor maximum width (doubled from regular sponsors)
+const leadSponsorMaxWidth = maxWidth * 2
 // Horizontal padding between logos
 const xPadding = 40
 // Vertical padding between rows of logos
 const yPadding = 20
+// Additional padding below lead sponsors
+const leadSponsorBottomPadding = 80
 
-/**
- * Build an SVG response body with rows of evenly-spaced sponsor logos wrapped in anchors.
- * @returns string
- */
 const buildResponse = () => {
   let images = []
-  let totalHeight = 0
-  let currentX = 0
-  let currentY = 0
-  let rowCount = 1
+  let currentY = 30
 
-  featuredSponsors.map((sponsor, index) => {
-    const dimensions = sizeOf("./public/" + sponsor.logo)
+  // First process lead sponsors
+  const leadSponsors = featuredSponsors.filter(sponsor => sponsor.isLeading === true)
+  const regularSponsors = featuredSponsors.filter(sponsor => sponsor.isLeading !== true)
 
-    let [w, h] = getScaledImageDimensions(dimensions.width, dimensions.height)
+  console.log("Processing lead sponsors")
 
-    if (currentX + w + xPadding > overallWidth) {
-      currentX = 0
-      currentY += maxHeight + yPadding
-      rowCount += 1
-    }
+  // Handle lead sponsors (centered, own row)
+  if (leadSponsors.length > 0) {
+    // Get dimensions for lead sponsors
+    const leadSponsorInfo = leadSponsors.map(sponsor => {
+      // Ensure we have a valid logo path
+      const logoPath = sponsor.logo ? `./public${sponsor.logo}` : null
+      if (!logoPath) {
+        console.error(`Missing logo path for sponsor: ${sponsor.name}`)
+        return null
+      }
 
-    let yOffset = (maxHeight - h) / 2
+      try {
+        const dimensions = sizeOf(logoPath)
+        const [width, height] = getScaledImageDimensions(
+            dimensions.width,
+            dimensions.height,
+            true
+        )
+        return { sponsor, width, height, logoPath }
+      } catch (error) {
+        console.error(`Error processing logo for ${sponsor.name}:`, error)
+        return null
+      }
+    }).filter(Boolean) // Remove any null entries
 
-    images.push({
-      href: baseUrl + sponsor.logo,
-      path: `./public/${sponsor.logo}`,
-      x: currentX,
-      y: currentY + yOffset,
-      height: h,
-      width: w,
-      url: sponsor.url,
+    // Calculate total width including padding between lead sponsors
+    const totalLeadWidth = leadSponsorInfo.reduce((sum, info, index) => {
+      return sum + info.width + (index < leadSponsors.length - 1 ? xPadding : 0)
+    }, 0)
+
+    // Center the lead sponsors
+    let startX = (overallWidth - totalLeadWidth) / 2
+
+    // Place lead sponsors
+    leadSponsorInfo.forEach(({ sponsor, width, height, logoPath }) => {
+      images.push({
+        href: baseUrl + sponsor.logo,
+        path: logoPath,
+        x: startX,
+        y: currentY + (leadSponsorHeight - height) / 2,
+        height,
+        width,
+        url: sponsor.url,
+        isLead: true
+      })
+
+      startX += width + xPadding
     })
 
-    currentX += w + xPadding
+    currentY += leadSponsorHeight + leadSponsorBottomPadding
+  }
+
+  // Now process regular sponsors
+  let currentX = 0
+  regularSponsors.forEach((sponsor) => {
+    // Ensure we have a valid logo path
+    const logoPath = sponsor.logo ? `./public${sponsor.logo}` : null
+    if (!logoPath) {
+      console.error(`Missing logo path for sponsor: ${sponsor.name}`)
+      return
+    }
+
+    try {
+      const dimensions = sizeOf(logoPath)
+      let [width, height] = getScaledImageDimensions(
+          dimensions.width,
+          dimensions.height,
+          false
+      )
+
+      // Start new row if needed
+      if (currentX + width > overallWidth) {
+        currentX = 0
+        currentY += maxHeight + yPadding
+      }
+
+      images.push({
+        href: baseUrl + sponsor.logo,
+        path: logoPath,
+        x: currentX,
+        y: currentY + (maxHeight - height) / 2,
+        height,
+        width,
+        url: sponsor.url,
+        isLead: false
+      })
+
+      currentX += width + xPadding
+    } catch (error) {
+      console.error(`Error processing logo for ${sponsor.name}:`, error)
+    }
   })
 
-  totalHeight = (maxHeight + yPadding) * rowCount
+  // Calculate total height needed
+  const totalHeight = currentY + maxHeight + yPadding
 
+  // Generate SVG
   let response = `
     <svg
       width="${overallWidth}"
@@ -65,67 +139,46 @@ const buildResponse = () => {
     >
   `
 
-  images.map((image) => {
+  images.forEach((image) => {
     response += `
       <a xlink:href="${image.url}" target="_blank">
-        <image href="${imgToBase64(image.path)}" x="${image.x}" y="${image.y}" height="${image.height}" width="${image.width}" />
+        <image 
+          href="${imgToBase64(image.path)}" 
+          x="${image.x}" 
+          y="${image.y}" 
+          height="${image.height}" 
+          width="${image.width}"
+        />
       </a>
     `
   })
 
   response += `</svg>`
-
-  return response;
+  return response
 }
 
 function imgToBase64(filePath) {
-  let extname = path.extname(filePath).slice(1) || 'png';
-
+  let extname = path.extname(filePath).slice(1) || 'png'
   if (extname === 'svg') {
     extname = "svg+xml"
   }
-
-  return 'data:image/' + extname + ';base64,' + fs.readFileSync(filePath).toString('base64');
+  return 'data:image/' + extname + ';base64,' + fs.readFileSync(filePath).toString('base64')
 }
 
-/**
- * Take the original width and height of an image and proportionally scale it
- * for optical balance in this layout.
- * @param {*} width
- * @param {*} height
- * @returns [w, h]
- */
-const getScaledImageDimensions = (width, height) => {
-  let h = height
-  let w = width
-  const ratio = w / h
+const getScaledImageDimensions = (width, height, isLeadSponsor = false) => {
+  const ratio = width / height
+  const maxH = isLeadSponsor ? leadSponsorHeight : maxHeight
+  const maxW = isLeadSponsor ? leadSponsorMaxWidth : maxWidth
 
-  if (ratio < 1) {
-    h = maxHeight
-    w = (maxHeight / height) * width
+  let h = maxH
+  let w = (maxH / height) * width
+
+  if (w > maxW) {
+    w = maxW
+    h = (maxW / width) * height
   }
 
-  if (ratio === 1) {
-    h = maxHeight
-    w = maxHeight
-  }
-
-  if (ratio > 1) {
-    h = maxHeight
-    w = (maxHeight / height) * width
-  }
-
-  if (ratio > 2) {
-    h = maxHeight * 0.75
-    w = ((maxHeight * 0.75) / height) * width
-  }
-
-  if (ratio > 3) {
-    w = maxWidth
-    h = (maxWidth / width) * height
-  }
-
-  return [w, h];
+  return [w, h]
 }
 
 export async function GET({ params, request }) {
