@@ -37,7 +37,7 @@ const buildResponse = () => {
     // Get dimensions for lead sponsors
     const leadSponsorInfo = leadSponsors.map(sponsor => {
       // Ensure we have a valid logo path
-      const logoPath = sponsor.darkLogo ? `./public${sponsor.darkLogo}` : null
+      const logoPath = sponsor.darklogo ? `./public${sponsor.darklogo}` : null
       if (!logoPath) {
         console.error(`Missing logo path for sponsor: ${sponsor.name}`)
         return null
@@ -68,7 +68,7 @@ const buildResponse = () => {
     // Place lead sponsors
     leadSponsorInfo.forEach(({ sponsor, width, height, logoPath }) => {
       images.push({
-        href: baseUrl + sponsor.darkLogo,
+        href: baseUrl + sponsor.darklogo,
         path: logoPath,
         x: startX,
         y: currentY + (leadSponsorHeight - height) / 2,
@@ -88,7 +88,7 @@ const buildResponse = () => {
   let currentX = 0
   regularSponsors.forEach((sponsor) => {
     // Ensure we have a valid logo path
-    const logoPath = sponsor.darkLogo ? `./public${sponsor.darkLogo}` : null
+    const logoPath = sponsor.darklogo ? `./public${sponsor.darklogo}` : null
     if (!logoPath) {
       console.error(`Missing logo path for sponsor: ${sponsor.name}`)
       return
@@ -109,7 +109,7 @@ const buildResponse = () => {
       }
 
       images.push({
-        href: baseUrl + sponsor.darkLogo,
+        href: baseUrl + sponsor.darklogo,
         path: logoPath,
         x: currentX,
         y: currentY + (maxHeight - height) / 2,
