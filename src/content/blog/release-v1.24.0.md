@@ -23,7 +23,7 @@ Congratulations to **all of you and all contributors who made this happen**. It'
 **New Features and other things we're proud of**:
 
 * `ddevcd` command can be used to switch between projects. See `ddev debug cd`. For example, if I have a project named `t3v12` I can do a `ddevcd t3v12` to switch to that directory. [Stas](https://github.com/stasadev) added this feature out of the blue and I love it. It does require a [tiny bit of one-time configuration](https://ddev.readthedocs.io/en/latest/users/usage/commands/#debug-cd).
-* `drupal11` is introduced as a project type, demoting the `drupal` project type to simply an alias for "latest stable drupal version".
+* `drupal11` is introduced as a project type, demoting the `drupal` project type to be a simple alias to the "latest stable drupal version".
 * The `ddev-webserver` image is at least 25% smaller. Only a few locales are included by default, and only currently-supported versions of PHP are built-in by default (but all the other versions still work). It was 480MB compressed, is now 361MB compressed.
 * `ddev auth ssh` can now be used with individual key files and can follow symlinks. For example, if you only want to have a single file named `id_rsa` to be available to your projects, you can `ddev auth ssh -f ~/.ssh/id_rsa`.
 
