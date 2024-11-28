@@ -585,6 +585,8 @@ But you can also use a separate DDEV project for frontend - and another one for 
 
 - Kudos to torenware, who created the first ever DDEV addon for Vite, [ddev-viteserve](https://github.com/torenware/ddev-viteserve). It's currently not maintained.
 
+- [ddev-vitest](https://github.com/tyler36/ddev-vitest) adds some helper commands for projects using [Vitest](https://vitest.dev/), a vite-native testing framework..
+
 ### Advanced: Autostart Vite
 
 There is also the possibility to automatically start Vite when you start a DDEV project.
