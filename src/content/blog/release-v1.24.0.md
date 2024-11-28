@@ -1,5 +1,5 @@
 ---
-title: "DDEV Release v1.24.0"
+title: "DDEV Release v1.24.0 with PHP 8.4.1 and all extensions"
 pubDate: 2024-12-02
 # modifiedDate: 2024-07-23
 summary: New features and changes in DDEV v1.24.0
