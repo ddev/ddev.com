@@ -39,7 +39,7 @@ Congratulations to **all of you and all contributors who made this happen**. It'
 * The `drupal` project type is no longer a generic project type, but instead is an alias to the latest stable Drupal (`drupal11` right now). A number of folks gave feedback that it caused the startup time to be longer and the process more complex. (`ddev config --update` is no longer a part of the Drupal quickstart)
 * In v1.23.5 we started preferring vendor/bin/composer to the specified `composer_version` but users thought that was a mistake, so this was reverted
 * The nginx-proxy router has been removed.
-* The `ddev service enable` and `ddev service disable` commands were removed, as they have long been superceded by the use of `ddev add-on get` and `ddev add-on remove`
+* The `ddev service enable` and `ddev service disable` commands were deprecated, as they have long been superceded by the use of `ddev add-on get` and `ddev add-on remove`
 * Removed support for Python and Django4 projects. After more than a year, these did not gain traction or a community, so sadly we had to leave them behind.
 
 Again, thanks so much to all of you for using, promoting, contributing, and supporting DDEV!
