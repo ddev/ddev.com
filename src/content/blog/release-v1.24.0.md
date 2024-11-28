@@ -4,9 +4,9 @@ pubDate: 2024-12-02
 # modifiedDate: 2024-07-23
 summary: New features and changes in DDEV v1.24.0
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2024/09/maintaining-tests.png
-#  alt: abstract view of DDEV automated tests
+featureImage:
+  src: /img/blog/2024/12/php-logo.svg
+  alt: PHP Logo for PHP 8.4
 categories:
   - Announcements
 ---
