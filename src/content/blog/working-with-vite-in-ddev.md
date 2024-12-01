@@ -62,7 +62,7 @@ In order to use Vite in our DDEV projects, we generally need to do two things:
     const origin = `${process.env.DDEV_PRIMARY_URL}:${port}`;
 
     export default defineConfig({
-      
+
       // Your settings
       // ...
 
@@ -449,26 +449,26 @@ Example repositories:
 
 #### Drupal
 
-[Andrew Morton](https://github.com/mortona42) gave some information about the current state, thanks very much! 
+[Andrew Morton](https://github.com/mortona42) gave some information about the current state, thanks very much!
 
 > Vite module: [https://www.drupal.org/project/vite](https://www.drupal.org/project/vite)
-> 
+>
 > This uses Vite's manifest.json to map enabled Drupal library files to the compiled versions in /dist, or to the vite server in dev mode.
-> 
+>
 > Here is a theme I contributed, with instructions for how to set it up with DDEV in the readme files. I'm trying to detail all the configuration possibilities we might need, with defaults that should work out of the box.
-> 
+>
 > [https://www.drupal.org/project/unocss_starter](https://www.drupal.org/project/unocss_starter) (uses Vite)
-> 
+>
 <!-- textlint-disable -->
 > I'm blogging about the process here: [https://www.drupalarchitect.info/projects/unocss-starter-theme](https://www.drupalarchitect.info/projects/unocss-starter-theme)
-> 
+>
 > There are a handful of devs working on using Vite to bundle assets multiple modules/themes in Drupal. Looks like Vite and Foxy are becoming the leading solutions.
 >
 > [https://www.drupal.org/project/foxy](https://www.drupal.org/project/foxy)
-> 
+>
 > Working POC: [https://github.com/darvanen/drupal-js](https://github.com/darvanen/drupal-js)
-> 
-> I think we'll be seeing a lot of new things in 
+>
+> I think we'll be seeing a lot of new things in
 this area over the next year.
 
 #### Laravel
@@ -530,8 +530,8 @@ Florian Geierstanger made a first demo publicly available:
 
 This lead to the development of further tools by Simon Praetorius:
 
-- Extension ["vite-asset-collector"](https://github.com/s2b/vite-asset-collector): 
-- Vite Plugin ["vite-plugin-typo3"](https://github.com/s2b/vite-plugin-typo3) 
+- Extension ["vite-asset-collector"](https://github.com/s2b/vite-asset-collector):
+- Vite Plugin ["vite-plugin-typo3"](https://github.com/s2b/vite-plugin-typo3)
 - DDEV Add-On ["ddev-vite-sidecar"](https://github.com/s2b/ddev-vite-sidecar)
 
 The usage of "vite-asset-collector" with DDEV is documented [here](https://docs.typo3.org/p/praetorius/vite-asset-collector/main/en-us/Installation/Index.html#installation-1). The [TYPO3 Slack](https://typo3.org/community/meet/chat-slack) has a Vite channel if you have questions or need support.
@@ -573,17 +573,19 @@ See [DDEV Installation: Codespaces](https://ddev.readthedocs.io/en/stable/users/
 
 Andy Blum wrote the awesome article [Node.js Development with DDEV](https://www.lullabot.com/articles/nodejs-development-ddev) which explains proxying requests to the correct ports of NodeJS projects running in the web container. He is using the NodeJS CMS Keystone in combination with SvelteKit (NodeJS framework) for the frontend in his tutorial - all in one DDEV project.
 
-This approach also enables use cases like running a classic PHP backend in combination with a NodeJS hosted frontend (on another subdomain of the same DDEV project). It's especially great for headless CMS projects. 
+This approach also enables use cases like running a classic PHP backend in combination with a NodeJS hosted frontend (on another subdomain of the same DDEV project). It's especially great for headless CMS projects.
 
-There is an article on velir.com: [How to Run Headless Drupal and NextJS on DDEV](https://www.velir.com/ideas/2024/05/13/how-to-run-headless-drupal-and-nextjs-on-ddev). And here is a [demo repository](https://github.com/mandrasch/ddev-laravel-breeze-sveltekit) for Laravel Breeze (PHP) and SvelteKit (NodeJS) within one DDEV project (monorepo). 
+There is an article on velir.com: [How to Run Headless Drupal and NextJS on DDEV](https://www.velir.com/ideas/2024/05/13/how-to-run-headless-drupal-and-nextjs-on-ddev). And here is a [demo repository](https://github.com/mandrasch/ddev-laravel-breeze-sveltekit) for Laravel Breeze (PHP) and SvelteKit (NodeJS) within one DDEV project (monorepo).
 
 But you can also use a separate DDEV project for frontend - and another one for backend of course. See [communication between DDEV projects](https://ddev.readthedocs.io/en/stable/users/usage/faq/#communicate-via-https).
 
 ### DDEV addons
 
 - [ddev-vite-sidecar](https://github.com/s2b/ddev-vite-sidecar) is a simple addon for (almost) zero-config integration of Vite into your DDEV projects. The Vite development server is exposed as a https://vite.* subdomain to your project's main domain, which means that no ports need to be exposed to the host system.
-  
-- Kudos to torenware, who created the first ever DDEV addon for Vite, [ddev-viteserve](https://github.com/torenware/ddev-viteserve). It's currently not maintained. 
+
+- Kudos to torenware, who created the first ever DDEV addon for Vite, [ddev-viteserve](https://github.com/torenware/ddev-viteserve). It's currently not maintained.
+
+- [ddev-vitest](https://github.com/tyler36/ddev-vitest) adds some helper commands for projects using [Vitest](https://vitest.dev/), a vite-native testing framework..
 
 ### Advanced: Autostart Vite
 
@@ -610,7 +612,7 @@ web_extra_daemons:
     directory: /var/www/html
 ```
 
-If you use this, the Vite dev server errors are only visible via "ddev logs". A real-life example can be found here: [github.com/ddev/ddev.com](https://github.com/ddev/ddev.com). 
+If you use this, the Vite dev server errors are only visible via "ddev logs". A real-life example can be found here: [github.com/ddev/ddev.com](https://github.com/ddev/ddev.com).
 
 You can also use supervisor tools like pm2 in this article: [Node.js Development with DDEV - lullabot.com](https://www.lullabot.com/articles/nodejs-development-ddev).
 
