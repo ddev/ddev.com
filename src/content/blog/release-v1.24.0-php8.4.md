@@ -37,10 +37,10 @@ Congratulations to **all of you and all contributors who made this happen**. It'
 ## Questions
 
 <dl>
-<dt>Do I have to change how I use the `drupal` project type?</dt>
-<dd>If your project is actually a Drupal 11 project, there's no reason to make any changes. If your project is Drupal 8-10, you may want to change it to project type `drupal10`, for example although there's no meaningful difference in this release. </dd>
+<dt>Do I have to change how I use the <code>drupal</code> project type?</dt>
+<dd>If your project is actually a Drupal 11 project, there's no reason to make any changes. If your project is Drupal 8-10, you may want to change it to project type <code>drupal10</code>, for example although there's no meaningful difference in this release. </dd>
 <dt>What if I want more locales than the ones provided by default?</dt>
-<dd>The default locales installed in `ddev-webserver` for v1.24.0 are `en_CA.UTF-8 UTF-8, en_US.UTF-8 UTF-8, en_GB.UTF-8 UTF-8, de_DE.UTF-8 UTF-8, de_AT.UTF-8 UTF-8, fr_CA.UTF-8 UTF-8, fr_FR.UTF-8 UTF-8, ja_JP.UTF-8 UTF-8, ru_RU.UTF-8 UTF-8`. If you need other locales, all locales will be installed if you add `locales-all` to your `webimage_extra_packages` in `.ddev/config.yaml`. For example, `webimage_extra_packages: ["locales-all"]`</dd>
+<dd>The default locales installed in the web container for v1.24.0 are <code>en_CA.UTF-8, en_US.UTF-8, en_GB.UTF-8, de_DE.UTF-8, de_AT.UTF-8, fr_CA.UTF-8, fr_FR.UTF-8, ja_JP.UTF-8, ru_RU.UTF-8</code>. If you need other locales, all locales will be installed if you add <code>locales-all</code> to your <code>webimage_extra_packages</code> in <code>.ddev/config.yaml</code> For example, <code>webimage_extra_packages: ["locales-all"]</code></dd>
 </dl>
 
 ## Reversions and Removals
@@ -55,4 +55,4 @@ From the entire team, thanks for using, promoting, contributing, and supporting 
 
 If you have more questions, please reach out to us in any of the many [support channels](https://ddev.readthedocs.io/en/stable/users/support/).
 
-Follow our [blog](https://ddev.com/blog/), [LinkedIn](https://www.linkedin.com/company/ddev-foundation), [Mastodon](https://fosstodon.org/@ddev), and join us on [Discord](https://discord.gg/5wjP76mBJD). And we'd love to have you sign up for the [monthly newsletter](/newsletter).
+Follow our [blog](https://ddev.com/blog/), [Bluesky](https://bsky.app/profile/ddev.bsky.social), [LinkedIn](https://www.linkedin.com/company/ddev-foundation), [Mastodon](https://fosstodon.org/@ddev), and join us on [Discord](https://discord.gg/5wjP76mBJD). And we'd love to have you sign up for the [monthly newsletter](/newsletter).
