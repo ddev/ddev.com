@@ -10,7 +10,8 @@ import {
   COPYRIGHT_HOLDER,
   MASTODON_URL,
   GITHUB_URL,
-  STORE_URL,
+  STORE_URL, 
+  BLUESKY_URL,
 } from "../const"
 
 import Icon from "./Icon.astro"
@@ -35,6 +36,11 @@ const navigation = {
     {
       name: "Discord",
       href: DISCORD_URL,
+    },
+    {
+      name: "Bluesky",
+      href: BLUESKY_URL,
+      me:true
     },
     {
       name: "Mastodon",
