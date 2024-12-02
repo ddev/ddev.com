@@ -10,7 +10,6 @@ export const DISCORD_URL = 'https://discord.gg/5wjP76mBJD';
 export const EMAIL_URL = "mailto:support%40ddev.com"
 export const COPYRIGHT_HOLDER = 'DDEV Foundation'
 export const MASTODON_URL = 'https://fosstodon.org/@ddev'
-export const X_URL = 'https://twitter.com/search?q=%23ddev&src=typd&f=live'
 export const ORG_STREET = '848 Montclair Dr'
 export const ORG_CITY = 'Palisade'
 export const ORG_STATE = 'Colorado'

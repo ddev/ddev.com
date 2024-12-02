@@ -134,6 +134,4 @@ Part of building this project is working directly with our users to improve DDEV
 
 Coming soon: We’ll be rolling out opt-in data collection and error reporting to help us make DDEV even better even faster. When you opt-in, you’ll be contributing data on how you’re using our open source tool and where you’re hitting issues. This will be a big factor in guiding product decisions. The more people who opt-in, the better the tool will become. Keep an eye out on future releases!
 
-### Want more tips? Follow us on Twitter and subscribe to the newsletter.
-
-When I come across tips and tricks from the community, I usually tweet about them. You can follow me as [@randyfay](https://twitter.com/randyfay).
+### Want more tips? Subscribe to the newsletter.
