@@ -27,10 +27,10 @@ categories:
 **DDEV Notes from around the web**
 
 * Drupal lead Dries Buyteart posted [Installing Drupal CMS (or Drupal Starshot) using DDEV](https://dri.es/installing-drupal-cms-or-drupal-starshot-using-ddev).
+* Drupal at your Fingertips contains loads of great DDEV advice, including how to set up Apache Solr, see [Drupal and Solr](https://www.drupalatyourfingertips.com/development#solr-and-ddev) (and lots of advice about other things including Xdebug).
 * [SilverStripe and Elasticsearch with DDEV](https://firesphere.dev/articles/ddev-elasticsearch-and-silverstripe)
 * [Xdebug, DDEV, WSL2 and corporate network restrictions](https://www.koehnlein.eu/en/blog/2024/ddev-wsl-xdebug/)
 * [DDEV matomo add-on](https://www.linkedin.com/pulse/phase-2-week-3-whos-valery-lourie-nskjf/)
-* 
 
 
 **Fully funding Maintainer Stas**: *We need your help and your organization's help! Let me know if you need help getting this into your 2025 budget!* Our key financial goal is to [fully fund @stasadev so he can work exclusively on DDEV](lets-fund-stas-maintainer.md). We’re about 30% of the way to that goal, but apparently due to market conditions, have been going backward in recent months. We need about $3700/month in increased pledges from organizations and individuals. See [Full information about supporting DDEV](https://github.com/sponsors/ddev). We’re happy to invoice you, happy to [do a call discussing this](https://cal.com/randyfay/30min), and would love it if you’d include DDEV in your 2025 budgeting process. (Our current status: We receive about $3000-$4000/month, spend about $4000/month. Bank balance is about $9,300, up from $9,000 last month.)
