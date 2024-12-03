@@ -30,6 +30,7 @@ Congratulations to **all of you and all contributors who made this happen**. It'
 ## Smaller Changes
 
 * Added dynamic timeout handling for scripts on start based on setting of `default_container_timeout`. This is mostly only for folks with exceptionally slow internet.
+* Added explicit support for the `symfony` project type, see [docs](https://ddev.readthedocs.io/en/stable/users/quickstart/#symfony), thanks [@IndraGunawan](https://github.com/IndraGunawan).
 * `ddev describe` changes how exposed ports are displayed for better clarity (thanks [@hanoii](https://github.com/hanoii))
 * Only a limited set of locales is now installed in `ddev-webserver` by default. If you need more, use `webimage_extra_packages: [locales-all]`
 * Complex `ddev composer` command usage with json or args with spaces is fixed. (A bug was introduced in v1.23.5.)
@@ -41,6 +42,8 @@ Congratulations to **all of you and all contributors who made this happen**. It'
 <dd>If your project is actually a Drupal 11 project, there's no reason to make any changes. If your project is Drupal 8-10, you may want to change it to project type <code>drupal10</code>, for example although there's no meaningful difference in this release. </dd>
 <dt>What if I want more locales than the ones provided by default?</dt>
 <dd>The default locales installed in the web container for v1.24.0 are <code>en_CA.UTF-8, en_US.UTF-8, en_GB.UTF-8, de_DE.UTF-8, de_AT.UTF-8, fr_CA.UTF-8, fr_FR.UTF-8, ja_JP.UTF-8, ru_RU.UTF-8</code>. If you need other locales, all locales will be installed if you add <code>locales-all</code> to your <code>webimage_extra_packages</code> in <code>.ddev/config.yaml</code> For example, <code>webimage_extra_packages: ["locales-all"]</code></dd>
+<dt>What should I do after upgrading DDEV?</dt>
+<dd>DDEV will already ask you to do a `ddev poweroff`, but consider doing a `ddev config --update` on your projects. This will auto-detect your project type and required PHP version. It may switch the `drupal` type to `drupal10` or `drupal11`.</dd>
 </dl>
 
 ## Reversions and Removals
