@@ -24,4 +24,4 @@ Sometimes as the releases go by not everybody ends up noticing new features in D
 8. **Updating**: Are you updating DDEV the easy way? See [upgrade details for every environment](https://ddev.readthedocs.io/en/stable/users/install/ddev-upgrade/).
 9. **FAQ**: Have you glanced at the[ FAQ](https://ddev.readthedocs.io/en/stable/users/usage/faq/) lately? We’d love to hear about new things you would like to see there or anywhere in our docs, hit us up on [any of our support channels](https://ddev.readthedocs.io/en/stable/users/support/).
 
-Take a look at my own[ favorite commands](https://ddev.readthedocs.io/en/stable/users/cli-usage/#favorite-commands) and see if you’re using them all. Is there anything we should add there? [Give us a shout on Twitter!](http://twitter.com/randyfay).
+Take a look at my own[ favorite commands](https://ddev.readthedocs.io/en/stable/users/cli-usage/#favorite-commands) and see if you’re using them all. Is there anything we should add there? [Give us a shout on any of our support channels!](https://ddev.readthedocs.io/en/stable/users/support/).

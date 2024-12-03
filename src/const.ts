@@ -1,6 +1,7 @@
 export const SITE_TITLE = 'DDEV';
 export const SITE_DESCRIPTION = 'Docker-based local PHP+Node.js web development environments.';
 export const STORE_URL = 'https://ddev.threadless.com';
+export const BLUESKY_URL = 'https://bsky.app/profile/ddev.bsky.social';
 export const GITHUB_REPO = 'ddev/ddev';
 export const GITHUB_URL = 'https://github.com/ddev/ddev';
 export const GITHUB_URL_WEBSITE = 'https://github.com/ddev/ddev.com/tree/main/src/content/blog';
@@ -10,7 +11,6 @@ export const DISCORD_URL = 'https://discord.gg/5wjP76mBJD';
 export const EMAIL_URL = "mailto:support%40ddev.com"
 export const COPYRIGHT_HOLDER = 'DDEV Foundation'
 export const MASTODON_URL = 'https://fosstodon.org/@ddev'
-export const X_URL = 'https://twitter.com/search?q=%23ddev&src=typd&f=live'
 export const ORG_STREET = '848 Montclair Dr'
 export const ORG_CITY = 'Palisade'
 export const ORG_STATE = 'Colorado'

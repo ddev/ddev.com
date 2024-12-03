@@ -9,9 +9,9 @@ import {
   EMAIL_URL,
   COPYRIGHT_HOLDER,
   MASTODON_URL,
-  X_URL,
   GITHUB_URL,
-  STORE_URL,
+  STORE_URL, 
+  BLUESKY_URL,
 } from "../const"
 
 import Icon from "./Icon.astro"
@@ -38,13 +38,14 @@ const navigation = {
       href: DISCORD_URL,
     },
     {
+      name: "Bluesky",
+      href: BLUESKY_URL,
+      me:true
+    },
+    {
       name: "Mastodon",
       href: MASTODON_URL,
       me: true
-    },
-    {
-      name: "X",
-      href: X_URL,
     },
     {
       name: "GitHub",
@@ -135,7 +136,7 @@ const navigation = {
               href={item.href}
               target="_blank"
               class={`text-gray-500 hover:text-black ${
-                ["Discord", "X"].includes(item.name) ? `w-5` : `w-6`
+                ["Discord", "Bluesky"].includes(item.name) ? `w-5` : `w-6`
               }`}
               rel={item.hasOwnProperty('me') && item.me ? 'me' : null}
             >

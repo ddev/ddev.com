@@ -46,4 +46,4 @@ I like to name my snapshots so I can find them later, so `ddev snapshot --name=t
   - `cp .ddev/commands/host/mysqlworkbench.example .ddev/commands/host/mysqlworkbench && chmod +x .ddev/commands/host/mysqlworkbench`
   - and then `ddev mysqlworkbench`
 
-What are your favorite DDEV database tweaks, hacks, approaches, strategies? We’d love to hear about them [on Twitter](https://twitter.com/ddev) ([tag #ddev](https://twitter.com/hashtag/ddev?src=hashtag%5Fclick)) or any of our [support channels](https://ddev.readthedocs.io/en/stable/users/support/). Join the conversation!
+What are your favorite DDEV database tweaks, hacks, approaches, strategies? We’d love to hear about them on any of our [support channels](https://ddev.readthedocs.io/en/stable/users/support/). Join the conversation!
