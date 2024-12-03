@@ -30,6 +30,7 @@ Congratulations to **all of you and all contributors who made this happen**. It'
 ## Smaller Changes
 
 * Added dynamic timeout handling for scripts on start based on setting of `default_container_timeout`. This is mostly only for folks with exceptionally slow internet.
+* Added explicit support for the `symfony` project type, see [docs](https://ddev.readthedocs.io/en/stable/users/quickstart/#symfony), thanks [@IndraGunawan](https://github.com/IndraGunawan).
 * `ddev describe` changes how exposed ports are displayed for better clarity (thanks [@hanoii](https://github.com/hanoii))
 * Only a limited set of locales is now installed in `ddev-webserver` by default. If you need more, use `webimage_extra_packages: [locales-all]`
 * Complex `ddev composer` command usage with json or args with spaces is fixed. (A bug was introduced in v1.23.5.)
@@ -41,6 +42,8 @@ Congratulations to **all of you and all contributors who made this happen**. It'
 <dd>If your project is actually a Drupal 11 project, there's no reason to make any changes. If your project is Drupal 8-10, you may want to change it to project type <code>drupal10</code>, for example although there's no meaningful difference in this release. </dd>
 <dt>What if I want more locales than the ones provided by default?</dt>
 <dd>The default locales installed in the web container for v1.24.0 are <code>en_CA.UTF-8, en_US.UTF-8, en_GB.UTF-8, de_DE.UTF-8, de_AT.UTF-8, fr_CA.UTF-8, fr_FR.UTF-8, ja_JP.UTF-8, ru_RU.UTF-8</code>. If you need other locales, all locales will be installed if you add <code>locales-all</code> to your <code>webimage_extra_packages</code> in <code>.ddev/config.yaml</code> For example, <code>webimage_extra_packages: ["locales-all"]</code></dd>
+<dt>What should I do after upgrading DDEV?</dt>
+<dd>DDEV will already ask you to do a <code>ddev poweroff</code>, but consider doing a <code>ddev config --update</code> on your projects. This will auto-detect your project type and required PHP version. It may switch the <code>drupal</code> type to <code>drupal10</code> or <code>drupal11</code>.</dd>
 </dl>
 
 ## Reversions and Removals
@@ -48,8 +51,8 @@ Congratulations to **all of you and all contributors who made this happen**. It'
 * The `drupal` project type is no longer a generic project type, but instead is an alias to the latest stable Drupal (`drupal11` right now). A number of folks gave feedback that it caused the startup time to be longer and the process more complex. (`ddev config --update` is no longer a part of the Drupal quickstart)
 * In v1.23.5 we started preferring `vendor/bin/composer` to the specified `composer_version` but users thought that was a mistake, so this was reverted.
 * The nginx-proxy router has been removed.
-* The `ddev service enable` and `ddev service disable` commands were deprecated, as they have long been superceded by the use of `ddev add-on get` and `ddev add-on remove`
-* Removed support for Python and Django4 projects. After more than a year, these did not gain traction or a community, so sadly we had to leave them behind.
+* The `ddev service enable` and `ddev service disable` commands were deprecated, as they have long been superseded by the use of `ddev add-on get` and `ddev add-on remove`. We apologize if this is an inconvenience, but we didn't see any significant usage of these commands. If you need something like that still, it's super easy to make a [custom command](https://ddev.readthedocs.io/en/stable/users/extend/custom-commands/) that would do the same thing, and consider delivering the custom command using an add-on.
+* Removed support for Python and Django4 project types. After more than a year, these did not gain traction or a community, so sadly we had to leave them behind.
 
 From the entire team, thanks for using, promoting, contributing, and supporting DDEV!
 
