@@ -4,9 +4,9 @@ pubDate: 2024-12-03
 #modifiedDate: 2024-09-06
 summary: DDEV November 2024 Newsletter
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2024/11/palisade-november-bookcliffs.jpg
-#  alt: Palisade, Colorado, USA, November 1, 2024
+featureImage:
+  src: /img/blog/2024/12/nancy_lewis_colorado_river.jpg
+  alt: Nancy Lewis painting of Colorado River near Palisade, Colorado
 categories:
   - Community
 ---
