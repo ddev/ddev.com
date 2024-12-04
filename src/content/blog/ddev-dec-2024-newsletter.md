@@ -7,6 +7,7 @@ author: Randy Fay
 featureImage:
   src: /img/blog/2024/12/nancy_lewis_colorado_river.jpg
   alt: Nancy Lewis painting of Colorado River near Palisade, Colorado
+  credit: Nancy Lewis painting of the Colorado River near Palisade, Colorado
 categories:
   - Community
 ---
