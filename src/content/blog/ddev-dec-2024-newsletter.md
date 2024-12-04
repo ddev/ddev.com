@@ -37,11 +37,11 @@ categories:
 
 **THANKS to all of you who are supporting DDEV’s path to sustainability** and who have gotten your organizations to do so.
 
-Want to keep up as the month goes along? Follow our
-* [blog](https://ddev.com/blog/), 
-* [LinkedIn](https://www.linkedin.com/company/ddev-foundation), 
-* [Mastodon](https://fosstodon.org/@ddev), 
+Want to keep up as the month goes along? Follow on
+* [blog](https://ddev.com/blog/)
+* [LinkedIn](https://www.linkedin.com/company/ddev-foundation)
+* [Mastodon](https://fosstodon.org/@ddev)
 * [BlueSky](https://bsky.app/profile/ddev.bsky.social) 
-* and join our community on [Discord](https://discord.gg/5wjP76mBJD).
+* and join our community on [Discord](https://discord.gg/5wjP76mBJD)
 
 Happy December from Randy Fay, DDEV Project Lead.
