@@ -152,6 +152,23 @@ Textlint’s [default terminology](https://github.com/sapegin/textlint-rule-term
 
 Run `npm run textlint` to check everything, and you can apply “fixable” changes using `npm run textlint:fix`. Be careful automating fixes to be sure they don’t have any unintended side effects!
 
+### Prettier and EditorConfig
+
+Prettier is used for auto-formatting files, see `.prettierrc`. EditorConfig is used for basic IDE settings, see `.editorconfig`. The EditorConfig configuration is [automatically parsed by Prettier](https://prettier.io/docs/en/configuration.html#editorconfig).
+
+If you work with Visual Studio Code, please install these three extensions:
+
+- https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+- https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
+- https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode
+
+Auto-format on save is activated via `.vscode/settings.json` for Visual Studio Code.
+
+General commands:
+
+- Use `npx prettier --check .` to verify everything is properly formatted
+- Use `npx prettier --write .` to auto-format all files
+
 ### Sponsor Management
 
 The `src/featured-sponsors.json` file is used for manually curating prominent sponsors.
