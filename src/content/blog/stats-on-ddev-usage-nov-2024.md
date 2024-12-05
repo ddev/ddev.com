@@ -31,7 +31,7 @@ The most popular commands are probably the ones you'd expect, `ddev composer`, `
 
 ## CMS Project Types
 
-Drupal, the generic "PHP" type, and TYPO3 remain the most popular, but they're the ones with the longest-term support. But look at Laravel, Craft CMS, and Laravel getting more popular all the time! 
+Drupal, the generic "PHP" type, and TYPO3 remain the most popular, but they're the ones with the longest-term support. But look at Laravel, Craft CMS, and Laravel getting more popular all the time!
 
 ![Most Popular CMS Project Types](/img/blog/2024/11/CMS-project-types.png)
 
@@ -47,7 +47,7 @@ People have [lots of Docker providers](https://ddev.readthedocs.io/en/stable/use
 
 ## WSL2 Docker Provider
 
-On WSL2, though, the robust and stable Docker CE wins out by a little bit. Note that *all* of the Docker providers are dependent on (and bundle) the excellent Docker CE project, with is maintained by Docker, Inc. So if you use Docker in any way, thank them!
+On WSL2, though, the robust and stable Docker CE wins out by a little bit. Note that _all_ of the Docker providers are dependent on (and bundle) the excellent Docker CE project, with is maintained by Docker, Inc. So if you use Docker in any way, thank them!
 
 ![WSL2 Docker Providers](/img/blog/2024/11/WSL2DockerProvider.png)
 
@@ -66,7 +66,6 @@ It seems that 81.5% of you have gotten new Macs now!
 As you know, the DDEV Add-on ecosystem has been a tremendous success, because people can scratch their own itch and the community can maintain add-ons that they need. Here are the most popular ones, excluding phpMyAdmin, which had by far the most usage (3 times the usage of the redis add-on).
 
 ![Add-On Usage](/img/blog/2024/11/add-ons-excluding-phpmyadmin.png)
-
 
 <a href="https://app.amplitude.com/analytics/share/4e4959f0f36c49d6a24cc2726e8231e5" target="_blank">Live version of Add-on usage</a>
 

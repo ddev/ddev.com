@@ -16,12 +16,12 @@ People sometimes ask how they should back up local DDEV projects. We can do it e
 
 PHP web projects typically consist of three or four components:
 
-* One or more databases
-* The PHP code
-* User-generated and other non-code transient files (images, etc.)
-* Configuration
+- One or more databases
+- The PHP code
+- User-generated and other non-code transient files (images, etc.)
+- Configuration
 
-We need a backup strategy for each of these. 
+We need a backup strategy for each of these.
 
 **Choose a trusted local backup solution.** Time Machine on macOS can work wonderfully for many people, and there are lots of other solutions out there. However, databases have not traditionally been good with backups because they are often not consistent during the backup process, so we need to do something different with them.
 
@@ -29,11 +29,11 @@ We need a backup strategy for each of these.
 
 **Databases** need an extra step for safety. In general, avoid working on a database that cannot be recreated by code (with migrations, for example). However, most of us want to have a database quickly available as a good place to start from. Since databases are typically in a binary format that can't reliably be backed up, we need a good way to make a copy. DDEV has two great ways to turn databases into files, `ddev snapshot` and `ddev export-db`.
 
-* **[`ddev snapshot`](https://ddev.readthedocs.io/en/stable/users/usage/cli/#snapshotting-and-restoring-a-database)**, optionally with a `name` argument, takes a binary copy of all of your databases (most projects have just one) and saves it into the `.ddev/db_snapshots` directory as a gzipped binary file. You can snapshot all your registered projects with `ddev snapshot -a`.
+- **[`ddev snapshot`](https://ddev.readthedocs.io/en/stable/users/usage/cli/#snapshotting-and-restoring-a-database)**, optionally with a `name` argument, takes a binary copy of all of your databases (most projects have just one) and saves it into the `.ddev/db_snapshots` directory as a gzipped binary file. You can snapshot all your registered projects with `ddev snapshot -a`.
 
-* **[`ddev export-db`](https://ddev.readthedocs.io/en/stable/users/usage/commands/#export-db)** exports a text-based dump of a single database to a named file. For example, `ddev export-db --file=.tarballs/db.sql.gz`. A text-based file can be imported into databases of related types, and not just its source type. For example, a MariaDB 10.11 database dump in this format can typically be imported into a MySQL 8.0 database.
+- **[`ddev export-db`](https://ddev.readthedocs.io/en/stable/users/usage/commands/#export-db)** exports a text-based dump of a single database to a named file. For example, `ddev export-db --file=.tarballs/db.sql.gz`. A text-based file can be imported into databases of related types, and not just its source type. For example, a MariaDB 10.11 database dump in this format can typically be imported into a MySQL 8.0 database.
 
-* **Automating database backups**: Some people like to use a pre-stop hook to do a database backup, so that a database dump happens every time they do `ddev stop` or `ddev poweroff`. For example:
+- **Automating database backups**: Some people like to use a pre-stop hook to do a database backup, so that a database dump happens every time they do `ddev stop` or `ddev poweroff`. For example:
 
 ```yaml
 hooks:
@@ -42,6 +42,7 @@ hooks:
 ```
 
 If you prefer a text-based database backup, you could do this:
+
 ```yaml
 hooks:
   pre-stop:

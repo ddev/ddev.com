@@ -19,10 +19,9 @@ Docker providers for macOS have been getting better and faster (mostly) over tim
 
 This test used an update of the same technique used in [December 2022](ddev-docker-desktop-and-colima-benchmarking-updated-dec-2022.md).
 
-
 ## Test Methodology
 
-The test does a Drupal 10 web install (details below), because it's a heavy PHP-access process that exercises both the database and filesystem extensively. 
+The test does a Drupal 10 web install (details below), because it's a heavy PHP-access process that exercises both the database and filesystem extensively.
 
 ## Results: OrbStack Wins!
 
@@ -42,14 +41,14 @@ I used the [ddev-puppeteer](https://github.com/ddev/ddev-puppeteer) project to r
 
 See the [spreadsheet with the raw data](https://docs.google.com/spreadsheets/d/14d79oUItssfB1_spUjjGOPkhumARXyhF0DNBK1kp2KA/edit?usp=sharing)
 
-* DDEV v1.22.5
-* Drupal 10.1.6 with Drush (`ddev config --project-type=drupal10 --docroot=web --create-docroot && ddev composer create drupal/recommended-project -y && ddev composer require drush/drush && ddev start`)
-* PHP 8.1
-* MacBook Air (M1, 2020), 16GB RAM, plugged in
-* Docker Desktop 4.25.2
-* Colima v0.6.6, Lima v0.18.0, QEMU 8.1.3 (`colima start qemutest --cpu 4 --memory 6 --disk 100 --dns=1.1.1.1 --vm-type=qemu --mount-type=sshfs` and `colima start vztest --cpu=4 --memory=6 --disk=100 --mount-type=virtiofs`)
-* Rancher Desktop 1.11.0
-* OrbStack 1.1.0
+- DDEV v1.22.5
+- Drupal 10.1.6 with Drush (`ddev config --project-type=drupal10 --docroot=web --create-docroot && ddev composer create drupal/recommended-project -y && ddev composer require drush/drush && ddev start`)
+- PHP 8.1
+- MacBook Air (M1, 2020), 16GB RAM, plugged in
+- Docker Desktop 4.25.2
+- Colima v0.6.6, Lima v0.18.0, QEMU 8.1.3 (`colima start qemutest --cpu 4 --memory 6 --disk 100 --dns=1.1.1.1 --vm-type=qemu --mount-type=sshfs` and `colima start vztest --cpu=4 --memory=6 --disk=100 --mount-type=virtiofs`)
+- Rancher Desktop 1.11.0
+- OrbStack 1.1.0
 
 ## Summary
 

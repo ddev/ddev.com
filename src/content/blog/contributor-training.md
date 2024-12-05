@@ -18,27 +18,26 @@ categories:
 
 As we announced in [Recruiting Contributors and Maintainers](recruiting-maintainers.md) we're actively trying to increase the DDEV community of contributors and maintainers. To do that, we're going to start a series of trainings, and we'd love to have you come. The trainings will include information on how to contribute by:
 
-* Involvement in the issue queue and Discord channel
-* Creating pull requests to solve known problems or provide new features
-* Test new prereleases
-* Understand basic Go programming techniques
-* Set up a Go development environment using Goland or Vscode
-* Run automated tests on your own machine
-* Manage failed test runs and improve our tests
-* Explore new test platforms for DDEV macOS and Windows automated tests
-* Maintain and improve DDEV's documentation
-* Maintain and improve ddev.com
-* Participate in reaching out to DDEV's current and future financial funders
-* Participate in marketing strategy and implementation
-* Build and improve Docker images
+- Involvement in the issue queue and Discord channel
+- Creating pull requests to solve known problems or provide new features
+- Test new prereleases
+- Understand basic Go programming techniques
+- Set up a Go development environment using Goland or Vscode
+- Run automated tests on your own machine
+- Manage failed test runs and improve our tests
+- Explore new test platforms for DDEV macOS and Windows automated tests
+- Maintain and improve DDEV's documentation
+- Maintain and improve ddev.com
+- Participate in reaching out to DDEV's current and future financial funders
+- Participate in marketing strategy and implementation
+- Build and improve Docker images
 
-Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or CEST. The trainings will be recorded for everybody's benefit. *Sign up on the simple form below to get the calendar invite with zoom link.*
-
+Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or CEST. The trainings will be recorded for everybody's benefit. _Sign up on the simple form below to get the calendar invite with zoom link._
 
 **Past Session Recordings:**
 
 | Training Date | Description and Recording                                                                                                                                                                                                                                                                                                                 |
-|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 2023-07-11    | [Testing DDEV Features, testing DDEV v1.22.0 prereleases, how to help](https://www.dropbox.com/scl/fi/8epf3vqrp6f5rf7w7up7l/20230711_contributor_training_testing_release.mp4?rlkey=s8zd82uc7a33kke9ksiqsi1yb&dl=0)                                                                                                                       |
 | 2023-07-18    | [Maintaining and Improving the Docs](https://www.dropbox.com/scl/fi/2d5qryxzgwa5zat9xz056/20230718_contributor_traiing_docs.mp4?rlkey=senzp6l6j8zq52vd4y74uhqfy&dl=0)                                                                                                                                                                     |
 | 2023-07-25    | [Setting up a Go Development Environment](https://youtu.be/IjrJw0Ay-dk) see [blog](setting-up-a-go-development-environment.md)                                                                                                                                                                                                            |
@@ -66,14 +65,14 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 <a name="upcoming-trainings"></a>
 **Upcoming Trainings:**
 
-* Hostname Resolution and Debugging in DDEV
-* Using AI in DDEV Development (ChatGPT, Continue.dev, etc.)
-* Implementing a New DDEV Project Type
-* Managing and Maintaining DDEV Docs (Readthedocs.io, etc.)
-* Using WSL2 with DDEV
-* Git for Fun and Profit
-* Making Your Own `ddev share` Variant
-* Go Development Environment with Goland or vscode
-* Experimenting with custom commands
+- Hostname Resolution and Debugging in DDEV
+- Using AI in DDEV Development (ChatGPT, Continue.dev, etc.)
+- Implementing a New DDEV Project Type
+- Managing and Maintaining DDEV Docs (Readthedocs.io, etc.)
+- Using WSL2 with DDEV
+- Git for Fun and Profit
+- Making Your Own `ddev share` Variant
+- Go Development Environment with Goland or vscode
+- Experimenting with custom commands
 
 Please join the [DDEV Live Event meetup](https://www.meetup.com/ddev-events/) to get notified about upcoming trainings. Drop by [Discord](https://discord.gg/5wjP76mBJD) or send [an email](mailto:support%40ddev.com) if you want to talk more.

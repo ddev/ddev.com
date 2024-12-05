@@ -7,7 +7,7 @@ author: Randy Fay
 featureImage:
   src: /img/blog/2024/06/weeping-sea-lion.png
   alt: "Dall-E: an image of a seal posed and crying with big tear drops, something like the MariaDB logo"
-  credit: 'Dall-E: an image of a seal posed and crying with big tear drops, something like the MariaDB logo'
+  credit: "Dall-E: an image of a seal posed and crying with big tear drops, something like the MariaDB logo"
 categories:
   - DevOps
 ---
@@ -50,30 +50,30 @@ We think we have worked around the majority of these cases in DDEV v1.23.2. See 
 
 However, be aware:
 
-* If your server is running MySQL and your local is running MariaDB, you'll want to start using MySQL. For example, `ddev debug migrate-database mysql:5.7`.
-* If your server is running MariaDB and gets updated to have the new dump format, and you do a `ddev pull` or similar download of the dump file, you'll want to make sure you're using DDEV v1.23.2 and a matching database version.
-* If you *push* your database dump to a server, which is unusual, please use `ddev export-db` to obtain it. `ddev export-db` removes the offending directive from the file.
+- If your server is running MySQL and your local is running MariaDB, you'll want to start using MySQL. For example, `ddev debug migrate-database mysql:5.7`.
+- If your server is running MariaDB and gets updated to have the new dump format, and you do a `ddev pull` or similar download of the dump file, you'll want to make sure you're using DDEV v1.23.2 and a matching database version.
+- If you _push_ your database dump to a server, which is unusual, please use `ddev export-db` to obtain it. `ddev export-db` removes the offending directive from the file.
 
 ## What has DDEV done to mitigate the damage in v1.23.2?
 
-* `ddev import-db` and `ddev export-db` remove the directive to make sure imports and exports are safe.
-* If you're using the (default) database type `mariadb`, the `mariadb`/`mysql` and `mariadb-dump`/`mysqldump` clients on `ddev-webserver` are the *new* ones from MariaDB, and they know what to do with the new directive.
-* If you're using any version of the `mysql` database type then `mysql` and `mysqldump` are built from MySQL source and are automatically installed so that they match the server versions.
-* We've designed a complete build-from-source system to match the MySQL clients so they could be installed in `ddev-webserver`. (In projects with database type `mysql` these client tools automatically installed for you.) You can take a look at [mysql-client-build](https://github.com/ddev/mysql-client-build/) and contribute to it.
-* For those who end up with trouble inside the `ddev-webserver` even after all this, there is a hidden version of the pre-change `mysql` and `mysqldump` commands in `/usr/local/mariadb-old/bin`, so users of tools that use `mysql` and `mysqldump` directly could use `PATH=/usr/local/mariadb-old/bin:$PATH some-tool some-command` for example, and if the tool uses `mysqldump` it will use the old one. *We don't know of any instances where you will need to do this in v1.23.2, we just bundled these in case people still needed a workaround.*
-* Some of our automated tests broke because they used the default `mariadb:10.11` locally, but they pushed to a database server running MySQL 5.7. `TestPushLagoon` and `TestPushAcquia` had to be adjusted this way. 
+- `ddev import-db` and `ddev export-db` remove the directive to make sure imports and exports are safe.
+- If you're using the (default) database type `mariadb`, the `mariadb`/`mysql` and `mariadb-dump`/`mysqldump` clients on `ddev-webserver` are the _new_ ones from MariaDB, and they know what to do with the new directive.
+- If you're using any version of the `mysql` database type then `mysql` and `mysqldump` are built from MySQL source and are automatically installed so that they match the server versions.
+- We've designed a complete build-from-source system to match the MySQL clients so they could be installed in `ddev-webserver`. (In projects with database type `mysql` these client tools automatically installed for you.) You can take a look at [mysql-client-build](https://github.com/ddev/mysql-client-build/) and contribute to it.
+- For those who end up with trouble inside the `ddev-webserver` even after all this, there is a hidden version of the pre-change `mysql` and `mysqldump` commands in `/usr/local/mariadb-old/bin`, so users of tools that use `mysql` and `mysqldump` directly could use `PATH=/usr/local/mariadb-old/bin:$PATH some-tool some-command` for example, and if the tool uses `mysqldump` it will use the old one. _We don't know of any instances where you will need to do this in v1.23.2, we just bundled these in case people still needed a workaround._
+- Some of our automated tests broke because they used the default `mariadb:10.11` locally, but they pushed to a database server running MySQL 5.7. `TestPushLagoon` and `TestPushAcquia` had to be adjusted this way.
 
 ## Links
 
-* DDEV issue [ddev import-db fails with "Error: Unknown command '\-'" because of new directive in mariadb-dump output](https://github.com/ddev/ddev/issues/6249)
-* [MariaDB Dump File Compatibility Change](https://mariadb.org/mariadb-dump-file-compatibility-change/)
-* MariaDB Issue [MariaDB 10.6.18 seems to generate invalid SQL dumps](https://jira.mariadb.org/browse/MDEV-34183)
-* [DDEV's MySQL Client Builder](https://github.com/ddev/mysql-client-build/)
-* [MySQL Client build tool](https://github.com/ddev/mysql-client-build/)
+- DDEV issue [ddev import-db fails with "Error: Unknown command '\-'" because of new directive in mariadb-dump output](https://github.com/ddev/ddev/issues/6249)
+- [MariaDB Dump File Compatibility Change](https://mariadb.org/mariadb-dump-file-compatibility-change/)
+- MariaDB Issue [MariaDB 10.6.18 seems to generate invalid SQL dumps](https://jira.mariadb.org/browse/MDEV-34183)
+- [DDEV's MySQL Client Builder](https://github.com/ddev/mysql-client-build/)
+- [MySQL Client build tool](https://github.com/ddev/mysql-client-build/)
 
 ## Don't forget to help us maintain all this!
 
-Do you wonder how much effort it took to mitigate all this, or wonder how you could have handled it for your projects on your own? 
+Do you wonder how much effort it took to mitigate all this, or wonder how you could have handled it for your projects on your own?
 
 It took a lot. Thanks to all of you who participated in the various issues and reviewed the PRs.
 

@@ -25,11 +25,11 @@ Want to know more about how Docker works and what Docker images and containers a
 macOS Docker installation for each of these is [in the docs](https://ddev.readthedocs.io/en/stable/users/install/docker-installation/#macos); the Docker providers and their differences are shown here:
 
 | Provider                                                          | Advantages                                      | Disadvantages                                       | Open Source? | Free? |
-|-------------------------------------------------------------------|-------------------------------------------------|-----------------------------------------------------| --- | --- |
-| [OrbStack](https://orbstack.dev)                                  | Lightweight, great performance, well maintained |                                                     | No | No |
-| [Colima](https://github.com/abiosoft/colima)                      | Many, many permutations of configuration        | There have been a variety of problems with upgrades | Yes | Yes |
-| [Docker Desktop](https://www.docker.com/products/docker-desktop/) | Well-known                                      | Often buggy                                         | No | No |
-| [Rancher Desktop](https://rancherdesktop.io/)                     |                                                 | New to DDEV                 | Yes | Yes |
+| ----------------------------------------------------------------- | ----------------------------------------------- | --------------------------------------------------- | ------------ | ----- |
+| [OrbStack](https://orbstack.dev)                                  | Lightweight, great performance, well maintained |                                                     | No           | No    |
+| [Colima](https://github.com/abiosoft/colima)                      | Many, many permutations of configuration        | There have been a variety of problems with upgrades | Yes          | Yes   |
+| [Docker Desktop](https://www.docker.com/products/docker-desktop/) | Well-known                                      | Often buggy                                         | No           | No    |
+| [Rancher Desktop](https://rancherdesktop.io/)                     |                                                 | New to DDEV                                         | Yes          | Yes   |
 
 ## What is a Docker Provider?
 
@@ -47,13 +47,13 @@ DDEV’s Docker images and containers are the same on every operating system, ex
 
 ## What are the Docker Providers on other Operating Systems?
 
-| OS | Provider | Open Source? | Free? | Comments                                                                           |
-| --- | --- | --- | --- |------------------------------------------------------------------------------------|
-| Traditional Windows | Docker Desktop | no | no | Can be buggy, can be slow, but pretty usable with Mutagen                          |
-| Windows WSL2 | docker-ce | yes | yes | Standard Linux Docker, performant, free, open source, well-maintained              |
-| Windows WSL2 | Docker Desktop | no | no | Can be buggy                                                                       |
-| Linux | docker-ce | yes | yes | Standard open-source Docker, well-maintained                                       |
-| Linux | Docker Desktop for Linux (DO NOT USE) | no | no | Non-functional for containers like DDEV that don’t use root user, poor performance |
+| OS                  | Provider                              | Open Source? | Free? | Comments                                                                           |
+| ------------------- | ------------------------------------- | ------------ | ----- | ---------------------------------------------------------------------------------- |
+| Traditional Windows | Docker Desktop                        | no           | no    | Can be buggy, can be slow, but pretty usable with Mutagen                          |
+| Windows WSL2        | docker-ce                             | yes          | yes   | Standard Linux Docker, performant, free, open source, well-maintained              |
+| Windows WSL2        | Docker Desktop                        | no           | no    | Can be buggy                                                                       |
+| Linux               | docker-ce                             | yes          | yes   | Standard open-source Docker, well-maintained                                       |
+| Linux               | Docker Desktop for Linux (DO NOT USE) | no           | no    | Non-functional for containers like DDEV that don’t use root user, poor performance |
 
 ## What are DDEV Users Choosing Right Now?
 
@@ -81,8 +81,8 @@ If you've tried out a new Docker provider and have decided to switch, use [this 
 
 The bottom line is:
 
-* On the old Docker Provider, `ddev snapshot --all` will create database snapshots of all your registered projects (the ones that show up in `ddev list`).
-* Then stop the old Docker Provider and start the new one.
-* `ddev snapshot restore --latest` in each of your projects will restore the database snapshots.
+- On the old Docker Provider, `ddev snapshot --all` will create database snapshots of all your registered projects (the ones that show up in `ddev list`).
+- Then stop the old Docker Provider and start the new one.
+- `ddev snapshot restore --latest` in each of your projects will restore the database snapshots.
 
 Note that OrbStack has built-in migration from Docker Desktop; it prompts you at install time. I haven't tried that out.

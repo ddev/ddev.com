@@ -12,7 +12,6 @@ categories:
   - Guides
 ---
 
-
 Here's our October 23, 2024 [Contributor Training](/blog/category/training) on using `ddev debug test` to help other users:
 
 <div class="video-container">
@@ -21,7 +20,7 @@ Here's our October 23, 2024 [Contributor Training](/blog/category/training) on u
 
 ## What is Tmate?
 
-[mxschmitt/action-tmate](https://github.com/mxschmitt/action-tmate) provides a way to ssh into actual running GitHub Actions VMs to debug your tests. 
+[mxschmitt/action-tmate](https://github.com/mxschmitt/action-tmate) provides a way to ssh into actual running GitHub Actions VMs to debug your tests.
 
 ## Why do we need Tmate?
 
@@ -30,7 +29,7 @@ Often it's hard to understand what has happened with an test because all we see 
 ## Alternatives to Tmate
 
 1. We normally will try to understand a test failure by running it locally.
-2. Running in a similar Linux/AMD64 system like Gitpod is a pretty easy option. 
+2. Running in a similar Linux/AMD64 system like Gitpod is a pretty easy option.
 3. [nektos/act](https://github.com/nektos/act) is another recommended competitor to Tmate. It uses Docker and a Docker image to run an action on your local machine. I haven't had luck with it when I've tried it. See Stas's experience with `act` [below](#how-to-useact).
 
 ## Security Concerns
@@ -55,7 +54,7 @@ In the [detached example](https://github.com/rfay/tmate-demos/blob/main/.github/
 
 ### Failure Example
 
-Often we have a complex step and want to be able to debug it if it fails. For this we can used `if: ${{ failure() }}`, as shown in the [failure example](https://github.com/rfay/tmate-demos/blob/main/.github/workflows/on_fail.yaml). Tmate kicks in automatically if the step *before* it fails. It would be nicer if it kicked in on any failure, but it just kicks in when the step before fails.
+Often we have a complex step and want to be able to debug it if it fails. For this we can used `if: ${{ failure() }}`, as shown in the [failure example](https://github.com/rfay/tmate-demos/blob/main/.github/workflows/on_fail.yaml). Tmate kicks in automatically if the step _before_ it fails. It would be nicer if it kicked in on any failure, but it just kicks in when the step before fails.
 
 ### Workflow Dispatch Example
 
@@ -105,7 +104,7 @@ jobs:
             const { data } = await github.rest.search.repos({q: 'user:stasadev'})
             console.log(data)
             const fs = require('fs');
-            fs.writeFileSync('data.json', JSON.stringify(data, null, 2)); 
+            fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
       - name: Add JSON files to the site
         run: |
           cat data.json | sudo tee ./_site/data.json
@@ -125,37 +124,37 @@ jobs:
 
 1. Simplify the workflow file `.github/workflows/jekyll-gh-pages.yml` by removing unrelated code to focus on testing the API call:
 
-    ```yaml
-    jobs:
-      build:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Get my GitHub repositories
-            uses: actions/github-script@v7
-            with:
-              github-token: ${{ secrets.GITHUB_TOKEN }}
-              script: |
-                const { data } = await github.rest.search.repos({q: 'user:stasadev'})
-                console.log(data)
-                const fs = require('fs');
-                fs.writeFileSync('data.json', JSON.stringify(data, null, 2)); 
-    ```
+   ```yaml
+   jobs:
+     build:
+       runs-on: ubuntu-latest
+       steps:
+         - name: Get my GitHub repositories
+           uses: actions/github-script@v7
+           with:
+             github-token: ${{ secrets.GITHUB_TOKEN }}
+             script: |
+               const { data } = await github.rest.search.repos({q: 'user:stasadev'})
+               console.log(data)
+               const fs = require('fs');
+               fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
+   ```
 
-    This workflow retrieves repositories for a specified user, writes them to `data.json`, and outputs the result with `console.log()`.
+   This workflow retrieves repositories for a specified user, writes them to `data.json`, and outputs the result with `console.log()`.
 
 2. Run the workflow locally with `act` in your project's root directory:
 
-    ```bash
-    act -P ubuntu-latest=catthehacker/ubuntu:act-latest \
-        --bind \
-        --job build \
-        -s GITHUB_TOKEN=my_token
-    ```
+   ```bash
+   act -P ubuntu-latest=catthehacker/ubuntu:act-latest \
+       --bind \
+       --job build \
+       -s GITHUB_TOKEN=my_token
+   ```
 
-    * `-P ubuntu-latest=catthehacker/ubuntu:act-latest`: Specifies the Docker image to use for the `ubuntu-latest` environment. If not specified, `act` uses the default image from its `.actrc` file (see [GitHub issue](https://github.com/nektos/act/issues/2219) for more details).
-    * `--bind`: Mounts the current working directory into the container, allowing files generated in the container (like `data.json`) to be accessible in the host file system.
-    * `--job build`: Tells `act` to run only the `build` job from the workflow.
-    * `-s GITHUB_TOKEN=my_token`: Sets a secret (`GITHUB_TOKEN`) for the workflow, where `my_token` should be replaced with a valid GitHub token for authentication.
+   - `-P ubuntu-latest=catthehacker/ubuntu:act-latest`: Specifies the Docker image to use for the `ubuntu-latest` environment. If not specified, `act` uses the default image from its `.actrc` file (see [GitHub issue](https://github.com/nektos/act/issues/2219) for more details).
+   - `--bind`: Mounts the current working directory into the container, allowing files generated in the container (like `data.json`) to be accessible in the host file system.
+   - `--job build`: Tells `act` to run only the `build` job from the workflow.
+   - `-s GITHUB_TOKEN=my_token`: Sets a secret (`GITHUB_TOKEN`) for the workflow, where `my_token` should be replaced with a valid GitHub token for authentication.
 
 The primary advantage of using `act` in this context is the ability to efficiently debug API calls locally in just a few seconds, without the need to commit changes, push them to GitHub, and wait for the workflow to complete, which typically takes several minutes.
 

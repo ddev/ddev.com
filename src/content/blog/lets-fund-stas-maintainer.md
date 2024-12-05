@@ -11,18 +11,18 @@ categories:
   - Announcements
 ---
 
-We all want DDEV to be fully maintained at the level you depend on. Now is the time to fully fund maintainer Stas Zhuk so that he does not have to take on other client work. 
+We all want DDEV to be fully maintained at the level you depend on. Now is the time to fully fund maintainer Stas Zhuk so that he does not have to take on other client work.
 
 **DDEV's Funding**: DDEV is funded in a variety of ways. [Platform.sh covers Randy's salary](platform-sh-becomes-a-lead-sponsor-of-ddev.md), thanks! Individuals and organization sponsors fund DDEV via [GitHub Sponsors](https://github.com/sponsors/ddev) and invoiced support commitments. As the pace of required maintenance and features has increased, we've explained how we intend to grow our maintainership for the long-term in a [couple](recruiting-maintainers.md) of [blog posts](expanding-ddev-maintainer-team.md). (DDEV's "fiscal entity" for funding is the US 501(c)(3) [DDEV Foundation](/foundation)).
 
 **Stas' Role as DDEV Maintainer**: In October, 2023, we [introduced Stas to the community](introducing-maintainer-stas.md) as our second maintainer. Since then, he has done amazing things, working as a part-time paid maintainer. He knows how all the testing and the various infrastructures work, has mastered the Golang and Docker codebase, and has contributed hundreds of bugfixes, features, and documentation improvements. As of today, he has contributed [211 commits](https://github.com/ddev/ddev/graphs/contributors) to the master branch of the `ddev/ddev` project alone, second only through the whole history of DDEV to yours truly. Take a look at his [600+](https://github.com/stasadev?tab=overview&from=2024-07-01&to=2024-07-31&org=ddev) contributions to the DDEV org **just in 2024 alone**. He maintains add-ons, supports new contributors, answers questions in Discord, Slack, Stack Overflow, and the GitHub issue queue.
 
-**Why is DDEV Maintenance Important?** You and DDEV are engulfed in a maelstrom of change. Upstream technologies change on you weekly. Things break from all directions. If DDEV weren't cared for daily, it would fail to serve you within a pretty short time. 
+**Why is DDEV Maintenance Important?** You and DDEV are engulfed in a maelstrom of change. Upstream technologies change on you weekly. Things break from all directions. If DDEV weren't cared for daily, it would fail to serve you within a pretty short time.
 
-* PHP 8.4 support was added today to DDEV HEAD (along with versions 5.6-8.3!). 
-* Drupal 11 is coming out this week. DDEV has already had support for some time. 
-* PostgreSQL 16 and MariaDB 11.4 already have support, and MySQL 8.4 will shortly when some upstream support becomes available. 
-* Recently [MariaDB changed their `mysqldump` output file format](mariadb-dump-breaking-change.md), causing a few of you to pull your hair out, until DDEV incorporated informal and then fully-integrated workarounds, so there are some of you that don't even know this happened.
+- PHP 8.4 support was added today to DDEV HEAD (along with versions 5.6-8.3!).
+- Drupal 11 is coming out this week. DDEV has already had support for some time.
+- PostgreSQL 16 and MariaDB 11.4 already have support, and MySQL 8.4 will shortly when some upstream support becomes available.
+- Recently [MariaDB changed their `mysqldump` output file format](mariadb-dump-breaking-change.md), causing a few of you to pull your hair out, until DDEV incorporated informal and then fully-integrated workarounds, so there are some of you that don't even know this happened.
 
 I'm just naming a tiny few of the things DDEV has had to react to in the last few months.
 

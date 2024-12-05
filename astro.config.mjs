@@ -3,7 +3,7 @@ import { plainTextPlugin } from "@barnabask/astro-minisearch"
 import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs"
 import prefetch from "@astrojs/prefetch"
 import react from "@astrojs/react"
-import rehypeAstroRelativeMarkdownLinks from "astro-rehype-relative-markdown-links";
+import rehypeAstroRelativeMarkdownLinks from "astro-rehype-relative-markdown-links"
 import robotsTxt from "astro-robots-txt"
 import searchIndex from "./src/lib/search-index.js"
 import sitemap from "@astrojs/sitemap"
@@ -16,7 +16,8 @@ export default defineConfig({
   vite: {
     server: {
       host: true, // leave this unchanged for DDEV!
-  }},
+    },
+  },
   integrations: [
     tailwind(),
     react(),

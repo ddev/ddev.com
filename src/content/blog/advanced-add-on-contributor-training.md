@@ -15,8 +15,6 @@ categories:
   - Guides
 ---
 
-
-
 Here's our July 10, 2024 [Contributor Training](/blog/category/training) on Advanced DDEV Add-On Techniques:
 
 <div class="video-container">
@@ -24,7 +22,6 @@ Here's our July 10, 2024 [Contributor Training](/blog/category/training) on Adva
 </div>
 
 The basics of creating a DDEV Add-on are super easy, you can click a button on the Add-on template and you're off and running. There are more details in the [Add-on Template](https://github.com/ddev/ddev-addon-template), in the [DDEV docs](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/#creating-an-additional-service-for-ddev-get), and in the [original add-on training](https://www.youtube.com/watch?v=TmXqQe48iqE).
-
 
 ## Adding project (or global) custom commands
 
@@ -84,8 +81,8 @@ One of the most common add-on uses is to create a new service, like `mongo` or `
 
 Examples:
 
-* [ddev-solr](https://github.com/ddev/ddev-solr/blob/main/docker-compose.solr.yaml)
-* [ddev-memcached](https://github.com/ddev/ddev-memcached/blob/main/docker-compose.memcached.yaml)
+- [ddev-solr](https://github.com/ddev/ddev-solr/blob/main/docker-compose.solr.yaml)
+- [ddev-memcached](https://github.com/ddev/ddev-memcached/blob/main/docker-compose.memcached.yaml)
 
 See the [general docs on extra services](https://ddev.readthedocs.io/en/stable/users/extend/custom-compose-files/#third-party-services-may-need-to-trust-ddev-webserver).
 
@@ -119,25 +116,25 @@ Some add-ons may require a specific version of DDEV.
 
 1. Add a `ddev_version_constraint` to the `install.yaml`. This [version constraint](https://github.com/Masterminds/semver#checking-version-constraints) will be validated against the running DDEV executable and prevent add-on from being installed if it doesn't validate. Available with DDEV v1.23.4+, and works only for DDEV v1.23.4+ binaries:
 
-  ```yaml
-  ddev_version_constraint: '>= v1.23.4'
-  ```
+```yaml
+ddev_version_constraint: ">= v1.23.4"
+```
 
 2. Check for the existence of a DDEV "capability" using `ddev debug capabilities`. For example:
 
-  ```yaml
-  pre_install_actions:
-    # Make sure we have a ddev version that can support what we do here
-    - |
-      #ddev-description:Checking DDEV version
-      (ddev debug capabilities | grep multiple-upload-dirs >/dev/null) || (echo "Please upgrade DDEV to v1.22+ for appropriate capabilities" && false)
-  ```
+```yaml
+pre_install_actions:
+  # Make sure we have a ddev version that can support what we do here
+  - |
+    #ddev-description:Checking DDEV version
+    (ddev debug capabilities | grep multiple-upload-dirs >/dev/null) || (echo "Please upgrade DDEV to v1.22+ for appropriate capabilities" && false)
+```
 
 3. Add a `ddev_version_constraint` to a `config.<add-on-name>.yaml`. This will only fail at `ddev start` time, so is less pleasant. But a `config.<add-on-name>.yaml` might have:
 
-  ```yaml
-  ddev_version_constraint: ">=v1.23.0"
-  ```
+```yaml
+ddev_version_constraint: ">=v1.23.0"
+```
 
 ## Reading and using YAML files, including config.yaml (yaml_read_files)
 
@@ -153,6 +150,7 @@ yaml_read_files:
 ```
 
 The `platformapp` variable is then used like this in the `install.yaml`:
+
 ```yaml
 pre_install_actions:
   - |

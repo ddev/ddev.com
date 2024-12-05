@@ -27,35 +27,41 @@ const buildResponse = () => {
   let currentY = 30
 
   // First process lead sponsors
-  const leadSponsors = featuredSponsors.filter(sponsor => sponsor.isLeading === true)
-  const regularSponsors = featuredSponsors.filter(sponsor => sponsor.isLeading !== true)
+  const leadSponsors = featuredSponsors.filter(
+    (sponsor) => sponsor.isLeading === true
+  )
+  const regularSponsors = featuredSponsors.filter(
+    (sponsor) => sponsor.isLeading !== true
+  )
 
   console.log("Processing lead sponsors")
 
   // Handle lead sponsors (centered, own row)
   if (leadSponsors.length > 0) {
     // Get dimensions for lead sponsors
-    const leadSponsorInfo = leadSponsors.map(sponsor => {
-      // Ensure we have a valid logo path
-      const logoPath = sponsor.logo ? `./public${sponsor.logo}` : null
-      if (!logoPath) {
-        console.error(`Missing logo path for sponsor: ${sponsor.name}`)
-        return null
-      }
+    const leadSponsorInfo = leadSponsors
+      .map((sponsor) => {
+        // Ensure we have a valid logo path
+        const logoPath = sponsor.logo ? `./public${sponsor.logo}` : null
+        if (!logoPath) {
+          console.error(`Missing logo path for sponsor: ${sponsor.name}`)
+          return null
+        }
 
-      try {
-        const dimensions = sizeOf(logoPath)
-        const [width, height] = getScaledImageDimensions(
+        try {
+          const dimensions = sizeOf(logoPath)
+          const [width, height] = getScaledImageDimensions(
             dimensions.width,
             dimensions.height,
             true
-        )
-        return { sponsor, width, height, logoPath }
-      } catch (error) {
-        console.error(`Error processing logo for ${sponsor.name}:`, error)
-        return null
-      }
-    }).filter(Boolean) // Remove any null entries
+          )
+          return { sponsor, width, height, logoPath }
+        } catch (error) {
+          console.error(`Error processing logo for ${sponsor.name}:`, error)
+          return null
+        }
+      })
+      .filter(Boolean) // Remove any null entries
 
     // Calculate total width including padding between lead sponsors
     const totalLeadWidth = leadSponsorInfo.reduce((sum, info, index) => {
@@ -75,7 +81,7 @@ const buildResponse = () => {
         height,
         width,
         url: sponsor.url,
-        isLead: true
+        isLead: true,
       })
 
       startX += width + xPadding
@@ -97,9 +103,9 @@ const buildResponse = () => {
     try {
       const dimensions = sizeOf(logoPath)
       let [width, height] = getScaledImageDimensions(
-          dimensions.width,
-          dimensions.height,
-          false
+        dimensions.width,
+        dimensions.height,
+        false
       )
 
       // Start new row if needed
@@ -116,7 +122,7 @@ const buildResponse = () => {
         height,
         width,
         url: sponsor.url,
-        isLead: false
+        isLead: false,
       })
 
       currentX += width + xPadding
@@ -158,11 +164,16 @@ const buildResponse = () => {
 }
 
 function imgToBase64(filePath) {
-  let extname = path.extname(filePath).slice(1) || 'png'
-  if (extname === 'svg') {
+  let extname = path.extname(filePath).slice(1) || "png"
+  if (extname === "svg") {
     extname = "svg+xml"
   }
-  return 'data:image/' + extname + ';base64,' + fs.readFileSync(filePath).toString('base64')
+  return (
+    "data:image/" +
+    extname +
+    ";base64," +
+    fs.readFileSync(filePath).toString("base64")
+  )
 }
 
 const getScaledImageDimensions = (width, height, isLeadSponsor = false) => {

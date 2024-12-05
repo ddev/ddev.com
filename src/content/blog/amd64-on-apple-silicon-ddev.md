@@ -5,23 +5,23 @@ modifiedDate: 2024-09-17
 summary: You might be able to run a DDEV project requiring Intel AMD64 on your Apple Silicon Mac
 author: Randy Fay
 featureImage:
-    src: /img/blog/2023/08/intel-on-apple.png
-    alt: Intel and Apple on Apple Silicon
+  src: /img/blog/2023/08/intel-on-apple.png
+  alt: Intel and Apple on Apple Silicon
 categories:
   - Guides
 ---
 
 From time to time, Apple Silicon DDEV users encounter an image or a Node.js package that is not available for the Mac's native architecture (variously called ARM64 or `aarch64`). These result in errors like: "Could not open '/lib64/ld-linux-x86-64.so.2': No such file or directory" or "the chromium binary is not available for ARM64".
 
-Emulation of Docker images has been pretty scary and unreliable since the Apple Silicon macs came out, but there is some hope. 
+Emulation of Docker images has been pretty scary and unreliable since the Apple Silicon macs came out, but there is some hope.
 
-To be clear: If you do not absolutely have to have a project that can run AMD64 Docker images or applications, don't do any of this. I always recommend running native ARM64 Docker images and applications on Apple Silicon Macs. Your life will be bettter. 
+To be clear: If you do not absolutely have to have a project that can run AMD64 Docker images or applications, don't do any of this. I always recommend running native ARM64 Docker images and applications on Apple Silicon Macs. Your life will be bettter.
 
 But if you have to run something like the `puppeteer` or `node-sass` Node.js packages, which are only available for AMD64, you might be able to do it. I'm going to show three ways that might work for you. You may have to try all of them, and I'll be really interested in your results.
 
 ## Prerequisite: Enable Rosetta
 
-To use these techniques, you *must* enable Apple's virtualization layer, Rosetta. Their [tech article](https://support.apple.com/en-us/102527) explains how. It's easy.
+To use these techniques, you _must_ enable Apple's virtualization layer, Rosetta. Their [tech article](https://support.apple.com/en-us/102527) explains how. It's easy.
 
 ## 1. Use [OrbStack](https://orbstack.dev) with the `DOCKER_DEFAULT_PLATFORM=linux/amd64`
 
@@ -40,7 +40,7 @@ This was the easiest to use and most performant of the options.
 
 ## 2. Use [Docker Desktop for Mac](https://www.docker.com/products/docker-desktop/) with the `DOCKER_DEFAULT_PLATFORM=linux/amd64`
 
-This is about the same, but you have to toggle some non-default settings. 
+This is about the same, but you have to toggle some non-default settings.
 
 You **must** enable "Use Rosetta for `x86_64/amd64` emulation on Apple Silicon" in the "General" section of Docker Desktop's settings. This is well down the list of checkboxes, you have to scroll to get down there.
 
@@ -70,6 +70,6 @@ You can actually have all these running at the same time, although it doesn't ma
 
 They won't be happy sharing ports though, so you'll want to change `router_http_port`, `router_https_port`, `mailpit_http_port`, and `mailpit_https_port` between the various providers (and between ARM64 and AMD64 instances).
 
-## Keep in touch! 
+## Keep in touch!
 
 I'd love to hear your experience. Join us in [Discord](https://discord.gg/5wjP76mBJD) or [open an issue](https://github.com/ddev/ddev/issues) or send [an email](mailto:support%40ddev.com) if you have success (or failure 😀).

@@ -32,26 +32,27 @@ Watch the video below and read the detailed instructions to configure your own p
 1. From the root of an existing project configured with DDEV: Add the zsh package to the web server container by adding `webimage_extra_packages: ["zsh"]` to the `.ddev/config.yaml` file (or run `ddev config --webimage-extra-packages=zsh`, which does the exact same thing). If you only want zsh in the web container, you can `ddev restart` and you’re done!
 2. To add a `ddev zsh` custom command to your project, place a file named “zsh” in `.ddev/commands/web/zsh` with the following contents and make it executable with `chmod +x zsh`:
 
-    ```
-    #!/bin/bash
+   ```
+   #!/bin/bash
 
-    ## Description: ssh into web container using zsh
-    ## Usage: zsh [flags] [args]
-    ## Example: "ddev zsh"
+   ## Description: ssh into web container using zsh
+   ## Usage: zsh [flags] [args]
+   ## Example: "ddev zsh"
 
-    zsh $@
-    ```
+   zsh $@
+   ```
 
-    Now you can run `ddev zsh` and be in your familiar zsh environment (if you did the `ddev restart` after adding the package in step 1.
+   Now you can run `ddev zsh` and be in your familiar zsh environment (if you did the `ddev restart` after adding the package in step 1.
+
 3. If zsh is all you want, copy your favorite `.zshrc` into `.ddev/homeadditions` for your project and zsh will be set up with your `.zshrc` every time you start the project. You’re done now.
 4. Now to add all the goodies that make [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) work:
-    1. If you already have a `~/.oh-my-zsh` and `~/.zshrc`, you can probably copy those into `.ddev/homeadditions` and they will be added when you run `ddev start`.
-    2. Otherwise, create the `.oh-my-zsh` like this:
-    3. `cd .ddev/homeadditions`
-    4. `curl -Lo install.sh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh`
-    5. `ZSH=./.oh-my-zsh sh ./install.sh --unattended`
-    6. `cp ~/.zshrc .` (This copies the `.zshrc` that `install.sh` will have mistakenly put in your home directory.
-    7. Change the line near the top of the `.ddev/homeadditions/.zshrc` to `export ZSH=~/.oh-my-zsh` instead of what the oh-my-zsh installer generated.
+   1. If you already have a `~/.oh-my-zsh` and `~/.zshrc`, you can probably copy those into `.ddev/homeadditions` and they will be added when you run `ddev start`.
+   2. Otherwise, create the `.oh-my-zsh` like this:
+   3. `cd .ddev/homeadditions`
+   4. `curl -Lo install.sh https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh`
+   5. `ZSH=./.oh-my-zsh sh ./install.sh --unattended`
+   6. `cp ~/.zshrc .` (This copies the `.zshrc` that `install.sh` will have mistakenly put in your home directory.
+   7. Change the line near the top of the `.ddev/homeadditions/.zshrc` to `export ZSH=~/.oh-my-zsh` instead of what the oh-my-zsh installer generated.
 5. Now you can run `ddev start` and `ddev zsh` will have all the Oh My Zsh goodies.
 
 **To review,** we used three advanced features of ddev:
