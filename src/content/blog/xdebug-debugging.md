@@ -7,7 +7,7 @@ author: Randy Fay
 featureImage:
   src: /img/blog/2024/05/xdebug_logo.png
   alt: Xdebug logo
-  credit: 'Xdebug logo from https://en.m.wikipedia.org/wiki/File:Xdebug_Logo.svg'
+  credit: "Xdebug logo from https://en.m.wikipedia.org/wiki/File:Xdebug_Logo.svg"
 categories:
   - Training
   - Videos
@@ -22,7 +22,7 @@ Here's a recording of our [Xdebug contributor Training](https://www.meetup.com/d
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4MrwXTaHfnc?si=nwocfW8FjXitbtSa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
-First of all, congratulations for making step-debugging a priority. It's my opinion that step-debugging is one of the very first things to learn in any language or environment that we undertake. 
+First of all, congratulations for making step-debugging a priority. It's my opinion that step-debugging is one of the very first things to learn in any language or environment that we undertake.
 
 Second, please [contribute to the Xdebug project](https://xdebug.org/support). Derick Rethans created this incredible resource and has been maintaining it for 22 years and counting. Making open-source projects sustainable is an obligation for all of us!
 
@@ -32,9 +32,9 @@ DDEV's Xdebug [documentation](https://ddev.readthedocs.io/en/stable/users/debugg
 
 The [simplest DDEV Xdebug usage](https://ddev.readthedocs.io/en/stable/users/debugging-profiling/step-debugging/) is just:
 
-* `ddev xdebug on`
-* Make your IDE listen for Xdebug
-* Visit a page in your web browser
+- `ddev xdebug on`
+- Make your IDE listen for Xdebug
+- Visit a page in your web browser
 
 In general, that's all you have to know. The exact details for PhpStorm and Visual Studio Code are provided in the docs, but this will work with any IDE that can do PHP step debugging, including NetBeans or even Eclipse.
 
@@ -46,9 +46,10 @@ If you have `ddev xdebug on` and you execute PHP code, normally by visiting a UR
 
 ## Demonstrating Xdebug's behavior
 
-You can easily test this out using the handy network utility `nc` or `netcat`. 
+You can easily test this out using the handy network utility `nc` or `netcat`.
 
-On your host workstation (the same place your IDE is running) you can 
+On your host workstation (the same place your IDE is running) you can
+
 ```
 nc -l 0.0.0.0 9003
 ```
@@ -72,7 +73,7 @@ There is an extensive set of [troubleshooting instructions](https://ddev.readthe
 2. You do not have your IDE set up to map your code to the code in the container successfully. Your `index.php` path on the workstation host should map to the path inside the container (often something like `/var/www/html/web/index.php`)
 3. You forgot to `ddev xdebug enable` or forgot to have your IDE listen for Xdebug.
 
-You may have problems beyond those in some environments, and they are often firewall-related. They can be sorted out by temporarily disabling your firewall and testing simple connectivity from the DDEV web container to the IDE. For example, make your IDE listen, then `ddev ssh` and `telnet host.docker.internal 9003`. If you get a connection there, and then *do not* get a connection when you tell your IDE to stop listening, you likely have all the networking problems sorted out.
+You may have problems beyond those in some environments, and they are often firewall-related. They can be sorted out by temporarily disabling your firewall and testing simple connectivity from the DDEV web container to the IDE. For example, make your IDE listen, then `ddev ssh` and `telnet host.docker.internal 9003`. If you get a connection there, and then _do not_ get a connection when you tell your IDE to stop listening, you likely have all the networking problems sorted out.
 
 ### WSL2 Complexities and Troubleshooting
 

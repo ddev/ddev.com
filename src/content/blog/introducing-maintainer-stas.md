@@ -44,10 +44,10 @@ Two of my favorite methods of learning are books and video courses. I usually pr
 
 The level of customization in DDEV is incredible and I like that some things can be done in more than one way. DDEV has so many built-in integrations for everyday use:
 
-* mkcert - HTTPS support is a must-have, and DDEV automatically takes care of any TLD I want to use locally.
-* Xdebug - no difficulties with the configuration, everything works as it should.
-* Mailpit (formerly MailHog) - no need for a separate container to test emails locally.
-* Add-ons - you can integrate any service into a project and share it publicly.
-* Custom Dockerfiles - you can add/change/remove literally anything in the container for your needs.
+- mkcert - HTTPS support is a must-have, and DDEV automatically takes care of any TLD I want to use locally.
+- Xdebug - no difficulties with the configuration, everything works as it should.
+- Mailpit (formerly MailHog) - no need for a separate container to test emails locally.
+- Add-ons - you can integrate any service into a project and share it publicly.
+- Custom Dockerfiles - you can add/change/remove literally anything in the container for your needs.
 
 I still have a lot to learn about DDEV and I'm excited to start this journey. I aim to bring fresh perspectives and innovation through my role as DDEV maintainer.

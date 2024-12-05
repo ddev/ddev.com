@@ -10,6 +10,7 @@ featureImage:
 categories:
   - Guides
 ---
+
 In the company where I currently work we develop plugins for several "shop" systems, including WooCommerce, Magento, Shopware, Prestashop, and other lesser-known systems.
 When I joined, the plugins team was maintaining a huge codebase of custom Docker images. After a few days using them, and after a few years using DDEV, I noticed quite a few
 problems with their approach:
@@ -29,7 +30,7 @@ was the official tool to use in any new project.
 
 This time I had more trouble. I was new to the job and did not have an established reputation, so all I had was my enthusiasm about DDEV and the conviction that it was a better solution.
 
-I prepared a demo of how DDEV works using one of our shop systems, showed the capabilities that DDEV offered. The reaction that I got from the developer team was not what I had hopeed Yes, "it seems to work fine, but we already have something that _works_ _fine_". 
+I prepared a demo of how DDEV works using one of our shop systems, showed the capabilities that DDEV offered. The reaction that I got from the developer team was not what I had hopeed Yes, "it seems to work fine, but we already have something that _works_ _fine_".
 
 I later realized that this was a common human behavior: aversion to change or resistance to trying something new. After all, they were accustomed to working with those custom Docker images.
 

@@ -25,7 +25,7 @@ But first, what do maintainers do? Why are they so busy? Why is it important to 
 
 **Quality means careful review and incubation**: You love the quality and reliability of DDEV, but that comes from maintainers and contributors carefully watching what goes in, coaching contributors, and making sure that what goes in only makes the project better. With few exceptions, every PR is carefully tested manually and is covered by automated tests as well.
 
-**Test infrastructure has to be maintained**: You know from your own work that test infrastructure and the tests themselves require extensive maintenance. DDEV runs tests on all supported operating systems and architectures and Docker providers. That’s a *lot* of tests, meaning hours of tests for every push, and of course there are flaky tests to improve and Windows machines to reboot when they fail.
+**Test infrastructure has to be maintained**: You know from your own work that test infrastructure and the tests themselves require extensive maintenance. DDEV runs tests on all supported operating systems and architectures and Docker providers. That’s a _lot_ of tests, meaning hours of tests for every push, and of course there are flaky tests to improve and Windows machines to reboot when they fail.
 
 **Onboarding and Support**: This is a wide-open Free and Open Source project. We want every contributor to have a great experience, and we want everybody to be free to contribute. But this means mentoring, and [contributor training](contributor-training.md). And support. Support all the time. It’s amazing how many people do not need support, but there is lots to be done every day in the [issue queue](https://github.com/ddev/ddev/issues), [Discord](https://discord.gg/5wjP76mBJD), Slack, and [Stack Overflow](https://stackoverflow.com/tags/ddev). It’s mostly maintainers that do this support, but it’s a great community and everybody is encouraged to help.
 
@@ -35,7 +35,7 @@ But first, what do maintainers do? Why are they so busy? Why is it important to 
 
 **More Maintainers Means Better Support and Resilience**: Better support, faster responses, ability to add features. These are all things you want and we want.
 
-**Randy is not forever**: Although I love DDEV and its community we are all finite, so the time will come that I either temporarily or permanently can’t carry on. That means we need a strong maintainer presence besides me.  (In fact in the short term I plan to be bike touring in Patagonia in December 2023 and January 2024 with limited access to the internet.)
+**Randy is not forever**: Although I love DDEV and its community we are all finite, so the time will come that I either temporarily or permanently can’t carry on. That means we need a strong maintainer presence besides me. (In fact in the short term I plan to be bike touring in Patagonia in December 2023 and January 2024 with limited access to the internet.)
 
 **The community and its needs are growing**: More CMSs have adopted DDEV as their go-to local development environment (Silverstripe this year, Craft CMS last year, etc.). That means we have new and different users with new and different needs. What fun! So great! But this will eventually strain our current abilities to support.
 

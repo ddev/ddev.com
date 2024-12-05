@@ -22,19 +22,19 @@ The same DDEV config can be used locally (shared across the team) and within the
 GitLab CI can use Docker in Docker (DinD). With DinD, Docker can run inside
 the GitLab Runner using the Docker executor. With this setup, you can use DDEV in your GitLab CI setup.
 
-**([ddev/ddev-gitlab-ci](https://github.com/ddev/ddev-gitlab-ci))** provides the needed Docker image and instructions; 
+**([ddev/ddev-gitlab-ci](https://github.com/ddev/ddev-gitlab-ci))** provides the needed Docker image and instructions;
 Some additional configuration may be required required.
 
 Depending on your setup it requires different steps.
 
-* **gitlab.com** works with no additional configuration.
-* **Self-hosted GitLab** requires additional configuration for the Runner (`/etc/gitlab-runner/config.toml`).
+- **gitlab.com** works with no additional configuration.
+- **Self-hosted GitLab** requires additional configuration for the Runner (`/etc/gitlab-runner/config.toml`).
 
 On [ddev/ddev-gitlab-ci](https://github.com/ddev/ddev-gitlab-ci), you'll find tested configuration examples for
 
-* [gitlab.com](https://github.com/ddev/ddev-gitlab-ci/blob/main/docs/gitlab-com.md)
-* [Docker in Docker](https://github.com/ddev/ddev-gitlab-ci/blob/main/docs%2Fdocker.md)
-* [Docker in Podman](https://github.com/ddev/ddev-gitlab-ci/blob/main/docs/podman.md)
+- [gitlab.com](https://github.com/ddev/ddev-gitlab-ci/blob/main/docs/gitlab-com.md)
+- [Docker in Docker](https://github.com/ddev/ddev-gitlab-ci/blob/main/docs%2Fdocker.md)
+- [Docker in Podman](https://github.com/ddev/ddev-gitlab-ci/blob/main/docs/podman.md)
 
 Once the runner is configured correctly and you have extended the `.gitlab-ci.yml` with a dedicated
 DDEV job you are good to go.

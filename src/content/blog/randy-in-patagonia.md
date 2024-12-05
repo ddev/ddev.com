@@ -18,7 +18,7 @@ TL;DR: Watch Randy's slideshow about this trip:
 </div>
 
 Some of you know that my wife Nancy and I have done lots of pretty ambitious bike touring over the last 20 years or so. From 2006-2009, [we rode 14,000 miles
-](https://hobobiker.com)(22,000 km) through the Americas from near the Arctic Ocean in Canada to Puerto Montt in Patagonian Chile, South America.  
+](https://hobobiker.com)(22,000 km) through the Americas from near the Arctic Ocean in Canada to Puerto Montt in Patagonian Chile, South America.
 
 Well, we've wanted to go back to South America and complete a part of what's missing there, and this year we decided to do it. Tomorrow (December 2, 2023) we fly to Puerto Montt and will start our bike trip shortly.
 

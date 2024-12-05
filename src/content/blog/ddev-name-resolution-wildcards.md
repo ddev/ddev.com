@@ -21,7 +21,9 @@ This article attempts to unwind what DDEV does for you in name resolution, and w
 ## Name resolution for browsers and URLs
 
 <!-- textlint-disable -->
+
 The first thing to understand is the structure of a URL used by your browser. A URL like `https://www.google.com/search?q=nothing` is divided into three main parts, the protocol (usually `HTTPS`), the hostname (like `www.google.com`), and the URI, (like `/search?q=nothing`). Every URL that your browser can visit has at least the protocol and the hostname. Sometimes the protocol is hidden implying the default `HTTPS`. The URI may be the default "front page".
+
 <!-- textlint-enable -->
 
 When your browser gets a URL, the browser has to parse the URL, turn the hostname into an IP address so it can find it on the internet, and then do a proper HTTP request including the URI. The key take-away for us is that it has to look up that hostname.
@@ -44,7 +46,7 @@ Your domain `ddev.site` as well as every subdomain, like `you.ddev.site` and `so
 
 When no internet connection available, or the DNS name resolution is broken, as a fallback DDEV tries to add the hostname to your `hosts` file during startup (`ddev start`). This is `/etc/hosts` on a Linux or macOS based machine and `C:\Windows\system32\drivers\etc\hosts` on a Windows based one. This is one of the very few times that DDEV will ever try to change the configuration of your local workstation. In general, the philosophy is never to do that. DDEV knows how to edit the hosts file properly and does it when you give it permission with your `sudo` password.
 
-If you *lose* your internet connection after `ddev start`, then your browser is going to struggle because it doesn't have a way to resolve the hostname. This can happen when you are, for example, working on a project and get on a plane. `ddev restart` will force the update of the hosts file, `ddev hostname` can do that directly, or you can manually edit the hosts file.
+If you _lose_ your internet connection after `ddev start`, then your browser is going to struggle because it doesn't have a way to resolve the hostname. This can happen when you are, for example, working on a project and get on a plane. `ddev restart` will force the update of the hosts file, `ddev hostname` can do that directly, or you can manually edit the hosts file.
 
 ## Why does my project use `ddev.site` anyway?
 
@@ -52,16 +54,16 @@ You don't have to use `ddev.site` as your "top-level domain name" or `TLD`. You 
 
 ## What happens with wildcard hostnames?
 
-DDEV supports wildcards in `additional_hostnames` in your `.ddev/config.yaml`. For example, this works great when you have internet and DNS working, because DDEV's `.ddev.site` will return `127.0.0.1` for any domain name you give it, including `a.b.c.d.e.f.g.h.ddev.site`.  So if you use `additional_hostnames: *.anything` then `a.anything.ddev.site` will work fine, as will `a.b.anything.ddev.site`. 
+DDEV supports wildcards in `additional_hostnames` in your `.ddev/config.yaml`. For example, this works great when you have internet and DNS working, because DDEV's `.ddev.site` will return `127.0.0.1` for any domain name you give it, including `a.b.c.d.e.f.g.h.ddev.site`. So if you use `additional_hostnames: *.anything` then `a.anything.ddev.site` will work fine, as will `a.b.anything.ddev.site`.
 
 However, wildcards don't work in `/etc/hosts` so DDEV has no way to provide a resolvable set of hostnames when you don't have an internet connection with working DNS entry available. As a result, you'll need to use explicit hostnames in this situation. For example, use `additional_hostnames: [a.anything,a.b.anything]`
 
 ## Can I stop using the regular DNS setup with `ddev.site`?
 
 Of course. There are two easy ways:
+
 1. Turn off the use of DNS in your `.ddev/config.yaml` by adding `use_dns_when_possible: false`
 2. Use a different `project_tld`. If you are using for example `project_tld: example.site` then DDEV will try to use `<projectname>.example.site` for your projects. Since that is not resolvable, DDEV will resort to using hosts file manipulation.
-
 
 ## Can I use my own local-machine DNS?
 
@@ -69,7 +71,7 @@ Yes, you can set up a DNS provider on your own computer. [blocky](https://github
 
 ## Can I set up a domain name on my local network or company network?
 
-Yes, this is exactly the same. Normally you would have every DDEV-related domain name return `127.0.0.1` for the DNS name you're supporting. However, some people use this technique to [share DDEV sites inside a local network](https://ddev.readthedocs.io/en/stable/users/topics/sharing/#exposing-a-host-port-and-providing-a-direct-url). 
+Yes, this is exactly the same. Normally you would have every DDEV-related domain name return `127.0.0.1` for the DNS name you're supporting. However, some people use this technique to [share DDEV sites inside a local network](https://ddev.readthedocs.io/en/stable/users/topics/sharing/#exposing-a-host-port-and-providing-a-direct-url).
 
 ## Can I set up my own domain in DNS like `ddev.site`?
 
@@ -77,7 +79,7 @@ Yes, if you have the ability to configure an internet DNS zone, you can set it u
 
 ## What happens on WSL2 and why do I have to take action on the Windows side?
 
-On WSL2, when you don't have internet, or your DNS is broken, or you're using a hostname that can't be looked up in DNS, DDEV has to request the hosts file change from the Windows side of things, because your *browser* is almost always running on Windows, so editing the hosts file on the Windows side is what has to happen. The way DDEV currently does this is requests a **Windows** version of `ddev.exe` to escalate and edit the hosts file. That's why WSL2 installations also ask you to install Windows DDEV using `choco install -y ddev`.
+On WSL2, when you don't have internet, or your DNS is broken, or you're using a hostname that can't be looked up in DNS, DDEV has to request the hosts file change from the Windows side of things, because your _browser_ is almost always running on Windows, so editing the hosts file on the Windows side is what has to happen. The way DDEV currently does this is requests a **Windows** version of `ddev.exe` to escalate and edit the hosts file. That's why WSL2 installations also ask you to install Windows DDEV using `choco install -y ddev`.
 
 ## No matter what, DDEV always wants to edit my hosts file (No DNS Rebinding)
 
@@ -91,7 +93,7 @@ Try `ping -c 1 test.ddev.site`. If it doesn't ping `127.0.0.1`, it is broken. Pl
 
 ## What about using `additional_fqdns` in DDEV configuration?
 
-DDEV provides `additional_hostnames`, which works nicely most of the time, but there is also `additional_fqdns`. With a setting like `additional_fqdns: [one.two.example.com]` a DDEV project will respond to `https://one.two.example.com`, but DDEV will need to add `one.two.example.com` to the hosts file for it to work.  The [docs](https://ddev.readthedocs.io/en/stable/users/configuration/config/#additional_hostnames) explain how to use it and what the consequences are.
+DDEV provides `additional_hostnames`, which works nicely most of the time, but there is also `additional_fqdns`. With a setting like `additional_fqdns: [one.two.example.com]` a DDEV project will respond to `https://one.two.example.com`, but DDEV will need to add `one.two.example.com` to the hosts file for it to work. The [docs](https://ddev.readthedocs.io/en/stable/users/configuration/config/#additional_hostnames) explain how to use it and what the consequences are.
 
 Be exceptionally careful with "masking" real sites this way. It can be really confusing to add for example `additional_fqdns: [www.google.com]` to your configuration, because DDEV will then put `www.google.com` into your hosts file and you'll no longer be able to reach Google.
 

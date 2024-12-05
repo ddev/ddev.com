@@ -43,43 +43,42 @@ In order to use Vite in our DDEV projects, we generally need to do two things:
 
 1. Expose Vite's development server port (default: `5173`):
 
-    ```yaml
-    # .ddev/config.yaml
-    web_extra_exposed_ports:
-      - name: vite
-        container_port: 5173
-        http_port: 5172
-        https_port: 5173
-    ```
+   ```yaml
+   # .ddev/config.yaml
+   web_extra_exposed_ports:
+     - name: vite
+       container_port: 5173
+       http_port: 5172
+       https_port: 5173
+   ```
 
-    This needs a `ddev restart` afterwards to apply changes.
+   This needs a `ddev restart` afterwards to apply changes.
 
 2. Adjust the Vite config to use DDEVs project URL, e.g. `https://test-vite.ddev.site:5173`:
 
-    ```js
-    import { defineConfig } from 'vite'
-    const port = 5173;
-    const origin = `${process.env.DDEV_PRIMARY_URL}:${port}`;
+   ```js
+   import { defineConfig } from "vite"
+   const port = 5173
+   const origin = `${process.env.DDEV_PRIMARY_URL}:${port}`
 
-    export default defineConfig({
+   export default defineConfig({
+     // Your settings
+     // ...
 
-      // Your settings
-      // ...
+     // Adjust Vites dev server to work with DDEV
+     // https://vitejs.dev/config/server-options.html
+     server: {
+       // respond to all network requests:
+       host: "0.0.0.0",
+       port: port,
+       strictPort: true,
+       // Defines the origin of the generated asset URLs during development
+       origin: origin,
+     },
+   })
+   ```
 
-      // Adjust Vites dev server to work with DDEV
-      // https://vitejs.dev/config/server-options.html
-      server: {
-        // respond to all network requests:
-        host: '0.0.0.0',
-        port: port,
-        strictPort: true,
-        // Defines the origin of the generated asset URLs during development
-        origin: origin
-      },
-    })
-    ```
-
-    This guide assumes your project runs on `https://`. If you can not access the HTTPS version of your project, please see [DDEV installation docs](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/).
+   This guide assumes your project runs on `https://`. If you can not access the HTTPS version of your project, please see [DDEV installation docs](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/).
 
 Some more customizations might be needed depending on your CMS / framework, see [PHP CMS / framework integration](#php-cms--frameworkintegration) below. You can also use a [DDEV addon](#ddevaddons).
 
@@ -182,8 +181,8 @@ xdebug_enabled: false
 additional_hostnames: []
 additional_fqdns: []
 database:
-    type: mariadb
-    version: "10.4"
+  type: mariadb
+  version: "10.4"
 use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
@@ -208,36 +207,35 @@ The last step is to adjust the Vite config to let it know that it will run on `h
 This can be done easily by creating a `vite.config.js` file like this:
 
 ```js
-import { defineConfig } from 'vite'
-import path from 'path'
+import { defineConfig } from "vite"
+import path from "path"
 
-const port = 5173;
-const origin = `${process.env.DDEV_PRIMARY_URL}:${port}`;
+const port = 5173
+const origin = `${process.env.DDEV_PRIMARY_URL}:${port}`
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    // Add entrypoint
-    build: {
-        // our entry
-        rollupOptions: {
-          input: path.resolve(__dirname, 'src/main.js'),
-        },
-
-        // manifest
-        manifest: true
-      },
-
-    // Adjust Vites dev server for DDEV
-    // https://vitejs.dev/config/server-options.html
-    server: {
-        // respond to all network requests:
-        host: '0.0.0.0',
-        port: port,
-        strictPort: true,
-        // Defines the origin of the generated asset URLs during development
-        origin: origin
+  // Add entrypoint
+  build: {
+    // our entry
+    rollupOptions: {
+      input: path.resolve(__dirname, "src/main.js"),
     },
 
+    // manifest
+    manifest: true,
+  },
+
+  // Adjust Vites dev server for DDEV
+  // https://vitejs.dev/config/server-options.html
+  server: {
+    // respond to all network requests:
+    host: "0.0.0.0",
+    port: port,
+    strictPort: true,
+    // Defines the origin of the generated asset URLs during development
+    origin: origin,
+  },
 })
 ```
 
@@ -257,20 +255,20 @@ Now we need a little test web page.
 Let's create the `src/main.js` as our entry file:
 
 ```js
-import './style.css'
+import "./style.css"
 
-console.log('hello vite!');
+console.log("hello vite!")
 ```
 
 Alongside create the file `src/style.css`:
 
 ```css
 body {
-    font-family: sans-serif;
+  font-family: sans-serif;
 }
 
 p {
-    color: darkslateblue;
+  color: darkslateblue;
 }
 ```
 
@@ -358,7 +356,7 @@ For production you would first run `ddev npm run build` to generate the optimize
 - /dist/assets/main-d6825f81.css
 - ...
 
-To include these in PHP, you will need to know the hash values. You could set  `build.manifest` to true in Vites config. With this option enabled a `/dist/manifest.json` file is generated on each build, which has reference to all JS and CSS files:
+To include these in PHP, you will need to know the hash values. You could set `build.manifest` to true in Vites config. With this option enabled a `/dist/manifest.json` file is generated on each build, which has reference to all JS and CSS files:
 
 Example:
 
@@ -390,7 +388,7 @@ You could now parse the `dist/manifest.json` file dynamically in PHP and get the
 
 This is the point where PHP libraries and CMS integrations come into play which handle this for us. In most cases, you won't need to write this integration yourself (see below).
 
-###  PHP CMS / framework integration
+### PHP CMS / framework integration
 
 You can read Vite's official guide for backend integration here:
 
@@ -446,7 +444,6 @@ Example repositories:
 - [mandrasch/ddev-craftcms-vite](https://github.com/mandrasch/ddev-craftcms-vite)
 - [vigetlabs/craft-site-starter](https://github.com/vigetlabs/craft-site-starter)
 
-
 #### Drupal
 
 [Andrew Morton](https://github.com/mortona42) gave some information about the current state, thanks very much!
@@ -458,8 +455,9 @@ Example repositories:
 > Here is a theme I contributed, with instructions for how to set it up with DDEV in the readme files. I'm trying to detail all the configuration possibilities we might need, with defaults that should work out of the box.
 >
 > [https://www.drupal.org/project/unocss_starter](https://www.drupal.org/project/unocss_starter) (uses Vite)
->
+
 <!-- textlint-disable -->
+
 > I'm blogging about the process here: [https://www.drupalarchitect.info/projects/unocss-starter-theme](https://www.drupalarchitect.info/projects/unocss-starter-theme)
 >
 > There are a handful of devs working on using Vite to bundle assets multiple modules/themes in Drupal. Looks like Vite and Foxy are becoming the leading solutions.
@@ -469,7 +467,7 @@ Example repositories:
 > Working POC: [https://github.com/darvanen/drupal-js](https://github.com/darvanen/drupal-js)
 >
 > I think we'll be seeing a lot of new things in
-this area over the next year.
+> this area over the next year.
 
 #### Laravel
 

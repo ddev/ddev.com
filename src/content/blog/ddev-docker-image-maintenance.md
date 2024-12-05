@@ -23,7 +23,7 @@ DDEV depends on a [few critical Docker images](https://github.com/ddev/ddev/tree
 
 ## Building images locally for testing your changes
 
-As a prerequisite to building multi-architecture Docker images, do `docker buildx create --use`, which sets up `docker buildx` to do that. 
+As a prerequisite to building multi-architecture Docker images, do `docker buildx create --use`, which sets up `docker buildx` to do that.
 
 After that, assuming that you are working on a branch called `YYMMDD_youruid_branch_description`, like `20240730_rfay_webserver_arch` and you need to build a new `ddev-webserver` image to support it, use
 
@@ -32,7 +32,7 @@ cd containers/ddev-webserver
 make VERSION=20240730_rfay_webserver_arch
 ```
 
-to build a local image in your matching architecture. 
+to build a local image in your matching architecture.
 
 If you are going to push to your own Docker organization, you could consider this:
 
@@ -44,8 +44,7 @@ In that situation, you would be able to push the image to `randyfay/ddev-webserv
 
 ## Updating the DDEV binary to use the new image
 
-To convince DDEV to use the new image, update `pkg/versionconstants/versionconstants.go` with the image tag or optionally also the DOCKER_ORG you used. 
-
+To convince DDEV to use the new image, update `pkg/versionconstants/versionconstants.go` with the image tag or optionally also the DOCKER_ORG you used.
 
 ## Pushing Images to `hub.docker.com`
 
@@ -67,21 +66,22 @@ If it helps you and you are a known entity, we can also give you permissions on 
 
 When you're testing simple things, you can use a number of techniques:
 
-* Run the image directly. For example, `docker run -it --rm ddev/ddev-webserver:20240730_rfay_webserver_arch bash` will land you inside the container where you can inspect what's going on there, run any scripts you need to, etc.
-* Run it using `ddev`. For example, if you have built `ddev` with `make`, you can make sure that `<project>/.gotmp/bin/<your_arch>` is in your `PATH`, and do a `ddev start`. Then you can `ddev ssh` and see what has happened.
+- Run the image directly. For example, `docker run -it --rm ddev/ddev-webserver:20240730_rfay_webserver_arch bash` will land you inside the container where you can inspect what's going on there, run any scripts you need to, etc.
+- Run it using `ddev`. For example, if you have built `ddev` with `make`, you can make sure that `<project>/.gotmp/bin/<your_arch>` is in your `PATH`, and do a `ddev start`. Then you can `ddev ssh` and see what has happened.
 
 If you have done a `make push` or used the GitHub Actions technique, make sure you do a `docker pull <image>:tag` to update your local image copy.
 
 ## Other ways to change the build
 
 ### `.ddev/web-build/Dockerfile.*`
+
 Actually changing the build is not necessarily the best way to introduce an image change, and it's almost certainly not the best way to experiment.
 
 Usually the best way to get started is the `.ddev/web-build/Dockerfile.*` technique, where you just add a tiny bit to the Docker build based on your project's needs. For example, in a project you might have a trivial `.ddev/web-build/Dockerfile.experiment` like this:
 
-````dockerfile
+```dockerfile
 RUN touch /var/tmp/this-ran.txt
-````
+```
 
 When your project starts up it will actually build this into the image. You can use this technique for texting and experimentation.
 
@@ -104,7 +104,7 @@ The test will build the container locally and then run a suite of `bats` tests o
 
 ## Testing images with the Golang-based tests
 
-There are hundreds of Golang-based tests as well, some of which do a good job exercising Docker image features. This is a fine way to do this work. 
+There are hundreds of Golang-based tests as well, some of which do a good job exercising Docker image features. This is a fine way to do this work.
 
 ## Resources
 
