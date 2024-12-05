@@ -27,6 +27,8 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run textlint
+      - name: Prettier
+        run: npx prettier --check .
       - name: Install, build, and upload your site output
         uses: withastro/action@v2
         with:
