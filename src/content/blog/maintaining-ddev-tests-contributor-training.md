@@ -30,7 +30,7 @@ Golang tests are in files named `*_test.go` and the tests themselves are functio
 
 ## How many tests are there? How many lines of test code?
 
-According to cloc there are currently 22,322 lines of go code: (`cloc ./pkg ./cmd --include-lang=Go --not-match-f='.*_test\.go$'`) and 14,853 lines of go test code (_\_test.go): (`cloc ./pkg ./cmd --include-lang=Go --match-f='._\_test\.go$'`)
+According to cloc there are currently 22,322 lines of go code: (`cloc ./pkg ./cmd --include-lang=Go --not-match-f='.*_test\.go$'`) and 14,853 lines of go test code (`*_test.go`): (`cloc ./pkg ./cmd --include-lang=Go --match-f='.*_test\.go$'`)
 
 ## What should a contributor work on?
 
