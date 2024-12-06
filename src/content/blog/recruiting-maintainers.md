@@ -4,8 +4,8 @@ pubDate: 2023-05-21
 summary: The DDEV community is seeking paid maintainers to boost the project’s sustainability and growth.
 author: Randy Fay
 featureImage:
-    src: /img/blog/2023/05/diverse-group-of-people-sitting-at-table-working.jpg
-    alt: Image of a diverse group of maintainers sitting at a table maintaining DDEV
+  src: /img/blog/2023/05/diverse-group-of-people-sitting-at-table-working.jpg
+  alt: Image of a diverse group of maintainers sitting at a table maintaining DDEV
 categories:
   - Community
 ---
@@ -14,7 +14,7 @@ We're recruiting DDEV Open Source Project Maintainers, both paid and volunteer p
 
 ## Maintainer Job Description
 
-The DDEV community is seeking dedicated and experienced individuals to become a maintainers of the [DDEV open source project](https://ddev.com). This role requires a deep understanding of the DDEV project, great coding skills, and the ability to work collaboratively with a diverse and passionate community. 
+The DDEV community is seeking dedicated and experienced individuals to become a maintainers of the [DDEV open source project](https://ddev.com). This role requires a deep understanding of the DDEV project, great coding skills, and the ability to work collaboratively with a diverse and passionate community.
 
 ### Responsibilities
 
@@ -61,6 +61,6 @@ While maintainers may work on the project on a volunteer basis, the community ha
 
 ### How to Apply
 
-You don't actually "apply," you grow into these positions. But if becoming a maintainer is interesting to you, let's talk about it and make a plan! We'll mentor you, give you responsibilities commensurate with your capabililties, and help you grow into the role. If you're a PHP developer, you can learn go enough to make significant contributions in a modest amount of time. But perhaps most of the DDEV project is a variety of miscellaneous technologies that you may already have experience with. And understanding the web developer is a fundamental part of DDEV, so if you're a web developer you're already part of the way there. 
+You don't actually "apply," you grow into these positions. But if becoming a maintainer is interesting to you, let's talk about it and make a plan! We'll mentor you, give you responsibilities commensurate with your capabililties, and help you grow into the role. If you're a PHP developer, you can learn go enough to make significant contributions in a modest amount of time. But perhaps most of the DDEV project is a variety of miscellaneous technologies that you may already have experience with. And understanding the web developer is a fundamental part of DDEV, so if you're a web developer you're already part of the way there.
 
 Drop by [Discord](https://discord.gg/5wjP76mBJD), the [issue queue](https://github.com/ddev/ddev/issues) or send an email to `randy.fay (at) ddev.com`. We'd love to talk with you about it!

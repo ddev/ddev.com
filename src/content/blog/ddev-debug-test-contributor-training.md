@@ -12,7 +12,6 @@ categories:
   - Guides
 ---
 
-
 Here's our October 9, 2024 [Contributor Training](/blog/category/training) on using `ddev debug test` to help other users:
 
 <div class="video-container">
@@ -25,11 +24,11 @@ Here's our October 9, 2024 [Contributor Training](/blog/category/training) on us
 
 ## What does it check?
 
-* DDEV version, architecture
-* Docker provider and configuration
-* Operating system and context
-* Project configuration and specialized configuration
-* Network connectivity inside and outside the container, and DNS name lookup
+- DDEV version, architecture
+- Docker provider and configuration
+- Operating system and context
+- Project configuration and specialized configuration
+- Network connectivity inside and outside the container, and DNS name lookup
 
 `ddev debug test` will often suggest what's going wrong with a person's DDEV/Docker/OS setup, making sure we know what version they're using and what context they're using it in.
 

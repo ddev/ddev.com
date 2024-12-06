@@ -124,10 +124,10 @@ export async function getSponsors() {
   // Combine sponsors from both sources and remove duplicates
   const allSponsors = [
     ...response.org.sponsors.nodes,
-    ...response.user.sponsors.nodes
+    ...response.user.sponsors.nodes,
   ].reduce((unique, sponsor) => {
     // Use login as unique identifier
-    if (!unique.some(item => item.login === sponsor.login)) {
+    if (!unique.some((item) => item.login === sponsor.login)) {
       unique.push(sponsor)
     }
     return unique

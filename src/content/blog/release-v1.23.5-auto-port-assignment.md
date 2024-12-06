@@ -25,7 +25,7 @@ I'm happy to announce that [DDEV v1.23.5](https://github.com/ddev/ddev/releases/
 
 **PHP8.4 RC1** is now included. It's still missing just a few extensions, which hopefully will be there at PHP 8.4 release in November.
 
-**`ddev debug rebuild` is the renamed `ddev debug refresh`**. It's a great way to test and debug Dockerfile problems and `webimage_extra_packages` problems, and now has the ability to run for just one service or for all, with or without Docker cache. 
+**`ddev debug rebuild` is the renamed `ddev debug refresh`**. It's a great way to test and debug Dockerfile problems and `webimage_extra_packages` problems, and now has the ability to run for just one service or for all, with or without Docker cache.
 
 You'll find loads more in the [release notes](https://github.com/ddev/ddev/releases/tag/v1.23.5), but I just wanted to stop by and say thank you to our wonderful community for continuing to shape DDEV and its future.
 

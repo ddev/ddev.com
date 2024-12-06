@@ -4,8 +4,8 @@ pubDate: 2024-03-15
 summary: "DDEV Contributor Live Training: Setting up a Go Development Environment."
 author: Bernardo Martinez
 featureImage:
-   src: /img/blog/2024/03/Go-Logo_Aqua.svg
-   alt: Golang Logo.
+  src: /img/blog/2024/03/Go-Logo_Aqua.svg
+  alt: Golang Logo.
 categories:
   - Training
   - Videos
@@ -29,7 +29,7 @@ DDEV uses [make](https://www.gnu.org/software/make/) ([Min 13:32](https://youtu.
 
 ## Cloning [DDEV](https://github.com/ddev/ddev) repository ([Min 15:30](https://youtu.be/IjrJw0Ay-dk?t=932))
 
- Check out the `ddev` repository with `git clone git@github.com:ddev/ddev -o upstream`. Run `make` to create a new binary. The DDEV Makefile will automatically detect your host OS and build the appropriate binary. However, one can provide a parameter to build others. As an example, `make darwin_amd64` builds the macOS AMD64 binary.
+Check out the `ddev` repository with `git clone git@github.com:ddev/ddev -o upstream`. Run `make` to create a new binary. The DDEV Makefile will automatically detect your host OS and build the appropriate binary. However, one can provide a parameter to build others. As an example, `make darwin_amd64` builds the macOS AMD64 binary.
 
 At ([Min 16:30](https://youtu.be/IjrJw0Ay-dk?t=982)) the Makefile located in the root of the DDEV project is lightly explained.
 
@@ -84,6 +84,7 @@ At ([Min 49:43](https://youtu.be/IjrJw0Ay-dk?t=2977)) a question arose from a us
 ```
 "cwd":"${workspaceRoot}/../d9simple"
 ```
+
 The issue was that "d9simple" is a placeholder string that needs to point to a real DDEV directory.
 
 At ([Min 50:50](https://youtu.be/IjrJw0Ay-dk?t=3048)) we can see a walkthrough of running Go tests in VSCode.
@@ -91,4 +92,5 @@ At ([Min 50:50](https://youtu.be/IjrJw0Ay-dk?t=3048)) we can see a walkthrough o
 devcontainer.json ([Min 58:35](https://youtu.be/IjrJw0Ay-dk?t=3507)) is a file for GitHub Codespaces.
 
 ## Keep in touch!
- Join us in [Discord](https://discord.gg/5wjP76mBJD) or [open an issue](https://github.com/ddev/ddev/issues) or send [an email](mailto:support%40ddev.com) if you have success (or failure 😀).
+
+Join us in [Discord](https://discord.gg/5wjP76mBJD) or [open an issue](https://github.com/ddev/ddev/issues) or send [an email](mailto:support%40ddev.com) if you have success (or failure 😀).

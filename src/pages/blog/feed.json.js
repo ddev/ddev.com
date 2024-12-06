@@ -36,6 +36,6 @@ const feed = {
 export async function GET(context) {
   return Response.json({
     success: true,
-    result: feed
+    result: feed,
   })
 }

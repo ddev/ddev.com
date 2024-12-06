@@ -19,7 +19,7 @@ Even though DDEV is written in [Go](https://golang.org/), which is amazingly com
 
 Our test suite is large and has grown over the lifespan of DDEV, up to about 5,500 lines of test code (out of the 14,680 lines of code that make up DDEV) that get run on every push.
 
-The biggest problems we have with this whole setup is it seems to push Docker to the limit, especially on Windows. So we see too often the Docker failures and hangs that users see only infrequently. Currently, this means a lot of random maintenance of Docker on the test machines. 
+The biggest problems we have with this whole setup is it seems to push Docker to the limit, especially on Windows. So we see too often the Docker failures and hangs that users see only infrequently. Currently, this means a lot of random maintenance of Docker on the test machines.
 
 One of our upcoming goals is to try to get all the macOS and Windows test runners out of Randy's house, as this is too dependent on him. Watch the [issue](https://github.com/ddev/ddev/issues/6444) to find out more. Here's a picture of what most of the macOS and Windows test runners look like today:
 

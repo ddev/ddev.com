@@ -12,7 +12,6 @@ categories:
   - Guides
 ---
 
-
 Here's our October 31, 2023 [Contributor Training](/blog/category/training) on exploring DDEV analytics with Amplitude:
 
 <div class="video-container">
@@ -21,7 +20,7 @@ Here's our October 31, 2023 [Contributor Training](/blog/category/training) on e
 
 **Opt-in/Opt-out analytics and the required instrumentation/telemetry** have been part of DDEV for years. Before DDEV v1.22.0, they were done only via [segment.io](http://segment.io) (which was sent to Amplitude). From v1.22.0 they have been sent directly to amplitude.
 
-**Opt-In** is done in `~/.ddev/global_config.yaml` or `ddev config --instrumentation-opt-in=true` (or false). We have no way of knowing how many people opt out.  On version upgrades, those who have it turned off are asked if they would be willing to turn it on.
+**Opt-In** is done in `~/.ddev/global_config.yaml` or `ddev config --instrumentation-opt-in=true` (or false). We have no way of knowing how many people opt out. On version upgrades, those who have it turned off are asked if they would be willing to turn it on.
 
 **Instrumentation events are cached before being sent**, so there is no internet action except after 100 actions have happened, then the events get pushed. You can see instrumentation activities with `DDEV_VERBOSE=true ddev start -y 2>&1 | grep AMPLITUDE` for example.
 

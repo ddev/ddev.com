@@ -37,8 +37,8 @@ categories:
 
 **Contributor Trainings From October (Recordings and Blogs):**
 
-* **[Supporting people using `ddev debug test` and other tools](ddev-debug-test-contributor-training.md)**
-* **[Using Tmate to Debug GitHub Workflows](tmate-github-actions-contributor-training.md)**
+- **[Supporting people using `ddev debug test` and other tools](ddev-debug-test-contributor-training.md)**
+- **[Using Tmate to Debug GitHub Workflows](tmate-github-actions-contributor-training.md)**
 
 **DDEV Notes from around the web:**
 
@@ -51,7 +51,7 @@ categories:
 
 **Upcoming Major Release v1.24.0** will change the defaults for new projects. PHP will be 8.3, Node.js will be v22. There will be a few new features, but I don't think any other major changes in behavior.
 
-**Fully funding Maintainer Stas**: *We need your help and your organization's help! Let me know if you need help getting this into your 2025 budget!* Our key financial goal is to [fully fund @stasadev so he can work exclusively on DDEV](lets-fund-stas-maintainer.md). We’re about 30% of the way to that goal, but apparently due to market conditions, have been going backward in recent months. We need about $3700/month in increased pledges from organizations and individuals. See [Full information about supporting DDEV](https://github.com/sponsors/ddev). We’re happy to invoice you, happy to [do a call discussing this](https://cal.com/randyfay/30min), and would love it if you’d include DDEV in your 2025 budgeting process. (Our current status: We receive about $4000-$5000/month, spend about $6000/month. Bank balance is about $9,000, down from $13,000 last month.)
+**Fully funding Maintainer Stas**: _We need your help and your organization's help! Let me know if you need help getting this into your 2025 budget!_ Our key financial goal is to [fully fund @stasadev so he can work exclusively on DDEV](lets-fund-stas-maintainer.md). We’re about 30% of the way to that goal, but apparently due to market conditions, have been going backward in recent months. We need about $3700/month in increased pledges from organizations and individuals. See [Full information about supporting DDEV](https://github.com/sponsors/ddev). We’re happy to invoice you, happy to [do a call discussing this](https://cal.com/randyfay/30min), and would love it if you’d include DDEV in your 2025 budgeting process. (Our current status: We receive about $4000-$5000/month, spend about $6000/month. Bank balance is about $9,000, down from $13,000 last month.)
 
 **THANKS to all of you who are supporting DDEV’s path to sustainability** and who have gotten your organizations to do so.
 

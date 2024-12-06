@@ -94,5 +94,4 @@ Otherwise, use a pull request like you would with DDEV or any other project. (Fo
 - Astro plugins we’re using.
 - [Textlint](https://github.com/ddev/ddev.com/blob/main/.textlintrc).
 
-
 Credit to [Kristin](https://www.drupal.org/u/kwiseman) and [Bernardo](https://www.drupal.org/u/bernardm28) for adapting the original outline for the DDEV blog.
