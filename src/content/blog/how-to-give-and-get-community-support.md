@@ -56,5 +56,5 @@ One of the great things about open source technology is the fact that we can all
 
 - The [DDEV Docs](https://ddev.readthedocs.io/en/stable/) are a great place to start looking for answers to straightforward questions.
 - Subscribe to the [issue queue on GitHub](https://github.com/ddev/ddev/issues).
-- On [DDEV's Discord](https://discord.gg/5wjP76mBJD), try to use #support where possible, or use threads elsewhere.
+- On [DDEV's Discord](/s/discord), try to use #support where possible, or use threads elsewhere.
 - The [DDEV tag on Stack Overflow](https://stackoverflow.com/tags/ddev) is a great place for long-term storage of obscure answers or complicated questions. When somebody figures out the answer to an important question, try to get it written up there.

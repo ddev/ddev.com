@@ -107,4 +107,4 @@ Now that the Traefik router has been standard for two major versions, there's ve
 
 **THANKS to all of you who are supporting DDEV’s path to sustainability** and who have gotten your organizations to do so. 13,600 or so of you are using this tool and ecosystem weekly, about 55 of you are financially supporting its sustainability. Time to [step up](https://github.com/sponsors/ddev) if you're not in those 55! We need you in the same way you need us.
 
-Want to keep up as the month goes along? Follow our [blog](https://ddev.com/blog/), [LinkedIn](https://www.linkedin.com/company/ddev-foundation), [Mastodon](https://fosstodon.org/@ddev), and join us on [Discord](https://discord.gg/5wjP76mBJD).
+Want to keep up as the month goes along? Follow our [blog](https://ddev.com/blog/), [LinkedIn](https://www.linkedin.com/company/ddev-foundation), [Mastodon](https://fosstodon.org/@ddev), and join us on [Discord](/s/discord).

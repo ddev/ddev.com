@@ -53,4 +53,4 @@ hooks:
 
 **User-generated and non-code images, etc.**: In general, these should come from upstream hosting environments. Although it is possible to push them upstream, it's usually a bad idea, as this could overwrite a production environment. So normally, if you lose these, you would just pull them again from wherever they come from.
 
-**What are your techniques?** Do you agree or disagree? I'd love to have a [PR with your suggestions](https://github.com/ddev/ddev.com) or stop by and chat about your preferences in the [DDEV Discord](https://discord.com/invite/5wjP76mBJD).
+**What are your techniques?** Do you agree or disagree? I'd love to have a [PR with your suggestions](https://github.com/ddev/ddev.com) or stop by and chat about your preferences in the [DDEV Discord](/s/discord).

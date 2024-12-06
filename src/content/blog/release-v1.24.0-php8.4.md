@@ -58,4 +58,4 @@ From the entire team, thanks for using, promoting, contributing, and supporting 
 
 If you have more questions, please reach out to us in any of the many [support channels](https://ddev.readthedocs.io/en/stable/users/support/).
 
-Follow our [blog](https://ddev.com/blog/), [Bluesky](https://bsky.app/profile/ddev.bsky.social), [LinkedIn](https://www.linkedin.com/company/ddev-foundation), [Mastodon](https://fosstodon.org/@ddev), and join us on [Discord](https://discord.gg/5wjP76mBJD). And we'd love to have you sign up for the [monthly newsletter](/newsletter).
+Follow our [blog](https://ddev.com/blog/), [Bluesky](https://bsky.app/profile/ddev.bsky.social), [LinkedIn](https://www.linkedin.com/company/ddev-foundation), [Mastodon](https://fosstodon.org/@ddev), and join us on [Discord](/s/discord). And we'd love to have you sign up for the [monthly newsletter](/newsletter).

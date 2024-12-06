@@ -43,6 +43,6 @@ Want to keep up as the month goes along? Follow on
 - [LinkedIn](https://www.linkedin.com/company/ddev-foundation)
 - [Mastodon](https://fosstodon.org/@ddev)
 - [Bluesky](https://bsky.app/profile/ddev.bsky.social)
-- and join our community on [Discord](https://discord.gg/5wjP76mBJD)
+- and join our community on [Discord](/s/discord)
 
 Happy December from Randy Fay, DDEV Project Lead.

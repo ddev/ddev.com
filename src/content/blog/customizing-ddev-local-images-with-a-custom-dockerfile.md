@@ -80,4 +80,4 @@ RUN cp /etc/php/7.1/mods-available/mcrypt.ini /etc/php/${DDEV_PHP_VERSION}/mods-
 
 ## Join the conversation!
 
-We’d love to hear about your recipes! Discuss them in our [Discord channel](https://discord.gg/5wjP76mBJD), PR them into [ddev-contrib](http://github.com/ddev/ddev-contrib), create a new [DDEV Add-on](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/), or tweet, or blog about them and give us a holler when you do. And we’re always happy to hear from you on any of our [support channels](https://ddev.readthedocs.io/en/stable/users/support/).
+We’d love to hear about your recipes! Discuss them in our [Discord channel](/s/discord), create a new [DDEV Add-on](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/), or tweet, or blog about them and give us a holler when you do. And we’re always happy to hear from you on any of our [support channels](https://ddev.readthedocs.io/en/stable/users/support/).

@@ -72,4 +72,4 @@ They won't be happy sharing ports though, so you'll want to change `router_http_
 
 ## Keep in touch!
 
-I'd love to hear your experience. Join us in [Discord](https://discord.gg/5wjP76mBJD) or [open an issue](https://github.com/ddev/ddev/issues) or send [an email](mailto:support%40ddev.com) if you have success (or failure 😀).
+I'd love to hear your experience. Join us in [Discord](/s/discord) or [open an issue](https://github.com/ddev/ddev/issues) or send [an email](mailto:support%40ddev.com) if you have success (or failure 😀).
