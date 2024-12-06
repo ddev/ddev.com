@@ -117,7 +117,7 @@ If it passes or fails, I'll likely click on a line to create a breakpoint and th
 
 - [Training: Setting up a go development environment](setting-up-a-go-development-environment.md)
 - [DDEV docs: Building, Testing, and Contributing](https://ddev.readthedocs.io/en/stable/developers/building-contributing/)
-- The GitHub Workflow tests and Buildkite tests are shown on every PR run and every run on the default branch. If you don't have access to see them, just ask in [Discord](https://discord.com/invite/5wjP76mBJD) or the [issue queue](https://github.com/ddev/ddev/issues), and you can get it.
+- The GitHub Workflow tests and Buildkite tests are shown on every PR run and every run on the default branch. If you don't have access to see them, just ask in [Discord](/s/discord) or the [issue queue](https://github.com/ddev/ddev/issues), and you can get it.
 
 ## Contributions welcome!
 

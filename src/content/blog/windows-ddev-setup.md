@@ -53,6 +53,6 @@ Two recent Windows machines I set up were the new ARM64/Qualcomm/CoPilot variety
     - Run `.githooks/linkallchecks.sh`
     - Install `golangci-lint` for `make staticrequired`: `go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest`
 
-We'd love to hear your own hints and tips on how you set up a Windows machine (or any other computer!). You can contribute to this article with a [PR to the blog](https://github.com/ddev/ddev.com) or make your suggestions on [Discord](https://discord.com/invite/5wjP76mBJD). We welcome guest blogs too!
+We'd love to hear your own hints and tips on how you set up a Windows machine (or any other computer!). You can contribute to this article with a [PR to the blog](https://github.com/ddev/ddev.com) or make your suggestions on [Discord](/s/discord). We welcome guest blogs too!
 
-Follow our [blog](https://ddev.com/blog/), [LinkedIn](https://www.linkedin.com/company/ddev-foundation), [Mastodon](https://fosstodon.org/@ddev), and join us on [Discord](https://discord.gg/5wjP76mBJD). And we'd love to have you sign up for the [monthly newsletter](/newsletter).
+Follow our [blog](https://ddev.com/blog/), [LinkedIn](https://www.linkedin.com/company/ddev-foundation), [Mastodon](https://fosstodon.org/@ddev), and join us on [Discord](/s/discord). And we'd love to have you sign up for the [monthly newsletter](/newsletter).

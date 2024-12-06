@@ -126,7 +126,7 @@ To get the JSON output on the command line, add this global flag to any command:
 
 `ddev describe -j`
 
-I’ve seen this used in some creative ways. In one case, I saw someone use JSON output to find the port that MySQL was using on the host. For another example, you could grab the HTTP URL and launch it automatically. If you have ideas and you’re playing with DDEV JSON output in your projects, join us in [Discord](https://discord.com/invite/5wjP76mBJD), we’d love to hear your ideas.
+I’ve seen this used in some creative ways. In one case, I saw someone use JSON output to find the port that MySQL was using on the host. For another example, you could grab the HTTP URL and launch it automatically. If you have ideas and you’re playing with DDEV JSON output in your projects, join us in [Discord](/s/discord), we’d love to hear your ideas.
 
 ### Thanks for your feedback!
 

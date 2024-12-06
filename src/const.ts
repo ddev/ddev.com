@@ -9,7 +9,7 @@ export const GITHUB_URL_WEBSITE =
   "https://github.com/ddev/ddev.com/tree/main/src/content/blog"
 export const GITHUB_ISSUES_URL = "https://github.com/ddev/ddev/issues"
 export const DOCUMENTATION_URL = "https://ddev.readthedocs.io/"
-export const DISCORD_URL = "https://discord.gg/5wjP76mBJD"
+export const DISCORD_URL = "/s/discord"
 export const EMAIL_URL = "mailto:support%40ddev.com"
 export const COPYRIGHT_HOLDER = "DDEV Foundation"
 export const MASTODON_URL = "https://fosstodon.org/@ddev"

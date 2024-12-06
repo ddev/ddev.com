@@ -75,4 +75,4 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 - Go Development Environment with Goland or vscode
 - Experimenting with custom commands
 
-Please join the [DDEV Live Event meetup](https://www.meetup.com/ddev-events/) to get notified about upcoming trainings. Drop by [Discord](https://discord.gg/5wjP76mBJD) or send [an email](mailto:support%40ddev.com) if you want to talk more.
+Please join the [DDEV Live Event meetup](https://www.meetup.com/ddev-events/) to get notified about upcoming trainings. Drop by [Discord](/s/discord) or send [an email](mailto:support%40ddev.com) if you want to talk more.

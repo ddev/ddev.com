@@ -42,7 +42,7 @@ We're looking forward to having you along with us. Thanks for your support of DD
 
 ## Stay in Touch!
 
-The DDEV community will be going strong as usual. Join us to give and receive support [in Discord](https://discord.gg/5wjP76mBJD) and [the issue queue](https://github.com/ddev/ddev/issues).
+The DDEV community will be going strong as usual. Join us to give and receive support [in Discord](/s/discord) and [the issue queue](https://github.com/ddev/ddev/issues).
 
 ## Making DDEV Sustainable in the Long Term
 

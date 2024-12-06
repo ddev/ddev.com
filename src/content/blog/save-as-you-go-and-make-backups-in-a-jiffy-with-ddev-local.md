@@ -104,4 +104,4 @@ A text-format database dump created with either this technique or `ddev export-d
 
 See the [docs](https://ddev.readthedocs.io/en/stable/users/usage/database-management/) for everything there is to know about database management.
 
-And join us in the [issue queue](https://github.com/ddev/ddev/issues), [Discord](https://discord.gg/5wjP76mBJD), [Stack Overflow](https://stackoverflow.com/tags/ddev) with your questions, comments, and suggestions.
+And join us in the [issue queue](https://github.com/ddev/ddev/issues), [Discord](/s/discord), [Stack Overflow](https://stackoverflow.com/tags/ddev) with your questions, comments, and suggestions.

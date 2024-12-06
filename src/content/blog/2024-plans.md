@@ -12,7 +12,7 @@ categories:
   - Community
 ---
 
-At the DDEV Advisory Group's 2-hour [annual review/planning meeting on March 6, 2024](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Advisory+Group&iso=20240306T09&p1=75&ah=2), we'll talk about plans and priorities for 2024. These have been discussed previously in the [DDEV 2024 Priorities discussion](https://github.com/orgs/ddev/discussions/5720) but in getting ready for the meeting it seems like a good time to propose them in a more cohesive fashion. (Everyone is welcome to the meeting. The Zoom link is announced in [Discord](https://discord.com/channels/664580571770388500/1068592494184501349/1213180991133192302) or email [support](mailto:support%40ddev.com) for a calendar invitation or the zoom link.)
+At the DDEV Advisory Group's 2-hour [annual review/planning meeting on March 6, 2024](https://www.timeanddate.com/worldclock/fixedtime.html?msg=DDEV+Advisory+Group&iso=20240306T09&p1=75&ah=2), we'll talk about plans and priorities for 2024. These have been discussed previously in the [DDEV 2024 Priorities discussion](https://github.com/orgs/ddev/discussions/5720) but in getting ready for the meeting it seems like a good time to propose them in a more cohesive fashion. (Everyone is welcome to the meeting. The Zoom link is announced in [Discord](/s/discord) or email [support](mailto:support%40ddev.com) for a calendar invitation or the zoom link.)
 
 ## Community
 
