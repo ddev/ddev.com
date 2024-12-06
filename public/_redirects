@@ -1,6 +1,6 @@
 /install.sh https://raw.githubusercontent.com/ddev/ddev/master/scripts/install_ddev.sh 302
 /s/port-conflict https://ddev.readthedocs.io/en/stable/users/usage/troubleshooting/#web-server-ports-already-occupied 301
-/s/discord /s/discord 301
+/s/discord https://discord.com/invite/5wjP76mBJD 301
 /ddev-local/ddev-wsl2-getting-started/ https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#windows 301
 /ddev-local/apache-solr-with-drupal-8-and-search-api-solr/ https://github.com/ddev/ddev-drupal9-solr 301
 /ddev-local/ddev-local-web-container-customization-in-v1-8-0/ https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/ 301
