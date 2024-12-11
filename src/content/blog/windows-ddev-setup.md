@@ -1,7 +1,7 @@
 ---
 title: "Setting up a Windows Machine for DDEV"
 pubDate: 2024-11-04
-#modifiedDate: 2024-10-17
+modifiedDate: 2024-12-11
 summary: Setting up a new Windows machine for DDEV maintenance or development is pretty easy. Here are my opinionated steps.
 author: Randy Fay
 featureImage:
@@ -31,7 +31,7 @@ Two recent Windows machines I set up were the new ARM64/Qualcomm/CoPilot variety
 6. In PowerShell, `wsl --install` and `wsl --update`
 7. Windows Terminal is a fantastic terminal and is installed by default these days. I always set it up early with "Default Terminal Application: Windows Terminal" and "Interaction->Automatically Copy Selection to Clipboard", and set Ubuntu as default, and have it auto-start on login.
 8. Once Ubuntu is installed:
-   - `sudo apt update && sudo apt install -y apt-transport-https autojump build-essential ca-certificates ccache clang curl dirmngr etckeeper expect git gnupg jq libcurl4-gnutls-dev libnss3-tools lsb-release mariadb-client nagios-plugins net-tools postgresql-client unzip vim xdg-utils zip && sudo apt upgrade -y`
+   - `sudo apt update && sudo apt install -y apt-transport-https autojump bats build-essential ca-certificates ccache clang curl dirmngr etckeeper expect git gnupg jq libcurl4-gnutls-dev libnss3-tools lsb-release mariadb-client nagios-plugins net-tools postgresql-client unzip vim xdg-utils zip && sudo apt upgrade -y`
    - `sudo snap install --classic go`
    - `sudo snap install ngrok and ngrok config add-authtoken <token>`
 9. In Windows Explorer, add my WSL2 home directory to favorites by copying it into the favorites area.
