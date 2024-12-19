@@ -17,8 +17,8 @@ const recentPosts = posts
 
 const feedItems = recentPosts.map((post) => {
   return {
-    id: `${blogUrl}/${post.slug}`,
-    url: `${blogUrl}/${post.slug}`,
+    id: `${blogUrl}/${post.id}`,
+    url: `${blogUrl}/${post.id}`,
     title: post.data.title,
     content_html: sanitizeHtml(marked.parse(post.body)),
   }

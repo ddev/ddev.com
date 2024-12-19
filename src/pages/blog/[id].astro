@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntryBySlug } from "astro:content"
+import { getCollection, getEntry, render } from "astro:content"
 import { formatDate, getCategoryUrl, getSlug } from "./../../lib/api"
 import Layout from "./../../layouts/Layout.astro"
 import PostBody from "./../../components/PostBody.astro"
@@ -12,15 +12,15 @@ import { BLOG_DESCRIPTION, GITHUB_URL_WEBSITE } from "src/const"
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog")
   return blogEntries.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { id: entry.id },
     props: { entry },
   }))
 }
 
 const { entry } = Astro.props
-const { Content, remarkPluginFrontmatter } = await entry.render()
+const { Content, remarkPluginFrontmatter } = await render(entry)
 
-const author = await getEntryBySlug("authors", getSlug(entry.data.author))
+const author = await getEntry("authors", getSlug(entry.data.author))
 
 const hasFeatureImage =
   Object.hasOwn(entry.data, "featureImage") &&
@@ -62,11 +62,11 @@ const blogPostSchema = [
       ? entry.data.featureImage.src
       : `/img/og-default.png`,
     keywords: entry.data.categories.join(","),
-    mainEntityOfPage: `${Astro.site}blog/${entry.slug}`,
+    mainEntityOfPage: `${Astro.site}blog/${entry.id}`,
     publisher: {
       "@id": `${Astro.site}#identity`,
     },
-    url: `${Astro.site}blog/${entry.slug}`,
+    url: `${Astro.site}blog/${entry.id}`,
   },
 ]
 ---
@@ -83,10 +83,10 @@ const blogPostSchema = [
       title={entry.data.title}
       date={formatDate(entry.data.pubDate, { month: "long" })}
       author={entry.data.author}
-      authorUrl={`/blog/author/${author.slug}`}
+      authorUrl={`/blog/author/${author.id}`}
       authorAvatar={authorImage}
       readTime={remarkPluginFrontmatter.minutesRead}
-      editUrl={GITHUB_URL_WEBSITE+`/`+entry.slug+`.md`}
+      editUrl={GITHUB_URL_WEBSITE+`/`+entry.id+`.md`}
     />
     {
       hasFeatureImage && shouldDisplayFeatureImage && (
@@ -135,5 +135,5 @@ const blogPostSchema = [
       </div>
     </div>
   </main>
-  <BlogPostFooter activeSlug={entry.slug} />
+  <BlogPostFooter activeSlug={entry.id} />
 </Layout>

@@ -1,10 +1,10 @@
 ---
-import { getCollection } from "astro:content"
+import { getCollection, render } from "astro:content"
 import Layout from "../../../layouts/Layout.astro"
 import BlogPostCard from "../../../components/BlogPostCard.astro"
 
 /**
- * Tell Astro to build routes using our author slugs.
+ * Tell Astro to build routes using our author ids.
  * https://docs.astro.build/en/reference/api-reference/#getstaticpaths
  */
 export async function getStaticPaths() {
@@ -19,7 +19,7 @@ export async function getStaticPaths() {
       })
 
     return {
-      params: { slug: author.slug },
+      params: { id: author.id },
       props: {
         author: author,
         posts: authorPosts,
@@ -31,7 +31,7 @@ export async function getStaticPaths() {
 const { author, posts } = Astro.props
 
 const title = `Posts by ${author.data.name}`
-const { Content } = await author.render()
+// const { Content } = render(author)
 ---
 
 <Layout
@@ -42,7 +42,8 @@ const { Content } = await author.render()
     <div class="lg:flex lg:space-x-12 py-24 px-6 lg:px-0">
       <h1 class="font-bold text-4xl dark:text-white">{author.data.name}</h1>
       <div class="prose mt-6 lg:mt-0 dark:prose-invert">
-        <Content />
+        <!-- author.render() -->
+        <!-- <Content /> -->
       </div>
     </div>
 
