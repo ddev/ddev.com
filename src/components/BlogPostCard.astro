@@ -3,18 +3,19 @@
  * A single card used to represent a blog post. Should probably be placed in a flex grid.
  */
 import type { CollectionEntry } from "astro:content"
+import { render } from "astro:content"
 import { Picture } from 'astro:assets'
 interface Props {
   post: CollectionEntry<"blog">
 }
 
-import { getEntryBySlug } from "astro:content"
+import { getEntry } from "astro:content"
 import { getSlug, formatDate, getCategoryUrl } from "../lib/api"
 
 const { post } = Astro.props
-const { remarkPluginFrontmatter } = await post.render()
+const { remarkPluginFrontmatter } = await render(post)
 
-const author = await getEntryBySlug("authors", getSlug(post.data.author))
+const author = await getEntry("authors", getSlug(post.data.author))
 const authorImage = author.data.avatarUrl ?? null
 
 const hasFeatureImage =
@@ -61,7 +62,7 @@ const firstCategory = post.data.categories.length
           {firstCategory}
         </a>
       </p>
-      <a href={`/blog/${post.slug}`} class="block mt-2">
+      <a href={`/blog/${post.id}`} class="block mt-2">
         <p class="text-xl font-semibold text-gray-900 dark:text-white">
           {post.data.title}
         </p>
@@ -71,7 +72,7 @@ const firstCategory = post.data.categories.length
       {
         authorImage && (
           <div class="flex-shrink-0">
-            <a href={`/blog/author/${author.slug}`}>
+            <a href={`/blog/author/${author.id}`}>
               <span class="sr-only">{post.data.author}</span>
               <img
                 class="h-10 w-10 rounded-full"
@@ -84,7 +85,7 @@ const firstCategory = post.data.categories.length
       }
       <div class={authorImage ? `ml-3` : ``}>
         <p class="text-sm font-medium text-gray-900 dark:text-white">
-          <a href={`/blog/author/${author.slug}`} class="hover:underline">
+          <a href={`/blog/author/${author.id}`} class="hover:underline">
             {post.data.author}
           </a>
         </p>

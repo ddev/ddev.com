@@ -1,6 +1,7 @@
 import { defineCollection, z } from "astro:content"
 import fs2 from "fs"
-import { glob } from "glob"
+import { glob as oldglob } from "glob"
+import { glob as contentGlob } from "astro/loaders"
 
 const allowedCategories = [
   "Announcements",
@@ -18,7 +19,7 @@ const allowedCategories = [
  * @returns array of `name` values from author entry frontmatter
  */
 const getAuthorNames = () => {
-  const files = glob.sync(`./src/content/authors/*.md`)
+  const files = oldglob.sync(`./src/content/authors/*.md`)
   const authorNames = files.map((file) => {
     const contents = fs2.readFileSync(file, "utf-8")
     const result = contents.match(new RegExp("name: (.*)"))
@@ -37,6 +38,10 @@ const getAuthorNames = () => {
  */
 
 const authorCollection = defineCollection({
+  loader: contentGlob({
+    pattern: "**/[^_]*.md",
+    base: "./src/content/authors",
+  }),
   schema: z.object({
     name: z.string(),
     firstName: z.string(),
@@ -45,6 +50,7 @@ const authorCollection = defineCollection({
 })
 
 const blogCollection = defineCollection({
+  loader: contentGlob({ pattern: "**/[^_]*.md", base: "./src/content/blog" }),
   schema: z.object({
     title: z.string(),
     summary: z.string().optional(),
