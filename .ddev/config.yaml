@@ -9,7 +9,8 @@ additional_fqdns: []
 use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
-nodejs_version: "20"
+# nodejs_version auto reads from the .nvmrc
+nodejs_version: "auto"
 omit_containers: ["db"]
 disable_upload_dirs_warning: true
 web_extra_exposed_ports:
