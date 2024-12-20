@@ -31,7 +31,7 @@ export async function getStaticPaths() {
 const { author, posts } = Astro.props
 
 const title = `Posts by ${author.data.name}`
-// const { Content } = render(author)
+const { Content } = await render(author)
 ---
 
 <Layout
@@ -42,8 +42,7 @@ const title = `Posts by ${author.data.name}`
     <div class="lg:flex lg:space-x-12 py-24 px-6 lg:px-0">
       <h1 class="font-bold text-4xl dark:text-white">{author.data.name}</h1>
       <div class="prose mt-6 lg:mt-0 dark:prose-invert">
-        <!-- author.render() -->
-        <!-- <Content /> -->
+        <Content />
       </div>
     </div>
 
