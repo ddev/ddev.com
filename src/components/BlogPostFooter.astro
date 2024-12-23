@@ -14,7 +14,7 @@ const orderedPosts = posts.sort((a, b) => {
 })
 
 orderedPosts.forEach((post, index) => {
-  if (post.slug === activeSlug) {
+  if (post.id === activeSlug) {
     if (posts[index - 1]) {
       prev = posts[index - 1]
     }
@@ -32,7 +32,7 @@ orderedPosts.forEach((post, index) => {
   {
     prev && (
       <a
-        href={`/blog/${prev.slug}`}
+        href={`/blog/${prev.id}`}
         rel="prefetch"
         class="flex border items-center rounded-md w-full my-1 md:my-0 content-center justify-start md:justify-start p-4 hover:border-blue-300 hover:shadow-sm dark:border-slate-700"
         title={`Previous: ${prev.data.title}`}
@@ -49,7 +49,7 @@ orderedPosts.forEach((post, index) => {
   {
     next && (
       <a
-        href={`/blog/${next.slug}`}
+        href={`/blog/${next.id}`}
         rel="prefetch"
         class="flex border items-center rounded-md w-full my-1 md:my-0 content-center justify-start md:justify-end md:text-right p-4 hover:border-blue-300 hover:shadow-sm dark:border-slate-700"
         title={`Next: ${next.data.title}`}

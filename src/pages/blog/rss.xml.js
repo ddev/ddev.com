@@ -39,7 +39,7 @@ const items = recentPosts.map((post) => {
   postContent += ensureAbsoluteUrls(marked.parse(post.body))
 
   return {
-    link: `${blogUrl}/${post.slug}`,
+    link: `${blogUrl}/${post.id}`,
     title: post.data.title,
     description: post.data.summary,
     categories: post.data.categories,
