@@ -21,6 +21,14 @@ Lots of good news:
 
 * **Simplified maintenance of XtraBackup**: We've had to maintain our own build-from-source version of [Percona XtraBackup](https://www.percona.com/mysql/software/percona-xtrabackup) for years because Percona didn't provide ARM64 versions. (DDEV uses XtraBackup under the hood for the `ddev snapshot` feature with MySQL.) We've been able to retire that build because Percona is now providing ARM64 versions of their packages.
 
+Now for nerdy `ddev import-db` performance comparisons:
+
+The new [database-performance](https://github.com/rfay/database-performance) repository contains scripts to create large databases, links to pre-created large database dumps, and a script to easily compare `ddev import-db` performance with those dumps, varying across DDEV versions, database versions and types, and imports. With these tools you can actually sort out what Docker provider on macOS gives the best import performance, what the difference is between MariaDB 10.11 and MySQL 8.0, etc. It was important to build this set of tools so we could verify that the new Bitnami-based images didn't have a performance regression.
+
+MySQL 8.0 import performance was studied in the issue queue: [Increase MySQL 8.0 database import speed](https://github.com/ddev/ddev/issues/6244) and [Techniques to speed up import-db](https://github.com/orgs/ddev/discussions/6591). However, it was always impossible to get or test specific cases because all the reporters were using proprietary information for their tests. With the `database-performance` tools and database dumps, we can now do properly comparable import tests.
+
+[//]: # Actual reports from upstream
+
 [//]: # (We'd love to hear your own hints and tips on how you set up a Windows machine &#40;or any other computer!&#41;. You can contribute to this article with a [PR to the blog]&#40;https://github.com/ddev/ddev.com&#41; or make your suggestions on [Discord]&#40;/s/discord&#41;. We welcome guest blogs too!)
 
 Follow our [blog](https://ddev.com/blog/), [LinkedIn](https://www.linkedin.com/company/ddev-foundation), [Mastodon](https://fosstodon.org/@ddev), and join us on [Discord](/s/discord). And we'd love to have you sign up for the [monthly newsletter](/newsletter).
