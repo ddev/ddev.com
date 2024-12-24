@@ -43,9 +43,10 @@ For companies and agencies using DDEV, adopting the Open Source Pledge isn’t j
 We know that these choices require organizational action, and we're happy to help communication with your organization. DDEV's financial affairs are handled through the US nonprofit [DDEV Foundation](/foundation) so it's easy to fund, with clear management and reporting. We're happy to talk to your boss about any facet of this process, see the [Contact page](/contact)
 
 ## Conclusion
+
 The Open Source Pledge offers an opportunity for meaningful change. For DDEV, and tools like it, this could mean more maintainers, better features, and greater reliability. Let’s work together to make open source development sustainable.
 
-[//]: # (TODO: Clear CTA on funding, based on another blog?)
-[//]: # (Review this and clean it up)
+[//]: # "TODO: Clear CTA on funding, based on another blog?"
+[//]: # "Review this and clean it up"
 
 Follow our [blog](https://ddev.com/blog/), [LinkedIn](https://www.linkedin.com/company/ddev-foundation), [Mastodon](https://fosstodon.org/@ddev), and join us on [Discord](/s/discord). And we'd love to have you sign up for the [monthly newsletter](/newsletter).
