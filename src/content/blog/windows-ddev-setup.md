@@ -47,11 +47,16 @@ Two recent Windows machines I set up were the new ARM64/Qualcomm/CoPilot variety
 15. Check out DDEV's code. `mkdir -p ~/workspace && cd ~/workspace && git clone -o upstream git@github.com:ddev/ddev`
 16. `echo "capath=/etc/ssl/certs/" >>~/.curlrc` to make Curl work right with `mkcert`.
 17. GoLand setup:
-    - Set `GOROOT` to `/snap/go`
+    - Set `GOROOT` to `/snap/go` in `Linux\Ubuntu`
     - For ARM64 you have to do `go install github.com/go-delve/delve/cmd/dlv@latest` and put this in IDE properties (under help) `dlv.path=//wsl.localhost/Ubuntu/home/rfay/go/bin/dlv`.
 18. DDEV repository setup
     - Run `.githooks/linkallchecks.sh`
     - Install `golangci-lint` for `make staticrequired`: `go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest`
+19. SSH configuration on Windows side: If your SSH username is different from the username automatically configured on the Windows side (or just generally different from the default you want to use) then add something like this to `.ssh/config` on the Windows side (or at `/mnt/c/Users/<username>/.ssh/config`). This will make it so your connection username does not have to be explicitly specified when you use `ssh` or `git`:
+    ```
+    Host *
+      User <default-user-you-want-to-use>
+    ```
 
 We'd love to hear your own hints and tips on how you set up a Windows machine (or any other computer!). You can contribute to this article with a [PR to the blog](https://github.com/ddev/ddev.com) or make your suggestions on [Discord](/s/discord). We welcome guest blogs too!
 
