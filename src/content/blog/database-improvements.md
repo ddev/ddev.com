@@ -17,7 +17,7 @@ Lots of good news:
 
 * **MySQL 8.0 import performance**: DDEV HEAD (upcoming DDEV v1.24.2) import performance with MySQL 8.0 is about 30% better than current v1.24.1.
 
-* **Retired Docker image maintenance**: We've maintained `ddev/mysql` images for years since MySQL didn't provide ARM64 images. Because Bitnami started providing ARM64 images, we have switched to [Bitnami/mysql](https://hub.docker.com/r/bitnami/mysql) as the base image for MySQL 8+ images. 
+* **Retired Docker image maintenance**: We've maintained `ddev/mysql` images for years since MySQL didn't provide ARM64 images. Because Bitnami started providing ARM64 images, we have switched to [`bitnami/mysql`](https://hub.docker.com/r/bitnami/mysql) as the base image for MySQL 8+ images.
 
 * **Simplified maintenance of XtraBackup**: We've had to maintain our own build-from-source version of [Percona XtraBackup](https://www.percona.com/mysql/software/percona-xtrabackup) for years because Percona didn't provide ARM64 versions. (DDEV uses XtraBackup under the hood for the `ddev snapshot` feature with MySQL.) We've been able to retire that build because Percona is now providing ARM64 versions of their packages.
 
