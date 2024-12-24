@@ -49,6 +49,7 @@ Imagine a day where the tools you rely on for development—-like DDEV—-sudden
 [//]: # "TODO: Clear CTA on funding, based on another blog?"
 [//]: # "Review this and clean it up"
 [//]: # "We're missing a good /contact URL, and the email in the footer doesn't work right"
+
 [//]: # Mention email and meeting links for followup.
 
 Follow our [blog](https://ddev.com/blog/), [LinkedIn](https://www.linkedin.com/company/ddev-foundation), [Mastodon](https://fosstodon.org/@ddev), and join us on [Discord](/s/discord). And we'd love to have you sign up for the [monthly newsletter](/newsletter).
