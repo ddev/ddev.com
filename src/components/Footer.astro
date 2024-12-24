@@ -12,6 +12,7 @@ import {
   GITHUB_URL,
   STORE_URL, 
   BLUESKY_URL,
+  LINKEDIN_URL,
 } from "../const"
 
 import Icon from "./Icon.astro"
@@ -21,7 +22,7 @@ const navigation = {
     { name: "Documentation", href: DOCUMENTATION_URL },
     { name: "Issues", href: GITHUB_ISSUES_URL },
     { name: "Discord", href: DISCORD_URL },
-    { name: "Email", href: EMAIL_URL }
+    { name: "Contact", href: "/contact", me:true }
   ],
   product: [
     { name: "About", href: "/about" },
@@ -46,6 +47,11 @@ const navigation = {
       name: "Mastodon",
       href: MASTODON_URL,
       me: true
+    },
+    {
+      name: "LinkedIn",
+      href: LINKEDIN_URL,
+      me:true
     },
     {
       name: "GitHub",
