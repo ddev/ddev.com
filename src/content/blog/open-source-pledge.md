@@ -35,7 +35,12 @@ DDEV isn’t listed in `package.json` or `composer.json` files; it’s an enviro
 
 ## A Call to Action
 
-For companies and agencies using DDEV, adopting the Open Source Pledge isn’t just about numbers -- it’s about recognizing the value of the tools that enable your success. By taking the pledge, you’re contributing to the sustainability of an ecosystem that empowers your work.
+For companies and agencies using DDEV, adopting the Open Source Pledge isn’t just about numbers -- it’s about recognizing the value of all the tools that enable your success. By taking the pledge, you’re contributing to the sustainability of an ecosystem that empowers your work.
+
+1. Sign the [Open Source Pledge](https://opensourcepledge.com/join/)
+2. Choose the portion that should be allocated to make DDEV a sustainable project and commit to its funding.
+
+We know that these choices require organizational action, and we're happy to help communication with your organization. DDEV's financial affairs are handled through the US nonprofit [DDEV Foundation](/foundation) so it's easy to fund, with clear management and reporting. We're happy to talk to your boss about any facet of this process, see the [Contact page](/contact)
 
 ## Conclusion
 The Open Source Pledge offers an opportunity for meaningful change. For DDEV, and tools like it, this could mean more maintainers, better features, and greater reliability. Let’s work together to make open source development sustainable.
