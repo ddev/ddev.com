@@ -44,9 +44,11 @@ We know that these choices require organizational action, and we're happy to hel
 
 ## Conclusion
 
-The Open Source Pledge offers an opportunity for meaningful change. For DDEV, and tools like it, this could mean more maintainers, better features, and greater reliability. Let’s work together to make open source development sustainable.
+Imagine a day where the tools you rely on for development—-like DDEV—-suddenly (or gradually) stop working. Without sustainable funding, this could be a reality for countless open-source projects. We must all work together to support this critical ecosystem. You count on expert, up-to-date maintenance and improvement of the project to support your clients. It's time to figure out how to make that maintenance sustainable.
 
 [//]: # "TODO: Clear CTA on funding, based on another blog?"
 [//]: # "Review this and clean it up"
+[//]: # "We're missing a good /contact URL, and the email in the footer doesn't work right"
+[//]: # Mention email and meeting links for followup.
 
 Follow our [blog](https://ddev.com/blog/), [LinkedIn](https://www.linkedin.com/company/ddev-foundation), [Mastodon](https://fosstodon.org/@ddev), and join us on [Discord](/s/discord). And we'd love to have you sign up for the [monthly newsletter](/newsletter).
