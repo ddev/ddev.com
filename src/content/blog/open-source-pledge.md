@@ -13,7 +13,7 @@ categories:
 
 ## What is the Open Source Pledge?
 
-Open-source software powers a massive part of the digital economy, but its sustainability (as with DDEV) often relies on voluntary contributions, which can be precarious. The [Open Source Pledge](https://opensourcepledge.com/) offers a framework for companies to support the tools they rely on, seeting an industry standard of USD$2000/developer/year to find open-source projects. The idea is to establish sustainable funding and encure the longevity of vital projects like DDEV and all the upstream projects it depends on.
+Open-source software powers a massive part of the digital economy, but its sustainability (as with DDEV) often relies on voluntary contributions, which can be precarious. The [Open Source Pledge](https://opensourcepledge.com/) offers a framework for companies to support the tools they rely on, seeting an industry standard of USD$2000/developer/year to find open-source projects. The idea is to establish sustainable funding and ensure the longevity of vital projects like DDEV and all the upstream projects it depends on.
 
 ## DDEV’s Sustainability Goals
 
