@@ -5,7 +5,7 @@ pubDate: 2024-12-27
 summary: "DDEV gets MySQL 8.4 and many related upgrades and performance improvements"
 author: Randy Fay
 featureImage:
-  src: /public/img/blog/2024/12/mysql80importtimeonhead.png
+  src: /public/img/blog/2024/12/mysql80importtimeonhead.svg
   alt: "Improved MySQL 8.0 import times in v1.24.2+"
 categories:
   - DevOps
@@ -33,15 +33,15 @@ Each of the following was tested with a Drupal 11 (Drupal CMS) database with 1M 
 
 Using OrbStack on macOS as a Docker Provider, MySQL 8.0 import time is improved by about 25% in HEAD vs v1.24.1 ([data](https://docs.google.com/spreadsheets/d/1_4VtPTi7MVt1DdppYp8sjRaHVmA-y7vaRYMlfqtpaKY/edit?usp=sharing)):
 
-![MySQL 8.0 Import Speed, v1.24.1 vs HEAD](/public/img/blog/2024/12/mysql80importtimeonhead.png)
+![MySQL 8.0 Import Speed, v1.24.1 vs HEAD](/public/img/blog/2024/12/mysql80importtimeonhead.svg)
 
 MySQL 8.4 is a little slower on import than MySQL 8.0, as MySQL 8.0 was significantly slower than MySQL 5.7. MariaDB 10.11 and MySQL 5.5 remain the fastest ([data](https://docs.google.com/spreadsheets/d/1ha9u895o9-4c5wPncs9hpe0OHAXi8OedtwUUizKXLrE/edit?usp=sharing)):
 
-![Database Version vs Import Speed, HEAD](/public/img/blog/2024/12/elapsedvsdatabaseversion.png)
+![Database Version vs Import Speed, HEAD](/public/img/blog/2024/12/elapsedvsdatabaseversion.svg)
 
 I also ran tests of Docker Provider vs MySQL 8.0 import times, and was surprised to see Lima and Colima come out as fastest ([data](https://docs.google.com/spreadsheets/d/1HRlG6m1Cl6c8H-hUiSNW63VdRrxjJ9vlcMgBIcIpLQU/edit?usp=sharing)):
 
-![Import Times for Various Docker Providers (macOS)](/public/img/blog/2024/12/dockerprovidervselapsed.png)
+![Import Times for Various Docker Providers (macOS)](/public/img/blog/2024/12/dockerprovidervselapsed.svg)
 
 I experimented with these scripts on Linux/AMD64 and WSL2/AMD64, but wasn't able to get predictable results, but the import times were significantly longer (20% to 100% longer), which I can only guess is probably a result of Apple Silicon's advantage over Intel processors, and the particular machines I had available to test on.
 
