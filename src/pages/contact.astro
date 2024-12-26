@@ -1,0 +1,50 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Heading from "../components/Heading.astro"
+import PostBody from "../components/PostBody.astro"
+
+import {
+  ORG_NAME,
+  ORG_STREET,
+  ORG_CITY,
+  ORG_STATE_ABBR,
+  ORG_POSTAL_CODE,
+  ORG_COUNTRY,
+  ORG_PHONE,
+  EMAIL_URL,
+  MEETING_URL,
+} from "../const"
+
+const title = `Contact Us`
+---
+
+<Layout
+  title={title}
+>
+  <main class="max-w-4xl mx-auto mb-24">
+    <Heading title={`Contact DDEV`} />
+    <div class="lg:flex">
+      <div class="px-6 lg:px-0 lg:w-2/3">
+        <PostBody>
+          <h2>Easy Contact Info</h2>
+          <p>
+            We're delighted to talk with you any time!
+          </p>
+          
+          <ul>
+            <li>Email <a href={EMAIL_URL}>support</a></li>
+            <li><a href={MEETING_URL}>Set up a meeting</a></li>
+          </ul>
+            
+          <h2>Snail Mail and Phone:</h2>
+
+            {ORG_NAME}<br />
+            {ORG_STREET}<br />
+            {ORG_CITY}, {ORG_STATE_ABBR}&nbsp;{ORG_POSTAL_CODE}&nbsp; {ORG_COUNTRY}<br />
+            {ORG_PHONE}<br />
+
+        </PostBody>
+      </div>
+    </div>
+  </main>
+</Layout>

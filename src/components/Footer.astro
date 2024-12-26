@@ -10,18 +10,19 @@ import {
   COPYRIGHT_HOLDER,
   MASTODON_URL,
   GITHUB_URL,
-  STORE_URL, 
+  STORE_URL,
   BLUESKY_URL,
+  LINKEDIN_URL,
 } from "../const"
 
 import Icon from "./Icon.astro"
 
 const navigation = {
   support: [
-    { name: "Documentation", href: DOCUMENTATION_URL },
-    { name: "Issues", href: GITHUB_ISSUES_URL },
-    { name: "Discord", href: DISCORD_URL },
-    { name: "Email", href: EMAIL_URL }
+    { name: "Documentation", href: DOCUMENTATION_URL, target: "_blank" },
+    { name: "Issues", href: GITHUB_ISSUES_URL, target: "_blank" },
+    { name: "Discord", href: DISCORD_URL, target: "_blank", me: true },
+    { name: "Contact", href: "/contact", me: true }
   ],
   product: [
     { name: "About", href: "/about" },
@@ -36,15 +37,21 @@ const navigation = {
     {
       name: "Discord",
       href: DISCORD_URL,
+      me: true
     },
     {
       name: "Bluesky",
       href: BLUESKY_URL,
-      me:true
+      me: true
     },
     {
       name: "Mastodon",
       href: MASTODON_URL,
+      me: true
+    },
+    {
+      name: "LinkedIn",
+      href: LINKEDIN_URL,
       me: true
     },
     {
@@ -65,14 +72,15 @@ const navigation = {
             <h2 class="text-sm font-mono text-navy-300 tracking-wider">
               Support
             </h2>
-            <ul class="mt-4 space-y-4">
+            <ul class="mt-4 space-y-4 dark:text-white">
               {
                 navigation.support.map((item) => (
                   <li>
                     <a
                       href={item.href}
-                      class="text-base external-link dark:text-white"
-                      target="_blank"
+                      class="text-base"
+                      rel={item.hasOwnProperty('me') && item.me ? 'me' : 'prefetch'}
+                      target={item.target || '_self'}
                     >
                       {item.name}
                     </a>
@@ -88,19 +96,16 @@ const navigation = {
             <ul class="mt-4 space-y-4 dark:text-white">
               {
                 navigation.product.map((item) => (
-                  item.target == "undefined" ?
                   <li>
-                    <a href={item.href} class="text-base" rel="prefetch">
+                    <a
+                      href={item.href}
+                      class="text-base"
+                      rel={item.hasOwnProperty('me') && item.me ? 'me' : 'prefetch'}
+                      target={item.target || '_self'}
+                    >
                       {item.name}
                     </a>
                   </li>
-                  :
-                  <li>
-                    <a href={item.href} class="text-base" rel="prefetch" target={item.target}>
-                      {item.name}
-                    </a>
-                  </li>
-
                 ))
               }
             </ul>
@@ -113,7 +118,12 @@ const navigation = {
               {
                 navigation.social.map((item) => (
                     <li>
-                      <a href={item.href} class="text-base" rel="prefetch" target="_blank">
+                      <a
+                        href={item.href}
+                        class="text-base"
+                        rel={item.hasOwnProperty('me') && item.me ? 'me' : 'prefetch'}
+                        target="_blank"
+                      >
                         {item.name}
                       </a>
                     </li>
