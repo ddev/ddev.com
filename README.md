@@ -150,7 +150,7 @@ A basic textlint configuration lives in `.textlintrc` and runs against `src/cont
 
 Textlint’s [default terminology](https://github.com/sapegin/textlint-rule-terminology/blob/master/terms.jsonc) catches a lot of accepted best practices on its own, where the only major override is to allow “website” (instead of its suggested “site”) because it’s rampant in blog posts and documentation. Same with the “front end” and “back end” conundrum and two-word “command line”.
 
-Run `ddev npm run textlint` or `npm run textlint` to check everything, and you can apply “fixable” changes using `ddev npm run textint:fix` or npm run textlint:fix`. Be careful automating fixes to be sure they don’t have any unintended side effects!
+Run `ddev npm run textlint` or `npm run textlint` to check everything, and you can apply “fixable” changes using `ddev npm run textint:fix` or `npm run textlint:fix`. Be careful automating fixes to be sure they don’t have any unintended side effects!
 
 ### Prettier and EditorConfig
 
