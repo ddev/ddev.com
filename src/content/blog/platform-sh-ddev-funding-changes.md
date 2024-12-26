@@ -15,7 +15,7 @@ As many of you know, [Platform.sh](https://platform.sh) is a key supporter and f
 
 Of course, time moves along and sometimes organizations have to change their priorities, and in 2025 Platform.sh has decided to change its approach, but still remains a generous lead sponsor at the _partner_ level. (Your organization can join them!)
 
-- Instead of funding maintainer Randy Fay as an employee, Platform.sh will fund the DDEV Foundation with a generous 3000 Euros/month.
+- Instead of funding maintainer Randy Fay as an employee, Platform.sh will fund the DDEV Foundation with a generous €3000/month.
 - Platform.sh will transfer the "DDEV" trademark and control of the `ddev.com` and `ddev.site` domain names to the DDEV Foundation.
 - We'll continue to maintain the [ddev-platformsh](https://github.com/ddev/ddev-platformsh) add-on and explore an [Upsun](https://upsun.com) add-on.
 
