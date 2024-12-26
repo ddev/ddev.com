@@ -1,12 +1,12 @@
 ---
-title: "DDEV's Database Support Gets an Upgrade"
-pubDate: 2024-12-23
+title: "DDEV's Database Support Gets MySQL 8.4 and Better Import Speeds"
+pubDate: 2024-12-27
 #modifiedDate: 2024-10-17
-summary: DDEV gets MySQL 8.4 and many related upgrades and performance improvements
+summary: "DDEV gets MySQL 8.4 and many related upgrades and performance improvements"
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2024/11/windows-install-blog-logos.png
-#  alt: Windows, DDEV, Ubuntu logos demonstrating setting up a Windows machine for DDEV.
+featureImage:
+  src: /public/img/blog/2024/12/MySQL8.0ImportTimeV1.24.1VSHEAD.svg
+  alt: "Improved MySQL 8.0 import times in v1.24.2+"
 categories:
   - DevOps
 ---
@@ -29,8 +29,22 @@ The new [database-performance](https://github.com/rfay/database-performance) rep
 
 MySQL 8.0 import performance was studied in the issue queue: [Increase MySQL 8.0 database import speed](https://github.com/ddev/ddev/issues/6244) and [Techniques to speed up import-db](https://github.com/orgs/ddev/discussions/6591). However, it was always impossible to get or test specific cases because all the reporters were using proprietary information for their tests. With the `database-performance` tools and database dumps, we can now do properly comparable import tests.
 
-[//]: # Actual reports from upstream
+Each of the following was tested with a Drupal 11 (Drupal CMS) database with 1M nodes and 1M users, about 3.7 GB compressed SQL file.
 
-[//]: # "We'd love to hear your own hints and tips on how you set up a Windows machine (or any other computer!). You can contribute to this article with a [PR to the blog](https://github.com/ddev/ddev.com) or make your suggestions on [Discord](/s/discord). We welcome guest blogs too!"
+Using OrbStack on macOS as a Docker Provider, MySQL 8.0 import time is improved by about 25% in HEAD vs v1.24.1 ([data](https://docs.google.com/spreadsheets/d/1_4VtPTi7MVt1DdppYp8sjRaHVmA-y7vaRYMlfqtpaKY/edit?usp=sharing)):
 
-Follow our [blog](https://ddev.com/blog/), [LinkedIn](https://www.linkedin.com/company/ddev-foundation), [Mastodon](https://fosstodon.org/@ddev), and join us on [Discord](/s/discord). And we'd love to have you sign up for the [monthly newsletter](/newsletter).
+![MySQL 8.0 Import Speed, v1.24.1 vs HEAD](/public/img/blog/2024/12/MySQL8.0ImportTimeV1.24.1VSHEAD.svg)
+
+MySQL 8.4 is a little slower on import than MySQL 8.0, as MySQL 8.0 was significantly slower than MySQL 5.7. MariaDB 10.11 and MySQL 5.5 remain the fastest ([data](https://docs.google.com/spreadsheets/d/1ha9u895o9-4c5wPncs9hpe0OHAXi8OedtwUUizKXLrE/edit?usp=sharing)):
+
+![Database Version vs Import Speed, HEAD](/public/img/blog/2024/12/ElapsedVSDatabaseVersion.svg)
+
+I also ran tests of Docker Provider vs MySQL 8.0 import times, and was surprised to see Lima and Colima come out as fastest ([data](https://docs.google.com/spreadsheets/d/1HRlG6m1Cl6c8H-hUiSNW63VdRrxjJ9vlcMgBIcIpLQU/edit?usp=sharing)):
+
+![Import Times for Various Docker Providers (macOS)](/public/img/blog/2024/12/DockerProviderVSElapsed.svg)
+
+I experimented with these scripts on Linux/AMD64 and WSL2/AMD64, but wasn't able to get predictable results, but the import times were significantly longer (20% to 100% longer), which I can only guess is probably a result of Apple Silicon's advantage over Intel processors, and the particular machines I had available to test on.
+
+**We'd love to hear your reports about these results.** You can use or contribute to the scripts and database dumps at [rfay/database-performance](https://github.com/rfay/database-performance). It's easy to use DDEV HEAD too, see [docs](https://ddev.readthedocs.io/en/stable/developers/building-contributing/#testing-latest-commits-on-head).
+
+Follow our [blog](https://ddev.com/blog/), [Bluesky](https://bsky.app/profile/ddev.bsky.social), [LinkedIn](https://www.linkedin.com/company/ddev-foundation), [Mastodon](https://fosstodon.org/@ddev), and join us on [Discord](/s/discord). And we'd love to have you sign up for the [monthly newsletter](/newsletter).
