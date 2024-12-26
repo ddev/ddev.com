@@ -44,7 +44,7 @@ We know that these choices require organizational action, and we're happy to hel
 
 ## Look to the Future!
 
-Imagine a day when the tools you rely on for development—-like DDEV—-suddenly (or gradually) stop working reliably. You've seen this happen before. Without sustainable funding, this could be a reality for countless open-source projects. We must all work together to support this critical ecosystem. You count on expert, up-to-date maintenance and improvement of the project to support your clients. It's time to figure out how to make that maintenance sustainable.
+Imagine a day when the tools you rely on for development--like DDEV--suddenly (or gradually) stop working reliably. You've seen this happen before. Without sustainable funding, this could be a reality for countless open-source projects. We must all work together to support this critical ecosystem. You count on expert, up-to-date maintenance and improvement of the project to support your clients. It's time to figure out how to make that maintenance sustainable.
 
 Full information about the many ways to support DDEV as an organization or individually is at [GitHub Sponsors](https://github.com/sponsors/ddev). Send us a note (`randy.fay (at) ddev.com`) or [make an appointment](https://cal.com/randyfay/30min) to talk about your organization's sponsorship.
 
