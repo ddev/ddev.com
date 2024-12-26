@@ -13,7 +13,7 @@ categories:
 
 Lots of good news:
 
-- **MySQL 8.4**: DDEV will support MySQL 8.4, the latest LTS version of MySQL, in upcoming v1.24.2. We now support **17** different database types and versions. Try doing that on your bare-metal development setup :)
+- **MySQL 8.4**: DDEV will support MySQL 8.4, the latest LTS version of MySQL, in upcoming v1.24.2. We now support **17** different database types and versions. Try doing that on your bare-metal development setup 😀.
 
 - **MySQL 8.0 import performance**: DDEV HEAD (upcoming DDEV v1.24.2) import performance with MySQL 8.0 is about 30% better than current v1.24.1.
 
@@ -23,13 +23,13 @@ Lots of good news:
 
 - **Open Source For The Win!** DDEV is built on the shoulders of giants. MySQL and MariaDB generously share their decades-old products. Percona makes XtraBackup available and even improves the packages outside their comfort zone. Bitnami starts building ARM64 images for their huge catalog of Docker images. And of course Docker itself provides the engine that powers DDEV. (It doesn't matter what Docker provider you're using, Docker Desktop, OrbStack, Colima, Lima, Rancher Desktop, Docker-ce, all of them are wrappers on the fantastically maintained Docker-ce project, with maintenance led by Docker, Inc.) None of the improvements discussed in this blog post would be possible without all those wonderful upstream changes.
 
-Now for nerdy `ddev import-db` performance comparisons:
+**Now for nerdy `ddev import-db` performance comparisons**:
 
 The new [database-performance](https://github.com/rfay/database-performance) repository contains scripts to create large databases, links to pre-created large database dumps, and a script to easily compare `ddev import-db` performance with those dumps, varying across DDEV versions, database versions and types, and imports. With these tools you can actually sort out what Docker provider on macOS gives the best import performance, what the difference is between MariaDB 10.11 and MySQL 8.0, etc. It was important to build this set of tools so we could verify that the new Bitnami-based images didn't have a performance regression.
 
 MySQL 8.0 import performance was studied in the issue queue: [Increase MySQL 8.0 database import speed](https://github.com/ddev/ddev/issues/6244) and [Techniques to speed up import-db](https://github.com/orgs/ddev/discussions/6591). However, it was always impossible to get or test specific cases because all the reporters were using proprietary information for their tests. With the `database-performance` tools and database dumps, we can now do properly comparable import tests.
 
-Each of the following was tested with a Drupal 11 (Drupal CMS) database with 1M nodes and 1M users, about 3.7 GB compressed SQL file.
+Each of the following was tested with a Drupal 11 (Drupal CMS) database with 1M nodes and 1M users, a 3.7 GB compressed SQL file with no private data, available in [database-performance](https://github.com/rfay/database-performance).
 
 Using OrbStack on macOS as a Docker Provider, MySQL 8.0 import time is improved by about 25% in HEAD vs v1.24.1 ([data](https://docs.google.com/spreadsheets/d/1_4VtPTi7MVt1DdppYp8sjRaHVmA-y7vaRYMlfqtpaKY/edit?usp=sharing)):
 
