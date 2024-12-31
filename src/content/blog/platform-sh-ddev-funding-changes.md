@@ -11,7 +11,7 @@ categories:
   - Community
 ---
 
-As many of you know, [Platform.sh](https://platform.sh) is a key supporter and funder of DDEV. They generously stepped in to and to become the lead sponsor of DDEV and to rescue the "DDEV" trademark and its use [in 2022](platform-sh-becomes-a-lead-sponsor-of-ddev.md).
+As many of you know, [Platform.sh](https://platform.sh) is a key supporter and funder of DDEV. They generously stepped in to become the lead sponsor of DDEV and rescue the "DDEV" trademark and its use [in 2022](platform-sh-becomes-a-lead-sponsor-of-ddev.md).
 
 Of course, time moves along and sometimes organizations have to change their priorities, and in 2025 Platform.sh has decided to change its approach, but still remains a generous lead sponsor at the _partner_ level. (Your organization can join them!)
 
@@ -27,7 +27,7 @@ As many of you know, though, times are tight in the agency world, and funding fo
 
 **THANKS to all of you who are supporting DDEV’s path to sustainability** and who have gotten your organizations to do so.
 
-**Stop by and thank Platform.sh** for their generous ongoing support of DDEV! See their [contact page](https://platform.sh/contact/) or join their [discord](https://discord.gg/platformsh).
+**Stop by and thank Platform.sh** for their generous ongoing support of DDEV! See their [contact page](https://platform.sh/contact/) or join their [Discord](https://discord.gg/platformsh).
 
 Want to keep up as the month goes along? Follow on
 
