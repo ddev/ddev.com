@@ -1,7 +1,7 @@
 ---
 title: "Setting up a Windows Machine for DDEV"
 pubDate: 2024-11-04
-modifiedDate: 2024-12-11
+modifiedDate: 2024-12-31
 summary: Setting up a new Windows machine for DDEV maintenance or development is pretty easy. Here are my opinionated steps.
 author: Randy Fay
 featureImage:
