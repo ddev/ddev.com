@@ -1,7 +1,7 @@
 ---
 title: "Setting up a Windows Machine for DDEV"
 pubDate: 2024-11-04
-#modifiedDate: 2024-10-17
+modifiedDate: 2024-12-31
 summary: Setting up a new Windows machine for DDEV maintenance or development is pretty easy. Here are my opinionated steps.
 author: Randy Fay
 featureImage:
@@ -31,7 +31,7 @@ Two recent Windows machines I set up were the new ARM64/Qualcomm/CoPilot variety
 6. In PowerShell, `wsl --install` and `wsl --update`
 7. Windows Terminal is a fantastic terminal and is installed by default these days. I always set it up early with "Default Terminal Application: Windows Terminal" and "Interaction->Automatically Copy Selection to Clipboard", and set Ubuntu as default, and have it auto-start on login.
 8. Once Ubuntu is installed:
-   - `sudo apt update && sudo apt install -y apt-transport-https autojump build-essential ca-certificates ccache clang curl dirmngr etckeeper expect git gnupg jq libcurl4-gnutls-dev libnss3-tools lsb-release mariadb-client nagios-plugins net-tools postgresql-client unzip vim xdg-utils zip && sudo apt upgrade -y`
+   - `sudo apt update && sudo apt install -y apt-transport-https autojump bats build-essential ca-certificates ccache clang curl dirmngr etckeeper expect git gnupg htop jq libcurl4-gnutls-dev libnss3-tools lsb-release mariadb-client nagios-plugins net-tools postgresql-client unzip vim xdg-utils zip && sudo apt upgrade -y`
    - `sudo snap install --classic go`
    - `sudo snap install ngrok and ngrok config add-authtoken <token>`
 9. In Windows Explorer, add my WSL2 home directory to favorites by copying it into the favorites area.
@@ -47,11 +47,16 @@ Two recent Windows machines I set up were the new ARM64/Qualcomm/CoPilot variety
 15. Check out DDEV's code. `mkdir -p ~/workspace && cd ~/workspace && git clone -o upstream git@github.com:ddev/ddev`
 16. `echo "capath=/etc/ssl/certs/" >>~/.curlrc` to make Curl work right with `mkcert`.
 17. GoLand setup:
-    - Set `GOROOT` to `/snap/go`
+    - Set `GOROOT` to `/snap/go` in `Linux\Ubuntu`
     - For ARM64 you have to do `go install github.com/go-delve/delve/cmd/dlv@latest` and put this in IDE properties (under help) `dlv.path=//wsl.localhost/Ubuntu/home/rfay/go/bin/dlv`.
 18. DDEV repository setup
     - Run `.githooks/linkallchecks.sh`
     - Install `golangci-lint` for `make staticrequired`: `go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest`
+19. SSH configuration on Windows side: If your SSH username is different from the username automatically configured on the Windows side (or just generally different from the default you want to use) then add something like this to `.ssh/config` on the Windows side (or at `/mnt/c/Users/<username>/.ssh/config`). This will make it so your connection username does not have to be explicitly specified when you use `ssh` or `git`:
+    ```
+    Host *
+      User <default-user-you-want-to-use>
+    ```
 
 We'd love to hear your own hints and tips on how you set up a Windows machine (or any other computer!). You can contribute to this article with a [PR to the blog](https://github.com/ddev/ddev.com) or make your suggestions on [Discord](/s/discord). We welcome guest blogs too!
 
