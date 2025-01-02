@@ -1,6 +1,6 @@
 ---
 title: "DDEV's Database Support Gets MySQL 8.4 and Better Import Speeds"
-pubDate: 2024-12-27
+pubDate: 2025-01-02
 #modifiedDate: 2024-10-17
 summary: "DDEV gets MySQL 8.4 and many related upgrades and performance improvements"
 author: Randy Fay
