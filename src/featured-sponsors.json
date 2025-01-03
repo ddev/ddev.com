@@ -27,15 +27,7 @@
     "github": "i-gelb",
     "isLeading": false
   },
-  {
-    "name": "Open Strategy Partners",
-    "type": "major",
-    "logo": "/logos/OSP_logo_black_RGB.svg",
-    "darklogo": "/logos/OSP_logo_white_RGB.svg",
-    "squareLogo": "/logos/OSP_logo_black_RGB.svg",
-    "url": "https://openstrategypartners.com/",
-    "github": "open-strategy-partners"
-  },
+
   {
     "name": "Agaric",
     "type": "standard",
@@ -72,15 +64,7 @@
     "url": "https://centarro.io/",
     "github": "centarro"
   },
-  {
-    "name": "Fame Helsinki",
-    "type": "standard",
-    "logo": "/logos/fame-logo.svg",
-    "darklogo": "/logos/fame-darkmode.svg",
-    "squareLogo": "/logos/fame-square.svg",
-    "url": "https://fame.fi/",
-    "github": "FameHelsinki"
-  },
+
   {
     "name": "Gizra",
     "type": "standard",
