@@ -1,7 +1,7 @@
 ---
 title: "Platform.sh becomes a Lead Sponsor of DDEV!"
 pubDate: 2022-05-27
-modifiedDate: 2025-01-03
+modifiedDate: 2025-01-07
 summary: Announcement of Platform.sh’s commitment to sponsoring DDEV development.
 author: Randy Fay
 featureImage:
@@ -11,7 +11,7 @@ categories:
   - Announcements
 ---
 
-Update 2025-01-03: Platform.sh has [changed its generous support](platform-sh-ddev-funding-changes.md).
+Update 2025-01-07: Platform.sh has [changed its generous support](platform-sh-ddev-funding-changes.md).
 
 Although many of you know this, I wanted to make a formal announcement of some great news. _[Platform.sh](https://platform.sh) has stepped up to become a lead sponsor of the [DDEV open-source project](https://github.com/ddev/ddev)!_
 
