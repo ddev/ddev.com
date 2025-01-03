@@ -27,7 +27,6 @@
     "github": "i-gelb",
     "isLeading": false
   },
-
   {
     "name": "Agaric",
     "type": "standard",
@@ -64,7 +63,15 @@
     "url": "https://centarro.io/",
     "github": "centarro"
   },
-
+  {
+    "name": "Fame Helsinki",
+    "type": "standard",
+    "logo": "/logos/fame-logo.svg",
+    "darklogo": "/logos/fame-darkmode.svg",
+    "squareLogo": "/logos/fame-square.svg",
+    "url": "https://fame.fi/",
+    "github": "FameHelsinki"
+  },
   {
     "name": "Gizra",
     "type": "standard",
