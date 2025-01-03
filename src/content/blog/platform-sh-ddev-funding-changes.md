@@ -1,6 +1,6 @@
 ---
 title: "Changes in Platform.sh Funding of DDEV"
-pubDate: 2025-01-03
+pubDate: 2025-01-07
 #modifiedDate: 2024-09-06
 summary: Changes in Platform.sh Funding of DDEV
 author: Randy Fay
@@ -21,9 +21,9 @@ Of course, time moves along and sometimes organizations have to change their pri
 
 We'll be preparing updated financial plans for 2025 to adjust to this change, and continue to be enormously thankful for the support of Platform.sh!
 
-This change in funding mode will give DDEV more flexibility in use of funds, and is expected to be a solid move to [full support for Stas Zhuk](lets-fund-stas-maintainer.md).
+This change in funding mode will give DDEV more flexibility in use of funds, and is expected to be a solid move toward [full support for Stas Zhuk](lets-fund-stas-maintainer.md).
 
-As many of you know, though, times are tight in the agency world, and funding for DDEV has actually declined in the last year, with a couple of key sponsors having to back away. We hope you and your organization are coming up with new plans to support DDEV.
+As many of you know, though, times are tight in the agency world, and funding for DDEV has actually declined in the last year, with several key sponsors having to back away. We hope you and your organization are coming up with new plans to support DDEV.
 
 **THANKS to all of you who are supporting DDEV’s path to sustainability** and who have gotten your organizations to do so.
 
