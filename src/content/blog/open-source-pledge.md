@@ -1,6 +1,6 @@
 ---
 title: "The Open Source Pledge and DDEV: A Path to Sustainability"
-pubDate: 2025-01-02
+pubDate: 2025-01-06
 #modifiedDate: 2024-10-17
 summary: "The Open Source Pledge and DDEV: A Path to Sustainability"
 author: Randy Fay
