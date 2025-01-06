@@ -1,13 +1,13 @@
 ---
 title: "DDEV January 2025 Newsletter"
-pubDate: 2025-01-08
+pubDate: 2025-01-06
 #modifiedDate: 2024-09-06
 summary: DDEV January 2025 Newsletter
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2024/12/nancy_lewis_colorado_river.jpg
-#  alt: Nancy Lewis painting of Colorado River near Palisade, Colorado
-#  credit: Nancy Lewis painting of the Colorado River near Palisade, Colorado
+featureImage:
+  src: /img/blog/2025/01/mtgarfield.jpg
+  alt: Mount Garfield over Palisade, Colorado, 2025-01-07
+  credit: View of Mount Garfield above Palisade, Colorado on my walk to work today, January 6, 2025
 categories:
   - Community
 ---
