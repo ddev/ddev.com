@@ -46,8 +46,9 @@ I also ran tests of Docker Provider vs MySQL 8.0 import times, and was surprised
 I experimented with these scripts on Linux/AMD64 and WSL2/AMD64, but wasn't able to get predictable results, but the import times were significantly longer (20% to 100% longer), which I can only guess is probably a result of Apple Silicon's advantage over Intel processors, and the particular machines I had available to test on.
 
 Interesting notes on MySQL 8.4+ on the web:
-* [Percona study of MySQL 8.4+ performance](https://www.percona.com/blog/sakila-where-are-you-going/)
-* [Percona update on MySQL 8.4+ performance improvements in 8.4.3+](https://www.percona.com/blog/mysql-8-4-3-and-9-1-0-major-performance-gains-revealed/)
+
+- [Percona study of MySQL 8.4+ performance](https://www.percona.com/blog/sakila-where-are-you-going/)
+- [Percona update on MySQL 8.4+ performance improvements in 8.4.3+](https://www.percona.com/blog/mysql-8-4-3-and-9-1-0-major-performance-gains-revealed/)
 
 **We'd love to hear your reports about these results.** You can use or contribute to the scripts and database dumps at [rfay/database-performance](https://github.com/rfay/database-performance). It's easy to use DDEV HEAD too, see [docs](https://ddev.readthedocs.io/en/stable/developers/building-contributing/#testing-latest-commits-on-head).
 
