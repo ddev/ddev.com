@@ -14,7 +14,11 @@ categories:
 
 **Happy New Year DDEV Community!**
 
-Our most important news of the month is both bad and good. Our lead sponsor, Platform.sh, has decided to reduce and change its sponsorship amount, but also to transfer to the DDEV Foundation the "DDEV" trademark and the domains that go with it, and they will continue sponsoring DDEV at a lower financial level. You can read all about it in the [change announcement blog](platform-sh-ddev-funding-changes.md). But the TL;DR is that we need every organization and individual to step up their financial support in order to ensure DDEV's future.
+Our most important news of the month is both bad and good, about Platform.sh change in funding of DDEV:
+  * Our lead sponsor, Platform.sh, has decided to reduce its sponsorship level.
+  * Platform.sh will also transfer to the DDEV Foundation the "DDEV" trademark and the domains that go with it.
+  * Platform.sh will continue sponsoring DDEV at a lower but still generous and critical financial level. You can read all about it in the [change announcement blog](platform-sh-ddev-funding-changes.md). 
+  * TL;DR: we need every organization and individual to step up their financial support in order to ensure DDEV's future.
 
 **DDEV v1.24.1** was [released](https://github.com/ddev/ddev/releases/tag/v1.24.1) with minor changes.
 
