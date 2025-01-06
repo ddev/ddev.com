@@ -22,10 +22,12 @@ Our most important news of the month is both bad and good. Our lead sponsor, Pla
 
 **DDEV Notes and News**
 
-- [DDEV Advisory Group Meeting](https://github.com/orgs/ddev/discussions/6853). This month's meeting is Wednesday, January 8, 2025, and is a critical discussion of our financial situation, budget, and plans based on recent news [join us](https://www.meetup.com/ddev-events/events/303197445). If you'd like a calendar invitation instead of the meetup signup, just reply to this email.
+- [DDEV Advisory Group Meeting](https://github.com/orgs/ddev/discussions/6853). This month's meeting is Wednesday, January 8, 2025, and is a critical discussion of our financial situation, budget, and plans based on recent news. [Join us](https://www.meetup.com/ddev-events/events/303197445). If you'd like a calendar invitation instead of the meetup signup, just reply to this email.
+- [DDEV Database Support Improvements and MySQL 8.4](https://ddev.com/blog/database-improvements) - read all about upstream improvements and performance improvements, maintenance improvements, and import measurement improvements. 
+- [Changes in Platform.sh Funding of DDEV](https://ddev.com/blog/platform-sh-ddev-funding-changes)
 - [DDEV, solr, and platform.sh](https://www.computerminds.co.uk/articles/ddev-solr-and-platformsh)
 - [Joshuami blog on Drupal CMS (via DDEV)](https://joshuami.com/blog/2024-12/blog-drupal-cms-starshot-kinda-now/)
-- [Testing Drupal 11 with Cypress and DDEV](https://www.thedroptimes.com/44845/how-test-drupal-11-using-cypress-and-ddev-drupaladicto-explains) shows how to use [@tyler36](https://github.com/tyler36)'s excellent [Cypress add-on for DDEV](https://github.com/tyler36/ddev-cypress).
+- [Testing Drupal 11 with Cypress and DDEV](https://www.thedroptimes.com/44845/how-test-drupal-11-using-cypress-and-ddev-drupaladicto-explains) shows how to use [@tyler36](https://github.com/tyler36)'s excellent [Cypress add-on for DDEV](https://github.com/tyler36/ddev-cypress). (The linked YouTube video is in Spanish.)
 - [Contao CMS docs show preferred DDEV approach](https://docs.contao.org/manual/en/guides/local-installation/ddev/)
 - DDEV Releases and announcements are now made on [Bluesky](https://bsky.app/profile/ddev.bsky.social) as well as other social networks, but no longer on X/Twitter.
 
