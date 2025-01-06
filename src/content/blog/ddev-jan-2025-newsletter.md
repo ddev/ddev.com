@@ -23,7 +23,7 @@ Our most important news of the month is both bad and good. Our lead sponsor, Pla
 **DDEV Notes and News**
 
 - [DDEV Advisory Group Meeting](https://github.com/orgs/ddev/discussions/6853). This month's meeting is Wednesday, January 8, 2025, and is a critical discussion of our financial situation, budget, and plans based on recent news. [Join us](https://www.meetup.com/ddev-events/events/303197445). If you'd like a calendar invitation instead of the meetup signup, just reply to this email.
-- [DDEV Database Support Improvements and MySQL 8.4](https://ddev.com/blog/database-improvements) - read all about upstream improvements and performance improvements, maintenance improvements, and import measurement improvements. 
+- [DDEV Database Support Improvements and MySQL 8.4](https://ddev.com/blog/database-improvements) - read all about upstream improvements and performance improvements, maintenance improvements, and import measurement improvements.
 - [Changes in Platform.sh Funding of DDEV](https://ddev.com/blog/platform-sh-ddev-funding-changes)
 - [DDEV, solr, and platform.sh](https://www.computerminds.co.uk/articles/ddev-solr-and-platformsh)
 - [Joshuami blog on Drupal CMS (via DDEV)](https://joshuami.com/blog/2024-12/blog-drupal-cms-starshot-kinda-now/)
