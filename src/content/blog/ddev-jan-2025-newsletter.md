@@ -14,7 +14,7 @@ categories:
 
 **Happy New Year DDEV Community!**
 
-Our most important news of the month is both bad and good. Our lead sponsor, Platform.sh, has decided to reduce and change its sponsorship amount, but also to transfer to the DDEV Foundation the "DDEV" trademark and the domains that go with it, and they will continue sponsoring DDEV at a lower financial level. You can read all about it in the [change announcement blog](20241226_platformsh_changes20241226_platformsh_changes). But the TL;DR is that we need every organization and individual to step up their financial support in order to ensure DDEV's future.
+Our most important news of the month is both bad and good. Our lead sponsor, Platform.sh, has decided to reduce and change its sponsorship amount, but also to transfer to the DDEV Foundation the "DDEV" trademark and the domains that go with it, and they will continue sponsoring DDEV at a lower financial level. You can read all about it in the [change announcement blog](platform-sh-ddev-funding-changes.md). But the TL;DR is that we need every organization and individual to step up their financial support in order to ensure DDEV's future.
 
 **DDEV v1.24.1** was released with minor changes.
 
@@ -22,7 +22,7 @@ Our most important news of the month is both bad and good. Our lead sponsor, Pla
 
 **DDEV Notes and News**
 
-- [DDEV Advisory Group Meeting](https://github.com/orgs/ddev/discussions/6682). This month's meeting is Wednesday, January 8, 2025, and is a critical discussion of our financial situation, budget, and plans based on recent news [join us](https://www.meetup.com/ddev-events/events/303197425). If you'd like a calendar invitation instead of the meetup signup, just reply to this email.
+- [DDEV Advisory Group Meeting](https://github.com/orgs/ddev/discussions/6853). This month's meeting is Wednesday, January 8, 2025, and is a critical discussion of our financial situation, budget, and plans based on recent news [join us](https://www.meetup.com/ddev-events/events/303197445). If you'd like a calendar invitation instead of the meetup signup, just reply to this email.
 - [DDEV, solr, and platform.sh](https://www.computerminds.co.uk/articles/ddev-solr-and-platformsh)
 - [Joshuami blog on Drupal CMS (via DDEV)](https://joshuami.com/blog/2024-12/blog-drupal-cms-starshot-kinda-now/)
 - [Testing Drupal 11 with Cypress and DDEV](https://www.thedroptimes.com/44845/how-test-drupal-11-using-cypress-and-ddev-drupaladicto-explains) shows how to use [@tyler36](https://github.com/tyler36)'s excellent [Cypress add-on for DDEV](https://github.com/tyler36/ddev-cypress).
@@ -41,4 +41,4 @@ Want to keep up as the month goes along? Follow on
 - [Bluesky](https://bsky.app/profile/ddev.bsky.social)
 - and join our community on [Discord](/s/discord)
 
-Happy December from Randy Fay, DDEV Project Lead.
+Happy January from Randy Fay, DDEV Project Lead.
