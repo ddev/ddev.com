@@ -1,6 +1,6 @@
 ---
 title: "Changes in Platform.sh Funding of DDEV"
-pubDate: 2025-01-07
+pubDate: 2025-01-06
 #modifiedDate: 2024-09-06
 summary: Changes in Platform.sh Funding of DDEV
 author: Randy Fay
