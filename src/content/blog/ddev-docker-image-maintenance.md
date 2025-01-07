@@ -19,7 +19,7 @@ Here's our July 24, 2024 [Contributor Training](/blog/category/training) on DDEV
 <iframe width="560" height="315" src="https://www.youtube.com/embed/HcJOm0nBU0w?si=M19qxd8ZoRjnHR9N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
-DDEV depends on a [few critical Docker images](https://github.com/ddev/ddev/tree/master/containers), including `ddev-webserver`, `ddev-dbserver`, `ddev-traefik-router`, and `ddev-ssh-agent`. Each of these is built for new releases, and if a PR changes them, then a new image tag is pushed for that PR (typically with the same tag as the PR branch name).
+DDEV depends on a [few critical Docker images](https://github.com/ddev/ddev/tree/main/containers), including `ddev-webserver`, `ddev-dbserver`, `ddev-traefik-router`, and `ddev-ssh-agent`. Each of these is built for new releases, and if a PR changes them, then a new image tag is pushed for that PR (typically with the same tag as the PR branch name).
 
 ## Building images locally for testing your changes
 

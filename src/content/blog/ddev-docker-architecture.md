@@ -33,20 +33,20 @@ DDEV's Docker builds typically squash all the layers together after they're buil
 
 ## What are the basic DDEV images and containers?
 
-DDEV's images and containers are all in the [containers](https://github.com/ddev/ddev/tree/master/containers) directory:
+DDEV's images and containers are all in the [containers](https://github.com/ddev/ddev/tree/main/containers) directory:
 
-- **[`ddev-webserver`](https://github.com/ddev/ddev/tree/master/containers/ddev-webserver)** which runs the web server (`nginx` or `apache`), the `php-fpm`, and `mailpit`. It's also what most people customize or use when they're using `ddev exec`. As an image, `ddev-webserver` is a child of [`ddev-php-base`](https://github.com/ddev/ddev/tree/master/containers/ddev-php-base), which is not run directly as a container.
+- **[`ddev-webserver`](https://github.com/ddev/ddev/tree/main/containers/ddev-webserver)** which runs the web server (`nginx` or `apache`), the `php-fpm`, and `mailpit`. It's also what most people customize or use when they're using `ddev exec`. As an image, `ddev-webserver` is a child of [`ddev-php-base`](https://github.com/ddev/ddev/tree/main/containers/ddev-php-base), which is not run directly as a container.
   - `ddev-webserver` is based on Debian 12 Bookworm, the current stable version of Debian. Keeping up with the latest Debian version means that we can support current technologies and packages.
   - Why is `ddev-webserver` so big? It's big! Since DDEV is a tool for local developers, the goal is always to make things work well for the developer. We always try to keep the size down, but it's a balancing act. For example, the web server includes all locales, so that people all over the world in all locales can use it without alteration.
   - **Customization:** Each project can [customize the web image](https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/) with `webimage_extra_packages` or `.ddev/web-build/Dockerfile.*`.
   - Why aren't `nginx`, `php-fpm`, `node`, and `mailpit` in separate containers? It's fairly common for each Docker container to run a single process, so it would not be unexpected for DDEV to have separate `nginx` and `php` containers (and it once did). However, it seemed better for users at one point in DDEV's history to combine them all in one container, and they're still there. We re-evaluate this from time to time.
-- **[`ddev-dbserver`](https://github.com/ddev/ddev/tree/master/containers/ddev-dbserver)** runs the MySQL, MariaDB, or PostgreSQL daemons.
+- **[`ddev-dbserver`](https://github.com/ddev/ddev/tree/main/containers/ddev-dbserver)** runs the MySQL, MariaDB, or PostgreSQL daemons.
 
   - The MariaDB images are built on top of the official upstream Docker images.
   - The MySQL images have to be done quite differently, because MySQL has never provided ARM64 packages. So take a minute and [fry your brain](https://ddev.readthedocs.io/en/stable/developers/release-management/#maintaining-ddev-dbserver-mysql-57-and-80-arm64-images) with what we have to do to build MySQL 5.6 and 8.x images. We do hope to use the `bitnami/mysql` upstream images in the future since they recently started supporting ARM64.
   - The PostgreSQL images are simpler.
 
-- **[`ddev-router'](https://github.com/ddev/ddev/tree/master/containers/ddev-traefik-router)** is in charge of receiving HTTP requests and directing them to the right container in the right project. Because of the router, many projects can be running at one time and can be using the same ports, but the router will distribute requests correctly to them.
+- **[`ddev-router'](https://github.com/ddev/ddev/tree/main/containers/ddev-traefik-router)** is in charge of receiving HTTP requests and directing them to the right container in the right project. Because of the router, many projects can be running at one time and can be using the same ports, but the router will distribute requests correctly to them.
   - The current standard router is based on [Traefik Proxy](https://traefik.io/traefik/), a widely adopted, well-documented reverse proxy.
   - It's possible to do [extensive modifications](https://ddev.readthedocs.io/en/stable/users/extend/traefik-router/#traefik-configuration) to the Traefik router.
   - You can add environment variables or other overrides to a `~/.ddev/router-compose.*.yaml`.
@@ -62,7 +62,7 @@ And of course additional Debian packages can be added easily with `webimage_extr
 
 DDEV's images are built-in standard ways with a full `make` and Dockerfile setup. They can be built locally for experimentation, but normally we push them with a [standardized GitHub Actions workflow](https://ddev.readthedocs.io/en/stable/developers/release-management/#pushing-docker-images-with-the-github-actions-workflow)
 
-If you build your own `ddev-webserver` for example, you can build it with local changes using `cd containers/ddev-webserver && make VERSION=someversion` and then update the [versionconstants.go webtag](https://github.com/ddev/ddev/blob/master/pkg/versionconstants/versionconstants.go#L14) to refer to `someversion`.
+If you build your own `ddev-webserver` for example, you can build it with local changes using `cd containers/ddev-webserver && make VERSION=someversion` and then update the [versionconstants.go webtag](https://github.com/ddev/ddev/blob/main/pkg/versionconstants/versionconstants.go#L14) to refer to `someversion`.
 
 ## Contributions welcome!
 

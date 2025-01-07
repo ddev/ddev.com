@@ -26,7 +26,7 @@ DDEV has three main types of tests:
 - Go “cmd” tests that rely on a matching external `ddev` binary. These are almost scripted tests, written in Go, but calling out to execute the `ddev` binary and exercise it.
 - Container tests written using bats (bash).
 
-Golang tests are in files named `*_test.go` and the tests themselves are functions named `Test*`. For example the test [TestConfigFunctionality](https://github.com/ddev/ddev/blob/507cfca2508b97786b80e8b8c83ea17f5c0fea20/pkg/ddevapp/config_test.go#L1458) is in the file [config_test.go](https://github.com/ddev/ddev/blob/master/pkg/ddevapp/config_test.go).
+Golang tests are in files named `*_test.go` and the tests themselves are functions named `Test*`. For example the test [TestConfigFunctionality](https://github.com/ddev/ddev/blob/507cfca2508b97786b80e8b8c83ea17f5c0fea20/pkg/ddevapp/config_test.go#L1458) is in the file [config_test.go](https://github.com/ddev/ddev/blob/main/pkg/ddevapp/config_test.go).
 
 ## How many tests are there? How many lines of test code?
 

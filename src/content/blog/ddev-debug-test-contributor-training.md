@@ -20,7 +20,7 @@ Here's our October 9, 2024 [Contributor Training](/blog/category/training) on us
 
 ## What is `ddev debug test` anyway?
 
-`ddev debug test` is really just a [shell script](https://github.com/ddev/ddev/blob/master/cmd/ddev/cmd/scripts/test_ddev.sh) embedded in the `ddev` binary that tries to answer all the questions we've learned to ask in support sessions in our [DDEV Discord channel](/s/discord) and the [issue queue](https://github.com/ddev/ddev/issues). There are so many different things that can affect people's DDEV experience, and asking the questions one by one is hard. So when people just run that one command and we can read through the results, it's a big win.
+`ddev debug test` is really just a [shell script](https://github.com/ddev/ddev/blob/main/cmd/ddev/cmd/scripts/test_ddev.sh) embedded in the `ddev` binary that tries to answer all the questions we've learned to ask in support sessions in our [DDEV Discord channel](/s/discord) and the [issue queue](https://github.com/ddev/ddev/issues). There are so many different things that can affect people's DDEV experience, and asking the questions one by one is hard. So when people just run that one command and we can read through the results, it's a big win.
 
 ## What does it check?
 
