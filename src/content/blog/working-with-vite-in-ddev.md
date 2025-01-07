@@ -316,7 +316,7 @@ You can also open https://test-vite.ddev.site:5173/@vite/client and https://test
 
 Vite also optimizes images referenced in CSS. These are also loaded from Vite's dev server for local production.
 
-Download the [DDEV Logo](https://github.com/ddev/ddev/blob/master/docs/content/developers/logos/2x/Logo_w_text%402x.png) to `src/images/ddev.png`.
+Download the [DDEV Logo](https://github.com/ddev/ddev/blob/main/docs/content/developers/logos/2x/Logo_w_text%402x.png) to `src/images/ddev.png`.
 
 Add this HTML container to your `index.php`:
 

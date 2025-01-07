@@ -25,7 +25,7 @@ Installing DDEV is described in the Linux [Docker Installation Docs](https://dde
 1. Install [docker.io](http://docker.io) and docker-compose with `sudo apt-get update && sudo apt-get install -y docker.io docker-compose`
 2. Add your user to the Docker group with `sudo usermod -aG docker $USER`. Note that on some machines or operating systems you may have to log out and log in again to see this take effect, but you can test it with `id` to see if you’re in the Docker group, and if `docker ps` works without sudo, it’s working.
 3. `sudo apt-get install libnss3-tools xdg-utils` : libnss3-tools helps mkcert to work with Firefox and Chromium, and xdg-utils is the secret sauce behind `ddev launch` on Linux.
-4. Install DDEV [using the install script](https://ddev.readthedocs.io/en/stable/#installationupgrade-script-linux-and-macos-armarm64-and-amd64-architectures): `curl -LO https://raw.githubusercontent.com/ddev/ddev/master/scripts/install_ddev.sh && bash install_ddev.sh`
+4. Install DDEV [using the install script](https://ddev.readthedocs.io/en/stable/#installationupgrade-script-linux-and-macos-armarm64-and-amd64-architectures): `curl -LO https://raw.githubusercontent.com/ddev/ddev/main/scripts/install_ddev.sh && bash install_ddev.sh`
 5. Use `ddev config` in a project and `ddev start` and `ddev launch`!
 
 I found that with a standard setup, DDEV on the Raspberry Pi 4 was able to do everything it’s supposed to do, and with better performance than expected. It would certainly be possible to add faster disk or an SSD to it and make things even better. If you need a super-low-cost development environment, want to see what ARM64 is all about, or want to do new cool things with the Pi, here’s your chance!
