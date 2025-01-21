@@ -147,8 +147,8 @@
     "name": "Webikon",
     "type": "standard",
     "logo": "/logos/webikon.com.svg",
-    "darklogo": "/logos/webicon.com.svg",
-    "squareLogo": "/logos/craft-cms-square.svg",
+    "darklogo": "/logos/webikon.com-dark.svg",
+    "squareLogo": "/logos/webikon.com.svg",
     "url": "https://github.com/claudiu-cristea",
     "github": "claudiu-cristea"
   }
