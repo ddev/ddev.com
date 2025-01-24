@@ -151,5 +151,14 @@
     "squareLogo": "/logos/webikon.com.svg",
     "url": "https://github.com/claudiu-cristea",
     "github": "claudiu-cristea"
+  },
+  {
+    "name": "JetBrains",
+    "type": "standard",
+    "logo": "/logos/jetbrains.svg",
+    "darklogo": "/logos/jetbrains-dark.svg",
+    "squareLogo": "/logos/jetbrains-square.svg",
+    "url": "https://www.jetbrains.com/community/opensource/?utm_source=ddev.com",
+    "github": "jetbrains"
   }
 ]
