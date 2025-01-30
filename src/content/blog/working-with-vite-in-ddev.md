@@ -1,7 +1,7 @@
 ---
 title: "Working with Vite in DDEV - an introduction"
 pubDate: 2023-11-08
-modifiedDate: 2024-24-10
+modifiedDate: 2025-01-30
 summary: Working with Vite in DDEV
 author: Matthias Andrasch
 featureImage:
@@ -515,7 +515,7 @@ export default defineConfig({
         // this will also be used for the public/hot file (Vite devserver URL)
         origin: origin,
 
-      // needed for Vite >= v6.0.9
+       // needed for Vite >= v6.0.9
        cors: { origin: process.env.DDEV_PRIMARY_URL },
 
     }
