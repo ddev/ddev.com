@@ -1,7 +1,7 @@
 ---
 title: "Working with Vite in DDEV - an introduction"
 pubDate: 2023-11-08
-modifiedDate: 2024-24-10
+modifiedDate: 2025-01-30
 summary: Working with Vite in DDEV
 author: Matthias Andrasch
 featureImage:
@@ -74,6 +74,8 @@ In order to use Vite in our DDEV projects, we generally need to do two things:
        strictPort: true,
        // Defines the origin of the generated asset URLs during development
        origin: origin,
+       // Configure CORS for the dev server (security)
+       cors: { origin: process.env.DDEV_PRIMARY_URL },
      },
    })
    ```
@@ -142,7 +144,7 @@ The final `package.json` is as follows:
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vite": "^4.5.0"
+    "vite": "^6.0.11"
   }
 }
 ```
@@ -235,6 +237,9 @@ export default defineConfig({
     strictPort: true,
     // Defines the origin of the generated asset URLs during development
     origin: origin,
+
+    // Configure CORS for the dev server (security)
+    cors: { origin: process.env.DDEV_PRIMARY_URL },
   },
 })
 ```
@@ -507,7 +512,9 @@ export default defineConfig({
         strictPort: true,
         // Defines the origin of the generated asset URLs during development,
         // this will also be used for the public/hot file (Vite devserver URL)
-        origin: origin
+        origin: origin,
+        // Configure CORS for the dev server (security)
+        cors: { origin: process.env.DDEV_PRIMARY_URL },
     }
 });
 ```
