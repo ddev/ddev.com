@@ -74,8 +74,7 @@ In order to use Vite in our DDEV projects, we generally need to do two things:
        strictPort: true,
        // Defines the origin of the generated asset URLs during development
        origin: origin,
-
-       // needed for Vite >= v6.0.9
+       // Configure CORS for the dev server (security)
        cors: { origin: process.env.DDEV_PRIMARY_URL },
      },
    })
@@ -239,7 +238,7 @@ export default defineConfig({
     // Defines the origin of the generated asset URLs during development
     origin: origin,
 
-    // needed for Vite >= v6.0.9
+    // Configure CORS for the dev server (security)
     cors: { origin: process.env.DDEV_PRIMARY_URL },
   },
 })
@@ -514,10 +513,8 @@ export default defineConfig({
         // Defines the origin of the generated asset URLs during development,
         // this will also be used for the public/hot file (Vite devserver URL)
         origin: origin,
-
-       // needed for Vite >= v6.0.9
-       cors: { origin: process.env.DDEV_PRIMARY_URL },
-
+        // Configure CORS for the dev server (security)
+        cors: { origin: process.env.DDEV_PRIMARY_URL },
     }
 });
 ```
