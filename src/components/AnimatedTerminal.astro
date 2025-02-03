@@ -233,18 +233,7 @@ Starting ddev-router if necessary...
   })
 </script>
 
-<style is:global lang="postcss">
-  .terminal-wrapper {
-    @apply rounded-lg;
-    background: #2e3440;
-  }
-
-  .prose .terminal-wrapper pre {
-    @apply my-0;
-  }
-</style>
-
-<div class="terminal-wrapper shadow-lg">
+<div class="terminal-wrapper rounded-lg shadow-lg" style="background: #2e3440;" >
   <div class={`top-bar flex p-3 space-x-2 rounded-t-lg`}>
     <div class="block rounded-full bg-slate-500 w-3 h-3"></div>
     <div class="block rounded-full bg-slate-500 w-3 h-3"></div>

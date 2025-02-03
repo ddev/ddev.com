@@ -28,42 +28,6 @@ order.map((label) => {
 })
 ---
 
-<style type="postcss" is:global>
-  .tab-area {
-    @apply -mx-4 mb-6 mt-6;
-    max-width: 41.5rem;
-  }
-
-  .tabs {
-    @apply ml-1;
-  }
-
-  .tab {
-    @apply px-3 py-1 leading-none font-mono font-bold text-sm text-gray-500 hover:text-black;
-
-    span {
-      @apply border-dotted border-b border-gray-400;
-    }
-
-    &.active {
-      @apply text-black dark:text-gray-300;
-
-      span {
-        @apply border-solid border-black dark:border-gray-300;
-      }
-    }
-  }
-
-  .panel {
-    @apply hidden px-4 rounded-lg shadow-xl dark:bg-transparent dark:shadow-slate-900/50;
-
-    &.active {
-      @apply block;
-    }
-  }
-
-</style>
-
 <script>
   class TabArea extends HTMLElement {
     constructor() {

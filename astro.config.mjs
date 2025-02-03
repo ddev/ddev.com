@@ -7,7 +7,7 @@ import rehypeAstroRelativeMarkdownLinks from "astro-rehype-relative-markdown-lin
 import robotsTxt from "astro-robots-txt"
 import searchIndex from "./src/lib/search-index.js"
 import sitemap from "@astrojs/sitemap"
-import tailwind from "@astrojs/tailwind"
+import tailwindcss from "@tailwindcss/vite"
 import widont from "rehype-widont"
 
 // https://astro.build/config
@@ -17,9 +17,9 @@ export default defineConfig({
     server: {
       host: true, // leave this unchanged for DDEV!
     },
+    plugins: [tailwindcss()],
   },
   integrations: [
-    tailwind(),
     react(),
     sitemap({
       serialize(item) {

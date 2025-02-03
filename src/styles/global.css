@@ -1,3 +1,6 @@
+@import "tailwindcss";
+@config "../../tailwind.config.cjs";
+
 header {
   a[target="_blank"] {
     &::after {
@@ -66,4 +69,90 @@ img {
 /* DarkMode for mark*/
 mark {
   @apply dark:bg-[blue];
+}
+
+.prose .terminal-wrapper pre {
+  @apply my-0;
+}
+
+.menu {
+  @apply hidden absolute top-0 right-0 max-w-full bg-white px-8 py-4 z-30 text-center shadow-2xl rounded-lg m-3 dark:bg-slate-800 dark:text-white;
+
+  &.open {
+    @apply block;
+  }
+}
+
+input[type="radio"]:checked + label {
+  @apply font-bold border-blue-300 shadow border;
+}
+
+.terminal-wrapper {
+  @apply rounded-lg;
+  background: #2e3440;
+  img {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  pre {
+    @apply font-normal overflow-x-auto px-4 py-2 font-mono bg-transparent rounded-t-none;
+
+    code {
+      color: #d8dee9;
+      .prompt {
+        @apply select-none text-slate-400;
+      }
+    }
+  }
+}
+
+.terminal-wrapper .top-bar {
+  &.powershell {
+    @apply justify-between text-white;
+    background: #1f2023;
+  }
+  &.powershell-ubuntu {
+    @apply justify-between text-white;
+    background: #1f2023;
+  }
+  &.ubuntu {
+    @apply justify-end;
+  }
+}
+
+.prose .terminal-wrapper pre {
+  @apply my-0;
+}
+
+.tab-area {
+  @apply -mx-4 mb-6 mt-6;
+  max-width: 41.5rem;
+}
+
+.tabs {
+  @apply ml-1;
+}
+
+.tab {
+  @apply px-3 py-1 leading-none font-mono font-bold text-sm text-gray-500 hover:text-black;
+
+  span {
+    @apply border-dotted border-b border-gray-400;
+  }
+
+  &.active {
+    @apply text-black dark:text-gray-300;
+
+    span {
+      @apply border-solid border-black dark:border-gray-300;
+    }
+  }
+}
+
+.panel {
+  @apply hidden px-4 rounded-lg shadow-xl dark:bg-transparent dark:shadow-slate-900/50;
+
+  &.active {
+    @apply block;
+  }
 }
