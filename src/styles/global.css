@@ -71,10 +71,6 @@ mark {
   @apply dark:bg-[blue];
 }
 
-.prose .terminal-wrapper pre {
-  @apply my-0;
-}
-
 .menu {
   @apply hidden absolute top-0 right-0 max-w-full bg-white px-8 py-4 z-30 text-center shadow-2xl rounded-lg m-3 dark:bg-slate-800 dark:text-white;
 
@@ -95,7 +91,7 @@ input[type="radio"]:checked + label {
     margin-bottom: 0px;
   }
   pre {
-    @apply font-normal overflow-x-auto px-4 py-2 font-mono bg-transparent rounded-t-none;
+    @apply font-normal overflow-x-auto font-mono bg-transparent rounded-t-none;
 
     code {
       color: #d8dee9;
