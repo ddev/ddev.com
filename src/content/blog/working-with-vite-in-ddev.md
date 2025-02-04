@@ -75,7 +75,9 @@ In order to use Vite in our DDEV projects, we generally need to do two things:
        // Defines the origin of the generated asset URLs during development
        origin: origin,
        // Configure CORS for the devserver (security)
-       cors: { origin: /https?:\/\/([A-Za-z0-9\-\.]+)?(localhost|\.site)(?::\d+)?$/ },
+       cors: {
+         origin: /https?:\/\/([A-Za-z0-9\-\.]+)?(localhost|\.site)(?::\d+)?$/,
+       },
      },
    })
    ```
