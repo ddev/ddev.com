@@ -6,7 +6,6 @@
  *
  * Used on the “Get Started with DDEV” page.
  */
-
 import Icon from "./Icon.astro"
 import { CloudIcon } from "@heroicons/react/24/solid/index.js"
 
@@ -17,12 +16,6 @@ export interface Props {
 
 const { heading, inputName = "platform" } = Astro.props
 ---
-
-<style lang="postcss">
-  input[type="radio"]:checked + label {
-    @apply font-bold border-blue-300 shadow border;
-  }
-</style>
 
 <script>
   const hash = window.location.hash ?? null
