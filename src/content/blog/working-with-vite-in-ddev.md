@@ -76,7 +76,7 @@ In order to use Vite in our DDEV projects, we generally need to do two things:
        // Configure CORS securely for the Vite dev server to allow requests
        // from *.ddev.site domains, supports additional hostnames (via regex)
        cors: {
-         origin: /https?:\/\/([A-Za-z0-9\-\.]+)?(\.site)(?::\d+)?$/,
+         origin: /https?:\/\/([A-Za-z0-9\-\.]+)?(\.ddev\.site)(?::\d+)?$/,
        },
      },
    })
@@ -240,7 +240,7 @@ export default defineConfig({
     // Configure CORS securely for the Vite dev server to allow requests
     // from *.ddev.site domains, supports additional hostnames (via regex)
     cors: {
-      origin: /https?:\/\/([A-Za-z0-9\-\.]+)?(\.site)(?::\d+)?$/,
+      origin: /https?:\/\/([A-Za-z0-9\-\.]+)?(\.ddev\.site)(?::\d+)?$/,
     },
   },
 })
@@ -528,7 +528,7 @@ export default defineConfig({
     // Configure CORS securely for the Vite dev server to allow requests
     // from *.ddev.site domains, supports additional hostnames (via regex)
     cors: {
-      origin: /https?:\/\/([A-Za-z0-9\-\.]+)?(\.site)(?::\d+)?$/,
+      origin: /https?:\/\/([A-Za-z0-9\-\.]+)?(\.ddev\.site)(?::\d+)?$/,
     },
   },
 })
