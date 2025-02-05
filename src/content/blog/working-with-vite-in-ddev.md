@@ -69,12 +69,15 @@ In order to use Vite in our DDEV projects, we generally need to do two things:
        // Respond to all network requests
        host: "0.0.0.0",
        port: port,
-       strictPort: true,
-       // Defines the origin of the generated asset URLs during development,
-       // this must be set to the Vite devserver URL and selected port
-       origin: `${process.env.DDEV_PRIMARY_URL}:5173`,
-       // Configure CORS securely for the Vite dev server to allow requests
-       // from *.ddev.site domains, supports additional hostnames (via regex)
+       // Defines the origin of the generated asset URLs during development, this must be set to the
+       // Vite dev server URL and selected port. In general, `process.env.DDEV_PRIMARY_URL` will give
+       // us the primary URL of the DDEV project, e.g. "https://test-vite.ddev.site". But since DDEV
+       // can be configured to use another port (via `router_https_port`), the output can also be
+       // "https://test-vite.ddev.site:1234". Therefore we need to strip a port number like ":1234"
+       // before adding Vites port to achieve the desired output of "https://test-vite.ddev.site:5173".
+       origin: `${process.env.DDEV_PRIMARY_URL.replace(/:\d+$/, "")}:5173`,
+       // Configure CORS securely for the Vite dev server to allow requests from *.ddev.site domains,
+       // supports additional hostnames (via regex). If you use another `project_tld`, adjust this.
        cors: {
          origin: /https?:\/\/([A-Za-z0-9\-\.]+)?(\.ddev\.site)(?::\d+)?$/,
        },
@@ -234,11 +237,15 @@ export default defineConfig({
     host: "0.0.0.0",
     port: 5173,
     strictPort: true,
-    // Defines the origin of the generated asset URLs during development,
-    // this must be set to the Vite devserver URL and selected port
-    origin: `${process.env.DDEV_PRIMARY_URL}:5173`,
-    // Configure CORS securely for the Vite dev server to allow requests
-    // from *.ddev.site domains, supports additional hostnames (via regex)
+    // Defines the origin of the generated asset URLs during development, this must be set to the
+    // Vite dev server URL and selected port. In general, `process.env.DDEV_PRIMARY_URL` will give
+    // us the primary URL of the DDEV project, e.g. "https://test-vite.ddev.site". But since DDEV
+    // can be configured to use another port (via `router_https_port`), the output can also be
+    // "https://test-vite.ddev.site:1234". Therefore we need to strip a port number like ":1234"
+    // before adding Vites port to achieve the desired output of "https://test-vite.ddev.site:5173".
+    origin: `${process.env.DDEV_PRIMARY_URL.replace(/:\d+$/, "")}:5173`,
+    // Configure CORS securely for the Vite dev server to allow requests from *.ddev.site domains,
+    // supports additional hostnames (via regex). If you use another `project_tld`, adjust this.
     cors: {
       origin: /https?:\/\/([A-Za-z0-9\-\.]+)?(\.ddev\.site)(?::\d+)?$/,
     },
@@ -251,10 +258,10 @@ Technical explanation:
 - We need to define an entry file to let vite know where to start, this is done in `rollupOptions`.
 - Also we need to tell Vite to respond to all network request, not only the ones addressed internally to http://localhost:5173. This is done via `host: '0.0.0.0'` and is important for making it work with DDEV / Docker.
 - The strict port setting is also necessary, because we only exposed port 5173. Without `strictPort: true`, Vite will use other ports like 5174 or 5175 if port 5173 is already occupied.
-- Another important part is to let Vite know from where to load Vite-controlled assets like images referenced in CSS. This is done via `server.origin`. <br> _(DDEV automatically provides environment variables via the regular `process.env` variable. The variable `process.env.DDEV_PRIMARY_URL` will have the value `https://test-vite.ddev.site` in our demo project. We use it to set the correct `server.origin` dynamically.)_
+- Another important part is to let Vite know from where to load Vite-controlled assets like images referenced in CSS. This is done via `server.origin`. <br> _(DDEV automatically provides environment variables via the regular `process.env` variable. The variable `process.env.DDEV_PRIMARY_URL` will have the value `https://test-vite.ddev.site` in our demo project. We use it to set the correct `server.origin` dynamically.)_ DDEV can be configured to use other ports than 80/443, or will auto-select ports if these are occupied already. Therefore we need to support both possible outputs of `process.env.DDEV_PRIMARY_URL`: "https://test-vite.ddev.site" or somehting like "https://test-vite.ddev.site:1234". If there is a custom port, we need to strip it before we add the Vite port.
 - Last but not least, we need to configure secure CORS headers. In earlier versions of Vite, this was set to `cors: true` by default and allowed all origins to fetch scripts from the devserver. After [security advisory GHSA-vg6x-rcgg-rjx6](https://github.com/vitejs/vite/security/advisories/GHSA-vg6x-rcgg-rjx6), the default setting was changed and we need to add the allowance of DDEV local domains explicitly. The regular expression supports domains like `https://test-vite.ddev.site` (or something like `https://test-vite.ddev.site:1234` when you use another HTTPS port). See [server.cors](https://vite.dev/config/server-options#server-cors) in the Vite docs for more information.
 
-If your site runs on another [top-level-domains (project_ltd)](https://ddev.readthedocs.io/en/stable/users/configuration/config/#project_tld) rather than `.ddev.site`, you can use this automagic snippet:
+If your site runs on another [top-level-domains (project_ltd)](https://ddev.readthedocs.io/en/stable/users/configuration/config/#project_tld) rather than `.ddev.site`, you edit the regex yourself or use this automagic snippet:
 
 ```js
 cors: {
@@ -522,11 +529,15 @@ export default defineConfig({
     host: "0.0.0.0",
     port: 5173,
     strictPort: true,
-    // Defines the origin of the generated asset URLs during development,
-    // this will also be used for the public/hot file (Vite devser + port)
-    origin: `${process.env.DDEV_PRIMARY_URL}:5173`,
-    // Configure CORS securely for the Vite dev server to allow requests
-    // from *.ddev.site domains, supports additional hostnames (via regex)
+    // Defines the origin of the generated asset URLs during development, this must be set to the
+    // Vite dev server URL and selected port. In general, `process.env.DDEV_PRIMARY_URL` will give
+    // us the primary URL of the DDEV project, e.g. "https://test-vite.ddev.site". But since DDEV
+    // can be configured to use another port (via `router_https_port`), the output can also be
+    // "https://test-vite.ddev.site:1234". Therefore we need to strip a port number like ":1234"
+    // before adding Vites port to achieve the desired output of "https://test-vite.ddev.site:5173".
+    origin: `${process.env.DDEV_PRIMARY_URL.replace(/:\d+$/, "")}:5173`,
+    // Configure CORS securely for the Vite dev server to allow requests from *.ddev.site domains,
+    // supports additional hostnames (via regex). If you use another `project_tld`, adjust this.
     cors: {
       origin: /https?:\/\/([A-Za-z0-9\-\.]+)?(\.ddev\.site)(?::\d+)?$/,
     },
