@@ -58,8 +58,6 @@ In order to use Vite in our DDEV projects, we generally need to do two things:
 
    ```js
    import { defineConfig } from "vite"
-   const port = 5173
-   const origin = `${process.env.DDEV_PRIMARY_URL}:${port}`
 
    export default defineConfig({
      // Your settings
@@ -72,8 +70,9 @@ In order to use Vite in our DDEV projects, we generally need to do two things:
        host: "0.0.0.0",
        port: port,
        strictPort: true,
-       // Defines the origin of the generated asset URLs during development
-       origin: origin,
+       // Defines the origin of the generated asset URLs during development,
+       // this must be set to the Vite devserver URL and selected port
+       origin: `${process.env.DDEV_PRIMARY_URL}:5173`,
        // Configure CORS securely for the Vite dev server to allow requests
        // from *.ddev.site domains, supports additional hostnames (via regex)
        cors: {
@@ -215,9 +214,6 @@ This can be done easily by creating a `vite.config.js` file like this:
 import { defineConfig } from "vite"
 import path from "path"
 
-const port = 5173
-const origin = `${process.env.DDEV_PRIMARY_URL}:${port}`
-
 // https://vitejs.dev/config/
 export default defineConfig({
   // Add entrypoint
@@ -236,10 +232,11 @@ export default defineConfig({
   server: {
     // Respond to all network requests
     host: "0.0.0.0",
-    port: port,
+    port: 5173,
     strictPort: true,
-    // Defines the origin of the generated asset URLs during development
-    origin: origin,
+    // Defines the origin of the generated asset URLs during development,
+    // this must be set to the Vite devserver URL and selected port
+    origin: `${process.env.DDEV_PRIMARY_URL}:5173`,
     // Configure CORS securely for the Vite dev server to allow requests
     // from *.ddev.site domains, supports additional hostnames (via regex)
     cors: {
@@ -513,9 +510,6 @@ Afterwards, you just need to change the `vite.config.js` like this:
 import { defineConfig } from "vite"
 import laravel from "laravel-vite-plugin"
 
-const port = 5173
-const origin = `${process.env.DDEV_PRIMARY_URL}:${port}`
-
 export default defineConfig({
   plugins: [
     laravel({
@@ -526,11 +520,11 @@ export default defineConfig({
   server: {
     // Respond to all network requests
     host: "0.0.0.0",
-    port: port,
+    port: 5173,
     strictPort: true,
     // Defines the origin of the generated asset URLs during development,
-    // this will also be used for the public/hot file (Vite devserver URL)
-    origin: origin,
+    // this will also be used for the public/hot file (Vite devser + port)
+    origin: `${process.env.DDEV_PRIMARY_URL}:5173`,
     // Configure CORS securely for the Vite dev server to allow requests
     // from *.ddev.site domains, supports additional hostnames (via regex)
     cors: {
