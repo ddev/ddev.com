@@ -14,10 +14,7 @@ categories:
 
 **Happy February!**
 
-
-
 **DDEV v1.24.2** was [released](https://github.com/ddev/ddev/releases/tag/v1.24.2) with [MySQL 8.4 support](https://ddev.com/blog/database-improvements) and improved `ddev composer create`.
-
 
 **DDEV Notes and News**
 
@@ -38,7 +35,6 @@ categories:
 - **Automated Tests for Quickstarts**: You won't see these, but it's a big step for us. Because our [Quickstarts](https://ddev.readthedocs.io/en/stable/users/quickstart/) are so dependent on the behavior of the upstream projects, it's always been hard for us to know when the target project has had a change that invalidates them. Now we have automated tests for the quickstarts of number of project types, and will add others as maintenance is done. Thanks to [Ralf Koller](https://github.com/rpkoller) for extensive work on the Drupal, WordPress, and TYPO3 quickstarts.
 - **Funding situation data feed**: Aiming for ever-more transparency in the DDEV funding situation, we now have an automatically-updated feed showing our [funding situation from all sources](https://github.com/ddev/sponsorship-data). You can see the [exact situation](https://github.com/ddev/sponsorship-data/blob/main/data/all-sponsorships.json) at any time. We expect to use this feed in the message-of-the-day on DDEV, as well as ddev.com and the DDEV README.
 - **New contributors and maintainers**: As DDEV's community grows, we always need new contributors and maintainers. We love to get contributors trained and get privileges to maintainers as needed! We already have lots of [Contributor Training](https://ddev.com/blog/category/training/) material, and [docs on how to contribute](https://ddev.readthedocs.io/en/stable/developers/) but we'll do anything you ask for! Need help with something? Need updates? Join us in [Discord](/s/discord) or [make an appointment with me](https://cal.com/randyfay/30min).
-
 
 **Funding DDEV and especially to help both maintainers go full-time on DDEV**: _We need your help and your organization's help! Let me know if you need help getting this into your 2025 budget!_ Our key financial goal is to [fully fund @stasadev so he can work exclusively on DDEV](lets-fund-stas-maintainer.md). We've slipped back in recent months. We need about $3700/month in increased pledges from organizations and individuals. See [Full information about supporting DDEV](https://github.com/sponsors/ddev). We’re happy to invoice you, happy to [do a call discussing this](https://cal.com/randyfay/30min), and would love it if you’d include DDEV in your 2025 budgeting process. (Our current status: We receive about $3000/month, have been spending about $3000-$4000/month. Bank balance is about $6,000, down from $8,600 last month.)
 
