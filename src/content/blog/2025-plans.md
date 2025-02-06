@@ -12,7 +12,7 @@ categories:
   - Community
 ---
 
-It's still (almost) the start of the New Year 2025, and we try to clarify goals at the beginning of each year. We'd love to have your thoughts and opinions! Some of the things we [planned in 2024](2024-plans.md) aren't quite done yet, but we're working and planning and responding to your needs. 
+It's still (almost) the start of the New Year 2025, and we try to clarify goals at the beginning of each year. We'd love to have your thoughts and opinions! Some of the things we [planned in 2024](2024-plans.md) aren't quite done yet, but we're working and planning and responding to your needs.
 
 At the DDEV Advisory Group's 2-hour [annual review/planning meeting on March 4, 2025](https://www.meetup.com/ddev-events/events/303197425/?eventOrigin=group_events_list), we'll talk about plans and priorities for 2025.
 
@@ -54,7 +54,6 @@ Do you see other important things in the [issue queue](https://github.com/ddev/d
 
 We would dearly love to have your input on these as the planning process goes forward. You can respond so very many ways in all of the [support venues](https://ddev.readthedocs.io/en/stable/users/support/).
 
-
 Want to keep up as the month goes along? Follow on
 
 - [blog](https://ddev.com/blog/)
@@ -62,4 +61,3 @@ Want to keep up as the month goes along? Follow on
 - [Mastodon](https://fosstodon.org/@ddev)
 - [Bluesky](https://bsky.app/profile/ddev.bsky.social)
 - and join our community on [Discord](/s/discord)
-
