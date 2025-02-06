@@ -12,9 +12,9 @@ categories:
   - Community
 ---
 
-It's still (almost) the start of the New Year 2025, and we try to clarify goals at the beginning of each year. We'd love to have your thoughts and opinions! Some of the things we [planned in 2024](2024-plans.md) aren't quite done yet, but we're working and planning and responding to your needs.
+Every year we try to clarify goals early, and here we go for 2025! We'd love to have your thoughts and opinions! Some of the things we [planned in 2024](2024-plans.md) aren't quite done yet, but we're working and planning and responding to your needs.
 
-At the DDEV Advisory Group's 2-hour [annual review/planning meeting on March 4, 2025](https://www.meetup.com/ddev-events/events/303197425/?eventOrigin=group_events_list), we'll talk about plans and priorities for 2025.
+At the DDEV Advisory Group's 2-hour [annual review/planning meeting on March 4, 2025](https://www.meetup.com/ddev-events/events/303197425/?eventOrigin=group_events_list), we'll talk about plans and priorities for 2025. You are invited!
 
 We'd love to have your input as daily users as we work through these this month.
 
@@ -23,7 +23,7 @@ We'd love to have your input as daily users as we work through these this month.
 ## Community
 
 - **Continue outstanding user support** even with growth of our user base. This remains a key priority from last year, but we still need to involve the entire community (meaning you!) in all the places.
-- **Begin formal governance for the DDEV Foundation**. Our talks about this in the Advisory Group haven't really gone anywhere, so I'll probably propose something like a 3-person board for the DDEV Foundation, where I retain operational control, but we have at least one other board member fully enabled on financial controls and payments.
+- **Begin formal governance for the DDEV Foundation**. We've been talking about this in the Advisory Group for years, but this year I'll propose a 3-person board for the DDEV Foundation, where I retain operational control, but we have at least one other board member fully enabled on financial controls and payments. Future years can bring future refinements.
 
 ## Sustainability and Finance
 
