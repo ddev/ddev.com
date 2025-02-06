@@ -19,6 +19,7 @@ categories:
 **DDEV Notes and News**
 
 - The [DDEV Advisory Group](https://github.com/orgs/ddev/discussions/6853) met January 8. The primary topic of discussion was the [change in DDEV's funding](https://ddev.com/blog/platform-sh-ddev-funding-changes) and budgeting response to it. Our decision was to continue the arrangement with Stas as-is (bill hours at $50/hour, cap $4000/month). Randy will also bill at $50/hour with cap of $4000, but limited by always trying to leave $6000 in the bank.
+- **We need your input!** Please take a look at the proposed [2025 Plans for DDEV](2025-plans.md) and let us know your opinion, how these things should be ordered, and what we might have missed!
 - macOS users will be interested in the (not-DDEV-focused) [Docker Performance macOS 2025](https://www.paolomainardi.com/posts/docker-performance-macos-2025/).
 - [The Open Source Pledge and DDEV: A Path to Sustainability](https://ddev.com/blog/open-source-pledge).
 - [MySQL 8.4 is now in DDEV v1.24.2](https://ddev.com/blog/database-improvements/).
