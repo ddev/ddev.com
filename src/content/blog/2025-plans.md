@@ -2,7 +2,7 @@
 title: "DDEV 2025 Plans"
 pubDate: 2025-02-06
 #modifiedDate: 2025-02-06
-summary: DDEV 2025 Goals
+summary: DDEV 2025 Plans
 author: Randy Fay
 #featureImage:
 #  src: /img/blog/2025/01/mtgarfield.jpg
@@ -35,8 +35,8 @@ We'd love to have your input as daily users as we work through these this month.
 ### Funded and Work-In-Progress Initiatives
 
 - The TYPO3 Association has agreed to fund the [integration of XHGui into DDEV](https://typo3.org/article/four-ideas-to-be-funded-in-quarter-1-2025) as part of their Community Budget Ideas. Part of this work has already been done in the [ddev/ddev-xhgui](https://github.com/ddev/ddev-xhgui) project, and it must be completed by March 31, 2025.
-- [Top-level Node.js support](https://ddev.readthedocs.io/en/latest/users/extend/customization-extendibility/#using-nodejs-as-ddevs-primary-web-server) as planned in 2024 has been committed to HEAD.
-- [Web-based Add-on Registry](https://github.com/ddev/ddev/issues/6383) is a WIP and expected to land soon.
+- [Top-level Node.js support](https://ddev.readthedocs.io/en/latest/users/extend/customization-extendibility/#using-nodejs-as-ddevs-primary-web-server) as planned in 2024 has been committed to HEAD. There will be a number of follow-up opportunities, including Caddy support, etc.
+- [Web-based Add-on Registry](https://github.com/ddev/ddev/issues/6383) is a work-in-progress and is expected to land soon.
 
 ### Proposed Features and Initiatives
 
@@ -54,7 +54,7 @@ Do you see other important things in the [issue queue](https://github.com/ddev/d
 
 We would dearly love to have your input on these as the planning process goes forward. You can respond so very many ways in all of the [support venues](https://ddev.readthedocs.io/en/stable/users/support/).
 
-Want to keep up as the month goes along? Follow on
+Want to keep up as the month goes along? Follow us on
 
 - [blog](https://ddev.com/blog/)
 - [LinkedIn](https://www.linkedin.com/company/ddev-foundation)
