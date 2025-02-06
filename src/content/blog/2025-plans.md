@@ -4,10 +4,10 @@ pubDate: 2025-02-06
 #modifiedDate: 2025-02-06
 summary: DDEV 2025 Plans
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2025/01/mtgarfield.jpg
-#  alt: Mount Garfield over Palisade, Colorado, 2025-01-07
-#  credit: View of Mount Garfield above Palisade, Colorado on my walk to work today, January 6, 2025
+featureImage:
+  src: /img/blog/2025/02/ddev-2025-plans.png
+  alt: Futuristic view of DDEV 2025 plans
+  credit: "Ideogram.ai: DDEV 2025 Plans: A futuristic cityscape with towering skyscrapers, some of which have unique and innovative designs"
 categories:
   - Community
 ---
