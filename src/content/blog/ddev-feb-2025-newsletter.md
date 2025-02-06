@@ -14,7 +14,7 @@ categories:
 
 **Happy February!**
 
-**DDEV v1.24.2** was [released](https://github.com/ddev/ddev/releases/tag/v1.24.2) with [MySQL 8.4 support](https://ddev.com/blog/database-improvements) and improved `ddev composer create`.
+**DDEV v1.24.2** was [released](https://github.com/ddev/ddev/releases/tag/v1.24.2) with [MySQL 8.4 support](https://ddev.com/blog/database-improvements) and improved `ddev composer create` making it nearly compatible with `composer create-project`.
 
 **DDEV Notes and News**
 
@@ -30,7 +30,7 @@ categories:
 
 **Ongoing DDEV Work**
 
-- **Node.js** improved support: People have asked for some time for Node.js to be the primary web server (instead of Nginx+php-fpm, etc), and now it can be done in a number of ways. Your review of nearly-complete [Generic Web Server Support](https://github.com/ddev/ddev/pull/6935) is welcome. Incidentally, this also provides experimental support for [FrankenPHP](https://frankenphp.dev/) and provides a Quickstart for it.
+- **Node.js** improved support: People have asked for some time for Node.js to be the primary web server (instead of Nginx+php-fpm, etc), and now it can be done in a number of ways. This is now in [DDEV HEAD](https://ddev.readthedocs.io/en/stable/developers/building-contributing/#testing-latest-commits-on-head) and there are Quickstarts for [Simple Node.js](https://ddev.readthedocs.io/en/latest/users/quickstart/#nodejs-nodejs-web-server) and [SvelteKit](https://ddev.readthedocs.io/en/latest/users/quickstart/#nodejs-sveltekit). Incidentally, this also provides experimental support for [FrankenPHP](https://frankenphp.dev/) and provides a [Quickstart](https://ddev.readthedocs.io/en/latest/users/quickstart/#generic-frankenphp) for it as a demonstration of the "generic" web server type.
 - **Web-based Add-on Registry**: As add-ons have become so very popular it's hard to sort them out and understand which ones are meaningful for a particular need. This long-term goal is nearing completion as Stas has a proof of concept and now has to push it through to a maintained production status.
 - **Automated Tests for Quickstarts**: You won't see these, but it's a big step for us. Because our [Quickstarts](https://ddev.readthedocs.io/en/stable/users/quickstart/) are so dependent on the behavior of the upstream projects, it's always been hard for us to know when the target project has had a change that invalidates them. Now we have automated tests for the quickstarts of number of project types, and will add others as maintenance is done. Thanks to [Ralf Koller](https://github.com/rpkoller) for extensive work on the Drupal, WordPress, and TYPO3 quickstarts.
 - **Funding situation data feed**: Aiming for ever-more transparency in the DDEV funding situation, we now have an automatically-updated feed showing our [funding situation from all sources](https://github.com/ddev/sponsorship-data). You can see the [exact situation](https://github.com/ddev/sponsorship-data/blob/main/data/all-sponsorships.json) at any time. We expect to use this feed in the message-of-the-day on DDEV, as well as ddev.com and the DDEV README.
