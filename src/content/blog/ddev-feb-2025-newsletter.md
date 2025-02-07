@@ -7,7 +7,7 @@ author: Randy Fay
 featureImage:
   src: /img/blog/2025/02/nancy-lewis-winter-scene.jpg
   alt: Nancy Lewis winter scene painting
-  credit: "Plein Air painting: Winter landscape by Nancy Lewis"
+  credit: "Plateau Creek Mile Marker 55, by Nancy Lewis"
 categories:
   - Community
 ---
