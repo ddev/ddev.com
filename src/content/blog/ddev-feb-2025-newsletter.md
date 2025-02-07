@@ -28,6 +28,7 @@ categories:
 - The Drop Times did a nice and extensive [interview with Randy](https://www.thedroptimes.com/interview/45389/making-ddev-past-present-and-future-in-focus) and [video interview](https://www.youtube.com/watch?v=EctDtSZcBhU).
 - Tag1 Consulting did a performance comparison of the new Drupal CMS vs WordPress, (using DDEV for everything). See [Drupal CMS vs WordPress Performance](https://www.tag1consulting.com/blog/drupal-cms-vs-wordpress-performance-2025).
 - The latest DDEV Quickstarts in the docs are for [Drupal CMS](https://ddev.readthedocs.io/en/stable/users/quickstart/#drupal-drupal-cms) and [ProcessWire](https://ddev.readthedocs.io/en/latest/users/quickstart/#processwire)! Congratulations to the Drupal community on Drupal CMS, and welcome ProcessWire folks. Thanks to [Bernhard Baumrock](https://github.com/BernhardBaumrock) for the ProcessWire initiative!
+- [DDEV: We use it on all our projects](https://www.youtube.com/watch?v=WkOoPEbtHwI).
 
 **Ongoing DDEV Work**
 
