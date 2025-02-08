@@ -39,6 +39,7 @@ We'd love to have your input as daily users as we work through these this month.
 - [Web-based Add-on Registry](https://github.com/ddev/ddev/issues/6383) is a work-in-progress and is expected to land soon.
 
 <a name="proposed-features"></a>
+
 ### Proposed Features and Initiatives
 
 1. [Implement mDNS as an alternate name resolution technique](https://github.com/ddev/ddev/issues/6663) in addition to DNS and hosts file manipulation. Our traditional use of DNS and hosts-file manipulation have been successful, but mDNS might allow avoiding hosts-file manipulation, especially with non-ddev.site URLs and when internet DNS is not available. This has been submitted for funding to the TYPO3 Community [Q2 Community Budget Ideas](https://typo3.org/article/call-for-community-budget-ideas-q2-2025)
