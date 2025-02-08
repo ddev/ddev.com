@@ -40,17 +40,18 @@ We'd love to have your input as daily users as we work through these this month.
 
 ### Proposed Features and Initiatives
 
-1. We have applied to the [Google Summer of Code](https://summerofcode.withgoogle.com/) but there's still more work to do. We need to prepare a list of proposed projects that potential mentees can take on. The features in this section would be possibilities. We'll also be looking for community mentors, and maybe some of you would like to sign up for being mentees via Google this summer!
-2. [Implement mDNS as an alternate name resolution technique](https://github.com/ddev/ddev/issues/6663) in addition to DNS and hosts file manipulation. Our traditional use of DNS and hosts-file manipulation have been successful, but mDNS might allow avoiding hosts-file manipulation, especially with non-ddev.site URLs and when internet DNS is not available. This has been submitted for funding to the TYPO3 Community [Q2 Community Budget Ideas](https://typo3.org/article/call-for-community-budget-ideas-q2-2025)
-3. [Allow Add-ons to include other add-ons](https://github.com/ddev/ddev/issues/6912): Add-ons can already require other add-ons, but they should be able to automatically result in a download.
-4. [Go-based Upsun Add-on like ddev-platformsh](https://github.com/ddev/ddev/issues/6533). (This would pioneer golang-based add-ons; Go is probably a much better language for complicated add-ons of this type.)
-5. Rewrite ddev-platformsh Add-on in Go: Assuming success of the Upsun add-on, it would be great to backport that work to [ddev-platformsh](https://github.com/ddev/ddev-platformsh). It's even possible that the two add-ons could be combined into one and maintained in one place.
-6. Develop a replacement for "Gitpod Classic", which has EOL in April, 2025. This may not need much more than improved GitHub Codespaces support, but we have loved Gitpod and hope to have something to replace it.
-7. [Improve self-diagnose capability](https://github.com/ddev/ddev/issues/6461) . We currently have ddev debug test but it would be great to implement something that was readable and actionable for ordinary mortals.
-8. [DDEV's Message-of-the-day and ddev.com should show current funding status and need](https://github.com/ddev/ddev/issues/6892). We now have an automatically updated JSON feed that can make this possible.
-9. DDEV Windows/WSL2 packaging and installation: The traditional Windows installer needs work, and the WSL2 install scripts are written in hard-to-maintain PowerShell. This work can be consolidated and improved, including [improving the Windows hosts-file escalation technique](https://github.com/ddev/ddev/issues/6440).
-10. [Rewrite `ddev launch` in Golang instead of as script](https://github.com/ddev/ddev/issues/6394).
-11. [Rework configuration system using Viper](https://github.com/ddev/ddev/issues/5763).
+1. [Implement mDNS as an alternate name resolution technique](https://github.com/ddev/ddev/issues/6663) in addition to DNS and hosts file manipulation. Our traditional use of DNS and hosts-file manipulation have been successful, but mDNS might allow avoiding hosts-file manipulation, especially with non-ddev.site URLs and when internet DNS is not available. This has been submitted for funding to the TYPO3 Community [Q2 Community Budget Ideas](https://typo3.org/article/call-for-community-budget-ideas-q2-2025)
+2. [Allow Add-ons to include other add-ons](https://github.com/ddev/ddev/issues/6912): Add-ons can already require other add-ons, but they should be able to automatically result in a download.
+3. [Go-based Upsun Add-on like ddev-platformsh](https://github.com/ddev/ddev/issues/6533). (This would pioneer golang-based add-ons; Go is probably a much better language for complicated add-ons of this type.)
+4. Rewrite ddev-platformsh Add-on in Go: Assuming success of the Upsun add-on, it would be great to backport that work to [ddev-platformsh](https://github.com/ddev/ddev-platformsh). It's even possible that the two add-ons could be combined into one and maintained in one place.
+5. Develop a replacement for "Gitpod Classic", which has EOL in April, 2025. This may not need much more than improved GitHub Codespaces support, but we have loved Gitpod and hope to have something to replace it.
+6. [Improve self-diagnose capability](https://github.com/ddev/ddev/issues/6461) . We currently have ddev debug test but it would be great to implement something that was readable and actionable for ordinary mortals.
+7. [DDEV's Message-of-the-day and ddev.com should show current funding status and need](https://github.com/ddev/ddev/issues/6892). We now have an automatically updated JSON feed that can make this possible.
+8. DDEV Windows/WSL2 packaging and installation: The traditional Windows installer needs work, and the WSL2 install scripts are written in hard-to-maintain PowerShell. This work can be consolidated and improved, including [improving the Windows hosts-file escalation technique](https://github.com/ddev/ddev/issues/6440).
+9. [Rewrite `ddev launch` in Golang instead of as script](https://github.com/ddev/ddev/issues/6394).
+10. [Rework configuration system using Viper](https://github.com/ddev/ddev/issues/5763).
+
+In addition to prioritizing these initiatives, we have applied to the [Google Summer of Code](https://summerofcode.withgoogle.com/), hoping that we can mentor contributors in that program and see work on one or more of these be successful through GSoC. We'll also be looking for community mentors (is that you?), and maybe some of you would like to sign up for being mentees via Google this summer!
 
 Do you see other important things in the [issue queue](https://github.com/ddev/ddev/issues) or elsewhere that are important to you? Are there frictions that impact your work that DDEV could fix? Please let us know.
 
