@@ -1,6 +1,6 @@
 ---
 title: "DDEV 2025 Plans"
-pubDate: 2025-02-06
+pubDate: 2025-02-08
 #modifiedDate: 2025-02-06
 summary: DDEV 2025 Plans
 author: Randy Fay

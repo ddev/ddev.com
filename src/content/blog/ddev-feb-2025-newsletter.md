@@ -1,6 +1,6 @@
 ---
 title: "DDEV February 2025 Newsletter"
-pubDate: 2025-02-06
+pubDate: 2025-02-10
 #modifiedDate: 2025-02-06
 summary: DDEV February 2025 Newsletter
 author: Randy Fay
