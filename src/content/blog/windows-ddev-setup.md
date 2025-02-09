@@ -1,7 +1,7 @@
 ---
 title: "Setting up a Windows Machine for DDEV"
 pubDate: 2024-11-04
-modifiedDate: 2024-12-31
+modifiedDate: 2025-02-08
 summary: Setting up a new Windows machine for DDEV maintenance or development is pretty easy. Here are my opinionated steps.
 author: Randy Fay
 featureImage:
@@ -31,8 +31,9 @@ Two recent Windows machines I set up were the new ARM64/Qualcomm/CoPilot variety
 6. In PowerShell, `wsl --install` and `wsl --update`
 7. Windows Terminal is a fantastic terminal and is installed by default these days. I always set it up early with "Default Terminal Application: Windows Terminal" and "Interaction->Automatically Copy Selection to Clipboard", and set Ubuntu as default, and have it auto-start on login.
 8. Once Ubuntu is installed:
-   - `sudo apt update && sudo apt install -y apt-transport-https autojump bats build-essential ca-certificates ccache clang curl dirmngr etckeeper expect git gnupg htop jq libcurl4-gnutls-dev libnss3-tools lsb-release mariadb-client nagios-plugins net-tools postgresql-client unzip vim xdg-utils zip && sudo apt upgrade -y`
+   - `sudo apt update && sudo apt install -y apt-transport-https autojump bats build-essential ca-certificates ccache clang curl dirmngr etckeeper expect git gnupg htop inetutils-telnet jq libcurl4-gnutls-dev libnss3-tools lsb-release mariadb-client nagios-plugins net-tools pipx postgresql-client unzip vim xdg-utils zip && sudo apt upgrade -y`
    - `sudo snap install --classic go`
+   - `sudo snap install node`
    - `sudo snap install ngrok and ngrok config add-authtoken <token>`
 9. In Windows Explorer, add my WSL2 home directory to favorites by copying it into the favorites area.
 10. Run the [DDEV WSL2 install script](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#wsl2-docker-ce-inside-install-script).
@@ -43,19 +44,27 @@ Two recent Windows machines I set up were the new ARM64/Qualcomm/CoPilot variety
 12. On Windows PowerShell `ssh -T git@github.com` to verify that the 1Password SSH agent is working. If it says "PTY Allocation Failed", just hit `<RETURN>` and ignore it. You should get the confirmation message from GitHub.
 13. 1Password WSL2 adaptation:
     `sudo ln -s /mnt/c/WINDOWS/System32/OpenSSH/ssh.exe /usr/local/bin/ssh && sudo ln -s /mnt/c/WINDOWS/System32/OpenSSH/ssh-add.exe /usr/local/bin/ssh-add` (Makes ssh use `ssh.exe` on Windows and the 1Password SSH and Git integrations then work great. This assumes that `/usr/local/bin` in your PATH comes before `/usr/bin`)
-14. If you have a `dotfiles` repository (containing your shared `.bash_profile`, `.zshrc`, etc.) clone it in WSL2.
-15. Check out DDEV's code. `mkdir -p ~/workspace && cd ~/workspace && git clone -o upstream git@github.com:ddev/ddev`
-16. `echo "capath=/etc/ssl/certs/" >>~/.curlrc` to make Curl work right with `mkcert`.
-17. GoLand setup:
+14. Link p4merge: `sudo ln -s "/mnt/c/Program Files/Perforce/p4merge.exe /usr/local/bin/p4merge`.
+15. If you have a `dotfiles` repository (containing your shared `.bash_profile`, `.zshrc`, etc.) clone it in WSL2.
+16. Check out DDEV's code. `mkdir -p ~/workspace && cd ~/workspace && git clone -o upstream git@github.com:ddev/ddev`
+17. `echo "capath=/etc/ssl/certs/" >>~/.curlrc` to make Curl work right with `mkcert`.
+18. GoLand setup:
     - Set `GOROOT` to `/snap/go` in `Linux\Ubuntu`
     - For ARM64 you have to do `go install github.com/go-delve/delve/cmd/dlv@latest` and put this in IDE properties (under help) `dlv.path=//wsl.localhost/Ubuntu/home/rfay/go/bin/dlv`.
-18. DDEV repository setup
+19. DDEV repository setup
     - Run `.githooks/linkallchecks.sh`
     - Install `golangci-lint` for `make staticrequired`: `go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest`
-19. SSH configuration on Windows side: If your SSH username is different from the username automatically configured on the Windows side (or just generally different from the default you want to use) then add something like this to `.ssh/config` on the Windows side (or at `/mnt/c/Users/<username>/.ssh/config`). This will make it so your connection username does not have to be explicitly specified when you use `ssh` or `git`:
+20. SSH configuration on Windows side: If your SSH username is different from the username automatically configured on the Windows side (or just generally different from the default you want to use) then add something like this to `.ssh/config` on the Windows side (or at `/mnt/c/Users/<username>/.ssh/config`). This will make it so your connection username does not have to be explicitly specified when you use `ssh` or `git`:
     ```
     Host *
       User <default-user-you-want-to-use>
+    ```
+21. Install `prettier` and `mkdocs`
+
+    ```bash
+    sudo npm install -g prettier
+    sudo pipx ensurepath --global
+    sudo PIPX_HOME=/usr/local/pipx PIPX_BIN_DIR=/usr/local/bin PIPX_MAN_DIR=/usr/local/share/man pipx install mkdocs
     ```
 
 We'd love to hear your own hints and tips on how you set up a Windows machine (or any other computer!). You can contribute to this article with a [PR to the blog](https://github.com/ddev/ddev.com) or make your suggestions on [Discord](/s/discord). We welcome guest blogs too!
