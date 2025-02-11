@@ -14,3 +14,4 @@
 /author/rmanelius /blog/author/rick-manelius 301
 /ddev-local/:slug /blog/:slug 301
 /ddev-local/:slug/ /blog/:slug 301
+/s/divide-and-conquer https://www.fldrupal.camp/session/divide-and-conquer-systematic-approach-troubleshooting-issues
