@@ -1,7 +1,7 @@
 ---
 title: "DDEV's Database Support Gets MySQL 8.4 and Better Import Speeds"
 pubDate: 2025-01-02
-modifiedDate: 2025-01-07
+modifiedDate: 2025-02-18
 summary: "DDEV gets MySQL 8.4 and many related upgrades and performance improvements"
 author: Randy Fay
 featureImage:
@@ -13,11 +13,11 @@ categories:
 
 Lots of good news:
 
-- **MySQL 8.4**: DDEV will support MySQL 8.4, the latest LTS version of MySQL, in upcoming v1.24.2. We now support **17** different database types and versions. Try doing that on your bare-metal development setup 😀.
+- **MySQL 8.4**: DDEV supports MySQL 8.4, the latest LTS version of MySQL, in v1.24.2+. We now support **17** different database types and versions. Try doing that on your bare-metal development setup 😀.
 
-- **MySQL 8.0 import performance**: DDEV HEAD (upcoming DDEV v1.24.2) import performance with MySQL 8.0 is about 30% better than current v1.24.1.
+- **MySQL 8.0 import performance**: DDEV v1.24.2 import performance with MySQL 8.0 is about 30% better than it was in v1.24.1.
 
-- **Retired Docker image maintenance**: We've maintained `ddev/mysql` images for years since MySQL didn't provide ARM64 images. Because Bitnami started providing ARM64 images, we have switched to [`bitnami/mysql`](https://hub.docker.com/r/bitnami/mysql) as the base image for MySQL 8+ images.
+- **Retired Docker image maintenance**: We've maintained `ddev/mysql` images for years since MySQL didn't provide Debian-based ARM64 images. Because Bitnami started providing ARM64 images, we have switched to [`bitnami/mysql`](https://hub.docker.com/r/bitnami/mysql) as the base image for MySQL 8+ images.
 
 - **Simplified maintenance of XtraBackup**: We've had to maintain our own build-from-source version of [Percona XtraBackup](https://www.percona.com/mysql/software/percona-xtrabackup) for years because Percona didn't provide ARM64 versions. (DDEV uses XtraBackup under the hood for the `ddev snapshot` feature with MySQL.) We've been able to retire that build because Percona is now providing ARM64 versions of their packages.
 
