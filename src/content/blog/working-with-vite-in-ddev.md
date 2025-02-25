@@ -1,7 +1,7 @@
 ---
 title: "Working with Vite in DDEV - an introduction"
 pubDate: 2023-11-08
-modifiedDate: 2025-02-04
+modifiedDate: 2025-02-25
 summary: Working with Vite in DDEV
 author: Matthias Andrasch
 featureImage:
@@ -28,7 +28,6 @@ This articles sums up my current personal experience. I hope it will be a helpfu
   - [Laravel](#laravel)
   - [TYPO3](#typo3)
   - [WordPress](#wordpress)
-  - [Gitpod](#gitpod)
   - [GitHub Codespaces](#githubcodespaces)
 - [NodeJS / headless projects](#nodejs--headlessprojects)
 - [DDEV addons](#ddevaddons)
@@ -585,10 +584,6 @@ I experimented with Gitpod support for Vite in these demo projects, see:
 
 - [mandrasch/ddev-laravel-vite](https://github.com/mandrasch/ddev-laravel-vite)
 - [mandrasch/ddev-craftcms-vite](https://github.com/mandrasch/ddev-craftcms-vite)
-
-Note: On Gitpod, DDEVs router is not used - therefore some adjustments are needed. Exposing the port does not work via `.ddev/config.yaml`, instead you can use a docker-compose-file. See `docker-compose.vite-workaround.yaml` in the demo repositories.
-
-See [DDEV Installation: Gitpod](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#gitpod) for more information.
 
 #### GitHub Codespaces
 

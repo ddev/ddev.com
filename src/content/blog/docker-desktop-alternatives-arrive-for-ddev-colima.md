@@ -1,16 +1,17 @@
 ---
 title: "Docker Desktop Alternatives Arrive for DDEV (Colima!)"
 pubDate: 2022-03-25
-summary: The pros and cons of DDEV’s new support for Colima.
+modifiedDate: 2025-02-25
+summary: The pros and cons of DDEV’s support for Colima.
 author: Randy Fay
 categories:
   - Announcements
   - DevOps
 ---
 
-I’m sure you already know that Docker Desktop [changed its license terms](https://www.docker.com/blog/updating-product-subscriptions/) so that larger organizations are required to pay a per-seat license fee to use it now. We all hope that Docker does well and certainly there’s nothing wrong with an organization charging for its work, but there are many organizations that are uncomfortable with this stance for various reasons, or who would prefer to use open-source solutions rather than closed-source solutions like Docker Desktop.
+I’m sure you know that Docker Desktop [changed its license terms](https://www.docker.com/blog/updating-product-subscriptions/) so that larger organizations are required to pay a per-seat license fee to use it now. We all hope that Docker does well and certainly there’s nothing wrong with an organization charging for its work, but there are many organizations that are uncomfortable with this stance for various reasons, or who would prefer to use open-source solutions rather than closed-source solutions like Docker Desktop.
 
-In v1.19, DDEV supports alternative Docker solutions for every platform, so that it’s no longer necessary to use Docker Desktop at all. And these solutions seem to be more robust and more performant.
+In v1.19+, DDEV supports alternative Docker solutions for every platform, so that it’s no longer necessary to use Docker Desktop at all. And these solutions seem to be more robust and more performant.
 
 ## macOS: Colima
 
@@ -45,8 +46,4 @@ If you install Docker inside the WSL2 distro, you do not need Docker Desktop at 
 
 ## Linux: Do What You’ve Always Done
 
-On Linux, the solution has always been open-source and there is no license fee (see [docs](https://ddev.readthedocs.io/en/stable/users/docker%5Finstallation/#linux-installation-docker)). (Note that Docker has recently introduced Docker Desktop for Linux… I’m sure this works, but it will then involve closed-source and license fees.)
-
-## Don’t Forget Gitpod – You don’t need _anything_ installed on your computer
-
-In the midst of all this, don’t forget that you don’t need to install Docker (or anything else) on your computer or tablet to use DDEV. You can use [Gitpod](https://www.gitpod.io) in your browser all day in many ways. There are plenty of people who are now working this way. It works great. [DDEV provides full support](https://ddev.readthedocs.io/en/stable/users/topics/gitpod/) for Gitpod.
+On Linux, the solution has always been open-source and there is no license fee (see [docs](https://ddev.readthedocs.io/en/stable/users/docker%5Finstallation/#linux-installation-docker)). (Note that the separate GUI product "Docker Desktop for Linux" does not work with DDEV.)
