@@ -18,28 +18,7 @@ const { latestVersion } = Astro.props
     Provider &amp; Install DDEV
   </h2>
 
-  <Tabs order={["Gitpod", "GitHub Codespaces"]}>
-    <Fragment slot="Gitpod">
-      <div class="prose pt-5 dark:prose-invert">
-        <p>
-          <a href="https://www.gitpod.io/docs/getting-started" target="_blank"
-          >Open any repository</a
-          > using Gitpod and install DDEV:
-        </p>
-        <Terminal
-          code={`→ curl -fsSL https://pkg.ddev.com/apt/gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/ddev.gpg > /dev/null\n→ echo "deb [signed-by=/etc/apt/keyrings/ddev.gpg] https://pkg.ddev.com/apt/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list >/dev/null\n→ sudo apt-get update && sudo apt-get install -y ddev
-`}
-        />
-      </div>
-      <a href="https://gitpod.io/#https://github.com/ddev/ddev"
-        target="_blank"
-        ><img
-          src="/img/open-in-gitpod.svg"
-          alt="Open in Gitpod"
-          class="drop-shadow-sm pb-4 my-4"
-        />
-      </a>
-    </Fragment>
+  <Tabs order={["GitHub Codespaces"]}>
     <Fragment slot="GitHub Codespaces">
       <div class="prose py-5 dark:prose-invert">
         <ol>
@@ -87,13 +66,7 @@ const { latestVersion } = Astro.props
 
   <p>Confirm that you’ve now got DDEV installed: 🎉</p>
   <Terminal code={`→ ddev -v\nddev version ${latestVersion}`} />
-  
-  <p>
-    Or use the <a href="https://ddev.github.io/ddev-gitpod-launcher/" target="_blank">ddev-gitpod-launcher</a> form to launch a repository.
-    You’ll provide a source repository and click a button to open a newly-established environment.
-    You can specify a companion artifacts repository and automatically load <code>db.sql.gz</code> and <code>files.tgz</code> from it.
-    (More details in the <a href="https://github.com/ddev/ddev-gitpod-launcher/blob/main/README.md" target="_blank">repository’s README</a>.)
-  </p>
+
 </div>
 
 <Examples itemNumber="2/2" terminalType="default" terminalSymbol="→" />

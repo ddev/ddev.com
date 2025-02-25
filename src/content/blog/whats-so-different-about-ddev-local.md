@@ -1,7 +1,7 @@
 ---
 title: "What’s so different about DDEV?"
 pubDate: 2022-10-30
-modifiedDate: 2023-05-18
+modifiedDate: 2025-02-25
 summary: What makes DDEV stand out among other local development tools.
 author: Randy Fay
 featureImage:
@@ -11,7 +11,7 @@ categories:
   - DevOps
 ---
 
-In 2022, users from designers to developers to testers and open source contributors have a wide variety of local development environments to choose from. Because most of the tools and platforms we use will run in many different operating systems and environments, we have the option of rolling our own, using a commercial project like [MAMP](https://www.mamp.info/en/mamp-pro/mac/) or [Local](https://localwp.com/) (for WordPress), or using one of the many Docker-based solutions like [DDEV](https://ddev.readthedocs.io/), [Docksal](https://docksal.io/), or [Lando](https://lando.dev/).
+These days users from designers to developers to testers and open source contributors have a wide variety of local development environments to choose from. Because most of the tools and platforms we use will run in many different operating systems and environments, we have the option of rolling our own, using a commercial project like [MAMP](https://www.mamp.info/en/mamp-pro/mac/) or [Local](https://localwp.com/) (for WordPress), or using one of the many Docker-based solutions like [DDEV](https://ddev.readthedocs.io/), [Docksal](https://docksal.io/), or [Lando](https://lando.dev/).
 
 **But what’s so special about DDEV**? What makes it different from other Docker-based solutions like [Lando](https://lando.dev/) or [Docksal](https://docksal.io/)? I recently spent a little time exploring several similar platforms and was impressed with what I saw, but definitely came away wanting to highlight a number of DDEV features.
 
@@ -29,8 +29,7 @@ In 2022, users from designers to developers to testers and open source contribut
 - **Explicit support** for many of CMSs and platforms: TYPO3, Drupal/Backdrop, WordPress, Craft CMS, Magento, Laravel, and Shopware. Explicit support means settings management and an NGINX configuration customized for the specific platform.
 - **Easy use of other PHP and NodeJS platforms**, including Symfony, etc. While DDEV provides explicit support with optional settings management for many CMSs, many, many developers use other platforms and CMSs, including Symfony, Moodle, Mautic, etc. Explicit support of NodeJS versions for processing and as daemons.
 - **Library of supported, maintained, tested add-ons**, including Redis, Solr, Memcached, Elasticsearch, Mongo, Varnish.
-- **Full Gitpod support**: Your local development environment doesn’t even need to be local any more. DDEV has full support for use in [Gitpod](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#gitpod).
-- **Keeping up**: DDEV is always keeping up with the dependencies you need. For example, at this writing, neither PHP 8.2.0 nor Drupal 10 have yet been released, but both have been supported in DDEV for months. This is typical. DDEV had Linux ARM64 support before the mac M1 even came out, and had Apple Silicon support as soon as Docker Desktop supported it.
+- **Keeping up**: DDEV is always keeping up with the dependencies you need. For example, at this writing, neither PHP 8.2.0 nor Drupal 10 had yet been released, but both had been supported in DDEV for months. This is typical. DDEV had Linux ARM64 support before the mac M1 even came out, and had Apple Silicon support as soon as Docker Desktop supported it.
 - **Open-Source options for everything**: While most similar tools were once wedded to Docker Desktop, DDEV now provides alternate and fully-open-source Docker providers for every environment except traditional Windows. Those who do not want to pay for the Docker Desktop license do not have to do so.
 
 ## Plays well with others
