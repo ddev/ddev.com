@@ -578,13 +578,6 @@ Example repository for idleberg/php-wordpress-vite-assets, quick & dirty:
 
 - [mandrasch/ddev-wp-vite-demo](https://github.com/mandrasch/ddev-wp-vite-demo)
 
-#### Gitpod
-
-I experimented with Gitpod support for Vite in these demo projects, see:
-
-- [mandrasch/ddev-laravel-vite](https://github.com/mandrasch/ddev-laravel-vite)
-- [mandrasch/ddev-craftcms-vite](https://github.com/mandrasch/ddev-craftcms-vite)
-
 #### GitHub Codespaces
 
 I experimented with Codespaces support for Vite in these demo projects, see:

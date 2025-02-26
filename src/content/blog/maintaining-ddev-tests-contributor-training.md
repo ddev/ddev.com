@@ -1,7 +1,7 @@
 ---
 title: "Contributor Training: Maintaining DDEV Automated Tests"
 pubDate: 2024-09-18
-# modifiedDate: 2024-07-23
+modifiedDate: 2025-02-26
 summary: Contributor training on maintaining and debugging DDEV automated tests.
 author: Randy Fay
 featureImage:
@@ -48,7 +48,7 @@ Flaky tests are the worst, because they may depend on the execution environment,
 
 - Review the test output from Buildkite or GitHub workflow to try to understand what's actually going on. There may be an earlier error that's reported that causes the actual failure.
 - Try to run it manually, perhaps step-debugging and introducing slower execution.
-- Try to run it on Gitpod, which is a more similar environment.
+- Try to run it on GitHub Codespaces, which is a more similar environment.
 - Try to run it using [tmate](https://github.com/mxschmitt/action-tmate) on the GitHub workflow, which is as close as you can get to the real test environment. (Tmate is built into each of the DDEV test workflows.)
 
 ### Fragile or brittle tests

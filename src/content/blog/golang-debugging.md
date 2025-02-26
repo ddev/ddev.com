@@ -1,7 +1,7 @@
 ---
 title: "Debugging Golang (Go) Applications"
 pubDate: 2024-05-17
-modifiedDate: 2024-11-08
+modifiedDate: 2025-02-26
 summary: Debugging Golang applications using GoLand or VS Code
 author: Randy Fay
 featureImage:
@@ -78,10 +78,6 @@ VS Code debugging is a bit more tweaky. It seems that for commands, you need to 
 ### Running a test
 
 Running tests is almost exactly the same as in GoLand. Right-click the arrow next to the test function and choose "Run" or "Debug". The same caveats apply for `cmd` tests, you need `ddev` built from the same code in your `$PATH`.
-
-## Working in Gitpod
-
-Every DDEV PR and the main page has a launcher for Gitpod. Gitpod is just a Linux-based VS Code development environment in the cloud, in a browser. You can do everything you would want to do with it that you could do with VS Code locally. If you click the "Launch in Gitpod" button on any PR, that PR will be set up for you automatically in Gitpod, with all VS Code extensions already loaded, and with DDEV already compiled.
 
 ## Contributions welcome!
 
