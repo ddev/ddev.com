@@ -13,7 +13,7 @@ categories:
 
 ## DDEV v1.24.3 Release
 
-Today we released [DDEV v1.24.3](https://github.com/ddev/ddev/releases/tag/v1.24.3) a ahead of schedule because of a wonderful set of open-source interactions. (There's other important stuff in the release, but I'll cover that later.)
+Today we released [DDEV v1.24.3](https://github.com/ddev/ddev/releases/tag/v1.24.3) ahead of schedule because of a wonderful set of open-source interactions. (There's other important stuff in the release, but I'll cover that later.)
 
 **We would appreciate it if you could upgrade soon, especially if you're on macOS or traditional Windows, so that we don't have to answer questions about this when it starts to hit users.**
 
