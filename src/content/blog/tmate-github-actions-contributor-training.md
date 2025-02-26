@@ -1,7 +1,7 @@
 ---
 title: "Contributor Training: Tmate for Debugging GitHub Actions Workflows"
 pubDate: 2024-10-23
-# modifiedDate: 2024-10-23
+modifiedDate: 2025-02-26
 summary: Contributor training - Using tmate to debug and experiment with GitHub Actions.
 author: Randy Fay
 featureImage:
@@ -29,7 +29,7 @@ Often it's hard to understand what has happened with an test because all we see 
 ## Alternatives to Tmate
 
 1. We normally will try to understand a test failure by running it locally.
-2. Running in a similar Linux/AMD64 system like Gitpod is a pretty easy option.
+2. Running in a similar Linux/AMD64 system like GitHub Codespaceds is a pretty easy option.
 3. [nektos/act](https://github.com/nektos/act) is another recommended competitor to Tmate. It uses Docker and a Docker image to run an action on your local machine. I haven't had luck with it when I've tried it. See Stas's experience with `act` [below](#how-to-useact).
 
 ## Security Concerns
