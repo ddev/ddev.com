@@ -50,7 +50,7 @@ We'd love to have your input as daily users as we work through these this month.
 6. [Improve self-diagnose capability](https://github.com/ddev/ddev/issues/6461) . We currently have ddev debug test but it would be great to implement something that was readable and actionable for ordinary mortals.
 7. [DDEV's Message-of-the-day and ddev.com should show current funding status and need](https://github.com/ddev/ddev/issues/6892). We now have an automatically updated JSON feed that can make this possible.
 8. DDEV Windows/WSL2 packaging and installation: The traditional Windows installer needs work, and the WSL2 install scripts are written in hard-to-maintain PowerShell. This work can be consolidated and improved, including [improving the Windows hosts-file escalation technique](https://github.com/ddev/ddev/issues/6440).
-9. [Change `ddev launch` to a more configurable script-based option](https://github.com/ddev/ddev/issues/6441). Instead of always using `ngrok` there should be multiple ways to share.
+9. [Change `ddev share` to a more configurable custom-command-based option](https://github.com/ddev/ddev/issues/6441). Instead of always using `ngrok` there should be multiple ways to share.
 10. [Rework configuration system using Viper](https://github.com/ddev/ddev/issues/5763).
 
 In addition to prioritizing these initiatives, we have applied to the [Google Summer of Code](https://summerofcode.withgoogle.com/), hoping that we can mentor contributors in that program and see work on one or more of these be successful through GSoC. We'll also be looking for community mentors (is that you?), and maybe some of you would like to sign up for being mentees via Google this summer!
