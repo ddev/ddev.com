@@ -25,20 +25,18 @@ We just want to take a moment to thank all of the amazing sponsors of the DDEV o
 * [Mobilistics](https://mobilistics.de/) and [i-gelb](https://i-gelb.net) both sponsor at the $500/month level.
 * All these lovely organizations sponsor at the $100/month (or a bit higher) level: [Lullabot](https://lullabot.com), [Affinity Bridge](https://affinitybridge.com/), [Webikon](https://github.com/claudiu-cristea), [FameHelsinki](https://fame.fi/), [OPTASY](https://www.optasy.com/), [Gizra](https://gizra.com), [Healthcare without Harm](https://noharm.org/), [Cambrico](https://cambrico.net/), [Agaric](https://agaric.coop), [Centarro](https://centarro.io), [Craft CMS](https://craftcms.com/), [Redfin Solutions](https://redfinsolutions.com/), [b13](https://b13.com)
 
-## JSON Detail about Sponsorships
+## So many more wonderful sponsors!
 
-## Many Ways to Sponsor
 
-Is your name or your organization's name missing here? It's easy to get it here. How much does DDEV's support and ongoing maintenance mean to your organization?
+
+TODO: ## JSON Detail about Sponsorships
+
+TODO: ## Many Ways to Sponsor
+
+TODO: Is your name or your organization's name missing here? It's easy to get it here. How much does DDEV's support and ongoing maintenance mean to your organization?
 
 (If I made a mistake and left you out let me know and I'll edit this.)
 
 Link to how to sponsor
 
-Want to keep up as the month goes along? Follow on
-
-- [blog](https://ddev.com/blog/)
-- [LinkedIn](https://www.linkedin.com/company/ddev-foundation)
-- [Mastodon](https://fosstodon.org/@ddev)
-- [Bluesky](https://bsky.app/profile/ddev.bsky.social)
-- and join our community on [Discord](/s/discord)
+Do you have questions or want to talk (about sponsoring or anything else)? [Contact us!](https://ddev.com/contact/) or join us in [Discord](/s/discord).
