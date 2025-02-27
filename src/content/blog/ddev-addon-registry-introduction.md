@@ -7,7 +7,7 @@ author: Stas Zhuk
 featureImage:
   src: /img/blog/2025/02/developer-laptops.jpg
   alt: Laptops showing opened GitHub repositories
-  credit: 'ChatGPT: many laptops arranged in a futuristic workspace, each showing different GitHub repositories, glowing screens displaying repository names and code'
+  credit: "ChatGPT: many laptops arranged in a futuristic workspace, each showing different GitHub repositories, glowing screens displaying repository names and code"
 categories:
   - Announcements
 ---
