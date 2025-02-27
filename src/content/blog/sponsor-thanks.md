@@ -1,8 +1,8 @@
 ---
 title: "Thanks to our Amazing Sponsors!"
-pubDate: 2025-02-27
+pubDate: 2025-02-28
 #modifiedDate: 2025-02-06
-summary: Thanks to our Amazing Sponsors!
+summary: Thank You to our Amazing Sponsors!
 author: Randy Fay
 #featureImage:
 #  src: /img/blog/2025/02/nancy-lewis-winter-scene.jpg
@@ -16,17 +16,24 @@ categories:
 
 We just want to take a moment to thank all of the amazing sponsors of the DDEV open source project. All of you reading this know that we've been working for years now to make DDEV a financially sustainable project, so it can serve you into the future. So many have responded to that call. Thank you!
 
+**Even though we're going to mention the biggest sponsors first, we want all of you to know that your sponsorship matters too, and with care we can expand to many, many small sponsors to ensure DDEV's resilience and sustainability.**
+
 ## Major Sponsors
 
-* [Platform.sh](https://platform.sh) has been a major sponsor of DDEV. You may know that they recently reduced their sponsorship, but they remain our largest single supporter, and we appreciate it greatly. Platform.sh has also transferred the "ddev" domain names to the [DDEV Foundation](/foundation) and will be transferring the "DDEV" trademark.
+* [Platform.sh](https://platform.sh) has been a major sponsor of DDEV for a few years now. You may know that they recently reduced their sponsorship, but they remain our largest single supporter, and we appreciate it greatly. Platform.sh has also transferred the "ddev" domain names to the [DDEV Foundation](/foundation) and will be transferring the "DDEV" trademark. And they're funding Randy's plane ticket to Drupalcon Atlanta!
 * [Tag1 Consulting](https://tag1consulting.com) stepped up to generously support DDEV at a very significant level so many years ago, and has continued doing that. And they don't just offer outstanding financial support, they're always making clear that they use and support DDEV, and we get to see them at conferences.
-* Mobilistics, i-gelb (500+/month)
-* Lullabot, Affinity Bridge, claudiu-cristea, FameHelsinki, OPTASY, Gizra, Healthcare without Harm, Cambrico, Agaric, Centarro, Pixel & Tonic
-* B13 (2000/year)
+* [Mobilistics](https://mobilistics.de/) and [i-gelb](https://i-gelb.net) both sponsor at the $500/month level.
+* All these lovely organizations sponsor at the $100/month (or a bit higher) level: [Lullabot](https://lullabot.com), [Affinity Bridge](https://affinitybridge.com/), [Webikon](https://github.com/claudiu-cristea), [FameHelsinki](https://fame.fi/), [OPTASY](https://www.optasy.com/), [Gizra](https://gizra.com), [Healthcare without Harm](https://noharm.org/), [Cambrico](https://cambrico.net/), [Agaric](https://agaric.coop), [Centarro](https://centarro.io), [Craft CMS](https://craftcms.com/), [Redfin Solutions](https://redfinsolutions.com/), [b13](https://b13.com)
 
 ## JSON Detail about Sponsorships
 
 ## Many Ways to Sponsor
+
+Is your name or your organization's name missing here? It's easy to get it here. How much does DDEV's support and ongoing maintenance mean to your organization?
+
+(If I made a mistake and left you out let me know and I'll edit this.)
+
+Link to how to sponsor
 
 Want to keep up as the month goes along? Follow on
 
@@ -35,5 +42,3 @@ Want to keep up as the month goes along? Follow on
 - [Mastodon](https://fosstodon.org/@ddev)
 - [Bluesky](https://bsky.app/profile/ddev.bsky.social)
 - and join our community on [Discord](/s/discord)
-
-Happy February from Randy Fay, DDEV Project Lead. It's a delight to collaborate with you!
