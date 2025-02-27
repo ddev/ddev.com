@@ -34,7 +34,7 @@ Here are the key tools used to build the DDEV Add-on Registry:
 
 - [GitHub Pages and Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll): Jekyll powers the static site, while GitHub Pages hosts it.
 - [DataTables](https://datatables.net/): For sorting and searching add-on entries.
-- Golang: Used to aggregate add-on data into markdown files, which are transformed into Liquid templates for Jekyll.
+- Golang: Used to aggregate add-on data into Markdown files, which are transformed into Liquid templates for Jekyll.
 
 ## How to Set Up the Registry Locally
 
@@ -67,7 +67,7 @@ Here's a breakdown of where important content and configuration files live:
 
 ## Looking Ahead: Future Development
 
-While the DDEV Add-on Registry is functional, it remains a project ripe for growth and collaboration. It’s built simply, offering the perfect opportunity for someone in the community to step in and improve or even re-imagine the site, especially considering that [ddev.com is built with Astro](ddev-website-for-contributors.md).
+While the DDEV Add-on Registry is functional, it remains a project ripe for growth and collaboration. It follows a minimalistic approach, offering the perfect opportunity for someone in the community to step in and improve or even re-imagine the site, especially considering that [ddev.com is built with Astro](ddev-website-for-contributors.md).
 
 Your ideas and contributions are welcome! We're tracking feedback and suggestions in [this GitHub issue](https://github.com/ddev/addon-registry/issues/9), and we'd love to hear from you.
 
