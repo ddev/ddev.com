@@ -21,7 +21,7 @@ Today we released [DDEV v1.24.3](https://github.com/ddev/ddev/releases/tag/v1.24
 
 On Monday, two days ago, @LoganHornbuckle reported [a problem](https://github.com/ddev/ddev/issues/7015) (apparently with Mutagen or Docker) we had never seen before. They helped extensively with followup, and it turned out that they had done a `colima update` and as a result gotten the new Docker/Moby Engine version 28.0.0.
 
-This was a serious fatal error, completely breaking DDEV's Mutagen support for Docker 28.
+The update exposed an incompatibility between Mutagen and Docker 28, which showed up as a fatal error, completely breaking DDEV's Mutagen support for Docker 28.
 
 Once we understood the situation, we were able to reproduce the problem, and assumed it was a problem with Docker 28.
 
