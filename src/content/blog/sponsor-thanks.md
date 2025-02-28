@@ -28,6 +28,13 @@ We just want to take a moment to thank all of the amazing sponsors of the DDEV o
 ## So many more wonderful sponsors!
 
 
+## In-Kind Sponsors
+
+The open-source community has lots of folks helping out multiple collaborators. In our case, [MacStadium](https://macstadium.com) provides us testing resources, and [JetBrains](https://jetbrains.com) provides a subscription to their IDE products, thanks! 
+
+But we never forget Docker. Docker has adopted us in the Docker-Sponsored-Open-Source program for a few years now, and this means that all of your image pulls are sponsored in that project. You may know that normal image pulls will be strictly limited starting April 1, 2024, but because of the DSOS, users of DDEV won't hit that restriction.
+
+And please don't forget that the [open-source Docker project](https://github.com/moby/moby) underlies every single Docker provider. It doesn't matter if you're using OrbStack or Lima or Docker Desktop or whatever, they're all built on top of the amazing Docker open-source project.
 
 TODO: ## JSON Detail about Sponsorships
 
