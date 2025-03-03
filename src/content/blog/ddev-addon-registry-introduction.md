@@ -1,8 +1,8 @@
 ---
 title: "DDEV Add-on Registry Introduction"
-pubDate: 2025-02-28
-#modifiedDate: 2025-02-28
-summary: Stas Zhuk on developing addons.ddev.com.
+pubDate: 2025-03-04
+#modifiedDate: 2025-03-04
+summary: Introducing addons.ddev.com website
 author: Stas Zhuk
 featureImage:
   src: /img/blog/2025/02/developer-laptops.jpg
@@ -16,60 +16,37 @@ categories:
 
 We're excited to introduce [**addons.ddev.com**](https://addons.ddev.com), a central hub where the community can explore, contribute to, and enhance the collection of DDEV add-ons.
 
-This registry is designed to provide seamless access to all available add-ons, making it easier for developers to browse without running into GitHub API limits.
+![DDEV Add-on Registry](/img/blog/2025/03/ddev-addon-registry.png)
 
-Our goal here is simple: to provide a functional, yet evolving, platform that highlights "what it is" today while leaving space for community-driven improvements tomorrow.
+The source code is available at <https://github.com/ddev/addon-registry>.
 
-## The Journey So Far
+## Search the Add-ons
 
-The concept for an add-on registry has been [in the works for a while](2024-plans.md). While `ddev add-on list` is a fantastic tool, it only scratches the surface when it comes to discovering and exploring add-ons.
+Need to find a specific add-on? Simply use the search field, and watch results update in real-time as you type.
 
-The need for a dedicated registry became clear as we sought to streamline access to add-ons, reduce API limitations, and lessen the maintenance burden.
+![DDEV Add-on Search](/img/blog/2025/03/ddev-addon-search.gif)
 
-For inspiration, I looked to the simplicity and functionality of projects like [GTFOBins](https://gtfobins.github.io/), which is built with Jekyll.
+## Sorting the Add-ons
 
-## Used Tools
+Click on a column title to organize the entries based on that field. A second click will reverse the sort order, and a third click resets it back.
 
-Here are the key tools used to build the DDEV Add-on Registry:
+![DDEV Add-on Sort](/img/blog/2025/03/ddev-addon-sort.gif)
 
-- [GitHub Pages and Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll): Jekyll powers the static site, while GitHub Pages hosts it.
-- [DataTables](https://datatables.net/): For sorting and searching add-on entries.
-- Golang: Used to aggregate add-on data into Markdown files, which are transformed into Liquid templates for Jekyll.
+## Add-on Types
 
-## How to Set Up the Registry Locally
+Add-ons fall into two categories: **Official** add-ons, which are supported by the DDEV team, and **Contrib** add-ons, which are supported by the community.
 
-Getting started with the DDEV Add-on Registry locally is straightforward. Here’s how:
+![DDEV Add-on Type](/img/blog/2025/03/ddev-addon-type.gif)
 
-1. Clone the repository: <https://github.com/ddev/addon-registry>
-2. Run `ddev start` to spin up the environment.
-3. Then, launch it by running `ddev launch :4000`.
+## Engage by Leaving Comments
 
-You’ll now be able to explore the add-ons within the registry right on your local machine.
+Want to share your thoughts or feedback on an add-on? Scroll to the bottom of an add-on's page and click "Sign in with GitHub". We use [giscus](https://giscus.app/) to manage comments, making it easy to join the conversation by authorizing your GitHub account. You can also react to other comments or add your own insights.
 
-## Key Components and Structure
+![DDEV Add-on Comment](/img/blog/2025/03/ddev-addon-comment.gif)
 
-Here's a breakdown of where important content and configuration files live:
+## What's Next?
 
-- **`.bundle`**: A script for installing Jekyll dependencies.
-- **`.ddev`**: The DDEV configuration directory.
-- **`.github`**: The GitHub workflows that handle the deployment process.
-- **`_addons`**: Custom Jekyll collection that holds all the add-ons fetched from the community.
-- **`_data`**: User-defined Jekyll data types.
-- **`_includes`**: HTML partials used across the site.
-- **`_layouts`**: The layout templates for Jekyll pages.
-- **`_pages`**: Jekyll pages overrides.
-- **`assets`**: Contains styles and static assets.
-- **`go`**: The Golang app that collects add-on data and populates `_addons`.
-- **`Gemfile`**: The Ruby equivalent of `composer.json`, managing dependencies.
-- **`_config.yml`**: The main configuration file for the Jekyll site.
-- **`addons.json`**: A JSON representation of all the DDEV add-ons.
-- **`index.html`**: The homepage of the registry.
-
-## Looking Ahead: Future Development
-
-While the DDEV Add-on Registry is functional, it remains a project ripe for growth and collaboration. It follows a minimalistic approach, offering the perfect opportunity for someone in the community to step in and improve or even re-imagine the site, especially considering that [ddev.com is built with Astro](ddev-website-for-contributors.md).
-
-Your ideas and contributions are welcome! We're tracking feedback and suggestions in [this GitHub issue](https://github.com/ddev/addon-registry/issues/9), and we'd love to hear from you.
+The DDEV Add-on Registry is a living project, and we're eager to involve the community in its future. If you have suggestions or want to contribute, head over to <https://github.com/ddev/addon-registry>. We look forward to your feedback and collaboration!
 
 Want to keep up as the month goes along? Follow us on
 
