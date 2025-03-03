@@ -22,7 +22,7 @@ The source code is available at <https://github.com/ddev/addon-registry>.
 
 ## Search the Add-ons
 
-Need to find a specific add-on? Simply use the search field, and watch results update in real-time as you type.
+Need to find a specific add-on? Use the search field, and watch results update in real-time as you type.
 
 ![DDEV Add-on Search](/img/blog/2025/03/ddev-addon-search.gif)
 
