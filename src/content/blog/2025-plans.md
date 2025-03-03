@@ -93,7 +93,7 @@ This section is updated for our annual review of the past year at the [DDEV Advi
 - We didn't really make progress with marketing or promotion in 2024. In fact, hosting companies and agencies with a clear stake in DDEV's success did not step up and even started ghosting discussions about this. This is likely a result of market conditions, but it's uncomfortable for us.
 - We tried to improve our marketing situation by engaging Open Strategy Partners, but didn't achieve all we had hoped, and had to end the arrangement earlier than planned because our funding was inadequate to continue it.
 - [Platform.sh changed their funding](platform-sh-ddev-funding-changes.md). While their ongoing commitment remains generous, this was certainly a challenge.
-
+- We never did see a return of amazing contributor Simon Gilli and still mourn his loss. Nobody knows what happened to him. Of course this is a reminder that none of us and none of our contributions are guaranteed into the future and is another reason to shore up the organization to continue into the future with or without specific individuals.
 
 Want to keep up as the month goes along? Follow us on
 
