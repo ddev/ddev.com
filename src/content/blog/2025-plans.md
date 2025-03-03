@@ -1,8 +1,8 @@
 ---
-title: "DDEV 2025 Plans"
+title: "DDEV 2025 Plans and 2024 Review"
 pubDate: 2025-02-08
-modifiedDate: 2025-02-18
-summary: DDEV 2025 Plans
+modifiedDate: 2025-03-03
+summary: DDEV 2025 Plans and 2024 Review
 author: Randy Fay
 featureImage:
   src: /img/blog/2025/02/ddev-2025-plans.png
@@ -11,6 +11,8 @@ featureImage:
 categories:
   - Community
 ---
+
+# 2025 Plans and Notes
 
 Every year we try to clarify goals early, and here we go for 2025! We'd love to have your thoughts and opinions! Some of the things we [planned in 2024](2024-plans.md) aren't quite done yet, but we're working and planning and responding to your needs.
 
@@ -53,11 +55,45 @@ We'd love to have your input as daily users as we work through these this month.
 9. [Change `ddev share` to a more configurable custom-command-based option](https://github.com/ddev/ddev/issues/6441). Instead of always using `ngrok` there should be multiple ways to share.
 10. [Rework configuration system using Viper](https://github.com/ddev/ddev/issues/5763).
 
-In addition to prioritizing these initiatives, we have applied to the [Google Summer of Code](https://summerofcode.withgoogle.com/), hoping that we can mentor contributors in that program and see work on one or more of these be successful through GSoC. We'll also be looking for community mentors (is that you?), and maybe some of you would like to sign up for being mentees via Google this summer!
+In addition to prioritizing these initiatives, we applied to the [Google Summer of Code](https://summerofcode.withgoogle.com/), hoping to mentor contributors in that program. (Update: We did not get accepted, but will try next year.)
 
 Do you see other important things in the [issue queue](https://github.com/ddev/ddev/issues) or elsewhere that are important to you? Are there frictions that impact your work that DDEV could fix? Please let us know.
 
-We would dearly love to have your input on these as the planning process goes forward. You can respond so very many ways in all of the [support venues](https://ddev.readthedocs.io/en/stable/users/support/).
+We would dearly love to have your input on these as the planning process goes forward. You can respond so very many ways in all the [support venues](https://ddev.readthedocs.io/en/stable/users/support/).
+
+## 2025 Planning Additional Notes
+
+### Recognized Risks
+
+We are a very small organization, so we try to pay careful attention to the risks as we go forward.
+
+- Key maintainer Stas lives in a very volatile situation in Ukraine, and none of us knows how to predict the future. There are physical risks, communication risks, and financial transfer risks always possible.
+- Randy is not young and can always face new risks.
+- The financial outlook for discretionary funding from agencies and hosting companies is horrible right now.
+- Any of our maintainers can become overworked or discouraged or burnout. We take these risks and their prevention very seriously.
+
+### Minor Notes
+
+- I (Randy) do expect to work less in 2025, but that hasn't worked out so far. However, I am planning a bicycle trip that will make me mostly out of touch from late May through much of June.
+- Updated blogs about key DDEV ideas are needed. For example, an updated blog about how DDEV is different from roll-your-own or bare metal, especially multiple database and php versions, and team share. 
+- More screenshare blogs for ordinary DDEV users are important. We have many out there, but some are seriously aged.
+
+## 2024 DDEV Review
+
+This section is updated for our annual review of the past year at the [DDEV Advisory Group](https://github.com/orgs/ddev/discussions/7031).
+
+### Great Things
+
+- Stas Zhuk as a maintainer has been a massive success in so many ways. Not only is he completely technically fluent with DDEV in every area, but he loves supporting DDEV users, and we've even been progressively successful in making sure he has adequate control of most areas of external accounts, etc.
+- Outstanding contributors like tyler36, GuySartorelli, Hanoii, Bernardo Martinez, and Ralf Koller continued to improve the project.
+- We worked hard at [Live Contributor Training](/blog/category/training/), and recorded blogs and training sessions, which is great. It's not clear how successful these were in enabling new contributors, but occasional reports say that the recorded sessions have been helpful.
+
+### Less Great Things
+
+- We didn't really make progress with marketing or promotion in 2024. In fact, hosting companies and agencies with a clear stake in DDEV's success did not step up and even started ghosting discussions about this. This is likely a result of market conditions, but it's uncomfortable for us.
+- We tried to improve our marketing situation by engaging Open Strategy Partners, but didn't achieve all we had hoped, and had to end the arrangement earlier than planned because our funding was inadequate to continue it.
+- [Platform.sh changed their funding](platform-sh-ddev-funding-changes.md). While their ongoing commitment remains generous, this was certainly a challenge.
+
 
 Want to keep up as the month goes along? Follow us on
 
