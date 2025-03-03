@@ -14,7 +14,7 @@ categories:
 
 **Happy March!**
 
-**DDEV v1.24.3** was [released](https://github.com/ddev/ddev/releases/tag/v1.24.3) earlier than planned for two major reasons: An upcoming Docker engine release was going to be incompatible with current Mutagen version, and the new `generic` webserver type allows Node.js and other interesting possibilities. **We encourage you all to upgrade because of this upcoming incompatibility, thanks!**
+**DDEV v1.24.3** was [released](https://github.com/ddev/ddev/releases/tag/v1.24.3) earlier than planned for two major reasons: An upcoming Docker engine release was going to be incompatible with current Mutagen version, and the new `generic` web server type allows Node.js and other interesting possibilities. **We encourage you all to upgrade because of this upcoming incompatibility, thanks!**
 
 **Web-based DDEV Add-on Registry** is now live! Try it out [https://addons.ddev.com](https://addons.ddev.com)
 
