@@ -18,7 +18,7 @@ We're excited to introduce [**addons.ddev.com**](https://addons.ddev.com), a cen
 
 ![DDEV Add-on Registry](/img/blog/2025/03/ddev-addon-registry.png)
 
-The source code is available at <https://github.com/ddev/addon-registry>.
+The source code is available and your contributions are encouraged at <https://github.com/ddev/addon-registry>.
 
 ## Search the Add-ons
 
