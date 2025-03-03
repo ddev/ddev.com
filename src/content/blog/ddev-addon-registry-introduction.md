@@ -1,22 +1,19 @@
 ---
 title: "DDEV Add-on Registry Introduction"
-pubDate: 2025-03-04
-#modifiedDate: 2025-03-04
+pubDate: 2025-03-03
+#modifiedDate: 2025-03-03
 summary: Introducing addons.ddev.com website
 author: Stas Zhuk
 featureImage:
-  src: /img/blog/2025/02/developer-laptops.jpg
-  alt: Laptops showing opened GitHub repositories
-  credit: "ChatGPT: many laptops arranged in a futuristic workspace, each showing different GitHub repositories, glowing screens displaying repository names and code"
+  src: /img/blog/2025/03/ddev-addon-registry.png
+  alt: DDEV Add-on Registry website
 categories:
   - Announcements
 ---
 
 ## Welcome to the DDEV Add-on Registry
 
-We're excited to introduce [**addons.ddev.com**](https://addons.ddev.com), a central hub where the community can explore, contribute to, and enhance the collection of DDEV add-ons.
-
-![DDEV Add-on Registry](/img/blog/2025/03/ddev-addon-registry.png)
+We're excited to introduce <https://addons.ddev.com>, a central hub where the community can explore, contribute to, and enhance the collection of DDEV add-ons.
 
 The source code is available and your contributions are encouraged at <https://github.com/ddev/addon-registry>.
 
