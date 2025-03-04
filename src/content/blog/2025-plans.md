@@ -29,7 +29,10 @@ We'd love to have your input as daily users as we work through these this month.
 
 ## Sustainability and Finance
 
-- **Improve our Marketing CTA and information**: The [ddev.com "Support DDEV"](https://ddev.com/support-ddev/) page says lots of things, but the financial CTA gets lost there. We need to make it completely clear that for the project to be sustainable, the community will need to support the two developers who are working full-time on it, and make clear the many ways that this can be done.
+- **Improve our Marketing CTA and information**: The [ddev.com "Support DDEV"](https://ddev.com/support-ddev/) page says lots of things, but the financial CTA gets lost there. We need to communicate successfully:
+  - For the project to be sustainable, the community will need to support the two developers who are working full-time on it.
+  - Show the many ways that support can be done can be done.
+  - Communicate clearly our current situation. ([The Drop Times](https://thedroptimes.com) rolled out an amazing promotion for DDEV, showing the current funding status against our goals. Now we need a community member to do the same thing for us in our website! (See the [March 2025 Newsletter](ddev-march-2025-newsletter.md)).
 - **Continue to develop contributors and maintainers**: As the project grows, we need more skilled contributors and maintainers. (The only difference between those is that maintainers typically have a higher level of direct access to project resources, but as a wide-open source project, almost all interested contributors can accomplish almost anything without enhanced privileges.) In the last two years, we've had [quite a lot of contributor trainings](/blog/category/training), and anecdotes indicate that people are using those recordings and blogs for training, but the actual attendance at them was not impressive. I'm thinking that this year these topics should probably be addressed with screenshare recordings and updated blogs instead of calendar-scheduled events. Given the financial struggles in our contributors' world, I doubt that we'll be able to add paid maintainers in 2025, I'm most interested right now in the reasonable goal of retaining and paying the two amazing maintainers we currently have.
 
 ## Features and Initiatives
@@ -85,13 +88,18 @@ This section is updated for our annual review of the past year at the [DDEV Advi
 ### Great Things
 
 - Stas Zhuk as a maintainer has been a massive success in so many ways. Not only is he completely technically fluent with DDEV in every area, but he loves supporting DDEV users, and we've even been progressively successful in making sure he has adequate control of most areas of external accounts, etc.
+- Despite our challenges, our finances are currently in balance, and our expenditures are within our means. This is a result of many wonderful sponsors, both individuals and organizations. Thank you!
 - Outstanding contributors like tyler36, GuySartorelli, Hanoii, Bernardo Martinez, and Ralf Koller continued to improve the project.
+- We continue to offer world-class support to DDEV users in many venues. In most cases, our community's response is better than any commercial organization can offer. I think this has to do with the quality of the software (most people don't need support) and also with our community's overall commitment to generous and friendly support.
 - We worked hard at [Live Contributor Training](/blog/category/training/), and recorded blogs and training sessions, which is great. It's not clear how successful these were in enabling new contributors, but occasional reports say that the recorded sessions have been helpful.
+- Prompted largely by The Drop Times we created the automatically-updated [sponsorship-data](https://github.com/ddev/sponsorship-data) repository, which has lots of potential for communicating about DDEV's funding status.
+- The [addons.ddev.com](https://addons.ddev.com) web-based add-on registry is now live.
 
 ### Less Great Things
 
 - We didn't really make progress with marketing or promotion in 2024. In fact, hosting companies and agencies with a clear stake in DDEV's success did not step up and even started ghosting discussions about this. This is likely a result of market conditions, but it's uncomfortable for us.
 - We tried to improve our marketing situation by engaging Open Strategy Partners, but didn't achieve all we had hoped, and had to end the arrangement earlier than planned because our funding was inadequate to continue it.
+- Randy is definitely tired of reaching out to organizations and finding that they either don't respond, or promise a response and don't follow through, or just don't have discretionary funds available and are unable to support DDEV at this point.
 - [Platform.sh changed their funding](platform-sh-ddev-funding-changes.md). While their ongoing commitment remains generous, this was certainly a challenge.
 - We never did see a return of amazing contributor Simon Gilli and still mourn his loss. Nobody knows what happened to him. Of course this is a reminder that none of us and none of our contributions are guaranteed into the future and is another reason to shore up the organization to continue into the future with or without specific individuals.
 
