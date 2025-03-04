@@ -27,6 +27,7 @@ categories:
 **DDEV Notes and News**
 
 - The DDEV Advisory Group [Annual Review and Planning Meeting](https://github.com/orgs/ddev/discussions/7031) is on Wednesday, March 5 (tomorrow!), and **all are invited**. The Zoom link is in the agenda link. We'll be looking at 2025 ambitions and 2024 review, we'd love to have you there!
+- A review of DDEV's year 2024 has been added to the [2025 Plans and 2024 Review](https://ddev.com/blog/2025-plans/) blog post. We'd love your feedback about both 2024 and the 2025 plans!
 - Randy presented on [Divide and conquer: A systematic approach to troubleshooting issues](https://www.fldrupal.camp/session/divide-and-conquer-systematic-approach-troubleshooting-issues) at Florida Drupalcamp. The full recording is on the link.
 - [Installing Drupal CMS with DDEV](https://www.webwash.net/drupal-cms-v1-installation-and-demo/)
 - [Vite suddenly not working due to CORS errors? 🧐 (DDEV)](https://dev.to/mandrasch/vite-is-suddenly-not-working-anymore-due-to-cors-error-ddev-3673)
