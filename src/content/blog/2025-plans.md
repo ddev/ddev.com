@@ -1,7 +1,7 @@
 ---
 title: "DDEV 2025 Plans and 2024 Review"
 pubDate: 2025-02-08
-modifiedDate: 2025-03-03
+modifiedDate: 2025-03-04
 summary: DDEV 2025 Plans and 2024 Review
 author: Randy Fay
 featureImage:
