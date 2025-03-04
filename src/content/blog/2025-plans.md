@@ -40,8 +40,8 @@ We'd love to have your input as daily users as we work through these this month.
 ### Funded and Work-In-Progress Initiatives
 
 - The TYPO3 Association has agreed to fund the [integration of XHGui into DDEV](https://typo3.org/article/four-ideas-to-be-funded-in-quarter-1-2025) as part of their Community Budget Ideas. Part of this work has already been done in the [ddev/ddev-xhgui](https://github.com/ddev/ddev-xhgui) project, and it must be completed by March 31, 2025.
-- [Top-level Node.js support](https://ddev.readthedocs.io/en/latest/users/extend/customization-extendibility/#using-nodejs-as-ddevs-primary-web-server) as planned in 2024 has been committed to HEAD. There will be a number of follow-up opportunities, including Caddy support, etc.
-- [Web-based Add-on Registry](https://github.com/ddev/ddev/issues/6383) is a work-in-progress and is expected to land soon.
+- [Top-level Node.js support](https://ddev.readthedocs.io/en/latest/users/extend/customization-extendibility/#using-nodejs-as-ddevs-primary-web-server) as planned in 2024 is included in DDEV v1.24.3+. There will be a number of follow-up opportunities, including Caddy support, etc.
+- The [Web-based Add-on Registry](https://addons.ddev.com) is **live**.
 
 <a name="proposed-features"></a>
 
@@ -72,13 +72,14 @@ We are a very small organization, so we try to pay careful attention to the risk
 
 - Key maintainer Stas lives in a very volatile situation in Ukraine, and none of us knows how to predict the future. Physical risks, communication risks, and financial transfer risks are always possible.
 - Randy is not young and can always face new risks.
-- The financial outlook for discretionary funding from agencies and hosting companies is horrible right now.
+- The financial outlook for discretionary funding from agencies and hosting companies (and perhaps individuals) is horrible right now.
 - Any of our maintainers can become overworked or discouraged or can burn out. We take these risks and their prevention very seriously.
 
 ### Minor Notes
 
-- I (Randy) do expect to work less in 2025, but that hasn't worked out so far. However, I am planning a bicycle trip that will make me mostly out of touch from late May through much of June.
+- I (Randy) do expect to work less in 2025, but that hasn't worked out so far. However, I am planning a bicycle trip that will make me mostly out of touch from late May through much of June. Stas has the keys to the kingdom and all the capabilities needed to make sure everything runs smoothly in my absence.
 - Updated blogs about key DDEV ideas are needed. For example, an updated blog about how DDEV is different from roll-your-own or bare metal, especially multiple database and PHP versions, and team share.
+- We need to review how key features are exposed in the documentation and in <https://ddev.com>. There are a number of cases the docs and website reflect DDEV as it was a few years ago. For example, add-ons, which are a fundamental feature, are not exposed clearly.
 - More screenshare blogs for ordinary DDEV users are important. We have many out there, but some are seriously aged.
 
 ## 2024 DDEV Review
