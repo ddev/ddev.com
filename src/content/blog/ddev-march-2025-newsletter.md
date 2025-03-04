@@ -28,7 +28,10 @@ categories:
 
 - The DDEV Advisory Group [Annual Review and Planning Meeting](https://github.com/orgs/ddev/discussions/7031) is on Wednesday, March 5 (tomorrow!), and **all are invited**. The Zoom link is in the agenda link. We'll be looking at 2025 ambitions and 2024 review, we'd love to have you there!
 - A review of DDEV's year 2024 has been added to the [2025 Plans and 2024 Review](https://ddev.com/blog/2025-plans/) blog post. We'd love your feedback about both 2024 and the 2025 plans!
+- [The Drop Times](https://thedroptimes.com) rolled out an amazing promotion for DDEV, showing the current funding status against our goals. Now we need a community member to do the same thing for us in our website!
+  ![The Drop Times DDEV Promotion](/img/blog/2025/03/the-drop-times-promotion.png)
 - Randy presented on [Divide and conquer: A systematic approach to troubleshooting issues](https://www.fldrupal.camp/session/divide-and-conquer-systematic-approach-troubleshooting-issues) at Florida Drupalcamp. The full recording is on the link.
+- The promotion done by The Drop Times consumes DDEV's current sponsorship information from the [sponsorship-data](https://github.com/ddev/sponsorship-data) repository, which has lots of potential for communicating about DDEV's funding status. Today's situation and totals are in [all-sponsorships.json](https://github.com/ddev/sponsorship-data/blob/main/data/all-sponsorships.json).
 - [Installing Drupal CMS with DDEV](https://www.webwash.net/drupal-cms-v1-installation-and-demo/)
 - [Vite suddenly not working due to CORS errors? 🧐 (DDEV)](https://dev.to/mandrasch/vite-is-suddenly-not-working-anymore-due-to-cors-error-ddev-3673)
 - Docker has renewed DDEV's "Docker-Sponsored Open Source" membership, meaning that DDEV users don't have a pull limit on DDEV images on hub.docker.com. This is a great thing for DDEV. Thanks, Docker!
