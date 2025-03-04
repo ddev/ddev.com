@@ -29,6 +29,7 @@ categories:
 - The DDEV Advisory Group [Annual Review and Planning Meeting](https://github.com/orgs/ddev/discussions/7031) is on Wednesday, March 5 (tomorrow!), and **all are invited**. The Zoom link is in the agenda link. We'll be looking at 2025 ambitions and 2024 review, we'd love to have you there!
 - Randy presented on [Divide and conquer: A systematic approach to troubleshooting issues](https://www.fldrupal.camp/session/divide-and-conquer-systematic-approach-troubleshooting-issues) at Florida Drupalcamp. The full recording is on the link.
 - [Installing Drupal CMS with DDEV](https://www.webwash.net/drupal-cms-v1-installation-and-demo/)
+- [Vite is suddenly not working due to CORS error? 🧐 (DDEV)](https://dev.to/mandrasch/vite-is-suddenly-not-working-anymore-due-to-cors-error-ddev-3673)
 - Docker has renewed DDEV's "Docker-Sponsored Open Source" membership, meaning that DDEV users don't have a pull limit on DDEV images on hub.docker.com. This is a great thing for DDEV. Thanks, Docker!
 - We applied for the [Google Summer of Code](https://summerofcode.withgoogle.com/) but did not get accepted due to the high volume of applications and limited available slots. We'll try again in the future!
 - We're working on integrating the excellent XHGui performance exploration GUI for Xhprof to DDEV. This work is being funded by the TYPO3 Community's Q1 Community Budget Idea, and need to be completed in March.
