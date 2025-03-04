@@ -95,6 +95,10 @@ This section is updated for our annual review of the past year at the [DDEV Advi
 - [Platform.sh changed their funding](platform-sh-ddev-funding-changes.md). While their ongoing commitment remains generous, this was certainly a challenge.
 - We never did see a return of amazing contributor Simon Gilli and still mourn his loss. Nobody knows what happened to him. Of course this is a reminder that none of us and none of our contributions are guaranteed into the future and is another reason to shore up the organization to continue into the future with or without specific individuals.
 
+### Financial Status
+
+Our full year financial reports, including balance sheet and profit-and-loss, were posted in the [2025-01-08 Advisory Group Meeting](https://github.com/orgs/ddev/discussions/6853). You'll see we ended the year with about $8,500 in the bank.
+
 Want to keep up as the month goes along? Follow us on
 
 - [blog](https://ddev.com/blog/)
