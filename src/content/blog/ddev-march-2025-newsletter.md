@@ -4,10 +4,10 @@ pubDate: 2025-03-04
 #modifiedDate: 2025-02-06
 summary: DDEV March 2025 Newsletter
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2025/02/nancy-lewis-winter-scene.jpg
-#  alt: Nancy Lewis winter scene painting
-#  credit: "Plateau Creek Mile Marker 55, by Nancy Lewis"
+featureImage:
+  src: /img/blog/2025/03/palisade-vinelands.jpg
+  alt: Nancy Lewis "Palisade Vinelands"
+  credit: "Palisade Vinelands, by Nancy Lewis"
 categories:
   - Community
 ---
