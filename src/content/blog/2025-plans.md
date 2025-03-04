@@ -56,7 +56,7 @@ We'd love to have your input as regular users as we work through these prioritie
 9. [Change `ddev share` to a more configurable custom-command-based option](https://github.com/ddev/ddev/issues/6441). Instead of always using `ngrok` there should be multiple ways to share.
 10. [Rework configuration system using Viper](https://github.com/ddev/ddev/issues/5763).
 
-In addition to prioritizing these initiatives, we applied to the [Google Summer of Code](https://summerofcode.withgoogle.com/), hoping to mentor contributors in that program. (Update: We did not get accepted, but will try next year.)
+(We applied to the [Google Summer of Code](https://summerofcode.withgoogle.com/), hoping to mentor contributors via that program. We did not get accepted, but will try in future years.)
 
 Do you see other important things in the [issue queue](https://github.com/ddev/ddev/issues) or elsewhere that are important to you? Are there frictions that impact your work that DDEV could fix? Please let us know.
 
