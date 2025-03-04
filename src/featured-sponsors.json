@@ -160,5 +160,14 @@
     "squareLogo": "/logos/jetbrains-square.svg",
     "url": "https://www.jetbrains.com/community/opensource/?utm_source=ddev.com",
     "github": "jetbrains"
+  },
+  {
+    "name": "Affinity Bridge",
+    "type": "standard",
+    "logo": "/logos/affinity-bridge.svg",
+    "darklogo": "/logos/affinity-bridge-dark.svg",
+    "squareLogo": "/logos/affinity-bridge-square.svg",
+    "url": "https://affinitybridge.com/",
+    "github": "affinitybridge"
   }
 ]
