@@ -88,7 +88,7 @@ This section is updated for our annual review of the past year at the [DDEV Advi
 
 - Stas Zhuk as a maintainer has been a massive success in so many ways. Not only is he completely technically fluent with DDEV in every area, but he loves supporting DDEV users, and we've been progressively successful in making sure he has adequate control of most areas of external accounts, etc.
 - Despite our challenges, our finances are currently in balance, and our expenditures are within our means. This is a result of many wonderful sponsors, both individuals and organizations. Thank you!
-- Outstanding contributors like tyler36, GuySartorelli, Hanoii, Bernardo Martinez, and Ralf Koller continued to improve the project.
+- Outstanding contributors like tyler36, GuySartorelli, Hanoii, Bernardo Martinez, and Ralf Koller and many others continued to improve the project.
 - We continue to offer world-class support to DDEV users in many venues. In most cases, our community's response is better than any commercial organization can offer. I think this has to do with the quality of the software (most people don't need support) and also with our community's overall commitment to generous and friendly support.
 - We worked hard at [Live Contributor Training](/blog/category/training/), and recorded blogs and training sessions, which is great. It's not clear how successful these were in enabling new contributors, but occasional reports say that the recorded sessions have been helpful.
 - Prompted largely by The Drop Times we created the automatically-updated [sponsorship-data](https://github.com/ddev/sponsorship-data) repository, which has lots of potential for communicating about DDEV's funding status.
