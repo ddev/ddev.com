@@ -16,11 +16,9 @@ categories:
 
 Every year we try to clarify goals early, and here we go for 2025! We'd love to have your thoughts and opinions! Some of the things we [planned in 2024](2024-plans.md) aren't quite done yet, but we're working and planning and responding to your needs.
 
-At the DDEV Advisory Group's 2-hour [annual review/planning meeting on March 4, 2025](https://www.meetup.com/ddev-events/events/303197425/?eventOrigin=group_events_list), we'll talk about plans and priorities for 2025. You are invited!
+At the DDEV Advisory Group's 2-hour [annual review/planning meeting on March 5, 2025](https://github.com/orgs/ddev/discussions/7031), we'll talk about plans and priorities for 2025. You are invited! The meeting link is in the meeting page.
 
-We'd love to have your input as daily users as we work through these this month.
-
-(I expect to edit this blog post several times as people express their opinions.)
+We'd love to have your input as regular users as we work through these priorities.
 
 ## Community
 
@@ -32,7 +30,7 @@ We'd love to have your input as daily users as we work through these this month.
 - **Improve our Marketing CTA and information**: The [ddev.com "Support DDEV"](https://ddev.com/support-ddev/) page says lots of things, but the financial CTA gets lost there. We need to communicate successfully:
   - For the project to be sustainable, the community will need to support the two developers who are working full-time on it.
   - Show the many ways that support can be done can be done.
-  - Communicate clearly our current situation. ([The Drop Times](https://thedroptimes.com) rolled out an amazing promotion for DDEV, showing the current funding status against our goals. Now we need a community member to do the same thing for us in our website! (See the [March 2025 Newsletter](ddev-march-2025-newsletter.md)).
+  - Communicate clearly our current situation. ([The Drop Times](https://thedroptimes.com) rolled out an amazing promotion for DDEV, showing the current funding status against our goals. Now we need a community member to do the same thing for us in our website! See the [March 2025 Newsletter](ddev-march-2025-newsletter.md)).
 - **Continue to develop contributors and maintainers**: As the project grows, we need more skilled contributors and maintainers. (The only difference between those is that maintainers typically have a higher level of direct access to project resources, but as a wide-open source project, almost all interested contributors can accomplish almost anything without enhanced privileges.) In the last two years, we've had [quite a lot of contributor trainings](/blog/category/training), and anecdotes indicate that people are using those recordings and blogs for training, but the actual attendance at them was not impressive. I'm thinking that this year these topics should probably be addressed with screenshare recordings and updated blogs instead of calendar-scheduled events. Given the financial struggles in our contributors' world, I doubt that we'll be able to add paid maintainers in 2025, I'm most interested right now in the reasonable goal of retaining and paying the two amazing maintainers we currently have.
 
 ## Features and Initiatives
