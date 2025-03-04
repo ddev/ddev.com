@@ -70,7 +70,7 @@ We are a very small organization, so we try to pay careful attention to the risk
 - Key maintainer Stas lives in a very volatile situation in Ukraine, and none of us knows how to predict the future. There are physical risks, communication risks, and financial transfer risks always possible.
 - Randy is not young and can always face new risks.
 - The financial outlook for discretionary funding from agencies and hosting companies is horrible right now.
-- Any of our maintainers can become overworked or discouraged or burnout. We take these risks and their prevention very seriously.
+- Any of our maintainers can become overworked or discouraged or can burn out. We take these risks and their prevention very seriously.
 
 ### Minor Notes
 
