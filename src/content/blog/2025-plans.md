@@ -75,7 +75,7 @@ We are a very small organization, so we try to pay careful attention to the risk
 ### Minor Notes
 
 - I (Randy) do expect to work less in 2025, but that hasn't worked out so far. However, I am planning a bicycle trip that will make me mostly out of touch from late May through much of June.
-- Updated blogs about key DDEV ideas are needed. For example, an updated blog about how DDEV is different from roll-your-own or bare metal, especially multiple database and php versions, and team share. 
+- Updated blogs about key DDEV ideas are needed. For example, an updated blog about how DDEV is different from roll-your-own or bare metal, especially multiple database and php versions, and team share.
 - More screenshare blogs for ordinary DDEV users are important. We have many out there, but some are seriously aged.
 
 ## 2024 DDEV Review
