@@ -48,7 +48,7 @@ We have almost too many ways that you can sponsor, but we want to make it easy f
 
 * For individuals and some organizations, [GitHub Sponsors](https://github.com/sponsors/ddev) is super easy, takes moments and can be changed any time.
 * We are happy to invoice your organization and do more of a "support contract" so that you don't have to explain open-source to your finance department. We accept ACH, Wise.com, bank transfer, IBAN, SWIFT, checks, we'll work with your organization to make it work for you. Just send us a note [via the contact page](/contact) or any other way.
-* [Paypal to DDEV](https://www.paypal.com/donate?hosted_button_id=R42QBRNKKSFFL)
+* [PayPal to DDEV](https://www.paypal.com/donate?hosted_button_id=R42QBRNKKSFFL)
 
 ## Oops, are you missing or did I forget you?
 
