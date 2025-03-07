@@ -19,10 +19,10 @@ We just want to take a moment to thank all of the amazing sponsors of the DDEV o
 
 ## Major Sponsors
 
-* [Platform.sh](https://platform.sh) has been a major sponsor of DDEV for a few years now. You may know that they recently reduced their sponsorship, but they remain our largest single supporter, and we appreciate it greatly. Platform.sh has also transferred the "ddev" domain names to the [DDEV Foundation](/foundation) and will be transferring the "DDEV" trademark. And they're funding Randy's plane ticket to Drupalcon Atlanta!
-* [Tag1 Consulting](https://tag1consulting.com) stepped up to generously support DDEV at a very significant level so many years ago, and has continued doing that. And they don't just offer outstanding financial support, they're always making clear that they use and support DDEV, and we get to see them at conferences.
-* [Mobilistics](https://mobilistics.de/) and [i-gelb](https://i-gelb.net) both sponsor at the $500/month level.
-* All these lovely organizations sponsor at the $100/month (or a bit higher) level: [Lullabot](https://lullabot.com), [Affinity Bridge](https://affinitybridge.com/), [Webikon](https://github.com/claudiu-cristea), [FameHelsinki](https://fame.fi/), [OPTASY](https://www.optasy.com/), [Gizra](https://gizra.com), [Healthcare without Harm](https://noharm.org/), [Cambrico](https://cambrico.net/), [Agaric](https://agaric.coop), [Centarro](https://centarro.io), [Craft CMS](https://craftcms.com/), [Redfin Solutions](https://redfinsolutions.com/), [b13](https://b13.com). And brand new this week (welcome!) [Full Fat Things](https://www.fullfatthings.com/).
+- [Platform.sh](https://platform.sh) has been a major sponsor of DDEV for a few years now. You may know that they recently reduced their sponsorship, but they remain our largest single supporter, and we appreciate it greatly. Platform.sh has also transferred the "ddev" domain names to the [DDEV Foundation](/foundation) and will be transferring the "DDEV" trademark. And they're funding Randy's plane ticket to Drupalcon Atlanta!
+- [Tag1 Consulting](https://tag1consulting.com) stepped up to generously support DDEV at a very significant level so many years ago, and has continued doing that. And they don't just offer outstanding financial support, they're always making clear that they use and support DDEV, and we get to see them at conferences.
+- [Mobilistics](https://mobilistics.de/) and [i-gelb](https://i-gelb.net) both sponsor at the $500/month level.
+- All these lovely organizations sponsor at the $100/month (or a bit higher) level: [Lullabot](https://lullabot.com), [Affinity Bridge](https://affinitybridge.com/), [Webikon](https://github.com/claudiu-cristea), [FameHelsinki](https://fame.fi/), [OPTASY](https://www.optasy.com/), [Gizra](https://gizra.com), [Healthcare without Harm](https://noharm.org/), [Cambrico](https://cambrico.net/), [Agaric](https://agaric.coop), [Centarro](https://centarro.io), [Craft CMS](https://craftcms.com/), [Redfin Solutions](https://redfinsolutions.com/), [b13](https://b13.com). And brand new this week (welcome!) [Full Fat Things](https://www.fullfatthings.com/).
 
 ## So many more wonderful sponsors!
 
@@ -32,7 +32,7 @@ Here are some of many sponsors who help out via [GitHub Sponsors](https://github
 
 ## In-Kind Sponsors
 
-The open-source community has lots of folks helping out multiple collaborators. In our case, [MacStadium](https://macstadium.com) provides us testing resources, and [JetBrains](https://jetbrains.com) provides a subscription to their IDE products, thanks! 
+The open-source community has lots of folks helping out multiple collaborators. In our case, [MacStadium](https://macstadium.com) provides us testing resources, and [JetBrains](https://jetbrains.com) provides a subscription to their IDE products, thanks!
 
 But we never forget Docker. Docker has adopted us in the Docker-Sponsored-Open-Source program for a few years now, and this means that all of your image pulls are sponsored in that project. You may know that normal image pulls will be strictly limited starting April 1, 2024, but because of the DSOS, users of DDEV won't hit that restriction.
 
@@ -46,9 +46,9 @@ We recently set up a [full updated JSON feed](https://github.com/ddev/sponsorshi
 
 We have almost too many ways that you can sponsor, but we want to make it easy for you and your organization.
 
-* For individuals and some organizations, [GitHub Sponsors](https://github.com/sponsors/ddev) is super easy, takes moments and can be changed any time.
-* We are happy to invoice your organization and do more of a "support contract" so that you don't have to explain open-source to your finance department. We accept ACH, Wise.com, bank transfer, IBAN, SWIFT, checks, we'll work with your organization to make it work for you. Just send us a note [via the contact page](/contact) or any other way.
-* [PayPal to DDEV](https://www.paypal.com/donate?hosted_button_id=R42QBRNKKSFFL)
+- For individuals and some organizations, [GitHub Sponsors](https://github.com/sponsors/ddev) is super easy, takes moments and can be changed any time.
+- We are happy to invoice your organization and do more of a "support contract" so that you don't have to explain open-source to your finance department. We accept ACH, Wise.com, bank transfer, IBAN, SWIFT, checks, we'll work with your organization to make it work for you. Just send us a note [via the contact page](/contact) or any other way.
+- [PayPal to DDEV](https://www.paypal.com/donate?hosted_button_id=R42QBRNKKSFFL)
 
 ## Oops, are you missing or did I forget you?
 
