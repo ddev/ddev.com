@@ -23,7 +23,7 @@ categories:
 - [DDEV Usage Statistics](stats-on-ddev-usage-nov-2024.md)
 - [Setting up a Windows Machine for DDEV](windows-ddev-setup.md)
 - [Contributor Training: DDEV Analytics with Amplitude](https://ddev.com/blog/amplitude-ddev-analytics-contributor-training/)
-- [DDEV Advisory Group Meeting](https://github.com/orgs/ddev/discussions/6682). These meetings happen every two months and you're always invited. The next one is Wednesday, January 8, 2025, and is the most important meeting of the year. We will review 2024 and plan for 2025. We'd love to have you [join us](https://www.meetup.com/ddev-events/events/303197425).
+- [DDEV Advisory Group Meeting](https://github.com/orgs/ddev/discussions/6682). These meetings happen every two months and you're always invited. The next one is Wednesday, January 8, 2025, and is the most important meeting of the year. We will review 2024 and plan for 2025.
 
 **DDEV Notes from around the web**
 

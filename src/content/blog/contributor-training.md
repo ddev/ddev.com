@@ -14,7 +14,7 @@ categories:
 
 **[See blogs and videos of past trainings](/blog/category/training)**
 
-**TL;DR: Sign up for contributor training** at [DDEV Live Event meetup group](https://www.meetup.com/ddev-events/) to get invitations to trainings.
+**TL;DR: Sign up for contributor training** - Use the [contact](/contact) link to ask for a calendar invitation.
 
 As we announced in [Recruiting Contributors and Maintainers](recruiting-maintainers.md) we're actively trying to increase the DDEV community of contributors and maintainers. To do that, we're going to start a series of trainings, and we'd love to have you come. The trainings will include information on how to contribute by:
 
@@ -75,4 +75,4 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 - Go Development Environment with Goland or vscode
 - Experimenting with custom commands
 
-Please join the [DDEV Live Event meetup](https://www.meetup.com/ddev-events/) to get notified about upcoming trainings. Drop by [Discord](/s/discord) or send [an email](mailto:support%40ddev.com) if you want to talk more.
+Use the [contact](/contact) link to ask for a calendar invitation. Drop by [Discord](/s/discord) or send [an email](mailto:support%40ddev.com) if you want to talk more.

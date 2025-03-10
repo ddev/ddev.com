@@ -44,4 +44,4 @@ Here's our October 31, 2023 [Contributor Training](/blog/category/training) on e
 
 Your suggestions to improve this blog are welcome. You can do a PR to this blog adding your techniques. Info and a training session on how to do a PR to anything in ddev.com is at [DDEV Website For Contributors](ddev-website-for-contributors.md). If you're a known community member, we're happy to give you access to Amplitude to explore these details.
 
-Join us for the next [DDEV Live Contributor Training](/blog/contributor-training/). Sign up at [DDEV Live Events Meetup](https://www.meetup.com/ddev-events/events/).
+Join us for the next [DDEV Live Contributor Training](/blog/contributor-training/). Use the [contact](/contact) link to ask for a calendar invitation.
