@@ -17,11 +17,6 @@ categories:
 
 **DrupalCon Barcelona**: I got to see lots of friends old and new in Barcelona. Four training session BoFs, a full-day contribution mentoring session, and loads of fun. **[Read about it on ddev.com](https://ddev.com/blog/drupalcon-barcelona-2024).**
 
-**Join us for Contributor Training**
-
-- October 9: **[Supporting people using `ddev debug test` and other tools](https://www.meetup.com/ddev-events/events/303503564)**
-- October 23: **[Using Tmate to Debug GitHub Workflows**](https://www.meetup.com/ddev-events/events/303503674)\*\*
-
 **GitHub Codespaces is working well with DDEV**: We used to add a lot of caveats about Codespaces, but the problems were fixed with a new workaround shown in the [DDEV docs](https://ddev.readthedocs.io/en/latest/users/install/ddev-installation/#ddev-installation-codespaces) say how to do it. Give it a try!
 
 **DDEV Notes from around the web:**

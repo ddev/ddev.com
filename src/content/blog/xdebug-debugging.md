@@ -16,7 +16,7 @@ categories:
 
 PHP developers have long had a variety of complications using Xdebug. It's a network protocol, which means that firewalls and other network complications can confuse things. And often people just don't understand how it works. We'll try to sort out how Xdebug works in general, and explain what that means in DDEV, and how to debug problems.
 
-Here's a recording of our [Xdebug contributor Training](https://www.meetup.com/ddev-events/events/301101460/) walking through DDEV and Xdebug. Please sign up on the [meetup](https://www.meetup.com/ddev-events/) so you'll get notified of future trainings.
+Here's a recording of our **Xdebug contributor Training** walking through DDEV and Xdebug.
 
 <div class="video-container">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4MrwXTaHfnc?si=nwocfW8FjXitbtSa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -89,4 +89,4 @@ On any platform you can use `DDEV_DEBUG=true ddev start` and it will explain to 
 
 We always love to hear your experiences with DDEV, so please do a PR to this blog adding your experience. Info and a training session on how to do a PR to anything in ddev.com is at [DDEV Website For Contributors](ddev-website-for-contributors.md). And if you can improve the DDEV docs, click the pencil at the top of any docs page to add your suggestion.
 
-And join us most Wednesdays for [DDEV Live Contributor Training](https://www.meetup.com/ddev-events/). Past trainings are recorded at [contributor training](contributor-training.md).
+Past trainings are recorded at [contributor training](contributor-training.md).

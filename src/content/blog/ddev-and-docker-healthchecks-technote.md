@@ -90,4 +90,4 @@ Yes, it's confusing. I wrote this tech note because I have already struggled wit
 
 Your suggestions to improve this tech note are welcome. You can do a PR to this blog adding your techniques. Info and a training session on how to do a PR to anything in ddev.com is at [DDEV Website For Contributors](ddev-website-for-contributors.md).
 
-Join us for the next [DDEV Live Contributor Training](contributor-training.md). Sign up at [DDEV Live Events Meetup](https://www.meetup.com/ddev-events/events/).
+Join us for the next [DDEV Live Contributor Training](contributor-training.md). Use the [contact](/contact) link to ask for a calendar invitation.

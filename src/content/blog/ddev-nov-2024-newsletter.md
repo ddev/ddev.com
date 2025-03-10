@@ -33,7 +33,7 @@ categories:
 
 > Finally, the upcoming `ddev cd` feature is something I’m excited about. I used to have a custom Bash script for this, but now it will be built into DDEV, with autocomplete.
 
-**Advisory Group Meeting Wednesday**: All are invited to the DDEV Advisory Group meeting Wednesday, November 6, 9am US MT, 5PM CET. [Meetup link](https://www.meetup.com/ddev-events/events/303197392/?eventOrigin=group_events_list) or [Zoom link](https://us02web.zoom.us/j/7315692237?pwd=RHR6NUkwb0g5WXIzS2NOcXRucCthZz09&omn=89153105842), passcode "12345" if you need it.
+**Advisory Group Meeting Wednesday**: All are invited to the DDEV Advisory Group meeting Wednesday, November 6, 9am US MT, 5PM CET.
 
 **Contributor Trainings From October (Recordings and Blogs):**
 
