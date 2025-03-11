@@ -1,6 +1,6 @@
 ---
 title: "Thanks to our Amazing Sponsors!"
-pubDate: 2025-03-10
+pubDate: 2025-03-12
 #modifiedDate: 2025-02-06
 summary: Thank You to our Amazing Sponsors!
 author: Randy Fay
@@ -34,7 +34,7 @@ Here are some of many sponsors who help out via [GitHub Sponsors](https://github
 
 The open-source community has lots of folks helping out multiple collaborators. In our case, [MacStadium](https://macstadium.com) provides us testing resources, and [JetBrains](https://jetbrains.com) provides a subscription to their IDE products, thanks!
 
-But we never forget Docker. Docker has adopted us in the Docker-Sponsored-Open-Source program for a few years now, and this means that all of your image pulls are sponsored in that project. You may know that normal image pulls will be strictly limited starting April 1, 2024, but because of the DSOS, users of DDEV won't hit that restriction.
+But we never forget Docker. Docker has adopted us in the [Docker-Sponsored-Open-Source (DSOS)](https://docs.docker.com/docker-hub/repos/manage/trusted-content/dsos-program/) program for a few years now, and this means that all of your image pulls are sponsored in that project. You may know that normal image pulls will be strictly limited starting April 1, 2025, but because of the DSOS, users of DDEV won't hit that restriction.
 
 And please don't forget that the [open-source Docker project](https://github.com/moby/moby) underlies every single Docker provider. It doesn't matter if you're using OrbStack or Lima or Docker Desktop or whatever, they're all built on top of the amazing Docker open-source project.
 
