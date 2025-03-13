@@ -54,6 +54,6 @@ We have almost too many ways that you can sponsor, but we want to make it easy f
 
 Is your name or your organization's name missing here? It's easy to get it here. How much does DDEV's support and ongoing maintenance mean to your organization?
 
-(If I made a mistake and left you out let me know and I'll edit this.)
+(If I made a mistake and left you out, let me know and I'll edit this.)
 
 Do you have questions or want to talk (about sponsoring or anything else)? [Contact us!](https://ddev.com/contact/) or join us in [Discord](/s/discord).
