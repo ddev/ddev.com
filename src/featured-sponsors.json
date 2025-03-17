@@ -91,15 +91,6 @@
     "github": "mobilistics"
   },
   {
-    "name": "Oliver Wand",
-    "type": "standard",
-    "logo": "/logos/oliver-wand.jpg",
-    "darklogo": "/logos/oliver-wand.jpg",
-    "squareLogo": "/logos/oliver-wand.jpg",
-    "url": "https://github.com/wandoliver",
-    "github": "wandoliver"
-  },
-  {
     "name": "optasy",
     "type": "standard",
     "logo": "/logos/optasy-full.svg",
