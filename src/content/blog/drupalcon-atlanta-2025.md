@@ -13,13 +13,13 @@ categories:
 
 ## DDEV at DrupalCon Atlanta 2025
 
-I wasn't involved with any of the formal sessions, but as has been my habit I scheduled a number of "BoFs", or Birds-of-a-Feather sessions:
+I wasn't involved with any of the formal sessions, but I scheduled a number of "BoFs", or Birds-of-a-Feather sessions:
 
 * **DDEV VS Code Integration Improvement**: We talked about ways that DDEV could integrate better with VS Code. Although the well-maintained [DDEV Manager VS Code Extension](https://marketplace.visualstudio.com/items?itemName=biati.ddev-manager) does great for people, there are a couple of things VS Code does not know how to do well. The biggest is that it doesn't know how to use `php` or `phpstan` or `phpunit` properly inside a Docker container (like the DDEV webserver), so it's hard to use the nice VS Code integration with those tools. DDEV Community member [Mike Anello](https://www.drupal.org/u/ultimike) was present and talked about his favorite usage, which involves the [Remote Explorer](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-explorer) extension. In his long-form Drupal trainings at [DrupalEasy](https://www.drupaleasy.com/) he teaches folks to use Remote Explorer with DDEV and work inside the web container all the time, and that solves the problem, but it is different from what DDEV users normally do. (PhpStorm knows how to use tools and interpreters inside the container, so doesn't have this problem.)
-* **Replacing Gitpod for Drupalpod and DDEV**: Many of you know that Gitpod has been a great resource for DDEV users to do development in a web environment, and that the great Gitpod Classic will be shutting down in April, 2025. The [Drupalpod](https://www.drupal.org/project/drupalpod) project, which wrapped Gitpod and DDEV to make Drupal contribution easy in a browser was used extensively by Drupal community members to review issues and contribute code. It was great for Contribution Day at DrupalCons these last few years because there was no need for people to set up a local development environment, and the bandwidth requirements were minimal.
-* **DDEV Office Hours**: ...
-* **Git Bisect for Fun and Profit**: ... link to florida and the repo ...
-* **Divide and conquer: A systematic approach to troubleshooting issues**: ... link to Florida and the repo ...
+* **Replacing Gitpod for Drupalpod and DDEV**: Many of you know that Gitpod has been a great resource for DDEV users to do development in a web environment, and that the great Gitpod Classic will be shutting down in April, 2025. The [Drupalpod](https://www.drupal.org/project/drupalpod) project, which wrapped Gitpod and DDEV to make Drupal contribution easy in a browser was used extensively by Drupal community members to review issues and contribute code. It was great for Contribution Day at DrupalCons these last few years because there was no need for people to set up a local development environment, and the bandwidth requirements were minimal. The [Drupal.org issue about this](https://www.drupal.org/project/drupalpod/issues/3500792) has the details of the discussion, including a recording.
+* **DDEV Office Hours**: DDEV Office Hours are a simple place to talk about anything DDEV-related, and we had a pleasant time.
+* **Git Bisect for Fun and Profit**: This Git tutorial on the lovely `git bisect` technique went well and we all had a good time. It was based on the [Florida Drupal Camp presentation](https://www.fldrupal.camp/session/divide-and-conquer-systematic-approach-troubleshooting-issues). Here's the [git-bisect-example repository](https://github.com/rfay/git-bisect-example).
+* **Divide and conquer: A systematic approach to troubleshooting issues**: This was a shorter version of the [Florida Drupal Camp presentation](https://www.fldrupal.camp/session/divide-and-conquer-systematic-approach-troubleshooting-issues).
 
 ## First-time Contributor Mentoring
 
@@ -42,7 +42,3 @@ I published an invitation to meet one-on-one and a few people took advantage of 
 [Platform.sh](https://platform.sh) was kind enough to fund the airline ticket to Atlanta.
 
 Thanks to both of you! I wouldn't have made it without both those things.
-
-## Support
-
-Try it out today and let us know how it goes—your feedback helps shape the future of DDEV! Join us in the [DDEV support venues](https://ddev.readthedocs.io/en/stable/users/support/) if you want to talk about XHGui and profiling.
