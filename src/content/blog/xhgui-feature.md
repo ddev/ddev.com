@@ -14,7 +14,7 @@ categories:
 
 ## XHGui Lands in DDEV in v1.24.4
 
-DDEV now has XHGui support for its XHProf profiling! This is a serious improvement in the user interface for profiling. Thank you to the [TYPO3 Community Budget Ideas](https://talk.typo3.org/c/t3a/community-budget-ideas-2025-q1/45) for their sponsorship of this feature.
+Thanks to sponsorship from the [TYPO3 Community Budget Ideas](https://talk.typo3.org/c/t3a/community-budget-ideas-2025-q1/45), DDEV now includes XHGui support for its XHProf profiling. This brings a much-improved experience with a consistent, browser-based interface.
 
 DDEV has had XHProf profiling for some time, and many in the community have loved it, but it had a few flaws; the list of profiling runs was ugly and uncoordinated, and the list was lost on `ddev restart`. 
 
@@ -36,13 +36,13 @@ and then to start profiling
 ddev xhgui on
 ```
 
-Visit a few pages and 
+Visit a few pages in your app to collect profiling data, then
 
 ```bash
 ddev xhgui launch
 ```
 
-In general, click one of the `GET` or `POST` links and follow it in to study CPU and memory utilization.
+In general, click one of the `GET` or `POST` links and follow it in to explore detailed CPU and memory usage breakdowns.
 
 If you have questions, join us in one of the [DDEV support venues](https://ddev.readthedocs.io/en/stable/users/support/), especially [Discord](https://ddev.com/s/discord) and we'll work it through with you.
 
@@ -66,4 +66,4 @@ Serious thanks are due to:
 
 ## Support
 
-Try it out today and let us know how it goes! Join us in the [DDEV support venues](https://ddev.readthedocs.io/en/stable/users/support/) if you want to talk about XHGui and profiling. We want it to work for you!
+Try it out today and let us know how it goes—your feedback helps shape the future of DDEV! Join us in the [DDEV support venues](https://ddev.readthedocs.io/en/stable/users/support/) if you want to talk about XHGui and profiling.
