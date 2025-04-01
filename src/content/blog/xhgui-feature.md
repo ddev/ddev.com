@@ -12,7 +12,7 @@ categories:
   - Performance
 ---
 
-## XHGui Lands in DDEV in v1.24.4
+## XHGui Lands in DDEV v1.24.4
 
 Thanks to sponsorship from the [TYPO3 Community Budget Ideas](https://talk.typo3.org/c/t3a/community-budget-ideas-2025-q1/45), DDEV now includes XHGui support for its XHProf profiling. This brings a much-improved experience with a consistent, browser-based interface.
 
@@ -24,13 +24,13 @@ With XHGui, you can now track performance bottlenecks with a clean interface, pe
 
 ## How to Use XHGui for Profiling
 
-Now in DDEV v1.24.4 you can switch to the XHGui profiling mode (permanently) with
+In DDEV v1.24.4+ you can switch to the XHGui profiling mode (permanently) with
 
 ```bash
 ddev config global --xhprof-mode=xhgui && ddev restart
 ```
 
-and then to start profiling
+Start profiling with
 
 ```bash
 ddev xhgui on
@@ -66,4 +66,4 @@ Serious thanks are due to:
 
 ## Support
 
-Try it out today and let us know how it goes—your feedback helps shape the future of DDEV! Join us in the [DDEV support venues](https://ddev.readthedocs.io/en/stable/users/support/) if you want to talk about XHGui and profiling.
+Try it out today and let us know how it goes — your feedback helps shape the future of DDEV! Join us in the [DDEV support venues](https://ddev.readthedocs.io/en/stable/users/support/) if you want to talk about XHGui and profiling.
