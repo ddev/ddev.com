@@ -16,9 +16,9 @@ categories:
 
 Thanks to sponsorship from the [TYPO3 Community Budget Ideas](https://talk.typo3.org/c/t3a/community-budget-ideas-2025-q1/45), DDEV now includes XHGui support for its XHProf profiling. This brings a much-improved experience with a consistent, browser-based interface.
 
-DDEV has had XHProf profiling for some time, and many in the community have loved it, but it had a few flaws; the list of profiling runs was ugly and uncoordinated, and the list was lost on `ddev restart`. 
+DDEV has had XHProf profiling for some time, and many in the community have loved it, but it had a few flaws; the list of profiling runs was ugly and uncoordinated, and the list was lost on `ddev restart`.
 
-However, the longstanding [XHGui](https://github.com/perftools/xhgui) project was out there for years, and it made much more sense. 
+However, the longstanding [XHGui](https://github.com/perftools/xhgui) project was out there for years, and it made much more sense.
 
 With XHGui, you can now track performance bottlenecks with a clean interface, persistent data, and detailed breakdowns of CPU and memory usage.
 
@@ -60,9 +60,9 @@ Here's a quick demonstration of using XHGui with a TYPO3 site in DDEV.
 
 Serious thanks are due to:
 
-* The [TYPO3 Organization](https://typo3.org/) for funding this feature integration.
-* [Elan Ruusamäe (glensc)](https://github.com/glensc) for years of maintaining the XHGui project (and extreme responsiveness as we worked on this).
-* DDEV community member [tyler36](https://github.com/tyler36), who created the original DDEV add-on and helped it incubate and mature over years and supported its inclusion in DDEV core.
+- The [TYPO3 Organization](https://typo3.org/) for funding this feature integration.
+- [Elan Ruusamäe (glensc)](https://github.com/glensc) for years of maintaining the XHGui project (and extreme responsiveness as we worked on this).
+- DDEV community member [tyler36](https://github.com/tyler36), who created the original DDEV add-on and helped it incubate and mature over years and supported its inclusion in DDEV core.
 
 ## Support
 
