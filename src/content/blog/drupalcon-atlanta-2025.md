@@ -1,6 +1,6 @@
 ---
 title: "DDEV at DrupalCon Atlanta 2025"
-pubDate: 2025-04-02
+pubDate: 2025-04-03
 #modifiedDate: 2025-02-06
 summary: Randy got to go to DrupalCon Atlanta and help folks with Drupal and DDEV.
 author: Randy Fay
