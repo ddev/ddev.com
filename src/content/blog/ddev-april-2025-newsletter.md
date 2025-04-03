@@ -1,7 +1,7 @@
 ---
 title: "DDEV April 2025 Newsletter"
-pubDate: 2025-03-04
-#modifiedDate: 2025-02-06
+pubDate: 2025-04-07
+#modifiedDate: 2025-04-07
 summary: DDEV April 2025 Newsletter
 author: Randy Fay
 #featureImage:
@@ -22,7 +22,7 @@ categories:
 * [Thanks to our Amazing Sponsors](https://ddev.com/blog/sponsor-thanks)
 * [XHGui Feature Makes Profiling Even Easier](https://ddev.com/blog/xhgui-feature)
 * [Set up an existing WordPress multisite locally with DDEV (with Bonus Pantheon support!)](https://www.kalamuna.com/blog/setup-existing-wordpress-multisite-locally-ddev-bonus-pantheon-support)
-* [Darren Oh: Zscaler, DDEV, and Colima](https://darren.oh.name/node/81)
+* [Darren Oh: Zscaler, DDEV, and Colima](https://darren.oh.name/node/81). (We'd love to have you contribute your own experience with packet-inspection VPNs in [this docs PR](https://github.com/ddev/ddev/pull/7061).) 
 * The TYPO3 Q2 Community Budget Idea for implementing mDNS in DDEV did not get enough votes in the community, so won't be funded this quarter.
 
 **Thanks for getting the newsletter! We love to have this way to keep in touch.** If you're not getting it yet by email, please sign up at [ddev.com/newsletter](/newsletter).
