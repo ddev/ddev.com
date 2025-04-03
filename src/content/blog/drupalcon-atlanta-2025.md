@@ -7,7 +7,7 @@ author: Randy Fay
 featureImage:
   src: /img/blog/2025/04/randy-mentoring-drupalcon-atlanta.jpg
   alt: Randy at table doing first-time contributor mentoring.
-  
+
 categories:
   - Community
 ---
