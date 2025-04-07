@@ -4,10 +4,10 @@ pubDate: 2025-04-07
 #modifiedDate: 2025-04-07
 summary: DDEV April 2025 Newsletter
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2025/03/palisade-vinelands.jpg
-#  alt: Nancy Lewis "Palisade Vinelands"
-#  credit: "Palisade Vinelands, by Nancy Lewis"
+featureImage:
+  src: /img/blog/2025/04/nancy-lewis-steamboat-awakening.jpg
+  alt: Nancy Lewis "Steamboat Awakening"
+  credit: "Steamboat Awakening, by Nancy Lewis"
 categories:
   - Community
 ---
