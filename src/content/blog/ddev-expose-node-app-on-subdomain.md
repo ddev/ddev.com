@@ -67,7 +67,7 @@ http:
     example-web-80-http-frontend:
       entrypoints:
         - http-80
-      rule: HostRegexp(`^frontend\.example\.ddev\.site$`)
+      rule: Host(`frontend.example.ddev.site`)
       service: "example-web-3000"
       ruleSyntax: v3
       tls: false
