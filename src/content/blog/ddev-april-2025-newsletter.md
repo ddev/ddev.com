@@ -25,7 +25,7 @@ categories:
 - [Darren Oh: Zscaler, DDEV, and Colima](https://darren.oh.name/node/81). (We'd love to have you contribute your own experience with packet-inspection VPNs in [this docs PR](https://github.com/ddev/ddev/pull/7061).)
 - The TYPO3 Q2 Community Budget Idea to implement mDNS (multicast DNS) in DDEV didn’t receive enough votes, so unfortunately it won’t be funded this quarter. The proposed [mDNS feature](https://github.com/ddev/ddev/issues/6663) offers an alternative to the standard `ddev.site` DNS resolution. It’s especially helpful for users who experience issues with DNS, and it could also eliminate the need for DDEV to modify the `/etc/hosts` file in those cases.
 
-**We welcome your contributions to the blog!** A number of community members have contributed blog articles demonstrating their use of DDEV to solve problems, and we welcome your contributions. It's easy, it's just markdown, and full instructions are at [the ddev.com repo](https://github.com/ddev/ddev.com).
+**We welcome your contributions to the blog!** A number of community members have contributed blog articles demonstrating their use of DDEV to solve problems, and we welcome your contributions. It's easy, it's just Markdown, and full instructions are at [the ddev.com repository](https://github.com/ddev/ddev.com).
 
 **Thanks for subscribing to the newsletter! We love to have this way to keep in touch.** If you're not getting it yet by email, please sign up at [ddev.com/newsletter](/newsletter).
 
