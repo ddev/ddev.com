@@ -14,7 +14,7 @@ categories:
 
 **Spring has Sprung in Palisade, Colorado!**
 
-**DDEV v1.24.4** was [released](https://github.com/ddev/ddev/releases/tag/v1.24.4) with the new [XHGui profiling feature](xhgui-feature.md) (funded by TYPO3 Community Ideas Budget!). 
+**DDEV v1.24.4** was [released](https://github.com/ddev/ddev/releases/tag/v1.24.4) with the new [XHGui profiling feature](xhgui-feature.md) (funded by TYPO3 Community Ideas Budget!).
 
 **DDEV Notes and News**
 
