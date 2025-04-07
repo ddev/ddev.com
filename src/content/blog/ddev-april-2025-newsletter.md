@@ -5,9 +5,9 @@ pubDate: 2025-04-07
 summary: DDEV April 2025 Newsletter
 author: Randy Fay
 featureImage:
-  src: /img/blog/2025/04/nancy-lewis-steamboat-awakening.jpg
-  alt: Nancy Lewis "Steamboat Awakening"
-  credit: "Steamboat Awakening, by Nancy Lewis"
+  src: /img/blog/2025/04/nancy-lewis-my-first-painting-in-palisade.jpg
+  alt: Nancy Lewis "My First Painting in Palisade"
+  credit: "My First Painting in Palisade, by Nancy Lewis"
 categories:
   - Community
 ---
