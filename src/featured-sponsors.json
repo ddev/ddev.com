@@ -39,9 +39,9 @@
   {
     "name": "Anwesoft",
     "type": "standard",
-    "logo": "/logos/anwesoft.png",
-    "darklogo": "/logos/anwesoft.png",
-    "squareLogo": "/logos/anwesoft.png",
+    "logo": "/logos/anwesoft.svg",
+    "darklogo": "/logos/anwesoft.svg",
+    "squareLogo": "/logos/anwesoft-square.png",
     "url": "https://www.anwesoft.com/",
     "github": "andreas-anwesoft"
   },
