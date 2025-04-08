@@ -27,7 +27,7 @@ to your Node.js app on port 3000 within the DDEV web container.
 
 ## Why Not Just Use `web_extra_exposed_ports`
 
-DDEV's'`web_extra_exposed_ports` feature is great for making your service accessible via a specific port
+DDEV's' [`web_extra_exposed_ports` feature](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#exposing-extra-ports-via-ddev-router) is great for making your service accessible via a specific port
 (e.g., (`3000`)). However, it doesn’t magically set up a subdomain for you to use on standard web ports (80/443).
 If you want `frontend.example.ddev.site` to map to your Node.js app over HTTPS, you need a reverse proxy rule.
 That’s where Traefik comes in.
