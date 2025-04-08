@@ -57,8 +57,7 @@ However, for a subdomain over standard web ports, the critical part is the next 
 
 ## Step 2: Create a Traefik Configuration File
 
-Inside your `.ddev` folder, create a subdirectory called `traefik/config` (if it doesn’t exist),
-and add a file named `frontend.yaml`:
+In your project's  `.ddev/traefik/config` folder add a file named `frontend.yaml`:
 
 In `frontend.yaml`, you’ll define two routers—one for HTTP (port 80) and one for HTTPS (port 443)—and
 a service that points to the Node.js app on port 3000.
