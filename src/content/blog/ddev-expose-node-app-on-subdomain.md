@@ -128,3 +128,8 @@ If you’ve followed these steps, your Node.js application will be served seamle
 **Further Reading**
 
 - [DDEV Router Customization and Debugging (Traefik)](https://ddev.readthedocs.io/en/stable/users/extend/traefik-router/#traefik-configuration)
+- [Traefik Proxy Docs](https://doc.traefik.io/traefik/)
+
+**Do You Have a Favorite DDEV Recipe? Contribute It!**
+
+We welcome community contributions to the DDEV blog and would love to have yours. The [ddev.com repository](https://github.com/ddev/ddev.com) has full details, and there's even a [training session on how to do it](https://ddev.com.ddev.site/blog/ddev-website-for-contributors/). It's all just markdown and we'll help!
