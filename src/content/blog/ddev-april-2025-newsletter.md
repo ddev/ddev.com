@@ -1,6 +1,6 @@
 ---
 title: "DDEV April 2025 Newsletter"
-pubDate: 2025-04-07
+pubDate: 2025-04-08
 #modifiedDate: 2025-04-07
 summary: DDEV April 2025 Newsletter
 author: Randy Fay
