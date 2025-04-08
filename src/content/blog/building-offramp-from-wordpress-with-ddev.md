@@ -2,7 +2,7 @@
 title: "Building an Off-Ramp from WordPress with DDEV"
 pubDate: 2025-04-09
 modifiedDate: 2025-04-09
-summary: DDEV used to exporting WordPress content for use in Grav CMS
+summary: DDEV used to develop WordPress content exporter pluginfor use in Grav CMS.
 author: Jeremy Gonyea
 featureImage:
   src: /img/blog/2025/04/wordpress-offramp.png
@@ -36,14 +36,13 @@ The [wp2grav_exporter](https://github.com/jgonyea/wp2grav_exporter) plugin is th
 - Post Types, including custom types
 - Posts and associated custom fields, including ACF fields
 - File attachments
-- Some site metadata
+- Site metadata
 
 ![Sample render comparing Wordpress to Grav](/img/blog/2025/04/sample-wordpress-grav-page-render.png)
 
 Additional screenshots of example content exports can be found at the Github page for the plugin.
 
-After running the export, content was drag-dropped between my two DDEV directories on my development machine, and I could immediately test how content looked.  The exported post configuration is encompassed in a Grav plugin, so the end-user is free to use whatever theme they want!
-
+After running the export, content is simply drag-dropped between my two DDEV directories, and I could immediately test how content looked.  The exported post configurations are encompassed in a Grav plugin, so the end-user is free to use whatever theme they want!
 
 ## Final thoughts
 DDEV has saved me countless hours with its easy setup and dependability.  If you haven't yet taken it for a test spin, I can't recommend it enough!
@@ -51,3 +50,7 @@ DDEV has saved me countless hours with its easy setup and dependability.  If you
 ___
 
 _Find an issue with my exporter? Please submit an issue to the [issue_queue](https://github.com/jgonyea/wp2grav_exporter/issues)!_
+
+___
+
+Highway sign edited from [Unsplash.com](https://unsplash.com/photos/a-highway-with-two-freeway-signs-above-it-lT-QVpLMn8k).
