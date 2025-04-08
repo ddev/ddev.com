@@ -5,8 +5,8 @@ pubDate: 2025-04-10
 summary: Serve a Node.js app on a dedicated subdomain over HTTP/HTTPS using DDEV’s Traefik.
 author: J. Minder
 featureImage:
-  src: /img/blog/2025/04/ddev-router-traeffik.png
-  alt: Screenshot of DDEV router and Traefik running on a `.ddev.site` domain in a browser window
+  src: /img/blog/2025/04/ddev-router-traefik.png
+  alt: Screenshot of DDEV router and Traefik running on a `.ddev.site` subdomain in a browser window
   shadow: true
 categories:
   - DevOps
@@ -77,7 +77,7 @@ http:
     example-web-80-https-frontend:
       entrypoints:
         - http-443
-      rule: HostRegexp(`^frontend\.example\.ddev\.site$`)
+      rule: Host(`frontend.example.ddev.site`)
       service: "example-web-3000"
       ruleSyntax: v3
       tls: true
@@ -106,8 +106,8 @@ ddev restart
 
 DDEV will pick up your new Traefik configuration, and you should now be able to access your Node.js application at:
 
-```text
-https://frontend.example.ddev.site
+```bash
+ddev launch https://frontend.example.ddev.site
 ```
 
 No more messing with non-standard port numbers in your URLs!
