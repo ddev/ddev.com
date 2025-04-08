@@ -37,6 +37,15 @@
     "github": "agaric"
   },
   {
+    "name": "Anwesoft",
+    "type": "standard",
+    "logo": "/logos/anwesoft.svg",
+    "darklogo": "/logos/anwesoft.svg",
+    "squareLogo": "/logos/anwesoft-square.png",
+    "url": "https://www.anwesoft.com/",
+    "github": "andreas-anwesoft"
+  },
+  {
     "name": "b13",
     "type": "standard",
     "logo": "/logos/b13.svg",
