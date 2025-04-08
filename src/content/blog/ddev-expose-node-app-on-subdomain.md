@@ -25,7 +25,7 @@ to your Node.js app on port 3000 within the DDEV web container.
 
 ---
 
-## Why Not Just Use `web_extra_exposed_ports`
+## Why Not Just Use `web_extra_exposed_ports`?
 
 DDEV's' [`web_extra_exposed_ports` feature](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#exposing-extra-ports-via-ddev-router) is great for making your service accessible via a specific port
 (e.g., (`3000`)). However, it doesn’t magically set up a subdomain for you to use on standard web ports (80/443).
@@ -45,7 +45,7 @@ additional_hostnames:
 
 _(Optional)_ You can still use web_extra_exposed_ports to expose the Node.js port if you want:
 
-```
+```yaml
 web_extra_exposed_ports:
 - name: node-app
   container_port: 3000
@@ -55,14 +55,12 @@ web_extra_exposed_ports:
 
 However, for a subdomain over standard web ports, the critical part is the next step with Traefik.
 
-## Step 2: Create a Traefik Configuration File
+## Step 2: Create a Project-level Traefik Configuration File
 
-In your project's `.ddev/traefik/config` folder add a file named `frontend.yaml`:
-
-In `frontend.yaml`, you’ll define two routers—one for HTTP (port 80) and one for HTTPS (port 443)—and
+In your project's `.ddev/traefik/config` folder add a file named `frontend.yaml`. In `frontend.yaml`, you’ll define two routers—one for HTTP (port 80) and one for HTTPS (port 443)—and
 a service that points to the Node.js app on port 3000.
 
-```
+```yaml
 http:
   routers:
     # Router for HTTP (port 80)
