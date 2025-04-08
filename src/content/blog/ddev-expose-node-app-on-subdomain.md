@@ -57,7 +57,7 @@ However, for a subdomain over standard web ports, the critical part is the next 
 
 ## Step 2: Create a Traefik Configuration File
 
-In your project's  `.ddev/traefik/config` folder add a file named `frontend.yaml`:
+In your project's `.ddev/traefik/config` folder add a file named `frontend.yaml`:
 
 In `frontend.yaml`, you’ll define two routers—one for HTTP (port 80) and one for HTTPS (port 443)—and
 a service that points to the Node.js app on port 3000.
@@ -132,4 +132,4 @@ If you’ve followed these steps, your Node.js application will be served seamle
 
 **Do You Have a Favorite DDEV Recipe? Contribute It!**
 
-We welcome community contributions to the DDEV blog and would love to have yours. The [ddev.com repository](https://github.com/ddev/ddev.com) has full details, and there's even a [training session on how to do it](https://ddev.com.ddev.site/blog/ddev-website-for-contributors/). It's all just markdown and we'll help!
+We welcome community contributions to the DDEV blog and would love to have yours. The [ddev.com repository](https://github.com/ddev/ddev.com) has full details, and there's even a [training session on how to do it](https://ddev.com.ddev.site/blog/ddev-website-for-contributors/). It's all just Markdown and we'll help!
