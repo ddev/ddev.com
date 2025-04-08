@@ -47,10 +47,10 @@ _(Optional)_ You can still use web_extra_exposed_ports to expose the Node.js por
 
 ```yaml
 web_extra_exposed_ports:
-- name: node-app
-  container_port: 3000
-  http_port: 3000
-  https_port: 3001
+  - name: node-app
+    container_port: 3000
+    http_port: 3000
+    https_port: 3001
 ```
 
 However, for a subdomain over standard web ports, the critical part is the next step with Traefik.
@@ -89,7 +89,6 @@ http:
       loadbalancer:
         servers:
           - url: http://ddev-example-web:3000
-
 ```
 
 Here’s what’s happening:
