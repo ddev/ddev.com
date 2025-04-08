@@ -1,9 +1,9 @@
 ---
 title: "Exposing a Node.js App Over HTTP / HHTPS on a Subdomain in DDEV"
-pubDate: 2025-04-07
-modifiedDate: 2025-04-07
+pubDate: 2025-04-10
+#modifiedDate: 2025-04-07
 summary: Serve a Node.js app on a dedicated subdomain over HTTP/HTTPS using DDEV’s Traefik.
-author: ayalon
+author: J. Minder
 featureImage:
   src: /img/blog/2025/04/ddev-router-traeffik.png
   alt: Screenshot of DDEV router and Traefik running on a `.ddev.site` domain in a browser window
