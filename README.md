@@ -188,11 +188,15 @@ If you’re adding a new item to the array, choose whichever position it should 
   "name": "Platform.sh",
   "type": "major",
   "logo": "/logos/platform.sh.svg",
+  "darklogo": "/logos/platform.sh-darkmode.svg",
   "squareLogo": "/logos/platform.sh-square.svg",
   "url": "https://platform.sh",
   "github": "platformsh",
 },
 ```
+
+> [!NOTE]
+> Prefer SVG variants over PNG. If an SVG isn't available, try converting the PNG to SVG using [online tools](https://convertio.co/png-svg/), and then manually adjust the SVG colors by editing the file directly (you can use a color picker to extract the colors from the original PNG).
 
 - **name** – the human-friendly organization name. (Be sure this is formatted exactly as it’s used on the website or GitHub profile!)
 - **type** – can be `"major"` or `"standard"` depending on contribution level. (Not currently used but can affect styling later.)
