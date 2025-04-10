@@ -18,7 +18,7 @@ Popular content managment systems like WordPress and Drupal store content in dat
 
 ## Why consider leaving WordPress?
 
-While the recent shennanigans from Automattic's CEO accelerated my work, it wasn't the primary reason I developed this content exporter. I fell in love with Grav development back in 2018 when I first started writing a [Drupal 7 exporter](https://www.drupal.org/project/grav_export), and I wanted to port something similar over to WordPress. I value data portability, empowering the end user to control where their content is used! In the end, it's about giving options.
+While the recent shenanigans from Automattic's CEO accelerated my work, it wasn't the primary reason I developed this content exporter. I fell in love with Grav development back in 2018 when I first started writing a [Drupal 7 exporter](https://www.drupal.org/project/grav_export), and I wanted to port something similar over to WordPress. I value data portability, empowering the end user to control where their content is used! In the end, it's about giving options.
 
 ## Why DDEV?
 
