@@ -22,7 +22,7 @@ While the recent shenanigans from Automattic's CEO accelerated my work, it wasn'
 
 ## Why DDEV?
 
-[DDEV](https://ddev.com/) is a fantastic tool, and it is perfect for my PHP development workflow. It made spinning up two local developlment sites a breeze. I normally relish building and configuring my own automated environments, _but DDEV makes it so simple to configure local environments_. Addtionally, DDEV comes with many "quickstart" configurations, meaning that popular CMS's like Drupal and WordPress work out of the box with nearly all settings ready to go.
+[DDEV](https://github.com/ddev/ddev) is a fantastic tool, and it is perfect for my PHP development workflow. It made spinning up two local developlment sites a breeze. I normally relish building and configuring my own automated environments, _but DDEV makes it so simple to configure local environments_. Additionally, DDEV comes with many "quickstart" configurations, meaning that popular CMS's like Drupal and WordPress work out of the box with nearly all settings ready to go.
 
 ## Development setup
 
