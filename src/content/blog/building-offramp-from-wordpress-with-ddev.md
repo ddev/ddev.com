@@ -14,7 +14,7 @@ categories:
 
 ---
 
-Popular content managment systems like WordPress and Drupal store content in databases (MySQl/ Postgres/ etc.). [Grav CMS](https://getgrav.org/) stores content and configuration in local files (Markdown and YAML respectively). Grav's simpler flat-file storage mechanism is one of the things that drew me to start dabbling with it.
+Popular content managment systems like WordPress and Drupal store content in databases (MySQL/ PostgreSQL/ etc.). [Grav CMS](https://getgrav.org/) stores content and configuration in local files (Markdown and YAML respectively). Grav's simpler flat-file storage mechanism is one of the things that drew me to start dabbling with it.
 
 ## Why consider leaving WordPress?
 
