@@ -1,7 +1,7 @@
 ---
 title: "Building an Off-Ramp from WordPress with DDEV"
 pubDate: 2025-04-11
-summary: DDEV used to develop WordPress content exporter pluginfor use in Grav CMS.
+summary: DDEV used to develop WordPress content exporter plugin for use in Grav CMS.
 author: Jeremy Gonyea
 featureImage:
   src: /img/blog/2025/04/wordpress-offramp.png
