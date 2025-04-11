@@ -31,7 +31,7 @@
     "autoprefixer": "^10.4.16",
     "github-slugger": "^2.0.0",
     "glob": "^10.3.10",
-    "image-size": "^1.0.2",
+    "image-size": "^1.2.1",
     "linkedom": "^0.15.3",
     "marked": "^9.0.3",
     "mdast-util-to-string": "^4.0.0",
