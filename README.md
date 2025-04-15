@@ -205,9 +205,9 @@ If you’re adding a new item to the array, choose whichever position it should 
 - **url** – organization’s website URL.
 - **github** – optional GitHub username when relevant, which can be used to make sure the sponsor doesn’t appear twice in a list—as seen in the [Sponsors.astro](https://github.com/ddev/ddev.com/blob/main/src/components/Sponsors.astro#L53) component.
 
-## Redirects
+## Redirects/Short Links/Shortcuts
 
-Any redirect can be added to ddev.com by editing `public/_redirects`. This can be useful to provide short redirects in a variety of contexts. Redirects can be to local URLs or to DDEV docs, for example.
+Any redirect can be added to ddev.com by editing `public/_redirects`. This can be useful to provide short redirects in a variety of contexts. Redirects can be to local URLs, DDEV docs, or external resources.
 
 - Most redirects should be listed as `301` for a permanent redirect.
 - Short links can be prefixed with `/s` to imply their nature. For example, `/s/port-conflict`
