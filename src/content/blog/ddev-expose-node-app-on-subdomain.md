@@ -1,5 +1,5 @@
 ---
-title: "Exposing a Node.js App Over HTTP / HHTPS on a Subdomain in DDEV"
+title: "Exposing a Node.js App Over HTTP / HTTPS on a Subdomain in DDEV"
 pubDate: 2025-04-10
 #modifiedDate: 2025-04-07
 summary: Serve a Node.js app on a dedicated subdomain over HTTP/HTTPS using DDEV’s Traefik.
