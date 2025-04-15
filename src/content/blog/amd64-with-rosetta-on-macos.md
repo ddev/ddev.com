@@ -4,9 +4,9 @@ pubDate: 2025-04-16
 #modifiedDate: 2025-02-06
 summary: Some software packages and docker images are still only available in Intel versions, but emulating AMD64 is working pretty well these days on macOS with Rosetta 2.
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2025/04/randy-mentoring-drupalcon-atlanta.jpg
-#  alt: Randy at table doing first-time contributor mentoring.
+featureImage:
+  src: /img/blog/2025/04/apple-silicon-intel.png
+  alt: Bridging Apple Silicon and Intel architectures.
 
 categories:
   - DevOps
