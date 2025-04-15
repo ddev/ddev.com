@@ -12,7 +12,7 @@ categories:
   - DevOps
 ---
 
-It's been almost 5 years since Apple introduced its ARM64-based Macs, and the world has loved them. But they threw a complete monkey wrench into the software works, which had expected the Intel/AMD64 for many, many years. (Read more: [ARM64! Apple Silicon! M-Series! DDEV! What does it all mean?](arm64-apple-silicon-m1-ddev-local-what-does-it-all-mean.md))
+It's been almost 5 years since Apple introduced its ARM64-based Macs, and the world has loved them. But they threw a complete monkey wrench into the software works, which had expected the Intel/AMD64 architecture for many, many years. (Read more: [ARM64! Apple Silicon! M-Series! DDEV! What does it all mean?](arm64-apple-silicon-m1-ddev-local-what-does-it-all-mean.md))
 
 Almost all systems that distributed binary artifacts had extensive troubles. That included compiled binaries, Docker images, libraries, etc. In some cases the problem was just the fundamental assumptions in the software.
 
