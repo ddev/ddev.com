@@ -48,9 +48,9 @@ I [recently added](https://github.com/ddev/ddev-sqlsrv/blob/main/docker-compose.
 
 ## Adding AMD64-only Software to the DDEV Web Container
 
-Sometimes the problem is *adding* software that is Intel-specific to the DDEV web container. For example, the classic NPM packages `node-sass` and `puppeteer` had this problem for years. (Now both seem to build somewhat successfully on ARM64 and they also have clear "no-longer-maintained" notices sending you to other packages.)
+Sometimes the problem is *adding* software that is Intel-specific to the DDEV web container. For example, the classic npm packages `node-sass` and `puppeteer` had this problem for years. (Now both seem to build somewhat successfully on ARM64 and they also have clear "no-longer-maintained" notices sending you to other packages.)
 
-However, as I recently experience with Oracle client-side [ddev-oci8](https://github.com/takielias/ddev-oci8) DDEV add-on, you can make the DDEV web container run as `linux/amd64` in the same exact way, and then if you need to NPM-install some odd package that is Intel-only, you can do it. Add a `.ddev/docker-compose.amd64.yaml` like this:
+However, as I recently experience with Oracle client-side [ddev-oci8](https://github.com/takielias/ddev-oci8) DDEV add-on, you can make the DDEV web container run as `linux/amd64` in the same exact way, and then if you need to npm-install some odd package that is Intel-only, you can do it. Add a `.ddev/docker-compose.amd64.yaml` like this:
 
 ```yaml
 services:
