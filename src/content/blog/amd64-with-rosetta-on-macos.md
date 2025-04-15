@@ -14,9 +14,9 @@ categories:
 
 It's been almost 5 years since Apple introduced its ARM64-based Macs, and the world has loved them. But they threw a complete monkey wrench into the software works, which had expected the Intel/AMD64 for many, many years. (Read more: [ARM64! Apple Silicon! M-Series! DDEV! What does it all mean?](arm64-apple-silicon-m1-ddev-local-what-does-it-all-mean.md))
 
-Almost all systems that distributed binary artifacts had extensive troubles. That included compiled binaries, Docker images, libraries, etc. In some cases the problem was just the fundamental assumptions in the software. 
+Almost all systems that distributed binary artifacts had extensive troubles. That included compiled binaries, Docker images, libraries, etc. In some cases the problem was just the fundamental assumptions in the software.
 
-Apple released [Rosetta 2](https://support.apple.com/en-us/102527) with the initial Apple Silicon macs, and it was great for simple situations, but it was initially quite unpredictable for Docker-based applications. You may know that I resisted any use of Rosetta for some years because of initial experiences of unpredictability. However, everything has gotten better around Rosetta over the years, but more than that, almost everything is available as a native app or native Docker image these days (and that has always included all DDEV apps and Docker images, from the very beginning). 
+Apple released [Rosetta 2](https://support.apple.com/en-us/102527) with the initial Apple Silicon macs, and it was great for simple situations, but it was initially quite unpredictable for Docker-based applications. You may know that I resisted any use of Rosetta for some years because of initial experiences of unpredictability. However, everything has gotten better around Rosetta over the years, but more than that, almost everything is available as a native app or native Docker image these days (and that has always included all DDEV apps and Docker images, from the very beginning).
 
 But it doesn't include everything. Microsoft continues to publish AMD64-only binaries and Docker images, and Oracle is as guilty. Surely they'll come around.
 
@@ -33,7 +33,7 @@ There are still a few Docker images that have not been properly updated to multi
 With these, if you have a `docker-compose.*.yaml` file that names an image which is only available as AMD64, you can just add to it this line:
 
 ```yaml
-  platform: linux/amd64
+platform: linux/amd64
 ```
 
 And if you're using a Docker provider like Orbstack or Docker Desktop that has robust Rosetta support (and you have Rosetta enabled) then it will "just work". It will have reduced performance, but it may work just fine for your application.
@@ -41,14 +41,14 @@ And if you're using a Docker provider like Orbstack or Docker Desktop that has r
 I [recently added](https://github.com/ddev/ddev-sqlsrv/blob/main/docker-compose.sqlsrv.yaml#L2-L7) this setup to the `ddev-sqlsrv` DDEV add-on, which previously was limited to Intel users only. Adding these lines to the service's `docker-compose.sqlsrv.yaml` made the add-on work fine on Apple Silicon:
 
 ```yaml
-    # On macOS Apple Silicon, this only works with Rosetta enabled
-    image: ${MSSQL_DOCKER_IMAGE:-mcr.microsoft.com/mssql/server:2022-CU18-ubuntu-22.04}
-    platform: linux/amd64
+# On macOS Apple Silicon, this only works with Rosetta enabled
+image: ${MSSQL_DOCKER_IMAGE:-mcr.microsoft.com/mssql/server:2022-CU18-ubuntu-22.04}
+platform: linux/amd64
 ```
 
 ## Adding AMD64-only Software to the DDEV Web Container
 
-Sometimes the problem is *adding* software that is Intel-specific to the DDEV web container. For example, the classic npm packages `node-sass` and `puppeteer` had this problem for years. (Now both seem to build somewhat successfully on ARM64 and they also have clear "no-longer-maintained" notices sending you to other packages.)
+Sometimes the problem is _adding_ software that is Intel-specific to the DDEV web container. For example, the classic npm packages `node-sass` and `puppeteer` had this problem for years. (Now both seem to build somewhat successfully on ARM64 and they also have clear "no-longer-maintained" notices sending you to other packages.)
 
 However, as I recently experience with Oracle client-side [ddev-oci8](https://github.com/takielias/ddev-oci8) DDEV add-on, you can make the DDEV web container run as `linux/amd64` in the same exact way, and then if you need to npm-install some odd package that is Intel-only, you can do it. Add a `.ddev/docker-compose.amd64.yaml` like this:
 
