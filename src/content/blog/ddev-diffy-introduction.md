@@ -1,6 +1,7 @@
 ---
 title: "Introduction: The Diffy DDEV plugin"
 pubDate: 2024-08-09
+modifiedDate: 2025-04-16
 summary: Visual regression testing tool Diffy got DDEV integration!
 author: Yuri Gerasymov
 featureImage:
@@ -20,7 +21,7 @@ As it is essential to spot the changes as early as possible, we built an integra
 For that you need a few steps:
 
 - create an account in Diffy, create a project, API key
-- add a ddev addon `ddev get diffywebsite/ddev-diffy` and run `ddev restart`
+- add a DDEV add-on `ddev add-on get diffywebsite/ddev-diffy` and run `ddev restart`
 - set API key, project ID in `.ddev/diffy-worker/.env` file
 - run screenshots from local environment with `ddev screenshot` and see them uploaded to Diffy
 

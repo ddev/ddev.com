@@ -1,6 +1,7 @@
 ---
 title: "Diffy: Anatomy of an Advanced DDEV Add-on"
 pubDate: 2024-08-13
+modifiedDate: 2025-04-16
 summary: Custom container built for multiple architectures. Download the app and run "npm install" in the container.
 author: Yuri Gerasymov
 featureImage:
@@ -15,7 +16,7 @@ categories:
 
 The `ddev-diffy` add-on is at [github.com/DiffyWebsite/ddev-diffy](https://github.com/DiffyWebsite/ddev-diffy).
 
-Add-on can be installed with a simple `ddev get DiffyWebsite/ddev-diffy`. Check the [introduction blog post](ddev-diffy-introduction.md) about the installation.
+Add-on can be installed with a simple `ddev add-on get DiffyWebsite/ddev-diffy`. Check the [introduction blog post](ddev-diffy-introduction.md) about the installation.
 
 Check our [documentation](https://docs.diffy.website/features/local-development/ddev-add-on).
 

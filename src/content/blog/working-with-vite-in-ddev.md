@@ -1,7 +1,7 @@
 ---
 title: "Working with Vite in DDEV - an introduction"
 pubDate: 2023-11-08
-modifiedDate: 2025-02-25
+modifiedDate: 2025-04-16
 summary: Working with Vite in DDEV
 author: Matthias Andrasch
 featureImage:
@@ -29,14 +29,14 @@ This articles sums up my current personal experience. I hope it will be a helpfu
   - [TYPO3](#typo3)
   - [WordPress](#wordpress)
   - [GitHub Codespaces](#githubcodespaces)
-- [NodeJS / headless projects](#nodejs--headlessprojects)
-- [DDEV addons](#ddevaddons)
+- [Node.js / headless projects](#nodejs--headlessprojects)
+- [DDEV add-ons](#ddevadd-ons)
 - [Advanced: Autostart Vite](#advancedautostartvite)
 - [Further resources](#furtherresources)
 
 ### General usage
 
-Vite is written in NodeJS. DDEV already has built-in support for [NodeJS](https://ddev.readthedocs.io/en/stable/users/usage/cli/#nodejs-npm-nvm-and-yarn).
+Vite is written in Node.js. DDEV already has built-in support for [Node.js](https://ddev.readthedocs.io/en/stable/users/usage/cli/#nodejs-npm-nvm-and-yarn).
 
 In order to use Vite in our DDEV projects, we generally need to do two things:
 
@@ -87,7 +87,7 @@ In order to use Vite in our DDEV projects, we generally need to do two things:
 
    This guide assumes your project runs on `https://`. If you can not access the HTTPS version of your project, please see [DDEV installation docs](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/).
 
-Some more customizations might be needed depending on your CMS / framework, see [PHP CMS / framework integration](#php-cms--frameworkintegration) below. You can also use a [DDEV addon](#ddevaddons).
+Some more customizations might be needed depending on your CMS / framework, see [PHP CMS / framework integration](#php-cms--frameworkintegration) below. You can also use a [DDEV add-on](#ddevadd-ons).
 
 ### A plain PHP example
 
@@ -95,7 +95,7 @@ Let's try it out with a simple example project. We will use Vite v4 for this.
 
 First we create a new DDEV project called `test-vite`:
 
-```
+```bash
 mkdir test-vite && cd test-vite
 ddev config --project-type=php
 ddev start
@@ -115,7 +115,7 @@ ddev npm i vite --save-dev
 
 _For more advanced examples, check out Vite's guide [Scaffolding Your First Vite Project](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)._
 
-We add these script commands to the package.json:
+We add these script commands to the `package.json`:
 
 ```json
   "scripts": {
@@ -125,7 +125,7 @@ We add these script commands to the package.json:
   },
 ```
 
-An we also need to add the type property:
+And we also need to add the type property:
 
 ```json
 "type": "module"
@@ -158,7 +158,7 @@ Now Vite is almost ready to go. But there are two important steps ahead of us.
 
 ### Expose the vite port
 
-Vite is installed within DDEV, but we can't access it from outside of the Docker container yet. We need to expose port `5173` of the DDEV project.
+Vite is installed within DDEV, but we can't access it from outside the Docker container yet. We need to expose port `5173` of the DDEV project.
 
 Why?
 
@@ -182,18 +182,18 @@ This is our resulting `.ddev/config.yaml` file:
 name: test-vite
 type: php
 docroot: ""
-php_version: "8.1"
+php_version: "8.3"
 webserver_type: nginx-fpm
 xdebug_enabled: false
 additional_hostnames: []
 additional_fqdns: []
 database:
   type: mariadb
-  version: "10.4"
+  version: "10.11"
 use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
-nodejs_version: "18"
+corepack_enable: false
 web_extra_exposed_ports:
   - name: vite
     container_port: 5173
@@ -201,7 +201,7 @@ web_extra_exposed_ports:
     https_port: 5173
 ```
 
-A `ddev restart` is necessary after changing the config.yaml file.
+A `ddev restart` is necessary after changing the `.ddev/config.yaml` file.
 
 You can check the exposed ports with `ddev describe` after the restart.
 
@@ -256,7 +256,7 @@ export default defineConfig({
 Technical explanation:
 
 - We need to define an entry file to let vite know where to start, this is done in `rollupOptions`.
-- Also we need to tell Vite to respond to all network request, not only the ones addressed internally to http://localhost:5173. This is done via `host: '0.0.0.0'` and is important for making it work with DDEV / Docker.
+- Also, we need to tell Vite to respond to all network request, not only the ones addressed internally to http://localhost:5173. This is done via `host: '0.0.0.0'` and is important for making it work with DDEV / Docker.
 - The strict port setting is also necessary, because we only exposed port 5173. Without `strictPort: true`, Vite will use other ports like 5174 or 5175 if port 5173 is already occupied.
 - Another important part is to let Vite know from where to load Vite-controlled assets like images referenced in CSS. This is done via `server.origin`. <br> _(DDEV automatically provides environment variables via the regular `process.env` variable. The variable `process.env.DDEV_PRIMARY_URL` will have the value `https://test-vite.ddev.site` in our demo project. We use it to set the correct `server.origin` dynamically.)_ DDEV can be configured to use other ports than 80/443, or will auto-select ports if these are occupied already. Therefore we need to support both possible outputs of `process.env.DDEV_PRIMARY_URL`: "https://test-vite.ddev.site" or something like "https://test-vite.ddev.site:1234". If there is a custom port, we need to strip it before we add the Vite port.
 - Last but not least, we need to configure secure CORS headers. In earlier versions of Vite, this was set to `cors: true` by default and allowed all origins to fetch scripts from the devserver. After [security advisory GHSA-vg6x-rcgg-rjx6](https://github.com/vitejs/vite/security/advisories/GHSA-vg6x-rcgg-rjx6), the default setting was changed and we need to add the allowance of DDEV local domains explicitly. The regular expression supports domains like `https://test-vite.ddev.site` (or something like `https://test-vite.ddev.site:1234` when you use another HTTPS port). See [server.cors](https://vite.dev/config/server-options#server-cors) in the Vite docs for more information.
@@ -347,19 +347,19 @@ Download the [DDEV Logo](https://github.com/ddev/ddev/blob/main/docs/content/dev
 
 Add this HTML container to your `index.php`:
 
-```
+```html
 <div id="image-test"></div>
 ```
 
 Add this to your `src/style.css`:
 
-```
+```css
 #image-test {
-    width: 300px;
-    height: 150px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-image: url('/src/images/ddev.png');
+  width: 300px;
+  height: 150px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("/src/images/ddev.png");
 }
 ```
 
@@ -377,17 +377,17 @@ You can find the source code for this simple demo here: [mandrasch/ddev-vite-sim
 
 This demo only covered the case of using the local development server for hot module reloading.
 
-For production you would first run `ddev npm run build` to generate the optimized files. These will be generated in the `dist/` folder with a hash:
+For production, you would first run `ddev npm run build` to generate the optimized files. These will be generated in the `dist/` folder with a hash:
 
 - /dist/assets/main-8811a981.js
 - /dist/assets/main-d6825f81.css
 - ...
 
-To include these in PHP, you will need to know the hash values. You could set `build.manifest` to true in Vites config. With this option enabled a `/dist/manifest.json` file is generated on each build, which has reference to all JS and CSS files:
+To include these in PHP, you will need to know the hash values. You could set `build.manifest` to true in Vite's config. With this option enabled a `/dist/manifest.json` file is generated on each build, which has reference to all JS and CSS files:
 
 Example:
 
-```
+```json
 {
   "src/images/ddev.png": {
     "file": "assets/ddev-f877fcaa.png",
@@ -398,12 +398,8 @@ Example:
     "src": "src/main.css"
   },
   "src/main.js": {
-    "assets": [
-      "assets/ddev-f877fcaa.png"
-    ],
-    "css": [
-      "assets/main-d6825f81.css"
-    ],
+    "assets": ["assets/ddev-f877fcaa.png"],
+    "css": ["assets/main-d6825f81.css"],
     "file": "assets/main-8811a981.js",
     "isEntry": true,
     "src": "src/main.js"
@@ -429,7 +425,7 @@ But how do we use these integrations with DDEV?
 
 The main goal for us is the same as above - we need to use Vite from https://your-project.ddev.site:5173/, not from http://localhost:5173. So adding the `server` settings to `vite.config.js` is necessary in all cases.
 
-```
+```yaml
 # .ddev/config.yaml
 web_extra_exposed_ports:
   - name: node-vite
@@ -458,7 +454,7 @@ André Felipe has published https://github.com/andrefelipe/vite-php-setup as gen
 
 For DDEV you need to change the `const VITE_HOST` to `"".$_SERVER['DDEV_PRIMARY_URL'].":5173"` in `public/helpers.php`.
 
-Also you might need to change the `isDev()` function.
+Also, you might need to change the `isDev()` function.
 
 #### CraftCMS
 
@@ -502,7 +498,7 @@ Since June 2022 [Vite is the default bundler for Laravel](https://laravel-news.c
 
 First, expose the port via `.ddev/config.yaml` and run `ddev restart`:
 
-```
+```yaml
 # .ddev/config.yaml
 web_extra_exposed_ports:
   - name: node-vite
@@ -563,13 +559,13 @@ This lead to the development of further tools by Simon Praetorius:
 
 - Extension ["vite-asset-collector"](https://github.com/s2b/vite-asset-collector):
 - Vite Plugin ["vite-plugin-typo3"](https://github.com/s2b/vite-plugin-typo3)
-- DDEV Add-On ["ddev-vite-sidecar"](https://github.com/s2b/ddev-vite-sidecar)
+- DDEV Add-on ["ddev-vite-sidecar"](https://github.com/s2b/ddev-vite-sidecar)
 
 The usage of "vite-asset-collector" with DDEV is documented [here](https://docs.typo3.org/p/praetorius/vite-asset-collector/main/en-us/Installation/Index.html#installation-1). The [TYPO3 Slack](https://typo3.org/community/meet/chat-slack) has a Vite channel if you have questions or need support.
 
 #### WordPress
 
-For WordPress I found these libraries:
+For WordPress, I found these libraries:
 
 - https://github.com/idleberg/php-wordpress-vite-assets
 - https://github.com/kucrut/vite-for-wp
@@ -589,23 +585,25 @@ Note: On Codespaces, DDEVs router is not used - therefore some adjustments are n
 
 See [DDEV Installation: Codespaces](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#github-codespaces) for more information.
 
-### NodeJS / headless projects
+### Node.js / headless projects
 
 Andy Blum wrote the awesome article [Node.js Development with DDEV](https://www.lullabot.com/articles/nodejs-development-ddev) which explains proxying requests to the correct ports of NodeJS projects running in the web container. He is using the NodeJS CMS Keystone in combination with SvelteKit (NodeJS framework) for the frontend in his tutorial - all in one DDEV project.
 
-This approach also enables use cases like running a classic PHP backend in combination with a NodeJS hosted frontend (on another subdomain of the same DDEV project). It's especially great for headless CMS projects.
+This approach also enables use cases like running a classic PHP backend in combination with a Node.js hosted frontend (on another subdomain of the same DDEV project). It's especially great for headless CMS projects.
 
-There is an article on velir.com: [How to Run Headless Drupal and NextJS on DDEV](https://www.velir.com/ideas/2024/05/13/how-to-run-headless-drupal-and-nextjs-on-ddev). And here is a [demo repository](https://github.com/mandrasch/ddev-laravel-breeze-sveltekit) for Laravel Breeze (PHP) and SvelteKit (NodeJS) within one DDEV project (monorepo).
+There is an article on velir.com: [How to Run Headless Drupal and NextJS on DDEV](https://www.velir.com/ideas/2024/05/13/how-to-run-headless-drupal-and-nextjs-on-ddev). And here is a [demo repository](https://github.com/mandrasch/ddev-laravel-breeze-sveltekit) for Laravel Breeze (PHP) and SvelteKit (Node.js) within one DDEV project (monorepo).
 
 But you can also use a separate DDEV project for frontend - and another one for backend of course. See [communication between DDEV projects](https://ddev.readthedocs.io/en/stable/users/usage/faq/#communicate-via-https).
 
-### DDEV addons
+### DDEV add-ons
 
-- [ddev-vite-sidecar](https://github.com/s2b/ddev-vite-sidecar) is a simple addon for (almost) zero-config integration of Vite into your DDEV projects. The Vite development server is exposed as a https://vite.* subdomain to your project's main domain, which means that no ports need to be exposed to the host system.
+- [ddev-vite-sidecar](https://github.com/s2b/ddev-vite-sidecar) is a simple add-on for (almost) zero-config integration of Vite into your DDEV projects. The Vite development server is exposed as a `https://vite.*` subdomain to your project's main domain, which means that no ports need to be exposed to the host system.
 
-- Kudos to torenware, who created the first ever DDEV addon for Vite, [ddev-viteserve](https://github.com/torenware/ddev-viteserve). It's currently not maintained.
+- Kudos to torenware, who created the first ever DDEV add-on for Vite, [ddev-viteserve](https://github.com/torenware/ddev-viteserve). It's currently not maintained.
 
-- [ddev-vitest](https://github.com/tyler36/ddev-vitest) adds some helper commands for projects using [Vitest](https://vitest.dev/), a vite-native testing framework..
+- [ddev-vitest](https://github.com/tyler36/ddev-vitest) adds some helper commands for projects using [Vitest](https://vitest.dev/), a vite-native testing framework.
+
+- Explore [DDEV Add-on Registry](https://addons.ddev.com) for more Vite add-ons.
 
 ### Advanced: Autostart Vite
 
@@ -615,7 +613,7 @@ Please beware: Autostart can complicate things a bit, it's a technique for advan
 
 Some developers like having it run in a background daemon, others like putting it in the [post-start hook](https://ddev.readthedocs.io/en/stable/users/configuration/hooks/). When it is started via post-start hook, the output & errors are still visible in the terminal.
 
-Edit your .ddev/config.yaml like this and execute a command within the DDEV web container on project start, a "ddev restart" is needed afterwards:
+Edit your `.ddev/config.yaml` like this and execute a command within the DDEV web container on project start, a `ddev restart` is needed afterwards:
 
 ```yaml
 hooks:
@@ -623,7 +621,7 @@ hooks:
     - exec: "npm run dev"
 ```
 
-If you want to run Vite in the background as a daemon via [web_extra_daemons](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#running-extra-daemons-in-the-web-container), edit your config.yaml like this ("ddev restart" needed):
+If you want to run Vite in the background as a daemon via [web_extra_daemons](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#running-extra-daemons-in-the-web-container), edit your `.ddev/config.yaml` like this (`ddev restart` needed):
 
 ```yaml
 web_extra_daemons:
