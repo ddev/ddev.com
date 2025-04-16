@@ -355,11 +355,11 @@ Add this to your `src/style.css`:
 
 ```css
 #image-test {
-    width: 300px;
-    height: 150px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-image: url('/src/images/ddev.png');
+  width: 300px;
+  height: 150px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("/src/images/ddev.png");
 }
 ```
 
@@ -398,12 +398,8 @@ Example:
     "src": "src/main.css"
   },
   "src/main.js": {
-    "assets": [
-      "assets/ddev-f877fcaa.png"
-    ],
-    "css": [
-      "assets/main-d6825f81.css"
-    ],
+    "assets": ["assets/ddev-f877fcaa.png"],
+    "css": ["assets/main-d6825f81.css"],
     "file": "assets/main-8811a981.js",
     "isEntry": true,
     "src": "src/main.js"
