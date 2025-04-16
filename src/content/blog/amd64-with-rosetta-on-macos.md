@@ -18,7 +18,7 @@ Almost all systems that distributed binary artifacts had extensive troubles. Tha
 
 Apple released [Rosetta 2](https://support.apple.com/en-us/102527) with the initial Apple Silicon macs, and it was great for simple situations, but it was initially quite unpredictable for Docker-based applications. You may know that I resisted any use of Rosetta for some years because of initial experiences of unpredictability. However, everything has gotten better around Rosetta over the years, but more than that, almost everything is available as a native app or native Docker image these days (and that has always included all DDEV apps and Docker images, from the very beginning).
 
-But it doesn't include everything. Microsoft continues to publish AMD64-only binaries and Docker images, and Oracle is as guilty. Surely they'll come around.
+But it doesn't include everything. Microsoft continues to publish AMD64-only binaries and Docker images, and Oracle is just as guilty. Surely they'll come around.
 
 In the meantime, here are some techniques to get niche AMD64-only applications going with DDEV. I recommend these techniques only if you have no good alternative, because native performance and reliability are much higher.
 
@@ -28,7 +28,7 @@ In the meantime, here are some techniques to get niche AMD64-only applications g
 
 ## Running an External Service as `linux/amd64`
 
-There are still a few Docker images that have not been properly updated to multi-platform builds, including [typo3solr](https://hub.docker.com/r/typo3solr/ext-solr) and [mssql/server](mcr.microsoft.com/mssql/server)
+There are still a few Docker images that have not been properly updated to multi-platform builds, including [typo3solr](https://hub.docker.com/r/typo3solr/ext-solr) and [mssql/server](https://hub.docker.com/r/microsoft/mssql-server).
 
 With these, if you have a `docker-compose.*.yaml` file that names an image which is only available as AMD64, you can just add to it this line:
 
