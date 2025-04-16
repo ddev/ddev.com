@@ -22,5 +22,5 @@ const { date, comment } = Astro.props
   <p class="text-navy-500 font-mono uppercase text-xs tracking-wide dark:text-slate-400">
     <b>Updated {formatDate(date, { month: "long" })}</b>
   </p>
-  {comment && <div class="mt-2" set:html={marked.parse(comment)} />}
+  {comment && <div class="mt-2 dark:text-white" set:html={marked.parse(comment)} />}
 </aside>

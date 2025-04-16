@@ -1,8 +1,9 @@
 ---
 title: "DDEV on Intel... on Apple Silicon"
 pubDate: 2023-08-23
-modifiedDate: 2024-09-17
-summary: You might be able to run a DDEV project requiring Intel AMD64 on your Apple Silicon Mac
+modifiedDate: 2025-04-16
+modifiedComment: "You can do these things without changing your whole Docker provider.<br><br>See [Solving Intel-only AMD64/X64 problems on macOS with Apple Silicon](/blog/amd64-with-rosetta-on-macos) for a more nuanced approach to solving platform problems like this."
+summary: You can run your Docker system as Intel AMD64 on your Apple Silicon Mac
 author: Randy Fay
 featureImage:
   src: /img/blog/2023/08/intel-on-apple.png
@@ -10,6 +11,8 @@ featureImage:
 categories:
   - Guides
 ---
+
+## Introduction: Mixed Architectures with Poor Support
 
 From time to time, Apple Silicon DDEV users encounter an image or a Node.js package that is not available for the Mac's native architecture (variously called ARM64 or `aarch64`). These result in errors like: "Could not open '/lib64/ld-linux-x86-64.so.2': No such file or directory" or "the chromium binary is not available for ARM64".
 
@@ -25,7 +28,7 @@ To use these techniques, you _must_ enable Apple's virtualization layer, Rosetta
 
 ## 1. Use [OrbStack](https://orbstack.dev) with the `DOCKER_DEFAULT_PLATFORM=linux/amd64`
 
-OrbStack is a great new Docker provider; super lightweight and performant, and it does [nice emulation](https://docs.orbstack.dev/docker/#intel-x86-emulation) using your Mac's Rosetta system. You **must** enable "Use Rosetta to run Intel code" in the "system" section of OrbStack's settings.
+OrbStack is a great Docker provider; super lightweight and performant, and it does [nice emulation](https://docs.orbstack.dev/docker/#intel-x86-emulation) using your Mac's Rosetta system. Enable "Use Rosetta to run Intel code" in the "system" section of OrbStack's settings.
 
 ```
 ddev poweroff
