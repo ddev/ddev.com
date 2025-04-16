@@ -1,7 +1,7 @@
 ---
 title: "Contributor Training: Advanced Add-On Techniques"
 pubDate: 2024-07-23
-# modifiedDate: 2024-07-23
+modifiedDate: 2025-04-16
 summary: Advanced Add-On Techniques for Contributors
 author: Randy Fay
 featureImage:
