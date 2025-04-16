@@ -201,7 +201,7 @@ web_extra_exposed_ports:
     https_port: 5173
 ```
 
-A `ddev restart` is necessary after changing the config.yaml file.
+A `ddev restart` is necessary after changing the `.ddev/config.yaml` file.
 
 You can check the exposed ports with `ddev describe` after the restart.
 
@@ -617,7 +617,7 @@ Please beware: Autostart can complicate things a bit, it's a technique for advan
 
 Some developers like having it run in a background daemon, others like putting it in the [post-start hook](https://ddev.readthedocs.io/en/stable/users/configuration/hooks/). When it is started via post-start hook, the output & errors are still visible in the terminal.
 
-Edit your .ddev/config.yaml like this and execute a command within the DDEV web container on project start, a `ddev restart` is needed afterwards:
+Edit your `.ddev/config.yaml` like this and execute a command within the DDEV web container on project start, a `ddev restart` is needed afterwards:
 
 ```yaml
 hooks:
@@ -625,7 +625,7 @@ hooks:
     - exec: "npm run dev"
 ```
 
-If you want to run Vite in the background as a daemon via [web_extra_daemons](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#running-extra-daemons-in-the-web-container), edit your config.yaml like this (`ddev restart` needed):
+If you want to run Vite in the background as a daemon via [web_extra_daemons](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#running-extra-daemons-in-the-web-container), edit your `.ddev/config.yaml` like this (`ddev restart` needed):
 
 ```yaml
 web_extra_daemons:
