@@ -2,6 +2,7 @@
 title: "DDEV on Intel... on Apple Silicon"
 pubDate: 2023-08-23
 modifiedDate: 2025-04-16
+modifiedComment: "You can do these things without changing your whole Docker provider.<br><br>See [Solving Intel-only AMD64/X64 problems on macOS with Apple Silicon](/blog/amd64-with-rosetta-on-macos) for a more nuanced approach to solving platform problems like this."
 summary: You can run your Docker system as Intel AMD64 on your Apple Silicon Mac
 author: Randy Fay
 featureImage:
@@ -10,10 +11,6 @@ featureImage:
 categories:
   - Guides
 ---
-
-## Update: You Can Do These Things without Changing Your Whole Docker Provider
-
-See [Solving Intel-only AMD64/X64 problems on macOS with Apple Silicon](amd64-with-rosetta-on-macos.md) for a more nuanced approach to solving platform problems like this.
 
 ## Introduction: Mixed Architectures with Poor Support
 
