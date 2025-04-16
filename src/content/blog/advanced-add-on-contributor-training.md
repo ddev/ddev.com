@@ -116,15 +116,15 @@ Some add-ons may require a specific version of DDEV.
 
 1. Add a `ddev_version_constraint` to the `install.yaml`. This [version constraint](https://github.com/Masterminds/semver#checking-version-constraints) will be validated against the running DDEV executable and prevent add-on from being installed if it doesn't validate. Available with DDEV v1.23.4+, and works only for DDEV v1.23.4+ binaries:
 
-    ```yaml
-    ddev_version_constraint: ">= v1.24.3"
-    ```
+   ```yaml
+   ddev_version_constraint: ">= v1.24.3"
+   ```
 
 2. Add a `ddev_version_constraint` to a `config.<add-on-name>.yaml`. This will only fail at `ddev start` time, so is less pleasant. But a `config.<add-on-name>.yaml` might have:
 
-    ```yaml
-    ddev_version_constraint: ">= v1.24.3"
-    ```
+   ```yaml
+   ddev_version_constraint: ">= v1.24.3"
+   ```
 
 ## Reading and using YAML files, including config.yaml (yaml_read_files)
 
