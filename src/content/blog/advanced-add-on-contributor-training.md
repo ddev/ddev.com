@@ -88,7 +88,7 @@ See the [general docs on extra services](https://ddev.readthedocs.io/en/stable/u
 
 ## Interacting with users during `install.yaml` installs
 
-Although unusual, it is sometimes useful to interact with the user during the `ddev get` process. For example, [`ddev-platformsh`](https://github.com/ddev/ddev-platformsh) checks to make sure that the `PLATFORMSH_CLI_TOKEN` has been properly configured, and, if not, requests it and configures it:
+Although unusual, it is sometimes useful to interact with the user during the `ddev add-on get` process. For example, [`ddev-platformsh`](https://github.com/ddev/ddev-platformsh) checks to make sure that the `PLATFORMSH_CLI_TOKEN` has been properly configured, and, if not, requests it and configures it:
 
 ```yaml
 pre_install_actions:
@@ -116,29 +116,19 @@ Some add-ons may require a specific version of DDEV.
 
 1. Add a `ddev_version_constraint` to the `install.yaml`. This [version constraint](https://github.com/Masterminds/semver#checking-version-constraints) will be validated against the running DDEV executable and prevent add-on from being installed if it doesn't validate. Available with DDEV v1.23.4+, and works only for DDEV v1.23.4+ binaries:
 
-```yaml
-ddev_version_constraint: ">= v1.23.4"
-```
+    ```yaml
+    ddev_version_constraint: ">= v1.24.3"
+    ```
 
-2. Check for the existence of a DDEV "capability" using `ddev debug capabilities`. For example:
+2. Add a `ddev_version_constraint` to a `config.<add-on-name>.yaml`. This will only fail at `ddev start` time, so is less pleasant. But a `config.<add-on-name>.yaml` might have:
 
-```yaml
-pre_install_actions:
-  # Make sure we have a ddev version that can support what we do here
-  - |
-    #ddev-description:Checking DDEV version
-    (ddev debug capabilities | grep multiple-upload-dirs >/dev/null) || (echo "Please upgrade DDEV to v1.22+ for appropriate capabilities" && false)
-```
-
-3. Add a `ddev_version_constraint` to a `config.<add-on-name>.yaml`. This will only fail at `ddev start` time, so is less pleasant. But a `config.<add-on-name>.yaml` might have:
-
-```yaml
-ddev_version_constraint: ">=v1.23.0"
-```
+    ```yaml
+    ddev_version_constraint: ">= v1.24.3"
+    ```
 
 ## Reading and using YAML files, including config.yaml (yaml_read_files)
 
-`ddev get` can read the contents of arbitrary YAML files, see [docs](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/#template-action-replacements-advanced).
+`ddev add-on get` can read the contents of arbitrary YAML files, see [docs](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/#template-action-replacements-advanced).
 
 For example, in `ddev-platformsh` the `.platform.app.yaml` is read into the `platformapp` variable, and other files are read as well, see [install.yaml](https://github.com/ddev/ddev-platformsh/blob/bb7365e30ae68797602dd0f648bf16bb46cd62b3/install.yaml#L330-L333):
 
@@ -165,11 +155,11 @@ In addition, the `~/.ddev/global_config.yaml` is read into the variable `DdevGlo
 
 ## Tips from previous trainings
 
-A [previous training in November, 2023](https://youtu.be/TmXqQe48iqE) covered many add-on topics, including testing with `bats` and debugging your tests. There you can learn about creating and testing add-ons.
+A [previous training in November 2023](https://youtu.be/TmXqQe48iqE) covered many add-on topics, including testing with `bats` and debugging your tests. There you can learn about creating and testing add-ons.
 
 ### Checking in add-ons
 
-Most teams choose to check in their project `.ddev` directory, and this is recommended. All metadata and other files for an add-on are stored in the `.ddev` directory, so this works fine. When it's time to update an add-on with `ddev get some/add-on`, do that, check in the result, and create a pull request.
+Most teams choose to check in their project `.ddev` directory, and this is recommended. All metadata and other files for an add-on are stored in the `.ddev` directory, so this works fine. When it's time to update an add-on with `ddev add-on get some/add-on`, do that, check in the result, and create a pull request.
 
 ### Customizing an add-on without "taking it over"
 
@@ -181,11 +171,12 @@ And of course you can add a `config.<add-on-name>_extra.yaml` to override what t
 
 ## Resources
 
+- [DDEV Add-on Registry](https://addons.ddev.com)
 - [DDEV docs](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/) on add-ons
 - [Previous Add-on Training](https://www.youtube.com/watch?v=TmXqQe48iqE)
 - `docker-compose.*.yaml` [docs](https://ddev.readthedocs.io/en/stable/users/extend/custom-compose-files/)
 - ddev-addon-template [README](https://github.com/ddev/ddev-addon-template)
-- Learn by studying other add-ons. Official ones at `ddev get --list` and all at `ddev get --list --all`
+- Learn by studying other add-ons. Official ones at `ddev add-on list` and all at `ddev add-on list --all`
 
 ## Contributions welcome!
 

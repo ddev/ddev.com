@@ -15,7 +15,7 @@ categories:
 
 The `ddev-diffy` add-on is at [github.com/DiffyWebsite/ddev-diffy](https://github.com/DiffyWebsite/ddev-diffy).
 
-Add-on can be installed with a simple `ddev get DiffyWebsite/ddev-diffy`. Check the [introduction blog post](ddev-diffy-introduction.md) about the installation.
+Add-on can be installed with a simple `ddev add-on get DiffyWebsite/ddev-diffy`. Check the [introduction blog post](ddev-diffy-introduction.md) about the installation.
 
 Check our [documentation](https://docs.diffy.website/features/local-development/ddev-add-on).
 
