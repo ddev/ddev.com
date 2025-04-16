@@ -95,7 +95,7 @@ Let's try it out with a simple example project. We will use Vite v4 for this.
 
 First we create a new DDEV project called `test-vite`:
 
-```
+```bash
 mkdir test-vite && cd test-vite
 ddev config --project-type=php
 ddev start
@@ -115,7 +115,7 @@ ddev npm i vite --save-dev
 
 _For more advanced examples, check out Vite's guide [Scaffolding Your First Vite Project](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)._
 
-We add these script commands to the package.json:
+We add these script commands to the `package.json`:
 
 ```json
   "scripts": {
@@ -125,7 +125,7 @@ We add these script commands to the package.json:
   },
 ```
 
-An we also need to add the type property:
+And we also need to add the type property:
 
 ```json
 "type": "module"
@@ -158,7 +158,7 @@ Now Vite is almost ready to go. But there are two important steps ahead of us.
 
 ### Expose the vite port
 
-Vite is installed within DDEV, but we can't access it from outside of the Docker container yet. We need to expose port `5173` of the DDEV project.
+Vite is installed within DDEV, but we can't access it from outside the Docker container yet. We need to expose port `5173` of the DDEV project.
 
 Why?
 
@@ -182,18 +182,18 @@ This is our resulting `.ddev/config.yaml` file:
 name: test-vite
 type: php
 docroot: ""
-php_version: "8.1"
+php_version: "8.3"
 webserver_type: nginx-fpm
 xdebug_enabled: false
 additional_hostnames: []
 additional_fqdns: []
 database:
   type: mariadb
-  version: "10.4"
+  version: "10.11"
 use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
-nodejs_version: "18"
+corepack_enable: false
 web_extra_exposed_ports:
   - name: vite
     container_port: 5173
@@ -256,7 +256,7 @@ export default defineConfig({
 Technical explanation:
 
 - We need to define an entry file to let vite know where to start, this is done in `rollupOptions`.
-- Also we need to tell Vite to respond to all network request, not only the ones addressed internally to http://localhost:5173. This is done via `host: '0.0.0.0'` and is important for making it work with DDEV / Docker.
+- Also, we need to tell Vite to respond to all network request, not only the ones addressed internally to http://localhost:5173. This is done via `host: '0.0.0.0'` and is important for making it work with DDEV / Docker.
 - The strict port setting is also necessary, because we only exposed port 5173. Without `strictPort: true`, Vite will use other ports like 5174 or 5175 if port 5173 is already occupied.
 - Another important part is to let Vite know from where to load Vite-controlled assets like images referenced in CSS. This is done via `server.origin`. <br> _(DDEV automatically provides environment variables via the regular `process.env` variable. The variable `process.env.DDEV_PRIMARY_URL` will have the value `https://test-vite.ddev.site` in our demo project. We use it to set the correct `server.origin` dynamically.)_ DDEV can be configured to use other ports than 80/443, or will auto-select ports if these are occupied already. Therefore we need to support both possible outputs of `process.env.DDEV_PRIMARY_URL`: "https://test-vite.ddev.site" or something like "https://test-vite.ddev.site:1234". If there is a custom port, we need to strip it before we add the Vite port.
 - Last but not least, we need to configure secure CORS headers. In earlier versions of Vite, this was set to `cors: true` by default and allowed all origins to fetch scripts from the devserver. After [security advisory GHSA-vg6x-rcgg-rjx6](https://github.com/vitejs/vite/security/advisories/GHSA-vg6x-rcgg-rjx6), the default setting was changed and we need to add the allowance of DDEV local domains explicitly. The regular expression supports domains like `https://test-vite.ddev.site` (or something like `https://test-vite.ddev.site:1234` when you use another HTTPS port). See [server.cors](https://vite.dev/config/server-options#server-cors) in the Vite docs for more information.
@@ -347,13 +347,13 @@ Download the [DDEV Logo](https://github.com/ddev/ddev/blob/main/docs/content/dev
 
 Add this HTML container to your `index.php`:
 
-```
+```html
 <div id="image-test"></div>
 ```
 
 Add this to your `src/style.css`:
 
-```
+```css
 #image-test {
     width: 300px;
     height: 150px;
@@ -377,17 +377,17 @@ You can find the source code for this simple demo here: [mandrasch/ddev-vite-sim
 
 This demo only covered the case of using the local development server for hot module reloading.
 
-For production you would first run `ddev npm run build` to generate the optimized files. These will be generated in the `dist/` folder with a hash:
+For production, you would first run `ddev npm run build` to generate the optimized files. These will be generated in the `dist/` folder with a hash:
 
 - /dist/assets/main-8811a981.js
 - /dist/assets/main-d6825f81.css
 - ...
 
-To include these in PHP, you will need to know the hash values. You could set `build.manifest` to true in Vites config. With this option enabled a `/dist/manifest.json` file is generated on each build, which has reference to all JS and CSS files:
+To include these in PHP, you will need to know the hash values. You could set `build.manifest` to true in Vite's config. With this option enabled a `/dist/manifest.json` file is generated on each build, which has reference to all JS and CSS files:
 
 Example:
 
-```
+```json
 {
   "src/images/ddev.png": {
     "file": "assets/ddev-f877fcaa.png",
@@ -429,7 +429,7 @@ But how do we use these integrations with DDEV?
 
 The main goal for us is the same as above - we need to use Vite from https://your-project.ddev.site:5173/, not from http://localhost:5173. So adding the `server` settings to `vite.config.js` is necessary in all cases.
 
-```
+```yaml
 # .ddev/config.yaml
 web_extra_exposed_ports:
   - name: node-vite
@@ -458,7 +458,7 @@ André Felipe has published https://github.com/andrefelipe/vite-php-setup as gen
 
 For DDEV you need to change the `const VITE_HOST` to `"".$_SERVER['DDEV_PRIMARY_URL'].":5173"` in `public/helpers.php`.
 
-Also you might need to change the `isDev()` function.
+Also, you might need to change the `isDev()` function.
 
 #### CraftCMS
 
@@ -502,7 +502,7 @@ Since June 2022 [Vite is the default bundler for Laravel](https://laravel-news.c
 
 First, expose the port via `.ddev/config.yaml` and run `ddev restart`:
 
-```
+```yaml
 # .ddev/config.yaml
 web_extra_exposed_ports:
   - name: node-vite
@@ -569,7 +569,7 @@ The usage of "vite-asset-collector" with DDEV is documented [here](https://docs.
 
 #### WordPress
 
-For WordPress I found these libraries:
+For WordPress, I found these libraries:
 
 - https://github.com/idleberg/php-wordpress-vite-assets
 - https://github.com/kucrut/vite-for-wp
