@@ -74,7 +74,7 @@ Now on `ddev restart` you'll be running an AMD64 web container and `ddev npm ins
 
 Test it with `ddev exec arch`, you'll now get `x86_64`.
 
-(If you have trouble, so a `ddev debug rebuild` to make it forget the old version of the Dockerfile build.)
+(If you run into issues, try `ddev debug rebuild` to clear the old Dockerfile build cache.)
 
 ## Run Your Entire Docker System as AMD64
 
