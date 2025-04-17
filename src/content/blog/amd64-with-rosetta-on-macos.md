@@ -1,7 +1,8 @@
 ---
 title: "Solving Intel-only AMD64/X64 problems on macOS with Apple Silicon"
 pubDate: 2025-04-16
-#modifiedDate: 2025-02-06
+modifiedDate: 2025-04-17
+modifiedComment: Added a good example for an npm package that fails on arm64.
 summary: Some software packages and docker images are still only available in Intel versions, but emulating AMD64 is working pretty well these days on macOS with Rosetta 2.
 author: Randy Fay
 featureImage:
@@ -48,9 +49,20 @@ platform: linux/amd64
 
 ## Adding AMD64-only Software to the DDEV Web Container
 
-Sometimes the problem is _adding_ software that is Intel-specific to the DDEV web container. For example, the classic npm packages `node-sass` and `puppeteer` had this problem for years. (Now both seem to build somewhat successfully on ARM64 and they also have clear "no-longer-maintained" notices sending you to other packages.)
+Sometimes the problem is _adding_ software that is Intel-specific to the DDEV web container. For example, the classic npm packages `node-sass` and `puppeteer` had this problem for years, and the `gifsicle` npm package still does.
 
-However, as I recently experience with Oracle client-side [ddev-oci8](https://github.com/takielias/ddev-oci8) DDEV add-on, you can make the DDEV web container run as `linux/amd64` in the same exact way, and then if you need to npm-install some odd package that is Intel-only, you can do it. Add a `.ddev/docker-compose.amd64.yaml` like this:
+On an Apple Silicon machine you might get an ugly error like this when doing `ddev npm install gifsicle`:
+
+```
+npm error OrbStack ERROR: Dynamic loader not found: /lib64/ld-linux-x86-64.so.2
+npm error
+npm error This usually means that you're running an x86 program on an arm64 OS without multi-arch libraries.
+npm error To fix this, you can:
+npm error   1. Use an Intel (amd64) container to run this program; or
+npm error   2. Install multi-arch libraries in this container.
+```
+
+In this situation, if you have Rosetta enabled and a Docker provider configured to support it, you can add a `.ddev/docker-compose.amd64.yaml` like this:
 
 ```yaml
 services:
@@ -59,9 +71,15 @@ services:
     platform: linux/amd64
 ```
 
+Now on `ddev restart` you'll be running an AMD64 web container and `ddev npm install gifsicle` will work just fine. And your colleagues who are on Intel processors will have no trouble with this configuration.
+
+Test it with `ddev exec arch`, you'll now get `x86_64`.
+
+(If you run into issues, try `ddev debug rebuild` to clear the old Dockerfile build cache.)
+
 ## Run Your Entire Docker System as AMD64
 
-As well as those techniques work, it seems unlikely that you'd want to run everything as AMD64, but [DDEV on Intel... on Apple Silicon](amd64-on-apple-silicon-ddev.md) tells you how!
+Since those techniques work so well, it seems unlikely that you'd want to run everything as AMD64, but [DDEV on Intel... on Apple Silicon](amd64-on-apple-silicon-ddev.md) tells you how if you want to!
 
 ## Wrapping Up: Try to Use Native Software When You Can
 
