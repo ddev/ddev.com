@@ -26,6 +26,7 @@ Here are some high-level practices to follow:
 - Add the `ddev-get` [topic](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics) to your GitHub repository.
 - Write a clear [description](https://github.com/orgs/community/discussions/60507) and include relevant keywords to improve discoverability in the [DDEV Add-on Registry](https://addons.ddev.com)
 - Regularly update your add-on to ensure compatibility and take advantage of new features
+- Take inspiration from the [official add-ons](https://addons.ddev.com/addons/ddev/) — see how they're structured and follow similar practices
 
 ## What's New in the DDEV Ecosystem
 
