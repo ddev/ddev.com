@@ -55,7 +55,7 @@ These improve the quality of contributions and bug reports.
 Your add-on should encourage users to keep DDEV updated. The current recommendation is to add this stanza to `install.yaml`:
 
 ```yaml
-ddev_version_constraint: '>= v1.24.3'
+ddev_version_constraint: ">= v1.24.3"
 ```
 
 This ensures compatibility and resolves known issues, such as those related to the [Mutagen Problem Report](open-source-for-the-win.md#mutagen-problemreport).
@@ -72,15 +72,15 @@ DDEV v1.24.4 introduced support for [optional docker-compose profiles](https://g
 
 ## Repository Configuration Best Practices
 
-_(Coming soon — this section will cover recommended GitHub settings for merging pull requests and default branch restrictions.)_
+_(Coming soon: this section will cover recommended GitHub settings for merging pull requests and default branch restrictions.)_
 
 ## Add-on Update Examples
 
-_(TODO: Add PR examples demonstrating how to update your add-on.)_
+_(Coming soon: Add PR examples demonstrating how to update your add-on.)_
 
 ## Add-on Scripts for Maintenance
 
-_(TODO: Develop an add-on maintenance script in ddev-addon-template.)_
+_(Coming soon: Develop an add-on maintenance script in ddev-addon-template.)_
 
 ## Conclusion
 
