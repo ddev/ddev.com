@@ -109,7 +109,31 @@ Example:
 
 ## Repository Configuration Best Practices
 
-_(Coming soon: this section will cover recommended GitHub settings for merging pull requests and default branch restrictions.)_
+To keep your add-on repository tidy, safe, and aligned with community standards, consider adjusting the following GitHub settings:
+
+### General Settings
+
+Go to **Settings → General** in your repository:
+
+- Uncheck features you don’t use, such as **Wikis**, **Discussions**, and **Projects**
+- Enable **Allow squash merging** with **Pull request title**
+- Disable **Allow merge commits** and **Allow rebase merging**
+- Enable **Always suggest updating pull request branches**
+- Enable **Automatically delete head branches**
+
+### Branch Protection Rules
+
+Go to **Settings → Rules → Rulesets**:
+
+1. Click **New ruleset → New branch ruleset**
+2. Set **Ruleset name** to `main`
+3. Under **Enforcement status**, select **Active**
+4. Under **Targets**, click **Add target** → choose **Include default branch**
+5. Under **Rules**, enable:
+   - **Restrict deletions**
+   - **Require a pull request before merging** (set **Allowed merge methods** to only **Squash**)
+   - **Block force pushes**
+6. Click **Create** to apply the ruleset
 
 ## Add-on Scripts for Maintenance
 
