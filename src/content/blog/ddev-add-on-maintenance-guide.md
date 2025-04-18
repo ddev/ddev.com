@@ -40,9 +40,13 @@ Huge thanks to [@GuySartorelli](https://github.com/GuySartorelli) for implementi
 
 ### Better Testing with Bats Libraries
 
-While all add-ons use the [Bats](https://bats-core.readthedocs.io/en/stable/) framework for testing, many are still missing [Bats libraries](https://github.com/ddev/ddev-addon-template/blob/main/tests/test.bats) that simplify assertions and test writing.
+While all add-ons use the [Bats](https://bats-core.readthedocs.io/en/stable/) framework for testing, many are still missing Bats libraries that simplify assertions and test writing.
 
 Consider adopting these libraries to enhance test clarity and maintainability.
+
+Example:
+
+- https://github.com/ddev/ddev-addon-template/blob/main/tests/test.bats
 
 ### Issue and PR Templates
 
@@ -69,11 +73,20 @@ The old `maintained` badge required yearly updates, which became a maintenance b
 
 To improve visibility and engagement on the [DDEV Add-on Registry](https://addons.ddev.com), add the registry badge to your [README.md](https://github.com/ddev/ddev-addon-template).
 
+Example:
+
+- https://github.com/ddev/ddev-addon-template/blob/main/README.md
+
 ### Advanced Customization with Flags
 
 Starting with DDEV v1.23.5, you can now use [`ddev dotenv set`](https://ddev.readthedocs.io/en/stable/users/usage/commands/#dotenv-set) to manage environment variables more cleanly. This allows your add-on to read custom environment variables defined in `.ddev/.env.*` files, and use them inside your `docker-compose.*.yaml` configuration.
 
 This feature is especially useful for advanced setups where flexibility and dynamic configuration are needed.
+
+Example:
+
+- https://github.com/ddev/ddev-adminer#advanced-customization
+- https://github.com/ddev/ddev-adminer/blob/main/docker-compose.adminer.yaml
 
 ### MutagenSync Annotation for Commands
 
@@ -81,17 +94,22 @@ With DDEV v1.24.4, custom commands can now use the [`MutagenSync`](https://ddev.
 
 You should use this annotation if your `host` or `web` commands modify, add, or remove files in the project directory. It ensures that file sync is handled correctly when Mutagen is enabled, preventing unexpected behavior or sync delays.
 
+Example:
+
+- https://github.com/backdrop-ops/ddev-backdrop-bee/blob/main/commands/web/bee
+
 ### Support for Optional Compose Profiles
 
 The same DDEV v1.24.4 release introduced support for [optional docker-compose profiles](https://ddev.readthedocs.io/en/stable/users/extend/custom-compose-files/#optional-services), which can be used by add-ons to offer more flexible configuration.
 
+Example:
+
+- https://github.com/ddev/ddev-mongo/blob/main/docker-compose.mongo.yaml
+- https://github.com/ddev/ddev-mongo/blob/main/commands/host/mongo-express
+
 ## Repository Configuration Best Practices
 
 _(Coming soon: this section will cover recommended GitHub settings for merging pull requests and default branch restrictions.)_
-
-## Add-on Update Examples
-
-_(Coming soon: Add PR examples demonstrating how to update your add-on.)_
 
 ## Add-on Scripts for Maintenance
 
