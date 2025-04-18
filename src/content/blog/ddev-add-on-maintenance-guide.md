@@ -19,14 +19,14 @@ Maintaining a DDEV add-on is more than a one-time task. As DDEV evolves, so shou
 
 Here are some high-level practices to follow:
 
+- Take inspiration from the [official add-ons](https://addons.ddev.com/), see how they're structured and follow similar practices
 - Keep an eye on updates in [ddev-addon-template](https://github.com/ddev/ddev-addon-template)
 - Track changes in [DDEV releases](https://github.com/ddev/ddev/releases)
 - Configure your add-on [repository settings](#repository-configuration-bestpractices)
-- Remember to publish a new release after any update (unless it's just a `README.md` change)
 - Add the `ddev-get` [topic](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics) to your GitHub repository.
-- Write a clear [description](https://github.com/orgs/community/discussions/60507) and include relevant keywords to improve discoverability in the [DDEV Add-on Registry](https://addons.ddev.com)
-- Regularly update your add-on to ensure compatibility and take advantage of new features
-- Take inspiration from the [official add-ons](https://addons.ddev.com/addons/ddev/) — see how they're structured and follow similar practices
+- Write a clear [description](https://github.com/orgs/community/discussions/60507) and include relevant keywords to improve discoverability
+- Ensure your add-on cleans up after itself: both `ddev add-on get` and `ddev add-on remove` should be idempotent. All files added via `project_files` and `global_files` must include a `#ddev-generated` stanza to support proper removal.
+- Remember to publish a new release after any update (unless it's just a `README.md` change)
 
 ## What's New in the DDEV Ecosystem
 
@@ -69,7 +69,7 @@ This ensures compatibility and resolves known issues, such as those related to t
 
 ### Add-on Badges
 
-The old `maintained` badge required yearly updates, which became a maintenance burden—especially for contributors with many add-ons. It's now replaced by a `last commit` badge.
+The old `maintained` badge required yearly updates, which became a maintenance burden, especially for contributors with many add-ons. It's now replaced by a `last commit` badge.
 
 To improve visibility and engagement on the [DDEV Add-on Registry](https://addons.ddev.com), add the registry badge to your [README.md](https://github.com/ddev/ddev-addon-template).
 
