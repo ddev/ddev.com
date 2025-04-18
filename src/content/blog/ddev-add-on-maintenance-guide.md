@@ -21,9 +21,11 @@ Here are some high-level practices to follow:
 
 - Keep an eye on updates in [ddev-addon-template](https://github.com/ddev/ddev-addon-template)
 - Track changes in [DDEV releases](https://github.com/ddev/ddev/releases)
-- Configure your add-on [repository settings](#repository-configuration-best-practices)
+- Configure your add-on [repository settings](#repository-configuration-bestpractices)
 - Remember to publish a new release after any update (unless it's just a `README.md` change)
-- Regularly update your add-on for compatibility and improvements
+- Add the `ddev-get` [topic](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics) to your GitHub repository.
+- Write a clear [description](https://github.com/orgs/community/discussions/60507) and include relevant keywords to improve discoverability in the [DDEV Add-on Registry](https://addons.ddev.com)
+- Regularly update your add-on to ensure compatibility and take advantage of new features
 
 ## What's New in the DDEV Ecosystem
 
@@ -37,7 +39,7 @@ Huge thanks to [@GuySartorelli](https://github.com/GuySartorelli) for implementi
 
 ### Better Testing with Bats Libraries
 
-While all add-ons use the [Bats](https://bats-core.readthedocs.io/en/stable/) framework for testing, many are still missing [Bats libraries](https://github.com/ddev/ddev-addon-template/pull/70) that simplify assertions and test writing.
+While all add-ons use the [Bats](https://bats-core.readthedocs.io/en/stable/) framework for testing, many are still missing [Bats libraries](https://github.com/ddev/ddev-addon-template/blob/main/tests/test.bats) that simplify assertions and test writing.
 
 Consider adopting these libraries to enhance test clarity and maintainability.
 
