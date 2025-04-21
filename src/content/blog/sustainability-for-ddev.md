@@ -17,15 +17,15 @@ We love this amazing open-source world that we're a part of. It's astonishing wh
 
 ## What Happens When a Community Loses its Maintainer?
 
-What happens when a great project loses a key maintainer? Recently the maintainer of the Vim editor, [Died](https://thenewstack.io/bram-moolenaar-author-of-the-open-source-vim-code-editor-has-died/). We will all die, and most of us will deal with other changes that cause us to change our focus without death. The [Vim community did step up successfully](https://thenewstack.io/vim-after-bram-a-core-maintainer-on-how-theyve-kept-it-going/), but that's not the only outcome possible for so many small projects.
+What happens when a great project loses a key maintainer? A couple of years ago Bram Moolenaar, the maintainer of the Vim editor, [passed away unexpectedly](https://thenewstack.io/bram-moolenaar-author-of-the-open-source-vim-code-editor-has-died/). Every project faces unexpected transitions, whether a maintainer steps back, changes focus, or, as happened with Bram, passes away. The [Vim community did step up successfully](https://thenewstack.io/vim-after-bram-a-core-maintainer-on-how-theyve-kept-it-going/), but that's not the only outcome possible for so many small projects.
 
 What can we learn from Vim's experience, and how is DDEV positioned in comparison?
 
 One thing that the Vim community discovered was that Bram's work was truly a full-time job, even with their incredible and active community.
 
-Many people may think that DDEV ias also a tiny project that could carry on without its maintainers, but that might not be true. Right now support, maintenance, and improvements for DDEV are completely using the time of two full-time maintainers. That's why you get the level of support and responsiveness you do. Both maintainers are currently paid, but perhaps not at a salary level that you would accept.
+Many people may think that DDEV is just a tiny project that could carry on without its maintainers, but that might not be true. Right now support, maintenance, and improvements for DDEV use the full-time and consistent effort of two full-time maintainers. That's why you get the level of support and responsiveness you do. Both maintainers are currently paid, but perhaps not at a salary level that you would accept.
 
-## The Good
+## The Good Stuff
 
 - **Distributed controls**: DDEV has two main leaders, Randy Fay and Stas Zhuk, who both have full control of the GitHub `ddev` organization, and a couple of other people also have full administrative privileges. This is good; we're not dependent on one person. Both of us are fully trained and capable on all of the technologies and infrastructures used in DDEV's testing and release environments. (We would like to have more full-trained maintainers, unpaid or paid. If you love DDEV, come and join us and we'll train you.)
 - **Financial Organization**: DDEV has its own fiscal organization, the DDEV Foundation, which is a US 501(c)(3) tax-exempt entity. The organization has its own bank account, and Randy and long-term collaborator [Mike Anello](https://www.drupaleasy.com/users/ultimike) are signers on the account, so it's not dependent on a single person.
@@ -35,7 +35,7 @@ Many people may think that DDEV ias also a tiny project that could carry on with
 
 Vim had serious challenges in all these areas, as there was only one "owner" of the GitHub project, and financial setups were very much ad-hoc. Bram was truly the "owner" of the whole project.
 
-## The Bad
+## Areas to Improve
 
 - **Governance**: From the beginning of DDEV, Randy has been the leader, acting as what's commonly called a "BDFL", or "Benevolent Dictator for Life". While that's a common model in open source, it's not a great model for overall sustainability. The BDFL model means that leadership can be concentrated in one person, preventing the development of community decisionmaking capabilities. One of our key goals for 2025 is to at least _start_ moving past that model.
 
@@ -44,7 +44,7 @@ Vim had serious challenges in all these areas, as there was only one "owner" of 
 - **Financial**: More than one person should know how to do (and have power to do) all the financial things, like paying contributors and other bills.
 - **Governance**: Figure out how to move from BDFL to something that lasts beyond one person.
 
-## Your Ideas
+## Share Your Thoughts!
 
 Do you have additional ideas, suggestions, or insight into how DDEV's future could be more sustainable? We would sure love to hear from you! Or get active and join our [DDEV Advisory Group](https://github.com/orgs/ddev/discussions/categories/ddev-advisory-group).
 
