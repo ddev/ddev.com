@@ -23,7 +23,7 @@ Here are some high-level practices to follow:
 - Keep an eye on updates in [ddev-addon-template](https://github.com/ddev/ddev-addon-template)
 - Track changes in [DDEV releases](https://github.com/ddev/ddev/releases)
 - Configure your add-on [repository settings](#repository-configuration-bestpractices)
-- Add the `ddev-get` [topic](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics) to your GitHub repository
+- Add the `ddev-get` [topic](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics) to your GitHub repository if it should be discoverable by the wider community. (If your add-on is currently just an experiment or a fork, wait until it matures to add the topic.)
 - Write a clear [description](https://github.com/orgs/community/discussions/60507) and include relevant keywords to improve discoverability
 - Use `#!/usr/bin/env bash` instead of `#!/bin/bash` at the top of your command scripts, it's more portable and works better across different environments.
 - Ensure your add-on cleans up after itself: both `ddev add-on get` and `ddev add-on remove` should be idempotent. All files added via `project_files` and `global_files` must include a `#ddev-generated` stanza to support proper removal
@@ -93,7 +93,7 @@ Example:
 
 With DDEV v1.24.4, custom commands can now use the [`MutagenSync`](https://ddev.readthedocs.io/en/stable/users/extend/custom-commands/#mutagensync-annotation) annotation.
 
-You should use this annotation if your `host` or `web` commands modify, add, or remove files in the project directory. It ensures that file sync is handled correctly when Mutagen is enabled, preventing unexpected behavior or sync delays.
+You should use this annotation if your `host` or `web` commands modify, add, or remove files in the project directory. It ensures that file sync is handled correctly when Mutagen is enabled, preventing unexpected behavior or sync delays. (It does no harm and causes no performance issues if mutagen is not in use.)
 
 Example:
 
