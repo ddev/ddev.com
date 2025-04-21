@@ -93,7 +93,7 @@ Example:
 
 With DDEV v1.24.4, custom commands can now use the [`MutagenSync`](https://ddev.readthedocs.io/en/stable/users/extend/custom-commands/#mutagensync-annotation) annotation.
 
-You should use this annotation if your `host` or `web` commands modify, add, or remove files in the project directory. It ensures that file sync is handled correctly when Mutagen is enabled, preventing unexpected behavior or sync delays. (It does no harm and causes no performance issues if mutagen is not in use.)
+You should use this annotation if your `host` or `web` commands modify, add, or remove files in the project directory. It ensures that file sync is handled correctly when Mutagen is enabled, preventing unexpected behavior or sync delays. (It does no harm and causes no performance issues if Mutagen is not in use.)
 
 Example:
 
