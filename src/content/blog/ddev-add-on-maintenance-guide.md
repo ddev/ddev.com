@@ -89,6 +89,17 @@ Example:
 - https://github.com/ddev/ddev-adminer#advanced-customization
 - https://github.com/ddev/ddev-adminer/blob/main/docker-compose.adminer.yaml
 
+### Making Small Changes to Docker Images
+
+If your add-on needs a customized Docker image, the typical approach is to create a separate `Dockerfile` and configure your add-on to use it. However, for minor tweaks, you can take advantage of the [`dockerfile_inline`](https://docs.docker.com/reference/compose-file/build/#dockerfile_inline) option in your `docker-compose.*.yaml` file.
+
+This approach lets you define a small `Dockerfile` directly in the YAML, avoiding the overhead of maintaining a separate file.
+
+Examples:
+
+- https://github.com/ddev/ddev-solr/blob/main/docker-compose.solr.yaml
+- https://github.com/ddev/ddev-opensearch/blob/main/docker-compose.opensearch.yaml
+
 ### MutagenSync Annotation for Commands
 
 With DDEV v1.24.4, custom commands can now use the [`MutagenSync`](https://ddev.readthedocs.io/en/stable/users/extend/custom-commands/#mutagensync-annotation) annotation.
