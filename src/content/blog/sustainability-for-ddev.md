@@ -43,7 +43,7 @@ We work hard to identify areas that are dependent on a single maintainer, and to
 - **Governance**: From the beginning of DDEV, Randy has been the leader, acting as what's commonly called a "BDFL", or "Benevolent Dictator for Life". While that's a common model in open source, it's not a great model for overall sustainability. The BDFL model means that leadership can be concentrated in one person, preventing the development of community decisionmaking capabilities. One of our key goals for 2025 is to at least _start_ moving past that model.
 - **Promotion/Marketing**: Randy seems to keep these roles year-in and year-out despite attempts to spread out the work
 - **Sending Thank-you notes**
-- **Test Runner Maintenance**: Although Stas knows everything and has full access to our extensive test runner infrastructure, many of the runners are in Randy's house, and when something has to be done physically to them, it becomes Randy's problem. 
+- **Test Runner Maintenance**: Although Stas knows everything and has full access to our extensive test runner infrastructure, many of the runners are in Randy's house, and when something has to be done physically to them, it becomes Randy's problem.
 
 ## What Comes Next?
 
