@@ -41,14 +41,16 @@ Vim had serious challenges in all these areas, as there was only one "owner" of 
 We work hard to identify areas that are dependent on a single maintainer, and to resolve those. But it's a perpetual process!
 
 - **Governance**: From the beginning of DDEV, Randy has been the leader, acting as what's commonly called a "BDFL", or "Benevolent Dictator for Life". While that's a common model in open source, it's not a great model for overall sustainability. The BDFL model means that leadership can be concentrated in one person, preventing the development of community decisionmaking capabilities. One of our key goals for 2025 is to at least _start_ moving past that model.
+- **Regulatory**: Randy has dealt with Colorado and US regulatory requirements, including getting the 501(c)(3) tax-exempt designation, changing the name of the organization to "DDEV Foundation", filing annual reports.
+- **Finance and Reporting**: Randy does the bimonthly financial reporting, tracks invoices, corresponds with donors, sends thank-you notes to donors, pays maintainers.
 - **Promotion/Marketing**: Randy seems to keep these roles year-in and year-out despite attempts to spread out the work
-- **Sending Thank-you notes**
 - **Test Runner Maintenance**: Although Stas knows everything and has full access to our extensive test runner infrastructure, many of the runners are in Randy's house, and when something has to be done physically to them, it becomes Randy's problem.
 
 ## What Comes Next?
 
 - **Financial**: More than one person should know how to do (and have power to do) all the financial things, like paying contributors and other bills.
 - **Governance**: Figure out how to move from BDFL to something that lasts beyond one person.
+- **Write up regulatory and financial tasks**: We have a good set of documents and a private repository that explain maintainer tasks. This all needs to be done for governance, regulatory, financial, and marketing tasks.
 - **You**: DDEV is a collaborative open-source project. Are you interested in a role?
 
 ## Share Your Thoughts!
