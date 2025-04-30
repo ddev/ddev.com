@@ -147,9 +147,9 @@ Go to **Settings → Rules → Rulesets**:
    - **Block force pushes**
 6. Click **Create** to apply the ruleset
 
-## Add-on Scripts for Maintenance
+## Add-on Script for Maintenance
 
-_(Coming soon: Develop an add-on maintenance script in ddev-addon-template.)_
+I'm currently working on a script to streamline the update process. It's a work in progress and [available here](https://github.com/ddev/ddev-addon-template/pull/76). I'd appreciate any feedback!
 
 ## Conclusion
 
