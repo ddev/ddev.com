@@ -29,6 +29,8 @@ Here are some high-level practices to follow:
 - Ensure your add-on cleans up after itself: both `ddev add-on get` and `ddev add-on remove` should be idempotent. All files added via `project_files` and `global_files` must include a `#ddev-generated` stanza to support proper removal
 - Remember to publish a new release after any update (unless it's just a `README.md` change)
 
+I'm currently working on a script to streamline the update process. It's a work in progress and [available here](https://github.com/ddev/ddev-addon-template/pull/76). I'd appreciate any feedback!
+
 ## What's New in the DDEV Ecosystem
 
 DDEV development is moving fast, and new features are introduced regularly. Here are some recent updates you should be aware of:
@@ -146,10 +148,6 @@ Go to **Settings → Rules → Rulesets**:
    - **Require a pull request before merging** (set **Allowed merge methods** to only **Squash**)
    - **Block force pushes**
 6. Click **Create** to apply the ruleset
-
-## Add-on Script for Maintenance
-
-I'm currently working on a script to streamline the update process. It's a work in progress and [available here](https://github.com/ddev/ddev-addon-template/pull/76). I'd appreciate any feedback!
 
 ## Conclusion
 
