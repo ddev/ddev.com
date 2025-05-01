@@ -1,7 +1,7 @@
 ---
 title: "Contributor Training: Advanced Add-On Techniques"
 pubDate: 2024-07-23
-modifiedDate: 2025-04-18
+modifiedDate: 2025-05-01
 modifiedComment: "Want to learn more? Check out the [DDEV Add-on Maintenance Guide](/blog/ddev-add-on-maintenance-guide)."
 summary: Advanced Add-On Techniques for Contributors
 author: Randy Fay

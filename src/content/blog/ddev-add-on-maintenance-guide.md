@@ -1,7 +1,7 @@
 ---
 title: "DDEV Add-on Maintenance Guide"
-pubDate: 2025-04-28
-#modifiedDate: 2025-04-28
+pubDate: 2025-05-01
+#modifiedDate: 2025-05-01
 summary: Maintaining an add-on involves regularly updating it to stay compatible with new features in both the upstream ddev-addon-template and DDEV itself.
 author: Stas Zhuk
 featureImage:
