@@ -1,7 +1,8 @@
 ---
 title: "Contributor Training: Advanced Add-On Techniques"
 pubDate: 2024-07-23
-modifiedDate: 2025-04-16
+modifiedDate: 2025-05-01
+modifiedComment: "Want to learn more? Check out the [DDEV Add-on Maintenance Guide](/blog/ddev-add-on-maintenance-guide)."
 summary: Advanced Add-On Techniques for Contributors
 author: Randy Fay
 featureImage:
@@ -172,6 +173,7 @@ And of course you can add a `config.<add-on-name>_extra.yaml` to override what t
 ## Resources
 
 - [DDEV Add-on Registry](https://addons.ddev.com)
+- [DDEV Add-on Maintenance Guide](ddev-add-on-maintenance-guide.md)
 - [DDEV docs](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/) on add-ons
 - [Previous Add-on Training](https://www.youtube.com/watch?v=TmXqQe48iqE)
 - `docker-compose.*.yaml` [docs](https://ddev.readthedocs.io/en/stable/users/extend/custom-compose-files/)
