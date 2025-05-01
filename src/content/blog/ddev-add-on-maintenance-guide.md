@@ -13,9 +13,9 @@ categories:
 
 ## Introduction
 
-Maintaining a DDEV add-on is more than a [one-time task](advanced-add-on-contributor-training.md). As DDEV evolves, so should your add-ons. This guide will help you stay in sync with recent changes and keep your add-ons up-to-date, reliable, and aligned with best practices.
+Maintaining a DDEV add-on is more than a [one-time task](advanced-add-on-contributor-training.md). As DDEV evolves, so should your add-ons. This guide will help you stay in sync with recent changes and keep your add-ons up-to-date, reliable, and aligned with current standards.
 
-As part of preparing this guide, I also updated all official DDEV add-ons to align with the latest standards and best practices.
+As part of preparing this guide, I also updated all official DDEV add-ons to reflect the latest recommendations and improvements.
 
 ## Recommendations for Add-on Maintainers
 
