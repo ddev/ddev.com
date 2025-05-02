@@ -11,8 +11,8 @@ class DdevSponsorsBanner extends HTMLElement {
     )
       .then((response) => response.json())
       .then((json) => {
-        const income = json.total_monthly_average_income;
-        const percentage = Math.min((income / goal) * 100, 100).toFixed(0);
+        const income = json.total_monthly_average_income
+        const percentage = Math.min((income / goal) * 100, 100).toFixed(0)
         const formattedIncome = new Intl.NumberFormat("en-US", {
           style: "currency",
           currency: "USD",
