@@ -38,9 +38,11 @@ This month: special-networking guides, add-on maintenance tips, community tool h
 ## Governance & Roadmap
 
 - **Apache-style PMC Exploration**  
-  Exploring an Apache-style PMC for DDEV governance → [Details↗](https://www.apache.org/foundation/governance/pmcs)
-- **Q3 TYPO3 Budget Ideas**  
-  Submit your ideas → [Call for ideas↗](https://typo3.org/article/call-for-community-budget-ideas-q3-2025)
+  We'll be exploring an Apache-style "Project Management Committee" model for DDEV governance → [Details↗](https://www.apache.org/foundation/governance/pmcs)
+
+## Your Input Requested!
+
+- **Q3 TYPO3 Budget Ideas** - We'd like to propose something useful to all and also attractive to the TYPO3 Community for the [TYPO3 Q3 Call for Community Budget Ideas↗](https://typo3.org/article/call-for-community-budget-ideas-q3-2025). Please let us know your suggestions!
 
 ---
 
