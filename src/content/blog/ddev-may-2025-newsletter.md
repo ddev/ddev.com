@@ -26,8 +26,8 @@ categories:
 - [Learning how to install and set up the new Drupal CMS using DDEV](https://www.linkedin.com/pulse/learning-how-install-set-up-new-drupal-cms-using-ddev-lcvgf/).
 - [TYPO3 Announcement of the DDEV XHGui Feature](https://typo3.org/article/budget-idea-report-integrate-xhgui-into-ddev-core).
 - [Building an Off-Ramp from WordPress with DDEV](https://ddev.com/blog/building-offramp-from-wordpress-with-ddev/): [Jeremy Gonyea](https://ddev.com/blog/author/jeremy-gonyea) shows his experience with a great one-off DDEV project migrating content from WordPress.
-- **Node.js app on a subdomain**: [Exposing a Node.js App Over HTTP / HTTPS on a Subdomain in DDEV](https://ddev.com/blog/ddev-expose-node-app-on-subdomain/) explains how you can configure DDEV to provide a *subdomain* for your extra server in a DDEV project. This approach suggests a great new feature for DDEV.
-  
+- **Node.js app on a subdomain**: [Exposing a Node.js App Over HTTP / HTTPS on a Subdomain in DDEV](https://ddev.com/blog/ddev-expose-node-app-on-subdomain/) explains how you can configure DDEV to provide a _subdomain_ for your extra server in a DDEV project. This approach suggests a great new feature for DDEV.
+
 **TYPO3 Community Budget Idea Suggestions**
 
 The [Q3 call for TYPO3 community budget ideas](https://typo3.org/article/call-for-community-budget-ideas-q3-2025) is out, and we'd like to propose a DDEV feature that would be great for the DDEV community and perhaps TYPO3 folks in particular. The community budget idea initiative underwrote the [XHGui feature](xhgui-feature.md) in Q1, but our proposal for Q2 didn't get enough votes. We'd love to hear from you about features or other improvements you think might make a good proposal for Q3.
@@ -42,7 +42,7 @@ Randy plans to be out bikepacking and mostly out of touch from about May 23 to a
 
 **Thanks for subscribing to the newsletter! We love to have this way to keep in touch.** If you're not getting it yet by email, please sign up at [ddev.com/newsletter](/newsletter).
 
-**Sponsorship Update** According to our [open sponsorship feed](https://github.com/ddev/sponsorship-data/blob/main/data/all-sponsorships.json) our total monthly average income went up from  $7639 to $7659 since March 1, a small $20 bump, but going the right direction. It's 64% of our monthly goal (as now shown on the banner at [ddev.com](/)!) Thank you! If your organization or you aren't on the bandwagon yet, [join us to help make DDEV sustainable](https://github.com/sponsors/ddev). GitHub Sponsors is great, but we also do support contracts, invoicing, PayPal — anything that works for you! Our goal is $12,000/month, so we're more than halfway there.
+**Sponsorship Update** According to our [open sponsorship feed](https://github.com/ddev/sponsorship-data/blob/main/data/all-sponsorships.json) our total monthly average income went up from $7639 to $7659 since March 1, a small $20 bump, but going the right direction. It's 64% of our monthly goal (as now shown on the banner at [ddev.com](/)!) Thank you! If your organization or you aren't on the bandwagon yet, [join us to help make DDEV sustainable](https://github.com/sponsors/ddev). GitHub Sponsors is great, but we also do support contracts, invoicing, PayPal — anything that works for you! Our goal is $12,000/month, so we're more than halfway there.
 
 **THANKS to all of you who are supporting DDEV’s path to sustainability** and who have gotten your organizations to do so.
 
