@@ -575,7 +575,7 @@ For WordPress, I found these libraries:
 
 - A quick and dirty demo theme: [mandrasch/ddev-wp-vite-demo](https://github.com/mandrasch/ddev-wp-vite-demo) based on idleberg/php-wordpress-vite-assets
 - Sample usage for [iamntz/wp-vite-manifest](https://github.com/iamntz/wp-vite-manifest/wiki/How-to-use-inside-your-WP-plugin-theme#usage)
-- [Integrating Vite and DDEV into WordPress](https://www.viget.com/articles/integrating-vite-and-ddev-into-wordpress/)
+- [Integrating Vite and DDEV into WordPress - viget.com](https://www.viget.com/articles/integrating-vite-and-ddev-into-wordpress/)
 
 #### GitHub Codespaces
 
