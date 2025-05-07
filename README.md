@@ -11,6 +11,7 @@ Source code for [ddev.com](https://ddev.com)’s static front end, built with [A
 - [Tailwind Typography](https://tailwindcss.com/docs/typography-plugin) plugin
 - [Heroicons](https://heroicons.com)
 - [Textlint](https://textlint.github.io)
+- [Giscus](https://giscus.app)
 
 ### Project Structure
 
@@ -137,6 +138,8 @@ Choose whichever categories apply, with special attention to the first because i
 - _Videos_ (posts that include or primarily feature video content)
 
 > 💡 **If you’re publishing work from a new author**, add an entry for them in `src/content/authors/`! The `"name"` value needs to match the one you’re using in your post frontmatter.
+
+Blog comments are managed by [giscus integration](https://github.com/ddev/giscus-comments).
 
 ### Pages
 
