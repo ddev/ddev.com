@@ -253,6 +253,31 @@ export async function getReleases() {
   return response ?? []
 }
 
+export async function getSponsorshipData() {
+  if (!githubTokenIsSet) {
+    return []
+  }
+
+  const cacheFilename = "all-sponsorships.json"
+  const cachedData = getCache(cacheFilename)
+
+  if (cachedData) {
+    return cachedData
+  }
+
+  const response = await octokit().request(
+    `GET https://api.github.com/repos/ddev/sponsorship-data/contents/data/all-sponsorships.json`
+  )
+
+  const content = Buffer.from(response.data.content, "base64").toString("utf8")
+
+  const sponsorshipData = JSON.parse(content)
+
+  putCache(cacheFilename, JSON.stringify(sponsorshipData))
+
+  return sponsorshipData ?? []
+}
+
 /**
  * Returns JSON-parsed value from a cached file if it exists.
  * @param filename Name of the file to look for in the cache directory.
