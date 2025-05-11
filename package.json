@@ -9,7 +9,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "textlint": "./node_modules/.bin/textlint 'src/scripts/**'",
+    "textlint": "./node_modules/.bin/textlint 'src/content/**'",
     "textlint:fix": "./node_modules/.bin/textlint 'src/content/**' --fix"
   },
   "dependencies": {
