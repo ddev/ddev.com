@@ -7,7 +7,7 @@ author: Garvin Hicking
 featureImage:
   src: /img/blog/2025/05/museums-victoria-Di7WfLcrJ_I-unsplash.jpg
   alt: Legacy computer museum
-  credit: "Photo by [Museums Victoria](https://unsplash.com/@museumsvictoria?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/photos/gray-mechanical-machine-lot-beside-wall-Di7WfLcrJ_I?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)"
+  credit: "Photo by [Museums Victoria](https://unsplash.com/@museumsvictoria) on [Unsplash](https://unsplash.com/photos/gray-mechanical-machine-lot-beside-wall-Di7WfLcrJ_I)"
 categories:
   - Guides
 ---
@@ -40,7 +40,7 @@ I created the base `~/legacyphp/.ddev/config.yaml` file manually inside my `~/le
 
 Note that I configured PHP and MySQL versions that are supported by DDEV for this first:
 
-```
+```yaml
 name: legacyphp
 type: php
 docroot: htdocs
@@ -55,7 +55,7 @@ database:
 
 Next I created the very small file `~/legacyphp/.ddev/docker-compose.db.yaml` in the same directory next to `config.yaml`:
 
-```
+```yaml
 services:
   db:
     platform: linux/amd64
@@ -75,7 +75,7 @@ Using a different PHP work is just a few lines more work, because we are not rep
 
 This is done via the file `~/legacyphp/.ddev/docker-compose.php.yaml`:
 
-```
+```yaml
 services:
   php:
     container_name: ddev-${DDEV_SITENAME}-php
@@ -109,7 +109,7 @@ Note here that we use `devilbox/php-fpm` with our needed version, and a bind-mou
 
 A special mount of `~/legacyphp/.ddev/php/` is included so that we can control the `php.ini` configuration, if needed. For example you could disable the OPCache+APC in case you're doing some legacy benchmarking that should not be falsified via caching, I created a very small file `~/legacyphp/.ddev/php/php.ini` file with the contents:
 
-```
+```ini
 # This is an example.
 # apc.enabled=Off
 # opcache.enable=Off
@@ -150,7 +150,7 @@ You could create a simple `~/legacyphp/htdocs/index.php` file with `<?php phpinf
 
 Using `ddev mysql` will connect you to the MySQL 5.5. instance:
 
-```
+```bash
 ~/legacyphp> ddev mysql
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 5
