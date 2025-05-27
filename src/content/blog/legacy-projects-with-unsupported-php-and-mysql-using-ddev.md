@@ -71,7 +71,7 @@ Two things are noteworthy:
 
 ## Step 3: Rewire PHP
 
-Using a different PHP work is just a few lines more work, because we are not replacing the whole `web` container oh DDEV, but instead add an additional PHP container which is executed from the web container via port 9000.
+Using a different PHP version is just a few lines more work, because we are not replacing the whole `web` container of DDEV. Instead, we add an additional PHP container which is executed from the web container via port 9000.
 
 This is done via the file `~/legacyphp/.ddev/docker-compose.php.yaml`:
 
