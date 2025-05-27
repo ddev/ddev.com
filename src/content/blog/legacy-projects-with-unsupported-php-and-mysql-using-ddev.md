@@ -117,7 +117,7 @@ A special mount of `~/legacyphp/.ddev/php/` is included so that we can control t
 
 ## Step 4: Utilize the PHP container with an Apache proxy
 
-To execute PHP with our external PHP docker image, I created the following file in `~/legacyphp/.ddev/apache/apache-site.conf`:
+To execute PHP with our external PHP Docker image, I created the following file in `~/legacyphp/.ddev/apache/apache-site.conf`:
 
 ```
 <VirtualHost *:80>
@@ -159,14 +159,14 @@ Server version: 5.5.62-log MySQL Community Server (GPL)
 
 ## Caveats
 
-You can enter the PHP docker container with a command like `docker exec -it ddev-legacyphp-php bash` if you need/want to execute PHP commands on shell-level, because the regular `web` container will run with the more recent PHP 8.3 version.
+You can enter the PHP Docker container with a command like `docker exec -it ddev-legacyphp-php bash` if you need/want to execute PHP commands on shell-level, because the regular `web` container will run with the more recent PHP 8.3 version.
 So if you need to perform composer CLI calls, be sure to do this within the matching PHP container.
 
 Another thing to pay attention to is that if you for example want to utilize mailpit with TYPO3's mail configuration, you can not use `localhost:1025` as an SMTP server. `localhost` in PHP's case will be that devilbox PHP container, and not the DDEV web container. Instead you need to setup `web:1025` as the hostname.
 
 The devilbox PHP config has pretty much all available PHP extensions set up to use, but if you need specific imagemagick or other tools, you will have to either ensure these are executed on the `web` container, or make them available with customization of a different base Docker container that you can build yourself.
 
-If you want to use xdebug with this setup, you'll need to do more internal port forwarding in the docker compose setup, which is beyond the scope of this article.
+If you want to use Xdebug with this setup, you'll need to do more internal port forwarding in the docker-compose setup, which is beyond the scope of this article.
 
 ## Closing words
 
