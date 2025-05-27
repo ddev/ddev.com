@@ -47,8 +47,8 @@ docroot: htdocs
 php_version: "8.3"
 webserver_type: apache-fpm
 database:
-    type: mysql
-    version: "8.0"
+  type: mysql
+  version: "8.0"
 ```
 
 ## Step 2: Rewire DB
@@ -100,7 +100,7 @@ services:
       - IS_DDEV_PROJECT=true
   web:
     links:
-    - php:php
+      - php:php
     healthcheck:
       test: ["CMD", "true"]
 ```
