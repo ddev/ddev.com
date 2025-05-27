@@ -119,7 +119,7 @@ A special mount of `~/legacyphp/.ddev/php/` is included so that we can control t
 
 To execute PHP with our external PHP Docker image, I created the following file in `~/legacyphp/.ddev/apache/apache-site.conf`:
 
-```
+```apache
 <VirtualHost *:80>
     RewriteEngine On
     RewriteCond %{HTTP:X-Forwarded-Proto} =https
