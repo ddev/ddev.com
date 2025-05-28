@@ -14,7 +14,7 @@ categories:
 
 _This guest post is by DDEV community member and [TYPO3](https://typo3.org) contributor [Garvin Hicking](/blog/author/garvin-hicking/)._
 
-In my daily work I am developing [TYPO3](https://typo3.org)-based projects and also contribute to the TYPO3 CMS OpenSource project itself.
+In my daily work, I develop [TYPO3](https://typo3.org)-based projects and also contribute to the TYPO3 CMS OpenSource project itself.
 
 Usually this means working with actively supported and up-to-date PHP versions as well as database systems like MySQL/PostgreSQL/MariaDB.
 
@@ -25,7 +25,7 @@ So naturally I wanted to be able to use DDEV for the legacy project to get it wo
 I quickly faced three major issues:
 
 - No PHP 5.3 out-of-the-box support from DDEV; it starts with 5.6 as of the time of this writing
-- No MySQL 5.5 support either; it starts with 5.7
+- No MySQL 5.5 ARM64 support either; it starts with 5.7
 - Additionally, I use an Apple MacBook Pro M1 with ARM-chipset, which has no "official" MySQL 5.5 support
 
 Thanks to the outstanding DDEV support on Discord, I was quickly able to find a way with minimal effort, just by creating very small custom, additional docker-compose YAML files.
@@ -67,7 +67,7 @@ services:
 Two things are noteworthy:
 
 - Setting `linux/amd64` as the platform will require Rosetta to be available on the macOS ARM64 platform
-- The `BASE_IMAGE` is set to a DDEV DB container of legacy ddev versions which are still available.
+- The `BASE_IMAGE` is set to a DDEV `db` container of legacy Docker images that are still provided.
 
 ## Step 3: Rewire PHP
 
@@ -80,29 +80,26 @@ services:
   php:
     container_name: ddev-${DDEV_SITENAME}-php
     image: devilbox/php-fpm:5.3-work
-
     restart: "no"
-    ports:
+    expose:
       - 9000
     labels:
       com.ddev.site-name: ${DDEV_SITENAME}
       com.ddev.approot: ${DDEV_APPROOT}
+    working_dir: /var/www/html
     volumes:
-      - type: bind
-        source: ../
-        target: /var/www/html
-        consistency: cached
+      - "../:/var/www/html"
       - ".:/mnt/ddev_config:ro"
       - ddev-global-cache:/mnt/ddev-global-cache
       - "./php:/etc/php-custom.d"
     environment:
+      - NEW_UID=${DDEV_UID}
+      - NEW_GID=${DDEV_GID}
       - DDEV_PHP_VERSION
       - IS_DDEV_PROJECT=true
   web:
-    links:
-      - php:php
-    healthcheck:
-      test: ["CMD", "true"]
+    depends_on:
+      - php
 ```
 
 Note here that we use `devilbox/php-fpm` with our needed version, and a bind-mount takes care the PHP container can access our main project root directory.
@@ -127,6 +124,7 @@ To execute PHP with our external PHP Docker image, I created the following file 
     RewriteRule ^(.+[^/])$ https://%{HTTP_HOST}$1/ [redirect,last]
     SetEnvIf X-Forwarded-Proto "https" HTTPS=on
 
+    Alias "/phpstatus" "/var/www/phpstatus.php"
     DocumentRoot /var/www/html/htdocs
     <Directory "/var/www/html/htdocs">
       AllowOverride All
@@ -148,7 +146,7 @@ Now you can execute `ddev start` and then `ddev launch` to see your project up a
 
 You could create a simple `~/legacyphp/htdocs/index.php` file with `<?php phpinfo(); ?>` to verify the version.
 
-Using `ddev mysql` will connect you to the MySQL 5.5. instance:
+Using `ddev mysql` will connect you to the MySQL 5.5 instance:
 
 ```bash
 ~/legacyphp> ddev mysql
@@ -159,10 +157,10 @@ Server version: 5.5.62-log MySQL Community Server (GPL)
 
 ## Caveats
 
-You can enter the PHP Docker container with a command like `docker exec -it ddev-legacyphp-php bash` if you need/want to execute PHP commands on shell-level, because the regular `web` container will run with the more recent PHP 8.3 version.
+You can enter the PHP Docker container with a command like `docker exec -it -u devilbox ddev-legacyphp-php bash` if you need/want to execute PHP commands on shell-level, because the regular `web` container will run with the more recent PHP 8.3 version.
 So if you need to perform composer CLI calls, be sure to do this within the matching PHP container.
 
-Another thing to pay attention to is that if you for example want to utilize mailpit with TYPO3's mail configuration, you can not use `localhost:1025` as an SMTP server. `localhost` in PHP's case will be that devilbox PHP container, and not the DDEV web container. Instead you need to setup `web:1025` as the hostname.
+Another thing to pay attention to is that if you for example want to utilize Mailpit with TYPO3's mail configuration, you can not use `localhost:1025` as an SMTP server. `localhost` in PHP's case will be that devilbox PHP container, and not the DDEV web container. Instead you need to setup `web:1025` as the hostname.
 
 The devilbox PHP config has pretty much all available PHP extensions set up to use, but if you need specific imagemagick or other tools, you will have to either ensure these are executed on the `web` container, or make them available with customization of a different base Docker container that you can build yourself.
 
@@ -170,6 +168,6 @@ If you want to use Xdebug with this setup, you'll need to do more internal port 
 
 ## Closing words
 
-Having showed you what is possible, I hope you will never need to use it, and you will always use well-supported and current software. :-)
+Having shown you what is possible, I hope you will never need to use it, and you will always use well-supported and current software. :-)
 
 Thanks so much to the DDEV project for getting me across the finish line with just very little effort!
