@@ -1,7 +1,7 @@
 ---
 title: "Using DDEV to spin up a legacy PHP application"
-pubDate: 2025-05-27
-modifiedDate: 2025-05-27
+pubDate: 2025-05-29
+#modifiedDate: 2025-05-29
 summary: How to use DDEV with outdated PHP and MySQL versions
 author: Garvin Hicking
 featureImage:
