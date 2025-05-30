@@ -62,6 +62,14 @@ services:
     build:
       args:
         BASE_IMAGE: ddev/ddev-dbserver-mysql-5.5:v1.24.6
+    entrypoint:
+      - sh
+      - -c
+      - |
+        cp /docker-entrypoint.sh ~/docker-entrypoint.sh
+        sed -i '157s|.*|if false; then|' ~/docker-entrypoint.sh
+        sed -i '175s|.*|echo mysql_8.0 >/var/lib/mysql/db_mariadb_version.txt|' ~/docker-entrypoint.sh
+        exec ~/docker-entrypoint.sh
 ```
 
 Two things are noteworthy:
