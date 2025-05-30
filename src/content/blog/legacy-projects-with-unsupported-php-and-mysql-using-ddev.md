@@ -72,10 +72,11 @@ services:
         exec ~/docker-entrypoint.sh
 ```
 
-Two things are noteworthy:
+Three things are noteworthy:
 
 - Setting `linux/amd64` as the platform will require Rosetta to be available on the macOS ARM64 platform
 - The `BASE_IMAGE` is set to a DDEV `db` container of legacy Docker images that are still provided.
+- Changing the `entrypoint` is a workaround to prevent DDEV complaining about a mismatching MySQL version after restarting the project. The small script "tricks" the DDEV inspection into believing, the version matches the one configured in `.ddev/config.yaml`.
 
 ## Step 3: Rewire PHP
 
