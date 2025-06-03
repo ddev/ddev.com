@@ -13,10 +13,10 @@
     "textlint:fix": "./node_modules/.bin/textlint 'src/content/**' --fix"
   },
   "dependencies": {
-    "@astrojs/prefetch": "^0.4.0",
-    "@astrojs/react": "^3.1.0",
-    "@astrojs/rss": "^4.0.0",
-    "@astrojs/sitemap": "^3.0.0",
+    "@astrojs/prefetch": "^0.4.1",
+    "@astrojs/react": "^4.3.0",
+    "@astrojs/rss": "^4.0.11",
+    "@astrojs/sitemap": "^3.4.0",
     "@barnabask/astro-minisearch": "^2.1.1",
     "@heroicons/react": "^2.0.13",
     "@octokit/auth-app": "^7.1.4",
@@ -24,7 +24,7 @@
     "@tailwindcss/vite": "^4.0.3",
     "@types/react": "^18.2.23",
     "@types/react-dom": "^18.2.8",
-    "astro": "^5.2.3",
+    "astro": "^5.8.1",
     "astro-rehype-relative-markdown-links": "^0.17.3",
     "astro-robots-txt": "^1.0.0",
     "astro-seo": "^0.8.0",
