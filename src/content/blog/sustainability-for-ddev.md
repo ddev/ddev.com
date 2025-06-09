@@ -64,6 +64,6 @@ Do you have additional ideas, suggestions, or insight into how DDEV's future cou
 
 Do you have questions or want to talk (about sponsoring or anything else)? [Contact us!](https://ddev.com/contact/) or join us in [Discord](/s/discord).
 
-*You can participate in the discussions of the [DDEV Advisory Group](https://github.com/ddev/sponsorship-data/blob/main/data/all-sponsorships.json) by joining in at any time. If you'd like a calendar invitation, request in [Discord](/s/discord) or via the [contact page](/contact).*
+_You can participate in the discussions of the [DDEV Advisory Group](https://github.com/ddev/sponsorship-data/blob/main/data/all-sponsorships.json) by joining in at any time. If you'd like a calendar invitation, request in [Discord](/s/discord) or via the [contact page](/contact)._
 
-*Have you signed up for the monthly [DDEV Newsletter](/newsletter)? We'd love to have you.*
+_Have you signed up for the monthly [DDEV Newsletter](/newsletter)? We'd love to have you._
