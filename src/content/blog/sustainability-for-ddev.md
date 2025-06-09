@@ -1,12 +1,12 @@
 ---
 title: "Securing DDEV’s Future: Our Commitment to Financial & Community Sustainability"
-pubDate: 2025-04-30
-#modifiedDate: 2025-02-06
+pubDate: 2025-06-09
+#modifiedDate: 2025-06-09
 summary: How we’re building governance, financial, and community structures to ensure DDEV thrives beyond any single maintainer.
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2025/03/ddev-github-sponsors.png
-#  alt: Some of DDEV's sponsors via GitHub Sponsors
+featureImage:
+  src: /img/blog/2025/06/ddev-sustainability.png
+  alt: Pillars of DDEV Sustainability, Governance, Community, Finance, Transparency
 categories:
   - Community
 ---
