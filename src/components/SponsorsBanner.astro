@@ -140,8 +140,8 @@ function formatCurrency(value: number): string {
 <script is:inline>
   const goal = 12000;
   const cacheKey = 'ddevSponsorshipData';
-  const cacheTTL = 24 * 60 * 60 * 1000 // 1 day in ms
-  const now = Date.now();
+  const cacheTTL = 12 * 60 * 60 * 1000; // 12 hours in ms
+  const apiUrl = 'https://raw.githubusercontent.com/ddev/sponsorship-data/refs/heads/main/data/all-sponsorships.json';
 
   function formatCurrency(value) {
     return new Intl.NumberFormat('en-US', {
@@ -152,27 +152,56 @@ function formatCurrency(value: number): string {
     }).format(value);
   }
 
-  function update(data) {
-    const income = data.total_monthly_average_income;
-    const percentage = Math.min((income / goal) * 100, 100).toFixed(0);
-    document.querySelector('.ddev-sponsor-us-banner__raised').textContent = `Raised: ${formatCurrency(income)}`;
-    document.querySelector('.ddev-sponsor-us-banner__goal').textContent = `Goal: ${formatCurrency(goal)}`;
-    document.querySelector('.ddev-sponsor-us-banner__percent').textContent = `${percentage}% of monthly goal`;
-    document.querySelector('.ddev-sponsor-us-banner__fill').style.width = `${percentage}%`;
+  function updateUI(data) {
+    try {
+      const income = data.total_monthly_average_income;
+      const percentage = Math.min((income / goal) * 100, 100).toFixed(0);
+
+      document.querySelector('.ddev-sponsor-us-banner__raised').textContent = `Raised: ${formatCurrency(income)}`;
+      document.querySelector('.ddev-sponsor-us-banner__goal').textContent = `Goal: ${formatCurrency(goal)}`;
+      document.querySelector('.ddev-sponsor-us-banner__percent').textContent = `${percentage}% of monthly goal`;
+      document.querySelector('.ddev-sponsor-us-banner__fill').style.width = `${percentage}%`;
+    } catch (error) {
+      console.error('Error updating UI:', error);
+    }
   }
 
-  const cached = localStorage.getItem(cacheKey);
-  if (cached) {
-    const parsed = JSON.parse(cached);
-    if (now - parsed.timestamp < cacheTTL) {
-      update(parsed.data);
+  async function fetchSponsorshipData() {
+    try {
+      const response = await fetch(apiUrl);
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+      const data = await response.json();
+      const cacheData = {
+        timestamp: Date.now(),
+        data: data
+      };
+
+      localStorage.setItem(cacheKey, JSON.stringify(cacheData));
+      updateUI(data);
+    } catch (error) {
+      console.error('Failed to fetch sponsorship data:', error);
     }
-  } else {
-    fetch('https://raw.githubusercontent.com/ddev/sponsorship-data/refs/heads/main/data/all-sponsorships.json')
-      .then((res) => res.json())
-      .then((data) => {
-        localStorage.setItem(cacheKey, JSON.stringify({ timestamp: now, data }));
-        update(data);
-      });
   }
+
+  function loadSponsorshipData() {
+    const cached = localStorage.getItem(cacheKey);
+    const now = Date.now();
+
+    if (cached) {
+      try {
+        const parsed = JSON.parse(cached);
+        if (now - parsed.timestamp < cacheTTL) {
+          updateUI(parsed.data);
+          return;
+        }
+      } catch (error) {
+        console.error('Error parsing cached data:', error);
+      }
+    }
+
+    fetchSponsorshipData();
+  }
+
+  loadSponsorshipData();
 </script>
