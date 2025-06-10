@@ -40,7 +40,7 @@ Vim had serious challenges in all these areas, as there was only one "owner" of 
 
 We work hard to identify areas that are dependent on a single maintainer, and to resolve those. But it's a perpetual process!
 
-- **Governance**: From the beginning of DDEV, Randy has been the leader, acting as what's commonly called a "BDFL", or "Benevolent Dictator for Life". While that's a common model in open source, it's not a great model for overall sustainability. The BDFL model means that leadership can be concentrated in one person, preventing the development of community decisionmaking capabilities. One of our key goals for 2025 is to at least _start_ moving past that model.
+- **Governance**: From the beginning of DDEV, Randy has been the leader, acting as what's commonly called a "Benevolent Dictator for Life", or "BDFL". While that's a common model in open source, it's not a great model for overall sustainability. The BDFL model means that leadership can be concentrated in one person, preventing the development of community decision-making capabilities. One of our key goals for 2025 is to at least _start_ moving past that model.
 - **Regulatory**: Randy has dealt with Colorado and US regulatory requirements, including getting the 501(c)(3) tax-exempt designation, changing the name of the organization to "DDEV Foundation", filing annual reports.
 - **Finance and Reporting**: Randy does the bimonthly financial reporting, tracks invoices, corresponds with donors, sends thank-you notes to donors, pays maintainers.
 - **Promotion/Marketing**: Randy seems to keep these roles year-in and year-out despite attempts to spread out the work
