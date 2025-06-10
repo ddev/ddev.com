@@ -13,9 +13,13 @@ categories:
 ---
 
 **Welcome to the June 2025 DDEV Newsletter**  
-This month: Vite and DDEV with WordPress, TYPO3 Community Budget Idea, DDEV Architecture, Running Old PHP versions, and Randy is back from bikepacking.
+This month: Vite and DDEV with WordPress, TYPO3 Community Budget Proposal, DDEV Architecture, Running Old PHP versions, and Randy is back from bikepacking.
 
 ---
+
+## TYPO3: Your Vote Requested Before June 16!
+
+- **Q3 TYPO3 Budget Proposal: Improved GitHub Codespaces and Devcontainers support** - We’ve proposed significant enhancements to make DDEV shine in GitHub Codespaces and Devcontainers. This will help TYPO3 and all DDEV users. If you're a TYPO3 member, please [cast your vote to help the DDEV proposal](https://typo3.org/article/budget-2025-ideas-for-quarter-3-2025-published-vote-now) using the email you received from the TYPO3 Foundation **before June 16**. → [Read more↗](https://github.com/ddev/ddev/issues/7294)
 
 ## What’s New
 
@@ -25,7 +29,7 @@ This month: Vite and DDEV with WordPress, TYPO3 Community Budget Idea, DDEV Arch
   A guest blog by TYPO3 contributor Garvin Hickling on how to use DDEV to run a (very) old PHP 5.3/MySQL 5.5 application → [Read more↗](https://ddev.com/blog/legacy-projects-with-unsupported-php-and-mysql-using-ddev)
 - **Securing DDEV’s Future: Our Commitment to Financial & Community Sustainability** [Read more↗](https://ddev.com/blog/sustainability-for-ddev/)
 - **106 GitHub Sponsors**  
-  We hit 106 GitHub sponsors this month, and going over 100 broke our aggregation script! What a great problem to have. Thank you!
+  We now have 106 GitHub Sponsors! Breaking our aggregation script was a delightful milestone—thank you for believing in DDEV.
 - **May 2025 Advisory Group Meeting Notes** → [Read more↗](https://github.com/orgs/ddev/discussions/7223). Join us July 7; ask for a calendar invitation in the [DDEV Discord](https://ddev.com/s/discord) or the [contact page](/contact).
 
 ## Community Tutorials
@@ -37,19 +41,15 @@ This month: Vite and DDEV with WordPress, TYPO3 Community Budget Idea, DDEV Arch
 ## Governance & Roadmap
 
 - **Apache Foundation-inspired Project Management Committee Exploration**  
-  Take a look and join the conversation about future DDEV governance → [Details↗](https://github.com/orgs/ddev/discussions/7293)
-
-## TYPO3: Your Vote Requested Before June 16!
-
-- **Q3 TYPO3 Budget Idea: Improved GitHub Codespaces and Devcontainers support** - We proposed a significant set of improvements, including better support for GitHub Codespaces and Devcontainers, which would make DDEV even more useful for TYPO3 developers and everybody else. If you're a TYPO3 member, please [vote up the DDEV proposal](https://typo3.org/article/budget-2025-ideas-for-quarter-3-2025-published-vote-now) using the email you received from the TYPO3 Foundation. → [Read more↗](https://github.com/ddev/ddev/issues/7294)
+  We’re exploring a governance model inspired by the Apache Foundation and Backdrop CMS to better support long-term sustainability and shared leadership. Take a look and join the conversation about future DDEV governance → [Details↗](https://github.com/orgs/ddev/discussions/7293)
 
 ---
 
 ## Sponsorship Status
 
-- **Monthly average income** up from $7,639 to $7,809 (65% of $12,000 goal, up a percent since early May!) → [Become a sponsor↗](https://github.com/sponsors/ddev)
+- **Monthly average income** up from $7,639 to $7,809 (65% of $12,000 goal, up a percent since early May!). Every contribution helps sustain our work—thank you! → [Become a sponsor↗](https://github.com/sponsors/ddev)
 
-## Stay Connected
+## Stay in the loop—follow us and join the conversation
 
 - [Blog↗](https://ddev.com/blog/)
 - [LinkedIn↗](https://www.linkedin.com/company/ddev-foundation)
