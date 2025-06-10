@@ -4,10 +4,10 @@ pubDate: 2025-06-10
 #modifiedDate: 2025-04-07
 summary: "Highlights: Vite and DDEV with WordPress, TYPO3 Community Budget Idea, DDEV Architecture, Running Old PHP versions."
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2025/05/rattlesnake-arches.jpg
-#  alt: Rattlesnake Arches, western Colorado
-#  credit: "Photo by Randy Fay"
+featureImage:
+  src: /img/blog/2025/06/impending-storm-new-mexico.jpg
+  alt: Impending storm in New Mexico, Randy Fay's bikepacking trip
+  credit: "Photo by Randy Fay"
 categories:
   - Community
 ---
