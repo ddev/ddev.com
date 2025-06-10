@@ -43,16 +43,16 @@ Most pages are built with [Astro components](https://docs.astro.build/en/core-co
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                | Action                                             |
-| :--------------------- | :------------------------------------------------- |
-| `npm install`          | Installs dependencies                              |
-| `npm run dev`          | Starts local dev server at `localhost:3000`        |
-| `npm run build`        | Build your production site to `./dist/`            |
-| `npm run preview`      | Preview your build locally, before deploying       |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
-| `npm run astro --help` | Get help using the Astro CLI                       |
-| `npm run textlint`     | Run textlint on content collections                |
-| `npm run textlint:fix` | Apply fixable updates to resolve textlint errors   |
+| Command                  | Action                                             |
+|:-------------------------| :------------------------------------------------- |
+| `npm install`            | Installs dependencies                              |
+| `npm run dev`            | Starts local dev server at `localhost:3000`        |
+| `npm run build`          | Build your production site to `./dist/`            |
+| `npm run preview`        | Preview your build locally, before deploying       |
+| `npm run astro ...`      | Run CLI commands like `astro add`, `astro preview` |
+| `npm run astro --help`   | Get help using the Astro CLI                       |
+| `npx run textlint`       | Run textlint on content collections                |
+| `npx run textlint --fix` | Apply fixable updates to resolve textlint errors   |
 
 ### Local Development Setup
 
@@ -98,7 +98,9 @@ There is a local `cache/` to reduce API calls.
 
 The site’s content lives in either `.astro` components that resemble souped-up HTML, or Markdown files organized into schema-validated [content collections](https://docs.astro.build/en/guides/content-collections/).
 
-### Blog Posts
+### Blog Posts and Guest Blog Posts
+
+Hint: There's a full contributor training on [contributing to ddev.com](https://ddev.com/blog/ddev-website-for-contributors/).
 
 Blog posts are Markdown files with frontmatter that live in `src/content/blog/`.
 
@@ -171,6 +173,7 @@ General commands:
 
 - Use `npx prettier --check .` to verify everything is properly formatted
 - Use `npx prettier --write .` to auto-format all files
+- `npx textlint --fix` applies textlint fixes
 
 ### Sponsor Management
 
