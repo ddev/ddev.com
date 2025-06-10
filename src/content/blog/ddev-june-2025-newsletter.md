@@ -1,6 +1,6 @@
 ---
 title: "DDEV June 2025 Newsletter"
-pubDate: 2025-06-10
+pubDate: 2025-06-11
 #modifiedDate: 2025-04-07
 summary: "Highlights: Vite and DDEV with WordPress, TYPO3 Community Budget Idea, DDEV Architecture, Running Old PHP versions."
 author: Randy Fay
