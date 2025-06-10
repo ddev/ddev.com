@@ -1,11 +1,11 @@
 ---
 title: "Securing DDEV’s Future: Our Commitment to Financial & Community Sustainability"
-pubDate: 2025-06-09
+pubDate: 2025-06-10
 #modifiedDate: 2025-06-09
 summary: How we’re building governance, financial, and community structures to ensure DDEV thrives beyond any single maintainer.
 author: Randy Fay
 featureImage:
-  src: /img/blog/2025/06/ddev-sustainability.png
+  src: /img/blog/2025/06/ddev-sustainability.jpg
   alt: Pillars of DDEV Sustainability, Governance, Community, Finance, Transparency
 categories:
   - Community
@@ -56,14 +56,12 @@ We work hard to identify areas that are dependent on a single maintainer, and to
 
 ## Current Financial Status
 
-As of June, 2025, DDEV's monthly support is at the $7500 USD level. Our goal is $12,000. You can see this at any time on the top of [ddev.com](/), and a full accounting updated daily is in the [sponsorship-data](https://github.com/ddev/sponsorship-data/blob/main/data/all-sponsorships.json) repository. Our current bank balance is about $19,000 USD.
+As of June, 2025, DDEV's monthly support is at the $7800 USD level. Our goal is $12,000. You can see this at any time on the top of [ddev.com](/), and a full accounting updated daily is in the [sponsorship-data](https://github.com/ddev/sponsorship-data/blob/main/data/all-sponsorships.json) repository. Our current bank balance is about $19,000 USD.
 
 ## Share Your Thoughts!
 
 Do you have additional ideas, suggestions, or insight into how DDEV's future could be more sustainable? We would sure love to [hear from you](/contact)! Or get active and join our [DDEV Advisory Group](https://github.com/orgs/ddev/discussions/categories/ddev-advisory-group).
 
 Do you have questions or want to talk (about sponsoring or anything else)? [Contact us!](https://ddev.com/contact/) or join us in [Discord](/s/discord).
-
-_You can participate in the discussions of the [DDEV Advisory Group](https://github.com/ddev/sponsorship-data/blob/main/data/all-sponsorships.json) by joining in at any time. If you'd like a calendar invitation, request in [Discord](/s/discord) or via the [contact page](/contact)._
 
 _Have you signed up for the monthly [DDEV Newsletter](/newsletter)? We'd love to have you._
