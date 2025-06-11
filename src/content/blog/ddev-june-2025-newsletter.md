@@ -13,7 +13,7 @@ categories:
 ---
 
 **Welcome to the June 2025 DDEV Newsletter**  
-This month: Vite and DDEV with WordPress, TYPO3 Community Budget Proposal, DDEV Architecture, Running Old PHP versions, and Randy is back from bikepacking.
+This month: TYPO3 Community Budget Proposal (**VOTE NOW**), Randy is back from bikepacking, Running Old PHP versions, Vite and DDEV with WordPress, DDEV Architecture, and more.
 
 ---
 
