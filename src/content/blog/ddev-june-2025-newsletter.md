@@ -35,7 +35,7 @@ This month: TYPO3 Community Budget Proposal (**VOTE NOW**), Randy is back from b
 ## Community Tutorials
 
 - **Integrating Vite and DDEV into WordPress** → [Read more↗](https://www.viget.com/articles/integrating-vite-and-ddev-into-wordpress/)
-- **AI-generated DDEV Architecture by DeepWiki, pretty impressive!** → [Read more↗](https://deepwiki.com/ddev/ddev)
+- **AI-generated DDEV Architecture by DeepWiki**, pretty impressive! → [Read more↗](https://deepwiki.com/ddev/ddev)
 - **Setup an existing WordPress multisite locally with DDEV (with Bonus Pantheon support!)** from Kalamuna → [Read more↗](https://www.kalamuna.com/blog/setup-existing-wordpress-multisite-locally-ddev-bonus-pantheon-support)
 
 ## Governance & Roadmap
