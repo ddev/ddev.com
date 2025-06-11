@@ -19,7 +19,7 @@ This month: Vite and DDEV with WordPress, TYPO3 Community Budget Proposal, DDEV 
 
 ## TYPO3: Your Vote Requested Before June 16!
 
-- **Q3 TYPO3 Budget Proposal: Improved GitHub Codespaces and Devcontainers support** - We’ve proposed significant enhancements to make DDEV shine in GitHub Codespaces and Devcontainers. This will help TYPO3 and all DDEV users. If you're a TYPO3 member, please [cast your vote to help the DDEV proposal](https://typo3.org/article/budget-2025-ideas-for-quarter-3-2025-published-vote-now) using the email you received from the TYPO3 Foundation **before June 16**. → [Read more↗](https://github.com/ddev/ddev/issues/7294)
+- **Q3 TYPO3 Budget Proposal: Improved GitHub Codespaces and Dev Containers support** - We’ve proposed significant enhancements to make DDEV shine in GitHub Codespaces and Dev Containers. This will help TYPO3 and all DDEV users. If you're a TYPO3 member, please [cast your vote to help the DDEV proposal](https://typo3.org/article/budget-2025-ideas-for-quarter-3-2025-published-vote-now) using the email you received from the TYPO3 Foundation **before June 16**. → [Read more↗](https://github.com/ddev/ddev/issues/7294)
 
 ## What’s New
 
