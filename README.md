@@ -43,16 +43,16 @@ Most pages are built with [Astro components](https://docs.astro.build/en/core-co
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                  | Action                                             |
-| :----------------------- | :------------------------------------------------- |
-| `npm install`            | Installs dependencies                              |
-| `npm run dev`            | Starts local dev server at `localhost:3000`        |
-| `npm run build`          | Build your production site to `./dist/`            |
-| `npm run preview`        | Preview your build locally, before deploying       |
-| `npm run astro ...`      | Run CLI commands like `astro add`, `astro preview` |
-| `npm run astro --help`   | Get help using the Astro CLI                       |
-| `npx run textlint`       | Run textlint on content collections                |
-| `npx run textlint --fix` | Apply fixable updates to resolve textlint errors   |
+| Command                | Action                                             |
+| :--------------------- | :------------------------------------------------- |
+| `npm install`          | Installs dependencies                              |
+| `npm run dev`          | Starts local dev server at `localhost:3000`        |
+| `npm run build`        | Build your production site to `./dist/`            |
+| `npm run preview`      | Preview your build locally, before deploying       |
+| `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
+| `npm run astro --help` | Get help using the Astro CLI                       |
+| `npm run textlint`     | Run textlint on content collections                |
+| `npm run textlint:fix` | Apply fixable updates to resolve textlint errors   |
 
 ### Local Development Setup
 
@@ -173,7 +173,6 @@ General commands:
 
 - Use `npx prettier --check .` to verify everything is properly formatted
 - Use `npx prettier --write .` to autoformat all files
-- `npx textlint --fix` applies textlint fixes
 
 ### Sponsor Management
 
