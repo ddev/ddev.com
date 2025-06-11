@@ -30,7 +30,7 @@ This month: Vite and DDEV with WordPress, TYPO3 Community Budget Proposal, DDEV 
 - **Securing DDEV’s Future: Our Commitment to Financial & Community Sustainability** [Read more↗](https://ddev.com/blog/sustainability-for-ddev/)
 - **106 GitHub Sponsors**  
   We now have 106 GitHub Sponsors! Breaking our aggregation script was a delightful milestone—thank you for believing in DDEV.
-- **May 2025 Advisory Group Meeting Notes** → [Read more↗](https://github.com/orgs/ddev/discussions/7223). Join us July 7; ask for a calendar invitation in the [DDEV Discord](https://ddev.com/s/discord) or the [contact page](/contact).
+- **May 2025 Advisory Group Meeting Notes** → [Read more↗](https://github.com/orgs/ddev/discussions/7223). Join us July 2; ask for a calendar invitation in the [DDEV Discord](https://ddev.com/s/discord) or the [contact page](/contact).
 
 ## Community Tutorials
 

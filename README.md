@@ -167,7 +167,7 @@ If you work with Visual Studio Code, please install these three extensions:
 - https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
 - https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode
 
-Autoformat on save is activated via `.vscode/settings.json` for Visual Studio Code.
+Automatically "Format on Save" setting is activated via `.vscode/settings.json` for Visual Studio Code.
 
 General commands:
 
