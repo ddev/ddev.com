@@ -98,7 +98,9 @@ There is a local `cache/` to reduce API calls.
 
 The site’s content lives in either `.astro` components that resemble souped-up HTML, or Markdown files organized into schema-validated [content collections](https://docs.astro.build/en/guides/content-collections/).
 
-### Blog Posts
+### Blog Posts and Guest Blog Posts
+
+Hint: There's a full contributor training on [contributing to ddev.com](https://ddev.com/blog/ddev-website-for-contributors/).
 
 Blog posts are Markdown files with frontmatter that live in `src/content/blog/`.
 
@@ -165,12 +167,12 @@ If you work with Visual Studio Code, please install these three extensions:
 - https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
 - https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode
 
-Auto-format on save is activated via `.vscode/settings.json` for Visual Studio Code.
+Automatically "Format on Save" setting is activated via `.vscode/settings.json` for Visual Studio Code.
 
 General commands:
 
 - Use `npx prettier --check .` to verify everything is properly formatted
-- Use `npx prettier --write .` to auto-format all files
+- Use `npx prettier --write .` to autoformat all files
 
 ### Sponsor Management
 
@@ -201,12 +203,12 @@ If you’re adding a new item to the array, choose whichever position it should 
 > [!NOTE]
 > Prefer SVG variants over PNG. If an SVG isn't available, try converting the PNG to SVG using [online tools](https://convertio.co/png-svg/), and then manually adjust the SVG colors by editing the file directly (you can use a color picker to extract the colors from the original PNG).
 
-- **name** – the human-friendly organization name. (Be sure this is formatted exactly as it’s used on the website or GitHub profile!)
-- **type** – can be `"major"` or `"standard"` depending on contribution level. (Not currently used but can affect styling later.)
-- **logo** – absolute, webroot-relative path for a logo you’ve added to the `public/logos/` directory. Make sure this is a clean, optimized vector SVG file unless it’s a person’s headshot. (Again, follow the organization’s brand guide wherever possible!)
-- **squareLogo** – a square variant of the organization’s logo, to be used in places like the [Support DDEV](https://ddev.com/support-ddev/) layout. No need to add this if `logo` is already square.
-- **url** – organization’s website URL.
-- **github** – optional GitHub username when relevant, which can be used to make sure the sponsor doesn’t appear twice in a list—as seen in the [Sponsors.astro](https://github.com/ddev/ddev.com/blob/main/src/components/Sponsors.astro#L53) component.
+- **`name`** – the human-friendly organization name. (Be sure this is formatted exactly as it’s used on the website or GitHub profile!)
+- **`type`** – can be `"major"` or `"standard"` depending on contribution level. (Not currently used but can affect styling later.)
+- **`logo`** – absolute, webroot-relative path for a logo you’ve added to the `public/logos/` directory. Make sure this is a clean, optimized vector SVG file unless it’s a person’s headshot. (Again, follow the organization’s brand guide wherever possible!)
+- **`squareLogo`** – a square variant of the organization’s logo, to be used in places like the [Support DDEV](https://ddev.com/support-ddev/) layout. No need to add this if `logo` is already square.
+- **`url`** – organization’s website URL.
+- **`github`** – optional GitHub username when relevant, which can be used to make sure the sponsor doesn’t appear twice in a list—as seen in the [Sponsors.astro](https://github.com/ddev/ddev.com/blob/main/src/components/Sponsors.astro#L53) component.
 
 ## Redirects/Short Links/Shortcuts
 
