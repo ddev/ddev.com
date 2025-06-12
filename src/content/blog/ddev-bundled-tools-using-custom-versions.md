@@ -1,6 +1,6 @@
 
 ---
-title: "Customizing or expanding bundled DDEV tools"
+title: "How-to downgrade terminus in DDEV and customize bundled tools"
 pubDate: 2025-06-12
 summary: How to upgrade/downgrade a utility provided by DDEV, or add a custom one for a given project
 author: Bill Seremetis
@@ -17,19 +17,14 @@ _This guest post is by DDEV community member and [Drupal](https://drupal.org)
 contributor [Bill Seremetis](/blog/author/bill-seremetis/) and sponsored by
 [Annertech](https://www.annertech.com)._
 
-DDEV comes bundled with a predefined set of tools, like `composer` for managing
-your PHP projects, `terminus`, `platform` and `acli` for specific hosting environments
-and of course tools specific to projects, such as `wp-cli`.
+DDEV comes bundled with a predefined set of tools, `terminus` being one of them.
+Latest releases of `terminus` are not compatible with older PHP versions, 
+thus there is a need to downgrade the package inside DDEV.
 
-Most of the time, these tools work as expected, and you have nothing to worry about.
+This guide covers how and will also explain how to use the same technique to install
+custom tools too.
 
-## Manually managing versions of bundled tools
-
-Sometimes though you might need a very specific version of a tool. Maybe you 
-[are running an older PHP version](https://github.com/pantheon-systems/terminus/releases/tag/4.0.0)
-or the bundled version [has a bug that ruins things for you](https://github.com/platformsh/cli/discussions/166).
-Newer DDEV versions won't fix your need to run an older version, and 
-sometimes it makes no sense to wait if you need a newer version.
+## Manually downgrading Terminus
 
 We can specify which version to use on a given project by overriding the one
 provided by DDEV easily by using a custom Dockerfile:
@@ -40,6 +35,10 @@ provided by DDEV easily by using a custom Dockerfile:
 ARG TERMINUS_VERSION="3.6.2"
 RUN curl -L --fail -o /usr/local/bin/terminus https://github.com/pantheon-systems/terminus/releases/download/${TERMINUS_VERSION}/terminus.phar && chmod +x /usr/local/bin/terminus
 ```
+
+`terminus` is just an example here, it could be any command you wish, 
+[either because you are running an older PHP version](https://github.com/pantheon-systems/terminus/releases/tag/4.0.0)
+or the bundled version [has a bug that ruins things for you](https://github.com/platformsh/cli/discussions/166).
 
 ## Installing custom tools
 
