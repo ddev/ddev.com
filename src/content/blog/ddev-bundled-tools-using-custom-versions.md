@@ -55,3 +55,15 @@ You can obviously use the same trick to install custom tools:
 ARG FZF_VERSION="0.62.0"
 RUN curl -s -L https://github.com/junegunn/fzf/releases/download/v${FZF_VERSION}/fzf-${FZF_VERSION}-linux_amd64.tar.gz | tar xvz -C /usr/local/bin/ && chmod +x /usr/local/bin/fzf
 ```
+
+## Resources
+
+- https://ddev.readthedocs.io/en/stable/users/providers/pantheon/
+- https://ddev.com/blog/customizing-ddev-local-images-with-a-custom-dockerfile/
+
+## Contribute to DDEV
+
+If you like DDEV then you are welcome to contribute! You can join the [Discord channel](/s/discord),
+create a new [DDEV Add-on](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/),
+or blog about how you use DDEV in your daily workflow.
+We’re always happy to hear from you on any of our [support channels](https://ddev.readthedocs.io/en/stable/users/support/).
