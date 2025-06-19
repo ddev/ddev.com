@@ -24,6 +24,11 @@ thus there is a need to downgrade the package inside DDEV.
 This guide covers how and will also explain how to use the same technique to install
 custom tools too.
 
+Please note there are many ways to install packages in a container. We will 
+cover [extra Dockerfiles](https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/#adding-extra-dockerfiles-for-webimage-and-dbimage)
+here, but also [check `webimage_extra_packages` and `dbimage_extra_packages` in your
+`config.yaml`for more details](https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/#adding-extra-debian-packages-with-webimage_extra_packages-and-dbimage_extra_packages)).
+
 ## Manually downgrading Terminus
 
 We can specify which version to use on a given project by overriding the one
