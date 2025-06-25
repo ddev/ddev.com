@@ -54,6 +54,7 @@ You can obviously use the same techniques to install a variety of custom tools:
 ```dockerfile
 # .ddev/web-build/Dockerfile.fzf
 # fooscript relies on fzf
+# fooscript lists all your Pantheon projects using a fuzzy finder list
 ARG FZF_VERSION="0.62.0"
 RUN curl -s -L https://github.com/junegunn/fzf/releases/download/v${FZF_VERSION}/fzf-${FZF_VERSION}-linux_amd64.tar.gz | tar xvz -C /usr/local/bin/ && chmod +x /usr/local/bin/fzf
 ```
