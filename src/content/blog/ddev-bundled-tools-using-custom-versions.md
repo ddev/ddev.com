@@ -1,4 +1,3 @@
-
 ---
 title: "How-to Downgrade Terminus in DDEV's Web Container and Customize Other Bundled Tools"
 pubDate: 2025-06-12
@@ -18,13 +17,13 @@ contributor [Bill Seremetis](/blog/author/bill-seremetis/) and sponsored by
 [Annertech](https://www.annertech.com)._
 
 DDEV comes bundled with a predefined set of tools, `terminus` being one of them.
-Latest releases of `terminus` are not compatible with older PHP versions, 
+Latest releases of `terminus` are not compatible with older PHP versions,
 thus there is a need to downgrade the package inside DDEV.
 
 This guide covers how and will also explain how to use the same technique to install
 custom tools too.
 
-Please note there are many ways to install packages in a container. We will 
+Please note there are many ways to install packages in a container. We will
 cover [extra Dockerfiles](https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/#adding-extra-dockerfiles-for-webimage-and-dbimage)
 here, but also [check `webimage_extra_packages` and `dbimage_extra_packages` in your
 `config.yaml`for more details](https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/#adding-extra-debian-packages-with-webimage_extra_packages-and-dbimage_extra_packages)).
@@ -43,7 +42,7 @@ ARG TERMINUS_VERSION="3.6.2"
 RUN curl -L --fail -o /usr/local/bin/terminus https://github.com/pantheon-systems/terminus/releases/download/${TERMINUS_VERSION}/terminus.phar && chmod +x /usr/local/bin/terminus
 ```
 
-`terminus` is just an example here, it could be any command you wish, 
+`terminus` is just an example here, it could be any command you wish,
 [either because you are running an older PHP version](https://github.com/pantheon-systems/terminus/releases/tag/4.0.0)
 or the bundled version [has a bug that ruins things for you](https://github.com/platformsh/cli/discussions/166).
 
