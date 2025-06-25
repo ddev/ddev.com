@@ -47,7 +47,7 @@ or the bundled version [has a bug that ruins things for you](https://github.com/
 
 ## Installing custom tools
 
-You can obviously use the same trick to install custom tools:
+You can obviously use the same techniques to install a variety of custom tools:
 
 ```dockerfile
 # .ddev/web-build/Dockerfile.fzf
@@ -58,7 +58,7 @@ RUN curl -s -L https://github.com/junegunn/fzf/releases/download/v${FZF_VERSION}
 
 ## Resources
 
-- https://ddev.readthedocs.io/en/stable/users/providers/pantheon/
+- [DDEV Pantheon integration documentation](https://ddev.readthedocs.io/en/stable/users/providers/pantheon/)
 - https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/#adding-extra-dockerfiles-for-webimage-and-dbimage
 - https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/#adding-extra-debian-packages-with-webimage_extra_packages-and-dbimage_extra_packages
 - https://ddev.com/blog/customizing-ddev-local-images-with-a-custom-dockerfile/
