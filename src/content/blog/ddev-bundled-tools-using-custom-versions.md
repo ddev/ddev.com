@@ -62,9 +62,9 @@ RUN curl -s -L https://github.com/junegunn/fzf/releases/download/v${FZF_VERSION}
 ## Resources
 
 - [DDEV Pantheon integration documentation](https://ddev.readthedocs.io/en/stable/users/providers/pantheon/)
-- https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/#adding-extra-dockerfiles-for-webimage-and-dbimage
-- https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/#adding-extra-debian-packages-with-webimage_extra_packages-and-dbimage_extra_packages
-- https://ddev.com/blog/customizing-ddev-local-images-with-a-custom-dockerfile/
+- [Adding extra Dockerfiles for `webimage` and `dbimage`](https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/#adding-extra-dockerfiles-for-webimage-and-dbimage)
+- [Adding extra Debian packages in DDEV](https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/#adding-extra-debian-packages-with-webimage_extra_packages-and-dbimage_extra_packages)
+- [Customizing DDEV images with a custom Dockerfile](https://ddev.com/blog/customizing-ddev-local-images-with-a-custom-dockerfile/)
 
 ## Contribute to DDEV
 
