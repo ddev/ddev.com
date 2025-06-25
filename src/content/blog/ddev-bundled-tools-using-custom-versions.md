@@ -29,10 +29,12 @@ cover [extra Dockerfiles](https://ddev.readthedocs.io/en/stable/users/extend/cus
 here, but also [check `webimage_extra_packages` and `dbimage_extra_packages` in your
 `config.yaml`for more details](https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/#adding-extra-debian-packages-with-webimage_extra_packages-and-dbimage_extra_packages)).
 
-## Manually downgrading Terminus
+## Case study:Manually downgrading Terminus
 
-We can specify which version to use on a given project by overriding the one
-provided by DDEV easily by using a custom Dockerfile:
+[Terminus](https://github.com/pantheon-systems/terminus/releases) dropped
+support for PHP 8.1 in newer versions which we still rely on in some of our
+projects. We had to downgrade the DDEV bundled version of Terminus for those
+projects by using a custom Dockerfile:
 
 ```dockerfile
 # .ddev/web-build/Dockerfile.terminus
