@@ -16,7 +16,7 @@ _This guest post is by DDEV community member and [Drupal](https://drupal.org)
 contributor [Bill Seremetis](/blog/author/bill-seremetis/) and sponsored by
 [Annertech](https://www.annertech.com)._
 
-DDEV comes bundled with a predefined set of tools, `terminus` being one of them.
+DDEV comes bundled with a predefined set of tools, Pantheon's `terminus` being one of them.
 Latest releases of `terminus` are not compatible with older PHP versions,
 thus there is a need to downgrade the package inside DDEV.
 
