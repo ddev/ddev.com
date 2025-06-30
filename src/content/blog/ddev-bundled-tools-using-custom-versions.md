@@ -31,8 +31,8 @@ here, but also [check `webimage_extra_packages` and `dbimage_extra_packages` in 
 ## Case study:Manually downgrading Terminus
 
 [Terminus](https://github.com/pantheon-systems/terminus/releases) dropped
-support for PHP 8.1 in newer versions which we still rely on in some of our
-projects. We had to downgrade the DDEV bundled version of Terminus for those
+support for PHP 8.1 in recent versions, but some of our
+projects still use PHP 8.1. We had to downgrade the DDEV-bundled version of `terminus` for those
 projects by using a custom Dockerfile:
 
 ```dockerfile
