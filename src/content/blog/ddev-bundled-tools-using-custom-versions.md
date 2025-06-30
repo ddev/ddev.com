@@ -1,5 +1,5 @@
 ---
-title: "How-to Downgrade Terminus in DDEV's Web Container and Customize Other Bundled Tools"
+title: "How to Downgrade Terminus in DDEV's Web Container and Customize Other Bundled Tools"
 pubDate: 2025-06-12
 summary: How to upgrade/downgrade a utility provided by DDEV in `ddev-webserver`, or add a custom utility for a given project
 author: Bill Seremetis
