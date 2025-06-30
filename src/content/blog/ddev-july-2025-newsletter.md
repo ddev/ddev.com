@@ -38,7 +38,7 @@ This month: Downgrading Terminus for old PHP, Advisory Group meeting and Governa
 
 ## Sponsorship Status
 
-- **Monthly average income** down slightly from $7,809 to $7,779 (65% of $12,000 goal).  Every contribution helps sustain our work—thank you! → [Become a sponsor↗](https://github.com/sponsors/ddev)
+- **Monthly average income** down slightly from $7,809 to $7,779 (65% of $12,000 goal). Every contribution helps sustain our work—thank you! → [Become a sponsor↗](https://github.com/sponsors/ddev)
 
 ## Stay in the loop—follow us and join the conversation
 
