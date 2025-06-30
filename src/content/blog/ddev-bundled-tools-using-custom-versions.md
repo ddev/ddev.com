@@ -28,7 +28,7 @@ cover [extra Dockerfiles](https://ddev.readthedocs.io/en/stable/users/extend/cus
 here, but also [check `webimage_extra_packages` and `dbimage_extra_packages` in your
 `config.yaml`for more details](https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/#adding-extra-debian-packages-with-webimage_extra_packages-and-dbimage_extra_packages)).
 
-## Case study:Manually downgrading Terminus
+## Case study: Manually Downgrading Terminus
 
 [Terminus](https://github.com/pantheon-systems/terminus/releases) dropped
 support for PHP 8.1 in recent versions, but some of our
