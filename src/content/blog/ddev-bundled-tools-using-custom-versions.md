@@ -17,7 +17,7 @@ contributor [Bill Seremetis](/blog/author/bill-seremetis/) and sponsored by
 [Annertech](https://www.annertech.com)._
 
 DDEV comes bundled with a predefined set of tools, Pantheon's `terminus` being one of them.
-The latest releases of `terminus` are not compatible with older PHP versions like PHP 8.1, though, 
+The latest releases of `terminus` are not compatible with older PHP versions like PHP 8.1, though,
 so we needed to downgrade it inside DDEV's `ddev-webserver` Docker image.
 
 This guide covers how to downgrade `terminus` and will also explain how to use the same technique to install
