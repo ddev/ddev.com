@@ -1,7 +1,7 @@
 ---
 title: "Using FrankenPHP with DDEV"
 pubDate: 2025-07-02
-#modifiedDate: 2025-07-02
+#modifiedDate: 2025-07-03
 summary: Maintaining an add-on involves regularly updating it to stay compatible with new features in both the upstream ddev-addon-template and DDEV itself.
 author: Stas Zhuk
 featureImage:
