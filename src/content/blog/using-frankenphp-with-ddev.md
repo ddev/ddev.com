@@ -117,7 +117,7 @@ Using [ddev-frankenphp-benchmark](https://github.com/stasadev/ddev-frankenphp-be
 - `generic-web`: DDEV's `generic` web server with FrankenPHP inside the `web` container (static binary)
 - `generic-addon`: DDEV's `generic` web server with FrankenPHP inside the `frankenphp` container (with `pdo_mysql` and `opcache` extensions)
 
-There was no significant performance difference across them. Summary:
+Summary:
 
 - All configurations delivered comparable and adequate performance.
 - FrankenPHP is a win where there is an upstream hosting environment using FrankenPHP.
