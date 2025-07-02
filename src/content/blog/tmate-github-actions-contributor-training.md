@@ -20,7 +20,7 @@ Here's our October 23, 2024 [Contributor Training](/blog/category/training) on u
 
 ## What is Tmate?
 
-[mxschmitt/action-tmate](https://github.com/mxschmitt/action-tmate) provides a way to ssh into actual running GitHub Actions VMs to debug your tests.
+[mxschmitt/action-tmate](https://github.com/mxschmitt/action-tmate) provides a way to SSH into actual running GitHub Actions VMs to debug your tests.
 
 ## Why do we need Tmate?
 
@@ -34,11 +34,11 @@ Often it's hard to understand what has happened with an test because all we see 
 
 ## Security Concerns
 
-If your test has secrets, then anyone who can ssh into it has access to those secrets.
+If your test has secrets, then anyone who can SSH into it has access to those secrets.
 
-In addition, the owners of `ssh.tmate.io` clearly have access to the ssh session you're experimenting with, so think carefully about secrets that might be exposed. (In many tests, there are no secrets likely exposed or available. We have a couple of DDEV GitHub actions that have sensitive secrets, and a few more that have far-less sensitive secrets.)
+In addition, the owners of `ssh.tmate.io` clearly have access to the SSH session you're experimenting with, so think carefully about secrets that might be exposed. (In many tests, there are no secrets likely exposed or available. We have a couple of DDEV GitHub Actions that have sensitive secrets, and a few more that have far-less sensitive secrets.)
 
-I recommend always using `limit-access-to-actor: true` so that only the user that has launched the test can ssh into it.
+I recommend always using `limit-access-to-actor: true` so that only the user that has launched the test can SSH into it.
 
 ## Usage Examples
 

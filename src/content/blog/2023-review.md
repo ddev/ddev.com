@@ -18,7 +18,7 @@ categories:
 - The DDEV Advisory Group meets bimonthly, giving direction and input to the project.
 - We are incredibly thankful to [Platform.sh](https://platform.sh) for the financial support that makes it possible to support DDEV at this level. Platform’s willingness to allow Randy to set his own agenda, work schedule and vacation schedule is amazing, and ensures his happy future.
 - The TYPO3, Drupal, Silverstripe, Craft CMS and other communities have been incredibly involved and supportive. And they've turned into self-support communities. Randy often wake up to find that significant issues have been solved while he was sleeping.
-- DDEV is built on the shoulders of open-source giants. Of course the entire Debian project, the golang ecosystem, PHP packaging by deb.sury.org, Xdebug development and support by Derick Rethans, Mutagen, and Lima, Rancher Desktop, etc.
+- DDEV is built on the shoulders of open-source giants. Of course the entire Debian project, the Golang ecosystem, PHP packaging by deb.sury.org, Xdebug development and support by Derick Rethans, Mutagen, and Lima, Rancher Desktop, etc.
 
 ## Accomplishments for 2023
 
@@ -46,7 +46,6 @@ categories:
 - **Project adoption**: DDEV was adopted as "official" or "preferred" local development environment by Ibexa and Drupal.
 - **Python/Django4** support: Although this significant feature was added, at the request of Platform.sh, it hasn't gotten any real traction or users at this point.
 - **Marketing and Communications**:
-
   - **Matt Stein** created a **completely new ddev.com** using Astro and even imported/converted the old WordPress content. He did astonishing work with easy animated introductions to using DDEV. In addition to a major new site, he made it so [others can easily contribute](ddev-website-for-contributors.md) content to it. Because it's a static site no privileges are required, it's all PRs on GitHub, which can easily be reviewed.
   - DDEV has a CRM with contact management (and 362 contacts).
   - We have a monthly newsletter.
@@ -55,7 +54,6 @@ categories:
   - Mike Anello interviewed Randy for [DrupalEasy Podcast S15E1 - Randy Fay - DDEV project governance and health](https://www.drupaleasy.com/podcast/2023/06/drupaleasy-podcast-s15e1-randy-fay-ddev-project-governance-and-health).
 
 - Contributors and Maintainers:
-
   - **Contributor and Maintainer Training**: A key focus of the year was to enable and train people to contribute to the project. We had many [Contributor Live Training](contributor-training.md) events, almost all recorded. In the process, we updated many docs, and many people contributed additional documentation.
   - **[Stas Zhuk](introducing-maintainer-stas.md)** became a fully-privileged maintainer (part-time, paid).
   - **Matt Stein** made incredible advances for ddev.com and for the docs while he had availability to do so, but has stepped back (mostly) into the background now. He remains a fully-privileged maintainer.

@@ -22,7 +22,7 @@ As we announced in [Recruiting Contributors and Maintainers](recruiting-maintain
 - Creating pull requests to solve known problems or provide new features
 - Test new prereleases
 - Understand basic Go programming techniques
-- Set up a Go development environment using Goland or Vscode
+- Set up a Go development environment using GoLand or VS Code
 - Run automated tests on your own machine
 - Manage failed test runs and improve our tests
 - Explore new test platforms for DDEV macOS and Windows automated tests
@@ -72,7 +72,7 @@ Live training sessions will be held weekly on Tuesdays at 8am US MT, 5pm CET or 
 - Using WSL2 with DDEV
 - Git for Fun and Profit
 - Making Your Own `ddev share` Variant
-- Go Development Environment with Goland or vscode
+- Go Development Environment with GoLand or VS Code
 - Experimenting with custom commands
 
 Use the [contact](/contact) link to ask for a calendar invitation. Drop by [Discord](/s/discord) or send [an email](mailto:support%40ddev.com) if you want to talk more.

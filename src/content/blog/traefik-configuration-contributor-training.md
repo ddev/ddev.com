@@ -71,7 +71,6 @@ The components of DDEV's Traefik configuration are:
   ```
 
   It defines two routers (named "d10-web-80-http" and "d10-web-80-https"). One accepts HTTP traffic (without TLS) on port 80, and the other accepts HTTPS traffic on port 443. They both capture traffic with the same hostname, "d10.ddev.site", and they both deliver their traffic to the same back-end web server service (the `ddev-webserver`) at `http://ddev-d10-web:80`.
-
   - **Routers**
 
     Routers define where HTTP/S traffic is accepted from, and are the TLS termination for HTTPS traffic. Then a "rule" defines which hostname patterns are eligible to be routed. For example, a typical router might look like this:

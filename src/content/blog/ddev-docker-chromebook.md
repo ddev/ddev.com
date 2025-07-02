@@ -23,7 +23,7 @@ Here’s the step-by-step to set up a DDEV development environment:
 3. Install Docker for Linux as in the [DDEV docs](https://ddev.readthedocs.io/en/stable/users/docker%5Finstallation/#linux-installation-docker-ce). You’ll be installing the [_Debian_ version](https://docs.docker.com/install/linux/docker-ce/debian/).
 4. Install Linuxbrew by running `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`.
 5. Install DDEV and docker-compose by running `brew tap ddev/ddev && brew install ddev docker-compose`.
-6. Add your user to the “docker” group by running `sudo usermod -aG docker $USER`.
+6. Add your user to the `docker` group by running `sudo usermod -aG docker $USER`.
 7. Reboot the Debian container by running `sudo reboot`, then open “Terminal” again. You should be able to run `docker ps` successfully.
 8. Allow DDEV to bind to all interfaces by running `ddev config global --router-bind-all-interfaces`.
 9. To use a browser to visit your site, you have two options. The first is to install a browser like Firefox or Chromium inside Linux and use the built-in X11 capabilities to use that browser. The second is to use Chrome’s browser; that has some problems especially with HTTPS, as described below.

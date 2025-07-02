@@ -58,7 +58,7 @@ The standard Composer command requires that you are creating a project in a comp
 
 In fact, if you do attempt to run `ddev composer create-project` you’ll get a friendly reminder that this command is unsupported, and ddev will tell you to use `ddev composer create` for basic project creation.
 
-Another thing you can do is execute Composer in other directories within the container. [SSH into a container](https://ddev.readthedocs.io/en/stable/users/cli-usage/#ssh-into-containers) to open an interactive bash shell session to the container. Then you can use Composer ‘natively’ ([see the docs](https://ddev.readthedocs.io/en/stable/users/developer-tools/#ddev-and-composer)). You can end the native Composer session by typing `exit`.
+Another thing you can do is execute Composer in other directories within the container. [SSH into a container](https://ddev.readthedocs.io/en/stable/users/cli-usage/#ssh-into-containers) to open an interactive Bash shell session to the container. Then you can use Composer ‘natively’ ([see the docs](https://ddev.readthedocs.io/en/stable/users/developer-tools/#ddev-and-composer)). You can end the native Composer session by typing `exit`.
 
 As the [documentation on ddev and Composer explains](https://ddev.readthedocs.io/en/stable/users/developer-tools/#ddev-and-composer), ddev will execute the Composer command at the project root in the web container, passing all arguments and flags to Composer, as the examples here show.
 

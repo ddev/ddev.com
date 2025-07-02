@@ -68,6 +68,6 @@ docker buildx build --push --platform $(BUILD_ARCHS) -t $(DOCKER_REPO):$(VERSION
 
 See [Makefile](https://github.com/DiffyWebsite/diffy-worker/blob/main/docker/Makefile) and [Readme](https://github.com/DiffyWebsite/diffy-worker) for more details.
 
-The biggest roadblock I had with the container is that default shell from ubuntu:22.04 is “dash”. So we had to replace it with bash to make node installed and used properly. Also pay attention that we install node with "n" so it is installed to `/usr/local/bin/node` so it is accessible for everyone.
+The biggest roadblock I had with the container is that default shell from ubuntu:22.04 is “dash”. So we had to replace it with Bash to make node installed and used properly. Also pay attention that we install node with "n" so it is installed to `/usr/local/bin/node` so it is accessible for everyone.
 
 I would like to thank Randy and Stas as lot for their constant support in this project.

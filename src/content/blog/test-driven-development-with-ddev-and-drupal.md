@@ -13,7 +13,7 @@ categories:
 
 We caught up with Matt Glaman from [Commerce Guys](https://commerceguys.com/), who was first introduced to DDEV at [DrupalCamp Florida](https://www.fldrupal.camp/) 2018\. Since then, he’s been an avid DDEV user, contributing great feedback and writing [blog posts](https://glamanate.com/tags/ddev) to help other DDEV users. He wrote about learning how to use [Xdebug over the command line](https://glamanate.com/blog/xdebug-over-command-line-ddev) and even a whole series on testing, which we’re going to look at in this post.
 
-Matt Glaman is an active member of the DDEV community, [Randy Fay pointed out](https://twitter.com/randyfay/status/1090727584457940993) that “Matt [also took up GoLang](https://glamanate.com/blog/goland-ide-and-local-vendor-directories) and made \*significant\* contributions to ddev. The [docroot detection he wrote](https://github.com/ddev/ddev/pulls?q=is%3Apr+author%3Amglaman+is%3Aclosed) has made ddev ever-so-much better.” Thanks Matt!
+Matt Glaman is an active member of the DDEV community, [Randy Fay pointed out](https://twitter.com/randyfay/status/1090727584457940993) that “Matt [also took up GoLand](https://glamanate.com/blog/goland-ide-and-local-vendor-directories) and made \*significant\* contributions to ddev. The [docroot detection he wrote](https://github.com/ddev/ddev/pulls?q=is%3Apr+author%3Amglaman+is%3Aclosed) has made ddev ever-so-much better.” Thanks Matt!
 
 ### Tell us a bit about yourself, Matt!
 

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+#ddev-generated
+## Description: Run prettier inside the web container
+## Usage: prettier
+## Example: "ddev prettier"
+## ExecRaw: true
+## MutagenSync: true
+
+npm run prettier:fix

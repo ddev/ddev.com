@@ -100,7 +100,7 @@ make test
 
 The test will build the container locally and then run a suite of `bats` tests on it. You can look at the `Makefile` to see exactly what the test does. The `ddev-webserver` test runs `tests/ddev-webserver/test.sh $(DOCKER_ORG)/ddev-webserver:$(VERSION)`, which runs the `bats` files in the `tests` directory.
 
-[`bats`](https://github.com/bats-core/bats-core) is a `bash`-based test framework and it's used here because the tests have nothing to do with Golang, and for most people the barrier to entry for a bash test is lower. `bats` is also used by default in DDEV add-on tests, and is covered in the [Contributor Training on Add-Ons](advanced-add-on-contributor-training.md). PRs that make nontrivial changes to the Docker images should normally have test coverage at this level.
+[`bats`](https://github.com/bats-core/bats-core) is a `bash`-based test framework and it's used here because the tests have nothing to do with Golang, and for most people the barrier to entry for a Bash test is lower. `bats` is also used by default in DDEV add-on tests, and is covered in the [Contributor Training on Add-Ons](advanced-add-on-contributor-training.md). PRs that make nontrivial changes to the Docker images should normally have test coverage at this level.
 
 ## Testing images with the Golang-based tests
 

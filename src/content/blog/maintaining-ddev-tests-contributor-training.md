@@ -24,7 +24,7 @@ DDEV has three main types of tests:
 
 - Go “pkg” tests, that don’t use an external `ddev` binary. These are mostly a "pure" form of Go test. There are both end-to-end tests and some unit tests.
 - Go “cmd” tests that rely on a matching external `ddev` binary. These are almost scripted tests, written in Go, but calling out to execute the `ddev` binary and exercise it.
-- Container tests written using bats (bash).
+- Container tests written using bats (Bash).
 
 Golang tests are in files named `*_test.go` and the tests themselves are functions named `Test*`. For example the test [TestConfigFunctionality](https://github.com/ddev/ddev/blob/507cfca2508b97786b80e8b8c83ea17f5c0fea20/pkg/ddevapp/config_test.go#L1458) is in the file [config_test.go](https://github.com/ddev/ddev/blob/main/pkg/ddevapp/config_test.go).
 
@@ -75,7 +75,7 @@ The easiest place to look at slow tests is a full buildkite test run, which show
 
 ## Running and debugging tests individually
 
-- [Setting up a Go Development Environment](setting-up-a-go-development-environment.md) has more hints about overall setup. Mostly there's nothing to do but run Goland and make sure that the Settings->Go->GOROOT is set correctly. `go env GOROOT` will show the correct directory.
+- [Setting up a Go Development Environment](setting-up-a-go-development-environment.md) has more hints about overall setup. Mostly there's nothing to do but run GoLand and make sure that the Settings->Go->GOROOT is set correctly. `go env GOROOT` will show the correct directory.
 - To save time, make sure to define the environment variable `GOTEST_SHORT=true`, or set it to a useful value for TestDdevFullSiteSetup. These values are in the [TestSites array](https://github.com/ddev/ddev/blob/507cfca2508b97786b80e8b8c83ea17f5c0fea20/pkg/ddevapp/ddevapp_test.go#L42-L365). For example, `GOTEST_SHORT=12` is for Drupal 10. If you don't set this, the test runner will spend lots of time downloading test tarballs that you don't need to wait for.
 - If you're running one of the “cmd” tests (mostly named something like `TestCmd*`, and all located in the `cmd` directory) then make sure that the related `ddev` binary from the same code is first in your `$PATH` so that you don't get confused about the behavior. Remember that those tests actually execute the `ddev` binary externally, rather than doing critical actions themselves.
 

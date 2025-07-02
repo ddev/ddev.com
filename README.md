@@ -51,6 +51,8 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`      | Preview your build locally, before deploying       |
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
 | `npm run astro --help` | Get help using the Astro CLI                       |
+| `npm run prettier`     | Run prettier in the project root                   |
+| `npm run prettier:fix` | Apply fixable updates to resolve prettier errors   |
 | `npm run textlint`     | Run textlint on content collections                |
 | `npm run textlint:fix` | Apply fixable updates to resolve textlint errors   |
 
@@ -155,7 +157,7 @@ A basic textlint configuration lives in `.textlintrc` and runs against `src/cont
 
 Textlint’s [default terminology](https://github.com/sapegin/textlint-rule-terminology/blob/master/terms.jsonc) catches a lot of accepted best practices on its own, where the only major override is to allow “website” (instead of its suggested “site”) because it’s rampant in blog posts and documentation. Same with the “front end” and “back end” conundrum and two-word “command line”.
 
-Run `ddev npm run textlint` or `npm run textlint` to check everything, and you can apply “fixable” changes using `ddev npm run textint:fix` or `npm run textlint:fix`. Be careful automating fixes to be sure they don’t have any unintended side effects!
+Run `ddev textlint` before committing your changes.
 
 ### Prettier and EditorConfig
 
@@ -169,10 +171,7 @@ If you work with Visual Studio Code, please install these three extensions:
 
 Automatically "Format on Save" setting is activated via `.vscode/settings.json` for Visual Studio Code.
 
-General commands:
-
-- Use `npx prettier --check .` to verify everything is properly formatted
-- Use `npx prettier --write .` to autoformat all files
+Run `ddev prettier` before committing your changes.
 
 ### Sponsor Management
 

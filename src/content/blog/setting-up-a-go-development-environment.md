@@ -25,7 +25,7 @@ The first command recommended was
 brew install go golangci-lint
 ```
 
-DDEV uses [make](https://www.gnu.org/software/make/) ([Min 13:32](https://youtu.be/IjrJw0Ay-dk?t=810)) to build its binary. Make is included with the macOS Command-Line Tools for XCode and can be installed with `xcode-select --install`, but that is already required to install Homebrew, so should already be installed.
+DDEV uses [make](https://www.gnu.org/software/make/) ([Min 13:32](https://youtu.be/IjrJw0Ay-dk?t=810)) to build its binary. Make is included with the macOS Command-Line Tools for Xcode and can be installed with `xcode-select --install`, but that is already required to install Homebrew, so should already be installed.
 
 ## Cloning [DDEV](https://github.com/ddev/ddev) repository ([Min 15:30](https://youtu.be/IjrJw0Ay-dk?t=932))
 
@@ -49,9 +49,9 @@ Makedocs is used for previewing and contributing to the docs. It's named makedoc
 
 You can preview a built version of the docs you're working with using `make mkdocs-serve`.
 
-## Randy IDE of choice is Goland ([Min 23:50](https://youtu.be/IjrJw0Ay-dk?t=1547))
+## Randy IDE of choice is GoLand ([Min 23:50](https://youtu.be/IjrJw0Ay-dk?t=1547))
 
-Goland is very similar to PhpStorm and of course is made by the same JetBrains company.
+GoLand is very similar to PhpStorm and of course is made by the same JetBrains company.
 
 One fantastic thing about Go is that there is only one way to format it ([Min 26:10](https://youtu.be/IjrJw0Ay-dk?t=1576)). It always uses tabs and the same indentation. It all follows the standards set by `gofmt`.
 
@@ -65,21 +65,21 @@ For new feature-based pull requests ([Min 31:34](https://youtu.be/IjrJw0Ay-dk?t=
 
 The [DDEV Docs development tab](https://ddev.readthedocs.io/en/latest/developers/) ([Min 32:20](https://youtu.be/IjrJw0Ay-dk?t=1938)) includes plenty of tips and insights.
 
-#### [GOLand](https://www.jetbrains.com/go/) debugging insights ([Min 33:39](https://youtu.be/IjrJw0Ay-dk?t=2014))
+#### [GoLand](https://www.jetbrains.com/go/) debugging insights ([Min 33:39](https://youtu.be/IjrJw0Ay-dk?t=2014))
 
 At this point Randy showed us a demo on how to run `ddev/cmd/debug-config-yml.go` by first running main.go and then setting the working directory to match an active ddev project.
 
-#### VSCode Go debugging ([Min 37:50](https://youtu.be/IjrJw0Ay-dk?t=2268))
+#### VS Code Go debugging ([Min 37:50](https://youtu.be/IjrJw0Ay-dk?t=2268))
 
 The following extension is mentioned, [Go](https://marketplace.visualstudio.com/items?itemName=golang.Go) by the Go team at Google.
 
-DDEV comes with a launch.json prebuilt for you. It includes the config that might be found in Goland UI but for VsCode. The one item Randy usually has to change is the working directory ([Min 39:57](https://youtu.be/IjrJw0Ay-dk?t=2395)). He then showed an example on how to debug Go in VSCode.
+DDEV comes with a launch.json prebuilt for you. It includes the config that might be found in GoLand UI but for VS Code. The one item Randy usually has to change is the working directory ([Min 39:57](https://youtu.be/IjrJw0Ay-dk?t=2395)). He then showed an example on how to debug Go in VS Code.
 
 The most important GO files are in pkg/ddevapp ([Min 44:26](https://youtu.be/IjrJw0Ay-dk?t=2660)), the ones in cmd are the ones associated with a commands and the pkg Go files are functionality.
 
 [Cobra](https://cobra.dev/) is the library used for command flags and arguments. A lot of the commands in the cmd directory are an implementation that calls upon other things.
 
-At ([Min 49:43](https://youtu.be/IjrJw0Ay-dk?t=2977)) a question arose from a user's ability to get VSCode Go working:
+At ([Min 49:43](https://youtu.be/IjrJw0Ay-dk?t=2977)) a question arose from a user's ability to get VS Code Go working:
 
 ```
 "cwd":"${workspaceRoot}/../d9simple"
@@ -87,7 +87,7 @@ At ([Min 49:43](https://youtu.be/IjrJw0Ay-dk?t=2977)) a question arose from a us
 
 The issue was that "d9simple" is a placeholder string that needs to point to a real DDEV directory.
 
-At ([Min 50:50](https://youtu.be/IjrJw0Ay-dk?t=3048)) we can see a walkthrough of running Go tests in VSCode.
+At ([Min 50:50](https://youtu.be/IjrJw0Ay-dk?t=3048)) we can see a walkthrough of running Go tests in VS Code.
 
 devcontainer.json ([Min 58:35](https://youtu.be/IjrJw0Ay-dk?t=3507)) is a file for GitHub Codespaces.
 
