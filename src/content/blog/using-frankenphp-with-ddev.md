@@ -14,11 +14,17 @@ categories:
 
 ## Introduction
 
-The PHP ecosystem is changing fast, with tools like FrankenPHP [FrankenPHP](https://frankenphp.dev) improving both performance and developer experience.
+The PHP ecosystem is changing fast, with tools like [FrankenPHP](https://frankenphp.dev) improving both performance and developer experience.
+
+FrankenPHP is now [officially supported](https://thephp.foundation/blog/2025/05/15/frankenphp/) by The PHP Foundation.
 
 This guide explains two ways to integrate FrankenPHP, based on my experience.
 
 You can either run FrankenPHP as a separate service (lets you install extra PHP extensions) or inside DDEV's `web` container (uses a static binary without support for extra extensions).
+
+### Generic web server
+
+This blog shows examples of the recently added [DDEV's generic web server](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#using-nodejs-as-ddevs-primary-web-server), which supports flexible configurations. It allows you to use any custom web server you want, including Node.js, Python, Ruby, etc.
 
 ## DDEV FrankenPHP Add-on
 
@@ -35,17 +41,25 @@ ddev add-on get stasadev/ddev-frankenphp
 ddev restart
 ```
 
+To add PHP extensions (see supported extensions [here](https://github.com/mlocati/docker-php-extension-installer?tab=readme-ov-file#supported-php-extensions)):
+
+```bash
+ddev dotenv set .ddev/.env.frankenphp --frankenphp-php-extensions="opcache spx"
+ddev add-on get stasadev/ddev-frankenphp
+ddev stop && ddev debug rebuild -s frankenphp && ddev start
+```
+
 ### ⚠️ Limitations:
 
-- Standard Linux/DDEV tools installed in the `web` container are not available because this is a separate Docker container.
-- `ddev xdebug` and `ddev launch` don't work (they target the `web` container)
-- Enabling/disabling Xdebug requires container rebuild
+- Standard Linux/DDEV tools are installed in the `web` container, not in the `frankenphp` container.
+- `ddev xdebug` and `ddev launch` don't work (they target the `web` container).
+- Enabling/disabling Xdebug requires container rebuild.
 
 If you want to suggest some feature or found a bug, feel free to [open an issue](https://github.com/stasadev/ddev-frankenphp/issues).
 
 ## Running FrankenPHP in the Web Container
 
-Alternatively, FrankenPHP can be run inside the `web` container. This quickstart shows an example (for a Drupal 11 project) where FrankenPHP is added as an extra daemon.
+Alternatively, FrankenPHP can be run inside the `web` container. This example from the [DDEV quickstart](https://ddev.readthedocs.io/en/stable/users/quickstart/#generic-frankenphp) shows an example (for a Drupal 11 project) where FrankenPHP is added as an extra daemon.
 
 ### ⚙️ Installation:
 
@@ -87,9 +101,31 @@ ddev launch $(ddev drush uli)
 - It's not possible to install additional PHP extensions (requires [ZTS build](https://github.com/oerdnj/deb.sury.org/issues/2208)).
 - Limited debugging capabilities, `ddev xdebug` doesn't work.
 
+## Resources
+
+- [FrankenPHP documentation](https://frankenphp.dev/docs/)
+- [DDEV's generic web server](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#using-nodejs-as-ddevs-primary-web-server)
+- [FrankenPHP add-on](https://github.com/stasadev/ddev-frankenphp)
+- [FrankenPHP quickstart](https://ddev.readthedocs.io/en/stable/users/quickstart/#generic-frankenphp)
+- [Hola FrankenPHP! Laravel Octane Servers Comparison: Pushing the Boundaries of Performance](https://medium.com/beyn-technology/hola-frankenphp-laravel-octane-servers-comparison-pushing-the-boundaries-of-performance-d3e7ad8e652c)
+
 ## Benchmarking
 
-Using https://github.com/stasadev/ddev-frankenphp-benchmark, I compared `nginx-fpm` with `frankenphp` in the web container (`generic-web`) and `frankenphp` in the `frankenphp` container (`generic-addon`).
+Using [ddev-frankenphp-benchmark](https://github.com/stasadev/ddev-frankenphp-benchmark), I compared three setups:
+
+- `nginx-fpm`: DDEV's `nginx-fpm` web server with `php-fpm`
+- `generic-web`: DDEV's `generic` web server with FrankenPHP inside the `web` container (static binary)
+- `generic-addon`: DDEV's `generic` web server with FrankenPHP inside the `frankenphp` container (with `pdo_mysql` and `opcache` extensions)
+
+There was no significant performance difference across them. Summary:
+
+- All configurations delivered comparable and adequate performance.
+- FrankenPHP is a win where there is an upstream hosting environment using FrankenPHP.
+- Benchmarks used default DDEV settings, not production-optimized configurations.
+- Laravel Octane (FrankenPHP worker mode) was not used and could yield better results.
+- CPU and memory usage were not measured.
+
+### Benchmarking Results
 
 <b>Software:</b><br>
 DDEV: v1.24.6<br>
@@ -117,18 +153,5 @@ Samsung 870 Evo SSD (530w/560r MB/s)
 ![Latency Distribution (Static Endpoint)](/img/blog/2025/07/frankenphp-latency-distribution-static.png)
 
 ![Latency Distribution (HTTP Request Endpoint)](/img/blog/2025/07/frankenphp-latency-distribution-http-request.png)
-
-As you can see, there's no significant difference, but:
-
-- This was a quick DDEV benchmark, not using any production config
-- Laravel Octane (FrankenPHP worker mode) wasn't used, which could improve speed
-- CPU and memory usage weren't measured
-- The hardware used wasn't powerful
-
-## Resources
-
-- [FrankenPHP documentation](https://frankenphp.dev/docs/)
-- [Hola FrankenPHP! Laravel Octane Servers Comparison: Pushing the Boundaries of Performance](https://medium.com/beyn-technology/hola-frankenphp-laravel-octane-servers-comparison-pushing-the-boundaries-of-performance-d3e7ad8e652c)
-- [ddev-frankenphp add-on](https://github.com/stasadev/ddev-frankenphp)
 
 If you find DDEV (and its add-ons like FrankenPHP) useful, consider [supporting its development](/support-ddev/#sponsor-development). Thank you!
