@@ -59,7 +59,7 @@ If you want to suggest some feature or found a bug, feel free to [open an issue]
 
 ## Running FrankenPHP in the Web Container
 
-Alternatively, FrankenPHP can be run inside the `web` container. This example from the [DDEV quickstart](https://ddev.readthedocs.io/en/stable/users/quickstart/#generic-frankenphp) shows an example (for a Drupal 11 project) where FrankenPHP is added as an extra daemon.
+Alternatively, FrankenPHP can be run inside the `web` container. This example from the [DDEV quickstart](https://ddev.readthedocs.io/en/stable/users/quickstart/#generic-frankenphp) shows a setup (for a Drupal 11 project) where FrankenPHP is added as an extra daemon.
 
 ### ⚙️ Installation:
 
