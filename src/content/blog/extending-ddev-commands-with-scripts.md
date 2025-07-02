@@ -50,11 +50,11 @@ Too many options, perhaps, for a newbie. But all these command line options give
 I started, then, working in such a tool, which I visualized as a local shop manager (in short, "lsm") with the following set of goals:
 
 - Each needed operation would translate in a command for lsm, like: initialize the containers, install the shop in the containers, remove them, download a specific version of the plugin, install the plugin, uninstall the plugin, configure the plugin, etc...
-- Strong focus in flexibility, with a lot of settings supported and that each command can declare. All the settings will be provided in a yaml file, or by CLI arguments.
+- Strong focus in flexibility, with a lot of settings supported and that each command can declare. All the settings will be provided in a YAML file, or by CLI arguments.
 - Provide as many default settings values as possible to ensure that lsm works in most of the cases out of the box.
 - Total abstraction from the shop systems: the workflow for managing a shop (magento, woocomerce, prestashop, etc...) would be exactly the same regardless which shop is being managed. So the end users need to learn one workflow of lsm commands and they can then manage all the shops.
 - Make the tool as easy to use as possible, with an independent documentation. Starting with a 'help' command that can describe all the other commands and the options that are accepted.
-- Built with latests PHP features, using Symfony project when needed (yaml...), PHPUnit...
+- Built with latests PHP features, using Symfony project when needed (YAML...), PHPUnit...
 - Use Phar format for distributing the lsm tool, which also has its own version lifecycle and self-update options.
 - Possibility of having several instances installed at the same time without any conflict.
 

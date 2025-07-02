@@ -10,10 +10,12 @@
       "terms": [
         "AMD64",
         "ARM64",
-        "Basg",
+        "Bash",
         "Docker",
         "Drush",
         "Git",
+        "GoLand",
+        "Golang",
         "Mutagen",
         "MySQL",
         "phpMyAdmin",
@@ -22,13 +24,16 @@
         ["(\\s)http", "HTTP"],
         ["(\\s)https", "HTTPS"],
         ["(\\s)SSH", "SSH"],
-        ["web-?server", "web server"]
+        ["vs?code", "VS Code"],
+        ["web-?server", "web server"],
       ],
       "exclude": [
         "back[- ]end(\\w*)",
-        "command ?line",
+        "command ?line tool(s)?",
         "front[- ]end(\\w*)",
-        "web[- ]?site(s)?"
+        "readme(s)?",
+        "V[ -]?S[ -]?Code",
+        "web[- ]?site(s)?",
       ]
     },
     "stop-words": {

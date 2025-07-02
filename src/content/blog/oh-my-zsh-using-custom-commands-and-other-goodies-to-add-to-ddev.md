@@ -15,9 +15,9 @@ DDEV is a powerful local development tool that many of you are fond of for its s
 
 When in doubt, update DDEV on your machine and run `ddev config` on a project before getting started with new features.
 
-As an example, and since there are many folks who absolutely love [zsh](https://www.zsh.org/) and [Oh My Zsh](https://ohmyz.sh/) (an alternative Unix shell and an accompanying framework), we’ll demonstrate these features by showing you how to add zsh and Oh My Zsh to a DDEV project. We’re going to do three things to demonstrate this:
+As an example, and since there are many folks who absolutely love [Zsh](https://www.zsh.org/) and [Oh My Zsh](https://ohmyz.sh/) (an alternative Unix shell and an accompanying framework), we’ll demonstrate these features by showing you how to add Zsh and Oh My Zsh to a DDEV project. We’re going to do three things to demonstrate this:
 
-- Add the zsh Debian package into the web container with `webimage_extra_packages`
+- Add the `zsh` Debian package into the web container with `webimage_extra_packages`
 - Add a custom command that works like `ddev ssh`, but it’s going to be `ddev zsh`
 - Add all the scaffolding for Oh My Zsh in the home directory for lovers of Oh My Zsh
 
@@ -27,10 +27,10 @@ Watch the video below and read the detailed instructions to configure your own p
 <iframe width="560" height="315" src="https://www.youtube.com/embed/eyhzszuF9Rg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
-## How to add zsh and Oh My Zsh to DDEV
+## How to add Zsh and Oh My Zsh to DDEV
 
-1. From the root of an existing project configured with DDEV: Add the zsh package to the web server container by adding `webimage_extra_packages: ["zsh"]` to the `.ddev/config.yaml` file (or run `ddev config --webimage-extra-packages=zsh`, which does the exact same thing). If you only want zsh in the web container, you can `ddev restart` and you’re done!
-2. To add a `ddev zsh` custom command to your project, place a file named “zsh” in `.ddev/commands/web/zsh` with the following contents and make it executable with `chmod +x zsh`:
+1. From the root of an existing project configured with DDEV: Add the `zsh` package to the web server container by adding `webimage_extra_packages: ["zsh"]` to the `.ddev/config.yaml` file (or run `ddev config --webimage-extra-packages=zsh`, which does the exact same thing). If you only want `zsh` in the web container, you can `ddev restart` and you’re done!
+2. To add a `ddev zsh` custom command to your project, place a file named `zsh` in `.ddev/commands/web/zsh` with the following contents and make it executable with `chmod +x zsh`:
 
    ```
    #!/bin/bash
@@ -42,9 +42,9 @@ Watch the video below and read the detailed instructions to configure your own p
    zsh $@
    ```
 
-   Now you can run `ddev zsh` and be in your familiar zsh environment (if you did the `ddev restart` after adding the package in step 1.
+   Now you can run `ddev zsh` and be in your familiar Zsh environment (if you did the `ddev restart` after adding the package in step 1.
 
-3. If zsh is all you want, copy your favorite `.zshrc` into `.ddev/homeadditions` for your project and zsh will be set up with your `.zshrc` every time you start the project. You’re done now.
+3. If Zsh is all you want, copy your favorite `.zshrc` into `.ddev/homeadditions` for your project and Zsh will be set up with your `.zshrc` every time you start the project. You’re done now.
 4. Now to add all the goodies that make [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) work:
    1. If you already have a `~/.oh-my-zsh` and `~/.zshrc`, you can probably copy those into `.ddev/homeadditions` and they will be added when you run `ddev start`.
    2. Otherwise, create the `.oh-my-zsh` like this:
@@ -57,8 +57,8 @@ Watch the video below and read the detailed instructions to configure your own p
 
 **To review,** we used three advanced features of ddev:
 
-- Added an extra Debian package (zsh) with [`webimage_extra_packages`](https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/#adding-extra-debian-packages-with-webimage%5Fextra%5Fpackages-and-dbimage%5Fextra%5Fpackages)
-- Added a custom command (zsh) in `.ddev/commands/web` by adding a simple script ([docs](https://ddev.readthedocs.io/en/stable/users/extend/custom-commands/))
+- Added an extra Debian package (`zsh`) with [`webimage_extra_packages`](https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/#adding-extra-debian-packages-with-webimage%5Fextra%5Fpackages-and-dbimage%5Fextra%5Fpackages)
+- Added a custom command (`zsh`) in `.ddev/commands/web` by adding a simple script ([docs](https://ddev.readthedocs.io/en/stable/users/extend/custom-commands/))
 - Added extra stuff (`oh-my-zsh` and `.zshrc`) into `.ddev/homeadditions` that will be added to the home directory in the web container on every `ddev start` ([docs](https://ddev.readthedocs.io/en/stable/users/extend/in-container-configuration/)).
 
 Happy customizing! If you have questions, check out our [support channels](https://ddev.readthedocs.io/en/stable/users/support/).

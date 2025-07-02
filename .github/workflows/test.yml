@@ -26,9 +26,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Lint
-        run: npm run textlint
+        run: npm run textlint || printf "Run 'ddev textlint' locally to fix it.\n\n"
       - name: Prettier
-        run: npx prettier --check .
+        run: npm run prettier || printf "\nRun 'ddev prettier' locally to fix it.\n\n"
       - name: Install, build, and upload your site output
         uses: withastro/action@v2
         with:

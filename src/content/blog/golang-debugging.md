@@ -26,11 +26,11 @@ First, you need some of the basics:
   - On macOS: `brew install golang delve` (`make` is already provided by Apple's Xcode command-line tools)
   - WSL2/Linux: `sudo snap install --classic go && sudo apt update && sudo apt install -y build-essential clang ccache`
 - Install your IDE, [GoLand](https://www.jetbrains.com/go/) or [VS Code](https://code.visualstudio.com/). On Windows/WSL2 most people install each of these on the Windows side, although they can be run inside WSL2 using the Linux versions.
-- For GoLand, nothing further is required, but on VS Code you'll need to install the [golang go](https://marketplace.visualstudio.com/items?itemName=golang.go) extension.
+- For GoLand, nothing further is required, but on VS Code you'll need to install the [Golang go](https://marketplace.visualstudio.com/items?itemName=golang.go) extension.
 
 Once you've have your IDE working, you can start debugging.
 
-## Goland Debugging
+## GoLand Debugging
 
 ### Debug a simple command like `ddev list`
 

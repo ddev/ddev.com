@@ -41,7 +41,6 @@ DDEV's images and containers are all in the [containers](https://github.com/ddev
   - **Customization:** Each project can [customize the web image](https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/) with `webimage_extra_packages` or `.ddev/web-build/Dockerfile.*`.
   - Why aren't `nginx`, `php-fpm`, `node`, and `mailpit` in separate containers? It's fairly common for each Docker container to run a single process, so it would not be unexpected for DDEV to have separate `nginx` and `php` containers (and it once did). However, it seemed better for users at one point in DDEV's history to combine them all in one container, and they're still there. We re-evaluate this from time to time.
 - **[`ddev-dbserver`](https://github.com/ddev/ddev/tree/main/containers/ddev-dbserver)** runs the MySQL, MariaDB, or PostgreSQL daemons.
-
   - The MariaDB images are built on top of the official upstream Docker images.
   - The MySQL images have to be done quite differently, because MySQL has never provided ARM64 packages. So take a minute and [fry your brain](https://ddev.readthedocs.io/en/stable/developers/release-management/#maintaining-ddev-dbserver-mysql-57-and-80-arm64-images) with what we have to do to build MySQL 5.6 and 8.x images. We do hope to use the `bitnami/mysql` upstream images in the future since they recently started supporting ARM64.
   - The PostgreSQL images are simpler.

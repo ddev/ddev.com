@@ -33,7 +33,7 @@ If you know something about Docker, you know that you can throw one or two Docke
 - Trusted HTTPS for every project.
 - Import, export, and snapshot databases.
 - Run or start as many projects as you want to, all at the same time, depending on the resources you have available. Each project can have different PHP version, use apache instead of nginx, etc.
-- ssh integration (ssh-agent bundled so you can use your keys inside the container for accessing hosts or private composer repositories.
+- SSH integration (ssh-agent bundled so you can use your keys inside the container for accessing hosts or private composer repositories.
 - Composer support built into the web container and accessed with `ddev composer`.
 - [Xdebug step-debugging](https://ddev.readthedocs.io/en/stable/users/step-debugging/#step-debugging-with-ddev-and-xdebug) out of the box. Run `ddev xdebug on` and go.
 - Add-ons for facilities not built into core DDEV, like Elasticsearch, Apache Solr, Redis, and lots more.

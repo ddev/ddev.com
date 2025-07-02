@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+## Description: Run textlint inside the web container
+## Usage: textlint
+## Example: "ddev textlint"
+## ExecRaw: true
+## MutagenSync: true
+
+npm run textlint:fix

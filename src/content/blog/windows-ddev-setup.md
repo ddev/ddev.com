@@ -40,10 +40,10 @@ Two recent Windows machines I set up were the new ARM64/Qualcomm/CoPilot variety
     - On ARM64 this will fail the Chocolatey installation because Chocolatey doesn't plan to support ARM64. But you can ignore the failure; the script continues on anyway.
     - On ARM64, `choco uninstall -y mkcert gsudo` so that the DDEV installer can get the native versions of each of these.
     - On ARM64, install the Windows-side DDEV from the installer in the [DDEV releases](https://github.com/ddev/ddev/releases). We'll probably discontinue documenting the Chocolatey install technique in the future.)
-11. Install and test the fantastic [1Password ssh agent](https://developer.1password.com/docs/ssh/agent/).
+11. Install and test the fantastic [1Password SSH agent](https://developer.1password.com/docs/ssh/agent/).
 12. On Windows PowerShell `ssh -T git@github.com` to verify that the 1Password SSH agent is working. If it says "PTY Allocation Failed", just hit `<RETURN>` and ignore it. You should get the confirmation message from GitHub.
 13. 1Password WSL2 adaptation:
-    `sudo ln -s /mnt/c/WINDOWS/System32/OpenSSH/ssh.exe /usr/local/bin/ssh && sudo ln -s /mnt/c/WINDOWS/System32/OpenSSH/ssh-add.exe /usr/local/bin/ssh-add` (Makes ssh use `ssh.exe` on Windows and the 1Password SSH and Git integrations then work great. This assumes that `/usr/local/bin` in your PATH comes before `/usr/bin`)
+    `sudo ln -s /mnt/c/WINDOWS/System32/OpenSSH/ssh.exe /usr/local/bin/ssh && sudo ln -s /mnt/c/WINDOWS/System32/OpenSSH/ssh-add.exe /usr/local/bin/ssh-add` (Makes SSH use `ssh.exe` on Windows and the 1Password SSH and Git integrations then work great. This assumes that `/usr/local/bin` in your PATH comes before `/usr/bin`)
 14. Link p4merge: `sudo ln -s "/mnt/c/Program Files/Perforce/p4merge.exe /usr/local/bin/p4merge`.
 15. If you have a `dotfiles` repository (containing your shared `.bash_profile`, `.zshrc`, etc.) clone it in WSL2.
 16. Check out DDEV's code. `mkdir -p ~/workspace && cd ~/workspace && git clone -o upstream git@github.com:ddev/ddev`
