@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-#ddev-generated
 ## Description: Run prettier inside the web container
 ## Usage: prettier
 ## Example: "ddev prettier"
