@@ -18,11 +18,11 @@ The PHP ecosystem is changing fast, with tools like FrankenPHP [FrankenPHP](http
 
 This guide explains two ways to integrate FrankenPHP, based on my experience.
 
-You can either run FrankenPHP as a separate service (lets you install extra PHP extensions) or inside the `web` container (uses a static binary without support for extra extensions).
+You can either run FrankenPHP as a separate service (lets you install extra PHP extensions) or inside DDEV's `web` container (uses a static binary without support for extra extensions).
 
 ## DDEV FrankenPHP Add-on
 
-I created the [stasadev/ddev-frankenphp](https://github.com/stasadev/ddev-frankenphp) add-on to run FrankenPHP as a separate service with:
+I created the [stasadev/ddev-frankenphp](https://github.com/stasadev/ddev-frankenphp) add-on to experiment with FrankenPHP as a separate service with some additional features:
 
 - Ability to install PHP extensions (Redis, Xdebug, SPX, etc.)
 - Better resource isolation
@@ -37,8 +37,8 @@ ddev restart
 
 ### ⚠️ Limitations:
 
-- Tools from the `web` container are not available
-- `ddev xdebug` and `ddev launch` don't work (target `web` container)
+- Standard Linux/DDEV tools installed in the `web` container are not available because this is a separate Docker container.
+- `ddev xdebug` and `ddev launch` don't work (they target the `web` container)
 - Enabling/disabling Xdebug requires container rebuild
 
 If you want to suggest some feature or found a bug, feel free to [open an issue](https://github.com/stasadev/ddev-frankenphp/issues).
@@ -84,8 +84,8 @@ ddev launch $(ddev drush uli)
 
 ### ⚠️ Limitations:
 
-- Can't install more PHP extensions (requires [ZTS build](https://github.com/oerdnj/deb.sury.org/issues/2208))
-- Limited debugging capabilities, `ddev xdebug` doesn't work
+- It's not possible to install additional PHP extensions (requires [ZTS build](https://github.com/oerdnj/deb.sury.org/issues/2208)).
+- Limited debugging capabilities, `ddev xdebug` doesn't work.
 
 ## Benchmarking
 
