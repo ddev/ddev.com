@@ -44,7 +44,7 @@ ddev restart
 To add PHP extensions (see supported extensions [here](https://github.com/mlocati/docker-php-extension-installer?tab=readme-ov-file#supported-php-extensions)):
 
 ```bash
-ddev dotenv set .ddev/.env.frankenphp --frankenphp-php-extensions="opcache spx"
+ddev dotenv set .ddev/.env.frankenphp --frankenphp-php-extensions="redis pdo_mysql"
 ddev add-on get stasadev/ddev-frankenphp
 ddev stop && ddev debug rebuild -s frankenphp && ddev start
 ```
@@ -115,7 +115,7 @@ Using [ddev-frankenphp-benchmark](https://github.com/stasadev/ddev-frankenphp-be
 
 - `nginx-fpm`: DDEV's `nginx-fpm` web server with `php-fpm`
 - `generic-web`: DDEV's `generic` web server with FrankenPHP inside the `web` container (static binary)
-- `generic-addon`: DDEV's `generic` web server with FrankenPHP inside the `frankenphp` container (with `pdo_mysql` and `opcache` extensions)
+- `generic-addon`: DDEV's `generic` web server with FrankenPHP inside the `frankenphp` container (with `pdo_mysql` extension)
 
 Summary:
 
