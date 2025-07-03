@@ -1,19 +1,18 @@
 ---
 title: "DDEV July 2025 Newsletter"
-pubDate: 2025-07-03
+pubDate: 2025-07-06
 #modifiedDate: 2025-04-07
-#summary: "Highlights: Vite and DDEV with WordPress, TYPO3 Community Budget Idea, DDEV Architecture, Running Old PHP versions."
+summary: "Highlights: Downgrading Terminus for old PHP, FrankenPHP, Advisory Group meeting and Governance proposal, Shopware Storefront and Admin Watchers, Writing your first Drupal 10 Functional Test, and more."
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2025/06/impending-storm-new-mexico.jpg
-#  alt: Impending storm in New Mexico, Randy Fay's bikepacking trip
-#  credit: "Photo by Randy Fay"
+featureImage:
+  src: /img/blog/2025/07/mount-garfield-morning.jpg
+  alt: Mount Garfield this morning, Palisade, Colorado, USA
 categories:
   - Community
 ---
 
 **Welcome to the July 2025 DDEV Newsletter**  
-This month: Downgrading Terminus for old PHP, Advisory Group meeting and Governance proposal, Shopware Storefront and Admin Watchers, Writing your first Drupal 10 Functional Test, and more.
+This month: Downgrading Terminus for old PHP, FrankenPHP, Advisory Group meeting and Governance proposal, Shopware Storefront and Admin Watchers, Writing your first Drupal 10 Functional Test, and more.
 
 ---
 
@@ -21,8 +20,9 @@ This month: Downgrading Terminus for old PHP, Advisory Group meeting and Governa
 
 - **How to Downgrade Terminus in DDEV's Web Container and Customize Other Bundled Tools**  
   A guest blog by Bill Seremetis explaining the problem with an old PHP version and Pantheon's Terminus, and how to fix it. → [Read more↗](ddev-bundled-tools-using-custom-versions.md)
-
-- **July 2025 Advisory Group Meeting** is Wednesday, July 2, join us! → [Read more↗](https://github.com/orgs/ddev/discussions/7373).
+- **Experimenting with FrankenPHP in DDEV**  
+ Stas Zhuk explains two ways to use [FrankenPHP](https://frankenphp.org/) in DDEV. → [Read more↗](using-frankenphp-with-ddev.md)
+- **July 2025 DDEV Advisory Group Meeting** meeting notes and recording! → [Read more↗](https://github.com/orgs/ddev/discussions/7373).
 
 ## Community Tutorials
 
@@ -32,7 +32,7 @@ This month: Downgrading Terminus for old PHP, Advisory Group meeting and Governa
 ## Governance & Roadmap
 
 - **Apache Foundation-inspired Project Management Committee Exploration**  
-  See a proposed early update to the DDEV Foundation's Articles of Incorporation, aiming us at goverlance like the Backdrop CMS folks have → [Details↗](https://docs.google.com/document/d/1MXatsz2FMBSnllnUArNCv562x0T2-EF1OwqsFEU9_-M/edit?usp=sharing)
+  See a proposed early update to the DDEV Foundation's Articles of Incorporation, aiming us at governance like the Backdrop CMS folks have → [Details↗](https://docs.google.com/document/d/1MXatsz2FMBSnllnUArNCv562x0T2-EF1OwqsFEU9_-M/edit?usp=sharing)
 
 ---
 
