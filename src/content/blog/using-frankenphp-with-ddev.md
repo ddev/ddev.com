@@ -51,9 +51,10 @@ ddev stop && ddev debug rebuild -s frankenphp && ddev start
 
 ### ⚠️ Limitations:
 
-- Standard Linux/DDEV tools are installed in the `web` container, not in the `frankenphp` container.
-- `ddev xdebug` and `ddev launch` don't work (they target the `web` container).
-- Enabling/disabling Xdebug requires container rebuild.
+- Standard Linux and DDEV tools are installed in the `web` container, not in the `frankenphp` container.
+- See the add-on README for adding Xdebug (`ddev xdebug` does not work here).
+- Enabling or disabling Xdebug requires rebuilding the `frankenphp` container.
+- `ddev launch` does not work because the web server runs in a different container.
 
 If you want to suggest some feature or found a bug, feel free to [open an issue](https://github.com/stasadev/ddev-frankenphp/issues).
 
