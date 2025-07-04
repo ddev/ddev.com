@@ -28,7 +28,7 @@ This month: Downgrading Terminus for old PHP, FrankenPHP, Advisory Group meeting
 ## Community Tutorials
 
 - **Shopware Storefront and Admin Watchers with DDEV** → [Read more↗](https://notebook.vanwittlaer.de/ddev-for-shopware/storefront-and-admin-watchers-with-ddev)
-- **How to Write Your First Functional Test in Drupal 10** → [Read more↗](https://eduardotelaya.com/blog/technology/2025-05-26-how-to-write-your-first-functional-test-in-drupal-10/?utm_source=TheDropTimes)
+- **How to Write Your First Functional Test in Drupal 10** → [Read more↗](https://eduardotelaya.com/blog/technology/2025-05-26-how-to-write-your-first-functional-test-in-drupal-10/)
 
 ## Governance & Roadmap
 
