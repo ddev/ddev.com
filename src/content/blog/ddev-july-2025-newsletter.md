@@ -1,6 +1,6 @@
 ---
 title: "DDEV July 2025 Newsletter"
-pubDate: 2025-07-06
+pubDate: 2025-07-07
 #modifiedDate: 2025-04-07
 summary: "Highlights: Downgrading Terminus for old PHP, FrankenPHP, Advisory Group meeting and Governance proposal, Shopware Storefront and Admin Watchers, Writing your first Drupal 10 Functional Test, and more."
 author: Randy Fay
@@ -27,6 +27,7 @@ This month: Downgrading Terminus for old PHP, FrankenPHP, Advisory Group meeting
 
 ## Community Tutorials
 
+- **From DevOps Headaches to Seamless Onboarding: How Dropping Chocolatey Made DDEV the Perfect Fit for a Client's Drupal Team** → [Read more↗](https://colan.pro/blog/dropping-chocolatey-for-ddev-on-windows-drupal-development/)
 - **Shopware Storefront and Admin Watchers with DDEV** → [Read more↗](https://notebook.vanwittlaer.de/ddev-for-shopware/storefront-and-admin-watchers-with-ddev)
 - **How to Write Your First Functional Test in Drupal 10** → [Read more↗](https://eduardotelaya.com/blog/technology/2025-05-26-how-to-write-your-first-functional-test-in-drupal-10/)
 
