@@ -22,13 +22,13 @@ TODO:
 
 A few years ago I wrote the first version of this article after experimenting with an 8GB [Asus C425](https://www.asus.com/us/Laptops/ASUS-Chromebook-14-C425TA/) for $329, which is a lot less any fancy Mac. It worked great, mostly because Chromebooks can run pure Debian Linux in what they call the “Terminal”.
 
-Fast forward to 2025 and I saw an enticing review of the very nice 16GB Lenovo Chromebook Plus, which turns out to be an ARM64 machine (the same architecture as Apple Silicon). It's a much beefier machine, with great build quality and a much higher finish level, but again very nice. 
+Fast forward to 2025 and I saw an enticing review of the very nice 16GB Lenovo Chromebook Plus, which turns out to be an [ARM64](arm64-apple-silicon-m1-ddev-local-what-does-it-all-mean.md) machine (the same architecture as Apple Silicon). It's a much beefier machine, with great build quality and a much higher finish level, but again very nice.
 
 ## Basic Chromebook Setup for DDEV
 
 Here’s the step-by-step to set up a DDEV development environment in 2025:
 
-1. In _Settings_ → About ChromeOS → Linux Development Environment, “Turn on” Linux.
+1. In _Settings_ → About ChromeOS → Developers → Linux Development Environment, “Set up". (For the disk size, you'll be using Docker images, so I used about 100GB, but it's what you need that matters.)
 2. In Linux, create a password for the username you’ve created by running `sudo passwd $USER`.
 3. Install Docker CE as in the [DDEV docs](https://ddev.readthedocs.io/en/stable/users/install/docker-installation/#docker-installation-linux). You’ll be installing the [_Debian_ version](https://docs.docker.com/install/linux/docker-ce/debian/).
 4. Install DDEV using the normal [Debian install instructions](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#debianubuntu).
