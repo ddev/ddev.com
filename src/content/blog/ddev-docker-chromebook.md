@@ -12,10 +12,6 @@ categories:
   - Guides
 ---
 
-TODO:
-* Using the Chromebook-side browser is really complicated (install CA, Use dnsmasq, link to article)
-* Addendum about using dnsmasq
-
 ## Introduction
 
 [DDEV](http://github.com/ddev/ddev) and Docker CE work fine for local development on a Chromebook!
@@ -24,26 +20,28 @@ A few years ago I wrote the first version of this article after experimenting wi
 
 Fast forward to 2025 and I saw an enticing review of the very nice 16GB Lenovo Chromebook Plus, which turns out to be an [ARM64](arm64-apple-silicon-m1-ddev-local-what-does-it-all-mean.md) machine (the same architecture as Apple Silicon). It's a much beefier machine, with great build quality and a much higher finish level, but again very nice.
 
+Installing on a Chromebook is a reminder of how versatile DDEV is. In almost any environment that has a Docker provider you get get it going with minimal effort. That includes Windows, WSL2, Mac, Linux, Chromebook, even [Raspberry Pi](watch-ddev-local-on-arm64-raspberry-pi.md).
+
 ## Basic Chromebook Setup for DDEV
 
 Here’s the step-by-step to set up a DDEV development environment in 2025:
 
 1. In _Settings_ → About ChromeOS → Developers → Linux Development Environment, “Set up". (For the disk size, you'll be using Docker images, so I used about 100GB, but it's what you need that matters.)
 2. In Linux, create a password for the username you’ve created by running `sudo passwd $USER`.
-3. TODO: Install some basics, like git, bash-completion, mkcert.
-3. Install Docker CE as in the [DDEV docs](https://ddev.readthedocs.io/en/stable/users/install/docker-installation/#docker-installation-linux). You’ll be installing the [_Debian_ version](https://docs.docker.com/install/linux/docker-ce/debian/).
-4. Install DDEV using the normal [Debian install instructions](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#debianubuntu).
-5. Add your user to the `docker` group by running `sudo usermod -aG docker $USER`.
-6. Reboot the Debian container by running `sudo reboot`, then open “Terminal” again. You should be able to run `docker ps` successfully.
-7. To use a browser to visit your site, you have two options. The first (preferred) is to install a browser like Chromium or Firefox and use the built-in graphics capabilities to use that browser. The second is to use the Chromebook's browser, which is far more complex. I'll add an addendum about how you can do it, but it's not easy and not recommended, but it's a fun demonstration of `dnsmasq`.
-8. Install the Chromium browser with `sudo apt-get update && sudo apt-get install -y chromium`. You’ll also want to run `mkcert -install`. Then use the browser inside the Debian Linux container.
-9. Create your project or check it out, `ddev config`, `ddev start`. Everything works, including `ddev launch`. Create a project the normal way and get to work! This is the simple path to a Drupal 11 Composer build, but there are lots of other DDEV [quickstart guides](https://ddev.readthedocs.io/en/stable/users/quickstart/).
+3. Do some basic updates: `sudo apt-get update && sudo apt-get upgrade -y`, then `sudo apt-get install -y git vim curl wget gnupg2 lsb-release apt-transport-https ca-certificates`.
+4. Install Docker CE as in the [DDEV docs](https://ddev.readthedocs.io/en/stable/users/install/docker-installation/#docker-installation-linux). You’ll be installing the [_Debian_ version](https://docs.docker.com/install/linux/docker-ce/debian/).
+5. Install DDEV using the normal [Debian install instructions](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#debianubuntu).
+6. Add your user to the `docker` group by running `sudo usermod -aG docker $USER`.
+7. Reboot the Debian container by running `sudo reboot`, then open “Terminal” again. You should be able to run `docker ps` successfully.
+8. To use a browser to visit your site, you have two options. The first (preferred) is to install a browser like Chromium or Firefox and use the built-in graphics capabilities to use that browser. The second is to use the Chromebook's browser, which is far more complex. I'll add an addendum about how you can do it, but it's not easy and not recommended, but it's a fun demonstration of `dnsmasq`.
+9. Install the Chromium browser with `sudo apt-get update && sudo apt-get install -y chromium`. You’ll also want to run `mkcert -install`. Then use the browser inside the Debian Linux container.
+10. Create your project or check it out, `ddev config`, `ddev start`. Everything works, including `ddev launch`. Create a project the normal way and get to work! This is the simple path to a Drupal 11 Composer build, but there are lots of other DDEV [quickstart guides](https://ddev.readthedocs.io/en/stable/users/quickstart/).
 
-   - `mkdir -p ~/workspace/d11 && cd ~/workspace/d11`
-   - `ddev config --project-type=drupal11 --docroot=web`
-   - `ddev composer create-project drupal/recommended-project`
-   - `ddev launch` and go install it!
-10. If you want to use PhpStorm or GoLand, they're easy enough to install in the Linux environment. You may need to install `snapd` first, (`sudo apt update && sudo apt install -y snapd`) and then install them with `sudo snap install phpstorm --classic` or `sudo snap install goland --classic`.
+    - `mkdir -p ~/workspace/d11 && cd ~/workspace/d11`
+    - `ddev config --project-type=drupal11 --docroot=web`
+    - `ddev composer create-project drupal/recommended-project`
+    - `ddev launch` and go install it!
+11. If you want to use PhpStorm or GoLand, they're easy enough to install in the Linux environment. You may need to install `snapd` first, (`sudo apt update && sudo apt install -y snapd`) and then install them with `sudo snap install phpstorm --classic` or `sudo snap install goland --classic`.
 
 ## Some comments about working with the Chromebook:
 
