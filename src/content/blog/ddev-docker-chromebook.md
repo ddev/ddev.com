@@ -49,12 +49,11 @@ Here’s the step-by-step to set up a DDEV development environment in 2025:
 - It was a pleasant experience with a nice keyboard. Outstanding performance, but less than my MacBook Air M4 It has great battery life, even with Docker running and doing lots. It has Linux (Debian), which is lovely. And the Linux side has great graphics support (GUI Linux apps work well and display with no effort). It has two USB-C ports but also a USB-A.
 - Like Windows with WSL2, this is a bit schizophrenic. I had to run several tools in the Linux environment (like GoLand and PhpStorm, both worked there though as snap installs.) And I ended up running 1Password *both* in the Chrome side (browser extension) and as an app on the Linux side so I could get proper SSH Agent support from it. You have a great Linux computer that works with the nice ChromeOS desktop, and the Linux is pretty much natural, standard, no hoops to jump through.
 - I ran into some apps that I was unsatisfied with. Slack and [Notion.so](http://notion.so) didn’t work well as Android apps. I installed Discord as an Android app, and didn't like it much.
-- There were some apps that I couldn’t use at all unless I ran them in Linux. They ran fine, but Linux GUI apps aren’t as well-tuned as those on other platforms. I had to run PhpStorm in Linux, and Firefox or Chrome if I wanted to use HTTPS.
-- Of course I didn’t have the versatility of the Mac or the predictability and wide app support of Windows. But if I were doing only web development and normal editing/daily work stuff it might work out.
+- Of course I didn’t have the versatility of the Mac or the predictability and wide app support of Windows. But if I were doing only web development and normal editing/daily work stuff it might work out. Mainstream environments are easier. Plain Ubuntu is easier because it's just one machine, not several.
 
 ## Adding `dnsmasq` to Use the Chromebook-side Chrome Browser
 
-These instructions help you to use the Chromebook-side Chrome browser and access the DDEV webserver running in Debian Linux (`Crostini`, or `terminal`):
+These instructions help you to use the Chromebook-side Chrome browser and access the DDEV webserver running in Debian Linux (`Crostini`, or `terminal`). It's easier just to use Chromium inside the Debian `terminal` app. 
 
 Basically, the Chromebook-side browser doesn't innately know about the lovely Debian Linux instance that's waiting there, so it doesn't know how to connect to DDEV, which essentially appears to be on a different computer. These instructions are inspired by [How To Apply ChromeOS's Linux Container's /etc/hosts Outside of the Container in Chrome](https://chrisbeley.com/software-engineering/how-to-apply-chromeos's-linux-container's-etchosts-outside-of-the-container-in-chrome), which is a little more complex than we need for most things, but it was certainly inspiring.
 
@@ -75,11 +74,3 @@ These assume that you already have DDEV installed and working in the `terminal`.
 ## How Do You Use DDEV?
 
 Where do _you_ run DDEV? If you have a unique setup, we'd love to have a guest blog on [ddev.com](/), or consider sharing the specs and adding a link to the [Awesome DDEV Links List](https://github.com/ddev/awesome-ddev) so others can check it out too!
-
-Addendum for using regular browser
-
-- To use the built-in Chrome browser:
-7. Import the CA into the browser
-
-  - Find out the IP address of your Debian terminal with `ip -a | grep eth0`. You’ll see something like “inet 100.105.93.95/28 brd 100.115.92.207” and the “100.115.92.195” is what you’re after.
-  - Install a Chrome extension like Host Switch Plus and configure it (Edit 2020-10-14: Host Switch Plus is no longer available, but [Livehosts](https://chrome.google.com/webstore/detail/livehosts/hdpoplemgeaioijkmoebnnjcilfjnjdi) may offer the same capability). Unfortunately the Chrome browser doesn’t innately understand how to connect to the web server running in the Debian terminal system, so we’ll use Host Switch Plus to convert `*.ddev.site` to connect to 100.115.92.195 (in my case). Here’s the configuration:
