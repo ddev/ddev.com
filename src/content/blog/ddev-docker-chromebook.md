@@ -69,7 +69,8 @@ These assume that you already have DDEV installed and working in the `terminal`.
   * `/etc/dnsmasq.d/upstream-dns` can contain `server=1.1.1.1`, which just makes it query Cloudflare's DNS for everything it doesn't know about.
   * Restart dnsmasq with `sudo systemctl restart dnsmasq` and you should be able to look up `something.ddev.site` using `dig +short something.ddev.site` and it should report that `something.ddev.site` is `100.115.92.204` in my example. Normally we always use `localhost` or `127.0.0.1` for this, but here we're essentially setting up for access from a different computer, so we'll convince the Chromebook to use the `dnsmasq` server as its DNS server.
 6. Configure `/etc/dhcp/dhclient.conf` with `echo 'prepend domain-name-servers 127.0.0.1;' | sudo tee -a /etc/dhcp/dhclient.conf > /dev/null`.
-6. Convince the Chromebook to use `dnsmasq` as its DNS server with Settings (lower right) → Your WIFI/network → Network → Name Servers → Custom Name Servers
+7. Convince the Chromebook to use `dnsmasq` as its DNS server with Settings (lower right) → Your WIFI/network → Network → Name Servers → Custom Name Servers
+8. I wasn't able to use the standard ports 80 or 443, so I changed to `ddev config global --router-http-port=8080 --router-https-port=8443` to use ports 8080 and 8443 (followed by `ddev restart`)
 
 ## How Do You Use DDEV?
 
