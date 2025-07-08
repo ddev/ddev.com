@@ -3,7 +3,7 @@ title: "DDEV, Docker, Chromebook!"
 pubDate: 2020-05-04
 summary: Lessons learned running DDEV on an inexpensive Chromebook.
 modifiedDate: 2025-07-08
-modifiedComment: "Significant updates five years later... still works! Chromebook is still a little confused by who it is, but it works as a Linux development environment"
+modifiedComment: "Significant updates five years later in 2025... it still works! Chromebook is still a little confused about who it is, but it works as a fine Linux development environment."
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/04/chromebook-3.jpg
@@ -34,12 +34,13 @@ Here’s the step-by-step to set up a DDEV development environment:
 7. Allow DDEV to bind to all interfaces by running `ddev config global --router-bind-all-interfaces`.
 8. To use a browser to visit your site, you have two options. The first is to install a browser like Chromium or Firefox Linux and use the built-in X11 capabilities to use that browser. The second is to use the Chromebook's browser, which is far more complex. I'll add an addendum about how you can do it, but it's not easy and not recommended.
 9. Install Chromium browser with `sudo apt-get update && sudo apt-get install -y chromium-browser`. You’ll also want to run `mkcert -install`. Then use the browser inside Linux.
-10. Create your project or check it out, `ddev config`, `ddev start`. Everything works, including `ddev launch`. Ceate a project the normal way and get to work! This is the simple path to a Drupal 11 Composer build, but there are lots of other DDEV [quickstart guides](https://ddev.readthedocs.io/en/stable/users/quickstart/).
+10. Create your project or check it out, `ddev config`, `ddev start`. Everything works, including `ddev launch`. Create a project the normal way and get to work! This is the simple path to a Drupal 11 Composer build, but there are lots of other DDEV [quickstart guides](https://ddev.readthedocs.io/en/stable/users/quickstart/).
 
-- `mkdir -p ~/workspace/d11 && cd ~/workspace/d11`
-- `ddev config --project-type=drupal11 --docroot=web`
-- `ddev composer create-project drupal/recommended-project`
-- `ddev launch` and go install it!
+    - `mkdir -p ~/workspace/d11 && cd ~/workspace/d11`
+    - `ddev config --project-type=drupal11 --docroot=web`
+    - `ddev composer create-project drupal/recommended-project`
+    - `ddev launch` and go install it!
+11. If you want to use PhpStorm or GoLand, they're easy enough to install in the Linux environment. You may need to install `snapd` first, (`sudo apt update && sudo apt install -y snapd`) and then install them with `sudo snap install phpstorm --classic` or `sudo snap install goland --classic`.
 
 Some comments about working with the Chromebook:
 
