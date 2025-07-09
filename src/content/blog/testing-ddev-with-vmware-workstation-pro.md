@@ -124,22 +124,27 @@ If Windows 10 was chosen as virtual machine type:
 - RMB (right mouse button) on Setup > New > Key > write `LabConfig`
 - RMB on Values area > New > DWORD (32-bit) Value > write `BypassSecureBootCheck`, set `1`
 - RMB on Values area > New > DWORD (32-bit) Value > write `BypassTPMCheck`, set `1`
+  ![Regedit Settings](/img/blog/2025/07/vmware-windows-regedit.png)
 
 After the first reboot (installation is not done yet), don't select country in the initial setup:
 
-- Press Shift+F10 to open `cmd`, write `OOBE\BYPASSNRO` (`O` letter, not number), needed to create local account (I don't want to login anywhere here).
+- Press Shift+F10, enter `OOBE\BYPASSNRO` (`O` letter, not number) directly in `cmd`. This is needed to force creation of a local account (I don't want to login anywhere here).
 
 After Windows boots:
 
-- VMware Menu > VM > Install VMware Tools and reboot.
+- VMware Menu > VM > Install VMware Tools
+- Open Explorer, select `D:` drive with mounted tools, and run `setup.exe`
+- Reboot
 
 Windows configuration:
 
 - Settings > Windows Update > Pause
 - Explorer > This PC > View > Show > Filename extensions, Hidden items
 - Settings > Home > Rename
-- System > Power > Screen and sleep > Never
-- System > Sound > More sound settings > Sounds > No Sounds
+- Settings > System > Power > Screen and sleep timeouts > Never
+- Settings > System > Sound > More sound settings > Sounds > No Sounds, uncheck "Play Windows Startup sound"
+- Settings > Personalization > Taskbar > Task View (uncheck), Widgets (uncheck)
+- Settings > Personalization > Taskbar > Taskbar behaviors > Taskbar alignment > Left
 
 Registry configuration:
 
@@ -174,18 +179,18 @@ Shutdown the virtual machine, press "Edit virtual machine settings":
 
 Press "Start up this guest operating system", and run inside Windows:
 
-- Search > Disk cleanup
-- Search > Defragmentation
+- Search > Disk Cleanup
+- Search > Defragment and Optimize Drives
 
 At this point, the VM uses more disk space than needed. We can [shrink guest on hosted platform](https://wiki.vi-toolkit.com/index.php?title=Shrink_guest_on_hosted_platform):
 
-- Add VMware Tools to PATH:
+- Add VMware Tools to PATH, run Terminal as admin:
 
   ```powershell
   cmd /c "setx /M PATH ""C:\Program Files\VMware\VMware Tools;%PATH%"""
   ```
 
-- Restart PowerShell, and run:
+- Restart PowerShell, and run Terminal as admin:
 
   ```powershell
   VMwareToolboxCmd.exe disk shrink c:\
