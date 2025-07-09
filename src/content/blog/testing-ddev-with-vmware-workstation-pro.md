@@ -21,7 +21,7 @@ This guide shows how [VMware Workstation Pro](https://www.vmware.com/) can be us
 
 ## Installing VMware Workstation Pro
 
-Download and install [VMware Workstation Pro](https://knowledge.broadcom.com/external/article/344595/downloading-and-installing-vmware-workst.html). Packages are available for Windows and Linux.
+Download and install [VMware Workstation Pro](https://knowledge.broadcom.com/external/article/344595/downloading-and-installing-vmware-workst.html). You must click on the link to the terms and conditions to accept them before downloading (checkbox is inactive by default). Packages are available for Windows and Linux.
 
 On Arch-based systems, install via:
 
@@ -31,9 +31,10 @@ yay -S vmware-workstation
 
 Initial configuration steps:
 
-- Edit > Preferences > Workspace > Set virtual machine location to a storage volume with sufficient space
+- Edit > Preferences > Workspace > Default Location for Virtual Machines - use location with sufficient space
+- Edit > Preferences > Hotkeys - remember shortcut to escape the VM, the default is Ctrl+Alt.
 - Edit > Preferences > Updates > Configure update behavior
-- Edit > Preferences > Review and adjust other options as needed
+- Check other settings
 
 ## Installing Windows 11
 
@@ -117,16 +118,16 @@ VM settings before first boot (press "Edit virtual machine settings"):
 
 Press "Start up this guest operating system".
 
-If Windows 10 was chosen as virtual machine type, then on "Select Image" screen:
+If Windows 10 was chosen as virtual machine type:
 
-- Press Shift+F10, write `regedit`, open `HKEY_LOCAL_MACHINE\SYSTEM\Setup`
+- Wait for the "Select Image" screen (where you choose which Windows to install), press Shift+F10 to open `cmd`, write `regedit`, open `HKEY_LOCAL_MACHINE\SYSTEM\Setup`
 - RMB (right mouse button) on Setup > New > Key > write `LabConfig`
 - RMB on Values area > New > DWORD (32-bit) Value > write `BypassSecureBootCheck`, set `1`
 - RMB on Values area > New > DWORD (32-bit) Value > write `BypassTPMCheck`, set `1`
 
-After the first reboot, don't select country in the initial setup:
+After the first reboot (installation is not done yet), don't select country in the initial setup:
 
-- Press Shift+F10, write `OOBE\BYPASSNRO` (`O` letter, not number), needed to create local account (I don't want to login anywhere here).
+- Press Shift+F10 to open `cmd`, write `OOBE\BYPASSNRO` (`O` letter, not number), needed to create local account (I don't want to login anywhere here).
 
 After Windows boots:
 
