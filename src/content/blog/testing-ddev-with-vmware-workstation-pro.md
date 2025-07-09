@@ -45,7 +45,7 @@ In VMware:
 - File > New Virtual Machine > Typical > I will install the operating system later
 - Select Windows 10 x64, not Windows 11 x64 (I don't want to use TPM encryption)
 - Specify 100 GB disk, stored as a single file
-- Customize hardware and finish
+- Customize hardware and finish. Make sure to allow more than the default 2GB of memory; 8GB is probably more reasonable.
 
 To apply additional low-level VM configuration, close VMware itself and use the script below:
 
