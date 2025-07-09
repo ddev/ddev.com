@@ -45,7 +45,15 @@ In VMware:
 - File > New Virtual Machine > Typical > I will install the operating system later
 - Select Windows 10 x64, not Windows 11 x64 (I don't want to use TPM encryption)
 - Specify 100 GB disk, stored as a single file
-- Customize hardware and finish. Make sure to allow more than the default 2GB of memory; 8GB is probably more reasonable.
+- Customize hardware and finish:
+  - Set at least 8GB RAM
+  - Number of processors: 2, number of cores per processor: 2
+  - Virtualize Intel VT-x/EPT or AMD-V/RVI (check)
+  - Virtualize CPU performance counters (check) - it may not work in some cases
+  - Network Adapter > Connect at power on (uncheck) - to be able to set up a local Windows account and skip Windows updates
+  - Sound Card > Connect at power on (uncheck) - I don't like any beeps on the first boot, will be turned on later
+  - USB Controller > Automatically connect new USB devices (uncheck if you don't need USB devices)
+  - CD/DVD (SATA) > Use ISO image > Browse - select ISO file
 
 To apply additional low-level VM configuration, close VMware itself and use the script below:
 
@@ -109,13 +117,6 @@ done
 echo "Updated ${vmx_file}"
 ```
 
-VM settings before first boot (press "Edit virtual machine settings"):
-
-- Hardware > Network Adapter > Connect at power on (uncheck) - for faster Windows installation without checking for updates, will be turned on later
-- Hardware > Sound Card > Connect at power on (uncheck) - I don't like any beeps on the first boot, will be turned on later
-- Hardware > USB Controller > Automatically connect new USB devices - I don't want to connect any USB
-- Hardware > CD/DVD (SATA) > Use ISO image > Browse - select ISO file
-
 Press "Start up this guest operating system".
 
 If Windows 10 was chosen as virtual machine type:
@@ -153,7 +154,7 @@ Registry configuration:
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Cloud Content" /v DisableWindowsConsumerFeatures /t REG_DWORD /d 1 /f
 # Disable automatic update for APPX applications in Microsoft Store
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsStore" /v AutoDownload /t REG_DWORD /d 2 /f
-# Disable Meltdown and Spectre
+# Disable Meltdown and Spectre fixes that slow down Windows
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v FeatureSettingsOverride /t REG_DWORD /d 3 /f
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v FeatureSettingsOverrideMask /t REG_DWORD /d 3 /f
 # Mouse cursor on the default button
