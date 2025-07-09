@@ -47,7 +47,7 @@ In VMware:
 - Specify 100 GB disk, stored as a single file
 - Customize hardware and finish
 
-To apply additional low-level VM configuration, use the script below:
+To apply additional low-level VM configuration, close VMware itself and use the script below:
 
 ```bash
 #!/usr/bin/env bash
