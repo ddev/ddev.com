@@ -22,7 +22,7 @@ This month: Downgrading Terminus for old PHP, FrankenPHP, Advisory Group meeting
 - **How to Downgrade Terminus in DDEV's Web Container and Customize Other Bundled Tools**  
   A guest blog by Bill Seremetis explaining the problem with an old PHP version and Pantheon's Terminus, and how to fix it. → [Read more↗](ddev-bundled-tools-using-custom-versions.md)
 - **Experimenting with FrankenPHP in DDEV**  
- Stas Zhuk explains two ways to use [FrankenPHP](https://frankenphp.org/) in DDEV. → [Read more↗](using-frankenphp-with-ddev.md)
+  Stas Zhuk explains two ways to use [FrankenPHP](https://frankenphp.org/) in DDEV. → [Read more↗](using-frankenphp-with-ddev.md)
 - **July 2025 DDEV Advisory Group Meeting** meeting notes and recording! → [Read more↗](https://github.com/orgs/ddev/discussions/7373).
 
 ## Community Tutorials
