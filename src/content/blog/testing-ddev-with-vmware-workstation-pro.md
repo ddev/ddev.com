@@ -19,6 +19,12 @@ In 2024, VMware Workstation Pro [became free for personal use](https://blogs.vmw
 
 This guide shows how [VMware Workstation Pro](https://www.vmware.com/) can be used to prepare environments for both Windows and Linux, where Docker and DDEV perform well even inside a VM.
 
+**Warning**: Nested virtualization may not work on all systems:
+
+> Virtualized Intel VT-x/EPT is not supported on this platform. Continue without virtualized Intel VT-x/EPT? VMware Workstation does not support nested virtualization on this host. Module 'HV' power on failed. Failed to start the virtual machine.
+
+If this occurs, search for known workarounds specific to your hardware and BIOS/UEFI configuration. It worked out of the box for me on Arch-based Linux but did not work for Randy on Windows 11.
+
 ## Installing VMware Workstation Pro
 
 Download and install [VMware Workstation Pro](https://knowledge.broadcom.com/external/article/344595/downloading-and-installing-vmware-workst.html). You must click on the link to the terms and conditions to accept them before downloading (checkbox is inactive by default). Packages are available for Windows and Linux.
@@ -49,7 +55,7 @@ In VMware:
   - Set at least 8GB RAM
   - Number of processors: 2, number of cores per processor: 2
   - Virtualize Intel VT-x/EPT or AMD-V/RVI (check)
-  - Virtualize CPU performance counters (check) - it may not work in some cases
+  - Virtualize CPU performance counters (check)
   - Network Adapter > Connect at power on (uncheck) - to be able to set up a local Windows account and skip Windows updates
   - Sound Card > Connect at power on (uncheck) - I don't like any beeps on the first boot, will be turned on later
   - USB Controller > Automatically connect new USB devices (uncheck if you don't need USB devices)
