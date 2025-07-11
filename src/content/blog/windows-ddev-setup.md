@@ -68,6 +68,7 @@ Two recent Windows machines I set up were the new ARM64/Qualcomm/CoPilot variety
 23. Install NSIS and dependencies. `sudo apt update && sudo apt install -y nsis` and `.ci-scripts/nsis_setup.sh /usr/share/nsis`
 24. Install homebrew for just a few uses: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 25. Install BATS with `brew tap bats-core/bats-core` and `brew instalil bats bats-assert bats-support bats-file`
+26. Install [goreleaser pro](https://goreleaser.com/install/#apt-repository)
 
 We'd love to hear your own hints and tips on how you set up a Windows machine (or any other computer!). You can contribute to this article with a [PR to the blog](https://github.com/ddev/ddev.com) or make your suggestions on [Discord](/s/discord). We welcome guest blogs too!
 
