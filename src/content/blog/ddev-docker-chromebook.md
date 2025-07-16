@@ -2,8 +2,8 @@
 title: "DDEV, Docker, Chromebook!"
 pubDate: 2020-05-04
 summary: Lessons learned running DDEV on an inexpensive Chromebook.
-modifiedDate: 2021-01-25
-modifiedComment: "Updated with [input from](https://github.com/ddev/ddev/discussions/2740) [@ops-andy](https://github.com/ops-andy) (thanks!)"
+modifiedDate: 2025-07-16
+modifiedComment: "Significant updates five years later in 2025... it still works! Chromebook is still a little confused about what it is, but it works as a fine Linux development environment."
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/04/chromebook-3.jpg
@@ -12,49 +12,69 @@ categories:
   - Guides
 ---
 
-[DDEV](http://github.com/ddev/ddev) and Docker work fine for local development on an inexpensive Chromebook!
+## Introduction
 
-I’d been wanting to try out a Chromebook for DDEV development for a while and I confess that I did an impulse buy on Amazon and got the 8GB [Asus C425](https://www.asus.com/us/Laptops/ASUS-Chromebook-14-C425TA/) for $329, which is a lot less than the fancy loaded MacBook Pro I usually use. It works great, mostly because it runs pure Debian Linux in what it calls the “Terminal”.
+[DDEV](https://github.com/ddev/ddev) and Docker CE work fine for local development on a Chromebook!
 
-Here’s the step-by-step to set up a DDEV development environment:
+A few years ago I wrote the first version of this article after experimenting with an 8GB [Asus C425](https://www.asus.com/us/Laptops/ASUS-Chromebook-14-C425TA/) for $329, which is a lot less than any fancy Mac. It worked great, mostly because Chromebooks can run pure Debian Linux in what they call the “Terminal”.
 
-1. In _Settings_ → _Linux (Beta)_, “Turn on” Linux.
+Fast forward to 2025 and I saw an enticing review of the very nice 16GB Lenovo Chromebook Plus, which turns out to be an [ARM64](arm64-apple-silicon-m1-ddev-local-what-does-it-all-mean.md) machine (the same architecture as Apple Silicon). It's a much beefier machine, with great build quality and a much higher finish level, but again very nice.
+
+Installing on a Chromebook is a reminder of how versatile DDEV is. In almost any environment that has a Docker provider you get get it going with minimal effort. That includes Windows, WSL2, Mac, Linux, Chromebook, even [Raspberry Pi](watch-ddev-local-on-arm64-raspberry-pi.md).
+
+## Basic Chromebook Setup for DDEV
+
+Here’s the step-by-step to set up a DDEV development environment in 2025:
+
+1. In _Settings_ → About ChromeOS → Developers → Linux Development Environment, “Set up". (For the disk size, you'll be using Docker images, so I used about 100GB, but it's what you need that matters.)
 2. In Linux, create a password for the username you’ve created by running `sudo passwd $USER`.
-3. Install Docker for Linux as in the [DDEV docs](https://ddev.readthedocs.io/en/stable/users/docker%5Finstallation/#linux-installation-docker-ce). You’ll be installing the [_Debian_ version](https://docs.docker.com/install/linux/docker-ce/debian/).
-4. Install Linuxbrew by running `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`.
-5. Install DDEV and docker-compose by running `brew tap ddev/ddev && brew install ddev docker-compose`.
+3. Do some basic updates: 
+
+    ```shell
+    sudo apt-get update && sudo apt-get upgrade -y
+    sudo apt-get install -y git vim curl wget gnupg2 lsb-release apt-transport-https ca-certificates
+    ```
+4. Install Docker CE as in the [Docker docs for Debian](https://docs.docker.com/install/linux/docker-ce/debian/) (See also [DDEV docs](https://ddev.readthedocs.io/en/stable/users/install/docker-installation/#docker-installation-linux).)
+5. Install DDEV using the normal [Debian install instructions](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#debianubuntu).
 6. Add your user to the `docker` group by running `sudo usermod -aG docker $USER`.
 7. Reboot the Debian container by running `sudo reboot`, then open “Terminal” again. You should be able to run `docker ps` successfully.
-8. Allow DDEV to bind to all interfaces by running `ddev config global --router-bind-all-interfaces`.
-9. To use a browser to visit your site, you have two options. The first is to install a browser like Firefox or Chromium inside Linux and use the built-in X11 capabilities to use that browser. The second is to use Chrome’s browser; that has some problems especially with HTTPS, as described below.
-   - To install a browser, run `sudo apt-get update && sudo apt-get install -y chromium-browser`. You’ll also want to run `mkcert -install`. Then use the browser inside Linux.
-   - To use the built-in Chrome browser:
-     - Find out the IP address of your Debian terminal with `ip -a | grep eth0`. You’ll see something like “inet 100.105.93.95/28 brd 100.115.92.207” and the “100.115.92.195” is what you’re after.
-     - Install a Chrome extension like Host Switch Plus and configure it (Edit 2020-10-14: Host Switch Plus is no longer available, but [Livehosts](https://chrome.google.com/webstore/detail/livehosts/hdpoplemgeaioijkmoebnnjcilfjnjdi) may offer the same capability). Unfortunately the Chrome browser doesn’t innately understand how to connect to the web server running in the Debian terminal system, so we’ll use Host Switch Plus to convert `*.ddev.site` to connect to 100.115.92.195 (in my case). Here’s the configuration:
+8. To access your site in a browser, you have two options. The first (preferred) is to install a browser like Chromium or Firefox and use the system's built-in graphics to run it. The second is to use the Chromebook's browser, which is far more complex. I'll add an addendum about how you can do it, but it's not easy and not recommended, but it's a fun demonstration of `dnsmasq`.
+9. Install the Chromium browser with `sudo apt-get update && sudo apt-get install -y chromium`. You’ll also want to run `mkcert -install`. Then use the browser inside the Debian Linux container.
+10. Create your project or check it out, `ddev config`, `ddev start`. Everything works, including `ddev launch`. Create a project the normal way and get to work! This is the simple path to a Drupal 11 Composer build, but there are lots of other DDEV [quickstart guides](https://ddev.readthedocs.io/en/stable/users/quickstart/).
 
-![Screenshot of the "Host Switch Plus" plugin configuration panel set as described in the preceding text. Default set to "direct". Checkbox for "enable" selected. IP set to the result from `ip -a | grep eth0`, and Domain set to `*.ddev.site`](/img/blog/2020/04/hostswitchplus.png)
+    - `mkdir -p ~/workspace/d11 && cd ~/workspace/d11`
+    - `ddev config --project-type=drupal11 --docroot=web`
+    - `ddev composer create-project drupal/recommended-project`
+    - `ddev launch` and go install it!
+11. If you want to use PhpStorm or GoLand, they're easy enough to install in the Linux environment. You may need to install `snapd` first, (`sudo apt update && sudo apt install -y snapd`) and then install them with `sudo snap install phpstorm --classic` or `sudo snap install goland --classic`.
 
-Now you can create a project the normal way and get to work! This is the simple path to a Drupal 8 Composer build, but there are lots of other DDEV [quickstart guides](https://ddev.readthedocs.io/en/stable/users/quickstart/).
+## Some comments about working with the Chromebook:
 
-- `mkdir -p ~/workspace/d8composer && cd ~/workspace/d8composer`
-- `ddev config --project-type=drupal8 --docroot=web --create-docroot`
-- `ddev composer create drupal/recommended-project:^8`
-- `ddev launch` and go install it!
+- It was a pleasant experience with a nice keyboard. Outstanding performance, but less than my MacBook Air M4. It has great battery life, even with Docker running and doing lots. It has Linux (Debian), which is lovely. And the Linux side has great graphics support (GUI Linux apps work well and display with no effort). It has two USB-C ports but also a USB-A.
+- As with Windows with WSL2, having two completely different computers running on one computer adds complexity along with its power. I had to run several tools in the Linux environment (like GoLand and PhpStorm, both worked there though as snap installs.) And I ended up running 1Password *both* in the Chrome side (browser extension) and as an app on the Linux side so I could get proper SSH Agent support from it. You have a great Linux computer that works with the nice ChromeOS desktop, and the Linux is pretty much natural, standard, no hoops to jump through.
+- I ran into some apps that I was unsatisfied with. Slack and [Notion.so](http://notion.so) didn’t work well as Android apps. I installed Discord as an Android app, and didn't like it much.
+- Of course I didn’t have the versatility of the Mac or the predictability and wide app support of Windows, but if I were doing only web development and normal editing/daily work stuff it might work out. Mainstream environments are easier. Plain Ubuntu is easier because it's just one machine, not several.
 
-Note: I haven’t figured out a way to get Host Switch Plus to work with HTTPS port 443.
+## Adding `dnsmasq` to Use the Chromebook-side Chrome Browser
 
-Some comments about working with the Asus Chromebook:
+These instructions help you to use the Chromebook-side Chrome browser and access the DDEV webserver running in Debian Linux (`Crostini`, or `terminal`). It's easier just to use Chromium inside the Debian `terminal` app. 
 
-- It was a pleasant experience with a nice keyboard (far better than the MacBook Pro). Acceptable performance for a laptop deep in the low-cost realm. It has great battery life, even with Docker running and doing lots. It has Linux (Debian Stretch), which is lovely. And it’s nicely integrated, including default X11 support (GUI Linux apps work well and display with no effort). It has two USB-C ports (fantastic) but also a USB-A (unlike Apple!)
-- I have to confess I’d probably buy a more powerful Chromebook, with more RAM and storage, if I were going to work with this for the long term; perhaps I’d get a Pixelbook.
-- Mostly there’s nothing fiddly to do. You have a great Linux computer that works with the nice ChromeOS desktop, and the Linux is pretty much natural, standard, no hoops to jump through.
-- I ran into some apps that I was unsatisfied with. Slack and [Notion.so](http://notion.so) didn’t work well as Android apps. (Too slow on this computer, which also doesn’t have a touchscreen, so not that much of a fit for Android apps.)
-- There were some apps that I couldn’t use at all unless I ran them in Linux. They ran fine, but Linux GUI apps aren’t as well-tuned as those on other platforms. I had to run PhpStorm in Linux, and Firefox or Chrome if I wanted to use HTTPS.
-- Of course I didn’t have the versatility of the Mac or the predictability and wide app support of Windows. But if I were doing only web development and normal editing/daily work stuff it might work out.
-- Installing PhpStorm and other JetBrains applications on the Linux side was not very hard:
-  - `sudo apt-get install libnss3`
-  - Download [JetBrains Toolbox for Linux](https://www.jetbrains.com/toolbox-app/) and install and run it, then use it to fetch and install PhpStorm.
+Basically, the Chromebook-side browser doesn't innately know about the lovely Debian Linux instance that's waiting there, so it doesn't know how to connect to DDEV, which essentially appears to be on a different computer. These instructions are inspired by [How To Apply ChromeOS's Linux Container's /etc/hosts Outside of the Container in Chrome](https://chrisbeley.com/software-engineering/how-to-apply-chromeos's-linux-container's-etchosts-outside-of-the-container-in-chrome), which is a little more complex than we need for most things, but it was certainly inspiring.
 
-Since we’re in the era of Linux laptops with Chromebooks and WSL2, we’ll soon be doing a full writeup on how to use DDEV with WSL2. It’s crazy fast.
+These assume that you already have DDEV installed and working in the `terminal`.
 
-Where do _you_ run DDEV? If you have a unique setup, consider sharing the specs and adding a link in our [community repository](https://github.com/ddev/awesome-ddev) so others can check it out too!
+1. Install the simple DNS server `dnsmasq` with `sudo apt update && sudo apt install -y dnsmasq dnsutils`.
+2. Configure DDEV to allow connections from other machines with `ddev config global --router-bind-all-interfaces` and optionally `ddev config --bind-all-interfaces` for your project. (The Chromebook/Chrome side is essentially a different machine.)
+3. The CA (Certificate Authority) that Chrome uses to authenticate certificates is normally installed with just `mkcert -install`, and you should already have done that, but remember that the Chromebook browser is completely separate from anything `mkcert` can access, so we'll import the CA manually into Chrome. In Chrome's Certificate Manager (`chrome://certificate-manager/`), go to "Local Certificates" and import from "Linux Files" the `rootCA.pem` in the directory shown by `mkcert -CAROOT`. (I didn't know how to navigate to the hidden directory `~/.local/share/mkcert` so I just copied `~/.local/share/mkcert/rootCA.pem` into my `Downloads` directory.)
+4. Find out the IP address of the `terminal` Debian container with `dig +short penguin.lxd`. Mine was `100.115.92.204`, so I'll use that as an example.
+5. Now we want to configure `dnsmasq` to act as a fairly normal DNS server, but also one that reports `*.ddev.site` as `100.115.92.204` in my case. 
+  * `/etc/dnsmasq.d/ddevsite-rules` can contain `address=/ddev.site/100.115.92.204`
+  * `/etc/dnsmasq.d/upstream-dns` can contain `server=1.1.1.1`, which just makes it query Cloudflare's DNS for everything it doesn't know about.
+  * Restart dnsmasq with `sudo systemctl restart dnsmasq` and you should be able to look up `something.ddev.site` using `dig +short something.ddev.site` and it should report that `something.ddev.site` is `100.115.92.204` in my example. Normally we always use `localhost` or `127.0.0.1` for this, but here we're essentially setting up for access from a different computer, so we'll convince the Chromebook to use the `dnsmasq` server as its DNS server.
+6. Configure `/etc/dhcp/dhclient.conf` with `echo 'prepend domain-name-servers 127.0.0.1;' | sudo tee -a /etc/dhcp/dhclient.conf > /dev/null`.
+7. Convince the Chromebook to use `dnsmasq` as its DNS server with Settings (lower right) → Your WIFI/network → Network → Name Servers → Custom Name Servers
+8. I wasn't able to use the standard ports 80 or 443, so I changed to `ddev config global --router-http-port=8080 --router-https-port=8443` to use ports 8080 and 8443 (followed by `ddev restart`)
+
+## How Do You Use DDEV?
+
+Where do _you_ run DDEV? If you have a unique setup, we'd love to have a guest blog on [ddev.com](/), or consider sharing the specs and adding a link to the [Awesome DDEV Links List](https://github.com/ddev/awesome-ddev) so others can check it out too!
