@@ -34,7 +34,7 @@ Here’s the step-by-step to set up a DDEV development environment in 2025:
     sudo apt-get update && sudo apt-get upgrade -y
     sudo apt-get install -y git vim curl wget gnupg2 lsb-release apt-transport-https ca-certificates
     ```
-4. Install Docker CE as in the [DDEV docs](https://ddev.readthedocs.io/en/stable/users/install/docker-installation/#docker-installation-linux). You’ll be installing the [_Debian_ version](https://docs.docker.com/install/linux/docker-ce/debian/).
+4. Install Docker CE as in the [Docker docs for Debian](https://docs.docker.com/install/linux/docker-ce/debian/) (See also [DDEV docs](https://ddev.readthedocs.io/en/stable/users/install/docker-installation/#docker-installation-linux).)
 5. Install DDEV using the normal [Debian install instructions](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#debianubuntu).
 6. Add your user to the `docker` group by running `sudo usermod -aG docker $USER`.
 7. Reboot the Debian container by running `sudo reboot`, then open “Terminal” again. You should be able to run `docker ps` successfully.
@@ -51,9 +51,9 @@ Here’s the step-by-step to set up a DDEV development environment in 2025:
 ## Some comments about working with the Chromebook:
 
 - It was a pleasant experience with a nice keyboard. Outstanding performance, but less than my MacBook Air M4. It has great battery life, even with Docker running and doing lots. It has Linux (Debian), which is lovely. And the Linux side has great graphics support (GUI Linux apps work well and display with no effort). It has two USB-C ports but also a USB-A.
-- Like Windows with WSL2, this is a bit schizophrenic. I had to run several tools in the Linux environment (like GoLand and PhpStorm, both worked there though as snap installs.) And I ended up running 1Password *both* in the Chrome side (browser extension) and as an app on the Linux side so I could get proper SSH Agent support from it. You have a great Linux computer that works with the nice ChromeOS desktop, and the Linux is pretty much natural, standard, no hoops to jump through.
+- As with Windows with WSL2, having two completely different computers running on one computer adds complexity along with its power. I had to run several tools in the Linux environment (like GoLand and PhpStorm, both worked there though as snap installs.) And I ended up running 1Password *both* in the Chrome side (browser extension) and as an app on the Linux side so I could get proper SSH Agent support from it. You have a great Linux computer that works with the nice ChromeOS desktop, and the Linux is pretty much natural, standard, no hoops to jump through.
 - I ran into some apps that I was unsatisfied with. Slack and [Notion.so](http://notion.so) didn’t work well as Android apps. I installed Discord as an Android app, and didn't like it much.
-- Of course I didn’t have the versatility of the Mac or the predictability and wide app support of Windows. But if I were doing only web development and normal editing/daily work stuff it might work out. Mainstream environments are easier. Plain Ubuntu is easier because it's just one machine, not several.
+- Of course I didn’t have the versatility of the Mac or the predictability and wide app support of Windows, but if I were doing only web development and normal editing/daily work stuff it might work out. Mainstream environments are easier. Plain Ubuntu is easier because it's just one machine, not several.
 
 ## Adding `dnsmasq` to Use the Chromebook-side Chrome Browser
 
