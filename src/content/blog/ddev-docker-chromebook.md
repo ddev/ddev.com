@@ -3,7 +3,7 @@ title: "DDEV, Docker, Chromebook!"
 pubDate: 2020-05-04
 summary: Lessons learned running DDEV on an inexpensive Chromebook.
 modifiedDate: 2025-07-08
-modifiedComment: "Significant updates five years later in 2025... it still works! Chromebook is still a little confused about who it is, but it works as a fine Linux development environment."
+modifiedComment: "Significant updates five years later in 2025... it still works! Chromebook is still a little confused about what it is, but it works as a fine Linux development environment."
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/04/chromebook-3.jpg
@@ -14,7 +14,7 @@ categories:
 
 ## Introduction
 
-[DDEV](http://github.com/ddev/ddev) and Docker CE work fine for local development on a Chromebook!
+[DDEV](https://github.com/ddev/ddev) and Docker CE work fine for local development on a Chromebook!
 
 A few years ago I wrote the first version of this article after experimenting with an 8GB [Asus C425](https://www.asus.com/us/Laptops/ASUS-Chromebook-14-C425TA/) for $329, which is a lot less than any fancy Mac. It worked great, mostly because Chromebooks can run pure Debian Linux in what they call the “Terminal”.
 
@@ -38,7 +38,7 @@ Here’s the step-by-step to set up a DDEV development environment in 2025:
 5. Install DDEV using the normal [Debian install instructions](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#debianubuntu).
 6. Add your user to the `docker` group by running `sudo usermod -aG docker $USER`.
 7. Reboot the Debian container by running `sudo reboot`, then open “Terminal” again. You should be able to run `docker ps` successfully.
-8. To use a browser to visit your site, you have two options. The first (preferred) is to install a browser like Chromium or Firefox and use the built-in graphics capabilities to use that browser. The second is to use the Chromebook's browser, which is far more complex. I'll add an addendum about how you can do it, but it's not easy and not recommended, but it's a fun demonstration of `dnsmasq`.
+8. To access your site in a browser, you have two options. The first (preferred) is to install a browser like Chromium or Firefox and use the system's built-in graphics to run it. The second is to use the Chromebook's browser, which is far more complex. I'll add an addendum about how you can do it, but it's not easy and not recommended, but it's a fun demonstration of `dnsmasq`.
 9. Install the Chromium browser with `sudo apt-get update && sudo apt-get install -y chromium`. You’ll also want to run `mkcert -install`. Then use the browser inside the Debian Linux container.
 10. Create your project or check it out, `ddev config`, `ddev start`. Everything works, including `ddev launch`. Create a project the normal way and get to work! This is the simple path to a Drupal 11 Composer build, but there are lots of other DDEV [quickstart guides](https://ddev.readthedocs.io/en/stable/users/quickstart/).
 
