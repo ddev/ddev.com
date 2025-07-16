@@ -33,13 +33,13 @@ const { latestVersion } = Astro.props
 
   <p>After reboot, install an Ubuntu distro:
 
-  <Terminal type="powershell" code={`> wsl --install Ubuntu --name ddev`} />
+  <Terminal type="powershell" code={`> wsl --install Ubuntu --name DDEV`} />
   
   <p>Verify that you now have an Ubuntu distro set as default:</p>
 
   <Terminal
     type="powershell"
-    code={`> wsl -l -v\n  NAME                   STATE           VERSION\n* ddev                 Stopped         2`}
+    code={`> wsl -l -v\n  NAME                   STATE           VERSION\n* DDEV                   Stopped         2`}
   />
 </div>
 
@@ -48,10 +48,10 @@ const { latestVersion } = Astro.props
     <small class="block font-mono text-xs text-gray-500">2/3</small>  Download the latest ddev-windows-installer.exe for your architecture from <a href="https://github.com/ddev/ddev/releases">DDEV Releases</a>.
   </h2>
 
-  <p>Run the installer, selecting the preferred "Docker CE" approach and selecting your "ddev" distro.</p>
+  <p>Run the installer, selecting the preferred "Docker CE" approach and selecting your "DDEV" distro.</p>
 
   <p>
-    In the “ddev” terminal app or Windows Terminal, confirm that DDEV is
+    In the “DDEV” terminal app or Windows Terminal, confirm that the "ddev" binary is
     installed: 🎉
   </p>
   <Terminal
