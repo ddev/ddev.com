@@ -2,7 +2,7 @@
 title: "DDEV, Docker, Chromebook!"
 pubDate: 2020-05-04
 summary: Lessons learned running DDEV on an inexpensive Chromebook.
-modifiedDate: 2025-07-08
+modifiedDate: 2025-07-16
 modifiedComment: "Significant updates five years later in 2025... it still works! Chromebook is still a little confused about what it is, but it works as a fine Linux development environment."
 author: Randy Fay
 featureImage:
