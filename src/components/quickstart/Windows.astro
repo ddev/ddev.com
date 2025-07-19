@@ -12,7 +12,7 @@ const { latestVersion } = Astro.props
 
 <div class="prose dark:prose-invert">
   <p class="text-gray-600 mb-16 dark:text-slate-400">
-    We’ll use WSL2 with Docker inside since it’s the fastest and most
+    We’ll use WSL2 with Docker-CE since it’s the fastest and most
     straightforward of <a
       href="https://ddev.readthedocs.io/en/stable/users/install/docker-installation/#windows"
       target="_blank"
@@ -25,46 +25,39 @@ const { latestVersion } = Astro.props
     with Ubuntu
   </h2>
 
-  <p>Run the following in an administrative PowerShell v5 terminal:</p>
+  <p>Run the following in PowerShell terminal:</p>
 
   <Terminal type="powershell" code={`> wsl --install`} />
 
   <p>You’ll probably need to reboot.</p>
 
-  <p>
-    Visit the Microsoft Store and install the updated “Windows Subsystem for
-    Linux” and click “Open”. It will likely prompt you for a username and
-    password for the Ubuntu WSL2 instance it creates.
-  </p>
+  <p>After reboot, install an Ubuntu distro:
 
+  <Terminal type="powershell" code={`> wsl --install Ubuntu --name DDEV`} />
+  
   <p>Verify that you now have an Ubuntu distro set as default:</p>
 
   <Terminal
     type="powershell"
-    code={`> wsl -l -v\n  NAME                   STATE           VERSION\n* Ubuntu                 Stopped         2`}
+    code={`> wsl -l -v\n  NAME                   STATE           VERSION\n* DDEV                   Stopped         2`}
   />
 </div>
 
 <div class="prose dark:prose-invert">
   <h2 class="text-3xl mt-24">
-    <small class="block font-mono text-xs text-gray-500">2/3</small>Run the
-    Install Script
+    <small class="block font-mono text-xs text-gray-500">2/3</small>
+    Run the Installer
   </h2>
 
-  <p>Run the following in an administrative PowerShell:</p>
-
-  <Terminal
-    type="powershell"
-    code={`> Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;\niex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/ddev/ddev/main/scripts/install_ddev_wsl2_docker_inside.ps1'))`}
-  />
+  <p>Download the latest <code>ddev-windows-installer.exe</code> from <a href="https://github.com/ddev/ddev/releases">DDEV Releases</a>, and run it selecting the preferred "Docker CE" approach and selecting your "DDEV" distro.</p>
 
   <p>
-    In the “Ubuntu” terminal app or Windows Terminal, confirm that DDEV is
+    In the “DDEV” terminal app or Windows Terminal, confirm that the <code>ddev</code> binary is
     installed: 🎉
   </p>
   <Terminal
     type="powershell-ubuntu"
-    code={`$ ddev -v\nddev version ${latestVersion}`}
+    code={`$ ddev --version\nddev version ${latestVersion}`}
   />
 </div>
 
@@ -87,11 +80,11 @@ const { latestVersion } = Astro.props
     Remove the <code>ddev</code> binary from the WSL2 distro:
   </p>
 
-  <Terminal type="powershell-ubuntu" code={`$ sudo apt-get remove ddev`} />
+  <Terminal type="powershell-ubuntu" code={`$ sudo apt-get remove ddev ddev-wsl2`} />
 
   <p>
     Lastly, remove DDEV from Windows by visiting <i>Add or remove programs</i>,
-    finding “DDEV”, and choosing <i>Uninstall</i>.
+    finding “DDEV”, and choosing <i>Uninstall</i>. If you do not need the "DDEV" distro, you can also remove it by running <code>wsl --unregister DDEV</code>.
   </p>
 
   <CommunityCTA />
