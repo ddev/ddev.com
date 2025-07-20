@@ -4,9 +4,9 @@ pubDate: 2025-07-21
 #modifiedDate: 2025-06-09
 summary: Skip the complex PowerShell scripts! DDEV's new GUI installer gets you developing on Windows with WSL2 in just 10 minutes. Watch the step-by-step video.
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2025/06/ddev-sustainability.jpg
-#  alt: Pillars of DDEV Sustainability, Governance, Community, Finance, Transparency
+featureImage:
+  src: /img/blog/2024/11/windows-install-blog-logos.png
+  alt: Windows logo with technical circuit elements representing DDEV Windows installation
 categories:
   - Announcements
   - DevOps
