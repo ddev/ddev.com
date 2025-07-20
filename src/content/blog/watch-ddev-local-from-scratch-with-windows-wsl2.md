@@ -10,6 +10,8 @@ featureImage:
 categories:
   - Guides
   - Videos
+modifiedDate: 2025-07-21
+modifiedComment: "Almost everything in this article is far easier now, we hope to update the content soon. For now, take a look at [New GUI Installer: Get DDEV Running on Windows in Just 10 Minutes (Video)](/blog/watch-new-windows-installer)."
 ---
 
 <div class="video-container">
