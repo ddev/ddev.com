@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro"
 import Heading from "../components/Heading.astro"
 import PostBody from "../components/PostBody.astro"
+import Icon from "../components/Icon.astro"
 
 import {
   ORG_NAME,
@@ -20,33 +21,77 @@ const title = `Contact Us`
 
 <Layout
   title={title}
+  description="Get in touch with the DDEV team through Discord, GitHub, email, or schedule a meeting. We're here to help with your local development needs."
 >
   <main class="max-w-4xl mx-auto mb-24">
-    <Heading title={`Contact DDEV`} />
-    <div class="lg:flex">
-      <div class="px-6 lg:px-0 lg:w-2/3">
-        <PostBody>
-          <h2>Easy Contact Info</h2>
+    <Heading title={`Contact DDEV`} subtitle="We're here to help with your local development needs" />
+    <div class="px-6 lg:px-0">
+      <PostBody>
+        <section class="prose dark:prose-invert mb-12">
+          <h2>Get Support</h2>
           <p>
-            We're delighted to talk with you any time!
+            Need help with DDEV? Choose the best option for your situation:
           </p>
           
-          <ul>
-            <li>Join us on <a href="/s/discord">Discord</a></li>
-            <li>Open a <a href="https://github.com/ddev/ddev/issues">GitHub issue</a></li>
-            <li>Email <a href={EMAIL_URL}>support</a></li>
-            <li><a href={MEETING_URL}>Set up a meeting</a></li>
-          </ul>
+          <div class="grid gap-6 md:grid-cols-2 not-prose">
+            <div class="flex items-start gap-3 p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
+              <div class="w-6 h-6 mt-1 text-indigo-600 dark:text-indigo-400">
+                <Icon name="Discord" />
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg mb-2">Discord Community</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-3">Join our active community for quick help, discussions, and connecting with other developers.</p>
+                <a href="/s/discord" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">Join Discord →</a>
+              </div>
+            </div>
             
-          <h2>Snail Mail and Phone:</h2>
+            <div class="flex items-start gap-3 p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
+              <div class="w-6 h-6 mt-1 text-gray-700 dark:text-gray-300">
+                <Icon name="GitHub" />
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg mb-2">GitHub Issues</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-3">Report bugs, request features, or get technical support through our issue tracker.</p>
+                <a href="https://github.com/ddev/ddev/issues" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">Open Issue →</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-3 p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
+              <div class="w-6 h-6 mt-1 text-blue-600 dark:text-blue-400">
+                <Icon name="Email" />
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg mb-2">Email Support</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-3">Send us an email for detailed questions or private support requests.</p>
+                <a href={EMAIL_URL} class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">Send Email →</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-3 p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
+              <div class="w-6 h-6 mt-1 text-green-600 dark:text-green-400">
+                <Icon name="Calendar" />
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg mb-2">Schedule a Meeting</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-3">Book a one-on-one session for complex questions or consultation.</p>
+                <a href={MEETING_URL} class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">Book Meeting →</a>
+              </div>
+            </div>
+          </div>
+        </section>
 
-            {ORG_NAME}<br />
-            {ORG_STREET}<br />
-            {ORG_CITY}, {ORG_STATE_ABBR}&nbsp;{ORG_POSTAL_CODE}&nbsp; {ORG_COUNTRY}<br />
-            {ORG_PHONE}<br />
-
-        </PostBody>
-      </div>
+        <section class="prose dark:prose-invert">
+          <h2>Business Information</h2>
+          <address class="not-italic">
+            <div class="font-semibold">{ORG_NAME}</div>
+            <div>{ORG_STREET}</div>
+            <div>{ORG_CITY}, {ORG_STATE_ABBR} {ORG_POSTAL_CODE} {ORG_COUNTRY}</div>
+            <div class="mt-2">
+              <span class="font-medium">Phone:</span> {ORG_PHONE}
+            </div>
+          </address>
+        </section>
+      </PostBody>
     </div>
   </main>
 </Layout>
