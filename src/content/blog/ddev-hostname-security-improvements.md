@@ -1,7 +1,7 @@
 ---
-title: "Enhanced Security with DDEV's New ddev-hostname Command"
-pubDate: 2025-07-20
-summary: "DDEV v1.24.7 introduces a new dedicated ddev-hostname binary that improves security by minimizing elevated privileges and simplifies WSL2 setup with the new ddev-wsl2 package."
+title: "Enhanced Security with DDEV's New `ddev-hostname` Binary"
+pubDate: 2025-07-22
+summary: "DDEV v1.24.7 introduces a new dedicated `ddev-hostname` binary that improves security by minimizing elevated privileges and simplifies WSL2 setup with the new ddev-wsl2 package."
 author: Randy Fay
 featureImage:
   src: /img/blog/2025/07/ddev-hostname-security.png
