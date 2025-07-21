@@ -26,7 +26,7 @@ const title = `Blog Authors`
     >
       {
         activeAuthors.map((author) => (
-          <div>
+          <div class="dark:text-white">
             <a href={`/blog/author/${author.id}`}>{author.data.name}</a>
           </div>
         ))
