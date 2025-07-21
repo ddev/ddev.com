@@ -10,6 +10,8 @@ featureImage:
 categories:
   - Guides
   - Videos
+modifiedDate: 2025-07-21
+modifiedComment: "Almost everything in this article is far easier now, we hope to update the content soon. For now, take a look at [New GUI Installer: Get DDEV Running on Windows in Just 10 Minutes (Video)](/blog/watch-new-windows-installer)."
 ---
 
 <div class="video-container">
@@ -21,8 +23,6 @@ WSL2 ([Windows Subsystem for Linux version 2](https://docs.microsoft.com/en-us/w
 Traditionally, web developers working on Windows have had to cobble together all the tools that Linux (and macOS) developers take for granted, as well as maintaining and managing versions. With WSL2 Windows developers now have a full Linux toolkit with anything they could ever want (`bash`, `zsh`, `grep`, `awk`, `vim`, `composer`, `make`, `npm`, `yarn`, and so on), standard packaging, all readily available. With DDEV in the mix they also have a super-fast local development environment that works the same as it does on Linux, macOS, (or traditional Windows, but much, much faster). And of course the traditional Windows problems with symlinks, different line endings, file formats, shell script support, all are solved by WSL2.
 
 In this screencast I’m walking through the official DDEV [WSL2 Installation Docs](https://ddev.readthedocs.io/en/stable/#installation-or-upgrade-windows-wsl2), but adding a little more detail. Then I show the basics of installing Chocolatey, mkcert, Docker Desktop, Homebrew, and DDEV, and basic usage of DDEV in action, including a [TYPO3 CMS Composer install](https://ddev.readthedocs.io/en/stable/users/quickstart/#typo3) and demonstrations of a few key commands.
-
-_Note_: One of the weaknesses of WSL2 is that PhpStorm isn’t really completely ready for it yet. There are [two not-quite-satisfactory ways](ddev-local-and-phpstorm-debugging-with-wsl2.md) to use PhpStorm though. But [VS Code](https://code.visualstudio.com/) has full and robust support for WSL2, including inside Docker containers. Our [original article on WSL2](https://ddev.com/ddev-local/ddev-wsl2-getting-started/) tells how to set up VS Code for use inside WSL2.
 
 **Here’s the video table of contents (opens on YouTube):**
 
@@ -44,5 +44,4 @@ _Note_: One of the weaknesses of WSL2 is that PhpStorm isn’t really completely
 - [WSL2 and DDEV Installation docs](https://ddev.readthedocs.io/en/stable/#installation-or-upgrade-windows-wsl2)
 - [Support](https://ddev.readthedocs.io/en/stable/users/support/): Drupal slack and TYPO3 slack #ddev, gitter #ddev, Stack Overflow, and the [DDEV issue queue](https://github.com/ddev/ddev/issues).
 - [DDEV Project Repository](https://github.com/ddev/ddev)
-- More about [PhpStorm on WSL2](ddev-local-and-phpstorm-debugging-with-wsl2.md), with full details about how to run it.
 - Using WSL2 (and **VS Code**), [DDEV ❤️ WSL2: getting started](https://ddev.com/ddev-local/ddev-wsl2-getting-started/)

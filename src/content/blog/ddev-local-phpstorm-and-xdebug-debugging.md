@@ -10,6 +10,9 @@ featureImage:
 categories:
   - Guides
   - Videos
+modifiedDate: 2025-07-21
+#modifiedComment: "Minor edits""
+
 ---
 
 <div class="video-container">
@@ -18,7 +21,7 @@ categories:
 
 The days of print-debugging are long behind us! [Xdebug](https://xdebug.org/) and PHP IDEs have made that approach unwieldy, but often the configuration between your IDE, PHP, web server, and Docker is challenging and fragile. Enter our open source local development environment, [DDEV](https://github.com/ddev/ddev).
 
-The combination of [PhpStorm](https://www.jetbrains.com/phpstorm/) and [DDEV](https://github.com/ddev/ddev)‘s plug-and-play approach to debugging makes those configuration struggles obsolete. You can get a working debug environment in a few minutes! We’ll walk you through it in this screencast using macOS. It works exactly the same on Windows or Linux, and with [WSL2 as well](ddev-local-and-phpstorm-debugging-with-wsl2.md). After all, we want you to be successful with the tools and workflows you know and love.
+The combination of [PhpStorm](https://www.jetbrains.com/phpstorm/) and [DDEV](https://github.com/ddev/ddev)‘s plug-and-play approach to debugging makes those configuration struggles obsolete. You can get a working debug environment in a few minutes! We’ll walk you through it in this screencast using macOS. It works exactly the same on Windows or Linux. After all, we want you to be successful with the tools and workflows you know and love.
 
 ## Debugging in your local development environment
 
@@ -51,4 +54,3 @@ What we’re doing in this tutorial:
 - [DDEV Xdebug docs](https://ddev.readthedocs.io/en/stable/users/step-debugging/) (including troubleshooting)
 - [Support docs](https://ddev.readthedocs.io/en/stable/users/support/): Drupal Slack and TYPO3 Slack #ddev, gitter #ddev, Stack Overflow, and the [DDEV issue queue](https://github.com/ddev/ddev/issues)
 - [DDEV Project Repository](https://github.com/ddev/ddev)
-- More about [PhpStorm on WSL2](ddev-local-and-phpstorm-debugging-with-wsl2.md), with full details about how to run it
