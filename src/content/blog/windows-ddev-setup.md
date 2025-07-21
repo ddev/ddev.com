@@ -10,7 +10,6 @@ featureImage:
 categories:
   - DevOps
 modifiedComment: "Updated after another Windows experience in July 2025, and added some ARM64-specific notes."
-
 ---
 
 I've recently set up a few Windows machines for DDEV maintenance and development, and wanted to share how I do it. It's surprisingly easy. My approach here is opinionated, but it works for me. You'll do things a little differently I'm sure.
@@ -63,10 +62,11 @@ Two recent Windows machines I set up were the new ARM64/Qualcomm/CoPilot variety
     sudo npm install -g prettier
     sudo PIPX_HOME=/usr/local/pipx PIPX_BIN_DIR=/usr/local/bin PIPX_MAN_DIR=/usr/local/share/man pipx install mkdocs
     ```
+
 21. Install `git` for Windows (and `git-bash`)
 22. Use [sharpkeys](https://github.com/randyrants/sharpkeys) to disable the Caps Lock key.
 23. Install NSIS and dependencies. `sudo apt update && sudo apt install -y nsis` and `.ci-scripts/nsis_setup.sh /usr/share/nsis`
-24. Install homebrew for just a few uses: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+24. Install Homebrew for just a few uses: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 25. Install BATS with `brew tap bats-core/bats-core` and `brew instalil bats bats-assert bats-support bats-file`
 26. Install [goreleaser pro](https://goreleaser.com/install/#apt-repository)
 
