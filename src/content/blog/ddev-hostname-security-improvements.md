@@ -20,7 +20,7 @@ One of the core principles of secure software development is the **principle of 
 
 Most of the time, DDEV projects work seamlessly with URLs like `https://yourproject.ddev.site` without any special setup. That's because DDEV maintains DNS records for `ddev.site` and all its subdomains that resolve to `127.0.0.1` (your local machine). As long as you have an internet connection, your browser can look up these hostnames automatically.
 
-However, there are situations where DDEV needs to edit your system's `hosts` file (`/etc/hosts` on Linux/macOS or `C:\Windows\system32\drivers\etc\hosts` on Windows):
+However, there are situations where DDEV needs to edit your system's `hosts` file (`/etc/hosts` on Linux/macOS or `C:\Windows\System32\drivers\etc\hosts` on Windows):
 
 - When you don't have an internet connection
 - When your DNS is broken or blocks `127.0.0.1` resolution (DNS rebinding protection)
