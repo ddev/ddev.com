@@ -11,51 +11,58 @@ import {
   ORG_POSTAL_CODE,
   ORG_COUNTRY,
   ORG_PHONE,
-  EMAIL_URL,
 } from "../const"
 
 const title = `DDEV Foundation`
+const description = `Learn about the DDEV Foundation, a Colorado, USA 501(c)(3) nonprofit corporation that develops and maintains DDEV, the local development environment tool.`
 ---
 
 <Layout
   title={title}
+  description={description}
 >
   <main class="max-w-4xl mx-auto mb-24">
     <Heading title={`DDEV Foundation`} />
-    <div class="lg:flex">
-      <div class="px-6 lg:px-0 lg:w-2/3">
-        <PostBody>
-          <p>
-            The DDEV Foundation, a Colorado (USA) nonprofit corporation, is the developer of <a href="https://ddev.com">DDEV</a>. It was formerly named the Localdev Foundation. It serves as the fiscal entity for the project and owns the bank account, etc. For more, see <a href="/about">About DDEV</a>.
-          </p>
-          <p>
-            The DDEV Foundation is a <a href="/img/blog/2024/03/501c3.png">US 501(c)(3) non-profit</a>.
-          </p>
+    <div class="px-6 lg:px-0">
+      <PostBody>
+        <article>
+          <section class="mb-8">
+            <p>
+              The DDEV Foundation, a Colorado (USA) nonprofit corporation, is the developer of <a href="https://ddev.com" rel="noopener">DDEV</a>. It was formerly named the Localdev Foundation. It serves as the fiscal entity for the project and owns the bank account, etc. For more, see <a href="/about">About DDEV</a>.
+            </p>
+            <p>
+              The DDEV Foundation is a <a href="/img/blog/2024/03/501c3.png" target="_blank" rel="noopener">US 501(c)(3) non-profit</a>.
+            </p>
+          </section>
 
-          <h2>Where does the money go?</h2>
+          <section class="mb-8">
+            <h2>Where does the money go?</h2>
+            <p>
+              DDEV Foundation funds are used for infrastructure costs and to pay part-time and full-time maintainers.
+            </p>
+          </section>
 
-          <p>
-            DDEV Foundation funds are used for infrastructure costs and to pay part-time and full-time maintainers. Lead Maintainer Randy Fay does not receive any of the funds as his salary is paid by lead sponsor Platform.sh.
-          </p>
+          <section class="mb-8">
+            <h2>Contact Information</h2>
+            <p class="mb-4">Contact <a href=/contact>support</a>.</p>
+            
+            <h3 class="text-lg font-semibold mb-2">Postal Address & Phone</h3>
+            <address class="not-italic">
+              {ORG_NAME}<br />
+              {ORG_STREET}<br />
+              {ORG_CITY}, {ORG_STATE_ABBR} {ORG_POSTAL_CODE} {ORG_COUNTRY}<br />
+              <a href={`tel:${ORG_PHONE}`}>{ORG_PHONE}</a>
+            </address>
+          </section>
 
-          <h2>Contact the DDEV Foundation</h2>
-
-          <p>Contact <a href={EMAIL_URL}>support</a>.</p>
-
-          <h2>Snail Mail and Phone:</h2>
-
-          {ORG_NAME}<br />
-          {ORG_STREET}<br />
-          {ORG_CITY}, {ORG_STATE_ABBR}&nbsp;{ORG_POSTAL_CODE}&nbsp; {ORG_COUNTRY}<br />
-          {ORG_PHONE}<br />
-
-          <h2>Colorado nonprofit corporation registration</h2>
-          <p>
-            Review our <a href="https://www.sos.state.co.us/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20211820326&entityId2=20211820326&fileId=20211820326&srchTyp=ENTITY">Colorado nonprofit corporation registration</a>.
-          </p>
-
-        </PostBody>
-      </div>
+          <section class="mb-8">
+            <h2>Legal Registration</h2>
+            <p>
+              Review our <a href="https://www.sos.state.co.us/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20211820326&entityId2=20211820326&fileId=20211820326&srchTyp=ENTITY" target="_blank" rel="noopener">Colorado nonprofit corporation registration</a>.
+            </p>
+          </section>
+        </article>
+      </PostBody>
     </div>
   </main>
 </Layout>
