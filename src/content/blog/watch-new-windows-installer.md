@@ -17,12 +17,12 @@ Tired of those complex PowerShell scripts we used to provide to get DDEV running
 
 In [DDEV v1.24.7](https://github.com/ddev/ddev/releases/tag/v1.24.7) we've eliminated the complexity of Windows setup. What used to require a privileged  PowerShell script and manual WSL2 configuration now takes just a few clicks.
 
-## Why This Changes Everything for DDEV Developers on Windows
+## Why This Changes Everything for DDEV Users on Windows
 
 ✅ **Almost No Command Line Required for Setup**<br/>
 ✅ **Handles WSL2 Setup Automatically** - No more manual configuration<br/>
 ✅ **Works with Your Preferred Docker Setup** - Docker Desktop, Rancher Desktop, or Docker-CE, in WSL2 or with Traditional Windows<br/>
-✅ **Beginner-Friendly** - Perfect for developers new to DDEV
+✅ **Beginner-Friendly** - Perfect for users new to DDEV
 
 The new installer supports:
 
@@ -38,7 +38,6 @@ Watch me transform a fresh Windows machine into a fully functional DDEV developm
 - Starting from a Windows machine without WSL2
 - Complete WSL2 and Docker CE setup
 - DDEV installation and first project
-- Ready to develop in 10 minutes
 
 <div class="video-container">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nKxZ5YNucd4?si=4QWTycKfMTu-nXEz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
