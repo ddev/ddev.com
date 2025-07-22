@@ -10,14 +10,18 @@
 
 # Generic blog redirects
 /ddev-local /blog 301
-/ddev-local/* /blog/:splat/ 301
-/blog/:slug /blog/:slug/ 301
+/ddev-local/* /blog/:splat 301
 
-# Removed blog post redirects, add trailing slashes here to make it work properly
+# Removed blog post redirects (add both links with and without trailing slash)
+/blog/ddev-wsl2-getting-started https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#ddev-installation-windows 301
 /blog/ddev-wsl2-getting-started/ https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#ddev-installation-windows 301
+/blog/apache-solr-with-drupal-8-and-search-api-solr https://github.com/ddev/ddev-drupal-solr 301
 /blog/apache-solr-with-drupal-8-and-search-api-solr/ https://github.com/ddev/ddev-drupal-solr 301
+/blog/ddev-local-web-container-customization-in-v1-8-0 https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/ 301
 /blog/ddev-local-web-container-customization-in-v1-8-0/ https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/ 301
+/blog/ddev-local-nfs-mounting-setup-macos https://ddev.readthedocs.io/en/stable/users/install/performance/#filesystem-performance-nfs 301
 /blog/ddev-local-nfs-mounting-setup-macos/ https://ddev.readthedocs.io/en/stable/users/install/performance/#filesystem-performance-nfs 301
+/blog/ddev-local-and-phpstorm-debugging-with-wsl2 https://ddev.readthedocs.io/en/stable/users/debugging-profiling/step-debugging/#phpstorm-debugging-setup 301
 /blog/ddev-local-and-phpstorm-debugging-with-wsl2/ https://ddev.readthedocs.io/en/stable/users/debugging-profiling/step-debugging/#phpstorm-debugging-setup 301
 
 # Authors redirects
