@@ -70,6 +70,12 @@ Blog posts require:
 - pubDate as Date object
 - Optional featureImage with alt text
 
+### Content Linking
+
+- **Internal blog links**: Use markdown filename references (e.g., `[link text](filename.md)`) for links between blog posts. Astro automatically resolves these to proper URLs.
+- **Other internal links**: Use root-relative paths (e.g., `[Contact](/contact)`) for links to other site pages
+- **External links**: Use full URLs for links outside the site
+
 ### GitHub Integration
 
 The site fetches dynamic data from GitHub API:
