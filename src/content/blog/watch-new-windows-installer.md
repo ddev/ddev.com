@@ -15,7 +15,7 @@ categories:
 
 Tired of those complex PowerShell scripts we used to provide to get DDEV running on Windows? The new GUI installer changes everything.
 
-In [DDEV v1.24.7](https://github.com/ddev/ddev/releases/tag/v1.24.7) we've eliminated the complexity of Windows setup. What used to require a privileged  PowerShell script and manual WSL2 configuration now takes just a few clicks.
+In [DDEV v1.24.7](https://github.com/ddev/ddev/releases/tag/v1.24.7) we've eliminated the complexity of Windows setup. What used to require a privileged PowerShell script and manual WSL2 configuration now takes just a few clicks.
 
 ## Why This Changes Everything for DDEV Users on Windows
 
@@ -26,15 +26,16 @@ In [DDEV v1.24.7](https://github.com/ddev/ddev/releases/tag/v1.24.7) we've elimi
 
 The new installer supports:
 
-* WSL2 Docker-CE
-* WSL2 Docker Desktop and Rancher Desktop
-* Traditional Windows installation
+- WSL2 Docker-CE
+- WSL2 Docker Desktop and Rancher Desktop
+- Traditional Windows installation
 
 ## See It In Action
 
 Watch me transform a fresh Windows machine into a fully functional DDEV development environment in about 10 minutes:
 
 **What you'll see:**
+
 - Starting from a Windows machine without WSL2
 - Complete WSL2 and Docker CE setup
 - DDEV installation and first project
@@ -54,6 +55,7 @@ This setup process is detailed in [Get Started - Windows](/get-started) and expl
 **Support the Project:** DDEV is fully open-source and free to use, and run by the nonprofit DDEV Foundation. We ask you to help make us a sustainable project by sponsoring yourself or getting your organization to sponsor the project. [Sponsor us on GitHub](https://github.com/sponsors/ddev).
 
 Questions? Issues? We're here to help:
+
 - 💬 [Contact our team](/contact)
 - 📖 [Simple installation docs](/get-started)
 - 📖 [Full installation docs](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#ddev-installation-windows)
