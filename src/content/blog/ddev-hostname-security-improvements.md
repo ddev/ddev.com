@@ -12,6 +12,8 @@ categories:
   - DevOps
 ---
 
+> **TL;DR**: The new binary `ddev-hostname` shipped with DDEV now takes care of `hosts` file editing when needed. `hosts` editing only happens when you use a non-`ddev.site` URL.
+
 One of the core principles of secure software development is the **principle of least privilege**: give a program only the minimal permissions it needs to do its job. With DDEV v1.24.7, we've taken a significant step forward in applying this principle to how DDEV manages hostname resolution on your development machine.
 
 **If you don't use an alternate top-level-domain (TLD) or custom FQDNs, you won't notice any changes here.** Read on, but DDEV will continue to work as it always has for most users.
