@@ -1,7 +1,8 @@
 ---
 title: "DDEV Add-on Maintenance Guide"
 pubDate: 2025-05-01
-#modifiedDate: 2025-05-01
+modifiedDate: 2025-07-22
+modifiedComment: Added update checker script.
 summary: Maintaining an add-on involves regularly updating it to stay compatible with new features in both the upstream ddev-addon-template and DDEV itself.
 author: Stas Zhuk
 featureImage:
@@ -30,8 +31,10 @@ Here are some high-level practices to follow:
 - Use `#!/usr/bin/env bash` instead of `#!/bin/bash` at the top of your command scripts, it's more portable and works better across different environments.
 - Ensure your add-on cleans up after itself: both `ddev add-on get` and `ddev add-on remove` should be idempotent. All files added via `project_files` and `global_files` must include a `#ddev-generated` stanza to support proper removal
 - Remember to publish a new release after any update (unless it's just a `README.md` change)
-
-I'm currently working on a script to streamline the update process. It's a work in progress and [available here](https://github.com/ddev/ddev-addon-template/pull/76). I'd appreciate any feedback!
+- Run the update checker in your add-on to ensure it is up to date:
+  ```bash
+  curl -fsSL https://raw.githubusercontent.com/ddev/ddev-addon-template/main/.github/scripts/update-checker.sh | bash
+  ```
 
 ## What's New in the DDEV Ecosystem
 
