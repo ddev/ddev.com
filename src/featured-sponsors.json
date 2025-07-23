@@ -169,5 +169,14 @@
     "squareLogo": "/logos/affinity-bridge-square.svg",
     "url": "https://affinitybridge.com/",
     "github": "affinitybridge"
+  },
+  {
+    "name": "Passbolt",
+    "type": "standard",
+    "logo": "/logos/passbolt-logo-primary-black.svg",
+    "darklogo": "/logos/passbolt-logo-primary-white.svg",
+    "squareLogo": "/logos/passbolt-logo-square.svg",
+    "url": "https://www.passbolt.com/",
+    "github": "passbolt"
   }
 ]
