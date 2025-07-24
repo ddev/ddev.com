@@ -43,43 +43,49 @@ This comprehensive screencast walks you through setting up a complete DDEV devel
 - Must work in the WSL2 filesystem rather than Windows filesystem (optimized for web apps, not Microsoft Word)
 
 **Complete Installation Process**: The video covers every step of the installation process, including:
-- Setting up WSL2 from scratch on Windows
-- Installing and configuring Docker Desktop with WSL2 integration
-- Installing the new DDEV Windows installer
-- Setting up Homebrew within WSL2 for package management
-- Configuring bash completion for better command-line experience
+- Setting up WSL2 from scratch using the `wsl --install` command
+- Running the new DDEV Windows AMD64 installer that automatically configures Docker CE
+- Creating and configuring WSL2 distros optimized for development
+- Understanding why you need to work in the WSL2 file system for optimal performance
 
 **Real-World Usage**: Beyond just installation, you'll see DDEV in action with:
-- Creating a simple PHP project to test your setup
-- Installing TYPO3 CMS using `ddev composer create`
-- Essential DDEV commands every developer should know
-- Best practices for working with DDEV projects
+- Creating a simple PHP project and launching it with HTTPS certificates
+- Installing Drupal 11 using `ddev composer create-project`
+- Essential DDEV commands like `ddev describe`, `ddev snapshot`, and `ddev export-db`
+- Advanced IDE integration with both PHP Storm and VS Code, including XDebug debugging
+
+**Professional Development Features**: The video demonstrates advanced workflows including:
+- Setting up XDebug debugging in both PHP Storm and VS Code
+- Working with DDEV projects from within WSL2-integrated IDEs
+- Understanding Docker Desktop vs Docker CE trade-offs for professional development
+- Best practices for file system performance and cross-platform compatibility
 
 ## Why WSL2 + DDEV?
 
-Traditionally, web developers on Windows faced significant challenges: cobbling together development tools, managing different versions, dealing with line ending issues, symlink problems, and slow file system performance. WSL2 solves these problems by providing a full Linux environment with all the tools developers expect (`bash`, `zsh`, `grep`, `awk`, `vim`, `composer`, `make`, `npm`, `yarn`, and more) while maintaining native Windows integration.
+As Randy explains in the video: *"Because Docker does the lifting you don't have to even have anything like PHP or Composer on your host computer and deal with those complexities. DDEV has been around for quite a few years now and it's had first-class Mac, Linux, Windows and WSL2 support for really quite a long time. It works the same on every platform."*
 
-With DDEV running in WSL2, you get Linux-native performance while keeping your familiar Windows workflow. It's the best of both worlds - a development environment that's as fast and reliable as Linux, with the Windows tools and interface you know and love.
+The advantages of WSL2 are compelling. Randy notes: *"On the advantage side it gives me Linux with all the tools and power of Linux right there available to me anytime. With DDEV it's got great performance and web serving and you're working with an environment much like where you'll deploy to."*
+
+However, he's also honest about the learning curve: *"You've got Linux on your Windows machine. You've already had a thousand and thousand and thousand things to learn and remember and now there's a whole different context with Linux."* The key insight is that *"because the WSL 2 or the Linux file system it's called EXT4 is so much better for web serving and really better for anything that is a lot of files and you really have to work in the WSL 2 file system."*
+
+This is why Microsoft built NTFS *"for Microsoft Word for huge files a few huge files and not for web apps"* - but WSL2's EXT4 filesystem is optimized exactly for the kind of many-small-files workload that web development requires.
 
 This screencast follows the official DDEV [WSL2 Installation Docs](https://ddev.readthedocs.io/en/stable/#installation-or-upgrade-windows-wsl2), but provides additional context, troubleshooting tips, and real-world examples to ensure your success.
 
 **Here's the video table of contents (opens on YouTube):**
 
-- Introduction and Overview ([0:00](https://youtu.be/1dr_4gPtFlQ?t=0))
-- What is DDEV? ([1:02](https://youtu.be/1dr_4gPtFlQ?t=62))
-- What is WSL2? ([2:52](https://youtu.be/1dr_4gPtFlQ?t=172))
-- Advantages and Disadvantages of WSL2 ([3:44](https://youtu.be/1dr_4gPtFlQ?t=224))
-- WSL2 Installation ([5:49](https://youtu.be/1dr_4gPtFlQ?t=349))
-- Installing Docker Desktop ([13:29](https://youtu.be/1dr_4gPtFlQ?t=809))
-- Installing Homebrew and DDEV inside WSL2 ([15:22](https://youtu.be/1dr_4gPtFlQ?t=922))
-- Installing and using bash-completion ([19:06](https://youtu.be/1dr_4gPtFlQ?t=1146))
-- Creating a super-simple PHP project (junk project) ([20:38](https://youtu.be/1dr_4gPtFlQ?t=1238))
-- Creating a TYPO3 project with `ddev composer create` ([27:57](https://youtu.be/1dr_4gPtFlQ?t=1677))
-- Some most-important ddev commands ([32:11](https://youtu.be/1dr_4gPtFlQ?t=1931))
-- Working with DDEV projects and troubleshooting ([36:01](https://youtu.be/1dr_4gPtFlQ?t=2161))
-- Advanced DDEV features and tips ([42:30](https://youtu.be/1dr_4gPtFlQ?t=2550))
-- Questions and answers ([47:15](https://youtu.be/1dr_4gPtFlQ?t=2835))
-- Final wrap-up and resources ([51:00](https://youtu.be/1dr_4gPtFlQ?t=3060))
+- Introduction and What is DDEV? ([0:00](https://youtu.be/1dr_4gPtFlQ?t=0))
+- What is WSL2? ([1:56](https://youtu.be/1dr_4gPtFlQ?t=116))
+- WSL2 Advantages and Disadvantages ([2:50](https://youtu.be/1dr_4gPtFlQ?t=170))
+- WSL2 Installation Process ([5:30](https://youtu.be/1dr_4gPtFlQ?t=330))
+- DDEV Windows Installer and Docker Setup ([12:03](https://youtu.be/1dr_4gPtFlQ?t=723))
+- Creating a Simple PHP Project ([16:14](https://youtu.be/1dr_4gPtFlQ?t=974))
+- Creating a Drupal 11 Project with Composer ([21:27](https://youtu.be/1dr_4gPtFlQ?t=1287))
+- Essential DDEV Commands ([25:25](https://youtu.be/1dr_4gPtFlQ?t=1525))
+- PHP Storm Integration and XDebug Setup ([30:38](https://youtu.be/1dr_4gPtFlQ?t=1838))
+- VS Code Integration and Debugging ([39:22](https://youtu.be/1dr_4gPtFlQ?t=2362))
+- Docker Desktop vs Docker CE Discussion ([46:55](https://youtu.be/1dr_4gPtFlQ?t=2815))
+- Wrap-up and Community Resources ([50:12](https://youtu.be/1dr_4gPtFlQ?t=3012))
 
 **Resources for you:**
 
