@@ -320,7 +320,7 @@ No, I didn't do that this time. It depends on the state of your machine whether
 
 81
 00:09:05,960 --> 00:09:16,240
-it does that. I'm going to set my local user here. I always use our fade and let's
+it does that. I'm going to set my local user here. I always use `rfay` and let's
 
 82
 00:09:16,240 --> 00:09:23,920
@@ -600,11 +600,11 @@ index.html. The DDEV is very happy to have an index.html. Now I'm going to do a 
 
 151
 00:17:47,580 --> 00:17:55,140
-config and I can use just the defaults here. I could have done a DDEV config dash dash
+config and I can use just the defaults here. I could have done a `ddev config --auto`.
 
 152
 00:17:55,140 --> 00:18:05,780
-auto. Now I'm going to do a DDEV start and it's going to ask if it can do the usage
+Now I'm going to do a `ddev start` and it's going to ask if it can do the usage
 
 153
 00:18:05,780 --> 00:18:15,900
@@ -648,7 +648,7 @@ coffee for the downloads.
 
 163
 00:19:41,780 --> 00:19:57,140
-Okay here it is it's done. I'm going to do a DDEV describe like it says like it suggests.
+Okay here it is it's done. I'm going to do a `ddev describe` like it says like it suggests.
 
 164
 00:19:57,140 --> 00:20:06,260
@@ -656,7 +656,7 @@ So here are the basics of this project. Here's the main URL test.ddev.site. The 
 
 165
 00:20:06,260 --> 00:20:16,900
-platform is WZL2 Docker CE. There are details about the individual containers and of course
+platform is WSL2 Docker CE. There are details about the individual containers and of course
 
 166
 00:20:16,900 --> 00:20:29,620
@@ -672,7 +672,7 @@ and sometimes there's a reason to do that. I'm going to use the regular HTTPS so
 
 169
 00:20:44,500 --> 00:20:51,780
-to say DDEV launch which is how most of us do that most of the time and you see we have we
+to say `ddev launch` which is how most of us do that most of the time and you see we have we
 
 170
 00:20:51,780 --> 00:21:01,620
@@ -700,7 +700,7 @@ Now I'm going to do a slightly more complex project. I'm just going to do a Drup
 
 176
 00:21:43,060 --> 00:21:53,940
-because that's what's in my fingers and I'm going to do a DDEV config and this is all. Let me
+because that's what's in my fingers and I'm going to do a `ddev config` and this is all. Let me
 
 177
 00:21:53,940 --> 00:22:02,580
@@ -728,7 +728,7 @@ here in the Quick Start and I'm going to use the Drupal 11 recipe here.
 
 183
 00:22:46,740 --> 00:22:55,060
-So I'm going to do a DDEV config, dash dash project, type equals Drupal 11, dash dash dot
+So I'm going to do a `ddev config --project-type=drupal11 --docroot=web`
 
 184
 00:22:56,260 --> 00:23:04,900
@@ -736,7 +736,7 @@ root equals web. I could have done this manually but I usually just type in the 
 
 185
 00:23:04,900 --> 00:23:10,740
-because I do it often and now I'm going to do a DDEV composer create project,
+because I do it often and now I'm going to do a `ddev composer create-project`
 
 186
 00:23:13,140 --> 00:23:19,620
@@ -760,7 +760,7 @@ Composer create project happens to start the project. So
 
 191
 00:23:57,140 --> 00:24:01,460
-there it is. It's already done and now if I do a DDEV launch here
+there it is. It's already done and now if I do a `ddev launch` here
 
 192
 00:24:04,740 --> 00:24:10,100
@@ -824,7 +824,7 @@ where we were working just right here is where we were working in a distro calle
 
 207
 00:26:13,620 --> 00:26:31,140
-an Ubuntu distro. So you can see that this is an Ubuntu 24.4 distro and then we ran the Windows
+an Ubuntu distro. So you can see that this is an Ubuntu 24.04 distro and then we ran the Windows
 
 208
 00:26:31,140 --> 00:26:38,900
@@ -836,7 +836,7 @@ that we just did. So here's the junk project that I didn't do. I did a test proj
 
 210
 00:26:49,700 --> 00:26:58,100
-here's a typo 3 example. I did a Drupal example instead and then I do want to show you a couple of
+here's a TYPO3 example. I did a Drupal example instead and then I do want to show you a couple of
 
 211
 00:26:58,100 --> 00:27:03,700
@@ -852,11 +852,11 @@ that you don't have to know all about. I can do a DDEV, let me just do this.
 
 214
 00:27:21,620 --> 00:27:33,780
-I'm going to do a DDEV export, export, vb-pile equals dot, our balls, dv dot sql dot gz.
+I'm going to do a `ddev export-db --file=.tarballs/db.sql.gz`
 
 215
 00:27:35,060 --> 00:27:41,940
-And that will save our database into that file. I can do a DDEV snapshot
+And that will save our database into that file. I can do a `ddev snapshot`
 
 216
 00:27:44,340 --> 00:27:49,300
@@ -872,7 +872,7 @@ on your machine and these are regular files instead of the Docker volume where t
 
 219
 00:28:01,540 --> 00:28:11,940
-usually stored. DDEV described we already showed. Always very useful. DDEV list shows you your
+usually stored. `ddev describe` we already showed. Always very useful. `ddev list` shows you your
 
 220
 00:28:11,940 --> 00:28:19,220
@@ -884,7 +884,7 @@ What else did I promise to show you? Stop, power off, mysql snapshot. When you w
 
 222
 00:28:32,420 --> 00:28:39,220
-let's go back to the test project and I'm just going to say DDEV stop and I could have from anywhere
+let's go back to the test project and I'm just going to say `ddev stop` and I could have from anywhere
 
 223
 00:28:39,220 --> 00:28:46,900
@@ -896,7 +896,7 @@ So that now is stopped and it shows it is stopped.
 
 225
 00:29:00,020 --> 00:29:09,140
-One of my favorites is DDEV mysql because I'm familiar on the command line so I can do a show
+One of my favorites is `ddev mysql` because I'm familiar on the command line so I can do a show
 
 226
 00:29:09,380 --> 00:29:26,740
@@ -920,7 +920,7 @@ and at VS Code integrations that we will look at in just a moment also have data
 
 231
 00:30:02,980 --> 00:30:10,660
-So there's all those things and then a DDEV power off, DDEV power off shuts off all of your
+So there's all those things and then a `ddev poweroff`, `ddev poweroff` shuts off all of your
 
 232
 00:30:10,660 --> 00:30:19,220
@@ -988,7 +988,7 @@ And it's been doing all the things that we want it to do. Let me just show you w
 
 248
 00:32:30,420 --> 00:32:44,820
-here. If I go into the windows explorer here and I go to Linux->DDEV->home->rfay.
+here. If I go into the Windows explorer here and I go to Linux->DDEV->home->rfay.
 
 249
 00:32:48,340 --> 00:32:57,940
@@ -1036,7 +1036,7 @@ terminal has already got this is already using the terminal inside WSL2 inside o
 
 260
 00:34:32,660 --> 00:34:41,780
-do it DDEV describe here and do all the things that we need to do. And now I'm going to demonstrate
+do it `ddev describe` here and do all the things that we need to do. And now I'm going to demonstrate
 
 261
 00:34:42,660 --> 00:34:50,900
@@ -1108,7 +1108,7 @@ So on the IDE we told it to listen. Now let's make a let's make a breakpoint her
 
 278
 00:37:45,780 --> 00:37:59,700
-I am going to do a `ddev xdebug on` to tell debug to do ddev to start doing its thing and let's remember
+I am going to do a `ddev xdebug on` to tell DDEV to start doing its thing and let's remember
 
 279
 00:38:04,180 --> 00:38:12,180
@@ -1176,7 +1176,7 @@ understands WSL2 using the current directory so that's installing the VS Code se
 
 295
 00:40:30,980 --> 00:40:40,100
-there's a very easy way to pop this up and now it's running it here with the regular windows side
+there's a very easy way to pop this up and now it's running it here with the regular Windows side
 
 296
 00:40:40,100 --> 00:40:54,820
@@ -1260,7 +1260,7 @@ so terminal works exactly the same let's get rid of this and you see that the th
 
 316
 00:44:10,820 --> 00:44:22,820
-is working very well it's also again in the distro and do DDEV list `ddev xdebug on`
+is working very well it's also again in the distro and do `ddev list`, `ddev xdebug on`
 
 317
 00:44:25,140 --> 00:44:34,660
@@ -1280,7 +1280,7 @@ click here and then click here but we'll do that and now we're going to do the e
 
 321
 00:44:56,740 --> 00:45:06,660
-we'll go back and in the terminal we'll do a DDEV launch it's the same as just visiting the page
+we'll go back and in the terminal we'll do a `ddev launch` it's the same as just visiting the page
 
 322
 00:45:06,660 --> 00:45:12,340
@@ -1308,11 +1308,11 @@ that you would expect to do with your debugger so in both PhpStorm and
 
 328
 00:45:55,460 --> 00:46:02,340
-nVS Code have database capabilities and all kinds of other things but and they do get for you
+VS Code have database capabilities and all kinds of other things but and they do get for you
 
 329
 00:46:03,780 --> 00:46:10,260
-I don't approve of that I think huge get from the command line person I'm a big believer that you
+I don't approve of that I think huge Git-from-the-command-line person I'm a big believer that you
 
 330
 00:46:10,260 --> 00:46:16,820
@@ -1332,7 +1332,7 @@ step-debugging and we we installed the extensions that we needed we did the code
 
 334
 00:46:47,860 --> 00:46:54,900
-did a ``ddev xdebug on``, did the VS Code listen thing and we visited a page and it stopped which is
+did a `ddev xdebug on`, did the VS Code listen thing and we visited a page and it stopped which is
 
 335
 00:46:55,540 --> 00:47:04,740
@@ -1340,11 +1340,11 @@ pretty stinking cool so okay let's go back and just talk about a couple of thing
 
 336
 00:47:04,740 --> 00:47:11,300
-have questions about you have heard about docker desktop for years now and so what about docker
+have questions about you have heard about Docker Desktop for years now and so what about docker
 
 337
 00:47:11,300 --> 00:47:20,020
-desktop did have has supported docker desktop on both traditional windows and wsl2 for many years
+desktop did have has supported Docker Desktop on both Traditional Windows and WSL2 for many years
 
 338
 00:47:20,660 --> 00:47:27,140
@@ -1352,7 +1352,7 @@ and it it works fine the installer as you saw when we went through the installer
 
 339
 00:47:27,140 --> 00:47:34,740
-offering both of those docker desktop is commercial software and it has a very specific license
+offering both of those Docker Desktop is commercial software and it has a very specific license
 
 340
 00:47:34,740 --> 00:47:40,260
@@ -1360,7 +1360,7 @@ agreement and your company may need to pay for you to be able to use it they're 
 
 341
 00:47:43,380 --> 00:47:50,580
-and docker desktop unfortunately is not really very stable it seems to have new bugs and every
+and Docker Desktop unfortunately is not really very stable it seems to have new bugs and every
 
 342
 00:47:50,580 --> 00:47:57,940
@@ -1376,11 +1376,11 @@ these wonderful open source tools that we depend on that are components of every
 
 345
 00:48:12,100 --> 00:48:21,380
-but docker desktop is not their finest hour it's focused on a lot of things that are not just
+but Docker Desktop is not their finest hour it's focused on a lot of things that are not just
 
 346
 00:48:21,940 --> 00:48:28,900
-doing the jobs that we need to do so docker desktop is fully supported if you would prefer to use
+doing the jobs that we need to do so Docker Desktop is fully supported if you would prefer to use
 
 347
 00:48:28,900 --> 00:48:35,140
@@ -1388,19 +1388,19 @@ that it's a little more complicated than what we just did but not much and then 
 
 348
 00:48:35,140 --> 00:48:42,420
-traditional windows so traditional windows is just the label that we give of if you're working on
+Traditional Windows so Traditional Windows is just the label that we give of if you're working on
 
 349
 00:48:42,420 --> 00:48:49,780
-windows and the regular windows ntfs file system we just call that traditional windows as opposed
+Windows and the regular Windows NTFS file system we just call that Traditional Windows as opposed
 
 350
 00:48:49,780 --> 00:48:57,220
-to the various wsl2 approaches and we've supported it for many years the performance is not as good as
+to the various WSL2 approaches and we've supported it for many years the performance is not as good as
 
 351
 00:48:57,220 --> 00:49:05,940
-with wsl2 and there's some initial startup sync time on a project that you may or may not find
+with WSL2 and there's some initial startup sync time on a project that you may or may not find
 
 352
 00:49:06,580 --> 00:49:18,100
@@ -1408,11 +1408,11 @@ troublesome but in reality it's not bad it used to be terrible it used to be jus
 
 353
 00:49:18,100 --> 00:49:26,340
-we first did wsl2 traditional windows was something that you would never want to do anymore because
+we first did WSL2 Traditional Windows was something that you would never want to do anymore because
 
 354
 00:49:26,340 --> 00:49:31,300
-wsl2 is so much better but now the traditional windows has mutagen support
+WSL2 is so much better but now the Traditional Windows has mutagen support
 
 355
 00:49:33,140 --> 00:49:40,500
@@ -1428,7 +1428,7 @@ than we that we were threatening to deprecate this approach and we have about 5%
 
 358
 00:49:56,020 --> 00:50:02,020
-are on traditional windows and they're very defensive about that so we won't do that anymore plus
+are on Traditional Windows and they're very defensive about that so we won't do that anymore plus
 
 359
 00:50:02,020 --> 00:50:12,180
@@ -1436,7 +1436,7 @@ it works a lot better than it used to okay so let's just take a quick look at wh
 
 360
 00:50:12,180 --> 00:50:22,500
-that we that we know what it was so we talked about what ddev is what wsl2 is on windows and why we'd
+that we that we know what it was so we talked about what DDEV is, what WSL2 is on Windows and why we'd
 
 361
 00:50:22,500 --> 00:50:29,940
@@ -1456,27 +1456,27 @@ and then we created a project that's what we did then so here's the dummy projec
 
 365
 00:50:55,940 --> 00:51:04,100
-and we did we demonstrated some of the commands then we demonstrated accessing wsl2 project
+and we did we demonstrated some of the commands then we demonstrated accessing WSL2 project
 
 366
 00:51:04,100 --> 00:51:13,220
-from PhpStorm and doing xt bug on it and then VS Code accessing it which is a little different
+from PhpStorm and doing Xdebug on it and then VS Code accessing it which is a little different
 
 367
 00:51:13,220 --> 00:51:19,860
-using the code dot approach from inside your distro and then we talked about docker desktop and
+using the `code .` approach from inside your distro and then we talked about Docker Desktop and
 
 368
 00:51:19,860 --> 00:51:29,300
-traditional windows and here we are with the resources for you obviously ddev.com has all the
+Traditional Windows and here we are with the resources for you obviously ddev.com has all the
 
 369
 00:51:29,300 --> 00:51:36,100
-things and pointers to all the things but one of those things is the ddev docs and in there you'll
+things and pointers to all the things but one of those things is the DDEV docs and in there you'll
 
 370
 00:51:36,100 --> 00:51:48,980
-find the wsl2 install docs in more detail there's a great drupal.org tutorial on all this and don't
+find the WSL2 install docs in more detail there's a great drupal.org tutorial on all this and don't
 
 371
 00:51:48,980 --> 00:51:58,020
@@ -1488,11 +1488,11 @@ discussion learning from you discussing the problems that you have and everythin
 
 373
 00:52:05,300 --> 00:52:13,540
-at in discord on stack overflow and the ddev issue queue and our project repo of course is
+at in discord on stack overflow and the DDEV issue queue and our project repo of course is
 
 374
 00:52:13,540 --> 00:52:21,140
-github.com slash ddev slash ddev so join us we would love to have you and thanks for hanging
+github.com/ddev/ddev so join us we would love to have you and thanks for hanging
 
 375
 00:52:21,140 --> 00:52:21,860
