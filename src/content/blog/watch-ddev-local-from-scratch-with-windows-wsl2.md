@@ -1,17 +1,17 @@
 ---
 title: "Watch: DDEV from scratch with Windows WSL2"
-pubDate: 2025-07-24
+pubDate: 2025-07-25
 summary: Screencast guide to running DDEV on Windows with WSL2, starting from scratch. Learn how to set up WSL2, Docker Desktop, and DDEV and use them for development.
 author: Randy Fay
 
 featureImage:
-  src: /img/blog/2023/11/WSL2_Docker_Platform.png
-  alt: WSL2 Docker Platform architecture diagram
+  src: /img/blog/2025/07/ddev-from-scratch-wsl2.png
+  alt: DDEV From Scratch on WSL2
   hide: false
 categories:
   - Guides
   - Videos
-modifiedDate: 2025-07-24
+modifiedDate: 2025-07-25
 modifiedComment: "This guide was originally published in 2020, but has been completely rewritten with a new video in 2025. It now covers the new DDEV Windows installer and WSL2 setup."
 ---
 
