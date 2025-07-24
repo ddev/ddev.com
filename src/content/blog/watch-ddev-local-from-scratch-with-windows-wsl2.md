@@ -83,7 +83,7 @@ This screencast follows the official DDEV [WSL2 Installation Docs](https://ddev.
 - DDEV Windows Installer and Docker Setup ([12:54](https://youtu.be/1dr_4gPtFlQ?t=774))
 - Creating a Simple PHP Project ([16:14](https://youtu.be/1dr_4gPtFlQ?t=974))
 - Creating a Drupal 11 Project with Composer ([21:27](https://youtu.be/1dr_4gPtFlQ?t=1287))
-- Essential DDEV Commands ([25:25](https://youtu.be/1dr_4gPtFlQ?t=1525))
+- Essential DDEV Commands ([25:25](https://youtu.be/1dr_4gPtFlQ?t=1614))
 - PhpStorm Integration and Xdebug Setup ([30:38](https://youtu.be/1dr_4gPtFlQ?t=1838))
 - VS Code Integration and Debugging ([39:22](https://youtu.be/1dr_4gPtFlQ?t=2362))
 - Docker Desktop vs Docker CE Discussion ([46:55](https://youtu.be/1dr_4gPtFlQ?t=2815))
@@ -95,5 +95,5 @@ This screencast follows the official DDEV [WSL2 Installation Docs](https://ddev.
 - [Video slides and table of contents](https://docs.google.com/presentation/d/1oCn7E1Bk0J9E14jiZ7tdvD80jBlibnc3f7PPJMEtqss/edit?usp=sharing) - The slides used in the video
 - [DDEV documentation](https://ddev.readthedocs.io/en/stable/).
 - [WSL2 and DDEV Installation docs](https://ddev.readthedocs.io/en/stable/#installation-or-upgrade-windows-wsl2)
-- [Support](https://ddev.readthedocs.io/en/stable/users/support/): Drupal slack and TYPO3 slack #ddev, gitter #ddev, Stack Overflow, and the [DDEV issue queue](https://github.com/ddev/ddev/issues).
+- [Support](https://ddev.readthedocs.io/en/stable/users/support/): [Drupal](https://www.drupal.org/community/contributor-guide/reference-information/talk/tools/slack) Slack, `#ddev` channel on [TYPO3](https://typo3.org/) Slack, `#ddev` on [Gitter](https://gitter.im/), [DDEV Stack Overflow](https://stackoverflow.com/questions/tagged/ddev), and the [DDEV issue queue](https://github.com/ddev/ddev/issues).
 - [DDEV Project Repository](https://github.com/ddev/ddev)
