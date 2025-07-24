@@ -1,21 +1,26 @@
 ---
 title: "Watch: DDEV from scratch with Windows WSL2"
-pubDate: 2020-08-06
-summary: Screencast guide to running DDEV on Windows with WSL2.
+pubDate: 2025-07-24
+summary: Screencast guide to running DDEV on Windows with WSL2, starting from scratch. Learn how to set up WSL2, Docker Desktop, and DDEV and use them for development.
 author: Randy Fay
-featureImage:
-  src: /img/blog/2020/08/screen-shot-2020-08-04-at-11.30.47-am-1.png
-  alt: Screen grab of video’s title frame
-  hide: true
+
+[//]: # (featureImage:)
+
+[//]: # (  src: /img/blog/2020/08/screen-shot-2020-08-04-at-11.30.47-am-1.png)
+
+[//]: # (  alt: Screen grab of video’s title frame)
+
+[//]: # (  hide: true)
 categories:
   - Guides
   - Videos
-modifiedDate: 2025-07-21
-modifiedComment: "Almost everything in this article is far easier now, we hope to update the content soon. For now, take a look at [New GUI Installer: Get DDEV Running on Windows in Just 10 Minutes (Video)](/blog/watch-new-windows-installer)."
+modifiedDate: 2025-07-24
+modifiedComment: "This guide was originally published in 2020, but has been completely rewritten with a new video in 2025. It now covers the new DDEV Windows installer and WSL2 setup."
 ---
 
+
 <div class="video-container">
-<iframe loading="lazy" title="DDEV From Scratch (Windows WSL2)" width="500" height="281" src="https://www.youtube.com/embed/ZMfHaUkhfc0?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1dr_4gPtFlQ?si=ZFjBU-6CcbsVI3SX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 WSL2 ([Windows Subsystem for Linux version 2](https://docs.microsoft.com/en-us/windows/wsl/wsl2-index)) is finally generally available on recent editions of Windows! Because of [Docker’s great support for WSL2](https://docs.docker.com/docker-for-windows/wsl/), it’s now the preferred way to run your [DDEV development environment](https://github.com/ddev/ddev) on Windows. DDEV on WSL2 is as fast as DDEV on Linux, but you have all the Windows niceties you love there.
