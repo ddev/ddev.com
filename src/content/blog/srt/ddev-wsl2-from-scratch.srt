@@ -740,7 +740,7 @@ because I do it often and now I'm going to do a `ddev composer create-project`
 
 186
 00:23:13,140 --> 00:23:19,620
-Drupal slash recommended project. So this is using Composer create project under the good
+Drupal slash recommended project. So this is using `composer create-project` under the hood
 
 187
 00:23:20,260 --> 00:23:27,060
@@ -752,11 +752,11 @@ There are obviously many ways to do this. I could have checked out. I could have
 
 189
 00:23:34,660 --> 00:23:42,500
-project. In fact, I do that often or we could do the Composer method which is what we have here.
+project. In fact, I do that often or we could do the `composer-create` method which is what we have here.
 
 190
 00:23:43,940 --> 00:23:47,700
-Composer create project happens to start the project. So
+`ddev composer create-project` happens to start the project. So
 
 191
 00:23:57,140 --> 00:24:01,460
@@ -764,7 +764,7 @@ there it is. It's already done and now if I do a `ddev launch` here
 
 192
 00:24:04,740 --> 00:24:10,100
-I can actually go through the process here and I'll just do that. Usually I would use Drush at
+I can actually go through the process here and I'll just do that. Usually I would use `drush` at
 
 193
 00:24:10,100 --> 00:24:18,340
@@ -880,7 +880,7 @@ projects that you have. We have two projects, a Drupal 11 and a base PHP project
 
 221
 00:28:22,740 --> 00:28:31,300
-What else did I promise to show you? Stop, power off, mysql snapshot. When you want to stop a project
+What else did I promise to show you? `ddev stop`, `ddev poweroff`, `ddev mysql`, `ddev snapshot`. When you want to stop a project
 
 222
 00:28:32,420 --> 00:28:39,220
@@ -888,7 +888,7 @@ let's go back to the test project and I'm just going to say `ddev stop` and I co
 
 223
 00:28:39,220 --> 00:28:46,900
-said "ddev stop test" and it would have stopped the distro or the project name "test".
+said `ddev stop test` and it would have stopped the distro or the project name "test".
 
 224
 00:28:47,700 --> 00:28:54,820
