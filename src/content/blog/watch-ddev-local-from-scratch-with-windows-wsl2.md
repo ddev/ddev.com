@@ -78,13 +78,14 @@ This screencast follows the official DDEV [WSL2 Installation Docs](https://ddev.
 - What is WSL2? ([1:56](https://youtu.be/1dr_4gPtFlQ?t=116))
 - WSL2 Advantages and Disadvantages ([2:50](https://youtu.be/1dr_4gPtFlQ?t=170))
 - WSL2 Installation Process ([5:30](https://youtu.be/1dr_4gPtFlQ?t=330))
-- DDEV Windows Installer and Docker Setup ([12:03](https://youtu.be/1dr_4gPtFlQ?t=723))
+- DDEV Windows Installer and Docker Setup ([12:54](https://youtu.be/1dr_4gPtFlQ?t=774))
 - Creating a Simple PHP Project ([16:14](https://youtu.be/1dr_4gPtFlQ?t=974))
 - Creating a Drupal 11 Project with Composer ([21:27](https://youtu.be/1dr_4gPtFlQ?t=1287))
 - Essential DDEV Commands ([25:25](https://youtu.be/1dr_4gPtFlQ?t=1525))
 - PHP Storm Integration and XDebug Setup ([30:38](https://youtu.be/1dr_4gPtFlQ?t=1838))
 - VS Code Integration and Debugging ([39:22](https://youtu.be/1dr_4gPtFlQ?t=2362))
 - Docker Desktop vs Docker CE Discussion ([46:55](https://youtu.be/1dr_4gPtFlQ?t=2815))
+- What about Traditional Windows? ([49:06](https://youtu.be/1dr_4gPtFlQ?t=2946))
 - Wrap-up and Community Resources ([50:12](https://youtu.be/1dr_4gPtFlQ?t=3012))
 
 **Resources for you:**
