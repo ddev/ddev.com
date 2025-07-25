@@ -15,6 +15,8 @@ modifiedDate: 2025-07-25
 modifiedComment: "This guide was originally published in 2020, but has been completely rewritten with a new video in 2025. It now covers the new DDEV Windows installer and WSL2 setup."
 ---
 
+> **Want just the 10-minute version of a DDEV WSL2 Install?** Check out the [New GUI Installer: Get DDEV Running on Windows in Just 10 Minutes](watch-new-windows-installer.md) for a quicker setup using the GUI installer.
+
 <div class="video-container">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1dr_4gPtFlQ?si=ZFjBU-6CcbsVI3SX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
@@ -64,13 +66,6 @@ _Considerations:_
 - Understanding Docker Desktop vs Docker CE trade-offs for professional development
 - Best practices for file system performance and cross-platform compatibility
 
-## Why WSL2 + DDEV?
-
-As explained in the video: _"Because Docker does the lifting you don't have to even have anything like PHP or Composer on your host computer and deal with those complexities. DDEV has been around for quite a few years now and it's had first-class Mac, Linux, Windows and WSL2 support for really quite a long time. It works the same on every platform."_
-
-The advantages of WSL2 are compelling. _"On the advantage side it gives me Linux with all the tools and power of Linux right there available to me anytime. With DDEV it's got great performance and web serving and you're working with an environment much like where you'll deploy to."_
-
-
 This screencast follows the official DDEV [WSL2 Installation Docs](https://ddev.readthedocs.io/en/stable/#installation-or-upgrade-windows-wsl2), but provides additional context, troubleshooting tips, and real-world examples to ensure your success.
 
 **Here's the video table of contents (opens on YouTube):**
@@ -89,10 +84,20 @@ This screencast follows the official DDEV [WSL2 Installation Docs](https://ddev.
 - What about Traditional Windows? ([49:06](https://youtu.be/1dr_4gPtFlQ?t=2946))
 - Wrap-up and Community Resources ([50:12](https://youtu.be/1dr_4gPtFlQ?t=3012))
 
-**Resources for you:**
+## Additional Resources
 
+### 📺 Video Materials
 - [Video slides and table of contents](https://docs.google.com/presentation/d/1oCn7E1Bk0J9E14jiZ7tdvD80jBlibnc3f7PPJMEtqss/edit?usp=sharing) - The slides used in the video
-- [DDEV documentation](https://ddev.readthedocs.io/en/stable/).
-- [WSL2 and DDEV Installation docs](https://ddev.readthedocs.io/en/stable/#installation-or-upgrade-windows-wsl2)
-- [Support](https://ddev.readthedocs.io/en/stable/users/support/): [Drupal](https://www.drupal.org/community/contributor-guide/reference-information/talk/tools/slack) Slack, `#ddev` channel on [TYPO3](https://typo3.org/) Slack, `#ddev` on [Gitter](https://gitter.im/), [DDEV Stack Overflow](https://stackoverflow.com/questions/tagged/ddev), and the [DDEV issue queue](https://github.com/ddev/ddev/issues).
-- [DDEV Project Repository](https://github.com/ddev/ddev)
+
+### 📖 Documentation
+- [DDEV documentation](https://ddev.readthedocs.io/en/stable/) - Complete DDEV documentation
+- [WSL2 and DDEV Installation docs](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#ddev-installation-windows) - Official installation guide
+
+### 💬 Community Support
+- [DDEV Discord](/s/discord) - Join the DDEV community on Discord for real-time support and discussion
+- [DDEV Stack Overflow](https://stackoverflow.com/questions/tagged/ddev) - Q&A with the community
+- [DDEV issue queue](https://github.com/ddev/ddev/issues) - Bug reports and feature requests
+- [Drupal Slack](https://www.drupal.org/community/contributor-guide/reference-information/talk/tools/slack) - `#ddev` channel
+
+### 🔧 Development
+- [DDEV Project Repository](https://github.com/ddev/ddev) - Source code and releases
