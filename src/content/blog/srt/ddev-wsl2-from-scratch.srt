@@ -1420,7 +1420,7 @@ it's actually tolerable and some teams use that deliberately because their teams
 
 356
 00:49:40,500 --> 00:49:49,700
-get basher power shell or cmd and so they do what they need to do there so there was a time
+Git Bash, or PowerShell, or Cmd and so they do what they need to do there so there was a time
 
 357
 00:49:49,700 --> 00:49:56,020

@@ -32,7 +32,7 @@ This screencast walks you through setting up a complete DDEV development environ
 - Docker handles all the heavy lifting, so you don't even need PHP or Composer or Node on your host computer
 - First-class support across macOS, Linux, Windows, and WSL2 - it works the same on every platform
 
-**WSL2 Setup and Benefits**: WSL2 ([Windows Subsystem for Linux version 2](https://docs.microsoft.com/en-us/windows/wsl/wsl2-index)) transforms Windows development by providing a real Linux kernel running alongside Windows. The video covers the key advantages and considerations:
+**WSL2 Setup and Benefits**: WSL2 ([Windows Subsystem for Linux version 2](https://learn.microsoft.com/en-us/windows/wsl/)) transforms Windows development by providing a real Linux kernel running alongside Windows. The video covers the key advantages and considerations:
 
 _Advantages:_
 
@@ -66,7 +66,7 @@ _Considerations:_
 - Understanding Docker Desktop vs Docker CE trade-offs for professional development
 - Best practices for file system performance and cross-platform compatibility
 
-This screencast follows the official DDEV [WSL2 Installation Docs](https://ddev.readthedocs.io/en/stable/#installation-or-upgrade-windows-wsl2), but provides additional context, troubleshooting tips, and real-world examples to ensure your success.
+This screencast follows the official DDEV [WSL2 Installation Docs](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#ddev-installation-windows), but provides additional context, troubleshooting tips, and real-world examples to ensure your success.
 
 **Here's the video table of contents (opens on YouTube):**
 
