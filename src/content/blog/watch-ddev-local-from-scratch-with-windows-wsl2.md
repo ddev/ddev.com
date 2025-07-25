@@ -87,17 +87,21 @@ This screencast follows the official DDEV [WSL2 Installation Docs](https://ddev.
 ## Additional Resources
 
 ### 📺 Video Materials
+
 - [Video slides and table of contents](https://docs.google.com/presentation/d/1oCn7E1Bk0J9E14jiZ7tdvD80jBlibnc3f7PPJMEtqss/edit?usp=sharing) - The slides used in the video
 
 ### 📖 Documentation
+
 - [DDEV documentation](https://ddev.readthedocs.io/en/stable/) - Complete DDEV documentation
 - [WSL2 and DDEV Installation docs](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#ddev-installation-windows) - Official installation guide
 
 ### 💬 Community Support
+
 - [DDEV Discord](/s/discord) - Join the DDEV community on Discord for real-time support and discussion
 - [DDEV Stack Overflow](https://stackoverflow.com/questions/tagged/ddev) - Q&A with the community
 - [DDEV issue queue](https://github.com/ddev/ddev/issues) - Bug reports and feature requests
 - [Drupal Slack](https://www.drupal.org/community/contributor-guide/reference-information/talk/tools/slack) - `#ddev` channel
 
 ### 🔧 Development
+
 - [DDEV Project Repository](https://github.com/ddev/ddev) - Source code and releases
