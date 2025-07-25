@@ -70,7 +70,6 @@ As explained in the video: _"Because Docker does the lifting you don't have to e
 
 The advantages of WSL2 are compelling. _"On the advantage side it gives me Linux with all the tools and power of Linux right there available to me anytime. With DDEV it's got great performance and web serving and you're working with an environment much like where you'll deploy to."_
 
-However, there is a learning curve: _"You've got Linux on your Windows machine. You've already had a thousand things to learn and remember and now there's a whole different context with Linux."_ And you need to work in the WSL2 filesystem: _"because the WSL2 or the Linux file system is so much better for web serving and really better for anything that is a lot of files and you really have to work in the WSL2 file system."_
 
 This screencast follows the official DDEV [WSL2 Installation Docs](https://ddev.readthedocs.io/en/stable/#installation-or-upgrade-windows-wsl2), but provides additional context, troubleshooting tips, and real-world examples to ensure your success.
 
