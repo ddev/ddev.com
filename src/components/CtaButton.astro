@@ -16,7 +16,7 @@ const { text, href, type = "default", target } = Astro.props
 
 <a
   href={href}
-  class={`w-full flex items-center justify-center px-8 py-3 text-base font-bold rounded-md md:py-4 md:text-lg md:px-10 ` +
+  class={`flex items-center justify-center px-8 py-3 text-base font-bold rounded-md md:py-4 md:text-lg md:px-10 no-underline ` +
     typeClasses[type]}
   target={target}
   role="button"
