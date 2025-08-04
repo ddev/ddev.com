@@ -20,6 +20,12 @@ As part of preparing this guide, I also updated all official DDEV add-ons to ref
 
 ## Recommendations for Add-on Maintainers
 
+Run the update checker script periodically in your add-on to verify it is up to date:
+
+```bash
+curl -fsSL https://ddev.com/s/addon-update-checker.sh | bash
+```
+
 Here are some high-level practices to follow:
 
 - Take inspiration from the [official add-ons](https://addons.ddev.com/), see how they're structured and follow similar practices
@@ -31,10 +37,6 @@ Here are some high-level practices to follow:
 - Use `#!/usr/bin/env bash` instead of `#!/bin/bash` at the top of your command scripts, it's more portable and works better across different environments.
 - Ensure your add-on cleans up after itself: both `ddev add-on get` and `ddev add-on remove` should be idempotent. All files added via `project_files` and `global_files` must include a `#ddev-generated` stanza to support proper removal
 - Remember to publish a new release after any update (unless it's just a `README.md` change)
-- Run the update checker in your add-on to ensure it is up to date:
-  ```bash
-  curl -fsSL https://raw.githubusercontent.com/ddev/ddev-addon-template/main/.github/scripts/update-checker.sh | bash
-  ```
 
 ## What's New in the DDEV Ecosystem
 
