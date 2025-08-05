@@ -265,9 +265,7 @@ export async function getSponsorshipData() {
     return cachedData
   }
 
-  const response = await octokit().request(
-    `GET /s/sponsorship-data.json`
-  )
+  const response = await octokit().request(`GET /s/sponsorship-data.json`)
 
   const content = Buffer.from(response.data.content, "base64").toString("utf8")
 
