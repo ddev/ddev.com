@@ -265,11 +265,13 @@ export async function getSponsorshipData() {
     return cachedData
   }
 
-  const response = await octokit().request(`GET /s/sponsorship-data.json`)
+  const response = await fetch('/s/sponsorship-data.json')
+  
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`)
+  }
 
-  const content = Buffer.from(response.data.content, "base64").toString("utf8")
-
-  const sponsorshipData = JSON.parse(content)
+  const sponsorshipData = await response.json()
 
   putCache(cacheFilename, JSON.stringify(sponsorshipData))
 
