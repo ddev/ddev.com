@@ -8,6 +8,7 @@
 /s/divide-and-conquer-drupal4gov https://docs.google.com/presentation/d/1_OyAwQGTtz9xv1e_Qzau4Rarum5xQpPy0uS7ntA9leI/edit?usp=sharing 301
 /s/divide-conquer-dcco https://docs.google.com/presentation/d/1JBSXLP59E8DSzkvxqPPKuceQ_fSMXoW_tySs_jXe8Pg/edit?usp=sharing 301
 /s/addon-update-checker.sh https://raw.githubusercontent.com/ddev/ddev-addon-template/main/.github/scripts/update-checker.sh 301
+/s/sponsorship-data.json https://rfay.github.io/sponsorship-data/data/all-sponsorships.json 301
 
 # Generic blog redirects
 /ddev-local /blog 301
