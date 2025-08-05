@@ -266,7 +266,7 @@ export async function getSponsorshipData() {
   }
 
   const response = await octokit().request(
-    `GET https://api.github.com/repos/ddev/sponsorship-data/contents/data/all-sponsorships.json`
+    `GET /s/sponsorship-data.json`
   )
 
   const content = Buffer.from(response.data.content, "base64").toString("utf8")

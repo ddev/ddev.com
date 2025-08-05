@@ -141,7 +141,7 @@ function formatCurrency(value: number): string {
   const goal = 12000;
   const cacheKey = 'ddevSponsorshipData';
   const cacheTTL = 12 * 60 * 60 * 1000; // 12 hours in ms
-  const apiUrl = 'https://raw.githubusercontent.com/ddev/sponsorship-data/refs/heads/main/data/all-sponsorships.json';
+  const apiUrl = '/s/sponsorship-data.json';
 
   function formatCurrency(value) {
     return new Intl.NumberFormat('en-US', {
