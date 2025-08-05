@@ -22,7 +22,7 @@ const githubTokenIsSet: boolean = (() => {
     process.env.GITHUB_TOKEN === ""
   ) {
     // add warning for production builds
-    if (import.meta.env.MODE === "production") {
+    if (import.meta.env.PROD) {
       console.warn(
         "GITHUB_TOKEN not set or empty. You can ignore this warning for local development."
       )
