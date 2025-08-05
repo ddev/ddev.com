@@ -265,7 +265,11 @@ export async function getSponsorshipData() {
     return cachedData
   }
 
-  const response = await fetch("/s/sponsorship-data.json")
+  // Construct the full URL for the redirect
+  const baseUrl = import.meta.env.PROD
+    ? "https://ddev.com"
+    : import.meta.env.SITE || "https://ddev.com"
+  const response = await fetch(`${baseUrl}/s/sponsorship-data.json`)
 
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`)
