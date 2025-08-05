@@ -265,8 +265,8 @@ export async function getSponsorshipData() {
     return cachedData
   }
 
-  const response = await fetch('/s/sponsorship-data.json')
-  
+  const response = await fetch("/s/sponsorship-data.json")
+
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`)
   }
