@@ -1,8 +1,8 @@
 ---
 import { getSponsorshipData } from "../lib/api";
 
-const goal = 12000;
 const data = await getSponsorshipData();
+const goal = data?.current_goal?.target_amount || 12000;
 const income = data?.total_monthly_average_income || 0;
 const percentage = Math.min((income / goal) * 100, 100).toFixed(0);
 
@@ -155,10 +155,11 @@ function formatCurrency(value: number): string {
   function updateUI(data) {
     try {
       const income = data.total_monthly_average_income;
-      const percentage = Math.min((income / goal) * 100, 100).toFixed(0);
+      const currentGoal = data.current_goal?.target_amount || goal;
+      const percentage = Math.min((income / currentGoal) * 100, 100).toFixed(0);
 
       document.querySelector('.ddev-sponsor-us-banner__raised').textContent = `Raised: ${formatCurrency(income)}`;
-      document.querySelector('.ddev-sponsor-us-banner__goal').textContent = `Goal: ${formatCurrency(goal)}`;
+      document.querySelector('.ddev-sponsor-us-banner__goal').textContent = `Goal: ${formatCurrency(currentGoal)}`;
       document.querySelector('.ddev-sponsor-us-banner__percent').textContent = `${percentage}% of monthly goal`;
       document.querySelector('.ddev-sponsor-us-banner__fill').style.width = `${percentage}%`;
     } catch (error) {
