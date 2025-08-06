@@ -20,7 +20,7 @@ This month: v1.24.7 release, ddev-hostname security, new Windows installer, VS C
 ## What’s New
 
 - **DDEV v1.24.7 Released**  
-  Bug-fixes, performance improvements, MariaDB 11.8. → [Release notes↗](https://github.com/ddev/ddev/releases/tag/v1.24.7)
+  Bugfixes, performance improvements, MariaDB 11.8. → [Release notes↗](https://github.com/ddev/ddev/releases/tag/v1.24.7)
 - **New Windows Installer Available**  
   A completely new Windows installer to install in WSL2 or traditional Windows. → [Read more↗](https://ddev.com/blog/watch-new-windows-installer)
 - **DDEV From Scratch with Windows WSL2**  
