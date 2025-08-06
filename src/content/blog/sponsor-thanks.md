@@ -40,7 +40,7 @@ And please don't forget that the [open-source Docker project](https://github.com
 
 ## JSON Detail about Sponsorships
 
-We recently set up a [full updated JSON feed](https://github.com/ddev/sponsorship-data) that can be used to see exactly where DDEV's sponsorship comes from and how we're doing. You can see the latest data any day in the [all sponsorships](https://github.com/ddev/sponsorship-data/blob/main/data/all-sponsorships.json) feed. And [Mark Conroy](https://bsky.app/profile/mark.ie) has built a [web component](https://web-components.mark.ie/web-components/ddev/sponsors-banner/) that can be used to show where we're at on any website. Thank you!
+We recently set up a [full updated JSON feed](/s/sponsorship-data.json) that can be used to see exactly where DDEV's sponsorship comes from and how we're doing. You can see the latest data any day in the [all sponsorships](https://github.com/ddev/sponsorship-data/blob/main/data/all-sponsorships.json) feed. And [Mark Conroy](https://bsky.app/profile/mark.ie) has built a [web component](https://web-components.mark.ie/web-components/ddev/sponsors-banner/) that can be used to show where we're at on any website. Thank you!
 
 ## Many Ways to Sponsor
 

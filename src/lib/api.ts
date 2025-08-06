@@ -22,7 +22,7 @@ const githubTokenIsSet: boolean = (() => {
     process.env.GITHUB_TOKEN === ""
   ) {
     // add warning for production builds
-    if (import.meta.env.MODE === "production") {
+    if (import.meta.env.PROD) {
       console.warn(
         "GITHUB_TOKEN not set or empty. You can ignore this warning for local development."
       )
@@ -265,13 +265,17 @@ export async function getSponsorshipData() {
     return cachedData
   }
 
-  const response = await octokit().request(
-    `GET https://api.github.com/repos/ddev/sponsorship-data/contents/data/all-sponsorships.json`
-  )
+  // Construct the full URL for the redirect
+  const baseUrl = import.meta.env.PROD
+    ? "https://ddev.com"
+    : import.meta.env.SITE || "https://ddev.com"
+  const response = await fetch(`${baseUrl}/s/sponsorship-data.json`)
 
-  const content = Buffer.from(response.data.content, "base64").toString("utf8")
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`)
+  }
 
-  const sponsorshipData = JSON.parse(content)
+  const sponsorshipData = await response.json()
 
   putCache(cacheFilename, JSON.stringify(sponsorshipData))
 

@@ -56,7 +56,7 @@ We work hard to identify areas that are dependent on a single maintainer, and to
 
 ## Current Financial Status
 
-As of June, 2025, DDEV's monthly support is at the $7800 USD level. Our goal is $12,000. You can see this at any time on the top of [ddev.com](/), and a full accounting updated daily is in the [sponsorship-data](https://github.com/ddev/sponsorship-data/blob/main/data/all-sponsorships.json) repository. Our current bank balance is about $19,000 USD.
+As of June, 2025, DDEV's monthly support is at the $7800 USD level. Our goal is $12,000. You can see this at any time on the top of [ddev.com](/), and a full accounting updated daily is in the [sponsorship-data](https://github.com/ddev/sponsorship-data/) repository. Our current bank balance is about $19,000 USD.
 
 ## Share Your Thoughts!
 
