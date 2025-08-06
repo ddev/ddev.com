@@ -5,9 +5,9 @@ pubDate: 2025-08-07
 summary: "Highlights: DDEV v1.24.7 release, Security priorities (ddev-hostname), New Windows installer, New VS Code extension release, Drupal Camp Colorado, Laracon US, Passbolt environment setup, Tailscale troubleshooting, Magento 2 quickstart, Stripe donation form, DrupalCon attendance, Local AI with Ollama, and informal Board nominations."
 author: Randy Fay
 featureImage:
-  src: /img/blog/2025/07/mount-garfield-morning.jpg
-  alt: Mount Garfield this morning, Palisade, Colorado, USA
-  caption: "Mount Garfield this morning, Palisade, Colorado, USA"
+  src: /img/blog/2025/08/laracon-photo.jpg
+  alt: Nuno Maduro at Laracon US 2025
+  caption: "Nuno Maduro at Laracon US 2025"
 categories:
   - Community
 ---
