@@ -51,7 +51,7 @@ This month: v1.24.7 release, ddev-hostname security, new Windows installer, VS C
 - **DrupalCamp Colorado**  
   Local sessions, sprints, and social time in the Rockies.
 - **Laracon US 2025: Younger, Bigger, Friendlier**  
-  One-track, high-quality talks, code deep-dives, and all-day cocktails. → [Details↗](https://www.notion.so/Laracon-23fc743a33f580efbd98e1291dcde519?pvs=21)
+  One-track, high-quality talks, code deep-dives, and all-day cocktails. → TODO: from notion
 - **See Us at DrupalCon EU in Vienna**  
   Randy will be there thanks to Tag1 and Platform.sh—come say hi!
 
