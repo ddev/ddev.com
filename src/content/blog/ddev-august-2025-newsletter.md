@@ -1,6 +1,6 @@
 ---
 title: "DDEV August 2025 Newsletter"
-pubDate: 2025-08-07
+pubDate: 2025-08-12
 #modifiedDate: 2025-04-07
 summary: "Highlights: DDEV v1.24.7 release, Contributor Training starts up again, Security priorities (ddev-hostname), New Windows installer, New VS Code extension release, Drupal Camp Colorado, Laracon US, Passbolt environment setup, Tailscale troubleshooting, Magento 2 quickstart, Stripe donation form, DrupalCon attendance, Local AI with Ollama, and informal Board nominations."
 author: Randy Fay
@@ -52,8 +52,11 @@ See the full schedule below.
 
 _This calendar stays in sync with any updates._
 
-If the button doesn’t work in your email app, copy and paste this URL into your calendar app’s “Subscribe from URL” feature:  
+If the button doesn’t work in your email app, copy and paste this URL into your calendar app’s “Subscribe from URL” feature:
+
+```text
 https://calendar.google.com/calendar/ical/c_e5499887bee6ac7709a06a18190c5c3b0d83a6dca5b32ed633612ee6fae31177%40group.calendar.google.com/public/basic.ics
+```
 
 ### Sessions
 
@@ -81,7 +84,7 @@ Passcode: DDEV2025
 - **Laracon US 2025: Younger, Bigger, Friendlier**  
   Since Laracon was right after DrupalCamp Colorado and in Denver I went to learn from the vibrant Laravel community. It was a big, highly produced event with lots of friendly people and immense emphasis on community. Folks seemed younger on average than in the Drupal world. I didn't learn a lot about Laravel, but there were great general sessions that inspired me to start using Git worktrees and some new AI techniques.
 - **See Us at DrupalCon EU in Vienna**  
-  Randy will be at [DrupalCon EU in Vienna](https://events.drupal.org/vienna2025) thanks to sponsorship from [Tag1](https://tag1.consulting.com) and [Platform.sh/Upsun](https://upsun.com). Please say hi. Let's talk about anything you might want to talk about. I normally do a bunch of Birds-of-a-Feather sessions.
+  Randy will be at [DrupalCon EU in Vienna](https://events.drupal.org/vienna2025) thanks to sponsorship from [Tag1](https://www.tag1consulting.com/) and [Platform.sh/Upsun](https://upsun.com). Please say hi. Let's talk about anything you might want to talk about. I normally do a bunch of Birds-of-a-Feather sessions.
 
 ## Governance & Roadmap
 
