@@ -57,16 +57,16 @@ https://calendar.google.com/calendar/ical/c_e5499887bee6ac7709a06a18190c5c3b0d83
 
 ### Sessions
 
-- **August 21, 2025 at 14:00 UTC — Using Claude Code AI in DDEV Development**  
+- **August 21, 2025 at 10:00 US ET / 16:00 CEST — Using Claude Code AI in DDEV Development**
   [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Using%20Claude%20Code%20AI%20in%20DDEV%20Development&dates=20250821T140000Z/20250821T150000Z&details=Join+the+DDEV+training+session+via+Zoom.+Meeting+ID:+123-456-7890&location=Zoom&trp=true) | [Add to Outlook.com](https://outlook.live.com/owa/?rru=addevent&startdt=2025-08-21T14:00:00Z&enddt=2025-08-21T15:00:00Z&subject=Using%20Claude%20Code%20AI%20in%20DDEV%20Development&body=Join+the+DDEV+training+session+via+Zoom.+Meeting+ID:+123-456-7890&location=Zoom)
 
-- **September 18, 2025 at 14:00 UTC — Hostname Resolution and Debugging for DDEV Users**  
+- **September 18, 2025 at 10:00 US ET / 16:00 CEST — Hostname Resolution and Debugging for DDEV Users**
   [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Hostname%20resolution%20and%20debugging%20for%20DDEV%20users&dates=20250918T140000Z/20250918T150000Z&details=Join+the+DDEV+training+session+via+Zoom.+Meeting+ID:+123-456-7890&location=Zoom&trp=true) | [Add to Outlook.com](https://outlook.live.com/owa/?rru=addevent&startdt=2025-09-18T14:00:00Z&enddt=2025-09-18T15:00:00Z&subject=Hostname%20resolution%20and%20debugging%20for%20DDEV%20users&body=Join+the+DDEV+training+session+via+Zoom.+Meeting+ID:+123-456-7890&location=Zoom)
 
-- **October 9, 2025 at 14:00 UTC — How and Why to Contribute a Blog to ddev.com**  
+- **October 9, 2025 at 10:00 US ET / 16:00 CEST — How and Why to Contribute a Blog to ddev.com**
   [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=How%20and%20Why%20to%20contribute%20a%20blog%20to%20ddev.com&dates=20251009T140000Z/20251009T150000Z&details=Join+the+DDEV+training+session+via+Zoom.+Meeting+ID:+123-456-7890&location=Zoom&trp=true) | [Add to Outlook.com](https://outlook.live.com/owa/?rru=addevent&startdt=2025-10-09T14:00:00Z&enddt=2025-10-09T15:00:00Z&subject=How%20and%20Why%20to%20contribute%20a%20blog%20to%20ddev.com&body=Join+the+DDEV+training+session+via+Zoom.+Meeting+ID:+123-456-7890&location=Zoom)
 
-- **November 20, 2025 at 15:00 UTC — Using DDEV in Windows WSL**  
+- **November 20, 2025 at 10:00 US ET / 16:00 CET — Using DDEV in Windows WSL**
   [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Using%20DDEV%20in%20Windows%20WSL&dates=20251120T150000Z/20251120T160000Z&details=Join+the+DDEV+training+session+via+Zoom.+Meeting+ID:+123-456-7890&location=Zoom&trp=true) | [Add to Outlook.com](https://outlook.live.com/owa/?rru=addevent&startdt=2025-11-20T15:00:00Z&enddt=2025-11-20T16:00:00Z&subject=Using%20DDEV%20in%20Windows%20WSL&body=Join+the+DDEV+training+session+via+Zoom.+Meeting+ID:+123-456-7890&location=Zoom)
 
 Zoom Join Info:  
