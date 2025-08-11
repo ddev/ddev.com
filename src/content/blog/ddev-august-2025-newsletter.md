@@ -2,7 +2,7 @@
 title: "DDEV August 2025 Newsletter"
 pubDate: 2025-08-07
 #modifiedDate: 2025-04-07
-summary: "Highlights: DDEV v1.24.7 release, Security priorities (ddev-hostname), New Windows installer, New VS Code extension release, Drupal Camp Colorado, Laracon US, Passbolt environment setup, Tailscale troubleshooting, Magento 2 quickstart, Stripe donation form, DrupalCon attendance, Local AI with Ollama, and informal Board nominations."
+summary: "Highlights: DDEV v1.24.7 release, Contributor Training starts up again, Security priorities (ddev-hostname), New Windows installer, New VS Code extension release, Drupal Camp Colorado, Laracon US, Passbolt environment setup, Tailscale troubleshooting, Magento 2 quickstart, Stripe donation form, DrupalCon attendance, Local AI with Ollama, and informal Board nominations."
 author: Randy Fay
 featureImage:
   src: /img/blog/2025/08/laracon-photo.jpg
@@ -13,7 +13,7 @@ categories:
 ---
 
 🚀 Dive into August 2025 with DDEV! 🌟  
-This month: v1.24.7 release, ddev-hostname security, new Windows installer, VS Code extension, DrupalCamp Colorado, Laracon US highlights, Passbolt environment, Tailscale troubleshooting, Magento 2 setup, DrupalCon Vienna, Ollama AI, and Board nominations.
+This month: v1.24.7 release, Contributor Training starts up again, ddev-hostname security, new Windows installer, VS Code extension, DrupalCamp Colorado, Laracon US highlights, Passbolt environment, Tailscale troubleshooting, Magento 2 setup, DrupalCon Vienna, Ollama AI, and Board nominations.
 
 ---
 
