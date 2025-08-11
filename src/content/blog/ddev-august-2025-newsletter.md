@@ -53,7 +53,7 @@ We're going to do training again this season, all are invited. Some sessions are
 [![Add to Google Calendar](https://img.shields.io/badge/Add%20to%20Google%20Calendar-4285F4?style=for-the-badge&logo=googlecalendar&logoColor=white)](https://calendar.google.com/calendar/render?cid=https://calendar.google.com/calendar/ical/c_e5499887bee6ac7709a06a18190c5c3b0d83a6dca5b32ed633612ee6fae31177%40group.calendar.google.com/public/basic.ics)
 [![Add to Apple/Outlook/etc.](https://img.shields.io/badge/Add%20to%20Apple%2FOutlook%20Calendar-FF9500?style=for-the-badge&logo=apple&logoColor=white)](webcal://calendar.google.com/calendar/ical/c_e5499887bee6ac7709a06a18190c5c3b0d83a6dca5b32ed633612ee6fae31177%40group.calendar.google.com/public/basic.ics)
 
-*This calendar stays in sync with any updates.*
+_This calendar stays in sync with any updates._
 
 If the button doesn’t work in your email app, copy and paste this URL into your calendar app’s “Subscribe from URL” feature:  
 https://calendar.google.com/calendar/ical/c_e5499887bee6ac7709a06a18190c5c3b0d83a6dca5b32ed633612ee6fae31177%40group.calendar.google.com/public/basic.ics
@@ -77,7 +77,7 @@ https://calendar.google.com/calendar/ical/c_e5499887bee6ac7709a06a18190c5c3b0d83
 - **DrupalCamp Colorado**  
   I got to see old friends and get refreshed on Drupal at DrupalCamp Colorado.
 - **Laracon US 2025: Younger, Bigger, Friendlier**  
-  Since Laracon was right after DrupalCamp Colorado and in Denver I went to learn from the vibrant Laravel community. It was a big, highly produced event with lots of friendly people and immense emphasis on community. Folks seemed younger than in the Drupal world. I didn't learn a lot about Laravel, but there were great general sessions that inspired me to start using git worktrees and some new AI techniques.
+  Since Laracon was right after DrupalCamp Colorado and in Denver I went to learn from the vibrant Laravel community. It was a big, highly produced event with lots of friendly people and immense emphasis on community. Folks seemed younger than in the Drupal world. I didn't learn a lot about Laravel, but there were great general sessions that inspired me to start using Git worktrees and some new AI techniques.
 - **See Us at DrupalCon EU in Vienna**  
   Randy will be at [DrupalCon EU in Vienna](https://events.drupal.org/vienna2025) thanks to sponsorship from [Tag1](https://tag1.consulting.com) and [Platform.sh/Upsun](https://upsun.com). Please say hi, and let's talk about anything you might want to talk about. I normally do a bunch of Birds-of-a-Feather sessions.
 
