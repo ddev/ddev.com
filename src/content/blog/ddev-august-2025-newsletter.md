@@ -81,7 +81,7 @@ Passcode: 12345
 ## Governance & Roadmap
 
 - **Informal Nominations for the DDEV Foundation Board**  
-  At the upcoming [DDEV Advisory Group](https://github.com/orgs/ddev/discussions/categories/ddev-advisory-group) meetings we'll be implementing an actual Board of Directors for the DDEV Foundation. Would you like to nominate someone (or yourself)? Ping us via any of our [contact methods](/contact/).
+  At the upcoming [DDEV Advisory Group](https://github.com/orgs/ddev/discussions/categories/ddev-advisory-group) meetings in September and November, we'll be implementing an actual Board of Directors for the DDEV Foundation. Would you like to nominate someone (or yourself)? Ping us via any of our [contact methods](/contact/).
 
 ---
 
