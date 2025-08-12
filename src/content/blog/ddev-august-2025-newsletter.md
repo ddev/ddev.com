@@ -24,7 +24,7 @@ This month: v1.24.7 release, Contributor Training starts up again, ddev-hostname
 - **DDEV From Scratch with Windows WSL2** — Step-by-step video guide to get started with DDEV on Windows WSL2 → [Watch guide↗](https://ddev.com/blog/watch-ddev-local-from-scratch-with-windows-wsl2)
 - **Security Priorities: Strengthening `ddev-hostname`** — Recent improvements securing host-file updates and future plans → [Read more↗](https://ddev.com/blog/ddev-hostname-security-improvements)
 - **DDEV VS Code Extension v3.0 Released** — New container commands, auto config reload, improved IDE integration, and remote-host support → [Get it on Marketplace↗](https://marketplace.visualstudio.com/items?itemName=biati.ddev-manager)  
-  Learn about “Expose from Container” → [Read more↗](https://github.com/ddev/vscode-ddev-manager/wiki/Expose-from-Container)
+  Learn about “Expose commands from Container” → [Read more↗](https://github.com/ddev/vscode-ddev-manager/wiki/Expose-from-Container)
 
 ## Community Tutorials
 
@@ -46,8 +46,6 @@ This month: v1.24.7 release, Contributor Training starts up again, ddev-hostname
 We're going to do training again this season, all are invited. Some sessions are more focused on contributors and maintainers, and others at all users. First up this month will be a session on using Claude Code to implement a DDEV feature or fix a bug. This will be using DDEV as an example, but probably anybody who works with code anywhere will profit from the approach.
 
 See the full schedule below.
-
-### Upcoming DDEV Live Contributor and User Training Sessions
 
 ### Upcoming DDEV Live Contributor and User Training Sessions
 
@@ -74,7 +72,7 @@ Passcode: 12345
 ## Events & Community
 
 - **DrupalCamp Colorado**  
-  I got to see old friends, meet new people, and attend great sessions that refreshed my Drupal knowledge at DrupalCamp Colorado.
+  I got to see old friends, met new people, and attended great sessions that refreshed my Drupal knowledge at DrupalCamp Colorado.
 - **Laracon US 2025: Younger, Bigger, Friendlier**  
   Since Laracon was right after DrupalCamp Colorado and in Denver I went to learn from the vibrant Laravel community. It was a big, highly produced event with lots of friendly people and immense emphasis on community. Folks seemed younger on average than in the Drupal world. I didn't learn a lot about Laravel, but there were great general sessions that inspired me to start using Git worktrees and some new AI techniques.
 - **See Us at DrupalCon EU in Vienna**  
