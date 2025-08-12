@@ -51,19 +51,19 @@ See the full schedule below.
 
 - **August 21, 2025 at 10:00 US ET / 16:00 CEST — Using Claude Code AI in DDEV Development**  
   [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Using%20Claude%20Code%20AI%20in%20DDEV%20Development&dates=20250821T140000Z/20250821T150000Z&details=Join%20the%20DDEV%20training%20session%20via%20Zoom.%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online&trp=true) •
-  [Download .ics](ics/ddev-2025-08-21.ics)
+  [Download .ics](/files/ics/ddev-2025-08-21.ics)
 
 - **September 18, 2025 at 10:00 US ET / 16:00 CEST — Hostname Resolution and Debugging for DDEV Users**  
   [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Hostname%20resolution%20and%20debugging%20for%20DDEV%20users&dates=20250918T140000Z/20250918T150000Z&details=Join%20the%20DDEV%20training%20session%20via%20Zoom.%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online&trp=true) •
-  [Download .ics](ics/ddev-2025-09-18.ics)
+  [Download .ics](/files/ics/ddev-2025-09-18.ics)
 
 - **October 9, 2025 at 10:00 US ET / 16:00 CEST — How and Why to Contribute a Blog to ddev.com**  
   [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=How%20and%20Why%20to%20contribute%20a%20blog%20to%20ddev.com&dates=20251009T140000Z/20251009T150000Z&details=Join%20the%20DDEV%20training%20session%20via%20Zoom.%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online&trp=true) •
-  [Download .ics](ics/ddev-2025-10-09.ics)
+  [Download .ics](/files/ics/ddev-2025-10-09.ics)
 
 - **November 20, 2025 at 10:00 US ET / 16:00 CET — Using DDEV in Windows WSL**  
   [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Using%20DDEV%20in%20Windows%20WSL&dates=20251120T150000Z/20251120T160000Z&details=Join%20the%20DDEV%20training%20session%20via%20Zoom.%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online&trp=true) •
-  [Download .ics](ics/ddev-2025-11-20.ics)
+  [Download .ics](/files/ics/ddev-2025-11-20.ics)
 
 Zoom Join Info:  
 Link: [Join Zoom Meeting](https://us02web.zoom.us/j/7315692237?pwd=RHR6NUkwb0g5WXIzS2NOcXRucCthZz09)  
