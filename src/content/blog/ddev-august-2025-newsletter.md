@@ -24,7 +24,7 @@ This month: v1.24.7 release, Contributor Training starts up again, ddev-hostname
 - **DDEV From Scratch with Windows WSL2** — Step-by-step video guide to get started with DDEV on Windows WSL2 → [Watch guide↗](https://ddev.com/blog/watch-ddev-local-from-scratch-with-windows-wsl2)
 - **Security Priorities: Strengthening `ddev-hostname`** — Recent improvements securing host-file updates and future plans → [Read more↗](https://ddev.com/blog/ddev-hostname-security-improvements)
 - **DDEV VS Code Extension v3.0 Released** — New container commands, auto config reload, improved IDE integration, and remote-host support → [Get it on Marketplace↗](https://marketplace.visualstudio.com/items?itemName=biati.ddev-manager)  
-  Learn about “Expose commands from Container” → [Read more↗](https://github.com/ddev/vscode-ddev-manager/wiki/Expose-from-Container)
+  Learn about “Expose Commands From Container” → [Read more↗](https://github.com/ddev/vscode-ddev-manager/wiki/Expose-from-Container)
 
 ## Community Tutorials
 
@@ -81,7 +81,7 @@ Passcode: 12345
 ## Governance & Roadmap
 
 - **Informal Nominations for the DDEV Foundation Board**  
-  At the upcoming [DDEV Advisory Group](https://github.com/orgs/ddev/discussions/categories/ddev-advisory-group) meetings in September and November, we'll be implementing an actual Board of Directors for the DDEV Foundation. Would you like to nominate someone (or yourself)? Ping us via any of our [contact methods](/contact/).
+  At the upcoming [DDEV Advisory Group](https://github.com/orgs/ddev/discussions/categories/ddev-advisory-group) meetings (in September and November) we'll be implementing an actual Board of Directors for the DDEV Foundation. Would you like to nominate someone (or yourself)? Ping us via any of our [contact methods](/contact/).
 
 ---
 
