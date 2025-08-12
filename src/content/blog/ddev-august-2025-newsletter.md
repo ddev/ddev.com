@@ -61,6 +61,10 @@ See the full schedule below.
 - **November 20, 2025 at 10:00 US ET / 16:00 CET — Using DDEV in Windows WSL**
   [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Using%20DDEV%20in%20Windows%20WSL&dates=20251120T150000Z/20251120T160000Z&details=Join%20the%20DDEV%20training%20session%20via%20Zoom.%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online&trp=true) | [Add to Outlook.com](https://outlook.live.com/owa/?rru=addevent&startdt=2025-11-20T15:00:00Z&enddt=2025-11-20T16:00:00Z&subject=Using%20DDEV%20in%20Windows%20WSL&body=Join%20the%20DDEV%20training%20session%20via%20Zoom.%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online)
 
+Zoom Join Info:  
+Link: [Join Zoom Meeting](https://us02web.zoom.us/j/7315692237?pwd=RHR6NUkwb0g5WXIzS2NOcXRucCthZz09)  
+Passcode: 12345
+
 ## Events & Community
 
 - **DrupalCamp Colorado**  
