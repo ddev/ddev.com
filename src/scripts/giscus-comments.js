@@ -25,7 +25,7 @@ class GiscusComments extends HTMLElement {
       script.setAttribute("data-category-id", "DIC_kwDON5ODtM4CnDbQ")
       script.setAttribute("data-mapping", "title")
       script.setAttribute("data-strict", "1")
-      script.setAttribute("data-reactions-enabled", "1")
+      script.setAttribute("data-reactions-enabled", "0")
       script.setAttribute("data-emit-metadata", "0")
       script.setAttribute("data-input-position", "top")
       script.setAttribute("data-theme", theme)
