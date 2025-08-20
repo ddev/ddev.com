@@ -12,7 +12,7 @@ categories:
   - DevOps
 ---
 
-Now you can use DDEV for CI on Gitlab. Spin up your entire tech stack including services (e.g. Solr, RabbitMQ)
+Now you can use DDEV for CI on GitLab. Spin up your entire tech stack including services (e.g. Solr, RabbitMQ)
 required to run the Website within the CI. Even end-to-end testing is easily possible (e.g. Cypress, Playwright).
 
 The same DDEV config can be used locally (shared across the team) and within the GitLab CI.

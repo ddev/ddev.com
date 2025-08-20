@@ -19,8 +19,8 @@ HTTPS with DDEV now works…
 
 - On macOS, Windows, and Linux
 - On Firefox, Chrome, Chromium, Safari
-- With curl on the host (macOS and Linux, not Windows)
-- With curl inside the web container
+- With cURL on the host (macOS and Linux, not Windows)
+- With cURL inside the web container
 
 There is a tiny bit of one-time setup to get your OS and browser to trust the root certificate authority that DDEV uses. The 3-minute screencast below shows how installation and setup works on all 3 platforms.
 

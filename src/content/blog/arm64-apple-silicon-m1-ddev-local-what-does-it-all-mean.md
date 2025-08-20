@@ -24,7 +24,7 @@ In this blog, we’ll take a look at these things:
 
 ## What is ARM64?
 
-Until 2020, the majority of Windows, Mac, and Linux computers used the Intel CPU architecture, or AMD64. Most software, including DDEV, cloud VMs, the most popular Docker images, and many upstream projects traditionally assumed AMD64 hardware, and ARM64 versions were not always available. But with the advent of Apple Silicon and the mac M-series machines, and with the proliferation of ARM64 linux machines like Raspberry Pi, it's no longer the case.
+Until 2020, the majority of Windows, Mac, and Linux computers used the Intel CPU architecture, or AMD64. Most software, including DDEV, cloud VMs, the most popular Docker images, and many upstream projects traditionally assumed AMD64 hardware, and ARM64 versions were not always available. But with the advent of Apple Silicon and the mac M-series machines, and with the proliferation of ARM64 Linux machines like Raspberry Pi, it's no longer the case.
 
 “ARM” stands for “Advanced RISC Machine” and “RISC” stands for “Reduced Instruction Set Computer.” The Intel architecture we all used so long was dubbed “CISC” or Complex Instruction Set Computer.” ARM seems to be the future. **ARM64** means ARM with 64-bit chips (there are also loads of ARM32 chips out there in the world). (The Intel architecture is typically labeled AMD64; apparently after another manufacturer of the AMD64 chips, AMD.)
 

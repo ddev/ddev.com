@@ -13,7 +13,7 @@ categories:
 
 We go to DrupalCon because it's a great way to stay in touch with one of our valued communities. DDEV has deep roots in the Drupal world, and it's always a delight to see our stakeholders at DrupalCon and hear their successes and frictions.
 
-**Drupal 11**: Drupal is about to release its newest version, Drupal 11. DDEV already has explicit support for Drupal 11, but there have been some late frictions with requirements like Sqlite 3.45 and Yarn v4. However, DDEV has them all supported.
+**Drupal 11**: Drupal is about to release its newest version, Drupal 11. DDEV already has explicit support for Drupal 11, but there have been some late frictions with requirements like SQLite 3.45 and Yarn v4. However, DDEV has them all supported.
 
 **Drupal Starshot**: The founder of Drupal, Dries Buytaert, did his regular "Driesnote" and launched a new initiative called "[Starshot](https://www.drupal.org/starshot)" to build a more usable out-of-the-box experience with Drupal. This initiative will proceed in parallel with normal Drupal core development and may have an impact on DDEV's Drupal support, as Drupal 11 has also forced us to be ready for new requirements.
 
