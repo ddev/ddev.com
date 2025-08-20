@@ -28,7 +28,7 @@ First, you need some of the basics:
 - Install your IDE, [GoLand](https://www.jetbrains.com/go/) or [VS Code](https://code.visualstudio.com/). On Windows/WSL2 most people install each of these on the Windows side, although they can be run inside WSL2 using the Linux versions.
 - For GoLand, nothing further is required, but on VS Code you'll need to install the [Go](https://marketplace.visualstudio.com/items?itemName=golang.go) extension.
 
-Once you've have your IDE working, you can start debugging.
+Once you have your IDE working, you can start debugging.
 
 ## GoLand Debugging
 
