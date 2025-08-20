@@ -33,7 +33,7 @@ Congratulations to **all of you and all contributors who made this happen**. It'
 - Added explicit support for the `symfony` project type, see [docs](https://ddev.readthedocs.io/en/stable/users/quickstart/#symfony), thanks [@IndraGunawan](https://github.com/IndraGunawan).
 - `ddev describe` changes how exposed ports are displayed for better clarity (thanks [@hanoii](https://github.com/hanoii))
 - Only a limited set of locales is now installed in `ddev-webserver` by default. If you need more, use `webimage_extra_packages: [locales-all]`
-- Complex `ddev composer` command usage with json or args with spaces is fixed. (A bug was introduced in v1.23.5.)
+- Complex `ddev composer` command usage with JSON or args with spaces is fixed. (A bug was introduced in v1.23.5.)
 
 ## Questions
 

@@ -85,9 +85,9 @@ RUN touch /var/tmp/this-ran.txt
 
 When your project starts up it will actually build this into the image. You can use this technique for texting and experimentation.
 
-### Adding conditional layers in Golang code
+### Adding conditional layers in Go code
 
-DDEV's Golang code adds a few layers to the images at the first `ddev start` on a project. You can see all of these consolidated in a project in the `.ddev/.webimageBuild/Dockerfile` (which is not something you will ever change, it's a generated file). That's where things like the matching in-container Linux user and group are added, and a few other things. You can see how DDEV adds these layers in [WriteBuildDockerfile()](https://github.com/ddev/ddev/blob/c2aca52a18687e678086dd232573cf51914dba56/pkg/ddevapp/config.go#L1113). It's unusual to do things with images this way, but some problems do require logic during the Golang processes.
+DDEV's Go code adds a few layers to the images at the first `ddev start` on a project. You can see all of these consolidated in a project in the `.ddev/.webimageBuild/Dockerfile` (which is not something you will ever change, it's a generated file). That's where things like the matching in-container Linux user and group are added, and a few other things. You can see how DDEV adds these layers in [WriteBuildDockerfile()](https://github.com/ddev/ddev/blob/c2aca52a18687e678086dd232573cf51914dba56/pkg/ddevapp/config.go#L1113). It's unusual to do things with images this way, but some problems do require logic during the Go processes.
 
 ## Running and improving the image-based tests
 
@@ -100,7 +100,7 @@ make test
 
 The test will build the container locally and then run a suite of `bats` tests on it. You can look at the `Makefile` to see exactly what the test does. The `ddev-webserver` test runs `tests/ddev-webserver/test.sh $(DOCKER_ORG)/ddev-webserver:$(VERSION)`, which runs the `bats` files in the `tests` directory.
 
-[`bats`](https://github.com/bats-core/bats-core) is a `bash`-based test framework and it's used here because the tests have nothing to do with Golang, and for most people the barrier to entry for a Bash test is lower. `bats` is also used by default in DDEV add-on tests, and is covered in the [Contributor Training on Add-Ons](advanced-add-on-contributor-training.md). PRs that make nontrivial changes to the Docker images should normally have test coverage at this level.
+[`bats`](https://github.com/bats-core/bats-core) is a `bash`-based test framework and it's used here because the tests have nothing to do with Go, and for most people the barrier to entry for a Bash test is lower. `bats` is also used by default in DDEV add-on tests, and is covered in the [Contributor Training on Add-Ons](advanced-add-on-contributor-training.md). PRs that make nontrivial changes to the Docker images should normally have test coverage at this level.
 
 ## Testing images with the Golang-based tests
 

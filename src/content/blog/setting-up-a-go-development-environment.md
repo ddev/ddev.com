@@ -13,7 +13,7 @@ categories:
   - Community
 ---
 
-The DDEV Community has regular contributor training sessions, and in July, 2023 we talked about setting up a Go (Golang) development environment for DDEV. This blog summarizes [the contributor training session](https://youtu.be/IjrJw0Ay-dk). The (Min digit) syntax added below provides the minute on which each subject is covered on the recording.
+The DDEV Community has regular contributor training sessions, and in July, 2023 we talked about setting up a Go development environment for DDEV. This blog summarizes [the contributor training session](https://youtu.be/IjrJw0Ay-dk). The (Min digit) syntax added below provides the minute on which each subject is covered on the recording.
 
 ## Installing Go on different Operation Systems ([Min 10:51](https://youtu.be/IjrJw0Ay-dk?t=647))
 

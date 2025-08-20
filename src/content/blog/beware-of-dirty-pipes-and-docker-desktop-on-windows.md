@@ -16,7 +16,7 @@ One of the great things about DDEV is that it has huge test coverage. Every PR t
 
 The other day I was deploying a brand new test runner for Windows (provided by kind community [GitHub Sponsors support](https://github.com/sponsors/ddev)!) and ended up with crazy results on one set of that did a `ddev import-db`
 
-Instead of seeing the normal type of output, which comes from the linux command `pv` inside the db container, which should look like this:
+Instead of seeing the normal type of output, which comes from the Linux command `pv` inside the db container, which should look like this:
 
 ```
 59.1MiB 0:00:05 [11.5MiB/s] [================================>] 100%

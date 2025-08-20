@@ -30,7 +30,7 @@ Are you asking "What happens to DDEV?" - Well we've been [working on that](expan
 
 ## How Can I Follow Along?
 
-You can follow us on our [facebook](https://facebook.com/randyfay). We'd love to have you.
+You can follow us on our [Facebook](https://facebook.com/randyfay). We'd love to have you.
 
 You should also be able to see exactly where we are on [share.garmin.com](https://share.garmin.com/randynancy).
 

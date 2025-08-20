@@ -18,7 +18,7 @@ categories:
 - The DDEV Advisory Group meets bimonthly, giving direction and input to the project.
 - We are incredibly thankful to [Platform.sh](https://platform.sh) for the financial support that makes it possible to support DDEV at this level. Platform’s willingness to allow Randy to set his own agenda, work schedule and vacation schedule is amazing, and ensures his happy future.
 - The TYPO3, Drupal, Silverstripe, Craft CMS and other communities have been incredibly involved and supportive. And they've turned into self-support communities. Randy often wake up to find that significant issues have been solved while he was sleeping.
-- DDEV is built on the shoulders of open-source giants. Of course the entire Debian project, the Golang ecosystem, PHP packaging by deb.sury.org, Xdebug development and support by Derick Rethans, Mutagen, and Lima, Rancher Desktop, etc.
+- DDEV is built on the shoulders of open-source giants. Of course the entire Debian project, the Go ecosystem, PHP packaging by deb.sury.org, Xdebug development and support by Derick Rethans, Mutagen, and Lima, Rancher Desktop, etc.
 
 ## Accomplishments for 2023
 

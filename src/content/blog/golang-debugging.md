@@ -14,7 +14,7 @@ categories:
   - Guides
 ---
 
-It's not hard to work with DDEV's Golang code, but you definitely need a development environment and the know-how to do step-debugging. Here's our [Contributor Training](contributor-training.md) showing some of the nuances with DDEV, followed by a short summary of the details.
+It's not hard to work with DDEV's Go code, but you definitely need a development environment and the know-how to do step-debugging. Here's our [Contributor Training](contributor-training.md) showing some of the nuances with DDEV, followed by a short summary of the details.
 
 <div class="video-container">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/E-AEzC1p76E?si=XYP23HYcxgqiJ2_M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -26,7 +26,7 @@ First, you need some of the basics:
   - On macOS: `brew install golang delve` (`make` is already provided by Apple's Xcode command-line tools)
   - WSL2/Linux: `sudo snap install --classic go && sudo apt update && sudo apt install -y build-essential clang ccache`
 - Install your IDE, [GoLand](https://www.jetbrains.com/go/) or [VS Code](https://code.visualstudio.com/). On Windows/WSL2 most people install each of these on the Windows side, although they can be run inside WSL2 using the Linux versions.
-- For GoLand, nothing further is required, but on VS Code you'll need to install the [Golang go](https://marketplace.visualstudio.com/items?itemName=golang.go) extension.
+- For GoLand, nothing further is required, but on VS Code you'll need to install the [Go](https://marketplace.visualstudio.com/items?itemName=golang.go) extension.
 
 Once you've have your IDE working, you can start debugging.
 

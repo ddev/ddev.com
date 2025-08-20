@@ -26,7 +26,7 @@ When news of this originally hit I quickly investigated and found no reason to t
   liblzma 5.2.5
   ```
 - All distributed DDEV images were built before the threat landed and were not rebuilt while the backdoor existed.
-- In its Golang code, DDEV uses [ulikunitz/xz](https://github.com/ulikunitz/xz), which is quite stable and unrelated to the release in question. DDEV includes ulikunitz/xz 0.5.11, the most recent stable version, from December 2022.
+- In its Go code, DDEV uses [ulikunitz/xz](https://github.com/ulikunitz/xz), which is quite stable and unrelated to the release in question. DDEV includes ulikunitz/xz 0.5.11, the most recent stable version, from December 2022.
 
 ## How can I find out if I have an affected `xz` version?
 
