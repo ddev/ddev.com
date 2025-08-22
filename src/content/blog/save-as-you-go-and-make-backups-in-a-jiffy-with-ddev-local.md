@@ -17,7 +17,7 @@ To us, the ideal local development environment should be fast and easy to use an
 
 Here’s how to easily save and restore databases with DDEV, so you can recover if something goes wrong or you change your mind about the development direction you’re going.
 
-[Install DDEV](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/)
+[Install DDEV](https://docs.ddev.com/en/stable/users/install/ddev-installation/)
 
 ## Using `ddev snapshot` to save-as-you-go
 
@@ -49,7 +49,7 @@ DDEV snapshotting uses native hot backup tools for MariaDB, MySQL, and PostgreSQ
 
 ## Backing up with `ddev export-db` and with `mysqldump`
 
-The `ddev snapshot` command is a great way to make a quick dump of your database, but it’s not as portable as a text-based database dump. The [ddev export-db](https://ddev.readthedocs.io/en/stable/users/usage/commands/#export-db) command.
+The `ddev snapshot` command is a great way to make a quick dump of your database, but it’s not as portable as a text-based database dump. The [ddev export-db](https://docs.ddev.com/en/stable/users/usage/commands/#export-db) command.
 
 Run this command to create a text-based database dump:
 
@@ -102,6 +102,6 @@ To restore an SQL dump like that on the host you would use this command:
 
 A text-format database dump created with either this technique or `ddev export-db` can typically be restored on any MySQL/MariaDB server without trouble. It’s not as fast as `ddev snapshot`, and the restore is much slower. But it’s much more portable.
 
-See the [docs](https://ddev.readthedocs.io/en/stable/users/usage/database-management/) for everything there is to know about database management.
+See the [docs](https://docs.ddev.com/en/stable/users/usage/database-management/) for everything there is to know about database management.
 
 And join us in the [issue queue](https://github.com/ddev/ddev/issues), [Discord](/s/discord), [Stack Overflow](https://stackoverflow.com/tags/ddev) with your questions, comments, and suggestions.

@@ -17,7 +17,7 @@ categories:
 
 **DrupalCon Barcelona**: I got to see lots of friends old and new in Barcelona. Four training session BoFs, a full-day contribution mentoring session, and loads of fun. **[Read about it on ddev.com](https://ddev.com/blog/drupalcon-barcelona-2024).**
 
-**GitHub Codespaces is working well with DDEV**: We used to add a lot of caveats about Codespaces, but the problems were fixed with a new workaround shown in the [DDEV docs](https://ddev.readthedocs.io/en/latest/users/install/ddev-installation/#ddev-installation-codespaces) say how to do it. Give it a try!
+**GitHub Codespaces is working well with DDEV**: We used to add a lot of caveats about Codespaces, but the problems were fixed with a new workaround shown in the [DDEV docs](https://docs.ddev.com/en/latest/users/install/ddev-installation/#ddev-installation-codespaces) say how to do it. Give it a try!
 
 **DDEV Notes from around the web:**
 
@@ -28,7 +28,7 @@ categories:
 - **[WSL2 with DDEV And Drupal](https://www.drupal.org/docs/develop/local-server-setup/windows-development-environment/installing-drupal-with-ddev-in-wsl2-on-windows)** on drupal.org: This outstanding and detailed explanation is a gift to anybody using WSL2 and Drupal.
 - **[How We Contributed a Quality of Life Improvement to DDEV](https://www.velir.com/ideas/2024/09/17/how-we-contributed-a-quality-of-life-improvement-to-ddev)** by [Kevin Quillen](https://kevinquillen.com/). An inspiration for anybody who wants to scratch an itch on DDEV!
 
-**DDEV on Windows ARM64** (the [Qualcomm Snapdragon Windows Copilot](https://www.qualcomm.com/news/onq/2024/06/what-on-earth-is-a-copilot-plus-pc) machines you’ve been hearing about.) I bought a Microsoft Surface Laptop on my own dime to see how it would do with DDEV, and it’s great on WSL2, not ready for traditional Windows. The [preferred install technique](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#windows) (docker-ce inside WSL2) works fine except that it stumbles installing `ddev.exe` on the Windows side. I hope to spend some time on the open [Windows ARM64 issue](https://github.com/ddev/ddev/issues/6344) before I need to decide whether to send it back or not. Overall, it’s a delightful machine and does great with DDEV.
+**DDEV on Windows ARM64** (the [Qualcomm Snapdragon Windows Copilot](https://www.qualcomm.com/news/onq/2024/06/what-on-earth-is-a-copilot-plus-pc) machines you’ve been hearing about.) I bought a Microsoft Surface Laptop on my own dime to see how it would do with DDEV, and it’s great on WSL2, not ready for traditional Windows. The [preferred install technique](https://docs.ddev.com/en/stable/users/install/ddev-installation/#windows) (docker-ce inside WSL2) works fine except that it stumbles installing `ddev.exe` on the Windows side. I hope to spend some time on the open [Windows ARM64 issue](https://github.com/ddev/ddev/issues/6344) before I need to decide whether to send it back or not. Overall, it’s a delightful machine and does great with DDEV.
 
 **Add-On Registry funding**: We applied to the TYPO3 community’s grant process to fund the initiative to [add a web-based DDEV Add-on Registry](https://github.com/ddev/ddev/issues/6383). Thanks to those of you who voted! We came in 5th and the top 4 projects were funded. This remains a priority though, and we’d love to have your participation and your organization’s participation.
 

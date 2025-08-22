@@ -44,13 +44,13 @@ Watch me transform a fresh Windows machine into a fully functional DDEV developm
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nKxZ5YNucd4?si=4QWTycKfMTu-nXEz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
-This setup process is detailed in [Get Started - Windows](/get-started) and explained further in the [official docs](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#ddev-installation-windows).
+This setup process is detailed in [Get Started - Windows](/get-started) and explained further in the [official docs](https://docs.ddev.com/en/stable/users/install/ddev-installation/#ddev-installation-windows).
 
 ## Ready to Try It?
 
 🚀 **[Download the new Windows installer](https://github.com/ddev/ddev/releases)**
 
-**Cross-Platform Compatibility:** DDEV works the same on macOS, Linux, Traditional Windows, and WSL2, see [Getting Started](/get-started). Your whole team can work on their preferred environment instead of fighting about it. It supports development of [so many different web environments](https://ddev.readthedocs.io/en/stable/users/quickstart/), so you're not stuck with using different tools for different CMSs.
+**Cross-Platform Compatibility:** DDEV works the same on macOS, Linux, Traditional Windows, and WSL2, see [Getting Started](/get-started). Your whole team can work on their preferred environment instead of fighting about it. It supports development of [so many different web environments](https://docs.ddev.com/en/stable/users/quickstart/), so you're not stuck with using different tools for different CMSs.
 
 **Support the Project:** DDEV is fully open-source and free to use, and run by the nonprofit DDEV Foundation. We ask you to help make us a sustainable project by sponsoring yourself or getting your organization to sponsor the project. [Sponsor us on GitHub](https://github.com/sponsors/ddev).
 
@@ -58,6 +58,6 @@ Questions? Issues? We're here to help:
 
 - 💬 [Contact our team](/contact)
 - 📖 [Simple installation docs](/get-started)
-- 📖 [Full installation docs](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#ddev-installation-windows)
+- 📖 [Full installation docs](https://docs.ddev.com/en/stable/users/install/ddev-installation/#ddev-installation-windows)
 
 _Have you signed up for the monthly [DDEV Newsletter](/newsletter)? We'd love to have you._

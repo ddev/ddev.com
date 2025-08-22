@@ -32,7 +32,7 @@ I installed [DemoPress](https://wordpress.org/plugins/demopress/) in the WordPre
 
 ### Xdebug
 
-Step debugging is imperative while trying to inspect content in-flight. Xdebug needed to listen on two different ports to avoid collisions between the two sites, and the [DDEV docs](https://ddev.readthedocs.io/en/stable/users/debugging-profiling/step-debugging/#using-xdebug-on-a-port-other-than-the-default-9003) are informative on how to configure this. I personally use VS Code, but other IDE's should work just as well, too. Step debugging was crucial to finding appropriate data structures and information I needed my converter plugin to use in a Grav site.
+Step debugging is imperative while trying to inspect content in-flight. Xdebug needed to listen on two different ports to avoid collisions between the two sites, and the [DDEV docs](https://docs.ddev.com/en/stable/users/debugging-profiling/step-debugging/#using-xdebug-on-a-port-other-than-the-default-9003) are informative on how to configure this. I personally use VS Code, but other IDE's should work just as well, too. Step debugging was crucial to finding appropriate data structures and information I needed my converter plugin to use in a Grav site.
 
 ## Wp2grav_exporter WordPress plugin
 

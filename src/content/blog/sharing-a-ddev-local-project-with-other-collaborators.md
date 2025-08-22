@@ -92,6 +92,6 @@ Computers and mobile devices on your local network should now be able to access 
 
 ## What next?
 
-Find us and other DDEV community experts via one of our [support channels](https://ddev.readthedocs.io/en/stable/users/support/).
+Find us and other DDEV community experts via one of our [support channels](https://docs.ddev.com/en/stable/users/support/).
 
 Take a look around the [project on GitHub](http://github.com/ddev/ddev) and feel free to contribute!

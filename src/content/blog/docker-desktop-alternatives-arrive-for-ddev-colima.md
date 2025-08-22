@@ -17,7 +17,7 @@ In v1.19+, DDEV supports alternative Docker solutions for every platform, so tha
 
 On macOS, DDEV now supports [Colima](https://github.com/abiosoft/colima), a young project but one that is easy to use and fully open-source. It basically makes the _Linux_ Docker daemon run in a VM on macOS, using the [Lima](https://github.com/lima-vm/lima) project and the robust open-source [Linux Docker daemon](https://github.com/moby/moby).
 
-It’s easy to set up, and is compatible with Docker Desktop (both can be running on the same system at the same time), see [docs](https://ddev.readthedocs.io/en/stable/users/docker%5Finstallation/#macos-installation-colima).
+It’s easy to set up, and is compatible with Docker Desktop (both can be running on the same system at the same time), see [docs](https://docs.ddev.com/en/stable/users/docker%5Finstallation/#macos-installation-colima).
 
 - `brew install colima`
 - `colima start --cpu=4 --disk=100 --memory=6 --dns=1.1.1.1`
@@ -40,10 +40,10 @@ It’s easy to set up, and is compatible with Docker Desktop (both can be runnin
 
 On Windows, WSL2 is by far the preferred way to run DDEV, as it’s perhaps a hundred times faster than running DDEV on traditional Windows. However, since WSL2 came out, the recommended installation procedure has used Docker Desktop (Windows), with its excellent WSL2 integration. However, it turns out that installing the Linux version of Docker inside the WSL2 distro is at least equivalent in terms of performance, and probably more reliable.
 
-In v1.19 the [docs provide instructions](https://ddev.readthedocs.io/en/stable/users/docker%5Finstallation/#windows-installation-wsl2-with-docker-linux-installed-inside) on the simple technique of installing inside the WSL2 distro. This will be the recommended standard technique in v1.20 and forward, and it works great now.
+In v1.19 the [docs provide instructions](https://docs.ddev.com/en/stable/users/docker%5Finstallation/#windows-installation-wsl2-with-docker-linux-installed-inside) on the simple technique of installing inside the WSL2 distro. This will be the recommended standard technique in v1.20 and forward, and it works great now.
 
 If you install Docker inside the WSL2 distro, you do not need Docker Desktop at all, and there are no license fees, and everything is open-source. I know of no downside to this approach.
 
 ## Linux: Do What You’ve Always Done
 
-On Linux, the solution has always been open-source and there is no license fee (see [docs](https://ddev.readthedocs.io/en/stable/users/docker%5Finstallation/#linux-installation-docker)). (Note that the separate GUI product "Docker Desktop for Linux" does not work with DDEV.)
+On Linux, the solution has always been open-source and there is no license fee (see [docs](https://docs.ddev.com/en/stable/users/docker%5Finstallation/#linux-installation-docker)). (Note that the separate GUI product "Docker Desktop for Linux" does not work with DDEV.)

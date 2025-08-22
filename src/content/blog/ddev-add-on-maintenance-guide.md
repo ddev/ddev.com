@@ -89,7 +89,7 @@ Example:
 
 ### Advanced Customization with Flags
 
-Starting with DDEV v1.23.5, you can now use [`ddev dotenv set`](https://ddev.readthedocs.io/en/stable/users/usage/commands/#dotenv-set) to manage environment variables more cleanly. This allows your add-on to read custom environment variables defined in `.ddev/.env.*` files, and use them inside your `docker-compose.*.yaml` configuration.
+Starting with DDEV v1.23.5, you can now use [`ddev dotenv set`](https://docs.ddev.com/en/stable/users/usage/commands/#dotenv-set) to manage environment variables more cleanly. This allows your add-on to read custom environment variables defined in `.ddev/.env.*` files, and use them inside your `docker-compose.*.yaml` configuration.
 
 This feature is especially useful for advanced setups where flexibility and dynamic configuration are needed.
 
@@ -111,7 +111,7 @@ Examples:
 
 ### MutagenSync Annotation for Commands
 
-With DDEV v1.24.4, custom commands can now use the [`MutagenSync`](https://ddev.readthedocs.io/en/stable/users/extend/custom-commands/#mutagensync-annotation) annotation.
+With DDEV v1.24.4, custom commands can now use the [`MutagenSync`](https://docs.ddev.com/en/stable/users/extend/custom-commands/#mutagensync-annotation) annotation.
 
 You should use this annotation if your `host` or `web` commands modify, add, or remove files in the project directory. It ensures that file sync is handled correctly when Mutagen is enabled, preventing unexpected behavior or sync delays. (It does no harm and causes no performance issues if Mutagen is not in use.)
 
@@ -121,7 +121,7 @@ Example:
 
 ### Support for Optional Compose Profiles
 
-The same DDEV v1.24.4 release introduced support for [optional docker-compose profiles](https://ddev.readthedocs.io/en/stable/users/extend/custom-compose-files/#optional-services), which can be used by add-ons to offer more flexible configuration.
+The same DDEV v1.24.4 release introduced support for [optional docker-compose profiles](https://docs.ddev.com/en/stable/users/extend/custom-compose-files/#optional-services), which can be used by add-ons to offer more flexible configuration.
 
 Example:
 

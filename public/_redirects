@@ -2,7 +2,7 @@
 /install.sh https://raw.githubusercontent.com/ddev/ddev/main/scripts/install_ddev.sh 302
 
 # Short link redirects
-/s/port-conflict https://ddev.readthedocs.io/en/stable/users/usage/troubleshooting/#web-server-ports-already-occupied 301
+/s/port-conflict https://docs.ddev.com/en/stable/users/usage/troubleshooting/#web-server-ports-already-occupied 301
 /s/discord https://discord.com/invite/5wjP76mBJD 301
 /s/divide-and-conquer https://www.fldrupal.camp/session/divide-and-conquer-systematic-approach-troubleshooting-issues 301
 /s/divide-and-conquer-drupal4gov https://docs.google.com/presentation/d/1_OyAwQGTtz9xv1e_Qzau4Rarum5xQpPy0uS7ntA9leI/edit?usp=sharing 301
@@ -15,16 +15,16 @@
 /ddev-local/* /blog/:splat 301
 
 # Removed blog post redirects (add both links with and without trailing slash)
-/blog/ddev-wsl2-getting-started https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#ddev-installation-windows 301
-/blog/ddev-wsl2-getting-started/ https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#ddev-installation-windows 301
+/blog/ddev-wsl2-getting-started https://docs.ddev.com/en/stable/users/install/ddev-installation/#ddev-installation-windows 301
+/blog/ddev-wsl2-getting-started/ https://docs.ddev.com/en/stable/users/install/ddev-installation/#ddev-installation-windows 301
 /blog/apache-solr-with-drupal-8-and-search-api-solr https://github.com/ddev/ddev-drupal-solr 301
 /blog/apache-solr-with-drupal-8-and-search-api-solr/ https://github.com/ddev/ddev-drupal-solr 301
-/blog/ddev-local-web-container-customization-in-v1-8-0 https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/ 301
-/blog/ddev-local-web-container-customization-in-v1-8-0/ https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/ 301
-/blog/ddev-local-nfs-mounting-setup-macos https://ddev.readthedocs.io/en/stable/users/install/performance/#filesystem-performance-nfs 301
-/blog/ddev-local-nfs-mounting-setup-macos/ https://ddev.readthedocs.io/en/stable/users/install/performance/#filesystem-performance-nfs 301
-/blog/ddev-local-and-phpstorm-debugging-with-wsl2 https://ddev.readthedocs.io/en/stable/users/debugging-profiling/step-debugging/#phpstorm-debugging-setup 301
-/blog/ddev-local-and-phpstorm-debugging-with-wsl2/ https://ddev.readthedocs.io/en/stable/users/debugging-profiling/step-debugging/#phpstorm-debugging-setup 301
+/blog/ddev-local-web-container-customization-in-v1-8-0 https://docs.ddev.com/en/stable/users/extend/customizing-images/ 301
+/blog/ddev-local-web-container-customization-in-v1-8-0/ https://docs.ddev.com/en/stable/users/extend/customizing-images/ 301
+/blog/ddev-local-nfs-mounting-setup-macos https://docs.ddev.com/en/stable/users/install/performance/#filesystem-performance-nfs 301
+/blog/ddev-local-nfs-mounting-setup-macos/ https://docs.ddev.com/en/stable/users/install/performance/#filesystem-performance-nfs 301
+/blog/ddev-local-and-phpstorm-debugging-with-wsl2 https://docs.ddev.com/en/stable/users/debugging-profiling/step-debugging/#phpstorm-debugging-setup 301
+/blog/ddev-local-and-phpstorm-debugging-with-wsl2/ https://docs.ddev.com/en/stable/users/debugging-profiling/step-debugging/#phpstorm-debugging-setup 301
 
 # Authors redirects
 /meet-the-team /blog/authors 301

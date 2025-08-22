@@ -37,7 +37,7 @@ Two recent Windows machines I set up were the new ARM64/Qualcomm/CoPilot variety
    - `sudo snap install --classic node`
    - `sudo snap install ngrok and ngrok config add-authtoken <token>`
 9. In Windows Explorer, add my WSL2 home directory to favorites by copying it into the favorites area.
-10. Install DDEV using the [DDEV installation instructions](https://ddev.readthedocs.io/en/stable/users/install/). The new GUI Windows installer makes it easy to do any kind of install, but I always recommend WSL2 with Docker-CE.
+10. Install DDEV using the [DDEV installation instructions](https://docs.ddev.com/en/stable/users/install/). The new GUI Windows installer makes it easy to do any kind of install, but I always recommend WSL2 with Docker-CE.
 11. Install and test the [1Password SSH agent](https://developer.1password.com/docs/ssh/agent/).
 12. On Windows PowerShell `ssh -T git@github.com` to verify that the 1Password SSH agent is working. If it says "PTY Allocation Failed", just hit `<RETURN>` and ignore it. You should get the confirmation message from GitHub.
 13. 1Password WSL2 adaptation:

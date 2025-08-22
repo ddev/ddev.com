@@ -37,7 +37,7 @@ One of the great things about open source technology is the fact that we can all
 - **Try to recreate the problem**  
    Learn as you help someone by trying to recreate their problem. A test repository is a good place to recreate a problem, and can be referenced later in the [issue queue](https://github.com/ddev/ddev/issues).
 - **Give people tools, not only answers.**  
-   Help them find the place in the [DDEV docs](https://ddev.readthedocs.io/en/stable/) or [Stack Overflow](https://stackoverflow.com/tags/ddev) where their question is answered. Remember that we’re trying to make them members of the community who can support others.
+   Help them find the place in the [DDEV docs](https://docs.ddev.com/en/stable/) or [Stack Overflow](https://stackoverflow.com/tags/ddev) where their question is answered. Remember that we’re trying to make them members of the community who can support others.
 
 #### For those receiving support:
 
@@ -54,7 +54,7 @@ One of the great things about open source technology is the fact that we can all
 
 ## Venues for Giving and Receiving Support
 
-- The [DDEV Docs](https://ddev.readthedocs.io/en/stable/) are a great place to start looking for answers to straightforward questions.
+- The [DDEV Docs](https://docs.ddev.com/en/stable/) are a great place to start looking for answers to straightforward questions.
 - Subscribe to the [issue queue on GitHub](https://github.com/ddev/ddev/issues).
 - On [DDEV's Discord](/s/discord), try to use #support where possible, or use threads elsewhere.
 - The [DDEV tag on Stack Overflow](https://stackoverflow.com/tags/ddev) is a great place for long-term storage of obscure answers or complicated questions. When somebody figures out the answer to an important question, try to get it written up there.

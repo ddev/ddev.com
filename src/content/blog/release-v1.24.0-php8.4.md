@@ -22,7 +22,7 @@ Congratulations to **all of you and all contributors who made this happen**. It'
 
 ## New Features and other things we're proud of
 
-- `ddevcd` command can be used to switch between projects. See `ddev debug cd`. For example, if I have a project named `t3v12` I can do a `ddevcd t3v12` to switch to that directory. [Stas](https://github.com/stasadev) added this feature out of the blue and I love it. It does require a [tiny bit of one-time configuration](https://ddev.readthedocs.io/en/stable/users/usage/commands/#debug-cd).
+- `ddevcd` command can be used to switch between projects. See `ddev debug cd`. For example, if I have a project named `t3v12` I can do a `ddevcd t3v12` to switch to that directory. [Stas](https://github.com/stasadev) added this feature out of the blue and I love it. It does require a [tiny bit of one-time configuration](https://docs.ddev.com/en/stable/users/usage/commands/#debug-cd).
 - `drupal11` is introduced as a project type, demoting the `drupal` project type to be a simple alias to the "latest stable Drupal version" (`drupal11` for now).
 - The `ddev-webserver` image is at least 25% smaller. Only a few locales are included by default, and only currently-supported versions of PHP are built-in by default (but all the other versions still work). It was 480MB compressed, is now 361MB compressed. More details below.
 - `ddev auth ssh` can now be used with individual key files and can follow symlinks. For example, if you only want to have a single file named `id_rsa` to be available to your projects, you can `ddev auth ssh -f ~/.ssh/id_rsa`.
@@ -30,7 +30,7 @@ Congratulations to **all of you and all contributors who made this happen**. It'
 ## Smaller Changes
 
 - Added dynamic timeout handling for scripts on start based on setting of `default_container_timeout`. This is mostly only for folks with exceptionally slow internet.
-- Added explicit support for the `symfony` project type, see [docs](https://ddev.readthedocs.io/en/stable/users/quickstart/#symfony), thanks [@IndraGunawan](https://github.com/IndraGunawan).
+- Added explicit support for the `symfony` project type, see [docs](https://docs.ddev.com/en/stable/users/quickstart/#symfony), thanks [@IndraGunawan](https://github.com/IndraGunawan).
 - `ddev describe` changes how exposed ports are displayed for better clarity (thanks [@hanoii](https://github.com/hanoii))
 - Only a limited set of locales is now installed in `ddev-webserver` by default. If you need more, use `webimage_extra_packages: [locales-all]`
 - Complex `ddev composer` command usage with JSON or args with spaces is fixed. (A bug was introduced in v1.23.5.)
@@ -51,11 +51,11 @@ Congratulations to **all of you and all contributors who made this happen**. It'
 - The `drupal` project type is no longer a generic project type, but instead is an alias to the latest stable Drupal (`drupal11` right now). A number of folks gave feedback that it caused the startup time to be longer and the process more complex. (`ddev config --update` is no longer a part of the Drupal quickstart)
 - In v1.23.5 we started preferring `vendor/bin/composer` to the specified `composer_version` but users thought that was a mistake, so this was reverted.
 - The nginx-proxy router has been removed.
-- The `ddev service enable` and `ddev service disable` commands were deprecated, as they have long been superseded by the use of `ddev add-on get` and `ddev add-on remove`. We apologize if this is an inconvenience, but we didn't see any significant usage of these commands. If you need something like that still, it's super easy to make a [custom command](https://ddev.readthedocs.io/en/stable/users/extend/custom-commands/) that would do the same thing, and consider delivering the custom command using an add-on.
+- The `ddev service enable` and `ddev service disable` commands were deprecated, as they have long been superseded by the use of `ddev add-on get` and `ddev add-on remove`. We apologize if this is an inconvenience, but we didn't see any significant usage of these commands. If you need something like that still, it's super easy to make a [custom command](https://docs.ddev.com/en/stable/users/extend/custom-commands/) that would do the same thing, and consider delivering the custom command using an add-on.
 - Removed support for Python and Django4 project types. After more than a year, these did not gain traction or a community, so sadly we had to leave them behind.
 
 From the entire team, thanks for using, promoting, contributing, and supporting DDEV!
 
-If you have more questions, please reach out to us in any of the many [support channels](https://ddev.readthedocs.io/en/stable/users/support/).
+If you have more questions, please reach out to us in any of the many [support channels](https://docs.ddev.com/en/stable/users/support/).
 
 Follow our [blog](https://ddev.com/blog/), [Bluesky](https://bsky.app/profile/ddev.bsky.social), [LinkedIn](https://www.linkedin.com/company/ddev-foundation), [Mastodon](https://fosstodon.org/@ddev), and join us on [Discord](/s/discord). And we'd love to have you sign up for the [monthly newsletter](/newsletter).

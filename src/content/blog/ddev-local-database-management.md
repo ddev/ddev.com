@@ -16,7 +16,7 @@ categories:
 
 Remember, you can run `ddev [command] --help` for more info on many of the topics below.
 
-**Many database backends**: You can use a vast array of different database types, including MariaDB from 5.5 through 10.4 and MySQL from 5.5 through 8.0 ([docs](https://ddev.readthedocs.io/en/stable/users/extend/database%5Ftypes/#database-server-types)). Note that if you want to _change_ database type, especially to downgrade, you need to export your database and then `ddev delete` the project (to kill off the existing database), make the change to a new db type, start again, and import.
+**Many database backends**: You can use a vast array of different database types, including MariaDB from 5.5 through 10.4 and MySQL from 5.5 through 8.0 ([docs](https://docs.ddev.com/en/stable/users/extend/database%5Ftypes/#database-server-types)). Note that if you want to _change_ database type, especially to downgrade, you need to export your database and then `ddev delete` the project (to kill off the existing database), make the change to a new db type, start again, and import.
 
 **Default database**: DDEV creates a default database named “db” and default permissions for the “db” user with password “db”, and it’s on the (inside Docker) hostname “db”.
 
@@ -46,4 +46,4 @@ I like to name my snapshots so I can find them later, so `ddev snapshot --name=t
   - `cp .ddev/commands/host/mysqlworkbench.example .ddev/commands/host/mysqlworkbench && chmod +x .ddev/commands/host/mysqlworkbench`
   - and then `ddev mysqlworkbench`
 
-What are your favorite DDEV database tweaks, hacks, approaches, strategies? We’d love to hear about them on any of our [support channels](https://ddev.readthedocs.io/en/stable/users/support/). Join the conversation!
+What are your favorite DDEV database tweaks, hacks, approaches, strategies? We’d love to hear about them on any of our [support channels](https://docs.ddev.com/en/stable/users/support/). Join the conversation!

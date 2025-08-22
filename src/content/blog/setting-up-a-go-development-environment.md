@@ -63,7 +63,7 @@ To verify formatting and static analysis use `make golangci-lint`
 
 For new feature-based pull requests ([Min 31:34](https://youtu.be/IjrJw0Ay-dk?t=1892)) Randy recommends starting with an issue to explain to maintainers the context surrounding their concerns before beginning a PR.
 
-The [DDEV Docs development tab](https://ddev.readthedocs.io/en/latest/developers/) ([Min 32:20](https://youtu.be/IjrJw0Ay-dk?t=1938)) includes plenty of tips and insights.
+The [DDEV Docs development tab](https://docs.ddev.com/en/latest/developers/) ([Min 32:20](https://youtu.be/IjrJw0Ay-dk?t=1938)) includes plenty of tips and insights.
 
 #### [GoLand](https://www.jetbrains.com/go/) debugging insights ([Min 33:39](https://youtu.be/IjrJw0Ay-dk?t=2014))
 

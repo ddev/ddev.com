@@ -26,11 +26,11 @@ First of all, congratulations for making step-debugging a priority. It's my opin
 
 Second, please [contribute to the Xdebug project](https://xdebug.org/support). Derick Rethans created this incredible resource and has been maintaining it for 22 years and counting. Making open-source projects sustainable is an obligation for all of us!
 
-DDEV's Xdebug [documentation](https://ddev.readthedocs.io/en/stable/users/debugging-profiling/step-debugging/) and [Xdebug troubleshooting section](https://ddev.readthedocs.io/en/stable/users/debugging-profiling/step-debugging/#troubleshooting-xdebug) will normally get everyone going, but we'll approach those from a slightly different perspective.
+DDEV's Xdebug [documentation](https://docs.ddev.com/en/stable/users/debugging-profiling/step-debugging/) and [Xdebug troubleshooting section](https://docs.ddev.com/en/stable/users/debugging-profiling/step-debugging/#troubleshooting-xdebug) will normally get everyone going, but we'll approach those from a slightly different perspective.
 
 ## Basic Usage
 
-The [simplest DDEV Xdebug usage](https://ddev.readthedocs.io/en/stable/users/debugging-profiling/step-debugging/) is just:
+The [simplest DDEV Xdebug usage](https://docs.ddev.com/en/stable/users/debugging-profiling/step-debugging/) is just:
 
 - `ddev xdebug on`
 - Make your IDE listen for Xdebug
@@ -67,7 +67,7 @@ That's exactly what your IDE receives from PHP in the same situation.
 
 ## Troubleshooting
 
-There is an extensive set of [troubleshooting instructions](https://ddev.readthedocs.io/en/stable/users/debugging-profiling/step-debugging/#troubleshooting-xdebug) in the DDEV docs, but remember that for most people there are most-common reasons for trouble:
+There is an extensive set of [troubleshooting instructions](https://docs.ddev.com/en/stable/users/debugging-profiling/step-debugging/#troubleshooting-xdebug) in the DDEV docs, but remember that for most people there are most-common reasons for trouble:
 
 1. Your website is not executing the code where you have the breakpoint set, so it doesn't stop at your breakpoint. (Avoid this one by telling your IDE to stop at the first line no matter what, or by settings a breakpoint at the first line of your `index.php`.)
 2. You do not have your IDE set up to map your code to the code in the container successfully. Your `index.php` path on the workstation host should map to the path inside the container (often something like `/var/www/html/web/index.php`)
@@ -79,7 +79,7 @@ You may have problems beyond those in some environments, and they are often fire
 
 WSL2 is a complex networking environment, and it's made more complex by the fact that most developers run their IDE on the Windows side, while running DDEV in WSL2. That means that DDEV has to figure out how to set `host.docker.internal` to the right IP address for your Windows IDE. DDEV tries hard and usually succeeds!
 
-As a result of the complexity, there's an additional set of [WSL2 Xdebug debugging instructions](https://ddev.readthedocs.io/en/stable/users/debugging-profiling/step-debugging/#wsl2-xdebug-troubleshooting) in the docs.
+As a result of the complexity, there's an additional set of [WSL2 Xdebug debugging instructions](https://docs.ddev.com/en/stable/users/debugging-profiling/step-debugging/#wsl2-xdebug-troubleshooting) in the docs.
 
 Remember that if you're one of the very unusual people who runs the Linux version your IDE inside WSL2, you'll be using `ddev config global --xdebug-ide-location=wsl2`. This is quite unusual.
 

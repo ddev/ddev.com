@@ -39,7 +39,7 @@ Drupal, the generic "PHP" type, and TYPO3 remain the most popular, but they're t
 
 ## macOS Docker Providers
 
-People have [lots of Docker providers](https://ddev.readthedocs.io/en/stable/users/install/docker-installation/#docker-installation-macos) to choose from on macOS. My own favorite is OrbStack due to its performance and excellent maintenance, but the classic Docker Desktop still has a huge market share. Neither of those is open source, but Lima, Colima, and Rancher Desktop all are.
+People have [lots of Docker providers](https://docs.ddev.com/en/stable/users/install/docker-installation/#docker-installation-macos) to choose from on macOS. My own favorite is OrbStack due to its performance and excellent maintenance, but the classic Docker Desktop still has a huge market share. Neither of those is open source, but Lima, Colima, and Rancher Desktop all are.
 
 ![macOS Docker Providers](/img/blog/2024/11/macOSDockerProvider.png)
 
@@ -71,7 +71,7 @@ As you know, the DDEV Add-on ecosystem has been a tremendous success, because pe
 
 ## Bundled `ddev pull` Usage
 
-DDEV provides a number of bundled hosting providers, including Platform.sh, Pantheon, Acquia, Lagoon, etc. Here are the actual usages of some of these. There are loads and loads of others that you have customized and used various ways. Many people customize these with names like `prod` and `staging` for those kinds of usage too, so this is very much not complete. And DDEV can be used with so many other situations, like [rsync and any hosting provider](https://ddev.readthedocs.io/en/stable/users/providers/). Just the other day I found out that the Mittwald hosting service provides a [Mittwald add-on](https://github.com/mittwald/ddev) that provides a custom hosting provider!
+DDEV provides a number of bundled hosting providers, including Platform.sh, Pantheon, Acquia, Lagoon, etc. Here are the actual usages of some of these. There are loads and loads of others that you have customized and used various ways. Many people customize these with names like `prod` and `staging` for those kinds of usage too, so this is very much not complete. And DDEV can be used with so many other situations, like [rsync and any hosting provider](https://docs.ddev.com/en/stable/users/providers/). Just the other day I found out that the Mittwald hosting service provides a [Mittwald add-on](https://github.com/mittwald/ddev) that provides a custom hosting provider!
 
 ![ddev pull Usage](/img/blog/2024/11/ddev-pull-commands.png)
 

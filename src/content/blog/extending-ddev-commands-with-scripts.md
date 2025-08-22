@@ -60,7 +60,7 @@ I started, then, working in such a tool, which I visualized as a local shop mana
 
 Under the hood, every command is retrieving the settings from the environment, doing necessary changes using PHP (change folders, create files...), and then calling the appropriate ddev command for the real action: config, start, stop, export-db, import-db, exec, share, composer... The tool abstracts DDEV for most of the users, because they do not need to use the ddev command-line tool for most of the operations...
 
-As an example, consider the steps for installing a shop, like for example [Shopware](https://ddev.readthedocs.io/en/stable/users/quickstart/#shopware).
+As an example, consider the steps for installing a shop, like for example [Shopware](https://docs.ddev.com/en/stable/users/quickstart/#shopware).
 The lsm tool, and due to business needs, has to support all (recent) versions of this shop. And for ensuring that the installation always works the tool needs to set the versions of the dependencies of shopware, like PHP or mariadb, before running the ddev commands, like 'config', for each major version (sometimes, even minor version) of the shop. The user has the need of installing a shop locally, and lsm provides a command for that. The user does not care about how the shop is installed or the differences between different shop versions.
 
 lsm offers a simplified and more focused experience compared to DDEV's out-of-the-box experience: DDEV is the general tool that can achieve everything. On the other hand, lsm, powered by DDEV, is the specific tool for doing specific operations. For most users, lsm is enough. For most advanced users, lsm is a first step toward using DDEV.

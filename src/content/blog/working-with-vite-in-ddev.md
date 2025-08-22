@@ -36,7 +36,7 @@ This articles sums up my current personal experience. I hope it will be a helpfu
 
 ### General usage
 
-Vite is written in Node.js. DDEV already has built-in support for [Node.js](https://ddev.readthedocs.io/en/stable/users/usage/cli/#nodejs-npm-nvm-and-yarn).
+Vite is written in Node.js. DDEV already has built-in support for [Node.js](https://docs.ddev.com/en/stable/users/usage/cli/#nodejs-npm-nvm-and-yarn).
 
 In order to use Vite in our DDEV projects, we generally need to do two things:
 
@@ -85,7 +85,7 @@ In order to use Vite in our DDEV projects, we generally need to do two things:
    })
    ```
 
-   This guide assumes your project runs on `https://`. If you can not access the HTTPS version of your project, please see [DDEV installation docs](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/).
+   This guide assumes your project runs on `https://`. If you can not access the HTTPS version of your project, please see [DDEV installation docs](https://docs.ddev.com/en/stable/users/install/ddev-installation/).
 
 Some more customizations might be needed depending on your CMS / framework, see [PHP CMS / framework integration](#php-cms--frameworkintegration) below. You can also use a [DDEV add-on](#ddevadd-ons).
 
@@ -166,7 +166,7 @@ If you use Vite on your localhost (without DDEV), the Vite development server wo
 
 Now we need it make it accessible via `https://test-vite.ddev.site:5173`.
 
-Fortunately exposing the port is very simple with DDEV's config option [web_extra_exposed_ports](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#exposing-extra-ports-via-ddev-router). We add the following to `.ddev/config.yaml` file:
+Fortunately exposing the port is very simple with DDEV's config option [web_extra_exposed_ports](https://docs.ddev.com/en/stable/users/extend/customization-extendibility/#exposing-extra-ports-via-ddev-router). We add the following to `.ddev/config.yaml` file:
 
 ```yaml
 web_extra_exposed_ports:
@@ -261,7 +261,7 @@ Technical explanation:
 - Another important part is to let Vite know from where to load Vite-controlled assets like images referenced in CSS. This is done via `server.origin`. <br> _(DDEV automatically provides environment variables via the regular `process.env` variable. The variable `process.env.DDEV_PRIMARY_URL` will have the value `https://test-vite.ddev.site` in our demo project. We use it to set the correct `server.origin` dynamically.)_ DDEV can be configured to use other ports than 80/443, or will auto-select ports if these are occupied already. Therefore we need to support both possible outputs of `process.env.DDEV_PRIMARY_URL`: "https://test-vite.ddev.site" or something like "https://test-vite.ddev.site:1234". If there is a custom port, we need to strip it before we add the Vite port.
 - Last but not least, we need to configure secure CORS headers. In earlier versions of Vite, this was set to `cors: true` by default and allowed all origins to fetch scripts from the devserver. After [security advisory GHSA-vg6x-rcgg-rjx6](https://github.com/vitejs/vite/security/advisories/GHSA-vg6x-rcgg-rjx6), the default setting was changed and we need to add the allowance of DDEV local domains explicitly. The regular expression supports domains like `https://test-vite.ddev.site` (or something like `https://test-vite.ddev.site:1234` when you use another HTTPS port). See [server.cors](https://vite.dev/config/server-options#server-cors) in the Vite docs for more information.
 
-If your site runs on another [top-level-domains (project_ltd)](https://ddev.readthedocs.io/en/stable/users/configuration/config/#project_tld) rather than `.ddev.site`, you edit the regular expression yourself or use this automagic snippet:
+If your site runs on another [top-level-domains (project_ltd)](https://docs.ddev.com/en/stable/users/configuration/config/#project_tld) rather than `.ddev.site`, you edit the regular expression yourself or use this automagic snippet:
 
 ```js
 cors: {
@@ -586,7 +586,7 @@ I experimented with Codespaces support for Vite in these demo projects, see:
 
 Note: On Codespaces, DDEVs router is not used - therefore some adjustments are needed. Exposing the port does not work via `.ddev/config.yaml`, instead you can use a docker-compose-file. See `docker-compose.vite-workaround.yaml` in the demo repositories.
 
-See [DDEV Installation: Codespaces](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#github-codespaces) for more information.
+See [DDEV Installation: Codespaces](https://docs.ddev.com/en/stable/users/install/ddev-installation/#github-codespaces) for more information.
 
 ### Node.js / headless projects
 
@@ -596,7 +596,7 @@ This approach also enables use cases like running a classic PHP backend in combi
 
 There is an article on velir.com: [How to Run Headless Drupal and NextJS on DDEV](https://www.velir.com/ideas/2024/05/13/how-to-run-headless-drupal-and-nextjs-on-ddev). And here is a [demo repository](https://github.com/mandrasch/ddev-laravel-breeze-sveltekit) for Laravel Breeze (PHP) and SvelteKit (Node.js) within one DDEV project (monorepo).
 
-But you can also use a separate DDEV project for frontend - and another one for backend of course. See [communication between DDEV projects](https://ddev.readthedocs.io/en/stable/users/usage/faq/#communicate-via-https).
+But you can also use a separate DDEV project for frontend - and another one for backend of course. See [communication between DDEV projects](https://docs.ddev.com/en/stable/users/usage/faq/#communicate-via-https).
 
 ### DDEV add-ons
 
@@ -614,7 +614,7 @@ There is also the possibility to automatically start Vite when you start a DDEV 
 
 Please beware: Autostart can complicate things a bit, it's a technique for advanced usage.
 
-Some developers like having it run in a background daemon, others like putting it in the [post-start hook](https://ddev.readthedocs.io/en/stable/users/configuration/hooks/). When it is started via post-start hook, the output & errors are still visible in the terminal.
+Some developers like having it run in a background daemon, others like putting it in the [post-start hook](https://docs.ddev.com/en/stable/users/configuration/hooks/). When it is started via post-start hook, the output & errors are still visible in the terminal.
 
 Edit your `.ddev/config.yaml` like this and execute a command within the DDEV web container on project start, a `ddev restart` is needed afterwards:
 
@@ -624,7 +624,7 @@ hooks:
     - exec: "npm run dev"
 ```
 
-If you want to run Vite in the background as a daemon via [web_extra_daemons](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#running-extra-daemons-in-the-web-container), edit your `.ddev/config.yaml` like this (`ddev restart` needed):
+If you want to run Vite in the background as a daemon via [web_extra_daemons](https://docs.ddev.com/en/stable/users/extend/customization-extendibility/#running-extra-daemons-in-the-web-container), edit your `.ddev/config.yaml` like this (`ddev restart` needed):
 
 ```yaml
 web_extra_daemons:

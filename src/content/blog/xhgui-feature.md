@@ -44,9 +44,9 @@ ddev xhgui launch
 
 In general, click one of the `GET` or `POST` links and follow it in to explore detailed CPU and memory usage breakdowns.
 
-If you have questions, join us in one of the [DDEV support venues](https://ddev.readthedocs.io/en/stable/users/support/), especially [Discord](https://ddev.com/s/discord) and we'll work it through with you.
+If you have questions, join us in one of the [DDEV support venues](https://docs.ddev.com/en/stable/users/support/), especially [Discord](https://ddev.com/s/discord) and we'll work it through with you.
 
-The [DDEV Docs on XHProf](https://ddev.readthedocs.io/en/stable/users/debugging-profiling/xhprof-profiling/) have some good starters, but your suggestions are welcome!
+The [DDEV Docs on XHProf](https://docs.ddev.com/en/stable/users/debugging-profiling/xhprof-profiling/) have some good starters, but your suggestions are welcome!
 
 ## XHGui Demonstration Screencast
 
@@ -66,4 +66,4 @@ Serious thanks are due to:
 
 ## Support
 
-Try it out today and let us know how it goes — your feedback helps shape the future of DDEV! Join us in the [DDEV support venues](https://ddev.readthedocs.io/en/stable/users/support/) if you want to talk about XHGui and profiling.
+Try it out today and let us know how it goes — your feedback helps shape the future of DDEV! Join us in the [DDEV support venues](https://docs.ddev.com/en/stable/users/support/) if you want to talk about XHGui and profiling.

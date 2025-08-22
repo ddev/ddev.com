@@ -31,7 +31,7 @@ The router's basic jobs are
 
 ## Configuration Components
 
-One of the great things about Traefik is its excellent community and [configuration documentation](https://doc.traefik.io/traefik/getting-started/configuration-overview/). DDEV uses this configuration as described in the [DDEV Traefik docs](https://ddev.readthedocs.io/en/stable/users/extend/traefik-router/).
+One of the great things about Traefik is its excellent community and [configuration documentation](https://doc.traefik.io/traefik/getting-started/configuration-overview/). DDEV uses this configuration as described in the [DDEV Traefik docs](https://docs.ddev.com/en/stable/users/extend/traefik-router/).
 
 The components of DDEV's Traefik configuration are:
 
@@ -127,7 +127,7 @@ When you're trying to understand how dynamic configuration works, it's handy to 
 
 ## Casual Hosting
 
-DDEV can be configured for ["casual hosting"](https://ddev.readthedocs.io/en/stable/users/topics/hosting/), meaning live-on-the-internet hosting of websites. It works fine, and people use it for staging sites, demonstrating current status to stakeholders, and even live hosting. I have been running a few small sites on a $20 Linode server for several years without trouble. But these sites do not have specific performance requirements and don't get a lot of traffic. Although "casual hosting" works fine, DDEV and its Docker images are designed for local development use, both from a performance and a security perspective, so your mileage may vary.
+DDEV can be configured for ["casual hosting"](https://docs.ddev.com/en/stable/users/topics/hosting/), meaning live-on-the-internet hosting of websites. It works fine, and people use it for staging sites, demonstrating current status to stakeholders, and even live hosting. I have been running a few small sites on a $20 Linode server for several years without trouble. But these sites do not have specific performance requirements and don't get a lot of traffic. Although "casual hosting" works fine, DDEV and its Docker images are designed for local development use, both from a performance and a security perspective, so your mileage may vary.
 
 "Casual hosting" even encompasses using [Let's Encrypt](https://letsencrypt.org/) to get free "real" TLS/SSL certificates.
 

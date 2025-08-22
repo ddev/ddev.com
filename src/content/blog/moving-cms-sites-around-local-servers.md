@@ -27,7 +27,7 @@ Any web developer will have to move a site from one place to another periodicall
 
 Up through Drupal 7, all you had to do to move a site in many cases was to check out the code, load the database from a database dump, and get the files into sites/default/files where they belong. In those days (and still on WordPress) that’s mostly what you have to do. Here is the process:
 
-**On the source server** (can be [DDEV](https://ddev.readthedocs.io/en/stable/) or anywhere else):
+**On the source server** (can be [DDEV](https://docs.ddev.com/en/stable/) or anywhere else):
 
 1. Dump the database. If the source project is in DDEV, this means running `ddev export-db --file=/path/to/sitename.db.sql.gz`. If you’re on a server or elsewhere, and assuming a single database, you can run `mysqldump <databasename> | gzip >/path/to/sitename.db.sql.gz`.
 2. Tar up the user-generated files: `cd <docroot>/sites/default/files && tar -czf /path/to/sitename_files.tar.gz .`.
@@ -78,7 +78,7 @@ TYPO3 is mostly the same as Drupal 7 plus a composer build, but there are often 
 
 ### From DDEV to Pantheon
 
-If you’re deploying to [Pantheon.io](http://pantheon.io) you can use the web interface to upload the database and files under “Database / Files” → “Import”. Run `ddev export-db --file=/path/to/<site>_db.sql.gz` for the database and `cd <docroot>/sites/default/files && tar -czf /path/to/<sitename>_files.tar.gz .` to create a files tarball and upload them. Advanced users can also use the “terminus” tool, which is bundled in the web container and already authenticated if you’ve done a `ddev auth pantheon` with [our integration](https://ddev.readthedocs.io/en/stable/users/providers/pantheon/). So `ddev ssh` and use terminus to upload.
+If you’re deploying to [Pantheon.io](http://pantheon.io) you can use the web interface to upload the database and files under “Database / Files” → “Import”. Run `ddev export-db --file=/path/to/<site>_db.sql.gz` for the database and `cd <docroot>/sites/default/files && tar -czf /path/to/<sitename>_files.tar.gz .` to create a files tarball and upload them. Advanced users can also use the “terminus” tool, which is bundled in the web container and already authenticated if you’ve done a `ddev auth pantheon` with [our integration](https://docs.ddev.com/en/stable/users/providers/pantheon/). So `ddev ssh` and use terminus to upload.
 
 ### Complexities and Alternatives
 
