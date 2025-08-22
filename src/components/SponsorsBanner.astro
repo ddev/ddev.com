@@ -23,11 +23,11 @@ function formatCurrency(value: number): string {
     --ddev-sub-color-blue-button-hover: #015471;
     --ddev-sub-color-black: #1e2127;
     --ddev-sub-color-white: #ffffff;
-    --ddev-sub-spacing: 1rem;
+    --ddev-sub-spacing: 0.5rem;
     font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif);
     background: var(--ddev-sub-color-black);
     color: var(--ddev-sub-color-white);
-    padding: var(--ddev-sub-spacing);
+    padding: var(--ddev-sub-spacing) 1rem;
     display: block;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   }
@@ -53,19 +53,51 @@ function formatCurrency(value: number): string {
     min-width: 0;
   }
 
-  .ddev-sponsor-us-banner__amounts {
+  .ddev-sponsor-us-banner__desktop-layout {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .ddev-sponsor-us-banner__mobile-layout {
+    display: none;
+  }
+
+  .ddev-sponsor-us-banner__raised,
+  .ddev-sponsor-us-banner__goal {
     font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  .ddev-sponsor-us-banner__percent {
+    font-size: 12px;
+    font-weight: normal;
+  }
+
+  .ddev-sponsor-us-banner__cta {
+    font-size: 12px;
     font-weight: bold;
   }
 
+  .ddev-sponsor-us-banner__progress-container {
+    flex-grow: 1;
+    min-width: 120px;
+  }
+
   .ddev-sponsor-us-banner__progress {
-    height: 8px;
-    border-radius: 4px;
+    height: 5px;
+    border-radius: 3px;
     background: rgba(255,255,255,0.2);
     overflow: hidden;
-    margin: 6px 0;
+    margin: 4px 0;
+  }
+
+  .ddev-sponsor-us-banner__progress-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-bottom: 4px;
   }
 
   .ddev-sponsor-us-banner__fill {
@@ -75,21 +107,23 @@ function formatCurrency(value: number): string {
     transition: width 0.5s ease;
   }
 
+  .ddev-sponsor-us-banner__amounts {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+  }
+
   .ddev-sponsor-us-banner__meta {
     display: flex;
     justify-content: space-between;
     font-size: 12px;
-    margin-bottom: 0.5rem;
-  }
-
-  .ddev-sponsor-us-banner__cta {
-    font-weight: bold;
+    margin-top: 0.25rem;
   }
 
   .ddev-sponsor-us-banner__link {
     background-color: var(--ddev-sub-color-blue-button);
     color: var(--ddev-sub-color-white);
-    padding: 0.6rem 1rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 4px;
     border: none;
     font-weight: bold;
@@ -98,6 +132,7 @@ function formatCurrency(value: number): string {
     white-space: nowrap;
     text-align: center;
     transition: background-color 0.2s ease;
+    font-size: 14px;
   }
 
   .ddev-sponsor-us-banner__link:hover {
@@ -105,15 +140,37 @@ function formatCurrency(value: number): string {
     text-decoration: none;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
+    .ddev-sponsor-us-banner__desktop-layout {
+      display: none;
+    }
+
+    .ddev-sponsor-us-banner__mobile-layout {
+      display: block;
+    }
+
+    .ddev-sponsor-us-banner__progress {
+      margin: 2px 0;
+    }
+  }
+
+  @media (max-width: 480px) {
     .ddev-sponsor-us-banner__inner {
       flex-direction: column;
       align-items: stretch;
-      text-align: center;
+      gap: 0.5rem;
     }
 
     .ddev-sponsor-us-banner__link {
       width: 100%;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .ddev-sponsor-us-banner__meta {
+      flex-direction: column;
+      gap: 0.25rem;
+      text-align: center;
     }
   }
 </style>
@@ -121,16 +178,34 @@ function formatCurrency(value: number): string {
 <div class="ddev-sponsor-us-banner">
   <div class="ddev-sponsor-us-banner__inner">
     <div class="ddev-sponsor-us-banner__content">
-      <div class="ddev-sponsor-us-banner__amounts">
+      <!-- Desktop Layout -->
+      <div class="ddev-sponsor-us-banner__desktop-layout">
         <span class="ddev-sponsor-us-banner__raised">Raised: {formatCurrency(income)}</span>
+        <div class="ddev-sponsor-us-banner__progress-container">
+          <div class="ddev-sponsor-us-banner__progress-text">
+            <span class="ddev-sponsor-us-banner__percent">{percentage}% of monthly goal</span>
+            <span class="ddev-sponsor-us-banner__cta">Help us cross the finish line!</span>
+          </div>
+          <div class="ddev-sponsor-us-banner__progress">
+            <div class="ddev-sponsor-us-banner__fill" style={{ width: `${percentage}%` }}></div>
+          </div>
+        </div>
         <span class="ddev-sponsor-us-banner__goal">Goal: {formatCurrency(goal)}</span>
       </div>
-      <div class="ddev-sponsor-us-banner__progress">
-        <div class="ddev-sponsor-us-banner__fill" style={{ width: `${percentage}%` }}></div>
-      </div>
-      <div class="ddev-sponsor-us-banner__meta">
-        <span class="ddev-sponsor-us-banner__percent">{percentage}% of monthly goal</span>
-        <span class="ddev-sponsor-us-banner__cta">Help us cross the finish line!</span>
+
+      <!-- Mobile Layout -->
+      <div class="ddev-sponsor-us-banner__mobile-layout">
+        <div class="ddev-sponsor-us-banner__amounts">
+          <span class="ddev-sponsor-us-banner__raised">Raised: {formatCurrency(income)}</span>
+          <span class="ddev-sponsor-us-banner__goal">Goal: {formatCurrency(goal)}</span>
+        </div>
+        <div class="ddev-sponsor-us-banner__progress">
+          <div class="ddev-sponsor-us-banner__fill" style={{ width: `${percentage}%` }}></div>
+        </div>
+        <div class="ddev-sponsor-us-banner__meta">
+          <span class="ddev-sponsor-us-banner__percent">{percentage}% of monthly goal</span>
+          <span class="ddev-sponsor-us-banner__cta">Help us cross the finish line!</span>
+        </div>
       </div>
     </div>
     <a class="ddev-sponsor-us-banner__link" href="https://github.com/sponsors/ddev" target="_blank">Sponsor Now</a>
@@ -158,10 +233,18 @@ function formatCurrency(value: number): string {
       const currentGoal = data.current_goal?.target_amount || goal;
       const percentage = Math.min((income / currentGoal) * 100, 100).toFixed(0);
 
-      document.querySelector('.ddev-sponsor-us-banner__raised').textContent = `Raised: ${formatCurrency(income)}`;
-      document.querySelector('.ddev-sponsor-us-banner__goal').textContent = `Goal: ${formatCurrency(currentGoal)}`;
-      document.querySelector('.ddev-sponsor-us-banner__percent').textContent = `${percentage}% of monthly goal`;
-      document.querySelector('.ddev-sponsor-us-banner__fill').style.width = `${percentage}%`;
+      document.querySelectorAll('.ddev-sponsor-us-banner__raised').forEach(el => {
+        el.textContent = `Raised: ${formatCurrency(income)}`;
+      });
+      document.querySelectorAll('.ddev-sponsor-us-banner__goal').forEach(el => {
+        el.textContent = `Goal: ${formatCurrency(currentGoal)}`;
+      });
+      document.querySelectorAll('.ddev-sponsor-us-banner__percent').forEach(el => {
+        el.textContent = `${percentage}% of monthly goal`;
+      });
+      document.querySelectorAll('.ddev-sponsor-us-banner__fill').forEach(el => {
+        el.style.width = `${percentage}%`;
+      });
     } catch (error) {
       console.error('Error updating UI:', error);
     }
