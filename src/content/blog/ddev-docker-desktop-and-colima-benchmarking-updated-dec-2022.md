@@ -11,7 +11,7 @@ categories:
   - Performance
 ---
 
-I wrote about performance comparisons between [Docker Desktop](https://www.docker.com/products/docker-desktop/) and [Colima](https://github.com/abiosoft/colima) on macOS both with and without [Mutagen](https://ddev.readthedocs.io/en/stable/users/install/performance/#mutagen) in March, 2022, and wanted to update the numbers. Things are looking great everywhere. There are now many more permutations, though. Colima has 9p and VirtioFS file mounting, and Docker Desktop’s VirtioFS implementation now works well (and is fast!).
+I wrote about performance comparisons between [Docker Desktop](https://www.docker.com/products/docker-desktop/) and [Colima](https://github.com/abiosoft/colima) on macOS both with and without [Mutagen](https://docs.ddev.com/en/stable/users/install/performance/#mutagen) in March, 2022, and wanted to update the numbers. Things are looking great everywhere. There are now many more permutations, though. Colima has 9p and VirtioFS file mounting, and Docker Desktop’s VirtioFS implementation now works well (and is fast!).
 
 (**Edited 2022-12-28**: Colima version 0.5.2 solved a couple of significant performance problems with VirtioFS mounting, so I updated the fantastic numbers and removed the caveat about `ddev import-db` being slow.)
 
@@ -44,9 +44,9 @@ For comparison on the results between March 2022 and today:
 
 For more raw numbers and the Drush install times, [here’s the spreadsheet link](https://docs.google.com/spreadsheets/d/1GG69B94ftYlkrNeoI55eUrxLVwIVYkt4mv-R2nJx6YU/edit?usp=sharing).
 
-If you’re interested in Colima with DDEV, see the [docs](https://ddev.readthedocs.io/en/stable/users/docker%5Finstallation/#macos-installation-colima). It’s super easy to set up, and even though it’s a young project, it’s well-maintained and people have been having good experiences with it. And for those of you concerned about Docker Desktop’s new subscription license fee, it’s a great option. But as you see here, it’s a great option for other reasons.
+If you’re interested in Colima with DDEV, see the [docs](https://docs.ddev.com/en/stable/users/docker%5Finstallation/#macos-installation-colima). It’s super easy to set up, and even though it’s a young project, it’s well-maintained and people have been having good experiences with it. And for those of you concerned about Docker Desktop’s new subscription license fee, it’s a great option. But as you see here, it’s a great option for other reasons.
 
-And of course, if you haven’t tried out Mutagen with DDEV on macOS, it’s time. Run `ddev config global --mutagen-enabled` and `ddev restart` and you’re on your way, see [DDEV docs](https://ddev.readthedocs.io/en/stable/users/performance/#using-mutagen). Although we were all worried about filesystem consistency originally, the feature has turned out to be shockingly reliable, but read the docs for caveats.
+And of course, if you haven’t tried out Mutagen with DDEV on macOS, it’s time. Run `ddev config global --mutagen-enabled` and `ddev restart` and you’re on your way, see [DDEV docs](https://docs.ddev.com/en/stable/users/performance/#using-mutagen). Although we were all worried about filesystem consistency originally, the feature has turned out to be shockingly reliable, but read the docs for caveats.
 
 Some takeaways from this round of testing:
 
@@ -59,4 +59,4 @@ Some takeaways from this round of testing:
 
 Congratulations to the [Colima](https://github.com/abiosoft/colima), [Lima](https://github.com/lima-vm/lima), and [Docker Desktop](https://www.docker.com/products/docker-desktop/), and [Mutagen](https://mutagen.io) teams for an amazing year of progress!
 
-Interested in engaging more with the DDEV community? Catch us in the [Discord Server](/s/discord), on [Stack Overflow](https://stackoverflow.com/tags/ddev), and in the [Issue Queue on GitHub](https://github.com/ddev/ddev/issues). We’d love to have you. Interested in knowing more about DDEV? It’s quick and easy to start up in the [docs](https://ddev.readthedocs.io/en/stable/).
+Interested in engaging more with the DDEV community? Catch us in the [Discord Server](/s/discord), on [Stack Overflow](https://stackoverflow.com/tags/ddev), and in the [Issue Queue on GitHub](https://github.com/ddev/ddev/issues). We’d love to have you. Interested in knowing more about DDEV? It’s quick and easy to start up in the [docs](https://docs.ddev.com/en/stable/).

@@ -69,7 +69,7 @@ While `start_period` is a good gauge of how long we should wait... its default i
 
 ## How long does DDEV wait for the services to become healthy?
 
-During `ddev start` we wait for the maximum of all containers' `start_period` or the [`default_container_timeout`](https://ddev.readthedocs.io/en/stable/users/configuration/config/#default_container_timeout) value from `.ddev/config.yaml`
+During `ddev start` we wait for the maximum of all containers' `start_period` or the [`default_container_timeout`](https://docs.ddev.com/en/stable/users/configuration/config/#default_container_timeout) value from `.ddev/config.yaml`
 
 The default value for the wait time is 120s. In other words, DDEV will wait for 120s for all containers to become ready unless `default_container_timeout` is set to a different value.
 

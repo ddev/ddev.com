@@ -24,9 +24,9 @@ This guide covers how to downgrade `terminus` and will also explain how to use t
 additional custom tools.
 
 Please note there are many ways to install packages in a container. We will
-cover [extra Dockerfiles](https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/#adding-extra-dockerfiles-for-webimage-and-dbimage)
+cover [extra Dockerfiles](https://docs.ddev.com/en/stable/users/extend/customizing-images/#adding-extra-dockerfiles-for-webimage-and-dbimage)
 here, but also [check `webimage_extra_packages` and `dbimage_extra_packages` in your
-`config.yaml`for more details](https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/#adding-extra-debian-packages-with-webimage_extra_packages-and-dbimage_extra_packages)).
+`config.yaml`for more details](https://docs.ddev.com/en/stable/users/extend/customizing-images/#adding-extra-debian-packages-with-webimage_extra_packages-and-dbimage_extra_packages)).
 
 ## Case study: Manually Downgrading Terminus
 
@@ -60,14 +60,14 @@ RUN curl -s -L https://github.com/junegunn/fzf/releases/download/v${FZF_VERSION}
 
 ## Resources
 
-- [DDEV Pantheon integration documentation](https://ddev.readthedocs.io/en/stable/users/providers/pantheon/)
-- [Adding extra Dockerfiles for `webimage` and `dbimage`](https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/#adding-extra-dockerfiles-for-webimage-and-dbimage)
-- [Adding extra Debian packages in DDEV](https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/#adding-extra-debian-packages-with-webimage_extra_packages-and-dbimage_extra_packages)
+- [DDEV Pantheon integration documentation](https://docs.ddev.com/en/stable/users/providers/pantheon/)
+- [Adding extra Dockerfiles for `webimage` and `dbimage`](https://docs.ddev.com/en/stable/users/extend/customizing-images/#adding-extra-dockerfiles-for-webimage-and-dbimage)
+- [Adding extra Debian packages in DDEV](https://docs.ddev.com/en/stable/users/extend/customizing-images/#adding-extra-debian-packages-with-webimage_extra_packages-and-dbimage_extra_packages)
 - [Customizing DDEV images with a custom Dockerfile](https://ddev.com/blog/customizing-ddev-local-images-with-a-custom-dockerfile/)
 
 ## Contribute to DDEV
 
 If you like DDEV then you are welcome to contribute! You can join the [Discord channel](/s/discord),
-create a new [DDEV Add-on](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/),
+create a new [DDEV Add-on](https://docs.ddev.com/en/stable/users/extend/additional-services/),
 or blog about how you use DDEV in your daily workflow.
-We’re always happy to hear from you on any of our [support channels](https://ddev.readthedocs.io/en/stable/users/support/).
+We’re always happy to hear from you on any of our [support channels](https://docs.ddev.com/en/stable/users/support/).

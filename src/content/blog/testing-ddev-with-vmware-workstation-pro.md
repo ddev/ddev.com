@@ -207,7 +207,7 @@ At this point, the VM uses more disk space than needed. We can [shrink guest on 
 
 VMware Menu > VM > Snapshot > Take snapshot.
 
-Install [Docker](https://ddev.readthedocs.io/en/stable/users/install/docker-installation/#docker-installation-windows) and [DDEV](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#windows). Create additional snapshots as needed.
+Install [Docker](https://docs.ddev.com/en/stable/users/install/docker-installation/#docker-installation-windows) and [DDEV](https://docs.ddev.com/en/stable/users/install/ddev-installation/#windows). Create additional snapshots as needed.
 
 ## Installing Linux
 
@@ -252,7 +252,7 @@ sudo systemctl daemon-reload
 sudo mount -a
 ```
 
-[Shrink Linux VM disk](https://wiki.vi-toolkit.com/index.php?title=Shrink_guest_on_hosted_platform), take a snapshot, then proceed with installing [Docker](https://ddev.readthedocs.io/en/stable/users/install/docker-installation/#docker-installation-linux) and [DDEV](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#ddev-installation-linux). Create additional snapshots as needed.
+[Shrink Linux VM disk](https://wiki.vi-toolkit.com/index.php?title=Shrink_guest_on_hosted_platform), take a snapshot, then proceed with installing [Docker](https://docs.ddev.com/en/stable/users/install/docker-installation/#docker-installation-linux) and [DDEV](https://docs.ddev.com/en/stable/users/install/ddev-installation/#ddev-installation-linux). Create additional snapshots as needed.
 
 ## How Do You Test DDEV?
 

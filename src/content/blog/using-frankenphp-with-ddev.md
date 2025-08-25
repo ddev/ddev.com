@@ -24,7 +24,7 @@ You can either run FrankenPHP as a separate service (lets you install extra PHP 
 
 ### Generic web server
 
-This blog shows examples of the recently added [DDEV's generic web server](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#using-nodejs-as-ddevs-primary-web-server), which supports flexible configurations. It allows you to use any custom web server you want, including Node.js, Python, Ruby, etc.
+This blog shows examples of the recently added [DDEV's generic web server](https://docs.ddev.com/en/stable/users/extend/customization-extendibility/#using-nodejs-as-ddevs-primary-web-server), which supports flexible configurations. It allows you to use any custom web server you want, including Node.js, Python, Ruby, etc.
 
 ## DDEV FrankenPHP Add-on
 
@@ -60,7 +60,7 @@ If you want to suggest some feature or found a bug, feel free to [open an issue]
 
 ## Running FrankenPHP in the Web Container
 
-Alternatively, FrankenPHP can be run inside the `web` container. This example from the [DDEV quickstart](https://ddev.readthedocs.io/en/stable/users/quickstart/#generic-frankenphp) shows a setup (for a Drupal 11 project) where FrankenPHP is added as an extra daemon.
+Alternatively, FrankenPHP can be run inside the `web` container. This example from the [DDEV quickstart](https://docs.ddev.com/en/stable/users/quickstart/#generic-frankenphp) shows a setup (for a Drupal 11 project) where FrankenPHP is added as an extra daemon.
 
 ### ⚙️ Installation:
 
@@ -105,9 +105,9 @@ ddev launch $(ddev drush uli)
 ## Resources
 
 - [FrankenPHP documentation](https://frankenphp.dev/docs/)
-- [DDEV's generic web server](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#using-nodejs-as-ddevs-primary-web-server)
+- [DDEV's generic web server](https://docs.ddev.com/en/stable/users/extend/customization-extendibility/#using-nodejs-as-ddevs-primary-web-server)
 - [FrankenPHP add-on](https://github.com/stasadev/ddev-frankenphp)
-- [FrankenPHP quickstart](https://ddev.readthedocs.io/en/stable/users/quickstart/#generic-frankenphp)
+- [FrankenPHP quickstart](https://docs.ddev.com/en/stable/users/quickstart/#generic-frankenphp)
 - [Hola FrankenPHP! Laravel Octane Servers Comparison: Pushing the Boundaries of Performance](https://medium.com/beyn-technology/hola-frankenphp-laravel-octane-servers-comparison-pushing-the-boundaries-of-performance-d3e7ad8e652c)
 
 ## Benchmarking

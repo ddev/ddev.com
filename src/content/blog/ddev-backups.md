@@ -29,9 +29,9 @@ We need a backup strategy for each of these.
 
 **Databases** need an extra step for safety. In general, avoid working on a database that cannot be recreated by code (with migrations, for example). However, most of us want to have a database quickly available as a good place to start from. Since databases are typically in a binary format that can't reliably be backed up, we need a good way to make a copy. DDEV has two great ways to turn databases into files, `ddev snapshot` and `ddev export-db`.
 
-- **[`ddev snapshot`](https://ddev.readthedocs.io/en/stable/users/usage/cli/#snapshotting-and-restoring-a-database)**, optionally with a `name` argument, takes a binary copy of all of your databases (most projects have just one) and saves it into the `.ddev/db_snapshots` directory as a gzipped binary file. You can snapshot all your registered projects with `ddev snapshot -a`.
+- **[`ddev snapshot`](https://docs.ddev.com/en/stable/users/usage/cli/#snapshotting-and-restoring-a-database)**, optionally with a `name` argument, takes a binary copy of all of your databases (most projects have just one) and saves it into the `.ddev/db_snapshots` directory as a gzipped binary file. You can snapshot all your registered projects with `ddev snapshot -a`.
 
-- **[`ddev export-db`](https://ddev.readthedocs.io/en/stable/users/usage/commands/#export-db)** exports a text-based dump of a single database to a named file. For example, `ddev export-db --file=.tarballs/db.sql.gz`. A text-based file can be imported into databases of related types, and not just its source type. For example, a MariaDB 10.11 database dump in this format can typically be imported into a MySQL 8.0 database.
+- **[`ddev export-db`](https://docs.ddev.com/en/stable/users/usage/commands/#export-db)** exports a text-based dump of a single database to a named file. For example, `ddev export-db --file=.tarballs/db.sql.gz`. A text-based file can be imported into databases of related types, and not just its source type. For example, a MariaDB 10.11 database dump in this format can typically be imported into a MySQL 8.0 database.
 
 - **Automating database backups**: Some people like to use a pre-stop hook to do a database backup, so that a database dump happens every time they do `ddev stop` or `ddev poweroff`. For example:
 

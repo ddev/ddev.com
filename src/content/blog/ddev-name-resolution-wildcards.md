@@ -71,7 +71,7 @@ Yes, you can set up a DNS provider on your own computer. [blocky](https://github
 
 ## Can I set up a domain name on my local network or company network?
 
-Yes, this is exactly the same. Normally you would have every DDEV-related domain name return `127.0.0.1` for the DNS name you're supporting. However, some people use this technique to [share DDEV sites inside a local network](https://ddev.readthedocs.io/en/stable/users/topics/sharing/#exposing-a-host-port-and-providing-a-direct-url).
+Yes, this is exactly the same. Normally you would have every DDEV-related domain name return `127.0.0.1` for the DNS name you're supporting. However, some people use this technique to [share DDEV sites inside a local network](https://docs.ddev.com/en/stable/users/topics/sharing/#exposing-a-host-port-and-providing-a-direct-url).
 
 ## Can I set up my own domain in DNS like `ddev.site`?
 
@@ -83,7 +83,7 @@ On WSL2, when you don't have internet, or your DNS is broken, or you're using a 
 
 ## No matter what, DDEV always wants to edit my `hosts` file (No DNS Rebinding)
 
-There is one DNS server configuration that disallows looking up any hostname that resolves to `127.0.0.1`. It's called preventing [DNS Rebinding](https://en.wikipedia.org/wiki/DNS_rebinding), and it happens most often to European users who have Fritzbox routers. The fix for this is covered in the [DDEV Docs](https://ddev.readthedocs.io/en/stable/users/usage/troubleshooting/#dns-rebinding-prohibited-mostly-on-fritzbox-routers) and it's easy and will make your life much easier.
+There is one DNS server configuration that disallows looking up any hostname that resolves to `127.0.0.1`. It's called preventing [DNS Rebinding](https://en.wikipedia.org/wiki/DNS_rebinding), and it happens most often to European users who have Fritzbox routers. The fix for this is covered in the [DDEV Docs](https://docs.ddev.com/en/stable/users/usage/troubleshooting/#dns-rebinding-prohibited-mostly-on-fritzbox-routers) and it's easy and will make your life much easier.
 
 However, if you don't have control over your router, there's another easy fix, and that is to use a trusted DNS server outside your network. To do this, change the DNS server configuration on your computer to `1.1.1.1` for Cloudflare's public DNS server, or `8.8.8.8` for Google's public DNS. Those will both do ordinary DNS resolution. There are lots of articles on the internet explaining how to change your computer's DNS servers, [here's one of them](https://www.hellotech.com/guide/for/how-to-change-dns-server-windows-mac). Unless you're on a corporate network with private DNS, this is unlikely to cause you any trouble and may resolve other difficulties, like removing some advertisements.
 
@@ -93,7 +93,7 @@ Try `ping -c 1 test.ddev.site`. If it doesn't ping `127.0.0.1`, it is broken. Pl
 
 ## What about using `additional_fqdns` in DDEV configuration?
 
-DDEV provides `additional_hostnames`, which works nicely most of the time, but there is also `additional_fqdns`. With a setting like `additional_fqdns: [one.two.example.com]` a DDEV project will respond to `https://one.two.example.com`, but DDEV will need to add `one.two.example.com` to the `hosts` file for it to work. The [docs](https://ddev.readthedocs.io/en/stable/users/configuration/config/#additional_hostnames) explain how to use it and what the consequences are.
+DDEV provides `additional_hostnames`, which works nicely most of the time, but there is also `additional_fqdns`. With a setting like `additional_fqdns: [one.two.example.com]` a DDEV project will respond to `https://one.two.example.com`, but DDEV will need to add `one.two.example.com` to the `hosts` file for it to work. The [docs](https://docs.ddev.com/en/stable/users/configuration/config/#additional_hostnames) explain how to use it and what the consequences are.
 
 Be exceptionally careful with "masking" real sites this way. It can be really confusing to add for example `additional_fqdns: [www.google.com]` to your configuration, because DDEV will then put `www.google.com` into your `hosts` file and you'll no longer be able to reach Google.
 

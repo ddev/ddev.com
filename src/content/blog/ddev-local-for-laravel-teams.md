@@ -33,11 +33,11 @@ Meanwhile, I was searching for one solution which would help to unify the experi
 
 > Cloning the project should be (almost) enough for getting up and running regardless of the skills of the team member.
 
-[DDEV](https://ddev.readthedocs.io/en/stable/) combines a lot of the benefits of the other Laravel LDEs into one solution. In the context of a team, DDEV can bring additional benefits. It’s easy to learn for the members who set it up and customize it. And it’s super easy to use for the rest of the team to run multiple projects on any OS.
+[DDEV](https://docs.ddev.com/en/stable/) combines a lot of the benefits of the other Laravel LDEs into one solution. In the context of a team, DDEV can bring additional benefits. It’s easy to learn for the members who set it up and customize it. And it’s super easy to use for the rest of the team to run multiple projects on any OS.
 
 After initial setup and configuration of the project, you can commit the DDEV configuration in your project repository. The next team member only need clone the repository and run `ddev start`, `ddev composer install` and `ddev exec artisan` (to run migrations, etc) inside of the project (or you can define a custom command that will replace them). Every team member can override parts of the config (like enabling NFS support or Xdebug) without committing it. The time between cloning and starting work on the code is reduced to almost nothing.
 
-In the end, the switch to DDEV did save a lot of time on the team (I have not heard about any LDE problems, since we switched 😀 ). That’s also the reason why I decided to [“officially” add Laravel to DDEV](https://ddev.readthedocs.io/en/stable/users/quickstart/#laravel) as a contribution to the open source project.
+In the end, the switch to DDEV did save a lot of time on the team (I have not heard about any LDE problems, since we switched 😀 ). That’s also the reason why I decided to [“officially” add Laravel to DDEV](https://docs.ddev.com/en/stable/users/quickstart/#laravel) as a contribution to the open source project.
 
 ## Additional tips for Laravel + DDEV
 
@@ -116,10 +116,10 @@ xdebug_enabled: false
 
 # nfs_mount_enabled: false
 # Great performance improvement but requires host configuration first.
-# See https://ddev.readthedocs.io/en/stable/users/performance/#using-nfs-to-mount-the-project-into-the-container
+# See https://docs.ddev.com/en/stable/users/performance/#using-nfs-to-mount-the-project-into-the-container
 nfs_mount_enabled: false
 ```
 
 ## Conclusion
 
-Today, as Laravel developers, we have a lot of solutions to make our workflow more efficient and enjoyable. Now with DDEV we get one tool that helps us to push our productivity and ensures comfort by committing configuration that runs the same local development environment on every team members’ machine. Get started with your own Laravel project and DDEV using the [quickstart guide](https://ddev.readthedocs.io/en/stable/users/quickstart/#laravel)!
+Today, as Laravel developers, we have a lot of solutions to make our workflow more efficient and enjoyable. Now with DDEV we get one tool that helps us to push our productivity and ensures comfort by committing configuration that runs the same local development environment on every team members’ machine. Get started with your own Laravel project and DDEV using the [quickstart guide](https://docs.ddev.com/en/stable/users/quickstart/#laravel)!

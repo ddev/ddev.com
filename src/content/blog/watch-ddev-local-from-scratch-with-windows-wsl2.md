@@ -66,7 +66,7 @@ _Considerations:_
 - Understanding Docker Desktop vs Docker CE trade-offs for professional development
 - Best practices for file system performance and cross-platform compatibility
 
-This screencast follows the official DDEV [WSL2 Installation Docs](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#ddev-installation-windows), but provides additional context, troubleshooting tips, and real-world examples to ensure your success.
+This screencast follows the official DDEV [WSL2 Installation Docs](https://docs.ddev.com/en/stable/users/install/ddev-installation/#ddev-installation-windows), but provides additional context, troubleshooting tips, and real-world examples to ensure your success.
 
 **Here's the video table of contents (opens on YouTube):**
 
@@ -92,8 +92,8 @@ This screencast follows the official DDEV [WSL2 Installation Docs](https://ddev.
 
 ### 📖 Documentation
 
-- [DDEV documentation](https://ddev.readthedocs.io/en/stable/) - Complete DDEV documentation
-- [WSL2 and DDEV Installation docs](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/#ddev-installation-windows) - Official installation guide
+- [DDEV documentation](https://docs.ddev.com/en/stable/) - Complete DDEV documentation
+- [WSL2 and DDEV Installation docs](https://docs.ddev.com/en/stable/users/install/ddev-installation/#ddev-installation-windows) - Official installation guide
 
 ### 💬 Community Support
 

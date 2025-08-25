@@ -62,7 +62,7 @@ I never tire of reminding DDEV users that the `ddev poweroff` and its neighbor `
 
 Docker can become unpredictable when you near the memory limit. To avoid causing strange behavior in Docker, I like to keep my memory usage low. By default, it’s set to a limit of 2 GB, and you can have several projects running no problem. Once I get close to that limit, I dump everything with `ddev poweroff`, secure in the knowledge that my containers are removed, not eating memory, and my data is intact.
 
-When you run `ddev stop` from the working directory (or `ddev stop <project1> <project2>` DDEV removes the containers, but it does not remove the data. Check out the docs on [removing a project.](https://ddev.readthedocs.io/en/stable/users/cli-usage/#removing-projects-from-ddev-local)
+When you run `ddev stop` from the working directory (or `ddev stop <project1> <project2>` DDEV removes the containers, but it does not remove the data. Check out the docs on [removing a project.](https://docs.ddev.com/en/stable/users/cli-usage/#removing-projects-from-ddev-local)
 
 Use the `--all` or `-a` flag to affect all running projects. For example, remove all running projects at once run this command:
 
@@ -76,7 +76,7 @@ This will help you keep Docker running smoothly.
 
 ### What’s your DDEV project up to? Check the logs.
 
-DDEV’s logs feature is useful to show you what your project is up to. It could be useful when you’re [debugging issues with Docker and DDEV](debugging-docker-on-windows-mac-and-linux.md), too. Check out the docs on [log access](https://ddev.readthedocs.io/en/stable/users/cli-usage/#log-access). Run `ddev logs` command to easily view logs from the web container. To follow the log in real time, use this command from within the project root folder:
+DDEV’s logs feature is useful to show you what your project is up to. It could be useful when you’re [debugging issues with Docker and DDEV](debugging-docker-on-windows-mac-and-linux.md), too. Check out the docs on [log access](https://docs.ddev.com/en/stable/users/cli-usage/#log-access). Run `ddev logs` command to easily view logs from the web container. To follow the log in real time, use this command from within the project root folder:
 
 `ddev logs -f`
 
@@ -96,7 +96,7 @@ It’s easy to change the PHP versions on a per-project basis either in the conf
 
 `ddev config --php-version 7.4`
 
-Check the docs on how to [change the PHP versions](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#changing-php-version).
+Check the docs on how to [change the PHP versions](https://docs.ddev.com/en/stable/users/extend/customization-extendibility/#changing-php-version).
 
 DDEV directly supports versions from 5.6 through 7.4, and you can even go back farther into the past using the [Old PHP recipe in github.com/ddev/ddev-contrib](https://github.com/ddev/ddev-contrib/tree/master/docker-compose-services/old%5Fphp).
 
@@ -116,7 +116,7 @@ With DDEV you can print the docker-compose configuration of the current project.
 To do that, redirect `ddev debug compose-config`, for example:
 `ddev debug compose-config >/tmp/fullconfig.yaml`
 
-This command outputs the fully preprocessed docker-compose configuration of the current project. You can even run `docker-compose up -f ~/tmp/fullconfig.yaml` in this example to see docker-compose doing everything it does. DDEV users who understand Docker Compose and want to fiddle with those recipes find this really helpful. You can use Docker Compose to do things like [defining additional services](https://ddev.readthedocs.io/en/stable/users/extend/custom-compose-files/). So if you’ve used Docker Compose add-ons, this will include all of those and what actually gets used in your project.
+This command outputs the fully preprocessed docker-compose configuration of the current project. You can even run `docker-compose up -f ~/tmp/fullconfig.yaml` in this example to see docker-compose doing everything it does. DDEV users who understand Docker Compose and want to fiddle with those recipes find this really helpful. You can use Docker Compose to do things like [defining additional services](https://docs.ddev.com/en/stable/users/extend/custom-compose-files/). So if you’ve used Docker Compose add-ons, this will include all of those and what actually gets used in your project.
 
 ### JSON output for geeks
 
@@ -130,7 +130,7 @@ I’ve seen this used in some creative ways. In one case, I saw someone use JSON
 
 ### Thanks for your feedback!
 
-Part of building this project is working directly with our users to improve DDEV. A lot of the tips in this post are based on [community discussions](https://ddev.readthedocs.io/en/stable/users/support/) in Slack and on Stack Overflow. When you find something new, we get it into the documentation and the help files as fast as we can. It’s also a very important channel for us to find out how and where we can make improvements.
+Part of building this project is working directly with our users to improve DDEV. A lot of the tips in this post are based on [community discussions](https://docs.ddev.com/en/stable/users/support/) in Slack and on Stack Overflow. When you find something new, we get it into the documentation and the help files as fast as we can. It’s also a very important channel for us to find out how and where we can make improvements.
 
 Coming soon: We’ll be rolling out opt-in data collection and error reporting to help us make DDEV even better even faster. When you opt-in, you’ll be contributing data on how you’re using our open source tool and where you’re hitting issues. This will be a big factor in guiding product decisions. The more people who opt-in, the better the tool will become. Keep an eye out on future releases!
 

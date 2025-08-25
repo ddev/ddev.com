@@ -11,7 +11,7 @@ categories:
   - Videos
 ---
 
-DDEV is a powerful local development tool that many of you are fond of for its simplicity and extensibility. Recent versions of [DDEV (v1.10+)](https://ddev.readthedocs.io/en/stable/) add custom commands and loads of other goodies we’d like to show you how to use. In this screencast and tutorial, we’ll show you how to make use of DDEV custom commands, adding web server packages, and adding extras in `.ddev/homeadditions` to support your specific project needs.
+DDEV is a powerful local development tool that many of you are fond of for its simplicity and extensibility. Recent versions of [DDEV (v1.10+)](https://docs.ddev.com/en/stable/) add custom commands and loads of other goodies we’d like to show you how to use. In this screencast and tutorial, we’ll show you how to make use of DDEV custom commands, adding web server packages, and adding extras in `.ddev/homeadditions` to support your specific project needs.
 
 When in doubt, update DDEV on your machine and run `ddev config` on a project before getting started with new features.
 
@@ -57,8 +57,8 @@ Watch the video below and read the detailed instructions to configure your own p
 
 **To review,** we used three advanced features of ddev:
 
-- Added an extra Debian package (`zsh`) with [`webimage_extra_packages`](https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/#adding-extra-debian-packages-with-webimage%5Fextra%5Fpackages-and-dbimage%5Fextra%5Fpackages)
-- Added a custom command (`zsh`) in `.ddev/commands/web` by adding a simple script ([docs](https://ddev.readthedocs.io/en/stable/users/extend/custom-commands/))
-- Added extra stuff (`oh-my-zsh` and `.zshrc`) into `.ddev/homeadditions` that will be added to the home directory in the web container on every `ddev start` ([docs](https://ddev.readthedocs.io/en/stable/users/extend/in-container-configuration/)).
+- Added an extra Debian package (`zsh`) with [`webimage_extra_packages`](https://docs.ddev.com/en/stable/users/extend/customizing-images/#adding-extra-debian-packages-with-webimage%5Fextra%5Fpackages-and-dbimage%5Fextra%5Fpackages)
+- Added a custom command (`zsh`) in `.ddev/commands/web` by adding a simple script ([docs](https://docs.ddev.com/en/stable/users/extend/custom-commands/))
+- Added extra stuff (`oh-my-zsh` and `.zshrc`) into `.ddev/homeadditions` that will be added to the home directory in the web container on every `ddev start` ([docs](https://docs.ddev.com/en/stable/users/extend/in-container-configuration/)).
 
-Happy customizing! If you have questions, check out our [support channels](https://ddev.readthedocs.io/en/stable/users/support/).
+Happy customizing! If you have questions, check out our [support channels](https://docs.ddev.com/en/stable/users/support/).

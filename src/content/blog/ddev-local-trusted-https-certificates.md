@@ -32,4 +32,4 @@ There is a tiny bit of one-time setup to get your OS and browser to trust the ro
 
 This entire feature is made possible by the outstanding [mkcert](https://github.com/FiloSottile/mkcert) project, another major triumph of open-source and open-source collaboration. Thanks to [@FiloSottile](https://github.com/FiloSottile) for an outstanding project.
 
-The [DDEV Installation Documentation](https://ddev.readthedocs.io/en/stable/#installation) has full details about mkcert operation.
+The [DDEV Installation Documentation](https://docs.ddev.com/en/stable/#installation) has full details about mkcert operation.

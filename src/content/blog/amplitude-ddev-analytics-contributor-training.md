@@ -38,7 +38,7 @@ Here's our October 31, 2023 [Contributor Training](/blog/category/training) on e
 
 - https://academy.amplitude.com/
 - https://help.amplitude.com/
-- https://ddev.readthedocs.io/en/latest/developers/building-contributing/#examining-data-on-amplitudecom
+- https://docs.ddev.com/en/latest/developers/building-contributing/#examining-data-on-amplitudecom
 
 ## Contributions welcome!
 

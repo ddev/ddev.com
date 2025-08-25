@@ -22,7 +22,7 @@ Here's our July 10, 2024 [Contributor Training](/blog/category/training) on Adva
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DzFa6CiHxzs?si=cMMx19RcIwQm23gs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
-The basics of creating a DDEV Add-on are super easy, you can click a button on the Add-on template and you're off and running. There are more details in the [Add-on Template](https://github.com/ddev/ddev-addon-template), in the [DDEV docs](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/#creating-an-additional-service-for-ddev-get), and in the [original add-on training](https://www.youtube.com/watch?v=TmXqQe48iqE).
+The basics of creating a DDEV Add-on are super easy, you can click a button on the Add-on template and you're off and running. There are more details in the [Add-on Template](https://github.com/ddev/ddev-addon-template), in the [DDEV docs](https://docs.ddev.com/en/stable/users/extend/additional-services/#creating-an-additional-service-for-ddev-get), and in the [original add-on training](https://www.youtube.com/watch?v=TmXqQe48iqE).
 
 ## Adding project (or global) custom commands
 
@@ -85,7 +85,7 @@ Examples:
 - [ddev-solr](https://github.com/ddev/ddev-solr/blob/main/docker-compose.solr.yaml)
 - [ddev-memcached](https://github.com/ddev/ddev-memcached/blob/main/docker-compose.memcached.yaml)
 
-See the [general docs on extra services](https://ddev.readthedocs.io/en/stable/users/extend/custom-compose-files/#third-party-services-may-need-to-trust-ddev-webserver).
+See the [general docs on extra services](https://docs.ddev.com/en/stable/users/extend/custom-compose-files/#third-party-services-may-need-to-trust-ddev-webserver).
 
 ## Interacting with users during `install.yaml` installs
 
@@ -129,7 +129,7 @@ Some add-ons may require a specific version of DDEV.
 
 ## Reading and using YAML files, including config.yaml (yaml_read_files)
 
-`ddev add-on get` can read the contents of arbitrary YAML files, see [docs](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/#template-action-replacements-advanced).
+`ddev add-on get` can read the contents of arbitrary YAML files, see [docs](https://docs.ddev.com/en/stable/users/extend/additional-services/#template-action-replacements-advanced).
 
 For example, in `ddev-platformsh` the `.platform.app.yaml` is read into the `platformapp` variable, and other files are read as well, see [install.yaml](https://github.com/ddev/ddev-platformsh/blob/bb7365e30ae68797602dd0f648bf16bb46cd62b3/install.yaml#L330-L333):
 
@@ -174,9 +174,9 @@ And of course you can add a `config.<add-on-name>_extra.yaml` to override what t
 
 - [DDEV Add-on Registry](https://addons.ddev.com)
 - [DDEV Add-on Maintenance Guide](ddev-add-on-maintenance-guide.md)
-- [DDEV docs](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/) on add-ons
+- [DDEV docs](https://docs.ddev.com/en/stable/users/extend/additional-services/) on add-ons
 - [Previous Add-on Training](https://www.youtube.com/watch?v=TmXqQe48iqE)
-- `docker-compose.*.yaml` [docs](https://ddev.readthedocs.io/en/stable/users/extend/custom-compose-files/)
+- `docker-compose.*.yaml` [docs](https://docs.ddev.com/en/stable/users/extend/custom-compose-files/)
 - ddev-addon-template [README](https://github.com/ddev/ddev-addon-template)
 - Learn by studying other add-ons. Official ones at `ddev add-on list` and all at `ddev add-on list --all`
 

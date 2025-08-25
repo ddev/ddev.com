@@ -26,7 +26,7 @@ The combination of [PhpStorm](https://www.jetbrains.com/phpstorm/) and [DDEV](ht
 
 What we’re doing in this tutorial:
 
-- [Installing DDEV](https://ddev.readthedocs.io/en/stable/#homebrewlinuxbrew-macoslinux)
+- [Installing DDEV](https://docs.ddev.com/en/stable/#homebrewlinuxbrew-macoslinux)
 - Installing PhpStorm (we use Homebrew here, but you can install it with a download)
 - Setting a breakpoint
 - Telling PhpStorm to listen for Xdebug
@@ -49,7 +49,7 @@ What we’re doing in this tutorial:
 
 **Resources for you:**
 
-- DDEV documentation: <https://ddev.readthedocs.io>
-- [DDEV Xdebug docs](https://ddev.readthedocs.io/en/stable/users/step-debugging/) (including troubleshooting)
-- [Support docs](https://ddev.readthedocs.io/en/stable/users/support/): Drupal Slack and TYPO3 Slack #ddev, gitter #ddev, Stack Overflow, and the [DDEV issue queue](https://github.com/ddev/ddev/issues)
+- DDEV documentation: <https://docs.ddev.com>
+- [DDEV Xdebug docs](https://docs.ddev.com/en/stable/users/step-debugging/) (including troubleshooting)
+- [Support docs](https://docs.ddev.com/en/stable/users/support/): Drupal Slack and TYPO3 Slack #ddev, gitter #ddev, Stack Overflow, and the [DDEV issue queue](https://github.com/ddev/ddev/issues)
 - [DDEV Project Repository](https://github.com/ddev/ddev)

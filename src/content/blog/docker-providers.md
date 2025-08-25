@@ -20,9 +20,9 @@ Each of DDEV’s officially supported Docker providers has full automated testin
 
 **A credit before we get down to the differences:** We want to thank Docker, Inc. for their amazing maintenance of a groundbreaking open-source product, as well as all their commercial products. Each of the Docker providers below incorporates the open-source Docker/Moby project, presenting it in different ways. And Docker provides the [hub.docker.com](https://hub.docker.com) registry, where all of DDEV's Docker images are served from. And they grant DDEV membership in their [Docker Sponsored Open Source Program](https://www.docker.com/community/open-source/application/), which saves the DDEV Foundation money and also means that there are no rate limits on your usage of DDEV Docker images. Thank you, Docker!
 
-Want to know more about how Docker works and what Docker images and containers are? It's a deep rabbit-hole, but it's fun! [DDEV's usage is explained in the docs](https://ddev.readthedocs.io/en/stable/users/usage/architecture/#container-architecture) and [Docker's introduction](https://docs.docker.com/get-started/overview/) is another entrypoint for you.
+Want to know more about how Docker works and what Docker images and containers are? It's a deep rabbit-hole, but it's fun! [DDEV's usage is explained in the docs](https://docs.ddev.com/en/stable/users/usage/architecture/#container-architecture) and [Docker's introduction](https://docs.docker.com/get-started/overview/) is another entrypoint for you.
 
-macOS Docker installation for each of these is [in the docs](https://ddev.readthedocs.io/en/stable/users/install/docker-installation/#macos); the Docker providers and their differences are shown here:
+macOS Docker installation for each of these is [in the docs](https://docs.ddev.com/en/stable/users/install/docker-installation/#macos); the Docker providers and their differences are shown here:
 
 | Provider                                                          | Advantages                                      | Disadvantages                                       | Open Source? | Free? |
 | ----------------------------------------------------------------- | ----------------------------------------------- | --------------------------------------------------- | ------------ | ----- |
@@ -77,7 +77,7 @@ This technique won't break anything on your system, assuming you have a little d
 
 ## Switching to a New Docker Provider with DDEV
 
-If you've tried out a new Docker provider and have decided to switch, use [this tip from the FAQ](https://ddev.readthedocs.io/en/stable/users/usage/faq/#how-can-i-migrate-from-one-docker-provider-to-another).
+If you've tried out a new Docker provider and have decided to switch, use [this tip from the FAQ](https://docs.ddev.com/en/stable/users/usage/faq/#how-can-i-migrate-from-one-docker-provider-to-another).
 
 The bottom line is:
 

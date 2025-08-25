@@ -50,6 +50,6 @@ Interesting notes on MySQL 8.4+ on the web:
 - [Percona study of MySQL 8.4+ performance](https://www.percona.com/blog/sakila-where-are-you-going/)
 - [Percona update on MySQL 8.4+ performance improvements in 8.4.3+](https://www.percona.com/blog/mysql-8-4-3-and-9-1-0-major-performance-gains-revealed/)
 
-**We'd love to hear your reports about these results.** You can use or contribute to the scripts and database dumps at [rfay/database-performance](https://github.com/rfay/database-performance). It's easy to use DDEV HEAD too, see [docs](https://ddev.readthedocs.io/en/stable/developers/building-contributing/#testing-latest-commits-on-head).
+**We'd love to hear your reports about these results.** You can use or contribute to the scripts and database dumps at [rfay/database-performance](https://github.com/rfay/database-performance). It's easy to use DDEV HEAD too, see [docs](https://docs.ddev.com/en/stable/developers/building-contributing/#testing-latest-commits-on-head).
 
 Follow our [blog](https://ddev.com/blog/), [Bluesky](https://bsky.app/profile/ddev.bsky.social), [LinkedIn](https://www.linkedin.com/company/ddev-foundation), [Mastodon](https://fosstodon.org/@ddev), and join us on [Discord](/s/discord). And we'd love to have you sign up for the [monthly newsletter](/newsletter).

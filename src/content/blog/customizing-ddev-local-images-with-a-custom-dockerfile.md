@@ -13,12 +13,12 @@ categories:
   - Guides
 ---
 
-Did you know that you can customize [DDEV](https://github.com/ddev/ddev) Docker images with some very simple changes? See the [full docs](https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/) but we'll give some examples here.
+Did you know that you can customize [DDEV](https://github.com/ddev/ddev) Docker images with some very simple changes? See the [full docs](https://docs.ddev.com/en/stable/users/extend/customizing-images/) but we'll give some examples here.
 
 There are two major ways to customize your DDEV web image:
 
-1. Add a Debian package into the image with `webimage_extra_packages` ([docs](https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/#adding-extra-debian-packages-with-webimage_extra_packages-and-dbimage_extra_packages)).
-2. Add an “extension” Dockerfile with free-form instructions for adding onto the container ([docs](https://ddev.readthedocs.io/en/stable/users/extend/customizing-images/#adding-extra-dockerfiles-for-webimage-and-dbimage)).
+1. Add a Debian package into the image with `webimage_extra_packages` ([docs](https://docs.ddev.com/en/stable/users/extend/customizing-images/#adding-extra-debian-packages-with-webimage_extra_packages-and-dbimage_extra_packages)).
+2. Add an “extension” Dockerfile with free-form instructions for adding onto the container ([docs](https://docs.ddev.com/en/stable/users/extend/customizing-images/#adding-extra-dockerfiles-for-webimage-and-dbimage)).
 
 You can use these together (add packages with `webimage_extra_packages` and also do more sophisticated things in a Dockerfile).
 
@@ -80,4 +80,4 @@ RUN cp /etc/php/7.1/mods-available/mcrypt.ini /etc/php/${DDEV_PHP_VERSION}/mods-
 
 ## Join the conversation!
 
-We’d love to hear about your recipes! Discuss them in our [Discord channel](/s/discord), create a new [DDEV Add-on](https://ddev.readthedocs.io/en/stable/users/extend/additional-services/), and let us know when you do, or blog about them and give us a holler when you do. And we’re always happy to hear from you on any of our [support channels](https://ddev.readthedocs.io/en/stable/users/support/).
+We’d love to hear about your recipes! Discuss them in our [Discord channel](/s/discord), create a new [DDEV Add-on](https://docs.ddev.com/en/stable/users/extend/additional-services/), and let us know when you do, or blog about them and give us a holler when you do. And we’re always happy to hear from you on any of our [support channels](https://docs.ddev.com/en/stable/users/support/).
