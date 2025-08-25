@@ -7,13 +7,13 @@ import {
   DOCUMENTATION_URL,
   ADDON_REGISTRY_URL,
   DISCORD_URL,
-  EMAIL_URL,
   COPYRIGHT_HOLDER,
   MASTODON_URL,
   GITHUB_URL,
   STORE_URL,
   BLUESKY_URL,
   LINKEDIN_URL,
+  YOUTUBE_URL,
 } from "../const"
 
 import Icon from "./Icon.astro"
@@ -39,6 +39,11 @@ const navigation = {
     {
       name: "Discord",
       href: DISCORD_URL,
+      me: true
+    },
+    {
+      name: "YouTube",
+      href: YOUTUBE_URL,
       me: true
     },
     {

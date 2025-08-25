@@ -4,6 +4,7 @@ export const SITE_DESCRIPTION =
 export const STORE_URL = "https://ddev.threadless.com"
 export const BLUESKY_URL = "https://bsky.app/profile/ddev.bsky.social"
 export const LINKEDIN_URL = "https://www.linkedin.com/company/ddev-foundation"
+export const YOUTUBE_URL = "https://www.youtube.com/@DDEVFoundation"
 export const GITHUB_REPO = "ddev/ddev"
 export const GITHUB_URL = "https://github.com/ddev/ddev"
 export const GITHUB_URL_WEBSITE =
