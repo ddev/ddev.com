@@ -38,9 +38,9 @@ Today's development workflows extend beyond single-machine scenarios:
 **Multi-Project Development Scenarios:**
 Decoupled applications typically involve multiple DDEV projects running simultaneously, such as frontend, backend API, and admin dashboard components. While DDEV handles this complexity locally, extending access for cross-device testing and external service integration requires additional networking solutions.
 
-**Available Approaches and Considerations:**
+### Available Approaches and Considerations
 
-### DDEV's Built-in Sharing Capabilities
+#### DDEV's Built-in Sharing Capabilities
 
 DDEV provides excellent built-in sharing through the [`ddev share`](https://ddev.readthedocs.io/en/stable/users/topics/sharing/) command, leveraging [ngrok](https://ngrok.com) for instant internet exposure:
 
@@ -55,7 +55,7 @@ DDEV provides excellent built-in sharing through the [`ddev share`](https://ddev
 - Webhook and OAuth integrations benefit from more memorable, persistent URLs
 - Multi-project architectures may require multiple tunnel instances
 
-### DDEV's Local Network Sharing
+#### DDEV's Local Network Sharing
 
 DDEV supports local network access through [router configuration](https://docs.ddev.com/en/stable/users/topics/sharing/#exposing-a-host-port-and-providing-a-direct-url):
 
@@ -74,7 +74,7 @@ ddev config global --router-bind-all-interfaces
 - Limited to devices on the same local network
 - May need firewall adjustments for broader access
 
-### Enterprise VPN Solutions
+#### Enterprise VPN Solutions
 
 Traditional VPN infrastructure provides comprehensive network access:
 
