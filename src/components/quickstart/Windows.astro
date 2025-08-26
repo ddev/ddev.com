@@ -2,6 +2,7 @@
 import Terminal from "@components/Terminal.astro"
 import CommunityCTA from "./CommunityCTA.astro"
 import Examples from "./Examples.astro"
+import CtaButton from "@components/CtaButton.astro"
 
 export interface Props {
   latestVersion: string
@@ -49,7 +50,14 @@ const { latestVersion } = Astro.props
     Run the Installer
   </h2>
 
-  <p>Download the latest <code>ddev-windows-installer.exe</code> from <a href="https://github.com/ddev/ddev/releases">DDEV Releases</a>, and run it selecting the preferred "Docker CE" approach and selecting your "DDEV" distro.</p>
+  <div class="not-prose mb-6">
+    <CtaButton
+      text="Download Windows Installer ↓" 
+      href={`https://github.com/ddev/ddev/releases/download/${latestVersion}/ddev_windows_amd64_installer.${latestVersion}.exe`}
+    />
+  </div>
+  
+  <p>Run the installer selecting the preferred "Docker CE" approach and selecting your "DDEV" distro. You can also find all releases at <a href="https://github.com/ddev/ddev/releases">DDEV Releases</a>.</p>
 
   <p>
     In the “DDEV” terminal app or Windows Terminal, confirm that the <code>ddev</code> binary is
