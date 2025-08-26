@@ -151,8 +151,8 @@ The add-on implements a per-project Tailscale container approach that works inde
 
 **Enhances Individual Development and Team Collaboration:**
 - Extends DDEV's single-machine excellence to multi-device accessibility
-- Private mode (default): Tailnet-only access via Tailscale Serve for secure development
-- Public mode: Internet-wide access via Tailscale Funnel for client demos and external testing
+- Private mode (default): tailnet-only access via Tailscale Serve for secure development
+- Public mode: internet-wide access via Tailscale Funnel for client demos and external testing
 
 **Strengthens Security Model:**
 - Maintains private network principles with optional public exposure
@@ -229,7 +229,7 @@ http://myapp-ddev-web.your-tailnet.ts.net/auth/microsoft/callback
 
 This stability eliminates the need for repeated URL updates in external service dashboards, streamlining the development and testing of payment flows and authentication systems.
 
-**For External Testing**: When webhooks need to be accessible from the internet (like Stripe's webhook testing), simply switch to public mode instead of deploying to a staging server:
+**For External Testing**: When webhooks need to be accessible from the internet (like Stripe's webhook testing), switch to public mode instead of deploying to a staging server:
 
 ```bash
 # Enable internet access for webhook testing
