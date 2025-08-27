@@ -31,8 +31,6 @@ The `ddev-tailscale-router` add-on works by running a Tailscale container alongs
 
 ### Installation
 
-> **Note:** This add-on has been tested on Linux and Windows with WSL2. It has not been tested on macOS or with ARM64-based systems (like Apple Silicon) and may not work as expected.
-
 To get started, follow these steps:
 
 1.  First, install the add-on:
