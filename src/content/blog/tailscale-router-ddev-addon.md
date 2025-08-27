@@ -8,15 +8,15 @@ categories:
   - TechNotes
 ---
 
-DDEV's `ddev share` command is a great way to quickly share your local development environment. However, it uses ngrok, which generates a new, random URL every time you use it. For a more permanent and secure solution, you can use the `ddev-tailscale-router` add-on.
+I've found that DDEV's `ddev share` command is a great way to quickly share my local development environment. However, since it uses ngrok, it generates a new, random URL every time, which can be a hassle. For a more permanent and secure solution, I've created the `ddev-tailscale-router` add-on.
 
 This add-on uses Tailscale, a service that creates a private and secure network between your devices. As a result, you get a stable, human-readable URL for each of your DDEV projects, which you can access from any device on your Tailscale network.
 
-This approach is particularly useful for:
+I've found this approach to be particularly useful for:
 
-*   **Cross-device testing:** Easily test your site on your phone or tablet without being on the same Wi-Fi network.
-*   **Stable webhook URLs:** Use the permanent Tailscale URL as a reliable endpoint for webhooks, such as those from payment gateways.
-*   **Team collaboration:** Share your development environment with team members so they can see your work in progress.
+*   **Cross-device testing:** I can easily test my sites on my phone or tablet without being on the same Wi-Fi network.
+*   **Stable webhook URLs:** I can use the permanent Tailscale URL as a reliable endpoint for webhooks, such as those from payment gateways.
+*   **Team collaboration:** I can share my development environment with team members so they can see my work in progress.
 
 ### How it Works
 
