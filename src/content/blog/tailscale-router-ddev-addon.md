@@ -5,7 +5,7 @@ summary: Learn how the ddev-tailscale-router add-on extends DDEV's local develop
 author: Ajith Thampi Joseph
 categories:
   - Guides
-  - DevOps
+  - TechNotes
 ---
 
 [DDEV](https://ddev.com) has transformed local web development by providing containerized environments that eliminate "works on my machine" problems. Its architecture uses `.ddev.site` domains and intelligent routing to prevent port conflicts, enabling multiple projects to run simultaneously. This capability is essential for modern development workflows.
@@ -17,6 +17,7 @@ While DDEV excels at local development, today's practices increasingly involve e
 DDEV's containerized architecture brilliantly solves local development complexity through its reverse proxy (ddev-router) system. This design enables multiple projects to coexist without port conflicts, which is essential for modern full-stack development where teams often run frontend, backend, and admin applications simultaneously.
 
 **DDEV's Architectural Strengths:**
+
 - `.ddev.site` domain routing prevents port conflicts across multiple projects
 - Container isolation ensures clean, reproducible development environments
 - Multi-project support enables complex application architectures
@@ -26,11 +27,13 @@ DDEV's containerized architecture brilliantly solves local development complexit
 Today's development workflows extend beyond single-machine scenarios:
 
 **External Service Integration Needs:**
+
 - **Webhook Development**: Payment processors like [Stripe](https://stripe.com/docs/webhooks) and [PayPal](https://developer.paypal.com/docs/api-basics/notifications/webhooks/) require stable, internet-accessible endpoints for testing transaction flows
 - **OAuth Implementation**: Social login providers such as [Google](https://developers.google.com/identity/protocols/oauth2), [GitHub](https://docs.github.com/en/developers/apps/building-oauth-apps), and [Facebook](https://developers.facebook.com/docs/facebook-login/) need consistent callback URLs that persist across development sessions
 - **API Integration**: Third-party services require reliable endpoint addresses for testing and development
 
 **Individual Developer and Team Requirements:**
+
 - **Cross-Device Testing**: Mobile and tablet testing requires accessing DDEV projects from various devices
 - **Client Demonstrations**: Stakeholders benefit from accessing work-in-progress through stable URLs
 - **Team Collaboration**: For teams with paid Tailscale plans, secure sharing of development environments becomes possible
@@ -45,11 +48,13 @@ Decoupled applications typically involve multiple DDEV projects running simultan
 DDEV provides excellent built-in sharing through the [`ddev share`](https://ddev.readthedocs.io/en/stable/users/topics/sharing/) command, leveraging [ngrok](https://ngrok.com) for instant internet exposure:
 
 **Strengths:**
+
 - One-command activation with `ddev share` (requires ngrok installation and account setup)
 - Automatic HTTPS certificate provisioning
 - Seamless integration with DDEV's workflow once configured
 
 **Considerations for Extended Use:**
+
 - Free-tier provides one static subdomain (configured via ngrok config), but it's a long, non-memorable URL
 - Random URLs are generated when not using the static subdomain configuration
 - Webhook and OAuth integrations benefit from more memorable, persistent URLs
@@ -64,12 +69,14 @@ ddev config global --router-bind-all-interfaces
 ```
 
 **Benefits:**
+
 - Enables local network access to DDEV projects
 - Maintains DDEV's security model
 - No external service dependencies
 - Works well for same-network device testing
 
 **Considerations:**
+
 - Requires DNS configuration on other devices for `.ddev.site` resolution
 - Limited to devices on the same local network
 - May need firewall adjustments for broader access
@@ -79,11 +86,13 @@ ddev config global --router-bind-all-interfaces
 Traditional VPN infrastructure provides comprehensive network access:
 
 **Capabilities:**
+
 - Full network-level access control
 - Enterprise-grade security and auditing
 - Comprehensive device management
 
 **Implementation Considerations:**
+
 - Server infrastructure and maintenance requirements
 - Client configuration complexity for team members
 - Ongoing security and certificate management
@@ -145,16 +154,19 @@ The add-on implements a per-project Tailscale container approach that works inde
 ### Integration Benefits
 
 **Complements DDEV's Built-in Sharing:**
+
 - Provides persistent URLs ideal for webhook and OAuth development
 - Maintains stable endpoints across development session restarts
 - Supports multi-project architectures with individual addressing
 
 **Enhances Individual Development and Team Collaboration:**
+
 - Extends DDEV's single-machine excellence to multi-device accessibility
 - Private mode (default): tailnet-only access via Tailscale Serve for secure development
 - Public mode: internet-wide access via Tailscale Funnel for client demos and external testing
 
 **Strengthens Security Model:**
+
 - Maintains private network principles with optional public exposure
 - Provides granular access control through Tailscale's ACL system
 - Enables secure sharing without compromising development environment isolation
@@ -199,6 +211,7 @@ For instance, a project named `myapp` becomes available at `http://myapp-ddev-we
 Stable endpoint addressing transforms external service integration workflows:
 
 **Payment Webhook Development:**
+
 ```
 # Stable endpoint for Stripe webhook configuration
 http://myapp-ddev-web.your-tailnet.ts.net/webhooks/stripe
@@ -213,11 +226,12 @@ http://myapp-ddev-web.your-tailnet.ts.net/webhooks/square
 ```
 
 **OAuth Callback Configuration:**
+
 ```
 # Google OAuth callback
 http://myapp-ddev-web.your-tailnet.ts.net/auth/google/callback
 
-# GitHub OAuth callback  
+# GitHub OAuth callback
 http://myapp-ddev-web.your-tailnet.ts.net/auth/github/callback
 
 # Facebook OAuth callback
@@ -274,6 +288,7 @@ ddev restart
 ```
 
 **Use Cases:**
+
 - Cross-device testing within your Tailnet
 - Team collaboration with Tailnet members
 - Internal development and testing
@@ -289,6 +304,7 @@ ddev restart
 ```
 
 **Use Cases:**
+
 - Client demonstrations and feedback sessions
 - External webhook testing (Stripe, PayPal, etc.)
 - OAuth provider configuration and testing
@@ -323,19 +339,24 @@ Tailscale's WireGuard-based routing introduces minimal latency overhead that's t
 ## Troubleshooting Guide
 
 ### URL Discovery Issues
+
 Verify project machine registration in the [Tailscale admin console](https://login.tailscale.com/admin/machines) and confirm hostname assignment. MagicDNS hostnames follow the pattern `[project-name]-ddev-web.[tailnet-name].ts.net`.
 
 ### Application Display Problems
+
 Some applications that generate `localhost` or `.ddev.site` URLs may require base URL configuration updates to use Tailscale hostnames instead. This is particularly common in CMS applications like [WordPress](https://wordpress.org/support/article/changing-the-site-url/) and [Drupal](https://www.drupal.org/docs/administering-a-drupal-site/site-configuration/changing-the-site-url), as well as frameworks that store base URLs in configuration files or databases.
 
 ### Network Connectivity Issues
+
 If you cannot access your development site through the Tailscale hostname, verify that:
+
 - The Tailscale container is running: `ddev logs -s tailscale-router`
 - Your authentication key is valid and properly configured
 - MagicDNS is enabled in your Tailscale network settings
 - The project name matches the hostname pattern in the admin console
 
 ### Authentication Failures
+
 Confirm authentication key validity and proper environment variable configuration through [DDEV's dotenv system](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#providing-custom-environment-variables-to-a-container).
 
 ## Support and Documentation
@@ -348,7 +369,3 @@ Comprehensive support resources are available through multiple channels:
 - **DDEV Documentation**: [Official DDEV docs](https://ddev.readthedocs.io/) for general DDEV usage and troubleshooting
 
 The add-on is actively maintained, and community contributions are welcomed through the open-source repository.
-
----
-
-*Ajith Thampi Joseph is a Software Engineer specializing in PHP development and DevOps automation. His work focuses on creating developer tools that eliminate workflow friction and improve team collaboration efficiency.*
