@@ -1,0 +1,149 @@
+<svg viewBox="0 0 1200 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Modern gradient background -->
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#334155;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Abstract flow gradient -->
+    <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.8" />
+      <stop offset="33%" style="stop-color:#10b981;stop-opacity:0.8" />
+      <stop offset="66%" style="stop-color:#8b5cf6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <!-- Glow effects -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="1024" fill="url(#heroGradient)"/>
+  
+  <!-- Abstract flowing shapes -->
+  <path d="M 0 400 Q 300 300 600 400 T 1200 350" 
+        stroke="url(#flowGradient)" 
+        stroke-width="4" 
+        fill="none" 
+        opacity="0.6"
+        filter="url(#softGlow)">
+    <animate attributeName="d" 
+             values="M 0 400 Q 300 300 600 400 T 1200 350;M 0 420 Q 300 280 600 380 T 1200 370;M 0 400 Q 300 300 600 400 T 1200 350" 
+             dur="8s" 
+             repeatCount="indefinite"/>
+  </path>
+  
+  <path d="M 0 450 Q 400 380 800 420 T 1200 400" 
+        stroke="url(#flowGradient)" 
+        stroke-width="3" 
+        fill="none" 
+        opacity="0.4"
+        filter="url(#softGlow)">
+    <animate attributeName="d" 
+             values="M 0 450 Q 400 380 800 420 T 1200 400;M 0 430 Q 400 400 800 400 T 1200 420;M 0 450 Q 400 380 800 420 T 1200 400" 
+             dur="10s" 
+             repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Floating abstract elements -->
+  <circle cx="200" cy="250" r="4" fill="#3b82f6" opacity="0.6" filter="url(#glow)">
+    <animate attributeName="cy" values="250;230;250" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="800" cy="700" r="3" fill="#10b981" opacity="0.7" filter="url(#glow)">
+    <animate attributeName="cy" values="700;680;700" dur="5s" repeatCount="indefinite" begin="1s"/>
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="5s" repeatCount="indefinite" begin="1s"/>
+  </circle>
+  
+  <circle cx="1000" cy="300" r="5" fill="#8b5cf6" opacity="0.5" filter="url(#glow)">
+    <animate attributeName="cy" values="300;320;300" dur="6s" repeatCount="indefinite" begin="2s"/>
+    <animate attributeName="opacity" values="0.5;0.9;0.5" dur="6s" repeatCount="indefinite" begin="2s"/>
+  </circle>
+  
+  <!-- Main title with modern typography -->
+  <g transform="translate(600, 350)">
+    <text x="0" y="0" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="52" font-weight="300" letter-spacing="2px" filter="url(#glow)">
+      DDEV
+    </text>
+    <text x="0" y="60" text-anchor="middle" fill="#60a5fa" font-family="Arial, sans-serif" font-size="52" font-weight="700" letter-spacing="2px" filter="url(#glow)">
+      TAILSCALE
+    </text>
+    <text x="0" y="110" text-anchor="middle" fill="#10b981" font-family="Arial, sans-serif" font-size="52" font-weight="300" letter-spacing="2px" filter="url(#glow)">
+      ROUTER
+    </text>
+  </g>
+  
+  <!-- Elegant subtitle -->
+  <text x="600" y="500" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="20" font-weight="300" letter-spacing="1px">
+    Stable Development URLs • Secure Tunneling • Cross-Device Access
+  </text>
+  
+  <!-- Abstract geometric accent -->
+  <g transform="translate(600, 580)" opacity="0.6">
+    <rect x="-150" y="0" width="300" height="2" fill="url(#flowGradient)" rx="1">
+      <animate attributeName="width" values="300;350;300" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="x" values="-150;-175;-150" dur="6s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Minimalist feature highlights -->
+  <g transform="translate(600, 650)">
+    <!-- Connection nodes -->
+    <circle cx="-120" cy="0" r="8" fill="#3b82f6" opacity="0.8" filter="url(#softGlow)">
+      <animate attributeName="r" values="8;12;8" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="-40" cy="0" r="8" fill="#10b981" opacity="0.8" filter="url(#softGlow)">
+      <animate attributeName="r" values="8;12;8" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle cx="40" cy="0" r="8" fill="#8b5cf6" opacity="0.8" filter="url(#softGlow)">
+      <animate attributeName="r" values="8;12;8" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle cx="120" cy="0" r="8" fill="#f59e0b" opacity="0.8" filter="url(#softGlow)">
+      <animate attributeName="r" values="8;12;8" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+    
+    <!-- Connecting lines -->
+    <line x1="-112" y1="0" x2="-48" y2="0" stroke="#60a5fa" stroke-width="2" opacity="0.6"/>
+    <line x1="-32" y1="0" x2="32" y2="0" stroke="#60a5fa" stroke-width="2" opacity="0.6"/>
+    <line x1="48" y1="0" x2="112" y2="0" stroke="#60a5fa" stroke-width="2" opacity="0.6"/>
+  </g>
+  
+  <!-- Additional visual elements for the extended height -->
+  <g transform="translate(600, 800)">
+    <text x="0" y="0" text-anchor="middle" fill="#475569" font-family="Arial, sans-serif" font-size="16" font-weight="300" letter-spacing="1px">
+      One Command Setup • Zero Configuration • Enterprise Security
+    </text>
+  </g>
+  
+  <!-- Subtle corner accents -->
+  <g opacity="0.3">
+    <circle cx="50" cy="50" r="20" fill="none" stroke="#3b82f6" stroke-width="1">
+      <animate attributeName="r" values="20;25;20" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1150" cy="974" r="15" fill="none" stroke="#10b981" stroke-width="1">
+      <animate attributeName="r" values="15;20;15" dur="6s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+  </g>
+  
+  <!-- Bottom gradient accent -->
+  <rect x="0" y="1000" width="1200" height="24" fill="url(#flowGradient)" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.5;0.3" dur="4s" repeatCount="indefinite"/>
+  </rect>
+</svg>
