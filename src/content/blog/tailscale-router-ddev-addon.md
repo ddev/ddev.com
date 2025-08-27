@@ -3,6 +3,11 @@ title: "A Simple and Secure Way to Share Your DDEV Projects with Tailscale"
 pubDate: 2025-08-26
 summary: "Tired of temporary sharing links? Learn how to use the ddev-tailscale-router add-on to get a stable, secure, and private URL for your DDEV projects."
 author: Ajith Thampi Joseph
+featureImage:
+  src: /img/blog/2025/08/ddev_tailscale_flowchart.svg
+  alt: "DDEV Tailscale Router Cover Image"
+  caption: "The ddev-tailscale-router add-on enables cross-device testing, stable webhook URLs, and team collaboration."
+  credit: "Image by Claude AI :)"
 categories:
   - Guides
   - TechNotes
@@ -14,9 +19,9 @@ This add-on uses Tailscale, a service that creates a private and secure network 
 
 I've found this approach to be particularly useful for:
 
-*   **Cross-device testing:** I can easily test my sites on my phone or tablet without being on the same Wi-Fi network.
-*   **Stable webhook URLs:** I can use the permanent Tailscale URL as a reliable endpoint for webhooks, such as those from payment gateways.
-*   **Team collaboration:** I can share my development environment with team members so they can see my work in progress.
+- **Cross-device testing:** I can easily test my sites on my phone or tablet without being on the same Wi-Fi network.
+- **Stable webhook URLs:** I can use the permanent Tailscale URL as a reliable endpoint for webhooks, such as those from payment gateways.
+- **Team collaboration:** I can share my development environment with team members so they can see my work in progress.
 
 ### How it Works
 
@@ -46,8 +51,8 @@ After restarting, you can find your project's permanent Tailscale URL in the [Ta
 
 The add-on offers two modes for sharing your project:
 
-*   **Private (default):** In this mode, your project is only accessible to devices on your Tailscale network.
-*   **Public:** Alternatively, you can make your project accessible to anyone on the internet.
+- **Private (default):** In this mode, your project is only accessible to devices on your Tailscale network.
+- **Public:** Alternatively, you can make your project accessible to anyone on the internet.
 
 To switch between modes, you can set the `ts-privacy` variable in your `.ddev/.env.tailscale-router` file:
 
