@@ -15,7 +15,7 @@ categories:
 
 I've found that DDEV's [`ddev share`](https://docs.ddev.com/en/stable/users/topics/sharing/) command is a great way to quickly share my local development environment. However, since it uses ngrok, it generates a new, random URL every time, which can be a hassle. For a more permanent and secure solution, I've created the [`ddev-tailscale-router`](https://github.com/atj4me/ddev-tailscale-router) add-on.
 
-This add-on uses [Tailscale](https://tailscale.com/), a service that creates a private and secure network between your devices. It is free for personal use.
+This add-on uses [Tailscale](https://tailscale.com/), a service that creates a private and secure network between your devices. It is free for personal use!
 
 As a result, you get a stable, human-readable URL for each of your DDEV projects, which you can access from any device on your Tailscale network.
 
