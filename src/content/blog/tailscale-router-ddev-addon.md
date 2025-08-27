@@ -1,5 +1,5 @@
 ---
-title: "A Simple and Secure Way to Share Your DDEV Projects with Tailscale"
+title: "Tailscale for DDEV: Simple and Secure Project Sharing"
 pubDate: 2025-08-26
 summary: "Tired of temporary sharing links? Learn how to use the ddev-tailscale-router add-on to get a stable, secure, and private URL for your DDEV projects."
 author: Ajith Thampi Joseph
@@ -13,9 +13,11 @@ categories:
   - TechNotes
 ---
 
-I've found that DDEV's `ddev share` command is a great way to quickly share my local development environment. However, since it uses ngrok, it generates a new, random URL every time, which can be a hassle. For a more permanent and secure solution, I've created the `ddev-tailscale-router` add-on.
+I've found that DDEV's [`ddev share`](https://docs.ddev.com/en/stable/users/topics/sharing/) command is a great way to quickly share my local development environment. However, since it uses ngrok, it generates a new, random URL every time, which can be a hassle. For a more permanent and secure solution, I've created the [`ddev-tailscale-router`](https://github.com/atj4me/ddev-tailscale-router) add-on.
 
-This add-on uses Tailscale, a service that creates a private and secure network between your devices. As a result, you get a stable, human-readable URL for each of your DDEV projects, which you can access from any device on your Tailscale network.
+This add-on uses [Tailscale](https://tailscale.com/), a service that creates a private and secure network between your devices. It is free for personal use.
+
+As a result, you get a stable, human-readable URL for each of your DDEV projects, which you can access from any device on your Tailscale network.
 
 I've found this approach to be particularly useful for:
 
