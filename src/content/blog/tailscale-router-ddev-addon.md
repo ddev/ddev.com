@@ -66,6 +66,8 @@ ddev dotenv set .ddev/.env.tailscale-router --ts-privacy=public
 ddev restart
 ```
 
-### Support
-
 If you have any questions or problems, please file an issue in the [GitHub repository](https://github.com/atj4me/ddev-tailscale-router/issues).
+
+---
+
+_This blog post was written with the assistance of Amazon Q and Google Gemini. I used them to help simplify the language, improve the flow, and proofread the text._
