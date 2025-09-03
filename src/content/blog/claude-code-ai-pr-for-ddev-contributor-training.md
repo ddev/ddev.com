@@ -26,6 +26,9 @@ Here's our August 21, 2025 [Contributor Training](/blog/category/training) on us
 - [ ] Overall strategy
 - [] Task Master
 - [] The biggest danger is it making us lazy. Biggest win is working on things at a little higher level.
+- [ ] Drop context to save tokens or to recover from AI confusion.
+- [] Keep good overall docs and steps so you can recover from context problems or loss.
+- 
 
 ## Key Ideas
 
