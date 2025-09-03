@@ -4,10 +4,10 @@ pubDate: 2025-09-12
 #modifiedDate: 2025-04-07
 summary: "Training sessions!, CakeFest workshop in Madrid, DrupalCon in Vienna, governance proposal, and community updates"
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2025/08/laracon-photo.jpg
-#  alt: Nuno Maduro at Laracon US 2025
-#  caption: "Nuno Maduro at Laracon US 2025"
+featureImage:
+  src: /img/blog/2025/09/almost-everybody-loves-ddev.svg
+  alt: Survey results showing widespread love for DDEV in the developer community
+  caption: "2025 Drupal Developer Survey: Almost everybody loves DDEV"
 categories:
   - Community
 ---

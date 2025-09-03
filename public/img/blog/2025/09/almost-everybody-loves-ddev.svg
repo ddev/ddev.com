@@ -1,0 +1,48 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Main title -->
+  <text x="600" y="150" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="60" font-weight="bold">
+    Almost Everybody
+  </text>
+  
+  <!-- Heart -->
+  <text x="600" y="200" text-anchor="middle" fill="#ef4444" font-size="40">♥</text>
+  
+  <!-- Second line -->
+  <text x="600" y="250" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="60" font-weight="bold">
+    Loves DDEV
+  </text>
+  
+  <!-- DDEV logo background -->
+  <rect x="400" y="290" width="400" height="90" rx="45" fill="white" opacity="0.95"/>
+  
+  <!-- DDEV logo -->
+  <image href="/img/blog/2025/09/ddev-logo.png" x="450" y="300" width="300" height="70"/>
+  
+  <!-- Survey source -->
+  <text x="600" y="420" text-anchor="middle" fill="#e5e7eb" font-family="Arial, sans-serif" font-size="24">
+    2025 Drupal Developer Survey
+  </text>
+  
+  <!-- Statistics bar -->
+  <rect x="300" y="460" width="600" height="40" rx="20" fill="rgba(255,255,255,0.2)"/>
+  <rect x="300" y="460" width="540" height="40" rx="20" fill="#10b981"/>
+  <text x="600" y="485" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+    90%+ Love Rate
+  </text>
+  
+  <!-- Bottom tagline -->
+  <text x="600" y="550" text-anchor="middle" fill="#e5e7eb" font-family="Arial, sans-serif" font-size="20" font-style="italic">
+    Join the community that developers love
+  </text>
+</svg>
