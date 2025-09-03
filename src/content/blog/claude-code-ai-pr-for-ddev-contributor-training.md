@@ -20,27 +20,57 @@ Here's our August 21, 2025 [Contributor Training](/blog/category/training) on us
 
 ## TODO
 
-- [ ] Using CLAUDE.md, what to put in it, not to trust claude to respect it.
-- [ ] Add links to resources
-- [ ] link to presentation
-- [ ] Overall strategy
-- [] Task Master
-- [] The biggest danger is it making us lazy. Biggest win is working on things at a little higher level.
 - [ ] Drop context to save tokens or to recover from AI confusion.
 - [] Keep good overall docs and steps so you can recover from context problems or loss.
 - 
 
-## Key Ideas
+## Big Picture
 
-- Good existing tests help keep the AI honest. Don't let it change tests to make them pass.
-- Good static analysis keeps code consistent. DDEV has `make staticrequired` to check go and Markdown consistency.
+- Used with respect, AI can be really powerful, a whole new level of abstraction in software development, maybe a bit like having an IDE when you were previously using just a line editor.
+- AI has lots of repetitive skill, but only you have **judgment**. It's phenomenal at repeating patterns that it's been trained on, and often good at imitating patters that you point out to it. 
+- It's a pretty good collaborator for those of us who work mostly alone.
+
+## Guardrails
+
+- Your code is your code. Build it with guardrails that will help keep it under control. Tests and static analysis are great guardrails. (DDEV has hundreds of automated tests and `make staticrequired` for static analysis.)
+- Control, read, and manually test the code yourself.
+- Consider getting a different AI to do a review.
+- Always try to get another human to do a review.
+- AI is *fantastic* at creating new tests, but don't let it touch the existing tests.
+
+## Structure and Strategy
+
+- For complex initiatives, explain the entire goal in detail to Claude and then get it to write a PRD, then commit the PRD into the repo. That way you'll have a high-quality set of context to use.
+- Put all your general directives in a `CLAUDE.md` file like [DDEV's CLAUDE.md](https://github.com/ddev/ddev/blob/main/CLAUDE.md). Their docs claim that directives like this will be used properly to guide Claude's behavior, and it does help, but Claude does not seem to be strictly obedient and I often have to remind it of basic DDEV precepts.
+- [TaskMaster AI](https://www.task-master.dev/) is a pretty good structural tool. You can give it a PRD and have it create a task list, then Claude can use it to navigate that task list. This would have been a great tool long before AI, but I rarely used that much structure in my coding before using this tool and AI.
+- Every time you accomplish a bit of something, make a commit or have Claude make a commit. That way you can roll it back, or review just one item. (This works for you as a human also.)
+
+## Capabilities
+
+- I was amazed to find that Claude could create an issue or PR for me, and certainly do commits. It can also do a comment on an issue or PR. I don't let it do those things without permission. (It seems to know how to use the `gh` utility to do these things; you need to have that installed and configured.)
+- I'm annoyed by how verbose and flowery the commit/issue/PR language is sometimes, but have tried to calm it down using directives int he `CLAUDE.md` file, but without success. It also is complimenting me all the time and always agreeing with what I say. I haven't been able to calm that down either.)
+
+## Problems
+
+- The current billing situation for Claude is confusing. It's based on the number of tokens you're using, but it doesn't give you feedback until you've almost used it all up. Then (on the $20/month plan) you're not able to use it for a number of hours, which seems to be arbitrary. You can spend more for a higher monthly plan, and you can also pay-as-you-go for tokens. I haven't done either of those.
+- Claude can get stuck and go in circles, like other AI. Clear context to try to get around that. Have an overall plan to get around it.
+- 
 
 ## Resources
 
--
+- [Claude Code AI](https://www.anthropic.com/claude-code)
+- [TaskMaster AI](https://www.task-master.dev/)
+- [Slides](https://rfay.github.io/ddev-claude-presentation/) and supporting [repository](https://github.com/rfay/ddev-claude-presentation) also built on [reveal.js](https://revealjs.com/) also using Claude.
+- [Coursera Claude Code Course](https://www.coursera.org/learn/claude-code): I took this as a free course; it didn't take too long and I learned a lot that I would not have known otherwise.
+
+## Conclusions
+
+Yes, AI can make us really lazy. And it can make us stupid. Those valid concerns were also levied against the calculator and the computer, of course. People thought that using the `C` language instead of assembler was giving up control. It was. We have to learn how to use this technology, use it right, and grow with it.
+
+Build guardrails. Pay attention. Know what your code does. Enjoy the ride!
 
 ## Contributions welcome!
 
 Your suggestions to improve this blog are welcome. You can do a PR to this blog adding your techniques. Info and a training session on how to do a PR to anything in ddev.com is at [DDEV Website For Contributors](ddev-website-for-contributors.md).
 
-Join us for the next [DDEV Live Contributor Training](/blog/contributor-training/). Use the [contact](/contact) link to ask for a calendar invitation.
+Join us for the next [DDEV Live Contributor Training](ddev-september-2025-newsletter.md).
