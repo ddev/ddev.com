@@ -25,15 +25,16 @@ Here's our August 21, 2025 [Contributor Training](/blog/category/training) on us
 - [ ] link to presentation
 - [ ] Overall strategy
 - [] Task Master
+- [] The biggest danger is it making us lazy. Biggest win is working on things at a little higher level.
 
 ## Key Ideas
 
-* Good existing tests help keep the AI honest. Don't let it change tests to make them pass.
-* Good static analysis keeps code consistent. DDEV has `make staticrequired` to check go and markdown consistency.
+- Good existing tests help keep the AI honest. Don't let it change tests to make them pass.
+- Good static analysis keeps code consistent. DDEV has `make staticrequired` to check go and Markdown consistency.
 
 ## Resources
 
-- 
+-
 
 ## Contributions welcome!
 
