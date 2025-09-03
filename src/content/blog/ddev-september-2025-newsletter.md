@@ -2,7 +2,7 @@
 title: "DDEV September 2025 Newsletter"
 pubDate: 2025-09-12
 #modifiedDate: 2025-04-07
-#summary: "Highlights: "
+summary: "Training sessions!, CakeFest workshop in Madrid, DrupalCon in Vienna, governance proposal, and community updates"
 author: Randy Fay
 #featureImage:
 #  src: /img/blog/2025/08/laracon-photo.jpg
@@ -25,8 +25,7 @@ categories:
 
 ## Community Tutorials
 
-- **2025 Drupal Developer Survey**: "Almost everybody loves DDEV":
-  . → [Read more↗](https://www.ironstar.io/devsurvey25/)
+- **2025 Drupal Developer Survey**: "Almost everybody loves DDEV" → [Read more↗](https://www.ironstar.io/devsurvey25/)
 - **Mike Anello: Reclaim Docker disk space when using DDEV** [Read more↗](https://www.drupaleasy.com/quicktips/reclaim-docker-disk-space-when-using-ddev)
 
 ## DDEV Training Has Started Up Again!
@@ -62,7 +61,7 @@ Passcode: 12345
 ## Governance & Roadmap
 
 - **Formal Governance Proposal**  
-  We've been working on a [formal governance proposal](https://docs.google.com/document/d/1MXatsz2FMBSnllnUArNCv562x0T2-EF1OwqsFEU9_-M/edit?usp=sharing). We'love your comments and engagement.
+  We've been working on a [formal governance proposal](https://docs.google.com/document/d/1MXatsz2FMBSnllnUArNCv562x0T2-EF1OwqsFEU9_-M/edit?usp=sharing). We'd love your comments and engagement.
 - **Informal Nominations for the DDEV Foundation Board**  
   Would you like to nominate someone (or yourself)? Ping us via any of our [contact methods](/contact/).
 
