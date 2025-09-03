@@ -13,9 +13,9 @@ categories:
   - TechNotes
 ---
 
-I've found that DDEV's [`ddev share`](https://docs.ddev.com/en/stable/users/topics/sharing/) command is a great way to quickly share my local development environment. However, since it uses ngrok, it generates a new, random URL every time, which can be a hassle. For a more permanent and secure solution, I've created the [`ddev-tailscale-router`](https://github.com/atj4me/ddev-tailscale-router) add-on.
+I've found that DDEV's [`ddev share`](https://docs.ddev.com/en/stable/users/topics/sharing/) command is a great way to quickly share my local development environment. However, since it uses ngrok, it generates a new, random URL every time unless you use a [stable domain](https://docs.ddev.com/en/stable/users/topics/sharing/#setting-up-a-stable-ngrok-domain). As an alternative, I've created the [`ddev-tailscale-router`](https://github.com/atj4me/ddev-tailscale-router) add-on.
 
-This add-on uses [Tailscale](https://tailscale.com/), a service that creates a private and secure network between your devices. It is free for personal use!
+This add-on uses [Tailscale](https://tailscale.com/), a VPN service that creates a private and secure network between your devices. It is free for personal use!
 
 As a result, you get a stable, human-readable URL for each of your DDEV projects, which you can access from any device on your Tailscale network.
 
@@ -69,6 +69,15 @@ ddev restart
 ```
 
 If you have any questions or problems, please file an issue in the [GitHub repository](https://github.com/atj4me/ddev-tailscale-router/issues).
+
+### Resources
+
+Here are some additional resources that you might find helpful:
+
+- **[Tailscale](https://tailscale.com/)**: A VPN service that creates a private and secure network between your devices.
+- **[DDEV Docs: Sharing](https://ddev.readthedocs.io/en/latest/users/usage/sharing/)**: The official DDEV documentation on how to share your projects.
+- **Medium: [My Journey with PHP Dev Environments](https://medium.com/@josephajithampi/my-journey-with-php-dev-environments-1da9f2806ee9)**: A blog post on setting up a PHP development environment.
+- **LinkedIn: [The Day My Development Environment Nearly Broke Me](https://www.linkedin.com/pulse/day-my-development-environment-nearly-broke-me-how-i-thampi-joseph-ildhc/)**: An article on the importance of a reliable development environment.
 
 ---
 
