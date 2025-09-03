@@ -18,16 +18,10 @@ Here's our August 21, 2025 [Contributor Training](/blog/category/training) on us
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sUSHF4V7yzs?si=t102XbCqHz6XBJvF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
-## TODO
-
-- [ ] Drop context to save tokens or to recover from AI confusion.
-- [] Keep good overall docs and steps so you can recover from context problems or loss.
-- 
-
 ## Big Picture
 
 - Used with respect, AI can be really powerful, a whole new level of abstraction in software development, maybe a bit like having an IDE when you were previously using just a line editor.
-- AI has lots of repetitive skill, but only you have **judgment**. It's phenomenal at repeating patterns that it's been trained on, and often good at imitating patters that you point out to it. 
+- AI has lots of repetitive skill, but only you have **judgment**. It's phenomenal at repeating patterns that it's been trained on, and often good at imitating patterns that you point out to it. 
 - It's a pretty good collaborator for those of us who work mostly alone.
 
 ## Guardrails
@@ -48,13 +42,23 @@ Here's our August 21, 2025 [Contributor Training](/blog/category/training) on us
 ## Capabilities
 
 - I was amazed to find that Claude could create an issue or PR for me, and certainly do commits. It can also do a comment on an issue or PR. I don't let it do those things without permission. (It seems to know how to use the `gh` utility to do these things; you need to have that installed and configured.)
-- I'm annoyed by how verbose and flowery the commit/issue/PR language is sometimes, but have tried to calm it down using directives int he `CLAUDE.md` file, but without success. It also is complimenting me all the time and always agreeing with what I say. I haven't been able to calm that down either.)
+- I'm annoyed by how verbose and flowery the commit/issue/PR language is sometimes, but have tried to calm it down using directives in the `CLAUDE.md` file, but without success. It also is complimenting me all the time and always agreeing with what I say. I haven't been able to calm that down either.
 
 ## Problems
 
-- The current billing situation for Claude is confusing. It's based on the number of tokens you're using, but it doesn't give you feedback until you've almost used it all up. Then (on the $20/month plan) you're not able to use it for a number of hours, which seems to be arbitrary. You can spend more for a higher monthly plan, and you can also pay-as-you-go for tokens. I haven't done either of those.
+- The current billing situation for Claude is confusing. It's based on the number of tokens you're using, but it doesn't give you feedback until you've almost used it all up. Then (on the $20/month plan) you're not able to use it for a number of hours, which seems to be arbitrary. You can spend more for a higher monthly plan, and you can also pay-as-you-go for tokens. I haven't done either of those. Clear context (`/clear`) at key points to limit the amount of context you're carrying forward and limit the number of tokens you're using.
 - Claude can get stuck and go in circles, like other AI. Clear context to try to get around that. Have an overall plan to get around it.
-- 
+
+## Demonstration
+
+In this demonstration (see screencast) we asked Claude to work on [this issue about `ddev launch`](https://github.com/ddev/ddev/issues/7424) and we asked it to create a PR for us. It generated [this PR](https://github.com/ddev/ddev/pull/7548) to resolve the problem. It was a trivial issue with a trivial solution, but the path to create it was similar to the path for a more complex situation.
+
+## Responsible AI Usage and Disclosure
+
+This isn't an adequate place to discuss responsible AI, but:
+
+* Acknowledge the use of AI. Claude is happy to add a tag onto every commit or comment.
+* Take responsibility for what you build.
 
 ## Resources
 
@@ -74,3 +78,5 @@ Build guardrails. Pay attention. Know what your code does. Enjoy the ride!
 Your suggestions to improve this blog are welcome. You can do a PR to this blog adding your techniques. Info and a training session on how to do a PR to anything in ddev.com is at [DDEV Website For Contributors](ddev-website-for-contributors.md).
 
 Join us for the next [DDEV Live Contributor Training](ddev-september-2025-newsletter.md).
+
+This article was reviewed by Claude Code AI, but it only fiddled with technical things.

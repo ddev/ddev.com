@@ -75,3 +75,5 @@ Passcode: 12345
 - [Mastodon↗](https://fosstodon.org/@ddev)
 - [Bluesky↗](https://bsky.app/profile/ddev.bsky.social)
 - [Discord↗](/s/discord)
+
+This article was reviewed by Claude Code AI. but it only fiddled with technical things. Claude tried to make a banner image. It's not clear whether that will survive.
