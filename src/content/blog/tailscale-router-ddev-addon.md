@@ -83,6 +83,10 @@ If you have any questions or problems, please file an issue in the [GitHub repos
 Here are some additional resources that you might find helpful:
 
 - **[Tailscale](https://tailscale.com/)**: A VPN service that creates a private and secure network between your devices.
+- **[Tailscale Download](https://tailscale.com/download)**: Installation guide for Tailscale on various platforms.
+- **[Tailscale: Enabling HTTPS](https://tailscale.com/kb/1153/enabling-https)**: Official documentation on enabling HTTPS for TLS certificate generation.
+- **[Tailscale Auth Keys](https://tailscale.com/kb/1085/auth-keys)**: Detailed information about creating and managing auth keys.
+- **[DDEV dotenv](https://ddev.readthedocs.io/en/latest/users/usage/commands/#dotenv)**: Documentation on managing environment variables with DDEV.
 - **[DDEV Docs: Sharing](https://ddev.readthedocs.io/en/latest/users/usage/sharing/)**: The official DDEV documentation on how to share your projects.
 - **Medium: [My Journey with PHP Dev Environments](https://medium.com/@josephajithampi/my-journey-with-php-dev-environments-1da9f2806ee9)**: A blog post on setting up a PHP development environment.
 - **LinkedIn: [The Day My Development Environment Nearly Broke Me](https://www.linkedin.com/pulse/day-my-development-environment-nearly-broke-me-how-i-thampi-joseph-ildhc/)**: An article on the importance of a reliable development environment.
