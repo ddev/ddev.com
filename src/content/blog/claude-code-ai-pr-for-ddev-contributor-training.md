@@ -4,9 +4,9 @@ pubDate: 2025-09-04
 #modifiedDate: 2025-02-26
 summary: Contributor training demonstrating use of Claude Code for a DDEV PR.
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2024/09/maintaining-tests.png
-#  alt: abstract view of DDEV automated tests
+featureImage:
+  src: /img/blog/2025/09/claude-code-ddev-banner.png
+  alt: Claude AI and DDEV collaboration banner for contributor training
 categories:
   - Training
   - Guides
@@ -79,4 +79,4 @@ Your suggestions to improve this blog are welcome. You can do a PR to this blog 
 
 Join us for the next [DDEV Live Contributor Training](ddev-september-2025-newsletter.md).
 
-This article was reviewed by Claude Code AI, but it only fiddled with technical things.
+This article was reviewed by Claude Code AI, but it only fiddled with technical things. I did attempt to get a good banner image with it.
