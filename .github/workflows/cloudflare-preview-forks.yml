@@ -22,6 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    env:
+      # Optional repo variables for precise control (Settings > Secrets and variables > Actions > Variables)
+      # If set, PAGES_BUILD_CMD will be executed and PAGES_OUTPUT_DIR used for packaging.
+      PAGES_BUILD_CMD: ${{ vars.PAGES_BUILD_CMD }}
+      PAGES_OUTPUT_DIR: ${{ vars.PAGES_OUTPUT_DIR }}
     steps:
       - name: Checkout PR code (from fork)
         uses: actions/checkout@v4
@@ -31,36 +36,94 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           persist-credentials: false
 
-      # NOTE:
-      # - Configure your build exactly like your existing non-fork preview build,
-      #   but without any secrets. Copy the same toolchain and commands.
-      # - The deploy job targets a Cloudflare Pages "Direct Upload" project.
-      - name: Setup build tooling
+      - name: Print repo root for debugging
         run: |
-          # ...existing code (e.g., setup Hugo/Node/PNPM/NPM/yarn/etc)...
-          echo "Setup steps as in your current preview workflow"
+          pwd
+          ls -la
 
-      - name: Build site
+      - name: Setup Node.js (for common JS builds)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          check-latest: true
+
+      - name: Build (auto-detect or use PAGES_BUILD_CMD)
+        id: build
         run: |
-          # ...existing code (exact same build commands you use today)...
-          # Example placeholders (replace with your real build):
-          # npm ci
-          # npm run build
-          # or: hugo --minify
-          echo "Build commands as in your current preview workflow"
+          set -euo pipefail
+
+          run_cmd() { echo "+ $*"; eval "$*"; }
+
+          if [ -n "${PAGES_BUILD_CMD:-}" ]; then
+            echo "Using PAGES_BUILD_CMD from repo variables: ${PAGES_BUILD_CMD}"
+            run_cmd "${PAGES_BUILD_CMD}"
+          else
+            echo "Auto-detecting build system..."
+            if [ -f "pnpm-lock.yaml" ]; then
+              echo "Detected pnpm"
+              corepack enable >/dev/null 2>&1 || true
+              run_cmd "pnpm --version"
+              run_cmd "pnpm install --frozen-lockfile"
+              if jq -e '.scripts.build' package.json >/dev/null 2>&1; then
+                run_cmd "pnpm run build"
+              else
+                echo "No build script found in package.json"; exit 1
+              fi
+            elif [ -f "yarn.lock" ]; then
+              echo "Detected yarn"
+              corepack enable >/dev/null 2>&1 || true
+              run_cmd "yarn --version"
+              run_cmd "yarn install --frozen-lockfile"
+              if jq -e '.scripts.build' package.json >/dev/null 2>&1; then
+                run_cmd "yarn build"
+              else
+                echo "No build script found in package.json"; exit 1
+              fi
+            elif [ -f "package-lock.json" ] || [ -f "package.json" ]; then
+              echo "Detected npm"
+              run_cmd "npm ci || npm install"
+              if jq -e '.scripts.build' package.json >/dev/null 2>&1; then
+                run_cmd "npm run build"
+              else
+                echo "No build script found in package.json"; exit 1
+              fi
+            elif [ -f "hugo.toml" ] || [ -f "hugo.yaml" ] || [ -f "hugo.yml" ] || [ -f "config.toml" ] || [ -f "config.yaml" ] || [ -f "config.yml" ]; then
+              echo "Detected Hugo"
+              sudo apt-get update -y
+              sudo apt-get install -y hugo
+              run_cmd "hugo version"
+              run_cmd "hugo --minify"
+            else
+              echo "Could not detect build system. Set repo variable PAGES_BUILD_CMD (and optionally PAGES_OUTPUT_DIR)."
+              exit 1
+            fi
+          fi
+
+      - name: Determine output directory
+        id: outdir
+        run: |
+          set -e
+          if [ -n "${PAGES_OUTPUT_DIR:-}" ]; then
+            OUTDIR="${PAGES_OUTPUT_DIR}"
+          else
+            # Try common static output directories in priority order
+            for d in dist build .output/public .vercel/output/static out public site _site; do
+              if [ -d "$d" ]; then OUTDIR="$d"; break; fi
+            done
+          fi
+          if [ -z "${OUTDIR:-}" ] || [ ! -d "$OUTDIR" ]; then
+            echo "Could not determine output directory. Set repo variable PAGES_OUTPUT_DIR to the static build output."
+            echo "Checked candidates: ${PAGES_OUTPUT_DIR:-<not set>}, dist, build, .output/public, .vercel/output/static, out, public, site, _site"
+            exit 1
+          fi
+          echo "Using output dir: $OUTDIR"
+          echo "outdir=$OUTDIR" >> "$GITHUB_OUTPUT"
 
       - name: Package built site
         run: |
-          # Replace 'public' with your build output dir if different (e.g., 'dist')
-          # Ensure the directory exists before upload.
-          if [ ! -d "public" ] && [ ! -d "dist" ]; then
-            echo "Please adjust the output directory (public/dist) to match your build"
-            exit 1
-          fi
-          OUTDIR="public"
-          [ -d "dist" ] && OUTDIR="dist"
-          echo "Using output dir: $OUTDIR"
-          mkdir -p artifact && cp -a "$OUTDIR"/. artifact/
+          mkdir -p artifact
+          cp -a "${{ steps.outdir.outputs.outdir }}"/. artifact/
+          echo "Packaged $(find artifact -type f | wc -l) files."
 
       - name: Upload built artifact
         uses: actions/upload-artifact@v4
@@ -78,6 +141,7 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
+      issues: write
     steps:
       - name: Check required secrets
         env:
