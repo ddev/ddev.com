@@ -106,8 +106,8 @@ jobs:
           if [ -f hugo.toml ] || [ -f hugo.yaml ] || [ -f hugo.yml ] || [ -f config.toml ] || [ -f config.yaml ] || [ -f config.yml ]; then
             echo "type=hugo" >> "$GITHUB_OUTPUT"; exit 0
           fi
-          echo "::error::Could not detect build system in $PWD. Set repo variable PAGES_BUILD_CMD and optionally PAGES_OUTPUT_DIR/PAGES_WORKING_DIR."
-          exit 1
+          echo "::warning::Could not detect build system in $PWD. Will deploy a minimal placeholder site. Set repo variable PAGES_BUILD_CMD and optionally PAGES_OUTPUT_DIR/PAGES_WORKING_DIR for a real build."
+          echo "type=none" >> "$GITHUB_OUTPUT"
 
       - name: Build (custom)
         if: ${{ steps.detect.outputs.type == 'custom' }}
@@ -176,8 +176,37 @@ jobs:
             fi
           fi
           if [ -z "${OUTDIR:-}" ] || [ ! -d "$OUTDIR" ]; then
-            echo "::error::Could not determine output directory in $PWD. Set repo variable PAGES_OUTPUT_DIR."
-            exit 1
+            if [ "${{ steps.detect.outputs.type }}" = "none" ]; then
+              OUTDIR=".cloudflare-fallback"
+              mkdir -p "$OUTDIR"
+              cat > "$OUTDIR/index.html" <<'HTML'
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Preview placeholder</title>
+    <meta name="robots" content="noindex,nofollow">
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; padding: 2rem; line-height: 1.5; }
+      code { background: #f4f4f4; padding: 0.1rem 0.3rem; border-radius: 4px; }
+    </style>
+  </head>
+  <body>
+    <h1>Cloudflare Pages preview placeholder</h1>
+    <p>No build system or output directory was detected for this PR preview.</p>
+    <p>To enable real previews, set repository variables in the base repo:</p>
+    <ul>
+      <li><code>PAGES_WORKING_DIR</code> (optional): project subfolder (e.g., <code>site</code>).</li>
+      <li><code>PAGES_BUILD_CMD</code> (e.g., <code>hugo --minify</code> or <code>npm ci && npm run build</code>).</li>
+      <li><code>PAGES_OUTPUT_DIR</code> (e.g., <code>public</code> or <code>dist</code>).</li>
+    </ul>
+  </body>
+</html>
+HTML
+            else
+              echo "::error::Could not determine output directory in $PWD. Set repo variable PAGES_OUTPUT_DIR."
+              exit 1
+            fi
           fi
           echo "Using output dir: $OUTDIR"
           echo "outdir=$OUTDIR" >> "$GITHUB_OUTPUT"
