@@ -280,23 +280,23 @@ HTML
         if: ${{ always() }}
         uses: actions/github-script@v7
         env:
-          PREVIEW_URL: ${{ steps.pages.outputs.deployment-url || steps.pages.outputs.url || '' }}
+          DEPLOYMENT_URL: ${{ steps.pages.outputs.deployment-url }}
+          ALT_URL: ${{ steps.pages.outputs.url }}
         with:
           script: |
-            const url = process.env.PREVIEW_URL;
+            const url = process.env.DEPLOYMENT_URL || process.env.ALT_URL || '';
             if (!url) {
               core.info('No preview URL found from Cloudflare action outputs.');
               return;
             }
             const body = `Cloudflare Pages preview: ${url}`;
-            // Update existing bot comment if present; otherwise create a new one
             const { data: comments } = await github.rest.issues.listComments({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
             });
             const existing = comments.find(c =>
-              c.user.type === 'Bot' && c.body && c.body.includes('Cloudflare Pages preview:')
+              c.user?.type === 'Bot' && c.body && c.body.includes('Cloudflare Pages preview:')
             );
             if (existing) {
               await github.rest.issues.updateComment({
