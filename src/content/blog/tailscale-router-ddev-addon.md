@@ -29,6 +29,14 @@ I've found this approach to be particularly useful for:
 
 The `ddev-tailscale-router` add-on works by running a Tailscale container alongside your DDEV project. This container automatically connects to your Tailscale network and securely proxies requests to your project's web container.
 
+### Prerequisites
+
+Before installing the add-on, you need to set up Tailscale:
+
+1. **Install Tailscale** on your development machine by following the [installation guide](https://tailscale.com/download).
+2. **Add a second device** to your Tailscale network (phone, tablet, or another computer).
+3. **Enable HTTPS** in your Tailscale admin console at https://login.tailscale.com/admin/dns by clicking "Enable HTTPS..." This is required for TLS certificate generation.
+
 ### Installation
 
 To get started, follow these steps:
