@@ -23,7 +23,7 @@ jobs:
     permissions:
       contents: read
     env:
-      # Optional repo variables for precise control (Settings > Secrets and variables > Actions > Variables)
+      # Optional repo variables (Settings > Secrets and variables > Actions > Variables)
       # If set, PAGES_BUILD_CMD will be executed and PAGES_OUTPUT_DIR used for packaging.
       PAGES_BUILD_CMD: ${{ vars.PAGES_BUILD_CMD }}
       PAGES_OUTPUT_DIR: ${{ vars.PAGES_OUTPUT_DIR }}
@@ -41,79 +41,98 @@ jobs:
           pwd
           ls -la
 
-      - name: Setup Node.js (for common JS builds)
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           check-latest: true
 
-      - name: Build (auto-detect or use PAGES_BUILD_CMD)
-        id: build
+      - name: Detect build type
+        id: detect
+        shell: bash
         run: |
           set -euo pipefail
-
-          run_cmd() { echo "+ $*"; eval "$*"; }
-
           if [ -n "${PAGES_BUILD_CMD:-}" ]; then
-            echo "Using PAGES_BUILD_CMD from repo variables: ${PAGES_BUILD_CMD}"
-            run_cmd "${PAGES_BUILD_CMD}"
-          else
-            echo "Auto-detecting build system..."
-            if [ -f "pnpm-lock.yaml" ]; then
-              echo "Detected pnpm"
-              corepack enable >/dev/null 2>&1 || true
-              run_cmd "pnpm --version"
-              run_cmd "pnpm install --frozen-lockfile"
-              if jq -e '.scripts.build' package.json >/dev/null 2>&1; then
-                run_cmd "pnpm run build"
-              else
-                echo "No build script found in package.json"; exit 1
-              fi
-            elif [ -f "yarn.lock" ]; then
-              echo "Detected yarn"
-              corepack enable >/dev/null 2>&1 || true
-              run_cmd "yarn --version"
-              run_cmd "yarn install --frozen-lockfile"
-              if jq -e '.scripts.build' package.json >/dev/null 2>&1; then
-                run_cmd "yarn build"
-              else
-                echo "No build script found in package.json"; exit 1
-              fi
-            elif [ -f "package-lock.json" ] || [ -f "package.json" ]; then
-              echo "Detected npm"
-              run_cmd "npm ci || npm install"
-              if jq -e '.scripts.build' package.json >/dev/null 2>&1; then
-                run_cmd "npm run build"
-              else
-                echo "No build script found in package.json"; exit 1
-              fi
-            elif [ -f "hugo.toml" ] || [ -f "hugo.yaml" ] || [ -f "hugo.yml" ] || [ -f "config.toml" ] || [ -f "config.yaml" ] || [ -f "config.yml" ]; then
-              echo "Detected Hugo"
-              sudo apt-get update -y
-              sudo apt-get install -y hugo
-              run_cmd "hugo version"
-              run_cmd "hugo --minify"
-            else
-              echo "Could not detect build system. Set repo variable PAGES_BUILD_CMD (and optionally PAGES_OUTPUT_DIR)."
-              exit 1
-            fi
+            echo "type=custom" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
+          if [ -f pnpm-lock.yaml ]; then
+            echo "type=pnpm" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          if [ -f yarn.lock ]; then
+            echo "type=yarn" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          if [ -f package.json ]; then
+            echo "type=npm" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          # Detect Hugo by common config files
+          if [ -f hugo.toml ] || [ -f hugo.yaml ] || [ -f hugo.yml ] || [ -f config.toml ] || [ -f config.yaml ] || [ -f config.yml ]; then
+            echo "type=hugo" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          echo "::error::Could not detect build system. Set repo variable PAGES_BUILD_CMD (and optionally PAGES_OUTPUT_DIR)."
+          exit 1
+
+      - name: Build (custom)
+        if: ${{ steps.detect.outputs.type == 'custom' }}
+        run: |
+          set -euo pipefail
+          echo "+ ${PAGES_BUILD_CMD}"
+          eval "${PAGES_BUILD_CMD}"
+
+      - name: Enable Corepack (pnpm/yarn)
+        if: ${{ steps.detect.outputs.type == 'pnpm' || steps.detect.outputs.type == 'yarn' }}
+        run: corepack enable
+
+      - name: Install deps and build (pnpm)
+        if: ${{ steps.detect.outputs.type == 'pnpm' }}
+        run: |
+          pnpm --version
+          pnpm install --frozen-lockfile
+          pnpm run build
+
+      - name: Install deps and build (yarn)
+        if: ${{ steps.detect.outputs.type == 'yarn' }}
+        run: |
+          yarn --version
+          yarn install --frozen-lockfile
+          yarn build
+
+      - name: Install deps and build (npm)
+        if: ${{ steps.detect.outputs.type == 'npm' }}
+        run: |
+          npm ci || npm install
+          npm run build
+
+      - name: Setup Hugo
+        if: ${{ steps.detect.outputs.type == 'hugo' }}
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build (Hugo)
+        if: ${{ steps.detect.outputs.type == 'hugo' }}
+        run: hugo --minify
 
       - name: Determine output directory
         id: outdir
+        shell: bash
         run: |
-          set -e
+          set -euo pipefail
           if [ -n "${PAGES_OUTPUT_DIR:-}" ]; then
             OUTDIR="${PAGES_OUTPUT_DIR}"
           else
-            # Try common static output directories in priority order
-            for d in dist build .output/public .vercel/output/static out public site _site; do
-              if [ -d "$d" ]; then OUTDIR="$d"; break; fi
-            done
+            # Prefer Hugo 'public' for hugo builds
+            if [ "${{ steps.detect.outputs.type }}" = "hugo" ] && [ -d public ]; then
+              OUTDIR="public"
+            else
+              for d in dist build .output/public .vercel/output/static out public site _site; do
+                if [ -d "$d" ]; then OUTDIR="$d"; break; fi
+              done
+            fi
           fi
           if [ -z "${OUTDIR:-}" ] || [ ! -d "$OUTDIR" ]; then
-            echo "Could not determine output directory. Set repo variable PAGES_OUTPUT_DIR to the static build output."
-            echo "Checked candidates: ${PAGES_OUTPUT_DIR:-<not set>}, dist, build, .output/public, .vercel/output/static, out, public, site, _site"
+            echo "::error::Could not determine output directory. Set repo variable PAGES_OUTPUT_DIR."
             exit 1
           fi
           echo "Using output dir: $OUTDIR"
