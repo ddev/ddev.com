@@ -27,6 +27,8 @@ jobs:
       # If set, PAGES_BUILD_CMD will be executed and PAGES_OUTPUT_DIR used for packaging.
       PAGES_BUILD_CMD: ${{ vars.PAGES_BUILD_CMD }}
       PAGES_OUTPUT_DIR: ${{ vars.PAGES_OUTPUT_DIR }}
+      # New: Optional working directory override (e.g., "site", "website", "docs")
+      PAGES_WORKING_DIR: ${{ vars.PAGES_WORKING_DIR }}
     steps:
       - name: Checkout PR code (from fork)
         uses: actions/checkout@v4
@@ -36,10 +38,44 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           persist-credentials: false
 
-      - name: Print repo root for debugging
+      - name: Detect working directory
+        id: workdir
+        shell: bash
         run: |
-          pwd
+          set -euo pipefail
+          if [ -n "${PAGES_WORKING_DIR:-}" ]; then
+            if [ ! -d "$PAGES_WORKING_DIR" ]; then
+              echo "::error::PAGES_WORKING_DIR '$PAGES_WORKING_DIR' does not exist."
+              exit 1
+            fi
+            echo "workdir=${PAGES_WORKING_DIR}" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # Look for common project subdirs with recognizable configs
+          is_proj_dir() {
+            local d="$1"
+            test -d "$d" || return 1
+            [ -f "$d/package.json" ] && return 0
+            [ -f "$d/pnpm-lock.yaml" ] && return 0
+            [ -f "$d/yarn.lock" ] && return 0
+            [ -f "$d/hugo.toml" ] || [ -f "$d/hugo.yaml" ] || [ -f "$d/hugo.yml" ] && return 0
+            [ -f "$d/config.toml" ] || [ -f "$d/config.yaml" ] || [ -f "$d/config.yml" ] && return 0
+            return 1
+          }
+          if is_proj_dir "."; then echo "workdir=." >> "$GITHUB_OUTPUT"; exit 0; fi
+          for d in site website web docs app; do
+            if is_proj_dir "$d"; then echo "workdir=$d" >> "$GITHUB_OUTPUT"; exit 0; fi
+          done
+          # Fallback to repo root
+          echo "workdir=." >> "$GITHUB_OUTPUT"
+
+      - name: Print repo and workdir for debugging
+        run: |
+          echo "Repo root: $(pwd)"
+          echo "Chosen workdir: ${{ steps.workdir.outputs.workdir }}"
           ls -la
+          echo "---"
+          ls -la "${{ steps.workdir.outputs.workdir }}"
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -50,6 +86,7 @@ jobs:
       - name: Detect build type
         id: detect
         shell: bash
+        working-directory: ${{ steps.workdir.outputs.workdir }}
         run: |
           set -euo pipefail
           if [ -n "${PAGES_BUILD_CMD:-}" ]; then
@@ -69,11 +106,12 @@ jobs:
           if [ -f hugo.toml ] || [ -f hugo.yaml ] || [ -f hugo.yml ] || [ -f config.toml ] || [ -f config.yaml ] || [ -f config.yml ]; then
             echo "type=hugo" >> "$GITHUB_OUTPUT"; exit 0
           fi
-          echo "::error::Could not detect build system. Set repo variable PAGES_BUILD_CMD (and optionally PAGES_OUTPUT_DIR)."
+          echo "::error::Could not detect build system in $PWD. Set repo variable PAGES_BUILD_CMD and optionally PAGES_OUTPUT_DIR/PAGES_WORKING_DIR."
           exit 1
 
       - name: Build (custom)
         if: ${{ steps.detect.outputs.type == 'custom' }}
+        working-directory: ${{ steps.workdir.outputs.workdir }}
         run: |
           set -euo pipefail
           echo "+ ${PAGES_BUILD_CMD}"
@@ -81,10 +119,12 @@ jobs:
 
       - name: Enable Corepack (pnpm/yarn)
         if: ${{ steps.detect.outputs.type == 'pnpm' || steps.detect.outputs.type == 'yarn' }}
+        working-directory: ${{ steps.workdir.outputs.workdir }}
         run: corepack enable
 
       - name: Install deps and build (pnpm)
         if: ${{ steps.detect.outputs.type == 'pnpm' }}
+        working-directory: ${{ steps.workdir.outputs.workdir }}
         run: |
           pnpm --version
           pnpm install --frozen-lockfile
@@ -92,6 +132,7 @@ jobs:
 
       - name: Install deps and build (yarn)
         if: ${{ steps.detect.outputs.type == 'yarn' }}
+        working-directory: ${{ steps.workdir.outputs.workdir }}
         run: |
           yarn --version
           yarn install --frozen-lockfile
@@ -99,6 +140,7 @@ jobs:
 
       - name: Install deps and build (npm)
         if: ${{ steps.detect.outputs.type == 'npm' }}
+        working-directory: ${{ steps.workdir.outputs.workdir }}
         run: |
           npm ci || npm install
           npm run build
@@ -112,11 +154,13 @@ jobs:
 
       - name: Build (Hugo)
         if: ${{ steps.detect.outputs.type == 'hugo' }}
+        working-directory: ${{ steps.workdir.outputs.workdir }}
         run: hugo --minify
 
       - name: Determine output directory
         id: outdir
         shell: bash
+        working-directory: ${{ steps.workdir.outputs.workdir }}
         run: |
           set -euo pipefail
           if [ -n "${PAGES_OUTPUT_DIR:-}" ]; then
@@ -132,7 +176,7 @@ jobs:
             fi
           fi
           if [ -z "${OUTDIR:-}" ] || [ ! -d "$OUTDIR" ]; then
-            echo "::error::Could not determine output directory. Set repo variable PAGES_OUTPUT_DIR."
+            echo "::error::Could not determine output directory in $PWD. Set repo variable PAGES_OUTPUT_DIR."
             exit 1
           fi
           echo "Using output dir: $OUTDIR"
@@ -141,7 +185,9 @@ jobs:
       - name: Package built site
         run: |
           mkdir -p artifact
-          cp -a "${{ steps.outdir.outputs.outdir }}"/. artifact/
+          SRC="${{ steps.workdir.outputs.workdir }}/${{ steps.outdir.outputs.outdir }}"
+          echo "Copying from: $SRC"
+          cp -a "$SRC"/. artifact/
           echo "Packaged $(find artifact -type f | wc -l) files."
 
       - name: Upload built artifact
