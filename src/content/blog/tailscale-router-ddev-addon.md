@@ -55,7 +55,17 @@ To get started, follow these steps:
     ddev restart
     ```
 
-After restarting, you can find your project's permanent Tailscale URL in the [Tailscale admin console](https://login.tailscale.com/admin/machines). It will look something like this: `http://<project-name>.<your-tailnet>.ts.net`.
+After restarting, you can access your project using the new commands:
+
+```bash
+# Get your project's Tailscale URL
+ddev tailscale url
+
+# Launch your project in the browser
+ddev tailscale launch
+```
+
+You can also find your project's permanent Tailscale URL in the [Tailscale admin console](https://login.tailscale.com/admin/machines). It will look something like this: `http://<project-name>.<your-tailnet>.ts.net`.
 
 ### Public vs. Private Mode
 
