@@ -37,7 +37,7 @@ Here's our August 21, 2025 [Contributor Training](/blog/category/training) on us
 - For complex initiatives, explain the entire goal in detail to Claude and then get it to write a PRD, then commit the PRD into the repo. That way you'll have a high-quality set of context to use.
 - Put all your general directives in a `CLAUDE.md` file like [DDEV's CLAUDE.md](https://github.com/ddev/ddev/blob/main/CLAUDE.md). Their docs claim that directives like this will be used properly to guide Claude's behavior, and it does help, but Claude does not seem to be strictly obedient and I often have to remind it of basic DDEV precepts.
 - [TaskMaster AI](https://www.task-master.dev/) is a pretty good structural tool. You can give it a PRD and have it create a task list, then Claude can use it to navigate that task list. This would have been a great tool long before AI, but I rarely used that much structure in my coding before using this tool and AI.
-- Every time you accomplish a bit of something, make a commit or have Claude make a commit. That way you can roll it back, or review just one item. (This works for you as a human also.)
+- Every time you accomplish a bit of something, make a commit or have Claude make a commit. That way you can roll it back, or review just one item. (This works for you as a human also.) Thanks [@shaal](https://www.drupal.org/u/shaal).
 
 ## Capabilities
 
