@@ -1,3 +1,4 @@
+# Tip: This workflow must be present on the base repo's default branch (e.g., main) for pull_request_target to trigger.
 name: Cloudflare Pages preview (forked PRs)
 # Requires a Cloudflare Pages project (Direct Upload). CF_PAGES_PROJECT must be that project name.
 # No GitHub App integration is required for this workflow; deployments are done via API token.
