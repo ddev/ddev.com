@@ -21,7 +21,7 @@ Here's our August 21, 2025 [Contributor Training](/blog/category/training) on us
 ## Big Picture
 
 - Used with respect, AI can be really powerful, a whole new level of abstraction in software development, maybe a bit like having an IDE when you were previously using just a line editor.
-- AI has lots of repetitive skill, but only you have **judgment**. It's phenomenal at repeating patterns that it's been trained on, and often good at imitating patterns that you point out to it. 
+- AI has lots of repetitive skill, but only you have **judgment**. It's phenomenal at repeating patterns that it's been trained on, and often good at imitating patterns that you point out to it.
 - It's a pretty good collaborator for those of us who work mostly alone.
 
 ## Guardrails
@@ -30,11 +30,11 @@ Here's our August 21, 2025 [Contributor Training](/blog/category/training) on us
 - Control, read, and manually test the code yourself.
 - Consider getting a different AI to do a review.
 - Always try to get another human to do a review.
-- AI is *fantastic* at creating new tests, but don't let it touch the existing tests.
+- AI is _fantastic_ at creating new tests, but don't let it touch the existing tests.
 
 ## Structure and Strategy
 
-- For complex initiatives, explain the entire goal in detail to Claude and then get it to write a PRD, then commit the PRD into the repo. That way you'll have a high-quality set of context to use.
+- For complex initiatives, explain the entire goal in detail to Claude and then get it to write a PRD, then commit the PRD into the repository. That way you'll have a high-quality set of context to use.
 - Put all your general directives in a `CLAUDE.md` file like [DDEV's CLAUDE.md](https://github.com/ddev/ddev/blob/main/CLAUDE.md). Their docs claim that directives like this will be used properly to guide Claude's behavior, and it does help, but Claude does not seem to be strictly obedient and I often have to remind it of basic DDEV precepts.
 - [TaskMaster AI](https://www.task-master.dev/) is a pretty good structural tool. You can give it a PRD and have it create a task list, then Claude can use it to navigate that task list. This would have been a great tool long before AI, but I rarely used that much structure in my coding before using this tool and AI.
 - Every time you accomplish a bit of something, make a commit or have Claude make a commit. That way you can roll it back, or review just one item. (This works for you as a human also.) Thanks [@shaal](https://www.drupal.org/u/shaal).
@@ -57,8 +57,8 @@ In this demonstration (see screencast) we asked Claude to work on [this issue ab
 
 This isn't an adequate place to discuss responsible AI, but:
 
-* Acknowledge the use of AI. Claude is happy to add a tag onto every commit or comment.
-* Take responsibility for what you build.
+- Acknowledge the use of AI. Claude is happy to add a tag onto every commit or comment.
+- Take responsibility for what you build.
 
 ## Resources
 
