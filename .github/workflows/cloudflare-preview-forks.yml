@@ -1,0 +1,175 @@
+name: Cloudflare Pages preview (forked PRs)
+# Requires a Cloudflare Pages project (Direct Upload). CF_PAGES_PROJECT must be that project name.
+# No GitHub App integration is required for this workflow; deployments are done via API token.
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review, closed]
+
+# Least privilege at the workflow level
+permissions:
+  contents: read
+
+concurrency:
+  group: fork-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build site (no secrets)
+    if: ${{ github.event.pull_request.head.repo.fork == true && github.event.action != 'closed' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout PR code (from fork)
+        uses: actions/checkout@v4
+        with:
+          # Important: explicit checkout of the fork + head SHA to avoid using base workflow code
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+
+      # NOTE:
+      # - Configure your build exactly like your existing non-fork preview build,
+      #   but without any secrets. Copy the same toolchain and commands.
+      # - The deploy job targets a Cloudflare Pages "Direct Upload" project.
+      - name: Setup build tooling
+        run: |
+          # ...existing code (e.g., setup Hugo/Node/PNPM/NPM/yarn/etc)...
+          echo "Setup steps as in your current preview workflow"
+
+      - name: Build site
+        run: |
+          # ...existing code (exact same build commands you use today)...
+          # Example placeholders (replace with your real build):
+          # npm ci
+          # npm run build
+          # or: hugo --minify
+          echo "Build commands as in your current preview workflow"
+
+      - name: Package built site
+        run: |
+          # Replace 'public' with your build output dir if different (e.g., 'dist')
+          # Ensure the directory exists before upload.
+          if [ ! -d "public" ] && [ ! -d "dist" ]; then
+            echo "Please adjust the output directory (public/dist) to match your build"
+            exit 1
+          fi
+          OUTDIR="public"
+          [ -d "dist" ] && OUTDIR="dist"
+          echo "Using output dir: $OUTDIR"
+          mkdir -p artifact && cp -a "$OUTDIR"/. artifact/
+
+      - name: Upload built artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-dist
+          path: artifact
+          if-no-files-found: error
+          retention-days: 7
+
+  deploy:
+    name: Deploy preview to Cloudflare Pages
+    if: ${{ github.event.pull_request.head.repo.fork == true && github.event.action != 'closed' }}
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Check required secrets
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_PAGES_PROJECT: ${{ secrets.CF_PAGES_PROJECT }}
+        run: |
+          missing=0
+          for v in CF_API_TOKEN CF_ACCOUNT_ID CF_PAGES_PROJECT; do
+            if [ -z "${!v}" ]; then
+              echo "::error::Missing repository secret '$v'."
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then
+            echo "Set CF_API_TOKEN, CF_ACCOUNT_ID, CF_PAGES_PROJECT in repo settings. CF_PAGES_PROJECT must be a Cloudflare Pages Direct Upload project."
+            exit 1
+          fi
+
+      - name: Download built artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site-dist
+          path: site-dist
+
+      - name: Publish to Cloudflare Pages (preview)
+        id: pages
+        uses: cloudflare/pages-action@v1
+        with:
+          # Required repo secrets (GitHub > Settings > Secrets and variables > Actions)
+          # CF_PAGES_PROJECT should be a Pages project created as "Direct Upload" (no Git integration).
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          projectName: ${{ secrets.CF_PAGES_PROJECT }}
+          directory: site-dist
+          # Stable per-PR preview
+          branch: pr-${{ github.event.pull_request.number }}
+          commitHash: ${{ github.event.pull_request.head.sha }}
+          wranglerVersion: '3'
+
+      - name: Comment preview URL
+        if: ${{ always() }}
+        uses: actions/github-script@v7
+        env:
+          PREVIEW_URL: ${{ steps.pages.outputs.deployment-url || steps.pages.outputs.url || '' }}
+        with:
+          script: |
+            const url = process.env.PREVIEW_URL;
+            if (!url) {
+              core.info('No preview URL found from Cloudflare action outputs.');
+              return;
+            }
+            const body = `Cloudflare Pages preview: ${url}`;
+            // Update existing bot comment if present; otherwise create a new one
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const existing = comments.find(c =>
+              c.user.type === 'Bot' && c.body && c.body.includes('Cloudflare Pages preview:')
+            );
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
+
+  # Optional: do nothing on close (Cloudflare will mark preview inactive).
+  # You can add a small comment on close if desired.
+  closed-note:
+    name: Note on PR close
+    if: ${{ github.event.pull_request.head.repo.fork == true && github.event.action == 'closed' }}
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: 'PR closed. The Cloudflare Pages preview is no longer updated.',
+            });
