@@ -42,12 +42,13 @@ Here's our August 21, 2025 [Contributor Training](/blog/category/training) on us
 ## Capabilities
 
 - I was amazed to find that Claude could create an issue or PR for me, and certainly do commits. It can also do a comment on an issue or PR. I don't let it do those things without permission. (It seems to know how to use the `gh` utility to do these things; you need to have that installed and configured.)
-- I'm annoyed by how verbose and flowery the commit/issue/PR language is sometimes, but have tried to calm it down using directives in the `CLAUDE.md` file, but without success. It also is complimenting me all the time and always agreeing with what I say. I haven't been able to calm that down either.
+- I have definitely learned some things from Claude. It has used the go `t.Run()` much more effectively for clearer subtests than I had ever done before. And it seems to use a bit more modern Go in general, so that's a plus.
 
 ## Problems
 
 - The current billing situation for Claude is confusing. It's based on the number of tokens you're using, but it doesn't give you feedback until you've almost used it all up. Then (on the $20/month plan) you're not able to use it for a number of hours, which seems to be arbitrary. You can spend more for a higher monthly plan, and you can also pay-as-you-go for tokens. I haven't done either of those. Clear context (`/clear`) at key points to limit the amount of context you're carrying forward and limit the number of tokens you're using.
 - Claude can get stuck and go in circles, like other AI. Clear context to try to get around that. Have an overall plan to get around it.
+- I'm annoyed by how verbose and flowery the commit/issue/PR language is sometimes, but have tried to calm it down using directives in the `CLAUDE.md` file, but without success. It also is complimenting me all the time and always agreeing with what I say. I haven't been able to calm that down either.
 
 ## Demonstration
 
