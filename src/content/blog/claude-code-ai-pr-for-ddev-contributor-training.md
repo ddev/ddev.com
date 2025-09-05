@@ -20,9 +20,11 @@ Here's our August 21, 2025 [Contributor Training](/blog/category/training) on us
 
 ## Big Picture
 
+- The most amazing thing about Claude Code as an **agent** is that it can do things and respond to them, on your machine, and using the internet, with your permission. That puts it way ahead of any other AI I've used. It can run tests and respond to the results (and fix things). It can create a commit or a PR.
 - Used with respect, AI can be really powerful, a whole new level of abstraction in software development, maybe a bit like having an IDE when you were previously using just a line editor.
 - AI has lots of repetitive skill, but only you have **judgment**. It's phenomenal at repeating patterns that it's been trained on, and often good at imitating patterns that you point out to it.
 - It's a pretty good collaborator for those of us who work mostly alone.
+- When I don't have the energy to approach a problem from scratch, sometimes just explaining it to Claude Code and asking for a plan gets me started. I've taken on quite a number of DDEV bugs/features this way and got to them instead of procrastinating another year or two.
 
 ## Guardrails
 
