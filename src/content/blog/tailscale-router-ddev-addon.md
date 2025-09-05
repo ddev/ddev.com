@@ -35,7 +35,7 @@ Before installing the add-on, you need to set up Tailscale:
 
 1. **Install Tailscale** on your development machine by following the [installation guide](https://tailscale.com/download).
 2. **Add a second device** to your Tailscale network (phone, tablet, or another computer).
-3. **Enable HTTPS** in your Tailscale admin console at https://login.tailscale.com/admin/dns by clicking "Enable HTTPS..." This is required for TLS certificate generation.
+3. **Enable HTTPS** in your [Tailscale admin console](https://tailscale.com/kb/1153/enabling-https) at [https://login.tailscale.com/admin/dns] by clicking "Enable HTTPS..." This is required for TLS certificate generation.
 
 ### Installation
 
@@ -45,7 +45,7 @@ To get started, follow these steps:
     ```bash
     ddev add-on get atj4me/ddev-tailscale-router
     ```
-2.  Next, get a Tailscale auth key from the [Tailscale admin console](https://login.tailscale.com/admin/settings/keys).
+2.  Next, get a Tailscale auth key from the [Tailscale admin console](https://tailscale.com/kb/1085/auth-keys).
 3.  Then, configure the auth key in your DDEV project:
     ```bash
     ddev dotenv set .ddev/.env.tailscale-router --ts-authkey=tskey-auth-your-key-here
@@ -55,7 +55,9 @@ To get started, follow these steps:
     ddev restart
     ```
 
-After restarting, you can access your project using the new commands:
+### Using Your Tailscale URL
+
+Once installation is complete, you can access your project using these commands:
 
 ```bash
 # Get your project's Tailscale URL
@@ -86,9 +88,9 @@ ddev dotenv set .ddev/.env.tailscale-router --ts-privacy=public
 ddev restart
 ```
 
-If you have any questions or problems, please file an issue in the [GitHub repository](https://github.com/atj4me/ddev-tailscale-router/issues).
+I hope this add-on helps streamline your development workflow! If you run into any issues or have suggestions for improvements, feel free to open an issue on the [GitHub repository](https://github.com/atj4me/ddev-tailscale-router/issues).
 
-### Resources
+### Additional Resources
 
 Here are some additional resources that you might find helpful:
 
@@ -96,6 +98,7 @@ Here are some additional resources that you might find helpful:
 - **[Tailscale Download](https://tailscale.com/download)**: Installation guide for Tailscale on various platforms.
 - **[Tailscale: Enabling HTTPS](https://tailscale.com/kb/1153/enabling-https)**: Official documentation on enabling HTTPS for TLS certificate generation.
 - **[Tailscale Auth Keys](https://tailscale.com/kb/1085/auth-keys)**: Detailed information about creating and managing auth keys.
+- **[Tailscale DNS](https://tailscale.com/kb/1054/dns)**: DNS in Tailscale
 - **[DDEV dotenv](https://ddev.readthedocs.io/en/latest/users/usage/commands/#dotenv)**: Documentation on managing environment variables with DDEV.
 - **[DDEV Docs: Sharing](https://ddev.readthedocs.io/en/latest/users/usage/sharing/)**: The official DDEV documentation on how to share your projects.
 - **Medium: [My Journey with PHP Dev Environments](https://medium.com/@josephajithampi/my-journey-with-php-dev-environments-1da9f2806ee9)**: A blog post on setting up a PHP development environment.
