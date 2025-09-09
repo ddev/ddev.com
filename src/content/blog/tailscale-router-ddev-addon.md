@@ -1,6 +1,6 @@
 ---
 title: "Tailscale for DDEV: Simple and Secure Project Sharing"
-pubDate: 2025-08-26
+pubDate: 2025-09-09
 summary: "Tired of temporary sharing links? Learn how to use the ddev-tailscale-router add-on to get a stable, secure, and private URL for your DDEV projects."
 author: Ajith Thampi Joseph
 featureImage:
