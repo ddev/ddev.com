@@ -34,8 +34,8 @@ The `ddev-tailscale-router` add-on works by running a Tailscale container alongs
 Before installing the add-on, you need to set up Tailscale:
 
 1. **Install Tailscale** on at least one device (phone, tablet, or computer) by following the [installation guide](https://tailscale.com/download). This is needed to access the Tailscale admin console and generate an auth key.
-2. **Enable HTTPS** in your [DNS settings](https://login.tailscale.com/admin/dns) by clicking "Enable HTTPS..." This is required for TLS certificate generation.
-3. **Generate an auth key** in your [Keys settings](https://login.tailscale.com/admin/settings/keys). Ephemeral, reusable keys are recommended.
+2. **Enable HTTPS** by following the [Tailscale HTTPS documentation](https://tailscale.com/kb/1153/enabling-https). This is required for TLS certificate generation.
+3. **Generate an auth key** by following the [Tailscale auth keys documentation](https://tailscale.com/kb/1085/auth-keys). Ephemeral, reusable keys are recommended.
 
 ### Installation
 
@@ -76,7 +76,7 @@ Get your project's Tailscale URL:
 ddev tailscale url
 ```
 
-Your project's permanent Tailscale URL will look like: `https://<project-name>.<your-tailnet>.ts.net`. You can also find it in your [Tailscale admin console](https://login.tailscale.com/admin/machines).
+Your project's permanent Tailscale URL will look like: `https://<project-name>.<your-tailnet>.ts.net`. You can also find it in your Tailscale admin console.
 
 ### Public vs. Private Mode
 
