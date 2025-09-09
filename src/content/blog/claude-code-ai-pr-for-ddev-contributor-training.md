@@ -43,8 +43,8 @@ Here's our August 21, 2025 [Contributor Training](/blog/category/training) on us
 
 ## Capabilities
 
- - I was amazed to find that Claude could create an issue or PR for me, and certainly do commits. It can also comment on an issue or PR. I don't let it do those things without permission. (It seems to know how to use the `gh` utility to do these things; you need to have that installed and configured.)
- - I have definitely learned some things from Claude. It has used the Go `t.Run()` much more effectively for clearer subtests than I had ever done before. And it seems to use a bit more modern Go in general, so that's a plus.
+- I was amazed to find that Claude could create an issue or PR for me, and certainly do commits. It can also comment on an issue or PR. I don't let it do those things without permission. (It seems to know how to use the `gh` utility to do these things; you need to have that installed and configured.)
+- I have definitely learned some things from Claude. It has used the Go `t.Run()` much more effectively for clearer subtests than I had ever done before. And it seems to use a bit more modern Go in general, so that's a plus.
 
 ## Problems
 
