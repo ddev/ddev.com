@@ -74,4 +74,4 @@ Passcode: 12345
 - [Bluesky↗](https://bsky.app/profile/ddev.bsky.social)
 - [Discord↗](/s/discord)
 
-This article was reviewed by Claude Code AI. but it only fiddled with technical things. It did the banner image.
+This article was reviewed by Claude Code, and made minor wording changes. It did the banner image.
