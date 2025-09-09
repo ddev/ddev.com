@@ -33,25 +33,32 @@ The `ddev-tailscale-router` add-on works by running a Tailscale container alongs
 
 Before installing the add-on, you need to set up Tailscale:
 
-1. **Install Tailscale** on your development machine by following the [installation guide](https://tailscale.com/download).
-2. **Add a second device** to your Tailscale network (phone, tablet, or another computer).
-3. **Enable HTTPS** in your [Tailscale admin console](https://tailscale.com/kb/1153/enabling-https) at [https://login.tailscale.com/admin/dns] by clicking "Enable HTTPS..." This is required for TLS certificate generation.
+1. **Install Tailscale** on at least one device (phone, tablet, or computer) by following the [installation guide](https://tailscale.com/download). This is needed to access the Tailscale admin console and generate an auth key.
+2. **Enable HTTPS** in your [DNS settings](https://login.tailscale.com/admin/dns) by clicking "Enable HTTPS..." This is required for TLS certificate generation.
+3. **Generate an auth key** in your [Keys settings](https://login.tailscale.com/admin/settings/keys). Ephemeral, reusable keys are recommended.
 
 ### Installation
 
 To get started, follow these steps:
 
-1.  First, install the add-on:
+1.  **Set up your auth key** (recommended approach):
+    Add the auth key to your shell environment:
+
     ```bash
-    ddev add-on get atj4me/ddev-tailscale-router
+    echo 'export TS_AUTHKEY=tskey-auth-your-key-here' >> ~/.bashrc
+    source ~/.bashrc
     ```
-2.  Next, get a Tailscale auth key from the [Tailscale admin console](https://tailscale.com/kb/1085/auth-keys).
-3.  Then, configure the auth key in your DDEV project:
+    Replace `~/.bashrc` with `~/.zshrc` if you use Zsh, or your relevant shell configuration file.
+
+    Alternatively, you can set it per project (**NOT RECOMMENDED**, because `.ddev/.env.tailscale-router` is not intended to store secrets):
+
     ```bash
     ddev dotenv set .ddev/.env.tailscale-router --ts-authkey=tskey-auth-your-key-here
     ```
-4.  Finally, restart your DDEV project:
+
+2.  **Install the add-on:**
     ```bash
+    ddev add-on get atj4me/ddev-tailscale-router
     ddev restart
     ```
 
@@ -59,36 +66,40 @@ To get started, follow these steps:
 
 Once installation is complete, you can access your project using these commands:
 
+Launch your project's Tailscale URL in browser:
 ```bash
-# Get your project's Tailscale URL
-ddev tailscale url
-
-# Launch your project in the browser
 ddev tailscale launch
 ```
 
-You can also find your project's permanent Tailscale URL in the [Tailscale admin console](https://login.tailscale.com/admin/machines). It will look something like this: `http://<project-name>.<your-tailnet>.ts.net`.
+Get your project's Tailscale URL:
+```bash
+ddev tailscale url
+```
+
+Your project's permanent Tailscale URL will look like: `https://<project-name>.<your-tailnet>.ts.net`. You can also find it in your [Tailscale admin console](https://login.tailscale.com/admin/machines).
 
 ### Public vs. Private Mode
 
 The add-on offers two modes for sharing your project:
 
-- **Private (default):** In this mode, your project is only accessible to devices on your Tailscale network.
-- **Public:** Alternatively, you can make your project accessible to anyone on the internet.
+- **Private (default):** Your project is only accessible to devices on your Tailscale network.
+- **Public:** Your project is accessible to anyone on the internet.
 
-To switch between modes, you can set the `ts-privacy` variable in your `.ddev/.env.tailscale-router` file:
+To switch between modes:
 
+Switch to public mode (accessible to anyone on the internet):
 ```bash
-# Switch to private mode
-ddev dotenv set .ddev/.env.tailscale-router --ts-privacy=private
-ddev restart
-
-# Switch to public mode
 ddev dotenv set .ddev/.env.tailscale-router --ts-privacy=public
 ddev restart
 ```
 
-> **Note:** When setting `ts-privacy` to public, you'll need to update your Tailscale ACL rules to allow Funnel access. See the [Tailscale Funnel documentation](https://tailscale.com/kb/1223/funnel) for details.
+Switch back to private mode (default):
+```bash
+ddev dotenv set .ddev/.env.tailscale-router --ts-privacy=private
+ddev restart
+```
+
+> **Note:** For public access, you need to configure your [Access Control List (ACL)](https://tailscale.com/kb/1223/funnel#funnel-node-attribute) to enable Funnel. See the [Tailscale Funnel documentation](https://tailscale.com/kb/1223/funnel) for details on setting up the required ACL policy.
 
 I hope this add-on helps streamline your development workflow! If you run into any issues or have suggestions for improvements, feel free to open an issue on the [GitHub repository](https://github.com/atj4me/ddev-tailscale-router/issues).
 
@@ -100,6 +111,7 @@ Here are some additional resources that you might find helpful:
 - **[Tailscale Download](https://tailscale.com/download)**: Installation guide for Tailscale on various platforms.
 - **[Tailscale: Enabling HTTPS](https://tailscale.com/kb/1153/enabling-https)**: Official documentation on enabling HTTPS for TLS certificate generation.
 - **[Tailscale Auth Keys](https://tailscale.com/kb/1085/auth-keys)**: Detailed information about creating and managing auth keys.
+- **[Tailscale Funnel](https://tailscale.com/kb/1223/funnel)**: Documentation on enabling public access to your Tailscale services.
 - **[Tailscale DNS](https://tailscale.com/kb/1054/dns)**: DNS in Tailscale
 - **[DDEV dotenv](https://ddev.readthedocs.io/en/latest/users/usage/commands/#dotenv)**: Documentation on managing environment variables with DDEV.
 - **[DDEV Docs: Sharing](https://ddev.readthedocs.io/en/latest/users/usage/sharing/)**: The official DDEV documentation on how to share your projects.
