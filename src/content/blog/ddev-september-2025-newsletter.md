@@ -1,6 +1,6 @@
 ---
 title: "DDEV September 2025 Newsletter"
-pubDate: 2025-09-12
+pubDate: 2025-09-09
 #modifiedDate: 2025-04-07
 summary: "Training sessions!, CakeFest workshop in Madrid, DrupalCon in Vienna, governance proposal, and community updates"
 author: Randy Fay
@@ -17,6 +17,7 @@ Always tell us what you need in 2025 and 2026! [contact us ↗](/contact).
 
 ## What’s New
 
+- **Tailscale for DDEV: Simple and Secure Project Sharing** → [Read more ↗](tailscale-router-ddev-addon.md)
 - **Contributor Training: DDEV PR using Claude Code AI** → [Watch ↗](claude-code-ai-pr-for-ddev-contributor-training.md)
 - **DDEV Advisory Group Meeting** → [Watch ↗](https://github.com/orgs/ddev/discussions/7579)
 
