@@ -1,0 +1,62 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Main title -->
+  <text x="600" y="150" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="60" font-weight="bold">
+    Almost Everybody
+  </text>
+  
+  <!-- Heart with smaller decorative hearts around it -->
+  <text x="570" y="200" text-anchor="middle" fill="#ef4444" font-size="20" opacity="0.6">♥</text>
+  <text x="600" y="200" text-anchor="middle" fill="#ef4444" font-size="40">♥</text>
+  <text x="630" y="200" text-anchor="middle" fill="#ef4444" font-size="20" opacity="0.6">♥</text>
+  
+  <!-- Second line -->
+  <text x="600" y="250" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="60" font-weight="bold">
+    Loves DDEV
+  </text>
+  
+  <!-- DDEV logo background -->
+  <rect x="400" y="290" width="400" height="90" rx="45" fill="white" opacity="0.95"/>
+  
+  <!-- DDEV logo - properly centered vertically -->
+  <g transform="translate(480, 305) scale(0.8)">
+    <g fill="#02a8e2">
+      <path d="m41.1 6.4h29.1l15.6 15.6v24.6l-15.6 15.6h-26.2c-.7-.8-1.8-1.4-3-1.4-2.1 0-3.9 1.7-3.9 3.9 0 2.1 1.7 3.9 3.9 3.9 1.2 0 2.2-.5 3-1.4h28.3l18.5-18.5v-28.8l-18.5-18.5h-31.2c-.7-.8-1.8-1.4-3-1.4-2.1 0-3.9 1.7-3.9 3.9 0 2.1 1.7 3.9 3.9 3.9 1.2 0 2.3-.6 3-1.4zm-3-4.2c.9 0 1.6.7 1.6 1.6s-.7 1.6-1.6 1.6-1.6-.7-1.6-1.6c0-.8.7-1.6 1.6-1.6zm3 60.9c.9 0 1.6.7 1.6 1.6s-.7 1.6-1.6 1.6-1.6-.7-1.6-1.6.7-1.6 1.6-1.6z"/>
+      <path d="m68.2 11.4h-37.2v.1c-.7-.8-1.7-1.2-2.8-1.2-2.1 0-3.9 1.7-3.9 3.9 0 2.1 1.7 3.9 3.9 3.9 1.3 0 2.5-.6 3.2-1.6h34.7l9.7 9.7v16.3l-9.7 9.7h-35.3c-.7-.8-1.8-1.4-3-1.4-2.1 0-3.9 1.7-3.9 3.9 0 2.1 1.7 3.9 3.9 3.9 1.2 0 2.2-.5 3-1.4h37.3l12.6-12.6v-20.6zm-40 1.2c.9 0 1.6.7 1.6 1.6s-.7 1.6-1.6 1.6-1.6-.7-1.6-1.6c-.1-.9.7-1.6 1.6-1.6zm-.3 40.4c.9 0 1.6.7 1.6 1.6s-.7 1.6-1.6 1.6-1.6-.7-1.6-1.6c-.1-.9.7-1.6 1.6-1.6z"/>
+      <path d="m62.4 47h-45.2c-.7.7-1.6 1.1-2.7 1.1-2.1 0-3.9-1.7-3.9-3.9 0-2.1 1.7-3.9 3.9-3.9 1.3 0 2.5.7 3.2 1.7h12.4l-5.2-5.2h-17.1c-.7.8-1.8 1.4-3 1.4-2.1 0-3.899998-1.7-3.899998-3.9 0-2.1 1.699998-3.9 3.899998-3.9 1.2 0 2.2.5 3 1.4h19.2l10.3 10.2h24.6l3.7-3.7v-7.9l-3.7-3.7h-22.9l5.2 5.2h10.1c.7-.8 1.8-1.4 3-1.4 2.1 0 3.9 1.7 3.9 3.9 0 2.1-1.7 3.9-3.9 3.9-1.2 0-2.2-.5-3-1.4h-12.2l-10.2-10.3h-13.5c-.7.8-1.8 1.4-3 1.4-2.1 0-3.9-1.7-3.9-3.9 0-2.1 1.7-3.9 3.9-3.9 1.2 0 2.2.5 3 1.4h45.6l6.7 6.7v12.1l-6.7 6.6zm-5.1-14.4c-.9 0-1.6.7-1.6 1.6s.7 1.6 1.6 1.6 1.6-.7 1.6-1.6c.1-.8-.7-1.6-1.6-1.6zm-41.8-10.2c-.9 0-1.6.7-1.6 1.6s.7 1.6 1.6 1.6 1.6-.7 1.6-1.6c0-.8-.7-1.6-1.6-1.6zm-1 20.2c-.9 0-1.6.7-1.6 1.6s.7 1.6 1.6 1.6-1.6-.7-1.6-1.6c.1-.9-.7-1.6-1.6-1.6zm-9.6-10c-.9 0-1.6.7-1.6 1.6s.7 1.6 1.6 1.6 1.6-.7 1.6-1.6c0-.8-.7-1.6-1.6-1.6z"/>
+    </g>
+    <path d="m112.2 23h22.8c3.9 0 7.1 3.2 7.1 7.1v8.4c0 3.9-3.2 7.1-7.1 7.1h-22.8zm22.9-6.1h-29v34.9h29c7.3 0 13.3-6 13.3-13.3v-8.4c-.1-7.3-6-13.2-13.3-13.2zm69.9 14.3v20.5h36.1v-6.2h-29.9v-8.1h24.9v-6.2h-24.9zm-43.1-8.2h22.8c3.9 0 7.1 3.2 7.1 7.1v8.4c0 3.9-3.2 7.1-7.1 7.1h-22.8zm22.8-6.1h-29v34.9h29c7.3 0 13.3-6 13.3-13.3v-8.4c0-7.3-6-13.2-13.3-13.2zm63 0 19.1 33 1 1.8h5l1.1-1.8 19.1-33h-7.2l-15.5 26.8-15.5-26.8z" fill="#1e2127"/>
+    <path d="m211.2 23h29.9v-6.1h-36.1v6.1z" fill="#02a8e2"/>
+  </g>
+  
+  <!-- Hearts around the stats bar -->
+  <text x="250" y="485" text-anchor="middle" fill="#ef4444" font-size="18" opacity="0.5">♥</text>
+  <text x="950" y="485" text-anchor="middle" fill="#ef4444" font-size="18" opacity="0.5">♥</text>
+  
+  <!-- Survey source -->
+  <text x="600" y="420" text-anchor="middle" fill="#e5e7eb" font-family="Arial, sans-serif" font-size="24">
+    2025 Drupal Developer Survey
+  </text>
+  
+  <!-- Statistics bar -->
+  <rect x="300" y="460" width="600" height="40" rx="20" fill="rgba(255,255,255,0.2)"/>
+  <rect x="300" y="460" width="540" height="40" rx="20" fill="#10b981"/>
+  <text x="600" y="485" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+    90%+ Love Rate
+  </text>
+  
+  <!-- Bottom tagline -->
+  <text x="600" y="550" text-anchor="middle" fill="#e5e7eb" font-family="Arial, sans-serif" font-size="20" font-style="italic">
+    Join the community that developers love
+  </text>
+</svg>
