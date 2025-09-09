@@ -33,7 +33,7 @@ The `ddev-tailscale-router` add-on works by running a Tailscale container alongs
 
 Before installing the add-on, you need to set up Tailscale:
 
-1. **Install Tailscale** on at least one device (phone, tablet, or computer) by following the [installation guide](https://tailscale.com/download). This is needed to access the Tailscale admin console and generate an auth key.
+1. **Install Tailscale** on at least two devices (phone, tablet, or computer) by following the [installation guide](https://tailscale.com/download). This is required to generate an auth key.
 2. **Enable HTTPS** by following the [Tailscale HTTPS documentation](https://tailscale.com/kb/1153/enabling-https). This is required for TLS certificate generation.
 3. **Generate an auth key** by following the [Tailscale auth keys documentation](https://tailscale.com/kb/1085/auth-keys). Ephemeral, reusable keys are recommended.
 
@@ -41,13 +41,14 @@ Before installing the add-on, you need to set up Tailscale:
 
 To get started, follow these steps:
 
-1.  **Set up your auth key** (recommended approach):
+1.  First, **set up your auth key** (recommended approach):
     Add the auth key to your shell environment:
 
     ```bash
     echo 'export TS_AUTHKEY=tskey-auth-your-key-here' >> ~/.bashrc
     source ~/.bashrc
     ```
+
     Replace `~/.bashrc` with `~/.zshrc` if you use Zsh, or your relevant shell configuration file.
 
     Alternatively, you can set it per project (**NOT RECOMMENDED**, because `.ddev/.env.tailscale-router` is not intended to store secrets):
@@ -56,9 +57,14 @@ To get started, follow these steps:
     ddev dotenv set .ddev/.env.tailscale-router --ts-authkey=tskey-auth-your-key-here
     ```
 
-2.  **Install the add-on:**
+2.  Next, **install the add-on:**
+
     ```bash
     ddev add-on get atj4me/ddev-tailscale-router
+    ```
+
+3.  Finally, **restart DDEV:**
+    ```bash
     ddev restart
     ```
 
@@ -67,11 +73,13 @@ To get started, follow these steps:
 Once installation is complete, you can access your project using these commands:
 
 Launch your project's Tailscale URL in browser:
+
 ```bash
 ddev tailscale launch
 ```
 
 Get your project's Tailscale URL:
+
 ```bash
 ddev tailscale url
 ```
@@ -88,12 +96,14 @@ The add-on offers two modes for sharing your project:
 To switch between modes:
 
 Switch to public mode (accessible to anyone on the internet):
+
 ```bash
 ddev dotenv set .ddev/.env.tailscale-router --ts-privacy=public
 ddev restart
 ```
 
 Switch back to private mode (default):
+
 ```bash
 ddev dotenv set .ddev/.env.tailscale-router --ts-privacy=private
 ddev restart
