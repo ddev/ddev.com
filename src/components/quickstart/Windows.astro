@@ -32,7 +32,11 @@ const { latestVersion } = Astro.props
 
   <p>You’ll probably need to reboot.</p>
 
-  <p>After reboot, install an Ubuntu distro:
+  <p>If you had previously installed WSL, update it:</p>
+
+  <Terminal type="powershell" code={`> wsl --update`} />
+  
+  <p>Then, install an Ubuntu distro named "DDEV":</p>
 
   <Terminal type="powershell" code={`> wsl --install Ubuntu --name DDEV`} />
   
