@@ -24,7 +24,7 @@ Always tell us what you need in 2025 and 2026! [contact us ↗](/contact).
 ## Community Tutorials
 
 - **2025 Drupal Developer Survey**: "Almost everybody loves DDEV" [Read more ↗](https://www.ironstar.io/devsurvey25/)
-- **Mike Anello: Reclaim Docker disk space when using DDEV** [Read more↗](https://www.drupaleasy.com/quicktips/reclaim-docker-disk-space-when-using-ddev)
+- **Mike Anello: Reclaim Docker disk space when using DDEV** [Read more ↗](https://www.drupaleasy.com/quicktips/reclaim-docker-disk-space-when-using-ddev)
 
 ## DDEV Training Has Started Up Again!
 
@@ -52,16 +52,13 @@ Passcode: 12345
 
 ## Events & Community
 
-- **Join Us at CakeFest in Madrid** Randy will be doing a workshop on DDEV at [CakeFest in Madrid](https://cakefest.org/). See you there! Or if you're just in the Madrid area, let's do a get-together.
-- **See Us at DrupalCon EU in Vienna**  
-  Randy will be at [DrupalCon EU in Vienna](https://events.drupal.org/vienna2025) thanks to sponsorship from [Tag1](https://www.tag1consulting.com/) and [Platform.sh/Upsun](https://upsun.com). Please say hi. Let's talk about anything you might want to talk about. I normally do a bunch of Birds-of-a-Feather sessions. Or if you live in the Vienna area, let's do a get-together.
+- **Join Us at CakeFest in Madrid** — Randy will be doing a workshop on DDEV at [CakeFest in Madrid](https://cakefest.org/). See you there! Or if you're just in the Madrid area, let's do a get-together.
+- **See Us at DrupalCon EU in Vienna** — Randy will be at [DrupalCon EU in Vienna](https://events.drupal.org/vienna2025) thanks to sponsorship from [Tag1](https://www.tag1consulting.com/) and [Platform.sh/Upsun](https://upsun.com). Please say hi. Let's talk about anything you might want to talk about. I normally do a bunch of Birds-of-a-Feather sessions. Or if you live in the Vienna area, let's do a get-together.
 
 ## Governance & Roadmap
 
-- **Formal Governance Proposal**  
-  We've been working on a [formal governance proposal](https://docs.google.com/document/d/1MXatsz2FMBSnllnUArNCv562x0T2-EF1OwqsFEU9_-M/edit?usp=sharing). We'd love your comments and engagement.
-- **Informal Nominations for the DDEV Foundation Board**  
-  Would you like to nominate someone (or yourself)? Ping us via any of our [contact methods](/contact/).
+- **Formal Governance Proposal** — We've been working on a [formal governance proposal](https://docs.google.com/document/d/1MXatsz2FMBSnllnUArNCv562x0T2-EF1OwqsFEU9_-M/edit?usp=sharing). We'd love your comments and engagement.
+- **Informal Nominations for the DDEV Foundation Board** — Would you like to nominate someone (or yourself)? Ping us via any of our [contact methods](/contact/).
 
 ---
 
