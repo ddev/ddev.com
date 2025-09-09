@@ -88,6 +88,8 @@ ddev dotenv set .ddev/.env.tailscale-router --ts-privacy=public
 ddev restart
 ```
 
+> **Note:** When setting `ts-privacy` to public, you'll need to update your Tailscale ACL rules to allow Funnel access. See the [Tailscale Funnel documentation](https://tailscale.com/kb/1223/funnel) for details.
+
 I hope this add-on helps streamline your development workflow! If you run into any issues or have suggestions for improvements, feel free to open an issue on the [GitHub repository](https://github.com/atj4me/ddev-tailscale-router/issues).
 
 ### Additional Resources
