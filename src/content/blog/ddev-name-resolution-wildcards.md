@@ -1,7 +1,7 @@
 ---
 title: "Hostnames and Wildcards and DDEV, Oh My!"
 pubDate: 2024-03-28
-modifiedDate: 2025-07-21
+modifiedDate: 2025-09-17
 summary: How hostname name resolution works in a DDEV environment, including how wildcards work and how DNS is involved
 author: Randy Fay
 featureImage:
@@ -22,7 +22,7 @@ This article attempts to unwind what DDEV does for you in name resolution, and w
 
 <!-- textlint-disable -->
 
-The first thing to understand is the structure of a URL used by your browser. A URL like `https://www.google.com/search?q=nothing` is divided into three main parts, the protocol (usually `HTTPS`), the hostname (like `www.google.com`), and the URI, (like `/search?q=nothing`). Every URL that your browser can visit has at least the protocol and the hostname. Sometimes the protocol is hidden implying the default `HTTPS`. The URI may be the default "front page".
+The first thing to understand is the structure of a URL used by your browser. A URL like `https://www.google.com/search?q=nothing` is divided into three main parts, the protocol (usually `https`), the hostname (like `www.google.com`), and the URI, (like `/search?q=nothing`). Every URL that your browser can visit has at least the protocol and the hostname. Sometimes the protocol is hidden implying the default `https`. The URI may be the default "front page".
 
 <!-- textlint-enable -->
 
@@ -40,13 +40,13 @@ When a browser tries to resolve `https://something.ddev.site` it looks up the ho
 
 ## What is `ddev.site` and where does it come from?
 
-Your domain `ddev.site` as well as every subdomain, like `you.ddev.site` and `something.else.entirely.ddev.site` are all records in the Domain Name System, maintained by the DDEV project as long as you have a working internet connection. You don't have to spare a thought about them. You can `ping -c 1 something.ddev.site` and it will show that it is pinging `127.0.0.1`
+Your domain `ddev.site` as well as every subdomain, like `you.ddev.site` and `something.else.entirely.ddev.site` are all wildcard records in the Domain Name System, maintained by the DDEV project as long as you have a working internet connection. You don't have to spare a thought about them. You can `ping -c 1 something.ddev.site` and it will show that it is pinging `127.0.0.1`
 
 ## What happens when you don't have an internet connection?
 
-When no internet connection available, or the DNS name resolution is broken, as a fallback DDEV tries to add the hostname to your `hosts` file during startup (`ddev start`). This is `/etc/hosts` on a Linux or macOS based machine and `C:\Windows\system32\drivers\etc\hosts` on a Windows based one. This is one of the very few times that DDEV will ever try to change the configuration of your local workstation. In general, the philosophy is never to do that. DDEV knows how to edit the `hosts` file properly and does it when you give it permission with your `sudo` password.
+When no internet connection is available, or the DNS name resolution is broken, as a fallback DDEV tries to add the hostname to your `hosts` file during startup (`ddev start`). This is `/etc/hosts` on a Linux or macOS based machine and `C:\Windows\system32\drivers\etc\hosts` on a Windows based one. This is one of the very few times that DDEV will ever try to change the configuration of your local workstation. (In general, the philosophy is never to fiddle with your computer). DDEV knows how to edit the `hosts` file safely using the [`ddev-hostname`](ddev-hostname-security-improvements.md) special-purpose program and does it when you give it permission with your `sudo` password.
 
-If you _lose_ your internet connection after `ddev start`, then your browser is going to struggle because it doesn't have a way to resolve the hostname. This can happen when you are, for example, working on a project and get on a plane. `ddev restart` will force the update of the `hosts` file, `ddev hostname` can do that directly, or you can manually edit the `hosts` file.
+If you _lose_ your internet connection after `ddev start`, then your browser is going to struggle because it doesn't have a way to resolve the hostname. This can happen when you are, for example, working on a project and get on a plane. `ddev restart` will force the update of the `hosts` file, and the `ddev hostname` command can do that directly, or you can manually edit the `hosts` file.
 
 ## Why does my project use `ddev.site` anyway?
 
