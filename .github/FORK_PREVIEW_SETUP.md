@@ -13,13 +13,9 @@ The workflow in `.github/workflows/cloudflare-preview-forks.yml` implements a se
 
 ### 1. Cloudflare Pages Project
 
-Create a **Direct Upload** Cloudflare Pages project (not Git-connected):
+The workflow uses the existing `ddev-com-front-end` Cloudflare Pages project that serves the main site. This provides consistent preview URLs and centralized management.
 
-1. Go to [Cloudflare Pages](https://dash.cloudflare.com/pages)
-2. Click "Create a project"
-3. Choose "Direct Upload" (not "Connect to Git")
-4. Name your project (e.g., `ddev-com-fork-previews`)
-5. Note the project name for step 3
+**No additional project setup needed** - the workflow will create `pr-{number}` branch deployments within the existing project using Cloudflare's Direct Upload API.
 
 ### 2. Cloudflare API Token
 
@@ -46,7 +42,7 @@ Add these in GitHub repository settings → Secrets and variables → Actions:
 **Repository Variables:**
 
 - `CF_ACCOUNT_ID`: Your Cloudflare Account ID (found in dashboard sidebar)
-- `CF_PAGES_PROJECT`: The project name from step 1
+- `CF_PAGES_PROJECT`: Set to `ddev-com-front-end` (the main site's Cloudflare project)
 
 ### 4. Repository Variables (Optional)
 
@@ -98,7 +94,7 @@ The workflow is triggered automatically for:
 
 1. Downloads build artifact from Stage 1
 2. Deploys to Cloudflare Pages using API
-3. Creates stable preview URL: `https://project.pages.dev/pr-{number}`
+3. Creates stable preview URL: `https://pr-{number}.ddev-com-front-end.pages.dev`
 4. Comments preview URL on the PR
 5. Updates comment on subsequent pushes
 
@@ -132,9 +128,9 @@ The workflow is triggered automatically for:
 
 ### Preview URL Issues
 
-- Verify Cloudflare Pages project exists
-- Check account ID matches organization
-- Ensure project name in `CF_PAGES_PROJECT` is exact
+- Verify `ddev-com-front-end` Cloudflare Pages project exists and is accessible
+- Check account ID matches the project's organization
+- Ensure `CF_PAGES_PROJECT` is set to `ddev-com-front-end`
 
 ## Manual Testing
 
