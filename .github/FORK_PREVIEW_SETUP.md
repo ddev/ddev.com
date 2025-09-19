@@ -13,9 +13,9 @@ The workflow in `.github/workflows/cloudflare-preview-forks.yml` implements a se
 
 ### 1. Cloudflare Pages Project
 
-The workflow uses the existing `ddev-com-front-end` Cloudflare Pages project that serves the main site. This provides consistent preview URLs and centralized management.
+The workflow uses a dedicated `ddev-com-fork-previews` Cloudflare Pages project for security isolation from the main site.
 
-**No additional project setup needed** - the workflow will create `pr-{number}` branch deployments within the existing project using Cloudflare's Direct Upload API.
+**No additional project setup needed** - the project is already configured and the workflow will create stable preview deployments using Cloudflare's Direct Upload API.
 
 ### 2. Cloudflare API Token
 
@@ -43,7 +43,7 @@ Add these in GitHub repository settings → Secrets and variables → Actions:
 **Repository Variables:**
 
 - `CF_ACCOUNT_ID`: Your Cloudflare Account ID (found in dashboard sidebar)
-- `CF_PAGES_PROJECT`: Set to `ddev-com-front-end` (the main site's Cloudflare project)
+- `CF_PAGES_PROJECT`: Set to `ddev-com-fork-previews` (dedicated fork preview project)
 
 ### 4. Repository Variables (Optional)
 
@@ -95,7 +95,7 @@ The workflow is triggered automatically for:
 
 1. Downloads build artifact from Stage 1
 2. Deploys to Cloudflare Pages using API
-3. Creates stable preview URL: `https://pr-{number}.ddev-com-front-end.pages.dev`
+3. Creates stable preview URL: `https://{hash}.ddev-com-fork-previews.pages.dev`
 4. Comments preview URL on the PR
 5. Updates comment on subsequent pushes
 
@@ -129,9 +129,9 @@ The workflow is triggered automatically for:
 
 ### Preview URL Issues
 
-- Verify `ddev-com-front-end` Cloudflare Pages project exists and is accessible
+- Verify `ddev-com-fork-previews` Cloudflare Pages project exists and is accessible
 - Check account ID matches the project's organization
-- Ensure `CF_PAGES_PROJECT` is set to `ddev-com-front-end`
+- Ensure `CF_PAGES_PROJECT` is set to `ddev-com-fork-previews`
 
 ## Manual Testing
 

@@ -332,8 +332,12 @@ jobs:
         env:
           DEPLOYMENT_URL: ${{ steps.pages.outputs.deployment-url }}
           ALT_URL: ${{ steps.pages.outputs.url }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
         with:
           script: |
+            // Log all available outputs for debugging
+            core.info(`Cloudflare outputs - deployment-url: ${process.env.DEPLOYMENT_URL}, url: ${process.env.ALT_URL}`);
+            
             // Prefer stable branch URL over commit-specific URL
             const branchUrl = process.env.ALT_URL;
             const commitUrl = process.env.DEPLOYMENT_URL;
@@ -344,17 +348,20 @@ jobs:
               return;
             }
 
-            const urlType = branchUrl ? 'stable branch preview' : 'deployment preview';
-            const body = `Cloudflare Pages ${urlType}: ${url}`;
+            const body = `🌐 **Fork Preview for PR #${process.env.PR_NUMBER}**
 
-            core.info(`Using ${urlType} URL: ${url}`);
+${url}
+
+*This preview updates automatically when you push changes to your fork.*`;
+
+            core.info(`Using preview URL: ${url}`);
             const { data: comments } = await github.rest.issues.listComments({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
             });
             const existing = comments.find(c =>
-              c.user?.type === 'Bot' && c.body && c.body.includes('Cloudflare Pages preview:')
+              c.user?.type === 'Bot' && c.body && c.body.includes('Cloudflare Pages')
             );
             if (existing) {
               await github.rest.issues.updateComment({
