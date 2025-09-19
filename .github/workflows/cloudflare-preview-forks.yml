@@ -284,8 +284,8 @@ jobs:
       - name: Check required secrets
         env:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
-          CF_PAGES_PROJECT: ${{ secrets.CF_PAGES_PROJECT }}
+          CF_ACCOUNT_ID: ${{ vars.CF_ACCOUNT_ID }}
+          CF_PAGES_PROJECT: ${{ vars.CF_PAGES_PROJECT }}
         run: |
           missing=0
           for v in CF_API_TOKEN CF_ACCOUNT_ID CF_PAGES_PROJECT; do
@@ -309,11 +309,11 @@ jobs:
         id: pages
         uses: cloudflare/pages-action@v1
         with:
-          # Required repo secrets (GitHub > Settings > Secrets and variables > Actions)
+          # Required repo secrets and variables (GitHub > Settings > Secrets and variables > Actions)
           # CF_PAGES_PROJECT should be a Pages project created as "Direct Upload" (no Git integration).
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          projectName: ${{ secrets.CF_PAGES_PROJECT }}
+          accountId: ${{ vars.CF_ACCOUNT_ID }}
+          projectName: ${{ vars.CF_PAGES_PROJECT }}
           directory: site-dist
           # Stable per-PR preview
           branch: pr-${{ github.event.pull_request.number }}

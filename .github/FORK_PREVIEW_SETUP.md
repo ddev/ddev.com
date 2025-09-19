@@ -35,11 +35,14 @@ Create an API token with Pages permissions:
 5. Set account and zone resources as needed
 6. Save the token
 
-### 3. Repository Secrets
+### 3. Repository Secrets and Variables
 
-Add these secrets in GitHub repository settings → Secrets and variables → Actions:
+Add these in GitHub repository settings → Secrets and variables → Actions:
 
+**Repository Secrets:**
 - `CF_API_TOKEN`: The API token from step 2
+
+**Repository Variables:**
 - `CF_ACCOUNT_ID`: Your Cloudflare Account ID (found in dashboard sidebar)
 - `CF_PAGES_PROJECT`: The project name from step 1
 
