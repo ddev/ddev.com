@@ -324,7 +324,6 @@ jobs:
           directory: site-dist
           # Stable per-PR preview
           branch: pr-${{ github.event.pull_request.number }}
-          commitHash: ${{ github.event.pull_request.head.sha }}
           wranglerVersion: "3"
 
       - name: Comment preview URL
