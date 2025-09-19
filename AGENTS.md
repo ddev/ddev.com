@@ -61,12 +61,13 @@ Only commit when explicitly requested by the user.
 Use descriptive branch names that include:
 
 - Date in YYYYMMDD format
-- Your GitHub username  
+- Your GitHub username
 - Brief description of the work
 
 Format: `YYYYMMDD_<username>_<short_description>`
 
 Examples:
+
 - `20250919_rfay_update_quickstart`
 - `20250919_username_fix_blog_styling`
 - `20250919_contributor_add_sponsor`
@@ -199,6 +200,7 @@ Post content here...
 ### Authors
 
 Add new authors to `src/content/authors/` with schema:
+
 - name (must match blog post frontmatter)
 - firstName
 - avatarUrl (optional)
