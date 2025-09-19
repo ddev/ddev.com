@@ -1,0 +1,420 @@
+# Tip: This workflow must be present on the base repo's default branch (e.g., main) for pull_request_target to trigger.
+name: Cloudflare Pages preview (forked PRs)
+# Requires a Cloudflare Pages project (Direct Upload). CF_PAGES_PROJECT must be that project name.
+# No GitHub App integration is required for this workflow; deployments are done via API token.
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review, closed]
+
+# Least privilege at the workflow level
+permissions:
+  contents: read
+
+concurrency:
+  group: fork-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build site (no secrets)
+    if: ${{ github.event.pull_request.head.repo.fork == true && github.event.action != 'closed' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      # Optional repo variables (Settings > Secrets and variables > Actions > Variables)
+      # If set, PAGES_BUILD_CMD will be executed and PAGES_OUTPUT_DIR used for packaging.
+      PAGES_BUILD_CMD: ${{ vars.PAGES_BUILD_CMD }}
+      PAGES_OUTPUT_DIR: ${{ vars.PAGES_OUTPUT_DIR }}
+      # New: Optional working directory override (e.g., "site", "website", "docs")
+      PAGES_WORKING_DIR: ${{ vars.PAGES_WORKING_DIR }}
+    steps:
+      - name: Checkout PR code (from fork)
+        uses: actions/checkout@v4
+        with:
+          # Important: explicit checkout of the fork + head SHA to avoid using base workflow code
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+
+      - name: Detect working directory
+        id: workdir
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -n "${PAGES_WORKING_DIR:-}" ]; then
+            if [ ! -d "$PAGES_WORKING_DIR" ]; then
+              echo "::error::PAGES_WORKING_DIR '$PAGES_WORKING_DIR' does not exist."
+              exit 1
+            fi
+            echo "workdir=${PAGES_WORKING_DIR}" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # Look for common project subdirs with recognizable configs
+          is_proj_dir() {
+            local d="$1"
+            test -d "$d" || return 1
+            [ -f "$d/package.json" ] && return 0
+            [ -f "$d/pnpm-lock.yaml" ] && return 0
+            [ -f "$d/yarn.lock" ] && return 0
+            [ -f "$d/hugo.toml" ] || [ -f "$d/hugo.yaml" ] || [ -f "$d/hugo.yml" ] && return 0
+            [ -f "$d/config.toml" ] || [ -f "$d/config.yaml" ] || [ -f "$d/config.yml" ] && return 0
+            return 1
+          }
+          if is_proj_dir "."; then echo "workdir=." >> "$GITHUB_OUTPUT"; exit 0; fi
+          for d in site website web docs app; do
+            if is_proj_dir "$d"; then echo "workdir=$d" >> "$GITHUB_OUTPUT"; exit 0; fi
+          done
+          # Fallback to repo root
+          echo "workdir=." >> "$GITHUB_OUTPUT"
+
+      - name: Print repo and workdir for debugging
+        run: |
+          echo "Repo root: $(pwd)"
+          echo "Chosen workdir: ${{ steps.workdir.outputs.workdir }}"
+          ls -la
+          echo "---"
+          ls -la "${{ steps.workdir.outputs.workdir }}"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          check-latest: true
+
+      - name: Content validation and security checks
+        shell: bash
+        working-directory: ${{ steps.workdir.outputs.workdir }}
+        run: |
+          set -euo pipefail
+          echo "Running content validation and security checks..."
+
+          # Check for potentially malicious files
+          if find . -name "*.php" -o -name "*.exe" -o -name "*.sh" -path "*/src/content/*" | grep -q .; then
+            echo "::warning::Executable files found in content directory. Manual review recommended."
+          fi
+
+          # Validate blog post frontmatter structure
+          if [ -d "src/content/blog" ]; then
+            echo "Validating blog post structure..."
+            for file in src/content/blog/*.md; do
+              if [ -f "$file" ]; then
+                # Check for required frontmatter fields
+                if ! grep -q "^title:" "$file" || ! grep -q "^pubDate:" "$file" || ! grep -q "^author:" "$file"; then
+                  echo "::error::Blog post $file missing required frontmatter (title, pubDate, author)"
+                  exit 1
+                fi
+                # Check for suspicious content patterns
+                if grep -qi "javascript:" "$file" || grep -qi "<script" "$file"; then
+                  echo "::warning::Potentially unsafe content detected in $file. Manual review recommended."
+                fi
+              fi
+            done
+          fi
+
+          # Check for oversized images
+          if find public -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" 2>/dev/null | xargs -I {} sh -c 'size=$(stat -c%s "{}"); if [ $size -gt 2097152 ]; then echo "::warning::Large image detected: {} ($(($size/1024))KB)"; fi' 2>/dev/null || true; then
+            echo "Image size check completed"
+          fi
+
+          echo "Content validation completed"
+
+      - name: Detect build type
+        id: detect
+        shell: bash
+        working-directory: ${{ steps.workdir.outputs.workdir }}
+        run: |
+          set -euo pipefail
+          if [ -n "${PAGES_BUILD_CMD:-}" ]; then
+            echo "type=custom" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [ -f pnpm-lock.yaml ]; then
+            echo "type=pnpm" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          if [ -f yarn.lock ]; then
+            echo "type=yarn" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          if [ -f package.json ]; then
+            echo "type=npm" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          # Detect Hugo by common config files
+          if [ -f hugo.toml ] || [ -f hugo.yaml ] || [ -f hugo.yml ] || [ -f config.toml ] || [ -f config.yaml ] || [ -f config.yml ]; then
+            echo "type=hugo" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          echo "::warning::Could not detect build system in $PWD. Will deploy a minimal placeholder site. Set repo variable PAGES_BUILD_CMD and optionally PAGES_OUTPUT_DIR/PAGES_WORKING_DIR for a real build."
+          echo "type=none" >> "$GITHUB_OUTPUT"
+
+      - name: Install dependencies for linting
+        if: ${{ steps.detect.outputs.type == 'npm' || steps.detect.outputs.type == 'yarn' || steps.detect.outputs.type == 'pnpm' }}
+        working-directory: ${{ steps.workdir.outputs.workdir }}
+        run: |
+          if [ -f package.json ]; then
+            if [ -f pnpm-lock.yaml ]; then
+              corepack enable && pnpm install --frozen-lockfile
+            elif [ -f yarn.lock ]; then
+              corepack enable && yarn install --frozen-lockfile
+            else
+              npm ci || npm install
+            fi
+          fi
+
+      - name: Run content linting
+        if: ${{ steps.detect.outputs.type == 'npm' || steps.detect.outputs.type == 'yarn' || steps.detect.outputs.type == 'pnpm' }}
+        working-directory: ${{ steps.workdir.outputs.workdir }}
+        run: |
+          # Run textlint if available (for content quality)
+          if [ -f package.json ] && npm list textlint >/dev/null 2>&1; then
+            echo "Running textlint..."
+            npm run textlint || echo "::warning::Textlint found issues. Consider running 'ddev npm run textlint:fix' locally."
+          fi
+
+          # Run prettier check if available (for code formatting)
+          if [ -f package.json ] && npm list prettier >/dev/null 2>&1; then
+            echo "Running prettier check..."
+            npm run prettier || echo "::warning::Prettier found formatting issues. Consider running 'ddev npm run prettier:fix' locally."
+          fi
+
+      - name: Build (custom)
+        if: ${{ steps.detect.outputs.type == 'custom' }}
+        working-directory: ${{ steps.workdir.outputs.workdir }}
+        run: |
+          set -euo pipefail
+          echo "+ ${PAGES_BUILD_CMD}"
+          eval "${PAGES_BUILD_CMD}"
+
+      - name: Enable Corepack (pnpm/yarn)
+        if: ${{ steps.detect.outputs.type == 'pnpm' || steps.detect.outputs.type == 'yarn' }}
+        working-directory: ${{ steps.workdir.outputs.workdir }}
+        run: corepack enable
+
+      - name: Install deps and build (pnpm)
+        if: ${{ steps.detect.outputs.type == 'pnpm' }}
+        working-directory: ${{ steps.workdir.outputs.workdir }}
+        run: |
+          pnpm --version
+          pnpm install --frozen-lockfile
+          pnpm run build
+
+      - name: Install deps and build (yarn)
+        if: ${{ steps.detect.outputs.type == 'yarn' }}
+        working-directory: ${{ steps.workdir.outputs.workdir }}
+        run: |
+          yarn --version
+          yarn install --frozen-lockfile
+          yarn build
+
+      - name: Install deps and build (npm)
+        if: ${{ steps.detect.outputs.type == 'npm' }}
+        working-directory: ${{ steps.workdir.outputs.workdir }}
+        run: |
+          npm ci || npm install
+          npm run build
+
+      - name: Setup Hugo
+        if: ${{ steps.detect.outputs.type == 'hugo' }}
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "latest"
+          extended: true
+
+      - name: Build (Hugo)
+        if: ${{ steps.detect.outputs.type == 'hugo' }}
+        working-directory: ${{ steps.workdir.outputs.workdir }}
+        run: hugo --minify
+
+      - name: Determine output directory
+        id: outdir
+        shell: bash
+        working-directory: ${{ steps.workdir.outputs.workdir }}
+        run: |
+          set -euo pipefail
+          if [ -n "${PAGES_OUTPUT_DIR:-}" ]; then
+            OUTDIR="${PAGES_OUTPUT_DIR}"
+          else
+            # Prefer Hugo 'public' for hugo builds
+            if [ "${{ steps.detect.outputs.type }}" = "hugo" ] && [ -d public ]; then
+              OUTDIR="public"
+            else
+              for d in dist build .output/public .vercel/output/static out public site _site; do
+                if [ -d "$d" ]; then OUTDIR="$d"; break; fi
+              done
+            fi
+          fi
+          if [ -z "${OUTDIR:-}" ] || [ ! -d "$OUTDIR" ]; then
+            if [ "${{ steps.detect.outputs.type }}" = "none" ]; then
+              OUTDIR=".cloudflare-fallback"
+              mkdir -p "$OUTDIR"
+              echo '<!doctype html><html><head><meta charset="utf-8"><title>Preview placeholder</title><meta name="robots" content="noindex,nofollow"><style>body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; padding: 2rem; line-height: 1.5; } code { background: #f4f4f4; padding: 0.1rem 0.3rem; border-radius: 4px; }</style></head><body><h1>Cloudflare Pages preview placeholder</h1><p>No build system or output directory was detected for this PR preview.</p><p>To enable real previews, set repository variables in the base repo:</p><ul><li><code>PAGES_WORKING_DIR</code> (optional): project subfolder (e.g., <code>site</code>).</li><li><code>PAGES_BUILD_CMD</code> (e.g., <code>hugo --minify</code> or <code>npm ci && npm run build</code>).</li><li><code>PAGES_OUTPUT_DIR</code> (e.g., <code>public</code> or <code>dist</code>).</li></ul></body></html>' > "$OUTDIR/index.html"
+            else
+              echo "::error::Could not determine output directory in $PWD. Set repo variable PAGES_OUTPUT_DIR."
+              exit 1
+            fi
+          fi
+          echo "Using output dir: $OUTDIR"
+          echo "outdir=$OUTDIR" >> "$GITHUB_OUTPUT"
+
+      - name: Package built site
+        run: |
+          mkdir -p artifact
+          SRC="${{ steps.workdir.outputs.workdir }}/${{ steps.outdir.outputs.outdir }}"
+          echo "Copying from: $SRC"
+          cp -a "$SRC"/. artifact/
+          echo "Packaged $(find artifact -type f | wc -l) files."
+
+      - name: Upload built artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-dist
+          path: artifact
+          if-no-files-found: error
+          retention-days: 7
+
+  deploy:
+    name: Deploy preview to Cloudflare Pages
+    if: ${{ github.event.pull_request.head.repo.fork == true && github.event.action != 'closed' }}
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+    steps:
+      - name: Load 1password secret(s)
+        uses: 1password/load-secrets-action@v3
+        with:
+          export-env: true
+        env:
+          OP_SERVICE_ACCOUNT_TOKEN: "${{ secrets.TESTS_SERVICE_ACCOUNT_TOKEN }}"
+          CF_API_TOKEN: "op://test-secrets/CF_API_TOKEN/credential"
+
+      - name: Check required secrets
+        env:
+          CF_ACCOUNT_ID: ${{ vars.CF_ACCOUNT_ID }}
+          CF_PAGES_PROJECT: ${{ vars.CF_PAGES_PROJECT }}
+        run: |
+          missing=0
+          for v in CF_API_TOKEN CF_ACCOUNT_ID CF_PAGES_PROJECT; do
+            if [ -z "${!v}" ]; then
+              echo "::error::Missing repository secret '$v'."
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then
+            echo "Set CF_API_TOKEN, CF_ACCOUNT_ID, CF_PAGES_PROJECT in repo settings. CF_PAGES_PROJECT must be a Cloudflare Pages Direct Upload project."
+            exit 1
+          fi
+
+      - name: Download built artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site-dist
+          path: site-dist
+
+      - name: Publish to Cloudflare Pages (preview)
+        id: pages
+        uses: cloudflare/pages-action@v1
+        with:
+          # Required repo secrets and variables (GitHub > Settings > Secrets and variables > Actions)
+          # CF_PAGES_PROJECT should be a Pages project created as "Direct Upload" (no Git integration).
+          apiToken: ${{ env.CF_API_TOKEN }}
+          accountId: ${{ vars.CF_ACCOUNT_ID }}
+          projectName: ${{ vars.CF_PAGES_PROJECT }}
+          directory: site-dist
+          # Stable per-PR preview
+          branch: pr-${{ github.event.pull_request.number }}
+          wranglerVersion: "3"
+
+      - name: Comment preview URL
+        if: ${{ always() }}
+        uses: actions/github-script@v7
+        env:
+          DEPLOYMENT_URL: ${{ steps.pages.outputs.deployment-url }}
+          ALT_URL: ${{ steps.pages.outputs.url }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        with:
+          script: |
+            // Log all available outputs for debugging
+            core.info(`Cloudflare deployment-url: ${process.env.DEPLOYMENT_URL}`);
+            core.info(`Cloudflare url: ${process.env.ALT_URL}`);
+
+            // Prefer stable branch URL over commit-specific URL
+            const branchUrl = process.env.ALT_URL;
+            const commitUrl = process.env.DEPLOYMENT_URL;
+            let url = branchUrl || commitUrl || '';
+
+            if (!url) {
+              core.info('No preview URL found from Cloudflare action outputs.');
+              return;
+            }
+
+            // Check existing comments BEFORE creating body to potentially reuse URL
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const existing = comments.find(c =>
+              (c.user?.login === 'github-actions[bot]' || c.user?.type === 'Bot') &&
+              c.body &&
+              c.body.includes('Fork Preview for PR')
+            );
+
+            // If there's an existing comment, check if we should reuse its URL for stability
+            if (existing) {
+              const existingUrl = existing.body.match(/https:\/\/[a-f0-9]+\.ddev-com-fork-previews\.pages\.dev/);
+              if (existingUrl && existingUrl[0]) {
+                core.info(`Found existing URL: ${existingUrl[0]}, new URL: ${url}`);
+                if (existingUrl[0] !== url) {
+                  core.info('URL changed - Cloudflare created new deployment instead of updating existing one');
+                }
+              }
+            }
+
+            const body = `🌐 **Fork Preview for PR #${process.env.PR_NUMBER}**\n\n${url}\n\n*This preview updates automatically when you push changes to your fork.*`;
+
+            core.info(`Using preview URL: ${url}`);
+
+            // Debug: Log all comments for troubleshooting
+            core.info(`Found ${comments.length} total comments`);
+            comments.forEach((c, i) => {
+              core.info(`Comment ${i}: user=${c.user?.login}, type=${c.user?.type}, body preview=${c.body?.substring(0, 50)}...`);
+            });
+
+            core.info(`Found existing comment: ${existing ? 'YES' : 'NO'}`);
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
+
+  # Optional: do nothing on close (Cloudflare will mark preview inactive).
+  # You can add a small comment on close if desired.
+  closed-note:
+    name: Note on PR close
+    if: ${{ github.event.pull_request.head.repo.fork == true && github.event.action == 'closed' }}
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: 'PR closed. The Cloudflare Pages preview is no longer updated.',
+            });
