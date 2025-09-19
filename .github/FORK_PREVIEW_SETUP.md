@@ -161,13 +161,16 @@ To test the workflow:
 ## Known Issues & Future Improvements
 
 ### URL Stability Problem
+
 Currently, Cloudflare's Direct Upload API creates a new deployment hash with each push, resulting in changing preview URLs like:
+
 - First push: `https://2e1a74f4.ddev-com-fork-previews.pages.dev`
 - Second push: `https://e98fa6ff.ddev-com-fork-previews.pages.dev`
 
 This breaks the ability to bookmark or share stable preview URLs for review purposes.
 
 **Potential Solutions to Investigate:**
+
 1. **Force predictable branch naming**: Try using branch names like `pr${{ github.event.pull_request.number }}` and construct expected URLs manually
 2. **Track and reuse first URL**: Store the initial deployment URL and attempt to update the same deployment rather than creating new ones
 3. **Use Cloudflare API directly**: Bypass the GitHub action and use Wrangler CLI or direct API calls for more control over deployment naming
