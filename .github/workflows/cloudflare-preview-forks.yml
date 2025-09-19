@@ -83,6 +83,43 @@ jobs:
           node-version: 20
           check-latest: true
 
+      - name: Content validation and security checks
+        shell: bash
+        working-directory: ${{ steps.workdir.outputs.workdir }}
+        run: |
+          set -euo pipefail
+          echo "Running content validation and security checks..."
+          
+          # Check for potentially malicious files
+          if find . -name "*.php" -o -name "*.exe" -o -name "*.sh" -path "*/src/content/*" | grep -q .; then
+            echo "::warning::Executable files found in content directory. Manual review recommended."
+          fi
+          
+          # Validate blog post frontmatter structure
+          if [ -d "src/content/blog" ]; then
+            echo "Validating blog post structure..."
+            for file in src/content/blog/*.md; do
+              if [ -f "$file" ]; then
+                # Check for required frontmatter fields
+                if ! grep -q "^title:" "$file" || ! grep -q "^pubDate:" "$file" || ! grep -q "^author:" "$file"; then
+                  echo "::error::Blog post $file missing required frontmatter (title, pubDate, author)"
+                  exit 1
+                fi
+                # Check for suspicious content patterns
+                if grep -qi "javascript:" "$file" || grep -qi "<script" "$file"; then
+                  echo "::warning::Potentially unsafe content detected in $file. Manual review recommended."
+                fi
+              fi
+            done
+          fi
+          
+          # Check for oversized images
+          if find public -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" 2>/dev/null | xargs -I {} sh -c 'size=$(stat -c%s "{}"); if [ $size -gt 2097152 ]; then echo "::warning::Large image detected: {} ($(($size/1024))KB)"; fi' 2>/dev/null || true; then
+            echo "Image size check completed"
+          fi
+          
+          echo "Content validation completed"
+
       - name: Detect build type
         id: detect
         shell: bash
@@ -108,6 +145,36 @@ jobs:
           fi
           echo "::warning::Could not detect build system in $PWD. Will deploy a minimal placeholder site. Set repo variable PAGES_BUILD_CMD and optionally PAGES_OUTPUT_DIR/PAGES_WORKING_DIR for a real build."
           echo "type=none" >> "$GITHUB_OUTPUT"
+
+      - name: Install dependencies for linting
+        if: ${{ steps.detect.outputs.type == 'npm' || steps.detect.outputs.type == 'yarn' || steps.detect.outputs.type == 'pnpm' }}
+        working-directory: ${{ steps.workdir.outputs.workdir }}
+        run: |
+          if [ -f package.json ]; then
+            if [ -f pnpm-lock.yaml ]; then
+              corepack enable && pnpm install --frozen-lockfile
+            elif [ -f yarn.lock ]; then
+              corepack enable && yarn install --frozen-lockfile
+            else
+              npm ci || npm install
+            fi
+          fi
+
+      - name: Run content linting
+        if: ${{ steps.detect.outputs.type == 'npm' || steps.detect.outputs.type == 'yarn' || steps.detect.outputs.type == 'pnpm' }}
+        working-directory: ${{ steps.workdir.outputs.workdir }}
+        run: |
+          # Run textlint if available (for content quality)
+          if [ -f package.json ] && npm list textlint >/dev/null 2>&1; then
+            echo "Running textlint..."
+            npm run textlint || echo "::warning::Textlint found issues. Consider running 'ddev npm run textlint:fix' locally."
+          fi
+          
+          # Run prettier check if available (for code formatting)
+          if [ -f package.json ] && npm list prettier >/dev/null 2>&1; then
+            echo "Running prettier check..."
+            npm run prettier || echo "::warning::Prettier found formatting issues. Consider running 'ddev npm run prettier:fix' locally."
+          fi
 
       - name: Build (custom)
         if: ${{ steps.detect.outputs.type == 'custom' }}
@@ -179,30 +246,7 @@ jobs:
             if [ "${{ steps.detect.outputs.type }}" = "none" ]; then
               OUTDIR=".cloudflare-fallback"
               mkdir -p "$OUTDIR"
-              cat > "$OUTDIR/index.html" <<'HTML'
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Preview placeholder</title>
-    <meta name="robots" content="noindex,nofollow">
-    <style>
-      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; padding: 2rem; line-height: 1.5; }
-      code { background: #f4f4f4; padding: 0.1rem 0.3rem; border-radius: 4px; }
-    </style>
-  </head>
-  <body>
-    <h1>Cloudflare Pages preview placeholder</h1>
-    <p>No build system or output directory was detected for this PR preview.</p>
-    <p>To enable real previews, set repository variables in the base repo:</p>
-    <ul>
-      <li><code>PAGES_WORKING_DIR</code> (optional): project subfolder (e.g., <code>site</code>).</li>
-      <li><code>PAGES_BUILD_CMD</code> (e.g., <code>hugo --minify</code> or <code>npm ci && npm run build</code>).</li>
-      <li><code>PAGES_OUTPUT_DIR</code> (e.g., <code>public</code> or <code>dist</code>).</li>
-    </ul>
-  </body>
-</html>
-HTML
+              echo '<!doctype html><html><head><meta charset="utf-8"><title>Preview placeholder</title><meta name="robots" content="noindex,nofollow"><style>body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; padding: 2rem; line-height: 1.5; } code { background: #f4f4f4; padding: 0.1rem 0.3rem; border-radius: 4px; }</style></head><body><h1>Cloudflare Pages preview placeholder</h1><p>No build system or output directory was detected for this PR preview.</p><p>To enable real previews, set repository variables in the base repo:</p><ul><li><code>PAGES_WORKING_DIR</code> (optional): project subfolder (e.g., <code>site</code>).</li><li><code>PAGES_BUILD_CMD</code> (e.g., <code>hugo --minify</code> or <code>npm ci && npm run build</code>).</li><li><code>PAGES_OUTPUT_DIR</code> (e.g., <code>public</code> or <code>dist</code>).</li></ul></body></html>' > "$OUTDIR/index.html"
             else
               echo "::error::Could not determine output directory in $PWD. Set repo variable PAGES_OUTPUT_DIR."
               exit 1
