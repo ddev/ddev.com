@@ -85,7 +85,11 @@ const { latestVersion } = Astro.props
 
   <p>Tip: Watch the <a href="/blog/watch-ddev-local-from-scratch-with-windows-wsl2/">video tutorial</a> showing all of this.</p>
 
-  <p>Inside the WSL2 "DDEV" distro create a directory for your project or clone your project. (<strong>This is not on the C:\ drive; Use the "DDEV" or "Windows Terminal" apps to access it. Or use <code>Explorer > Linux > DDEV > /home/&lt;you&gt;</code> to see the files.</strong>) </p>
+  <p><strong>Important:</strong> Work inside the WSL2 "DDEV" distro, not on your Windows C:\ drive. Open the "DDEV" app from your Start menu to access the Linux terminal.</p>
+
+  <p>To view files from Windows Explorer or your IDE: <code>Explorer > Linux > DDEV > home > [your-username]</code></p>
+
+  <p>Create a directory for your project:</p>
   <Terminal type={terminalType} code={`${terminalSymbol} mkdir -p ~/dev/my-project && cd ~/dev/my-project`} />
 
   <p>
