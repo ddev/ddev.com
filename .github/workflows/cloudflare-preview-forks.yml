@@ -336,8 +336,9 @@ jobs:
         with:
           script: |
             // Log all available outputs for debugging
-            core.info(`Cloudflare outputs - deployment-url: ${process.env.DEPLOYMENT_URL}, url: ${process.env.ALT_URL}`);
-            
+            core.info(`Cloudflare deployment-url: ${process.env.DEPLOYMENT_URL}`);
+            core.info(`Cloudflare url: ${process.env.ALT_URL}`);
+
             // Prefer stable branch URL over commit-specific URL
             const branchUrl = process.env.ALT_URL;
             const commitUrl = process.env.DEPLOYMENT_URL;
@@ -348,11 +349,7 @@ jobs:
               return;
             }
 
-            const body = `🌐 **Fork Preview for PR #${process.env.PR_NUMBER}**
-
-${url}
-
-*This preview updates automatically when you push changes to your fork.*`;
+            const body = `🌐 **Fork Preview for PR #${process.env.PR_NUMBER}**\n\n${url}\n\n*This preview updates automatically when you push changes to your fork.*`;
 
             core.info(`Using preview URL: ${url}`);
             const { data: comments } = await github.rest.issues.listComments({
