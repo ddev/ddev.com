@@ -334,12 +334,20 @@ jobs:
           ALT_URL: ${{ steps.pages.outputs.url }}
         with:
           script: |
-            const url = process.env.DEPLOYMENT_URL || process.env.ALT_URL || '';
+            // Prefer stable branch URL over commit-specific URL
+            const branchUrl = process.env.ALT_URL;
+            const commitUrl = process.env.DEPLOYMENT_URL;
+            const url = branchUrl || commitUrl || '';
+            
             if (!url) {
               core.info('No preview URL found from Cloudflare action outputs.');
               return;
             }
-            const body = `Cloudflare Pages preview: ${url}`;
+            
+            const urlType = branchUrl ? 'stable branch preview' : 'deployment preview';
+            const body = `Cloudflare Pages ${urlType}: ${url}`;
+            
+            core.info(`Using ${urlType} URL: ${url}`);
             const { data: comments } = await github.rest.issues.listComments({
               owner: context.repo.owner,
               repo: context.repo.repo,
