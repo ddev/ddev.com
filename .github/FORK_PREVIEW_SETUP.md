@@ -40,9 +40,11 @@ Create an API token with Pages permissions:
 Add these in GitHub repository settings → Secrets and variables → Actions:
 
 **Repository Secrets:**
+
 - `CF_API_TOKEN`: The API token from step 2
 
 **Repository Variables:**
+
 - `CF_ACCOUNT_ID`: Your Cloudflare Account ID (found in dashboard sidebar)
 - `CF_PAGES_PROJECT`: The project name from step 1
 
