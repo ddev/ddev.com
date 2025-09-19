@@ -37,7 +37,8 @@ Add these in GitHub repository settings → Secrets and variables → Actions:
 
 **Repository Secrets:**
 
-- `CF_API_TOKEN`: The API token from step 2
+- `PUSH_SERVICE_ACCOUNT_TOKEN`: 1Password service account token (if not already configured)
+- Note: `CF_API_TOKEN` is loaded from 1Password vault, not directly as a repository secret
 
 **Repository Variables:**
 

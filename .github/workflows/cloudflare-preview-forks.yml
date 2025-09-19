@@ -281,9 +281,16 @@ jobs:
       pull-requests: write
       issues: write
     steps:
+      - name: Load 1password secret(s)
+        uses: 1password/load-secrets-action@v3
+        with:
+          export-env: true
+        env:
+          OP_SERVICE_ACCOUNT_TOKEN: "${{ secrets.TESTS_SERVICE_ACCOUNT_TOKEN }}"
+          CF_API_TOKEN: "op://test-secrets/CF_API_TOKEN/credential"
+
       - name: Check required secrets
         env:
-          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           CF_ACCOUNT_ID: ${{ vars.CF_ACCOUNT_ID }}
           CF_PAGES_PROJECT: ${{ vars.CF_PAGES_PROJECT }}
         run: |
@@ -311,7 +318,7 @@ jobs:
         with:
           # Required repo secrets and variables (GitHub > Settings > Secrets and variables > Actions)
           # CF_PAGES_PROJECT should be a Pages project created as "Direct Upload" (no Git integration).
-          apiToken: ${{ secrets.CF_API_TOKEN }}
+          apiToken: ${{ env.CF_API_TOKEN }}
           accountId: ${{ vars.CF_ACCOUNT_ID }}
           projectName: ${{ vars.CF_PAGES_PROJECT }}
           directory: site-dist
