@@ -5,6 +5,7 @@ This guide explains how to configure the automated preview generation for forked
 ## Overview
 
 The workflow in `.github/workflows/cloudflare-preview-forks.yml` implements a secure two-stage process:
+
 1. **Build Stage**: Safely builds the site from fork code without exposing secrets
 2. **Deploy Stage**: Uses Cloudflare API to deploy the built site with secure credentials
 
@@ -15,7 +16,7 @@ The workflow in `.github/workflows/cloudflare-preview-forks.yml` implements a se
 Create a **Direct Upload** Cloudflare Pages project (not Git-connected):
 
 1. Go to [Cloudflare Pages](https://dash.cloudflare.com/pages)
-2. Click "Create a project" 
+2. Click "Create a project"
 3. Choose "Direct Upload" (not "Connect to Git")
 4. Name your project (e.g., `ddev-com-fork-previews`)
 5. Note the project name for step 3
@@ -28,7 +29,7 @@ Create an API token with Pages permissions:
 2. Click "Create Token"
 3. Use "Custom token" template
 4. Set permissions:
-   - `Zone:Zone:Read` 
+   - `Zone:Zone:Read`
    - `Zone:Page Rules:Edit`
    - `Account:Cloudflare Pages:Edit`
 5. Set account and zone resources as needed
@@ -53,16 +54,19 @@ For custom build configurations, set these in GitHub repository settings → Sec
 ### 5. Enable Workflow
 
 The workflow is triggered automatically for:
+
 - Forked repository PRs only
 - Events: `opened`, `synchronize`, `reopened`, `ready_for_review`, `closed`
 
 ## Security Features
 
 ### Two-Stage Architecture
+
 - **Stage 1 (Build)**: Runs fork code without any secrets
 - **Stage 2 (Deploy)**: Uses secrets only after build artifact is created
 
 ### Content Validation
+
 - Checks for executable files in content directories
 - Validates blog post frontmatter structure
 - Detects potentially unsafe content patterns
@@ -70,6 +74,7 @@ The workflow is triggered automatically for:
 - Runs textlint and prettier if available
 
 ### Access Controls
+
 - Only processes PRs from forked repositories
 - Uses `pull_request_target` with explicit fork checkout
 - Separates untrusted code execution from credential access
@@ -77,6 +82,7 @@ The workflow is triggered automatically for:
 ## Workflow Behavior
 
 ### Build Process
+
 1. Detects build system (npm/yarn/pnpm/hugo/custom)
 2. Runs content validation and security checks
 3. Installs dependencies and runs linting
@@ -84,6 +90,7 @@ The workflow is triggered automatically for:
 5. Packages output as artifact
 
 ### Deployment Process
+
 1. Downloads build artifact from Stage 1
 2. Deploys to Cloudflare Pages using API
 3. Creates stable preview URL: `https://project.pages.dev/pr-{number}`
@@ -91,6 +98,7 @@ The workflow is triggered automatically for:
 5. Updates comment on subsequent pushes
 
 ### PR Lifecycle
+
 - **Opened/Updated**: Creates or updates preview
 - **Closed**: Adds closure note (preview remains accessible)
 - **Draft**: Still builds and deploys (no special handling)
@@ -98,16 +106,19 @@ The workflow is triggered automatically for:
 ## Troubleshooting
 
 ### Build Failures
+
 - Check build logs in GitHub Actions
 - Ensure dependencies install correctly
 - Verify build command produces output directory
 
 ### Missing Secrets
+
 - Workflow will fail with clear error messages
 - Verify all three secrets are set correctly
 - Check Cloudflare API token permissions
 
 ### Content Validation Errors
+
 - Review security check output
 - Fix frontmatter issues in blog posts
 - Address linting warnings locally with:
@@ -115,6 +126,7 @@ The workflow is triggered automatically for:
   - `ddev npm run prettier:fix`
 
 ### Preview URL Issues
+
 - Verify Cloudflare Pages project exists
 - Check account ID matches organization
 - Ensure project name in `CF_PAGES_PROJECT` is exact
@@ -132,12 +144,14 @@ To test the workflow:
 ## Maintenance
 
 ### Regular Tasks
+
 - Monitor Cloudflare Pages usage and costs
 - Review security warnings in build logs
 - Update dependencies in fork validation steps
 - Clean up old preview deployments if needed
 
 ### Updates
+
 - Keep `cloudflare/pages-action` version current
 - Monitor Cloudflare API changes
 - Update content validation rules as needed

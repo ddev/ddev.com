@@ -89,12 +89,12 @@ jobs:
         run: |
           set -euo pipefail
           echo "Running content validation and security checks..."
-          
+
           # Check for potentially malicious files
           if find . -name "*.php" -o -name "*.exe" -o -name "*.sh" -path "*/src/content/*" | grep -q .; then
             echo "::warning::Executable files found in content directory. Manual review recommended."
           fi
-          
+
           # Validate blog post frontmatter structure
           if [ -d "src/content/blog" ]; then
             echo "Validating blog post structure..."
@@ -112,12 +112,12 @@ jobs:
               fi
             done
           fi
-          
+
           # Check for oversized images
           if find public -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" 2>/dev/null | xargs -I {} sh -c 'size=$(stat -c%s "{}"); if [ $size -gt 2097152 ]; then echo "::warning::Large image detected: {} ($(($size/1024))KB)"; fi' 2>/dev/null || true; then
             echo "Image size check completed"
           fi
-          
+
           echo "Content validation completed"
 
       - name: Detect build type
@@ -169,7 +169,7 @@ jobs:
             echo "Running textlint..."
             npm run textlint || echo "::warning::Textlint found issues. Consider running 'ddev npm run textlint:fix' locally."
           fi
-          
+
           # Run prettier check if available (for code formatting)
           if [ -f package.json ] && npm list prettier >/dev/null 2>&1; then
             echo "Running prettier check..."
@@ -216,7 +216,7 @@ jobs:
         if: ${{ steps.detect.outputs.type == 'hugo' }}
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
+          hugo-version: "latest"
           extended: true
 
       - name: Build (Hugo)
@@ -318,7 +318,7 @@ jobs:
           # Stable per-PR preview
           branch: pr-${{ github.event.pull_request.number }}
           commitHash: ${{ github.event.pull_request.head.sha }}
-          wranglerVersion: '3'
+          wranglerVersion: "3"
 
       - name: Comment preview URL
         if: ${{ always() }}
