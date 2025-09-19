@@ -1,7 +1,7 @@
 ---
 title: "Hostnames and Wildcards and DDEV, Oh My!"
 pubDate: 2024-03-28
-modifiedDate: 2025-09-17
+modifiedDate: 2025-09-20
 summary: How hostname name resolution works in a DDEV environment, including how wildcards work and how DNS is involved
 author: Randy Fay
 featureImage:
@@ -10,6 +10,7 @@ featureImage:
   credit: 'Ideogram.ai: Create An illustration showing a simplified and stylized representation of the internet with various devices (computers, tablets, and smartphones) displaying local development websites, all connected by dotted lines to a central server labeled "DDEV". The server has a large, glowing globe above it, symbolizing global DNS, with several dotted lines branching off to represent the resolution of wildcard hostnames. The background is digital and abstract, suggesting connectivity and network infrastructure.'
 categories:
   - Guides
+  - Training
 ---
 
 A very cool thing about DDEV is that most of the time you don’t have to worry about IP addresses, HTTPS, SSL, TLS, DNS, or name resolution in general and most of you will never have to. You don't even have to understand the rest of this article to use DDEV.
@@ -17,6 +18,14 @@ A very cool thing about DDEV is that most of the time you don’t have to worry 
 **Most of you will never need to understand anything in this article.**
 
 This article attempts to unwind what DDEV does for you in name resolution, and what to do when things require a bit more effort. People who use `ddev.site` URLs and have working DNS will never think about any of these things.
+
+## In video form!
+
+If you'd rather watch this, here's September 18, 2025 [Contributor Training](/blog/category/training):
+
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MKGkqFHu_hw?si=05Si39vwLo-cwak7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 ## Name resolution for browsers and URLs
 
