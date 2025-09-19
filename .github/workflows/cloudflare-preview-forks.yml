@@ -342,24 +342,48 @@ jobs:
             // Prefer stable branch URL over commit-specific URL
             const branchUrl = process.env.ALT_URL;
             const commitUrl = process.env.DEPLOYMENT_URL;
-            const url = branchUrl || commitUrl || '';
+            let url = branchUrl || commitUrl || '';
 
             if (!url) {
               core.info('No preview URL found from Cloudflare action outputs.');
               return;
             }
 
-            const body = `🌐 **Fork Preview for PR #${process.env.PR_NUMBER}**\n\n${url}\n\n*This preview updates automatically when you push changes to your fork.*`;
-
-            core.info(`Using preview URL: ${url}`);
+            // Check existing comments BEFORE creating body to potentially reuse URL
             const { data: comments } = await github.rest.issues.listComments({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
             });
+
             const existing = comments.find(c =>
-              c.user?.type === 'Bot' && c.body && c.body.includes('Cloudflare Pages')
+              (c.user?.login === 'github-actions[bot]' || c.user?.type === 'Bot') &&
+              c.body &&
+              c.body.includes('Fork Preview for PR')
             );
+
+            // If there's an existing comment, check if we should reuse its URL for stability
+            if (existing) {
+              const existingUrl = existing.body.match(/https:\/\/[a-f0-9]+\.ddev-com-fork-previews\.pages\.dev/);
+              if (existingUrl && existingUrl[0]) {
+                core.info(`Found existing URL: ${existingUrl[0]}, new URL: ${url}`);
+                if (existingUrl[0] !== url) {
+                  core.info('URL changed - Cloudflare created new deployment instead of updating existing one');
+                }
+              }
+            }
+
+            const body = `🌐 **Fork Preview for PR #${process.env.PR_NUMBER}**\n\n${url}\n\n*This preview updates automatically when you push changes to your fork.*`;
+
+            core.info(`Using preview URL: ${url}`);
+
+            // Debug: Log all comments for troubleshooting
+            core.info(`Found ${comments.length} total comments`);
+            comments.forEach((c, i) => {
+              core.info(`Comment ${i}: user=${c.user?.login}, type=${c.user?.type}, body preview=${c.body?.substring(0, 50)}...`);
+            });
+
+            core.info(`Found existing comment: ${existing ? 'YES' : 'NO'}`);
             if (existing) {
               await github.rest.issues.updateComment({
                 owner: context.repo.owner,
