@@ -314,33 +314,30 @@ jobs:
 
       - name: Publish to Cloudflare Pages (preview)
         id: pages
-        uses: cloudflare/pages-action@v1
+        uses: cloudflare/wrangler-action@v3
         with:
           # Required repo secrets and variables (GitHub > Settings > Secrets and variables > Actions)
           # CF_PAGES_PROJECT should be a Pages project created as "Direct Upload" (no Git integration).
           apiToken: ${{ env.CF_API_TOKEN }}
           accountId: ${{ vars.CF_ACCOUNT_ID }}
-          projectName: ${{ vars.CF_PAGES_PROJECT }}
-          directory: site-dist
-          # Stable per-PR preview
-          branch: pr-${{ github.event.pull_request.number }}
-          wranglerVersion: "3"
+          command: pages deploy site-dist --project-name=${{ vars.CF_PAGES_PROJECT }} --branch=pr-${{ github.event.pull_request.number }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Comment preview URL
         if: ${{ always() }}
         uses: actions/github-script@v7
         env:
           DEPLOYMENT_URL: ${{ steps.pages.outputs.deployment-url }}
-          ALT_URL: ${{ steps.pages.outputs.url }}
+          BRANCH_URL: ${{ steps.pages.outputs.pages-deployment-alias-url }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         with:
           script: |
             // Log all available outputs for debugging
             core.info(`Cloudflare deployment-url: ${process.env.DEPLOYMENT_URL}`);
-            core.info(`Cloudflare url: ${process.env.ALT_URL}`);
+            core.info(`Cloudflare branch-url: ${process.env.BRANCH_URL}`);
 
             // Prefer stable branch URL over commit-specific URL
-            const branchUrl = process.env.ALT_URL;
+            const branchUrl = process.env.BRANCH_URL;
             const commitUrl = process.env.DEPLOYMENT_URL;
             let url = branchUrl || commitUrl || '';
 
@@ -364,7 +361,7 @@ jobs:
 
             // If there's an existing comment, check if we should reuse its URL for stability
             if (existing) {
-              const existingUrl = existing.body.match(/https:\/\/[a-f0-9]+\.ddev-com-fork-previews\.pages\.dev/);
+              const existingUrl = existing.body.match(/https:\/\/[a-f0-9-]+\.[a-zA-Z0-9-]+\.pages\.dev/);
               if (existingUrl && existingUrl[0]) {
                 core.info(`Found existing URL: ${existingUrl[0]}, new URL: ${url}`);
                 if (existingUrl[0] !== url) {

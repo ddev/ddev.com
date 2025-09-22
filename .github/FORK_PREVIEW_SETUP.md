@@ -94,8 +94,8 @@ The workflow is triggered automatically for:
 ### Deployment Process
 
 1. Downloads build artifact from Stage 1
-2. Deploys to Cloudflare Pages using API
-3. Creates stable preview URL: `https://{hash}.ddev-com-fork-previews.pages.dev`
+2. Deploys to Cloudflare Pages using wrangler-action
+3. Creates stable branch URL for consistent preview access
 4. Comments preview URL on the PR
 5. Updates comment on subsequent pushes
 
@@ -154,25 +154,28 @@ To test the workflow:
 
 ### Updates
 
-- Keep `cloudflare/pages-action` version current
+- Keep `cloudflare/wrangler-action` version current
 - Monitor Cloudflare API changes
 - Update content validation rules as needed
 
-## Known Issues & Future Improvements
+## Stable URL Implementation
 
-### URL Stability Problem
+### Solution Implemented
 
-Currently, Cloudflare's Direct Upload API creates a new deployment hash with each push, resulting in changing preview URLs like:
+The workflow now uses `cloudflare/wrangler-action@v3` which provides stable branch URLs through the `pages-deployment-alias-url` output. This ensures consistent preview URLs for each PR:
 
-- First push: `https://2e1a74f4.ddev-com-fork-previews.pages.dev`
-- Second push: `https://e98fa6ff.ddev-com-fork-previews.pages.dev`
+- **Branch URL**: Stable per PR (e.g., `https://pr-123.project-name.pages.dev`)  
+- **Deployment URL**: Commit-specific for debugging if needed
 
-This breaks the ability to bookmark or share stable preview URLs for review purposes.
+### Benefits
 
-**Potential Solutions to Investigate:**
+1. **Stable bookmarking**: Preview URLs remain constant across pushes to the same PR
+2. **Better collaboration**: Team members can bookmark and share stable URLs
+3. **Future-proof**: Uses the recommended, actively maintained Cloudflare action
+4. **Enhanced debugging**: Both stable and commit-specific URLs available
 
-1. **Force predictable branch naming**: Try using branch names like `pr${{ github.event.pull_request.number }}` and construct expected URLs manually
-2. **Track and reuse first URL**: Store the initial deployment URL and attempt to update the same deployment rather than creating new ones
-3. **Use Cloudflare API directly**: Bypass the GitHub action and use Wrangler CLI or direct API calls for more control over deployment naming
+### Migration Notes
 
-**Current Status**: Comment updating works correctly (single comment per PR), but URLs change with each deployment. This is the main remaining issue to solve for optimal user experience.
+- Migrated from deprecated `cloudflare/pages-action@v1` to `cloudflare/wrangler-action@v3`
+- Updated output variable handling (`url` → `pages-deployment-alias-url`)
+- Maintained backward compatibility with existing project configuration
