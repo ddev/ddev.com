@@ -1,6 +1,6 @@
 ---
-title: "Solving Intel-only AMD64/X64 problems on macOS with Apple Silicon"
-pubDate: 2025-04-16
+title: "Experimental PR, ignore this"
+pubDate: 2026-09-30
 modifiedDate: 2025-04-17
 modifiedComment: Added a good example for an npm package that fails on arm64.
 summary: Some software packages and docker images are still only available in Intel versions, but emulating AMD64 is working pretty well these days on macOS with Rosetta 2.
