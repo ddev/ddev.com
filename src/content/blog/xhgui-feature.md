@@ -1,5 +1,5 @@
 ---
-title: "dummy stuff"
+title: "dummy stuff, round 2 for update"
 pubDate: 2026-04-01
 #modifiedDate: 2025-02-06
 summary: The new XHGui feature in DDEV makes profiling (studying a website's performance and bottlenecks) even easier than it was before, with a consistent web interface.
