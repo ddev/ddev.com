@@ -189,13 +189,13 @@ If you’re adding a new item to the array, choose whichever position it should 
 
 ```json
 {
-  "name": "Platform.sh",
+  "name": "Upsun",
   "type": "major",
-  "logo": "/logos/platform.sh.svg",
-  "darklogo": "/logos/platform.sh-darkmode.svg",
-  "squareLogo": "/logos/platform.sh-square.svg",
-  "url": "https://platform.sh",
-  "github": "platformsh",
+  "logo": "/logos/upsun.svg",
+  "darklogo": "/logos/upsun-darkmode.svg",
+  "squareLogo": "/logos/upsun-square.svg",
+  "url": "https://upsun.com",
+  "github": "upsun",
 },
 ```
 
