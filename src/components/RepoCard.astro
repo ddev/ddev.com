@@ -18,11 +18,12 @@ const repoData = await getRepoDetails(name)
 
 <a
   href={`https://github.com/${name}`}
+  target="_blank"
   class="border hover:border-blue-300 rounded-md shadow-sm hover:shadow-lg dark:border-slate-700"
 >
   <div class="">
     <div class="flex justify-between border-b px-3 py-3 dark:border-slate-700">
-      <h3 class="text-base font-bold">{name}</h3>
+      <h3 class="text-sm font-bold">{name}</h3>
       <div class="font-mono text-sm" style="margin-top: 2px">
         <StarIcon
           className="w-4 h-4 inline-block relative"
