@@ -72,7 +72,7 @@ A sophisticated platform like Upsun has many possibilities, and we want most thi
 
 DDEV v1.24.8 (required) adds [support for add-ons written mostly in PHP](https://docs.ddev.com/en/stable/users/extend/creating-add-ons/#php-based-actions-new). Originally, all add-ons were written in Bash, with Go templating. It worked great for so many simple add-ons, but was way too complicated for sophisticated ones. PHP is a familiar and powerful language for many add-on developers, so now provides a much more expressive way to write complex add-ons.
 
-The [ddev/platformsh](https://github.com/ddev/platformsh) add-on forced the issue on this. Every time we went back to it to maintain it we had to remember how Go templates worked and sort out complex Bash logic. Bash and Go templates are a lousy combination for maintainability. PHP should be much better. The `ddev-upsun` add-on will replace `ddev/platformsh` and supports both the Flex and Fixed Upsun configurations.
+The [ddev-platformsh](https://github.com/ddev/ddev-platformsh) add-on forced the issue on this. Every time we went back to it to maintain it we had to remember how Go templates worked and sort out complex Bash logic. Bash and Go templates are a lousy combination for maintainability. PHP should be much better. The `ddev-upsun` add-on will replace `ddev-platformsh` and supports both the Flex and Fixed Upsun configurations.
 
 If you're currently using the `ddev/ddev-platformsh` add-on, you can migrate to `ddev-upsun` by removing the old add-on with `ddev add-on remove ddev-platformsh` and adding the new one with `ddev add-on get ddev/ddev-upsun`.
 
