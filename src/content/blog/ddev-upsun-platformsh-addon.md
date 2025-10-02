@@ -5,7 +5,7 @@ pubDate: 2025-10-02
 summary: "New DDEV Add-on supports Upsun Flex and Upsun Fixed (Platform.sh-style configuration)"
 author: Randy Fay
 featureImage:
-  src: /img/blog/2025/10/Upsun-formerlyPSH-horizontal-white3x_1.png
+  src: /img/blog/2025/10/upsun-formerly-platform.sh.jpeg
   alt: Sophisticated upsun support for DDEV
 categories:
   - Announcements
