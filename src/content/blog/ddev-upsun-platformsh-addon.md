@@ -16,7 +16,7 @@ categories:
 
 We're proud to announce that DDEV now has an [Upsun add-on](https://github.com/ddev/ddev-upsun) with extensive support for Upsun Flex and Upsun Fixed (Platform.sh-style configuration)!
 
-Although DDEV has had `ddev pull upsun` support for Upsun projects for a couple of years, the add-on provides a more complete integration with Upsun. It reads your Upsun configuration and automatically configures matching services in your local DDEV project, mirroring what your upstream project uses.
+Although DDEV has had `ddev pull upsun` support for Upsun projects for a couple of years, the add-on provides a more complete integration. It reads your Upsun configuration and automatically configures matching services in your local DDEV project, mirroring what your upstream project uses.
 
 ---
 
@@ -64,13 +64,13 @@ A sophisticated platform like Upsun has many possibilities, and we want most thi
 
 - Versioning for add-ons (Redis version will be supported in `ddev/ddev-redis` add-on, for example).
 - More service support, like Elasticsearch and Solr.
-- Even more extensive automated tests. Currently we have a very extensive set of tests based on Drupal setup, but want to add tests for other frameworks and CMSes.
+- Even more extensive automated tests. Currently we have a very extensive set of tests based on a Drupal setup, but want to add tests for other frameworks and CMSes.
 
 ---
 
 ## How We Got Here (PHP Add-ons)
 
-DDEV v1.24.8 (required) adds [support for add-ons written mostly in PHP](https://docs.ddev.com/en/stable/users/extend/creating-add-ons/#php-based-actions-new). Originally, all add-ons were written in Bash, with Go templating. It worked great for so many simple add-ons, but was way too complicated for sophisticated add-ons. PHP is a familiar and powerful language for many add-on developers, so now provides a much more expressive way to write complex add-ons.
+DDEV v1.24.8 (required) adds [support for add-ons written mostly in PHP](https://docs.ddev.com/en/stable/users/extend/creating-add-ons/#php-based-actions-new). Originally, all add-ons were written in Bash, with Go templating. It worked great for so many simple add-ons, but was way too complicated for sophisticated ones. PHP is a familiar and powerful language for many add-on developers, so now provides a much more expressive way to write complex add-ons.
 
 The [ddev/platformsh](https://github.com/ddev/platformsh) add-on forced the issue on this. Every time we went back to it to maintain it we had to remember how Go templates worked and sort out complex Bash logic. Bash and Go templates are a lousy combination for maintainability. PHP should be much better. The `ddev-upsun` add-on will replace `ddev/platformsh` and supports both the Flex and Fixed Upsun configurations.
 
@@ -81,7 +81,7 @@ If you're currently using the `ddev/ddev-platformsh` add-on, you can migrate to 
 ## What's Next
 
 - Check out the [full documentation](https://github.com/ddev/ddev-upsun#readme) for advanced configuration options.
-- We'd love feedback—open issues or contribute PRs if you encounter edge cases.
+- We'd love your feedback — open issues or contribute PRs if you encounter any edge case.
 - If you like it, give us a star on [GitHub](https://github.com/ddev/ddev-upsun).
 
 ---
