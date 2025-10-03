@@ -4,9 +4,9 @@ pubDate: 2025-10-06
 #modifiedDate: 2025-06-09
 summary: DDEV works great on Linux, we'll set it up from scratch in just 10 minutes..
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2024/11/windows-install-blog-logos.png
-#  alt:
+featureImage:
+  src: /img/blog/2025/10/ddev-linux-install.png
+  alt: Ubuntu and DDEV logos on purple background representing DDEV Linux installation
 categories:
   - DevOps
   - Videos
@@ -70,8 +70,8 @@ Here's what happens in this screencast. You can do it yourself in moments. We're
 - [DDEV Docs](https://docs.ddev.com)
 - [DDEV Quickstarts](https://docs.ddev.com/en/stable/users/quickstart/)
 - [DDEV Installation](https://docs.ddev.com/en/stable/users/install/)
-- [DDEV Configuration](https://docs.ddev.com/en/stable/users/configuration/)
-- [DDEV Debugging](https://docs.ddev.com/en/stable/users/debugging/)
+- [DDEV Configuration](https://docs.ddev.com/en/stable/users/configuration/config/)
+- [Step-Debugging](https://docs.ddev.com/en/stable/users/debugging-profiling/step-debugging/)
 - [DDEV FAQ](https://docs.ddev.com/en/stable/users/faq/)
 
 **Support the DDEV Project:** DDEV is fully open-source and free to use, and run by the nonprofit DDEV Foundation. We ask you to help make us a sustainable project by sponsoring yourself or getting your organization to sponsor the project. [Sponsor us on GitHub](https://github.com/sponsors/ddev).
