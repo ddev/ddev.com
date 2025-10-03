@@ -5,8 +5,8 @@ pubDate: 2025-10-06
 summary: DDEV works great on Linux, we'll set it up from scratch in just 10 minutes..
 author: Randy Fay
 featureImage:
-  src: /img/blog/2025/10/ddev-linux-install.png
-  alt: Ubuntu and DDEV logos on purple background representing DDEV Linux installation
+  src: /img/blog/2025/10/banner-ddev-10-minutes-linux.svg
+  alt: DDEV and Linux go great together
 categories:
   - DevOps
   - Videos
