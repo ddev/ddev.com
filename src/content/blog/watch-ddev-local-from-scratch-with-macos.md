@@ -1,16 +1,19 @@
 ---
 title: "Watch: DDEV From Scratch with macOS"
 pubDate: 2020-08-13
+modifiedDate: 2025-10-06
 summary: Screencast guide to running DDEV on macOS.
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/08/screen-shot-2020-08-04-at-5.33.27-pm.png
-  alt: Screen grab of video’s title frame
+  alt: Screen grab of video's title frame
   hide: true
 categories:
   - Guides
   - Videos
 ---
+
+> **Using Windows or Linux?** See [DDEV on Windows in 10 Minutes](watch-new-windows-installer.md), [DDEV on WSL2 from Scratch](watch-ddev-local-from-scratch-with-windows-wsl2.md), or [DDEV on Linux in 10 Minutes](ddev-on-linux-in-10-minutes.md).
 
 <div class="video-container">
 <iframe loading="lazy" title="DDEV from Scratch on macOS" width="500" height="281" src="https://www.youtube.com/embed/-firvjLr2hE?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>

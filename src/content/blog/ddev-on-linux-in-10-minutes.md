@@ -12,15 +12,30 @@ categories:
   - Videos
 ---
 
-TODO:
-
-- Add outline here, add outline to the video
-
 <div class="video-container">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/14JvCVbn1qs?si=uxr_xUmpi6I3u7ks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 This screencast walks you through setting up a complete DDEV development environment on Linux, starting completely from scratch. Whether you're new to DDEV or local development environments in general, this step-by-step guide will get you up and running quickly.
+
+## Video Outline
+
+**Here's the video table of contents (opens on YouTube):**
+
+- Introduction ([0:00](https://youtu.be/14JvCVbn1qs?t=0))
+- Install Docker CE ([0:30](https://youtu.be/14JvCVbn1qs?t=30))
+- Docker Post-Installation ([1:47](https://youtu.be/14JvCVbn1qs?t=107))
+- Install DDEV ([2:34](https://youtu.be/14JvCVbn1qs?t=154))
+- Configure HTTPS Certificates ([3:20](https://youtu.be/14JvCVbn1qs?t=200))
+- Create Project ([3:45](https://youtu.be/14JvCVbn1qs?t=225))
+- Project Startup ([5:00](https://youtu.be/14JvCVbn1qs?t=300))
+- Launch Project ([6:52](https://youtu.be/14JvCVbn1qs?t=412))
+- Install PhpStorm ([8:10](https://youtu.be/14JvCVbn1qs?t=490))
+- Configure Xdebug ([10:56](https://youtu.be/14JvCVbn1qs?t=656))
+- Test Step Debugging ([12:14](https://youtu.be/14JvCVbn1qs?t=734))
+- Recap ([13:19](https://youtu.be/14JvCVbn1qs?t=799))
+
+## What Happens in This Screencast
 
 Here's what happens in this screencast. You can do it yourself in moments. We're using [DDEV's get-started](/get-started), but of course there is far more detail in the [DDEV docs](https://docs.ddev.com), explaining how to use other distros or other install techniques.
 
