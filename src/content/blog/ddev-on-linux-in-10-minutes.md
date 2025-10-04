@@ -16,7 +16,7 @@ categories:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/14JvCVbn1qs?si=uxr_xUmpi6I3u7ks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
-This screencast walks you through setting up a complete DDEV development environment on Linux, starting completely from scratch. Whether you're new to DDEV or local development environments in general, this step-by-step guide will get you up and running quickly.
+*This screencast walks you through setting up a complete DDEV development environment on Linux, starting completely from scratch. Whether you're new to DDEV or local development environments in general, this step-by-step guide will get you up and running quickly.*
 
 ## Video Outline
 
@@ -37,7 +37,7 @@ This screencast walks you through setting up a complete DDEV development environ
 
 ## What Happens in This Screencast
 
-Here's what happens in this screencast. You can do it yourself in moments. We're using [DDEV's get-started](/get-started), but of course there is far more detail in the [DDEV docs](https://docs.ddev.com), explaining how to use other distros or other install techniques.
+Here's what happens in this screencast. You can do it yourself in just a few minutes. We're using [DDEV's get-started](/get-started), but of course there is far more detail in the [DDEV docs](https://docs.ddev.com), explaining how to use other distros or other install techniques.
 
 1. Install Docker CE. Use the `apt` repository technique from [Docker's docs](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository).
 
@@ -63,7 +63,8 @@ Here's what happens in this screencast. You can do it yourself in moments. We're
 
 ## Key Things to Know
 
-**Cross-Platform Compatibility:** DDEV works the same on macOS, Linux, Traditional Windows, and WSL2, see [Getting Started](/get-started). Your whole team can work on their preferred environment instead of fighting about which OS is best. See [DDEV on Windows in 10 Minutes](watch-new-windows-installer.md) and [DDEV on macOS from Scratch](watch-ddev-local-from-scratch-with-macos.md).
+**Use your own IDE, including VS Code:** I used PhpStorm here, but [VS Code works great](https://docs.ddev.com/en/stable/users/debugging-profiling/step-debugging/#ide-setup).
+**Cross-Platform Compatibility:** DDEV works the same on macOS, Linux, Traditional Windows, and WSL2, see [Getting Started](/get-started). Your whole team can work on their preferred environment instead of arguing about which OS is best. See [DDEV on Windows in 10 Minutes](watch-new-windows-installer.md) and [DDEV on macOS from Scratch](watch-ddev-local-from-scratch-with-macos.md).
 **Support for almost any PHP-based project and many Node.js environments** DDEV supports development of [so many different web environments](https://docs.ddev.com/en/stable/users/quickstart/), so you're not stuck with using separate tools for different CMSs.
 **More Extensive Docs**:
 
@@ -82,4 +83,4 @@ Questions? Issues? We're here to help:
 
 _Have you signed up for the monthly [DDEV Newsletter](/newsletter)? We'd love to have you._
 
-Claude Code was used in editing this blog and in preparing video outline, etc.
+Claude Code was used in editing this blog and in preparing video outline, etc. Canva AI helped with the banner image.
