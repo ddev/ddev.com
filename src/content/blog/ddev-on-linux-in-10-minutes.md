@@ -85,7 +85,7 @@ Here's what happens in this screencast. You can do it yourself in just a few min
 
 Questions? Issues? We're here to help:
 
-- Discord is great for real-time help: [Join our Discord](https://ddev.com/s/discord)
+- Discord is great for real-time help: [Join our Discord](/s/discord)
 - 💬 [Contact us](/contact)
 
 _Have you signed up for the monthly [DDEV Newsletter](/newsletter)? We'd love to have you._
