@@ -1,7 +1,7 @@
 ---
 title: "New GUI Installer: Get DDEV Running on Windows in Just 10 Minutes (Video)"
 pubDate: 2025-07-21
-#modifiedDate: 2025-06-09
+modifiedDate: 2025-10-06
 summary: Skip the complex PowerShell scripts! DDEV's new GUI installer gets you developing on Windows with WSL2 in just 10 minutes. Watch the step-by-step video.
 author: Randy Fay
 featureImage:
@@ -12,6 +12,8 @@ categories:
   - DevOps
   - Videos
 ---
+
+> **Using macOS or Linux?** See [DDEV on macOS from Scratch](watch-ddev-local-from-scratch-with-macos.md) or [DDEV on Linux in 10 Minutes](ddev-on-linux-in-10-minutes.md).
 
 Tired of those complex PowerShell scripts we used to provide to get DDEV running on Windows? The new GUI installer changes everything.
 

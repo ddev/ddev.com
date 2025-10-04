@@ -1,0 +1,634 @@
+WEBVTT
+
+00:00:00.780 --> 00:00:04.840
+Hi, there. My name is Randy Fay. I'm one
+of the maintainers of the DDEV
+
+00:00:05.000 --> 00:00:09.800
+project. DDEV is a local development
+environment for
+
+00:00:09.880 --> 00:00:14.870
+web developers, and we're gonna just show
+how to do it.
+
+00:00:14.900 --> 00:00:19.480
+We're gonna try to set up DDEV on Linux
+all the
+
+00:00:19.540 --> 00:00:24.390
+way to using it in 10 minutes. So let's
+see how we do
+
+00:00:24.500 --> 00:00:28.800
+here. Uh, it is 8:40. We'll see how we do.
+
+00:00:30.160 --> 00:00:35.020
+Okay, first of all, I went to
+https://ddev.com/get-started, and it
+
+00:00:35.080 --> 00:00:38.900
+automatically shows me being on Linux,
+uh,
+
+00:00:38.910 --> 00:00:43.120
+platform. And what we're gonna do is we're
+going to install Docker CE
+
+00:00:43.220 --> 00:00:47.920
+first, so let me just open the Docker
+
+00:00:48.140 --> 00:00:52.680
+instructions. And I'm gonna go down and
+
+00:00:52.860 --> 00:00:57.580
+here's their apt repository. I'm
+
+00:00:57.640 --> 00:00:59.240
+going to paste that
+
+00:01:01.420 --> 00:01:09.640
+here.
+
+00:01:18.700 --> 00:01:22.520
+Okay, so now we'll do apt install
+
+00:01:22.560 --> 00:01:26.400
+docker-ce.
+
+00:01:34.140 --> 00:01:39.140
+That's got Docker now set up for us.
+There's not
+
+00:01:39.200 --> 00:01:43.860
+much to do here. If I do a sudo docker ps,
+it will work,
+
+00:01:43.900 --> 00:01:46.940
+but we haven't enabled our regular user to
+use it.
+
+00:01:47.040 --> 00:01:51.220
+We have to do the post-install action,
+which is pretty easy.
+
+00:01:51.300 --> 00:01:52.720
+Uh, let's just take a look
+
+00:01:52.840 --> 00:01:56.660
+here.
+
+00:01:59.080 --> 00:02:03.940
+Here's their post-installation action, and
+it's just adding the user
+
+00:02:04.060 --> 00:02:08.100
+to, adding the user's privilege to run
+Docker.
+
+00:02:08.160 --> 00:02:12.440
+So, I'm gonna paste that here. It's just
+sudo
+
+00:02:12.620 --> 00:02:17.260
+usermod, uh, docker on my user. Uh,
+
+00:02:17.320 --> 00:02:20.940
+normally you would have to reboot or log
+out and then log back in again,
+
+00:02:20.980 --> 00:02:25.700
+but I'm just gonna say "newgroup docker".
+And now I can just do a
+
+00:02:25.740 --> 00:02:30.480
+"docker ps" and Docker is all working for
+me. So we've done the
+
+00:02:30.540 --> 00:02:34.660
+first step now. Let's go back to the Get
+Started page.
+
+00:02:34.720 --> 00:02:39.260
+We've installed Docker. Now we'll install
+DDEV. So,
+
+00:02:39.900 --> 00:02:44.600
+let's go ahead and copy this section here.
+
+00:02:46.640 --> 00:02:50.520
+This is also in the DDEV docs at
+https://docs.ddev.com, which is
+
+00:02:50.560 --> 00:02:54.020
+fine. So, let's paste
+
+00:02:54.080 --> 00:03:00.440
+that.
+
+00:03:05.820 --> 00:03:10.640
+Now "ddev --version" should show us the
+current stable
+
+00:03:10.720 --> 00:03:15.680
+version of DDEV, and it does. So, our
+
+00:03:15.740 --> 00:03:20.660
+third step here is to do a "mkcert
+-install". mkcert is
+
+00:03:20.700 --> 00:03:25.580
+DDEV's magic that lets you use HTTPS, use
+
+00:03:25.640 --> 00:03:30.340
+trusted HTTPS, on your machine. It tells
+your browser to
+
+00:03:30.380 --> 00:03:35.120
+accept the DDEV certificates.
+
+00:03:37.020 --> 00:03:41.460
+So there is our, uh, there is our setup,
+and
+
+00:03:45.040 --> 00:03:48.870
+let's go ahead and create a project. What
+I'm going to do
+
+00:03:52.360 --> 00:03:56.980
+is I'm going to... I always put my
+projects in a workspace
+
+00:03:57.380 --> 00:04:01.960
+folder, and I'm just gonna check
+
+00:04:02.080 --> 00:04:06.760
+out a standard Drupal project that I'm
+always working with.
+
+00:04:13.140 --> 00:04:16.370
+It's just a Drupal 11 project and I'm just
+gonna check it out,
+
+00:04:17.279 --> 00:04:21.409
+and then we're going to use it.
+
+00:04:23.260 --> 00:04:28.140
+So, here I can do a DDEV config, and
+
+00:04:28.240 --> 00:04:32.960
+it's going to use the folder name as the
+project name.
+
+00:04:32.969 --> 00:04:37.520
+It automatically detected the docroot,
+which is web,
+
+00:04:37.640 --> 00:04:41.490
+and it automatically detected the Drupal
+11, um,
+
+00:04:42.260 --> 00:04:46.560
+code base there. So, now we can do a DDEV
+
+00:04:46.620 --> 00:04:51.480
+start. So we will do a "ddev start". Now
+this
+
+00:04:51.520 --> 00:04:56.400
+is going to download the images, the
+Docker images,
+
+00:04:56.780 --> 00:05:01.110
+which... it's a one-time, it's a one-time
+thing. You usually only have to do this
+
+00:05:01.140 --> 00:05:04.420
+when you're upgrading DDEV or the first
+time you use it.
+
+00:05:04.500 --> 00:05:08.469
+So, here we are. Um, we'll say yes, we can
+
+00:05:08.500 --> 00:05:13.000
+send, uh, instrumentation up, and here it
+is pulling the
+
+00:05:13.060 --> 00:05:17.010
+images. This takes a couple of minutes,
+but again,
+
+00:05:17.040 --> 00:05:21.620
+this is usually only on first install or
+upgrade or if you're using
+
+00:05:23.000 --> 00:05:27.830
+some different, some different thing
+than you,
+
+00:05:27.920 --> 00:05:32.720
+uh, were using on previous projects. So,
+
+00:05:32.800 --> 00:05:36.900
+uh, this is pretty fast internet. It might
+take a little longer if you have slower
+
+00:05:36.980 --> 00:05:38.400
+internet or whatever, but,
+
+00:05:38.440 --> 00:05:57.811
+uh...It
+
+00:05:57.822 --> 00:06:02.671
+does a little customization in the images
+to put your user- username
+
+00:06:02.692 --> 00:06:07.671
+and user ID in there, so that you can work
+inside the container with the same exact
+
+00:06:07.732 --> 00:06:10.652
+username and UID. So that's what it means
+when it says,
+
+00:06:11.192 --> 00:06:15.491
+"Building project images." It's building
+images specifically for you.
+
+00:06:15.532 --> 00:06:19.582
+Now, this project has an automatic "ddev
+composer install" on start.
+
+00:06:19.632 --> 00:06:23.902
+I forgot about that, but I'll- I'll show
+you that anyway.
+
+00:06:23.991 --> 00:06:28.912
+Um... (keyboard clicking) Normally, you
+would do a ddev
+
+00:06:28.972 --> 00:06:33.852
+composer install on a on a PHP
+project that had
+
+00:06:33.912 --> 00:06:38.412
+Composer. Um, that runs Composer and PHP
+
+00:06:38.592 --> 00:06:43.171
+inside the project. Since our, since our
+hook did that automatically,
+
+00:06:43.232 --> 00:06:47.751
+we were all set. So, we have got our
+project installed.
+
+00:06:47.792 --> 00:06:52.611
+Now, we're six minutes in on a brand new
+machine, and,
+
+00:06:52.692 --> 00:06:56.532
+uh, let's just go ahead and try this out
+and see what happens.
+
+00:06:56.592 --> 00:07:00.912
+I'm going to do a "ddev launch", um, and that
+will launch,
+
+00:07:01.012 --> 00:07:05.512
+Firefox here. And here is
+
+00:07:05.572 --> 00:07:09.912
+the Drupal install screen. So, I'm going
+
+00:07:09.991 --> 00:07:14.921
+to... And you see that it's got, uh,
+trusted HTTPS here,
+
+00:07:14.932 --> 00:07:19.912
+because, uh, DDEV does that with mkcert. And I'm gonna do the,
+
+00:07:19.952 --> 00:07:23.932
+uh, the nice demo version of this. Here is
+Drupal being
+
+00:07:23.991 --> 00:07:28.592
+installed. Takes no time at all. Uh, Linux
+is
+
+00:07:28.792 --> 00:07:33.592
+super fast with this. I'll just put the
+things here that DDEV
+
+00:07:33.671 --> 00:07:35.832
+wants, that, uh, Drupal
+
+00:07:35.932 --> 00:07:40.452
+wants.
+
+00:07:40.462 --> 00:07:42.462
+(keyboard clicking)
+
+00:07:42.852 --> 00:07:49.512
+And...
+
+00:07:53.671 --> 00:07:57.532
+So, here it is. It's all set up. Our
+project is running,
+
+00:07:57.551 --> 00:08:01.111
+and we've got all the normal things that
+we would expect to have.
+
+00:08:01.131 --> 00:08:05.731
+This is just an ordinary, uh, demo, uh,
+Drupal 11
+
+00:08:05.852 --> 00:08:10.462
+site. So, there we are. Uh, we're gonna...
+Now, we're going to
+
+00:08:10.491 --> 00:08:14.902
+install PhpStorm and do a little Xdebug
+with this,
+
+00:08:14.952 --> 00:08:19.192
+so that we can do step debugging, which is
+critical for any developer.
+
+00:08:19.272 --> 00:08:22.932
+So, I am going to go here,
+
+00:08:24.032 --> 00:08:28.152
+and I'm going to do a sudo snap
+
+00:08:28.371 --> 00:08:32.111
+install --classic
+
+00:08:33.510 --> 00:08:37.291
+PhpStorm.
+
+00:08:38.131 --> 00:08:42.861
+And what we're gonna do is just use
+PhpStorm like any developer would use,
+
+00:08:43.692 --> 00:08:48.132
+and we're going to, uh, set a breakpoint.
+
+00:08:49.092 --> 00:08:53.832
+Uh, we'll just use the index.php of this
+project, but we're gonna set a breakpoint,
+
+00:08:54.712 --> 00:08:59.432
+and we're gonna have PhpStorm listen, and
+we're gonna tell DDEV to turn
+
+00:08:59.512 --> 00:09:04.492
+on Xdebug, because we need to be able to
+s- step through our
+
+00:09:04.512 --> 00:09:09.252
+project and understand what it's doing and
+why. Uh,
+
+00:09:09.372 --> 00:09:14.031
+Snap is a little slower getting PhpStorm
+than usual
+
+00:09:14.492 --> 00:09:17.672
+right now, so I'll try to be patient. But
+this is,
+
+00:09:17.771 --> 00:09:21.791
+uh, this is the easy stuff.
+
+00:09:21.892 --> 00:09:26.832
+Um, just a reminder here, I'll
+
+00:09:26.872 --> 00:09:30.531
+just open another window. Um, our
+
+00:09:30.612 --> 00:09:34.952
+project is right here in
+
+00:09:35.012 --> 00:09:39.872
+workspace.d11, and we have, in the
+
+00:09:40.512 --> 00:09:44.812
+web directory, we have an index.php, which
+drives all of
+
+00:09:44.892 --> 00:09:48.852
+this. And, of course, the vendor
+
+00:09:48.892 --> 00:09:53.771
+directory has been populated by our, our
+Composer
+
+00:09:53.812 --> 00:09:57.932
+install, which was done inside the
+container.
+
+00:10:02.172 --> 00:10:07.102
+And our PhpStorm is ready. I should've
+done
+
+00:10:07.132 --> 00:10:11.412
+a PhpStorm Amper, but I didn't. Um, here
+we are.
+
+00:10:12.872 --> 00:10:16.632
+We have read it very carefully.
+
+00:10:18.832 --> 00:10:23.771
+And now we're gonna open this project. I
+don't, don't know what the input
+
+00:10:23.781 --> 00:10:27.412
+thing is, but I'm gonna do it anyway. Here
+we are.
+
+00:10:27.452 --> 00:10:31.192
+Here's the workspace directory. Here's
+d11. I'm gonna select
+
+00:10:31.202 --> 00:10:34.932
+that. I'm gonna trust projects in my
+workspace
+
+00:10:35.072 --> 00:10:39.692
+folder. And here we
+
+00:10:39.791 --> 00:10:42.612
+are. We see our project. Um,
+
+00:10:44.932 --> 00:10:49.472
+we are... See our project. Here's the web
+directory.
+
+00:10:50.311 --> 00:10:55.291
+And I'm going to open the index.php.
+
+00:10:56.972 --> 00:11:01.632
+And I'm just gonna make a breakpoint here.
+So, here's my
+
+00:11:01.712 --> 00:11:05.392
+breakpoint. That's where I wanna stop. Of
+course, you would be doing something more
+
+00:11:05.432 --> 00:11:09.452
+sophisticated in your project that you're
+studying, your module or
+
+00:11:09.512 --> 00:11:14.452
+whatever. And now I can, um,
+
+00:11:15.912 --> 00:11:19.752
+I can click the, uh, start listening for
+PHP debug
+
+00:11:19.832 --> 00:11:24.632
+connections. So, I'm gonna tell, tell it
+to start listening.
+
+00:11:25.172 --> 00:11:29.892
+I have to get my, uh... Sorry, I have to
+get that
+
+00:11:30.051 --> 00:11:31.952
+out of the way of the re- actual recording
+
+00:11:32.072 --> 00:11:35.352
+software.
+
+00:11:37.952 --> 00:11:41.832
+So...
+
+00:11:44.232 --> 00:11:48.652
+And I wanna turn on the, um... I don't, I
+don't need to validate,
+
+00:11:48.662 --> 00:11:51.672
+'cause with DDEV everything's working. So,
+here it is.
+
+00:11:51.692 --> 00:11:56.672
+It's listening. And in DDEV,
+
+00:11:57.412 --> 00:12:00.771
+uh, I'm going to just,
+
+00:12:00.892 --> 00:12:05.688
+um...I'm gonna do a DDEV-xdebug on,
+(keyboard clicking) telling
+
+00:12:05.868 --> 00:12:09.708
+DDEV to use that. And now we'll go back
+and visit our
+
+00:12:09.788 --> 00:12:14.388
+project. Just go to the home directory.
+And here,
+
+00:12:14.488 --> 00:12:18.778
+uh, PhpStorm recognized that that was
+going on,
+
+00:12:18.828 --> 00:12:21.788
+immediately caught it. Now, the first time
+you do this,
+
+00:12:21.848 --> 00:12:26.438
+it has to map your code to the code inside
+the
+
+00:12:26.508 --> 00:12:30.188
+container. And you see the code inside the
+ca-container is at
+
+00:12:30.248 --> 00:12:34.848
+var/www/html. And it says, "Well, what is
+it
+
+00:12:35.228 --> 00:12:40.048
+on the, on the, on the host?" And it's
+this
+
+00:12:40.128 --> 00:12:44.888
+right here, workspace-d11/web/index.php.
+So I'm gonna
+
+00:12:44.898 --> 00:12:49.448
+accept that, and here we are. We
+
+00:12:49.528 --> 00:12:54.448
+have, uh, we are in PhpStorm. It has
+stopped at the line
+
+00:12:54.508 --> 00:12:59.468
+that I set the break point on. And here, I
+can see all
+
+00:12:59.568 --> 00:13:04.468
+of the variables that are here, and I can
+step through
+
+00:13:04.528 --> 00:13:09.368
+this. So I'll step through with an F8, um,
+and I can step
+
+00:13:09.528 --> 00:13:14.368
+in. I can step into each of these
+functions. So what
+
+00:13:14.408 --> 00:13:19.388
+we've done is in, oh, maybe I took 13
+minutes. We started with a
+
+00:13:19.428 --> 00:13:23.208
+plain vanilla, uh, a plain vanilla
+
+00:13:24.528 --> 00:13:29.008
+pro- uh, uh, Ubuntu system with nothing
+installed on it.
+
+00:13:29.028 --> 00:13:33.768
+We installed Docker. We installed DDEV. We
+installed
+
+00:13:33.828 --> 00:13:38.668
+PhpStorm. We installed a Drupal 11 project
+and did the
+
+00:13:38.688 --> 00:13:43.128
+composer install on it. We ran through the
+installation,
+
+00:13:43.228 --> 00:13:47.908
+and then we, uh, debugged it with
+PhpStorm. So
+
+00:13:47.968 --> 00:13:51.868
+that's, uh, that's Linux, DDEV,
+
+00:13:53.148 --> 00:13:56.278
+10 minutes, sort of. It was, it was kinda
+10 minutes,
+
+00:13:56.348 --> 00:14:00.648
+but we did a lot in 13 minutes. So we, we
+invite you to join
+
+00:14:00.728 --> 00:14:04.748
+us, uh, DDEV.com, docs.DDEV.com. Join us
+in
+
+00:14:04.788 --> 00:14:09.768
+Discord. We'll have all of this in the, in
+the recording and the blog post
+
+00:14:09.788 --> 00:14:11.658
+that goes with it. Thanks for joining
+
+00:14:11.688 --> 00:14:16.000
+today.
