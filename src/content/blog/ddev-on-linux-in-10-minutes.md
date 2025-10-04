@@ -74,7 +74,6 @@ Here's what happens in this screencast. You can do it yourself in just a few min
 - **Cross-Platform Compatibility:** DDEV works the same on macOS, Linux, Traditional Windows, and WSL2, see [Getting Started](/get-started). Your whole team can work on their preferred environment without friction. See [DDEV on Windows in 10 Minutes](watch-new-windows-installer.md) and [DDEV on macOS from Scratch](watch-ddev-local-from-scratch-with-macos.md).
 - **Support for almost any PHP-based project and many Node.js environments** DDEV supports development of [so many different web environments](https://docs.ddev.com/en/stable/users/quickstart/), so you're not stuck with using separate tools for different CMSs.
 - **More Extensive Docs**:
-
   - [DDEV Docs](https://docs.ddev.com)
   - [DDEV Quickstarts](https://docs.ddev.com/en/stable/users/quickstart/)
   - [DDEV Installation](https://docs.ddev.com/en/stable/users/install/)
