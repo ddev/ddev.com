@@ -6,7 +6,7 @@ summary: DDEV works great on Linux, we'll set it up from scratch in just 10 minu
 author: Randy Fay
 featureImage:
   src: /img/blog/2025/10/banner-ddev-10-minutes-linux.svg
-  alt: DDEV and Linux go great together
+  alt: DDEV on Linux in 10 Minutes
 categories:
   - DevOps
   - Videos
