@@ -11,11 +11,13 @@ featureImage:
 categories:
   - Guides
   - Videos
-modifiedDate: 2025-07-25
+modifiedDate: 2025-10-06
 modifiedComment: "This guide was originally published in 2020, but has been completely rewritten with a new video in 2025. It now covers the new DDEV Windows installer and WSL2 setup."
 ---
 
 > **Want just the 10-minute version of a DDEV WSL2 Install?** Check out the [New GUI Installer: Get DDEV Running on Windows in Just 10 Minutes](watch-new-windows-installer.md) for a quicker setup using the GUI installer.
+>
+> **Using Linux or macOS?** See [DDEV on Linux in 10 Minutes](ddev-on-linux-in-10-minutes.md) or [DDEV on macOS from Scratch](watch-ddev-local-from-scratch-with-macos.md).
 
 <div class="video-container">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1dr_4gPtFlQ?si=ZFjBU-6CcbsVI3SX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
