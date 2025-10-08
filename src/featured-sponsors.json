@@ -153,6 +153,15 @@
     "github": "claudiu-cristea"
   },
   {
+    "name": "Passbolt",
+    "type": "standard",
+    "logo": "/logos/passbolt-logo-primary-black.svg",
+    "darklogo": "/logos/passbolt-logo-primary-white.svg",
+    "squareLogo": "/logos/passbolt-logo-square.svg",
+    "url": "https://www.passbolt.com/",
+    "github": "passbolt"
+  },
+  {
     "name": "JetBrains",
     "type": "standard",
     "logo": "/logos/jetbrains.svg",
@@ -171,12 +180,12 @@
     "github": "affinitybridge"
   },
   {
-    "name": "Passbolt",
+    "name": "Agiledrop",
     "type": "standard",
-    "logo": "/logos/passbolt-logo-primary-black.svg",
-    "darklogo": "/logos/passbolt-logo-primary-white.svg",
-    "squareLogo": "/logos/passbolt-logo-square.svg",
-    "url": "https://www.passbolt.com/",
-    "github": "passbolt"
+    "logo": "/logos/agiledrop.svg",
+    "darklogo": "/logos/agiledrop-dark.svg",
+    "squareLogo": "/logos/agiledrop-square.svg",
+    "url": "https://www.agiledrop.com/",
+    "github": "AGILEDROP"
   }
 ]
