@@ -1,7 +1,7 @@
 ---
 title: "DDEV Website for Contributors"
 pubDate: 2023-08-15
-modifiedDate: 2023-08-23
+modifiedDate: 2025-10-09
 summary: Matt Stein on maintaining and improving ddev.com.
 author: Matt Stein
 featureImage:
@@ -16,7 +16,7 @@ The following is based on [Matt Stein's presentation outline](https://doc.mattst
 
 ## Welcome!
 
-I’d like to show you how ddev.com is put together so you can swoop in and improve it. There’s a lot that could be improved; The emphasis is on “what it is” rather than “how it should be.”
+I’d like to show you how `ddev.com` is put together so you can swoop in and improve it. There’s a lot that could be improved; The emphasis is on “what it is” rather than “how it should be.”
 
 ## Background
 
@@ -24,13 +24,13 @@ I’d like to show you how ddev.com is put together so you can swoop in and impr
 
 [**Matt**](https://github.com/mattstein) is a designer that’s been doing CMS-based development for clients using PHP, Twig, and different front-end frameworks; master of none fond of writing, documentation, and content strategy.
 
-[**ddev.com**](https://ddev.com) is a former WordPress site, tricky to share access and not the friendliest public welcome to all things DDEV.
+[**ddev.com**](https://ddev.com) used to be a WordPress site, tricky to share access and not the friendliest public welcome to all things DDEV.
 
 ### New Thing
 
-Rebuilt + migrated earlier this year to [Astro](https://astro.build)!
+Rebuilt + migrated in 2023 to [Astro](https://astro.build)!
 
-- Hat tip Mayank for sharing Astro with me.
+- Hat tip to Mayank for sharing Astro with me.
 - Fun to build with!
 - Static site generator that sits in a nice front-end sweet spot.
   - Flat file + fully accessible to front-end developers in a public repository.
@@ -44,7 +44,7 @@ Rebuilt + migrated earlier this year to [Astro](https://astro.build)!
   - [Tailwind CSS](https://tailwindcss.com) + [Tailwind Typography](https://tailwindcss.com/docs/typography-plugin).
   - Built and hosted with [Cloudflare Pages](https://pages.cloudflare.com).
 
-**tl;dr** if you’re comfortable with Markdown, HTML, CSS, Tailwind, or a modern front-end framework, you can jump right in!
+**tl;dr** if you’re comfortable with Markdown, HTML, CSS, Tailwind, or a modern front-end framework, you can jump right in! Blog posts and edits are even easier than that.
 
 <small>Also TypeScript, kind of.</small>
 
@@ -54,11 +54,11 @@ If you’re comfortable with _all_ of those things, you could make a big dent in
 
 Clone <https://github.com/ddev/ddev.com>.
 
-Add a GitHub key to `.env`.
+Add a GitHub key to `.env`. (optional)
 
 ## Where Content Lives
 
-> 💡 Consider reading [the readme](https://github.com/ddev/ddev.com/blob/main/README.md) and especially the [Astro docs](https://docs.astro.build/en/getting-started/).
+> 💡 Read [the README](https://github.com/ddev/ddev.com/blob/main/README.md) and especially the [Astro docs](https://docs.astro.build/en/getting-started/).
 
 Markdown, component markup, TypeScript constants, and a JSON blob.
 

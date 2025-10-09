@@ -256,5 +256,5 @@ Production requires `GITHUB_TOKEN` environment variable in Cloudflare Pages sett
 ## Resources
 
 - [Astro Documentation](https://docs.astro.build)
-- [DDEV Documentation](https://ddev.readthedocs.io/)
+- [DDEV Documentation](https://docs.ddev.com/)
 - [Contributing to ddev.com Training](https://ddev.com/blog/ddev-website-for-contributors/)
