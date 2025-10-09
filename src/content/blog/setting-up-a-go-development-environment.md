@@ -1,6 +1,7 @@
 ---
 title: "Setting up a Go Development Environment for DDEV"
 pubDate: 2024-03-15
+modifiedDate: 2025-10-09
 summary: "DDEV Contributor Live Training: Setting up a Go Development Environment."
 author: Bernardo Martinez
 featureImage:
@@ -15,7 +16,7 @@ categories:
 
 The DDEV Community has regular contributor training sessions, and in July, 2023 we talked about setting up a Go development environment for DDEV. This blog summarizes [the contributor training session](https://youtu.be/IjrJw0Ay-dk). The (Min digit) syntax added below provides the minute on which each subject is covered on the recording.
 
-## Installing Go on different Operation Systems ([Min 10:51](https://youtu.be/IjrJw0Ay-dk?t=647))
+## Installing Go on different Operating Systems ([Min 10:51](https://youtu.be/IjrJw0Ay-dk?t=647))
 
 Randy used macOS and recommended Homebrew as the tool to manage Go updates.
 
@@ -49,7 +50,7 @@ Makedocs is used for previewing and contributing to the docs. It's named makedoc
 
 You can preview a built version of the docs you're working with using `make mkdocs-serve`.
 
-## Randy IDE of choice is GoLand ([Min 23:50](https://youtu.be/IjrJw0Ay-dk?t=1547))
+## Randy's IDE of choice is GoLand ([Min 23:50](https://youtu.be/IjrJw0Ay-dk?t=1547))
 
 GoLand is very similar to PhpStorm and of course is made by the same JetBrains company.
 
