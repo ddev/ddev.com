@@ -38,6 +38,7 @@ Run `ddev start` to preview your changes locally with hot module reloading at th
 ### Quality Checks ([35:15](https://www.youtube.com/watch?v=A-rsZ7SG_bg&t=2115s))
 
 Every pull request automatically runs:
+
 - **Prettier** for code formatting
 - **Textlint** for content consistency and terminology
 
