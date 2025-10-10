@@ -58,6 +58,6 @@ Each pull request automatically creates a preview deployment on Cloudflare Pages
 
 Your suggestions to improve this blog are welcome. You can do a PR to this blog adding your techniques. Info and a training session on how to do a PR to anything in ddev.com is at [DDEV Website For Contributors](ddev-website-for-contributors.md).
 
-Join us for the next [DDEV Live Contributor Training](/blog/contributor-training/).
+Follow the [DDEV Newsletter](/newsletter) for information about upcoming user and contributor training sessions.
 
 Claude Code did almost all of the collation of the information in this blog from the YouTube video and the [presentation materials](https://rfay.github.io/contributing-to-ddev.com).
