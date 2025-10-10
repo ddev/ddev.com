@@ -1,62 +1,72 @@
 ---
 title: "DDEV October 2025 Newsletter"
-pubDate: 2025-10-09
-#modifiedDate: 2025-04-07
-summary: "Training sessions, CakeFest workshop in Madrid, DrupalCon Vienna, governance proposal, and community updates"
+pubDate: 2025-10-10
+summary: "New Upsun add-on, quality tools for Drupal with Aljibe, community tutorials, upcoming training, and governance updates"
 author: Randy Fay
 featureImage:
-  src: /img/blog/2025/09/almost-everybody-loves-ddev.svg
-  alt: Survey results showing widespread love for DDEV in the developer community
-  caption: "2025 Drupal Developer Survey: Almost everybody loves DDEV"
+  src: /img/blog/2025/10/october-newsletter-banner.png
+  alt: DDEV October 2025 Newsletter banner with community and tools theme
+  caption: "DDEV October 2025: Community • Tools • Growth"
 categories:
   - Community
 ---
 
-🚀 Our sprint to finish out 2025 has begun! 🌟
-Tell us what you need for 2025–2026. [Contact us↗](/contact).
+🚀 October brings new tools, community contributions, and training opportunities! 🌟
+Have ideas for DDEV in 2026? [Contact us↗](/contact).
 
-## What’s New
+## What's New
 
-- **Tailscale for DDEV: Simple and Secure Project Sharing** → [Read more↗](tailscale-router-ddev-addon.md)
-- **Contributor Training: DDEV PR using Claude Code AI** → [Watch↗](claude-code-ai-pr-for-ddev-contributor-training.md)
-- **DDEV Advisory Group Meeting** → [Read more↗](https://github.com/orgs/ddev/discussions/7579)
+- **Upsun/Platform.sh Add-on Released** → Configure your local project to match its Upsun equivalent with the new official add-on [Read more↗](ddev-upsun-platformsh-addon.md)
+- **DDEV on Linux in 10 Minutes** → Quick-start guide for Linux users [Read more↗](ddev-on-linux-in-10-minutes.md)
+- **Contributing to ddev.com Training** → Learn how to write and contribute blog posts [Watch↗](ddev-website-for-contributors.md)
 
-## Community Tutorials
+## Community Highlights
 
-- **2025 Drupal Developer Survey**: "Almost everybody loves DDEV" [Read more↗](https://www.ironstar.io/devsurvey25/)
-- **Mike Anello: Reclaim Docker disk space when using DDEV** [Read more↗](https://www.drupaleasy.com/quicktips/reclaim-docker-disk-space-when-using-ddev)
+- **Metadrop Releases Aljibe**: Quality and testing toolkit for Drupal development with DDEV [Read more↗](https://metadrop.net/en/articles/aljibe-quality-and-testing-drupal-developments-ddev) • [The Drop Times coverage↗](https://www.thedroptimes.com/54668/metadrop-releases-aljibe-qa-and-testing-toolkit-drupal-development-with-ddev)
+- **WordPress Development with DDEV Pull**: Guide to using `ddev pull` for WordPress projects [Read more↗](https://www.koehnlein.dev/en/blog/2025/wordpress-ddev-pull/)
+- **WebHaven Now Powered by DDEV**: Development workflow success story [Read more↗](https://webhaven.io/blog/webhaven-now-powered-ddev-local-development)
+- **DDEV and PHPStorm's Node.js Remote Interpreter**: Workflow guide for ESLint, Prettier, and more [Read more↗](https://kitemetric.com/blogs/ddev-and-phpstorm-s-nodejs-remote-interpreter-a-smooth-workflow-for-eslint-prettier-and-more)
 
-## DDEV Training Has Started Up Again!
+## Community Video Tutorials
 
-We're doing training again this season, all are invited. Some sessions are more focused on contributors and maintainers, and others for all users. This month we'll talk about the key magic of hostname resolution, debugging, and DNS. This is critical for everybody in the web world, not just for DDEV users. Join us whatever your experience level is.
+- **Ivan Zugec: Introduction to DDEV** [Watch↗](https://www.youtube.com/watch?v=muk1Rs_3X64)
+- **Drupal CZ/SK: DDEV Workshop** [Watch↗](https://www.youtube.com/watch?v=n2vIoFSet2Y)
+- **Drupalize.Me: Working with DDEV** [Watch↗](https://www.youtube.com/watch?v=Hnzp-aJ4NWA)
 
-See the full schedule below.
+## DDEV Training Continues
 
-### Upcoming DDEV Live Contributor and User Training Sessions
+Join us for upcoming training sessions for contributors and users. Guest blog contributions are welcome—learn more in our October 9th training session recording!
 
-- **November 20, 2025 at 10:00 US ET / 16:00 CET — Using DDEV in Windows WSL**  
+### Upcoming DDEV Live Training Sessions
+
+- **November (Date TBA) — TYPO3 Development with DDEV**
+  Details coming soon. Watch for announcements on our social channels.
+
+- **November 20, 2025 at 10:00 US ET / 16:00 CET — Using DDEV in Windows WSL**
   [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Using%20DDEV%20in%20Windows%20WSL&dates=20251120T150000Z/20251120T160000Z&details=Join%20the%20DDEV%20training%20session%20via%20Zoom.%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online&trp=true) •
   [Download .ics](/files/ics/ddev-2025-11-20.ics)
 
-Zoom Join Info:  
-Link: [Join Zoom Meeting](https://us02web.zoom.us/j/7315692237?pwd=RHR6NUkwb0g5WXIzS2NOcXRucCthZz09)  
+Zoom Join Info:
+Link: [Join Zoom Meeting](https://us02web.zoom.us/j/7315692237?pwd=RHR6NUkwb0g5WXIzS2NOcXRucCthZz09)
 Passcode: 12345
 
 ## Events & Community
 
-- **Join Us at CakeFest in Madrid** — Randy will be doing a workshop on DDEV at [CakeFest in Madrid](https://cakefest.org/). See you there! Or if you're just in the Madrid area, let's do a get-together.
-- **See Us at DrupalCon EU in Vienna** — Randy will be at [DrupalCon EU in Vienna](https://events.drupal.org/vienna2025) thanks to sponsorship from [Tag1](https://www.tag1consulting.com/) and [Platform.sh/Upsun](https://upsun.com). Please say hi. Let's talk about anything you might want to talk about. I normally do a bunch of Birds-of-a-Feather sessions. Or if you live in the Vienna area, let's do a get-together.
+- **CakeFest in Madrid** — Randy presented a DDEV workshop at [CakeFest](https://cakefest.org/) in Madrid. Thanks to everyone who attended!
+- **DrupalCon EU in Vienna** — Randy will be at [DrupalCon EU in Vienna](https://events.drupal.org/vienna2025) thanks to sponsorship from [Tag1](https://www.tag1consulting.com/) and [Upsun](https://upsun.com). Stop by to chat about DDEV, join Birds-of-a-Feather sessions, or connect if you're in the Vienna area.
 
 ## Governance & Roadmap
 
-- **Formal Governance Proposal** — We've been working on a [formal governance proposal](https://docs.google.com/document/d/1MXatsz2FMBSnllnUArNCv562x0T2-EF1OwqsFEU9_-M/edit?usp=sharing). We'd love your comments and engagement.
-- **Informal Nominations for the DDEV Foundation Board** — Would you like to nominate someone (or yourself)? Ping us via any of our [contact methods](/contact/).
+- **Formal Governance Proposal** — Review our [formal governance proposal](https://docs.google.com/document/d/1MXatsz2FMBSnllnUArNCv562x0T2-EF1OwqsFEU9_-M/edit?usp=sharing) and share your feedback.
+- **DDEV Foundation Board Nominations** — Interested in nominating someone (or yourself) for the board? [Contact us](/contact/).
 
 ---
 
-## Sponsorship Status
+## Sponsorship Update
 
-- **Monthly average income** up from $7,878 to $7,958 (66% of $12,000 goal). Every contribution helps sustain our work—thank you! → [Become a sponsor↗](https://github.com/sponsors/ddev)
+Our recent fundraising communication following the v1.24.8 release has been successful—thank you for your support! Your contributions help us maintain and grow DDEV for the entire community.
+
+- **Monthly average income** continues to grow (66% of $12,000 goal). Every contribution sustains our work—thank you! → [Become a sponsor↗](https://github.com/sponsors/ddev)
 
 ## Stay in the Loop—Follow Us and Join the Conversation
 
