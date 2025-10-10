@@ -41,7 +41,7 @@ Every pull request automatically runs:
 - **Prettier** for code formatting
 - **Textlint** for content consistency and terminology
 
-The linting rules are defined in `.textlintrc` and enforce consistent usage of terms like "ARM64", "Bash", and "phpMyAdmin".
+The linter rules are defined in `.textlintrc` and enforce consistent usage of terms like "ARM64", "Bash", and "phpMyAdmin".
 
 ### Preview Deployments ([32:15](https://www.youtube.com/watch?v=A-rsZ7SG_bg&t=1935s))
 
