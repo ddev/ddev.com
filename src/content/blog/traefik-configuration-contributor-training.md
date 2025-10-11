@@ -137,4 +137,4 @@ In DDEV v1.23.4+ Casual hosting will be possible using Traefik, but until that r
 
 Your suggestions to improve this blog are welcome. You can do a PR to this blog adding your techniques. Info and a training session on how to do a PR to anything in ddev.com is at [DDEV Website For Contributors](/blog/ddev-website-for-contributors/).
 
-Join us for the next [DDEV Live Contributor Training](/blog/contributor-training/). Use the [contact](/contact) link to ask for a calendar invitation.
+Follow the [DDEV Newsletter](/newsletter) for information about upcoming user and contributor training sessions.
