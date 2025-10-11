@@ -10,6 +10,7 @@ featureImage:
   credit: "Photo by Randy Fay"
 categories:
   - Community
+  - Newsletters
 ---
 
 **Welcome to the June 2025 DDEV Newsletter**  

@@ -10,6 +10,7 @@ featureImage:
   credit: "Plateau Creek Mile Marker 55, by Nancy Lewis"
 categories:
   - Community
+  - Newsletters
 ---
 
 **Happy February!**

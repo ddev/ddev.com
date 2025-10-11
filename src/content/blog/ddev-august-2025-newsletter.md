@@ -10,6 +10,7 @@ featureImage:
   caption: "Nuno Maduro at Laracon US 2025"
 categories:
   - Community
+  - Newsletters
 ---
 
 🚀 Dive into August 2025 with DDEV! 🌟  
