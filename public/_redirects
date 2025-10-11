@@ -25,7 +25,8 @@
 /blog/ddev-local-nfs-mounting-setup-macos/ https://docs.ddev.com/en/stable/users/install/performance/#filesystem-performance-nfs 301
 /blog/ddev-local-and-phpstorm-debugging-with-wsl2 https://docs.ddev.com/en/stable/users/debugging-profiling/step-debugging/#phpstorm-debugging-setup 301
 /blog/ddev-local-and-phpstorm-debugging-with-wsl2/ https://docs.ddev.com/en/stable/users/debugging-profiling/step-debugging/#phpstorm-debugging-setup 301
-/blog/contributor-training/ /blog/category/training/
+/blog/contributor-training /blog/category/training/ 301
+/blog/contributor-training/ /blog/category/training/ 301
 
 # Authors redirects
 /meet-the-team /blog/authors 301
