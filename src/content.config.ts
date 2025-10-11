@@ -9,6 +9,7 @@ const allowedCategories = [
   "DevOps",
   "Performance",
   "Guides",
+  "Newsletters",
   "TechNotes",
   "Training",
   "Videos",

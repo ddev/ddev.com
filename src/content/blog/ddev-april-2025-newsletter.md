@@ -10,6 +10,7 @@ featureImage:
   credit: "My First Painting in Palisade, by Nancy Lewis"
 categories:
   - Community
+  - Newsletters
 ---
 
 **Spring has Sprung in Palisade, Colorado!**

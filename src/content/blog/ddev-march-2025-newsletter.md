@@ -10,6 +10,7 @@ featureImage:
   credit: "Palisade Vinelands, by Nancy Lewis"
 categories:
   - Community
+  - Newsletters
 ---
 
 **Happy March!**

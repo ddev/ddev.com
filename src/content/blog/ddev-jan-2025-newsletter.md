@@ -10,6 +10,7 @@ featureImage:
   credit: View of Mount Garfield above Palisade, Colorado on my walk to work today, January 6, 2025
 categories:
   - Community
+  - Newsletters
 ---
 
 **Happy New Year DDEV Community!**

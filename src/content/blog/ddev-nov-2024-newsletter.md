@@ -9,6 +9,7 @@ featureImage:
   alt: Palisade, Colorado, USA, November 1, 2024
 categories:
   - Community
+  - Newsletters
 ---
 
 **Happy November from DDEV**! It's a beautiful fall here, but things are cooling down. We live in an agricultural area, so the first freeze is always an event.

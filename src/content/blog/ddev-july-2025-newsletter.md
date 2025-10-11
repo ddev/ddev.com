@@ -10,6 +10,7 @@ featureImage:
   caption: "Mount Garfield this morning, Palisade, Colorado, USA"
 categories:
   - Community
+  - Newsletters
 ---
 
 **Welcome to the July 2025 DDEV Newsletter**  
