@@ -30,8 +30,8 @@ Have ideas for DDEV in 2026? [Contact us↗](/contact).
 
 ## Community Video Tutorials
 
-- **Ivan Zugec: Instala WordPress en local con DDEV en 10 minutos (Spanish)** [Watch↗](https://www.youtube.com/watch?v=muk1Rs_3X64)
-- **Instala phpMyAdmin y Adminer en DDEV (Spanish)** [Watch↗](https://www.youtube.com/watch?v=n2vIoFSet2Y)
+- **Eureka Tutoriales: Instala WordPress en local con DDEV en 10 minutos (Spanish)** [Watch↗](https://www.youtube.com/watch?v=muk1Rs_3X64)
+- **Eureka Tutoriales: Instala phpMyAdmin y Adminer en DDEV (Spanish)** [Watch↗](https://www.youtube.com/watch?v=n2vIoFSet2Y)
 - **Setting up your local environment to work with the Mautic Documentation** [Watch↗](https://www.youtube.com/watch?v=Hnzp-aJ4NWA)
 
 ## DDEV Training Continues
@@ -49,7 +49,7 @@ Passcode: 12345
 ## Events & Community
 
 - **CakeFest in Madrid** — Randy presented a DDEV workshop at [CakeFest](https://cakefest.org/) in Madrid. Thanks to everyone who attended!
-- **DrupalCon EU in Vienna** — Randy will be at [DrupalCon EU in Vienna](https://events.drupal.org/vienna2025) thanks to sponsorship from [Tag1](https://www.tag1consulting.com/) and [Upsun](https://upsun.com). Stop by to chat about DDEV, join Birds-of-a-Feather sessions, or connect if you're in the Vienna area.
+- **DrupalCon EU in Vienna** — Randy will be at [DrupalCon EU in Vienna](https://events.drupal.org/vienna2025) thanks to sponsorship from [Tag1](https://www.tag1consulting.com/) and [Upsun](https://upsun.com). Catch me to chat about DDEV, join Birds-of-a-Feather sessions, or connect if you're in the Vienna area. [Make an appointment](https://cal.com/randyfay/30min) to make sure we see each other!
 
 ## DDEV Training at TYPO3Camp RheinRuhr
 
