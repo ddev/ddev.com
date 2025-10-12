@@ -4,11 +4,12 @@ pubDate: 2025-10-13
 summary: "New Upsun add-on, quality tools for Drupal with Aljibe, community tutorials, upcoming training, and governance updates"
 author: Randy Fay
 featureImage:
-  src: /img/blog/2025/10/october-newsletter-banner.png
-  alt: DDEV October 2025 Newsletter banner with community and tools theme
-  caption: "DDEV October 2025: Community • Tools • Growth"
+  src: "/img/blog/2025/10/nancy-lewis-2025-10-newsletter.jpeg"
+  alt: "Community, Tools, Growth: Our gateway to the future, by Nancy Lewis"
+  caption: "DDEV October 2025: Community • Tools • Growth: Our gateway to the future, by Nancy Lewis"
 categories:
   - Community
+  # TODO: Add "Newsletters" category.
 ---
 
 🚀 October brings new tools, community contributions, and training opportunities! 🌟
