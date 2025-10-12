@@ -1,6 +1,6 @@
 ---
 title: "DDEV October 2025 Newsletter"
-pubDate: 2025-10-10
+pubDate: 2025-10-13
 summary: "New Upsun add-on, quality tools for Drupal with Aljibe, community tutorials, upcoming training, and governance updates"
 author: Randy Fay
 featureImage:
@@ -37,8 +37,6 @@ Have ideas for DDEV in 2026? [Contact us↗](/contact).
 
 Join us for upcoming training sessions for contributors and users. Guest blog contributions are welcome—learn more in our October 9th training session recording!
 
-### Upcoming DDEV Live Contributor Training Sessions
-
 - **November 20, 2025 at 10:00 US ET / 16:00 CET — Using DDEV in Windows WSL**
   [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Using%20DDEV%20in%20Windows%20WSL&dates=20251120T150000Z/20251120T160000Z&details=Join%20the%20DDEV%20training%20session%20via%20Zoom.%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online&trp=true) •
   [Download .ics](/files/ics/ddev-2025-11-20.ics)
@@ -56,18 +54,17 @@ Passcode: 12345
 
 Randy will be presenting DDEV training at [TYPO3Camp RheinRuhr](https://www.typo3camp-rheinruhr.de/workshops) in Germany November 7-9. Join us to learn about DDEV or connect if you're in the area!
 
-## Governance & Roadmap
+## Governance: We have a Board!
 
-- **Formal Governance Proposal** — Review our [formal governance proposal](https://docs.google.com/document/d/1MXatsz2FMBSnllnUArNCv562x0T2-EF1OwqsFEU9_-M/edit?usp=sharing) and share your feedback.
-TODO: - **DDEV Foundation Board, November meeting** — 
+- **A Board for DDEV Foundation!** — Join us for the [November 5 Advisory Group Meeting](https://github.com/orgs/ddev/discussions/7590) for
+  - [Final discussion of updated Articles of Incorporation](https://docs.google.com/document/d/1MXatsz2FMBSnllnUArNCv562x0T2-EF1OwqsFEU9_-M/edit?usp=sharing).
+  - Introduction of new Board members.
 
 ---
 
 ## Sponsorship Update
 
-As of the v1.24.8 release the daily reminders of DDEV sponsorship status on `ddev start` have been successful, and we've had a number of new sponsors, thank you! Your contributions help us maintain and grow DDEV for the entire community. As of today, the monthly sponsorship commitment is up to 69% of our goal, at $8,226. Thank you! That's up from 66% and $7,958 last month.
-
-- **Monthly average income** continues to grow (66% of $12,000 goal). Every contribution sustains our work—thank you! → [Become a sponsor↗](https://github.com/sponsors/ddev)
+As of the v1.24.8 release the daily reminders of DDEV sponsorship status on `ddev start` have been successful, and we've had a number of new sponsors, thank you! Your contributions help us maintain and grow DDEV for the entire community. As of today, the monthly sponsorship commitment is up to 69% of our goal, at $8,231. Thank you! That's up from 66% and $7,958 last month. → [Become a sponsor↗](https://github.com/sponsors/ddev)
 
 ## Stay in the Loop—Follow Us and Join the Conversation
 
