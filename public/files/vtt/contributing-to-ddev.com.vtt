@@ -1,0 +1,1937 @@
+WEBVTT
+
+00:00:02.000 --> 00:00:06.000
+I should turn on the transcription as well. Oh, it says it's on.
+
+00:00:06.000 --> 00:00:11.000
+Um… okay.
+
+00:00:11.000 --> 00:00:18.000
+One of them recent ones didn't have transcription. Anyway, welcome everybody. Um, we're happy to have you here today.
+
+00:00:18.000 --> 00:00:21.000
+KFX, you're welcome to unmute and join in.
+
+00:00:21.000 --> 00:00:25.000
+Um, at any time.
+
+00:00:25.000 --> 00:00:28.000
+Uh, we're gonna do a contributor training today.
+
+00:00:28.000 --> 00:00:35.000
+on, um, improving, editing, adding blogs to ddev.com.
+
+00:00:35.000 --> 00:00:39.000
+is such an important community resource,
+
+00:00:39.000 --> 00:00:41.000
+That, uh, we…
+
+00:00:41.000 --> 00:00:45.000
+We really like to have people sharing their techniques,
+
+00:00:45.000 --> 00:00:49.000
+And their needs and their problems, and their workarounds.
+
+00:00:49.000 --> 00:00:56.000
+Um, there, and fixing things when things are broken. So…
+
+00:00:56.000 --> 00:00:58.000
+Um, I'm gonna go ahead…
+
+00:00:58.000 --> 00:01:09.000
+And share my screen.
+
+00:01:09.000 --> 00:01:15.000
+And see how we do here. I have, um…
+
+00:01:15.000 --> 00:01:20.000
+I only have the, uh, the regular screen, and it's kind of cluttered.
+
+00:01:20.000 --> 00:01:23.000
+So I hope things work out here. I don't have a way to see…
+
+00:01:23.000 --> 00:01:27.000
+Uh, people's chat or anything, so speak up!
+
+00:01:27.000 --> 00:01:29.000
+If there's anything that I should see
+
+00:01:29.000 --> 00:01:32.000
+or no here.
+
+00:01:32.000 --> 00:01:38.000
+Uh, you can't see the Zoom components, though, right? Like, you don't see the participants on the screen.
+
+00:01:38.000 --> 00:01:41.000
+Or do you?
+
+00:01:41.000 --> 00:01:42.000
+Okay, good. Yeah.
+
+00:01:42.000 --> 00:01:44.000
+No, we see on the Chrome browser. Let's, uh, open it. Mhm.
+
+00:01:44.000 --> 00:01:49.000
+All right, thank you very much.
+
+00:01:49.000 --> 00:01:53.000
+So, okay, but I can't use the Chrome browser because…
+
+00:01:53.000 --> 00:01:56.000
+Things in the way. Let's see if I can…
+
+00:01:56.000 --> 00:02:01.000
+Hide it…
+
+00:02:01.000 --> 00:02:04.000
+Hide floating meeting controls.
+
+00:02:04.000 --> 00:02:07.000
+Now, how will I ever get them back? Okay.
+
+00:02:07.000 --> 00:02:12.000
+Making progress here, maybe.
+
+00:02:12.000 --> 00:02:15.000
+Uh, DDev.com,
+
+00:02:15.000 --> 00:02:17.000
+As you probably know,
+
+00:02:17.000 --> 00:02:19.000
+is, um…
+
+00:02:19.000 --> 00:02:22.000
+where we have our…
+
+00:02:22.000 --> 00:02:24.000
+Yeah, let's go to the… we have…
+
+00:02:24.000 --> 00:02:27.000
+Our introduction to DDev,
+
+00:02:27.000 --> 00:02:29.000
+Here, we have our Get Started.
+
+00:02:29.000 --> 00:02:33.000
+Um, we have a link to the docs, and then we have blogs.
+
+00:02:33.000 --> 00:02:36.000
+But most of what's here
+
+00:02:36.000 --> 00:02:38.000
+is the blog.
+
+00:02:38.000 --> 00:02:40.000
+And a lot of times, those things…
+
+00:02:40.000 --> 00:02:44.000
+have a tendency to get out of date and need some help.
+
+00:02:44.000 --> 00:02:46.000
+Um, and of course, we need
+
+00:02:46.000 --> 00:02:53.000
+new ideas and new techniques there, and we always welcome contributors.
+
+00:02:53.000 --> 00:02:57.000
+to do that. So, that's what we're going to be working on today.
+
+00:02:57.000 --> 00:03:01.000
+Um, contributing to Tdep.com.
+
+00:03:01.000 --> 00:03:06.000
+Uh, D-Dev is an open-source community, and DDev.com
+
+00:03:06.000 --> 00:03:12.000
+is set up to help that open-source community work. So,
+
+00:03:12.000 --> 00:03:16.000
+Uh, back in the day, this used to be a WordPress site,
+
+00:03:16.000 --> 00:03:22.000
+And if you wanted to fix something, you had to open an issue, and somebody with permissions had to fix it.
+
+00:03:22.000 --> 00:03:27.000
+But today, you can click the link, you can click the
+
+00:03:27.000 --> 00:03:33.000
+pencil on it, you can open a PR against it. It's all a static website.
+
+00:03:33.000 --> 00:03:36.000
+And we're happy to have contributions.
+
+00:03:36.000 --> 00:03:43.000
+And so it's much, much easier to make contributions or edits or improvements there.
+
+00:03:43.000 --> 00:03:46.000
+And, of course, we invite you to pursue
+
+00:03:46.000 --> 00:03:48.000
+Ambitious things, too,
+
+00:03:48.000 --> 00:03:51.000
+Uh, Stas is often doing ambitious things.
+
+00:03:51.000 --> 00:03:54.000
+making pieces of the project.
+
+00:03:54.000 --> 00:03:57.000
+of the site work better, that kind of thing.
+
+00:03:57.000 --> 00:04:01.000
+So…
+
+00:04:01.000 --> 00:04:11.000
+Speak up anytime, as always. Otherwise, I'll just keep blabbing.
+
+00:04:11.000 --> 00:04:15.000
+So, what we're gonna do, um, is show…
+
+00:04:15.000 --> 00:04:18.000
+how you can fix errors. As you know,
+
+00:04:18.000 --> 00:04:20.000
+Because you work in the tech world,
+
+00:04:20.000 --> 00:04:24.000
+things get out of date and ugly, uh, pretty fast.
+
+00:04:24.000 --> 00:04:28.000
+So, I'm just going to open up this blog here,
+
+00:04:28.000 --> 00:04:31.000
+Setting up a Go development environment.
+
+00:04:31.000 --> 00:04:33.000
+Which, um…
+
+00:04:33.000 --> 00:04:36.000
+probably didn't get as much editing
+
+00:04:36.000 --> 00:04:39.000
+as it could have.
+
+00:04:39.000 --> 00:04:43.000
+So…
+
+00:04:43.000 --> 00:04:46.000
+You see, it says, um…
+
+00:04:46.000 --> 00:04:50.000
+Installing Go on different operation systems.
+
+00:04:50.000 --> 00:04:52.000
+Instead of operating systems.
+
+00:04:52.000 --> 00:04:55.000
+And it says, um…
+
+00:04:55.000 --> 00:05:00.000
+Here's Randy, IDE of Choices Goland.
+
+00:05:00.000 --> 00:05:02.000
+That kind of thing. And so…
+
+00:05:02.000 --> 00:05:05.000
+Let's fix at least those two things.
+
+00:05:05.000 --> 00:05:13.000
+So, I am going to go and say, edit this page.
+
+00:05:13.000 --> 00:05:16.000
+And we have noticed that there's a problem.
+
+00:05:16.000 --> 00:05:18.000
+So, we can edit it,
+
+00:05:18.000 --> 00:05:24.000
+I'm gonna just click the Edit This File button now that we're on GitHub.
+
+00:05:24.000 --> 00:05:28.000
+And because I'm a maintainer of this,
+
+00:05:28.000 --> 00:05:30.000
+It's not going to insist on a fork.
+
+00:05:30.000 --> 00:05:35.000
+But if you're not a maintainer in the maintainers group,
+
+00:05:35.000 --> 00:05:37.000
+On the DDevOg,
+
+00:05:37.000 --> 00:05:41.000
+you would have to create a fork, but it just walks you through that.
+
+00:05:41.000 --> 00:05:43.000
+There's really nothing to it.
+
+00:05:43.000 --> 00:05:46.000
+So I'm going to say, edit it?
+
+00:05:46.000 --> 00:05:49.000
+And I'm going to change the…
+
+00:05:49.000 --> 00:05:53.000
+Update date… let me just see what the…
+
+00:05:53.000 --> 00:05:58.000
+correct way to do the update is modified date.
+
+00:05:58.000 --> 00:06:07.000
+So this is what we want here. We're going to add a modified date to it.
+
+00:06:07.000 --> 00:06:10.000
+So, we'll update it to today's date.
+
+00:06:10.000 --> 00:06:13.000
+And…
+
+00:06:13.000 --> 00:06:16.000
+So, here's one edit.
+
+00:06:16.000 --> 00:06:20.000
+Installing Go on different operating systems.
+
+00:06:20.000 --> 00:06:24.000
+And…
+
+00:06:24.000 --> 00:06:26.000
+cloning the repository…
+
+00:06:26.000 --> 00:06:28.000
+The role of Make Docs,
+
+00:06:28.000 --> 00:06:31.000
+We're gonna say Randy's…
+
+00:06:31.000 --> 00:06:34.000
+IDE of choice is Goland.
+
+00:06:34.000 --> 00:06:40.000
+Um…
+
+00:06:40.000 --> 00:06:43.000
+It'll be interesting to see
+
+00:06:43.000 --> 00:06:47.000
+whether some of this is getting pretty out of date.
+
+00:06:47.000 --> 00:06:54.000
+It doesn't look too bad to me.
+
+00:06:54.000 --> 00:06:59.000
+Looks like we have the things that we wanted to do. I just wanted to demonstrate…
+
+00:06:59.000 --> 00:07:04.000
+Uh, those, uh, two things, and now I'm going to do a save.
+
+00:07:04.000 --> 00:07:09.000
+On that. Um, so I'm gonna say commit changes.
+
+00:07:09.000 --> 00:07:17.000
+And if I weren't, uh, maintainer, it would ask me to do that, um…
+
+00:07:17.000 --> 00:07:19.000
+It looks like…
+
+00:07:19.000 --> 00:07:22.000
+GitHub Copilot did a decent…
+
+00:07:22.000 --> 00:07:25.000
+a just decent title for us here.
+
+00:07:25.000 --> 00:07:36.000
+And I'm gonna give this, uh, branch, like we like to name them.
+
+00:07:36.000 --> 00:07:43.000
+And I'm gonna say proposed changes.
+
+00:07:43.000 --> 00:07:47.000
+And that, uh, proposed changes is the same as
+
+00:07:47.000 --> 00:07:49.000
+Open a pull request.
+
+00:07:49.000 --> 00:08:01.000
+Um…
+
+00:08:01.000 --> 00:08:03.000
+And I'm gonna create a pull request.
+
+00:08:03.000 --> 00:08:09.000
+So,
+
+00:08:09.000 --> 00:08:15.000
+There we have made our contribution, we have fixed the thing, it took us moments to do it.
+
+00:08:15.000 --> 00:08:19.000
+And in just a moment, it will have a preview ready for us.
+
+00:08:19.000 --> 00:08:25.000
+And we'll take a look at that. We'll let it work right now. It's working on that preview.
+
+00:08:25.000 --> 00:08:28.000
+Uh, does that… does that all make sense?
+
+00:08:28.000 --> 00:08:31.000
+Stas, I know this…
+
+00:08:31.000 --> 00:08:33.000
+Very exotic stuff.
+
+00:08:33.000 --> 00:08:34.000
+But…
+
+00:08:34.000 --> 00:08:37.000
+Yeah, I usually don't edit the pages like this.
+
+00:08:37.000 --> 00:08:41.000
+No, um, you know, I have started…
+
+00:08:41.000 --> 00:08:43.000
+On occasion, when I just see a typo,
+
+00:08:43.000 --> 00:08:46.000
+It's in the docs or here.
+
+00:08:46.000 --> 00:08:49.000
+I do just click that, and it…
+
+00:08:49.000 --> 00:08:55.000
+You know? And that way I get the job… I get it done faster than checking it out. Or maybe it's faster.
+
+00:08:55.000 --> 00:08:58.000
+Or maybe I do it while I'm remembering it, which…
+
+00:08:58.000 --> 00:09:00.000
+can be useful.
+
+00:09:00.000 --> 00:09:02.000
+So…
+
+00:09:02.000 --> 00:09:05.000
+So that, um…
+
+00:09:05.000 --> 00:09:07.000
+Oh, it didn't do what I…
+
+00:09:07.000 --> 00:09:13.000
+If I had done a forked VR, which is not what the path that it took me on,
+
+00:09:13.000 --> 00:09:15.000
+than it would have taken a couple of more minutes.
+
+00:09:15.000 --> 00:09:18.000
+But as it is, here's my…
+
+00:09:18.000 --> 00:09:22.000
+new, um… here's my new…
+
+00:09:22.000 --> 00:09:27.000
+branch preview, I'm going to open the branch preview and take a look at it.
+
+00:09:27.000 --> 00:09:31.000
+And I'm going to navigate here to the blog,
+
+00:09:31.000 --> 00:09:34.000
+And I should be able to…
+
+00:09:34.000 --> 00:09:36.000
+Uh, search for it.
+
+00:09:36.000 --> 00:09:39.000
+go…
+
+00:09:39.000 --> 00:09:44.000
+It's this one, and now it has, uh, updated today on it.
+
+00:09:44.000 --> 00:09:50.000
+And now it says, installing Go on different operating systems instead of…
+
+00:09:50.000 --> 00:09:52.000
+operation systems.
+
+00:09:52.000 --> 00:09:55.000
+And it says Randy's IDE of choice is Goland.
+
+00:09:55.000 --> 00:10:01.000
+So that's looking good. Now, I can take and edit that in the…
+
+00:10:01.000 --> 00:10:09.000
+issue that we have here.
+
+00:10:09.000 --> 00:10:12.000
+And then I can ask Stas…
+
+00:10:12.000 --> 00:10:14.000
+For a review,
+
+00:10:14.000 --> 00:10:19.000
+And he'll probably approve it and pull it, who knows what'll happen then. But, uh…
+
+00:10:19.000 --> 00:10:23.000
+That's all it takes to fix an error.
+
+00:10:23.000 --> 00:10:28.000
+or an update, or anything else that you find or need there.
+
+00:10:28.000 --> 00:10:31.000
+Um, that's… you just click that edit button,
+
+00:10:31.000 --> 00:10:36.000
+And go for it, and it is fine.
+
+00:10:36.000 --> 00:10:40.000
+Eric, welcome!
+
+00:10:40.000 --> 00:10:45.000
+Feel free to chime in anytime.
+
+00:10:45.000 --> 00:10:48.000
+We don't have a…
+
+00:10:48.000 --> 00:10:49.000
+I'm saying hello to you! Hello!
+
+00:10:49.000 --> 00:10:52.000
+Oh, were you saying hello to me? Hello! How are you?
+
+00:10:52.000 --> 00:10:55.000
+Where are you in the world, Eric?
+
+00:10:55.000 --> 00:10:56.000
+We're glad to have you here today.
+
+00:10:56.000 --> 00:11:03.000
+In Brooklyn, New York. Well, I've always been interested in DDAB. I'm a regular user of it. I'm so sorry I'm late, I just saw the listing for it.
+
+00:11:03.000 --> 00:11:14.000
+So I won't hold you up, but I think it's great, and we use it all the time, and I write, uh, custom applications using it, and it's just… the best.
+
+00:11:14.000 --> 00:11:18.000
+We're very, very happy to have you here and to have that feedback.
+
+00:11:18.000 --> 00:11:20.000
+What we just did was…
+
+00:11:20.000 --> 00:11:26.000
+We found some errors in this blog post here.
+
+00:11:26.000 --> 00:11:29.000
+On DDev.com, and we edited them,
+
+00:11:29.000 --> 00:11:32.000
+Just by clicking the, uh, edit this page,
+
+00:11:32.000 --> 00:11:38.000
+And that automatically led us to create a PR for it, because DDEV is a static
+
+00:11:38.000 --> 00:11:42.000
+HTML website which is run on Markdown.
+
+00:11:42.000 --> 00:11:46.000
+And so we created a, um…
+
+00:11:46.000 --> 00:11:49.000
+We created a PR for that.
+
+00:11:49.000 --> 00:11:55.000
+And… who knows, maybe the PR has already been pulled. It's been approved!
+
+00:11:55.000 --> 00:11:58.000
+But maybe that, uh, Stasadev…
+
+00:11:58.000 --> 00:12:03.000
+Fancy guy will actually pull it, and then it'll be live on the website. But that's all it takes.
+
+00:12:03.000 --> 00:12:07.000
+is click, do an edit, and there it is, it's, uh…
+
+00:12:07.000 --> 00:12:10.000
+It's being processed already on the website.
+
+00:12:10.000 --> 00:12:16.000
+So, click the… this works on DDevs docs as well. There's a little pencil there.
+
+00:12:16.000 --> 00:12:20.000
+And you can… you can quickly make an edit
+
+00:12:20.000 --> 00:12:25.000
+And as Stas said, sometimes… I mean, if you have a non-trivial edit, you would not do that.
+
+00:12:25.000 --> 00:12:28.000
+But if you have a trivial edit, sometimes…
+
+00:12:28.000 --> 00:12:32.000
+I will see an error in the docs, or something that could…
+
+00:12:32.000 --> 00:12:41.000
+be stated just a little bit better, and I'll just click the edit button instead of checking out the whole thing.
+
+00:12:41.000 --> 00:12:44.000
+Okay, so there's our first step.
+
+00:12:44.000 --> 00:12:53.000
+of just doing a simple change that… something that needs to be done, you know it needs to be done, you can do it in the web interface if you want to,
+
+00:12:53.000 --> 00:13:00.000
+Now, if we want to do a blog post or any other significant change,
+
+00:13:00.000 --> 00:13:03.000
+Um, we can do that, too.
+
+00:13:03.000 --> 00:13:08.000
+It's, um, it's very, very straightforward to do.
+
+00:13:08.000 --> 00:13:13.000
+And, um, we welcome you to do it.
+
+00:13:13.000 --> 00:13:16.000
+So, Eric, for example, you probably have
+
+00:13:16.000 --> 00:13:19.000
+particular expertise
+
+00:13:19.000 --> 00:13:22.000
+from your, uh, from the things that you do for your
+
+00:13:22.000 --> 00:13:25.000
+custom sites, and…
+
+00:13:25.000 --> 00:13:27.000
+Sometimes you realize
+
+00:13:27.000 --> 00:13:32.000
+that you're the expert in that territory, or that you have solved a problem
+
+00:13:32.000 --> 00:13:35.000
+that maybe not everybody knows how to do.
+
+00:13:35.000 --> 00:13:44.000
+And we encourage community participation and blog posts on that. If you look at
+
+00:13:44.000 --> 00:13:47.000
+If you look at the blog posts, you'll see a number there.
+
+00:13:47.000 --> 00:13:51.000
+Um, that are not written by the maintainers.
+
+00:13:51.000 --> 00:13:54.000
+Here's the tail scale one that went up recently.
+
+00:13:54.000 --> 00:13:57.000
+Explaining how to use the Tailscale VPN.
+
+00:13:57.000 --> 00:14:01.000
+Uh, for, uh, sharing projects.
+
+00:14:01.000 --> 00:14:03.000
+Um…
+
+00:14:03.000 --> 00:14:06.000
+We had, uh…
+
+00:14:06.000 --> 00:14:11.000
+We had this nice one, uh, that's…
+
+00:14:11.000 --> 00:14:13.000
+Stas and me still.
+
+00:14:13.000 --> 00:14:15.000
+But we had, uh, how to downgrade Terminus.
+
+00:14:15.000 --> 00:14:19.000
+So, Bill… Bill Ceramentis discovered
+
+00:14:19.000 --> 00:14:24.000
+Um, he… he pioneered exactly what to do with Terminus.
+
+00:14:24.000 --> 00:14:28.000
+When they upgraded it and basically made it so that it wouldn't work with
+
+00:14:28.000 --> 00:14:31.000
+I think PHP 8.0.
+
+00:14:31.000 --> 00:14:38.000
+And so, there's an easy way to fix that in DDev, and he published it, and explained it. It's a little too…
+
+00:14:38.000 --> 00:14:41.000
+obscure a problem to deal with.
+
+00:14:41.000 --> 00:14:45.000
+Um, for putting it in the docs.
+
+00:14:45.000 --> 00:14:49.000
+Because it… you know, it's a solution to a very…
+
+00:14:49.000 --> 00:14:51.000
+New problem to a very old
+
+00:14:51.000 --> 00:14:54.000
+situation that's very niche.
+
+00:14:54.000 --> 00:14:56.000
+Um, but…
+
+00:14:56.000 --> 00:15:00.000
+A blog post is a great place for it and makes it quite discoverable.
+
+00:15:00.000 --> 00:15:02.000
+on the internet. So…
+
+00:15:02.000 --> 00:15:04.000
+He did… he did that, um…
+
+00:15:04.000 --> 00:15:08.000
+Garvin Hickling did it with the Legacy PHP application.
+
+00:15:08.000 --> 00:15:10.000
+Bringing up an old, old…
+
+00:15:10.000 --> 00:15:14.000
+PHP application, another great… another great topic.
+
+00:15:14.000 --> 00:15:15.000
+for specialized use of that.
+
+00:15:15.000 --> 00:15:21.000
+No, I saw that post. Very helpful.
+
+00:15:21.000 --> 00:15:28.000
+Have you had to do that?
+
+00:15:28.000 --> 00:15:29.000
+Yeah.
+
+00:15:29.000 --> 00:15:32.000
+I have not, but, you know, it caught my eye. So, yeah, that's a good… and I assume it works fine, you know, I mean, I'm running…
+
+00:15:32.000 --> 00:15:42.000
+One Drupal 9 on one of my DDev instances, Drupal 10, Drupal 11, you know, so it's very flexible that way.
+
+00:15:42.000 --> 00:15:45.000
+Let's see what he was actually doing. I think he was doing, uh…
+
+00:15:45.000 --> 00:15:48.000
+He was doing a Type 03
+
+00:15:48.000 --> 00:15:51.000
+4.5. I think they're on 13 or 14 now.
+
+00:15:51.000 --> 00:15:54.000
+Wow.
+
+00:15:54.000 --> 00:16:00.000
+4.5, with MySQL 5.5 and PHP 5.5.
+
+00:16:00.000 --> 00:16:01.000
+pre.
+
+00:16:01.000 --> 00:16:03.000
+Wow, I think that's ancient.
+
+00:16:03.000 --> 00:16:09.000
+Yeah, and he got it going. Um, I think he used…
+
+00:16:09.000 --> 00:16:14.000
+Um… Ah, no, he did! He… he went and added a…
+
+00:16:14.000 --> 00:16:16.000
+a service…
+
+00:16:16.000 --> 00:16:22.000
+For 5.5, and did… uh, he did PHP on a different service.
+
+00:16:22.000 --> 00:16:25.000
+Which is a good way to do it.
+
+00:16:25.000 --> 00:16:29.000
+I just did that for PHP 8.5, the same thing.
+
+00:16:29.000 --> 00:16:31.000
+Um, but…
+
+00:16:31.000 --> 00:16:36.000
+Anyway, so we… that's the kind of thing, you know, that so often,
+
+00:16:36.000 --> 00:16:39.000
+All of us run into problems,
+
+00:16:39.000 --> 00:16:42.000
+And we solved them, and sometimes they're niche problems.
+
+00:16:42.000 --> 00:16:48.000
+And if we share those, they're going to be useful to somebody in the future, so…
+
+00:16:48.000 --> 00:16:52.000
+We just encourage that. That blog post. The starting place
+
+00:16:52.000 --> 00:16:56.000
+For a blog post is do open an issue
+
+00:16:56.000 --> 00:16:59.000
+So that Stas and I, or anybody else,
+
+00:16:59.000 --> 00:17:04.000
+can make suggestions about, uh, what we think will make it the most…
+
+00:17:04.000 --> 00:17:08.000
+Uh, most consequential approach to it.
+
+00:17:08.000 --> 00:17:13.000
+Um, and then you just check out the repository
+
+00:17:13.000 --> 00:17:19.000
+For the website, and what I always do is copy a similar blog post,
+
+00:17:19.000 --> 00:17:26.000
+Um, if you haven't done one of these before, then you can add your author profile to
+
+00:17:26.000 --> 00:17:28.000
+source content authors.
+
+00:17:28.000 --> 00:17:31.000
+Let me just show you what I'm saying here.
+
+00:17:31.000 --> 00:17:34.000
+Um, so here's ddev.com.
+
+00:17:34.000 --> 00:17:39.000
+And I'm looking at it in Go land. It would look exactly the same.
+
+00:17:39.000 --> 00:17:43.000
+If you were looking at it in PHPstorm or whatever,
+
+00:17:43.000 --> 00:17:46.000
+Um, and…
+
+00:17:46.000 --> 00:17:49.000
+the, uh, the key elements for a blog
+
+00:17:49.000 --> 00:17:52.000
+are in source…
+
+00:17:52.000 --> 00:17:54.000
+Here's source.
+
+00:17:54.000 --> 00:17:56.000
+And content…
+
+00:17:56.000 --> 00:18:01.000
+And… blog has all the blogs in it.
+
+00:18:01.000 --> 00:18:05.000
+And the authors has all the authors, so…
+
+00:18:05.000 --> 00:18:08.000
+There's nothing to the author besides
+
+00:18:08.000 --> 00:18:11.000
+using your, uh, your name there.
+
+00:18:11.000 --> 00:18:13.000
+And… giving a blurb.
+
+00:18:13.000 --> 00:18:21.000
+And pointing it at an avatar. The avatar can be, as you see here, he used his gravitar,
+
+00:18:21.000 --> 00:18:27.000
+Avatar here, Alberto used, um, one in the image directory.
+
+00:18:27.000 --> 00:18:30.000
+Uh, Bernardo used…
+
+00:18:30.000 --> 00:18:33.000
+one in the image directory…
+
+00:18:33.000 --> 00:18:38.000
+Um, Bill used something in his own site, et cetera, et cetera.
+
+00:18:38.000 --> 00:18:40.000
+So, they all… they'll work fine.
+
+00:18:40.000 --> 00:18:45.000
+Um, so… but the blog, for example, I need to…
+
+00:18:45.000 --> 00:18:48.000
+Uh, do a blog.
+
+00:18:48.000 --> 00:18:52.000
+So I'll just give an ex… actually, let's just… let's just create a blog.
+
+00:18:52.000 --> 00:18:55.000
+Um, I need to do the…
+
+00:18:55.000 --> 00:19:00.000
+um, October newsletter for 2025.
+
+00:19:00.000 --> 00:19:03.000
+So what I'm going to do is open the DDev…
+
+00:19:03.000 --> 00:19:09.000
+September newsletter.
+
+00:19:09.000 --> 00:19:11.000
+I can't see it here…
+
+00:19:11.000 --> 00:19:13.000
+But if I…
+
+00:19:13.000 --> 00:19:18.000
+Search for that in the files.
+
+00:19:18.000 --> 00:19:20.000
+I should see it.
+
+00:19:20.000 --> 00:19:23.000
+Data of September 2025.
+
+00:19:23.000 --> 00:19:28.000
+And so, uh, what I'm gonna do with this, and I'm not gonna follow it all the way through,
+
+00:19:28.000 --> 00:19:33.000
+I'm going to copy this and make it the October newsletter.
+
+00:19:33.000 --> 00:19:38.000
+Um, and I do have content lined up for that.
+
+00:19:38.000 --> 00:19:40.000
+Um, but…
+
+00:19:40.000 --> 00:19:42.000
+I'm not gonna do it all right now.
+
+00:19:42.000 --> 00:19:45.000
+In the front matter.
+
+00:19:45.000 --> 00:19:47.000
+I'm not sure I'll add it to Git.
+
+00:19:47.000 --> 00:19:51.000
+And I'm gonna do, uh…
+
+00:19:51.000 --> 00:19:55.000
+I'm gonna replace September…
+
+00:19:55.000 --> 00:20:02.000
+With October,
+
+00:20:02.000 --> 00:20:04.000
+And…
+
+00:20:04.000 --> 00:20:06.000
+This one is obsolete, because we just…
+
+00:20:06.000 --> 00:20:11.000
+Those two are obsolete, because we just did them.
+
+00:20:11.000 --> 00:20:16.000
+We have the November one coming up. I hope to see you in November. We'll talk about
+
+00:20:16.000 --> 00:20:21.000
+DDev with Windows, WSL.
+
+00:20:21.000 --> 00:20:23.000
+And…
+
+00:20:23.000 --> 00:20:27.000
+Let's just say that I'm ready to…
+
+00:20:27.000 --> 00:20:32.000
+kind of ready to get started with this one. I'm not going to finish.
+
+00:20:32.000 --> 00:20:36.000
+Um, doing what it has.
+
+00:20:36.000 --> 00:20:41.000
+But let's just say that I had finished that.
+
+00:20:41.000 --> 00:20:43.000
+I'm then going to…
+
+00:20:43.000 --> 00:20:47.000
+Um, create a PR for it.
+
+00:20:47.000 --> 00:20:53.000
+And… I don't have to do anything more right now.
+
+00:20:53.000 --> 00:20:55.000
+in the, um…
+
+00:20:55.000 --> 00:21:00.000
+I don't have to do anything more right now with the author, because my author…
+
+00:21:00.000 --> 00:21:02.000
+entry is already there.
+
+00:21:02.000 --> 00:21:05.000
+And, of course, I have…
+
+00:21:05.000 --> 00:21:11.000
+Plenty more to do in the content here, but this'll… this gives me a good start.
+
+00:21:11.000 --> 00:21:16.000
+Maybe I'll even get to work on it later today.
+
+00:21:16.000 --> 00:21:21.000
+And let's open up the, um…
+
+00:21:21.000 --> 00:21:37.000
+I'm gonna use regular…
+
+00:21:37.000 --> 00:21:40.000
+So here's the changes that we've made, um…
+
+00:21:40.000 --> 00:21:43.000
+Goland was happy enough to add that.
+
+00:21:43.000 --> 00:21:46.000
+And I am going to…
+
+00:21:46.000 --> 00:21:48.000
+Check out a… I'm gonna do a git fetch…
+
+00:21:48.000 --> 00:21:50.000
+upstream…
+
+00:21:50.000 --> 00:22:10.000
+And…
+
+00:22:10.000 --> 00:22:16.000
+And so there I have it.
+
+00:22:16.000 --> 00:22:20.000
+And I didn't open an issue for this. Like I said, the issue…
+
+00:22:20.000 --> 00:22:22.000
+Um…
+
+00:22:22.000 --> 00:22:30.000
+The issue would be a good place to discuss the content before it went in. I've been keeping that content in a Notion note.
+
+00:22:30.000 --> 00:22:39.000
+thinking about it, and uh… nobody else… maybe nobody reads the newsletter at all, but I'm usually the only one that adds content to it.
+
+00:22:39.000 --> 00:22:40.000
+Um,
+
+00:22:40.000 --> 00:22:45.000
+No, it's good. It's… it's really good. I also want to compliment you on the, uh, the deed of, um, documentation.
+
+00:22:45.000 --> 00:23:03.000
+Whenever I have a question, I can just pop it into the Google, and I mean, the AI wants to go first these days, but then if I go to the DDEV site, it's usually got it right there, write the answer, just what I'm looking for, so… you know, good, good, you know, good work, good on you, you know.
+
+00:23:03.000 --> 00:23:10.000
+Thank you very much, Eric. We do… we do work hard at it, and the community works hard at it, and when people raise a question,
+
+00:23:10.000 --> 00:23:14.000
+in Discord, or Slack, or all the different places.
+
+00:23:14.000 --> 00:23:19.000
+We do take that as a sign that maybe it isn't good enough in the docs yet.
+
+00:23:19.000 --> 00:23:22.000
+Um, and we do try to put it in there.
+
+00:23:22.000 --> 00:23:23.000
+Um, how do you use the docs? Do you do a search first? Is that the first thing you do?
+
+00:23:23.000 --> 00:23:32.000
+Yes, let's see, so… Yes, I mean, the go-to, you know, the search engine of choice.
+
+00:23:32.000 --> 00:23:37.000
+Like, we're in this… we're in this changing world right now, so it's a little hard to say, but search engine of choice.
+
+00:23:37.000 --> 00:23:40.000
+Or the browser of choice is always, for me, has always been Chrome.
+
+00:23:40.000 --> 00:23:45.000
+So hit the chrome. What we're now calling the prompt, you know, you type in the URL bar.
+
+00:23:45.000 --> 00:23:59.000
+And… and just put my… and it… over time, it just… it just evolved into just asking… asking the internet the question, I suppose that's the opening for AI to step in, step in as it has in such a big way.
+
+00:23:59.000 --> 00:24:10.000
+And that's… that's where I'll, um, uh… find anything that I need. Last time I had any problem with DDev, wow, it's a long time.
+
+00:24:10.000 --> 00:24:21.000
+You know, like, like something was stuck, or something was broken. I mean, the whole thing is configuration, so if you really get frustrated with it, just trash it all, and just start over.
+
+00:24:21.000 --> 00:24:22.000
+Yep, that's the professional way, right?
+
+00:24:22.000 --> 00:24:25.000
+All right? Trash is… trash is the wrong professional term, right?
+
+00:24:25.000 --> 00:24:33.000
+Dw delete, I shouldn't be saying.
+
+00:24:33.000 --> 00:24:36.000
+Okay, so I'm going to go ahead and commit this.
+
+00:24:36.000 --> 00:24:46.000
+Um, uh…
+
+00:24:46.000 --> 00:24:47.000
+Oh, I want the October…
+
+00:24:47.000 --> 00:24:51.000
+And, you know…
+
+00:24:51.000 --> 00:24:54.000
+I want the October newsletter…
+
+00:24:54.000 --> 00:24:57.000
+starter.
+
+00:24:57.000 --> 00:25:01.000
+And now I'm going to push that.
+
+00:25:01.000 --> 00:25:03.000
+And I'm going to push it to my fork,
+
+00:25:03.000 --> 00:25:06.000
+Uh, because anybody can push.
+
+00:25:06.000 --> 00:25:11.000
+to an open-source fork. So my fork is, uh, named Arfe.
+
+00:25:11.000 --> 00:25:22.000
+Um…
+
+00:25:22.000 --> 00:25:24.000
+And then it gives me the link.
+
+00:25:24.000 --> 00:25:27.000
+For a PR?
+
+00:25:27.000 --> 00:25:31.000
+And, um…
+
+00:25:31.000 --> 00:25:43.000
+Let's see if the link comes out right. Oh, the link doesn't come out right because I was experimenting with DDevTest earlier.
+
+00:25:43.000 --> 00:25:48.000
+Normally, the link would be fine. I gotta get rid of that other, uh…
+
+00:25:48.000 --> 00:25:50.000
+get rid of that other thing.
+
+00:25:50.000 --> 00:25:52.000
+Um, so…
+
+00:25:52.000 --> 00:25:56.000
+I'm gonna say starter for DDev.
+
+00:25:56.000 --> 00:26:01.000
+newsletter…
+
+00:26:01.000 --> 00:26:04.000
+October…
+
+00:26:04.000 --> 00:26:06.000
+2025…
+
+00:26:06.000 --> 00:26:11.000
+And it doesn't really need much more of the normal stuff than that.
+
+00:26:11.000 --> 00:26:18.000
+And I'm going to say, create a pull request. And I'm doing this as an ordinary user, so this…
+
+00:26:18.000 --> 00:26:25.000
+This, as an ordinary user, these checks will run. We may have to enable them if they're… if it's your first
+
+00:26:25.000 --> 00:26:28.000
+If it's your first PR,
+
+00:26:28.000 --> 00:26:32.000
+But these normal things will run and create a preview
+
+00:26:32.000 --> 00:26:35.000
+So we can actually use the preview online.
+
+00:26:35.000 --> 00:26:39.000
+I can also, while that's going on, I'll show you what I can do.
+
+00:26:39.000 --> 00:26:46.000
+Um, I can, in the ddev.com directory, I can do a ddev start,
+
+00:26:46.000 --> 00:26:53.000
+And it will… it will, uh, show me exactly how to, um,
+
+00:26:53.000 --> 00:26:55.000
+exactly how to
+
+00:26:55.000 --> 00:26:58.000
+preview that on my local machine.
+
+00:26:58.000 --> 00:27:05.000
+So, I'm gonna do that while the other one is getting ready.
+
+00:27:05.000 --> 00:27:07.000
+the, um… it… we…
+
+00:27:07.000 --> 00:27:11.000
+Because community contribution is so important,
+
+00:27:11.000 --> 00:27:13.000
+We do love to…
+
+00:27:13.000 --> 00:27:18.000
+make it so that people can usually do things like this.
+
+00:27:18.000 --> 00:27:21.000
+Um, so that they can see…
+
+00:27:21.000 --> 00:27:26.000
+Uh, things without straining at the markdown so that they can see
+
+00:27:26.000 --> 00:27:28.000
+What it really looks like,
+
+00:27:28.000 --> 00:27:32.000
+on the website, and those kinds of things, because we do want…
+
+00:27:32.000 --> 00:27:36.000
+those community contributions.
+
+00:27:36.000 --> 00:27:38.000
+I am on a very…
+
+00:27:38.000 --> 00:27:42.000
+Slow Wi-Fi. You should have seen me at the Cake PHP thing today.
+
+00:27:42.000 --> 00:27:46.000
+Telling them to do a DDEV start and pull all the images.
+
+00:27:46.000 --> 00:27:50.000
+With 30 people in the room, so…
+
+00:27:50.000 --> 00:27:51.000
+What technology do you work with, Eric, or framework, or CMS?
+
+00:27:51.000 --> 00:28:12.000
+Um, let's see, I'm a Drupal developer, um, so I run a large multi-site.
+
+00:28:12.000 --> 00:28:13.000
+We're glad to have you here!
+
+00:28:13.000 --> 00:28:15.000
+Uh, with Acquia. Um, for the government, so… you know, not exactly busy this week. So… so, you know… Yeah, well, but I, you know, I've been a fan of DDev since, you know, since the beginning, you know, it was like Lando, you know, in 2021, Lando was like, oh, this is great, this is great.
+
+00:28:15.000 --> 00:28:25.000
+But then I remember when I got, you know, the defining moment for me, I had already really switched over to DDEV and writing, you know, a custom application where I could make.
+
+00:28:25.000 --> 00:28:32.000
+One command and have the whole site built for me in DDEV and get it all ready. You know, based on my custom.
+
+00:28:32.000 --> 00:28:45.000
+You know, database and my custom code, and, you know, all the rest of it, and the composer and all the rest of it. Right, but the ones I was when I got this job on the multi-side, and I tried to load up Lando. This was 2021, so I assume Lando's gotten better since then.
+
+00:28:45.000 --> 00:28:51.000
+This was 2021, so I tried to load up the Lando on the big site that I run, which is, like.
+
+00:28:51.000 --> 00:29:15.000
+500,000 or so nodes, right? And 3 hours later, I'm still waiting for Lando to load, and I'm like, well, I have DDev skills, let me drop a DDev in here and see if it's going to get better. I had a slow computer back then, like an i7 or something like that, right? So I dropped DDev into it, just dropped it in, and then 18 minutes later, I had a website running on my local system. It was like, okay, that's the end of that discussion as far as I'm concerned. But I assume Lando's gotten.
+
+00:29:15.000 --> 00:29:26.000
+Better. Yeah.
+
+00:29:26.000 --> 00:29:30.000
+But was that on… was that on a Mac, on a new…
+
+00:29:30.000 --> 00:29:34.000
+Was that on an Apple?
+
+00:29:34.000 --> 00:29:35.000
+Oh, uh…
+
+00:29:35.000 --> 00:29:37.000
+Yeah, who knows? This was old. This was… this was previous. This was like an ice, you know, in… in that, in that day, you know, like an i7, you know, you know, when I got that computer in 2000… uh, whatever, 15, 16, if it was a… it was a fast computer, but it wasn't a fast computer in 2021.
+
+00:29:37.000 --> 00:29:43.000
+Then when I got this computer, which is a M3 Max with 48 gigabytes of RAM.
+
+00:29:43.000 --> 00:29:59.000
+I run all the DDevs on my local computer. I mean, excuse me, all the sites on my local computer at once.
+
+00:29:59.000 --> 00:30:02.000
+Yeah.
+
+00:30:02.000 --> 00:30:03.000
+Right, right, yeah.
+
+00:30:03.000 --> 00:30:04.000
+And the computer wouldn't even know it. Right, just, just, you know, I want… I want this particular one, I write this one. I want this particular one, I write this one.
+
+00:30:04.000 --> 00:30:09.000
+You know, and that's all… that's all D-Dev, so it's really great stuff.
+
+00:30:09.000 --> 00:30:12.000
+Back…
+
+00:30:12.000 --> 00:30:16.000
+Back in that time period, um, a number of people
+
+00:30:16.000 --> 00:30:18.000
+had problems with, um…
+
+00:30:18.000 --> 00:30:26.000
+you know, Lando was dependent on the Bitnami images, which refused to do…
+
+00:30:26.000 --> 00:30:29.000
+Um, uh, ARM64 images.
+
+00:30:29.000 --> 00:30:32.000
+And so, Landa was stuck on that for…
+
+00:30:32.000 --> 00:30:35.000
+quite a long time, and of course,
+
+00:30:35.000 --> 00:30:37.000
+I assume that Lando has had
+
+00:30:37.000 --> 00:30:41.000
+An immense amount of pain now, because Bitnami…
+
+00:30:41.000 --> 00:30:43.000
+Quit the business. They…
+
+00:30:43.000 --> 00:30:44.000
+They went private, so that is a terrible thing for Lando.
+
+00:30:44.000 --> 00:30:48.000
+No.
+
+00:30:48.000 --> 00:30:50.000
+Um, and it actually…
+
+00:30:50.000 --> 00:30:53.000
+It has one slight effect on us.
+
+00:30:53.000 --> 00:30:58.000
+We use, uh, Bitnami images for our…
+
+00:30:58.000 --> 00:31:03.000
+MySQL8.X images, or we used it as a base.
+
+00:31:03.000 --> 00:31:10.000
+So we're not in any trouble in the short term, because we build our own images, and we've built them against their…
+
+00:31:10.000 --> 00:31:13.000
+their public backup, basically.
+
+00:31:13.000 --> 00:31:17.000
+But that Bitnami thing was a…
+
+00:31:17.000 --> 00:31:20.000
+Bitnami was a great set of images, and…
+
+00:31:20.000 --> 00:31:24.000
+I don't… and I always thought that Lando's…
+
+00:31:24.000 --> 00:31:27.000
+Use of them was smart,
+
+00:31:27.000 --> 00:31:29.000
+But…
+
+00:31:29.000 --> 00:31:34.000
+it handicapped them for a number of years, so I'm talking too much. Here we are.
+
+00:31:34.000 --> 00:31:39.000
+It came up, it told us where the, um… it told us
+
+00:31:39.000 --> 00:31:42.000
+where the HMR version of the URL is,
+
+00:31:42.000 --> 00:31:46.000
+And this is locally, so I can open that now.
+
+00:31:46.000 --> 00:31:48.000
+And…
+
+00:31:48.000 --> 00:31:55.000
+If I then remember how to get rid of this…
+
+00:31:55.000 --> 00:32:03.000
+get rid of the thing that's in front of me that you can't see.
+
+00:32:03.000 --> 00:32:05.000
+And then I'll be able to show that to you.
+
+00:32:05.000 --> 00:32:08.000
+Um, we can go to the blog,
+
+00:32:08.000 --> 00:32:15.000
+And here's our October 2025 newsletter showing up in the preview.
+
+00:32:15.000 --> 00:32:21.000
+And I can click through to it and see everything that is not yet written in it.
+
+00:32:21.000 --> 00:32:26.000
+But we did update the contributor training so that it only shows
+
+00:32:26.000 --> 00:32:28.000
+Next month's training now?
+
+00:32:28.000 --> 00:32:33.000
+So that's, um, that's a step forward. So that's our local preview.
+
+00:32:33.000 --> 00:32:39.000
+But while we were doing that, and while we were chatting, the, um, the GitHub
+
+00:32:39.000 --> 00:32:41.000
+preview came through for us.
+
+00:32:41.000 --> 00:32:45.000
+So, now it opened up, and this would work…
+
+00:32:45.000 --> 00:32:51.000
+for any of you, it opened up a complete preview online
+
+00:32:51.000 --> 00:32:53.000
+that anybody can use,
+
+00:32:53.000 --> 00:32:56.000
+And so, if I open that now…
+
+00:32:56.000 --> 00:32:57.000
+And that gets updated every committee.
+
+00:32:57.000 --> 00:33:01.000
+Was it running… was it running tests, um, in the… in the interim?
+
+00:33:01.000 --> 00:33:04.000
+It also ran tests, so it did, uh…
+
+00:33:04.000 --> 00:33:09.000
+It ran, uh… it ran the test here, which does…
+
+00:33:09.000 --> 00:33:14.000
+Um, prettier and, uh, text-lint.
+
+00:33:14.000 --> 00:33:16.000
+So it's just looking for simple,
+
+00:33:16.000 --> 00:33:21.000
+Um, simple grammar or non-standard usage.
+
+00:33:21.000 --> 00:33:25.000
+Um, it seems to whine about things that I wouldn't whine about, but it…
+
+00:33:25.000 --> 00:33:29.000
+It's a step toward consistency anyway, so it ran the…
+
+00:33:29.000 --> 00:33:30.000
+It ran the test on it, um, it, uh, it made sure that it could build
+
+00:33:30.000 --> 00:33:34.000
+Right.
+
+00:33:34.000 --> 00:33:38.000
+at all. I'm not sure that with a blog change,
+
+00:33:38.000 --> 00:33:41.000
+You can break anything that way.
+
+00:33:41.000 --> 00:33:46.000
+that would really break the test. So I ran that, um…
+
+00:33:46.000 --> 00:33:51.000
+we can, uh, go to that publicly built blog,
+
+00:33:51.000 --> 00:33:55.000
+And navigate to the actual newsletter.
+
+00:33:55.000 --> 00:33:59.000
+And I normally take and put that
+
+00:33:59.000 --> 00:34:02.000
+into the review here,
+
+00:34:02.000 --> 00:34:07.000
+Um, and say…
+
+00:34:07.000 --> 00:34:11.000
+a quick… quick way for somebody to get to it.
+
+00:34:11.000 --> 00:34:13.000
+Um, this…
+
+00:34:13.000 --> 00:34:16.000
+is not intended
+
+00:34:16.000 --> 00:34:18.000
+to be…
+
+00:34:18.000 --> 00:34:22.000
+in, uh, ready for review.
+
+00:34:22.000 --> 00:34:24.000
+At this point, I clicked the wrong button.
+
+00:34:24.000 --> 00:34:27.000
+So I'm going to say convert to draft.
+
+00:34:27.000 --> 00:34:30.000
+Because it won't be ready until I actually work on it.
+
+00:34:30.000 --> 00:34:33.000
+But it will become real, and there it is.
+
+00:34:33.000 --> 00:34:36.000
+Um, and it's, uh…
+
+00:34:36.000 --> 00:34:41.000
+We have created a PR, we've created a contribution, and done…
+
+00:34:41.000 --> 00:34:45.000
+what we needed to do for that. So…
+
+00:34:45.000 --> 00:34:47.000
+That's our, um…
+
+00:34:47.000 --> 00:34:57.000
+That's our starting point for creating a blog.
+
+00:34:57.000 --> 00:35:01.000
+I guess we did everything on this page. We've done the, uh…
+
+00:35:01.000 --> 00:35:06.000
+We've done the local preview, and we've done the pull request.
+
+00:35:06.000 --> 00:35:08.000
+For the blog post,
+
+00:35:08.000 --> 00:35:14.000
+And the… the README… let me stop there and see if there's any…
+
+00:35:14.000 --> 00:35:15.000
+Any questions or comments about what we just did?
+
+00:35:15.000 --> 00:35:25.000
+Would you be willing to talk a little bit about your text linting and your prettier thing, uh, steps in the testing?
+
+00:35:25.000 --> 00:35:27.000
+Sure, actually, we can take a look at them.
+
+00:35:27.000 --> 00:35:30.000
+Um, that's a fine idea.
+
+00:35:30.000 --> 00:35:32.000
+Um…
+
+00:35:32.000 --> 00:35:34.000
+So, if we go…
+
+00:35:34.000 --> 00:35:39.000
+out here to, uh, the ddev.com repository,
+
+00:35:39.000 --> 00:35:46.000
+And we go into the, uh, .github here.
+
+00:35:46.000 --> 00:35:51.000
+the, um… the workflows
+
+00:35:51.000 --> 00:35:53.000
+are the cloud…
+
+00:35:53.000 --> 00:35:58.000
+Cloudflare Preview Forks, which is for forked PRs. That's how…
+
+00:35:58.000 --> 00:36:02.000
+forked PRs can get built without any secrets being disclosed.
+
+00:36:02.000 --> 00:36:06.000
+But the normal workflow is done here in…
+
+00:36:06.000 --> 00:36:08.000
+in test.yaml.
+
+00:36:08.000 --> 00:36:12.000
+So, uh, when we have a, um…
+
+00:36:12.000 --> 00:36:14.000
+When we have a pull request,
+
+00:36:14.000 --> 00:36:17.000
+Uh, or a… or a push on Maine.
+
+00:36:17.000 --> 00:36:21.000
+It goes, uh, and these jobs…
+
+00:36:21.000 --> 00:36:24.000
+here are done, so…
+
+00:36:24.000 --> 00:36:27.000
+it checks out…
+
+00:36:27.000 --> 00:36:35.000
+Let me… slow me down if this is… this, uh, GitHub Action stuff is not familiar.
+
+00:36:35.000 --> 00:36:36.000
+Yeah.
+
+00:36:36.000 --> 00:36:38.000
+Following along so far, yep, thank you.
+
+00:36:38.000 --> 00:36:40.000
+And, uh,
+
+00:36:40.000 --> 00:36:44.000
+Here, it installs dependencies that we have, then it does a text lint,
+
+00:36:44.000 --> 00:36:47.000
+Um, and TextLint is running against
+
+00:36:47.000 --> 00:36:50.000
+a .text link RC that we have.
+
+00:36:50.000 --> 00:36:56.000
+So, I'll show you that in a second. And then Prettier, which is just a formatter,
+
+00:36:56.000 --> 00:37:00.000
+Um, uh, checks the formatting.
+
+00:37:00.000 --> 00:37:02.000
+And we have both of those tools.
+
+00:37:02.000 --> 00:37:06.000
+in the local development environment as well.
+
+00:37:06.000 --> 00:37:10.000
+So, if we go to the TextLintRC,
+
+00:37:10.000 --> 00:37:13.000
+Here's what it looks like.
+
+00:37:13.000 --> 00:37:16.000
+And it insists on…
+
+00:37:16.000 --> 00:37:20.000
+You know, if I often use ARM64 in lowercase,
+
+00:37:20.000 --> 00:37:24.000
+And it will be mad at me then, and I often use Bash as lowercase.
+
+00:37:24.000 --> 00:37:32.000
+then it will be mad at me then, and I won't get it right. Uh, I often type php myadmin with the capital P on the front.
+
+00:37:32.000 --> 00:37:35.000
+And it doesn't like that. So…
+
+00:37:35.000 --> 00:37:42.000
+Um, and these can be added with a simple PR as well. If we see things going into the content.
+
+00:37:42.000 --> 00:37:46.000
+that are not that great.
+
+00:37:46.000 --> 00:37:48.000
+And then the prettier
+
+00:37:48.000 --> 00:37:50.000
+Um, doesn't have…
+
+00:37:50.000 --> 00:37:54.000
+a lot in it, but it… it does…
+
+00:37:54.000 --> 00:37:59.000
+Um…
+
+00:37:59.000 --> 00:38:01.000
+It does…
+
+00:38:01.000 --> 00:38:03.000
+have in particular…
+
+00:38:03.000 --> 00:38:10.000
+There's not a lot in this one this prettier, um…
+
+00:38:10.000 --> 00:38:11.000
+I'm not even sure what single quote false means. Do you know, Stas?
+
+00:38:11.000 --> 00:38:25.000
+It's like maybe, uh, do not use single quotes. In text, replaces with double.
+
+00:38:25.000 --> 00:38:31.000
+Yeah, maybe it just won't let you do that, yeah.
+
+00:38:31.000 --> 00:38:32.000
+What's that?
+
+00:38:32.000 --> 00:38:36.000
+Corey prettes them up. Right, instead of a straight… instead of a straight quote, it makes a, um, you know, a typographic quote.
+
+00:38:36.000 --> 00:38:43.000
+Yeah, well, actually, we don't allow typographic quotes, so maybe that's part of it.
+
+00:38:43.000 --> 00:38:47.000
+We… we do the rendering, uh, to typographic quotes,
+
+00:38:47.000 --> 00:38:51.000
+on… on render, and don't allow it in the code.
+
+00:38:51.000 --> 00:38:53.000
+Because, um…
+
+00:38:53.000 --> 00:38:58.000
+They break all… those break all code!
+
+00:38:58.000 --> 00:39:07.000
+We don't want them anywhere.
+
+00:39:07.000 --> 00:39:09.000
+I know. Uh, the, um…
+
+00:39:09.000 --> 00:39:10.000
+The original, uh…
+
+00:39:10.000 --> 00:39:11.000
+Oh, yeah, no, I'm a typographer from way back, so I can tell you, yeah, you know, I'll give that up, just for simplicity's sake, you know, but…
+
+00:39:11.000 --> 00:39:17.000
+the original contributor, a wonderful, wonderful contributor, Matt, um, who…
+
+00:39:17.000 --> 00:39:19.000
+made this astrocyte go,
+
+00:39:19.000 --> 00:39:21.000
+is very much a typographic
+
+00:39:21.000 --> 00:39:24.000
+weenie kind of guy, you know, he…
+
+00:39:24.000 --> 00:39:29.000
+insists on things being perfect, and he wanted us… he originally…
+
+00:39:29.000 --> 00:39:33.000
+was wanting, um, typographic quotes.
+
+00:39:33.000 --> 00:39:37.000
+And I just, like, stumped my feet and had a, you know, had a fit.
+
+00:39:37.000 --> 00:39:39.000
+Um…
+
+00:39:39.000 --> 00:39:45.000
+But instead of that, he figured out how to render them typographically, which is…
+
+00:39:45.000 --> 00:39:51.000
+A fine idea, yes. Do it at that level, fine, but don't accidentally put stuff
+
+00:39:51.000 --> 00:39:52.000
+in my code, when people are copying and pasting and that kind of thing.
+
+00:39:52.000 --> 00:39:53.000
+Right.
+
+00:39:53.000 --> 00:39:59.000
+Oh, yeah. Particularly when you're learning, stuff like that can get so confusing.
+
+00:39:59.000 --> 00:40:05.000
+Oh, yes, absolutely. But, uh, people who care about typography,
+
+00:40:05.000 --> 00:40:08.000
+I think it's very important, so it's great to have a, uh,
+
+00:40:08.000 --> 00:40:13.000
+It's great to have a compromise there, and it was brilliant how he…
+
+00:40:13.000 --> 00:40:14.000
+How he worked out that compromise.
+
+00:40:14.000 --> 00:40:16.000
+Yeah.
+
+00:40:16.000 --> 00:40:22.000
+Now, there are other things that can be fixed, and feel free to bring up anything, but the README here…
+
+00:40:22.000 --> 00:40:28.000
+In DDev.com tells about the structure of this, and of course,
+
+00:40:28.000 --> 00:40:31.000
+Um, there is a link also
+
+00:40:31.000 --> 00:40:33.000
+in our presentation,
+
+00:40:33.000 --> 00:40:36.000
+to how Astro works, how this is…
+
+00:40:36.000 --> 00:40:39.000
+how this is set up, um…
+
+00:40:39.000 --> 00:40:42.000
+What the project structure is here,
+
+00:40:42.000 --> 00:40:45.000
+And… local development,
+
+00:40:45.000 --> 00:40:51.000
+Um, running it without DDev, running it with DDev, I always run it with DDev these days.
+
+00:40:51.000 --> 00:40:55.000
+And I guess we should remove this switching from
+
+00:40:55.000 --> 00:41:02.000
+Um, and then managing content, this is what we're going over today.
+
+00:41:02.000 --> 00:41:05.000
+And the…
+
+00:41:05.000 --> 00:41:09.000
+Here's text lint and Prettier, and how to use them.
+
+00:41:09.000 --> 00:41:12.000
+And then sponsor management is a common thing.
+
+00:41:12.000 --> 00:41:17.000
+Um, we got a… we got a new $100 a month sponsor yesterday.
+
+00:41:17.000 --> 00:41:20.000
+And Stas went right in and put them…
+
+00:41:20.000 --> 00:41:24.000
+In, he found their… found their, uh, logo,
+
+00:41:24.000 --> 00:41:26.000
+And put them in like this,
+
+00:41:26.000 --> 00:41:30.000
+And, uh, that was a big win, and of course, it's a…
+
+00:41:30.000 --> 00:41:33.000
+It's an unusual and very pleasant day when we get a new
+
+00:41:33.000 --> 00:41:37.000
+sponsor at that level, so…
+
+00:41:37.000 --> 00:41:43.000
+Um, but that's… oh, and Short Links is another… it tells here about short links. We have…
+
+00:41:43.000 --> 00:41:46.000
+Short links for things like Discord.
+
+00:41:46.000 --> 00:41:49.000
+So, um, it's got…
+
+00:41:49.000 --> 00:41:52.000
+All the things that you need to know
+
+00:41:52.000 --> 00:41:55.000
+there about ddev.com in the README.
+
+00:41:55.000 --> 00:42:05.000
+Or you can edit it and add the things that you discovered that we needed to know.
+
+00:42:05.000 --> 00:42:10.000
+So, uh, and of course, as I said earlier, you're welcome to…
+
+00:42:10.000 --> 00:42:14.000
+fiddle with the astrocyte itself.
+
+00:42:14.000 --> 00:42:17.000
+Stas regularly finds things that he thinks
+
+00:42:17.000 --> 00:42:20.000
+can be improved, and he improves them.
+
+00:42:20.000 --> 00:42:25.000
+And, uh, anyway, just basically, we appreciate you
+
+00:42:25.000 --> 00:42:29.000
+Uh, we appreciate the entire community and your contributions on this.
+
+00:42:29.000 --> 00:42:36.000
+Because it is a community, and we can work together to make these resources improve
+
+00:42:36.000 --> 00:42:38.000
+Over time, which is, uh…
+
+00:42:38.000 --> 00:42:41.000
+Which is a great thing. So…
+
+00:42:41.000 --> 00:42:43.000
+But the floor is open for any…
+
+00:42:43.000 --> 00:42:46.000
+Questions, comments? Um…
+
+00:42:46.000 --> 00:42:48.000
+We're really happy to have
+
+00:42:48.000 --> 00:42:54.000
+Really happy to have you here, Eric. And we had a few more people show up. All right.
+
+00:42:54.000 --> 00:42:58.000
+Glad to see you, everybody that came. Trolls came!
+
+00:42:58.000 --> 00:43:02.000
+And… and Pierre Paul came. Excellent.
+
+00:43:02.000 --> 00:43:06.000
+Glad to have you here. And we'll get this, uh…
+
+00:43:06.000 --> 00:43:09.000
+We'll get a blog post wrapped around this.
+
+00:43:09.000 --> 00:43:13.000
+And, uh, put it up on YouTube pretty soon, too, so…
+
+00:43:13.000 --> 00:43:18.000
+Feel free to, uh, speak up if you have any questions or thoughts.
+
+00:43:18.000 --> 00:43:28.000
+Or anything else.
+
+00:43:28.000 --> 00:43:33.000
+Hello to everybody from Madrid, where…
+
+00:43:33.000 --> 00:43:38.000
+I was… I spoke to the PHP people today at their Cake Fest.
+
+00:43:38.000 --> 00:43:41.000
+Um, they're having a… having a great time.
+
+00:43:41.000 --> 00:43:46.000
+Yesterday, when I looked at my… we flew yesterday, and I looked at my…
+
+00:43:46.000 --> 00:43:49.000
+calendar, and I said, oh no, this is going to conflict, I can't…
+
+00:43:49.000 --> 00:43:55.000
+you know, I thought it was gonna… I thought this was at 8 o'clock in the morning, which it is my time.
+
+00:43:55.000 --> 00:44:02.000
+In Denver, and it's… but it's at 4 o'clock here, so there was no conflict, so I can do this from the…
+
+00:44:02.000 --> 00:44:11.000
+From the hotel room.
+
+00:44:11.000 --> 00:44:14.000
+Well, without further comments…
+
+00:44:14.000 --> 00:44:17.000
+Sure appreciate you, and uh…
+
+00:44:17.000 --> 00:44:22.000
+Look forward to, uh, look forward to seeing you at our next
+
+00:44:22.000 --> 00:44:28.000
+November 1, if you're interested in DDev on Windows, which is really fun.
+
+00:44:28.000 --> 00:44:30.000
+So…
+
+00:44:30.000 --> 00:44:32.000
+Thank you.
+
+00:44:32.000 --> 00:44:39.000
+Keyopics and Pierre Paul, and everybody have a great day.
+
+00:44:39.000 --> 00:44:40.000
+Thanks so much.
+
