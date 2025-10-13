@@ -10,6 +10,7 @@ featureImage:
   caption: "2025 Drupal Developer Survey: Almost everybody loves DDEV"
 categories:
   - Community
+  - Newsletters
 ---
 
 🚀 Our sprint to finish out 2025 has begun! 🌟

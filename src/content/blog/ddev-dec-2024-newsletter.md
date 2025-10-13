@@ -10,6 +10,7 @@ featureImage:
   credit: Nancy Lewis painting of the Colorado River near Palisade, Colorado
 categories:
   - Community
+  - Newsletters
 ---
 
 **Hello DDEV Community!** It’s always a pleasure to reach out to you at the beginning of the month. Here are some updates for you.

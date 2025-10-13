@@ -123,7 +123,7 @@ The site uses Astro's Content Collections with strict schema validation:
 Blog posts require:
 
 - Valid author (must exist in authors collection)
-- Categories from predefined list: Announcements, Community, DevOps, Performance, Guides, TechNotes, Training, Videos
+- Categories from predefined list: Announcements, Community, DevOps, Performance, Guides, Newsletters, TechNotes, Training, Videos
 - pubDate as Date object
 - Optional featureImage with alt text
 
@@ -193,7 +193,7 @@ categories:
 Post content here...
 ```
 
-**Categories**: Announcements, Community, DevOps, Performance, Guides, TechNotes, Training, Videos
+**Categories**: Announcements, Community, DevOps, Performance, Guides, Newsletters, TechNotes, Training, Videos
 
 **Images**: Production-ready, <2MB, reasonable dimensions, optimized
 
