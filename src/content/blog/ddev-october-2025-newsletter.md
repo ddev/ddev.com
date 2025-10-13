@@ -9,7 +9,7 @@ featureImage:
   caption: "DDEV October 2025: Community • Tools • Growth: Our gateway to the future, by Nancy Lewis"
 categories:
   - Community
-  # TODO: Add "Newsletters" category.
+  - Newsletters
 ---
 
 🚀 October brings new tools, community contributions, and training opportunities! 🌟
