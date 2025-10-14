@@ -40,9 +40,11 @@ Most of the Composer features in the command line ddev app are direct analogs of
 
 The one thing that’s different is `ddev composer create-project`. If you’re familiar with Composer already, you know the [command to create a project](https://getcomposer.org/doc/03-cli.md#create-project) is this:
 
-`composer create-project <name> <directory>`
+```
+composer create-project <name> <directory> <version>
+```
 
-In ddev, you use `ddev composer create-project <name>` without the additional directory component. For example, our [TYPO3 quickstart](https://docs.ddev.com/en/stable/users/quickstart/#typo3) recommends you run this command:
+In DDEV, you use `ddev composer create-project <name>` without the additional directory component (all installs are done in the current [composer_root](https://docs.ddev.com/en/stable/users/configuration/config/#composer_root), which is the project root by default). For example, our [TYPO3 quickstart](https://docs.ddev.com/en/stable/users/quickstart/#typo3) recommends you run this command:
 
 ```bash
 ddev composer create-project "typo3/cms-base-distribution"
