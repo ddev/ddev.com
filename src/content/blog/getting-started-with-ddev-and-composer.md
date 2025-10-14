@@ -54,7 +54,7 @@ The standard Composer command requires that you are creating a project in a comp
 
 Another thing you can do is execute Composer in other directories within the container. [SSH into a container](https://docs.ddev.com/en/stable/users/cli-usage/#ssh-into-containers) to open an interactive Bash shell session to the container. Then you can use Composer directly inside the container ([see the docs](https://docs.ddev.com/en/stable/users/usage/developer-tools/#ddev-and-composer)). You can end the Composer session by typing `exit`.
 
-As the [documentation on ddev and Composer explains](https://docs.ddev.com/en/stable/users/usage/developer-tools/#ddev-and-composer), DDEV will execute the Composer command at the project root in the web container, passing all arguments and flags to Composer, as the examples here show.
+As the [documentation on ddev and Composer explains](https://docs.ddev.com/en/stable/users/usage/developer-tools/#ddev-and-composer), DDEV will execute the Composer command at the project root (the path can be changed with the [composer_root](https://docs.ddev.com/en/stable/users/configuration/config/#composer_root) option) in the web container, passing all arguments and flags to Composer, as the examples here show.
 
 `ddev composer create-project "drupal/recommended-project:^11" --stability dev --no-interaction`
 
