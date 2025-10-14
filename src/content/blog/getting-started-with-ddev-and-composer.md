@@ -50,7 +50,7 @@ In DDEV, you use `ddev composer create-project <name>` without the additional di
 ddev composer create-project "typo3/cms-base-distribution"
 ```
 
-The standard Composer command requires that you are creating a project in a completely empty directory. With DDEV that’s not possible, we have a .ddev directory already, if nothing else. So what ddev does in the background is to create the project in a temporary directory, then it copies back into the project root. From the command line interface, you won’t even notice it.
+The standard Composer command requires that you are creating a project in a completely empty directory. With DDEV that’s not possible, we have a `.ddev` directory already, if nothing else. So what DDEV does in the background is to create the project in a temporary directory, then it copies back into the project root. From the command line interface, you won’t even notice it.
 
 Another thing you can do is execute Composer in other directories within the container. [SSH into a container](https://docs.ddev.com/en/stable/users/cli-usage/#ssh-into-containers) to open an interactive Bash shell session to the container. Then you can use Composer directly inside the container ([see the docs](https://docs.ddev.com/en/stable/users/usage/developer-tools/#ddev-and-composer)). You can end the Composer session by typing `exit`.
 
