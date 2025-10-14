@@ -58,7 +58,7 @@ As the [documentation on ddev and Composer explains](https://docs.ddev.com/en/st
 
 `ddev composer create-project "drupal/recommended-project:^11" --stability dev --no-interaction`
 
-`ddev composer create-project "typo3/cms-base-distribution" ^12`
+`ddev composer create-project "typo3/cms-base-distribution" . ^12`
 
 `ddev composer require monolog/monolog`
 
