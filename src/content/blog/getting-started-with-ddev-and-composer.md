@@ -76,5 +76,5 @@ Also, check out these articles:
 
 - [Watch: DDEV from scratch with Windows WSL2](watch-ddev-local-from-scratch-with-windows-wsl2.md)
 - [DDEV on Linux in 10 Minutes](ddev-on-linux-in-10-minutes.md)
-- How to set up a [Docker-based development environment on macOS](watch-ddev-local-from-scratch-with-macos.md).
+- [Watch: DDEV From Scratch with macOS](watch-ddev-local-from-scratch-with-macos.md)
 - [Debugging Docker on Windows, Mac, and Linux](debugging-docker-on-windows-mac-and-linux.md)
