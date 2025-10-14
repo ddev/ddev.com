@@ -22,11 +22,11 @@ As web development evolved in the decade after PHP appeared, different web devel
 
 Enter Composer, the dependency manager that [took its inspiration](https://getcomposer.org/doc/00-intro.md) from dependency managers like npm. Unlike some others, Composer works on a per-project basis, pulling in the correct version of the correct libraries from repositories like Packagist, [the main Composer repository](https://getcomposer.org/doc/01-basic-usage.md#packagist).
 
-Composer is the recommended way to develop for both TYPO3 CMS and Drupal, but it still can cause issues, particularly for Windows users. Now with DDEV’s support for Composer, you don’t even have to install Composer on your local machine. You’ll get a more predictable experience and have one less thing to worry about.
+Composer is the recommended way to develop for many PHP frameworks and CMSs, but it still can cause issues, particularly for Windows users. Now with DDEV’s support for Composer, you don’t even have to install Composer on your local machine. You’ll get a more predictable experience and have one less thing to worry about.
 
 ## Built-in Composer commands in DDEV
 
-The new `ddev composer` feature is a wrapper on Composer that does everything inside the container, eliminating the need to install Composer on the host. If you’ve used Composer before, it will seem pretty familiar, but there’s an important difference to note.
+The `ddev composer` feature is a wrapper on Composer that does everything inside the container, eliminating the need to install Composer on the host. If you’ve used Composer before, it will seem pretty familiar, but there’s an important difference to note.
 
 Our recommended [quickstart](https://docs.ddev.com/en/stable/users/quickstart/) techniques for [TYPO3 CMS](https://docs.ddev.com/en/stable/users/quickstart/#typo3) and [Drupal](https://docs.ddev.com/en/stable/users/quickstart/#drupal) use Composer to create projects. You can also check out the docs on using the command line interface for [ddev and Composer](https://docs.ddev.com/en/stable/users/usage/developer-tools/#ddev-and-composer).
 
@@ -51,7 +51,7 @@ ddev composer create-project "typo3/cms-base-distribution"
 
 The standard Composer command requires that you are creating a project in a completely empty directory. With DDEV that’s not possible, we have a .ddev directory already, if nothing else. So what ddev does in the background is to create the project in a temporary directory, then it copies back into the project root. From the command line interface, you won’t even notice it.
 
-Another thing you can do is execute Composer in other directories within the container. [SSH into a container](https://docs.ddev.com/en/stable/users/cli-usage/#ssh-into-containers) to open an interactive Bash shell session to the container. Then you can use Composer ‘natively’ ([see the docs](https://docs.ddev.com/en/stable/users/usage/developer-tools/#ddev-and-composer)). You can end the native Composer session by typing `exit`.
+Another thing you can do is execute Composer in other directories within the container. [SSH into a container](https://docs.ddev.com/en/stable/users/cli-usage/#ssh-into-containers) to open an interactive Bash shell session to the container. Then you can use Composer directly inside the container ([see the docs](https://docs.ddev.com/en/stable/users/usage/developer-tools/#ddev-and-composer)). You can end the Composer session by typing `exit`.
 
 As the [documentation on ddev and Composer explains](https://docs.ddev.com/en/stable/users/usage/developer-tools/#ddev-and-composer), DDEV will execute the Composer command at the project root in the web container, passing all arguments and flags to Composer, as the examples here show.
 
@@ -67,7 +67,7 @@ Each of these examples shows that the Composer commands will work, passing all o
 
 ## Get started with DDEV and Composer
 
-Composer is a great solution for dependency management in PHP, but it’s still not consistently applied across operating systems. Reduce friction in your development workflows by setting up consistent versions of Composer and PHP on your local development environment and your host with DDEV, our containerized Docker-based dev-to-deploy solution.
+Composer is a great solution for dependency management in PHP, but it’s still not consistently applied across operating systems. Reduce friction in your development workflows by setting up consistent versions of Composer and PHP on your local development and deployment environments.
 
 You can use DDEV with any PHP CMS or framework. We test DDEV on—and offer [Quickstart guides](https://docs.ddev.com/en/stable/users/quickstart/) for— Drupal, WordPress, TYPO3 CMS, Backdrop CMS and many others. Composer is the recommended way to develop with most of them, including TYPO3 CMS and Drupal.
 
