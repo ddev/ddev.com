@@ -32,8 +32,11 @@ const { latestVersion } = Astro.props
             Edit the project’s <code>.devcontainer/devcontainer.json</code> file:
             <Code
               code={`{
-    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "image": "mcr.microsoft.com/devcontainers/base:debian-12",
     "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {
+            "version": "latest"
+        },
         "ghcr.io/ddev/ddev/install-ddev:latest": {}
     }
 }
