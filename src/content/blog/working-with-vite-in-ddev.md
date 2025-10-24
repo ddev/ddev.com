@@ -2,7 +2,7 @@
 title: "Working with Vite in DDEV - an introduction"
 pubDate: 2023-11-08
 modifiedDate: 2025-10-27
-modifiedComment: "Added a link to the official DDEV documentation for Vite."
+modifiedComment: "Added a link to the [official DDEV Vite Integration documentation](https://docs.ddev.com/en/stable/users/usage/vite/)."
 summary: Working with Vite in DDEV
 author: Matthias Andrasch
 featureImage:
