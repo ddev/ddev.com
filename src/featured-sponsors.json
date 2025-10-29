@@ -187,5 +187,14 @@
     "squareLogo": "/logos/agiledrop-square.svg",
     "url": "https://www.agiledrop.com/",
     "github": "AGILEDROP"
+  },
+  {
+    "name": "Amedick Sommer",
+    "type": "standard",
+    "logo": "/logos/amedick-sommer.svg",
+    "darklogo": "/logos/amedick-sommer.svg",
+    "squareLogo": "/logos/amedick-sommer-square.svg",
+    "url": "https://www.amedick-sommer.de/",
+    "github": "AmedickSommer"
   }
 ]
