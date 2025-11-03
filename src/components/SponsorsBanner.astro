@@ -15,6 +15,10 @@ function formatCurrency(value: number): string {
     maximumFractionDigits: 0,
   }).format(value);
 }
+
+// Check if we're on the sustainability page
+const currentPath = Astro.url.pathname;
+const isOnSustainabilityPage = currentPath === '/blog/sustainability-for-ddev/' || currentPath === '/blog/sustainability-for-ddev';
 ---
 
 <style>
@@ -122,8 +126,28 @@ function formatCurrency(value: number): string {
     text-decoration: none;
   }
 
-  .ddev-sponsor-banner__cta {
+  .ddev-sponsor-banner__cta a,
+  .ddev-sponsor-banner__cta span {
     font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  .ddev-sponsor-banner__cta a:hover {
+    color: #0298cf;
+  }
+
+  .ddev-sponsor-banner__cta a::after {
+    content: '';
+    display: inline-block;
+    width: 0.9em;
+    height: 0.9em;
+    margin-left: 0.25em;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: baseline;
   }
 
   @media (max-width: 700px) {
@@ -159,7 +183,13 @@ function formatCurrency(value: number): string {
         <div class="ddev-sponsor-banner__progress-section">
           <div class="ddev-sponsor-banner__progress-header">
             <span id="percent-desktop">{percentage}% of monthly goal</span>
-            <span class="ddev-sponsor-banner__cta">Help us cross the finish line!</span>
+            <span class="ddev-sponsor-banner__cta">
+              {isOnSustainabilityPage ? (
+                <span>Securing DDEV's future!</span>
+              ) : (
+                <a href="/blog/sustainability-for-ddev/">Help us cross the finish line!</a>
+              )}
+            </span>
           </div>
           <div class="ddev-sponsor-banner__progress-bar">
             <div class="ddev-sponsor-banner__progress-fill" id="progress-desktop" style={{ width: `${percentage}%` }}></div>
@@ -179,12 +209,18 @@ function formatCurrency(value: number): string {
         </div>
         <div class="ddev-sponsor-banner__meta-row">
           <span id="percent-mobile">{percentage}% of monthly goal</span>
-          <span class="ddev-sponsor-banner__cta">Help us cross the finish line!</span>
+          <span class="ddev-sponsor-banner__cta">
+            {isOnSustainabilityPage ? (
+              <span>Securing DDEV's future!</span>
+            ) : (
+              <a href="/blog/sustainability-for-ddev/">Help us cross the finish line!</a>
+            )}
+          </span>
         </div>
       </div>
     </div>
 
-    <a class="ddev-sponsor-banner__button" href="https://github.com/sponsors/ddev" target="_blank">
+    <a class="ddev-sponsor-banner__button" href="https://github.com/sponsors/ddev">
       Sponsor DDEV
     </a>
   </div>
