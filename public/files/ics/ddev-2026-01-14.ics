@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//DDEV//Advisory Group Meeting//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:2026-01-14-ddev-advisory-group@ddev.com
+DTSTAMP:20251114T000000Z
+DTSTART:20260114T160000Z
+DTEND:20260114T180000Z
+SUMMARY:DDEV Extended Advisory Group and Board Meeting
+DESCRIPTION:Annual 2-hour review of 2025 and plans for 2026.\nAgenda:\n- DDEV Trademark transfer progress\n- 2026 goals for board consideration\n- 2025 year-end review feedback\n- Financial summary and planning discussion\n\nMeeting details: https://github.com/orgs/ddev/discussions/7863
+LOCATION:Online
+END:VEVENT
+END:VCALENDAR
