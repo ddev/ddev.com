@@ -77,6 +77,9 @@ The router configuration approach is recommended because it preserves DDEV's des
 
 If you want to request that AVM (the makers of Fritz!Box) consider adding `ddev.site` to their default DNS Rebinding Protection exceptions, consider contacting their support team. A friend of DDEV has already done this, but your request may help.
 
+## Thanks!
+
+Thanks to [Ingo Schmitt](https://my.typo3.org/u/ischmittis) for investigating and demonstrating the fix.  Thanks to [npostnik](https://www.npostnik.de/ueber-mich/) for already having documented this in a German blog post.
 
 ## Keep in touch!
 
