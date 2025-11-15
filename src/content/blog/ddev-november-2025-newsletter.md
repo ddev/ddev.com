@@ -11,20 +11,19 @@ categories:
   - Newsletters
 ---
 
-🎉 November brings exciting developments in AI-assisted development, community growth, and governance! 🚀
+🎉 A [Love Letter to DDEV](https://ryanstubbs.co.uk/2025/11/a-love-letter-to-ddev/) and we have a Board of Directors and updated Governance! 🚀
 
 Have ideas for DDEV in 2026? [Contact us↗](/contact).
 
 ## What's New
 
 - **Claude Code AI-Assisted PR for DDEV Training** → Learn how to use Claude Code to create pull requests for DDEV [Read more↗](claude-code-ai-pr-for-ddev-contributor-training.md)
-- **DDEV on Linux in 10 Minutes** → Quick installation guide for Linux users [Read more↗](ddev-on-linux-in-10-minutes.md)
 
 ## Community Highlights
 
-- **Claude Code Plugins for Drupal/DDEV**: Community member Siva has created custom Claude Code commands and plugins for DDEV and Drupal development workflows [View on GitHub↗](https://github.com/siva01c/claude-plugins)
-- **Profiling Your Drupal App with New Relic and DDEV**: Practical guide session from DrupalCon Vienna 2025 [Session details↗](https://events.drupal.org/vienna2025/session/profiling-your-drupal-app-new-relic-ddev-practical-guide) • [Watch on YouTube↗](https://www.youtube.com/watch?v=S5oPq1FqB1I&list=PLpeDXSh4nHjR5zd_mBGhzW4YBwuv5zs3d&index=113)
 - **A Love Letter to DDEV**: Ryan Stubbs shares his appreciation for DDEV and its impact on development workflows [Read more↗](https://ryanstubbs.co.uk/2025/11/a-love-letter-to-ddev/)
+- **Claude Code Plugins for Drupal/DDEV**: Community member Luděk Kvapil has created custom Claude Code commands and plugins for DDEV and Drupal development workflows [View on GitHub↗](https://github.com/siva01c/claude-plugins)
+- **Profiling Your Drupal App with New Relic and DDEV**: Practical guide session from DrupalCon Vienna 2025 [Session details↗](https://events.drupal.org/vienna2025/session/profiling-your-drupal-app-new-relic-ddev-practical-guide) • [Watch on YouTube↗](https://www.youtube.com/watch?v=S5oPq1FqB1I&list=PLpeDXSh4nHjR5zd_mBGhzW4YBwuv5zs3d&index=113)
 
 ## Community Video Tutorials
 
