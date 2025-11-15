@@ -88,4 +88,4 @@ As of today, the monthly sponsorship commitment is up to 70% of our goal, at $8,
 - [Bluesky↗](https://bsky.app/profile/ddev.bsky.social)
 - [Discord↗](/s/discord)
 
-Compiled and edited with assistance from Claude Code.
+Compiled and edited with assistance from Claude Code and Copilot.
