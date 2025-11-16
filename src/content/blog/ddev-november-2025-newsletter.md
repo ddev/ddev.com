@@ -13,7 +13,7 @@ categories:
 
 🎉 A [Love Letter to DDEV](https://ryanstubbs.co.uk/2025/11/a-love-letter-to-ddev/) and we have a Board of Directors and updated Governance! 🚀
 
-Have ideas for DDEV in 2026? [Contact us↗](/contact).
+As the year winds down, it's time to get serious about 2026 planning 📋. We'll have a meeting in the next few weeks talking about priorities for the new year. See some [WIP proposals](https://github.com/orgs/ddev/projects/10) and [Contact us any time with your opinions↗](/contact) or to get an invitation to the meeting.
 
 ## What's New
 
