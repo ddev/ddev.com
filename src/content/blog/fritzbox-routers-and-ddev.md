@@ -47,7 +47,7 @@ Rather than relying on DDEV's hosts file fallback, it's better to solve the unde
 
 Here's how to fix it:
 
-1. Access your Fritz!Box router settings (often at `http://fritz.box`)
+1. Access your Fritz!Box router settings - the factory defaults are `http://fritz.box` and 'http://192.168.178.1'
 2. Navigate to **Home Network** (Heimnetz) > **Network** (Netzwerk) > **Network Settings** (Netzwerkeinstellungen)
 3. Look for the DNS rebinding protection section
 4. Add `ddev.site` to the exceptions list
@@ -74,7 +74,7 @@ The router configuration approach is recommended because it preserves DDEV's des
 
 ## Contacting Fritz!Box Support to Ask for `ddev.site` to be added to their exceptions
 
-If you want to request that AVM (the makers of Fritz!Box) consider adding `ddev.site` to their default DNS Rebinding Protection exceptions, consider contacting their support team. A friend of DDEV has already done this, but your request may help.
+If you want to request that AVM (the makers of Fritz!Box) consider adding `ddev.site` to their default DNS Rebinding Protection exceptions, consider contacting their support team. A friend of DDEV has already done this, but more requests may help.
 
 ## Thanks!
 
