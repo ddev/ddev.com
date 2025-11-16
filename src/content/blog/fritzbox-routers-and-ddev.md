@@ -18,7 +18,7 @@ However, one particular brand of router, the Fritz!Box, has a different DNS conf
 
 ## The Problem
 
-When you first set up DDEV with a Fritz!Box router, you might encounter a `DNS_PROBE_FINISHED_NXDOMAIN` error when trying to access your `.ddev.site` domain, even though your site is accessible via IP address. This happens because Fritz!Box routers include DNS Rebinding Protection that "suppresses DNS responses pointing to your own network."
+When you first set up DDEV with a Fritz!Box router, you might encounter a failure to resolve the domain name when trying to access your `*.ddev.site` project, even though your site is accessible via the `127.0.0.1` direct URL given in `ddev describe`. This happens because Fritz!Box routers enable DNS Rebinding Protection that suppresses DNS responses pointing to your own network.
 
 ## What is DNS Rebinding Protection?
 
@@ -37,7 +37,6 @@ DDEV's use of `127.0.0.1` and the `ddev.site` domain is intentional and safe—i
 
 - **You control the configuration**: You explicitly install and configure DDEV on your own machine
 - **Local-only access**: DDEV projects only respond to requests from your own computer (`127.0.0.1`), not from external networks
-- **No data exfiltration**: There's no malicious code trying to steal data from your local services
 - **Transparent operation**: DDEV openly documents exactly how it uses DNS and local networking
 
 The Fritz!Box can't distinguish between a legitimate local development tool like DDEV and a potential DNS rebinding attack—both use domain names that resolve to `127.0.0.1`. That's why you need to explicitly allow `ddev.site` as an exception.
@@ -48,7 +47,7 @@ Rather than relying on DDEV's hosts file fallback, it's better to solve the unde
 
 Here's how to fix it:
 
-1. Access your Fritz!Box router settings (typically at `http://fritz.box`)
+1. Access your Fritz!Box router settings (often at `http://fritz.box`)
 2. Navigate to **Home Network** (Heimnetz) > **Network** (Netzwerk) > **Network Settings** (Netzwerkeinstellungen)
 3. Look for the DNS rebinding protection section
 4. Add `ddev.site` to the exceptions list
