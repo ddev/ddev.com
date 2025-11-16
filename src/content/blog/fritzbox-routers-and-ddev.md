@@ -71,7 +71,7 @@ The router configuration approach is recommended because it preserves DDEV's des
 - [DDEV Documentation on Restrictive DNS Servers](https://docs.ddev.com/en/stable/users/usage/networking/#restrictive-dns-servers-especially-fritzbox-routers)
 - [German blog post detailing the Fritz!Box issue](https://www.npostnik.de/allgemein/ddev-neues-modem-fritzbox-und-dns_probe_finished_nxdomain/)
 - Read all the details about DNS Name Resolution in [DNS Name Resolution and Wildcards](ddev-name-resolution-wildcards.md)
-- [Article in the Fritz! knowledge base (in German) how to access the admin interface of a FritzBox] (https://ch.fritz.com/service/wissensdatenbank/dok/FRITZ-App-Fon/1_Benutzeroberflache-der-FRITZ-Box-aufrufen/)  
+- [Article in the Fritz! knowledge base (in German) how to access the admin interface of a Fritz!Box] (https://ch.fritz.com/service/wissensdatenbank/dok/FRITZ-App-Fon/1_Benutzeroberflache-der-FRITZ-Box-aufrufen/)
 
 ## Contacting Fritz!Box Support to Ask for `ddev.site` to be added to their exceptions
 
