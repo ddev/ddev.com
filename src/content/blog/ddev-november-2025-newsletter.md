@@ -3,10 +3,10 @@ title: "DDEV November 2025 Newsletter"
 pubDate: 2025-11-14
 summary: "Board of Directors announced, Claude Code with DDEV, community tutorials, DrupalCon Vienna highlights, and upcoming training sessions"
 author: Randy Fay
-#featureImage:
-#  src: "/img/blog/2025/11/newsletter.jpeg"
-#  alt: "Attendees at DrupalCon Vienna BoF and trainings"
-#  caption: ""
+featureImage:
+  src: "/img/blog/2025/11/Autumn Colors in Steamboat Springs Colorado.jpg"
+  alt: "Autumn Colors in Steamboat Springs, Colorado"
+  caption: "Autumn Colors in Steamboat Springs, Colorado, by Nancy Lewis"
 categories:
   - Newsletters
 ---
