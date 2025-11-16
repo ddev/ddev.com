@@ -61,7 +61,7 @@ Passcode: 12345
 
 ## Events & Community
 
-- **DrupalCon EU in Vienna** — Randy hosted multiple Birds‑of‑a‑Feather (BoF) sessions at [DrupalCon EU in Vienna↗](https://events.drupal.org/vienna2025) thanks to sponsorship from [Tag1↗](https://www.tag1consulting.com/) and [Upsun↗](https://upsun.com). Sessions included DDEV Office Hours, [Contributing to DDEV using Claude Code↗](https://ddev.com/blog/claude-code-ai-pr-for-ddev-contributor-training/), [Using DDEV on Windows↗](https://ddev.com/blog/watch-ddev-local-from-scratch-with-windows-wsl2/), DDEV new features, and Git Bisect for Fun and Profit. Watch the [Git Bisect: Divide and Conquer troubleshooting presentation↗](https://drupal.tv/events/florida-drupalcamp-2025/divide-and-conquer-systematic-approach-troubleshooting-issues) from Florida DrupalCamp.
+- **DrupalCon EU in Vienna** — Randy hosted multiple Birds-of-a-Feather (BoF) sessions at [DrupalCon EU in Vienna↗](https://events.drupal.org/vienna2025) thanks to sponsorship from [Tag1↗](https://www.tag1consulting.com/) and [Upsun↗](https://upsun.com). Sessions included DDEV Office Hours, [Contributing to DDEV using Claude Code↗](https://ddev.com/blog/claude-code-ai-pr-for-ddev-contributor-training/), [Using DDEV on Windows↗](https://ddev.com/blog/watch-ddev-local-from-scratch-with-windows-wsl2/), DDEV new features, and Git Bisect for Fun and Profit. Watch the [Git Bisect: Divide and Conquer troubleshooting presentation↗](https://drupal.tv/events/florida-drupalcamp-2025/divide-and-conquer-systematic-approach-troubleshooting-issues) from Florida DrupalCamp.
 - **DDEV workshops at TYPO3Camp RheinRuhr 2025** — Randy presented DDEV training at TYPO3Camp RheinRuhr in Germany (Nov 7–9). [View training materials↗](https://rfay.github.io/ddev-from-beginning/)
 
 ## Governance: We have a Board!
@@ -69,7 +69,7 @@ Passcode: 12345
 The DDEV Foundation now has a formal board. Join us for our annual extended advisory group and board meeting (public; all are welcome):
 
 - **January 14, 2026 at 8:00 AM US Mountain Time / 4:00 PM CET — DDEV Extended Advisory Group and Board Meeting**
-  Annual 2‑hour review of 2025 and plans for 2026
+  Annual 2-hour review of 2025 and plans for 2026
   [Discussion details↗](https://github.com/orgs/ddev/discussions/7863) •
   [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=DDEV%20Extended%20Advisory%20Group%20and%20Board%20Meeting&dates=20260114T160000Z/20260114T180000Z&details=Annual%202-hour%20review%20of%202025%20and%20plans%20for%202026.%0AAgenda%3A%0A-%20DDEV%20Trademark%20transfer%20progress%0A-%202026%20goals%20for%20board%20consideration%0A-%202025%20year-end%20review%20feedback%0A-%20Financial%20summary%20and%20planning%20discussion%0A%0AMeeting%20details%3A%20https%3A%2F%2Fgithub.com%2Forgs%2Fddev%2Fdiscussions%2F7863&location=Online&trp=true) •
   [Download .ics](/files/ics/ddev-2026-01-14.ics)
