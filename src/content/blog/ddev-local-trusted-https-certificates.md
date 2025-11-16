@@ -27,7 +27,7 @@ mkcert -install && ddev poweroff && ddev start
 
 ## Understanding Certificate Authorities
 
-When you visit an HTTPS website, your browser verifies the site's SSL/TLS certificate was issued by a trusted **Certificate Authority (CA)**. A CA is an organization that validates website identities and issues digital certificates confirming they are who they claim to be. Your operating system and browsers come with a list of trusted CAs (like Let's Encrypt, DigiCert, or Sectigo).
+When you visit an HTTPS website, your browser verifies that the site's SSL/TLS certificate was issued by a trusted **Certificate Authority (CA)**. A CA is an organization that validates website identities and issues digital certificates confirming they are who they claim to be. Your operating system and browsers come with a list of trusted CAs (like Let's Encrypt, DigiCert, or Sectigo).
 
 For local development, we need a way to create certificates that your system trusts, even though the `.ddev.site` domains aren't publicly accessible. This is where mkcert comes in.
 
