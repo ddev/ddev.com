@@ -78,13 +78,15 @@ Some browsers don't automatically pick up the system trust store. Firefox, in pa
 
 ### cURL Doesn't Trust Certificates
 
-If you're using a custom-built cURL or one that doesn't respect your system's trust store, you may need to:
+If you're using an unusual cURL that doesn't respect your system's trust store, you may need to:
 
 1. Use your system's standard cURL instead
 2. Manually configure cURL to trust the mkcert CA
 3. Use the `-k` flag (insecure mode) for local development only
 
 The `curl` inside DDEV's web container is already configured to trust DDEV certificates.
+
+(You can figure out which cURL is being used by running `which -a curl`. On Linux you usually want `/usr/bin/curl`, on macOS you might also be using the Homebrew version, `/opt/homebrew/bin/curl`).
 
 ### Certificate Errors After System Updates
 
@@ -102,6 +104,8 @@ Then import the `rootCA.pem` file into your system or browser's certificate stor
 
 ## More Information
 
-For detailed browser configuration and troubleshooting steps, see the [DDEV browser configuration documentation](https://docs.ddev.com/en/stable/users/install/configuring-browsers/).
+* For detailed browser configuration and troubleshooting steps, see the [DDEV browser configuration documentation](https://docs.ddev.com/en/stable/users/install/configuring-browsers/).
+* Read more about how all of this works in [Hostnames and Wildcards and DDEV, Oh My!](ddev-name-resolution-wildcards).
+* The [mkcert project](https://github.com/FiloSottile/mkcert) has more information and documentation.
 
 This entire feature is made possible by the outstanding [mkcert](https://github.com/FiloSottile/mkcert) project, another triumph of open-source collaboration. Thanks to [@FiloSottile](https://github.com/FiloSottile) for this project.
