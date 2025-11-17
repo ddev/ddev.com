@@ -13,7 +13,7 @@ categories:
 
 🎉 A [Love Letter to DDEV](https://ryanstubbs.co.uk/2025/11/a-love-letter-to-ddev/) and we have a Board of Directors and updated Governance! 🚀
 
-As the year winds down, it's time to get serious about 2026 planning 📋. We'll have a meeting in the next few weeks talking about priorities for the new year. See some [WIP proposals](https://github.com/orgs/ddev/projects/10) and [Contact us any time with your opinions↗](/contact) or to get an invitation to the meeting.
+As the year winds down, it's time to get serious about 2026 planning 📋. We'll have a meeting in the next few weeks talking about priorities for the new year. See some [WIP proposals](https://github.com/orgs/ddev/projects/10) and [contact us any time with your opinions↗](/contact) or to get an invitation to the meeting.
 
 ## What's New
 
@@ -27,8 +27,8 @@ As the year winds down, it's time to get serious about 2026 planning 📋. We'll
 
 ## Community Video Tutorials
 
-- **Drupal CMS und Core für Projektentwicklung unter Windows 11 von Null installieren (German)**: Complete guide to installing Drupal CMS and Core for project development on Windows 11 from scratch [Watch on YouTube↗](https://www.youtube.com/watch?v=AwORq6A07pc)
-- **Drupal 11 für Entwicklerinnen und Sitebuilderinnen (German)**: Udemy course for Drupal 11 developers and site builders [Enroll with coupon↗](https://www.udemy.com/course/drupal-11-fur-entwicklerinnen-und-sitebuilderinnen/?couponCode=MT251103G2)
+- **Drupal CMS und Core für Projektentwicklung unter Windows 11 von Null installieren (German)**: Complete guide to installing Drupal CMS and Drupal Core for project development on Windows 11 from scratch [Watch on YouTube↗](https://www.youtube.com/watch?v=AwORq6A07pc)
+- **Drupal 11 für Entwickler:innen und Sitebuilder:innen (German)**: Udemy course for Drupal 11 developers and site builders [Enroll with coupon↗](https://www.udemy.com/course/drupal-11-fur-entwicklerinnen-und-sitebuilderinnen/?couponCode=MT251103G2)
 
 ## DDEV Training Continues
 
@@ -51,7 +51,7 @@ Join us for upcoming training sessions for contributors and users.
   [Download .ics](/files/ics/ddev-2026-03-26.ics)
 
 - **April 23, 2026 at 10:00 US ET / 16:00 CEST — Creating, maintaining and testing add-ons**
-  Re‑run of our popular add‑on training. [Previous session recording↗](https://www.youtube.com/watch?v=TmXqQe48iqE)
+  2026-updated version of our popular add‑on training. [Previous session recording↗](https://www.youtube.com/watch?v=TmXqQe48iqE)
   [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Creating%2C%20maintaining%20and%20testing%20add-ons&dates=20260423T140000Z/20260423T150000Z&details=Join%20the%20DDEV%20training%20session%20via%20Zoom.%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online&trp=true) •
   [Download .ics](/files/ics/ddev-2026-04-23.ics)
 
@@ -66,7 +66,7 @@ Passcode: 12345
 
 ## Governance: We have a Board!
 
-The DDEV Foundation now has a formal board. Join us for our annual extended advisory group and board meeting (public; all are welcome):
+The DDEV Foundation now has a formal board. Join us for our annual extended advisory group and board meeting (public; all are welcome): Watch for a blog post about the new board members! (Or [sneak peak](https://github.com/orgs/ddev/discussions/7590) by reading the meeting notes.)
 
 - **January 14, 2026 at 8:00 AM US Mountain Time / 4:00 PM CET — DDEV Extended Advisory Group and Board Meeting**
   Annual 2-hour review of 2025 and plans for 2026
