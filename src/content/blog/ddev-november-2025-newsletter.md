@@ -1,6 +1,6 @@
 ---
 title: "DDEV November 2025 Newsletter"
-pubDate: 2025-11-14
+pubDate: 2025-11-17
 summary: "Board of Directors announced, Claude Code with DDEV, community tutorials, DrupalCon Vienna highlights, and upcoming training sessions"
 author: Randy Fay
 featureImage:
