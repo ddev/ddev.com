@@ -47,7 +47,7 @@ Rather than relying on DDEV's hosts file fallback, it's better to solve the unde
 
 Here's how to fix it:
 
-1. Access your Fritz!Box router settings - the factory defaults are `http://fritz.box` and 'http://192.168.178.1'
+1. Access your Fritz!Box router settings - the factory defaults are `http://fritz.box` and `http://192.168.178.1`
 2. Navigate to **Home Network** (Heimnetz) > **Network** (Netzwerk) > **Network Settings** (Netzwerkeinstellungen)
 3. Look for the DNS rebinding protection section
 4. Add `ddev.site` to the exceptions list
@@ -71,7 +71,7 @@ The router configuration approach is recommended because it preserves DDEV's des
 - [DDEV Documentation on Restrictive DNS Servers](https://docs.ddev.com/en/stable/users/usage/networking/#restrictive-dns-servers-especially-fritzbox-routers)
 - [German blog post detailing the Fritz!Box issue](https://www.npostnik.de/allgemein/ddev-neues-modem-fritzbox-und-dns_probe_finished_nxdomain/)
 - Read all the details about DNS Name Resolution in [DNS Name Resolution and Wildcards](ddev-name-resolution-wildcards.md)
-- [Article in the Fritz! knowledge base (in German) how to access the admin interface of a Fritz!Box] (https://ch.fritz.com/service/wissensdatenbank/dok/FRITZ-App-Fon/1_Benutzeroberflache-der-FRITZ-Box-aufrufen/)
+- [Article in the Fritz! knowledge base (in German) how to access the admin interface of a Fritz!Box](https://ch.fritz.com/service/wissensdatenbank/dok/FRITZ-App-Fon/1_Benutzeroberflache-der-FRITZ-Box-aufrufen/)
 
 ## Contacting Fritz!Box Support to Ask for `ddev.site` to be added to their exceptions
 
