@@ -104,8 +104,8 @@ Then import the `rootCA.pem` file into your system or browser's certificate stor
 
 ## More Information
 
-* For detailed browser configuration and troubleshooting steps, see the [DDEV browser configuration documentation](https://docs.ddev.com/en/stable/users/install/configuring-browsers/).
-* Read more about how all of this works in [Hostnames and Wildcards and DDEV, Oh My!](ddev-name-resolution-wildcards.md).
-* The [mkcert project](https://github.com/FiloSottile/mkcert) has more information and documentation.
+- For detailed browser configuration and troubleshooting steps, see the [DDEV browser configuration documentation](https://docs.ddev.com/en/stable/users/install/configuring-browsers/).
+- Read more about how all of this works in [Hostnames and Wildcards and DDEV, Oh My!](ddev-name-resolution-wildcards.md).
+- The [mkcert project](https://github.com/FiloSottile/mkcert) has more information and documentation.
 
 This entire feature is made possible by the outstanding [mkcert](https://github.com/FiloSottile/mkcert) project, another triumph of open-source collaboration. Thanks to [@FiloSottile](https://github.com/FiloSottile) for this project.
