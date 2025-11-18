@@ -32,7 +32,7 @@
     "astro-seo": "^0.8.0",
     "autoprefixer": "^10.4.16",
     "github-slugger": "^2.0.0",
-    "glob": "^10.3.10",
+    "glob": "^12.0.0",
     "image-size": "^1.2.1",
     "linkedom": "^0.15.3",
     "marked": "^9.0.3",
