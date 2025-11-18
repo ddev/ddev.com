@@ -1,6 +1,6 @@
 ---
 title: "Fritz!Box Routers and DDEV"
-pubDate: 2025-11-20
+pubDate: 2025-11-18
 summary: Solving DNS Rebinding issues with Fritz!Box routers (also spelled "Fritzbox" or "Fritz Box")
 featureImage:
   src: /img/blog/2025/11/FritzBox-DNS-Rebind-Schutz.png
