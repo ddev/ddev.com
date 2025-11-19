@@ -42,31 +42,6 @@ Here are some high-level practices to follow:
 
 DDEV development is moving fast, and new features are introduced regularly. Here are some recent updates you should be aware of:
 
-### `ddev get` Deprecation
-
-The classic `ddev get` command is deprecated in DDEV v1.23.5 and replaced by `ddev add-on get`.
-
-Huge thanks to [@GuySartorelli](https://github.com/GuySartorelli) for implementing this feature, and also for proactively updating many add-on `README.md` files. You've likely already seen a pull request for your add-on!
-
-### Better Testing with Bats Libraries
-
-While all add-ons use the [Bats](https://bats-core.readthedocs.io/en/stable/) framework for testing, many are still missing Bats libraries that simplify assertions and test writing.
-
-Consider adopting these libraries to enhance test clarity and maintainability.
-
-Example:
-
-- https://github.com/ddev/ddev-addon-template/blob/main/tests/test.bats
-
-### Issue and PR Templates
-
-Make sure your add-on includes:
-
-- [Issue templates](https://github.com/ddev/ddev-addon-template/tree/main/.github/ISSUE_TEMPLATE)
-- [Pull request template](https://github.com/ddev/ddev-addon-template/blob/main/.github/PULL_REQUEST_TEMPLATE.md)
-
-These improve the quality of contributions and bug reports.
-
 ### Recommending DDEV Version Constraints
 
 Your add-on should encourage users to keep DDEV updated. The current recommendation is to add this stanza to `install.yaml`:
@@ -107,6 +82,50 @@ health_checks() {
 }
 ```
 
+### MutagenSync Annotation for Commands
+
+With DDEV v1.24.4, custom commands can now use the [`MutagenSync`](https://docs.ddev.com/en/stable/users/extend/custom-commands/#mutagensync-annotation) annotation.
+
+You should use this annotation if your `host` or `web` commands modify, add, or remove files in the project directory. It ensures that file sync is handled correctly when Mutagen is enabled, preventing unexpected behavior or sync delays. (It does no harm and causes no performance issues if Mutagen is not in use.)
+
+Example:
+
+- https://github.com/backdrop-ops/ddev-backdrop-bee/blob/main/commands/web/bee
+
+### Support for Optional Compose Profiles
+
+The same DDEV v1.24.4 release introduced support for [optional docker-compose profiles](https://docs.ddev.com/en/stable/users/extend/custom-compose-files/#optional-services), which can be used by add-ons to offer more flexible configuration.
+
+Example:
+
+- https://github.com/ddev/ddev-mongo/blob/main/docker-compose.mongo.yaml
+- https://github.com/ddev/ddev-mongo/blob/main/commands/host/mongo-express
+
+### `ddev get` Deprecation
+
+The classic `ddev get` command is deprecated in DDEV v1.23.5 and replaced by `ddev add-on get`.
+
+Huge thanks to [@GuySartorelli](https://github.com/GuySartorelli) for implementing this feature, and also for proactively updating many add-on `README.md` files. You've likely already seen a pull request for your add-on!
+
+### Better Testing with Bats Libraries
+
+While all add-ons use the [Bats](https://bats-core.readthedocs.io/en/stable/) framework for testing, many are still missing Bats libraries that simplify assertions and test writing.
+
+Consider adopting these libraries to enhance test clarity and maintainability.
+
+Example:
+
+- https://github.com/ddev/ddev-addon-template/blob/main/tests/test.bats
+
+### Issue and PR Templates
+
+Make sure your add-on includes:
+
+- [Issue templates](https://github.com/ddev/ddev-addon-template/tree/main/.github/ISSUE_TEMPLATE)
+- [Pull request template](https://github.com/ddev/ddev-addon-template/blob/main/.github/PULL_REQUEST_TEMPLATE.md)
+
+These improve the quality of contributions and bug reports.
+
 ### Add-on Badges
 
 The old `maintained` badge required yearly updates, which became a maintenance burden, especially for contributors with many add-ons. It's now replaced by a `last commit` badge.
@@ -138,25 +157,6 @@ Examples:
 
 - https://github.com/ddev/ddev-solr/blob/main/docker-compose.solr.yaml
 - https://github.com/ddev/ddev-opensearch/blob/main/docker-compose.opensearch.yaml
-
-### MutagenSync Annotation for Commands
-
-With DDEV v1.24.4, custom commands can now use the [`MutagenSync`](https://docs.ddev.com/en/stable/users/extend/custom-commands/#mutagensync-annotation) annotation.
-
-You should use this annotation if your `host` or `web` commands modify, add, or remove files in the project directory. It ensures that file sync is handled correctly when Mutagen is enabled, preventing unexpected behavior or sync delays. (It does no harm and causes no performance issues if Mutagen is not in use.)
-
-Example:
-
-- https://github.com/backdrop-ops/ddev-backdrop-bee/blob/main/commands/web/bee
-
-### Support for Optional Compose Profiles
-
-The same DDEV v1.24.4 release introduced support for [optional docker-compose profiles](https://docs.ddev.com/en/stable/users/extend/custom-compose-files/#optional-services), which can be used by add-ons to offer more flexible configuration.
-
-Example:
-
-- https://github.com/ddev/ddev-mongo/blob/main/docker-compose.mongo.yaml
-- https://github.com/ddev/ddev-mongo/blob/main/commands/host/mongo-express
 
 ## Repository Configuration Best Practices
 
