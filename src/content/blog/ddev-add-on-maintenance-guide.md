@@ -1,8 +1,8 @@
 ---
 title: "DDEV Add-on Maintenance Guide"
 pubDate: 2025-05-01
-modifiedDate: 2025-07-22
-modifiedComment: Added update checker script.
+modifiedDate: 2025-11-19
+modifiedComment: Added new features from DDEV v1.24.10
 summary: Maintaining an add-on involves regularly updating it to stay compatible with new features in both the upstream ddev-addon-template and DDEV itself.
 author: Stas Zhuk
 featureImage:
@@ -72,10 +72,40 @@ These improve the quality of contributions and bug reports.
 Your add-on should encourage users to keep DDEV updated. The current recommendation is to add this stanza to `install.yaml`:
 
 ```yaml
-ddev_version_constraint: ">= v1.24.3"
+ddev_version_constraint: '>= v1.24.10'
 ```
 
 This ensures compatibility and resolves known issues, such as those related to the [Mutagen Problem Report](open-source-for-the-win.md#mutagen-problemreport).
+
+### Customizing `ddev describe` Output
+
+With DDEV v1.24.10, add-ons can now customize the output of the `ddev describe` with `x-ddev.describe-*` extension.
+
+[This feature](https://docs.ddev.com/en/stable/users/extend/custom-docker-services/#customizing-ddev-describe-output) is useful for showing credentials, URLs, or usage notes for custom services.
+
+Example:
+
+- https://github.com/ddev/ddev-redis/blob/main/docker-compose.redis.yaml
+
+### Changing `ddev ssh` Shell
+
+DDEV v1.24.10 also introduced the ability for add-ons to specify a custom shell for the `ddev ssh -s service` command using the [`x-ddev.ssh-shell`](https://docs.ddev.com/en/stable/users/extend/in-container-configuration/#changing-ddev-ssh-shell) extension.
+
+Example:
+
+- https://github.com/ddev/ddev-varnish/blob/main/docker-compose.varnish.yaml
+
+It's also useful to check if shell is available in the `tests/test.bats` file (where `service` is the name of the service container you want to test):
+
+```bash
+health_checks() {
+  # Check that bash is available in the "service" container
+  run ddev exec -s service command -v bash
+  assert_success
+  assert_output --partial "bash"
+  # ... other health checks ...
+}
+```
 
 ### Add-on Badges
 
