@@ -72,7 +72,7 @@ These improve the quality of contributions and bug reports.
 Your add-on should encourage users to keep DDEV updated. The current recommendation is to add this stanza to `install.yaml`:
 
 ```yaml
-ddev_version_constraint: '>= v1.24.10'
+ddev_version_constraint: ">= v1.24.10"
 ```
 
 This ensures compatibility and resolves known issues, such as those related to the [Mutagen Problem Report](open-source-for-the-win.md#mutagen-problemreport).
