@@ -11,8 +11,8 @@ featureImage:
 categories:
   - Guides
   - Videos
-modifiedDate: 2025-10-06
-modifiedComment: "This guide was originally published in 2020, but has been completely rewritten with a new video in 2025. It now covers the new DDEV Windows installer and WSL2 setup."
+modifiedDate: 2025-11-20
+modifiedComment: "This guide was originally published in 2020, but has been completely rewritten with a new video in 2025. It now covers the new DDEV Windows installer and WSL2 setup. A link to the 2025-11-20 recording of a DDEV Contributor Training on Windows/WSL2 has also been added."
 ---
 
 > **Want just the 10-minute version of a DDEV WSL2 Install?** Check out the [New GUI Installer: Get DDEV Running on Windows in Just 10 Minutes](watch-new-windows-installer.md) for a quicker setup using the GUI installer.
@@ -24,6 +24,8 @@ modifiedComment: "This guide was originally published in 2020, but has been comp
 </div>
 
 This screencast walks you through setting up a complete DDEV development environment on Windows using WSL2, starting completely from scratch. Whether you're new to DDEV, WSL2, or local development environments in general, this step-by-step guide will get you up and running quickly.
+
+> We also did a [DDEV Contributor/User Training on Windows with WSL2](https://youtu.be/dcKXa23cFmg?si=NDXSHscN2blOJpL1) in November, 2025 which did a casual walkthrough of this information.
 
 ## What You'll Learn
 
