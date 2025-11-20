@@ -1,7 +1,7 @@
 ---
 title: "DDEV Add-on Maintenance Guide"
 pubDate: 2025-05-01
-modifiedDate: 2025-11-19
+modifiedDate: 2025-11-20
 modifiedComment: Added new features from DDEV v1.24.10
 summary: Maintaining an add-on involves regularly updating it to stay compatible with new features in both the upstream ddev-addon-template and DDEV itself.
 author: Stas Zhuk
@@ -64,21 +64,28 @@ Example:
 
 ### Changing `ddev ssh` Shell
 
-DDEV v1.24.10 also introduced the ability for add-ons to specify a custom shell for the `ddev ssh -s service` command using the [`x-ddev.ssh-shell`](https://docs.ddev.com/en/stable/users/extend/in-container-configuration/#changing-ddev-ssh-shell) extension.
+DDEV v1.24.10 also introduced the ability for add-ons to specify a custom shell for the `ddev ssh -s my-service` command using the [`x-ddev.ssh-shell`](https://docs.ddev.com/en/stable/users/extend/in-container-configuration/#changing-ddev-ssh-shell) extension.
+
+```yaml
+services:
+  my-service:
+    x-ddev:
+      ssh-shell: bash
+```
 
 Example:
 
 - https://github.com/ddev/ddev-varnish/blob/main/docker-compose.varnish.yaml
 
-It's also useful to check if shell is available in the `tests/test.bats` file (where `service` is the name of the service container you want to test):
+To ensure your add-on works reliably, include a shell availability check in your Bats health checks (`tests/test.bats`):
 
 ```bash
 health_checks() {
-  # Check that bash is available in the "service" container
-  run ddev exec -s service command -v bash
+  # Verify that bash is available in the "my-service" container
+  run ddev exec -s my-service command -v bash
   assert_success
   assert_output --partial "bash"
-  # ... other health checks ...
+  # ... additional checks ...
 }
 ```
 
