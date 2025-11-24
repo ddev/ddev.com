@@ -9,6 +9,7 @@ featureImage:
   alt: FrankenPHP logo
   credit: FrankenPHP logo from [GitHub](https://github.com/php/frankenphp)
 categories:
+  - Add-ons
   - Guides
 ---
 
