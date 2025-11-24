@@ -12,6 +12,7 @@ featureImage:
   shadow: true
   hidden: true
 categories:
+  - Add-ons
   - Training
   - Guides
 ---

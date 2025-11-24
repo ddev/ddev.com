@@ -11,6 +11,7 @@ featureImage:
   caption: "The ddev-tailscale-router add-on enables cross-device testing, stable webhook URLs, and team collaboration."
   credit: "Image by Claude AI :)"
 categories:
+  - Add-ons
   - Guides
   - TechNotes
 ---
