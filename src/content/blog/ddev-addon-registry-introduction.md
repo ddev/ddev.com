@@ -8,6 +8,7 @@ featureImage:
   src: /img/blog/2025/03/ddev-addon-registry.png
   alt: DDEV Add-on Registry website
 categories:
+  - Add-ons
   - Announcements
 ---
 

@@ -4,6 +4,7 @@ import { glob as oldglob } from "glob"
 import { glob as contentGlob } from "astro/loaders"
 
 const allowedCategories = [
+  "Add-ons",
   "Announcements",
   "Community",
   "DevOps",

@@ -111,7 +111,9 @@ To add a new blog post, use this Markdown as a template:
 ```markdown
 ---
 title: "It’s A Post!"
-pubDate: 2023-01-01
+pubDate: 2026-01-01
+modifiedDate: 2026-01-03
+modifiedComment: "This got updated"
 summary:
 author: Randy Fay
 featureImage:
@@ -132,6 +134,7 @@ The Astro build doesn’t do any fancy image sizing or optimization, so be sure 
 
 Choose whichever categories apply, with special attention to the first because it’ll be displayed on post summary cards:
 
+- _Add-ons_ (Info about add-ons)
 - _Announcements_ (releases, organization news, etc.)
 - _Community_ (events, third-party developments, etc.)
 - _DevOps_ (workflows, infrastructure, etc.)

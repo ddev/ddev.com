@@ -9,6 +9,7 @@ featureImage:
   alt: "Microsoft image creator: dismantled photo camera."
   credit: "Microsoft image creator: dismantled photo camera."
 categories:
+  - Add-ons
   - TechNotes
 ---
 

@@ -9,6 +9,7 @@ featureImage:
   src: /img/blog/2025/04/ddev-add-on-registry.png
   alt: DDEV Add-on Registry website
 categories:
+  - Add-ons
   - Guides
 ---
 
