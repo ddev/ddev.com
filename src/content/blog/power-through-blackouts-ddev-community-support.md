@@ -49,7 +49,7 @@ After the first wave of attacks on Ukrainian infrastructure ended and prices wen
 
 ![Powerbanks for laptop](/img/blog/2025/11/powerbanks-laptop-2023.jpg)
 
-The second problem was internet during blackouts. I switched to optic fiber and bought two UPS units: SKE UPS Mini POE 60W for the router and Marsriva Smart Mini UPS KP5 for the ONA (Optical Network Adapter). Together they give me stable internet for about 8-9 hours when there's no power.
+The second problem was internet during blackouts. I switched to a fiber optic provider and bought two UPS units: SKE UPS Mini POE 60W for the router and Marsriva Smart Mini UPS KP5 for the ONA (Optical Network Adapter). Together they give me stable internet for about 8-9 hours when there's no power.
 
 ![UPS units - front view](/img/blog/2025/11/internet-ups-front.jpg)
 
