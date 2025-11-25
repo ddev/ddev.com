@@ -1,6 +1,7 @@
 ---
 title: "Power Through Blackouts: How DDEV Community Helped Me in Ukraine"
-pubDate: 2025-11-25
+pubDate: 2025-12-01
+#modifiedDate: 2025-12-01
 summary: Working as a DDEV maintainer during wartime blackouts in Ukraine, and how the DDEV community's support made it possible to continue contributing through power challenges.
 author: Stas Zhuk
 featureImage:
@@ -13,7 +14,7 @@ categories:
 
 Since Russia's full-scale invasion of Ukraine in 2022, Russian forces have been systematically targeting our civilian power infrastructure. These attacks cause blackouts that can last hours or days, making it difficult to work, live normally, or even survive the winter. In November 2025, these attacks got much worse.
 
-I'm a DDEV maintainer living in Kremenchuk, Ukraine. I'm Stanislav Zhuk, but you can call me Stas. I became a DDEV maintainer in October 2023, and you can read more about my background in the [introduction post](introducing-maintainer-stas.md). I work a typical five-day week, usually from afternoon to evening, which lets me overlap with Randy's timezone in Denver.
+I'm a DDEV maintainer living in Kremenchuk, Ukraine. I'm Stanislav Zhuk, but you can call me Stas. I became a DDEV maintainer in October 2023, and you can read more about my background in the [introduction post](introducing-maintainer-stas.md). I work a typical five-day week, usually from afternoon to evening, which lets me overlap with Randy's timezone.
 
 This is my story of how your support helped me keep working through Russian attacks on our infrastructure, and why it matters so much.
 
@@ -29,7 +30,7 @@ Kremenchuk is an industrial city in central Ukraine on the banks of the Dnieper 
 
 In November 2025, Russians heavily attacked Kremenchuk's infrastructure. We had no electricity, water, or central heating for almost a whole day. Now we have blackouts every day - typically 1.5-2 hours with electricity, then 3-5 hours without it, and the cycle repeats. There's no sign of when this will get better.
 
-This is the reality we live in: you can never know when and where Russians are going to strike again. I read the news every day, and every day civilians die. I try not to think too much about it to keep my mental health okay, but the threat is always there.
+This is the reality we live in: you can never know when and where the next strike will happen. I read the news every day, and every day civilians die. I try to focus on other things to stay sane, but the threat is constant.
 
 Working during these conditions needs careful planning. For work, I need to keep my laptop running and have internet with acceptable speed. For home, I need to power the refrigerator during long blackouts so food doesn't spoil. Some things I cannot control: water supply and central heating. I have an electric radiator, but it uses too much power to run from battery stations during long outages.
 
@@ -79,6 +80,8 @@ Having two power stations makes me feel much more confident during these hard wa
 ## The Impact of Your Support
 
 Your support has been really important. Without these power stations, I couldn't do my work as a DDEV maintainer during blackouts. You didn't just give me equipment - you gave me the ability to keep contributing and keep helping the project and its users, even in these hard times.
+
+Thank you for supporting Ukraine and understanding how important our situation is to Europe and the world. Your support means more than just equipment - it's a reminder that we're not alone.
 
 This support is more than just hardware. It shows what open source communities can be: people helping each other through hard times, so we can keep building together.
 
