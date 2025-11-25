@@ -21,7 +21,9 @@ This is my story of how your support helped me keep working through Russian atta
 
 Kremenchuk is an industrial city in central Ukraine on the banks of the Dnieper River.
 
+<div class="video-container">
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d163792.42791563695!2d33.33258837822418!3d49.06253597268899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d751c89822e669%3A0x52e2019915e44908!2sKremenchuk%2C%20Poltava%20Oblast%2C%20Ukraine!5e0!3m2!1sen!2s!4v1732537200000!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
 
 ## The Current Situation
 
@@ -43,7 +45,7 @@ The market was crazy at that time - prices went very high and it was hard to fin
 
 ### 2023-2024: Building Capacity
 
-After the first wave of Russian infrastructure attacks ended and prices went back to normal, I bought two more powerful powerbanks to run my laptop. They got me through 2023 and the first half of 2024. Now I use them to charge mobile phones.
+After the first wave of attacks on Ukrainian infrastructure ended and prices went back to normal, I bought two more powerful powerbanks to run my laptop. They got me through 2023 and the first half of 2024. Now I use them to charge mobile phones.
 
 ![Powerbanks for laptop](/img/blog/2025/11/powerbanks-laptop-2023.jpg)
 
