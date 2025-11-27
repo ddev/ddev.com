@@ -1,8 +1,9 @@
 ---
 title: "Using FrankenPHP with DDEV"
 pubDate: 2025-07-03
-#modifiedDate: 2025-07-03
-summary: Maintaining an add-on involves regularly updating it to stay compatible with new features in both the upstream ddev-addon-template and DDEV itself.
+modifiedDate: 2025-11-27
+modifiedComment: The FrankenPHP add-on is now official.
+summary: Learn how to use FrankenPHP with DDEV through the official add-on or Debian packages. Includes installation steps, features, and performance benchmarks.
 author: Stas Zhuk
 featureImage:
   src: /img/blog/2025/07/frankenphp-logo.png
@@ -19,49 +20,48 @@ The PHP ecosystem is changing fast, with tools like [FrankenPHP](https://franken
 
 FrankenPHP is now [officially supported](https://thephp.foundation/blog/2025/05/15/frankenphp/) by The PHP Foundation.
 
-This guide explains two ways to integrate FrankenPHP, based on my experience.
+This guide explains two ways to integrate FrankenPHP with DDEV:
 
-You can either run FrankenPHP as a separate service (lets you install extra PHP extensions) or inside DDEV's `web` container (uses a static binary without support for extra extensions).
+1. **Official DDEV add-on** (recommended): Run FrankenPHP as a separate service with full PHP extension support and flexibility
+2. **Debian packages**: Install FrankenPHP directly in the web container (PHP 8.4 only, limited features)
 
 ### Generic web server
 
 This blog shows examples of the recently added [DDEV's generic web server](https://docs.ddev.com/en/stable/users/extend/customization-extendibility/#using-nodejs-as-ddevs-primary-web-server), which supports flexible configurations. It allows you to use any custom web server you want, including Node.js, Python, Ruby, etc.
 
-## DDEV FrankenPHP Add-on
+## DDEV FrankenPHP Add-on (Recommended)
 
-I created the [stasadev/ddev-frankenphp](https://github.com/stasadev/ddev-frankenphp) add-on to experiment with FrankenPHP as a separate service with some additional features:
-
-- Ability to install PHP extensions (Redis, Xdebug, SPX, etc.)
-- Better resource isolation
+The [ddev/ddev-frankenphp](https://github.com/ddev/ddev-frankenphp) add-on is now officially maintained by the DDEV team! It has matured to production-ready status with full feature support.
 
 ### ⚙️ Installation:
 
 ```bash
-ddev config --webserver-type=generic
-ddev add-on get stasadev/ddev-frankenphp
+ddev add-on get ddev/ddev-frankenphp
 ddev restart
 ```
 
 To add PHP extensions (see supported extensions [here](https://github.com/mlocati/docker-php-extension-installer?tab=readme-ov-file#supported-php-extensions)):
 
 ```bash
-ddev dotenv set .ddev/.env.frankenphp --frankenphp-php-extensions="redis pdo_mysql"
-ddev add-on get stasadev/ddev-frankenphp
-ddev stop && ddev debug rebuild -s frankenphp && ddev start
+ddev dotenv set .ddev/.env.web --frankenphp-custom-extensions="redis memcached"
+ddev stop && ddev debug rebuild && ddev start
 ```
 
-### ⚠️ Limitations:
+### ✨ Features:
 
-- Standard Linux and DDEV tools are installed in the `web` container, not in the `frankenphp` container.
-- See the add-on README for adding Xdebug (`ddev xdebug` does not work here).
-- Enabling or disabling Xdebug requires rebuilding the `frankenphp` container.
-- `ddev launch` does not work because the web server runs in a different container.
+- Supports PHP 8.2+
+- Install any PHP extension (Redis, Xdebug, Memcached, etc.)
+- Custom FrankenPHP options supported
+- Worker mode supported for maximum performance
+- Full debugging support: [`ddev xdebug`](https://docs.ddev.com/en/stable/users/usage/commands/#xdebug), [`ddev xhprof`](https://docs.ddev.com/en/stable/users/usage/commands/#xhprof), [`ddev xhgui`](https://docs.ddev.com/en/stable/users/usage/commands/#xhgui)
 
-If you want to suggest some feature or found a bug, feel free to [open an issue](https://github.com/stasadev/ddev-frankenphp/issues).
+Note: Initial `ddev start` takes longer due to manual extension compilation.
 
-## Running FrankenPHP in the Web Container
+If you want to suggest some feature or found a bug, feel free to [open an issue](https://github.com/ddev/ddev-frankenphp/issues).
 
-Alternatively, FrankenPHP can be run inside the `web` container. This example from the [DDEV quickstart](https://docs.ddev.com/en/stable/users/quickstart/#generic-frankenphp) shows a setup (for a Drupal 11 project) where FrankenPHP is added as an extra daemon.
+## Alternative: FrankenPHP via Debian Packages
+
+FrankenPHP can also be installed directly in the web container using Debian packages. This example from the [DDEV quickstart](https://docs.ddev.com/en/stable/users/quickstart/#generic-frankenphp) shows a setup for a Drupal 11 project where FrankenPHP runs as an extra daemon.
 
 ### ⚙️ Installation:
 
@@ -84,9 +84,19 @@ web_extra_exposed_ports:
 EOF
 
 cat <<'DOCKERFILEEND' >.ddev/web-build/Dockerfile.frankenphp
-RUN curl -s https://frankenphp.dev/install.sh | sh
-RUN mv frankenphp /usr/local/bin/
-RUN mkdir -p /usr/local/etc && ln -s /etc/php/${DDEV_PHP_VERSION}/fpm /usr/local/etc/php
+RUN curl -fsSL https://key.henderkes.com/static-php.gpg -o /usr/share/keyrings/static-php.gpg && \
+    echo "deb [signed-by=/usr/share/keyrings/static-php.gpg] https://deb.henderkes.com/ stable main" > /etc/apt/sources.list.d/static-php.list
+# Install FrankenPHP and extensions, see https://frankenphp.dev/docs/#deb-packages for details.
+# You can find the list of available extensions at https://deb.henderkes.com/pool/main/p/
+RUN (apt-get update || true) && DEBIAN_FRONTEND=noninteractive apt-get install -y -o Dpkg::Options::="--force-confnew" --no-install-recommends --no-install-suggests \
+    frankenphp \
+    php-zts-cli \
+    php-zts-gd \
+    php-zts-pdo-mysql
+# Make sure that 'php' command uses the ZTS version of PHP
+# and that the php.ini in use by FrankenPHP is the one from DDEV.
+RUN ln -sf /usr/bin/php-zts /usr/local/bin/php && \
+    ln -sf /etc/php/${DDEV_PHP_VERSION}/fpm/php.ini /etc/php-zts/php.ini
 DOCKERFILEEND
 
 ddev composer create-project drupal/recommended-project
@@ -100,14 +110,16 @@ ddev launch $(ddev drush uli)
 
 ### ⚠️ Limitations:
 
-- It's not possible to install additional PHP extensions (requires [ZTS build](https://github.com/oerdnj/deb.sury.org/issues/2208)).
-- Limited debugging capabilities, `ddev xdebug` doesn't work.
+- PHP 8.4 only (no version flexibility)
+- Cannot customize FrankenPHP options
+- Worker mode not supported
+- No debugging support (`ddev xdebug`, `ddev xhprof`, `ddev xhgui` do not work)
 
 ## Resources
 
 - [FrankenPHP documentation](https://frankenphp.dev/docs/)
 - [DDEV's generic web server](https://docs.ddev.com/en/stable/users/extend/customization-extendibility/#using-nodejs-as-ddevs-primary-web-server)
-- [FrankenPHP add-on](https://github.com/stasadev/ddev-frankenphp)
+- [FrankenPHP add-on](https://github.com/ddev/ddev-frankenphp)
 - [FrankenPHP quickstart](https://docs.ddev.com/en/stable/users/quickstart/#generic-frankenphp)
 - [Hola FrankenPHP! Laravel Octane Servers Comparison: Pushing the Boundaries of Performance](https://medium.com/beyn-technology/hola-frankenphp-laravel-octane-servers-comparison-pushing-the-boundaries-of-performance-d3e7ad8e652c)
 
