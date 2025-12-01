@@ -14,7 +14,9 @@ categories:
 
 I'm sure you remember how much Upsun (formerly Platform.sh) has helped DDEV along the way. When we were about to lose the ability to use the "DDEV" name, they stepped in and solved the problem. Then they [sponsored DDEV](platform-sh-becomes-a-lead-sponsor-of-ddev.md) at a very high level for a couple of years, and in 2025 at a [lower level](platform-sh-ddev-funding-changes.md). They have also managed the DDEV trademark and are now transferring it to the DDEV Foundation. We appreciate their significant ongoing support so very much, and honor their critical role in our history.
 
-Starting next month, due to changing priorities, Upsun will be lowering their sponsorship level to the $1000/month level, still one of our most important supporters, but leaving a big hole in our funding.
+Starting next month, due to changing priorities, Upsun will be lowering their sponsorship level to $1000/month, still one of our most important supporters, but leaving a significant gap in our funding.
+
+Starting in January, we'll be at about 53% of our sponsorship goal, down from 70% currently. The current sponsorship level is about $8300/month; with the decrease from Upsun it will drop to about $6300/month. That's a big hole to fill, and we're counting on you to help!
 
 ## How You Can Help
 
