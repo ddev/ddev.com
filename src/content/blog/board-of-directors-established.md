@@ -18,15 +18,35 @@ Today we filed an amended [Articles of Incorporation](https://www.sos.state.co.u
 
 ## Introducing the New Board
 
-- Michael Anello, `@ultimike`  "Mike Anello (ultimike) is a seasoned Drupal developer with over 15 years of experience. He specializes in Drupal consulting and training through his business, ensuring clients leverage Drupal's full potential. Mike is a notable community contributor and advocate, sharing his expertise and insights widely."
-- Jen Lampton, `@jenlampton`, "Jen Lampton has been building websites since 1997, and participating
-  in Open Source communities since 2006. She is a co-founder of Backdrop
-  CMS, and a provisional member of the Drupal security team. Jen
-  currently maintains dozens of Open Source projects, and contributes to
-  other projects (including ddev!) as it applies to her work."
-- Benni Mack
-- Andrew Berry `@deviantintegral` Andrew Berry is the VP of Technology at Lullabot, one of the first Drupal-focused agencies. Andrew's led technical architecture for large Drupal-based platforms, including the [State of Iowa](https://www.lullabot.com/our-work/state-iowa) and [IndieCommerce](https://www.lullabot.com/our-work/american-bookseller-association) - both of which rely on DDEV for locals and CI. Andrew joins the DDEV Board of Directors from Guelph, Ontario, Canada.
-- Randy Fay `@rfay` is the original maintainer of DDEV, enjoying it since 2016. He has deep roots in the Drupal community, and has done loads of traveling by bike.
+### Michael Anello ([@ultimike](https://github.com/ultimike))
+
+![Mike Anello headshot](/img/blog/2025/12/mike-anello-headshot.jpg)
+
+Mike Anello is a seasoned Drupal developer with over 15 years of experience. He specializes in Drupal consulting and training through his business, ensuring clients leverage Drupal's full potential. Mike is a notable community contributor and advocate, sharing his expertise and insights widely.
+
+### Jen Lampton ([@jenlampton](https://github.com/jenlampton))
+
+![Jen Lampton headshot](/img/blog/2025/12/jen-lampton-headshot.png)
+
+Jen Lampton has been building websites since 1997 and participating in Open Source communities since 2006. She is a co-founder of Backdrop CMS and a provisional member of the Drupal security team. Jen currently maintains dozens of Open Source projects and contributes to other projects (including DDEV!) as it applies to her work.
+
+### Benni Mack ([@bmack](https://github.com/bmack))
+
+![Benni Mack headshot](/img/blog/2025/12/benni-mack-headshot.png)
+
+Benni Mack is a long-time TYPO3 core developer and contributor, serving as TYPO3 CMS Team Lead. He brings extensive experience in open source project governance and community building. Benni is passionate about developer experience and has been instrumental in modernizing TYPO3's development practices.
+
+### Andrew Berry ([@deviantintegral](https://github.com/deviantintegral))
+
+![Andrew Berry headshot](/img/blog/2025/12/andrew-berry-headshot.jpg)
+
+Andrew Berry is the VP of Technology at Lullabot, one of the first Drupal-focused agencies. Andrew has led technical architecture for large Drupal-based platforms, including the [State of Iowa](https://www.lullabot.com/our-work/state-iowa) and [IndieCommerce](https://www.lullabot.com/our-work/american-bookseller-association)—both of which rely on DDEV for local development and CI. Andrew joins the DDEV Board of Directors from Guelph, Ontario, Canada.
+
+### Randy Fay ([@rfay](https://github.com/rfay))
+
+![Randy Fay headshot](/img/blog/2025/12/randy-fay-headshot.jpg)
+
+Randy is the original maintainer of DDEV, enjoying it since 2016. He has deep roots in the Drupal community and has done loads of traveling by bike.
 
 ## Our Vision: Sustainability and Financial Stability for the Project
 
@@ -41,3 +61,5 @@ Do you have additional ideas, suggestions, or insight into how DDEV's future cou
 Do you have questions or want to talk (about sponsoring or anything else)? [Contact us!](https://ddev.com/contact/) or join us in [Discord](/s/discord).
 
 _Have you signed up for the monthly [DDEV Newsletter](/newsletter)? We'd love to have you._
+
+_Claude Code was used for editing and formatting in the blog post._
