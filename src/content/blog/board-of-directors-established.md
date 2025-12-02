@@ -40,7 +40,7 @@ Benni Mack is a long-time TYPO3 core developer and contributor, serving as TYPO3
 
 ![Andrew Berry headshot](/img/blog/2025/12/andrew-berry-headshot.jpg)
 
-Andrew Berry is the VP of Technology at Lullabot, one of the first Drupal-focused agencies. Andrew has led technical architecture for large Drupal-based platforms, including the [State of Iowa](https://www.lullabot.com/our-work/state-iowa) and [IndieCommerce](https://www.lullabot.com/our-work/american-bookseller-association)—both of which rely on DDEV for local development and CI. Andrew joins the DDEV Board of Directors from Guelph, Ontario, Canada.
+Andrew Berry has been a member and contributor in the Drupal community since 2006. He is also the VP of Technology at Lullabot, where teams [rely on DDEV for local development](https://architecture.lullabot.com/adr/20211207-ddev-locals/). When not doing Drupal and DDEV, Andrew spends his time working on home automation and related open source projects.
 
 ### Randy Fay ([@rfay](https://github.com/rfay))
 
