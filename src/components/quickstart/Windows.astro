@@ -58,10 +58,14 @@ const { latestVersion } = Astro.props
     Run the Installer
   </h2>
 
-  <div class="not-prose mb-6">
+  <div class="not-prose mb-6 flex flex-col sm:flex-row gap-4">
     <CtaButton
-      text="Download Windows Installer ↓" 
+      text="Download for AMD64/Intel (most people) ↓"
       href={`https://github.com/ddev/ddev/releases/download/${latestVersion}/ddev_windows_amd64_installer.${latestVersion}.exe`}
+    />
+    <CtaButton
+      text="Download for Snapdragon/ARM64 ↓"
+      href={`https://github.com/ddev/ddev/releases/download/${latestVersion}/ddev_windows_arm64_installer.${latestVersion}.exe`}
     />
   </div>
 

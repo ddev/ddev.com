@@ -208,14 +208,14 @@ export async function getRepoDetails(name: string) {
 }
 
 /**
- * Gets the most recent `ddev/ddev` tag name, like `v1.21.4`.
+ * Gets the most recent `ddev/ddev` tag name, like `v1.24.10`.
  *
  * @param stable Whether to return stable releases only (`true` by default).
  * @returns tag name
  */
 export async function getLatestReleaseVersion(stable = true) {
   if (!githubTokenIsSet) {
-    return []
+    return "v1.24.9" // Fallback version for local development without token
   }
 
   let data = await getReleases()
