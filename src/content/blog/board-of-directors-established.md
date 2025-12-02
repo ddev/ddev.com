@@ -1,5 +1,5 @@
 ---
-title: "DDEV Foundation Now Has a Board of Directors!"
+title: "The DDEV Foundation Now Has a Board of Directors!"
 #title: "Securing DDEV’s Future: Our Commitment to Financial & Community Sustainability"
 pubDate: 2025-12-10
 #modifiedDate: 2025-06-09
@@ -22,7 +22,7 @@ Today we filed an amended [Articles of Incorporation](https://www.sos.state.co.u
 
 ![Mike Anello headshot](/img/blog/2025/12/mike-anello-headshot.jpg)
 
-Mike Anello is a seasoned Drupal developer with over 15 years of experience. He specializes in Drupal consulting and training through his business, ensuring clients leverage Drupal's full potential. Mike is a notable community contributor and advocate, sharing his expertise and insights widely.
+Mike Anello is a seasoned Drupal developer with over 15 years of experience. He specializes in Drupal consulting and training through his business, ensuring clients leverage Drupal's full potential. Mike is a notable community contributor and advocate, sharing his expertise and insights widely. Mike is already serving as the Treasurer of the Foundation.
 
 ### Jen Lampton ([@jenlampton](https://github.com/jenlampton))
 
