@@ -14,11 +14,11 @@ categories:
 
 I'm sure you remember how much Upsun (formerly Platform.sh) has helped the DDEV project along the way. When we were about to lose the ability to use the "DDEV" name, they stepped in and solved the problem. Then they [sponsored DDEV](platform-sh-becomes-a-lead-sponsor-of-ddev.md) at a very high level for a couple of years, and in 2025 at a [lower level](platform-sh-ddev-funding-changes.md). They have also managed the DDEV trademark and are now transferring it to the rapidly maturing [DDEV Foundation](/foundation). We appreciate their significant ongoing support very much, and fully recognize and appreciate their critical role in our history.
 
-Starting next month, due to changing priorities, Upsun will be lowering their sponsorship level to $1000/month, still one of our most important supporters, but leaving a significant gap in our funding.
+Starting next month, Upsun will be lowering their sponsorship level to $1000/month. They are still one of our most significant supporters, but this leaves a significant gap in our funding.
 
-Starting in January, we'll be at about 53% of our sponsorship goal, down from 70% currently. The current sponsorship level is about $8300/month; with the decrease from Upsun it will drop to about $6300/month. That's a big hole to fill, and we're counting on you to help!
+Starting in January, we'll be at about 53% of our sponsorship goal, down from 70% as of December 2025. The current sponsorship level is about $8300/month; with the decrease from Upsun it will drop to about $6300/month. That's a big hole to fill, and we're counting on you to help!
 
-In 2025, the DDEV Foundation (through your support) spent between $8,000-$10,000 per month to developers working on the project for you. You can see the difference there.
+In 2025, the DDEV Foundation (through your support) spent between $8,000-$10,000 per month to developers working on the project for you. Without additional funding, we're estimating a shortfall of about $2000 a month.
 
 ## How You Can Help
 
