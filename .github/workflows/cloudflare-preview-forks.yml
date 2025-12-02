@@ -29,6 +29,8 @@ jobs:
       PAGES_OUTPUT_DIR: ${{ vars.PAGES_OUTPUT_DIR }}
       # New: Optional working directory override (e.g., "site", "website", "docs")
       PAGES_WORKING_DIR: ${{ vars.PAGES_WORKING_DIR }}
+      # GitHub token for API access (read-only, safe for forked PRs)
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout PR code (from fork)
         uses: actions/checkout@v4
