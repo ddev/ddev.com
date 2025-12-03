@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config"
 import { plainTextPlugin } from "@barnabask/astro-minisearch"
 import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs"
+import downloadRedirects from "./src/lib/download-redirects.js"
 import prefetch from "@astrojs/prefetch"
 import react from "@astrojs/react"
 import rehypeAstroRelativeMarkdownLinks from "astro-rehype-relative-markdown-links"
@@ -30,7 +31,7 @@ export default defineConfig({
           item.url.endsWith(".svg/") ||
           item.url.endsWith(".xml/")
         ) {
-          // Don’t index sitemaps or generated SVG, which come with `/` route endings here
+          // Don't index sitemaps or generated SVG, which come with `/` route endings here
           return undefined
         }
         return item
@@ -42,6 +43,7 @@ export default defineConfig({
     searchIndex({
       output: "search.json",
     }),
+    downloadRedirects(),
     prefetch(),
   ],
   markdown: {
