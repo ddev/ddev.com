@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import { getLatestReleaseVersion } from "../lib/api"
-import { GITHUB_REPO, GITHUB_URL, DOCUMENTATION_URL } from "../const"
+import { GITHUB_URL } from "../const"
 
 const title = "Download DDEV"
 
@@ -187,7 +187,7 @@ const downloads = {
           Most users (except on Windows) should use package managers like Homebrew (macOS) and apt (Ubuntu).
         </p>
         <p class="dark:text-slate-300">
-          See <a href="/get-started" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">quick instructions</a> or <a href={`${DOCUMENTATION_URL.replace(/\/$/, '')}/en/stable/users/install/ddev-installation/`} target="_blank" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">full installation docs</a>.
+          See <a href="/get-started" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">quick instructions</a> or <a href={`https://docs.ddev.com/en/stable/users/install/ddev-installation/`} target="_blank" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">full installation docs</a>.
         </p>
       </div>
 
