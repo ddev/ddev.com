@@ -18,7 +18,7 @@ Starting next month, Upsun will be lowering their sponsorship level to $1000/mon
 
 Starting in January, we'll be at about 53% of our sponsorship goal, down from 70% as of December 2025. The current sponsorship level is about $8300/month; with the decrease from Upsun it will drop to about $6300/month. That's a big hole to fill, and we're counting on you to help!
 
-In 2025, the DDEV Foundation (through your support) spent between $8,000-$10,000 per month to developers working on the project for you. Without additional funding, we're estimating a shortfall of about $2000 a month.
+In 2025, the DDEV Foundation (through your support) paid between $8,000-$10,000 per month to developers working on the project for you. Without additional funding, we're estimating a shortfall of about $2000 a month.
 
 ## How You Can Help
 
