@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import { getLatestReleaseVersion } from "../lib/api"
-import { GITHUB_REPO, GITHUB_URL } from "../const"
+import { GITHUB_REPO, GITHUB_URL, DOCUMENTATION_URL } from "../const"
 
 const title = "Download DDEV Binaries"
 
@@ -11,108 +11,6 @@ const version = rawVersion.replace(/^v/, "")       // → "1.24.10"
 
 // Organize downloads by platform
 const downloads = {
-  windows: {
-    title: "Windows",
-    items: [
-      {
-        name: "Windows Installer (amd64) — Recommended",
-        file: `ddev_windows_amd64_installer.v${version}.exe`,
-        path: "/download/ddev_windows_amd64_installer.exe",
-        description: "Recommended installer for most Windows users (64-bit Intel/AMD)",
-      },
-      {
-        name: "Windows Installer (arm64) — Recommended",
-        file: `ddev_windows_arm64_installer.v${version}.exe`,
-        path: "/download/ddev_windows_arm64_installer.exe",
-        description: "Recommended installer for Windows on ARM devices",
-      },
-      {
-        name: "Windows Portable (amd64)",
-        file: `ddev_windows-amd64.v${version}.zip`,
-        path: "/download/ddev_windows-amd64.zip",
-        description: "Portable ZIP archive for 64-bit Intel/AMD",
-      },
-      {
-        name: "Windows Portable (arm64)",
-        file: `ddev_windows-arm64.v${version}.zip`,
-        path: "/download/ddev_windows-arm64.zip",
-        description: "Portable ZIP archive for ARM devices",
-      },
-    ],
-  },
-
-  linux: {
-    title: "Linux",
-    items: [
-      {
-        name: "Debian/Ubuntu (amd64)",
-        file: `ddev_${version}_linux_amd64.deb`,
-        path: "/download/ddev_linux_amd64.deb",
-        description: "For Debian, Ubuntu, and derivatives (64-bit Intel/AMD)",
-      },
-      {
-        name: "Debian/Ubuntu (arm64)",
-        file: `ddev_${version}_linux_arm64.deb`,
-        path: "/download/ddev_linux_arm64.deb",
-        description: "For Debian, Ubuntu, and derivatives (ARM64)",
-      },
-      {
-        name: "RPM Package (amd64)",
-        file: `ddev_${version}_linux_amd64.rpm`,
-        path: "/download/ddev_linux_amd64.rpm",
-        description: "For Fedora, RHEL, CentOS, and derivatives (64-bit Intel/AMD)",
-      },
-      {
-        name: "RPM Package (arm64)",
-        file: `ddev_${version}_linux_arm64.rpm`,
-        path: "/download/ddev_linux_arm64.rpm",
-        description: "For Fedora, RHEL, CentOS, and derivatives (ARM64)",
-      },
-      {
-        name: "Linux Archive (amd64)",
-        file: `ddev_linux-amd64.v${version}.tar.gz`,
-        path: "/download/ddev_linux-amd64.tar.gz",
-        description: "Portable TAR archive for 64-bit Intel/AMD",
-      },
-      {
-        name: "Linux Archive (arm64)",
-        file: `ddev_linux-arm64.v${version}.tar.gz`,
-        path: "/download/ddev_linux-arm64.tar.gz",
-        description: "Portable TAR archive for ARM64",
-      },
-    ],
-  },
-
-  wsl2: {
-    title: "WSL2 (Additional Packages)",
-    items: [
-      {
-        name: "WSL2 Debian/Ubuntu (amd64)",
-        file: `ddev-wsl2_${version}_linux_amd64.deb`,
-        path: "/download/ddev-wsl2_linux_amd64.deb",
-        description: "For WSL2 on Debian/Ubuntu (64-bit Intel/AMD)",
-      },
-      {
-        name: "WSL2 Debian/Ubuntu (arm64)",
-        file: `ddev-wsl2_${version}_linux_arm64.deb`,
-        path: "/download/ddev-wsl2_linux_arm64.deb",
-        description: "For WSL2 on Debian/Ubuntu (ARM64)",
-      },
-      {
-        name: "WSL2 RPM Package (amd64)",
-        file: `ddev-wsl2_${version}_linux_amd64.rpm`,
-        path: "/download/ddev-wsl2_linux_amd64.rpm",
-        description: "For WSL2 on Fedora, RHEL, CentOS (64-bit Intel/AMD)",
-      },
-      {
-        name: "WSL2 RPM Package (arm64)",
-        file: `ddev-wsl2_${version}_linux_arm64.rpm`,
-        path: "/download/ddev-wsl2_linux_arm64.rpm",
-        description: "For WSL2 on Fedora, RHEL, CentOS (ARM64)",
-      },
-    ],
-  },
-
   macos: {
     title: "macOS",
     items: [
@@ -120,13 +18,121 @@ const downloads = {
         name: "macOS Archive (Apple Silicon)",
         file: `ddev_macos-arm64.v${version}.tar.gz`,
         path: "/download/ddev_macos-arm64.tar.gz",
-        description: "For Apple Silicon Macs",
+        description: "For Apple Silicon Macs (M Series)",
       },
       {
         name: "macOS Archive (Intel)",
         file: `ddev_macos-amd64.v${version}.tar.gz`,
         path: "/download/ddev_macos-amd64.tar.gz",
         description: "For Intel-based Macs",
+      },
+    ],
+  },
+
+  windows: {
+    title: "WSL2 and Traditional Windows",
+    items: [
+      {
+        name: "Windows Installer (amd64) - Recommended",
+        file: `ddev_windows_amd64_installer.v${version}.exe`,
+        path: "/download/ddev_windows_amd64_installer.exe",
+        description: "Recommended installer for Traditional Windows (64-bit Intel/AMD)",
+      },
+      {
+        name: "Windows Installer (arm64) - Recommended",
+        file: `ddev_windows_arm64_installer.v${version}.exe`,
+        path: "/download/ddev_windows_arm64_installer.exe",
+        description: "Recommended installer for Traditional Windows on ARM devices",
+      },
+      {
+        name: "Windows Portable (amd64)",
+        file: `ddev_windows-amd64.v${version}.zip`,
+        path: "/download/ddev_windows-amd64.zip",
+        description: "Portable ZIP archive for Traditional Windows (64-bit Intel/AMD)",
+      },
+      {
+        name: "Windows Portable (arm64)",
+        file: `ddev_windows-arm64.v${version}.zip`,
+        path: "/download/ddev_windows-arm64.zip",
+        description: "Portable ZIP archive for Traditional Windows on ARM devices",
+      },
+      {
+        name: "WSL2 Installer (Docker CE) - Legacy",
+        file: "install_ddev_wsl2_docker_inside.ps1",
+        url: "https://raw.githubusercontent.com/ddev/ddev/main/scripts/install_ddev_wsl2_docker_inside.ps1",
+        description: "Legacy PowerShell script for WSL2 with Docker inside WSL2 (obsolete, use Windows Installer instead)",
+      },
+      {
+        name: "WSL2 Installer (Docker Desktop) - Legacy",
+        file: "install_ddev_wsl2_docker_desktop.ps1",
+        url: "https://raw.githubusercontent.com/ddev/ddev/main/scripts/install_ddev_wsl2_docker_desktop.ps1",
+        description: "Legacy PowerShell script for WSL2 with Docker Desktop (obsolete, use Windows Installer instead)",
+      },
+    ],
+  },
+
+  linux: {
+    title: "Linux and WSL2",
+    items: [
+      {
+        name: "Debian/Ubuntu (amd64)",
+        file: `ddev_${version}_linux_amd64.deb`,
+        path: "/download/ddev_linux_amd64.deb",
+        description: "For Debian, Ubuntu, WSL2, and derivatives (64-bit Intel/AMD)",
+      },
+      {
+        name: "Debian/Ubuntu (arm64)",
+        file: `ddev_${version}_linux_arm64.deb`,
+        path: "/download/ddev_linux_arm64.deb",
+        description: "For Debian, Ubuntu, WSL2, and derivatives (ARM64)",
+      },
+      {
+        name: "RPM Package (amd64)",
+        file: `ddev_${version}_linux_amd64.rpm`,
+        path: "/download/ddev_linux_amd64.rpm",
+        description: "For Fedora, RHEL, CentOS, WSL2, and derivatives (64-bit Intel/AMD)",
+      },
+      {
+        name: "RPM Package (arm64)",
+        file: `ddev_${version}_linux_arm64.rpm`,
+        path: "/download/ddev_linux_arm64.rpm",
+        description: "For Fedora, RHEL, CentOS, WSL2, and derivatives (ARM64)",
+      },
+      {
+        name: "Linux Archive (amd64)",
+        file: `ddev_linux-amd64.v${version}.tar.gz`,
+        path: "/download/ddev_linux-amd64.tar.gz",
+        description: "Portable TAR archive for Linux and WSL2 (64-bit Intel/AMD)",
+      },
+      {
+        name: "Linux Archive (arm64)",
+        file: `ddev_linux-arm64.v${version}.tar.gz`,
+        path: "/download/ddev_linux-arm64.tar.gz",
+        description: "Portable TAR archive for Linux and WSL2 (ARM64)",
+      },
+      {
+        name: "WSL2 Additional Package - DEB (amd64)",
+        file: `ddev-wsl2_${version}_linux_amd64.deb`,
+        path: "/download/ddev-wsl2_linux_amd64.deb",
+        description: "Additional package for WSL2 on Debian, Ubuntu (64-bit Intel/AMD)",
+      },
+      {
+        name: "WSL2 Additional Package - DEB (arm64)",
+        file: `ddev-wsl2_${version}_linux_arm64.deb`,
+        path: "/download/ddev-wsl2_linux_arm64.deb",
+        description: "Additional package for WSL2 on Debian, Ubuntu (ARM64)",
+      },
+      {
+        name: "WSL2 Additional Package - RPM (amd64)",
+        file: `ddev-wsl2_${version}_linux_amd64.rpm`,
+        path: "/download/ddev-wsl2_linux_amd64.rpm",
+        description: "Additional package for WSL2 on Fedora, RHEL, CentOS (64-bit Intel/AMD)",
+      },
+      {
+        name: "WSL2 Additional Package - RPM (arm64)",
+        file: `ddev-wsl2_${version}_linux_arm64.rpm`,
+        path: "/download/ddev-wsl2_linux_arm64.rpm",
+        description: "Additional package for WSL2 on Fedora, RHEL, CentOS (ARM64)",
       },
     ],
   },
@@ -159,19 +165,29 @@ const downloads = {
     <div class="my-24 px-6 lg:px-0">
       <h1 class="font-bold text-4xl dark:text-white">{title}</h1>
       <p class="text-2xl text-gray-600 my-4 dark:text-slate-400">
-        Latest release: {rawVersion} · <a
-        href={`${GITHUB_URL}/releases`}
+        <a
+        href={`${GITHUB_URL}/releases/tag/${rawVersion}`}
         class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
-      >
+        target="_blank"
+        >
+          {rawVersion} release notes
+        </a> · <a
+          href={`${GITHUB_URL}/releases`}
+          class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+          target="_blank"
+        >
         View all releases
-      </a>
+        </a>
       </p>
     </div>
 
     <div class="px-6 lg:px-0">
-      <div class="mb-8">
+      <div class="mb-8 space-y-2">
         <p class="dark:text-slate-300">
-          Most users should install via package managers instead. See the <a href="/get-started" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">Get Started</a> page for installation instructions.
+          Most users (except on Windows) should use package managers like Homebrew (macOS) and apt (Ubuntu).
+        </p>
+        <p class="dark:text-slate-300">
+          See <a href="/get-started" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">quick instructions</a> or <a href={`${DOCUMENTATION_URL}`} target="_blank" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">full installation docs</a>.
         </p>
       </div>
 
@@ -181,11 +197,11 @@ const downloads = {
             <h2 class="text-2xl font-bold mb-4 dark:text-white">
               {section.title}
             </h2>
-            <div class="space-y-3">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
               {section.items.map((item) => (
                 <a
-                  href={item.path}
-                  class="block border border-slate-200 dark:border-slate-700 rounded-lg p-4 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                  href={item.url || item.path}
+                  class="block border-2 border-slate-300 dark:border-slate-600 rounded-lg p-4 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer"
                 >
                   <div class="flex-1">
                     <h3 class="font-semibold text-lg dark:text-white mb-1">
