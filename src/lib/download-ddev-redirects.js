@@ -17,37 +17,89 @@ export default function downloadDdevRedirects() {
           { path: "/download/checksums.txt", file: `checksums.txt` },
 
           // Windows
-          { path: "/download/ddev_windows_amd64_installer.exe", file: `ddev_windows_amd64_installer.${latestVersion}.exe` },
-          { path: "/download/ddev_windows_arm64_installer.exe", file: `ddev_windows_arm64_installer.${latestVersion}.exe` },
-          { path: "/download/ddev_windows-amd64.zip", file: `ddev_windows-amd64.${latestVersion}.zip` },
-          { path: "/download/ddev_windows-arm64.zip", file: `ddev_windows-arm64.${latestVersion}.zip` },
+          {
+            path: "/download/ddev_windows_amd64_installer.exe",
+            file: `ddev_windows_amd64_installer.${latestVersion}.exe`,
+          },
+          {
+            path: "/download/ddev_windows_arm64_installer.exe",
+            file: `ddev_windows_arm64_installer.${latestVersion}.exe`,
+          },
+          {
+            path: "/download/ddev_windows-amd64.zip",
+            file: `ddev_windows-amd64.${latestVersion}.zip`,
+          },
+          {
+            path: "/download/ddev_windows-arm64.zip",
+            file: `ddev_windows-arm64.${latestVersion}.zip`,
+          },
 
           // Linux - standard packages
-          { path: "/download/ddev_linux_amd64.deb", file: `ddev_${latestVersion}_linux_amd64.deb` },
-          { path: "/download/ddev_linux_arm64.deb", file: `ddev_${latestVersion}_linux_arm64.deb` },
-          { path: "/download/ddev_linux_amd64.rpm", file: `ddev_${latestVersion}_linux_amd64.rpm` },
-          { path: "/download/ddev_linux_arm64.rpm", file: `ddev_${latestVersion}_linux_arm64.rpm` },
-          { path: "/download/ddev_linux-amd64.tar.gz", file: `ddev_linux-amd64.${latestVersion}.tar.gz` },
-          { path: "/download/ddev_linux-arm64.tar.gz", file: `ddev_linux-arm64.${latestVersion}.tar.gz` },
+          {
+            path: "/download/ddev_linux_amd64.deb",
+            file: `ddev_${latestVersion}_linux_amd64.deb`,
+          },
+          {
+            path: "/download/ddev_linux_arm64.deb",
+            file: `ddev_${latestVersion}_linux_arm64.deb`,
+          },
+          {
+            path: "/download/ddev_linux_amd64.rpm",
+            file: `ddev_${latestVersion}_linux_amd64.rpm`,
+          },
+          {
+            path: "/download/ddev_linux_arm64.rpm",
+            file: `ddev_${latestVersion}_linux_arm64.rpm`,
+          },
+          {
+            path: "/download/ddev_linux-amd64.tar.gz",
+            file: `ddev_linux-amd64.${latestVersion}.tar.gz`,
+          },
+          {
+            path: "/download/ddev_linux-arm64.tar.gz",
+            file: `ddev_linux-arm64.${latestVersion}.tar.gz`,
+          },
 
           // Linux - WSL2 packages
-          { path: "/download/ddev-wsl2_linux_amd64.deb", file: `ddev-wsl2_${latestVersion}_linux_amd64.deb` },
-          { path: "/download/ddev-wsl2_linux_arm64.deb", file: `ddev-wsl2_${latestVersion}_linux_arm64.deb` },
-          { path: "/download/ddev-wsl2_linux_amd64.rpm", file: `ddev-wsl2_${latestVersion}_linux_amd64.rpm` },
-          { path: "/download/ddev-wsl2_linux_arm64.rpm", file: `ddev-wsl2_${latestVersion}_linux_arm64.rpm` },
+          {
+            path: "/download/ddev-wsl2_linux_amd64.deb",
+            file: `ddev-wsl2_${latestVersion}_linux_amd64.deb`,
+          },
+          {
+            path: "/download/ddev-wsl2_linux_arm64.deb",
+            file: `ddev-wsl2_${latestVersion}_linux_arm64.deb`,
+          },
+          {
+            path: "/download/ddev-wsl2_linux_amd64.rpm",
+            file: `ddev-wsl2_${latestVersion}_linux_amd64.rpm`,
+          },
+          {
+            path: "/download/ddev-wsl2_linux_arm64.rpm",
+            file: `ddev-wsl2_${latestVersion}_linux_arm64.rpm`,
+          },
 
           // macOS
-          { path: "/download/ddev_macos-amd64.tar.gz", file: `ddev_macos-amd64.${latestVersion}.tar.gz` },
-          { path: "/download/ddev_macos-arm64.tar.gz", file: `ddev_macos-arm64.${latestVersion}.tar.gz` },
+          {
+            path: "/download/ddev_macos-amd64.tar.gz",
+            file: `ddev_macos-amd64.${latestVersion}.tar.gz`,
+          },
+          {
+            path: "/download/ddev_macos-arm64.tar.gz",
+            file: `ddev_macos-arm64.${latestVersion}.tar.gz`,
+          },
 
           // Shell completion scripts
-          { path: "/download/ddev_shell_completion_scripts.tar.gz", file: `ddev_shell_completion_scripts.${latestVersion}.tar.gz` },
+          {
+            path: "/download/ddev_shell_completion_scripts.tar.gz",
+            file: `ddev_shell_completion_scripts.${latestVersion}.tar.gz`,
+          },
         ]
 
         const redirectsPath = path.join(dir.pathname, "_redirects")
         let redirectsContent = fs.readFileSync(redirectsPath, "utf8")
 
-        let downloadRedirects = "\n\n# DDEV download redirects (generated at build time)"
+        let downloadRedirects =
+          "\n\n# DDEV download redirects (generated at build time)"
 
         for (const asset of assets) {
           downloadRedirects += `\n${asset.path} ${baseUrl}/${asset.file} 302`
