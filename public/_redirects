@@ -35,3 +35,5 @@
 /author/heather /blog/author/heather-mcnamee 301
 /author/rfay /blog/author/randy-fay 301
 /author/rmanelius /blog/author/rick-manelius 301
+
+# See src/lib/download-ddev-redirects.js for additional redirects
