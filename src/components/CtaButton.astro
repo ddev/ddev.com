@@ -4,6 +4,7 @@ export interface Props {
   href: string
   type?: string
   target?: string
+  title?: string
 }
 
 const typeClasses = {
@@ -11,14 +12,15 @@ const typeClasses = {
   hollow: `border border-blue-650 text-blue-650 hover:border-blue-800 hover:text-blue-800 dark:hover:text-blue-500 hover:border-blue-500`,
 }
 
-const { text, href, type = "default", target } = Astro.props
+const { text, href, type = "default", target, title } = Astro.props
 ---
 
 <a
   href={href}
-  class={`flex items-center justify-center px-8 py-3 text-base font-bold rounded-md md:py-4 md:text-lg md:px-10 no-underline ` +
+  class={`flex items-center justify-center px-8 py-3 text-base font-bold rounded-md md:py-4 md:text-lg md:px-10 no-underline whitespace-pre-line ` +
     typeClasses[type]}
   target={target}
+  title={title}
   role="button"
 >
   {text}
