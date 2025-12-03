@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro"
 import { getLatestReleaseVersion } from "../lib/api"
 import { GITHUB_REPO, GITHUB_URL, DOCUMENTATION_URL } from "../const"
 
-const title = "Download DDEV Binaries"
+const title = "Download DDEV"
 
 // GitHub returns version WITH leading "v"
 const rawVersion = await getLatestReleaseVersion() // e.g. "v1.24.10"
