@@ -58,12 +58,23 @@ const { latestVersion } = Astro.props
     Run the Installer
   </h2>
 
-  <div class="not-prose mb-6">
+  <div class="not-prose mb-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
     <CtaButton
-      text="Download Windows Installer ↓" 
-      href={`https://github.com/ddev/ddev/releases/download/${latestVersion}/ddev_windows_amd64_installer.${latestVersion}.exe`}
+      text="Download for AMD64 ↓\n(Intel/AMD)"
+      href="/download/ddev_windows_amd64_installer.exe"
+      title="For computers with Intel or AMD processors (most common)"
+    />
+    <CtaButton
+      text="Download for ARM64 ↓\n(Snapdragon)"
+      href="/download/ddev_windows_arm64_installer.exe"
+      title="For computers with ARM processors like Qualcomm Snapdragon"
     />
   </div>
+
+  <ul>
+    <li><strong>AMD64 (x86-64)</strong>: Most traditional Windows PCs (Intel/AMD processors)</li>
+    <li><strong>ARM64</strong>: Windows on ARM devices like Microsoft Surface Pro X, Surface Pro 9 (5G), or other ARM-based Windows devices</li>
+  </ul>
 
   <p>Run the installer selecting the preferred "Docker CE" approach and selecting your "DDEV" distro. You can also find all releases at <a href="https://github.com/ddev/ddev/releases">DDEV Releases</a>.</p>
 
