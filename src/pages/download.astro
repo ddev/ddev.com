@@ -4,7 +4,10 @@ import { getLatestReleaseVersion } from "../lib/api"
 import { GITHUB_REPO, GITHUB_URL } from "../const"
 
 const title = "Download DDEV Binaries"
-const latestVersion = await getLatestReleaseVersion()
+
+// GitHub returns version WITH leading "v"
+const rawVersion = await getLatestReleaseVersion() // e.g. "v1.24.10"
+const version = rawVersion.replace(/^v/, "")       // → "1.24.10"
 
 // Organize downloads by platform
 const downloads = {
@@ -13,117 +16,121 @@ const downloads = {
     items: [
       {
         name: "Windows Installer (amd64) — Recommended",
-        file: `ddev_windows_amd64_installer.${latestVersion}.exe`,
+        file: `ddev_windows_amd64_installer.v${version}.exe`,
         path: "/download/ddev_windows_amd64_installer.exe",
         description: "Recommended installer for most Windows users (64-bit Intel/AMD)",
       },
       {
         name: "Windows Installer (arm64) — Recommended",
-        file: `ddev_windows_arm64_installer.${latestVersion}.exe`,
+        file: `ddev_windows_arm64_installer.v${version}.exe`,
         path: "/download/ddev_windows_arm64_installer.exe",
         description: "Recommended installer for Windows on ARM devices",
       },
       {
         name: "Windows Portable (amd64)",
-        file: `ddev_windows-amd64.${latestVersion}.zip`,
+        file: `ddev_windows-amd64.v${version}.zip`,
         path: "/download/ddev_windows-amd64.zip",
         description: "Portable ZIP archive for 64-bit Intel/AMD",
       },
       {
         name: "Windows Portable (arm64)",
-        file: `ddev_windows-arm64.${latestVersion}.zip`,
+        file: `ddev_windows-arm64.v${version}.zip`,
         path: "/download/ddev_windows-arm64.zip",
         description: "Portable ZIP archive for ARM devices",
       },
     ],
   },
+
   linux: {
     title: "Linux",
     items: [
       {
         name: "Debian/Ubuntu (amd64)",
-        file: `ddev_${latestVersion}_linux_amd64.deb`,
+        file: `ddev_${version}_linux_amd64.deb`,
         path: "/download/ddev_linux_amd64.deb",
         description: "For Debian, Ubuntu, and derivatives (64-bit Intel/AMD)",
       },
       {
         name: "Debian/Ubuntu (arm64)",
-        file: `ddev_${latestVersion}_linux_arm64.deb`,
+        file: `ddev_${version}_linux_arm64.deb`,
         path: "/download/ddev_linux_arm64.deb",
         description: "For Debian, Ubuntu, and derivatives (ARM64)",
       },
       {
         name: "RPM Package (amd64)",
-        file: `ddev_${latestVersion}_linux_amd64.rpm`,
+        file: `ddev_${version}_linux_amd64.rpm`,
         path: "/download/ddev_linux_amd64.rpm",
         description: "For Fedora, RHEL, CentOS, and derivatives (64-bit Intel/AMD)",
       },
       {
         name: "RPM Package (arm64)",
-        file: `ddev_${latestVersion}_linux_arm64.rpm`,
+        file: `ddev_${version}_linux_arm64.rpm`,
         path: "/download/ddev_linux_arm64.rpm",
         description: "For Fedora, RHEL, CentOS, and derivatives (ARM64)",
       },
       {
         name: "Linux Archive (amd64)",
-        file: `ddev_linux-amd64.${latestVersion}.tar.gz`,
+        file: `ddev_linux-amd64.v${version}.tar.gz`,
         path: "/download/ddev_linux-amd64.tar.gz",
         description: "Portable TAR archive for 64-bit Intel/AMD",
       },
       {
         name: "Linux Archive (arm64)",
-        file: `ddev_linux-arm64.${latestVersion}.tar.gz`,
+        file: `ddev_linux-arm64.v${version}.tar.gz`,
         path: "/download/ddev_linux-arm64.tar.gz",
         description: "Portable TAR archive for ARM64",
       },
     ],
   },
+
   wsl2: {
     title: "WSL2 (Additional Packages)",
     items: [
       {
         name: "WSL2 Debian/Ubuntu (amd64)",
-        file: `ddev-wsl2_${latestVersion}_linux_amd64.deb`,
+        file: `ddev-wsl2_${version}_linux_amd64.deb`,
         path: "/download/ddev-wsl2_linux_amd64.deb",
         description: "For WSL2 on Debian/Ubuntu (64-bit Intel/AMD)",
       },
       {
         name: "WSL2 Debian/Ubuntu (arm64)",
-        file: `ddev-wsl2_${latestVersion}_linux_arm64.deb`,
+        file: `ddev-wsl2_${version}_linux_arm64.deb`,
         path: "/download/ddev-wsl2_linux_arm64.deb",
         description: "For WSL2 on Debian/Ubuntu (ARM64)",
       },
       {
         name: "WSL2 RPM Package (amd64)",
-        file: `ddev-wsl2_${latestVersion}_linux_amd64.rpm`,
+        file: `ddev-wsl2_${version}_linux_amd64.rpm`,
         path: "/download/ddev-wsl2_linux_amd64.rpm",
         description: "For WSL2 on Fedora, RHEL, CentOS (64-bit Intel/AMD)",
       },
       {
         name: "WSL2 RPM Package (arm64)",
-        file: `ddev-wsl2_${latestVersion}_linux_arm64.rpm`,
+        file: `ddev-wsl2_${version}_linux_arm64.rpm`,
         path: "/download/ddev-wsl2_linux_arm64.rpm",
         description: "For WSL2 on Fedora, RHEL, CentOS (ARM64)",
       },
     ],
   },
+
   macos: {
     title: "macOS",
     items: [
       {
         name: "macOS Archive (Apple Silicon)",
-        file: `ddev_macos-arm64.${latestVersion}.tar.gz`,
+        file: `ddev_macos-arm64.v${version}.tar.gz`,
         path: "/download/ddev_macos-arm64.tar.gz",
         description: "For Apple Silicon Macs",
       },
       {
         name: "macOS Archive (Intel)",
-        file: `ddev_macos-amd64.${latestVersion}.tar.gz`,
+        file: `ddev_macos-amd64.v${version}.tar.gz`,
         path: "/download/ddev_macos-amd64.tar.gz",
         description: "For Intel-based Macs",
       },
     ],
   },
+
   other: {
     title: "Other",
     items: [
@@ -135,7 +142,7 @@ const downloads = {
       },
       {
         name: "Shell Completion Scripts",
-        file: `ddev_shell_completion_scripts.${latestVersion}.tar.gz`,
+        file: `ddev_shell_completion_scripts.v${version}.tar.gz`,
         path: "/download/ddev_shell_completion_scripts.tar.gz",
         description: "Bash, Zsh, Fish, and PowerShell completion scripts",
       },
@@ -152,14 +159,15 @@ const downloads = {
     <div class="my-24 px-6 lg:px-0">
       <h1 class="font-bold text-4xl dark:text-white">{title}</h1>
       <p class="text-2xl text-gray-600 my-4 dark:text-slate-400">
-        Latest release: {latestVersion} · <a
-          href={`${GITHUB_URL}/releases`}
-          class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
-        >
-          View all releases
-        </a>
+        Latest release: {rawVersion} · <a
+        href={`${GITHUB_URL}/releases`}
+        class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+      >
+        View all releases
+      </a>
       </p>
     </div>
+
     <div class="px-6 lg:px-0">
       <div class="mb-8">
         <p class="dark:text-slate-300">
