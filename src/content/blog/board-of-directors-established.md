@@ -1,7 +1,7 @@
 ---
 title: "The DDEV Foundation Now Has a Board of Directors!"
 #title: "Securing DDEV’s Future: Our Commitment to Financial & Community Sustainability"
-pubDate: 2025-12-10
+pubDate: 2025-12-05
 #modifiedDate: 2025-06-09
 summary: On our path to improved governance and financial sustainability, we're proud to announce that the DDEV Foundation now has a Board of Directors.
 author: Randy Fay
