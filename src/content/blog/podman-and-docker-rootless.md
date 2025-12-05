@@ -165,7 +165,7 @@ For additional details, see the [Podman socket activation documentation](https:/
 
 ### Podman Rootful on Linux
 
-Rootful Podman requires configuring user group permissions, similar to [Docker's Linux post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/).
+Rootful Podman requires configuring user group permissions.
 
 1. Create the `podman` group:
 
@@ -294,7 +294,7 @@ Podman Rootless is slower than Docker. See these resources:
 - [Podman run/build performance issues](https://github.com/containers/podman/issues/13226)
 - [Podman Performance documentation](https://github.com/containers/podman/blob/main/docs/tutorials/performance.md)
 
-To improve performance, install `fuse-overlayfs` and configure the overlay storage driver:
+To improve performance (on Linux), install `fuse-overlayfs` and configure the overlay storage driver:
 
 **Install fuse-overlayfs**:
 
@@ -330,7 +330,7 @@ This removes all existing containers, images, and volumes (similar to `docker sy
 
 Docker Rootless offers rootless security with full Docker compatibility.
 
-### Installation
+### Installation (Linux/WSL2 only)
 
 1. Follow the official [Docker Rootless installation guide](https://docs.docker.com/engine/security/rootless/).
 
@@ -380,7 +380,7 @@ Docker Rootless offers rootless security with full Docker compatibility.
 
 7. Docker Rootless requires no-bind-mounts mode
 
-   Docker Rootless has a limitation with bind mounts that affects DDEV. You must enable `no-bind-mounts` mode:
+   Docker Rootless has a limitation with bind mounts that affects DDEV. You must enable [`no-bind-mounts` mode](https://docs.ddev.com/en/stable/users/configuration/config/#no_bind_mounts):
 
    ```bash
    ddev config global --no-bind-mounts=true
