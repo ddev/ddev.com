@@ -2,10 +2,7 @@
 import Layout from "../layouts/Layout.astro"
 import Heading from "../components/Heading.astro"
 import CtaButton from "../components/CtaButton.astro"
-import {
-  DISCORD_URL,
-  GITHUB_URL,
-} from "../const"
+import { DISCORD_URL, GITHUB_URL } from "../const"
 import Sponsors from "../components/Sponsors.astro"
 
 const title = `Support DDEV`
@@ -13,17 +10,17 @@ const title = `Support DDEV`
 
 <Layout
   title={title}
-  ogImage={`/img/og-support.png`}
-  ogImageAlt={`Support DDEV title card`}
-  description={`Help ensure DDEV's sustainable future through financial support and community involvement.`}
+  ogImage="/img/og-support.png"
+  ogImageAlt="Support DDEV title card"
+  description="Help ensure DDEV's sustainable future through financial support and community involvement."
 >
-  <main class="max-w-4xl mx-auto mb-24">
-    <Heading title={title} subtitle={`Help Us Build a Sustainable Future`} />
+  <main class="max-w-4xl mx-auto mb-24 px-6 lg:px-0">
+    <Heading title={title} subtitle="Help Us Build a Sustainable Future" />
 
-    <div class="px-6 lg:px-0">
-      <div class="prose text-lg mt-0 mb-24 dark:prose-invert">
+    <div class="prose dark:prose-invert space-y-16">
+      <section>
         <p>
-          DDEV serves over <strong>19,000 developers every week</strong>, eliminating environment setup headaches and enabling teams to focus on what matters: building great software. This impact is only possible through the generous financial support of our community.
+          DDEV serves over <strong>19,000 developers every week</strong>, eliminating environment setup headaches and enabling teams to focus on building great software. This impact is only possible through the generous support of our community.
         </p>
         <p>
           Like many open-source projects, DDEV faces the challenge of sustainability. We need consistent funding to maintain the level of support and rapid response to technology changes that you depend on. <strong>Your financial support directly funds the full-time maintainers who keep DDEV working seamlessly with the latest PHP versions, databases, and frameworks.</strong>
@@ -33,22 +30,20 @@ const title = `Support DDEV`
           <li><a href="#financial-support">🎯 Financial Support</a></li>
           <li><a href="#community-contributions">🤝 Community Contributions</a></li>
           <li><a href="#spread-the-word">📢 Spread the Word</a></li>
+          <li><a href="#make-a-difference">🌟 Make a Difference</a></li>
         </ul>
-      </div>
+      </section>
 
-      <div class="prose mt-12 dark:prose-invert">
+      <section>
         <h2 id="financial-support">🎯 Financial Support</h2>
-        
         <p>
           <strong>Why Financial Support Matters:</strong> DDEV requires two full-time maintainers to provide the level of support and responsiveness you depend on. We actively maintain compatibility with rapidly changing upstream technologies—PHP 8.5, PostgreSQL 18, MariaDB 11.8, and emerging frameworks—often before you even realize these changes could break your workflow.
         </p>
-
         <p>
           <strong>Our Current Goal:</strong> We need <strong>$12,000/month</strong> to fully fund both maintainers. We're currently at $6,300/month (See the header for current status!). Your contribution directly ensures DDEV's sustainability and continued excellence.
         </p>
-
         <div class="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg border-l-4 border-blue-500 my-8">
-          <h3 class="text-lg font-semibold text-blue-800 dark:text-blue-200 mt-0">Ways to Support Financially</h3>
+          <h3 class="font-semibold text-blue-800 dark:text-blue-200 mt-0">Ways to Support Financially</h3>
           <ul class="mb-0">
             <li><strong>GitHub Sponsors:</strong> Perfect for individuals and organizations who prefer monthly recurring support</li>
             <li><strong>Direct Invoicing:</strong> Many organizations prefer direct billing. <a href="/contact">Contact us</a> to set this up</li>
@@ -56,66 +51,50 @@ const title = `Support DDEV`
           </ul>
         </div>
 
-        <p class="text-center my-8">
-          <strong>Every contribution matters—from $5/month individuals to $1,000/month organizations.</strong>
-        </p>
-      </div>
+        <p class="text-center text-lg"><strong>Every contribution matters—from $5/month individuals to $1,000/month organizations.</strong></p>
 
-      <div class="mt-4 mb-8 max-w-2xl">
-        <Sponsors includeFeatured={true} />
-        <p class="text-sm text-gray-600 dark:text-gray-400 mt-4">
-          Join these amazing sponsors who make DDEV possible. <a href="/foundation" class="underline">Learn more about the DDEV Foundation</a>, our 501(c)(3) nonprofit organization.
-        </p>
-      </div>
+        <div class="my-16 max-w-xl not-prose">
+          <Sponsors includeFeatured={true} />
+          <p class="text-sm text-gray-600 dark:text-gray-400 mt-4">
+            Join these amazing sponsors who make DDEV possible. <a href="/foundation" class="underline">Learn more about the DDEV Foundation</a>, our 501(c)(3) nonprofit organization.
+          </p>
+        </div>
 
-      <div class="my-8 flex-cols space-y-4 md:flex md:space-x-4 md:space-y-0">
-        <CtaButton
-          text="PayPal →"
-          href="https://www.paypal.com/donate/?hosted_button_id=MCNCSZHC7LHSQ"
-          type="default"
-          target="_blank"
-        />
-        <CtaButton
-          text="Sponsor on GitHub →"
-          href="https://github.com/sponsors/ddev"
-          type="default"
-          target="_blank"
-        />
-        <CtaButton
-          text="Contact for Direct Billing →"
-          href="/contact"
-          type="hollow"
-        />
-      </div>
+        <div class="grid gap-4 sm:max-w-fit sm:mx-auto not-prose">
+          <div class="grid gap-4 sm:grid-cols-2">
+            <CtaButton text="Sponsor on GitHub →" href="https://github.com/sponsors/ddev" target="_blank" />
+            <CtaButton text="Sponsor on PayPal →" href="https://www.paypal.com/donate/?hosted_button_id=MCNCSZHC7LHSQ" target="_blank" />
+          </div>
+          <CtaButton text="Contact for Direct Billing →" href="/contact" type="hollow" />
+        </div>
+      </section>
+    </div>
 
-      <div class="prose mt-12 dark:prose-invert">
+    <div class="prose dark:prose-invert space-y-16">
+      <section>
         <h2 id="community-contributions">🤝 Community Contributions</h2>
-        
         <p>
           Community contributions help reduce the maintenance burden on our funded maintainers, allowing them to focus on core development and new features.
         </p>
-
         <div class="grid md:grid-cols-2 gap-6 my-8">
-          <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-            <h3 class="text-lg font-semibold mb-2 mt-0">💬 Help Others in the Community</h3>
-            <p class="text-sm mb-4">Answer questions on <a href={DISCORD_URL} target="_blank">Discord</a> and in the <a href="https://github.com/ddev/ddev/issues" target="_blank">GitHub Issue Queue</a>. Every question you answer helps our maintainers focus on development.</p>
-            <a href={DISCORD_URL} target="_blank" class="text-blue-600 dark:text-blue-400 text-sm font-medium">Join Discord →</a>
+          <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+            <h3 class="font-semibold mb-3 mt-0">💬 Help Others in the Community</h3>
+            <p class="mb-4">Answer questions on <a href={DISCORD_URL} target="_blank">Discord</a> and the <a href="https://github.com/ddev/ddev/issues" target="_blank">GitHub Issue Queue</a>.</p>
+            <a href={DISCORD_URL} target="_blank" class="text-blue-600 dark:text-blue-400 font-medium">Join Discord →</a>
           </div>
-
-          <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-            <h3 class="text-lg font-semibold mb-2 mt-0">🛠 Contribute Code & Docs</h3>
-            <p class="text-sm mb-4">File issues, submit PRs, improve documentation. Every contribution, from typo fixes to new features, helps.</p>
-            <a href="https://github.com/ddev/ddev/blob/main/CONTRIBUTING.md" target="_blank" class="text-blue-600 dark:text-blue-400 text-sm font-medium">Contributing Guide →</a>
+          <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+            <h3 class="font-semibold mb-3 mt-0">🛠 Contribute Code & Docs</h3>
+            <p class="mb-4">File issues, submit PRs, improve documentation—every contribution helps.</p>
+            <a href="https://github.com/ddev/ddev/blob/main/CONTRIBUTING.md" target="_blank" class="text-blue-600 dark:text-blue-400 font-medium">Contributing Guide →</a>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="prose mt-12 dark:prose-invert">
+      <section>
         <h2 id="spread-the-word">📢 Spread the Word</h2>
         <p>
           If DDEV has improved your development workflow, help others discover it too! <strong>The more developers who use DDEV, the stronger our case for sustainable funding becomes.</strong>
         </p>
-
         <ul>
           <li>⭐ <a href={GITHUB_URL} target="_blank">Star the project on GitHub</a></li>
           <li>📝 Write about your DDEV experience in blog posts</li>
@@ -123,47 +102,29 @@ const title = `Support DDEV`
           <li>📺 Create videos showing DDEV workflows</li>
           <li>💬 Share on social media when DDEV saves you time</li>
         </ul>
+        <p class="text-center"><strong>Got a DDEV success story?</strong> <a href="/contact">Let us know!</a></p>
+        <p class="text-center">We love hearing how DDEV has helped your team.</p>
+      </section>
 
-        <p>
-          <strong>Got a DDEV success story?</strong> <a href="/contact">Let us know!</a> We love hearing how DDEV has helped your team.
-        </p>
-      </div>
-
-      <div class="prose mt-12 mb-24 dark:prose-invert">
-        <h2>Ready to Make a Difference?</h2>
-        
+      <section>
+        <h2 id="make-a-difference">🌟 Ready to Make a Difference?</h2>
         <p>
           DDEV's future depends on our community stepping up to ensure financial sustainability. Whether you're an individual developer who relies on DDEV or an organization that saves countless hours with our tool, your financial support makes the difference between DDEV thriving and struggling to survive.
         </p>
-        
-        <div class="text-center">
-          <p class="mb-6"><strong>Join the movement to make DDEV sustainable.</strong></p>
-          <div class="my-8 flex-cols space-y-4 md:flex md:space-x-4 md:space-y-0">
+        <p class="text-center"><strong>Join the movement to make DDEV sustainable.</strong></p>
 
-            <CtaButton
-              text="Become a GitHub Sponsor →"
-              href="https://github.com/sponsors/ddev"
-              type="default"
-              target="_blank"
-            />
-            <CtaButton
-              text="Paypal →"
-              href="https://www.paypal.com/donate/?hosted_button_id=MCNCSZHC7LHSQ"
-              type="default"
-              target="_blank"
-            />
-            <CtaButton
-              text="Contact for Organization Support →"
-              href="/contact"
-              type="hollow"
-            />
+        <div class="grid gap-4 sm:max-w-fit sm:mx-auto my-8 not-prose">
+          <div class="grid gap-4 sm:grid-cols-2">
+            <CtaButton text="Sponsor on GitHub →" href="https://github.com/sponsors/ddev" target="_blank" />
+            <CtaButton text="Sponsor on PayPal →" href="https://www.paypal.com/donate/?hosted_button_id=MCNCSZHC7LHSQ" target="_blank" />
           </div>
+          <CtaButton text="Contact for Organization Support →" href="/contact" type="hollow" />
         </div>
 
-        <p class="text-center mt-8 text-sm text-gray-600 dark:text-gray-400">
+        <p class="text-sm text-gray-600 dark:text-gray-400 text-center mt-16">
           Questions? Join our <a href={DISCORD_URL} target="_blank" class="underline">Discord community</a> or check out the <a href="https://github.com/orgs/ddev/discussions/categories/ddev-advisory-group" target="_blank" class="underline">DDEV Advisory Group</a> discussions.
         </p>
-      </div>
+      </section>
     </div>
   </main>
 </Layout>
