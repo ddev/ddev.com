@@ -39,7 +39,6 @@ This required major changes to how DDEV works with container runtimes. We rebuil
   - [Installing Podman](#installingpodman-1)
   - [Installing Docker CLI](#installing-dockercli-1)
   - [Configuring Podman](#configuringpodman)
-  - [Common Podman Rootless Issues](#common-podmanrootlessissues)
 - [Windows](#windows)
   - [Installing Podman](#installingpodman-2)
 - [Running Multiple Container Runtimes](#running-multiple-containerruntimes)
@@ -480,6 +479,12 @@ Otherwise, set the `DOCKER_HOST` environment variable in your shell profile (`~/
 
 ```bash
 export DOCKER_HOST=unix://$(podman info --format '{{.Host.RemoteSocket.Path}}')
+```
+
+Podman rootless is unable to bind to privileged ports (<1024) by default on macOS. To fix this, configure DDEV to use unprivileged ports:
+
+```bash
+ddev config global --router-http-port=8080 --router-https-port=8443
 ```
 
 ## Windows
