@@ -3,10 +3,10 @@ title: "DDEV December 2025 Newsletter"
 pubDate: 2025-12-15
 summary: "Board of Directors established, Upsun sponsorship changes, v1.25 coming, new add-ons, community tutorials, and the path forward"
 author: Randy Fay
-#featureImage:
-#  src: "/img/blog/2025/11/Autumn Colors in Steamboat Springs Colorado.jpg"
-#  alt: "Autumn Colors in Steamboat Springs, Colorado"
-#  caption: "Autumn Colors in Steamboat Springs, Colorado, by Nancy Lewis"
+featureImage:
+  src: "/img/blog/2025/12/sunset-on-mt-garfield-2025-12-10.jpg"
+  alt: "Sunset on Mount Garfield, 2025-12-10"
+  caption: "Sunset on Mount Garfield, near Palisade, Colorado, USA, 2025-12-10"
 categories:
   - Newsletters
 ---
