@@ -48,9 +48,8 @@ Several new official add-ons have been added to the registry:
 
 - **DrupalEasy Show & Tell: DDEV Q&A with Randy Fay**: Covers Solr integration, custom commands, ngrok/Cloudflared sharing, and more [Watch on DrupalEasy↗](https://www.drupaleasy.com/video/2025/11/drupaleasy-show-tell-ddev-qa-randy-fay)
 - **DrupalEasy Show & Tell: DDEV + Ubuntu + Visual Studio Code debugging with Randy Fay**: This Show & Tell is a tour-de-force of DDEV Xdebug debugging and will likely be useful for anyone having issues getting DDEV + Xdebug + Visual Studio Code working. During the Show & Tell, Randy stressed the importance of debugging from a known, standard state. [Watch on DrupalEasy↗](https://www.drupaleasy.com/video/2025/11/drupaleasy-show-tell-ddev-ubuntu-visual-studio-code-debugging-randy-fay)
-- **TYPO3 Local Setup with DDEV and Solr**: Setting up a TYPO3 development environment with Apache Solr search integration using DDEV [Watch on YouTube↗](https://www.youtube.com/watch?v=-45TDujkI2g)
-- **WebWash: Drupal CMS v1 Installation and Demo**: Ivan Zugec demonstrates installing Drupal CMS v1 using DDEV and explores new features including AI integration and ECA workflows [Watch on YouTube↗](https://www.youtube.com/watch?v=vXZ35lOkktQ)
-- **WebWash: Drupal Live Build Series**: Part of the series covering DDEV setup, GitHub integration, and Drupal content modeling for building a project management system [Watch on YouTube↗](https://www.youtube.com/watch?v=dHTuJzfpD_o)
+- **WebWash: Getting Started with Search API in Drupal**: Ivan Zugec covers setting up Drupal's Search API module [Watch on YouTube↗](https://www.youtube.com/watch?v=-45TDujkI2g)
+- **WebWash: Getting Started with DDEV for Drupal Development**: Ivan Zugec walks through DDEV setup for Drupal projects [Watch on YouTube↗](https://www.youtube.com/watch?v=dHTuJzfpD_o)
 
 ## Help Us Out: Use HEAD
 
