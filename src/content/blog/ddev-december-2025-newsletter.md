@@ -24,7 +24,7 @@ As we wrap up 2025, there's much to celebrate and some important news to share. 
 
 We're preparing for the upcoming v1.25.0 major release in January. Here are some things to know:
 
-- **New defaults for new projects** — New projects will get updated default settings. PHP 8.5, NodeJS 24, MariaDB 11.8 become defaults for new projects (existing projects are not affected).
+- **New defaults for new projects** — New projects will get updated default settings. PHP 8.5, Node.js 24, MariaDB 11.8 become defaults for new projects (existing projects are not affected).
 - **Some exotic Dockerfiles may need adjustments** — If you have custom Dockerfiles with unusual configurations there may be complications because of the new base image. We'll be happy to help solve them.
 
 Watch for announcements everywhere.
@@ -47,9 +47,10 @@ Several new official add-ons have been added to the registry:
 ## Community Video Tutorials
 
 - **DrupalEasy Show & Tell: DDEV Q&A with Randy Fay**: Covers Solr integration, custom commands, ngrok/Cloudflared sharing, and more [Watch on DrupalEasy↗](https://www.drupaleasy.com/video/2025/11/drupaleasy-show-tell-ddev-qa-randy-fay)
-- **TYPO3 Local Setup with DDEV and Solr**: [Watch on YouTube↗](https://www.youtube.com/watch?v=-45TDujkI2g)
-- **Drupal + AI Development**: [Watch on YouTube↗](https://www.youtube.com/watch?v=vXZ35lOkktQ)
-- **DDEV Development Workflow**: [Watch on YouTube↗](https://www.youtube.com/watch?v=dHTuJzfpD_o)
+- **DrupalEasy Show & Tell: DDEV + Ubuntu + Visual Studio Code debugging with Randy Fay**: This Show & Tell is a tour-de-force of DDEV Xdebug debugging and will likely be useful for anyone having issues getting DDEV + Xdebug + Visual Studio Code working. During the Show & Tell, Randy stressed the importance of debugging from a known, standard state. [Watch on DrupalEasy↗](https://www.drupaleasy.com/video/2025/11/drupaleasy-show-tell-ddev-ubuntu-visual-studio-code-debugging-randy-fay)
+- **TYPO3 Local Setup with DDEV and Solr**: Setting up a TYPO3 development environment with Apache Solr search integration using DDEV [Watch on YouTube↗](https://www.youtube.com/watch?v=-45TDujkI2g)
+- **WebWash: Drupal CMS v1 Installation and Demo**: Ivan Zugec demonstrates installing Drupal CMS v1 using DDEV and explores new features including AI integration and ECA workflows [Watch on YouTube↗](https://www.youtube.com/watch?v=vXZ35lOkktQ)
+- **WebWash: Drupal Live Build Series**: Part of the series covering DDEV setup, GitHub integration, and Drupal content modeling for building a project management system [Watch on YouTube↗](https://www.youtube.com/watch?v=dHTuJzfpD_o)
 
 ## Help Us Out: Use HEAD
 
@@ -99,7 +100,7 @@ With Upsun lowering their sponsorship in January, we'll drop from 70% to about 5
 **Previous status**: $8,376/month (70% of goal)
 **After January**: ~$6,874/month (53% of goal)
 
-If DDEV has helps your team, now is the time to give back. Whether you're an individual developer, an agency, or an organization — your contribution makes a difference. → [Become a sponsor↗](https://github.com/sponsors/ddev)
+If DDEV has helped your team, now is the time to give back. Whether you're an individual developer, an agency, or an organization — your contribution makes a difference. → [Become a sponsor↗](https://github.com/sponsors/ddev)
 
 [Contact us](/contact) to discuss sponsorship options that work for your organization.
 
