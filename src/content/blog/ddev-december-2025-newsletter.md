@@ -33,7 +33,7 @@ Watch for announcements everywhere.
 
 Several new official add-ons have been added to the registry:
 
-- **[ddev-nvm](https://github.com/ddev/ddev-nvm)** — NVM (Node Version Manager) integration for DDEV
+- **[ddev-nvm](https://github.com/ddev/ddev-nvm)** — NVM (Node Version Manager) integration for DDEV (replaces the native `ddev nvm`, which has been removed from upcoming v1.25.0)
 - **[ddev-frankenphp](https://github.com/ddev/ddev-frankenphp)** — FrankenPHP server for PHP built on top of Caddy
 - **[ddev-redis-insight](https://github.com/ddev/ddev-redis-insight)** — Redis Insight Web UI for use with DDEV Redis service
 - **[ddev-python2](https://github.com/ddev/ddev-python2)** — Python 2 for npm builds and similar that still require it
