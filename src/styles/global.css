@@ -156,3 +156,107 @@ input[type="radio"]:checked + label {
     @apply block;
   }
 }
+
+/* Basic CSS to position the button */
+pre {
+  position: relative; /* Essential for positioning the button */
+}
+
+/* Style for the copy button */
+button.copy {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.5; /* Hide slightly when not hovered */
+  transition:
+    opacity 0.2s,
+    background-color 0.2s;
+}
+
+button.copy:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Feedback state when copied */
+button.copy.copied {
+  background-color: #28a745; /* Green color for success */
+  opacity: 1;
+}
+
+/* Optional: Hide the default 'Copy' text if you use an icon */
+button.copy span {
+  /* ... icon styles if using an SVG */
+}
+
+/* Style for the text content on success */
+button.copy::after {
+  content: "Copy"; /* Default text */
+}
+
+button.copy.copied::after {
+  content: "Copied!"; /* Text when copied */
+}
+
+/* --- Terminal Prompt Styling --- */
+
+/* Target the Shiki <pre> container inside your terminal component */
+.terminal-code-container pre.astro-code {
+  /* Position relative is crucial for positioning the copy button */
+  position: relative;
+
+  /* Apply padding-left to make space for the prompt symbol */
+  padding-left: 2rem;
+}
+
+/* Use a pseudo-element to display the prompt symbol on each line */
+.terminal-code-container pre.astro-code code .line::before {
+  /* Get the symbol from the parent wrapper's data-prompt attribute */
+  content: attr(data-prompt) " ";
+
+  /* Position the symbol */
+  position: absolute;
+  left: 1rem; /* Adjust this to line up with the start of the <pre> padding */
+
+  /* Inherit text color, but make it look like a prompt */
+  opacity: 0.6;
+}
+
+/* Ensure empty lines still have the prompt or adjust styling as necessary */
+.terminal-code-container pre.astro-code code .line:empty::before {
+  /* Optionally hide the prompt on entirely empty lines */
+  content: "";
+}
+
+/* --- Shiki Copy Button Styling --- */
+
+/* Style the button inserted by the transformer (requires pre.astro-code { position: relative; } above) */
+.shiki-copy {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 10;
+
+  /* Customizing colors */
+  background-color: #333;
+  color: #fff;
+  opacity: 0.8;
+  transition:
+    opacity 0.2s,
+    background-color 0.2s;
+}
+
+.shiki-copy:hover {
+  opacity: 1;
+  background-color: #444;
+}

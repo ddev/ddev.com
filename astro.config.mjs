@@ -10,6 +10,9 @@ import searchIndex from "./src/lib/search-index.js"
 import sitemap from "@astrojs/sitemap"
 import tailwindcss from "@tailwindcss/vite"
 import widont from "rehype-widont"
+import { addCopyButton } from 'shiki-transformer-copy-button';
+
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -51,6 +54,14 @@ export default defineConfig({
     // https://github.com/shikijs/shiki/blob/main/docs/languages.md
     shikiConfig: {
       theme: "nord",
+      // You can add options to the transformer here
+      // For example, to change the 'copied' state duration:
+      // toggle: 3000, // 3 seconds
+      transformers: [
+        addCopyButton({
+          // visibility: 'hover', // if you want it to only show on hover
+        }),
+      ], 
     },
     remarkPlugins: [remarkReadingTime],
     rehypePlugins: [
