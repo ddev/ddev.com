@@ -10,9 +10,7 @@ import searchIndex from "./src/lib/search-index.js"
 import sitemap from "@astrojs/sitemap"
 import tailwindcss from "@tailwindcss/vite"
 import widont from "rehype-widont"
-import { addCopyButton } from 'shiki-transformer-copy-button';
-
-
+import { addCopyButton } from "shiki-transformer-copy-button"
 
 // https://astro.build/config
 export default defineConfig({
@@ -61,7 +59,7 @@ export default defineConfig({
         addCopyButton({
           // visibility: 'hover', // if you want it to only show on hover
         }),
-      ], 
+      ],
     },
     remarkPlugins: [remarkReadingTime],
     rehypePlugins: [
