@@ -166,7 +166,7 @@ pre {
 button.copy {
   position: absolute;
   top: 0.5rem;
-  right: 0.5rem;
+  right: 2.1rem;
   border: none;
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
@@ -213,6 +213,7 @@ button.copy.copied::after {
 
   /* Apply padding-left to make space for the prompt symbol */
   padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 /* Use a pseudo-element to display the prompt symbol on each line */
@@ -259,4 +260,8 @@ button.copy.copied::after {
 .shiki-copy:hover {
   opacity: 1;
   background-color: #444;
+}
+
+.prose button.copy {
+  right: 1.1rem;
 }
