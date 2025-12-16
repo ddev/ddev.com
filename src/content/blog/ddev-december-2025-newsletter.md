@@ -94,7 +94,7 @@ Passcode: 12345
 
 ## Sponsorship Update: Your Help is Needed
 
-With Upsun lowering their sponsorship in January, we'll drop from 70% to about 56% of our sponsorship goal. That's a significant gap.
+With Upsun lowering their sponsorship in January, we'll drop from 70% to about 58% of our sponsorship goal. That's a significant gap.
 
 **Previous status**: $8,376/month (70% of goal)
 
