@@ -24,7 +24,7 @@ As we wrap up 2025, there's much to celebrate and some important news to share. 
 
 We're preparing for the upcoming v1.25.0 major release in January. Here are some things to know:
 
-- **New defaults for new projects** — New projects will get updated default settings. PHP 8.5, Node.js 24, MariaDB 11.8 become defaults for new projects (existing projects are not affected).
+- **New defaults for new projects** — New projects will get updated default settings. PHP 8.4, Node.js 24, MariaDB 11.8 become defaults for new projects (existing projects are not affected).
 - **Some exotic Dockerfiles may need adjustments** — If you have custom Dockerfiles with unusual configurations there may be complications because of the new base image. We'll be happy to help solve them.
 
 Watch for announcements everywhere.
@@ -94,10 +94,11 @@ Passcode: 12345
 
 ## Sponsorship Update: Your Help is Needed
 
-With Upsun lowering their sponsorship in January, we'll drop from 70% to about 56% of our sponsorship goal. That's a significant gap.
+With Upsun lowering their sponsorship in January, we'll drop from 70% to about 58% of our sponsorship goal. That's a significant gap.
 
 **Previous status**: $8,376/month (70% of goal)
-**After January**: ~$6,874/month (53% of goal)
+
+**After January**: ~$6,964/month (58% of goal)
 
 If DDEV has helped your team, now is the time to give back. Whether you're an individual developer, an agency, or an organization — your contribution makes a difference. → [Become a sponsor↗](https://github.com/sponsors/ddev)
 
