@@ -97,7 +97,8 @@ Passcode: 12345
 With Upsun lowering their sponsorship in January, we'll drop from 70% to about 56% of our sponsorship goal. That's a significant gap.
 
 **Previous status**: $8,376/month (70% of goal)
-**After January**: ~$6,874/month (53% of goal)
+
+**After January**: ~$6,964/month (58% of goal)
 
 If DDEV has helped your team, now is the time to give back. Whether you're an individual developer, an agency, or an organization — your contribution makes a difference. → [Become a sponsor↗](https://github.com/sponsors/ddev)
 
