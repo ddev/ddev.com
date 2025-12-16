@@ -166,7 +166,7 @@ pre {
 button.copy {
   position: absolute;
   top: 0.5rem;
-  right: 2.1rem;
+  right: 1.1rem;
   border: none;
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
@@ -212,8 +212,8 @@ button.copy.copied::after {
   position: relative;
 
   /* Apply padding-left to make space for the prompt symbol */
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 /* Use a pseudo-element to display the prompt symbol on each line */
