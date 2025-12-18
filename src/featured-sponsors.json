@@ -153,6 +153,15 @@
     "github": "jetbrains"
   },
   {
+    "name": "Værsågod",
+    "type": "standard",
+    "logo": "/logos/vaersaagod.svg",
+    "darklogo": "/logos/vaersaagod.svg",
+    "squareLogo": "/logos/vaersaagod.svg",
+    "url": "https://www.vaersaagod.no/en",
+    "github": "vaersaagod"
+  },
+  {
     "name": "Affinity Bridge",
     "type": "standard",
     "logo": "/logos/affinity-bridge.svg",
