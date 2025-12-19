@@ -20,7 +20,7 @@ categories:
 
 - [Understanding Docker and Podman](#understanding-docker-andpodman)
   - [Open Source Alternatives to Docker Desktop](#open-source-alternatives-to-dockerdesktop)
-  - [Why Choose Podman?](#why-choose-podmanrootless)
+  - [Why Choose Podman?](#why-choosepodman)
   - [Why Choose Docker Rootless?](#why-choose-dockerrootless)
 - [Key aim: Linux and WSL2 users](#key-aim-linux-and-wsl2users)
   - [Installing Podman](#installingpodman)
@@ -58,7 +58,7 @@ A common misconception is that Podman is the only open-source alternative to Doc
 
 All of these work with DDEV. The main reason to choose Podman specifically is if your organization forbids Docker entirely or if you want rootless operation by default.
 
-### Why Choose Podman Rootless?
+### Why Choose Podman?
 
 Podman is rootless by default, making it the simplest option for secure container environments. Traditional Docker requires root daemons, which can be a security concern in corporate environments with strict policies. (Note that DDEV is targeted at local development, where there are few risks of specialized attacks using this vector anyway.)
 
