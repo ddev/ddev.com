@@ -498,6 +498,7 @@ Supporting Podman and Docker Rootless required major changes to DDEV's Docker in
 - **Optimized API call performance** ([#7587](https://github.com/ddev/ddev/pull/7587)): DDEV's Docker API logic was inefficient, making redundant calls without caching. We restructured the code to cache data and reduce unnecessary API requests.
 - **Removed legacy docker-compose features** ([#7642](https://github.com/ddev/ddev/pull/7642)): Podman refuses to work with deprecated `links` and `external_links` directives in `docker-compose` files. We removed these legacy features and modernized DDEV's compose file generation.
 - **Added Podman and Docker Rootless support** ([#7702](https://github.com/ddev/ddev/pull/7702)): DDEV now detects and supports Podman (rootful and rootless) and Docker Rootless. We added handling for Podman-specific limitations and enabled rootless environments to work without root privileges.
+- **Added support for SELinux environments** ([#7939](https://github.com/ddev/ddev/pull/7939)): Podman has SELinux enabled by default on Fedora and some other distributions. We added support for SELinux by configuring volume mounts with the appropriate labels.
 
 These changes enabled Podman and Docker Rootless support. These features were developed together because Podman's primary use case is rootless operation. Once DDEV could handle rootless runtimes, supporting both became natural. They share the same security model and similar technical constraints.
 
