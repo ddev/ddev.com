@@ -41,7 +41,8 @@ const { latestVersion } = Astro.props
     },
     "containerEnv": {
         "XDG_CONFIG_HOME": "/workspaces/.config"
-    }
+    },
+    "postCreateCommand": "echo 'it should all be set up'"
 }
 `}
               theme="nord"
