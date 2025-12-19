@@ -2,6 +2,7 @@
 /**
  * This is a visual wrapper that puts simple terminal GUI around a code block
  * to help convey that it’s depicting a terminal session and not code.
+ * FIX: Uses the <Code /> component to apply Shiki highlighting and transformers (like the copy button).
  */
 
 import {
@@ -9,7 +10,11 @@ import {
   MinusIcon,
   StopIcon,
 } from "@heroicons/react/24/outline/index.js"
-import { Code } from "astro/components"
+import { Code } from "astro/components" // Keep this import
+
+// 1. Import the transformer here!
+import { addCopyButton } from 'shiki-transformer-copy-button';
+import type { ShikiTransformer } from 'shiki';
 
 export interface Props {
   code: string
@@ -21,9 +26,12 @@ export interface Props {
     | "admin-powershell"
     | "windows-terminal"
     | "ubuntu"
+  // Added a language prop for Shiki, defaults to 'bash'
+  lang?: 'bash' | 'sh' | 'powershell' | 'text' 
 }
 
-const { code, codeTheme = "nord", type = "default" } = Astro.props
+// Destructure props, adding a default for lang
+const { code, codeTheme = "nord", type = "default", lang = "bash" } = Astro.props
 
 const promptSymbols = {
   default: '→',
@@ -34,19 +42,86 @@ const promptSymbols = {
   ubuntu: '$',
 }
 
-/**
- * Wraps each instance of the symbol appearing as the first character of a line in a code snippet.
- */
-const wrapPromptSymbol = (code: string, symbol: string) => {
-  // Escape the dollar sign
-  let searchSymbol = (symbol === '$') ? '\\$' : symbol;
+const promptSymbol = promptSymbols[type];
 
+/**
+ * Mark lines that have prompts and strip the prompt symbol
+ * @returns Object with cleaned code and array of line indices that had prompts
+ */
+const stripAndMarkPromptLines = (code: string, symbol: string) => {
+  // Escape special regex characters like $
+  let searchSymbol = (symbol === '$') ? '\\$' : symbol;
   const search = new RegExp(`^${searchSymbol} `, "gm")
-  return code.replaceAll(search, `<span class="prompt">${symbol} </span>`)
+
+  const lines = code.split('\n');
+  const promptLineIndices = new Set<number>();
+
+  const cleanedLines = lines.map((line, index) => {
+    if (line.match(new RegExp(`^${searchSymbol} `))) {
+      promptLineIndices.add(index);
+      return line.replace(new RegExp(`^${searchSymbol} `), '');
+    }
+    return line;
+  });
+
+  return {
+    code: cleanedLines.join('\n'),
+    promptLineIndices
+  };
 }
+
+// Strip prompts and track which lines had them
+const { code: rawCode, promptLineIndices } = stripAndMarkPromptLines(String(code), promptSymbol);
+
+// Get only the command lines (lines with prompts) for copying
+const copyText = rawCode.split('\n')
+  .filter((_, index) => promptLineIndices.has(index))
+  .join('\n');
+
+// Custom transformer to add prompt symbols back only to lines that had them
+const addPromptSymbol = (symbol: string, lineIndices: Set<number>): ShikiTransformer => {
+  let currentLine = 0;
+  return {
+    name: 'add-prompt-symbol',
+    line(node) {
+      // Only add prompt if this line originally had one
+      if (lineIndices.has(currentLine)) {
+        node.children.unshift({
+          type: 'element',
+          tagName: 'span',
+          properties: { className: ['prompt'] },
+          children: [{ type: 'text', value: `${symbol} ` }]
+        })
+      }
+      currentLine++;
+    }
+  }
+}
+
+// Custom transformer to modify copy button's data-code attribute
+const customizeCopyButton = (text: string): ShikiTransformer => {
+  return {
+    name: 'customize-copy-button',
+    postprocess(html) {
+      // Replace the data-code attribute value in the generated HTML
+      // This runs after all transformations, so the button is already generated
+      return html.replace(
+        /data-code="[^"]*"/,
+        `data-code="${text.replace(/"/g, '&quot;')}"`
+      );
+    }
+  }
+}
+
+// 2. Define the transformers array for this component
+const componentTransformers = [
+    addPromptSymbol(promptSymbol, promptLineIndices),
+    addCopyButton(),
+    customizeCopyButton(copyText)
+];
 ---
 
-<div class="terminal-wrapper">
+<div class="terminal-wrapper" data-prompt={promptSymbol}>
   <div class={`top-bar flex p-3 space-x-2 rounded-t-lg ${type}`}>
     {(type == "default" || type == "ubuntu") && (
       <div class="block rounded-full bg-slate-500 w-3 h-3"></div>
@@ -70,7 +145,7 @@ const wrapPromptSymbol = (code: string, symbol: string) => {
       </div>
     )}
   </div>
-  <div class="overflow-hidden my-0">
-    <pre><code tabindex="0" set:html={wrapPromptSymbol(String(code), promptSymbols[type])} /></pre>
+  <div class="terminal-code-container my-0">
+    <Code code={rawCode} lang={lang} theme={codeTheme} transformers={componentTransformers} />
   </div>
 </div>

@@ -156,3 +156,96 @@ input[type="radio"]:checked + label {
     @apply block;
   }
 }
+
+/* Code block containers */
+.prose pre,
+pre.astro-code {
+  position: relative;
+  overflow: visible;
+}
+
+.prose pre code,
+pre.astro-code code {
+  display: block;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+/* Copy buttons */
+button.copy,
+.shiki-copy,
+pre.astro-code > button.copy {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.85rem;
+  padding: 0.25rem 0.7rem 0.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  opacity: 0.5;
+  z-index: 10;
+  pointer-events: auto;
+  display: none;
+  transition:
+    opacity 0.2s,
+    background-color 0.2s;
+}
+
+.terminal-code-container button.copy,
+.terminal-code-container .shiki-copy,
+.terminal-code-container pre.astro-code > button.copy {
+  top: 0.3rem;
+}
+
+.prose button.copy {
+  right: 1.35rem;
+}
+
+@media (min-width: 768px) {
+  button.copy,
+  .shiki-copy,
+  pre.astro-code > button.copy {
+    display: block;
+  }
+}
+
+button.copy:hover,
+.shiki-copy:hover,
+pre.astro-code > button.copy:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+button.copy.copied,
+.shiki-copy.copied,
+pre.astro-code > button.copy.copied {
+  background-color: #28a745;
+  opacity: 1;
+}
+
+button.copy::after {
+  content: "Copy";
+}
+
+button.copy.copied::after {
+  content: "Copied!";
+}
+
+/* Terminal prompt styling */
+.terminal-code-container pre.astro-code {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.terminal-code-container pre.astro-code code .line::before {
+  content: attr(data-prompt) " ";
+  position: absolute;
+  left: 1rem;
+  opacity: 0.6;
+}
+
+.terminal-code-container pre.astro-code code .line:empty::before {
+  content: "";
+}
