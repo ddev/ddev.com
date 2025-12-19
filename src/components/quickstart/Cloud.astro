@@ -38,6 +38,9 @@ const { latestVersion } = Astro.props
             "version": "latest"
         },
         "ghcr.io/ddev/ddev/install-ddev:latest": {}
+    },
+    "containerEnv": {
+        "XDG_CONFIG_HOME": "/workspaces/.config"
     }
 }
 `}
