@@ -43,7 +43,7 @@ Here's what happens in this screencast. You can do it yourself in just a few min
 
 - Do the post-install one-time action:
   ```bash
-  sudo usermod -aG docker $USER`
+  sudo usermod -aG docker $USER
   ```
 - We could log out and log back in, but instead for now:
   ```bash
