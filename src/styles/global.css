@@ -176,7 +176,7 @@ button.copy,
 .shiki-copy,
 pre.astro-code > button.copy {
   position: absolute;
-  top: 0.5rem;
+  top: 0.65rem;
   right: 0.85rem;
   padding: 0.3rem 0.6rem;
   border: none;
@@ -196,7 +196,7 @@ pre.astro-code > button.copy {
 .terminal-code-container button.copy,
 .terminal-code-container .shiki-copy,
 .terminal-code-container pre.astro-code > button.copy {
-  top: 0.15rem;
+  top: 0.3rem;
 }
 
 .prose button.copy {

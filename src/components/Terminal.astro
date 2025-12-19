@@ -14,6 +14,7 @@ import { Code } from "astro/components" // Keep this import
 
 // 1. Import the transformer here!
 import { addCopyButton } from 'shiki-transformer-copy-button';
+import type { ShikiTransformer } from 'shiki';
 
 export interface Props {
   code: string
@@ -44,29 +45,79 @@ const promptSymbols = {
 const promptSymbol = promptSymbols[type];
 
 /**
- * Strips the prompt symbol from the beginning of each line so the raw code
- * can be passed to Shiki, preventing the symbol from being highlighted incorrectly.
- * @returns The code with the prompt symbol removed from the start of each line.
+ * Mark lines that have prompts and strip the prompt symbol
+ * @returns Object with cleaned code and array of line indices that had prompts
  */
-const stripPromptSymbol = (code: string, symbol: string) => {
+const stripAndMarkPromptLines = (code: string, symbol: string) => {
   // Escape special regex characters like $
   let searchSymbol = (symbol === '$') ? '\\$' : symbol;
-  
-  // Regex to find the symbol at the start of a line (or start of string), globally
   const search = new RegExp(`^${searchSymbol} `, "gm")
-  return code.replaceAll(search, "")
+
+  const lines = code.split('\n');
+  const promptLineIndices = new Set<number>();
+
+  const cleanedLines = lines.map((line, index) => {
+    if (line.match(new RegExp(`^${searchSymbol} `))) {
+      promptLineIndices.add(index);
+      return line.replace(new RegExp(`^${searchSymbol} `), '');
+    }
+    return line;
+  });
+
+  return {
+    code: cleanedLines.join('\n'),
+    promptLineIndices
+  };
 }
 
-// The raw code block to be highlighted by Shiki
-const rawCode = stripPromptSymbol(String(code), promptSymbol);
-// Replace the line above with the original code, including prompts:
-// const rawCode = String(code);
+// Strip prompts and track which lines had them
+const { code: rawCode, promptLineIndices } = stripAndMarkPromptLines(String(code), promptSymbol);
 
+// Get only the command lines (lines with prompts) for copying
+const copyText = rawCode.split('\n')
+  .filter((_, index) => promptLineIndices.has(index))
+  .join('\n');
+
+// Custom transformer to add prompt symbols back only to lines that had them
+const addPromptSymbol = (symbol: string, lineIndices: Set<number>): ShikiTransformer => {
+  let currentLine = 0;
+  return {
+    name: 'add-prompt-symbol',
+    line(node) {
+      // Only add prompt if this line originally had one
+      if (lineIndices.has(currentLine)) {
+        node.children.unshift({
+          type: 'element',
+          tagName: 'span',
+          properties: { className: ['prompt'] },
+          children: [{ type: 'text', value: `${symbol} ` }]
+        })
+      }
+      currentLine++;
+    }
+  }
+}
+
+// Custom transformer to modify copy button's data-code attribute
+const customizeCopyButton = (text: string): ShikiTransformer => {
+  return {
+    name: 'customize-copy-button',
+    postprocess(html) {
+      // Replace the data-code attribute value in the generated HTML
+      // This runs after all transformations, so the button is already generated
+      return html.replace(
+        /data-code="[^"]*"/,
+        `data-code="${text.replace(/"/g, '&quot;')}"`
+      );
+    }
+  }
+}
 
 // 2. Define the transformers array for this component
 const componentTransformers = [
-    // Call the function here
-    addCopyButton()
+    addPromptSymbol(promptSymbol, promptLineIndices),
+    addCopyButton(),
+    customizeCopyButton(copyText)
 ];
 ---
 
