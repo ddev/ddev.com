@@ -14,7 +14,7 @@ categories:
 
 The DDEV community has requested Podman and Docker Rootless support for years. This support is now available in [DDEV HEAD](https://docs.ddev.com/en/stable/developers/building-contributing/#testing-latest-commits-on-head) as an experimental feature, general availability is planned for upcoming DDEV v1.25.0.
 
-It allows DDEV to work in corporate environments where Docker Desktop is not allowed due to security policies or licensing restrictions.
+It allows DDEV to work in corporate environments where Podman or Rootless Docker are preferred due to security policies or licensing restrictions.
 
 This required major changes to how DDEV works with container runtimes. We rebuilt core infrastructure and fixed compatibility issues that existed since DDEV's start.
 
@@ -78,9 +78,9 @@ All of these work with DDEV. The main reason to choose Podman specifically is if
 
 ### Why Choose Rootless?
 
-Running containers without root privileges is more secure. Traditional Docker and rootful Podman need elevated privileges, which creates security risks in corporate environments where strict security policies apply.
+Although DDEV's use of all Docker providers is quite secure, and we run containers as normal users with limited privileges, the rootless approaches to Docker and Podman actually run the *Docker daemon* without root privileges, closing additional attack surface. Traditional Docker and rootful Podman daemons need elevated privileges, which creates security risks in corporate environments where strict security policies apply. (Note that DDEV is targeted at local development, where there are few risks of specialized attacks using this vector anyway.)
 
-Rootless alternatives (Podman Rootless and Docker Rootless) run containers without root access. This means:
+Rootless alternatives (Podman Rootless and Docker Rootless) run the daemon without root access, fundamentally and completely cutting off root privileges for containers. This means:
 
 - No root daemon on the system, only a rootless daemon in userspace
 - Container processes cannot access root-owned files
@@ -96,7 +96,7 @@ There is a [Docker Engine API](https://docs.docker.com/reference/api/engine/), w
 
 Podman can work without a socket, but to have access to the Docker API, it's necessary to enable it. The socket lets DDEV use the Docker API to talk to Podman, so DDEV can support both Docker and Podman with the same code.
 
-## Linux and WSL2
+## Key aim: Linux and WSL2 users
 
 The primary focus for this article is Linux and WSL2 (we have test coverage for Linux only for now). Most features and configurations are well-tested on these platforms.
 
@@ -104,7 +104,7 @@ The primary focus for this article is Linux and WSL2 (we have test coverage for 
 
 Install Podman using your distribution's package manager. See the [official Podman installation guide for Linux](https://podman.io/docs/installation#installing-on-linux).
 
-**Note:** Some distributions may have outdated Podman versions. This is the case with Ubuntu 24.04, which has Podman 4.9.3. We recommend using Podman 5.0 or newer for the best experience, because we didn't have success with Podman 4.x in our automated tests, but you can still use Podman 4.x ignoring the warning on `ddev start`.
+**Note:** Some distributions may have outdated Podman versions. This is the case with Ubuntu 24.04, which has Podman 4.9.3. We require Podman 5.0 or newer for the best experience, because we didn't have success with Podman 4.x in our automated tests, but you can still use Podman 4.x ignoring the warning on `ddev start`.
 
 You can also install [Podman Desktop](https://podman-desktop.io/docs/installation/linux-install) if you prefer a GUI.
 
@@ -298,7 +298,7 @@ Rootful Podman requires configuring user group permissions.
 
 ### Podman Rootless Performance Optimization
 
-Podman Rootless is slower than Docker. See these resources:
+Podman Rootless is significantly slower than Docker. See these resources:
 
 - [Podman run/build performance issues](https://github.com/containers/podman/issues/13226)
 - [Podman Performance documentation](https://github.com/containers/podman/blob/main/docs/tutorials/performance.md)
@@ -560,11 +560,12 @@ DDEV automatically detects your active container runtime. To switch:
 
 ### Recommendations
 
-**Use [standard Docker](https://docs.ddev.com/en/stable/users/install/docker-installation/) if:**
+**Use of the many [standard Docker providers](https://docs.ddev.com/en/stable/users/install/docker-installation/) if:**
 
 - You're comfortable with the most widely used container runtime
 - You don't have rootless security requirements
-- This is the recommended option for most users
+
+_This is the recommended option for the vast majority of users._
 
 **Use Podman Rootless if:**
 
