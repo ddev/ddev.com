@@ -178,7 +178,7 @@ pre.astro-code > button.copy {
   position: absolute;
   top: 0.65rem;
   right: 0.85rem;
-  padding: 0.3rem 0.6rem;
+  padding: 0.25rem 0.7rem 0.2rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
