@@ -1,7 +1,7 @@
 ---
 title: "Podman and Docker Rootless in DDEV"
-pubDate: 2025-12-10
-#modifiedDate: 2025-12-10
+pubDate: 2025-12-22
+#modifiedDate: 2025-12-22
 summary: After years of development, DDEV now supports Podman and Docker Rootless for secure, rootless container development.
 author: Stas Zhuk
 featureImage:
@@ -12,28 +12,22 @@ categories:
   - Guides
 ---
 
-The DDEV community has requested Podman and Docker Rootless support for years. This support is now available in [DDEV HEAD](https://docs.ddev.com/en/stable/developers/building-contributing/#testing-latest-commits-on-head) as an experimental feature, general availability is planned for upcoming DDEV v1.25.0.
+**TL;DR**: DDEV now supports Podman and Docker Rootless in [DDEV HEAD](https://docs.ddev.com/en/stable/developers/building-contributing/#testing-latest-commits-on-head) (coming in v1.25.0). Jump to setup instructions: [Linux/WSL2](#key-aim-linux-and-wsl2users) · [macOS](#macos) · [Windows](#windows)
 
-It allows DDEV to work in corporate environments where Podman or Rootless Docker are preferred due to security policies or licensing restrictions.
-
-This required major changes to how DDEV works with container runtimes. We rebuilt core infrastructure and fixed compatibility issues that existed since DDEV's start.
-
-**Note**: Podman and Docker Rootless support is experimental. While it works for most use cases, you may encounter issues. Please report any problems on the [DDEV issue tracker](https://github.com/ddev/ddev/issues).
+**Note**: This support is experimental. Report issues on the [DDEV issue tracker](https://github.com/ddev/ddev/issues).
 
 ## Table of Contents
 
-- [The Journey to Podman Support](#the-journey-to-podmansupport)
 - [Understanding Docker and Podman](#understanding-docker-andpodman)
   - [Open Source Alternatives to Docker Desktop](#open-source-alternatives-to-dockerdesktop)
-  - [Why Choose Rootless?](#why-chooserootless)
-  - [The Socket Requirement for DDEV](#the-socket-requirement-forddev)
-- [Linux and WSL2](#linux-andwsl2)
+  - [Why Choose Podman?](#why-choose-podmanrootless)
+  - [Why Choose Docker Rootless?](#why-choose-dockerrootless)
+- [Key aim: Linux and WSL2 users](#key-aim-linux-and-wsl2users)
   - [Installing Podman](#installingpodman)
   - [Installing Docker CLI](#installing-dockercli)
   - [Configuring Podman Rootless](#configuring-podmanrootless)
-  - [Configuring Podman Rootful](#configuring-podmanrootful)
-  - [Common Podman Issues](#common-podmanissues)
   - [Podman Rootless Performance Optimization](#podman-rootless-performanceoptimization)
+  - [Configuring Podman Rootful](#configuring-podmanrootful)
   - [Setting Up Docker Rootless](#setting-up-dockerrootless)
 - [macOS](#macos)
   - [Installing Podman](#installingpodman-1)
@@ -46,21 +40,9 @@ This required major changes to how DDEV works with container runtimes. We rebuil
 - [Which Runtime Should You Choose?](#which-runtime-should-youchoose)
   - [Runtime Comparison](#runtimecomparison)
   - [Recommendations](#recommendations)
+- [The Journey to Podman Support](#the-journey-to-podmansupport)
 - [Supporting DDEV Development](#supporting-ddevdevelopment)
 - [Conclusion](#conclusion)
-
-## The Journey to Podman Support
-
-Supporting Podman and Docker Rootless required major changes to DDEV's Docker integration:
-
-- **Switched to official Docker client library** ([#5787](https://github.com/ddev/ddev/pull/5787)): DDEV previously used an unofficial library to communicate with the Docker API. We migrated to Docker's official client library for better compatibility and long-term support.
-- **Replaced direct CLI calls with proper API usage** ([#7189](https://github.com/ddev/ddev/pull/7189)): DDEV used to call `docker context inspect` directly, which doesn't work with Podman. We switched to using the `docker/cli` library to handle context operations properly.
-- **Modernized SSH authentication** ([#7511](https://github.com/ddev/ddev/pull/7511)): The `ddev auth ssh` command used to call `docker run` directly. We rewrote it to use the Docker API, making it compatible with alternative runtimes.
-- **Optimized API call performance** ([#7587](https://github.com/ddev/ddev/pull/7587)): DDEV's Docker API logic was inefficient, making redundant calls without caching. We restructured the code to cache data and reduce unnecessary API requests.
-- **Removed legacy docker-compose features** ([#7642](https://github.com/ddev/ddev/pull/7642)): Podman refuses to work with deprecated `links` and `external_links` directives in `docker-compose` files. We removed these legacy features and modernized DDEV's compose file generation.
-- **Added Podman and Docker Rootless support** ([#7702](https://github.com/ddev/ddev/pull/7702)): DDEV now detects and supports Podman (rootful and rootless) and Docker Rootless. We added handling for Podman-specific limitations and enabled rootless environments to work without root privileges.
-
-These changes enabled Podman and Docker Rootless support. These features were developed together because Podman's primary use case is rootless operation. Once DDEV could handle rootless runtimes, supporting both became natural. They share the same security model and similar technical constraints.
 
 ## Understanding Docker and Podman
 
@@ -76,25 +58,27 @@ A common misconception is that Podman is the only open-source alternative to Doc
 
 All of these work with DDEV. The main reason to choose Podman specifically is if your organization forbids Docker entirely or if you want rootless operation by default.
 
-### Why Choose Rootless?
+### Why Choose Podman Rootless?
 
-Although DDEV's use of all Docker providers is quite secure, and we run containers as normal users with limited privileges, the rootless approaches to Docker and Podman actually run the *Docker daemon* without root privileges, closing additional attack surface. Traditional Docker and rootful Podman daemons need elevated privileges, which creates security risks in corporate environments where strict security policies apply. (Note that DDEV is targeted at local development, where there are few risks of specialized attacks using this vector anyway.)
+Podman is rootless by default, making it the simplest option for secure container environments. Traditional Docker requires root daemons, which can be a security concern in corporate environments with strict policies. (Note that DDEV is targeted at local development, where there are few risks of specialized attacks using this vector anyway.)
 
-Rootless alternatives (Podman Rootless and Docker Rootless) run the daemon without root access, fundamentally and completely cutting off root privileges for containers. This means:
+Podman's rootless approach runs the daemon without elevated privileges:
 
 - No root daemon on the system, only a rootless daemon in userspace
 - Container processes cannot access root-owned files
 - Reduced attack surface if a container is compromised
 
-DDEV has traditionally run its containers as an unprivileged user, limiting the attack surface. However, Docker itself runs its daemon under root user by default. Rootless runtimes eliminate this requirement.
+While DDEV already runs containers as unprivileged users, Podman eliminates the need for a root daemon entirely.
 
-Podman is rootless by default. Docker Rootless requires special setup.
+### Why Choose Docker Rootless?
 
-### The Socket Requirement for DDEV
+Docker Rootless provides the same security benefits as Podman Rootless while maintaining full Docker compatibility. It runs the daemon without root privileges, offering:
 
-There is a [Docker Engine API](https://docs.docker.com/reference/api/engine/), which serves as a layer between DDEV and Docker/Podman. To make API calls, it's required to have a running socket that listens for API requests.
+- No root daemon on the system
+- Container processes cannot access root-owned files
+- Reduced attack surface if a container is compromised
 
-Podman can work without a socket, but to have access to the Docker API, it's necessary to enable it. The socket lets DDEV use the Docker API to talk to Podman, so DDEV can support both Docker and Podman with the same code.
+Unlike Podman which is rootless by default, Docker Rootless requires special setup to enable. Choose this option if you want to stay with Docker but need rootless security.
 
 ## Key aim: Linux and WSL2 users
 
@@ -112,11 +96,13 @@ For more information, see the [Podman tutorials](https://github.com/containers/p
 
 ### Installing Docker CLI
 
-Docker has two parts: the Docker engine (daemon) and the CLI client.
+Podman provides a Docker-compatible API, which means you can use the Docker CLI as a frontend for Podman. This approach offers several benefits:
 
-It's easier to install `docker` CLI to use with Podman to be able to change Docker contexts easily.
+- Use familiar `docker` commands while Podman handles the actual container operations
+- Switch between different container runtimes using Docker contexts
+- Maintain compatibility with scripts and tools that expect the `docker` command
 
-1. [Set up Docker's apt repository](https://docs.docker.com/engine/install/)
+1. [Set up Docker's repository](https://docs.docker.com/engine/install/)
 2. Install only the CLI:
 
    ```bash
@@ -132,50 +118,54 @@ It's easier to install `docker` CLI to use with Podman to be able to change Dock
 
 This is the recommended configuration for most users.
 
-1. In order for users to run rootless Podman, a `subuid` and `subgid` configuration entry must exist for each user that wants to use it. New users created using `useradd` have these entries by default:
+1. Prepare the system:
 
    ```bash
-   # Add subuid and subgid ranges
-   sudo usermod --add-subuids 100000-165535 --add-subgids 100000-165535 $(whoami)
-   # Migrate existing Podman data
+   # Add subuid and subgid ranges if they don't exist for the current user
+   grep "^$(id -un):\|^$(id -u):" /etc/subuid >/dev/null 2>&1 || sudo usermod --add-subuids 100000-165535 $(whoami)
+   grep "^$(id -un):\|^$(id -u):" /etc/subgid >/dev/null 2>&1 || sudo usermod --add-subgids 100000-165535 $(whoami)
+   # Propagate changes to subuid and subgid
    podman system migrate
+   # Debian requires setting unprivileged_userns_clone
+   if [ -f /proc/sys/kernel/unprivileged_userns_clone ]; then
+     if [ "1" != "$(cat /proc/sys/kernel/unprivileged_userns_clone)" ]; then
+       echo 'kernel.unprivileged_userns_clone=1' | sudo tee -a /etc/sysctl.d/60-rootless.conf
+       sudo sysctl --system
+     fi
+   fi
+   # Fedora requires setting max_user_namespaces
+   if [ -f /proc/sys/user/max_user_namespaces ]; then
+     if [ "0" = "$(cat /proc/sys/user/max_user_namespaces)" ]; then
+       echo 'user.max_user_namespaces=28633' | sudo tee -a /etc/sysctl.d/60-rootless.conf
+       sudo sysctl --system
+     fi
+   fi
+   # Allow privileged port access if needed
+   if [ -f /proc/sys/net/ipv4/ip_unprivileged_port_start ]; then
+     if [ "1024" = "$(cat /proc/sys/net/ipv4/ip_unprivileged_port_start)" ]; then
+       echo 'net.ipv4.ip_unprivileged_port_start=0' | sudo tee -a /etc/sysctl.d/60-rootless.conf
+       sudo sysctl --system
+     fi
+   fi
    ```
 
-   See the [Arch Wiki Podman page](https://wiki.archlinux.org/title/Podman#Set_subuid_and_subgid) for more details.
+   For more details, see the [Arch Linux Wiki](https://wiki.archlinux.org/title/Podman).
 
-2. Configure system for privileged port access:
-
-   ```bash
-   # Allow binding to ports below 1024
-   echo 'net.ipv4.ip_unprivileged_port_start=0' | sudo tee -a /etc/sysctl.d/60-rootless.conf
-
-   # Apply without rebooting
-   sudo sysctl -p /etc/sysctl.d/60-rootless.conf
-   ```
-
-3. Enable and start the Podman socket:
+2. Enable the Podman socket and verify it's running:
 
    ```bash
    systemctl --user enable --now podman.socket
-   ```
 
-4. Verify the socket is running:
-
-   ```bash
+   # You should see `/run/user/1000/podman/podman.sock` (the number may vary):
    ls $XDG_RUNTIME_DIR/podman/podman.sock
-   ```
 
-   You should see `/run/user/1000/podman/podman.sock` (the number may vary).
-
-   You can also check the socket path with:
-
-   ```bash
+   # You can also check the socket path with:
    podman info --format '{{.Host.RemoteSocket.Path}}'
    ```
 
-5. Configure Docker API to use Podman. Choose one of these methods:
+   For more details, see the [Podman socket activation documentation](https://github.com/containers/podman/blob/main/docs/tutorials/socket_activation.md).
 
-   **Option A: Create Docker context** (if you have `docker` CLI installed):
+3. Configure Docker API to use Podman:
 
    ```bash
    # View existing contexts
@@ -193,108 +183,9 @@ This is the recommended configuration for most users.
    docker ps
    ```
 
-   **Option B: Set environment variable in your shell profile** (`~/.bashrc` or `~/.zshrc`):
+   For more details, see [Podman rootless tutorial](https://github.com/containers/podman/blob/main/docs/tutorials/rootless_tutorial.md)
 
-   ```bash
-   export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
-   ```
-
-For additional details, see the [Podman socket activation documentation](https://github.com/containers/podman/blob/main/docs/tutorials/socket_activation.md).
-
-### Configuring Podman Rootful
-
-Rootful Podman requires configuring user group permissions.
-
-1. Create the `podman` group (alternatively, you can reuse an existing `docker` group here, if you have both Docker and Podman installed):
-
-   ```bash
-   sudo groupadd podman
-   ```
-
-2. Add your user to the group:
-
-   ```bash
-   sudo usermod -aG podman $USER
-   ```
-
-3. Log out and log back in, or activate the changes immediately:
-
-   ```bash
-   newgrp podman
-   ```
-
-   If you're in a VM, restart it for changes to take effect.
-
-4. Configure Podman socket permissions:
-
-   ```bash
-   # Configure permissions for /run/podman
-   sudo tee /etc/tmpfiles.d/podman.conf > /dev/null <<EOF
-   d /run/podman 0770 root podman
-   EOF
-
-   # Configure socket to run with podman group
-   sudo mkdir -p /etc/systemd/system/podman.socket.d
-   sudo tee /etc/systemd/system/podman.socket.d/override.conf > /dev/null <<EOF
-   [Socket]
-   SocketMode=0660
-   SocketUser=root
-   SocketGroup=podman
-   EOF
-
-   # Apply changes
-   sudo systemd-tmpfiles --create
-   sudo systemctl daemon-reload
-   ```
-
-5. Enable and start the socket:
-
-   ```bash
-   sudo systemctl enable --now podman.socket
-   ```
-
-6. Verify the socket:
-
-   ```bash
-   ls /var/run/podman/podman.sock
-   ```
-
-   Or check with:
-
-   ```bash
-   sudo podman info --format '{{.Host.RemoteSocket.Path}}'
-   ```
-
-7. Configure Docker API to use Podman. Choose one of these methods:
-
-   **Option A: Create Docker context** (if you have `docker` CLI installed):
-
-   ```bash
-   # View existing contexts
-   docker context ls
-
-   # Create Podman rootful context
-   docker context create podman \
-       --description "Podman (rootful)" \
-       --docker host="unix:///var/run/podman/podman.sock"
-
-   # Switch to the new context
-   docker context use podman
-
-   # Verify it works
-   docker ps
-   ```
-
-   **Option B: Set environment variable in your shell profile** (`~/.bashrc` or `~/.zshrc`):
-
-   ```bash
-   export DOCKER_HOST=unix:///var/run/podman/podman.sock
-   ```
-
-### Common Podman Issues
-
-- [Podman rootless tutorial](https://github.com/containers/podman/blob/main/docs/tutorials/rootless_tutorial.md)
-- [Arch Wiki](https://wiki.archlinux.org/title/Podman)
+4. Proceed with [DDEV installation](https://docs.ddev.com/en/stable/users/install/ddev-installation/#ddev-installation-linux).
 
 ### Podman Rootless Performance Optimization
 
@@ -333,34 +224,50 @@ podman system reset
 
 This removes all existing containers, images, and volumes (similar to `docker system prune -a`).
 
+### Configuring Podman Rootful
+
+Rootless Podman is recommended for most users. However, if you need rootful Podman, the setup differs from rootless in two key ways:
+
+1. User group permissions: configure [group permissions](https://github.com/podman-desktop/podman-desktop/issues/2861#issuecomment-1596192247) to allow non-root users to access the rootful socket
+
+2. Socket activation and paths:
+
+   ```bash
+   # Enable rootful socket (requires sudo)
+   sudo systemctl enable --now podman.socket
+
+   # Socket path for rootful
+   ls /var/run/podman/podman.sock
+   ```
+
+   Compare to rootless:
+
+   ```bash
+   # Rootless socket (no sudo)
+   systemctl --user enable --now podman.socket
+
+   # Socket path for rootless
+   ls $XDG_RUNTIME_DIR/podman/podman.sock
+   ```
+
 ### Setting Up Docker Rootless
 
 Docker Rootless on Linux offers rootless security with full Docker compatibility.
 
 1. Follow the official [Docker Rootless installation guide](https://docs.docker.com/engine/security/rootless/).
 
-2. For daemon configuration, see the [Docker daemon documentation](https://docs.docker.com/engine/daemon/).
-
-3. In order for users to run rootless Docker, a `subuid` and `subgid` configuration entry must exist for each user that wants to use it. New users created using `useradd` have these entries by default:
+2. Configure system:
 
    ```bash
-   # Add subuid and subgid ranges
-   sudo usermod --add-subuids 100000-165535 --add-subgids 100000-165535 $(whoami)
-   ```
-
-4. Configure system for privileged port access:
-
-   ```bash
-   # Allow binding to ports below 1024
-   echo 'net.ipv4.ip_unprivileged_port_start=0' | sudo tee -a /etc/sysctl.d/60-rootless.conf
-
-   # Apply without rebooting
-   sudo sysctl -p /etc/sysctl.d/60-rootless.conf
-   ```
-
-5. Allow [loopback connections](https://github.com/moby/moby/issues/47684#issuecomment-2166149845) (needed for working Xdebug):
-
-   ```bash
+   # Allow privileged port access if needed
+   if [ -f /proc/sys/net/ipv4/ip_unprivileged_port_start ]; then
+     if [ "1024" = "$(cat /proc/sys/net/ipv4/ip_unprivileged_port_start)" ]; then
+       echo 'net.ipv4.ip_unprivileged_port_start=0' | sudo tee -a /etc/sysctl.d/60-rootless.conf
+       sudo sysctl --system
+     fi
+   fi
+   # Allow loopback connections (needed for working Xdebug)
+   # See https://github.com/moby/moby/issues/47684#issuecomment-2166149845
    mkdir -p ~/.config/systemd/user/docker.service.d
    cat << 'EOF' > ~/.config/systemd/user/docker.service.d/override.conf
    [Service]
@@ -368,30 +275,26 @@ Docker Rootless on Linux offers rootless security with full Docker compatibility
    EOF
    ```
 
-6. Enable and start the Docker socket:
+3. Enable the Docker socket, and verify it's running:
 
    ```bash
    systemctl --user enable --now docker.socket
-   ```
 
-7. Verify the socket:
-
-   ```bash
+   # You should see `/run/user/1000/docker.sock` (the number may vary):
    ls $XDG_RUNTIME_DIR/docker.sock
    ```
 
-   You should see `/run/user/1000/docker.sock` (the number may vary).
-
-8. Configure Docker context (if needed):
+4. Configure Docker API to use Docker rootless:
 
    ```bash
    # View existing contexts
    docker context ls
 
-   # Create rootless context
-   docker context create rootless \
-       --description "Rootless runtime socket" \
-       --docker host="unix://$XDG_RUNTIME_DIR/docker.sock"
+   # Create rootless context if it doesn't exist
+   docker context inspect rootless >/dev/null 2>&1 || \
+       docker context create rootless \
+           --description "Rootless runtime socket" \
+           --docker host="unix://$XDG_RUNTIME_DIR/docker.sock"
 
    # Switch to the context
    docker context use rootless
@@ -400,7 +303,9 @@ Docker Rootless on Linux offers rootless security with full Docker compatibility
    docker ps
    ```
 
-9. Docker Rootless requires no-bind-mounts mode
+5. Proceed with [DDEV installation](https://docs.ddev.com/en/stable/users/install/ddev-installation/#ddev-installation-linux).
+
+6. Docker Rootless requires no-bind-mounts mode
 
    Docker Rootless has a limitation with bind mounts that affects DDEV. You must enable [`no-bind-mounts` mode](https://docs.ddev.com/en/stable/users/configuration/config/#no_bind_mounts):
 
@@ -441,6 +346,12 @@ For more information, see the [official Podman installation guide for macOS](htt
 
 ### Installing Docker CLI
 
+Podman provides a Docker-compatible API, which means you can use the Docker CLI as a frontend for Podman. This approach offers several benefits:
+
+- Use familiar `docker` commands while Podman handles the actual container operations
+- Switch between different container runtimes using Docker contexts
+- Maintain compatibility with scripts and tools that expect the `docker` command
+
 ```bash
 brew install docker
 ```
@@ -473,12 +384,6 @@ docker context use podman-rootless
 
 # Verify it works
 docker ps
-```
-
-Otherwise, set the `DOCKER_HOST` environment variable in your shell profile (`~/.zshrc` or `~/.bashrc`):
-
-```bash
-export DOCKER_HOST=unix://$(podman info --format '{{.Host.RemoteSocket.Path}}')
 ```
 
 Podman rootless is unable to bind to privileged ports (<1024) by default on macOS. To fix this, configure DDEV to use unprivileged ports:
@@ -519,7 +424,7 @@ rootless            Rootless runtime socket                   unix:///run/user/1
 Switch between them with:
 
 ```bash
-docker context use <context-name>
+docker context use "<context-name>"
 ```
 
 **Note**: Running both Docker and Podman in rootful mode at the same time may cause network conflicts. See [Podman and Docker network problem on Fedora 41](https://github.com/containers/podman/issues/24486).
@@ -546,17 +451,18 @@ DDEV automatically detects your active container runtime. To switch:
 
 ### Runtime Comparison
 
-| Feature                      | Standard Docker  | Docker Rootless                                    | Podman Rootful                   | Podman Rootless                          |
-| ---------------------------- | ---------------- | -------------------------------------------------- | -------------------------------- | ---------------------------------------- |
-| **Platform Support**         | All              | Linux, WSL2                                        | All                              | All                                      |
-| **Rootless Daemon**          | No               | Yes                                                | No                               | Yes                                      |
-| **Root Daemon**              | Yes              | No                                                 | Yes                              | No                                       |
-| **Bind Mounts**              | Native           | File ownership is wrong, requires `no-bind-mounts` | Native                           | Native (with `--userns=keep-id`)         |
-| **Performance**              | Excellent        | Moderate (because of `no-bind-mounts`)             | Moderate                         | Moderate                                 |
-| **Privileged Ports (<1024)** | Works by default | Requires `sysctl` config                           | Works by default                 | Requires `sysctl` config or may not work |
-| **Setup Complexity**         | Simple           | Moderate                                           | Moderate                         | Moderate                                 |
-| **Maturity**                 | Most mature      | Experimental                                       | Experimental                     | Experimental                             |
-| **Recommended For**          | Most users       | Docker users needing rootless                      | Organizations that forbid Docker | Organizations that forbid Docker         |
+| Feature                           | Standard Docker  | Docker Rootless                        | Podman Rootful                   | Podman Rootless                          |
+| --------------------------------- | ---------------- | -------------------------------------- | -------------------------------- | ---------------------------------------- |
+| **Platform Support**              | All              | Linux, WSL2                            | All                              | All                                      |
+| **Rootless Daemon**               | ❌               | ✅                                     | ❌                               | ✅                                       |
+| **Has automated testing in DDEV** | ✅               | ✅                                     | ❌                               | ✅                                       |
+| **Mutagen**                       | ✅               | ✅                                     | ✅                               | ✅                                       |
+| **Bind Mounts**                   | ✅               | ❌, requires `no-bind-mounts`          | ✅                               | ✅ (with `--userns=keep-id`)             |
+| **Performance**                   | Excellent        | Moderate (because of `no-bind-mounts`) | Slow compared to Docker          | Slow compared to Docker                  |
+| **Privileged Ports (<1024)**      | Works by default | Requires `sysctl` config               | Works by default                 | Requires `sysctl` config or may not work |
+| **Setup Complexity**              | Simple           | Moderate                               | Moderate                         | Moderate                                 |
+| **Maturity**                      | Most mature      | Experimental                           | Experimental                     | Experimental                             |
+| **Recommended For**               | Most users       | Docker users needing rootless          | Organizations that forbid Docker | Organizations that forbid Docker         |
 
 ### Recommendations
 
@@ -581,6 +487,19 @@ _This is the recommended option for the vast majority of users._
 
 - You need full Docker compatibility
 - You want rootless security without changing runtimes
+
+## The Journey to Podman Support
+
+Supporting Podman and Docker Rootless required major changes to DDEV's Docker integration:
+
+- **Switched to official Docker client library** ([#5787](https://github.com/ddev/ddev/pull/5787)): DDEV previously used an unofficial library to communicate with the Docker API. We migrated to Docker's official client library for better compatibility and long-term support.
+- **Replaced direct CLI calls with proper API usage** ([#7189](https://github.com/ddev/ddev/pull/7189)): DDEV used to call `docker context inspect` directly, which doesn't work with Podman. We switched to using the `docker/cli` library to handle context operations properly.
+- **Modernized SSH authentication** ([#7511](https://github.com/ddev/ddev/pull/7511)): The `ddev auth ssh` command used to call `docker run` directly. We rewrote it to use the Docker API, making it compatible with alternative runtimes.
+- **Optimized API call performance** ([#7587](https://github.com/ddev/ddev/pull/7587)): DDEV's Docker API logic was inefficient, making redundant calls without caching. We restructured the code to cache data and reduce unnecessary API requests.
+- **Removed legacy docker-compose features** ([#7642](https://github.com/ddev/ddev/pull/7642)): Podman refuses to work with deprecated `links` and `external_links` directives in `docker-compose` files. We removed these legacy features and modernized DDEV's compose file generation.
+- **Added Podman and Docker Rootless support** ([#7702](https://github.com/ddev/ddev/pull/7702)): DDEV now detects and supports Podman (rootful and rootless) and Docker Rootless. We added handling for Podman-specific limitations and enabled rootless environments to work without root privileges.
+
+These changes enabled Podman and Docker Rootless support. These features were developed together because Podman's primary use case is rootless operation. Once DDEV could handle rootless runtimes, supporting both became natural. They share the same security model and similar technical constraints.
 
 ## Supporting DDEV Development
 
