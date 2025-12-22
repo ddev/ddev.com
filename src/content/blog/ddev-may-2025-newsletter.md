@@ -21,7 +21,7 @@ This month: special-networking guides, add-on maintenance tips, community tool h
 ## What’s New
 
 - **Special Network Configurations**  
-  Handling packet-inspection VPNs (Zscaler, GlobalProtect) → [Read more↗](https://docs.ddev.com/en/latest/users/usage/networking/)
+  Handling packet-inspection VPNs (Zscaler, GlobalProtect) → [Read more↗](https://docs.ddev.com/en/stable/users/usage/networking/)
 - **Add-On Maintenance Guide** by @stasadev → [Read more↗](https://ddev.com/blog/ddev-add-on-maintenance-guide)
 - **AMD64 on Apple Silicon** → [Read more↗](https://ddev.com/blog/amd64-with-rosetta-on-macos/)
 

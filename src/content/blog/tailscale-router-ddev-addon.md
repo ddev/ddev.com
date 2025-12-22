@@ -155,8 +155,8 @@ Here are some additional resources that you might find helpful:
 - **[Tailscale Auth Keys](https://tailscale.com/kb/1085/auth-keys)**: Detailed information about creating and managing auth keys.
 - **[Tailscale Funnel](https://tailscale.com/kb/1223/funnel)**: Documentation on enabling public access to your Tailscale services.
 - **[Tailscale DNS](https://tailscale.com/kb/1054/dns)**: DNS in Tailscale
-- **[DDEV dotenv](https://docs.ddev.com/en/latest/users/usage/commands/#dotenv)**: Documentation on managing environment variables with DDEV.
-- **[DDEV Docs: Sharing](https://docs.ddev.com/en/latest/users/usage/sharing/)**: The official DDEV documentation on how to share your projects.
+- **[DDEV dotenv](https://docs.ddev.com/en/stable/users/usage/commands/#dotenv)**: Documentation on managing environment variables with DDEV.
+- **[DDEV Docs: Sharing](https://docs.ddev.com/en/stable/users/topics/sharing)**: The official DDEV documentation on how to share your projects.
 - **Medium: [My Journey with PHP Dev Environments](https://medium.com/@josephajithampi/my-journey-with-php-dev-environments-1da9f2806ee9)**: A blog post on setting up a PHP development environment.
 - **LinkedIn: [The Day My Development Environment Nearly Broke Me](https://www.linkedin.com/pulse/day-my-development-environment-nearly-broke-me-how-i-thampi-joseph-ildhc/)**: An article on the importance of a reliable development environment.
 
