@@ -17,7 +17,7 @@ categories:
 
 **DrupalCon Barcelona**: I got to see lots of friends old and new in Barcelona. Four training session BoFs, a full-day contribution mentoring session, and loads of fun. **[Read about it on ddev.com](https://ddev.com/blog/drupalcon-barcelona-2024).**
 
-**GitHub Codespaces is working well with DDEV**: We used to add a lot of caveats about Codespaces, but the problems were fixed with a new workaround shown in the [DDEV docs](https://docs.ddev.com/en/latest/users/install/ddev-installation/#ddev-installation-codespaces) say how to do it. Give it a try!
+**GitHub Codespaces is working well with DDEV**: We used to add a lot of caveats about Codespaces, but the problems were fixed with a new workaround shown in the [DDEV docs](https://docs.ddev.com/en/stable/users/install/ddev-installation/#ddev-installation-codespaces) say how to do it. Give it a try!
 
 **DDEV Notes from around the web:**
 
