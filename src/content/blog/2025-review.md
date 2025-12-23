@@ -43,7 +43,7 @@ categories:
 - **Docker rootless** functionality added for Linux environments
 - **Parallel Docker image pulls** for faster project starts
 - **Docker Compose profiles**: Start projects with specific profiles using `ddev start --profiles=list,of,profiles`
-- Base webserver image updated to **Debian 13 Trixie**
+- Base web server image updated to **Debian 13 Trixie**
 - Refactored Docker API code: no calls to `docker` binary (switched to `github.com/docker/cli`) and no fragile YAML map structures (switched to `github.com/compose-spec/compose-go/v2`)
 
 ### Developer Experience
@@ -110,7 +110,7 @@ categories:
 
 ## Challenges
 
-- **`bitnami/mysql` issue**: Using `bitnami/mysql` for 8.0 and 8.4 backfired with [Bitnami ceasing its traditional support of important docker images](https://github.com/ddev/ddev/issues/7470). This raises questions about dependency management when upstream projects change direction.
+- **`bitnami/mysql` issue**: Using `bitnami/mysql` for MySQL 8.0 and 8.4 backfired with [Bitnami ceasing its traditional support of important Docker images](https://github.com/ddev/ddev/issues/7470). This raises questions about dependency management when upstream projects change direction.
 - We continue to struggle with funding for DDEV and went backward this year instead of forward.
 - Market conditions are affecting agency and hosting company funding
 
