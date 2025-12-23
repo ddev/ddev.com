@@ -185,6 +185,8 @@ Run `ddev prettier` before committing your changes.
 
 ### Sponsor Management
 
+How to add a new featured sponsor: see [instructions](README_SPONSOR.md).
+
 The `src/featured-sponsors.json` file is used for manually curating prominent sponsors.
 
 While it’s a bit of a pain and [still relies on coercion](https://github.com/ddev/ddev.com/blob/main/src/components/FeaturedSponsors.astro#L4-L20) in some places, it lets us collect pristine, brand-friendly resources in one place and use them in different contexts.
@@ -194,30 +196,6 @@ It’s used to display sponsor details in a few places:
 1. The [homepage](https://ddev.com) “Featured Sponsors” list.
 2. The leading bubbles on the [Support DDEV page](https://ddev.com/support-ddev/)’s “Sponsor Development” grid.
 3. The [procedurally-generated](https://github.com/ddev/ddev.com/blob/main/src/pages/resources/featured-sponsors.svg.js) featured sponsors [light](https://ddev.com/resources/featured-sponsors.svg) and [dark](https://ddev.com/resources/featured-sponsors-darkmode.svg) SVG images used in the [main project readme](https://github.com/ddev/ddev#wonderful-sponsors).
-
-If you’re adding a new item to the array, choose whichever position it should appear in and use the following format:
-
-```json
-{
-  "name": "Upsun",
-  "type": "major",
-  "logo": "/logos/upsun.svg",
-  "darklogo": "/logos/upsun-darkmode.svg",
-  "squareLogo": "/logos/upsun-square.svg",
-  "url": "https://upsun.com",
-  "github": "upsun",
-},
-```
-
-> [!NOTE]
-> Prefer SVG variants over PNG. If an SVG isn't available, try converting the PNG to SVG using [online tools](https://convertio.co/png-svg/), and then manually adjust the SVG colors by editing the file directly (you can use a color picker to extract the colors from the original PNG).
-
-- **`name`** – the human-friendly organization name. (Be sure this is formatted exactly as it’s used on the website or GitHub profile!)
-- **`type`** – can be `"major"` or `"standard"` depending on contribution level. (Not currently used but can affect styling later.)
-- **`logo`** – absolute, webroot-relative path for a logo you’ve added to the `public/logos/` directory. Make sure this is a clean, optimized vector SVG file unless it’s a person’s headshot. (Again, follow the organization’s brand guide wherever possible!)
-- **`squareLogo`** – a square variant of the organization’s logo, to be used in places like the [Support DDEV](https://ddev.com/support-ddev/) layout. No need to add this if `logo` is already square.
-- **`url`** – organization’s website URL.
-- **`github`** – optional GitHub username when relevant, which can be used to make sure the sponsor doesn’t appear twice in a list—as seen in the [Sponsors.astro](https://github.com/ddev/ddev.com/blob/main/src/components/Sponsors.astro#L53) component.
 
 ## Redirects/Short Links/Shortcuts
 
