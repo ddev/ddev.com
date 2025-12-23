@@ -187,5 +187,14 @@
     "squareLogo": "/logos/amedick-sommer-square.svg",
     "url": "https://www.amedick-sommer.de/",
     "github": "AmedickSommer"
+  },
+  {
+    "name": "NPO Applications GmbH",
+    "type": "standard",
+    "logo": "/logos/npo-applications.png",
+    "darklogo": "/logos/npo-applications-dark.png",
+    "squareLogo": "/logos/npo-applications-square.png",
+    "url": "https://www.npo-applications.de/",
+    "github": "NPO-Applications-GmbH"
   }
 ]
