@@ -41,7 +41,7 @@
    - **`url`** – organization’s website URL.
    - **`github`** – optional GitHub username when relevant, which can be used to make sure the sponsor doesn’t appear twice in a list—as seen in the [Sponsors.astro](https://github.com/ddev/ddev.com/blob/main/src/components/Sponsors.astro#L53) component.
 
-4. Try it locally and check both light and dark mode:
+4. Try it locally and check both light and dark mode (there is no manual switch; change your OS or browser appearance settings):
    - `ddev launch :4321`
    - `ddev launch :4321/support-ddev/`
 
