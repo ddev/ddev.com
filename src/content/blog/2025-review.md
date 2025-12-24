@@ -39,17 +39,19 @@ categories:
 
 ### Container and Infrastructure
 
-- **Podman support in v1.25.0**: Podman rootless/rootful environments
-- **Docker rootless** functionality added for Linux environments
 - **Parallel Docker image pulls** for faster project starts
 - **Docker Compose profiles**: Start projects with specific profiles using `ddev start --profiles=list,of,profiles`
-- Base web server image updated to **Debian 13 Trixie**
 - Refactored Docker API code: no calls to `docker` binary (switched to `github.com/docker/cli`) and no fragile YAML map structures (switched to `github.com/compose-spec/compose-go/v2`)
+
+Upcoming v1.25.0:
+
+- **Podman support**: Podman rootless/rootful environments
+- **Docker rootless** functionality added for Linux environments
+- Base web server image updated to **Debian 13 Trixie**
 
 ### Developer Experience
 
 - **New handling of privilege elevation using the `ddev-hostname` binary**, improving security, [read more](ddev-hostname-security-improvements.md)
-- **Improved `ddev share` in v1.25.0**: More configurable, customizable, with `pre-share` hooks and DDEV_SHARE_URL environment variable
 - **`--user`/`-u` flag** for `ddev exec` and `ddev ssh`
 - **`ddev describe`** now works on stopped projects
 - **`ddev utility download-images --all`** forces pulling all images in use
@@ -57,14 +59,23 @@ categories:
 - **`ddev npx`** command support
 - Improved cleanup for `ddev delete` and `ddev delete images`
 
-### Language and Database Updates in v1.25.0
+Upcoming v1.25.0:
 
-- **PHP 8.4** as default for new projects
-- **PHP 8.5** support with all extensions
-- **Node.js 24** as default for new projects
-- **MariaDB 11.8** as default for new projects
+- **Improved `ddev share`**: More configurable, customizable, with `pre-share` hooks and `DDEV_SHARE_URL` environment variable
+
+### Language and Database Updates
+
+- **PHP 8.5** support added with a limited set of extensions
+- **MariaDB 11.8** support added
 - **PostgreSQL 18** support added
 - [Node.js as primary web server](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#using-nodejs-as-ddevs-primary-web-server) support
+
+Upcoming v1.25.0:
+
+- **PHP 8.4** as default for new projects (previously PHP 8.3)
+- **PHP 8.5** support with all extensions
+- **Node.js 24** as default for new projects (previously Node.js 22)
+- **MariaDB 11.8** as default for new projects (previously MariaDB 10.11)
 
 ### Platform Integration
 
