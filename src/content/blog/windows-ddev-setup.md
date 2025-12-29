@@ -1,7 +1,7 @@
 ---
 title: "Setting up a Windows Machine for DDEV Development"
 pubDate: 2024-11-04
-modifiedDate: 2025-07-11
+modifiedDate: 2025-12-30
 summary`: Setting up a new Windows machine for DDEV maintenance or development is pretty easy. Here are my opinionated steps.
 author: Randy Fay
 featureImage:
@@ -9,7 +9,7 @@ featureImage:
   alt: Windows, DDEV, Ubuntu logos demonstrating setting up a Windows machine for DDEV.
 categories:
   - DevOps
-modifiedComment: "Updated after another Windows experience in July 2025, and added some ARM64-specific notes."
+modifiedComment: "Ongoing updates, including claude code and better use of brew for some things now that arm64 is supported"
 ---
 
 I've recently set up a few Windows machines for DDEV maintenance and development, and wanted to share how I do it. It's surprisingly easy. My approach here is opinionated, but it works for me. You'll do things a little differently I'm sure.
@@ -32,7 +32,7 @@ Two recent Windows machines I set up were the new ARM64/Qualcomm/CoPilot variety
 6. In PowerShell, `wsl --install` and `wsl --update`
 7. Windows Terminal is a fantastic terminal and is installed by default these days. I always set it up early with "Default Terminal Application: Windows Terminal" and "Interaction->Automatically Copy Selection to Clipboard", and set Ubuntu as default, and have it auto-start on login.
 8. Once Ubuntu is installed:
-   - `sudo apt update && sudo apt install -y apt-transport-https autojump bats build-essential ca-certificates ccache clang curl dirmngr etckeeper expect git gnupg htop inetutils-telnet jq libcurl4-gnutls-dev libnss3-tools lsb-release mariadb-client nagios-plugins net-tools pipx postgresql-client unzip vim xdg-utils zip && sudo apt upgrade -y`
+   - `sudo apt update && sudo apt install -y apt-transport-https autojump bats build-essential ca-certificates ccache clang curl direnv dirmngr etckeeper expect git gnupg htop inetutils-telnet jq libcurl4-gnutls-dev libnss3-tools lsb-release mariadb-client nagios-plugins net-tools nsis pipx postgresql-client unzip vim xdg-utils zip && sudo apt upgrade -y`
    - `sudo snap install --classic go`
    - `sudo snap install --classic node`
    - `sudo snap install ngrok and ngrok config add-authtoken <token>`
@@ -50,7 +50,8 @@ Two recent Windows machines I set up were the new ARM64/Qualcomm/CoPilot variety
     - For ARM64 you have to do `go install github.com/go-delve/delve/cmd/dlv@latest` and put this in "Custom Properties" (under help) `dlv.path=//wsl.localhost/Ubuntu/home/rfay/go/bin/dlv`.
 18. DDEV repository setup
     - Run `.githooks/linkallchecks.sh`
-    - Install `golangci-lint` for `make staticrequired`: `sudo snap install --classic golangci-lint`
+    - Run `scripts/install-dev-tools.sh`
+    - Run `.ci-scripts/nsis_setup.sh /usr/share/nsis`
 19. SSH configuration on Windows side: If your SSH username is different from the username automatically configured on the Windows side (or just generally different from the default you want to use) then add something like this to `.ssh/config` on the Windows side (or at `/mnt/c/Users/<username>/.ssh/config`). This will make it so your connection username does not have to be explicitly specified when you use `ssh` or `git`:
     ```
     Host *
@@ -65,10 +66,9 @@ Two recent Windows machines I set up were the new ARM64/Qualcomm/CoPilot variety
 
 21. Install `git` for Windows (and `git-bash`)
 22. Use [sharpkeys](https://github.com/randyrants/sharpkeys) to disable the Caps Lock key.
-23. Install NSIS and dependencies. `sudo apt update && sudo apt install -y nsis` and `.ci-scripts/nsis_setup.sh /usr/share/nsis`
-24. Install Homebrew for just a few uses: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-25. Install BATS with `brew tap bats-core/bats-core` and `brew instalil bats bats-assert bats-support bats-file`
-26. Install [goreleaser pro](https://goreleaser.com/install/#apt-repository)
+23. Install Homebrew for just a few uses: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+24. Install a few things with `brew tap bats-core/bats-core` and `brew install bats-core bats-assert bats-support bats-file claude go golangci-lint`
+25. Install [goreleaser pro](https://goreleaser.com/install/#apt-repository)
 
 We'd love to hear your own hints and tips on how you set up a Windows machine (or any other computer!). You can contribute to this article with a [PR to the blog](https://github.com/ddev/ddev.com) or make your suggestions on [Discord](/s/discord). We welcome guest blogs too!
 
