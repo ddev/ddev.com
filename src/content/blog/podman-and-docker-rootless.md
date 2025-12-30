@@ -414,11 +414,11 @@ brew install docker
 
    This approach uses Docker contexts to switch between different container runtimes without modifying system sockets. This is more flexible if you want to use multiple Docker providers.
 
-   **Option 2: Use the default Docker socket** (simpler, requires sudo):
+   **Option 2: Use the default Docker socket** (simpler, but less flexible):
 
    ```bash
    # Install podman-mac-helper
-   # (path may vary based on your installation)
+   # Use the command from `podman machine start` output
    sudo /opt/homebrew/Cellar/podman/5.7.1/bin/podman-mac-helper install
    podman machine stop
    podman machine start
@@ -427,13 +427,13 @@ brew install docker
    docker ps
    ```
 
-   Proceed with [DDEV installation](https://docs.ddev.com/en/stable/users/install/ddev-installation/).
+3. Proceed with [DDEV installation](https://docs.ddev.com/en/stable/users/install/ddev-installation/).
 
-3. Handle privileged ports (<1024):
+4. Handle privileged ports (<1024):
 
    By default, Podman on macOS cannot bind to privileged ports. Choose one solution:
 
-   Configure DDEV to use unprivileged ports:
+   Configure DDEV to use unprivileged ports instead of 80/443:
 
    ```bash
    ddev config global --router-http-port=8080 \
