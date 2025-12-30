@@ -440,13 +440,7 @@ brew install docker
        --router-https-port=8443
    ```
 
-   Or switch to rootful mode:
-
-   ```bash
-   podman machine stop
-   podman machine set --rootful
-   podman machine start
-   ```
+   Note: switching to rootful mode with `podman machine set --rootful` doesn't help with privileged ports on macOS.
 
 ## Windows
 
