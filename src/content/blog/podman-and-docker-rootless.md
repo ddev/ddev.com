@@ -443,8 +443,8 @@ brew install docker
    Or switch to rootful mode:
 
    ```bash
-   podman machine set --rootful
    podman machine stop
+   podman machine set --rootful
    podman machine start
    ```
 
