@@ -208,6 +208,7 @@ sudo dnf install fuse-overlayfs
 **Configure storage**:
 
 ```bash
+mkdir -p ~/.config/containers
 cat << 'EOF' > ~/.config/containers/storage.conf
 [storage]
 driver = "overlay"
