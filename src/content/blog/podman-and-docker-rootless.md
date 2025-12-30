@@ -1,11 +1,11 @@
 ---
 title: "Podman and Docker Rootless in DDEV"
-pubDate: 2025-12-22
-#modifiedDate: 2025-12-22
+pubDate: 2026-01-08
+#modifiedDate: 2026-01-08
 summary: After years of development, DDEV now supports Podman and Docker Rootless for secure, rootless container development.
 author: Stas Zhuk
 featureImage:
-  src: /img/blog/2025/12/ddev-podman-docker-rootless.png
+  src: /img/blog/2026/01/ddev-podman-docker-rootless.png
   alt: DDEV logo with Podman and Docker logos
 categories:
   - Announcements
