@@ -362,7 +362,8 @@ brew install docker
 1. Initialize and start the Podman machine:
 
    ```bash
-   podman machine init
+   # check `podman machine init -h` for more options
+   podman machine init --memory 8192
    podman machine start
    ```
 
