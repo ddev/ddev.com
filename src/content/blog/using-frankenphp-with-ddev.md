@@ -24,7 +24,7 @@ This guide explains how FrankenPHP can be used with DDEV using [ddev/ddev-franke
 
 ### Generic web server
 
-This blog shows examples of the recently added [DDEV's generic web server](https://docs.ddev.com/en/stable/users/extend/customization-extendibility/#using-nodejs-as-ddevs-primary-web-server), which supports flexible configurations. It allows you to use any custom web server you want, including Node.js, Python, Ruby, etc.
+This blog shows an example of the recently added [DDEV's generic web server](https://docs.ddev.com/en/stable/users/extend/customization-extendibility/#using-nodejs-as-ddevs-primary-web-server), which supports flexible configurations. It allows you to use any custom web server you want, including Node.js, Python, Ruby, etc.
 
 ## DDEV FrankenPHP Add-on
 
