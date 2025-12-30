@@ -402,8 +402,8 @@ brew install docker
    ```bash
    # Create Podman context (path to socket may vary)
    # Use the socket path from `podman machine start` output
-   docker context create podman \
-       --description "Podman" \
+   docker context create podman-rootless \
+       --description "Podman (rootless)" \
        --docker host="unix:///var/folders/x3/r1wk89cd3_x0yb_21dgnj53m0000gn/T/podman/podman-machine-default-api.sock"
 
    # Switch to the new context
