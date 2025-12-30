@@ -431,16 +431,14 @@ brew install docker
 
 4. Handle privileged ports (<1024):
 
-   By default, Podman on macOS cannot bind to privileged ports. Choose one solution:
-
-   Configure DDEV to use unprivileged ports instead of 80/443:
+   Podman on macOS cannot bind to privileged ports (80/443). Configure DDEV to use unprivileged ports:
 
    ```bash
    ddev config global --router-http-port=8080 \
        --router-https-port=8443
    ```
 
-   Note: switching to rootful mode with `podman machine set --rootful` doesn't help with privileged ports on macOS.
+   Note: switching to rootful mode with `podman machine set --rootful --user-mode-networking=false` doesn't help with privileged ports because the `--user-mode-networking=false` flag is [not supported on macOS](https://github.com/containers/podman/issues/26780) (it's only available for WSL).
 
 ## Windows
 
