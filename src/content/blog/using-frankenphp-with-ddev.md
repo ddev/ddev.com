@@ -68,8 +68,8 @@ If you want to suggest some feature or found a bug, feel free to [open an issue]
 Using [ddev-frankenphp-benchmark](https://github.com/stasadev/ddev-frankenphp-benchmark), I compared three setups:
 
 - `nginx-fpm`: DDEV's `nginx-fpm` web server with `php-fpm`
-- `apache-fpm`: DDEV's `apache-fpm`  web server with `php-fpm`
-- `frankenphp-addon`: DDEV's `generic` web server with `frankenphp`
+- `frankenphp`: DDEV's `generic` web server with `frankenphp`
+- `apache-fpm`: DDEV's `apache-fpm` web server with `php-fpm`
 
 Summary:
 
