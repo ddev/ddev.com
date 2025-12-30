@@ -359,43 +359,98 @@ brew install docker
 
 ### Configuring Podman
 
-After installing Podman, initialize and start the Podman machine:
+1. Initialize and start the Podman machine:
 
-```bash
-podman machine init
-podman machine start
-```
+   ```bash
+   podman machine init
+   podman machine start
+   ```
 
-The Podman machine will automatically configure the socket. Verify it's running:
+   Example output from `podman machine start`:
 
-```bash
-podman info --format '{{.Host.RemoteSocket.Path}}'
-```
+   ```text
+   ~ % podman machine start
+   Starting machine "podman-machine-default"
 
-If you have Docker CLI installed, you can create a context for Podman:
+   This machine is currently configured in rootless mode. If your containers
+   require root permissions (e.g. ports < 1024), or if you run into compatibility
+   issues with non-podman clients, you can switch using the following command:
 
-```bash
-# Create Podman context
-docker context create podman-rootless \
-    --description "Podman (rootless)" \
-    --docker host="unix://$(podman info --format '{{.Host.RemoteSocket.Path}}')"
+   	podman machine set --rootful
 
-# Switch to the new context
-docker context use podman-rootless
+   API forwarding listening on: /var/folders/x3/r1wk89cd3_x0yb_21dgnj53m0000gn/T/podman/podman-machine-default-api.sock
 
-# Verify it works
-docker ps
-```
+   The system helper service is not installed; the default Docker API socket
+   address can't be used by podman. If you would like to install it, run the following commands:
 
-Podman rootless is unable to bind to privileged ports (<1024) by default on macOS. To fix this, configure DDEV to use unprivileged ports:
+           sudo /opt/homebrew/Cellar/podman/5.7.1/bin/podman-mac-helper install
+           podman machine stop; podman machine start
 
-```bash
-ddev config global --router-http-port=8080 --router-https-port=8443
-```
+   You can still connect Docker API clients by setting DOCKER_HOST using the
+   following command in your terminal session:
+
+           export DOCKER_HOST='unix:///var/folders/x3/r1wk89cd3_x0yb_21dgnj53m0000gn/T/podman/podman-machine-default-api.sock'
+
+   Machine "podman-machine-default" started successfully
+   ```
+
+2. Configure Docker CLI to use Podman. Choose one of two approaches:
+
+   **Option 1: Create a Docker context** (recommended, more flexible):
+
+   ```bash
+   # Create Podman context (path to socket may vary)
+   # Use the socket path from `podman machine start` output
+   docker context create podman \
+       --description "Podman" \
+       --docker host="unix:///var/folders/x3/r1wk89cd3_x0yb_21dgnj53m0000gn/T/podman/podman-machine-default-api.sock"
+
+   # Switch to the new context
+   docker context use podman
+
+   # Verify it works
+   docker ps
+   ```
+
+   This approach uses Docker contexts to switch between different container runtimes without modifying system sockets. This is more flexible if you want to use multiple Docker providers.
+
+   **Option 2: Use the default Docker socket** (simpler, requires sudo):
+
+   ```bash
+   # Install podman-mac-helper
+   # (path may vary based on your installation)
+   sudo /opt/homebrew/Cellar/podman/5.7.1/bin/podman-mac-helper install
+   podman machine stop
+   podman machine start
+
+   # Verify it works
+   docker ps
+   ```
+
+   Proceed with [DDEV installation](https://docs.ddev.com/en/stable/users/install/ddev-installation/).
+
+3. Handle privileged ports (<1024):
+
+   By default, Podman on macOS cannot bind to privileged ports. Choose one solution:
+
+   Configure DDEV to use unprivileged ports:
+
+   ```bash
+   ddev config global --router-http-port=8080 \
+       --router-https-port=8443
+   ```
+
+   Or switch to rootful mode:
+
+   ```bash
+   podman machine set --rootful
+   podman machine stop
+   podman machine start
+   ```
 
 ## Windows
 
-Windows users can use Podman Desktop, but setup has its own challenges. Docker Rootless is not available on traditional Windows (it works in WSL2, see the [Linux and WSL2](#linux-and-wsl2) section).
+Windows users can use Podman Desktop, but setup has its own challenges. Docker Rootless is not available on traditional Windows (it works in WSL2, see the [Linux and WSL2](#key-aim-linux-and-wsl2users) section).
 
 ### Installing Podman
 
@@ -405,7 +460,7 @@ Alternatively, install Podman directly following the [official Podman installati
 
 For more information, see the [Podman tutorials](https://github.com/containers/podman/tree/main/docs/tutorials#readme).
 
-The setup and configuration follow similar patterns to the Linux/WSL2 setup, but with Podman Desktop managing the VM for you. Follow the [Linux and WSL2](#linux-and-wsl2) instructions.
+The setup and configuration follow similar patterns to the Linux/WSL2 setup, but with Podman Desktop managing the VM for you. Follow the [Linux and WSL2](#key-aim-linux-and-wsl2users) instructions.
 
 ## Running Multiple Container Runtimes
 
