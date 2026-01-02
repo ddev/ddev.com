@@ -64,6 +64,15 @@
     "github": "centarro"
   },
   {
+    "name": "Fame Helsinki",
+    "type": "standard",
+    "logo": "/logos/fame-logo.svg",
+    "darklogo": "/logos/fame-darkmode.svg",
+    "squareLogo": "/logos/fame-square.svg",
+    "url": "https://fame.fi/",
+    "github": "FameHelsinki"
+  },
+  {
     "name": "Gizra",
     "type": "standard",
     "logo": "/logos/gizra.svg",
