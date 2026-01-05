@@ -205,5 +205,23 @@
     "squareLogo": "/logos/npo-applications-square.png",
     "url": "https://www.npo-applications.de/",
     "github": "NPO-Applications-GmbH"
+  },
+  {
+    "name": "Pottkinder GmbH",
+    "type": "standard",
+    "logo": "/logos/pottkinder.png",
+    "darklogo": "/logos/pottkinder-dark.png",
+    "squareLogo": "/logos/pottkinder-square.png",
+    "url": "https://pottkinder.de/",
+    "github": "AgenturPottkinder"
+  },
+  {
+    "name": "Let's Talk",
+    "type": "standard",
+    "logo": "/logos/lets-talk.svg",
+    "darklogo": "/logos/lets-talk-dark.svg",
+    "squareLogo": "/logos/lets-talk.svg",
+    "url": "https://letstalk.nl/",
+    "github": "Lets-Talk-NL"
   }
 ]
