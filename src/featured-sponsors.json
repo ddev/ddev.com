@@ -214,5 +214,13 @@
     "squareLogo": "/logos/pottkinder-square.png",
     "url": "https://pottkinder.de/",
     "github": "AgenturPottkinder"
+  },
+  {
+    "name": "Let's Talk",
+    "type": "standard",
+    "logo": "/logos/lets-talk.svg",
+    "darklogo": "/logos/lets-talk-dark.svg",
+    "squareLogo": "/logos/lets-talk.svg",
+    "url": "https://letstalk.nl/"
   }
 ]
