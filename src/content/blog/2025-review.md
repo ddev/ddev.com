@@ -224,19 +224,10 @@ I know this is "Too Much Information" but here is a simple and inadequate list o
 - test: symfony bats tests (#7102)
 - _(and 26 more)_
 
-**Andrew Berry** - [deviantintegral](https://github.com/deviantintegral) - [11 contributions](https://github.com/ddev/ddev/commits?author=deviantintegral&since=2025-01-01&until=2025-12-31)
+**Andrew Berry** - [deviantintegral](https://github.com/deviantintegral) - [2 contributions](https://github.com/ddev/ddev/commits?author=deviantintegral&since=2025-01-01&until=2025-12-31)
 
 - feat: support using zstd for snapshots, fix `postgres:9` snapshot, fixes #7844, fixes #3583 (#7845)
-- fix: old postgres restores
-- fix: check postgres image version for zstd compat
-- fix: opt out MySQL 5.6 images too
-- fix: support old zstd's without multithreading
-- fix: quoting
-- fix: missing quotes on 'zstd -T0'
-- Replace zstdmt with zstd -T0 for greater compatibility
-- Add zstd to all images
-- Support using zstd for snapshots
-- _(and 1 more)_
+- build: fix getopt detection on macOS (#7846)
 
 **Akiba** - [AkibaAT](https://github.com/AkibaAT) - [7 contributions](https://github.com/ddev/ddev/commits?author=AkibaAT&since=2025-01-01&until=2025-12-31)
 
@@ -516,38 +507,38 @@ I know this is "Too Much Information" but here is a simple and inadequate list o
 
 ### Summary by Count
 
-| Contributor                   | GitHub                                                | Count                                                                                               |
-| ----------------------------- | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| Ralf Koller                   | [rpkoller](https://github.com/rpkoller)               | [36](https://github.com/ddev/ddev/commits?author=rpkoller&since=2025-01-01&until=2025-12-31)        |
-| Andrew Berry                  | [deviantintegral](https://github.com/deviantintegral) | [11](https://github.com/ddev/ddev/commits?author=deviantintegral&since=2025-01-01&until=2025-12-31) |
-| Akiba                         | [AkibaAT](https://github.com/AkibaAT)                 | [7](https://github.com/ddev/ddev/commits?author=AkibaAT&since=2025-01-01&until=2025-12-31)          |
-| Ariel Barreiro                | [hanoii](https://github.com/hanoii)                   | [6](https://github.com/ddev/ddev/commits?author=hanoii&since=2025-01-01&until=2025-12-31)           |
-| tyler36                       | [tyler36](https://github.com/tyler36)                 | [4](https://github.com/ddev/ddev/commits?author=tyler36&since=2025-01-01&until=2025-12-31)          |
-| Travis Carden                 | [TravisCarden](https://github.com/TravisCarden)       | [3](https://github.com/ddev/ddev/commits?author=TravisCarden&since=2025-01-01&until=2025-12-31)     |
-| Laryn                         | [laryn](https://github.com/laryn)                     | [3](https://github.com/ddev/ddev/commits?author=laryn&since=2025-01-01&until=2025-12-31)            |
-| Raphael Portmann              | [raphaelportmann](https://github.com/raphaelportmann) | [2](https://github.com/ddev/ddev/commits?author=raphaelportmann&since=2025-01-01&until=2025-12-31)  |
-| cyppe                         | [cyppe](https://github.com/cyppe)                     | [2](https://github.com/ddev/ddev/commits?author=cyppe&since=2025-01-01&until=2025-12-31)            |
-| Peter Bowyer                  | [pbowyer](https://github.com/pbowyer)                 | [2](https://github.com/ddev/ddev/commits?author=pbowyer&since=2025-01-01&until=2025-12-31)          |
-| Shelane French                | [shelane](https://github.com/shelane)                 | [2](https://github.com/ddev/ddev/commits?author=shelane&since=2025-01-01&until=2025-12-31)          |
-| Pierre Paul Lefebvre          | [PierrePaul](https://github.com/PierrePaul)           | [2](https://github.com/ddev/ddev/commits?author=PierrePaul&since=2025-01-01&until=2025-12-31)       |
-| Sven Reichel                  | [sreichel](https://github.com/sreichel)               | [2](https://github.com/ddev/ddev/commits?author=sreichel&since=2025-01-01&until=2025-12-31)         |
-| lguigo22                      | [lguigo22](https://github.com/lguigo22)               | [1](https://github.com/ddev/ddev/commits?author=lguigo22&since=2025-01-01&until=2025-12-31)         |
-| Justin Vogt                   | [JUVOJustin](https://github.com/JUVOJustin)           | [1](https://github.com/ddev/ddev/commits?author=JUVOJustin&since=2025-01-01&until=2025-12-31)       |
-| grummbeer                     | [grummbeer](https://github.com/grummbeer)             | [1](https://github.com/ddev/ddev/commits?author=grummbeer&since=2025-01-01&until=2025-12-31)        |
-| crowjake                      | [crowjake](https://github.com/crowjake)               | [1](https://github.com/ddev/ddev/commits?author=crowjake&since=2025-01-01&until=2025-12-31)         |
-| Markus Sommer                 | [BreathCodeFlow](https://github.com/BreathCodeFlow)   | [1](https://github.com/ddev/ddev/commits?author=BreathCodeFlow&since=2025-01-01&until=2025-12-31)   |
-| James Sansbury                | [q0rban](https://github.com/q0rban)                   | [1](https://github.com/ddev/ddev/commits?author=q0rban&since=2025-01-01&until=2025-12-31)           |
-| Moshe Weitzman                | [weitzman](https://github.com/weitzman)               | [1](https://github.com/ddev/ddev/commits?author=weitzman&since=2025-01-01&until=2025-12-31)         |
-| Yan Loetzer                   | [yanniboi](https://github.com/yanniboi)               | [1](https://github.com/ddev/ddev/commits?author=yanniboi&since=2025-01-01&until=2025-12-31)         |
-| Garvin Hicking                | [garvinhicking](https://github.com/garvinhicking)     | [1](https://github.com/ddev/ddev/commits?author=garvinhicking&since=2025-01-01&until=2025-12-31)    |
-| Benny Poensgen                | [vanWittlaer](https://github.com/vanWittlaer)         | [1](https://github.com/ddev/ddev/commits?author=vanWittlaer&since=2025-01-01&until=2025-12-31)      |
-| Rob Loach                     | [RobLoach](https://github.com/RobLoach)               | [1](https://github.com/ddev/ddev/commits?author=RobLoach&since=2025-01-01&until=2025-12-31)         |
-| JshGrn                        | [JshGrn](https://github.com/JshGrn)                   | [1](https://github.com/ddev/ddev/commits?author=JshGrn&since=2025-01-01&until=2025-12-31)           |
-| E                             | [ara303](https://github.com/ara303)                   | [1](https://github.com/ddev/ddev/commits?author=ara303&since=2025-01-01&until=2025-12-31)           |
-| Alan Doucette                 | [dragonwize](https://github.com/dragonwize)           | [1](https://github.com/ddev/ddev/commits?author=dragonwize&since=2025-01-01&until=2025-12-31)       |
-| Brooke Mahoney                | [brookemahoney](https://github.com/brookemahoney)     | [1](https://github.com/ddev/ddev/commits?author=brookemahoney&since=2025-01-01&until=2025-12-31)    |
-| gitressa                      | [gitressa](https://github.com/gitressa)               | [1](https://github.com/ddev/ddev/commits?author=gitressa&since=2025-01-01&until=2025-12-31)         |
-| _...and 36 more contributors_ |                                                       |                                                                                                     |
+| Contributor                   | GitHub                                                | Count                                                                                              |
+| ----------------------------- | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Ralf Koller                   | [rpkoller](https://github.com/rpkoller)               | [36](https://github.com/ddev/ddev/commits?author=rpkoller&since=2025-01-01&until=2025-12-31)       |
+| Akiba                         | [AkibaAT](https://github.com/AkibaAT)                 | [7](https://github.com/ddev/ddev/commits?author=AkibaAT&since=2025-01-01&until=2025-12-31)         |
+| Ariel Barreiro                | [hanoii](https://github.com/hanoii)                   | [6](https://github.com/ddev/ddev/commits?author=hanoii&since=2025-01-01&until=2025-12-31)          |
+| tyler36                       | [tyler36](https://github.com/tyler36)                 | [4](https://github.com/ddev/ddev/commits?author=tyler36&since=2025-01-01&until=2025-12-31)         |
+| Travis Carden                 | [TravisCarden](https://github.com/TravisCarden)       | [3](https://github.com/ddev/ddev/commits?author=TravisCarden&since=2025-01-01&until=2025-12-31)    |
+| Laryn                         | [laryn](https://github.com/laryn)                     | [3](https://github.com/ddev/ddev/commits?author=laryn&since=2025-01-01&until=2025-12-31)           |
+| Andrew Berry                  | [deviantintegral](https://github.com/deviantintegral) | [2](https://github.com/ddev/ddev/commits?author=deviantintegral&since=2025-01-01&until=2025-12-31) |
+| Raphael Portmann              | [raphaelportmann](https://github.com/raphaelportmann) | [2](https://github.com/ddev/ddev/commits?author=raphaelportmann&since=2025-01-01&until=2025-12-31) |
+| cyppe                         | [cyppe](https://github.com/cyppe)                     | [2](https://github.com/ddev/ddev/commits?author=cyppe&since=2025-01-01&until=2025-12-31)           |
+| Peter Bowyer                  | [pbowyer](https://github.com/pbowyer)                 | [2](https://github.com/ddev/ddev/commits?author=pbowyer&since=2025-01-01&until=2025-12-31)         |
+| Shelane French                | [shelane](https://github.com/shelane)                 | [2](https://github.com/ddev/ddev/commits?author=shelane&since=2025-01-01&until=2025-12-31)         |
+| Pierre Paul Lefebvre          | [PierrePaul](https://github.com/PierrePaul)           | [2](https://github.com/ddev/ddev/commits?author=PierrePaul&since=2025-01-01&until=2025-12-31)      |
+| Sven Reichel                  | [sreichel](https://github.com/sreichel)               | [2](https://github.com/ddev/ddev/commits?author=sreichel&since=2025-01-01&until=2025-12-31)        |
+| lguigo22                      | [lguigo22](https://github.com/lguigo22)               | [1](https://github.com/ddev/ddev/commits?author=lguigo22&since=2025-01-01&until=2025-12-31)        |
+| Justin Vogt                   | [JUVOJustin](https://github.com/JUVOJustin)           | [1](https://github.com/ddev/ddev/commits?author=JUVOJustin&since=2025-01-01&until=2025-12-31)      |
+| grummbeer                     | [grummbeer](https://github.com/grummbeer)             | [1](https://github.com/ddev/ddev/commits?author=grummbeer&since=2025-01-01&until=2025-12-31)       |
+| crowjake                      | [crowjake](https://github.com/crowjake)               | [1](https://github.com/ddev/ddev/commits?author=crowjake&since=2025-01-01&until=2025-12-31)        |
+| Markus Sommer                 | [BreathCodeFlow](https://github.com/BreathCodeFlow)   | [1](https://github.com/ddev/ddev/commits?author=BreathCodeFlow&since=2025-01-01&until=2025-12-31)  |
+| James Sansbury                | [q0rban](https://github.com/q0rban)                   | [1](https://github.com/ddev/ddev/commits?author=q0rban&since=2025-01-01&until=2025-12-31)          |
+| Moshe Weitzman                | [weitzman](https://github.com/weitzman)               | [1](https://github.com/ddev/ddev/commits?author=weitzman&since=2025-01-01&until=2025-12-31)        |
+| Yan Loetzer                   | [yanniboi](https://github.com/yanniboi)               | [1](https://github.com/ddev/ddev/commits?author=yanniboi&since=2025-01-01&until=2025-12-31)        |
+| Garvin Hicking                | [garvinhicking](https://github.com/garvinhicking)     | [1](https://github.com/ddev/ddev/commits?author=garvinhicking&since=2025-01-01&until=2025-12-31)   |
+| Benny Poensgen                | [vanWittlaer](https://github.com/vanWittlaer)         | [1](https://github.com/ddev/ddev/commits?author=vanWittlaer&since=2025-01-01&until=2025-12-31)     |
+| Rob Loach                     | [RobLoach](https://github.com/RobLoach)               | [1](https://github.com/ddev/ddev/commits?author=RobLoach&since=2025-01-01&until=2025-12-31)        |
+| JshGrn                        | [JshGrn](https://github.com/JshGrn)                   | [1](https://github.com/ddev/ddev/commits?author=JshGrn&since=2025-01-01&until=2025-12-31)          |
+| E                             | [ara303](https://github.com/ara303)                   | [1](https://github.com/ddev/ddev/commits?author=ara303&since=2025-01-01&until=2025-12-31)          |
+| Alan Doucette                 | [dragonwize](https://github.com/dragonwize)           | [1](https://github.com/ddev/ddev/commits?author=dragonwize&since=2025-01-01&until=2025-12-31)      |
+| Brooke Mahoney                | [brookemahoney](https://github.com/brookemahoney)     | [1](https://github.com/ddev/ddev/commits?author=brookemahoney&since=2025-01-01&until=2025-12-31)   |
+| gitressa                      | [gitressa](https://github.com/gitressa)               | [1](https://github.com/ddev/ddev/commits?author=gitressa&since=2025-01-01&until=2025-12-31)        |
+| _...and 36 more contributors_ |                                                       |                                                                                                    |
 
 ### Blog Guest Contributors
 
@@ -555,23 +546,23 @@ Guest contributions to the blog are [always welcome](https://github.com/ddev/dde
 
 **Ajith Thampi Joseph** - [atj4me](https://github.com/atj4me)
 
-- [Tailscale for DDEV: Simple and Secure Project Sharing](tailscale-router-ddev-addon)
+- [Tailscale for DDEV: Simple and Secure Project Sharing](./tailscale-router-ddev-addon.md)
 
 **Bill Seremetis** - [bserem](https://github.com/bserem)
 
-- [How to Downgrade Terminus in DDEV's Web Container and Customize Other Bundled Tools](ddev-bundled-tools-using-custom-versions)
+- [How to Downgrade Terminus in DDEV's Web Container and Customize Other Bundled Tools](./ddev-bundled-tools-using-custom-versions.md)
 
 **Garvin Hicking** - [garvinhicking](https://github.com/garvinhicking)
 
-- [Using DDEV to spin up a legacy PHP application](legacy-projects-with-unsupported-php-and-mysql-using-ddev)
+- [Using DDEV to spin up a legacy PHP application](./legacy-projects-with-unsupported-php-and-mysql-using-ddev.md)
 
 **Jeremy Gonyea** - [jgonyea](https://github.com/jgonyea)
 
-- [Building an Off-Ramp from WordPress with DDEV](building-offramp-from-wordpress-with-ddev)
+- [Building an Off-Ramp from WordPress with DDEV](./building-offramp-from-wordpress-with-ddev.md)
 
 **ayalon** - [ayalon](https://github.com/ayalon)
 
-- [Exposing a Node.js App Over HTTP / HTTPS on a Subdomain in DDEV](ddev-expose-node-app-on-subdomain) (blog author: J. Minder)
+- [Exposing a Node.js App Over HTTP / HTTPS on a Subdomain in DDEV](./ddev-expose-node-app-on-subdomain.md) (blog author: J. Minder)
 
 And thanks to all of you who use DDEV, report issues, answer questions in [Discord](https://ddev.com/s/discord) and other venues, and spread the word. Your support makes this project possible.
 
@@ -588,7 +579,7 @@ There are so many unofficial add-ons being maintained by so many people, but her
 7. **[@b13](https://github.com/b13)** (TYPO3 agency) - ddev-typo3-solr, ddev-rabbitmq
 8. **[@jedubois](https://github.com/jedubois)** - ddev-varnish
 9. **[@hussainweb](https://github.com/hussainweb)** - ddev-redis
-10. **[@seebeen](https://github.com/seebeen)** - ddev-ioncube,ddev-minio
+10. **[@seebeen](https://github.com/seebeen)** - ddev-ioncube, ddev-minio
 11. **[@bserem](https://github.com/bserem)** (Bill Seremetis) - ddev-adminer
 12. **[@AkibaAT](https://github.com/AkibaAT)** - ddev-intellij-plugin
 13. **[@biati-digital](https://github.com/biati-digital)** - vscode-ddev-manager
