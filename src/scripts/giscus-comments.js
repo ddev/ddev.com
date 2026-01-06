@@ -10,11 +10,14 @@ class GiscusComments extends HTMLElement {
 
     // Helper function to get the theme based on dark class or system preference
     const getTheme = () => {
-      const savedTheme = typeof localStorage !== 'undefined' ? localStorage.getItem('theme') : null
+      const savedTheme =
+        typeof localStorage !== "undefined"
+          ? localStorage.getItem("theme")
+          : null
 
-      if (savedTheme === 'dark') {
+      if (savedTheme === "dark") {
         return "dark_dimmed"
-      } else if (savedTheme === 'light') {
+      } else if (savedTheme === "light") {
         return "light"
       } else {
         // Auto mode: check system preference
@@ -65,14 +68,14 @@ class GiscusComments extends HTMLElement {
 
     observer.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ['class']
+      attributeFilter: ["class"],
     })
 
     // Also listen for system theme changes when in auto mode
     window
       .matchMedia("(prefers-color-scheme: dark)")
       .addEventListener("change", () => {
-        const savedTheme = localStorage.getItem('theme')
+        const savedTheme = localStorage.getItem("theme")
         // Only update if in auto mode
         if (!savedTheme) {
           const newTheme = getTheme()
