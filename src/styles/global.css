@@ -249,3 +249,23 @@ button.copy.copied::after {
 .terminal-code-container pre.astro-code code .line:empty::before {
   content: "";
 }
+
+/* Remove underline from heading anchor links (but not other links in headings) */
+.prose h1 > a[href^="#"],
+.prose h2 > a[href^="#"],
+.prose h3 > a[href^="#"],
+.prose h4 > a[href^="#"],
+.prose h5 > a[href^="#"],
+.prose h6 > a[href^="#"] {
+  @apply no-underline;
+  color: inherit;
+}
+
+.prose h1 > a[href^="#"]:hover,
+.prose h2 > a[href^="#"]:hover,
+.prose h3 > a[href^="#"]:hover,
+.prose h4 > a[href^="#"]:hover,
+.prose h5 > a[href^="#"]:hover,
+.prose h6 > a[href^="#"]:hover {
+  @apply no-underline;
+}
