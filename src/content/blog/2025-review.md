@@ -24,6 +24,8 @@ The DDEV open-source community continues excellent engagement on several fronts.
 
 - [addons.ddev.com](https://addons.ddev.com) now shows 149 community-contributed add-ons.
 - Several key features were suggested, initiated, and developed by community members. SO MANY of these are listed below.
+- Online Training: We restarted online [contributor and user training](/blog/category/training/)
+- Offline Training: Randy conducted many Birds-of-a-Feature sessions at DrupalCons, spoke at Florida Drupalcamp, attended, spoke, and trained at TYPO3Camp RheinRuhr, etc.
 
 ## Major Features and Improvements
 
@@ -112,8 +114,9 @@ Upcoming v1.25.0:
 
 ## DDEV Developer Improvements
 
-- The new Quickstart tests have proved to be extremely valuable, providing early warning when upstream projects change. They also are a completely new perspective into problems with DDEV.
+- The new Quickstart tests have proved to be extremely valuable, providing early warning when upstream projects change. They also are a completely new perspective into problems with DDEV. Kudos to [@rpkoller](https://github.com/rpkoller) for taking those on and maintaining them!
 - [AkibaAT](https://github.com/AkibaAT) reorganized our Docker image builds so that multi-architecture builds that used to take an hour now take 10 minutes or less.
+- Continuous improvements to AGENTS.md and CLAUDE.md to improve our efficiency in using AI.
 
 ## AI in DDEV Development
 
@@ -131,12 +134,16 @@ Upcoming v1.25.0:
 - `ddev nvm` functionality removed
 - Legacy configuration syntax cleanup
 
-## Challenges
+## Challenges and things that could have gone better
 
+- Market conditions are affecting agency and hosting company funding, and we go into 2026 with limited funding
+- We applied to participate in the [Google Summer of Code](https://summerofcode.withgoogle.com/) and the [GitHub Secure Open Source Fund](https://github.com/open-source/github-secure-open-source-fund) but were not accepted in either.
+- Although the TYPO3 Association funded one feature submission (XHGui) later submissions were not accepted, and the nature of their program now seems to exclude DDEV features.
+- Key upstream groups like the TYPO3 Association and Drupal Association still are not figuring out how to fund DDEV.
 - **`bitnami/mysql` issue**: Using `bitnami/mysql` for MySQL 8.0 and 8.4 backfired with [Bitnami ceasing its traditional support of important Docker images](https://github.com/ddev/ddev/issues/7470). This raises questions about dependency management when upstream projects change direction.
 - We continue to struggle with funding for DDEV and went backward this year instead of forward.
-- Market conditions are affecting agency and hosting company funding
 - GitHub killed off the best strategy we had for keeping add-on tests running, which means that nightly tests must be manually enabled by their maintainers when they are discontinued automatically.
+- We're so interested in solving user problems that it's possible we're too aggressive in Discord and maybe the issue queue in pursuing them. I'm thinking about whether this is an issue with users and will appreciate comment.
 
 ## By the Numbers
 
