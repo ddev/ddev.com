@@ -224,11 +224,6 @@ I know this is "Too Much Information" but here is a simple and inadequate list o
 - test: symfony bats tests (#7102)
 - _(and 26 more)_
 
-**Andrew Berry** - [deviantintegral](https://github.com/deviantintegral) - [2 contributions](https://github.com/ddev/ddev/commits?author=deviantintegral&since=2025-01-01&until=2025-12-31)
-
-- feat: support using zstd for snapshots, fix `postgres:9` snapshot, fixes #7844, fixes #3583 (#7845)
-- build: fix getopt detection on macOS (#7846)
-
 **Akiba** - [AkibaAT](https://github.com/AkibaAT) - [7 contributions](https://github.com/ddev/ddev/commits?author=AkibaAT&since=2025-01-01&until=2025-12-31)
 
 - build(image): use native arm builder for building Docker images, fixes #7539 (#7553)
@@ -266,6 +261,11 @@ I know this is "Too Much Information" but here is a simple and inadequate list o
 - feat: backdrop add bee to quickstart (#7053)
 - docs: add Backdrop-specific config considerations. (#7037)
 - docs: change code refs to include info about Backdrop config storage options, fixes #7013 (#7014)
+
+**Andrew Berry** - [deviantintegral](https://github.com/deviantintegral) - [2 contributions](https://github.com/ddev/ddev/commits?author=deviantintegral&since=2025-01-01&until=2025-12-31)
+
+- feat: support using zstd for snapshots, fix `postgres:9` snapshot, fixes #7844, fixes #3583 (#7845)
+- build: fix getopt detection on macOS (#7846)
 
 **Raphael Portmann** - [raphaelportmann](https://github.com/raphaelportmann) - [2 contributions](https://github.com/ddev/ddev/commits?author=raphaelportmann&since=2025-01-01&until=2025-12-31)
 
