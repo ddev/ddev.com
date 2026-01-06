@@ -170,6 +170,27 @@ Upcoming v1.25.0:
 - GitHub killed off the best strategy we had for keeping add-on tests running, which means that nightly tests must be manually enabled by their maintainers when they are discontinued automatically.
 - We're so interested in solving user problems that it's possible we're too aggressive in Discord and maybe the issue queue in pursuing them. I'm thinking about whether this is an issue with users and will appreciate comment.
 
+## Comparing Outcomes to 2025 Goals
+
+In [2025 Plans](2025-plans.md) we laid out ambitions plans for 2025. Here are the outcomes:
+
+- **Continue outstanding user support** Done.
+- **Begin formal governance for the DDEV Foundation**. Done.
+- **Improve our Marketing CTA and information**: Significant progress, with much better communication.
+- **Continue to develop contributors and maintainers**: Great year, as shown below.
+- **XHGui support**: Done
+- **`addons.ddev.com`**: Done
+- Feature: Implement mDNS as an alternate name resolution technique. Not funded, not implemented, de-prioritized.
+- Allow Add-ons to include other add-ons: Done 
+- Go-based Upsun Add-on like ddev-platformsh: Done, but with PHP instead of Go. 
+- Rewrite ddev-platformsh Add-on in Go: Done, but in PHP. `ddev-upsun` now supports the older Platform.sh "fixed" projects.
+- Develop a replacement for "Gitpod Classic": Gitpod was removed from codebase, and GitHub Codespaces support was improved, but a full replacement remains a goal for 2026.
+- Improve self-diagnose capability: Done. Massive improvement with `ddev utility diagnose`, `ddev utility mutagen-diagnose`, `ddev utility xdebug-diagnose`.
+- DDEV's Message-of-the-day and ddev.com should show current funding status and need: Done
+- DDEV Windows/WSL2 packaging and installation: Done
+- Change `ddev share` to a more configurable custom-command-based option: Done (in v1.25.0)
+- Rework configuration system using Viper. Not done and de-prioritized.
+
 ## By the Numbers
 
 - **579 commits** to the main repository
