@@ -18,6 +18,13 @@ categories:
 - **Advisory Group Continues**: Our Advisory Group meetings continued throughout the year, providing valuable input and community input and oversight. It will continue just about the same even though we now have a formal Board.
 - **"Almost Everybody Loves DDEV"**: The [Ironstar Developer Survey 2025](https://www.ironstar.io/devsurvey25/#almost-everybody-loves-ddev) confirmed what we suspected - DDEV has strong community support and satisfaction.
 
+## Community Engagement
+
+The DDEV open-source community continues excellent engagement on several fronts.
+
+- [addons.ddev.com](https://addons.ddev.com) now shows 149 community-contributed add-ons.
+- Several key features were suggested, initiated, and developed by community members.
+
 ## Major Features and Improvements
 
 ### Sponsorship Communication
