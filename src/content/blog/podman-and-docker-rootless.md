@@ -12,36 +12,36 @@ categories:
   - Guides
 ---
 
-**TL;DR**: DDEV now supports Podman and Docker Rootless in [DDEV HEAD](https://docs.ddev.com/en/stable/developers/building-contributing/#testing-latest-commits-on-head) (coming in v1.25.0). Jump to setup instructions: [Linux/WSL2](#key-aim-linux-and-wsl2users) · [macOS](#macos) · [Windows](#windows)
+**TL;DR**: DDEV now supports Podman and Docker Rootless in [DDEV HEAD](https://docs.ddev.com/en/stable/developers/building-contributing/#testing-latest-commits-on-head) (coming in v1.25.0). Jump to setup instructions: [Linux/WSL2](#key-aim-linux-and-wsl2-users) · [macOS](#macos) · [Windows](#windows)
 
 **Note**: This support is experimental. Report issues on the [DDEV issue tracker](https://github.com/ddev/ddev/issues).
 
 ## Table of Contents
 
-- [Understanding Docker and Podman](#understanding-docker-andpodman)
-  - [Open Source Alternatives to Docker Desktop](#open-source-alternatives-to-dockerdesktop)
-  - [Why Choose Podman?](#why-choosepodman)
-  - [Why Choose Docker Rootless?](#why-choose-dockerrootless)
-- [Key aim: Linux and WSL2 users](#key-aim-linux-and-wsl2users)
-  - [Installing Podman](#installingpodman)
-  - [Installing Docker CLI](#installing-dockercli)
-  - [Configuring Podman Rootless](#configuring-podmanrootless)
-  - [Podman Rootless Performance Optimization](#podman-rootless-performanceoptimization)
-  - [Configuring Podman Rootful](#configuring-podmanrootful)
-  - [Setting Up Docker Rootless](#setting-up-dockerrootless)
+- [Understanding Docker and Podman](#understanding-docker-and-podman)
+  - [Open Source Alternatives to Docker Desktop](#open-source-alternatives-to-docker-desktop)
+  - [Why Choose Podman?](#why-choose-podman)
+  - [Why Choose Docker Rootless?](#why-choose-docker-rootless)
+- [Key aim: Linux and WSL2 users](#key-aim-linux-and-wsl2-users)
+  - [Installing Podman](#installing-podman)
+  - [Installing Docker CLI](#installing-docker-cli)
+  - [Configuring Podman Rootless](#configuring-podman-rootless)
+  - [Podman Rootless Performance Optimization](#podman-rootless-performance-optimization)
+  - [Configuring Podman Rootful](#configuring-podman-rootful)
+  - [Setting Up Docker Rootless](#setting-up-docker-rootless)
 - [macOS](#macos)
-  - [Installing Podman](#installingpodman-1)
-  - [Installing Docker CLI](#installing-dockercli-1)
-  - [Configuring Podman](#configuringpodman)
+  - [Installing Podman](#installing-podman-1)
+  - [Installing Docker CLI](#installing-docker-cli-1)
+  - [Configuring Podman](#configuring-podman)
 - [Windows](#windows)
-  - [Installing Podman](#installingpodman-2)
-- [Running Multiple Container Runtimes](#running-multiple-containerruntimes)
-- [Switching Runtimes with DDEV](#switching-runtimes-withddev)
-- [Which Runtime Should You Choose?](#which-runtime-should-youchoose)
-  - [Runtime Comparison](#runtimecomparison)
+  - [Installing Podman](#installing-podman-2)
+- [Running Multiple Container Runtimes](#running-multiple-container-runtimes)
+- [Switching Runtimes with DDEV](#switching-runtimes-with-ddev)
+- [Which Runtime Should You Choose?](#which-runtime-should-you-choose)
+  - [Runtime Comparison](#runtime-comparison)
   - [Recommendations](#recommendations)
-- [The Journey to Podman Support](#the-journey-to-podmansupport)
-- [Supporting DDEV Development](#supporting-ddevdevelopment)
+- [The Journey to Podman Support](#the-journey-to-podman-support)
+- [Supporting DDEV Development](#supporting-ddev-development)
 - [Conclusion](#conclusion)
 
 ## Understanding Docker and Podman
@@ -443,7 +443,7 @@ brew install docker
 
 ## Windows
 
-Windows users can use Podman Desktop, but setup has its own challenges. Docker Rootless is not available on traditional Windows (it works in WSL2, see the [Linux and WSL2](#key-aim-linux-and-wsl2users) section).
+Windows users can use Podman Desktop, but setup has its own challenges. Docker Rootless is not available on traditional Windows (it works in WSL2, see the [Linux and WSL2](#key-aim-linux-and-wsl2-users) section).
 
 ### Installing Podman
 
@@ -453,7 +453,7 @@ Alternatively, install Podman directly following the [official Podman installati
 
 For more information, see the [Podman tutorials](https://github.com/containers/podman/tree/main/docs/tutorials#readme).
 
-The setup and configuration follow similar patterns to the Linux/WSL2 setup, but with Podman Desktop managing the VM for you. Follow the [Linux and WSL2](#key-aim-linux-and-wsl2users) instructions.
+The setup and configuration follow similar patterns to the Linux/WSL2 setup, but with Podman Desktop managing the VM for you. Follow the [Linux and WSL2](#key-aim-linux-and-wsl2-users) instructions.
 
 ## Running Multiple Container Runtimes
 
