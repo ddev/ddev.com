@@ -35,7 +35,7 @@ Let’s go through the way integration is built.
 
 To download the app we use `install.yaml` post_install_actions:
 
-```
+```yaml
 - rm -rf diffy-worker && mkdir diffy-worker
 - docker run -it --rm -v ./diffy-worker:/diffy-worker --user $DDEV_UID:$DDEV_GID ddev/ddev-utilities bash -c "cd /diffy-worker && wget -qO- https://github.com/DiffyWebsite/diffy-worker/archive/refs/heads/main.tar.gz | tar xz --strip-components=1"
 ```
@@ -63,7 +63,7 @@ Another interesting trick is that if that user tries to run `npm install` system
 
 We follow DDEV path to build the Docker container for multiple architectures:
 
-```
+```bash
 docker buildx build --push --platform $(BUILD_ARCHS) -t $(DOCKER_REPO):$(VERSION) --label "build-info=$(DOCKER_REPO):$(VERSION) commit=$(shell git describe --tags --always) built $$(date) by $$(id -un) on $$(hostname)" --label "maintainer=Diffy <info@diffy.website>" $(DOCKER_ARGS) .
 ```
 

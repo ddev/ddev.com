@@ -20,7 +20,7 @@ When news of this originally hit I quickly investigated and found no reason to t
 
 - The XZ Backdoor only found its way into distributions like Arch Linux and Debian Testing (and Homebrew) that have rolling releases, meaning that they take every upstream release as it comes in. DDEV images use only stable upstream distributions, including Debian 11 Bullseye, Debian 12 Bookworm, and Ubuntu 20.04, which don't receive "hot" releases like that.
 - DDEV bundles `xz` only in `ddev-dbserver`. We can see that `ddev-dbserver` has an unaffected version of xz. In any version of DDEV we can use `ddev exec -s db xz --version` to see the installed version. In various versions of the ddev-dbserver I am only able to see version 5.2.5 and 5.2.4, but check it for yourself:
-  ```
+  ```text
   $ ddev exec -s db xz --version
   xz (XZ Utils) 5.2.5
   liblzma 5.2.5

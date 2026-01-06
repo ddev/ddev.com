@@ -25,7 +25,7 @@ In brief, [Acquia](https://www.acquia.com/) has open sourced their [Drupal migra
 
 My Drupal migration odyssey began a few months ago with no Drupal 8+ knowledge whatsoever. It took me about 100 hours to migrate my slightly complex Drupal 7 website of _(12 custom content types, 200 custom fields, 2,500 images and documents, and a few hundred pages)_, to a 65% functional Drupal 10 site. Comparatively in a single afternoon I was able to get an 80% functional Drupal 9 website with AM:A. I hope this illustrates the power of AM:A.
 
-[A table below compares the _learn-everything-from-scratch "traditional"_ migration from Drupal 7 to Drupal 10, to the same site migration with AM:A to Drupal 9](#comparing-traditional-migration-in-d10-to-amad9).
+[A table below compares the _learn-everything-from-scratch "traditional"_ migration from Drupal 7 to Drupal 10, to the same site migration with AM:A to Drupal 9](#comparing-traditional-migration-in-d10-to-ama-d9).
 
 Drupal 9 is the only tested path at the time of this posting. [Drupal 9 was EoL on November 1st, 2023](https://www.drupal.org/psa-2023-11-01), and [Drupal 7 will be EoL on January 5th, 2025](https://www.drupal.org/psa-2023-06-07). The community can work together to [get AM:A working with Drupal 10](https://www.drupal.org/project/acquia_migrate/issues/3399733). Please contribute if you can help move this forward.
 
@@ -47,20 +47,20 @@ My system information is as follows:
 
 Create a new DDEV project directory on your local machine.
 
-```
+```bash
 mkdir ddev-ama-project
 ```
 
 Move into the `ddev-ama-project` directory and create subdirectories for both the D7 and D9 sites.
 
-```
+```bash
 cd ddev-ama-project
 mkdir d7 d9
 ```
 
 Copy all of your Drupal 7 files to your newly created project's `d7` subdirectory so that your files are organized as:
 
-```
+```bash
 cp -r ~/my-drupal7-source-files/ d7/
 ...snip...
     /sites/default/settings.php
@@ -76,19 +76,19 @@ cp -r ~/my-drupal7-source-files/ d7/
 
 Create the DDEV project (_still within the newly created `ddev-ama-project` directory_).
 
-- For maximum compatibility we are using `php7.4`. You could use `php8.1`, but you will likely encounter errors on your Drupal 7 site. We can always [reconfigure DDEV later](#additional-notes-andtips) to use `php8.1` for the migrated D9 site after our AM:A migration is complete.
+- For maximum compatibility we are using `php7.4`. You could use `php8.1`, but you will likely encounter errors on your Drupal 7 site. We can always [reconfigure DDEV later](#additional-notes-and-tips) to use `php8.1` for the migrated D9 site after our AM:A migration is complete.
 - We are adding two hostnames; `d7ama-www` for **Drupal 7**, and `d9ama-www` for **Drupal 9**.
 
-```
+```bash
 ddev config --project-type=drupal7 \
---php-version=7.4 \
---docroot="d7/" \
---additional-hostnames="d7ama-www,d9ama-www"
+    --php-version=7.4 \
+    --docroot="d7/" \
+    --additional-hostnames="d7ama-www,d9ama-www"
 ```
 
 **Next, import the D7 database** to the new project. This operation adds the file `settings.ddev.php` to the `d7/sites/default` local DDEV project with the `db:db@db` credentials, imports the database, and starts the new DDEV project.
 
-```
+```bash
 ddev import-db --file=../drupal7-www-database.sql
 ```
 
@@ -103,30 +103,30 @@ We will use the conveniently included version of [ACLI](https://docs.acquia.com/
 
 Run the following command:
 
-```
+```bash
 ddev exec php8.1 /usr/local/bin/acli \
-app:new:from:drupal7 \
---drupal7-directory=/var/www/html/d7 \
---directory=/var/www/html/d9
+    app:new:from:drupal7 \
+    --drupal7-directory=/var/www/html/d7 \
+    --directory=/var/www/html/d9
 ```
 
 ![new D9 site has been scaffolded with the help of acli](/img/blog/2023/11/ddev-ama-blog-2-d9-acli-created.png)
 
 The new Drupal 9 site scaffolding has been created with information from _your_ Drupal 7 site!
 
-<mark>**Important**</mark> - SSH into the DDEV container to install the D9 site.
+**Important** - SSH into the DDEV container to install the D9 site.
 
-```
+```bash
 ddev ssh
 ```
 
-**The command above logs you into the <mark>`/var/www/html/d7`</mark> directory, you need to change to the <mark>`/var/www/html/d9`</mark> directory** to accomplish the following:
+**The command above logs you into the `/var/www/html/d7` directory, you need to change to the `/var/www/html/d9` directory** to accomplish the following:
 
 - Install the D9 site within our single DDEV project.
 - Create the D9 DDEV database named: `dbd9`.
 - Configure the D9 `settings.php` with the appropriate database credentials.
 
-```
+```bash
 cd ../d9
 
 vendor/bin/drush site-install \
@@ -143,23 +143,23 @@ The new D9 site has been `site-install`ed!
 
 ### Install and configure Acquia Migrate: Accelerate (AM:A)
 
-Initiate the AM:A magic with the following commands <mark>**_(remember we are still within the `ssh` session of the DDEV project)_**</mark>. _(Note for clarity: we are running the **D9** included version of `vendor/bin/drush` on the **D9** site. Running `drush` otherwise or elsewhere would affect the **D7** site.)_
+Initiate the AM:A magic with the following commands **_(remember we are still within the `ssh` session of the DDEV project)_**. _(Note for clarity: we are running the **D9** included version of `vendor/bin/drush` on the **D9** site. Running `drush` otherwise or elsewhere would affect the **D7** site.)_
 
-```
+```bash
 jq -r '.installModules[]' < acli-generated-project-metadata.json | xargs php -d memory_limit=512M vendor/bin/drush pm:install -y
 ```
 
 _(the above installs all modules whose migration recommendations have been vetted, to ensure those migrations are available out of the box)_
 
-```
+```bash
 vendor/bin/drush state:set --input-format=json acquia_migrate.initial_info - < acli-generated-project-metadata.json
 ```
 
 _(the above provides all the metadata to the AM:A Drupal module's Module Auditor UI by storing it in Drupal's state )_
 
-### <mark>Log out of the `ddev ssh` session</mark>, and modify the DDEV project to serve a second URL for the d9 site:
+### Log out of the `ddev ssh` session, and modify the DDEV project to serve a second URL for the d9 site:
 
-```
+```bash
 logout
 
 cp .ddev/nginx_full/seconddocroot.conf.example .ddev/nginx_full/nginx-site2-d9.conf
@@ -167,31 +167,31 @@ cp .ddev/nginx_full/seconddocroot.conf.example .ddev/nginx_full/nginx-site2-d9.c
 
 Use the text editor of your choice to edit your newly created `nginx-site2-d9.conf` file.
 
-```
+```bash
 vi .ddev/nginx_full/nginx-site2-d9.conf
 ```
 
 Remove line #3 from the `nginx-site2-d9.conf` file.
 
-```
+```text
 #ddev-generated
 ```
 
 Change line #9 of `nginx-site2-d9.conf` to your D9 docroot:
 
-```
+```text
 root /var/www/html/d9/docroot;
 ```
 
 Change line #12 of `nginx-site2-d9.conf` to your D9 site URL:
 
-```
+```text
 server_name d9ama-www.ddev.site;
 ```
 
-<mark>**Save `nginx-site2-d9.conf` changes and restart DDEV**</mark>. DDEV must be restarted to serve the new D9 docroot. Until it's restarted DDEV will continue to serve the D7 site at all configured project URLs.
+**Save `nginx-site2-d9.conf` changes and restart DDEV**. DDEV must be restarted to serve the new D9 docroot. Until it's restarted DDEV will continue to serve the D7 site at all configured project URLs.
 
-```
+```bash
 ddev restart
 ```
 
@@ -210,49 +210,50 @@ Proceed with AM:A configuration, after _Step 2_ below you can refresh the browse
 
 3. **Configure your source database.** Using the text editor of your choice, add your **D7** database information to your **D9** `settings.php`.
 
-```
-vi d9/docroot/sites/default/settings.php
-```
+   ```bash
+   vi d9/docroot/sites/default/settings.php
+   ```
 
-```
-$databases['migrate']['default'] = array (
-  'database' => 'db',
-  'username' => 'db',
-  'password' => 'db',
-  'prefix' => '',
-  'host' => 'db',
-  'port' => '',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
-```
+   ```php
+   $databases['migrate']['default'] = array (
+     'database' => 'db',
+     'username' => 'db',
+     'password' => 'db',
+     'prefix' => '',
+     'host' => 'db',
+     'port' => '',
+     'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+     'driver' => 'mysql',
+   );
+   ```
 
-_(Refresh your browser, and ~~Configure your source database~~ should now be checked off with a strikethrough.)_
+   _(Refresh your browser, and ~~Configure your source database~~ should now be checked off with a strikethrough.)_
 
 4. **Configure your files directory**. Add this below your recently added database information in `d9/docroot/sites/default/settings.php` to match your use case.
 
-```
-// The directory specified here must contain the directory specified in the
-// "file_public_path" Drupal 7 variable. Usually: "sites/default/files".
-$settings['migrate_source_base_path'] = '/var/www/html/d7';
+   ```php
+   // The directory specified here must contain the directory specified in the
+   // "file_public_path" Drupal 7 variable. Usually: "sites/default/files".
+   $settings['migrate_source_base_path'] = '/var/www/html/d7';
 
-// The directory specified here must contain the directory specified in the
-// "file_private_path" Drupal 7 variable. Usually outside the web root.
-//$settings['migrate_source_private_file_path'] = '/somewhere/private';
-```
+   // The directory specified here must contain the directory specified in the
+   // "file_private_path" Drupal 7 variable. Usually outside the web root.
+   //$settings['migrate_source_private_file_path'] = '/somewhere/private';
+   ```
 
-_(Refresh your browser, and ~~Configure your files directory~~ should now be checked off with a strikethrough.)_
+   _(Refresh your browser, and ~~Configure your files directory~~ should now be checked off with a strikethrough.)_
 
 5. **Create matching files directory.** My specific instance required modifying the files path to a non-default directory, you may not have this requirement.
+
    _(Refresh your browser, and ~~Create matching files directory~~ should now be checked off with a strikethrough.)_
 
 6. **Choose which data to import from your source site.** Click the link to begin your migration journey following the specific AM:A recommendations for your site!
 
-![Acquia Migrate: Accelerate (AM:A) Choose which data to import from your source site! ](/img/blog/2023/11/ddev-ama-blog-5-ama-check-and-ready.png)
+   ![Acquia Migrate: Accelerate (AM:A) Choose which data to import from your source site! ](/img/blog/2023/11/ddev-ama-blog-5-ama-check-and-ready.png)
 
 ## Your AM:A Journey Begins Now!
 
-Off you go! Best of luck on your migration! [Check out additional notes and tips below](#additional-notes-andtips) for more.
+Off you go! Best of luck on your migration! [Check out additional notes and tips below](#additional-notes-and-tips) for more.
 
 ![Your AM:A Journey Begins Now! ](/img/blog/2023/11/ddev-ama-blog-6-ama-dashboard.png)
 
@@ -348,6 +349,6 @@ Looking back, my Drupal 7 site went from zero to a shaky 65% after a grueling 10
 
 - On Windows Terminal WSL2, the GUI is _much_ faster than the CLI of `drush ama:`. The AM:A website GUI took 1 minute to import 1,500 files, the CLI in WSL2 took 9 minutes!
 - `ddev snapshot` is your friend, use it as you progress and modify your D7 database. If something goes wrong you can `ddev snapshot restore` to the most recent good snapshot. I saved snapshots about every 20% as the migration progressed such as `ddev snapshot --name ama-project-20-percent`, etc.
-- The the DDEV `nginx-site2-d9.conf` NGINX config had to be modified to serve generated images. [NGINX configuration options can interfere with generated thumbnails and image styles for uploaded images](https://www.drupal.org/project/drupal/issues/3120676#comment-15294229).
+- The DDEV `nginx-site2-d9.conf` NGINX config had to be modified to serve generated images. [NGINX configuration options can interfere with generated thumbnails and image styles for uploaded images](https://www.drupal.org/project/drupal/issues/3120676#comment-15294229).
 - `ddev config --php-version=8.1` will change the PHP version of the project at any time if you want to experiment with updating D9 or D10, be aware this change will introduce php errors on your D7 site.
 - Here's a [Gist of Drush scripts for cleaning up various Drupal 7 database issues](https://gist.github.com/RowboTony/acf9ee5afb78b6a29a7a763f56d1fb11) which may be helpful _(as-is, no guarantee or warranty)_.

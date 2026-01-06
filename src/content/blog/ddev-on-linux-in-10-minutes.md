@@ -40,19 +40,20 @@ _This screencast walks you through setting up a complete DDEV development enviro
 Here's what happens in this screencast. You can do it yourself in just a few minutes. We're using [DDEV's get-started](/get-started), but of course there is far more detail in the [DDEV docs](https://docs.ddev.com), explaining how to use other distros or other install techniques.
 
 1. Install Docker CE. Use the `apt` repository technique from [Docker's docs](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository).
+   - Do the post-install one-time action:
 
-- Do the post-install one-time action:
-  ```bash
-  sudo usermod -aG docker $USER
-  ```
-- We could log out and log back in, but instead for now:
-  ```bash
-  newgrp docker
-  ```
+   ```bash
+   sudo usermod -aG docker $USER
+   ```
+
+   - We could log out and log back in, but instead for now:
+
+   ```bash
+   newgrp docker
+   ```
 
 2. Install DDEV, using the `apt` repository technique from [get-started](/get-started).
-
-- `ddev --version` shows us being working fine with current stable.
+   - `ddev --version` shows us being working fine with current stable.
 
 3. One-time `mkcert -install` helps your browser trust DDEV's HTTPS certificates.
 4. Check out a project. I used [rfay/d11](https://github.com/rfay/d11), a trivial demo Drupal 11 project. (DDEV's [quickstarts show many different project types](https://docs.ddev.com/en/stable/users/quickstart/) with quick startup.)

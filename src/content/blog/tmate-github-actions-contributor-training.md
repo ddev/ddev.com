@@ -30,7 +30,7 @@ Often it's hard to understand what has happened with an test because all we see 
 
 1. We normally will try to understand a test failure by running it locally.
 2. Running in a similar Linux/AMD64 system like GitHub Codespaceds is a pretty easy option.
-3. [nektos/act](https://github.com/nektos/act) is another recommended competitor to Tmate. It uses Docker and a Docker image to run an action on your local machine. I haven't had luck with it when I've tried it. See Stas's experience with `act` [below](#how-to-useact).
+3. [nektos/act](https://github.com/nektos/act) is another recommended competitor to Tmate. It uses Docker and a Docker image to run an action on your local machine. I haven't had luck with it when I've tried it. See Stas's experience with `act` [below](#how-to-use-act).
 
 ## Security Concerns
 
