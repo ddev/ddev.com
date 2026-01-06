@@ -178,7 +178,7 @@ Upcoming v1.25.0:
 - **93 repositories** in the DDEV ecosystem
 - **3,400+ GitHub stars** on the core project
 - **29 official add-ons**
-- **176 total add-ons**
+- **175+ total add-ons**
 
 ## Wow, Community Contributions!
 
@@ -402,7 +402,7 @@ I know this is "Too Much Information" but here is a simple and inadequate list o
 
 **michaellenahan** - [michaellenahan](https://github.com/michaellenahan) - [1 contribution](https://github.com/ddev/ddev/commits?author=michaellenahan&since=2025-01-01&until=2025-12-31)
 
-- docs: improve xhgui documention, fixes #7376 (#7377)
+- docs: improve xhgui documentation, fixes #7376 (#7377)
 
 **August Miller** - [AugustMiller](https://github.com/AugustMiller) - [1 contribution](https://github.com/ddev/ddev/commits?author=AugustMiller&since=2025-01-01&until=2025-12-31)
 
