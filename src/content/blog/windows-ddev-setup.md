@@ -53,7 +53,7 @@ Two recent Windows machines I set up were the new ARM64/Qualcomm/CoPilot variety
     - Run `scripts/install-dev-tools.sh`
     - Run `.ci-scripts/nsis_setup.sh /usr/share/nsis`
 19. SSH configuration on Windows side: If your SSH username is different from the username automatically configured on the Windows side (or just generally different from the default you want to use) then add something like this to `.ssh/config` on the Windows side (or at `/mnt/c/Users/<username>/.ssh/config`). This will make it so your connection username does not have to be explicitly specified when you use `ssh` or `git`:
-    ```
+    ```text
     Host *
       User <default-user-you-want-to-use>
     ```

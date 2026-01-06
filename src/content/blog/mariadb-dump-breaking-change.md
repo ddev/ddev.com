@@ -36,7 +36,7 @@ The bottom line: **After 15 years of maintaining mostly-compatible client-side t
 
 In DDEV v1.23.1 we mitigated this problem to a certain extent by updating the DDEV v1.23.1 `ddev-dbserver` image. This solved a number of problems related to `ddev import-db` and `ddev export-db` because the format used was the new (breaking-change) MariaDB format. If you see the import failure when you do `ddev import-db` or `ddev export-db` you can update to the newer version using the appropriate command below:
 
-```
+```bash
 docker pull ddev/ddev-dbserver-mariadb-10.11:v1.23.1
 docker pull ddev/ddev-dbserver-mariadb-10.6:v1.23.1
 docker pull ddev/ddev-dbserver-mariadb-10.5:v1.23.1
@@ -46,7 +46,7 @@ However, there are many uses of DDEV where the PHP code on the `ddev-webserver` 
 
 ## DDEV v1.23.2
 
-We think we have worked around the majority of these cases in DDEV v1.23.2. See the [next section](#what-has-ddev-done-to-mitigate-the-damage-inv1232).
+We think we have worked around the majority of these cases in DDEV v1.23.2. See the [next section](#what-has-ddev-done-to-mitigate-the-damage-in-v1232).
 
 However, be aware:
 

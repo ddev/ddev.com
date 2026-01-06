@@ -9,7 +9,6 @@ import robotsTxt from "astro-robots-txt"
 import searchIndex from "./src/lib/search-index.js"
 import sitemap from "@astrojs/sitemap"
 import tailwindcss from "@tailwindcss/vite"
-import widont from "rehype-widont"
 import { addCopyButton } from "shiki-transformer-copy-button"
 
 // https://astro.build/config
@@ -63,7 +62,6 @@ export default defineConfig({
     },
     remarkPlugins: [remarkReadingTime],
     rehypePlugins: [
-      widont,
       plainTextPlugin({
         contentKey: "plainText",
         removeEmoji: false,

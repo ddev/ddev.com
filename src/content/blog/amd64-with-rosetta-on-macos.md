@@ -53,7 +53,7 @@ Sometimes the problem is _adding_ software that is Intel-specific to the DDEV we
 
 On an Apple Silicon machine you might get an ugly error like this when doing `ddev npm install gifsicle`:
 
-```
+```text
 npm error OrbStack ERROR: Dynamic loader not found: /lib64/ld-linux-x86-64.so.2
 npm error
 npm error This usually means that you're running an x86 program on an arm64 OS without multi-arch libraries.

@@ -43,6 +43,22 @@ module.exports = {
             // remove automatic backticks that surround inline code blocks
             "code::before": null,
             "code::after": null,
+            // use modern CSS text-wrap for better typography (replaces deprecated rehype-widont)
+            p: {
+              textWrap: "pretty",
+            },
+            h1: {
+              textWrap: "pretty",
+            },
+            h2: {
+              textWrap: "pretty",
+            },
+            h3: {
+              textWrap: "pretty",
+            },
+            h4: {
+              textWrap: "pretty",
+            },
           },
           code: {},
         },

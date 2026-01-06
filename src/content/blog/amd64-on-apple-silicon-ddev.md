@@ -30,7 +30,7 @@ To use these techniques, you _must_ enable Apple's virtualization layer, Rosetta
 
 OrbStack is a great Docker provider; super lightweight and performant, and it does [nice emulation](https://docs.orbstack.dev/docker/#intel-x86-emulation) using your Mac's Rosetta system. Enable "Use Rosetta to run Intel code" in the "system" section of OrbStack's settings.
 
-```
+```bash
 ddev poweroff
 docker rm -f $(docker ps -aq)
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
@@ -49,7 +49,7 @@ You **must** enable "Use Rosetta for `x86_64/amd64` emulation on Apple Silicon" 
 
 Then:
 
-```
+```bash
 ddev poweroff
 docker rm -f $(docker ps -aq)
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
@@ -58,7 +58,7 @@ ddev start
 
 ## 3. Use [Colima](https://github.com/abiosoft/colima) with an AMD64 setting
 
-```
+```bash
 ddev poweroff
 colima stop
 colima start amd64 --arch x86_64 --cpu 4 --memory 6 --disk 100 --dns=1.1.1.1

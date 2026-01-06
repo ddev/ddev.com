@@ -32,7 +32,7 @@ Here are some high-level practices to follow:
 - Take inspiration from the [official add-ons](https://addons.ddev.com/), see how they're structured and follow similar practices
 - Keep an eye on updates in [ddev-addon-template](https://github.com/ddev/ddev-addon-template)
 - Track changes in [DDEV releases](https://github.com/ddev/ddev/releases)
-- Configure your add-on [repository settings](#repository-configuration-bestpractices)
+- Configure your add-on [repository settings](#repository-configuration-best-practices)
 - Add the `ddev-get` [topic](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics) to your GitHub repository if it should be discoverable by the wider community. (If your add-on is currently just an experiment or a fork, wait until it matures to add the topic.)
 - Write a clear [description](https://github.com/orgs/community/discussions/60507) and include relevant keywords to improve discoverability
 - Use `#!/usr/bin/env bash` instead of `#!/bin/bash` at the top of your command scripts, it's more portable and works better across different environments.

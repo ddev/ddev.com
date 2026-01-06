@@ -50,7 +50,7 @@ You can easily test this out using the handy network utility `nc` or `netcat`.
 
 On your host workstation (the same place your IDE is running) you can
 
-```
+```bash
 nc -l 0.0.0.0 9003
 ```
 
@@ -59,7 +59,7 @@ nc -l 0.0.0.0 9003
 If you then visit your project, for example with `ddev exec curl localhost` or `curl https://<project>.ddev.site` you'll see something like this pop up in the `nc` session:
 
 ```xml
-476<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="iso-8859-1"?>
 <init xmlns="urn:debugger_protocol_v1" xmlns:xdebug="https://xdebug.org/dbgp/xdebug" fileuri="file:///var/www/html/web/index.php" language="PHP" xdebug:language_version="8.2.19" protocol_version="1.0" appid="5089"><engine version="3.2.2"><![CDATA[Xdebug]]></engine><author><![CDATA[Derick Rethans]]></author><url><![CDATA[https://xdebug.org]]></url><copyright><![CDATA[Copyright (c) 2002-2023 by Derick Rethans]]></copyright></init>
 ```
 
