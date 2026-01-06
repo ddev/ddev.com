@@ -1,0 +1,147 @@
+---
+/**
+ * Theme toggle with three states: auto (system), light, and dark.
+ */
+import {
+  SunIcon,
+  MoonIcon,
+} from "@heroicons/react/24/outline/index.js"
+---
+
+<button
+  id="theme-toggle"
+  type="button"
+  class="p-1 dark:text-white"
+  aria-label="Toggle theme"
+  title="Switch to light mode"
+>
+  <!-- Auto icon (Heroicons sun + split sun/moon center) -->
+  <svg
+    id="theme-icon-auto"
+    class="w-6 h-6"
+    style="display: none"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      stroke="currentColor"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636"
+    />
+    <circle cx="12" cy="12" r="3.75" fill="currentColor" opacity="0.3" />
+    <path d="M12 8.25A3.75 3.75 0 0 1 12 15.75Z" fill="currentColor" />
+  </svg>
+  <SunIcon id="theme-icon-light" className="w-6 h-6" style={{ display: 'none' }} />
+  <MoonIcon id="theme-icon-dark" className="w-6 h-6" style={{ display: 'none' }} />
+</button>
+
+<script is:inline>
+  // Immediately show the correct icon based on saved theme
+  (function() {
+    const savedTheme = typeof localStorage !== 'undefined' ? localStorage.getItem('theme') : null;
+    const currentTheme = savedTheme || 'auto';
+
+    const autoIcon = document.getElementById('theme-icon-auto');
+    const lightIcon = document.getElementById('theme-icon-light');
+    const darkIcon = document.getElementById('theme-icon-dark');
+
+    if (currentTheme === 'auto' && autoIcon) {
+      autoIcon.style.display = 'block';
+    } else if (currentTheme === 'light' && lightIcon) {
+      lightIcon.style.display = 'block';
+    } else if (currentTheme === 'dark' && darkIcon) {
+      darkIcon.style.display = 'block';
+    }
+  })();
+</script>
+
+<script>
+  const themeToggle = document.getElementById('theme-toggle');
+  const autoIcon = document.getElementById('theme-icon-auto');
+  const lightIcon = document.getElementById('theme-icon-light');
+  const darkIcon = document.getElementById('theme-icon-dark');
+
+  // Get current theme or default to auto
+  let currentTheme = localStorage.getItem('theme') || 'auto';
+
+  const updateTitle = (currentTheme: string) => {
+    if (!themeToggle) return;
+    // Switch to opposite of current system preference
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // Show what the NEXT theme will be when clicked
+    if (currentTheme === 'auto') {
+      themeToggle.title = systemDark ? 'Switch to light mode' : 'Switch to dark mode';
+    } else if (currentTheme === 'light') {
+      themeToggle.title = systemDark ? 'Switch to dark mode' : 'Switch to system preference';
+    } else {
+      themeToggle.title = systemDark ? 'Switch to system preference' : 'Switch to light mode';
+    }
+  };
+
+  const applyTheme = (theme: string) => {
+    const element = document.documentElement;
+
+    // Hide all icons
+    if (autoIcon) autoIcon.style.display = 'none';
+    if (lightIcon) lightIcon.style.display = 'none';
+    if (darkIcon) darkIcon.style.display = 'none';
+
+    if (theme === 'auto') {
+      // Use system preference
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (systemDark) {
+        element.classList.add('dark');
+      } else {
+        element.classList.remove('dark');
+      }
+      if (autoIcon) autoIcon.style.display = 'block';
+      localStorage.removeItem('theme');
+    } else if (theme === 'light') {
+      element.classList.remove('dark');
+      if (lightIcon) lightIcon.style.display = 'block';
+      localStorage.setItem('theme', 'light');
+    } else if (theme === 'dark') {
+      element.classList.add('dark');
+      if (darkIcon) darkIcon.style.display = 'block';
+      localStorage.setItem('theme', 'dark');
+    }
+
+    updateTitle(theme);
+  };
+
+  // Apply initial theme
+  applyTheme(currentTheme);
+
+  // Listen for system theme changes when in auto mode
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  mediaQuery.addEventListener('change', (e) => {
+    // Only auto-update if in auto mode
+    if (currentTheme === 'auto') {
+      const element = document.documentElement;
+      if (e.matches) {
+        element.classList.add('dark');
+      } else {
+        element.classList.remove('dark');
+      }
+    }
+  });
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      // Cycle through themes intelligently
+      if (currentTheme === 'auto') {
+        currentTheme = systemDark ? 'light' : 'dark';
+      } else if (currentTheme === 'light') {
+        currentTheme = systemDark ? 'dark' : 'auto';
+      } else {
+        currentTheme = systemDark ? 'auto' : 'light';
+      }
+
+      applyTheme(currentTheme);
+    });
+  }
+</script>

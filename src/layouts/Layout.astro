@@ -18,6 +18,7 @@ import {
   ORG_SAME_AS,
   ORG_PHONE,
 } from "../const"
+import themeToggleInitScript from "../scripts/theme-toggle-init.js?raw"
 
 export interface Props {
   title: string
@@ -132,6 +133,7 @@ import "../styles/global.css"
       }}
     />
     <Icons />
+    <script is:inline set:html={themeToggleInitScript}></script>
     <script defer data-domain="ddev.com" src="https://plausible.io/js/script.js"
     ></script>
     {

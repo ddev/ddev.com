@@ -9,6 +9,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/solid/index.js"
 import SponsorsBanner from "./SponsorsBanner.astro"
+import ThemeToggle from "./ThemeToggle.astro"
 ---
 
 <script>
@@ -62,54 +63,55 @@ import SponsorsBanner from "./SponsorsBanner.astro"
   >
     <a href="/" class="relative block cursor-pointer -ml-2">
       <span class="sr-only">DDEV logo</span>
-      <picture>
-        <source
-          srcset="/logos/dark-ddev.svg" 
-           media="(prefers-color-scheme: dark)">
-        <img
-          class="h-8 w-auto sm:h-10" 
-          src="/logos/ddev.svg"
-          alt="DDEV logo"
-          aria-hidden="true"
-        />
-      </picture>
+      <img
+        class="h-8 w-auto sm:h-10 dark:hidden"
+        src="/logos/ddev.svg"
+        alt="DDEV logo"
+        aria-hidden="true"
+      />
+      <img
+        class="h-8 w-auto sm:h-10 hidden dark:block"
+        src="/logos/dark-ddev.svg"
+        alt="DDEV logo"
+        aria-hidden="true"
+      />
     </a>
-    <div class="w-2/3 flex justify-end items-center">
-      <ul class="hidden lg:flex">
-        <li class="mx-4">
+    <div class="w-2/3 flex justify-end items-center gap-6">
+      <ul class="hidden lg:flex items-center gap-6">
+        <li>
           <a
             class="font-bold whitespace-nowrap dark:text-white"
             href="/get-started"
             rel="prefetch">Get Started</a
           >
         </li>
-        <li class="mx-4">
+        <li>
           <a
             class="font-bold whitespace-nowrap dark:text-white"
             href="/download"
             rel="prefetch">Download</a
           >
         </li>
-        <li class="mx-4">
+        <li>
           <a
             class="font-bold whitespace-nowrap dark:text-white"
             href={DOCUMENTATION_URL}
             target="_blank">Docs</a
           >
         </li>
-        <li class="mx-4">
+        <li>
           <a class="font-bold whitespace-nowrap dark:text-white" href="/blog" rel="prefetch"
             >Blog</a
           >
         </li>
-        <li class="mx-4">
+        <li>
           <a
             class="font-bold whitespace-nowrap dark:text-white"
             href={GITHUB_URL}
             target="_blank">GitHub</a
           >
         </li>
-        <li class="mx-4">
+        <li>
           <a
             class="font-bold whitespace-nowrap dark:text-white"
             href="/support-ddev"
@@ -117,14 +119,17 @@ import SponsorsBanner from "./SponsorsBanner.astro"
           >
         </li>
       </ul>
-      <a href="/search" class="ml-4 p-1 dark:text-white">
-        <span class="sr-only">Search</span>
-        <MagnifyingGlassIcon className="w-6 h-6 " aria-hidden={true} />
-      </a>
-      <button id="mobile-trigger" class="flex lg:hidden ml-6 p-1">
-        <span class="sr-only">Menu</span>
-        <Bars2Icon className="w-6 h-6 dark:text-white" />
-      </button>
+      <div class="flex items-center gap-3">
+        <a href="/search" class="p-1 dark:text-white">
+          <span class="sr-only">Search</span>
+          <MagnifyingGlassIcon className="w-6 h-6 " aria-hidden={true} />
+        </a>
+        <ThemeToggle />
+        <button id="mobile-trigger" class="flex lg:hidden p-1">
+          <span class="sr-only">Menu</span>
+          <Bars2Icon className="w-6 h-6 dark:text-white" />
+        </button>
+      </div>
     </div>
     <div id="mobile-menu" class="menu">
       <div class="flex w-full justify-end mb-2">
