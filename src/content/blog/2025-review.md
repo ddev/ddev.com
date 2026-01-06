@@ -39,9 +39,9 @@ The DDEV open-source community continues excellent engagement on several fronts.
 - **The [Add-on Registry](https://addons.ddev.com)** launched in January 2025, now displaying 175 add-ons, 28 of which are officially maintained by the DDEV team
 - **PHP-based add-ons** Add-ons can now be written in PHP, as the [ddev-upsun](https://github.com/ddev/ddev-upsun) add-on shows. The PHP language is far more capable for accomplishing complex tasks than shell scripts.
 - **`ddev add-on get`** now downloads add-on dependencies automatically
-- **`x-ddev` extension** allows add-ons to add important information to `ddev describe` output
+- [**`x-ddev` extension**](https://docs.ddev.com/en/stable/users/extend/custom-docker-services/#customizing-ddev-describe-output) allows add-ons to add important information to `ddev describe` output
 - Add-on monitoring continues for both official and community add-ons
-- New official add-ons: FrankenPHP (June), Redis Insight (July), Upsun (August), NVM Standalone (November)
+- New official add-ons: [FrankenPHP](https://github.com/ddev/ddev-frankenphp) (June), [Redis Insight](https://github.com/ddev/ddev-redis-insight) (July), [Upsun](https://github.com/ddev/ddev-upsun) (August), [NVM Standalone](https://github.com/ddev/ddev-nvm) (November)
 - By year's end: 28+ official add-ons and 175+ total
 
 ### Container and Infrastructure
@@ -62,7 +62,7 @@ Upcoming v1.25.0:
 - **`--user`/`-u` flag** for `ddev exec` and `ddev ssh`
 - **`ddev describe`** now works on stopped projects
 - **`ddev utility download-images --all`** forces pulling all images in use
-- **Shell completion** added and expanded thanks to community contributions
+- [**Shell completion**](https://docs.ddev.com/en/stable/users/install/shell-completion/#shell-completion-autocomplete) added and expanded thanks to community contributions
 - **`ddev npx`** command support
 - Improved cleanup for `ddev delete` and `ddev delete images`
 
@@ -107,8 +107,8 @@ Upcoming v1.25.0:
 
 ## IDE Integration
 
-- **IntelliJ IDEA plugin** got regular, consistent maintenance thanks to [@AkibaAT](https://github.com/AkibaAT) and moved to the DDEV organization on GitHub
-- **The VS Code DDEV Manager extension** continued to be well maintained thanks to [@biati-digital](https://www.biati.com.mx/)
+- [**IntelliJ IDEA plugin**](https://github.com/ddev/ddev-intellij-plugin) got regular, consistent maintenance thanks to [@AkibaAT](https://github.com/AkibaAT) and moved to the DDEV organization on GitHub
+- [**The VS Code DDEV Manager extension**](https://marketplace.visualstudio.com/items?itemName=biati.ddev-manager) continued to be well maintained thanks to [@biati-digital](https://www.biati.com.mx/)
 
 ## AI in DDEV Development
 
@@ -146,7 +146,7 @@ Upcoming v1.25.0:
 
 Thanks to our amazing community: maintainer Stas Zhuk, contributors like tyler36, GuySartorelli, Hanoii, Bernardo Martinez, Ralf Koller, and many others. Thanks to our many crucial sponsors including Tag1, Upsun, Passbolt, Agiledrop, and all individual supporters.
 
-And thanks to all of you who use DDEV, report issues, answer questions in Discord and other venues, and spread the word. Your support makes this project possible.
+And thanks to all of you who use DDEV, report issues, answer questions in [Discord](https://ddev.com/s/discord) and other venues, and spread the word. Your support makes this project possible.
 
 ## Looking Ahead
 
