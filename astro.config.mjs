@@ -5,6 +5,8 @@ import downloadDdevRedirects from "./src/lib/download-ddev-redirects.js"
 import prefetch from "@astrojs/prefetch"
 import react from "@astrojs/react"
 import rehypeAstroRelativeMarkdownLinks from "astro-rehype-relative-markdown-links"
+import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import rehypeSlug from "rehype-slug"
 import robotsTxt from "astro-robots-txt"
 import searchIndex from "./src/lib/search-index.js"
 import sitemap from "@astrojs/sitemap"
@@ -62,6 +64,13 @@ export default defineConfig({
     },
     remarkPlugins: [remarkReadingTime],
     rehypePlugins: [
+      rehypeSlug,
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: "wrap",
+        },
+      ],
       plainTextPlugin({
         contentKey: "plainText",
         removeEmoji: false,
