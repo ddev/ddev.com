@@ -29,13 +29,14 @@ categories:
 - [AI in DDEV Development](#ai-in-ddev-development)
 - [Removals in v1.25.0](#removals-in-v1250)
 - [Challenges and things that could have gone better](#challenges-and-things-that-could-have-gone-better)
+- [Comparing Outcomes to 2025 Goals](#comparing-outcomes-to-2025-goals)
 - [By the Numbers](#by-the-numbers)
 - [Wow, Community Contributions!](#wow-community-contributions)
   - [By Contributor](#by-contributor)
   - [Summary by Count](#summary-by-count)
   - [Blog Guest Contributors](#blog-guest-contributors)
   - [Amazing Official Add-on Maintainers](#amazing-official-add-on-maintainers)
-- [Looking Ahead](#looking-ahead)
+- [Looking Ahead to 2026](#looking-ahead-to-2026)
 
 ## Organizational Milestones
 
