@@ -430,6 +430,24 @@ This is a simple and inadequate list of the amazing contributions directly to th
 | gitressa | [gitressa](https://github.com/gitressa) | [1](https://github.com/ddev/ddev/commits?author=gitressa&since=2025-01-01&until=2025-12-31) |
 | _...and 36 more contributors_ | | |
 
+### Blog Guest Contributors
+
+Guest contributions to the blog are [always welcome](https://github.com/ddev/ddev.com#blog-posts-and-guest-blog-posts) and key contributors added significant posts this year:
+
+**Ajith Thampi Joseph** - [atj4me](https://github.com/atj4me)
+- [Tailscale for DDEV: Simple and Secure Project Sharing](tailscale-router-ddev-addon)
+
+**Bill Seremetis** - [bserem](https://github.com/bserem)
+- [How to Downgrade Terminus in DDEV's Web Container and Customize Other Bundled Tools](ddev-bundled-tools-using-custom-versions)
+
+**Garvin Hicking** - [garvinhicking](https://github.com/garvinhicking)
+- [Using DDEV to spin up a legacy PHP application](legacy-projects-with-unsupported-php-and-mysql-using-ddev)
+
+**Jeremy Gonyea** - [jgonyea](https://github.com/jgonyea)
+- [Building an Off-Ramp from WordPress with DDEV](building-offramp-from-wordpress-with-ddev)
+
+**ayalon** - [ayalon](https://github.com/ayalon)
+- [Exposing a Node.js App Over HTTP / HTTPS on a Subdomain in DDEV](ddev-expose-node-app-on-subdomain) (blog author: J. Minder)
 
 And thanks to all of you who use DDEV, report issues, answer questions in [Discord](https://ddev.com/s/discord) and other venues, and spread the word. Your support makes this project possible.
 
