@@ -182,8 +182,8 @@ In [2025 Plans](2025-plans.md) we laid out ambitions plans for 2025. Here are th
 - **XHGui support**: Done
 - **`addons.ddev.com`**: Done
 - Feature: Implement mDNS as an alternate name resolution technique. Not funded, not implemented, de-prioritized.
-- Allow Add-ons to include other add-ons: Done 
-- Go-based Upsun Add-on like ddev-platformsh: Done, but with PHP instead of Go. 
+- Allow Add-ons to include other add-ons: Done
+- Go-based Upsun Add-on like ddev-platformsh: Done, but with PHP instead of Go.
 - Rewrite ddev-platformsh Add-on in Go: Done, but in PHP. `ddev-upsun` now supports the older Platform.sh "fixed" projects.
 - Develop a replacement for "Gitpod Classic": Gitpod was removed from codebase, and GitHub Codespaces support was improved, but a full replacement remains a goal for 2026.
 - Improve self-diagnose capability: Done. Massive improvement with `ddev utility diagnose`, `ddev utility mutagen-diagnose`, `ddev utility xdebug-diagnose`.
