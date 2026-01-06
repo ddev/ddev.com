@@ -154,7 +154,7 @@ As an open-source project we truly value the amazing contributions of the commun
 
 ### By Contributor
 
-This is a simple and inadequate list of the amazing contributions directly to the main project by contributors other than Randy and Stas:
+I know this is "Too Much Information" but here is a simple and inadequate list of the amazing contributions directly to the main project by contributors other than Randy and Stas. It inspires me so much to see this consolidated list.
 
 **Ralf Koller** - [rpkoller](https://github.com/rpkoller) - [36 contributions](https://github.com/ddev/ddev/commits?author=rpkoller&since=2025-01-01&until=2025-12-31)
 - test: add a no-interaction flag to the install command in ibexa bats file (#7479
@@ -450,6 +450,25 @@ Guest contributions to the blog are [always welcome](https://github.com/ddev/dde
 - [Exposing a Node.js App Over HTTP / HTTPS on a Subdomain in DDEV](ddev-expose-node-app-on-subdomain) (blog author: J. Minder)
 
 And thanks to all of you who use DDEV, report issues, answer questions in [Discord](https://ddev.com/s/discord) and other venues, and spread the word. Your support makes this project possible.
+
+
+### Amazing Official Add-on Maintainers
+
+There are so many unofficial add-ons being maintained by so many people, but here are the folks that maintained official repositories:
+
+1. **[@tyler36](https://github.com/tyler36)** - ddev-browsersync, ddev-cron, ddev-cypress, ddev-qr, plus contributions to 20+ other add-ons
+2. **[@weitzman](https://github.com/weitzman)** (Moshe Weitzman) - ddev-drupal-contrib, ddev-selenium-standalone-chrome
+3. **[@cmuench](https://github.com/cmuench)** (Christian Münch) - ddev-opensearch
+4. **[@julienloizelet](https://github.com/julienloizelet)** (Julien Loizelet) - ddev-mongo
+5. **[@mkalkbrenner](https://github.com/mkalkbrenner)** - ddev-solr
+6. **[@robertoperuzzo](https://github.com/robertoperuzzo)** - ddev-sqlsrv
+7. **[@b13](https://github.com/b13)** (TYPO3 agency) - ddev-typo3-solr, ddev-rabbitmq
+8. **[@jedubois](https://github.com/jedubois)** - ddev-varnish
+9. **[@hussainweb](https://github.com/hussainweb)** - ddev-redis
+10. **[@seebeen](https://github.com/seebeen)** - ddev-ioncube,ddev-minio
+11. **[@bserem](https://github.com/bserem)** (Bill Seremetis) - ddev-adminer
+12. **[@AkibaAT](https://github.com/AkibaAT)** - ddev-intellij-plugin
+13. **[@biati-digital](https://github.com/biati-digital)** - vscode-ddev-manager
 
 ## Looking Ahead
 
