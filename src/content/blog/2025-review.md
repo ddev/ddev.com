@@ -40,7 +40,7 @@ categories:
 ## Organizational Milestones
 
 - **Board of Directors Established**: In December 2025, we formally established a Board of Directors for the DDEV Foundation, enhancing governance and setting the stage for long-term sustainability. We're super proud of this as it's something we've been working toward for years. [Read all about it](board-of-directors-established.md).
-- **Advisory Group Continues**: Our Advisory Group meetings continued throughout the year, providing valuable input and community input and oversight. It will continue just about the same even though we now have a formal Board.
+- **Advisory Group Continues**: Our Advisory Group meetings continued throughout the year, providing valuable input and oversight. It will continue just about the same even though we now have a formal Board.
 - **"Almost Everybody Loves DDEV"**: The [Ironstar Developer Survey 2025](https://www.ironstar.io/devsurvey25/#almost-everybody-loves-ddev) confirmed what we suspected - DDEV has strong community support and satisfaction.
 
 ## Community Engagement
@@ -59,12 +59,12 @@ The DDEV open-source community continues excellent engagement on several fronts.
 - Massively improved reporting, communication, and management of sponsorship information
 - Public sponsorship data feed via [sponsorship-data repository](https://github.com/ddev/sponsorship-data)
 - Banners on DDEV web properties and The Drop Times show current funding status
-- Daily `ddev start` notifications keep users informated about sponsorship status
+- Daily `ddev start` notifications keep users informed about sponsorship status
 
 ### Add-on Ecosystem
 
-- **The [Add-on Registry](https://addons.ddev.com)** launched in January 2025, now displaying 175 add-ons, 28 of which are officially maintained by the DDEV team
-- **PHP-based add-ons** Add-ons can now be written in PHP, as the [ddev-upsun](https://github.com/ddev/ddev-upsun) add-on shows. The PHP language is far more capable for accomplishing complex tasks than shell scripts.
+- **The [Add-on Registry](https://addons.ddev.com)** launched in January 2025, now displays 175 add-ons, 28 of which are officially maintained by the DDEV team.
+- **PHP-based add-ons** Add-ons can now be written in PHP, as the [ddev-upsun](https://github.com/ddev/ddev-upsun) add-on shows. The PHP language is far more powerful for complex tasks than shell scripts.
 - **`ddev add-on get`** now downloads add-on dependencies automatically
 - [**`x-ddev` extension**](https://docs.ddev.com/en/stable/users/extend/custom-docker-services/#customizing-ddev-describe-output) allows add-ons to add important information to `ddev describe` output
 - Add-on monitoring continues for both official and community add-ons. We monitor the nightly tests of official add-ons, and periodically check in with all the community add-ons, asking people to re-enable or fix tests.
@@ -177,8 +177,8 @@ Upcoming v1.25.0:
 - **Releases v1.24.0 through v1.24.10 with v1.25.0 coming in early 2026**
 - **93 repositories** in the DDEV ecosystem
 - **3,400+ GitHub stars** on the core project
-- **28 official add-ons**
-- **175 total add-ons**
+- **29 official add-ons**
+- **176 total add-ons**
 
 ## Wow, Community Contributions!
 
@@ -190,7 +190,7 @@ I know this is "Too Much Information" but here is a simple and inadequate list o
 
 **Ralf Koller** - [rpkoller](https://github.com/rpkoller) - [36 contributions](https://github.com/ddev/ddev/commits?author=rpkoller&since=2025-01-01&until=2025-12-31)
 
-- test: add a no-interaction flag to the install command in ibexa bats file (#7479
+- test: add a no-interaction flag to the install command in ibexa bats file (#7479)
 - test: adding quickstarts for typo3 v13 and v12 plus bats tests (#7302)
 - feat: add success message for xhgui on and off, fixes #7202 (#7205)
 - test: make the drupal cms bats test a bit more robust and trustworthy (#7203)
