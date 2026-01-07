@@ -48,7 +48,7 @@ categories:
 
 The DDEV open-source community continues excellent engagement on several fronts.
 
-- [addons.ddev.com](https://addons.ddev.com) now shows 149 community-contributed add-ons.
+- [addons.ddev.com](https://addons.ddev.com) now shows 147 community-contributed add-ons.
 - Several key features were suggested, initiated, and developed by community members. SO MANY of these are listed below.
 - Online Training: We restarted online [contributor and user training](/blog/category/training/)
 - Offline Training: Randy conducted many Birds-of-a-Feature sessions at DrupalCons, spoke at Florida Drupalcamp, attended, spoke, and trained at TYPO3Camp RheinRuhr, etc.
@@ -64,13 +64,13 @@ The DDEV open-source community continues excellent engagement on several fronts.
 
 ### Add-on Ecosystem
 
-- **The [Add-on Registry](https://addons.ddev.com)** launched in January 2025, now displays 175 add-ons, 28 of which are officially maintained by the DDEV team.
+- **The [Add-on Registry](https://addons.ddev.com)** launched in January 2025, now displays 176 add-ons, 29 of which are officially maintained by the DDEV team.
 - **PHP-based add-ons** Add-ons can now be written in PHP, as the [ddev-upsun](https://github.com/ddev/ddev-upsun) add-on shows. The PHP language is far more powerful for complex tasks than shell scripts.
 - **`ddev add-on get`** now downloads add-on dependencies automatically
 - [**`x-ddev` extension**](https://docs.ddev.com/en/stable/users/extend/custom-docker-services/#customizing-ddev-describe-output) allows add-ons to add important information to `ddev describe` output
 - Add-on monitoring continues for both official and community add-ons. We monitor the nightly tests of official add-ons, and periodically check in with all the community add-ons, asking people to re-enable or fix tests.
 - New official add-ons: [FrankenPHP](https://github.com/ddev/ddev-frankenphp) (June), [Redis Insight](https://github.com/ddev/ddev-redis-insight) (July), [Upsun](https://github.com/ddev/ddev-upsun) (August), [NVM Standalone](https://github.com/ddev/ddev-nvm) (November)
-- By year's end: 29 official add-ons and 175+ total add-ons.
+- By year's end: 29 official add-ons and 176+ total add-ons.
 - Stas continued to document and promote best practices with add-ons, including improved testing and upgrading strategies.
 
 ### Container and Infrastructure
@@ -201,7 +201,7 @@ In [2025 Plans](./2025-plans.md) we laid out ambitions plans for 2025. Here are 
 - **93 repositories** in the DDEV ecosystem
 - **3,400+ GitHub stars** on the core project
 - **29 official add-ons**
-- **175+ total add-ons**
+- **176+ total add-ons**
 
 ## Wow, Community Contributions!
 
@@ -574,7 +574,7 @@ There are so many unofficial add-ons being maintained by so many people, but her
 1. **[@tyler36](https://github.com/tyler36)** - ddev-browsersync, ddev-cron, ddev-cypress, ddev-qr, plus contributions to 20+ other add-ons
 2. **[@weitzman](https://github.com/weitzman)** (Moshe Weitzman) - ddev-drupal-contrib, ddev-selenium-standalone-chrome
 3. **[@cmuench](https://github.com/cmuench)** (Christian Münch) - ddev-opensearch
-4. **[@julienloizelet](https://github.com/julienloizelet)** (Julien Loizelet) - ddev-mongo
+4. **[@julienloizelet](https://github.com/julienloizelet)** (Julien Loizelet) - ddev-mongo, ddev-redis-insight
 5. **[@mkalkbrenner](https://github.com/mkalkbrenner)** - ddev-solr
 6. **[@robertoperuzzo](https://github.com/robertoperuzzo)** - ddev-sqlsrv
 7. **[@b13](https://github.com/b13)** (TYPO3 agency) - ddev-typo3-solr, ddev-rabbitmq
