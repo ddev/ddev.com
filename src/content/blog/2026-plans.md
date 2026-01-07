@@ -62,6 +62,7 @@ We are a very small organization, so we try to pay careful attention to the risk
 - Randy is not young and can always face new risks.
 - The financial outlook for discretionary funding from agencies and hosting companies (and perhaps individuals) remains horrible.
 - Any of our maintainers can become overworked or discouraged or can burn out. We take the risk of burnout and overwork very seriously and are careful to talk about them and try to prevent them.
+- Mutagen maintenance and future: Mutagen is a critical part of DDEV, and it's in maintenance-only mode since Jacob went to work for Docker. It's outstanding in quality, so should last, and Jacob has been responsive when there are problems. Its future is not clear.
 
 ### Minor Notes
 
