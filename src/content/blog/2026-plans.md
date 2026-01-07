@@ -17,8 +17,6 @@ Every year we try to lay out a bit of a plan for the coming year.
 
 One of DDEV's primary strengths is our connection to a wonderful community, so each year turns out a bit different than expected. As we listen to people's actual experience, we try to adjust. And of course as upstream changes bring new features and bugs, we get lots of fun things to work on that we could never have anticipated.
 
-TODO: Add links at bottom to previous year plans, 2024, 2025, etc.
-
 We look forward to your input as the year goes forward.
 
 ## Community
@@ -29,12 +27,10 @@ We look forward to your input as the year goes forward.
 
 In 2025 we established [Board of Directors](board-of-directors-established.md), but now we have to learn what that means. The Board will have to establish itself, begin helping to determine priorities, and find its way to a strong oversight role. Here are a few issues to toss to the board early:
 
-* Fundraising drive
-* Consider spending more on AI
+* Overall Marketing/Fundraising strategy, including Fundraising drive
+* Consider spending more on AI (Higher level of Claude Code plans)
 * Discuss and create AI strategy, including policy, guidelines, tools, etc.
 * How many conferences to attend (and what conferences) and spending priorities
-
-## Sustainability and Finance
 
 ## Features and Initiatives
 
@@ -66,8 +62,14 @@ We are a very small organization, so we try to pay careful attention to the risk
 
 ### Minor Notes
 
-Want to keep up as the month goes along? Follow us on
 
+## Past Plans and Reviews
+
+[2025 Plans and 2024 review](2025-plans.md), [2024 plans](2024-plans.md)
+
+Want to keep up as the month goes along? Follow us on:
+
+- [Montly Newsletter](/newsletter)
 - [blog](https://ddev.com/blog/)
 - [LinkedIn](https://www.linkedin.com/company/ddev-foundation)
 - [Mastodon](https://fosstodon.org/@ddev)
