@@ -13,7 +13,7 @@ categories:
 
 # 2026 Plans and Notes
 
-Every year we try to lay out a bit of a plan for the coming year. 
+Every year we try to lay out a bit of a plan for the coming year.
 
 One of DDEV's primary strengths is our connection to a wonderful community, so each year turns out a bit different than expected. As we listen to people's actual experience, we try to adjust. And of course as upstream changes bring new features and bugs, we get lots of fun things to work on that we could never have anticipated.
 
@@ -28,10 +28,7 @@ We look forward to your input as the year goes forward.
 
 ## Sustainability and Finance
 
-
 ## Features and Initiatives
-
-
 
 ## 2026 Planning Additional Notes
 
@@ -45,8 +42,6 @@ We are a very small organization, so we try to pay careful attention to the risk
 - Any of our maintainers can become overworked or discouraged or can burn out. We take the risk of burnout and overwork very seriously and are careful to talk about them and try to prevent them.
 
 ### Minor Notes
-
-
 
 Want to keep up as the month goes along? Follow us on
 
