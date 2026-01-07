@@ -118,6 +118,7 @@ summary:
 author: Randy Fay
 featureImage:
   src: /img/blog/kebab-case.jpg
+  srcDark:
   alt:
   caption:
   credit:

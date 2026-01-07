@@ -8,11 +8,24 @@ class GiscusComments extends HTMLElement {
     if (typeof window === "undefined") return
     if (this.querySelector("iframe.giscus-frame")) return
 
-    // Helper function to get the theme based on system preference
-    const getTheme = () =>
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark_dimmed"
-        : "light"
+    // Helper function to get the theme based on dark class or system preference
+    const getTheme = () => {
+      const savedTheme =
+        typeof localStorage !== "undefined"
+          ? localStorage.getItem("theme")
+          : null
+
+      if (savedTheme === "dark") {
+        return "dark_dimmed"
+      } else if (savedTheme === "light") {
+        return "light"
+      } else {
+        // Auto mode: check system preference
+        return window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark_dimmed"
+          : "light"
+      }
+    }
 
     const setTheme = () => {
       const theme = getTheme()
@@ -47,12 +60,27 @@ class GiscusComments extends HTMLElement {
     // Initial theme setup
     setTheme()
 
-    // Listen for theme changes
+    // Listen for changes to the dark class on html element
+    const observer = new MutationObserver(() => {
+      const newTheme = getTheme()
+      this.updateTheme(newTheme)
+    })
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    })
+
+    // Also listen for system theme changes when in auto mode
     window
       .matchMedia("(prefers-color-scheme: dark)")
       .addEventListener("change", () => {
-        const newTheme = getTheme()
-        this.updateTheme(newTheme)
+        const savedTheme = localStorage.getItem("theme")
+        // Only update if in auto mode
+        if (!savedTheme) {
+          const newTheme = getTheme()
+          this.updateTheme(newTheme)
+        }
       })
   }
 

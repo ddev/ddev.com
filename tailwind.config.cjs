@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -77,10 +78,8 @@ module.exports = {
           fontWeight: "500 !important",
           backgroundColor: theme("colors.code.light"),
         },
-        "@media (prefers-color-scheme: dark)": {
-          code: {
-            backgroundColor: theme("colors.code.dark"),
-          },
+        ".dark code": {
+          backgroundColor: theme("colors.code.dark"),
         },
       })
     },

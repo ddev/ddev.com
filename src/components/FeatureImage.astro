@@ -4,33 +4,46 @@ import { Picture } from 'astro:assets'
 
 export interface Props {
   src: string
+  srcDark?: string
   alt: string
   caption?: string
   credit?: string
   shadow?: boolean
 }
 
-const { src, alt, caption = "", credit, shadow = false } = Astro.props
+const { src, srcDark, alt, caption = "", credit, shadow = false } = Astro.props
 ---
 
 <figure class={`w-full mx-auto mb-24 z-10 px-6 lg:px-0`}>
   {
     src.includes(".svg") ? (
-      <img src={src} alt={alt} />
+      <>
+        <img src={src} alt={alt} class={srcDark ? "dark:hidden" : ""} />
+        {srcDark && <img src={srcDark} alt={alt} class="hidden dark:block" />}
+      </>
     ) : (
-      <div
-        class={
-          `block rounded-lg overflow-hidden` + (shadow ? ` shadow-xl` : ``)
-        }
-      >
-        <Picture
-          class= "block rounded-lg"
-          src={src}
-          alt={alt}
-          width={900}
-          height={500}
-        />
-      </div>
+      <>
+        <div class={`block rounded-lg overflow-hidden${shadow ? " shadow-xl" : ""}${srcDark ? " dark:hidden" : ""}`}>
+          <Picture
+            class="block rounded-lg"
+            src={src}
+            alt={alt}
+            width={900}
+            height={500}
+          />
+        </div>
+        {srcDark && (
+          <div class={`hidden dark:block rounded-lg overflow-hidden${shadow ? " shadow-xl" : ""}`}>
+            <Picture
+              class="block rounded-lg"
+              src={srcDark}
+              alt={alt}
+              width={900}
+              height={500}
+            />
+          </div>
+        )}
+      </>
     )
   }
   {

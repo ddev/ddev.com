@@ -3,9 +3,9 @@
     <style>
       .cls-1{fill:#02a8e2;}
       .cls-1,.cls-2{fill-rule:evenodd;}
-      .cls-2{fill:#1e2127;}
+      .cls-2{fill:#e1ded8;}
       .cls-3{
-      fill:#1e2127;
+      fill:#e1ded8;
       font-family:Arial,sans-serif;
       font-size:60px;
       font-weight:600;

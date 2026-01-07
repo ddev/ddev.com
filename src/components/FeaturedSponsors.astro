@@ -41,16 +41,16 @@ regularSponsors.map((sponsor) => {
                 href={sponsor.url}
                 target="_blank"
             >
-              <picture>
-                <source
-                    srcset={sponsor.darklogo}
-                    media="(prefers-color-scheme: dark)">
-                <img
-                    src={sponsor.logo}
-                    class="block w-auto h-full"
-                    alt={`${sponsor.name} logo`}
-                />
-              </picture>
+              <img
+                  src={sponsor.logo}
+                  class="block w-auto h-full dark:hidden"
+                  alt={`${sponsor.name} logo`}
+              />
+              <img
+                  src={sponsor.darklogo}
+                  class="hidden dark:block w-auto h-full"
+                  alt={`${sponsor.name} logo`}
+              />
             </a>
         ))}
       </div>
@@ -70,16 +70,16 @@ regularSponsors.map((sponsor) => {
             href={sponsor.url}
             target="_blank"
         >
-          <picture>
-            <source
-                srcset={sponsor.darklogo}
-                media="(prefers-color-scheme: dark)">
-            <img
-                src={sponsor.logo}
-                class="block w-auto h-full"
-                alt={`${sponsor.name} logo`}
-            />
-          </picture>
+          <img
+              src={sponsor.logo}
+              class="block w-auto h-full dark:hidden"
+              alt={`${sponsor.name} logo`}
+          />
+          <img
+              src={sponsor.darklogo}
+              class="hidden dark:block w-auto h-full"
+              alt={`${sponsor.name} logo`}
+          />
         </a>
     ))}
   </div>
