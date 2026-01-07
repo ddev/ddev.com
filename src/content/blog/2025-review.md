@@ -156,9 +156,9 @@ Upcoming v1.25.0:
 
 ## Removals in v1.25.0
 
-- NFS support removed
-- `ddev service` command removed
-- `ddev nvm` functionality removed
+- [NFS](https://github.com/ddev/ddev/blob/v1.24.10/docs/content/users/install/performance.md) support removed
+- [`ddev service`](https://github.com/ddev/ddev/blob/v1.24.10/docs/content/users/usage/commands.md#service) command removed
+- [`ddev nvm`](https://github.com/ddev/ddev/blob/v1.24.10/docs/content/users/usage/commands.md#nvm) functionality removed, but still supported with [ddev-nvm add-on](https://github.com/ddev/ddev-nvm))
 - Legacy configuration syntax cleanup
 
 ## Challenges and things that could have gone better
