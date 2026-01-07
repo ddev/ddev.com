@@ -68,7 +68,7 @@ In preparing for this, we have been discussing these things in [regular advisory
 
 Want to keep up as the month goes along? Follow us on:
 
-- [Montly Newsletter](/newsletter)
+- [Monthly Newsletter](/newsletter)
 - [blog](https://ddev.com/blog/)
 - [LinkedIn](https://www.linkedin.com/company/ddev-foundation)
 - [Mastodon](https://fosstodon.org/@ddev)
