@@ -31,6 +31,8 @@ const featureImageAlt = hasFeatureImage ? post.data.featureImage.alt : ``
 const firstCategory = post.data.categories.length
   ? post.data.categories[0]
   : null
+
+const featureImageDarkUrl = (hasFeatureImage && post.data.featureImage.srcDark) || null
 ---
 
 {
@@ -43,15 +45,29 @@ const firstCategory = post.data.categories.length
   <div class="flex-shrink-0">
     {
       featureImageUrl.includes(".svg") ? (
-        <img src={featureImageUrl} alt={featureImageAlt} />
+        <>
+          <img src={featureImageUrl} alt={featureImageAlt} class={featureImageDarkUrl ? "dark:hidden" : ""} />
+          {featureImageDarkUrl && <img src={featureImageDarkUrl} alt={featureImageAlt} class="hidden dark:block" />}
+        </>
       ) : (
-        <Picture
-          class="block h-48 w-full object-cover relative",
-          src={featureImageUrl}
-          alt={featureImageAlt}
-          width={600}
-          height={400}
-        />
+        <>
+          <Picture
+            class={`block h-48 w-full object-cover${featureImageDarkUrl ? " dark:hidden" : ""}`}
+            src={featureImageUrl}
+            alt={featureImageAlt}
+            width={600}
+            height={400}
+          />
+          {featureImageDarkUrl && (
+            <Picture
+              class="hidden dark:block h-48 w-full object-cover"
+              src={featureImageDarkUrl}
+              alt={featureImageAlt}
+              width={600}
+              height={400}
+            />
+          )}
+        </>
       )
     }
   </div>

@@ -63,6 +63,7 @@ const blogCollection = defineCollection({
     featureImage: z
       .object({
         src: z.string(),
+        srcDark: z.string().optional(),
         alt: z.nullable(z.string()),
         caption: z.nullable(z.string()).optional(),
         credit: z.nullable(z.string()).optional(),
