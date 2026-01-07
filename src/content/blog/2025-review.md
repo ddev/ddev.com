@@ -1,10 +1,10 @@
 ---
 title: "DDEV 2025 Year in Review"
-pubDate: 2025-12-23
+pubDate: 2026-01-12
 summary: A look back at DDEV's accomplishments, challenges, and growth in 2025
 author: Randy Fay
 #featureImage:
-#  src: /img/blog/2025/12/ddev-2025-review.png
+#  src: /img/blog/2026/01/ddev-2025-review.png
 #  alt: DDEV 2025 Year in Review
 categories:
   - Community
@@ -121,12 +121,13 @@ Upcoming v1.25.0:
 
 ### Windows Improvements
 
-- **New Windows GUI Installer** handling Traditional Windows, WSL2/Docker CE, and Docker/Rancher Desktop
+- [**New Windows GUI Installer**](./watch-new-windows-installer.md) handling Traditional Windows, WSL2/Docker CE, and Docker/Rancher Desktop
 - ARM64 Windows installer support
 
 ## `ddev.com` Website and Documentation
 
 - **[Downloads page](/downloads)** with improved installer access
+- **Theme switch button** for light/dark mode
 - **Copy button** for code blocks thanks to Bernardo Martinez
 - **Giscus** commenting system for community discussions on blog posts
 - AI integration documentation
@@ -173,14 +174,14 @@ Upcoming v1.25.0:
 
 ## Comparing Outcomes to 2025 Goals
 
-In [2025 Plans](2025-plans.md) we laid out ambitions plans for 2025. Here are the outcomes:
+In [2025 Plans](./2025-plans.md) we laid out ambitions plans for 2025. Here are the outcomes:
 
 - **Continue outstanding user support** Done.
 - **Begin formal governance for the DDEV Foundation**. Done.
 - **Improve our Marketing CTA and information**: Significant progress, with much better communication.
 - **Continue to develop contributors and maintainers**: Great year, as shown below.
 - **XHGui support**: Done
-- **`addons.ddev.com`**: Done
+- [**addons.ddev.com**](https://addons.ddev.com/): Done
 - Feature: Implement mDNS as an alternate name resolution technique. Not funded, not implemented, de-prioritized.
 - Allow Add-ons to include other add-ons: Done
 - Go-based Upsun Add-on like ddev-platformsh: Done, but with PHP instead of Go.
