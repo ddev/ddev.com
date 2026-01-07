@@ -47,6 +47,11 @@ In 2025 we established [Board of Directors](board-of-directors-established.md), 
 - Use a DDEV proxy on the host to allow commands like ddev list and ddev describe and ddev launch to work from inside the web container.
 - Explore moving Mutagen completely into container (syncing between volume and bind-mount)
 
+## Procedures
+
+- Randy and Stas have always done timekeeping and timesheet reporting, but will improve their reporting a bit with categories/projects in 2026. [discussion](https://github.com/orgs/ddev/discussions/7923#discussioncomment-15172639).
+- Explore additional benefits of being open source and 501(c)(3) nonprofit. We have a number of benefits already, including GitHub nonprofit status, etc. But we can probably get additional benefits from AWS, etc. (JetBrains and Docker also provide us open source benefits.)
+
 ## 2026 Planning Additional Notes
 
 ### Recognized Risks
