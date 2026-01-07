@@ -21,33 +21,31 @@ We look forward to your input as the year goes forward.
 
 ## Community
 
-- **Community is core to our strength and growth**. We are committed to maintaining the outstanding support that we offer for free and keeping that communication line open. And we want to continue to grow the amazing corps of contributors who offer improvements to the DDEV ecosystem.
+**Community is core to our strength and growth**. We are committed to maintaining the outstanding support that we offer for free and keeping that communication line open. And we want to continue to grow the amazing corps of contributors who offer improvements to the DDEV ecosystem.
 
 ## Board of Directors
 
 In 2025 we established [Board of Directors](board-of-directors-established.md), but now we have to learn what that means. The Board will have to establish itself, begin helping to determine priorities, and find its way to a strong oversight role. Here are a few issues to toss to the board early:
 
-* Overall Marketing/Fundraising strategy, including Fundraising drive
-* Consider spending more on AI (Higher level of Claude Code plans)
-* Discuss and create AI strategy, including policy, guidelines, tools, etc.
-* How many conferences to attend (and what conferences) and spending priorities
+- Overall Marketing/Fundraising strategy, including Fundraising drive
+- Consider spending more on AI (Higher level of Claude Code plans)
+- Discuss and create AI strategy, including policy, guidelines, tools, etc.
+- How many conferences to attend (and what conferences) and spending priorities
 
 ## Features and Initiatives
 
-* Overall AI strategy for DDEV users. How can we support the community in its use of AI for web development? 
-* Update macOS install blog + Xdebug usage blog (carried forward from 2025)
-* AI Sandboxing as key DDEV feature (from github.com/orgs/ddev/discussions/7923)
-* Consider MCP (for projects) as key DDEV feature
-* Consider MCP for DDEV
-* Integration of mkcert CA without use of external tool
-* Start a project without ddev config, Consider offering ddev config --auto or ddev config when ddev start in a directory without config ddev#7976
-* Explore using real certificates instead of mkcert
-* Subdomains for extra ports/services instead of separate ports. (Prereq for some web-based setups like coder)
-* Coder support for subdomains. Could codespaces use some proxy/redirect technique to route subdomains to main item, but have a header that determined how traefik would route it?
-* Use a ddev proxy on host to allow commands like ddev list and ddev describe and ddev launch to work.
-* MCP support (for ecosystems that are using DDEV, perhaps for DDEV itself)
-* Explore moving mutagen completely into container (syncing between volume and bind-mount)
-
+- Consider a general AI strategy for DDEV users. How can we support the community in its use of AI for web development? Many platforms ([like Laravel](https://github.com/ddev/ddev/issues/7556)) have explicit MCPs; people want to know how to use them with DDEV.
+- Update macOS install blog + Xdebug usage blog (carried forward from 2025)
+- AI Sandboxing as key DDEV feature (from [issue](https://github.com/orgs/ddev/discussions/7923))
+- Consider MCP (for projects) as key DDEV feature
+- Consider MCP for DDEV ([experimental PR](https://github.com/ddev/ddev/pull/7604))
+- Integration of mkcert CA without use of external `mkcert` tool
+- Start a project without ddev config, Consider offering ddev config --auto or ddev config when ddev start in a directory without config ([issue](https://github.com/ddev/ddev/issues/7976))
+- Explore using real certificates instead of mkcert CA
+- Subdomains for extra ports/services instead of separate ports. (Prereq for some web-based setups like coder). See the [blog](ddev-expose-node-app-on-subdomain.md) on this approach.
+- Coder support for subdomains. Could codespaces use some proxy/redirect technique to route subdomains to main item, but have a header that determined how traefik would route it?
+- Use a DDEV proxy on the host to allow commands like ddev list and ddev describe and ddev launch to work from inside the web container.
+- Explore moving Mutagen completely into container (syncing between volume and bind-mount)
 
 ## 2026 Planning Additional Notes
 
@@ -62,10 +60,11 @@ We are a very small organization, so we try to pay careful attention to the risk
 
 ### Minor Notes
 
-
 ## Past Plans and Reviews
 
-[2025 Plans and 2024 review](2025-plans.md), [2024 plans](2024-plans.md)
+Previous plans and reviews have obviously framed this year's plans: [2025 Plans and 2024 review](2025-plans.md), [2024 plans](2024-plans.md)
+
+In preparing for this, we have been discussing these things in [regular advisory group meetings](https://github.com/orgs/ddev/discussions/categories/ddev-advisory-group) and a specific [brainstorming meeting](https://github.com/orgs/ddev/discussions/7923).
 
 Want to keep up as the month goes along? Follow us on:
 
