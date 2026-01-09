@@ -46,6 +46,7 @@ In 2025 we established [Board of Directors](board-of-directors-established.md), 
 - Coder support for subdomains. Could codespaces use some proxy/redirect technique to route subdomains to main item, but have a header that determined how traefik would route it?
 - Use a DDEV proxy on the host to allow commands like ddev list and ddev describe and ddev launch to work from inside the web container.
 - Explore moving Mutagen completely into container (syncing between volume and bind-mount)
+- Improved management of `.ddev/.env*` files, marking DDEV-owned lines, etc.
 
 ## Procedures
 
