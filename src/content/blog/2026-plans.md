@@ -32,6 +32,7 @@ In 2025 we established [Board of Directors](board-of-directors-established.md), 
 - Consider spending more on AI (Higher level of Claude Code plans)
 - Discuss and create AI strategy, including policy, guidelines, tools, etc.
 - How many conferences to attend (and what conferences) and spending priorities
+- Should we move toward a Freemium model with "premium" features? What infrastructure and code would be required?
 
 ## Features and Initiatives
 
@@ -50,6 +51,8 @@ In 2025 we established [Board of Directors](board-of-directors-established.md), 
 - Improved management of `.ddev/.env*` files, marking DDEV-owned lines, etc.
 - More work on web-based setups like coder and codespaces and Dev Containers in general.
 - Explore environment adjustments that might let users work "inside the web container" as if they were on a real host (use `composer` instead of `ddev composer`, etc). People can already do this with `ddev ssh`, but that isn't directly compatible with VS Code or PhpStorm.
+- Serialize concurrent runs of `ddev start` and similar commands.
+- Move the DDEV IntelliJ/PhpStorm plugin to the DDEV organization.
 
 ## Procedures
 
@@ -67,6 +70,7 @@ We are a very small organization, so we try to pay careful attention to the risk
 - The financial outlook for discretionary funding from agencies and hosting companies (and perhaps individuals) remains horrible.
 - Any of our maintainers can become overworked or discouraged or can burn out. We take the risk of burnout and overwork very seriously and are careful to talk about them and try to prevent them.
 - Mutagen maintenance and future: Mutagen is a critical part of DDEV, and it's in maintenance-only mode since Jacob went to work for Docker. It's outstanding in quality, so should last, and Jacob has been responsive when there are problems. Its future is not clear.
+- Scope expansion could be unsustainable. We support so many different environments, and our testing is so enormous. Without the current expertise, we couldn't maintain the existing scope.
 
 ### Minor Notes
 
