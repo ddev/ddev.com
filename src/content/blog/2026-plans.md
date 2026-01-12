@@ -15,7 +15,7 @@ categories:
 
 Every year we try to lay out a bit of a plan for the coming year.
 
-One of DDEV's primary strengths is our connection to a wonderful community, so each year turns out a bit different than expected. As we listen to people's actual experience, we try to adjust. And of course as upstream changes bring new features and bugs, we get lots of fun things to work on that we could never have anticipated.
+One of DDEV's primary strengths is our connection to a wonderful community, so each year turns out a bit different than expected. As we listen to people's actual experience, we try to adjust. And of course as upstream changes bring new features and bugs, we get lots of fun things to work on that we could never have anticipated. The items listed here are notes about what we think we understand at this point, but the year ahead and user experience and requests will affect what really happens.
 
 We look forward to your input as the year goes forward.
 
@@ -27,6 +27,7 @@ We look forward to your input as the year goes forward.
 
 In 2025 we established [Board of Directors](board-of-directors-established.md), but now we have to learn what that means. The Board will have to establish itself, begin helping to determine priorities, and find its way to a strong oversight role. Here are a few issues to toss to the board early:
 
+- Governance strategy and technique. Meetings? Voting?
 - Overall Marketing/Fundraising strategy, including Fundraising drive
 - Consider spending more on AI (Higher level of Claude Code plans)
 - Discuss and create AI strategy, including policy, guidelines, tools, etc.
@@ -47,6 +48,8 @@ In 2025 we established [Board of Directors](board-of-directors-established.md), 
 - Use a DDEV proxy on the host to allow commands like ddev list and ddev describe and ddev launch to work from inside the web container.
 - Explore moving Mutagen completely into container (syncing between volume and bind-mount)
 - Improved management of `.ddev/.env*` files, marking DDEV-owned lines, etc.
+- More work on web-based setups like coder and codespaces and Dev Containers in general.
+- Explore environment adjustments that might let users work "inside the web container" as if they were on a real host (use `composer` instead of `ddev composer`, etc). People can already do this with `ddev ssh`, but that isn't directly compatible with VS Code or PhpStorm.
 
 ## Procedures
 
