@@ -223,5 +223,14 @@
     "squareLogo": "/logos/lets-talk.svg",
     "url": "https://letstalk.nl/",
     "github": "Lets-Talk-NL"
+  },
+  {
+    "name": "Aten Design Group",
+    "type": "standard",
+    "logo": "/logos/atendesigngroup.svg",
+    "darklogo": "/logos/atendesigngroup-dark.svg",
+    "squareLogo": "/logos/atendesigngroup-square.svg",
+    "url": "https://atendesigngroup.com/",
+    "github": "AtenDesignGroup"
   }
 ]
