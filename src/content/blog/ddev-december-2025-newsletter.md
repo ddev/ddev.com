@@ -1,6 +1,8 @@
 ---
 title: "DDEV December 2025 Newsletter"
 pubDate: 2025-12-15
+modifiedDate: 2026-01-13
+modifiedComment: "Calendar time in google link for Advisory Group was off by an hour"
 summary: "Board of Directors established, Upsun sponsorship changes, v1.25 coming, new add-ons, community tutorials, and the path forward"
 author: Randy Fay
 featureImage:
@@ -87,7 +89,7 @@ Passcode: 12345
   **January 14, 2026 at 8:00 AM US Mountain Time / 4:00 PM CET — DDEV Extended Advisory Group and Board Meeting**
   Annual 2-hour review of 2025 and plans for 2026
   [Discussion details↗](https://github.com/orgs/ddev/discussions/7863) •
-  [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=DDEV%20Extended%20Advisory%20Group%20and%20Board%20Meeting&dates=20260114T160000Z/20260114T180000Z&details=Annual%202-hour%20review%20of%202025%20and%20plans%20for%202026.%0AAgenda%3A%0A-%20DDEV%20Trademark%20transfer%20progress%0A-%202026%20goals%20for%20board%20consideration%0A-%202025%20year-end%20review%20feedback%0A-%20Financial%20summary%20and%20planning%20discussion%0A%0AMeeting%20details%3A%20https%3A%2F%2Fgithub.com%2Forgs%2Fddev%2Fdiscussions%2F7863&location=Online&trp=true) •
+  [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=DDEV%20Extended%20Advisory%20Group%20and%20Board%20Meeting&dates=20260114T150000Z/20260114T170000Z&details=Annual%202-hour%20review%20of%202025%20and%20plans%20for%202026.%0AAgenda%3A%0A-%20DDEV%20Trademark%20transfer%20progress%0A-%202026%20goals%20for%20board%20consideration%0A-%202025%20year-end%20review%20feedback%0A-%20Financial%20summary%20and%20planning%20discussion%0A%0AMeeting%20details%3A%20https%3A%2F%2Fgithub.com%2Forgs%2Fddev%2Fdiscussions%2F7863&location=Online&trp=true) •
   [Download .ics](/files/ics/ddev-2026-01-14.ics)
 
 ---
