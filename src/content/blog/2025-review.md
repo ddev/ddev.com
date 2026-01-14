@@ -1,11 +1,11 @@
 ---
 title: "DDEV 2025 Year in Review"
-pubDate: 2026-01-12
+pubDate: 2026-01-15
 summary: A look back at DDEV's accomplishments, challenges, and growth in 2025
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2026/01/ddev-2025-review.png
-#  alt: DDEV 2025 Year in Review
+featureImage:
+  src: /img/blog/2026/01/2025-in-review.png
+  alt: DDEV 2025 Year in Review
 categories:
   - Community
 ---
