@@ -48,7 +48,7 @@ categories:
 
 The DDEV open-source community continues excellent engagement on several fronts.
 
-- [addons.ddev.com](https://addons.ddev.com) now shows 147 community-contributed add-ons.
+- [addons.ddev.com](https://addons.ddev.com) now shows 147 community-contributed add-ons (176 in total).
 - Several key features were suggested, initiated, and developed by community members. SO MANY of these are listed below.
 - Online Training: We restarted online [contributor and user training](/blog/category/training/)
 - Offline Training: Randy conducted many Birds-of-a-Feature sessions at DrupalCons, spoke at Florida Drupalcamp, attended, spoke, and trained at TYPO3Camp RheinRuhr, etc.
@@ -107,7 +107,7 @@ Upcoming v1.25.0:
 
 ### Language and Database Updates
 
-- **PHP 8.5** support added with a limited set of extensions
+- **PHP 8.5** support added with a limited set of extensions (in v1.24.10)
 - **MariaDB 11.8** support added
 - **PostgreSQL 18** support added
 - [Node.js as primary web server](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#using-nodejs-as-ddevs-primary-web-server) support
