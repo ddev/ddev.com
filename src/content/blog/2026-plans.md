@@ -42,14 +42,14 @@ In 2025 we established [Board of Directors](board-of-directors-established.md), 
 - Consider MCP (for projects) as key DDEV feature
 - Consider MCP for DDEV ([experimental PR](https://github.com/ddev/ddev/pull/7604))
 - Integration of mkcert CA without use of external `mkcert` tool
-- Start a project without ddev config, Consider offering ddev config --auto or ddev config when ddev start in a directory without config ([issue](https://github.com/ddev/ddev/issues/7976))
+- Start a project without `ddev config`, Consider offering `ddev config --auto` or `ddev config` when `ddev start` in a directory without config ([issue](https://github.com/ddev/ddev/issues/7976))
 - Explore using real certificates instead of mkcert CA
 - Subdomains for extra ports/services instead of separate ports. (Prereq for some web-based setups like coder). See the [blog](ddev-expose-node-app-on-subdomain.md) on this approach.
 - Coder support for subdomains. Could codespaces use some proxy/redirect technique to route subdomains to main item, but have a header that determined how traefik would route it?
 - Use a DDEV proxy on the host to allow commands like ddev list and ddev describe and ddev launch to work from inside the web container.
 - Explore moving Mutagen completely into container (syncing between volume and bind-mount)
 - Improved management of `.ddev/.env*` files, marking DDEV-owned lines, etc.
-- More work on web-based setups like coder and codespaces and Dev Containers in general.
+- More work on web-based setups like Coder and Codespaces and Dev Containers in general.
 - Explore environment adjustments that might let users work "inside the web container" as if they were on a real host (use `composer` instead of `ddev composer`, etc). People can already do this with `ddev ssh`, but that isn't directly compatible with VS Code or PhpStorm.
 - Serialize concurrent runs of `ddev start` and similar commands.
 - Move the DDEV IntelliJ/PhpStorm plugin to the DDEV organization.
