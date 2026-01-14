@@ -23,7 +23,7 @@ categories:
   - [Developer Experience](#developer-experience)
   - [Language and Database Updates](#language-and-database-updates)
   - [Windows Improvements](#windows-improvements)
-- [`ddev.com` Website and Documentation](#ddevcom-website-and-documentation)
+- [ddev.com Website and Documentation](#ddevcom-website-and-documentation)
 - [IDE Integration](#ide-integration)
 - [DDEV Developer Improvements](#ddev-developer-improvements)
 - [AI in DDEV Development](#ai-in-ddev-development)
@@ -65,7 +65,7 @@ The DDEV open-source community continues excellent engagement on several fronts.
 ### Add-on Ecosystem
 
 - **The [Add-on Registry](https://addons.ddev.com)** launched in January 2025, now displays 176 add-ons, 29 of which are officially maintained by the DDEV team.
-- **PHP-based add-ons** Add-ons can now be written in PHP, as the [ddev-upsun](https://github.com/ddev/ddev-upsun) add-on shows. The PHP language is far more powerful for complex tasks than shell scripts.
+- **PHP-based add-ons**: Add-ons can now be written in PHP, as the [ddev-upsun](https://github.com/ddev/ddev-upsun) add-on shows. The PHP language is far more powerful for complex tasks than shell scripts.
 - **`ddev add-on get`** now downloads add-on dependencies automatically
 - [**`x-ddev` extension**](https://docs.ddev.com/en/stable/users/extend/custom-docker-services/#customizing-ddev-describe-output) allows add-ons to add important information to `ddev describe` output
 - Add-on monitoring continues for both official and community add-ons. We monitor the nightly tests of official add-ons, and periodically check in with all the community add-ons, asking people to re-enable or fix tests.
@@ -124,7 +124,7 @@ Upcoming v1.25.0:
 - [**New Windows GUI Installer**](./watch-new-windows-installer.md) handling Traditional Windows, WSL2/Docker CE, and Docker/Rancher Desktop
 - ARM64 Windows installer support
 
-## `ddev.com` Website and Documentation
+## ddev.com Website and Documentation
 
 - **[Downloads page](/downloads)** with improved installer access
 - **Theme switch button** for light/dark mode
@@ -158,7 +158,7 @@ Upcoming v1.25.0:
 
 - [NFS](https://github.com/ddev/ddev/blob/v1.24.10/docs/content/users/install/performance.md) support removed
 - [`ddev service`](https://github.com/ddev/ddev/blob/v1.24.10/docs/content/users/usage/commands.md#service) command removed
-- [`ddev nvm`](https://github.com/ddev/ddev/blob/v1.24.10/docs/content/users/usage/commands.md#nvm) functionality removed, but still supported with [ddev-nvm add-on](https://github.com/ddev/ddev-nvm))
+- [`ddev nvm`](https://github.com/ddev/ddev/blob/v1.24.10/docs/content/users/usage/commands.md#nvm) functionality removed, but still supported with [ddev-nvm add-on](https://github.com/ddev/ddev-nvm)
 - Legacy configuration syntax cleanup
 
 ## Challenges and things that could have gone better
@@ -174,7 +174,7 @@ Upcoming v1.25.0:
 
 ## Comparing Outcomes to 2025 Goals
 
-In [2025 Plans](./2025-plans.md) we laid out ambitions plans for 2025. Here are the outcomes:
+In [2025 Plans](./2025-plans.md) we laid out ambitious plans for 2025. Here are the outcomes:
 
 - **Continue outstanding user support** Done.
 - **Begin formal governance for the DDEV Foundation**. Done.
