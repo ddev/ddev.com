@@ -1,12 +1,12 @@
 ---
-title: "DDEV 2026 Plans"
+title: "Planning for another great DDEV year in 206"
 pubDate: 2026-01-16
 #modifiedDate: 2025-03-04
 summary: DDEV 2026 Plans
 author: Randy Fay
-#featureImage:
-#  src: /img/blog/2025/02/ddev-2025-plans.png
-#  alt: Futuristic view of DDEV 2025 plans
+featureImage:
+  src: /img/blog/2026/01/ddev-2026.png
+  alt: DDEV 2026 Plans
 categories:
   - Community
 ---
@@ -79,6 +79,8 @@ We are a very small organization, so we try to pay careful attention to the risk
 Previous plans and reviews have obviously framed this year's plans: [2025 Plans and 2024 review](2025-plans.md), [2024 plans](2024-plans.md)
 
 In preparing for this, we have been discussing these things in [regular advisory group meetings](https://github.com/orgs/ddev/discussions/categories/ddev-advisory-group) and a specific [brainstorming meeting](https://github.com/orgs/ddev/discussions/7923).
+
+We always want to hear from you about your experiences with DDEV as the year goes along!
 
 Want to keep up as the month goes along? Follow us on:
 
