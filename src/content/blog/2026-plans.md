@@ -1,5 +1,5 @@
 ---
-title: "Planning for another great DDEV year in 206"
+title: "Planning for another great DDEV year in 2006"
 pubDate: 2026-01-16
 #modifiedDate: 2025-03-04
 summary: DDEV 2026 Plans
