@@ -7,14 +7,13 @@ summary: Use WarpBuild to speed up DDEV in CI.
 author: Andrew Berry
 featureImage:
   src: /img/blog/2026/01/warp-speed-ci.jpg
-  srcDark:
+  srcDark: /img/blog/2026/01/warp-speed-ci.jpg
   alt: Warp Speed CI
   caption:
   credit:
 categories:
   - DevOps
   - Performance
-  - Resources
 ---
 
 For most developers, DDEV solves a common challenge: making sure that each developer as a consistent, stable local environment for building their web application. At Lullabot, as we had more and more success with DDEV, another related issue kept coming up: how do we grow and develop our use of continuous integration and automated testing while avoiding similar challenges?
