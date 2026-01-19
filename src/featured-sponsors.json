@@ -232,5 +232,14 @@
     "squareLogo": "/logos/atendesigngroup-square.svg",
     "url": "https://atendesigngroup.com/",
     "github": "AtenDesignGroup"
+  },
+  {
+    "name": "dkd Internet Service GmbH",
+    "type": "standard",
+    "logo": "/logos/dkd.svg",
+    "darklogo": "/logos/dkd.svg",
+    "squareLogo": "/logos/dkd.svg",
+    "url": "https://www.dkd.de/en/",
+    "github": "dkd"
   }
 ]
