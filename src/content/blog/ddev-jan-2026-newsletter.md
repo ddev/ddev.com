@@ -63,7 +63,6 @@ Zoom Info:
 Link: [Join Zoom Meeting](https://us02web.zoom.us/j/7315692237?pwd=RHR6NUkwb0g5WXIzS2NOcXRucCthZz09)
 Passcode: 12345
 
-
 ---
 
 ## Sponsorship Update: Community Response Has Been Strong
