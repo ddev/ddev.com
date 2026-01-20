@@ -1,7 +1,7 @@
 ---
-title: "DDEV January 2026 Newsletter"
-pubDate: 2026-01-21
-summary: "2025 review and 2026 plans, strong community sponsorship response, DDEVBar for macOS, community tutorials from around the world, and upcoming training sessions"
+title: "DDEV January 2026: Year in Review, Looking Ahead, and Community Momentum"
+pubDate: 2026-01-20
+summary: "Reflecting on 2025's growth, mapping 2026's roadmap, celebrating a 10% sponsorship surge, and discovering global community contributions from macOS tools to international tutorials"
 author: Randy Fay
 featureImage:
   src: "/img/blog/2026/01/nancy-lewis-redrock-oil.jpg"
@@ -11,16 +11,18 @@ categories:
   - Newsletters
 ---
 
+As we kick off 2026, it's time to look back at what we accomplished together and share where we're headed next. The DDEV community continues to grow stronger, with contributions flowing in from around the globe.
+
 ## What's New
 
-- **DDEV 2025 Review** → A look back at an amazing year of growth, improvements, and community contributions. [Read more↗](2025-review.md)
-- **DDEV 2026 Plans** → Our roadmap for the year ahead, including goals for sustainability, features, and community growth. [Read more↗](2026-plans.md)
+- **DDEV 2025 Review** → The numbers tell an impressive story: growth in adoption, features, and community engagement. [Read more↗](2025-review.md)
+- **DDEV 2026 Plans** → Our roadmap for sustainability, new features, and expanding the community. [Read more↗](2026-plans.md)
 
 ## Community Highlights
 
-- **DDEVBar for macOS** → Klemens Starybrat created a native Mac menu bar application for managing DDEV projects. [Check it out↗](https://klemens.ee/ddevbar/)
+- **DDEVBar for macOS** → Klemens Starybrat built a native Mac menu bar app that makes managing DDEV projects effortless. [Check it out↗](https://klemens.ee/ddevbar/)
 
-## Community Tutorials
+## Community Tutorials from Around the World
 
 - **Navigating Local Development Landscapes** → Tag1 explores modern approaches to local development environments, featuring DDEV. [Read on Tag1↗](https://www.tag1.com/tag1-team-talks/navigating-local-development-landscapes/)
 - **Configurando um Ambiente de Desenvolvimento WordPress com DDEV (Docker)** → Willian Rodrigues walks through configuring a fast, standardized WordPress development environment (in Portuguese). [Read on Dev.to↗](https://dev.to/williangringo/configurando-um-ambiente-de-desenvolvimento-wordpress-com-ddev-docker-rapido-padronizado-e-sem-1i6i)
@@ -30,7 +32,7 @@ categories:
 ## Community Video Tutorials
 
 - **CraftQuest: DDEV + Vite + Tailwind Boilerplate from Scratch** → Learn to build a modern development boilerplate combining DDEV, Vite, and Tailwind CSS. [Watch on CraftQuest↗](https://craftquest.io/courses/ddev-vite-tailwind-boilerplate-from-scratch)
-- **An introduction to Ansible and using ce-deploy in DDEV** → Greg Harvey Ansible+ce-deploy with DDEV. [Watch on YouTube↗](https://www.youtube.com/watch?v=vRWW93X6GN0)
+- **An introduction to Ansible and using ce-deploy in DDEV** → Greg Harvey demonstrates deployment workflows using Ansible and ce-deploy with DDEV. [Watch on YouTube↗](https://www.youtube.com/watch?v=vRWW93X6GN0)
 
 ---
 
@@ -65,9 +67,9 @@ Passcode: 12345
 
 ---
 
-## Sponsorship Update: Community Response Has Been Strong
+## Sponsorship Update: You Showed Up
 
-The DDEV community has responded strongly to the need for increased sponsorship after Upsun lowered their support level. We're up more than 5% in just a month—thank you to everyone who stepped up!
+When we shared the news about Upsun lowering their sponsorship, the community responded. In just one month, sponsorship jumped from 58% to 68% of our goal—a 10% increase that makes a real difference. Thank you to everyone who stepped up.
 
 **Previous status (December 2025)**: ~$6,964/month (58% of goal)
 
