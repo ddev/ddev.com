@@ -21,7 +21,8 @@ As we kick off 2026, it's time to look back at what we accomplished together and
 ## Community Highlights
 
 - **DDEVBar for macOS** → Klemens Starybrat built a native Mac menu bar app that makes managing DDEV projects simpler. [Check it out↗](https://klemens.ee/ddevbar/)
-- **DDEV Manager GUI for DDEV** → VonLoxx created another DDEV wrapper GUI. [Try it out↗](https://github.com/DDEV-Manager/ddev-manager)
+- **DDEV Manager GUI** → VonLoxx created another DDEV wrapper GUI. [Try it out↗](https://github.com/DDEV-Manager/ddev-manager)
+- **DDEV GUI** by ChaosKing (only tested on Linux) is another entry in this category. [Experiment and give feedback↗](https://github.com/theChaosCoder/ddev-gui)
 
 ## Community Tutorials from Around the World
 
