@@ -24,7 +24,7 @@ categories:
 
 - **Navigating Local Development Landscapes** → Tag1 explores modern approaches to local development environments, featuring DDEV. [Read on Tag1↗](https://www.tag1.com/tag1-team-talks/navigating-local-development-landscapes/)
 - **Configurando um Ambiente de Desenvolvimento WordPress com DDEV (Docker)** → Willian Rodrigues walks through configuring a fast, standardized WordPress development environment (in Portuguese). [Read on Dev.to↗](https://dev.to/williangringo/configurando-um-ambiente-de-desenvolvimento-wordpress-com-ddev-docker-rapido-padronizado-e-sem-1i6i)
-- **DDEV and Gotenberg: Using Custom Fonts for Your PDFs** → Jean-David Daviet explains how to integrate Gotenberg with DDEV for PDF generation with custom fonts (in French). [Read the tutorial↗](https://jeandaviddaviet.fr/en/devops/ddev-and-gotenberg-using-custom-fonts-for-your-pdfs)
+- **DDEV and Gotenberg: Using Custom Fonts for Your PDFs** → Jean-David Daviet explains how to integrate Gotenberg with DDEV for PDF generation with custom fonts (in English and French). [Read the tutorial↗](https://jeandaviddaviet.fr/en/devops/ddev-and-gotenberg-using-custom-fonts-for-your-pdfs)
 - **Custom Drupal 11 Theme with TailwindCSS 4.1** → Serhii Shevchyk demonstrates setting up a modern Drupal 11 theme using TailwindCSS and DDEV. [Read on Medium↗](https://medium.com/@serhii.shevchyk/how-to-set-up-a-custom-drupal-11-theme-with-tailwindcss-4-1-8337e51c4df1)
 
 ## Community Video Tutorials
