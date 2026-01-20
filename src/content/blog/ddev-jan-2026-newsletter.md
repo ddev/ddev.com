@@ -18,8 +18,11 @@ As we kick off 2026, it's time to look back at what we accomplished together and
 - **DDEV 2025 Review** → The numbers tell an impressive story: growth in adoption, features, and community engagement. [Read more↗](2025-review.md)
 - **DDEV 2026 Plans** → Our roadmap for sustainability, new features, and expanding the community. [Read more↗](2026-plans.md)
 
-## Community Highlights
+## Lots of new DDEV GUI experiments!
 
+Many DDEV users love the [PhpStorm/IntelliJ DDEV Integration Plugin](https://plugins.jetbrains.com/plugin/18813-ddev-integration) maintained by AkibaAT and the [VS Code DDEV Manager](https://marketplace.visualstudio.com/items?itemName=biati.ddev-manager) by Biati Digital, but there are new experimental entries in the GUI manager space:
+
+- **DevWorkspacePro** by damms005 is a commercial entry in the wrapper-GUI space that has had lots of energy applied to it. There isn't currently a free trial available, and it's a bit pricey, but see it at <https://devworkspacepro.com/>.
 - **DDEVBar for macOS** → Klemens Starybrat built a native Mac menu bar app that makes managing DDEV projects simpler. [Check it out↗](https://klemens.ee/ddevbar/)
 - **DDEV Manager GUI** → VonLoxx created another DDEV wrapper GUI. [Try it out↗](https://github.com/DDEV-Manager/ddev-manager)
 - **DDEV GUI** by ChaosKing (only tested on Linux) is another entry in this category. [Experiment and give feedback↗](https://github.com/theChaosCoder/ddev-gui)
