@@ -29,7 +29,6 @@ Many DDEV users love the [PhpStorm/IntelliJ DDEV Integration Plugin](https://plu
 
 ## Community Tutorials from Around the World
 
-- **My CraftQuest DDEV Setup** → Prolific trainer Ryan Irelan shows his setup for Craft CMS [Watch↗](https://craftquest.io/lessons/my-craftquest-ddev-setup)
 - **Navigating Local Development Landscapes** → Tag1 explores modern approaches to local development environments, featuring DDEV. [Read on Tag1↗](https://www.tag1.com/tag1-team-talks/navigating-local-development-landscapes/)
 - **Configurando um Ambiente de Desenvolvimento WordPress com DDEV (Docker)** → Willian Rodrigues walks through configuring a fast, standardized WordPress development environment (in Portuguese). [Read on Dev.to↗](https://dev.to/williangringo/configurando-um-ambiente-de-desenvolvimento-wordpress-com-ddev-docker-rapido-padronizado-e-sem-1i6i)
 - **DDEV and Gotenberg: Using Custom Fonts for Your PDFs** → Jean-David Daviet explains how to integrate Gotenberg with DDEV for PDF generation with custom fonts (in English and French). [Read the tutorial↗](https://jeandaviddaviet.fr/en/devops/ddev-and-gotenberg-using-custom-fonts-for-your-pdfs)
@@ -38,6 +37,7 @@ Many DDEV users love the [PhpStorm/IntelliJ DDEV Integration Plugin](https://plu
 ## Community Video Tutorials
 
 - **CraftQuest: DDEV + Vite + Tailwind Boilerplate from Scratch** → Learn to build a modern development boilerplate combining DDEV, Vite, and Tailwind CSS. [Watch on CraftQuest↗](https://craftquest.io/courses/ddev-vite-tailwind-boilerplate-from-scratch)
+- **My CraftQuest DDEV Setup** → Prolific trainer Ryan Irelan shows his setup for Craft CMS [Watch↗](https://craftquest.io/lessons/my-craftquest-ddev-setup)
 - **An introduction to Ansible and using ce-deploy in DDEV** → Greg Harvey demonstrates deployment workflows using Ansible and ce-deploy with DDEV. [Watch on YouTube↗](https://www.youtube.com/watch?v=vRWW93X6GN0)
 
 ---
