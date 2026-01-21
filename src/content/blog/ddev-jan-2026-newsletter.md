@@ -11,12 +11,11 @@ categories:
   - Newsletters
 ---
 
-As we kick off 2026, it's time to look back at what we accomplished together and share where we're headed next. The DDEV community continues to grow stronger, with contributions flowing in from around the globe.
-
-## What's New
+This is the time of year that many of us look backward and forward to inform our future, and DDEV is no different. We took the time to review last year and put together plans for 2026.
 
 - **DDEV 2025 Review** → The numbers tell an impressive story: growth in adoption, features, and community engagement. [Read more↗](2025-review.md)
 - **DDEV 2026 Plans** → Our roadmap for sustainability, new features, and expanding the community. [Read more↗](2026-plans.md)
+- **Board and Advisory Group Meeting** was last week, and you can read the summary and watch the recording. [See it all↗](https://github.com/orgs/ddev/discussions/7863)
 
 ## Lots of new DDEV GUI experiments!
 
@@ -44,7 +43,7 @@ Many DDEV users love the [PhpStorm/IntelliJ DDEV Integration Plugin](https://plu
 
 ## Help Us Out: Use HEAD
 
-Want to help DDEV development? Consider testing with the HEAD version of DDEV. This helps us catch issues early. We think some advanced users with complex Dockerfiles may have hiccups with upcoming v1.25.0. It's easy, See [the docs↗](https://docs.ddev.com/en/stable/developers/building-contributing/#testing-latest-commits-on-head) for instructions.
+Want to help DDEV development? Consider testing with the HEAD version of DDEV. This helps us catch issues early. We expect that some advanced users with complex Dockerfiles may have hiccups with upcoming v1.25.0. It's easy, See [the docs↗](https://docs.ddev.com/en/stable/developers/building-contributing/#testing-latest-commits-on-head) for instructions.
 
 ## DDEV Training Continues
 
@@ -75,7 +74,7 @@ Passcode: 12345
 
 ## Sponsorship Update: You Showed Up
 
-When we shared the news about Upsun lowering their sponsorship, the community responded. In just one month, sponsorship jumped from 58% to 68% of our goal—a 10% increase that makes a real difference. Thank you to everyone who stepped up.
+When we shared the news about Upsun lowering their sponsorship, the community responded. In just one month, sponsorship jumped from 58% to 68% of our goal—a 10% increase that makes a real difference. Thank you to everyone who stepped up and to those of you who are about to jump on board.
 
 **Previous status (December 2025)**: ~$6,964/month (58% of goal)
 
