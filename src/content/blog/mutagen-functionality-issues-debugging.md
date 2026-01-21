@@ -19,6 +19,10 @@ Mutagen is an asynchronous file synchronization tool that decouples in-container
 
 Traditional Docker bind-mounts check every file access against the file on the host. On macOS and Windows, Docker's implementation of these checks is not performant. Mutagen solves this by maintaining a cached copy of your project files in a Docker volume, syncing changes between host and container asynchronously.
 
+### Mostly for PHP
+
+The primary target of Mutagen syncing is PHP files. These were the fundamental problem with Docker as the number of files in a Docker-hosted PHP website grew into the Composer generation with tens of thousands of files, so `php-fpm` had to open so very many of them all at once. Now with DDEV on macOS using Mutagen, `php-fpm` is opening files that are just on its local Linux filesystem, not opening ten thousand files that all have to be verified on the host.
+
 ### Webserving Performance Improvement
 
 Mutagen has made many cohorts of developers very, very happy with the webserving performance. One dev said "the first time I tried it I cried."
