@@ -32,8 +32,8 @@ Mutagen supports filesystem notifications (`inotify`/`fsnotify`), so file-watche
 When Mutagen is enabled, DDEV:
 
 1. Mounts a Docker volume onto `/var/www` inside the web container
-2. A Linux mutagen daemon is installed inside the web container
-3. A host-side mutagen daemon is started by DDEV
+2. A Linux Mutagen daemon is installed inside the web container
+3. A host-side Mutagen daemon is started by DDEV
 4. The two daemons keep each other up-to-date with changes on either side
 
 ### Lifecycle
@@ -53,7 +53,7 @@ DDEV automatically excludes user-generated files in `upload_dirs` from Mutagen s
 
 If your project has non-standard locations, override defaults by setting `upload_dirs` in `.ddev/config.yaml`.
 
-We do note that `upload_dirs` is not an adequate description for this behavior. It was originally intended for user-generated files, but now is used for heavy directories like `node_modules`, etc. 
+We do note that `upload_dirs` is not an adequate description for this behavior. It was originally intended for user-generated files, but now is used for heavy directories like `node_modules`, etc.
 
 ## Common Issues and Caveats
 
@@ -67,8 +67,8 @@ Frontend build tools create massive `node_modules` directories that slow Mutagen
 
 ```yaml
 upload_dirs: #upload_dirs entries are relative to docroot
-  - sites/default/files  # Keep existing CMS defaults
-  - ../node_modules      # Exclude from Mutagen
+  - sites/default/files # Keep existing CMS defaults
+  - ../node_modules # Exclude from Mutagen
 ```
 
 Then run `ddev restart`. The directory remains available in the container via Docker bind-mount.
@@ -88,6 +88,7 @@ If the same file changes on both host and container while out of sync, conflicts
 - Large `npm install` or `yarn install` operations
 
 **Best practices**:
+
 - Do Git operations on the host, not in the container
 - Use `ddev composer` for most composer operations
 - Run `ddev mutagen sync` after major Git branch changes
@@ -194,16 +195,19 @@ ddev mutagen status -l
 ### Troubleshooting Steps
 
 1. **Verify that your project works without Mutagen**:
+
    ```bash
    ddev config --performance-mode=none && ddev restart
    ```
 
 2. **Run diagnostics**:
+
    ```bash
    ddev utility mutagen-diagnose
    ```
 
 3. **Reset to clean `.ddev/mutagen/mutagen.yml`**:
+
    ```bash
    # Backup customizations first
    mv .ddev/mutagen/mutagen.yml .ddev/mutagen/mutagen.yml.bak
@@ -211,17 +215,20 @@ ddev mutagen status -l
    ```
 
 4. **Reset Mutagen volume and recreate it**:
+
    ```bash
    ddev mutagen reset
    ddev restart
    ```
 
 5. **Enable debug output**:
+
    ```bash
    DDEV_DEBUG=true ddev start
    ```
 
 6. **View Mutagen logs**:
+
    ```bash
    ddev mutagen logs
    ```
@@ -240,9 +247,9 @@ ddev mutagen status -l
 
 ```yaml
 upload_dirs:
-  - sites/default/files  # CMS uploads
-  - ../node_modules         # Build dependencies
-  - ../vendor/bin           # Large binaries
+  - sites/default/files # CMS uploads
+  - ../node_modules # Build dependencies
+  - ../vendor/bin # Large binaries
 ```
 
 **Advanced approach**: Edit `.ddev/mutagen/mutagen.yml` after removing the `#ddev-generated` line:
@@ -253,7 +260,7 @@ ignore:
     - "/web/themes/custom/mytheme/node_modules"
     - "/vendor/large-package"
 ```
- 
+
 Then add corresponding bind-mounts in `.ddev/docker-compose.bindmount.yaml`:
 
 ```yaml
@@ -293,11 +300,13 @@ Disable Mutagen if:
 - You're troubleshooting other DDEV issues
 
 Disable per-project:
+
 ```bash
 ddev mutagen reset && ddev config --performance-mode=none && ddev restart
 ```
 
 Disable globally:
+
 ```bash
 ddev config global --performance-mode=none
 ```
@@ -310,6 +319,7 @@ DDEV uses its own Mutagen installation, normally in `~/.ddev`, but using $XDG_CO
 - **Data directory**: `$HOME/.ddev_mutagen_data_directory`
 
 Access Mutagen directly:
+
 ```bash
 ddev utility mutagen sync list
 ddev utility mutagen sync monitor <projectname>
@@ -322,7 +332,7 @@ Mutagen provides dramatic performance improvements for macOS and traditional Win
 - Use `ddev utility mutagen-diagnose` as your first debugging step
 - Configure `upload_dirs` to exclude large directories like `node_modules` or heavy user-generated files directories
 - Run `ddev mutagen reset` after file changes when DDEV is stopped
-- Do git operations on the host, not in the container
+- Do Git operations on the host, not in the container
 - Monitor sync activity with `ddev mutagen monitor` when troubleshooting
 
 The benefits far outweigh the caveats for most projects, especially with the new diagnostic tools that identify and help resolve common issues automatically.
