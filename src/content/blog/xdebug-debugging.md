@@ -1,7 +1,8 @@
 ---
 title: "DDEV and Xdebug: Debugging and sorting out problems"
 pubDate: 2024-05-28
-# modifiedDate: 2024-04-23
+modifiedDate: 2026-02-15
+modifiedComment: "See updated guide: Xdebug in DDEV: Understanding, Debugging, and Troubleshooting Step Debugging"
 summary: How Xdebug works with DDEV, and how to debug problems
 author: Randy Fay
 featureImage:
@@ -12,6 +13,10 @@ categories:
   - Training
   - Videos
   - Guides
+---
+
+**Update**: See the comprehensive updated guide: [Xdebug in DDEV: Understanding, Debugging, and Troubleshooting Step Debugging](xdebug-step-debugging-understanding-and-troubleshooting.md) covering DDEV v1.25's new `ddev utility xdebug-diagnose` tool and advanced troubleshooting.
+
 ---
 
 PHP developers have long had a variety of complications using Xdebug. It's a network protocol, which means that firewalls and other network complications can confuse things. And often people just don't understand how it works. We'll try to sort out how Xdebug works in general, and explain what that means in DDEV, and how to debug problems.
