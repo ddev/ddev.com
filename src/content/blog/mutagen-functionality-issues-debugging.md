@@ -1,17 +1,29 @@
 ---
 title: "Mutagen in DDEV: Functionality, Issues, and Debugging"
-pubDate: 2026-01-24
+pubDate: 2026-02-01
 summary: Understanding Mutagen's performance benefits, common issues, and how to debug sync problems in DDEV.
 author: Randy Fay
 featureImage:
   src: /img/blog/2026/01/mutagen-postal-sync.png
   alt: Friendly illustration of how Mutagen sync works between host and container filesystems
 categories:
+  - Training
   - TechNotes
   - Performance
 ---
 
 [Mutagen](https://mutagen.io) has been a part of DDEV for years, providing dramatic performance improvements for macOS and traditional Windows users. It's enabled by default on these platforms, but understanding how it works, what can go wrong, and how to debug issues is key to getting the most out of DDEV.
+
+## Contributor Training Video
+
+See the January 22, 2026 Contributor Training based on this blog:
+
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YbTlX63GZrk?si=hFPY_sgkganNFe5u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+See the [slides for the training video](https://rfay.github.io/mutagen-fundamentals-and-troubleshooting-presentation/).
+
 
 ## What Mutagen Does
 
