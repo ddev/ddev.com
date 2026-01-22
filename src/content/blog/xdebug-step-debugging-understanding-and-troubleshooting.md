@@ -400,4 +400,4 @@ For more information, see:
 - [Xdebug Documentation](https://xdebug.org/docs/)
 - [Xdebug Step Debugging Guide](https://xdebug.org/docs/step_debug)
 
-Copilot was used to create an initial draft for this blog, and for subsequent reviews.
+Claude Code was used to create an initial draft for this blog, and for subsequent reviews.
