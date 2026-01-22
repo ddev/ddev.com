@@ -27,11 +27,13 @@ Unlike traditional debugging with `var_dump()` or `error_log()`, Xdebug lets you
 
 ## How Xdebug Works
 
-Xdebug operates using a client-server architecture, but in a way that might seem backwards at first:
+Xdebug operates using a client-server architecture. In TCP networking terms (which we use here), PHP is the client and your IDE is the server:
 
 1. **Your IDE is the server** - it listens for incoming connections on port 9003 (the default Xdebug port)
-2. **PHP is the client** - when Xdebug is enabled and a request is made, PHP initiates a connection to your IDE
+2. **PHP is the client** - when Xdebug is enabled and a request is made, PHP initiates a TCP connection to your IDE
 3. **Communication uses the DBGp protocol** - a standardized protocol for debugger communication
+
+Note: The [Xdebug documentation](https://xdebug.org/docs/step_debug) uses the opposite terminology, calling the IDE the "client" and PHP the "server." We use TCP networking terminology where the listener (IDE) is the server and the connector (PHP) is the client.
 
 When PHP hits a breakpoint or starts debugging, Xdebug:
 
@@ -64,6 +66,25 @@ The key technical detail is `host.docker.internal` - this is a special DNS name 
 - `ddev xdebug off` - Disable Xdebug
 - `ddev xdebug toggle` - Toggle Xdebug state
 - `ddev xdebug status` - Check if Xdebug is enabled
+- `ddev xdebug info` - Display Xdebug configuration and connection details
+
+## Why DDEV Xdebug "Just Works"
+
+One of DDEV's proudest achievements is that Xdebug typically works without any configuration. This seems simple, but it's solving a complex problem: PHP running inside a Docker container needs to connect back to your IDE on your host machine, and the container has no inherent knowledge of how to reach the host.
+
+The solution is `host.docker.internal` - a special hostname that resolves to the host machine's IP address from the container's perspective. The challenge is that this works differently across platforms:
+
+- **macOS and Windows (Docker Desktop)**: Automatically provides `host.docker.internal`
+- **Linux**: No built-in `host.docker.internal` support
+- **WSL2**: Complex networking scenarios depending on NAT vs. mirrored mode
+
+DDEV automatically detects your environment and configures `host.docker.internal` correctly:
+
+- On Linux, DDEV adds the host gateway IP to `/etc/hosts` in the container
+- On WSL2, DDEV determines whether to use the Windows host IP or the WSL2 IP based on your configuration
+- On all platforms, DDEV validates the IP and reconfigures if needed
+
+This means when you run `ddev xdebug on`, the extension is already configured to connect to `host.docker.internal:9003`, and that hostname reliably resolves to wherever your IDE is listening.
 
 ## Technical Details: Understanding host.docker.internal
 
@@ -72,7 +93,7 @@ The magic that makes Xdebug work across the Docker container boundary is `host.d
 - Resolves to the host machine's IP address as seen from the container
 - Is automatically configured by Docker Desktop on macOS and Windows
 - On Linux, DDEV provides this capability through additional networking configuration
-- On WSL2, resolves to the Windows host IP address
+- On WSL2, resolves to the Windows host IP address (or WSL2 IP with `xdebug_ide_location=wsl2`)
 
 You can verify what `host.docker.internal` resolves to:
 
@@ -80,11 +101,34 @@ You can verify what `host.docker.internal` resolves to:
 ddev exec getent hosts host.docker.internal
 ```
 
+Or use the new info command:
+
+```bash
+ddev xdebug info
+```
+
 When Xdebug tries to connect, it uses this hostname to reach your IDE. The connection path is:
 
 ```
 PHP in container → host.docker.internal:9003 → Your IDE on host
 ```
+
+### Debugging host.docker.internal Resolution
+
+If you need to troubleshoot how DDEV determines the `host.docker.internal` IP address, use debug mode:
+
+```bash
+DDEV_DEBUG=true ddev start
+```
+
+You'll see output explaining the logic, like:
+
+```
+host.docker.internal='172.22.192.1' because IsWSL2 and !IsDockerDesktop;
+received from ip -4 route show default
+```
+
+This is especially helpful on WSL2 where the networking can be complex.
 
 ### Special Cases
 
@@ -105,6 +149,8 @@ ddev config global --xdebug-ide-location=container
 ```ini
 xdebug.client_port=9000
 ```
+
+**Note**: While Xdebug settings can be overridden using `.ddev/php/<filename>.ini` files, this is unusual and normally unnecessary. DDEV's default Xdebug configuration works for most debugging scenarios.
 
 ## Common Issues
 
@@ -136,11 +182,14 @@ Another common problem is forgetting to start the debug listener in your IDE. PH
 
 Firewalls can block the incoming connection from the Docker container. This is especially common on:
 
+- **WSL2 with Windows Defender Firewall** (the most common debugging issue)
 - Windows with Windows Defender Firewall
 - macOS with application firewalls enabled
 - Linux with restrictive firewall rules
 
-**Quick test**: Temporarily disable your firewall and try debugging. If it works, you need to add a firewall rule allowing incoming connections on port 9003.
+On WSL2, the connection travels from the Docker container in WSL2 across to Windows where your IDE listens, and Windows Defender Firewall frequently blocks this by default.
+
+**Quick test**: Temporarily disable your firewall and try debugging. If it works, you need to add a firewall rule allowing incoming connections on port 9003 (or allow access when Windows prompts).
 
 ### WSL2 Networking Complexities
 
@@ -163,6 +212,19 @@ Then restart WSL2:
 ```bash
 wsl --shutdown
 ```
+
+**WSL2 Firewall Issues**: The most common WSL2 debugging problem is Windows Defender Firewall blocking connections from the Docker container to your IDE on Windows. The connection must travel from WSL2 → Windows, and Windows Defender Firewall often blocks this by default.
+
+**First debugging step for WSL2**: Temporarily disable Windows Defender Firewall:
+
+1. Open Windows Security
+2. Go to Firewall & network protection
+3. Click your active network (Domain, Private, or Public)
+4. Turn off Windows Defender Firewall
+5. Try debugging
+6. Re-enable the firewall
+
+If debugging works with the firewall off, you need to add a firewall rule for port 9003. The easiest approach is to let Windows prompt you when your IDE first listens - just allow access when prompted.
 
 ## The New `ddev utility xdebug-diagnose` Tool
 
@@ -235,8 +297,16 @@ Check that Xdebug is enabled and loaded:
 
 ```bash
 ddev xdebug status
+ddev xdebug info
 ddev exec php -m | grep xdebug
 ```
+
+The `ddev xdebug info` command shows important configuration details including:
+
+- Whether Xdebug is enabled
+- The configured client host (should be `host.docker.internal`)
+- The configured port (should be 9003)
+- Current Xdebug mode settings
 
 ### 3. Check IDE Listener
 
@@ -264,15 +334,35 @@ Test the specific port:
 ddev exec nc -zv host.docker.internal 9003
 ```
 
+**Advanced test - simulate IDE behavior**: You can use `nc` (netcat) to simulate your IDE and see exactly what Xdebug sends:
+
+```bash
+# On your host (not in container), start listening
+nc -l 0.0.0.0 9003
+```
+
+Then visit your site with `ddev xdebug on`. You'll see the DBGp protocol XML that Xdebug sends - this proves Xdebug can connect to your host on port 9003.
+
 ### 5. Check Logs
 
-DDEV logs show connection attempts:
+DDEV logs show connection attempts and errors:
 
 ```bash
 ddev logs
 ```
 
-Look for messages about Xdebug connections or errors.
+Look for messages about Xdebug connections or errors. You might see:
+
+- Connection attempts to `host.docker.internal:9003`
+- Connection refused errors (IDE not listening)
+- Network timeout errors (firewall blocking)
+- Xdebug initialization messages
+
+For real-time monitoring during debugging attempts:
+
+```bash
+ddev logs -f
+```
 
 ### 6. Review xdebug_ide_location Setting
 
@@ -291,15 +381,25 @@ Only set it for special cases:
 
 To isolate firewall issues:
 
+**WSL2** (most common issue): Disable Windows Defender Firewall
+
+1. Open Windows Security → Firewall & network protection
+2. Turn off firewall for your active network
+3. Test debugging
+4. Re-enable firewall
+5. If it works, add a firewall rule for port 9003 (or allow when Windows prompts)
+
+**macOS**:
+
 ```bash
-# macOS
+# Disable firewall
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate off
 
 # Test debugging, then re-enable:
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
 ```
 
-**Windows**: Temporarily disable Windows Defender Firewall through Security settings
+**Traditional Windows**: Same as WSL2 - disable Windows Defender Firewall through Security settings
 
 ### 8. Restart Everything
 
@@ -358,6 +458,25 @@ Create `.vscode/launch.json`:
 
 **WSL2 + VS Code with WSL extension**: Install the PHP Debug extension in WSL, not Windows. VS Code should be opened using the WSL extension.
 
+## Command-Line Debugging
+
+You can debug PHP scripts run from the command line, not just web requests:
+
+1. Enable Xdebug: `ddev xdebug on`
+2. Start your IDE debug listener
+3. Set a breakpoint in your script
+4. Run the script: `ddev exec php myscript.php`
+
+The script will connect to your IDE just like a web request. This works for:
+
+- Standalone PHP scripts
+- Drush commands
+- WP-CLI commands
+- Artisan commands
+- Any PHP executed in the container
+
+For PhpStorm, you may need to configure a "PHP Script" run configuration for command-line debugging, but zero-configuration debugging often works here too.
+
 ## Debugging Composer Operations
 
 By default, Composer disables Xdebug for performance. To debug Composer scripts:
@@ -382,17 +501,50 @@ Xdebug adds overhead to every PHP request. If debugging is slow:
 3. **Consider profiling mode**: Use Xdebug profiling mode instead of step debugging for performance analysis
 4. **Toggle as needed**: Use `ddev xdebug toggle` to quickly enable/disable
 
+## Advanced Features
+
+### xdebugctl Utility
+
+DDEV's web container includes the [`xdebugctl` utility](https://github.com/xdebug/xdebugctl) from the Xdebug project for advanced Xdebug management. This utility provides additional control over Xdebug configuration beyond the standard `ddev xdebug` commands:
+
+```bash
+ddev exec xdebugctl --help
+```
+
+`xdebugctl` allows you to:
+
+- Query and modify Xdebug settings dynamically
+- Switch between debugging modes (debug, profile, trace)
+- Configure advanced Xdebug features
+
+For details, see the [xdebugctl documentation](https://xdebug.org/docs/xdebugctl) and the [Xdebug 3.4 release notes](https://xdebug.org/announcements/2024-12-03).
+
+### Xdebug Map Feature
+
+Recent versions of Xdebug include a "map" feature that allows you to remap file paths during debugging. This is available in DDEV's web container and may be automatically integrated into future DDEV versions.
+
+The map feature is useful when:
+
+- Your container paths don't match your local paths in complex ways
+- You're debugging code deployed to different paths than development
+- You need path translation beyond simple prefix replacement
+
+This feature complements the standard path mappings configured in your IDE and provides more flexible path transformation capabilities.
+
 ## Summary
 
 Xdebug step debugging in DDEV provides powerful interactive debugging capabilities for PHP development:
 
-- PHP initiates connections to your IDE on port 9003
-- `host.docker.internal` enables cross-container networking
+- DDEV automatically configures `host.docker.internal` for seamless debugging across all platforms
+- PHP (the TCP client) initiates connections to your IDE (the TCP server) on port 9003
+- The new `ddev xdebug info` command provides configuration details at a glance
 - The new `ddev utility xdebug-diagnose` tool automates troubleshooting
-- Interactive mode provides guided diagnostics with IDE testing
-- Most issues relate to IDE listener status, firewalls, or WSL2 networking
+- Interactive diagnostic mode provides guided step-by-step testing with your IDE
+- Most issues relate to breakpoints in unexecuted code, incorrect path mappings, IDE listener status, or firewalls
+- The `xdebugctl` utility provides advanced Xdebug control
+- Check `ddev logs` for connection attempts and error messages
 
-The diagnostic tools make it much easier to identify and fix configuration problems, especially for WSL2 users dealing with complex networking scenarios.
+The diagnostic tools and automatic configuration make it much easier to identify and fix configuration problems, especially for WSL2 users dealing with complex networking scenarios.
 
 For more information, see:
 
