@@ -5,13 +5,17 @@ author: Randy Fay
 summary: Video walkthrough of debugging with PhpStorm and Xdebug.
 featureImage:
   src: /img/blog/2020/08/screen-shot-2020-08-04-at-5.27.30-pm-1.png
-  alt: Still from video title matching this post, with the subtitle “No fiddling. No configuration. No php.ini”
+  alt: Still from video title matching this post, with the subtitle "No fiddling. No configuration. No php.ini"
   hide: true
 categories:
   - Guides
   - Videos
-modifiedDate: 2025-07-21
-#modifiedComment: "Minor edits""
+modifiedDate: 2026-02-15
+modifiedComment: "See updated guide: Xdebug in DDEV: Understanding, Debugging, and Troubleshooting Step Debugging"
+---
+
+**Update**: See the comprehensive updated guide: [Xdebug in DDEV: Understanding, Debugging, and Troubleshooting Step Debugging](xdebug-step-debugging-understanding-and-troubleshooting.md) covering DDEV v1.25's new `ddev utility xdebug-diagnose` tool and advanced troubleshooting.
+
 ---
 
 <div class="video-container">
