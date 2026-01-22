@@ -24,7 +24,6 @@ See the January 22, 2026 Contributor Training based on this blog:
 
 See the [slides for the training video](https://rfay.github.io/mutagen-fundamentals-and-troubleshooting-presentation/).
 
-
 ## What Mutagen Does
 
 Mutagen is an asynchronous file synchronization tool that decouples in-container reads and writes from reads and writes on the host machine. Each filesystem enjoys near-native speed because neither is stuck waiting on the other.
