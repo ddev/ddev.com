@@ -1,10 +1,12 @@
 ---
 /**
  * This is a styled terminal that animates screens of output for demonstration.
- * It’s vanilla JavaScript that uses a chain of recursive `setTimeout()` methods
- * to append and reset some `innterHTML`. (Avoid `setInterval()`, which may let
+ * It's vanilla JavaScript that uses a chain of recursive `setTimeout()` methods
+ * to append and reset some `innerHTML`. (Avoid `setInterval()`, which may let
  * things drift out of sync!)
  */
+import { getLatestReleaseVersion } from "../lib/api"
+const latestRelease = await getLatestReleaseVersion()
 ---
 
 <script>
@@ -25,6 +27,12 @@
     wait?: number
   }
 
+  // Get the latest release version from the data attribute
+  const terminalWrapper = document.querySelector('.terminal-wrapper') as HTMLElement
+  // Build the DDEV version line with proper padding (line should be 85 chars total including │ symbols)
+  const versionText = `DDEV version: ${terminalWrapper?.dataset.latestRelease}` || 'v1.25.0'
+  const versionLine = `│ ${versionText}${' '.repeat(83 - versionText.length)} │`
+
   /**
    * Output and animation settings for the things we want to show in the terminal.
    */
@@ -33,7 +41,7 @@
       clumps: [
         { transition: "type", lines: 1, wait: 1000 },
         { transition: "roll", lines: 4, wait: 1000 },
-        { transition: "roll", lines: 6, wait: 1000 },
+        { transition: "roll", lines: 4, wait: 1000 },
         { transition: "roll", lines: 3, wait: 1000 },
         { transition: "show", lines: 3 },
       ],
@@ -43,14 +51,12 @@ Starting my-project...
 Building project images...
 <span class="text-green-500">Project images built in 1s.</span>
  Network ddev-my-project_default  Created
- Container ddev-my-project-web  Created
- Container ddev-my-project-db  Created
  Container ddev-my-project-web  Started
  Container ddev-my-project-db  Started
-Waiting for containers to become ready: [web db] 
-Starting ddev-router if necessary...
- Container ddev-router  Created
+Waiting for containers to become ready: [web db]... ready in 1.0s
+Starting ddev-router, pushing config...
  Container ddev-router  Started
+Waiting for ddev-router to become ready... ready in 1.0s
 <span class="text-green-500">Successfully started my-project</span>
 <span class="text-green-500">Your project can be reached at https://my-project.ddev.site</span>
 <span class="text-green-500">See 'ddev describe' for alternate URLs.</span>`,
@@ -58,33 +64,39 @@ Starting ddev-router if necessary...
     {
       clumps: [
         { transition: "type", lines: 1, wait: 250 },
-        { transition: "show", lines: 25 },
+        { transition: "show", lines: 31 },
       ],
       output: `ddev describe
 ┌─────────────────────────────────────────────────────────────────────────────────────┐
 │ Project: my-project ~/dev/my-project https://my-project.ddev.site                   │
 │ Docker platform: docker-desktop                                                     │
 │ Router: traefik                                                                     │
+${versionLine}
 ├────────────┬──────┬────────────────────────────────────────────┬────────────────────┤
 │ SERVICE    │ STAT │ URL/PORT                                   │ INFO               │
 ├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
-│ web        │ <span class="text-green-500">OK</span>   │ https://my-project.ddev.site               │ php PHP8.3         │
-│            │      │ InDocker: web:443,80,8025                  │ nginx-fpm          │
-│            │      │ Host: 127.0.0.1:51046,51047                │ docroot:''         │
-│            │      │                                            │ Perf mode: none    │
-│            │      │                                            │ NodeJS:20          │
+│ web        │ <span class="text-green-500">OK</span>   │ https://my-project.ddev.site               │ php PHP 8.4        │
+│            │      │ InDocker -> Host:                          │ Server: nginx-fpm  │
+│            │      │  - web:80 -> 127.0.0.1:51046               │ Docroot: ''        │
+│            │      │  - web:443 -> 127.0.0.1:51047              │ Perf mode: none    │
+│            │      │  - web:8025 -> 127.0.0.1:51048             │ NodeJS: 24         │
 ├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
-│ db         │ <span class="text-green-500">OK</span>   │ InDocker: db:3306                          │ mysql:8.0          │
-│            │      │ Host: 127.0.0.1:51045                      │ User/Pass: 'db/db' │
+│ db         │ <span class="text-green-500">OK</span>   │ InDocker -> Host:                          │ mysql:8.0          │
+│            │      │  - db:3306 -> 127.0.0.1:51045              │ User/Pass: 'db/db' │
 │            │      │                                            │ or 'root/root'     │
+├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
+│ xhgui      │ <span class="text-green-500">OK</span>   │ https://my-project.ddev.site:8142          │                    │
+│            │      │ InDocker:                                  │                    │
+│            │      │  - xhgui:80                                │                    │
+│            │      │ Launch: ddev xhgui                         │                    │
 ├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
 │ Mailpit    │      │ Mailpit: https://my-project.ddev.site:8026 │                    │
 │            │      │ Launch: ddev mailpit                       │                    │
 ├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
 │ All URLs   │      │ https://my-project.ddev.site,              │                    │
-│            │      │ https://127.0.0.1:51046,                   │                    │
+│            │      │ https://127.0.0.1:51047,                   │                    │
 │            │      │ http://my-project.ddev.site,               │                    │
-│            │      │ http://127.0.0.1:51047                     │                    │
+│            │      │ http://127.0.0.1:51046                     │                    │
 └────────────┴──────┴────────────────────────────────────────────┴────────────────────┘`,
     },
   ]
@@ -233,7 +245,7 @@ Starting ddev-router if necessary...
   })
 </script>
 
-<div class="terminal-wrapper rounded-lg shadow-lg" style="background: #2e3440;" >
+<div class="terminal-wrapper rounded-lg shadow-lg" style="background: #2e3440;" data-latest-release={latestRelease}>
   <div class={`top-bar flex p-3 space-x-2 rounded-t-lg`}>
     <div class="block rounded-full bg-slate-500 w-3 h-3"></div>
     <div class="block rounded-full bg-slate-500 w-3 h-3"></div>
