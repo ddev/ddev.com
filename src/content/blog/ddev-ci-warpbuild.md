@@ -54,6 +54,8 @@ Before running our real work, we need to know what snapshot we could restore fro
 ```yaml
 jobs:
   determine-snapshot:
+    # This could be a WarpBuild runner too!
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6
 
