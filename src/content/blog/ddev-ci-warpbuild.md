@@ -49,7 +49,7 @@ on:
   pull_request:
 ```
 
-Before running our real work, we need to know what snapshot we could restore from. We start by creating a hash of key files that affect what gets saved in the snapshot. For example, if Playwright (and it's browser and system dependencies) are upgraded by Renovate, we want a new snapshot to be created. Extend or modify these files to match your own project setup.
+Before running our real work, we need to know what snapshot we could restore from. We start by creating a hash of key files that affect what gets saved in the snapshot. For example, if Playwright (and its browser and system dependencies) are upgraded by Renovate, we want a new snapshot to be created. Extend or modify these files to match your own project setup.
 
 ```yaml
 jobs:
@@ -142,7 +142,7 @@ At this point, we've got DDEV ready to go, so we can start it and run tests or a
 
 Now, tests have passed and we can create a snapshot if needed. If tests fail, we never create a snapshot so that we don't accidentally commit a broken environment.
 
-We shut down DDEV since we're going to clean up generated files. Thsi keeps our snapshot a bit smaller, and gives us an opportunity to clean up any credentials that might be used as a part of the job. While we don't typically need a Pantheon token for tests, we do need it for some other jobs we run with DDEV.
+We shut down DDEV since we're going to clean up generated files. This keeps our snapshot a bit smaller and gives us an opportunity to clean up any credentials that might be used as a part of the job. While we don't typically need a Pantheon token for tests, we do need it for some other jobs we run with DDEV.
 
 ```yaml
       - name: Clean up for snapshot
@@ -172,7 +172,6 @@ Now we can actually save the snapshot. We skip this if we can since it takes a b
 ```
 
 To test, once you have jobs passing, you can rerun them from the GitHub Actions UI. If everything is working, you will see all steps related to installing DDEV skipped.
-
 
 Note: We don't pin actions to hashes in these examples for easy copypaste, but for security we always [use Renovate to pin hashes for us](https://docs.renovatebot.com/modules/manager/github-actions/#digest-pinning-and-updating). We would also like to use [Renovate Custom Managers](https://docs.renovatebot.com/modules/manager/regex/) to automatically offer DDEV upgrades and keep the version number in sync across all files and locations.
 
