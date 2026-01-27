@@ -18,7 +18,7 @@ categories:
 
 For most developers, DDEV solves a common challenge: making sure that each developer has a consistent, stable local environment for building their web application. At Lullabot, as we had more and more success with DDEV, but another related issue kept coming up: how do we grow and develop our use of continuous integration and automated testing while avoiding similar challenges?
 
-A typical CI/CD pipeline is implemented using the tools and systems provided by the CI service itself. For example, at a basic level you can place shell commands inside configuration files to run tests and tools. Running those commands locally in DDEV is possible, but it's a painful copypaste process. If you're a back-end or DevOps engineer, odds are high you've wasted hours trying to figure out why a test you wrote locally isn't passing in CI – or vice versa!
+A typical CI/CD pipeline is implemented using the tools and systems provided by the CI service itself. For example, at a basic level you can place shell commands inside configuration files to run tests and tools. Running those commands locally in DDEV is possible, but it's a painful copy/paste process. If you're a back-end or DevOps engineer, odds are high you've wasted hours trying to figure out why a test you wrote locally isn't passing in CI – or vice versa!
 
 As a first step, we used [Task](https://taskfile.dev/) to improve our velocity. Having a unified task runner that works outside PHP lets us standardize CI tasks more easily. However, this still left a big surface area for differences between local and CI environments. For example, in GitHub, the `shivammathur/setup-php` action is used to install PHP and extensions, but the action is not identical to DDEV. Underlying system libraries and packages installed with `apt-get` could also be different, causing unexpected issues. Finally, there was often a lag in detecting when local test environments broke because those changes weren't tested in CI.
 
@@ -26,7 +26,7 @@ This brought us to using DDEV for CI. It's a great solution! Running all of our 
 
 Unlike using a CI-provider's built-in tooling, DDEV is not typically cached or included in CI runners. Just running the [setup-ddev](https://github.com/ddev/github-action-setup-ddev) action can take up to a minute on a bad day. That doesn't include any additional packages or Dockerfile customizations a project may include. At Lullabot, we use [ddev-playwright](https://github.com/Lullabot/ddev-playwright) to run end-to-end tests. Browser engines and their dependencies are heavy! System dependencies can be north of 1GB of compressed packages (that then have to be installed), and browsers themselves can be several hundred MB. This was adding several minutes of setup time just to run a single test.
 
-Luckily, based on our experience building [Tugboat](https://tugboatqa.com/), we knew that the technology to improve startup performance existed. When [WarpBuild](https://www.warpbuild.com/) was announced with Snapshot support in 2024, we immediately started testing it out. Our theory was that Snapshots would be fast enough to create and restore that we'd see significant improvements in startup time. Let's show how we set it up!
+Luckily, based on our experience building [Tugboat](https://tugboatqa.com/), we knew that the technology to improve startup performance existed. When [WarpBuild](https://www.warpbuild.com/) was announced with Snapshot support in 2024, we immediately started testing it out. We theorized that the performance improvement of snapshots would result in significant startup time improvement. Here's how we set it up!
 
 We had three parallel jobs that all required DDEV:
 
@@ -94,7 +94,7 @@ After linking WarpBuild to our GitHub repository, we had to update our workflows
    ```
    It was important to include the DDEV version in the snapshot name so we could clear it when updating DDEV. We also had a version number in case we messed up the cache. We recommend using Renovate Custom Managers to keep it in sync with other ddev versions in your project.
 
-We don't pin actions to hashes in these examples for easy copypaste, but for security we always [use Renovate to pin hashes for us](https://docs.renovatebot.com/modules/manager/github-actions/#digest-pinning-and-updating).
+We don't pin actions to hashes in these examples for easy copy-paste, but for security we always [use Renovate to pin hashes for us](https://docs.renovatebot.com/modules/manager/github-actions/#digest-pinning-and-updating).
 
 The results?
 
