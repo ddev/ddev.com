@@ -215,7 +215,7 @@ export async function getRepoDetails(name: string) {
  */
 export async function getLatestReleaseVersion(stable = true) {
   if (!githubTokenIsSet) {
-    return "v1.24.9" // Fallback version for local development without token
+    return "v1.25.0" // Fallback version for local development without token
   }
 
   let data = await getReleases()
