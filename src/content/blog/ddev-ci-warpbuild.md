@@ -174,7 +174,7 @@ Now we can actually save the snapshot. We skip this if we can since it takes a b
 To test, once you have jobs passing, you can rerun them from the GitHub Actions UI. If everything is working, you will see all steps related to installing DDEV skipped.
 
 
-Note: We don't pin actions to hashes in these examples for easy copy-paste, but for security we always [use Renovate to pin hashes for us](https://docs.renovatebot.com/modules/manager/github-actions/#digest-pinning-and-updating). We would also like to use [Renovate Custom Managers](https://docs.renovatebot.com/modules/manager/regex/) to automatically offer DDEV upgrades and keep the version number in sync across all files and locations.
+Note: We don't pin actions to hashes in these examples for easy copypaste, but for security we always [use Renovate to pin hashes for us](https://docs.renovatebot.com/modules/manager/github-actions/#digest-pinning-and-updating). We would also like to use [Renovate Custom Managers](https://docs.renovatebot.com/modules/manager/regex/) to automatically offer DDEV upgrades and keep the version number in sync across all files and locations.
 
 ## The Results?
 
