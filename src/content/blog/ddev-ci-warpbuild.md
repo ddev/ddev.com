@@ -168,7 +168,7 @@ Now we can actually save the snapshot. We skip this if we can since it takes a b
         # if: ${{ matrix.shard == 1 && steps.find-ddev.outputs.ddev-path != '/usr/bin/ddev'}}
         with:
           # Must match the snapshot.key in runs-on above
-          alias: "my-project-ddev-1.24.10-v1-${{ inputs.snapshot }}"
+          alias: "my-project-ddev-1.24.10-v1-${{ needs.determine-snapshot.outputs.snapshot }}"
           fail-on-error: true
           wait-timeout-minutes: 30
 ```
