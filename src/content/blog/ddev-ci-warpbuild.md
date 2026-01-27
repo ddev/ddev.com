@@ -36,73 +36,154 @@ We had three parallel jobs that all required DDEV:
 
 Note that our Playwright tests themselves run in parallel on a single worker as well, using [lullabot/playwright-drupal](https://github.com/lullabot/playwright-drupal). This allows us to optimize the additional startup time for installing Drupal itself (which can't be cached in a snapshot) across many tests.
 
-After linking WarpBuild to our GitHub repository, we had to update our workflows. Here's the changes we made [after enabling Snapshots](https://docs.warpbuild.com/ci/snapshot-runners) in the WarpBuild UI.
+After linking WarpBuild to our GitHub repository, we had to update our workflows. Here is an example representing the changes we made to our workflow [after enabling Snapshots](https://docs.warpbuild.com/ci/snapshot-runners) in the WarpBuild UI.
 
-1. Update workflows to use the WarpBuild runner such as `warp-ubuntu-2404-x64-16x`. WarpBuild has _many_ runner options available, including ARM and spot instances to reduce costs further. We'll explain `snapshot.key` and `inputs.snapshot` below.
-   ```yaml
-   runs-on:
-     "${{ contains(github.event.head_commit.message, '[warp-no-snapshot]') &&
-     'warp-ubuntu-2404-x64-16x' ||
-     format('warp-ubuntu-2404-x64-16x;snapshot.key=PROJECT-NAME-playwright-snapshot-1.24.10-v1-{0}', inputs.snapshot) }}"
-   ```
-2. Switch `actions/cache` to `WarpBuilds/cache`:
-   ```yaml
-   - uses: WarpBuilds/cache@v1
-     with:
-       path: |
-         ${{ github.workspace }}/.ddev/.drainpipe-composer-cache
-         ${{ github.workspace }}/vendor
-         ${{ github.workspace }}/web/core
-         ${{ github.workspace }}/web/modules/contrib
-       key: ${{ runner.os }}-composer-full-${{ hashFiles('**/composer.lock') }}
-   ```
-3. Create a hash of key files to know when the snapshot should be rebuilt.
-   ```yaml
-   - name: Determine Snapshot Base
-     id: snapshot-base
-     run: |
-       set -x
-       hash=$(cat .github/actions/ddev/action.yml test/playwright/.yarnrc.yml test/playwright/yarn.lock | md5sum | cut -c 1-8)
-       echo "snapshot=$hash" >> $GITHUB_OUTPUT
-     shell: bash
-   ```
-   This hash is used as a part of the `runs-on` key above, and when saving a snapshot below. That way, if DDEV or Playwright are upgraded, the pull request will build from scratch and create a new snapshot automatically.
-4. We check to see if we are running from a snapshot or not by testing for DDEV.
-   ```yaml
-   - name: Find ddev
-     id: find-ddev
-     shell: bash
-     run: |
-       set -x
-       DDEV_PATH=$(which ddev) || DDEV_PATH=''
-       echo "ddev-path=$DDEV_PATH" >> "$GITHUB_OUTPUT"
-   ```
-5. After installing DDEV and running `ddev install-playwright`, we run tests. If they pass, we run a `Create snapshot` step. `matrix.shard` prevents us from wasting time creating multiple snapshots on all shards (we selected shard 2 randomly).
-   ```yaml
-   - name: Clean up for the snapshot
-     if: ${{ matrix.shard == 2 && steps.find-ddev.outputs.ddev-path != '/usr/bin/ddev'}}
-     run: |
-       ddev poweroff
-       git clean -ffdx
-   - name: Create snapshot
-     uses: WarpBuilds/snapshot-save@v1
-     if: ${{ matrix.shard == 2 && steps.find-ddev.outputs.ddev-path != '/usr/bin/ddev'}}
-     with:
-       alias: "PROJECT-NAME-playwright-snapshot-1.24.10-v1-${{ inputs.snapshot }}"
-       fail-on-error: true
-       wait-timeout-minutes: 60
-   ```
-   It was important to include the DDEV version in the snapshot name so we could clear it when updating DDEV. We also had a version number in case we messed up the cache. We recommend using Renovate Custom Managers to keep it in sync with other ddev versions in your project.
+Start with a basic workflow to trigger on pull requests and on merges to `main`.
 
-We don't pin actions to hashes in these examples for easy copy-paste, but for security we always [use Renovate to pin hashes for us](https://docs.renovatebot.com/modules/manager/github-actions/#digest-pinning-and-updating).
+```yaml
+name: "WarpBuild Snapshot Example"
 
-The results?
+on:
+  push:
+    branches: [main]
+  pull_request:
+```
+
+Before running our real work, we need to know what snapshot we could restore from. We start by creating a hash of key files that affect what gets saved in the snapshot. For example, if Playwright (and it's browser and system dependencies) are upgraded by Renovate, we want a new snapshot to be created. Extend or modify these files to match your own project setup.
+
+```yaml
+jobs:
+  determine-snapshot:
+    steps:
+      - uses: actions/checkout@v6
+        
+      - name: Determine Snapshot Base
+        id: snapshot-base
+        run: |
+          set -x
+          hash=$(cat .github/workflows/test.yml test/playwright/.yarnrc.yml test/playwright/yarn.lock | md5sum | cut -c 1-8)
+          echo "snapshot=$hash" >> $GITHUB_OUTPUT
+        shell: bash
+```
+
+WarpBuild needs some additional configuration to tell GitHub Actions to use it as a runner. This could be as simple as `runs-on: 'warp-<runner-type>'` if you aren't using snapshots. WarpBuild has _many_ runner options available, including ARM and spot instances to reduce costs further.
+
+The runs-on statement:
+
+1. [Skips snapshots via commit messages](https://github.com/WarpBuilds/snapshot-save#conditional-snapshot-usage).
+2. Uses a "16x" sized runner so we can run tests in parallel.
+3. Creates a snapshot key with the project name, the ddev version, a manual version number, and the short hash of the files from above.
+
+ We also switch to the WarpBuild cache (so it's local to the runner) and check out the project. Update the cache paths as appropriate for your project.
+
+```yaml
+  build-and-test:
+    needs: [ determine-snapshot ]
+    runs-on:
+      "${{ contains(github.event.head_commit.message, '[warp-no-snapshot]') &&
+      'warp-ubuntu-2404-x64-16x' ||
+      'warp-ubuntu-2404-x64-16x;snapshot.key=my-project-ddev-1.24.10-v1-{0}', inputs.snapshot }}"
+    
+    steps:
+      - uses: WarpBuilds/cache@v1
+        with:
+          path: |
+            ${{ github.workspace }}/.ddev/.drainpipe-composer-cache
+            ${{ github.workspace }}/vendor
+            ${{ github.workspace }}/web/core
+            ${{ github.workspace }}/web/modules/contrib
+          key: ${{ runner.os }}-composer-full-${{ hashFiles('**/composer.lock') }}
+
+      - uses: actions/checkout@v6
+```
+
+We need to add logic to either start from scratch and install everything or restore from a snapshot. Since DDEV isn't installed by default in runners, we can use its presence to easily determine if we're running from inside a snapshot or not. We save these values for later use.
+
+```yaml
+      - name: Find ddev
+        id: find-ddev
+        run: |
+          DDEV_PATH=$(which ddev) || DDEV_PATH=''
+          echo "ddev-path=$DDEV_PATH" >> "$GITHUB_OUTPUT"
+          if [ -n "$DDEV_PATH" ]; then
+            echo "ddev found at: $DDEV_PATH (restored from snapshot)"
+          else
+            echo "ddev not found (fresh runner, will install)"
+          fi
+```
+
+If ddev exists, we can skip installing it:
+
+```yaml
+      - name: Install ddev
+        uses: ddev/github-action-setup-ddev@v1
+        if: ${{ steps.find-ddev.outputs.ddev-path != '/usr/bin/ddev' }}
+        with:
+          autostart: false
+          # When updating this version, also update the snapshot key above
+          version: 1.24.10
+```
+
+At this point, we've got DDEV ready to go, so we can start it and run tests or anything else.
+
+```yaml
+      - name: Start ddev
+        run: |
+          # Playwright users may want to run `ddev install-playwright` here.
+          ddev start
+          ddev describe
+
+      - name: Run tests
+        run: |
+          ddev exec echo "Running tests..."
+          # Replace this with one or more test commands for your project.
+          ddev task test:playwright
+```
+
+Now, tests have passed and we can create a snapshot if needed. If tests fail, we never create a snapshot so that we don't accidentally commit a broken environment.
+
+We shut down DDEV since we're going to clean up generated files. Thsi keeps our snapshot a bit smaller, and gives us an opportunity to clean up any credentials that might be used as a part of the job. While we don't typically need a Pantheon token for tests, we do need it for some other jobs we run with DDEV.
+
+```yaml
+      - name: Clean up for snapshot
+        if: ${{ steps.find-ddev.outputs.ddev-path != '/usr/bin/ddev' }}
+        run: |
+          # Stop ddev to ensure clean state
+          ddev poweroff
+          # Remove any cached credentials or tokens
+          rm -f ~/.terminus/cache/session
+          # Clean git state and temporary files
+          git clean -ffdx
+```
+
+Now we can actually save the snapshot. We skip this if we can since it takes a bit of time to save and upload. There's no point in rewriting our snapshot if it hasn't changed! The `wait-timeout-minutes` is set very high, but in practice this step only takes a minute or two. We just don't want this step to fail if Amazon is slow.
+
+```yaml
+      - name: Save WarpBuild snapshot
+        uses: WarpBuilds/snapshot-save@v1
+        if: ${{ steps.find-ddev.outputs.ddev-path != '/usr/bin/ddev' }}
+        # Using a matrix build? Avoid thrashing snapshots by only saving from one shard.
+        # if: ${{ matrix.shard == 1 && steps.find-ddev.outputs.ddev-path != '/usr/bin/ddev'}}
+        with:
+          # Must match the snapshot.key in runs-on above
+          alias: "my-project-ddev-1.24.10-v1-${{ inputs.snapshot }}"
+          fail-on-error: true
+          wait-timeout-minutes: 30
+```
+
+To test, once you have jobs passing, you can rerun them from the GitHub Actions UI. If everything is working, you will see all steps related to installing DDEV skipped.
+
+
+Note: We don't pin actions to hashes in these examples for easy copy-paste, but for security we always [use Renovate to pin hashes for us](https://docs.renovatebot.com/modules/manager/github-actions/#digest-pinning-and-updating). We would also like to use [Renovate Custom Managers](https://docs.renovatebot.com/modules/manager/regex/) to automatically offer DDEV upgrades and keep the version number in sync across all files and locations.
+
+## The Results?
 
 - The time to start Playwright tests was reduced from **4 to 5 minutes** to **1 to 2 minutes**. Now, the longest time in the workflow is the `ddev start` command.
-- We thought costs would go down, but we ended up writing many more tests! CI costs stayed roughly similar to our previous GitHub costs but with greater test coverage and faster reports.
+  - This project uses eight parallel runners, so we're saving about 24 minutes of CI costs _per commit_.
+- We thought costs would go down, but we ended up writing many more tests! CI costs with WarpBuild stayed roughly similar to our previous GitHub costs but with greater test coverage and faster reports.
 - While ZAP tests needed browsers like Playwright, static tests didn't. However, restoring snapshots was fast enough creating separate snapshots without browsers wasn't worth the complexity.
 - Snapshot storage costs are inexpensive enough to not matter compared to the CI runner cost.
 
-While this seems like a lot of work, it was only about half a day to set up and test - and that was with a new, in-beta service with minimal documentation and rough edges. We haven't really had to touch this code since. Setting up new projects is an hour, at most.
+While this seems like a lot of work, it was only about half a day to set up and test – and that was when WarpBuild was in beta, had minimal documentation and some rough edges. We haven't really had to touch this code since. Setting up new projects is an hour, at most.
 
 Do you have other optimizations for DDEV in CI to share? Post in the comments, we'd love to hear them!
