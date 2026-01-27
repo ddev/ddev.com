@@ -56,7 +56,7 @@ jobs:
   determine-snapshot:
     steps:
       - uses: actions/checkout@v6
-        
+
       - name: Determine Snapshot Base
         id: snapshot-base
         run: |
@@ -74,7 +74,7 @@ The runs-on statement:
 2. Uses a "16x" sized runner so we can run tests in parallel.
 3. Creates a snapshot key with the project name, the ddev version, a manual version number, and the short hash of the files from above.
 
- We also switch to the WarpBuild cache (so it's local to the runner) and check out the project. Update the cache paths as appropriate for your project.
+We also switch to the WarpBuild cache (so it's local to the runner) and check out the project. Update the cache paths as appropriate for your project.
 
 ```yaml
   build-and-test:
