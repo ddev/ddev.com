@@ -16,7 +16,7 @@ categories:
   - Performance
 ---
 
-For most developers, DDEV solves a common challenge: making sure that each developer as a consistent, stable local environment for building their web application. At Lullabot, as we had more and more success with DDEV, another related issue kept coming up: how do we grow and develop our use of continuous integration and automated testing while avoiding similar challenges?
+For most developers, DDEV solves a common challenge: making sure that each developer has a consistent, stable local environment for building their web application. At Lullabot, as we had more and more success with DDEV, but another related issue kept coming up: how do we grow and develop our use of continuous integration and automated testing while avoiding similar challenges?
 
 A typical CI/CD pipeline is implemented using the tools and systems provided by the CI service itself. For example, at a basic level you can place shell commands inside configuration files to run tests and tools. Running those commands locally in DDEV is possible, but it's a painful copypaste process. If you're a back-end or DevOps engineer, odds are high you've wasted hours trying to figure out why a test you wrote locally isn't passing in CI – or vice versa!
 
