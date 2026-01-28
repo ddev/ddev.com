@@ -79,13 +79,15 @@ The runs-on statement:
 We also switch to the WarpBuild cache (so it's local to the runner) and check out the project. Update the cache paths as appropriate for your project.
 
 ```yaml
+jobs:
+  # other jobs...
   build-and-test:
-    needs: [ determine-snapshot ]
+    needs: [determine-snapshot]
     runs-on:
       "${{ contains(github.event.head_commit.message, '[warp-no-snapshot]') &&
       'warp-ubuntu-2404-x64-16x' ||
       'warp-ubuntu-2404-x64-16x;snapshot.key=my-project-ddev-1.24.10-v1-{0}', inputs.snapshot }}"
-    
+
     steps:
       - uses: WarpBuilds/cache@v1
         with:
@@ -102,6 +104,11 @@ We also switch to the WarpBuild cache (so it's local to the runner) and check ou
 We need to add logic to either start from scratch and install everything or restore from a snapshot. Since DDEV isn't installed by default in runners, we can use its presence to easily determine if we're running from inside a snapshot or not. We save these values for later use.
 
 ```yaml
+jobs:
+  # other jobs...
+  build-and-test:
+    steps:
+      # ... previous steps ...
       - name: Find ddev
         id: find-ddev
         run: |
@@ -117,6 +124,11 @@ We need to add logic to either start from scratch and install everything or rest
 If ddev exists, we can skip installing it:
 
 ```yaml
+jobs:
+  # other jobs...
+  build-and-test:
+    steps:
+      # ... previous steps ...
       - name: Install ddev
         uses: ddev/github-action-setup-ddev@v1
         if: ${{ steps.find-ddev.outputs.ddev-path != '/usr/bin/ddev' }}
@@ -129,6 +141,11 @@ If ddev exists, we can skip installing it:
 At this point, we've got DDEV ready to go, so we can start it and run tests or anything else.
 
 ```yaml
+jobs:
+  # other jobs...
+  build-and-test:
+    steps:
+      # ... previous steps ...
       - name: Start ddev
         run: |
           # Playwright users may want to run `ddev install-playwright` here.
@@ -147,6 +164,11 @@ Now, tests have passed and we can create a snapshot if needed. If tests fail, we
 We shut down DDEV since we're going to clean up generated files. This keeps our snapshot a bit smaller and gives us an opportunity to clean up any credentials that might be used as a part of the job. While we don't typically need a Pantheon token for tests, we do need it for some other jobs we run with DDEV.
 
 ```yaml
+jobs:
+  # other jobs...
+  build-and-test:
+    steps:
+      # ... previous steps ...
       - name: Clean up for snapshot
         if: ${{ steps.find-ddev.outputs.ddev-path != '/usr/bin/ddev' }}
         run: |
@@ -161,6 +183,11 @@ We shut down DDEV since we're going to clean up generated files. This keeps our 
 Now we can actually save the snapshot. We skip this if we can since it takes a bit of time to save and upload. There's no point in rewriting our snapshot if it hasn't changed! The `wait-timeout-minutes` is set very high, but in practice this step only takes a minute or two. We just don't want this step to fail if Amazon is slow.
 
 ```yaml
+jobs:
+  # other jobs...
+  build-and-test:
+    steps:
+      # ... previous steps ...
       - name: Save WarpBuild snapshot
         uses: WarpBuilds/snapshot-save@v1
         if: ${{ steps.find-ddev.outputs.ddev-path != '/usr/bin/ddev' }}
