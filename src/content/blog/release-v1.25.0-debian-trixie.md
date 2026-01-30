@@ -6,7 +6,7 @@ author: Stas Zhuk
 featureImage:
   src: /img/blog/2026/02/banner-ddev-v1.25.0.svg
   srcDark: /img/blog/2026/02/banner-ddev-v1.25.0-dark.svg
-  alt: DDEV on Linux in 10 Minutes
+  alt: DDEV v1.25.0 Release Banner
 categories:
   - Announcements
 ---
