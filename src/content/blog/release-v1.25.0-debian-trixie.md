@@ -4,8 +4,8 @@ pubDate: 2026-02-02
 summary: New features and changes in DDEV v1.25.0
 author: Stas Zhuk
 featureImage:
-  src: /img/blog/2026/01/banner-ddev-v1.25.0.svg
-  srcDark: /img/blog/2026/01/banner-ddev-v1.25.0-dark.svg
+  src: /img/blog/2026/02/banner-ddev-v1.25.0.svg
+  srcDark: /img/blog/2026/02/banner-ddev-v1.25.0-dark.svg
   alt: DDEV on Linux in 10 Minutes
 categories:
   - Announcements
