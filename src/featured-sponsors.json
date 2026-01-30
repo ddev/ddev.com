@@ -241,5 +241,14 @@
     "squareLogo": "/logos/dkd.svg",
     "url": "https://www.dkd.de/en/",
     "github": "dkd"
+  },
+  {
+    "name": "WEBKINDER",
+    "type": "standard",
+    "logo": "/logos/webkinder.svg",
+    "darklogo": "/logos/webkinder-dark.svg",
+    "squareLogo": "/logos/webkinder-square.svg",
+    "url": "https://www.webkinder.ch/",
+    "github": "webkinder"
   }
 ]
