@@ -106,6 +106,13 @@ Before diving into setup, consider whether you need an alternative to traditiona
 
 Install Podman using your distribution's package manager. See the [official Podman installation guide for Linux](https://podman.io/docs/installation#installing-on-linux).
 
+```bash
+# Ubuntu/Debian
+sudo apt-get install podman
+# Fedora
+sudo dnf install podman
+```
+
 **Note:** Some distributions may have outdated Podman versions. This is the case with Ubuntu 24.04, which has Podman 4.9.3. We require Podman 5.0 or newer for the best experience, because we didn't have success with Podman 4.x in our automated tests, but you can still use Podman 4.x ignoring the warning on `ddev start`.
 
 You can also install [Podman Desktop](https://podman-desktop.io/docs/installation/linux-install) if you prefer a GUI.
