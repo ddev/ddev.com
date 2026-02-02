@@ -12,7 +12,7 @@ categories:
   - Guides
 ---
 
-**TL;DR**: DDEV supports Podman and Docker Rootless as of v1.25.0. Podman and Docker Rootless are a bit more trouble than the [recommended normal traditional Docker providers](https://docs.ddev.com/en/stable/users/install/docker-installation/) and have some serious trade-offs. On macOS you can't use the normal default ports 80 and 443. On Linux Docker Rootless you can't bind-mount directories, so the entire project has to be mutagen-synced.
+**TL;DR**: DDEV supports Podman and Docker Rootless as of v1.25.0. Podman and Docker Rootless are a bit more trouble than the [recommended normal traditional Docker providers](https://docs.ddev.com/en/stable/users/install/docker-installation/) and have some serious trade-offs. With Podman on macOS you can't use the normal default ports 80 and 443. On Linux Docker Rootless you can't bind-mount directories, so the entire project has to be mutagen-synced. But Podman Rootless on Linux is pretty solid.
 
 Jump to setup instructions: [Linux/WSL2](#key-aim-linux-and-wsl2-users) · [macOS](#macos) · [Windows](#windows)
 
