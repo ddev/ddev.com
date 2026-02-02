@@ -108,9 +108,9 @@ Install Podman using your distribution's package manager. See the [official Podm
 
 ```bash
 # Ubuntu/Debian
-sudo apt-get install podman
+sudo apt-get update && sudo apt-get install podman
 # Fedora
-sudo dnf install podman
+sudo dnf install --refresh podman
 ```
 
 **Note:** Some distributions may have outdated Podman versions. This is the case with Ubuntu 24.04, which has Podman 4.9.3. We require Podman 5.0 or newer for the best experience, because we didn't have success with Podman 4.x in our automated tests, but you can still use Podman 4.x ignoring the warning on `ddev start`.
@@ -132,9 +132,9 @@ Podman provides a Docker-compatible API, which means you can use the Docker CLI 
 
    ```bash
    # Ubuntu/Debian
-   sudo apt-get install docker-ce-cli
+   sudo apt-get update && sudo apt-get install docker-ce-cli
    # Fedora
-   sudo dnf install docker-ce-cli
+   sudo dnf install --refresh docker-ce-cli
    ```
 
    **Note:** You don't need to install `docker-ce` (the Docker engine).
@@ -219,9 +219,9 @@ To improve performance, install `fuse-overlayfs` and configure the overlay stora
 
 ```bash
 # Ubuntu/Debian
-sudo apt-get install fuse-overlayfs
+sudo apt-get update && sudo apt-get install fuse-overlayfs
 # Fedora
-sudo dnf install fuse-overlayfs
+sudo dnf install --refresh fuse-overlayfs
 ```
 
 **Configure storage**:
