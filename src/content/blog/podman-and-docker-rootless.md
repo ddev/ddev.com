@@ -1,18 +1,18 @@
 ---
 title: "Podman and Docker Rootless in DDEV"
-pubDate: 2026-01-08
-#modifiedDate: 2026-01-08
+pubDate: 2026-02-03
+#modifiedDate: 2026-02-03
 summary: After years of development, DDEV now supports Podman and Docker Rootless for secure, rootless container development.
 author: Stas Zhuk
 featureImage:
-  src: /img/blog/2026/01/ddev-podman-docker-rootless.png
+  src: /img/blog/2026/02/ddev-podman-docker-rootless.png
   alt: DDEV logo with Podman and Docker logos
 categories:
   - Announcements
   - Guides
 ---
 
-**TL;DR**: DDEV now supports Podman and Docker Rootless in [DDEV HEAD](https://docs.ddev.com/en/stable/developers/building-contributing/#testing-latest-commits-on-head) (coming in v1.25.0). Podman and Docker Rootless are a bit more trouble than the [recommended normal traditional docker providers](https://docs.ddev.com/en/stable/users/install/docker-installation/) and have some serious trade-offs. On macOS you can't use the normal default ports 80 and 443. On Linux Docker Rootless you can't bind-mount directories, so the entire project has to mutagen-synced.
+**TL;DR**: DDEV supports Podman and Docker Rootless as of v1.25.0. Podman and Docker Rootless are a bit more trouble than the [recommended normal traditional Docker providers](https://docs.ddev.com/en/stable/users/install/docker-installation/) and have some serious trade-offs. On macOS you can't use the normal default ports 80 and 443. On Linux Docker Rootless you can't bind-mount directories, so the entire project has to be mutagen-synced.
 
 Jump to setup instructions: [Linux/WSL2](#key-aim-linux-and-wsl2-users) · [macOS](#macos) · [Windows](#windows)
 
@@ -25,6 +25,7 @@ Jump to setup instructions: [Linux/WSL2](#key-aim-linux-and-wsl2-users) · [macO
   - [Why Choose Podman?](#why-choose-podman)
   - [Why Choose Docker Rootless?](#why-choose-docker-rootless)
 - [Key aim: Linux and WSL2 users](#key-aim-linux-and-wsl2-users)
+  - [Do You Need an Alternative to Docker?](#do-you-need-an-alternative-to-docker)
   - [Installing Podman](#installing-podman)
   - [Installing Docker CLI](#installing-docker-cli)
   - [Configuring Podman Rootless](#configuring-podman-rootless)
@@ -32,10 +33,12 @@ Jump to setup instructions: [Linux/WSL2](#key-aim-linux-and-wsl2-users) · [macO
   - [Configuring Podman Rootful](#configuring-podman-rootful)
   - [Setting Up Docker Rootless](#setting-up-docker-rootless)
 - [macOS](#macos)
+  - [Do You Need an Alternative to Docker?](#do-you-need-an-alternative-to-docker-1)
   - [Installing Podman](#installing-podman-1)
   - [Installing Docker CLI](#installing-docker-cli-1)
   - [Configuring Podman](#configuring-podman)
 - [Windows](#windows)
+  - [Do You Need an Alternative to Docker?](#do-you-need-an-alternative-to-docker-2)
   - [Installing Podman](#installing-podman-2)
 - [Running Multiple Container Runtimes](#running-multiple-container-runtimes)
 - [Switching Runtimes with DDEV](#switching-runtimes-with-ddev)
@@ -86,6 +89,19 @@ Unlike Podman which is rootless by default, Docker Rootless requires special set
 
 The primary focus for this article is Linux and WSL2 (we have test coverage for Linux only for now). Most features and configurations are well-tested on these platforms.
 
+### Do You Need an Alternative to Docker?
+
+Before diving into setup, consider whether you need an alternative to traditional Docker:
+
+| Runtime                | Why would you do this?                               | Key trade-offs                                                                   | Performance                 | Setup    | Recommendation                                   |
+| ---------------------- | ---------------------------------------------------- | -------------------------------------------------------------------------------- | --------------------------- | -------- | ------------------------------------------------ |
+| **Traditional Docker** | Standard, widely-used option                         | None                                                                             | Excellent                   | Simple   | **Recommended for most users**                   |
+| **Docker Rootless**    | Security requirement for rootless daemon             | Must use `--no-bind-mounts` (everything via Mutagen), can't use default workflow | Moderate (Mutagen overhead) | Moderate | Only if rootless security is required            |
+| **Podman Rootful**     | Organization forbids Docker                          | Slower than Docker, different behavior                                           | Slower than Docker          | Moderate | Only if Docker not allowed                       |
+| **Podman Rootless**    | Organization forbids Docker + want rootless security | May need sysctl changes for ports <1024, slower than Docker                      | Slower than Docker          | Moderate | Only if Docker not allowed and rootless required |
+
+**Bottom line**: Stick with traditional Docker unless organizational policy or security requirements force you to use an alternative. The alternatives work, but have significant trade-offs.
+
 ### Installing Podman
 
 Install Podman using your distribution's package manager. See the [official Podman installation guide for Linux](https://podman.io/docs/installation#installing-on-linux).
@@ -120,7 +136,7 @@ Podman provides a Docker-compatible API, which means you can use the Docker CLI 
 
 This is the recommended configuration for most users.
 
-1. Prepare the system:
+1. Prepare the system by configuring subuid and subgid ranges and enabling userns options, see the [Arch Linux Wiki](https://wiki.archlinux.org/title/Podman#Rootless_Podman) for details:
 
    ```bash
    # Add subuid and subgid ranges if they don't exist for the current user
@@ -151,9 +167,7 @@ This is the recommended configuration for most users.
    fi
    ```
 
-   For more details, see the [Arch Linux Wiki](https://wiki.archlinux.org/title/Podman).
-
-2. Enable the Podman socket and verify it's running:
+2. Enable the Podman socket and verify it's running ([Podman socket activation documentation](https://github.com/containers/podman/blob/main/docs/tutorials/socket_activation.md)):
 
    ```bash
    systemctl --user enable --now podman.socket
@@ -165,9 +179,7 @@ This is the recommended configuration for most users.
    podman info --format '{{.Host.RemoteSocket.Path}}'
    ```
 
-   For more details, see the [Podman socket activation documentation](https://github.com/containers/podman/blob/main/docs/tutorials/socket_activation.md).
-
-3. Configure Docker API to use Podman:
+3. Configure Docker API to use Podman ([Podman rootless tutorial](https://github.com/containers/podman/blob/main/docs/tutorials/rootless_tutorial.md)):
 
    ```bash
    # View existing contexts
@@ -184,8 +196,6 @@ This is the recommended configuration for most users.
    # Verify it works
    docker ps
    ```
-
-   For more details, see [Podman rootless tutorial](https://github.com/containers/podman/blob/main/docs/tutorials/rootless_tutorial.md)
 
 4. Proceed with [DDEV installation](https://docs.ddev.com/en/stable/users/install/ddev-installation/#ddev-installation-linux).
 
@@ -335,6 +345,15 @@ Docker Rootless on Linux offers rootless security with full Docker compatibility
 
 macOS users can use Podman and Podman Desktop, but setup has its own challenges. Docker Rootless is not available on macOS.
 
+### Do You Need an Alternative to Docker?
+
+| Runtime                | Why would you do this?                        | Key trade-offs                                                           | Performance        | Setup    | Recommendation                 |
+| ---------------------- | --------------------------------------------- | ------------------------------------------------------------------------ | ------------------ | -------- | ------------------------------ |
+| **Traditional Docker** | Standard, widely-used option                  | None                                                                     | Excellent          | Simple   | **Recommended for most users** |
+| **Podman**             | Avoid Docker entirely (organizational policy) | Cannot use ports 80/443 (must use 8080/8443 instead), different behavior | Slower than Docker | Moderate | Only if Docker not allowed     |
+
+**Bottom line**: Use traditional Docker (OrbStack, Docker Desktop, Lima, Colima, or Rancher Desktop) unless your organization forbids it. The inability to use standard ports 80/443 with Podman creates a significantly different development experience.
+
 ### Installing Podman
 
 Install Podman using Homebrew:
@@ -361,7 +380,20 @@ brew install docker
 
 ### Configuring Podman
 
-1. Initialize and start the Podman machine:
+1. Handle privileged ports (<1024):
+
+   **Important**: Podman on macOS cannot bind to privileged ports (80/443). You must configure DDEV to use unprivileged ports:
+
+   ```bash
+   ddev config global --router-http-port=8080 \
+       --router-https-port=8443
+   ```
+
+   This means your DDEV projects will be accessible at `https://yourproject.ddev.site:8443` instead of the standard `https://yourproject.ddev.site`.
+
+   Note: switching to rootful mode with `podman machine set --rootful --user-mode-networking=false` doesn't help with privileged ports because the `--user-mode-networking=false` flag is [not supported on macOS](https://github.com/containers/podman/issues/26780) (it's only available for WSL).
+
+2. Initialize and start the Podman machine:
 
    ```bash
    # check `podman machine init -h` for more options
@@ -369,44 +401,30 @@ brew install docker
    podman machine start
    ```
 
-   Example output from `podman machine start`:
+   Check for the Podman socket path using `podman machine inspect`:
 
    ```text
-   ~ % podman machine start
-   Starting machine "podman-machine-default"
-
-   This machine is currently configured in rootless mode. If your containers
-   require root permissions (e.g. ports < 1024), or if you run into compatibility
-   issues with non-podman clients, you can switch using the following command:
-
-   	podman machine set --rootful
-
-   API forwarding listening on: /var/folders/x3/r1wk89cd3_x0yb_21dgnj53m0000gn/T/podman/podman-machine-default-api.sock
-
-   The system helper service is not installed; the default Docker API socket
-   address can't be used by podman. If you would like to install it, run the following commands:
-
-           sudo /opt/homebrew/Cellar/podman/5.7.1/bin/podman-mac-helper install
-           podman machine stop; podman machine start
-
-   You can still connect Docker API clients by setting DOCKER_HOST using the
-   following command in your terminal session:
-
-           export DOCKER_HOST='unix:///var/folders/x3/r1wk89cd3_x0yb_21dgnj53m0000gn/T/podman/podman-machine-default-api.sock'
-
-   Machine "podman-machine-default" started successfully
+   ~ % podman machine inspect
+   ...
+      "ConnectionInfo": {
+         "PodmanSocket": {
+              "Path": "/var/folders/z5/lhpyjf2n7xj2djl0bw_7kb3m0000gn/T/podman/podman-machine-default-api.sock"
+         },
+         "PodmanPipe": null
+      },
+   ...
    ```
 
-2. Configure Docker CLI to use Podman. Choose one of two approaches:
+3. Configure Docker CLI to use Podman. Choose one of two approaches:
 
    **Option 1: Create a Docker context** (recommended, more flexible):
 
    ```bash
    # Create Podman context (path to socket may vary)
-   # Use the socket path from `podman machine start` output
+   # Use the socket path from `podman machine inspect` output
    docker context create podman-rootless \
        --description "Podman (rootless)" \
-       --docker host="unix:///var/folders/x3/r1wk89cd3_x0yb_21dgnj53m0000gn/T/podman/podman-machine-default-api.sock"
+       --docker host="unix:///var/folders/z5/lhpyjf2n7xj2djl0bw_7kb3m0000gn/T/podman/podman-machine-default-api.sock"
 
    # Switch to the new context
    docker context use podman
@@ -430,22 +448,20 @@ brew install docker
    docker ps
    ```
 
-3. Proceed with [DDEV installation](https://docs.ddev.com/en/stable/users/install/ddev-installation/).
-
-4. Handle privileged ports (<1024):
-
-   Podman on macOS cannot bind to privileged ports (80/443). Configure DDEV to use unprivileged ports:
-
-   ```bash
-   ddev config global --router-http-port=8080 \
-       --router-https-port=8443
-   ```
-
-   Note: switching to rootful mode with `podman machine set --rootful --user-mode-networking=false` doesn't help with privileged ports because the `--user-mode-networking=false` flag is [not supported on macOS](https://github.com/containers/podman/issues/26780) (it's only available for WSL).
+4. Proceed with [DDEV installation](https://docs.ddev.com/en/stable/users/install/ddev-installation/).
 
 ## Windows
 
 Windows users can use Podman Desktop, but setup has its own challenges. Docker Rootless is not available on traditional Windows (it works in WSL2, see the [Linux and WSL2](#key-aim-linux-and-wsl2-users) section).
+
+### Do You Need an Alternative to Docker?
+
+| Runtime                | Why would you do this?                        | Key trade-offs                             | Performance        | Setup    | Recommendation                 |
+| ---------------------- | --------------------------------------------- | ------------------------------------------ | ------------------ | -------- | ------------------------------ |
+| **Traditional Docker** | Standard, widely-used option                  | None                                       | Excellent          | Simple   | **Recommended for most users** |
+| **Podman**             | Avoid Docker entirely (organizational policy) | Different behavior, less mature on Windows | Slower than Docker | Moderate | Only if Docker not allowed     |
+
+**Bottom line**: Use traditional Docker (Docker Desktop or alternatives) unless your organization forbids it. Podman on Windows works but is less mature than on Linux.
 
 ### Installing Podman
 
