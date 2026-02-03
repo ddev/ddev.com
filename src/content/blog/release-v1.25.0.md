@@ -1,5 +1,5 @@
 ---
-title: "DDEV Release v1.25.0 with Debian Trixie, XHGui, and Enhanced Windows Support"
+title: "DDEV v1.25.0: Improved Windows Support, Faster Debugging, and Modern Defaults"
 pubDate: 2026-02-03
 summary: New features and changes in DDEV v1.25.0
 author: Stas Zhuk
@@ -11,13 +11,15 @@ categories:
   - Announcements
 ---
 
-We're excited to announce [DDEV v1.25.0](https://github.com/ddev/ddev/releases/tag/v1.25.0), featuring Debian Trixie as the base image, XHGui as the default profiler, and a completely revised Windows installer.
+We're excited to announce [DDEV v1.25.0](https://github.com/ddev/ddev/releases/tag/v1.25.0), featuring a completely revised Windows installer, XHGui as the default profiler, and updated system defaults including a move to Debian Trixie.
 
 This release represents contributions from the entire DDEV community, with your suggestions, bug reports, code contributions, and financial support making it possible.
 
-## What's Changed in This Major Release
+## What's New and Updated
 
 **Default versions updated**:
+
+These updates mostly affect new projects. Existing projects typically continue to work without changes.
 
 - **Debian Trixie** replaces Debian Bookworm as the base image for `ddev-webserver` and `ddev-ssh-agent`
 - **XHGui** is now the default profiler (replacing prepend mode). See [XHGui Feature blog post](./xhgui-feature.md)
@@ -45,9 +47,9 @@ After upgrading to v1.25.0, follow these steps:
 2. **Update your projects**: Run `ddev config --auto` on each project to update to current configuration
 3. **Update installed add-ons**: Run `ddev add-on list --installed` to see your add-ons, then update them as needed
 4. **Free up disk space**: Run `ddev delete images` to remove old Docker image versions
-5. **Check for breaking changes** below if you use any removed features
+5. **Check compatibility notes** below
 
-## Breaking Changes: What to Check
+## Compatibility Notes and Things to Check
 
 ### 1. Debian Trixie base image
 
