@@ -1,6 +1,6 @@
 ---
 title: "DDEV Release v1.25.0 with Debian Trixie, XHGui, and Enhanced Windows Support"
-pubDate: 2026-02-02
+pubDate: 2026-02-03
 summary: New features and changes in DDEV v1.25.0
 author: Stas Zhuk
 featureImage:
@@ -33,7 +33,7 @@ This release represents contributions from the entire DDEV community, with your 
   - `ddev utility xdebug-diagnose` helps troubleshoot Xdebug issues. See [(draft) Xdebug Understanding and Troubleshooting](https://pr-520.ddev-com-fork-previews.pages.dev/blog/xdebug-step-debugging-understanding-and-troubleshooting/)
   - `ddev utility mutagen-diagnose` helps debug Mutagen issues. See [(draft) Mutagen Functionality and Debugging](https://pr-519.ddev-com-fork-previews.pages.dev/blog/mutagen-functionality-issues-debugging/)
 - **Faster snapshots**: `ddev snapshot` now uses zstd instead of gzip for significantly faster exports and restores, thanks [@deviantintegral](https://github.com/deviantintegral)
-- **Experimental Podman and Docker Rootless support**: See [(draft) Podman and Docker Rootless in DDEV](https://pr-476.ddev-com-fork-previews.pages.dev/blog/podman-and-docker-rootless/)
+- **Experimental Podman and Docker Rootless support**: See [Podman and Docker Rootless in DDEV](./podman-and-docker-rootless.md)
 - **FrankenPHP as an official add-on**: [`ddev-frankenphp`](https://github.com/ddev/ddev-frankenphp) with many improvements. See updated [(draft) Using FrankenPHP with DDEV](https://pr-502.ddev-com-fork-previews.pages.dev/blog/using-frankenphp-with-ddev/)
 - **Traefik configuration standardization**: Project configuration now uses a single file: `.ddev/traefik/config/<projectname>.yaml` (all other files are ignored)
 
