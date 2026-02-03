@@ -420,7 +420,7 @@ brew install docker
        --docker host="unix:///var/folders/z5/lhpyjf2n7xj2djl0bw_7kb3m0000gn/T/podman/podman-machine-default-api.sock"
 
    # Switch to the new context
-   docker context use podman
+   docker context use podman-rootless
 
    # Verify it works
    docker ps
