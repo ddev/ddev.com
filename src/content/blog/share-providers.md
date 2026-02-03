@@ -64,7 +64,7 @@ WordPress is always difficult because it embeds the URL right in the database. F
 # .ddev/config.yaml
 hooks:
   pre-share:
-    # provider DDEV_SHARE_URL in container
+    # provide DDEV_SHARE_URL in container
     - exec-host: echo "${DDEV_SHARE_URL}" >.ddev/share_url.txt
     # Save database for restore later
     - exec-host: ddev export-db --file=/tmp/tmpdump.sql.gz
@@ -84,7 +84,7 @@ This approach works for any CMS that stores base URLs in its configuration or da
 
 ### TYPO3 Example
 
-TYPO3 usually puts the site URL into config/sites/\*/config.yaml as `base: <url>`, and then it won't respond to the different URLs in a `ddev share`. The hooks here temporarily remove teh `base:` element:
+TYPO3 usually puts the site URL into config/sites/\*/config.yaml as `base: <url>`, and then it won't respond to the different URLs in a `ddev share`. The hooks here temporarily remove the `base:` element:
 
 ```yaml
 hooks:
@@ -123,7 +123,7 @@ The new provider system is script-based, allowing you to create custom providers
 
 For details on creating custom providers, see the [sharing documentation](https://docs.ddev.com/en/stable/users/topics/sharing/).
 
-An example of a share provider for `localtunnel` is provided in `.ddev/share_providers/localtunnel.sh.example` and you can experiment with it by just copying that to `.ddev/share_providers/localtunnel`.
+An example of a share provider for `localtunnel` is provided in `.ddev/share-providers/localtunnel.sh.example` and you can experiment with it by just copying that to `.ddev/share-providers/localtunnel`.
 
 ## Questions
 
