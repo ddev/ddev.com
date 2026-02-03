@@ -20,6 +20,12 @@ export async function getStaticPaths() {
 const { entry } = Astro.props
 const { Content, remarkPluginFrontmatter } = await render(entry)
 
+// Extract original filename from file path for GitHub edit URL
+// entry.id is URL-safe (dots removed), but we need the actual filename
+const originalFilename = entry.filePath
+  ? entry.filePath.split('/').pop().replace(/\.mdx?$/, '')
+  : entry.id
+
 const author = await getEntry("authors", getSlug(entry.data.author))
 
 const hasFeatureImage =
@@ -86,7 +92,7 @@ const blogPostSchema = [
       authorUrl={`/blog/author/${author.id}`}
       authorAvatar={authorImage}
       readTime={remarkPluginFrontmatter.minutesRead}
-      editUrl={GITHUB_URL_WEBSITE+`/`+entry.id+`.md`}
+      editUrl={GITHUB_URL_WEBSITE+`/`+originalFilename+`.md`}
     />
     {
       hasFeatureImage && shouldDisplayFeatureImage && (
