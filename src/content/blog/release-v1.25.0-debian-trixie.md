@@ -28,12 +28,12 @@ This release represents contributions from the entire DDEV community, with your 
 **Major new features**:
 
 - **Revised Windows installer** now uses per-user installation for WSL2 or traditional Windows (no admin account required). Download from [ddev.com/download](/download/)
-- **Reworked `ddev share` command** with a new cloudflared share provider for free sharing options. See [(draft) New `ddev share` Provider System](https://pr-521.ddev-com-fork-previews.pages.dev/blog/share-providers/)
+- **Reworked `ddev share` command** with a new cloudflared share provider for free sharing options. See [new docs](https://docs.ddev.com/en/stable/users/topics/sharing/).
 - **New diagnostic commands**:
   - `ddev utility xdebug-diagnose` helps troubleshoot Xdebug issues. See [(draft) Xdebug Understanding and Troubleshooting](https://pr-520.ddev-com-fork-previews.pages.dev/blog/xdebug-step-debugging-understanding-and-troubleshooting/)
   - `ddev utility mutagen-diagnose` helps debug Mutagen issues. See [(draft) Mutagen Functionality and Debugging](https://pr-519.ddev-com-fork-previews.pages.dev/blog/mutagen-functionality-issues-debugging/)
 - **Faster snapshots**: `ddev snapshot` now uses zstd instead of gzip for significantly faster exports and restores, thanks [@deviantintegral](https://github.com/deviantintegral)
-- **Experimental Podman and Docker Rootless support**: See [Podman and Docker Rootless in DDEV](./podman-and-docker-rootless.md)
+- **Experimental Podman and Docker Rootless support**: See [Podman and Docker Rootless in DDEV](podman-and-docker-rootless.md)
 - **FrankenPHP as an official add-on**: [`ddev-frankenphp`](https://github.com/ddev/ddev-frankenphp) with many improvements. See updated [(draft) Using FrankenPHP with DDEV](https://pr-502.ddev-com-fork-previews.pages.dev/blog/using-frankenphp-with-ddev/)
 - **Traefik configuration standardization**: Project configuration now uses a single file: `.ddev/traefik/config/<projectname>.yaml` (all other files are ignored)
 
@@ -51,7 +51,7 @@ After upgrading to v1.25.0, follow these steps:
 
 ### 1. Debian Trixie base image
 
-**If your project has custom Dockerfiles** or uses `webimage_extra_packages`, check they're compatible with Debian Trixie.
+**If your project has custom Dockerfiles** or uses `webimage_extra_packages` and `ddev start` shows any problems, you may have a little work to do, but most projects are unaffected.
 
 **What to do**: Test your project after upgrading. See [Debian Trixie release notes](https://www.debian.org/releases/trixie/release-notes/issues.html) for known issues.
 
@@ -73,19 +73,7 @@ ddev config global --xhprof-mode=prepend
 
 **What to do**: Update your nginx module configuration.
 
-Example: Adding NJS (JavaScript) support to nginx
-
-For DDEV v1.24.10 and earlier:
-
-```bash
-ddev config --webimage-extra-packages="nginx-module-njs"
-
-cat <<'EOF' > .ddev/web-build/Dockerfile.nginx
-RUN sed -i '1i load_module modules/ngx_http_js_module.so;\nload_module modules/ngx_stream_js_module.so;\n' /etc/nginx/nginx.conf
-EOF
-```
-
-For DDEV v1.25.0+:
+Example: Adding NJS (JavaScript) support to nginx in DDEV v1.25.0+:
 
 ```bash
 ddev config --webimage-extra-packages="libnginx-mod-http-js,libnginx-mod-stream,libnginx-mod-stream-js" --ddev-version-constraint='>=v1.25.0'
