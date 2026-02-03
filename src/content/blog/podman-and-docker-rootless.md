@@ -246,29 +246,15 @@ This removes all existing containers, images, and volumes (similar to `docker sy
 
 ### Configuring Podman Rootful
 
-Rootless Podman is recommended for most users. However, if you need rootful Podman, the setup differs from rootless in two key ways:
+Rootless Podman is recommended. Only use rootful Podman if your setup specifically requires it.
 
-1. User group permissions: configure [group permissions](https://github.com/podman-desktop/podman-desktop/issues/2861#issuecomment-1596192247) to allow non-root users to access the rootful socket
+To configure rootful Podman:
 
-2. Socket activation and paths:
-
-   ```bash
-   # Enable rootful socket (requires sudo)
-   sudo systemctl enable --now podman.socket
-
-   # Socket path for rootful
-   ls /var/run/podman/podman.sock
-   ```
-
-   Compare to rootless:
-
-   ```bash
-   # Rootless socket (no sudo)
-   systemctl --user enable --now podman.socket
-
-   # Socket path for rootless
-   ls $XDG_RUNTIME_DIR/podman/podman.sock
-   ```
+1. Create a `podman` group (`sudo groupadd podman`) and add your user to it (`sudo usermod -aG podman $USER`).
+2. Configure [group permissions](https://github.com/podman-desktop/podman-desktop/issues/2861#issuecomment-1596192247) to allow non-root users to access the socket
+3. Activate the socket with `sudo systemctl enable --now podman.socket`
+4. Create a Docker context `docker context create podman-rootful --description "Podman (root)" --docker host="unix:///var/run/podman/podman.sock"`
+5. Switch to the new context with `docker context use podman-rootful`
 
 ### Setting Up Docker Rootless
 
