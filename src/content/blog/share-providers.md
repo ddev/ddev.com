@@ -84,24 +84,37 @@ This approach works for any CMS that stores base URLs in its configuration or da
 
 ### TYPO3 Example
 
-TYPO3 usually puts the site URL into config/sites/*/config.yaml as `base: <url>`, and then it won't respond to the different URLs in a `ddev share`. The hooks here temporarily remove teh `base:` element:
+TYPO3 usually puts the site URL into config/sites/\*/config.yaml as `base: <url>`, and then it won't respond to the different URLs in a `ddev share`. The hooks here temporarily remove teh `base:` element:
 
 ```yaml
 hooks:
-    pre-share:
-        # Make a backup of config/sites
-        - exec: cp -r ${DDEV_APPROOT}/config/sites ${DDEV_APPROOT}/config/sites.bak
-        - exec-host: echo "removing 'base' from site config for sharing to ${DDEV_SHARE_URL}"
-        # Remove `base:` from the various site configs
-        - exec: sed -i 's|^base:|#base:|g' ${DDEV_APPROOT}/config/sites/*/config.yaml
-        - exec-host: echo "shared on ${DDEV_SHARE_URL}"
-    post-share:
-        # Restore the original configuration
-        - exec: rm -rf ${DDEV_APPROOT}/config/sites
-        - exec: mv ${DDEV_APPROOT}/config/sites.bak ${DDEV_APPROOT}/config/sites
-        - exec-host: ddev mutagen sync
-        - exec-host: echo "changes to config/sites reverted"
+  pre-share:
+    # Make a backup of config/sites
+    - exec: cp -r ${DDEV_APPROOT}/config/sites ${DDEV_APPROOT}/config/sites.bak
+    - exec-host: echo "removing 'base' from site config for sharing to ${DDEV_SHARE_URL}"
+    # Remove `base:` from the various site configs
+    - exec: sed -i 's|^base:|#base:|g' ${DDEV_APPROOT}/config/sites/*/config.yaml
+    - exec-host: echo "shared on ${DDEV_SHARE_URL}"
+  post-share:
+    # Restore the original configuration
+    - exec: rm -rf ${DDEV_APPROOT}/config/sites
+    - exec: mv ${DDEV_APPROOT}/config/sites.bak ${DDEV_APPROOT}/config/sites
+    - exec-host: ddev mutagen sync
+    - exec-host: echo "changes to config/sites reverted"
+```
 
+### Magento 2 Example
+
+Magento2 has pretty easy control of the URL, so the hooks are pretty simple:
+
+```yaml
+hooks:
+  pre-share:
+    # Switch magento to the share URL
+    - exec-host: ddev magento setup:store-config:set --base-url="${DDEV_SHARE_URL}"
+  post-share:
+    # Switch back to the normal local URL
+    - exec-host: ddev magento setup:store-config:set --base-url="${DDEV_PRIMARY_URL}"
 ```
 
 ## Extensibility: Custom Share Providers
@@ -110,11 +123,13 @@ The new provider system is script-based, allowing you to create custom providers
 
 For details on creating custom providers, see the [sharing documentation](https://docs.ddev.com/en/stable/users/topics/sharing/).
 
+An example of a share provider for `localtunnel` is provided in `.ddev/share_providers/localtunnel.sh.example` and you can experiment with it by just copying that to `.ddev/share_providers/localtunnel`.
+
 ## Questions
 
 <dl>
 <dt>Do I need to change anything in existing projects?</dt>
-<dd>No. Ngrok remains the default provider, so existing projects continue working without any changes. Your ngrok authtokens and configurations are fully compatible with v1.25.0.</dd>
+<dd>No. Ngrok remains the default provider, so existing projects continue working without any changes. Your ngrok authtokens and configurations are fully compatible with v1.25+.</dd>
 
 <dt>When should I use cloudflared vs ngrok?</dt>
 <dd>Use cloudflared for quick, free sharing during development and testing. Use ngrok if you need stable subdomains, custom domains, or advanced features like IP allowlisting and OAuth protection.</dd>
@@ -125,9 +140,9 @@ For details on creating custom providers, see the [sharing documentation](https:
 
 ## Try It Today
 
-DDEV v1.25.0 is now available. Upgrade and try `ddev share -p cloudflared` to experience zero-friction sharing. Whether you choose free Cloudflare Tunnel for convenience or ngrok for advanced features, the new provider system gives you the flexibility to share on your terms.
+DDEV v1.25.0 is now available. Use the techniques above, and try out Cloudflared to see if you like it.
 
-For complete details on the new sharing system, see the [sharing documentation](https://docs.ddev.com/en/stable/users/topics/sharing/) and [PR #7802](https://github.com/ddev/ddev/pull/7802).
+For complete details on the new sharing system, see the [sharing documentation](https://docs.ddev.com/en/stable/users/topics/sharing/).
 
 Join us on [Discord](https://discord.gg/5wjP76mBJD), follow us on [Mastodon](https://fosstodon.org/@ddev), [Bluesky](https://bsky.app/profile/ddev.com), or [LinkedIn](https://www.linkedin.com/company/ddev-foundation/), and subscribe to our [newsletter](https://ddev.com/newsletter/) for updates.
 
