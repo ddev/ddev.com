@@ -1,7 +1,7 @@
 ---
-title: "New `ddev share` Provider System Brings Free Sharing Options"
-pubDate: 2026-01-22
-summary: "DDEV v1.25.0 introduces a flexible provider system for `ddev share`, bringing free Cloudflare tunnel support, automation capabilities, and extensibility for custom sharing solutions."
+title: "New `ddev share` Provider System: Cloudflare tunnel with no login or token"
+pubDate: 2026-02-10
+summary: "DDEV v1.25.0 introduces a flexible provider system for `ddev share`, adding free Cloudflare tunnel support, automation capabilities, and extensibility for custom sharing solutions."
 author: Randy Fay
 #featureImage:
 #  src: /img/blog/2026/01/ddev-share-providers.png
@@ -12,28 +12,28 @@ categories:
   - DevOps
 ---
 
-Sharing your local development environment with clients, colleagues, or testing services has always been a valuable DDEV feature. DDEV v1.25.0 makes this easier and more flexible than ever with a complete redesign of `ddev share`. The biggest news? You can now share your projects for free using Cloudflare Tunnel—no account signup or token setup required.
+Sharing your local development environment with clients, colleagues, or testing services has always been a valuable DDEV feature. DDEV v1.25.0 makes this easier and more flexible than ever with a complete redesign of `ddev share`. The biggest news is that you can now share your projects for free using Cloudflare Tunnel—no account signup or token setup required.
 
 ## What Changed in `ddev share`
 
 Previous versions of DDEV relied exclusively on ngrok for sharing. While ngrok remains a solid choice with advanced features, v1.25.0 introduces a modular provider system that gives you options. DDEV now ships with two built-in providers:
 
-- **ngrok**: The traditional option (requires account and authtoken)
+- **ngrok**: The traditional option (requires free account and authtoken)
 - **cloudflared**: A new, cost-free option using Cloudflare Tunnel (requires no account or token)
 
-You can select providers via command flags, project configuration, or global defaults—whichever fits your workflow. Existing projects using ngrok continue working unchanged; ngrok remains the default provider.
+You can select providers via command flags, project configuration, or global defaults. Existing projects using ngrok continue working unchanged, and ngrok remains the default provider.
 
 ## Free Sharing with Cloudflare Tunnel
 
-Cloudflare Tunnel provides production-grade infrastructure for sharing your local environments at zero cost. After [installing the client](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/do-more-with-tunnels/local-management/create-local-tunnel/), getting started is as simple as:
+Cloudflare Tunnel provides production-grade infrastructure for sharing your local environments at zero cost. After [installing the `cloudflared` client](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/do-more-with-tunnels/local-management/create-local-tunnel/), getting started is:
 
 ```bash
-ddev share -provider cloudflared
+ddev share --provider=cloudflared
 ```
 
 No account creation, no authentication setup, no subscription tiers—just immediate access to share your work. This removes barriers for individual developers and teams who need occasional sharing without the overhead of managing service accounts.
 
-When should you use cloudflared vs ngrok? Use cloudflared for quick, free sharing during development and testing. Choose ngrok if you need stable subdomains, custom domains, or advanced features like IP allowlisting and OAuth protection.
+When should you use cloudflared vs ngrok? Use cloudflared for quick, free sharing during development and testing. Choose ngrok if you need stable subdomains, custom domains, or advanced features like IP allowlisting and OAuth protection. (However, if you control a domain registered at Cloudflare you can use that for stable domains. This will be covered in a future blog.)
 
 ## Configuration Flexibility
 
@@ -41,35 +41,68 @@ You can set your preferred provider at multiple levels:
 
 ```bash
 # Use a specific provider for this session
-ddev share -provider cloudflared
+ddev share --provider=cloudflared
 
 # Set default provider for the current project
-ddev config --share-provider=cloudflared
+ddev config --share-default-provider=cloudflared
 
 # Set global default for all projects
-ddev config global --share-provider=cloudflared
+ddev config global --share-default-provider=cloudflared
 ```
 
 This flexibility lets you use different providers for different projects or standardize across your entire development setup.
 
-## Automation with DDEV_SHARE_URL
+## Automation for difficult CMSs using `pre-share` hooks and $DDEV_SHARE_URL
 
 When you run `ddev share`, DDEV now exports the tunnel URL as the `DDEV_SHARE_URL` environment variable. This enables automation through hooks, particularly useful for integration testing, webhooks, or CI workflows that need the public URL.
 
-A practical example: sharing WordPress or TYPO3 sites used to require manual database updates to replace localhost URLs with the share URL. Now you can automate this with pre-share hooks that run before the tunnel starts:
+### WordPress Example
+
+WordPress is always difficult because it embeds the URL right in the database. For site moves to new URLs the `wp search-replace` tool is the classic way to deal with this, so the hook demonstration below can be used to make `ddev share` work even when the URL is dynamic.
 
 ```yaml
 # .ddev/config.yaml
 hooks:
   pre-share:
-    - exec: |
-        if [ -n "$DDEV_SHARE_URL" ]; then
-          # WordPress example
-          wp search-replace "https://myproject.ddev.site" "$DDEV_SHARE_URL" --quiet
-        fi
+    # provider DDEV_SHARE_URL in container
+    - exec-host: echo "${DDEV_SHARE_URL}" >.ddev/share_url.txt
+    # Save database for restore later
+    - exec-host: ddev export-db --file=/tmp/tmpdump.sql.gz
+    # Change the URL in the database
+    - exec: wp search-replace ${DDEV_PRIMARY_URL} $(cat /mnt/ddev_config/share_url.txt) | grep Success
+    # Fix the wp-config-ddev.php to use the DDEV_SHARE_URL
+    - exec: cp wp-config-ddev.php wp-config-ddev.php.bak
+    - exec: sed -i.bak "s|${DDEV_PRIMARY_URL}|$(cat /mnt/ddev_config/share_url.txt)|g" wp-config-ddev.php
+    - exec: wp cache flush
+  post-share:
+    # Put back the things we changed
+    - exec: cp wp-config-ddev.php.bak wp-config-ddev.php
+    - exec-host: ddev import-db --file=/tmp/tmpdump.sql.gz
 ```
 
 This approach works for any CMS that stores base URLs in its configuration or database. The pre-share hook updates URLs automatically, and you can use post-share hooks to restore them when sharing ends. This eliminates the manual configuration work that sharing previously required for many CMSs.
+
+### TYPO3 Example
+
+TYPO3 usually puts the site URL into config/sites/*/config.yaml as `base: <url>`, and then it won't respond to the different URLs in a `ddev share`. The hooks here temporarily remove teh `base:` element:
+
+```yaml
+hooks:
+    pre-share:
+        # Make a backup of config/sites
+        - exec: cp -r ${DDEV_APPROOT}/config/sites ${DDEV_APPROOT}/config/sites.bak
+        - exec-host: echo "removing 'base' from site config for sharing to ${DDEV_SHARE_URL}"
+        # Remove `base:` from the various site configs
+        - exec: sed -i 's|^base:|#base:|g' ${DDEV_APPROOT}/config/sites/*/config.yaml
+        - exec-host: echo "shared on ${DDEV_SHARE_URL}"
+    post-share:
+        # Restore the original configuration
+        - exec: rm -rf ${DDEV_APPROOT}/config/sites
+        - exec: mv ${DDEV_APPROOT}/config/sites.bak ${DDEV_APPROOT}/config/sites
+        - exec-host: ddev mutagen sync
+        - exec-host: echo "changes to config/sites reverted"
+
+```
 
 ## Extensibility: Custom Share Providers
 
