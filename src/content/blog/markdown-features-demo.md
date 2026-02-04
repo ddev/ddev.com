@@ -9,6 +9,8 @@ categories:
 
 This demonstration post showcases all the markdown formatting features available for blog posts on ddev.com. It's designed for testing the rendering of various markdown elements.
 
+## Table of Contents
+
 ## Callout Boxes
 
 ### Note/Info Callout
@@ -71,7 +73,35 @@ You can also include [links to other resources](https://docs.ddev.com) and even 
 - First item with important information
 - Second item with related details
 - Third item with additional context
-:::
+  :::
+
+## GitHub Flavored Markdown Features
+
+The site supports GitHub Flavored Markdown (GFM) which adds several useful features:
+
+### Autolinks
+
+URLs automatically become clickable links:
+
+- https://ddev.com
+- https://docs.ddev.com
+- user@example.com (email addresses too!)
+
+### Strikethrough
+
+You can strike through text using ~~double tildes~~. This is useful for showing deprecated features or corrections.
+
+Example: ~~DDEV v1.0 required manual configuration~~ DDEV now auto-detects project types.
+
+### Emoji Support
+
+Emojis are automatically made accessible for screen readers:
+
+🚀 DDEV is fast and powerful
+✅ Tests passing
+⚠️ Warning message
+💡 Helpful tip
+🎉 Celebrate your success!
 
 ## Standard Markdown Blockquotes
 
@@ -129,14 +159,14 @@ class MyController extends ControllerBase {
 
 ```javascript
 const config = {
-  host: 'localhost',
+  host: "localhost",
   port: 3000,
-  environment: 'development'
-};
+  environment: "development",
+}
 
 function initializeApp() {
-  console.log('Starting DDEV-powered app...');
-  return config;
+  console.log("Starting DDEV-powered app...")
+  return config
 }
 ```
 
@@ -166,26 +196,30 @@ nodejs_version: "20"
 }
 ```
 
-## Internal Links
+## Links
 
 ### Links Between Blog Posts
 
-Here's a link to another blog post using filename reference: [Learn about DDEV performance](docker-performance-2023.md)
+Internal blog links use filename references: [Learn about DDEV performance](docker-performance-2023.md)
 
 ### Links to Other Site Pages
 
-Here's a root-relative link: [Visit our support page](/support-ddev)
+Root-relative links: [Visit our support page](/support-ddev)
 
 ### External Links
 
-Here's an external link: [DDEV Documentation](https://docs.ddev.com)
+External links automatically open in a new tab with security attributes: [DDEV Documentation](https://docs.ddev.com)
 
-You can also use reference-style links for cleaner markdown:
+Reference-style links for cleaner markdown:
 
 Check out the [Docker documentation][docker-docs] and the [Astro guide][astro-guide] for more information.
 
 [docker-docs]: https://docs.docker.com
 [astro-guide]: https://docs.astro.build
+
+:::note[External Link Behavior]
+All external links (links to domains other than ddev.com) automatically get `target="_blank"` and `rel="noopener noreferrer"` attributes for security and usability. You don't need to add these manually.
+:::
 
 ## Lists
 
@@ -219,11 +253,11 @@ Check out the [Docker documentation][docker-docs] and the [Astro guide][astro-gu
 
 ### Emphasis
 
-This text has *italic emphasis* and this has _italic emphasis too_.
+This text has _italic emphasis_ and this has _italic emphasis too_.
 
-This text has **bold emphasis** and this has __bold emphasis too__.
+This text has **bold emphasis** and this has **bold emphasis too**.
 
-You can combine ***bold and italic*** or ___bold and italic___.
+You can combine **_bold and italic_** or **_bold and italic_**.
 
 ### Inline Code
 
@@ -243,19 +277,19 @@ Content after the horizontal rule.
 
 ## Tables
 
-| Command | Description | Example |
-|---------|-------------|---------|
-| `ddev start` | Start project containers | `ddev start` |
-| `ddev stop` | Stop project containers | `ddev stop` |
+| Command        | Description                | Example        |
+| -------------- | -------------------------- | -------------- |
+| `ddev start`   | Start project containers   | `ddev start`   |
+| `ddev stop`    | Stop project containers    | `ddev stop`    |
 | `ddev restart` | Restart project containers | `ddev restart` |
-| `ddev ssh` | SSH into web container | `ddev ssh` |
+| `ddev ssh`     | SSH into web container     | `ddev ssh`     |
 
 Alignment in tables:
 
 | Left Aligned | Center Aligned | Right Aligned |
-|:-------------|:--------------:|--------------:|
-| Item 1 | Item 2 | Item 3 |
-| A | B | C |
+| :----------- | :------------: | ------------: |
+| Item 1       |     Item 2     |        Item 3 |
+| A            |       B        |             C |
 
 ## Nested Content Examples
 
@@ -306,15 +340,23 @@ Here's a workflow with embedded callouts:
    Use `ddev launch` to open your site in a browser automatically.
    :::
 
-## Images
+## Images and Figures
 
-Here's how you reference images in markdown:
+Images are automatically wrapped in semantic `<figure>` elements with captions generated from alt text:
 
 ![DDEV Logo](/logos/ddev-logo.svg)
 
-Images with alt text are important for accessibility:
+The alt text becomes the figure caption, improving both accessibility and visual presentation:
 
 ![Screenshot showing DDEV running in terminal with successful start message](/img/blog/2022/example-terminal.jpg)
+
+:::tip[Image Best Practices]
+
+- Always include descriptive alt text (becomes the caption)
+- Keep images under 1-2MB
+- Use appropriate formats: JPEG for photos, PNG for screenshots, SVG for logos
+- Optimize with tools like ImageOptim before committing
+  :::
 
 ## Video Embeds
 
@@ -335,6 +377,7 @@ Videos should be wrapped in a `.video-container` div for responsive sizing:
 Before deploying to production, verify:
 
 1. **Environment Configuration**
+
    ```bash
    # Check environment variables
    ddev exec printenv
@@ -346,6 +389,7 @@ Before deploying to production, verify:
    :::
 
 3. **Run Tests**
+
    ```bash
    ddev exec phpunit
    ddev exec npm test

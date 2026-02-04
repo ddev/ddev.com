@@ -1,6 +1,8 @@
 ---
 title: "Contributor Training: Contributing to ddev.com"
 pubDate: 2025-10-10
+modifiedDate: 2026-02-04
+modifiedComment: "Added markdown formatting resources"
 summary: Learn how to contribute to ddev.com by fixing errors and writing blog posts.
 author: Randy Fay
 featureImage:
@@ -53,6 +55,8 @@ Each pull request automatically creates a preview deployment on Cloudflare Pages
 - [Presentation Slides](https://rfay.github.io/contributing-to-ddev.com/)
 - [ddev.com Repository](https://github.com/ddev/ddev.com)
 - [DDEV Website For Contributors](ddev-website-for-contributors.md) blog post
+- [Markdown Formatting Guide](https://github.com/ddev/ddev.com/blob/main/MARKDOWN_FORMATTING.md) - Complete guide to markdown features available for blog posts
+- [Markdown Features Demo](/blog/markdown-features-demo) - Live examples of all formatting options
 
 ## Contributions welcome!
 

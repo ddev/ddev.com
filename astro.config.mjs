@@ -5,10 +5,16 @@ import { remarkCallouts } from "./src/lib/remark-callouts.mjs"
 import downloadDdevRedirects from "./src/lib/download-ddev-redirects.js"
 import prefetch from "@astrojs/prefetch"
 import react from "@astrojs/react"
+import { rehypeAccessibleEmojis } from "rehype-accessible-emojis"
 import rehypeAstroRelativeMarkdownLinks from "astro-rehype-relative-markdown-links"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import rehypeExternalLinks from "rehype-external-links"
+import rehypeFigure from "rehype-figure"
 import rehypeSlug from "rehype-slug"
 import remarkDirective from "remark-directive"
+import remarkGfm from "remark-gfm"
+import remarkToc from "remark-toc"
+import remarkUnwrapImages from "remark-unwrap-images"
 import robotsTxt from "astro-robots-txt"
 import searchIndex from "./src/lib/search-index.js"
 import sitemap from "@astrojs/sitemap"
@@ -64,7 +70,20 @@ export default defineConfig({
         }),
       ],
     },
-    remarkPlugins: [remarkReadingTime, remarkDirective, remarkCallouts],
+    remarkPlugins: [
+      remarkReadingTime,
+      remarkDirective,
+      remarkCallouts,
+      remarkGfm, // GitHub Flavored Markdown (tables, strikethrough, task lists, autolinks)
+      remarkUnwrapImages, // Remove paragraph wrapper from images
+      [
+        remarkToc,
+        {
+          heading: "table of contents", // Case-insensitive heading to look for
+          tight: true, // Compact lists
+        },
+      ],
+    ],
     rehypePlugins: [
       rehypeSlug,
       [
@@ -73,6 +92,15 @@ export default defineConfig({
           behavior: "wrap",
         },
       ],
+      [
+        rehypeExternalLinks,
+        {
+          target: "_blank",
+          rel: ["noopener", "noreferrer"],
+        },
+      ],
+      rehypeFigure, // Wrap images in <figure> with <figcaption>
+      rehypeAccessibleEmojis, // Add accessible labels to emojis
       plainTextPlugin({
         contentKey: "plainText",
         removeEmoji: false,

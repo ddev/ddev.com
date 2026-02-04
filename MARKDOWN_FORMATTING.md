@@ -2,6 +2,20 @@
 
 This guide covers special markdown formatting features available for blog posts and content on ddev.com.
 
+## Features Overview
+
+The site supports:
+
+- **Callout Boxes** - Styled note, tip, warning, and danger boxes with custom titles
+- **GitHub Flavored Markdown** - Tables, task lists, strikethrough, automatic URL linking
+- **Code Blocks** - Syntax highlighting with copy buttons (via Shiki)
+- **Automatic Table of Contents** - Generated from headings
+- **Smart External Links** - Auto-added security attributes for external URLs
+- **Figure Captions** - Images automatically wrapped in `<figure>` with captions from alt text
+- **Accessible Emojis** - Screen reader labels added automatically
+- **Internal Link Resolution** - Simple filename references between blog posts
+- **Standard Markdown** - Full CommonMark support plus extras
+
 ## Callout Boxes
 
 Callout boxes are styled containers that highlight important information. They use the directive syntax with three colons (`:::`).
@@ -129,6 +143,82 @@ For simpler callouts, you can use standard markdown blockquotes with bold labels
 
 This approach works well for quick notes that don't need the full styled callout treatment.
 
+## GitHub Flavored Markdown
+
+The site supports GitHub Flavored Markdown (GFM) which adds several useful features:
+
+### Automatic URL Linking
+
+URLs and email addresses automatically become clickable links:
+
+```markdown
+https://ddev.com
+https://docs.ddev.com
+user@example.com
+```
+
+### Strikethrough
+
+Strike through text using double tildes:
+
+```markdown
+~~This feature is deprecated~~ Use the new feature instead.
+```
+
+**Example:**
+
+~~DDEV v1.0 required manual configuration~~ DDEV now auto-detects project types.
+
+### Tables
+
+Create tables using pipes and hyphens (already documented below in the standard markdown section).
+
+### Task Lists
+
+Create interactive checkboxes:
+
+```markdown
+- [x] Completed task
+- [ ] Incomplete task
+- [ ] Another task
+```
+
+**Example:**
+
+- [x] Install DDEV
+- [x] Create project
+- [ ] Configure add-ons
+- [ ] Deploy
+
+## Table of Contents
+
+Automatically generate a table of contents from your headings by adding a heading called "Table of Contents":
+
+```markdown
+## Table of Contents
+
+<!-- The TOC will be automatically inserted here -->
+
+## First Section
+
+## Second Section
+```
+
+The plugin searches for a heading (case-insensitive) containing "table of contents" and inserts a linked list of all other headings in the document.
+
+## Emojis
+
+Emojis are automatically enhanced with accessible labels for screen readers:
+
+```markdown
+🚀 DDEV is fast
+✅ Tests passing
+⚠️ Warning
+💡 Helpful tip
+```
+
+You can use emojis naturally in your markdown, and they'll automatically include proper ARIA labels for accessibility.
+
 ## Code Blocks
 
 Code blocks support syntax highlighting and include a copy button on hover:
@@ -142,43 +232,68 @@ ddev npm install
 
 Supported languages include: bash, javascript, typescript, php, yaml, json, html, css, go, python, and more.
 
-## Internal Links
+## Links
 
-**Between blog posts:**
+### Internal Links Between Blog Posts
+
 Use the markdown filename (without path):
 
 ```markdown
 [Read our quickstart guide](quickstart.md)
 ```
 
-**To other site pages:**
+### Internal Links to Other Site Pages
+
 Use root-relative paths:
 
 ```markdown
 [Visit our support page](/support-ddev)
 ```
 
-**External links:**
+### External Links
+
 Use full URLs:
 
 ```markdown
-[DDEV Documentation](https://ddev.readthedocs.io)
+[DDEV Documentation](https://docs.ddev.com)
 ```
+
+**Automatic Security Enhancement:**
+
+All external links (links to domains other than ddev.com) automatically receive:
+
+- `target="_blank"` - Opens in a new tab
+- `rel="noopener noreferrer"` - Security attributes to prevent potential exploits
+
+You don't need to add these attributes manually. Internal links (to ddev.com pages) are not affected.
 
 ## Images
 
-Images in blog posts should be production-ready:
+### Basic Image Syntax
 
-- Appropriate format (JPEG, PNG, or SVG)
-- Size no larger than ~1-2MB
-- Dimensions no greater than 2000px
-- Compressed with tools like [ImageOptim](https://imageoptim.com)
+Images are automatically wrapped in semantic HTML `<figure>` elements with captions:
 
 ```markdown
 ![Descriptive alt text](/img/blog/my-image.jpg)
 ```
 
-In frontmatter:
+This automatically generates:
+
+```html
+<figure>
+  <img src="/img/blog/my-image.jpg" alt="Descriptive alt text" />
+  <figcaption>Descriptive alt text</figcaption>
+</figure>
+```
+
+The alt text serves dual purposes:
+
+1. Accessibility for screen readers
+2. Visual caption below the image
+
+### Feature Images in Frontmatter
+
+For hero images at the top of posts:
 
 ```yaml
 featureImage:
@@ -187,6 +302,16 @@ featureImage:
   caption: "Optional caption (can use **markdown**)"
   credit: "Optional image credit"
 ```
+
+### Image Best Practices
+
+Images in blog posts should be production-ready:
+
+- Appropriate format (JPEG, PNG, or SVG)
+- Size no larger than ~1-2MB
+- Dimensions no greater than 2000px
+- Compressed with tools like [ImageOptim](https://imageoptim.com)
+- **Always include descriptive alt text** (it becomes the caption)
 
 ## Video Embeds
 
@@ -233,17 +358,25 @@ The site uses Tailwind Typography for consistent, beautiful text rendering:
 
 4. **Consider blockquotes for simple notes**: If you just need a quick note without full styling, use a blockquote with a bold label.
 
-5. **Test in both light and dark mode**: All callouts support dark mode automatically, but verify your content looks good in both.
+5. **Write descriptive alt text for images**: Alt text serves as both accessibility text and the visible caption below images.
+
+6. **Let external links auto-enhance**: Don't manually add `target="_blank"` or `rel` attributes to external links - they're added automatically.
+
+7. **Use emojis naturally**: Accessibility labels are added automatically, but don't overuse them.
+
+8. **Add table of contents for long posts**: If your post has many sections, include a "## Table of Contents" heading.
+
+9. **Test in both light and dark mode**: All styling supports dark mode automatically, but verify your content looks good in both.
 
 ## Examples in the Wild
 
 Check out these resources for markdown formatting examples:
 
-- **[Comprehensive Demo Post](/blog/markdown-features-demo)** - A complete demonstration of all available formatting features (hidden from blog listings)
+- **Comprehensive Demo Post** - A complete demonstration of all available formatting features (hidden from blog listings)
+  - [Rendered version](/blog/markdown-features-demo) - See how the features look on the site
+  - [Source code](https://github.com/ddev/ddev.com/blob/main/src/content/blog/markdown-features-demo.md) - View the raw markdown
 - Any post in `src/content/blog/` that uses the `:::` directive syntax
 - Posts using blockquote-style callouts with `> **Label**:` format
-
-The demo post source is at `src/content/blog/markdown-features-demo.md` and can be used as a reference when writing new content.
 
 ## Questions?
 
