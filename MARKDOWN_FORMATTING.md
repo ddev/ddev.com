@@ -237,11 +237,14 @@ The site uses Tailwind Typography for consistent, beautiful text rendering:
 
 ## Examples in the Wild
 
-Check out these blog posts for callout usage examples:
+Check out these resources for markdown formatting examples:
 
+- **[Comprehensive Demo Post](/blog/markdown-features-demo)** - A complete demonstration of all available formatting features (hidden from blog listings)
 - Any post in `src/content/blog/` that uses the `:::` directive syntax
 - Posts using blockquote-style callouts with `> **Label**:` format
 
+The demo post source is at `src/content/blog/markdown-features-demo.md` and can be used as a reference when writing new content.
+
 ## Questions?
 
-If you have questions about markdown formatting, ask in the [DDEV Discord](https://discord.gg/5wjP76mBJD) or check the [Astro markdown documentation](https://docs.astro.build/en/guides/markdown-content/).
+If you have questions about markdown formatting, ask in the [DDEV Discord](/s/discord) or check the [Astro markdown documentation](https://docs.astro.build/en/guides/markdown-content/).
