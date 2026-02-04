@@ -60,7 +60,7 @@ When you run `ddev share`, DDEV now exports the tunnel URL as the `DDEV_SHARE_UR
 
 ### WordPress Example
 
-WordPress is always difficult because it embeds the URL right in the database. For site moves to new URLs the `wp search-replace` tool is the classic way to deal with this, so the hook demonstration below can be used to make `ddev share` work even when the URL is dynamic.
+WordPress is always difficult because it embeds the URL right in the database. For sites to use a different URL the `wp search-replace` tool is the classic way to deal with this, so the hook demonstration below can be used to make `ddev share` work even when the URL is dynamic.
 
 ```yaml
 # .ddev/config.yaml
