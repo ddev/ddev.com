@@ -1,7 +1,7 @@
 ---
 title: "Markdown Features Demo: Testing All Formatting Options"
 pubDate: 2022-01-01
-summary: "Comprehensive demonstration of all markdown formatting features available on ddev.com, including callout boxes, code blocks, links, images, and typography. Not for publication."
+summary: "Demonstration of markdown formatting features available on ddev.com, including callout boxes, code blocks, links, images, and typography. Not for publication. This is hidden with an old date because it's not useful for normal readers."
 author: Randy Fay
 categories:
   - TechNotes
@@ -348,11 +348,11 @@ Here's a workflow with embedded callouts:
 
 Images are automatically wrapped in semantic `<figure>` elements with captions generated from alt text:
 
-![DDEV Logo](/logos/ddev-logo.svg)
+![Installation speed](/img/blog/2022/03/macos-m1-vs.-drupal-drush-install-seconds.png)
 
 The alt text becomes the figure caption, improving both accessibility and visual presentation:
 
-![Screenshot showing DDEV running in terminal with successful start message](/img/blog/2022/example-terminal.jpg)
+![Weird installation graph](/img/blog/2022/03/macos-m1-vs.-drupal-drush-install-seconds.png)
 
 :::tip[Image Best Practices]
 
@@ -388,9 +388,8 @@ Before deploying to production, verify:
    ```
 
 2. **Database Backup**
-   :::warning
+
    Always create a backup before deployment!
-   :::
 
 3. **Run Tests**
 
@@ -404,7 +403,7 @@ Before deploying to production, verify:
    - Optimize images
    - Clear caches
 
-For more information, see the [deployment guide](https://docs.ddev.com/en/stable/users/topics/deploy/) or ask in [DDEV Discord](/s/discord).
+For more information, see the [README](https://github.com/ddev/ddev.com/README) or ask in [DDEV Discord](/s/discord).
 :::
 
 ## Conclusion

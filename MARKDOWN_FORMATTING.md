@@ -286,7 +286,7 @@ This automatically generates:
 
 ```html
 <figure>
-  <img src="/img/blog/my-image.jpg" alt="Descriptive alt text" />
+  <img src="/img/blog/2022/03/macos-m1-vs.-drupal-drush-install-seconds.png" alt="Descriptive alt text" />
   <figcaption>Descriptive alt text</figcaption>
 </figure>
 ```
@@ -302,7 +302,7 @@ For hero images at the top of posts:
 
 ```yaml
 featureImage:
-  src: /img/blog/kebab-case.jpg
+  src: /img/blog/2022/03/macos-m1-vs.-drupal-drush-install-seconds.png
   alt: Descriptive text for screen readers
   caption: "Optional caption (can use **markdown**)"
   credit: "Optional image credit"
