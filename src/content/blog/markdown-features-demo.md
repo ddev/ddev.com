@@ -7,7 +7,7 @@ categories:
   - TechNotes
 ---
 
-This demonstration post showcases all the markdown formatting features available for blog posts on ddev.com. It's designed for testing the rendering of various markdown elements.
+This demonstration post showcases all the Markdown formatting features available for blog posts on ddev.com. It's designed for testing the rendering of various Markdown elements.
 
 ## Table of Contents
 
@@ -105,7 +105,7 @@ Emojis are automatically made accessible for screen readers:
 
 ## Standard Markdown Blockquotes
 
-For simpler callouts that don't need full styling, you can use standard markdown blockquotes:
+For simpler callouts that don't need full styling, you can use standard Markdown blockquotes:
 
 > **Note**: This is a simple note using blockquote syntax.
 
@@ -210,7 +210,7 @@ Root-relative links: [Visit our support page](/support-ddev)
 
 External links automatically open in a new tab with security attributes: [DDEV Documentation](https://docs.ddev.com)
 
-Reference-style links for cleaner markdown:
+Reference-style links for cleaner Markdown:
 
 Check out the [Docker documentation][docker-docs] and the [Astro guide][astro-guide] for more information.
 
@@ -405,6 +405,6 @@ For more information, see the [deployment guide](https://docs.ddev.com/en/stable
 
 ## Conclusion
 
-This demo post covers all the major markdown features available for blog posts on ddev.com. Each section demonstrates different formatting capabilities that can be used when writing actual blog content.
+This demo post covers all the major Markdown features available for blog posts on ddev.com. Each section demonstrates different formatting capabilities that can be used when writing actual blog content.
 
 Remember to check the [MARKDOWN_FORMATTING.md](https://github.com/ddev/ddev.com/blob/main/MARKDOWN_FORMATTING.md) guide for the latest syntax and examples.
