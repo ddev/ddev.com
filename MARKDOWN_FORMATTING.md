@@ -178,10 +178,14 @@ Create tables using pipes and hyphens (already documented below in the standard 
 Create interactive checkboxes:
 
 ```markdown
+<!-- textlint-disable no-todo -->
 - [x] Completed task
 - [ ] Incomplete task
 - [ ] Another task
+<!-- textlint-enable no-todo -->
 ```
+
+**Note:** Task lists with `- [ ]` trigger the `no-todo` textlint rule. Wrap them in textlint disable comments as shown above.
 
 **Example:**
 

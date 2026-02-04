@@ -244,10 +244,14 @@ All external links (links to domains other than ddev.com) automatically get `tar
 
 ### Task Lists
 
+<!-- textlint-disable no-todo -->
+
 - [x] Install DDEV
 - [x] Create new project
 - [ ] Configure add-ons
 - [ ] Deploy to production
+
+<!-- textlint-enable no-todo -->
 
 ## Typography Examples
 
