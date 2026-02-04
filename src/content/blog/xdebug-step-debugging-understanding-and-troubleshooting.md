@@ -58,7 +58,7 @@ DDEV:
 2. Configures Xdebug to connect to `host.docker.internal:9003`
 3. Sets up the necessary environment variables and configuration
 
-The key technical detail is `host.docker.internal` - this is a special DNS name that Docker provides to containers, resolving to the host machine's IP address. This allows PHP running inside the container to connect to your IDE running on your host machine.
+The key technical detail is `host.docker.internal` - this is a special DNS name that DDEV+Docker provide to containers, resolving to the host machine's IP address. This allows PHP running inside the container to connect to your IDE running on your host machine.
 
 ### Basic Commands
 
@@ -70,19 +70,18 @@ The key technical detail is `host.docker.internal` - this is a special DNS name 
 
 ## Why DDEV Xdebug "Just Works"
 
-One of DDEV's proudest achievements is that Xdebug typically works without any configuration. This seems simple, but it's solving a complex problem: PHP running inside a Docker container needs to connect back to your IDE on your host machine, and the container has no inherent knowledge of how to reach the host.
+One of our proudest achievements with DDEV is that Xdebug typically works without any configuration. This seems simple, but it's solving a complex problem: PHP running inside a Docker container needs to connect back to your IDE on your host machine, and the container has no inherent knowledge of how to reach the host.
 
 The solution is `host.docker.internal` - a special hostname that resolves to the host machine's IP address from the container's perspective. The challenge is that this works differently across platforms:
 
-- **macOS and Windows (Docker Desktop)**: Automatically provides `host.docker.internal`
-- **Linux**: No built-in `host.docker.internal` support
+- **macOS and Windows**: Some Docker providers like Docker Desktop and Colima automatically provide `host.docker.internal`
+- **Linux**: No direct built-in `host.docker.internal` support
 - **WSL2**: Complex networking scenarios depending on NAT vs. mirrored mode
 
 DDEV automatically detects your environment and configures `host.docker.internal` correctly:
 
-- On Linux, DDEV adds the host gateway IP to `/etc/hosts` in the container
+- On Linux, DDEV use the host gateway feature of docker-compose
 - On WSL2, DDEV determines whether to use the Windows host IP or the WSL2 IP based on your configuration
-- On all platforms, DDEV validates the IP and reconfigures if needed
 
 This means when you run `ddev xdebug on`, the extension is already configured to connect to `host.docker.internal:9003`, and that hostname reliably resolves to wherever your IDE is listening.
 
@@ -99,12 +98,6 @@ You can verify what `host.docker.internal` resolves to:
 
 ```bash
 ddev exec getent hosts host.docker.internal
-```
-
-Or use the new info command:
-
-```bash
-ddev xdebug info
 ```
 
 When Xdebug tries to connect, it uses this hostname to reach your IDE. The connection path is:
@@ -144,7 +137,7 @@ ddev config global --xdebug-ide-location=wsl2
 ddev config global --xdebug-ide-location=container
 ```
 
-**Different Port**: If you need to use a different port than 9003, create `.ddev/php/xdebug_client_port.ini`:
+**Different Port**: If you need to use a different port than 9003 (very unusual), create `.ddev/php/xdebug_client_port.ini`:
 
 ```ini
 xdebug.client_port=9000
@@ -158,7 +151,7 @@ xdebug.client_port=9000
 
 The most common debugging issue is setting a breakpoint in code that never runs. You might set a breakpoint in a function that's not called, a conditional branch that's not taken, or a file that's not included.
 
-**Solution**: Start with a breakpoint in the main entry point, usually `index.php` or `web/index.php`. This ensures your breakpoint will definitely be hit. Once you confirm Xdebug is working, you can move your breakpoint to the specific code you want to debug.
+**Solution**: Start studying your situation with a breakpoint in the main entry point, usually `index.php` or `web/index.php`. This ensures your breakpoint will definitely be hit. Once you confirm Xdebug is working, you can move your breakpoint to the specific code you want to debug.
 
 ### Incorrect Path Mappings
 
@@ -228,7 +221,7 @@ If debugging works with the firewall off, you need to add a firewall rule for po
 
 ## The New `ddev utility xdebug-diagnose` Tool
 
-DDEV v1.25 introduces an experimental diagnostic tool that automatically checks your Xdebug configuration and connectivity:
+DDEV v1.25 introduces a diagnostic tool that automatically checks your Xdebug configuration and connectivity:
 
 ```bash
 ddev utility xdebug-diagnose
@@ -375,7 +368,7 @@ ddev config global --xdebug-ide-location=""
 Only set it for special cases:
 
 - `wsl2` - VS Code with WSL extension or IDE running in WSL2
-- `container` - IDE running in a container
+- `container` - IDE proxied from inside container
 
 ### 7. Temporarily Disable Firewall
 
