@@ -52,6 +52,8 @@ ddev config global --share-default-provider=cloudflared
 
 This flexibility lets you use different providers for different projects or standardize across your entire development setup.
 
+**Tip**: Your CMS or framework may have "trusted host patterns" configuration that denies access to the site when hosted at an unknown URL. You'll need to configure to allow all or specific URLs. For example, in Drupal, `$settings['trusted_host_patterns'] = ['.*'];` or in TYPO3 `'trustedHostsPattern' => '.*.*'`.
+
 ## Automation for difficult CMSs using `pre-share` hooks and $DDEV_SHARE_URL
 
 When you run `ddev share`, DDEV now exports the tunnel URL as the `DDEV_SHARE_URL` environment variable. This enables automation through hooks, particularly useful for integration testing, webhooks, or CI workflows that need the public URL.
