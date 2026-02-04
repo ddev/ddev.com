@@ -1,12 +1,14 @@
 import { defineConfig } from "astro/config"
 import { plainTextPlugin } from "@barnabask/astro-minisearch"
 import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs"
+import { remarkCallouts } from "./src/lib/remark-callouts.mjs"
 import downloadDdevRedirects from "./src/lib/download-ddev-redirects.js"
 import prefetch from "@astrojs/prefetch"
 import react from "@astrojs/react"
 import rehypeAstroRelativeMarkdownLinks from "astro-rehype-relative-markdown-links"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypeSlug from "rehype-slug"
+import remarkDirective from "remark-directive"
 import robotsTxt from "astro-robots-txt"
 import searchIndex from "./src/lib/search-index.js"
 import sitemap from "@astrojs/sitemap"
@@ -62,7 +64,7 @@ export default defineConfig({
         }),
       ],
     },
-    remarkPlugins: [remarkReadingTime],
+    remarkPlugins: [remarkReadingTime, remarkDirective, remarkCallouts],
     rehypePlugins: [
       rehypeSlug,
       [

@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @config "../../tailwind.config.cjs";
+@import "./callouts.css";
 
 header {
   a[target="_blank"] {

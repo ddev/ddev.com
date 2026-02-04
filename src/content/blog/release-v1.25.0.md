@@ -29,7 +29,14 @@ These updates mostly affect new projects. Existing projects typically continue t
 
 **Major new features**:
 
-- **Revised Windows installer** now uses per-user installation for WSL2 or traditional Windows (no admin account required). Download from [ddev.com/download](/download/)
+:::tip
+The DDEV Windows Installer no longer needs administrative privileges to install, and it can be installed using `winget` with 
+  ```
+  winget install --interactive ddev
+  ```
+:::
+
+- **Updated Windows installer** now uses per-user installation for WSL2 or traditional Windows (no admin account required). Download from [ddev.com/download](/download/)
 - **Reworked `ddev share` command** with a new cloudflared share provider for free sharing options. See [new docs](https://docs.ddev.com/en/stable/users/topics/sharing/).
 - **New diagnostic commands**:
   - `ddev utility xdebug-diagnose` helps troubleshoot Xdebug issues. See [(draft) Xdebug Understanding and Troubleshooting](https://pr-520.ddev-com-fork-previews.pages.dev/blog/xdebug-step-debugging-understanding-and-troubleshooting/)

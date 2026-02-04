@@ -106,6 +106,8 @@ Hint: There's a full contributor training on [contributing to ddev.com](https://
 
 Blog posts are Markdown files with frontmatter that live in `src/content/blog/`.
 
+For details on special markdown formatting features like callout boxes, see [MARKDOWN_FORMATTING.md](MARKDOWN_FORMATTING.md).
+
 To add a new blog post, use this Markdown as a template:
 
 ```markdown
