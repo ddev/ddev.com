@@ -179,6 +179,7 @@ Create interactive checkboxes:
 
 ```markdown
 <!-- textlint-disable no-todo -->
+
 - [x] Completed task
 - [ ] Incomplete task
 - [ ] Another task
