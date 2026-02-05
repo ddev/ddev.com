@@ -1,7 +1,7 @@
 ---
 title: "Exposing a Node.js App Over HTTP / HTTPS on a Subdomain in DDEV"
 pubDate: 2025-04-10
-#modifiedDate: 2025-04-07
+modifiedDate: 2026-02-05
 summary: Serve a Node.js app on a dedicated subdomain over HTTP/HTTPS using DDEV’s Traefik.
 author: J. Minder
 featureImage:
@@ -32,6 +32,12 @@ DDEV's' [`web_extra_exposed_ports` feature](https://docs.ddev.com/en/stable/user
 If you want `frontend.example.ddev.site` to map to your Node.js app over HTTPS, you need a reverse proxy rule.
 That’s where Traefik comes in.
 
+> Please note: the procedure described here only works with versions of DDEV greater than 1.25. So it's recommended to add this constraint to your DDEV setup by issuing this command:
+
+```bash
+ddev config --ddev-version-constraint='>=v1.25.0'
+```
+
 ## Step 1: Update Your `.ddev/config.yaml`
 
 In your project’s `.ddev/config.yaml`, define the project name and the additional hostname you want to use. For example:
@@ -55,10 +61,15 @@ web_extra_exposed_ports:
 
 However, for a subdomain over standard web ports, the critical part is the next step with Traefik.
 
-## Step 2: Create a Project-level Traefik Configuration File
+## Step 2: Edit your project-level Traefik Configuration File
 
-In your project's `.ddev/traefik/config` folder add a file named `frontend.yaml`. In `frontend.yaml`, you’ll define two routers—one for HTTP (port 80) and one for HTTPS (port 443)—and
-a service that points to the Node.js app on port 3000.
+DDEV will generate a Traefik configuration file in your `.ddev/traefik/config` directory. You will need to edit this file and add congiguration to it in the `routers` and `services` sections.
+
+1. Remove the `#ddev-generated` line at the top of the file.
+
+> Please note: as always, this means that the file now becomes your responsibility and you will need to update it manually if you add new services etc. This process should become easier once [This issue](https://github.com/ddev/ddev/issues/8047) gets finished and released.
+
+2. Find the `routers` section of the file, you need to add two routers: one for HTTP (port 80) and one for HTTPS (port 443), leaving intact the existing ones:
 
 ```yaml
 http:
@@ -82,13 +93,17 @@ http:
       ruleSyntax: v3
       tls: true
       priority: 100
+```
 
-  services:
-    # The custom service that routes to your Node app
-    example-web-3000:
-      loadbalancer:
-        servers:
-          - url: http://ddev-example-web:3000
+3. Find the `services` section of the file: here you will add a service that points to the Node.js app on port 3000. Again, leave the already defined services in place.
+
+```yaml
+services:
+  # The custom service that routes to your Node app
+  example-web-3000:
+    loadbalancer:
+      servers:
+        - url: http://ddev-example-web:3000
 ```
 
 Here’s what’s happening:
