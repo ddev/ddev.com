@@ -63,7 +63,7 @@ However, for a subdomain over standard web ports, the critical part is the next 
 
 ## Step 2: Edit your project-level Traefik Configuration File
 
-DDEV will generate a Traefik configuration file in your `.ddev/traefik/config` directory. You will need to edit this file and add congiguration to it in the `routers` and `services` sections.
+DDEV will generate a Traefik configuration file in your `.ddev/traefik/config` directory. You will need to edit this file and add configuration to it in the `routers` and `services` sections.
 
 1. Remove the `#ddev-generated` line at the top of the file.
 
