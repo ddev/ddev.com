@@ -98,12 +98,13 @@ http:
 3. Find the `services` section of the file: here you will add a service that points to the Node.js app on port 3000. Again, leave the already defined services in place.
 
 ```yaml
-services:
-  # The custom service that routes to your Node app
-  example-web-3000:
-    loadbalancer:
-      servers:
-        - url: http://ddev-example-web:3000
+http:
+  services:
+    # The custom service that routes to your Node app
+    example-web-3000:
+      loadbalancer:
+        servers:
+          - url: http://ddev-example-web:3000
 ```
 
 Here’s what’s happening:
