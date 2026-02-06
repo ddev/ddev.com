@@ -250,5 +250,14 @@
     "squareLogo": "/logos/webkinder-square.svg",
     "url": "https://www.webkinder.ch/",
     "github": "webkinder"
+  },
+  {
+    "name": "Code Enigma",
+    "type": "standard",
+    "logo": "/logos/codeenigma.svg",
+    "darklogo": "/logos/codeenigma-dark.svg",
+    "squareLogo": "/logos/codeenigma-square.svg",
+    "url": "https://www.codeenigma.com/",
+    "github": "codeenigma"
   }
 ]
