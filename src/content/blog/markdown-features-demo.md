@@ -97,11 +97,11 @@ Example: ~~DDEV v1.0 required manual configuration~~ DDEV now auto-detects proje
 
 Emojis are automatically made accessible for screen readers:
 
-🚀 DDEV is fast and powerful
-✅ Tests passing
-⚠️ Warning message
-💡 Helpful tip
-🎉 Celebrate your success!
+- 🚀 DDEV is fast and powerful
+- ✅ Tests passing
+- ⚠️ Warning message
+- 💡 Helpful tip
+- 🎉 Celebrate your success!
 
 ## Standard Markdown Blockquotes
 
@@ -261,7 +261,7 @@ This text has _italic emphasis_ and this has _italic emphasis too_.
 
 This text has **bold emphasis** and this has **bold emphasis too**.
 
-You can combine **_bold and italic_** or **_bold and italic_**.
+You can combine **_bold and italic_** or _**italic and bold**_.
 
 ### Inline Code
 
