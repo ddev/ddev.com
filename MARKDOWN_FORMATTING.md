@@ -286,7 +286,10 @@ This automatically generates:
 
 ```html
 <figure>
-  <img src="/img/blog/2022/03/macos-m1-vs.-drupal-drush-install-seconds.png" alt="Descriptive alt text" />
+  <img
+    src="/img/blog/2022/03/macos-m1-vs.-drupal-drush-install-seconds.png"
+    alt="Descriptive alt text"
+  />
   <figcaption>Descriptive alt text</figcaption>
 </figure>
 ```
