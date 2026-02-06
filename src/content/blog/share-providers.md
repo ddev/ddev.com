@@ -16,7 +16,7 @@ Sharing your local development environment with clients, colleagues, or testing 
 
 ## What Changed in `ddev share`
 
-Previous versions of DDEV relied exclusively on ngrok for sharing. While ngrok remains a solid choice with advanced features, v1.25.0 introduces a modular provider system that gives you options. DDEV now ships with two built-in providers:
+Previous versions of DDEV relied exclusively on ngrok for sharing. While ngrok remains a solid choice with advanced features, v1.25.0 introduces a modular provider system allowing more options and flexibility. DDEV now ships with two built-in providers:
 
 - **ngrok**: The traditional option (requires free account and authtoken)
 - **cloudflared**: A new, cost-free option using Cloudflare Tunnel (requires no account or token)
