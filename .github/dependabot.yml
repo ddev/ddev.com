@@ -35,4 +35,19 @@ updates:
       day: "monday"
       time: "09:00"
 
+    # Only allow major version bumps
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - "version-update:semver-minor"
+          - "version-update:semver-patch"
+
+    # Optional: group majors into one PR to reduce noise
+    groups:
+      major-deps:
+        patterns:
+          - "*"
+        update-types:
+          - "major"
+
     open-pull-requests-limit: 5
