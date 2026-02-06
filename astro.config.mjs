@@ -60,7 +60,11 @@ export default defineConfig({
     syntaxHighlight: "shiki",
     // https://github.com/shikijs/shiki/blob/main/docs/languages.md
     shikiConfig: {
-      theme: "nord",
+      themes: {
+        light: "catppuccin-latte",
+        dark: "one-dark-pro",
+      },
+      defaultColor: false,
       // You can add options to the transformer here
       // For example, to change the 'copied' state duration:
       // toggle: 3000, // 3 seconds

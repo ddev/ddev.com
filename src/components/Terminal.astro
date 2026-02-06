@@ -27,11 +27,17 @@ export interface Props {
     | "windows-terminal"
     | "ubuntu"
   // Added a language prop for Shiki, defaults to 'bash'
-  lang?: 'bash' | 'sh' | 'powershell' | 'text' 
+  lang?: 'bash' | 'sh' | 'powershell' | 'text'
 }
 
 // Destructure props, adding a default for lang
-const { code, codeTheme = "nord", type = "default", lang = "bash" } = Astro.props
+const { code, type = "default", lang = "bash" } = Astro.props
+
+// Use dual themes for light/dark mode support
+const codeThemes = {
+  light: "catppuccin-latte" as const,
+  dark: "one-dark-pro" as const,
+}
 
 const promptSymbols = {
   default: '→',
@@ -146,6 +152,6 @@ const componentTransformers = [
     )}
   </div>
   <div class="terminal-code-container my-0">
-    <Code code={rawCode} lang={lang} theme={codeTheme} transformers={componentTransformers} />
+    <Code code={rawCode} lang={lang} themes={codeThemes} defaultColor={false} transformers={componentTransformers} />
   </div>
 </div>
