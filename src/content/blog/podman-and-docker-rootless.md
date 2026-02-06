@@ -20,35 +20,6 @@ Jump to setup instructions: [Linux/WSL2](#key-aim-linux-and-wsl2-users) · [macO
 
 ## Table of Contents
 
-- [Understanding Docker and Podman](#understanding-docker-and-podman)
-  - [Open Source Alternatives to Docker Desktop](#open-source-alternatives-to-docker-desktop)
-  - [Why Choose Podman?](#why-choose-podman)
-  - [Why Choose Docker Rootless?](#why-choose-docker-rootless)
-- [Key aim: Linux and WSL2 users](#key-aim-linux-and-wsl2-users)
-  - [Do You Need an Alternative to Docker?](#do-you-need-an-alternative-to-docker)
-  - [Installing Podman](#installing-podman)
-  - [Installing Docker CLI](#installing-docker-cli)
-  - [Configuring Podman Rootless](#configuring-podman-rootless)
-  - [Podman Rootless Performance Optimization](#podman-rootless-performance-optimization)
-  - [Configuring Podman Rootful](#configuring-podman-rootful)
-  - [Setting Up Docker Rootless](#setting-up-docker-rootless)
-- [macOS](#macos)
-  - [Do You Need an Alternative to Docker?](#do-you-need-an-alternative-to-docker-1)
-  - [Installing Podman](#installing-podman-1)
-  - [Installing Docker CLI](#installing-docker-cli-1)
-  - [Configuring Podman](#configuring-podman)
-- [Windows](#windows)
-  - [Do You Need an Alternative to Docker?](#do-you-need-an-alternative-to-docker-2)
-  - [Installing Podman](#installing-podman-2)
-- [Running Multiple Container Runtimes](#running-multiple-container-runtimes)
-- [Switching Runtimes with DDEV](#switching-runtimes-with-ddev)
-- [Which Runtime Should You Choose?](#which-runtime-should-you-choose)
-  - [Runtime Comparison](#runtime-comparison)
-  - [Recommendations](#recommendations)
-- [The Journey to Podman Support](#the-journey-to-podman-support)
-- [Supporting DDEV Development](#supporting-ddev-development)
-- [Conclusion](#conclusion)
-
 ## Understanding Docker and Podman
 
 ### Open Source Alternatives to Docker Desktop
