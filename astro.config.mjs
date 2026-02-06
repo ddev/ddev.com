@@ -11,10 +11,10 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypeExternalLinks from "rehype-external-links"
 import rehypeFigure from "rehype-figure"
 import rehypeSlug from "rehype-slug"
+import rehypeUnwrapImages from "rehype-unwrap-images"
 import remarkDirective from "remark-directive"
 import remarkGfm from "remark-gfm"
 import remarkToc from "remark-toc"
-import remarkUnwrapImages from "remark-unwrap-images"
 import robotsTxt from "astro-robots-txt"
 import searchIndex from "./src/lib/search-index.js"
 import sitemap from "@astrojs/sitemap"
@@ -75,7 +75,6 @@ export default defineConfig({
       remarkDirective,
       remarkCallouts,
       remarkGfm, // GitHub Flavored Markdown (tables, strikethrough, task lists, autolinks)
-      remarkUnwrapImages, // Remove paragraph wrapper from images
       [
         remarkToc,
         {
@@ -100,6 +99,7 @@ export default defineConfig({
         },
       ],
       rehypeFigure, // Wrap images in <figure> with <figcaption>
+      rehypeUnwrapImages, // Remove paragraph wrappers after figure processing
       rehypeAccessibleEmojis, // Add accessible labels to emojis
       plainTextPlugin({
         contentKey: "plainText",
