@@ -21,6 +21,8 @@ updates:
     # Optional: group majors into one PR to reduce noise
     groups:
       major-deps:
+        patterns:
+          - "*"
         update-types:
           - "major"
 
