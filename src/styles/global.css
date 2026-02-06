@@ -107,7 +107,7 @@ html.dark .terminal-wrapper {
 }
 
 .terminal-wrapper .top-bar {
-  @apply bg-gray-200;
+  background: var(--shiki-light-bg, #e6e9ef);
 
   &.powershell {
     @apply justify-between text-gray-800 bg-gray-300;
@@ -121,7 +121,7 @@ html.dark .terminal-wrapper {
 }
 
 html.dark .terminal-wrapper .top-bar {
-  @apply bg-slate-700;
+  background: var(--shiki-dark-bg, #2e3440);
 
   &.powershell {
     @apply text-white;
