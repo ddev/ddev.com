@@ -14,30 +14,6 @@ categories:
 
 ## Table of Contents
 
-- [Organizational Milestones](#organizational-milestones)
-- [Community Engagement](#community-engagement)
-- [Major Features and Improvements](#major-features-and-improvements)
-  - [Sponsorship Communication](#sponsorship-communication)
-  - [Add-on Ecosystem](#add-on-ecosystem)
-  - [Container and Infrastructure](#container-and-infrastructure)
-  - [Developer Experience](#developer-experience)
-  - [Language and Database Updates](#language-and-database-updates)
-  - [Windows Improvements](#windows-improvements)
-- [ddev.com Website and Documentation](#ddevcom-website-and-documentation)
-- [IDE Integration](#ide-integration)
-- [DDEV Developer Improvements](#ddev-developer-improvements)
-- [AI in DDEV Development](#ai-in-ddev-development)
-- [Removals in v1.25.0](#removals-in-v1250)
-- [Challenges and things that could have gone better](#challenges-and-things-that-could-have-gone-better)
-- [Comparing Outcomes to 2025 Goals](#comparing-outcomes-to-2025-goals)
-- [By the Numbers](#by-the-numbers)
-- [Wow, Community Contributions!](#wow-community-contributions)
-  - [By Contributor](#by-contributor)
-  - [Summary by Count](#summary-by-count)
-  - [Blog Guest Contributors](#blog-guest-contributors)
-  - [Amazing Official Add-on Maintainers](#amazing-official-add-on-maintainers)
-- [Looking Ahead to 2026](#looking-ahead-to-2026)
-
 ## Organizational Milestones
 
 - **Board of Directors Established**: In December 2025, we formally established a Board of Directors for the DDEV Foundation, enhancing governance and setting the stage for long-term sustainability. We're super proud of this as it's something we've been working toward for years. [Read all about it](board-of-directors-established.md).

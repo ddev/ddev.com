@@ -127,6 +127,8 @@ Blog posts require:
 - pubDate as Date object
 - Optional featureImage with alt text
 
+For special markdown formatting features (callout boxes, code blocks, etc.), see [MARKDOWN_FORMATTING.md](MARKDOWN_FORMATTING.md).
+
 ### Content Linking
 
 - **Internal blog links**: Use markdown filename references (e.g., `[link text](filename.md)`) for links between blog posts. Astro automatically resolves these to proper URLs.

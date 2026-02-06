@@ -60,6 +60,16 @@ module.exports = {
             h4: {
               textWrap: "pretty",
             },
+            // Support markdown table alignment via align attributes
+            'th[align="left"], td[align="left"]': {
+              textAlign: "left",
+            },
+            'th[align="center"], td[align="center"]': {
+              textAlign: "center",
+            },
+            'th[align="right"], td[align="right"]': {
+              textAlign: "right",
+            },
           },
           code: {},
         },
