@@ -86,7 +86,7 @@ input[type="radio"]:checked + label {
 
 .terminal-wrapper {
   @apply rounded-lg;
-  background: #2e3440;
+  background: var(--shiki-light-bg, #e6e9ef);
   img {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -95,25 +95,41 @@ input[type="radio"]:checked + label {
     @apply font-normal overflow-x-auto font-mono bg-transparent rounded-t-none;
 
     code {
-      color: #d8dee9;
       .prompt {
-        @apply select-none text-slate-400;
+        @apply select-none opacity-60;
       }
     }
   }
 }
 
+html.dark .terminal-wrapper {
+  background: var(--shiki-dark-bg, #2e3440);
+}
+
 .terminal-wrapper .top-bar {
+  @apply bg-gray-200;
+
   &.powershell {
-    @apply justify-between text-white;
-    background: #1f2023;
+    @apply justify-between text-gray-800 bg-gray-300;
   }
   &.powershell-ubuntu {
-    @apply justify-between text-white;
-    background: #1f2023;
+    @apply justify-between text-gray-800 bg-gray-300;
   }
   &.ubuntu {
     @apply justify-end;
+  }
+}
+
+html.dark .terminal-wrapper .top-bar {
+  @apply bg-slate-700;
+
+  &.powershell {
+    @apply text-white;
+    background: #1f2023;
+  }
+  &.powershell-ubuntu {
+    @apply text-white;
+    background: #1f2023;
   }
 }
 
@@ -172,6 +188,19 @@ pre.astro-code code {
   padding-bottom: 2px;
 }
 
+/* Shiki dual theme support */
+pre.astro-code,
+pre.astro-code span {
+  color: var(--shiki-light) !important;
+  background-color: var(--shiki-light-bg) !important;
+}
+
+html.dark pre.astro-code,
+html.dark pre.astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+}
+
 /* Copy buttons */
 button.copy,
 .shiki-copy,
@@ -183,8 +212,8 @@ pre.astro-code > button.copy {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #333;
   opacity: 0.5;
   z-index: 10;
   pointer-events: auto;
@@ -192,6 +221,13 @@ pre.astro-code > button.copy {
   transition:
     opacity 0.2s,
     background-color 0.2s;
+}
+
+html.dark button.copy,
+html.dark .shiki-copy,
+html.dark pre.astro-code > button.copy {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
 }
 
 .terminal-code-container button.copy,
@@ -216,13 +252,20 @@ button.copy:hover,
 .shiki-copy:hover,
 pre.astro-code > button.copy:hover {
   opacity: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+html.dark button.copy:hover,
+html.dark .shiki-copy:hover,
+html.dark pre.astro-code > button.copy:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
 button.copy.copied,
 .shiki-copy.copied,
 pre.astro-code > button.copy.copied {
-  background-color: #28a745;
+  background-color: #0891b2 !important;
+  color: white !important;
   opacity: 1;
 }
 

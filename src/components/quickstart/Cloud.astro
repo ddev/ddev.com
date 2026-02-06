@@ -41,7 +41,8 @@ const { latestVersion } = Astro.props
     }
 }
 `}
-              theme="nord"
+              themes={{ light: "catppuccin-latte" as const, dark: "one-dark-pro" as const }}
+              defaultColor={false}
               lang="json"
             />
           </li>
