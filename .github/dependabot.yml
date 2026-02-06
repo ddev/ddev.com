@@ -1,0 +1,53 @@
+# NOTE: GitHub Dependabot only reads this file when it is located at:
+#   .github/dependabot.yml
+# If you created this as `dependabot.yaml` elsewhere, move/rename it accordingly.
+version: 2
+
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+
+    # Only allow major version bumps
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - "version-update:semver-minor"
+          - "version-update:semver-patch"
+
+    # Optional: group majors into one PR to reduce noise
+    groups:
+      major-deps:
+        patterns:
+          - "*"
+        update-types:
+          - "major"
+
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+
+    # Only allow major version bumps
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - "version-update:semver-minor"
+          - "version-update:semver-patch"
+
+    # Optional: group majors into one PR to reduce noise
+    groups:
+      major-deps:
+        patterns:
+          - "*"
+        update-types:
+          - "major"
+
+    open-pull-requests-limit: 5
