@@ -2,6 +2,7 @@
 title: "Exposing a Node.js App Over HTTP / HTTPS on a Subdomain in DDEV"
 pubDate: 2025-04-10
 modifiedDate: 2026-02-05
+modifiedComment: "DDEV v1.25.0 is more restrictive on project traefik configuration, so the .ddev/traefik/project.yaml has to be edited and have the #ddev-generated removed"
 summary: Serve a Node.js app on a dedicated subdomain over HTTP/HTTPS using DDEV’s Traefik.
 author: J. Minder
 featureImage:
@@ -31,12 +32,6 @@ DDEV's' [`web_extra_exposed_ports` feature](https://docs.ddev.com/en/stable/user
 (e.g., (`3000`)). However, it doesn’t magically set up a subdomain for you to use on standard web ports (80/443).
 If you want `frontend.example.ddev.site` to map to your Node.js app over HTTPS, you need a reverse proxy rule.
 That’s where Traefik comes in.
-
-> Please note: the procedure described here only works with versions of DDEV greater than 1.25. So it's recommended to add this constraint to your DDEV setup by issuing this command:
-
-```bash
-ddev config --ddev-version-constraint='>=v1.25.0'
-```
 
 ## Step 1: Update Your `.ddev/config.yaml`
 
