@@ -2,6 +2,11 @@
 @config "../../tailwind.config.cjs";
 @import "./callouts.css";
 
+:root {
+  --code-bg-light: #dfe2e7;
+  --code-bg-dark: #2e3440;
+}
+
 header {
   a[target="_blank"] {
     &::after {
@@ -86,7 +91,7 @@ input[type="radio"]:checked + label {
 
 .terminal-wrapper {
   @apply rounded-lg;
-  background: var(--shiki-light-bg, #e6e9ef);
+  background: var(--code-bg-light);
   img {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -103,11 +108,11 @@ input[type="radio"]:checked + label {
 }
 
 html.dark .terminal-wrapper {
-  background: var(--shiki-dark-bg, #2e3440);
+  background: var(--code-bg-dark);
 }
 
 .terminal-wrapper .top-bar {
-  background: var(--shiki-light-bg, #e6e9ef);
+  background: var(--code-bg-light);
 
   &.powershell {
     @apply justify-between text-gray-800 bg-gray-300;
@@ -121,7 +126,7 @@ html.dark .terminal-wrapper {
 }
 
 html.dark .terminal-wrapper .top-bar {
-  background: var(--shiki-dark-bg, #2e3440);
+  background: var(--code-bg-dark);
 
   &.powershell {
     @apply text-white;
@@ -188,17 +193,17 @@ pre.astro-code code {
   padding-bottom: 2px;
 }
 
-/* Shiki dual theme support */
+/* Shiki dual theme support - override backgrounds for better contrast */
 pre.astro-code,
 pre.astro-code span {
   color: var(--shiki-light) !important;
-  background-color: var(--shiki-light-bg) !important;
+  background-color: var(--code-bg-light) !important;
 }
 
 html.dark pre.astro-code,
 html.dark pre.astro-code span {
   color: var(--shiki-dark) !important;
-  background-color: var(--shiki-dark-bg) !important;
+  background-color: var(--code-bg-dark) !important;
 }
 
 /* Copy buttons */

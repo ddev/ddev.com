@@ -32,3 +32,7 @@ export const ORG_SAME_AS = [
   "https://localdev.foundation",
 ]
 export const BLOG_DESCRIPTION = `Posts about DDEV, Docker, and local development.`
+export const SHIKI_THEMES = {
+  light: "github-light-high-contrast",
+  dark: "github-dark-high-contrast",
+} as const

@@ -15,6 +15,7 @@ import { Code } from "astro/components" // Keep this import
 // 1. Import the transformer here!
 import { addCopyButton } from 'shiki-transformer-copy-button';
 import type { ShikiTransformer } from 'shiki';
+import { SHIKI_THEMES } from '../const';
 
 export interface Props {
   code: string
@@ -34,10 +35,7 @@ export interface Props {
 const { code, type = "default", lang = "bash" } = Astro.props
 
 // Use dual themes for light/dark mode support
-const codeThemes = {
-  light: "catppuccin-latte" as const,
-  dark: "one-dark-pro" as const,
-}
+const codeThemes = SHIKI_THEMES
 
 const promptSymbols = {
   default: '→',
