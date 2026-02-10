@@ -25,7 +25,7 @@ You can select providers via command flags, project configuration, or global def
 
 ## Free Sharing with Cloudflare Tunnel
 
-Cloudflare Tunnel provides production-grade infrastructure for sharing your local environments at zero cost. After [installing the `cloudflared` client](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/do-more-with-tunnels/local-management/create-local-tunnel/), getting started is:
+Cloudflare Tunnel provides production-grade infrastructure for sharing your local environments at zero cost. After [installing the `cloudflared` CLI](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/downloads/), getting started is:
 
 ```bash
 ddev share --provider=cloudflared
