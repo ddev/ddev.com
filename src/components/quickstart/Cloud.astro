@@ -4,6 +4,7 @@ import Tabs from "@components/Tabs.astro"
 import { Code } from "astro/components"
 import CommunityCTA from "./CommunityCTA.astro"
 import Examples from "./Examples.astro"
+import { SHIKI_THEMES } from "../../const"
 
 export interface Props {
   latestVersion: string
@@ -41,7 +42,8 @@ const { latestVersion } = Astro.props
     }
 }
 `}
-              theme="nord"
+              themes={SHIKI_THEMES}
+              defaultColor={false}
               lang="json"
             />
           </li>

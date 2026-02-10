@@ -20,6 +20,7 @@ import searchIndex from "./src/lib/search-index.js"
 import sitemap from "@astrojs/sitemap"
 import tailwindcss from "@tailwindcss/vite"
 import { addCopyButton } from "shiki-transformer-copy-button"
+import { SHIKI_THEMES } from "./src/const.ts"
 
 // https://astro.build/config
 export default defineConfig({
@@ -60,7 +61,8 @@ export default defineConfig({
     syntaxHighlight: "shiki",
     // https://github.com/shikijs/shiki/blob/main/docs/languages.md
     shikiConfig: {
-      theme: "nord",
+      themes: SHIKI_THEMES,
+      defaultColor: false,
       // You can add options to the transformer here
       // For example, to change the 'copied' state duration:
       // toggle: 3000, // 3 seconds
