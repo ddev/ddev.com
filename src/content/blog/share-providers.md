@@ -4,8 +4,8 @@ pubDate: 2026-02-10
 summary: "DDEV v1.25.0 introduces a flexible provider system for `ddev share`, adding free Cloudflare tunnel support, automation capabilities, and extensibility for custom sharing solutions."
 author: Randy Fay
 featureImage:
- src: /img/blog/2026/02/ddev-share-banner.svg
- alt: DDEV now supports many ways to do `ddev share` including cloudflared, ngrok, and even custom share providers
+  src: /img/blog/2026/02/ddev-share-banner.svg
+  alt: DDEV now supports many ways to do `ddev share` including cloudflared, ngrok, and even custom share providers
 categories:
   - Announcements
   - Training
