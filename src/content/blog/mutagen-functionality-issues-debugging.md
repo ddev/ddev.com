@@ -16,7 +16,7 @@ categories:
 
 ## Contributor Training Video
 
-See the January 22, 2026 Contributor Training based on this blog:
+This blog is based on the [Mutagen Fundamentals and Troubleshooting](https://www.youtube.com/watch?v=YbTlX63GZrk) Contributor Training held on January 22, 2026.
 
 <div class="video-container">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YbTlX63GZrk?si=hFPY_sgkganNFe5u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -36,7 +36,7 @@ The primary target of Mutagen syncing is PHP files. These were the fundamental p
 
 ### Webserving Performance Improvement
 
-Mutagen has made many cohorts of developers very, very happy with the webserving performance. One dev said "the first time I tried it I cried."
+Mutagen has delighted many developers with its web-serving performance. One dev said "the first time I tried it I cried."
 
 ### Filesystem Notifications
 
