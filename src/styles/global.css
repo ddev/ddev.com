@@ -185,6 +185,11 @@ html.dark .terminal-wrapper .top-bar {
   overflow-x: auto;
 }
 
+/* Inline code - allow breaking long strings on mobile */
+.prose :not(pre) > code {
+  overflow-wrap: break-word;
+}
+
 /* Code block containers */
 .prose pre,
 pre.astro-code {
