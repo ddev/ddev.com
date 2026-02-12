@@ -34,13 +34,13 @@ const { title, subtitle, date, author, authorUrl, authorAvatar, readTime, editUr
       author && (
         <div class="flex items-center content-center mr-2">
           {authorAvatar && (
-            <div class="rounded-full overflow-hidden mr-2">
+            <a href={authorUrl} class="rounded-full overflow-hidden mr-2 block">
               <img
                 src={authorAvatar}
                 alt={`${author} avatar`}
                 class="block w-12 h-12"
               />
-            </div>
+            </a>
           )}
           {author && (
             <div class={authorAvatar ? `ml-1 dark:text-white` : ``}>
