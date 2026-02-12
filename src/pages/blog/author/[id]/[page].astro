@@ -1,42 +1,59 @@
 ---
 import { getCollection, render } from "astro:content"
-import Layout from "../../../layouts/Layout.astro"
-import BlogPostCard from "../../../components/BlogPostCard.astro"
-import Paging from "../../../components/Paging.astro"
-import { BLOG_PAGE_SIZE } from "../../../const"
+import Layout from "../../../../layouts/Layout.astro"
+import BlogPostCard from "../../../../components/BlogPostCard.astro"
+import Paging from "../../../../components/Paging.astro"
+import { BLOG_PAGE_SIZE } from "../../../../const"
 
 export async function getStaticPaths() {
   const authors = await getCollection("authors")
   const posts = await getCollection("blog")
 
-  return authors.map((author) => {
+  const paths = []
+
+  for (const author of authors) {
     const authorPosts = posts
       .filter((post) => post.data.author === author.data.name)
       .sort((a, b) => {
         return new Date(a.data.pubDate) > new Date(b.data.pubDate) ? -1 : 1
       })
 
-    return {
-      params: { id: author.id },
-      props: {
-        author,
-        posts: authorPosts.slice(0, BLOG_PAGE_SIZE),
-        totalPosts: authorPosts.length,
-      },
+    const totalPages = Math.ceil(authorPosts.length / BLOG_PAGE_SIZE)
+
+    for (let page = 2; page <= totalPages; page++) {
+      paths.push({
+        params: { id: author.id, page: String(page) },
+        props: {
+          author,
+          posts: authorPosts.slice((page - 1) * BLOG_PAGE_SIZE, page * BLOG_PAGE_SIZE),
+          currentPage: page,
+          totalPages,
+        },
+      })
     }
-  })
+  }
+
+  return paths
 }
 
-const { author, posts, totalPosts } = Astro.props
+const { author, posts, currentPage, totalPages } = Astro.props
 
 const title = `Posts by ${author.data.name}`
 const { Content } = await render(author)
-const nextURL = totalPosts > BLOG_PAGE_SIZE ? `/blog/author/${author.id}/2` : undefined
+const prevURL =
+  currentPage === 2
+    ? `/blog/author/${author.id}`
+    : `/blog/author/${author.id}/${currentPage - 1}`
+const nextURL =
+  currentPage < totalPages
+    ? `/blog/author/${author.id}/${currentPage + 1}`
+    : undefined
 ---
 
 <Layout
-  title={title}
+  title={`${title}, Page ${currentPage}`}
   description={`List of blog posts by ${author.data.name}.`}
+  noindex={true}
 >
   <main class="max-w-4xl mx-auto mb-24">
     <div class="lg:flex lg:space-x-12 py-24 px-6 lg:px-0">
@@ -53,17 +70,11 @@ const nextURL = totalPosts > BLOG_PAGE_SIZE ? `/blog/author/${author.id}/2` : un
       </div>
     </div>
 
-    <h2 class="text-base font-mono text-navy-300 px-6 lg:px-0 dark:text-navy-100">
-      {author.data.firstName || author.data.name}'s {
-        totalPosts == 1 ? `Post` : `Posts`
-      }
-    </h2>
-
     <div
       class="mt-12 mb-24 px-6 sm:px-4 lg:px-0 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
     >
       {posts.map((post) => <BlogPostCard post={post} />)}
     </div>
   </main>
-  <Paging nextURL={nextURL} />
+  <Paging nextURL={nextURL} prevURL={prevURL} />
 </Layout>

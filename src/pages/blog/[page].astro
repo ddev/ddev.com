@@ -4,19 +4,21 @@ import BlogPostCard from "../../components/BlogPostCard.astro"
 import Heading from "../../components/Heading.astro"
 import Paging from "../../components/Paging.astro"
 import { getCollection } from "astro:content"
+import type { GetStaticPathsOptions } from "astro"
+import { BLOG_PAGE_SIZE } from "src/const"
 
 /**
  * Tell Astro to build routes for paginated blog post listings.
  * https://docs.astro.build/en/reference/api-reference/#getstaticpaths
  */
-export async function getStaticPaths({ paginate }) {
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const posts = await getCollection("blog")
   const allPosts = posts.sort((a, b) => {
     return new Date(a.data.pubDate) > new Date(b.data.pubDate) ? -1 : 1
   })
 
   // Generate pages from our array of astronauts, with 6 to a page
-  return paginate(allPosts, { pageSize: 6 })
+  return paginate(allPosts, { pageSize: BLOG_PAGE_SIZE })
 }
 
 const { page } = Astro.props
@@ -28,7 +30,7 @@ const title = `Blog Posts`
   <main class="max-w-4xl mx-auto">
     <Heading title={title} subtitle={`DDEV, Docker, and local development.`} />
     <div
-      class="mt-12 mb-24 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none"
+      class="mt-12 mb-24 px-6 sm:px-4 lg:px-0 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
     >
       {page.data.map((post) => <BlogPostCard post={post} />)}
     </div>

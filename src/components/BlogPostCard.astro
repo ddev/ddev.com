@@ -16,33 +16,25 @@ const { post } = Astro.props
 const { remarkPluginFrontmatter } = await render(post)
 
 const author = await getEntry("authors", getSlug(post.data.author))
-const authorImage = author.data.avatarUrl ?? null
+const authorImage = author?.data.avatarUrl ?? null
 
-const hasFeatureImage =
-  Object.hasOwn(post.data, "featureImage") &&
-  Object.hasOwn(post.data.featureImage, "src")
+const featureImage = post.data.featureImage
 
-const featureImageUrl = hasFeatureImage
-  ? post.data.featureImage.src
-  : `/img/generic-thumbnail.png`
+const featureImageUrl = featureImage?.src ?? `/img/generic-thumbnail.png`
+const featureImageAlt = featureImage?.alt ?? ``
+const featureImageDarkUrl = featureImage?.srcDark ?? null
 
-const featureImageAlt = hasFeatureImage ? post.data.featureImage.alt : ``
-
-const firstCategory = post.data.categories.length
-  ? post.data.categories[0]
-  : null
-
-const featureImageDarkUrl = (hasFeatureImage && post.data.featureImage.srcDark) || null
+const categories = post.data.categories.length ? post.data.categories : []
 ---
 
 {
   /* `isolation: isolate` is here to convince Safari not to display un-rounded corners during animation */
 }
 <div
-  class="flex flex-col rounded-lg overflow-hidden"
+  class="relative flex flex-col rounded-lg overflow-hidden"
   style="isolation: isolate;"
 >
-  <div class="flex-shrink-0">
+  <div class="shrink-0">
     {
       featureImageUrl.includes(".svg") ? (
         <>
@@ -52,7 +44,7 @@ const featureImageDarkUrl = (hasFeatureImage && post.data.featureImage.srcDark) 
       ) : (
         <>
           <Picture
-            class={`block h-48 w-full object-cover${featureImageDarkUrl ? " dark:hidden" : ""}`}
+            class={`block w-full aspect-3/2 object-cover${featureImageDarkUrl ? " dark:hidden" : ""}`}
             src={featureImageUrl}
             alt={featureImageAlt}
             width={600}
@@ -60,7 +52,7 @@ const featureImageDarkUrl = (hasFeatureImage && post.data.featureImage.srcDark) 
           />
           {featureImageDarkUrl && (
             <Picture
-              class="hidden dark:block h-48 w-full object-cover"
+              class="hidden dark:block w-full aspect-3/2 object-cover"
               src={featureImageDarkUrl}
               alt={featureImageAlt}
               width={600}
@@ -73,12 +65,17 @@ const featureImageDarkUrl = (hasFeatureImage && post.data.featureImage.srcDark) 
   </div>
   <div class="flex-1 bg-gray-100 p-6 flex flex-col justify-between dark:bg-slate-600">
     <div class="flex-1">
-      <p class="text-sm font-mono text-indigo-600 dark:text-cyan-300">
-        <a href={getCategoryUrl(firstCategory)} class="hover:underline">
-          {firstCategory}
-        </a>
-      </p>
-      <a href={`/blog/${post.id}`} class="block mt-2">
+      <div class="flex flex-wrap gap-1">
+        {categories.map((category) => (
+          <a
+            href={getCategoryUrl(category)}
+            class="relative z-10 text-xs font-mono px-2 py-0.5 rounded-full border border-indigo-400 text-indigo-600 hover:border-indigo-600 dark:border-cyan-500 dark:text-cyan-300 dark:hover:border-cyan-300"
+          >
+            {category}
+          </a>
+        ))}
+      </div>
+      <a href={`/blog/${post.id}`} class="block mt-2 after:absolute after:inset-0">
         <p class="text-xl font-semibold text-gray-900 dark:text-white">
           {post.data.title}
         </p>
@@ -87,8 +84,8 @@ const featureImageDarkUrl = (hasFeatureImage && post.data.featureImage.srcDark) 
     <div class="mt-6 flex items-center">
       {
         authorImage && (
-          <div class="flex-shrink-0">
-            <a href={`/blog/author/${author.id}`}>
+          <div class="shrink-0">
+            <a href={`/blog/author/${author?.id}`} class="relative z-10">
               <span class="sr-only">{post.data.author}</span>
               <img
                 class="h-10 w-10 rounded-full"
@@ -101,13 +98,13 @@ const featureImageDarkUrl = (hasFeatureImage && post.data.featureImage.srcDark) 
       }
       <div class={authorImage ? `ml-3` : ``}>
         <p class="text-sm font-medium text-gray-900 dark:text-white">
-          <a href={`/blog/author/${author.id}`} class="hover:underline">
+          <a href={`/blog/author/${author?.id}`} class="relative z-10 hover:underline">
             {post.data.author}
           </a>
         </p>
         <div class="flex space-x-1 text-sm text-gray-600 dark:text-gray-300">
-          <time datetime={post.data.pubDate}
-            >{formatDate(post.data.pubDate)}</time
+          <time datetime={post.data.pubDate.toISOString()}
+            >{formatDate(post.data.pubDate.toISOString())}</time
           >
           <span aria-hidden="true"> &middot;</span>
           <span> {remarkPluginFrontmatter.minutesRead}</span>

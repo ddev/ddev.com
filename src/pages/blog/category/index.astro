@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content"
+import { getCategoryUrl } from "../../../lib/api"
+import Layout from "../../../layouts/Layout.astro"
+import Heading from "../../../components/Heading.astro"
+
+const posts = await getCollection("blog")
+
+const categoryCounts = posts
+  .flatMap((post) => post.data.categories)
+  .reduce(
+    (acc, category) => {
+      acc[category] = (acc[category] ?? 0) + 1
+      return acc
+    },
+    {} as Record<string, number>,
+  )
+
+const categories = Object.entries(categoryCounts).sort(([a], [b]) =>
+  a.localeCompare(b),
+)
+---
+
+<Layout title="Blog Categories" description="Index of DDEV blog categories.">
+  <main class="max-w-4xl mx-auto">
+    <Heading title="Blog Categories" />
+    <div class="mt-12 mb-24 px-6 lg:px-0 columns-1 sm:columns-2 lg:columns-3 gap-x-8">
+      {
+        categories.map(([name, count]) => (
+          <div class="mb-4 break-inside-avoid dark:text-white">
+            <a href={getCategoryUrl(name)} class="hover:underline">{name}</a>
+            <span class="text-sm text-gray-500 dark:text-gray-400 ml-1">
+              ({count})
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </main>
+</Layout>
