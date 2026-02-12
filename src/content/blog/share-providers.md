@@ -1,6 +1,6 @@
 ---
 title: "New `ddev share` Provider System: Cloudflare tunnel with no login or token"
-pubDate: 2026-02-10
+pubDate: 2026-02-12
 summary: "DDEV v1.25.0 introduces a flexible provider system for `ddev share`, adding free Cloudflare tunnel support, automation capabilities, and extensibility for custom sharing solutions."
 author: Randy Fay
 featureImage:
@@ -121,11 +121,11 @@ hooks:
 
 ## Extensibility: Custom Share Providers
 
-The new provider system is script-based, allowing you to create custom providers for internal tunneling solutions or other services. Place Bash scripts in `.ddev/share-providers/` (project-level) or `~/.ddev/share-providers/` (global), and DDEV will recognize them as available providers.
+The new provider system is script-based, allowing you to create custom providers for internal tunneling solutions or other services. Place Bash scripts in `.ddev/share-providers/` (project-level) or `$HOME/.ddev/share-providers/` (global), and DDEV will recognize them as available providers.
 
 For details on creating custom providers, see the [sharing documentation](https://docs.ddev.com/en/stable/users/topics/sharing/).
 
-An example of a share provider for `localtunnel` is provided in `.ddev/share-providers/localtunnel.sh.example` and you can experiment with it by just copying that to `.ddev/share-providers/localtunnel`.
+An example of a share provider for `localtunnel` is provided in `.ddev/share-providers/localtunnel.sh.example` and you can experiment with it by just copying that to `.ddev/share-providers/localtunnel.sh`.
 
 ## Questions
 
@@ -137,7 +137,7 @@ An example of a share provider for `localtunnel` is provided in `.ddev/share-pro
 <dd>Use cloudflared for quick, free sharing during development and testing. Use ngrok if you need stable subdomains, custom domains, or advanced features like IP allowlisting and OAuth protection.</dd>
 
 <dt>Can I create my own share provider?</dt>
-<dd>Yes! Place bash scripts in `.ddev/share-providers/` (project-level) or `~/.ddev/share-providers/` (global). See the <a href="https://docs.ddev.com/en/stable/users/topics/sharing/">sharing documentation</a> for implementation details.</dd>
+<dd>Yes! Place bash scripts in <code>.ddev/share-providers/</code> (project-level) or <code>$HOME/.ddev/share-providers/</code> (global). See the <a href="https://docs.ddev.com/en/stable/users/topics/sharing/">sharing documentation</a> for implementation details.</dd>
 </dl>
 
 ## Try It Today
@@ -146,6 +146,6 @@ DDEV v1.25.0 is now available. Use the techniques above, and try out Cloudflared
 
 For complete details on the new sharing system, see the [sharing documentation](https://docs.ddev.com/en/stable/users/topics/sharing/).
 
-Join us on [Discord](https://discord.gg/5wjP76mBJD), follow us on [Mastodon](https://fosstodon.org/@ddev), [Bluesky](https://bsky.app/profile/ddev.com), or [LinkedIn](https://www.linkedin.com/company/ddev-foundation/), and subscribe to our [newsletter](https://ddev.com/newsletter/) for updates.
+Join us on [Discord](/s/discord), follow us on [Mastodon](https://fosstodon.org/@ddev), [Bluesky](https://bsky.app/profile/ddev.com), or [LinkedIn](https://www.linkedin.com/company/ddev-foundation/), and subscribe to our [newsletter](https://ddev.com/newsletter/) for updates.
 
 This blog was drafted and reviewed by AI including Claude Code.
