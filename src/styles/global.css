@@ -179,6 +179,12 @@ html.dark .terminal-wrapper .top-bar {
   }
 }
 
+/* Table containers - horizontal scroll on mobile */
+.prose table {
+  display: block;
+  overflow-x: auto;
+}
+
 /* Code block containers */
 .prose pre,
 pre.astro-code {
