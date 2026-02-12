@@ -49,7 +49,7 @@ const buildResponse = () => {
         }
 
         try {
-          const dimensions = sizeOf(logoPath)
+          const dimensions = sizeOf(fs.readFileSync(logoPath))
           const [width, height] = getScaledImageDimensions(
             dimensions.width,
             dimensions.height,
@@ -101,7 +101,7 @@ const buildResponse = () => {
     }
 
     try {
-      const dimensions = sizeOf(logoPath)
+      const dimensions = sizeOf(fs.readFileSync(logoPath))
       let [width, height] = getScaledImageDimensions(
         dimensions.width,
         dimensions.height,
