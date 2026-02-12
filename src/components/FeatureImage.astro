@@ -1,6 +1,7 @@
 ---
 import { marked } from "marked"
 import { Picture } from 'astro:assets'
+import type { ImageMetadata } from 'astro'
 
 export interface Props {
   src: string
@@ -12,6 +13,16 @@ export interface Props {
 }
 
 const { src, srcDark, alt, caption = "", credit, shadow = false } = Astro.props
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/public/img/**/*.{png,jpg,jpeg,webp,gif}'
+)
+const resolveImage = async (path: string) => {
+  const key = `/public${path}`
+  return images[key] ? (await images[key]()).default : path
+}
+const resolvedSrc = await resolveImage(src)
+const resolvedSrcDark = srcDark ? await resolveImage(srcDark) : null
 ---
 
 <figure class={`w-full mx-auto mb-24 z-10 px-6 lg:px-0`}>
@@ -23,20 +34,20 @@ const { src, srcDark, alt, caption = "", credit, shadow = false } = Astro.props
       </>
     ) : (
       <>
-        <div class={`block rounded-lg overflow-hidden${shadow ? " shadow-xl" : ""}${srcDark ? " dark:hidden" : ""}`}>
+        <div class={`block rounded-lg overflow-hidden${shadow ? " shadow-xl" : ""}${resolvedSrcDark ? " dark:hidden" : ""}`}>
           <Picture
-            class="block rounded-lg"
-            src={src}
+            class="block w-full h-auto rounded-lg"
+            src={resolvedSrc as any}
             alt={alt}
             width={900}
             height={500}
           />
         </div>
-        {srcDark && (
+        {resolvedSrcDark && (
           <div class={`hidden dark:block rounded-lg overflow-hidden${shadow ? " shadow-xl" : ""}`}>
             <Picture
-              class="block rounded-lg"
-              src={srcDark}
+              class="block w-full h-auto rounded-lg"
+              src={resolvedSrcDark as any}
               alt={alt}
               width={900}
               height={500}

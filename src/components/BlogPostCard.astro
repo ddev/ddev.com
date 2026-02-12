@@ -5,6 +5,7 @@
 import type { CollectionEntry } from "astro:content"
 import { render } from "astro:content"
 import { Picture } from 'astro:assets'
+import type { ImageMetadata } from 'astro'
 interface Props {
   post: CollectionEntry<"blog">
 }
@@ -23,6 +24,16 @@ const featureImage = post.data.featureImage
 const featureImageUrl = featureImage?.src ?? `/img/generic-thumbnail.png`
 const featureImageAlt = featureImage?.alt ?? ``
 const featureImageDarkUrl = featureImage?.srcDark ?? null
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/public/img/**/*.{png,jpg,jpeg,webp,gif}'
+)
+const resolveImage = async (path: string) => {
+  const key = `/public${path}`
+  return images[key] ? (await images[key]()).default : path
+}
+const resolvedSrc = await resolveImage(featureImageUrl)
+const resolvedSrcDark = featureImageDarkUrl ? await resolveImage(featureImageDarkUrl) : null
 
 const categories = post.data.categories.length ? post.data.categories : []
 ---
@@ -44,16 +55,16 @@ const categories = post.data.categories.length ? post.data.categories : []
       ) : (
         <>
           <Picture
-            class={`block w-full aspect-3/2 object-cover${featureImageDarkUrl ? " dark:hidden" : ""}`}
-            src={featureImageUrl}
+            class={`block w-full aspect-3/2 object-cover${resolvedSrcDark ? " dark:hidden" : ""}`}
+            src={resolvedSrc as any}
             alt={featureImageAlt}
             width={600}
             height={400}
           />
-          {featureImageDarkUrl && (
+          {resolvedSrcDark && (
             <Picture
               class="hidden dark:block w-full aspect-3/2 object-cover"
-              src={featureImageDarkUrl}
+              src={resolvedSrcDark as any}
               alt={featureImageAlt}
               width={600}
               height={400}
