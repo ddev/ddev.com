@@ -4,14 +4,14 @@ import Layout from "../../layouts/Layout.astro"
 import BlogPostCard from "../../components/BlogPostCard.astro"
 import Heading from "../../components/Heading.astro"
 import Paging from "../../components/Paging.astro"
-import { BLOG_DESCRIPTION } from "src/const"
+import { BLOG_DESCRIPTION, BLOG_PAGE_SIZE } from "src/const"
 
 const posts = await getCollection("blog")
 const recentPosts = posts
   .sort((a, b) => {
     return new Date(a.data.pubDate) > new Date(b.data.pubDate) ? -1 : 1
   })
-  .slice(0, 6)
+  .slice(0, BLOG_PAGE_SIZE)
 
 const title = `Blog Posts`
 const rssUrl = new URL(`/blog/rss.xml`, Astro.site).toString()
@@ -29,7 +29,7 @@ const jsonUrl = new URL(`/blog/feed.json`, Astro.site).toString()
   <main class="max-w-4xl mx-auto">
     <Heading title={title} subtitle={`DDEV, Docker, and local development.`} />
     <div
-      class="mt-12 mb-24 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none"
+      class="mt-12 mb-24 px-6 sm:px-4 lg:px-0 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
     >
       {recentPosts.map((post) => <BlogPostCard post={post} />)}
     </div>

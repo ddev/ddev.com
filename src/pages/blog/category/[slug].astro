@@ -3,11 +3,9 @@ import { getSlug } from "../../../lib/api"
 import { getCollection } from "astro:content"
 import Layout from "../../../layouts/Layout.astro"
 import BlogPostCard from "../../../components/BlogPostCard.astro"
+import Paging from "../../../components/Paging.astro"
+import { BLOG_PAGE_SIZE } from "../../../const"
 
-/**
- * Tell Astro to build routes using our category slugs.
- * https://docs.astro.build/en/reference/api-reference/#getstaticpaths
- */
 export async function getStaticPaths() {
   const posts = await getCollection("blog")
   const categories = [
@@ -15,40 +13,49 @@ export async function getStaticPaths() {
   ]
 
   return categories.map((category) => {
+    const categoryPosts = posts
+      .filter((post) => post.data.categories.includes(category))
+      .sort((a, b) => {
+        return new Date(a.data.pubDate) > new Date(b.data.pubDate) ? -1 : 1
+      })
+
     return {
-      params: {
-        slug: getSlug(category),
-      },
+      params: { slug: getSlug(category) },
       props: {
         name: category,
-        posts: posts
-          .filter((post) => post.data.categories.includes(category))
-          .sort((a, b) => {
-            return new Date(a.data.pubDate) > new Date(b.data.pubDate) ? -1 : 1
-          }),
+        posts: categoryPosts.slice(0, BLOG_PAGE_SIZE),
+        totalPosts: categoryPosts.length,
       },
     }
   })
 }
 
-const { name, posts } = Astro.props
+const { name, posts, totalPosts } = Astro.props
 
-const title = `Posts in “${name}”`
+const title = `Posts in "${name}"`
+const slug = getSlug(name)
+const nextURL = totalPosts > BLOG_PAGE_SIZE ? `/blog/category/${slug}/2` : undefined
 ---
 
 <Layout
   title={title}
-  description={`List of blog posts in the “${name}” category.`}
+  description={`List of blog posts in the "${name}" category.`}
 >
   <main class="max-w-4xl mx-auto mb-24">
     <div class="py-24 px-6 lg:px-0">
-      <h1 class="font-bold text-4xl dark:text-white">Posts in “{name}”</h1>
+      <p class="text-sm font-mono mb-4">
+        <a href="/blog/category" class="text-indigo-600 dark:text-cyan-300 hover:underline">
+          &larr; All categories
+        </a>
+      </p>
+      <h1 class="font-bold text-4xl dark:text-white">Posts in "{name}"</h1>
     </div>
 
     <div
-      class="mt-12 mb-24 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none"
+      class="mt-12 mb-24 px-6 sm:px-4 lg:px-0 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
     >
       {posts.map((post) => <BlogPostCard post={post} />)}
     </div>
   </main>
+  <Paging nextURL={nextURL} />
 </Layout>
