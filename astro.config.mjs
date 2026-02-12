@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config"
 import { plainTextPlugin } from "@barnabask/astro-minisearch"
 import { remarkReadingTime } from "./src/lib/remark-reading-time.mjs"
+import { remarkPublicImages } from "./src/lib/remark-public-images.mjs"
 import { remarkCallouts } from "./src/lib/remark-callouts.mjs"
 import downloadDdevRedirects from "./src/lib/download-ddev-redirects.js"
 import prefetch from "@astrojs/prefetch"
@@ -73,6 +74,7 @@ export default defineConfig({
       ],
     },
     remarkPlugins: [
+      remarkPublicImages,
       remarkReadingTime,
       remarkDirective,
       remarkCallouts,
