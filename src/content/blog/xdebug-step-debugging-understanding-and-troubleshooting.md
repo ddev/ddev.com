@@ -1,6 +1,6 @@
 ---
 title: "Xdebug in DDEV: Understanding, Debugging, and Troubleshooting Step Debugging"
-pubDate: 2026-02-15
+pubDate: 2026-02-17
 summary: Understanding how Xdebug step debugging works, how it's integrated in DDEV, and how to diagnose and fix common connectivity issues.
 author: Randy Fay
 featureImage:
@@ -12,6 +12,53 @@ categories:
 ---
 
 Xdebug is an indispensable tool for PHP developers, enabling step-by-step debugging of code execution. DDEV has always included Xdebug support out of the box, but understanding how the connection works between your IDE and the containerized PHP environment is key to successful debugging. DDEV v1.25 introduces a new diagnostic tool that makes troubleshooting Xdebug connectivity problems much easier.
+
+## The New `ddev utility xdebug-diagnose` Tool
+
+If you're here because of an Xdebug problem, DDEV now a diagnostic tool that can automatically check your Xdebug configuration and connectivity:
+
+```bash
+ddev utility xdebug-diagnose
+```
+
+This command analyzes:
+
+- **Port 9003 listener status**: Whether your IDE is listening
+- **WSL2 configuration**: Mirrored mode and hostAddressLoopback settings
+- **host.docker.internal resolution**: What IP address it resolves to
+- **xdebug_ide_location setting**: Whether it's configured correctly for your environment
+- **Network connectivity**: Whether the container can connect to the host
+- **Xdebug status**: Whether the extension is enabled
+- **PHP module loading**: Whether Xdebug is actually loaded in PHP
+
+The diagnostic provides actionable recommendations. For example:
+
+```
+✗ WSL2 mirrored mode: hostAddressLoopback NOT enabled
+   Fix: Add to C:\Users\<username>\.wslconfig:
+        [experimental]
+        hostAddressLoopback=true
+      Then run: wsl --shutdown
+```
+
+### Interactive Mode
+
+For a guided, step-by-step diagnostic that tests your actual IDE connection:
+
+```bash
+ddev utility xdebug-diagnose --interactive
+```
+
+Interactive mode:
+
+1. Detects your environment (macOS, Linux, WSL2, etc.)
+2. Tests network connectivity without your IDE listening
+3. Asks about your IDE setup (PhpStorm, VS Code, etc.)
+4. Prompts you to start your IDE debug listener
+5. Tests the actual DBGp protocol connection
+6. Provides specific guidance based on your configuration
+
+This mode is particularly helpful when setting up Xdebug for the first time or debugging configuration issues.
 
 ## What Xdebug Does
 
@@ -219,52 +266,6 @@ wsl --shutdown
 
 If debugging works with the firewall off, you need to add a firewall rule for port 9003. The easiest approach is to let Windows prompt you when your IDE first listens - just allow access when prompted.
 
-## The New `ddev utility xdebug-diagnose` Tool
-
-DDEV v1.25 introduces a diagnostic tool that automatically checks your Xdebug configuration and connectivity:
-
-```bash
-ddev utility xdebug-diagnose
-```
-
-This command analyzes:
-
-- **Port 9003 listener status**: Whether your IDE is listening
-- **WSL2 configuration**: Mirrored mode and hostAddressLoopback settings
-- **host.docker.internal resolution**: What IP address it resolves to
-- **xdebug_ide_location setting**: Whether it's configured correctly for your environment
-- **Network connectivity**: Whether the container can connect to the host
-- **Xdebug status**: Whether the extension is enabled
-- **PHP module loading**: Whether Xdebug is actually loaded in PHP
-
-The diagnostic provides actionable recommendations. For example:
-
-```
-✗ WSL2 mirrored mode: hostAddressLoopback NOT enabled
-   Fix: Add to C:\Users\<username>\.wslconfig:
-        [experimental]
-        hostAddressLoopback=true
-      Then run: wsl --shutdown
-```
-
-### Interactive Mode
-
-For a guided, step-by-step diagnostic that tests your actual IDE connection:
-
-```bash
-ddev utility xdebug-diagnose --interactive
-```
-
-Interactive mode:
-
-1. Detects your environment (macOS, Linux, WSL2, etc.)
-2. Tests network connectivity without your IDE listening
-3. Asks about your IDE setup (PhpStorm, VS Code, etc.)
-4. Prompts you to start your IDE debug listener
-5. Tests the actual DBGp protocol connection
-6. Provides specific guidance based on your configuration
-
-This mode is particularly helpful when setting up Xdebug for the first time or debugging configuration issues.
 
 ## Troubleshooting Steps
 
