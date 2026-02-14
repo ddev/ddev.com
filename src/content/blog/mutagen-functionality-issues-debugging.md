@@ -1,6 +1,6 @@
 ---
 title: "Mutagen in DDEV: Functionality, Issues, and Debugging"
-pubDate: 2026-02-01
+pubDate: 2026-02-16
 summary: Understanding Mutagen's performance benefits, common issues, and how to debug sync problems in DDEV.
 author: Randy Fay
 featureImage:
@@ -13,6 +13,16 @@ categories:
 ---
 
 [Mutagen](https://mutagen.io) has been a part of DDEV for years, providing dramatic performance improvements for macOS and traditional Windows users. It's enabled by default on these platforms, but understanding how it works, what can go wrong, and how to debug issues is key to getting the most out of DDEV.
+
+## Just Need to Debug Something?
+
+If you're here because you just need to debug a Mutagen problem, this will probably help:
+
+```
+ddev utility mutagen-diagnose
+```
+
+See [more below](#debugging-mutagen-issues).
 
 ## Contributor Training Video
 
