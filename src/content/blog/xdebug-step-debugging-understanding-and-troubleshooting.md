@@ -266,7 +266,6 @@ wsl --shutdown
 
 If debugging works with the firewall off, you need to add a firewall rule for port 9003. The easiest approach is to let Windows prompt you when your IDE first listens - just allow access when prompted.
 
-
 ## Troubleshooting Steps
 
 When Xdebug isn't working, follow these steps:
