@@ -11,14 +11,14 @@ categories:
   - TechNotes
 ---
 
-For most people, Xdebug step debugging in DDEV just works: `ddev xdebug on`, set a breakpoint, start your IDE's debug listener, and go. DDEV handles all the Docker networking automatically. If you're having trouble, run `ddev utility xdebug-diagnose` and `ddev xdebug diagnose --interactive` — they checks your configuration and connectivity and tells you exactly what to fix.
+For most people, Xdebug step debugging in DDEV just works: `ddev xdebug on`, set a breakpoint, start your IDE's debug listener, and go. DDEV handles all the Docker networking automatically. If you're having trouble, run `ddev utility xdebug-diagnose` and `ddev utility xdebug-diagnose --interactive` — they check your configuration and connectivity and tells you exactly what to fix.
 
 This post explains how the pieces fit together and what to do if things do go wrong.
 
 ## The Quick Version
 
 1. `ddev xdebug on`
-2. Start listening in your IDE (PhpStorm: click the phone icon; VS Code: press F5)
+2. Start listening in your IDE (PhpStorm: click the phone icon; VS Code: press <kbd>F5</kbd>)
 3. Set a breakpoint in your entry point (`index.php` or `web/index.php`)
 4. Visit your site
 
@@ -42,7 +42,9 @@ The diagnostic checks port 9003 listener status, `host.docker.internal` resoluti
 
 The connection model is a reverse connection: your IDE listens on port 9003 (it's the TCP server), and PHP with Xdebug initiates the connection (it's the TCP client). Your IDE must be listening _before_ PHP tries to connect.
 
-> Note: The [Xdebug documentation](https://xdebug.org/docs/step_debug) uses the opposite terminology, calling the IDE the "client." We use standard TCP terminology here.
+:::note
+The [Xdebug documentation](https://xdebug.org/docs/step_debug) uses the opposite terminology, calling the IDE the "client." We use standard TCP terminology here.
+:::
 
 ## How DDEV Makes It Work
 

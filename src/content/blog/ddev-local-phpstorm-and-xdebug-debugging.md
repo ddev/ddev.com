@@ -10,7 +10,7 @@ featureImage:
 categories:
   - Guides
   - Videos
-modifiedDate: 2026-02-15
+modifiedDate: 2026-02-17
 modifiedComment: "See updated guide: Xdebug in DDEV: Understanding, Debugging, and Troubleshooting Step Debugging"
 ---
 

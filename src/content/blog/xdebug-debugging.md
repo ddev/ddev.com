@@ -1,7 +1,7 @@
 ---
 title: "DDEV and Xdebug: Debugging and sorting out problems"
 pubDate: 2024-05-28
-modifiedDate: 2026-02-15
+modifiedDate: 2026-02-17
 modifiedComment: "See updated guide: Xdebug in DDEV: Understanding, Debugging, and Troubleshooting Step Debugging"
 summary: How Xdebug works with DDEV, and how to debug problems
 author: Randy Fay
