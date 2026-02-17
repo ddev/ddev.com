@@ -44,11 +44,16 @@ The [2026 CraftQuest Community Survey↗](https://craftquest.io/community-survey
 
 ## v1.25.0 Upgrade Notes and Known Issues
 
-Every major release brings some friction, and v1.25.0 is no exception. Here's what to watch for:
+Every major release brings some friction, and v1.25.0 is no exception. These will generally be solved in v1.25.1, which will be out soon. Here's what to watch for:
 
 - **deb.sury.org certificate expiration on v1.24.x** → The GPG key for the PHP package repository expired on February 4, breaking `ddev start` for users still on v1.24.10 who needed to rebuild containers. We pushed updated images for v1.24.10, so you can either `ddev poweroff && ddev utility download-images` or just go ahead and upgrade to v1.25.0, which ships with the updated key. [Details↗](https://github.com/ddev/ddev/issues/8106)
 - **MariaDB 11.8 client and SSL** → DDEV v1.25.0 ships with MariaDB 11.8 client (required for Debian Trixie), which defaults to requiring SSL. This can break `drush sql-cli` and similar tools on MariaDB versions below 10.11. Workaround: add `extra: "--skip-ssl"` to your `drush/drush.yml` under `command.sql.options`, or upgrade your database to MariaDB 10.11+. [Details↗](https://github.com/ddev/ddev/issues/8119)
-- **Docker 29 compatibility** → Docker 29 changed the default storage driver, which can cause intermittent build failures when DDEV builds `web` and `db` images in parallel. Workarounds include pinning to Docker 28 or setting `"storage-driver": "overlay2"` in `daemon.json`. [Details↗](https://github.com/ddev/ddev/issues/8136)
+
+[//]: # (- **Docker 29 compatibility** → Docker 29 changed the default storage driver, which can cause intermittent build failures when DDEV builds `web` and `db` images in parallel. Workarounds include pinning to Docker 28 or setting `"storage-driver": "overlay2"` in `daemon.json`. [Details↗]&#40;https://github.com/ddev/ddev/issues/8136&#41;)
+- **MySQL collation issues** → Importing databases can silently change collations, leading to "Illegal mix of collations" errors when joining imported tables with newly created ones. Separately, overriding MySQL server collation via `.ddev/mysql/*.cnf` doesn't work as expected. [#8130↗](https://github.com/ddev/ddev/issues/8130) [#8129↗](https://github.com/ddev/ddev/issues/8129)
+- **Inter-container HTTP(S) communication** → The ddev-router doesn't always update network aliases when projects start or stop, which can break container-to-container requests for `*.ddev.site` hostnames. [Details↗](https://github.com/ddev/ddev/issues/8110)
+- **Downgrading to v1.24.10** → If you need to go back to v1.24.10, you'll need to clean up `~/.ddev/traefik/config` — leftover v1.25.0 Traefik configuration breaks the older version. [Details↗](https://github.com/ddev/ddev/issues/8120)
+- **Traefik debug logging noise** → Enabling Traefik debug logging surfaces warning-level messages as "router configuration problems" during `ddev start` and `ddev list`, which looks alarming but is harmless. [Details↗](https://github.com/ddev/ddev/issues/8102)
 - **`ddev npm` and `working_dir`** → `ddev npm` doesn't currently respect the `working_dir` web setting, a difference from v1.24.10. [Details↗](https://github.com/ddev/ddev/issues/8148)
 
 As always, please [open an issue↗](https://github.com/ddev/ddev/issues/new/choose) if you run into trouble — it helps us fix things faster. You're the reason DDEV works so well!
