@@ -1,7 +1,7 @@
 ---
 title: "Using FrankenPHP with DDEV"
 pubDate: 2025-07-03
-modifiedDate: 2025-12-30
+modifiedDate: 2026-02-17
 modifiedComment: Update FrankenPHP add-on instructions, remove deprecated content, update benchmark results.
 summary: Learn how to use FrankenPHP with DDEV through the official add-on or Debian packages. Includes installation steps, features, and performance benchmarks.
 author: Stas Zhuk
