@@ -26,7 +26,7 @@ The [2026 CraftQuest Community Survey↗](https://craftquest.io/community-survey
 
 ## Community Highlights
 
-- **ddev-mngr** → A Go-based CLI tool with an interactive terminal UI for managing multiple DDEV projects at once — start, stop, check status, and open URLs across projects. With this add-on [Olivier Dobberkau](https://github.com/dkd-dobberkau) inspired a new TUI approach for DDEV core as well! [View on GitHub↗](https://github.com/dkd-dobberkau/ddev-mngr)
+- **ddev-mngr** → A Go-based command-line tool with an interactive terminal UI for managing multiple DDEV projects at once — start, stop, check status, and open URLs across projects. With this add-on [Olivier Dobberkau](https://github.com/dkd-dobberkau) inspired a new TUI approach for DDEV core as well! [View on GitHub↗](https://github.com/dkd-dobberkau/ddev-mngr)
 - **TYPO3 DDEV Agent Skill** → Netresearch built an Agent Skill (compatible with Claude Code, Cursor, Windsurf, and GitHub Copilot) that automates DDEV environment setup for TYPO3 extension development, including multi-version testing environments for TYPO3 11.5, 12.4, and 13.4 LTS. [View on GitHub↗](https://github.com/netresearch/typo3-ddev-skill)
 - **Using Laravel Boost with DDEV** → Russell Jones explains how to integrate Laravel Boost (an official MCP server) with DDEV, giving AI coding agents contextual access to routes, database schema, logs, and configuration. [Read on Dev.to↗](https://dev.to/jonesrussell/using-laravel-boost-with-ddev-1kc6)
 - **Laravel VS Code Extension v1.4.2** → Now includes Docker integration support and a fix for Pint functionality within DDEV environments. [Read more↗](https://news.extly.com/more-news/2030-dev-news/24693-docker-support-in-laravel-vs-code-extension-v1-4-2.html)
@@ -38,7 +38,7 @@ The [2026 CraftQuest Community Survey↗](https://craftquest.io/community-survey
 
 ## What People Are Saying
 
-> "I was today years old when I found out that DDEV exists. Now I am busy migrating all projects to docker containers." — [Bluesky↗](https://bsky.app/profile/themuellerman.bsky.social/post/3mdq22hu3uc2c)
+> "I was today years old when I found out that DDEV exists. Now I am busy migrating all projects to Docker containers." — [Bluesky↗](https://bsky.app/profile/themuellerman.bsky.social/post/3mdq22hu3uc2c)
 
 > "ddev is the reason I don't throw my laptop out of the window during local setup wars. one command to run the stack and forget the rest. simple as that." — [@OMascatinho on X↗](https://x.com/OMascatinho/status/2017005770944971031)
 
@@ -49,7 +49,8 @@ Every major release brings some friction, and v1.25.0 is no exception. These wil
 - **deb.sury.org certificate expiration on v1.24.x** → The GPG key for the PHP package repository expired on February 4, breaking `ddev start` for users still on v1.24.10 who needed to rebuild containers. We pushed updated images for v1.24.10, so you can either `ddev poweroff && ddev utility download-images` or just go ahead and upgrade to v1.25.0, which ships with the updated key. [Details↗](https://github.com/ddev/ddev/issues/8106)
 - **MariaDB 11.8 client and SSL** → DDEV v1.25.0 ships with MariaDB 11.8 client (required for Debian Trixie), which defaults to requiring SSL. This can break `drush sql-cli` and similar tools on MariaDB versions below 10.11. Workaround: add `extra: "--skip-ssl"` to your `drush/drush.yml` under `command.sql.options`, or upgrade your database to MariaDB 10.11+. [Details↗](https://github.com/ddev/ddev/issues/8119)
 
-[//]: # (- **Docker 29 compatibility** → Docker 29 changed the default storage driver, which can cause intermittent build failures when DDEV builds `web` and `db` images in parallel. Workarounds include pinning to Docker 28 or setting `"storage-driver": "overlay2"` in `daemon.json`. [Details↗]&#40;https://github.com/ddev/ddev/issues/8136&#41;)
+[//]: # '- **Docker 29 compatibility** → Docker 29 changed the default storage driver, which can cause intermittent build failures when DDEV builds `web` and `db` images in parallel. Workarounds include pinning to Docker 28 or setting `"storage-driver": "overlay2"` in `daemon.json`. [Details↗](https://github.com/ddev/ddev/issues/8136)'
+
 - **MySQL collation issues** → Importing databases can silently change collations, leading to "Illegal mix of collations" errors when joining imported tables with newly created ones. Separately, overriding MySQL server collation via `.ddev/mysql/*.cnf` doesn't work as expected. [#8130↗](https://github.com/ddev/ddev/issues/8130) [#8129↗](https://github.com/ddev/ddev/issues/8129)
 - **Inter-container HTTP(S) communication** → The ddev-router doesn't always update network aliases when projects start or stop, which can break container-to-container requests for `*.ddev.site` hostnames. [Details↗](https://github.com/ddev/ddev/issues/8110)
 - **Downgrading to v1.24.10** → If you need to go back to v1.24.10, you'll need to clean up `~/.ddev/traefik/config` — leftover v1.25.0 Traefik configuration breaks the older version. [Details↗](https://github.com/ddev/ddev/issues/8120)
