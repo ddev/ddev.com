@@ -51,7 +51,7 @@ Every major release brings some friction, and v1.25.0 is no exception. Here's wh
 - **Docker 29 compatibility** → Docker 29 changed the default storage driver, which can cause intermittent build failures when DDEV builds `web` and `db` images in parallel. Workarounds include pinning to Docker 28 or setting `"storage-driver": "overlay2"` in `daemon.json`. [Details↗](https://github.com/ddev/ddev/issues/8136)
 - **`ddev npm` and `working_dir`** → `ddev npm` doesn't currently respect the `working_dir` web setting, a difference from v1.24.10. [Details↗](https://github.com/ddev/ddev/issues/8148)
 
-As always, please [open an issue↗](https://github.com/ddev/ddev/issues/new/choose) if you run into trouble — it helps us fix things faster.
+As always, please [open an issue↗](https://github.com/ddev/ddev/issues/new/choose) if you run into trouble — it helps us fix things faster. You're the reason DDEV works so well!
 
 ---
 
@@ -80,7 +80,11 @@ Passcode: 12345
 
 ## Sponsorship Update
 
-PLACEHOLDER — UPDATE WITH CURRENT SPONSORSHIP NUMBERS AND STATUS.
+After the community rallied in January, sponsorship has held steady and ticked up slightly. Thank you!
+
+**Previous status (January 2026)**: ~$8,208/month (68% of goal)
+
+**February 2026**: ~$8,422/month (70% of goal)
 
 If DDEV has helped your team, now is the time to give back. Whether you're an individual developer, an agency, or an organization — your contribution makes a difference. → [Become a sponsor↗](https://github.com/sponsors/ddev)
 
