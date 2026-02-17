@@ -30,6 +30,7 @@ export interface Props {
   link?: object[]
   structuredData?: object[]
   pubDate?: Date
+  modifiedDate?: Date
 }
 
 const {
@@ -42,6 +43,7 @@ const {
   link = [],
   structuredData = [],
   pubDate,
+  modifiedDate,
 } = Astro.props
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString()
@@ -129,6 +131,7 @@ import "../styles/global.css"
         },
         article: pubDate ? {
           publishedTime: pubDate.toISOString(),
+          modifiedTime: modifiedDate ? modifiedDate.toISOString() : undefined,
         } : undefined,
       }}
       extend={{

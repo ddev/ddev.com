@@ -77,12 +77,17 @@ export default function searchIndex(config) {
           )
           const ogTitleValue = ogTitleTag.getAttribute("content")
 
+          const articleModifiedTag = postDocument.querySelector(
+            "meta[property='article:modified_time']"
+          )
           const articlePublishedTag = postDocument.querySelector(
             "meta[property='article:published_time']"
           )
-          const publishedDate = articlePublishedTag
-            ? articlePublishedTag.getAttribute("content")
-            : null
+          const publishedDate = articleModifiedTag
+            ? articleModifiedTag.getAttribute("content")
+            : articlePublishedTag
+              ? articlePublishedTag.getAttribute("content")
+              : null
 
           const robotsTag = postDocument.querySelector("meta[name=robots]")
           const robotsValue = robotsTag.getAttribute("content")
