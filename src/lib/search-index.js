@@ -77,6 +77,11 @@ export default function searchIndex(config) {
           )
           const ogTitleValue = ogTitleTag.getAttribute("content")
 
+          const articlePublishedTag = postDocument.querySelector(
+            "meta[property='article:published_time']"
+          )
+          const publishedDate = articlePublishedTag ? articlePublishedTag.getAttribute("content") : null
+
           const robotsTag = postDocument.querySelector("meta[name=robots]")
           const robotsValue = robotsTag.getAttribute("content")
 
@@ -98,11 +103,14 @@ export default function searchIndex(config) {
             url: url,
             title: ogTitleValue,
             text: postContent,
+            date: publishedDate,
           })
         }
 
         // Generate the index in the format we need
-        let index = await getSearchIndex(items)
+        let index = await getSearchIndex(items, {
+          storeFields: ["title", "heading", "date"],
+        })
 
         // Write the index contents to a file
         fs2.writeFileSync(new URL(output, dir), index.body)
