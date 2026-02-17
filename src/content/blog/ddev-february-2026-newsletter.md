@@ -38,7 +38,7 @@ The [2026 CraftQuest Community Survey↗](https://craftquest.io/community-survey
 
 ## What People Are Saying
 
-> "I was today years old when I found out that DDEV exists. Now I am busy migrating all projects to Docker containers." — [Bluesky↗](https://bsky.app/profile/themuellerman.bsky.social/post/3mdq22hu3uc2c)
+> "I was today years old when I found out that DDEV exists. Now I am busy migrating all projects to Docker containers." — [@themuellerman.bsky.social↗](https://bsky.app/profile/themuellerman.bsky.social/post/3mdq22hu3uc2c)
 
 > "ddev is the reason I don't throw my laptop out of the window during local setup wars. one command to run the stack and forget the rest. simple as that." — [@OMascatinho on X↗](https://x.com/OMascatinho/status/2017005770944971031)
 
