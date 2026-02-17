@@ -10,53 +10,53 @@
 
 .callout-note,
 .callout-info {
-  @apply border-blue-500 bg-blue-50 dark:bg-blue-950/30;
+  @apply border-cyan-600 bg-cyan-100 dark:border-cyan-400 dark:bg-cyan-900/50;
 }
 
 .callout-note .callout-title,
 .callout-info .callout-title {
-  @apply text-blue-900 dark:text-blue-200;
+  @apply text-slate-900 dark:text-slate-100;
 }
 
 .callout-note p,
 .callout-info p {
-  @apply text-blue-800 dark:text-blue-300;
+  @apply text-slate-800 dark:text-slate-200;
 }
 
 .callout-tip {
-  @apply border-green-500 bg-green-50 dark:bg-green-950/30;
+  @apply border-green-600 bg-green-100 dark:border-green-400 dark:bg-green-900/50;
 }
 
 .callout-tip .callout-title {
-  @apply text-green-900 dark:text-green-200;
+  @apply text-slate-900 dark:text-slate-100;
 }
 
 .callout-tip p {
-  @apply text-green-800 dark:text-green-300;
+  @apply text-slate-800 dark:text-slate-200;
 }
 
 .callout-warning {
-  @apply border-yellow-500 bg-yellow-50 dark:bg-yellow-950/30;
+  @apply border-yellow-600 bg-yellow-100 dark:border-yellow-400 dark:bg-yellow-900/50;
 }
 
 .callout-warning .callout-title {
-  @apply text-yellow-900 dark:text-yellow-200;
+  @apply text-slate-900 dark:text-slate-100;
 }
 
 .callout-warning p {
-  @apply text-yellow-800 dark:text-yellow-300;
+  @apply text-slate-800 dark:text-slate-200;
 }
 
 .callout-danger {
-  @apply border-red-500 bg-red-50 dark:bg-red-950/30;
+  @apply border-red-600 bg-red-100 dark:border-red-400 dark:bg-red-900/50;
 }
 
 .callout-danger .callout-title {
-  @apply text-red-900 dark:text-red-200;
+  @apply text-slate-900 dark:text-slate-100;
 }
 
 .callout-danger p {
-  @apply text-red-800 dark:text-red-300;
+  @apply text-slate-800 dark:text-slate-200;
 }
 
 /* Remove extra margins from last paragraph in callout */
