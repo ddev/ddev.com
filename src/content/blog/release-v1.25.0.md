@@ -36,7 +36,7 @@ These updates mostly affect new projects. Existing projects typically continue t
   - `ddev utility mutagen-diagnose` helps debug Mutagen issues. See [Mutagen in DDEV: Functionality, Issues, and Debugging](mutagen-functionality-issues-debugging.md)
 - **Faster snapshots**: `ddev snapshot` now uses zstd instead of gzip for significantly faster exports and restores, thanks [@deviantintegral](https://github.com/deviantintegral)
 - **Experimental Podman and Docker Rootless support**: See [Podman and Docker Rootless in DDEV](podman-and-docker-rootless.md)
-- **FrankenPHP as an official add-on**: [`ddev-frankenphp`](https://github.com/ddev/ddev-frankenphp) with many improvements. See updated [(draft) Using FrankenPHP with DDEV](https://pr-502.ddev-com-fork-previews.pages.dev/blog/using-frankenphp-with-ddev/)
+- **FrankenPHP as an official add-on**: [`ddev-frankenphp`](https://github.com/ddev/ddev-frankenphp) with many improvements. See updated [Using FrankenPHP with DDEV](using-frankenphp-with-ddev.md)
 - **Traefik configuration standardization**: Project configuration now uses a single file: `.ddev/traefik/config/<projectname>.yaml` (all other files are ignored)
 
 ## What You Need to Do After Upgrading
