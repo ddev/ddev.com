@@ -33,7 +33,7 @@ These updates mostly affect new projects. Existing projects typically continue t
 - **Reworked `ddev share` command** with a new cloudflared share provider for free sharing options. See [new docs](https://docs.ddev.com/en/stable/users/topics/sharing/).
 - **New diagnostic commands**:
   - `ddev utility xdebug-diagnose` helps troubleshoot Xdebug issues. See [(draft) Xdebug Understanding and Troubleshooting](https://pr-520.ddev-com-fork-previews.pages.dev/blog/xdebug-step-debugging-understanding-and-troubleshooting/)
-  - `ddev utility mutagen-diagnose` helps debug Mutagen issues. See [(draft) Mutagen Functionality and Debugging](https://pr-519.ddev-com-fork-previews.pages.dev/blog/mutagen-functionality-issues-debugging/)
+  - `ddev utility mutagen-diagnose` helps debug Mutagen issues. See [Mutagen in DDEV: Functionality, Issues, and Debugging](mutagen-functionality-issues-debugging.md)
 - **Faster snapshots**: `ddev snapshot` now uses zstd instead of gzip for significantly faster exports and restores, thanks [@deviantintegral](https://github.com/deviantintegral)
 - **Experimental Podman and Docker Rootless support**: See [Podman and Docker Rootless in DDEV](podman-and-docker-rootless.md)
 - **FrankenPHP as an official add-on**: [`ddev-frankenphp`](https://github.com/ddev/ddev-frankenphp) with many improvements. See updated [(draft) Using FrankenPHP with DDEV](https://pr-502.ddev-com-fork-previews.pages.dev/blog/using-frankenphp-with-ddev/)
