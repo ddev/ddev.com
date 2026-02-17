@@ -30,7 +30,7 @@ These updates mostly affect new projects. Existing projects typically continue t
 **Major new features**:
 
 - **Revised Windows installer** now uses per-user installation for WSL2 or traditional Windows (no admin account required). Download from [ddev.com/download](/download/)
-- **Reworked `ddev share` command** with a new cloudflared share provider for free sharing options. See [new docs](https://docs.ddev.com/en/stable/users/topics/sharing/).
+- **Reworked `ddev share` command** with a new cloudflared share provider for free sharing options. See [new docs](https://docs.ddev.com/en/stable/users/topics/sharing/) and [blog](share-providers.md)
 - **New diagnostic commands**:
   - `ddev utility xdebug-diagnose` helps troubleshoot Xdebug issues. See [Xdebug Understanding and Troubleshooting](xdebug-step-debugging-understanding-and-troubleshooting.md)
   - `ddev utility mutagen-diagnose` helps debug Mutagen issues. See [Mutagen in DDEV: Functionality, Issues, and Debugging](mutagen-functionality-issues-debugging.md)
