@@ -30,9 +30,9 @@ These updates mostly affect new projects. Existing projects typically continue t
 **Major new features**:
 
 - **Revised Windows installer** now uses per-user installation for WSL2 or traditional Windows (no admin account required). Download from [ddev.com/download](/download/)
-- **Reworked `ddev share` command** with a new cloudflared share provider for free sharing options. See [new docs](https://docs.ddev.com/en/stable/users/topics/sharing/).
+- **Reworked `ddev share` command** with a new cloudflared share provider for free sharing options. See [new docs](https://docs.ddev.com/en/stable/users/topics/sharing/) and [blog](share-providers.md)
 - **New diagnostic commands**:
-  - `ddev utility xdebug-diagnose` helps troubleshoot Xdebug issues. See [(draft) Xdebug Understanding and Troubleshooting](https://pr-520.ddev-com-fork-previews.pages.dev/blog/xdebug-step-debugging-understanding-and-troubleshooting/)
+  - `ddev utility xdebug-diagnose` helps troubleshoot Xdebug issues. See [Xdebug Understanding and Troubleshooting](xdebug-step-debugging-understanding-and-troubleshooting.md)
   - `ddev utility mutagen-diagnose` helps debug Mutagen issues. See [Mutagen in DDEV: Functionality, Issues, and Debugging](mutagen-functionality-issues-debugging.md)
 - **Faster snapshots**: `ddev snapshot` now uses zstd instead of gzip for significantly faster exports and restores, thanks [@deviantintegral](https://github.com/deviantintegral)
 - **Experimental Podman and Docker Rootless support**: See [Podman and Docker Rootless in DDEV](podman-and-docker-rootless.md)

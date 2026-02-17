@@ -18,7 +18,7 @@ categories:
 
 If you're here because you just need to debug a Mutagen problem, this will probably help:
 
-```
+```bash
 ddev utility mutagen-diagnose
 ```
 
