@@ -32,8 +32,8 @@ Use DDEV for all development tasks:
 
 ### Site Access
 
-- Dev server: https://<projectname>.ddev.site:4321
-- Built site: https://<projectname>.ddev.site
+- Dev server: `https://<projectname>.ddev.site:4321`
+- Built site: `https://<projectname>.ddev.site`
 
 ### Testing and Quality
 
@@ -152,7 +152,7 @@ Featured sponsors are managed in `src/featured-sponsors.json` with specific sche
 ### DDEV Setup (Recommended)
 
 1. Run `ddev start` to start and set up the project's dependencies
-2. Open https://<projectname>.ddev.site:4321 in your browser
+2. Open `https://<projectname>.ddev.site:4321` in your browser
 3. To rebuild static site: `ddev npm run build`
 4. Static site available at: https://<projectname>.ddev.site
 
