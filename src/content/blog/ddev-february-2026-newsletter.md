@@ -3,10 +3,10 @@ title: "DDEV February 2026: v1.25.0 Ships, 72% Market Share, and New Training Po
 pubDate: 2026-02-19
 summary: "DDEV v1.25.0 released with improved Windows support and modern defaults, CraftQuest survey shows 72% market share, plus new training posts on Mutagen, Xdebug, and ddev share"
 author: Randy Fay
-#featureImage:
-#  src: "/img/blog/2026/02/PLACEHOLDERIMAGE.jpg"
-#  alt: "PLACEHOLDER ALT TEXT"
-#  caption: "PLACEHOLDER CAPTION"
+featureImage:
+  src: "/img/blog/2026/02/beauty-of-buford.jpg"
+  alt: "Nancy Lewis: The Beauty of Buford"
+  caption: "Nancy Lewis: The Beauty of Buford"
 categories:
   - Newsletters
 ---
@@ -23,6 +23,12 @@ DDEV v1.25.0 is here, and the community response has been strong. This month als
 ## CraftQuest Survey: DDEV at 72%
 
 The [2026 CraftQuest Community Survey↗](https://craftquest.io/community-survey/2026) collected responses from 253 Craft CMS developers and found DDEV at 72% market share for local development environments. The report notes: "This near-standardization simplifies onboarding for newcomers, reduces support burden for plugin developers, and means the ecosystem can optimize tooling around a single local dev workflow."
+
+## Conference Time!
+
+I'll be at Florida Drupalcamp this week, and will speak on how to [use `git worktree` to run multiple versions of the same site](https://www.fldrupal.camp/session/use-git-worktree-ddev-run-multiple-versions-same-site). I'd love to see you and sit down and hear your experience with DDEV and ways you think it could be better.
+
+Then in March I'll be at [DrupalCon Chicago](https://events.drupal.org/chicago2026) and as usual will do lots of Birds-of-a-Feather sessions about DDEV and related topics. Catch me in the hall, or [let's sit down and have a coffee](https://cal.com/randyfay/30min). 
 
 ## Community Highlights
 
