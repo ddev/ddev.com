@@ -28,7 +28,7 @@ The [2026 CraftQuest Community Survey↗](https://craftquest.io/community-survey
 
 I'll be at Florida Drupalcamp this week, and will speak on how to [use `git worktree` to run multiple versions of the same site](https://www.fldrupal.camp/session/use-git-worktree-ddev-run-multiple-versions-same-site). I'd love to see you and sit down and hear your experience with DDEV and ways you think it could be better.
 
-Then in March I'll be at [DrupalCon Chicago](https://events.drupal.org/chicago2026) and as usual will do lots of Birds-of-a-Feather sessions about DDEV and related topics. Catch me in the hall, or [let's sit down and have a coffee](https://cal.com/randyfay/30min). 
+Then in March I'll be at [DrupalCon Chicago](https://events.drupal.org/chicago2026) and as usual will do lots of Birds-of-a-Feather sessions about DDEV and related topics. Catch me in the hall, or [let's sit down and have a coffee](https://cal.com/randyfay/30min).
 
 ## Community Highlights
 
