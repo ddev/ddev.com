@@ -1,7 +1,16 @@
+name: ddev.com
 type: php
 docroot: dist
+php_version: "8.1"
+webserver_type: nginx-fpm
+xdebug_enabled: false
+additional_hostnames: []
+additional_fqdns: []
+use_dns_when_possible: true
+composer_version: "2"
 web_environment: []
 # nodejs_version auto reads from the .nvmrc
+nodejs_version: "auto"
 omit_containers: ["db"]
 disable_upload_dirs_warning: true
 web_extra_exposed_ports:
