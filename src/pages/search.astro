@@ -23,7 +23,7 @@ const title = `Search`
   const response = await fetch(indexPath)
   const searchData = await response.json()
   const searchIndex = loadIndex(searchData, {
-    storeFields: ["title", "heading", "date"],
+    storeFields: ["title", "heading", "pubDate", "modifiedDate"],
   })
 
   let selectedResultIndex: number = -1
@@ -58,12 +58,14 @@ const title = `Search`
       if (aTitleMatch && !bTitleMatch) return -1
       if (!aTitleMatch && bTitleMatch) return 1
 
-      // Tertiary sort: by date (newest first)
-      if (a.date && b.date) {
-        return new Date(b.date).getTime() - new Date(a.date).getTime()
+      // Tertiary sort: by date (newest first), preferring modifiedDate
+      const aDate = a.modifiedDate || a.pubDate
+      const bDate = b.modifiedDate || b.pubDate
+      if (aDate && bDate) {
+        return new Date(bDate).getTime() - new Date(aDate).getTime()
       }
-      if (a.date && !b.date) return -1
-      if (!a.date && b.date) return 1
+      if (aDate && !bDate) return -1
+      if (!aDate && bDate) return 1
       return 0
     })
 
@@ -80,11 +82,15 @@ const title = `Search`
       .map((result) => {
         let resulturl = window.location.origin + result.id.replace(/^\/+/, '/');
         const isPost = isBlogPost(result.id)
-        const formattedDate = result.date ? new Date(result.date).toLocaleDateString('en-US', {
+        const formatDate = (d) => d ? new Date(d).toLocaleDateString('en-US', {
           year: 'numeric',
           month: 'short',
           day: 'numeric'
         }) : ''
+        const formattedPubDate = formatDate(result.pubDate)
+        const formattedModifiedDate = result.modifiedDate && result.modifiedDate !== result.pubDate
+          ? formatDate(result.modifiedDate)
+          : ''
 
         return `
         <a href="${
@@ -94,7 +100,7 @@ const title = `Search`
             <h2 class="font-bold dark:text-white">${result.title}</h2>
           </div>
           <div class="text-right shrink-0 ml-4 text-sm">
-            ${isPost && formattedDate ? `<span class="text-gray-600 dark:text-gray-400">${formattedDate} &middot; </span>` : ''}<span class="font-mono dark:text-slate-500">${getResultLabelFromPath(
+            ${isPost && formattedPubDate ? `<span class="text-gray-600 dark:text-gray-400">${formattedPubDate}${formattedModifiedDate ? ` (upd. ${formattedModifiedDate})` : ''} &middot; </span>` : ''}<span class="font-mono dark:text-slate-500">${getResultLabelFromPath(
               result.id
             )}</span>
           </div>

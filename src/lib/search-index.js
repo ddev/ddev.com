@@ -83,11 +83,12 @@ export default function searchIndex(config) {
           const articlePublishedTag = postDocument.querySelector(
             "meta[property='article:published_time']"
           )
-          const publishedDate = articleModifiedTag
+          const pubDate = articlePublishedTag
+            ? articlePublishedTag.getAttribute("content")
+            : null
+          const modifiedDate = articleModifiedTag
             ? articleModifiedTag.getAttribute("content")
-            : articlePublishedTag
-              ? articlePublishedTag.getAttribute("content")
-              : null
+            : null
 
           const robotsTag = postDocument.querySelector("meta[name=robots]")
           const robotsValue = robotsTag.getAttribute("content")
@@ -110,13 +111,14 @@ export default function searchIndex(config) {
             url: url,
             title: ogTitleValue,
             text: postContent,
-            date: publishedDate,
+            pubDate: pubDate,
+            modifiedDate: modifiedDate,
           })
         }
 
         // Generate the index in the format we need
         let index = await getSearchIndex(items, {
-          storeFields: ["title", "heading", "date"],
+          storeFields: ["title", "heading", "pubDate", "modifiedDate"],
         })
 
         // Write the index contents to a file
