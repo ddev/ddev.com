@@ -22,7 +22,9 @@ const title = `Search`
   const resultsContainer = document.getElementById("results")
   const response = await fetch(indexPath)
   const searchData = await response.json()
-  const searchIndex = loadIndex(searchData)
+  const searchIndex = loadIndex(searchData, {
+    storeFields: ["title", "heading", "pubDate", "modifiedDate"],
+  })
 
   let selectedResultIndex: number = -1
   let currentKeywords: string
@@ -32,7 +34,42 @@ const title = `Search`
       return []
     }
 
-    return searchIndex.search(keywords).slice(0, maxResults)
+    const results = searchIndex.search(keywords, {
+      fuzzy: 0.2,
+      prefix: true,
+      boost: { title: 2 }
+    })
+
+    const hasTitleMatch = (result) =>
+      Object.values(result.match).some((fields) => fields.includes("title"))
+
+    // Sort: blog posts first, then title matches by date desc, then body matches by date desc
+    results.sort((a, b) => {
+      const aIsPost = isBlogPost(a.id)
+      const bIsPost = isBlogPost(b.id)
+
+      // Primary sort: blog posts before pages
+      if (aIsPost && !bIsPost) return -1
+      if (!aIsPost && bIsPost) return 1
+
+      // Secondary sort: title matches before body-only matches
+      const aTitleMatch = hasTitleMatch(a)
+      const bTitleMatch = hasTitleMatch(b)
+      if (aTitleMatch && !bTitleMatch) return -1
+      if (!aTitleMatch && bTitleMatch) return 1
+
+      // Tertiary sort: by date (newest first), preferring modifiedDate
+      const aDate = a.modifiedDate || a.pubDate
+      const bDate = b.modifiedDate || b.pubDate
+      if (aDate && bDate) {
+        return new Date(bDate).getTime() - new Date(aDate).getTime()
+      }
+      if (aDate && !bDate) return -1
+      if (!aDate && bDate) return 1
+      return 0
+    })
+
+    return results.slice(0, maxResults)
   }
 
   const updateResults = (keywords: string) => {
@@ -44,15 +81,28 @@ const title = `Search`
     resultsContainer.innerHTML = results
       .map((result) => {
         let resulturl = window.location.origin + result.id.replace(/^\/+/, '/');
+        const isPost = isBlogPost(result.id)
+        const formatDate = (d) => d ? new Date(d).toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric'
+        }) : ''
+        const formattedPubDate = formatDate(result.pubDate)
+        const formattedModifiedDate = result.modifiedDate && result.modifiedDate !== result.pubDate
+          ? formatDate(result.modifiedDate)
+          : ''
+
         return `
         <a href="${
           resulturl
         }" class="border rounded w-full flex items-center content-center my-2 p-4 hover:shadow-sm hover:border-blue-300 dark:border-slate-700">
-          <h2 class="font-bold block w-3/4 dark:text-white">${result.title}</h2>
-          <div class="block w-1/4 text-right">
-            <div class="inline-block text-sm font-mono dark:text-slate-500">${getResultLabelFromPath(
+          <div class="flex-1">
+            <h2 class="font-bold dark:text-white">${result.title}</h2>
+          </div>
+          <div class="text-right shrink-0 ml-4 text-sm">
+            ${isPost && formattedPubDate ? `<span class="text-gray-600 dark:text-gray-400">${formattedPubDate}${formattedModifiedDate ? ` (upd. ${formattedModifiedDate})` : ''} &middot; </span>` : ''}<span class="font-mono dark:text-slate-500">${getResultLabelFromPath(
               result.id
-            )}</div>
+            )}</span>
           </div>
         </a>
       `
@@ -104,18 +154,20 @@ const title = `Search`
   })
 
   /**
+   * Returns true if the path is a blog post (not a listing or index page).
+   */
+  const isBlogPost = (path) => {
+    return path.includes("/blog/") &&
+      !(path.endsWith("/blog/") ||
+        path.includes("/blog/author/") ||
+        path.includes("/blog/category/"))
+  }
+
+  /**
    * Returns a label for the post item based on its path.
    */
   const getResultLabelFromPath = (path) => {
-    if (
-      path.includes("/blog/") &&
-      !(path.endsWith("/blog/") || path.includes("/blog/authors/"))
-    ) {
-      // Label a post detail page, but *not* the main listing or author listing
-      return "Blog Post"
-    } else {
-      return "Page"
-    }
+    return isBlogPost(path) ? "Blog Post" : "Page"
   }
 </script>
 

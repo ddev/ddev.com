@@ -29,6 +29,8 @@ export interface Props {
   ogImageAlt?: string
   link?: object[]
   structuredData?: object[]
+  pubDate?: Date
+  modifiedDate?: Date
 }
 
 const {
@@ -40,6 +42,8 @@ const {
   ogImageAlt,
   link = [],
   structuredData = [],
+  pubDate,
+  modifiedDate,
 } = Astro.props
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString()
@@ -125,6 +129,10 @@ import "../styles/global.css"
           description: description,
           siteName: SITE_TITLE,
         },
+        article: pubDate ? {
+          publishedTime: pubDate.toISOString(),
+          modifiedTime: modifiedDate ? modifiedDate.toISOString() : undefined,
+        } : undefined,
       }}
       extend={{
         link: link,
