@@ -1,36 +1,36 @@
-name: ddev.com
-type: php
+type: generic
 docroot: dist
-php_version: "8.1"
 webserver_type: nginx-fpm
-xdebug_enabled: false
 additional_hostnames: []
 additional_fqdns: []
+hooks:
+    post-start:
+        - exec: bash -c 'while [ ! -f /var/tmp/npm-install-done ]; do sleep 1; done'
+        - exec: bash -c 'if [ ! -d /var/www/html/dist ]; then npm run build; fi'
+        - exec: echo -e "                                  NOTICE                                        "
+        - exec: echo -e "================================================================================"
+        - exec: echo -e "The Astro dev container is ready"
+        - exec: echo -e "Hot Module Reloading (HMR) is available at \e[32m${DDEV_PRIMARY_URL_WITHOUT_PORT}:4321\e[0m"
+        - exec: echo -e "To troubleshoot any issues run \e[35mddev describe\e[0m or \e[35mddev logs --follow --time\e[0m"
+        - exec: echo -e "================================================================================"
+omit_containers: [db]
 use_dns_when_possible: true
-composer_version: "2"
 web_environment: []
 # nodejs_version auto reads from the .nvmrc
-nodejs_version: "auto"
-omit_containers: ["db"]
-disable_upload_dirs_warning: true
+nodejs_version: auto
+corepack_enable: false
 web_extra_exposed_ports:
     - name: astro-dev
       container_port: 4321
       http_port: 4322
       https_port: 4321
-# The extra -- in `npm run dev -- --host` is a Vite requirement
-# https://github.com/vitejs/vite/discussions/3396
 web_extra_daemons:
-  - name: astro-dev-daemon
-    command: bash -c 'npm install && touch /var/tmp/npminstalldone && npm run dev -- --host'
-    directory: /var/www/html
-hooks:
-  post-start:
-    - exec: bash -c 'while [ ! -f /var/tmp/npminstalldone ]; do sleep 1; done'
-    - exec: bash -c 'if [ ! -d /var/www/html/dist ]; then npm run build; fi'
-    - exec: echo -e "                                  NOTICE                                        \n
-                         =================================================================================\n
-                         =================================================================================\n
-                          The Astro dev container is ready \n
-                          Hot Module Reloadin (HMR) is avaliable at \e[32m${DDEV_PRIMARY_URL}:4321\e[0m \n
-                          To troubleshoot any isues run \e[35mddev describe\e[0m or \e[35mddev logs --follow --time\e[0m \n"
+    - name: astro-dev-daemon
+      # The extra -- in `npm run dev -- --host` is a Vite requirement
+      # See https://github.com/vitejs/vite/discussions/3396
+      # 4321 is the default port for Astro, set it explicitly anyway
+      # See https://docs.astro.build/en/reference/configuration-reference/#serverport
+      command: bash -c 'npm install && touch /var/tmp/npm-install-done && npm run dev -- --host --port 4321'
+      directory: /var/www/html
+disable_upload_dirs_warning: true
+ddev_version_constraint: '>= v1.24.10'
