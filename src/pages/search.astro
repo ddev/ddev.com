@@ -40,7 +40,10 @@ const title = `Search`
       boost: { title: 2 }
     })
 
-    // Sort: blog posts first, then by relevance, then by date
+    const hasTitleMatch = (result) =>
+      Object.values(result.match).some((fields) => fields.includes("title"))
+
+    // Sort: blog posts first, then title matches by date desc, then body matches by date desc
     results.sort((a, b) => {
       const aIsPost = isBlogPost(a.id)
       const bIsPost = isBlogPost(b.id)
@@ -49,12 +52,13 @@ const title = `Search`
       if (aIsPost && !bIsPost) return -1
       if (!aIsPost && bIsPost) return 1
 
-      // Secondary sort: by relevance score
-      if (a.score !== b.score) {
-        return b.score - a.score
-      }
+      // Secondary sort: title matches before body-only matches
+      const aTitleMatch = hasTitleMatch(a)
+      const bTitleMatch = hasTitleMatch(b)
+      if (aTitleMatch && !bTitleMatch) return -1
+      if (!aTitleMatch && bTitleMatch) return 1
 
-      // Tertiary sort: by date (newest first) when scores are equal
+      // Tertiary sort: by date (newest first)
       if (a.date && b.date) {
         return new Date(b.date).getTime() - new Date(a.date).getTime()
       }
