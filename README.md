@@ -146,7 +146,6 @@ Choose whichever categories apply, with special attention to the first because i
 - _Newsletters_ (monthly newsletters)
 - _Podcasts_ (podcasts)
 - _Releases_ (new features, bug fixes, etc.)
-- _Resources_ (links to external resources)
 - _Showcase_ (showcase of DDEV projects)
 - _Tutorials_ (tutorials)
 - _Videos_ (videos)
