@@ -70,6 +70,8 @@ jobs:
   determine-snapshot:
     # This could be a WarpBuild runner too!
     runs-on: ubuntu-24.04
+    outputs:
+      snapshot: ${{ steps.snapshot-base.outputs.snapshot }}
     steps:
       - uses: actions/checkout@v6
 
@@ -100,7 +102,7 @@ jobs:
     runs-on:
       "${{ contains(github.event.head_commit.message, '[warp-no-snapshot]') &&
       'warp-ubuntu-2404-x64-16x' ||
-      'warp-ubuntu-2404-x64-16x;snapshot.key=my-project-ddev-1.24.10-v1-{0}', inputs.snapshot }}"
+      format('warp-ubuntu-2404-x64-16x;snapshot.key=my-project-ddev-1.24.10-v1-{0}', needs.determine-snapshot.outputs.snapshot) }}"
 
     steps:
       - uses: WarpBuilds/cache@v1
