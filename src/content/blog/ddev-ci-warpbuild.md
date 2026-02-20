@@ -102,7 +102,7 @@ jobs:
     runs-on:
       "${{ contains(github.event.head_commit.message, '[warp-no-snapshot]') &&
       'warp-ubuntu-2404-x64-16x' ||
-      format('warp-ubuntu-2404-x64-16x;snapshot.key=my-project-ddev-1.24.10-v1-{0}', needs.determine-snapshot.outputs.snapshot) }}"
+      format('warp-ubuntu-2404-x64-16x;snapshot.key=my-project-ddev-1.25.0-v1-{0}', needs.determine-snapshot.outputs.snapshot) }}"
 
     steps:
       - uses: WarpBuilds/cache@v1
@@ -151,7 +151,7 @@ jobs:
         with:
           autostart: false
           # When updating this version, also update the snapshot key above
-          version: 1.24.10
+          version: 1.25.0
 ```
 
 At this point, we've got DDEV ready to go, so we can start it and run tests or anything else.
@@ -211,7 +211,7 @@ jobs:
         # if: ${{ matrix.shard == 1 && steps.find-ddev.outputs.ddev-path != '/usr/bin/ddev'}}
         with:
           # Must match the snapshot.key in runs-on above
-          alias: "my-project-ddev-1.24.10-v1-${{ needs.determine-snapshot.outputs.snapshot }}"
+          alias: "my-project-ddev-1.25.0-v1-${{ needs.determine-snapshot.outputs.snapshot }}"
           fail-on-error: true
           wait-timeout-minutes: 30
 ```
