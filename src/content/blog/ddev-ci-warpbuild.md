@@ -36,7 +36,21 @@ We had three parallel jobs that all required DDEV:
 
 Note that our Playwright tests themselves run in parallel on a single worker as well, using [lullabot/playwright-drupal](https://github.com/lullabot/playwright-drupal). This allows us to optimize the additional startup time for installing Drupal itself (which can't be cached in a snapshot) across many tests.
 
-After linking WarpBuild to our GitHub repository, we had to update our workflows. Here is an example representing the changes we made to our workflow [after enabling Snapshots](https://docs.warpbuild.com/ci/snapshot-runners) in the WarpBuild UI.
+After linking WarpBuild to our GitHub repository, we had to update our workflows. Here is an example representing the changes we made to our workflow [after enabling Snapshots](https://docs.warpbuild.com/ci/snapshot-runners) in the WarpBuild UI. At a high level, here's the flow we want to create with our GitHub jobs:
+
+```mermaid
+flowchart TD
+    A[determine-snapshot: <br>Hash key files] --> B[Request WarpBuild runner<br>with snapshot key]
+    B --> C{Snapshot exists?}
+    C -->|"Yes (fast path)"| D[Restore snapshot<br>DDEV pre-installed]
+    C -->|"No (first run)"| E[Install DDEV, browsers,<br>and dependencies]
+    D --> F[Start DDEV & run tests]
+    E --> F
+    F --> G{First run?}
+    G -->|Yes| H[Clean up & save snapshot]
+    G -->|No| I[Done!]
+    H --> I
+```
 
 Start with a basic workflow to trigger on pull requests and on merges to `main`.
 
