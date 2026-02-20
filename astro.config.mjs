@@ -59,7 +59,10 @@ export default defineConfig({
     prefetch(),
   ],
   markdown: {
-    syntaxHighlight: "shiki",
+    syntaxHighlight: {
+      type: "shiki",
+      excludeLangs: ["mermaid", "math"],
+    },
     // https://github.com/shikijs/shiki/blob/main/docs/languages.md
     shikiConfig: {
       themes: SHIKI_THEMES,
