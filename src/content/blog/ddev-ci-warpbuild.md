@@ -1,13 +1,11 @@
 ---
 title: "Using WarpBuild to speed up DDEV in CI"
-pubDate: 2026-01-01
-modifiedDate: 2026-01-03
-modifiedComment: ""
+pubDate: 2026-02-20
 summary: Use WarpBuild to speed up DDEV in CI.
 author: Andrew Berry
 featureImage:
-  src: /img/blog/2026/01/warp-speed-ci.jpg
-  srcDark: /img/blog/2026/01/warp-speed-ci.jpg
+  src: /img/blog/2026/02/warp-speed-ci.jpg
+  srcDark: /img/blog/2026/02/warp-speed-ci.jpg
   alt: Warp Speed CI
   caption:
   credit:
