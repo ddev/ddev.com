@@ -14,9 +14,8 @@
     containers.push(div)
   }
 
-  const { default: mermaid } = await import(
-    "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs"
-  )
+  const { default: mermaid } =
+    await import("https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs")
 
   const isDark =
     document.documentElement.classList.contains("dark") ||
