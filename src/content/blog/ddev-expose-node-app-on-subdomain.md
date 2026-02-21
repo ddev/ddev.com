@@ -1,7 +1,8 @@
 ---
 title: "Exposing a Node.js App Over HTTP / HTTPS on a Subdomain in DDEV"
 pubDate: 2025-04-10
-#modifiedDate: 2025-04-07
+modifiedDate: 2026-02-05
+modifiedComment: "DDEV v1.25.0 is more restrictive on project traefik configuration, so the .ddev/traefik/project.yaml has to be edited and have the #ddev-generated removed"
 summary: Serve a Node.js app on a dedicated subdomain over HTTP/HTTPS using DDEV’s Traefik.
 author: J. Minder
 featureImage:
@@ -55,10 +56,15 @@ web_extra_exposed_ports:
 
 However, for a subdomain over standard web ports, the critical part is the next step with Traefik.
 
-## Step 2: Create a Project-level Traefik Configuration File
+## Step 2: Edit your project-level Traefik Configuration File
 
-In your project's `.ddev/traefik/config` folder add a file named `frontend.yaml`. In `frontend.yaml`, you’ll define two routers—one for HTTP (port 80) and one for HTTPS (port 443)—and
-a service that points to the Node.js app on port 3000.
+DDEV will generate a Traefik configuration file in your `.ddev/traefik/config` directory. You will need to edit this file and add configuration to it in the `routers` and `services` sections.
+
+1. Remove the `#ddev-generated` line at the top of the file.
+
+> Please note: as always, this means that the file now becomes your responsibility and you will need to update it manually if you add new services etc. This process should become easier once [This issue](https://github.com/ddev/ddev/issues/8047) gets finished and released.
+
+2. Find the `routers` section of the file, you need to add two routers: one for HTTP (port 80) and one for HTTPS (port 443), leaving intact the existing ones:
 
 ```yaml
 http:
@@ -82,7 +88,12 @@ http:
       ruleSyntax: v3
       tls: true
       priority: 100
+```
 
+3. Find the `services` section of the file: here you will add a service that points to the Node.js app on port 3000. Again, leave the already defined services in place.
+
+```yaml
+http:
   services:
     # The custom service that routes to your Node app
     example-web-3000:
