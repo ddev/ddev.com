@@ -94,17 +94,21 @@ import {
       const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       if (systemDark) {
         element.classList.add('dark');
+        element.setAttribute('data-theme', 'dark');
       } else {
         element.classList.remove('dark');
+        element.setAttribute('data-theme', 'light');
       }
       if (autoIcon) autoIcon.style.display = 'block';
       localStorage.removeItem('theme');
     } else if (theme === 'light') {
       element.classList.remove('dark');
+      element.setAttribute('data-theme', 'light');
       if (lightIcon) lightIcon.style.display = 'block';
       localStorage.setItem('theme', 'light');
     } else if (theme === 'dark') {
       element.classList.add('dark');
+      element.setAttribute('data-theme', 'dark');
       if (darkIcon) darkIcon.style.display = 'block';
       localStorage.setItem('theme', 'dark');
     }
@@ -123,8 +127,10 @@ import {
       const element = document.documentElement;
       if (e.matches) {
         element.classList.add('dark');
+        element.setAttribute('data-theme', 'dark');
       } else {
         element.classList.remove('dark');
+        element.setAttribute('data-theme', 'light');
       }
     }
   });

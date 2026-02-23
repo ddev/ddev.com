@@ -310,6 +310,12 @@ button.copy.copied::after {
   content: "";
 }
 
+/* Remove background injected by astro-mermaid */
+pre.mermaid[data-processed] {
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
 /* Remove underline from heading anchor links (but not other links in headings) */
 .prose h1 > a[href^="#"],
 .prose h2 > a[href^="#"],
