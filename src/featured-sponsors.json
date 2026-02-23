@@ -259,5 +259,14 @@
     "squareLogo": "/logos/codeenigma-square.svg",
     "url": "https://www.codeenigma.com/",
     "github": "codeenigma"
+  },
+  {
+    "name": "coding. powerful. systems. CPS GmbH",
+    "type": "standard",
+    "logo": "/logos/cps.svg",
+    "darklogo": "/logos/cps-dark.svg",
+    "squareLogo": "/logos/cps-square.svg",
+    "url": "https://www.cps-it.de/",
+    "github": "CPS-IT"
   }
 ]
