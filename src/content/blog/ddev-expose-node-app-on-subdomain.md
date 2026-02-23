@@ -1,7 +1,8 @@
 ---
 title: "Exposing a Node.js App Over HTTP / HTTPS on a Subdomain in DDEV"
 pubDate: 2025-04-10
-#modifiedDate: 2025-04-07
+modifiedDate: 2026-02-23
+modifiedComment: "Added compatibility note: this technique does not work in DDEV v1.25.0 due to an incomplete Traefik refactoring; upgrade to v1.25.1 or later."
 summary: Serve a Node.js app on a dedicated subdomain over HTTP/HTTPS using DDEV’s Traefik.
 author: J. Minder
 featureImage:
@@ -56,6 +57,10 @@ web_extra_exposed_ports:
 However, for a subdomain over standard web ports, the critical part is the next step with Traefik.
 
 ## Step 2: Create a Project-level Traefik Configuration File
+
+:::warning
+This technique does not work in DDEV v1.25.0. That release included a major Traefik refactoring that did not yet cover project-level configuration. Upgrade to v1.25.1 or later, which includes a fix for this and other issues introduced in v1.25.0.
+:::
 
 In your project's `.ddev/traefik/config` folder add a file named `frontend.yaml`. In `frontend.yaml`, you’ll define two routers—one for HTTP (port 80) and one for HTTPS (port 443)—and
 a service that points to the Node.js app on port 3000.
