@@ -1,14 +1,11 @@
 ---
 title: "Using WarpBuild to speed up DDEV in CI"
-pubDate: 2026-02-20
-summary: Use WarpBuild to speed up DDEV in CI.
+pubDate: 2026-02-24
+summary: How Lullabot used WarpBuild's snapshot runners to cut DDEV CI startup time from 4-5 minutes down to 1-2 minutes, saving ~24 minutes of runner cost per commit.
 author: Andrew Berry
 featureImage:
   src: /img/blog/2026/02/warp-speed-ci.jpg
-  srcDark: /img/blog/2026/02/warp-speed-ci.jpg
   alt: Warp Speed CI
-  caption:
-  credit:
 categories:
   - DevOps
   - Performance
