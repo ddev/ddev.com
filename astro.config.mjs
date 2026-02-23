@@ -60,7 +60,7 @@ export default defineConfig({
     prefetch(),
     mermaid({
       autoTheme: true,
-    })
+    }),
   ],
   markdown: {
     syntaxHighlight: {
