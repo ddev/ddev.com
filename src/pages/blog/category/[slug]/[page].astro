@@ -30,6 +30,7 @@ export async function getStaticPaths() {
           name: category,
           posts: categoryPosts.slice((page - 1) * BLOG_PAGE_SIZE, page * BLOG_PAGE_SIZE),
           currentPage: page,
+          prevUrl: page === 2 ? `/blog/category/${slug}/` : `/blog/category/${slug}/${page - 1}/`,
           nextUrl:
             page < totalPages ? `/blog/category/${slug}/${page + 1}/` : undefined,
         },
@@ -40,7 +41,7 @@ export async function getStaticPaths() {
   return paths
 }
 
-const { name, posts, currentPage, nextUrl } = Astro.props
+const { name, posts, currentPage, prevUrl, nextUrl } = Astro.props
 
 const title = `Posts in "${name}"`
 ---
@@ -59,6 +60,6 @@ const title = `Posts in "${name}"`
       </p>
       <h1 class="font-bold text-4xl dark:text-white">Posts in "{name}"</h1>
     </div>
-    <BlogPostGrid posts={posts} nextUrl={nextUrl} />
+    <BlogPostGrid posts={posts} prevUrl={prevUrl} nextUrl={nextUrl} />
   </main>
 </Layout>

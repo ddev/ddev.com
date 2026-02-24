@@ -22,12 +22,13 @@ export async function getStaticPaths() {
     props: {
       posts: allPosts.slice((pageNum - 1) * BLOG_PAGE_SIZE, pageNum * BLOG_PAGE_SIZE),
       currentPage: pageNum,
+      prevUrl: pageNum === 2 ? `/blog/` : pageNum > 2 ? `/blog/${pageNum - 1}/` : undefined,
       nextUrl: pageNum < totalPages ? `/blog/${pageNum + 1}/` : undefined,
     },
   }))
 }
 
-const { posts, currentPage, nextUrl } = Astro.props
+const { posts, currentPage, prevUrl, nextUrl } = Astro.props
 
 const title = `Blog Posts`
 ---
@@ -35,6 +36,6 @@ const title = `Blog Posts`
 <Layout title={title + `, Page ${currentPage}`} noindex={true}>
   <main class="max-w-4xl mx-auto">
     <Heading title={title} subtitle={`DDEV, Docker, and local development.`} />
-    <BlogPostGrid posts={posts} nextUrl={nextUrl} />
+    <BlogPostGrid posts={posts} prevUrl={prevUrl} nextUrl={nextUrl} />
   </main>
 </Layout>

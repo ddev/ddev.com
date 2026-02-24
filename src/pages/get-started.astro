@@ -29,6 +29,16 @@ const latestRelease = await getLatestReleaseVersion()
 >
   <main class="max-w-4xl mx-auto mb-24">
     <Heading title={title} subtitle={`Install and start using DDEV.`} />
+    <style>
+      /* Show selected platform via CSS (works without JS) */
+      body:has(#platform-mac:checked) [data-platform="mac"],
+      body:has(#platform-windows:checked) [data-platform="windows"],
+      body:has(#platform-linux:checked) [data-platform="linux"],
+      body:has(#platform-cloud:checked) [data-platform="cloud"] {
+        display: block;
+      }
+    </style>
+
     <div class="prose mb-16 dark:prose-invert">
       <PlatformPicker heading={`Choose your platform:`} />
     </div>

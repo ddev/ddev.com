@@ -9,9 +9,10 @@ import BlogPostCard from "./BlogPostCard.astro"
 interface Props {
   posts: CollectionEntry<"blog">[]
   nextUrl?: string
+  prevUrl?: string
 }
 
-const { posts, nextUrl } = Astro.props
+const { posts, nextUrl, prevUrl } = Astro.props
 ---
 
 <div
@@ -23,13 +24,12 @@ const { posts, nextUrl } = Astro.props
 </div>
 <div id="scroll-sentinel"></div>
 {
-  nextUrl && (
+  (prevUrl || nextUrl) && (
     <noscript>
-      <div class="text-center my-8 pb-24">
-        <a href={nextUrl} class="font-bold dark:text-white">
-          Older Posts →
-        </a>
-      </div>
+      <nav class="max-w-4xl mx-auto my-8 pb-24 flex px-6 lg:px-0">
+        {prevUrl && <a href={prevUrl} class="font-bold text-black">← Newer Posts</a>}
+        {nextUrl && <a href={nextUrl} class="font-bold text-black ml-auto">Older Posts →</a>}
+      </nav>
     </noscript>
   )
 }

@@ -86,7 +86,7 @@ Upcoming v1.25.0:
 - **PHP 8.5** support added with a limited set of extensions (in v1.24.10)
 - **MariaDB 11.8** support added
 - **PostgreSQL 18** support added
-- [Node.js as primary web server](https://ddev.readthedocs.io/en/stable/users/extend/customization-extendibility/#using-nodejs-as-ddevs-primary-web-server) support
+- [Node.js as primary web server](https://docs.ddev.com/en/stable/users/extend/customization-extendibility/#using-nodejs-as-ddevs-primary-web-server) support
 
 Upcoming v1.25.0:
 
