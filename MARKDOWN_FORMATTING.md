@@ -380,11 +380,12 @@ The site uses Tailwind Typography for consistent, beautiful text rendering:
 
 Check out these resources for markdown formatting examples:
 
-- **Comprehensive Demo Post** - A complete demonstration of all available formatting features (hidden from blog listings)
-  - [Rendered version](/blog/markdown-features-demo) - See how the features look on the site
+- **Demo Post** - A complete demonstration of all available formatting features (hidden from blog listings)
+  - [Rendered version](https://ddev.com/blog/markdown-features-demo) - See how the features look on the site
   - [Source code](https://github.com/ddev/ddev.com/blob/main/src/content/blog/markdown-features-demo.md) - View the raw markdown
 - Any post in `src/content/blog/` that uses the `:::` directive syntax
 - Posts using blockquote-style callouts with `> **Label**:` format
+- Mermaid diagram example at https://ddev.com/blog/ddev-ci-warpbuild (https://github.com/ddev/ddev.com/blob/main/src/content/blog/ddev-ci-warpbuild.md)
 
 ## Questions?
 
