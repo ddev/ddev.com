@@ -11,7 +11,7 @@ const title = `Search`
 <script>
   import { loadIndex } from "@barnabask/astro-minisearch"
 
-  const maxResults = 10
+  const batchSize = 10
   const env = process.env.NODE_ENV || "production"
 
   // Load the statically-built file in the `dist/` directory for local development
@@ -28,6 +28,17 @@ const title = `Search`
 
   let selectedResultIndex: number = -1
   let currentKeywords: string
+  let allResults: any[] = []
+  let shownCount = 0
+
+  const sentinel = document.createElement("div")
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (entries[0].isIntersecting) showMore()
+    },
+    { rootMargin: "100px" },
+  )
 
   const getResults = (keywords: string) => {
     if (!searchIndex) {
@@ -69,45 +80,59 @@ const title = `Search`
       return 0
     })
 
-    return results.slice(0, maxResults)
+    return results
+  }
+
+  const renderResult = (result) => {
+    const resulturl = window.location.origin + result.id.replace(/^\/+/, "/")
+    const isPost = isBlogPost(result.id)
+    const formatDate = (d) =>
+      d
+        ? new Date(d).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          })
+        : ""
+    const formattedPubDate = formatDate(result.pubDate)
+    const formattedModifiedDate =
+      result.modifiedDate && result.modifiedDate !== result.pubDate
+        ? formatDate(result.modifiedDate)
+        : ""
+
+    return `
+      <a href="${resulturl}" class="border rounded w-full flex items-center content-center my-2 p-4 hover:shadow-sm hover:border-blue-300 dark:border-slate-700">
+        <div class="flex-1">
+          <h2 class="font-bold dark:text-white">${result.title}</h2>
+        </div>
+        <div class="text-right shrink-0 ml-4 text-sm">
+          ${isPost && formattedPubDate ? `<span class="text-gray-600 dark:text-gray-400">${formattedPubDate}${formattedModifiedDate ? ` (upd. ${formattedModifiedDate})` : ""} &middot; </span>` : ""}<span class="font-mono dark:text-slate-500">${getResultLabelFromPath(result.id)}</span>
+        </div>
+      </a>
+    `
+  }
+
+  const showMore = () => {
+    sentinel.remove()
+    observer.disconnect()
+
+    const batch = allResults.slice(shownCount, shownCount + batchSize)
+    resultsContainer.insertAdjacentHTML("beforeend", batch.map(renderResult).join(""))
+    shownCount += batch.length
+
+    if (shownCount < allResults.length) {
+      resultsContainer.appendChild(sentinel)
+      observer.observe(sentinel)
+    }
   }
 
   const updateResults = (keywords: string) => {
     currentKeywords = keywords
-    let results = getResults(inputElement.value)
-
+    allResults = getResults(keywords)
+    shownCount = 0
     selectedResultIndex = -1
-
-    resultsContainer.innerHTML = results
-      .map((result) => {
-        let resulturl = window.location.origin + result.id.replace(/^\/+/, '/');
-        const isPost = isBlogPost(result.id)
-        const formatDate = (d) => d ? new Date(d).toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'short',
-          day: 'numeric'
-        }) : ''
-        const formattedPubDate = formatDate(result.pubDate)
-        const formattedModifiedDate = result.modifiedDate && result.modifiedDate !== result.pubDate
-          ? formatDate(result.modifiedDate)
-          : ''
-
-        return `
-        <a href="${
-          resulturl
-        }" class="border rounded w-full flex items-center content-center my-2 p-4 hover:shadow-sm hover:border-blue-300 dark:border-slate-700">
-          <div class="flex-1">
-            <h2 class="font-bold dark:text-white">${result.title}</h2>
-          </div>
-          <div class="text-right shrink-0 ml-4 text-sm">
-            ${isPost && formattedPubDate ? `<span class="text-gray-600 dark:text-gray-400">${formattedPubDate}${formattedModifiedDate ? ` (upd. ${formattedModifiedDate})` : ''} &middot; </span>` : ''}<span class="font-mono dark:text-slate-500">${getResultLabelFromPath(
-              result.id
-            )}</span>
-          </div>
-        </a>
-      `
-      })
-      .join("")
+    resultsContainer.innerHTML = ""
+    showMore()
   }
 
   const focusResult = () => {
@@ -130,8 +155,6 @@ const title = `Search`
   })
 
   document.addEventListener("keydown", function (event) {
-    const key = event.key
-
     switch (event.key) {
       case "ArrowUp":
         selectedResultIndex =
@@ -140,9 +163,9 @@ const title = `Search`
         break
       case "ArrowDown":
         selectedResultIndex =
-          selectedResultIndex < maxResults - 1
+          selectedResultIndex < shownCount - 1
             ? selectedResultIndex + 1
-            : maxResults - 1
+            : shownCount - 1
         focusResult()
         break
       case "Escape":
@@ -168,6 +191,10 @@ const title = `Search`
    */
   const getResultLabelFromPath = (path) => {
     return isBlogPost(path) ? "Blog Post" : "Page"
+  }
+
+  if (inputElement.value) {
+    updateResults(inputElement.value)
   }
 </script>
 

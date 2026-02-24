@@ -1,8 +1,7 @@
 ---
 import { getCollection, render } from "astro:content"
 import Layout from "../../../layouts/Layout.astro"
-import BlogPostCard from "../../../components/BlogPostCard.astro"
-import Paging from "../../../components/Paging.astro"
+import BlogPostGrid from "../../../components/BlogPostGrid.astro"
 import { BLOG_PAGE_SIZE } from "../../../const"
 
 export async function getStaticPaths() {
@@ -22,16 +21,19 @@ export async function getStaticPaths() {
         author,
         posts: authorPosts.slice(0, BLOG_PAGE_SIZE),
         totalPosts: authorPosts.length,
+        nextUrl:
+          authorPosts.length > BLOG_PAGE_SIZE
+            ? `/blog/author/${author.id}/2/`
+            : undefined,
       },
     }
   })
 }
 
-const { author, posts, totalPosts } = Astro.props
+const { author, posts, totalPosts, nextUrl } = Astro.props
 
 const title = `Posts by ${author.data.name}`
 const { Content } = await render(author)
-const nextURL = totalPosts > BLOG_PAGE_SIZE ? `/blog/author/${author.id}/2` : undefined
 ---
 
 <Layout
@@ -59,11 +61,6 @@ const nextURL = totalPosts > BLOG_PAGE_SIZE ? `/blog/author/${author.id}/2` : un
       }
     </h2>
 
-    <div
-      class="mt-12 mb-24 px-6 sm:px-4 lg:px-0 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
-    >
-      {posts.map((post) => <BlogPostCard post={post} />)}
-    </div>
+    <BlogPostGrid posts={posts} nextUrl={nextUrl} />
   </main>
-  <Paging nextURL={nextURL} />
 </Layout>

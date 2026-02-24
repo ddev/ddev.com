@@ -1,39 +1,40 @@
 ---
 import Layout from "../../layouts/Layout.astro"
-import BlogPostCard from "../../components/BlogPostCard.astro"
+import BlogPostGrid from "../../components/BlogPostGrid.astro"
 import Heading from "../../components/Heading.astro"
-import Paging from "../../components/Paging.astro"
 import { getCollection } from "astro:content"
-import type { GetStaticPathsOptions } from "astro"
 import { BLOG_PAGE_SIZE } from "src/const"
 
 /**
  * Tell Astro to build routes for paginated blog post listings.
  * https://docs.astro.build/en/reference/api-reference/#getstaticpaths
  */
-export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+export async function getStaticPaths() {
   const posts = await getCollection("blog")
   const allPosts = posts.sort((a, b) => {
     return new Date(a.data.pubDate) > new Date(b.data.pubDate) ? -1 : 1
   })
 
-  // Generate pages from our array of astronauts, with 6 to a page
-  return paginate(allPosts, { pageSize: BLOG_PAGE_SIZE })
+  const totalPages = Math.ceil(allPosts.length / BLOG_PAGE_SIZE)
+
+  return Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => ({
+    params: { page: String(pageNum) },
+    props: {
+      posts: allPosts.slice((pageNum - 1) * BLOG_PAGE_SIZE, pageNum * BLOG_PAGE_SIZE),
+      currentPage: pageNum,
+      nextUrl: pageNum < totalPages ? `/blog/${pageNum + 1}/` : undefined,
+    },
+  }))
 }
 
-const { page } = Astro.props
+const { posts, currentPage, nextUrl } = Astro.props
 
 const title = `Blog Posts`
 ---
 
-<Layout title={title + `, Page ${page.currentPage}`} noindex={true}>
+<Layout title={title + `, Page ${currentPage}`} noindex={true}>
   <main class="max-w-4xl mx-auto">
     <Heading title={title} subtitle={`DDEV, Docker, and local development.`} />
-    <div
-      class="mt-12 mb-24 px-6 sm:px-4 lg:px-0 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
-    >
-      {page.data.map((post) => <BlogPostCard post={post} />)}
-    </div>
+    <BlogPostGrid posts={posts} nextUrl={nextUrl} />
   </main>
-  <Paging nextURL={page.url.next} prevURL={page.url.prev} />
 </Layout>

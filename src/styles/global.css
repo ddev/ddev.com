@@ -180,8 +180,7 @@ html.dark .terminal-wrapper .top-bar {
 }
 
 /* Table containers - horizontal scroll on mobile */
-.prose table {
-  display: block;
+.prose .table-wrapper {
   overflow-x: auto;
 }
 

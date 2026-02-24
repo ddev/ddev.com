@@ -2,8 +2,7 @@
 import { getSlug } from "../../../../lib/api"
 import { getCollection } from "astro:content"
 import Layout from "../../../../layouts/Layout.astro"
-import BlogPostCard from "../../../../components/BlogPostCard.astro"
-import Paging from "../../../../components/Paging.astro"
+import BlogPostGrid from "../../../../components/BlogPostGrid.astro"
 import { BLOG_PAGE_SIZE } from "../../../../const"
 
 export async function getStaticPaths() {
@@ -21,16 +20,18 @@ export async function getStaticPaths() {
         return new Date(a.data.pubDate) > new Date(b.data.pubDate) ? -1 : 1
       })
 
+    const slug = getSlug(category)
     const totalPages = Math.ceil(categoryPosts.length / BLOG_PAGE_SIZE)
 
     for (let page = 2; page <= totalPages; page++) {
       paths.push({
-        params: { slug: getSlug(category), page: String(page) },
+        params: { slug, page: String(page) },
         props: {
           name: category,
           posts: categoryPosts.slice((page - 1) * BLOG_PAGE_SIZE, page * BLOG_PAGE_SIZE),
           currentPage: page,
-          totalPages,
+          nextUrl:
+            page < totalPages ? `/blog/category/${slug}/${page + 1}/` : undefined,
         },
       })
     }
@@ -39,18 +40,9 @@ export async function getStaticPaths() {
   return paths
 }
 
-const { name, posts, currentPage, totalPages } = Astro.props
+const { name, posts, currentPage, nextUrl } = Astro.props
 
 const title = `Posts in "${name}"`
-const slug = getSlug(name)
-const prevURL =
-  currentPage === 2
-    ? `/blog/category/${slug}`
-    : `/blog/category/${slug}/${currentPage - 1}`
-const nextURL =
-  currentPage < totalPages
-    ? `/blog/category/${slug}/${currentPage + 1}`
-    : undefined
 ---
 
 <Layout
@@ -67,12 +59,6 @@ const nextURL =
       </p>
       <h1 class="font-bold text-4xl dark:text-white">Posts in "{name}"</h1>
     </div>
-
-    <div
-      class="mt-12 mb-24 px-6 sm:px-4 lg:px-0 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
-    >
-      {posts.map((post) => <BlogPostCard post={post} />)}
-    </div>
+    <BlogPostGrid posts={posts} nextUrl={nextUrl} />
   </main>
-  <Paging nextURL={nextURL} prevURL={prevURL} />
 </Layout>

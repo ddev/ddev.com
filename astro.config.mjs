@@ -8,6 +8,7 @@ import prefetch from "@astrojs/prefetch"
 import react from "@astrojs/react"
 import { rehypeAccessibleEmojis } from "rehype-accessible-emojis"
 import rehypeAstroRelativeMarkdownLinks from "astro-rehype-relative-markdown-links"
+import { rehypeWrapTables } from "./src/lib/rehype-wrap-tables.mjs"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypeExternalLinks from "rehype-external-links"
 import rehypeFigure from "rehype-figure"
@@ -118,6 +119,7 @@ export default defineConfig({
         headingTags: ["h2", "h3"],
       }),
       rehypeAstroRelativeMarkdownLinks,
+      rehypeWrapTables,
     ],
   },
   image: {

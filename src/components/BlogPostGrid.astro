@@ -1,0 +1,84 @@
+---
+/**
+ * Renders a grid of blog post cards with infinite scroll via HTML fragment fetching.
+ * Pass `nextUrl` to enable loading the next page when the user scrolls to the bottom.
+ */
+import type { CollectionEntry } from "astro:content"
+import BlogPostCard from "./BlogPostCard.astro"
+
+interface Props {
+  posts: CollectionEntry<"blog">[]
+  nextUrl?: string
+}
+
+const { posts, nextUrl } = Astro.props
+---
+
+<div
+  id="post-grid"
+  data-next-url={nextUrl}
+  class="mt-12 mb-24 px-6 sm:px-4 lg:px-0 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+>
+  {posts.map((post) => <BlogPostCard post={post} />)}
+</div>
+<div id="scroll-sentinel"></div>
+{
+  nextUrl && (
+    <noscript>
+      <div class="text-center my-8 pb-24">
+        <a href={nextUrl} class="font-bold dark:text-white">
+          Older Posts →
+        </a>
+      </div>
+    </noscript>
+  )
+}
+
+<script>
+  const grid = document.getElementById("post-grid")
+  const sentinel = document.getElementById("scroll-sentinel")
+
+  if (!grid?.dataset.nextUrl) {
+    sentinel?.remove()
+  } else {
+    let loading = false
+
+    async function loadMore() {
+      if (loading || !grid.dataset.nextUrl) return
+      loading = true
+
+      try {
+        const res = await fetch(grid.dataset.nextUrl)
+        if (!res.ok) throw new Error(`HTTP ${res.status}`)
+
+        const doc = new DOMParser().parseFromString(await res.text(), "text/html")
+
+        doc.querySelectorAll("#post-grid > div").forEach((card) => {
+          grid.appendChild(card)
+        })
+
+        const newNextUrl = doc.getElementById("post-grid")?.dataset.nextUrl
+        if (newNextUrl) {
+          grid.dataset.nextUrl = newNextUrl
+        } else {
+          grid.removeAttribute("data-next-url")
+          observer.disconnect()
+          sentinel?.remove()
+        }
+      } catch (err) {
+        console.error("Failed to load more posts:", err)
+      }
+
+      loading = false
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) loadMore()
+      },
+      { rootMargin: "200px" },
+    )
+
+    observer.observe(sentinel)
+  }
+</script>
