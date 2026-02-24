@@ -375,6 +375,106 @@ Videos should be wrapped in a `.video-container` div for responsive sizing:
   ></iframe>
 </div>
 
+## Mermaid Diagrams
+
+Mermaid lets you create diagrams from text using fenced code blocks with the `mermaid` language identifier. See the [Mermaid documentation](https://mermaid.js.org/intro/) for the full list of diagram types and syntax.
+
+### Flowchart
+
+```mermaid
+flowchart TD
+    A[Developer] -->|git push| B[CI Pipeline]
+    B --> C{Tests pass?}
+    C -->|Yes| D[Build]
+    C -->|No| E[Notify developer]
+    D --> F[Deploy to staging]
+    F --> G{Approved?}
+    G -->|Yes| H[Deploy to production]
+    G -->|No| E
+```
+
+### Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    participant Browser
+    participant Server
+    participant DB
+
+    Browser->>Server: GET /api/users
+    Server->>DB: SELECT * FROM users
+    DB-->>Server: rows
+    Server-->>Browser: 200 OK (JSON)
+
+    Browser->>Server: POST /api/users
+    Server->>DB: INSERT INTO users
+    DB-->>Server: OK
+    Server-->>Browser: 201 Created
+```
+
+### Class Diagram
+
+```mermaid
+classDiagram
+    class Animal {
+        +String name
+        +int age
+        +speak() String
+    }
+    class Dog {
+        +String breed
+        +fetch() void
+    }
+    class Cat {
+        +bool indoor
+        +purr() void
+    }
+    Animal <|-- Dog
+    Animal <|-- Cat
+```
+
+### State Diagram
+
+```mermaid
+stateDiagram-v2
+    [*] --> Pending
+    Pending --> Running: start
+    Running --> Succeeded: complete
+    Running --> Failed: error
+    Failed --> Pending: retry
+    Succeeded --> [*]
+    Failed --> [*]: give up
+```
+
+### Pie Chart
+
+```mermaid
+pie showData
+    title Operating Systems in Use
+    "Linux" : 42
+    "macOS" : 35
+    "Windows" : 23
+```
+
+### Git Graph
+
+```mermaid
+gitGraph
+    commit id: "Initial commit"
+    branch feature/login
+    checkout feature/login
+    commit id: "Add login form"
+    commit id: "Add validation"
+    checkout main
+    branch feature/api
+    checkout feature/api
+    commit id: "Add REST endpoints"
+    checkout main
+    merge feature/login id: "Merge login"
+    merge feature/api id: "Merge API"
+    commit id: "Release v1.0"
+```
+
 ## Complex Combinations
 
 :::danger[Production Deployment Checklist]

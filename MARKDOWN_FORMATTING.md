@@ -385,7 +385,7 @@ Check out these resources for markdown formatting examples:
   - [Source code](https://github.com/ddev/ddev.com/blob/main/src/content/blog/markdown-features-demo.md) - View the raw markdown
 - Any post in `src/content/blog/` that uses the `:::` directive syntax
 - Posts using blockquote-style callouts with `> **Label**:` format
-- Mermaid diagram example at https://ddev.com/blog/ddev-ci-warpbuild (https://github.com/ddev/ddev.com/blob/main/src/content/blog/ddev-ci-warpbuild.md)
+- [Mermaid diagram documentation](https://mermaid.js.org/intro/)
 
 ## Questions?
 
