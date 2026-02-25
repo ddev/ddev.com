@@ -7,6 +7,42 @@
  */
 import { getLatestReleaseVersion } from "../lib/api"
 const latestRelease = await getLatestReleaseVersion()
+
+// Pre-rendered ddev describe output — used for both the animation and noscript fallback
+const versionText = `DDEV version: ${latestRelease}`
+const versionLine = `│ ${versionText}${" ".repeat(83 - versionText.length)} │`
+const describeOutput = `ddev describe
+┌─────────────────────────────────────────────────────────────────────────────────────┐
+│ Project: my-project ~/dev/my-project https://my-project.ddev.site                   │
+│ Docker platform: docker-desktop                                                     │
+│ Router: traefik                                                                     │
+${versionLine}
+├────────────┬──────┬────────────────────────────────────────────┬────────────────────┤
+│ SERVICE    │ STAT │ URL/PORT                                   │ INFO               │
+├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
+│ web        │ <span class="text-green-500">OK</span>   │ https://my-project.ddev.site               │ php PHP 8.4        │
+│            │      │ InDocker -> Host:                          │ Server: nginx-fpm  │
+│            │      │  - web:80 -> 127.0.0.1:51046               │ Docroot: ''        │
+│            │      │  - web:443 -> 127.0.0.1:51047              │ Perf mode: none    │
+│            │      │  - web:8025 -> 127.0.0.1:51048             │ NodeJS: 24         │
+├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
+│ db         │ <span class="text-green-500">OK</span>   │ InDocker -> Host:                          │ mysql:8.0          │
+│            │      │  - db:3306 -> 127.0.0.1:51045              │ User/Pass: 'db/db' │
+│            │      │                                            │ or 'root/root'     │
+├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
+│ xhgui      │ <span class="text-green-500">OK</span>   │ https://my-project.ddev.site:8142          │                    │
+│            │      │ InDocker:                                  │                    │
+│            │      │  - xhgui:80                                │                    │
+│            │      │ Launch: ddev xhgui                         │                    │
+├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
+│ Mailpit    │      │ Mailpit: https://my-project.ddev.site:8026 │                    │
+│            │      │ Launch: ddev mailpit                       │                    │
+├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
+│ All URLs   │      │ https://my-project.ddev.site,              │                    │
+│            │      │ https://127.0.0.1:51047,                   │                    │
+│            │      │ http://my-project.ddev.site,               │                    │
+│            │      │ http://127.0.0.1:51046                     │                    │
+└────────────┴──────┴────────────────────────────────────────────┴────────────────────┘`
 ---
 
 <script>
@@ -27,11 +63,8 @@ const latestRelease = await getLatestReleaseVersion()
     wait?: number
   }
 
-  // Get the latest release version from the data attribute
   const terminalWrapper = document.querySelector('.terminal-wrapper') as HTMLElement
-  // Build the DDEV version line with proper padding (line should be 85 chars total including │ symbols)
-  const versionText = `DDEV version: ${terminalWrapper?.dataset.latestRelease}` || 'v1.25.0'
-  const versionLine = `│ ${versionText}${' '.repeat(83 - versionText.length)} │`
+  const describeOutput = terminalWrapper?.dataset.describeOutput ?? ''
 
   /**
    * Output and animation settings for the things we want to show in the terminal.
@@ -66,38 +99,7 @@ Waiting for ddev-router to become ready... ready in 1.0s
         { transition: "type", lines: 1, wait: 250 },
         { transition: "show", lines: 31 },
       ],
-      output: `ddev describe
-┌─────────────────────────────────────────────────────────────────────────────────────┐
-│ Project: my-project ~/dev/my-project https://my-project.ddev.site                   │
-│ Docker platform: docker-desktop                                                     │
-│ Router: traefik                                                                     │
-${versionLine}
-├────────────┬──────┬────────────────────────────────────────────┬────────────────────┤
-│ SERVICE    │ STAT │ URL/PORT                                   │ INFO               │
-├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
-│ web        │ <span class="text-green-500">OK</span>   │ https://my-project.ddev.site               │ php PHP 8.4        │
-│            │      │ InDocker -> Host:                          │ Server: nginx-fpm  │
-│            │      │  - web:80 -> 127.0.0.1:51046               │ Docroot: ''        │
-│            │      │  - web:443 -> 127.0.0.1:51047              │ Perf mode: none    │
-│            │      │  - web:8025 -> 127.0.0.1:51048             │ NodeJS: 24         │
-├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
-│ db         │ <span class="text-green-500">OK</span>   │ InDocker -> Host:                          │ mysql:8.0          │
-│            │      │  - db:3306 -> 127.0.0.1:51045              │ User/Pass: 'db/db' │
-│            │      │                                            │ or 'root/root'     │
-├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
-│ xhgui      │ <span class="text-green-500">OK</span>   │ https://my-project.ddev.site:8142          │                    │
-│            │      │ InDocker:                                  │                    │
-│            │      │  - xhgui:80                                │                    │
-│            │      │ Launch: ddev xhgui                         │                    │
-├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
-│ Mailpit    │      │ Mailpit: https://my-project.ddev.site:8026 │                    │
-│            │      │ Launch: ddev mailpit                       │                    │
-├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
-│ All URLs   │      │ https://my-project.ddev.site,              │                    │
-│            │      │ https://127.0.0.1:51047,                   │                    │
-│            │      │ http://my-project.ddev.site,               │                    │
-│            │      │ http://127.0.0.1:51046                     │                    │
-└────────────┴──────┴────────────────────────────────────────────┴────────────────────┘`,
+      output: describeOutput,
     },
   ]
 
@@ -245,7 +247,14 @@ ${versionLine}
   })
 </script>
 
-<div class="terminal-wrapper rounded-lg shadow-lg" style="background: #2e3440;" data-latest-release={latestRelease}>
+<style>
+  /* data-theme is set by the inline head script before body renders,
+   * so these rules apply on the very first paint with no flash. */
+  html[data-theme] #noscript-pre { display: none; }
+  html:not([data-theme]) #animated-pre { display: none; }
+</style>
+
+<div class="terminal-wrapper rounded-lg shadow-lg" style="background: #2e3440;" data-describe-output={describeOutput}>
   <div class="top-bar flex p-3 space-x-2 rounded-t-lg" style="background: #2e3440;">
     <div class="block rounded-full bg-slate-500 w-3 h-3"></div>
     <div class="block rounded-full bg-slate-500 w-3 h-3"></div>
@@ -253,7 +262,8 @@ ${versionLine}
   </div>
   <div class="overflow-hidden my-0">
     <div class="h-full p-4 text-slate-300 text-xs" style="height: 540px;">
-      <pre><span class="select-none text-slate-400">→ </span><span id="animation-stage" /></pre>
+      <pre id="animated-pre"><span class="select-none text-slate-400">→ </span><span id="animation-stage" /></pre>
+      <pre id="noscript-pre"><span class="select-none text-slate-400">→ </span><span set:html={describeOutput} /></pre>
     </div>
   </div>
 </div>

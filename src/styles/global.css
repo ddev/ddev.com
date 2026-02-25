@@ -292,6 +292,13 @@ button.copy.copied::after {
   content: "Copied!";
 }
 
+/* Hide copy buttons without JS, they require JS to function */
+html:not([data-theme]) button.copy,
+html:not([data-theme]) .shiki-copy,
+html:not([data-theme]) pre.astro-code > button.copy {
+  display: none;
+}
+
 /* Terminal prompt styling */
 .terminal-code-container pre.astro-code {
   padding-left: 1rem;

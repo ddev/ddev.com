@@ -1,7 +1,8 @@
 ---
 /**
- * Renders a grid of blog post cards with infinite scroll via HTML fragment fetching.
- * Pass `nextUrl` to enable loading the next page when the user scrolls to the bottom.
+ * Renders a grid of blog post cards with a "Load More" button for fetching
+ * additional pages via HTML fragment fetching.
+ * Pass `nextUrl` to enable loading the next page on button click.
  */
 import type { CollectionEntry } from "astro:content"
 import BlogPostCard from "./BlogPostCard.astro"
@@ -18,11 +19,22 @@ const { posts, nextUrl, prevUrl } = Astro.props
 <div
   id="post-grid"
   data-next-url={nextUrl}
-  class="mt-12 mb-24 px-6 sm:px-4 lg:px-0 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+  class="mt-12 px-6 sm:px-4 lg:px-0 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
 >
   {posts.map((post) => <BlogPostCard post={post} />)}
 </div>
-<div id="scroll-sentinel"></div>
+{
+  nextUrl && (
+    <div id="load-more-container" class="hidden flex justify-center my-8 pb-16">
+      <button
+        id="load-more-btn"
+        class="px-6 py-2 border border-blue-650 text-blue-650 hover:border-blue-800 hover:text-blue-800 dark:border-slate-400 dark:text-slate-300 dark:hover:border-white dark:hover:text-white font-bold rounded-md transition-colors cursor-pointer"
+      >
+        Load More
+      </button>
+    </div>
+  )
+}
 {
   (prevUrl || nextUrl) && (
     <noscript>
@@ -36,16 +48,16 @@ const { posts, nextUrl, prevUrl } = Astro.props
 
 <script>
   const grid = document.getElementById("post-grid")
-  const sentinel = document.getElementById("scroll-sentinel")
+  const container = document.getElementById("load-more-container")
+  const btn = document.getElementById("load-more-btn") as HTMLButtonElement | null
 
-  if (!grid?.dataset.nextUrl) {
-    sentinel?.remove()
-  } else {
-    let loading = false
+  if (btn && grid?.dataset.nextUrl) {
+    container?.classList.remove("hidden")
 
-    async function loadMore() {
-      if (loading || !grid.dataset.nextUrl) return
-      loading = true
+    btn.addEventListener("click", async () => {
+      if (!grid.dataset.nextUrl) return
+      btn.disabled = true
+      btn.textContent = "Loading…"
 
       try {
         const res = await fetch(grid.dataset.nextUrl)
@@ -60,25 +72,17 @@ const { posts, nextUrl, prevUrl } = Astro.props
         const newNextUrl = doc.getElementById("post-grid")?.dataset.nextUrl
         if (newNextUrl) {
           grid.dataset.nextUrl = newNextUrl
+          btn.disabled = false
+          btn.textContent = "Load More"
         } else {
           grid.removeAttribute("data-next-url")
-          observer.disconnect()
-          sentinel?.remove()
+          container?.remove()
         }
       } catch (err) {
         console.error("Failed to load more posts:", err)
+        btn.disabled = false
+        btn.textContent = "Load More"
       }
-
-      loading = false
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) loadMore()
-      },
-      { rootMargin: "200px" },
-    )
-
-    observer.observe(sentinel)
+    })
   }
 </script>
