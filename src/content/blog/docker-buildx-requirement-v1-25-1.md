@@ -21,7 +21,7 @@ Most users won't need to do anything. Docker Desktop, OrbStack, and Rancher Desk
 You may need to take action if you're using:
 
 - **macOS with Lima or Colima** - requires manual installation via Homebrew
-- **Debian with Docker from Debian repositories** - older versions don't meet requirements
+- **Ubuntu or Debian with Docker from Ubuntu/Debian repositories** instead of Docker's repositories - older versions don't meet requirements
 - **NixOS** - requires package update
 
 If you're running Docker Desktop, OrbStack, or Rancher Desktop, you can skip this article.
@@ -60,7 +60,7 @@ The requirement comes from Docker Compose itself. DDEV now validates your system
 
 ## Solutions by Platform
 
-### macOS with Lima or Colima
+### macOS with Lima or Colima (or if you have this problem for any reason)
 
 Install Docker Buildx via Homebrew:
 
@@ -90,7 +90,7 @@ Debian 13 (Trixie) includes Docker Buildx v0.13.1 from the Debian repositories, 
 
 **Solution**: Switch to Docker from the official Docker repositories.
 
-1. [Backup your DDEV projects](ddev-backups.md)
+1. [Backup your DDEV projects](ddev-backups.md) with `ddev snapshot -a`.
 2. Uninstall Docker packages from Debian repositories
 3. Follow the [Docker installation instructions in our documentation](https://docs.ddev.com/en/stable/users/install/docker-installation/#docker-for-linux)
 
@@ -112,7 +112,7 @@ If the platform-specific solutions above don't work, you can manually place the 
 - `/usr/lib/docker/cli-plugins/`
 - `/usr/libexec/docker/cli-plugins/`
 
-**Windows:**
+**Traditional Windows (not needed for WSL2):**
 
 - `%USERPROFILE%\.docker\cli-plugins\`
 - `%ProgramFiles%\Docker\cli-plugins\`
