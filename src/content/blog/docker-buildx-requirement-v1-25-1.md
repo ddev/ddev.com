@@ -21,7 +21,7 @@ Most users won't need to do anything. Docker Desktop, OrbStack, and Rancher Desk
 You may need to take action if you're using:
 
 - **macOS with Lima or Colima** - requires manual installation via Homebrew
-- **Linux with Docker from Debian repositories** - older versions don't meet requirements
+- **Debian with Docker from Debian repositories** - older versions don't meet requirements
 - **NixOS** - requires package update
 
 If you're running Docker Desktop, OrbStack, or Rancher Desktop, you can skip this article.
@@ -119,7 +119,7 @@ If the platform-specific solutions above don't work, you can manually place the 
 
 See Docker's plugin manager source for [Linux/macOS](https://github.com/docker/cli/blob/master/cli-plugins/manager/manager_unix.go) and [Windows](https://github.com/docker/cli/blob/master/cli-plugins/manager/manager_windows.go) for the complete list.
 
-Alternatively, place the binary anywhere and configure Docker to find it by adding `cliPluginsExtraDirs` to `~/.docker/config.json` (or `%USERPROFILE%\.docker\config.json` on Windows):
+Alternatively, place the binary anywhere and configure Docker to find it by adding `cliPluginsExtraDirs` to `$HOME/.docker/config.json` (or `%USERPROFILE%\.docker\config.json` on Windows):
 
 ```json
 {
