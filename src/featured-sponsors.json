@@ -268,5 +268,14 @@
     "squareLogo": "/logos/cps-square.svg",
     "url": "https://www.cps-it.de/",
     "github": "CPS-IT"
+  },
+  {
+    "name": "webdna",
+    "type": "standard",
+    "logo": "/logos/webdna.svg",
+    "darklogo": "/logos/webdna-dark.svg",
+    "squareLogo": "/logos/webdna-square.png",
+    "url": "https://webdna.co.uk/",
+    "github": "webdna"
   }
 ]
