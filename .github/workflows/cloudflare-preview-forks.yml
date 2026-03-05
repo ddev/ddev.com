@@ -264,7 +264,7 @@ jobs:
           echo "Packaged $(find artifact -type f | wc -l) files."
 
       - name: Upload built artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: site-dist
           path: artifact
@@ -307,7 +307,7 @@ jobs:
           fi
 
       - name: Download built artifact
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: site-dist
           path: site-dist
