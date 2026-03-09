@@ -58,14 +58,23 @@ const { itemNumber, terminalType, terminalSymbol } = Astro.props;
   </p>
 
   <p>
+    Run <code>ddev</code> with no arguments to open the <a
+      href="https://docs.ddev.com/en/stable/users/usage/cli/#interactive-dashboard"
+      target="_blank"
+      >interactive dashboard</a>, an overview of your projects and quick access to common actions:
+  </p>
+
+  <Terminal type={terminalType} code={`${terminalSymbol} ddev`} />
+
+  <p>
     Run the <a
       href="https://docs.ddev.com/en/stable/users/usage/commands/#help"
       target="_blank"
       >help command</a>
-    (or plain <code>ddev</code>) to see the actions you can take with the CLI:
+    (or <code>ddev -h</code>) to see the actions you can take with the CLI:
   </p>
 
-  <Terminal type={terminalType} code={`${terminalSymbol} ddev -h`} />
+  <Terminal type={terminalType} code={`${terminalSymbol} ddev help`} />
 
   <p>
     Use the <a
