@@ -277,5 +277,14 @@
     "squareLogo": "/logos/webdna-square.png",
     "url": "https://webdna.co.uk/",
     "github": "webdna"
+  },
+  {
+    "name": "FreelyGive",
+    "type": "standard",
+    "logo": "/logos/freelygive.svg",
+    "darklogo": "/logos/freelygive.svg",
+    "squareLogo": "/logos/freelygive-square.webp",
+    "url": "https://freelygive.io/",
+    "github": "FreelyGive"
   }
 ]
