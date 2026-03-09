@@ -174,14 +174,21 @@ coder stop my-workspace   # Stop (data preserved)
 coder delete my-workspace # Delete (data lost permanently)
 ```
 
+## FAQ
+
+* **How do I pull/push to GitHub/GitLab/Drupalcode? (or use ssh)?**
+
+Use the `coder publickey` command to get the publickey associated with your coder.ddev.com projects (it's the same for all projects). You can then add that to GitHub/GitLab/Drupalcode/Remote SSH to allow you to access those resources.
+
+* **How do I set this up myself for my own initiative?**
+
+The full details are in the repo at [github.com/ddev/coder-ddev](https://github.com/ddev/coder-ddev).
+
+## Thanks to Coder.com
+
+The world of open source is amazing. Coder.com is a shockingly mature project, and so many of these things worked just great out of the box. 
+
 ## What's Next
-
-coder.ddev.com is actively developed alongside [DDEV](https://ddev.com). Planned improvements include:
-
-- More templates for common project types
-- Better integration with drupal.org contribution workflows
-- Improved performance and startup times
-- Expanded contributor workshop support for events like DrupalCon
 
 The templates and image are open source at [github.com/ddev/coder-ddev](https://github.com/ddev/coder-ddev). Contributions, bug reports, and feature requests are welcome.
 
@@ -191,3 +198,4 @@ The templates and image are open source at [github.com/ddev/coder-ddev](https://
 - **DDEV Discord**: [discord.gg/hCZFfAMc5k](https://discord.gg/hCZFfAMc5k) — `#coder-ddev` channel
 - **Issues**: [github.com/ddev/coder-ddev/issues](https://github.com/ddev/coder-ddev/issues)
 - **DDEV Docs**: [docs.ddev.com](https://docs.ddev.com)
+- **Coder.com**: [coder.com] or [github.com/coder/coder](https://github.com/coder/coder)
