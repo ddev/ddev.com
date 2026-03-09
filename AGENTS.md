@@ -2,6 +2,10 @@
 
 This file provides guidance to AI agents when working with code in this repository.
 
+## Tool Preferences
+
+- Prefer `jq` over Python for JSON processing in shell commands
+
 ## Communication Style
 
 - Use direct, concise language without unnecessary adjectives or adverbs

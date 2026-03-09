@@ -30,7 +30,15 @@ export default defineConfig({
   site: "https://ddev.com",
   vite: {
     server: {
-      allowedHosts: ["." + process.env.DDEV_TLD], // leave this unchanged for DDEV!
+      allowedHosts: [
+        process.env.DDEV_TLD ? "." + process.env.DDEV_TLD : undefined,
+        // Allow Coder workspace hosts derived from VSCODE_PROXY_URI
+        // e.g. "https://{{port}}--main--ddev-com--rfay.coder.ddev.com" → ".coder.ddev.com"
+        process.env.VSCODE_PROXY_URI?.match(/^https?:\/\/[^.]+\.(.+)$/)?.[1]
+          ? "." +
+            process.env.VSCODE_PROXY_URI.match(/^https?:\/\/[^.]+\.(.+)$/)?.[1]
+          : undefined,
+      ].filter(Boolean),
     },
     // Configure CORS for the dev server (security)
     cors: { origin: process.env.DDEV_PRIMARY_URL },
