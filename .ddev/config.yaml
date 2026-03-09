@@ -11,6 +11,7 @@ hooks:
         - exec: echo -e "================================================================================"
         - exec: echo -e "The Astro dev container is ready"
         - exec: echo -e "Hot Module Reloading (HMR) is available at \e[32m${DDEV_PRIMARY_URL_WITHOUT_PORT}:4321\e[0m"
+        - exec-host: "bash -c 'if [ -n \"${VSCODE_PROXY_URI:-}\" ]; then echo -e \"Coder HMR URL: \\e[32m$(echo $VSCODE_PROXY_URI | sed s/{{port}}/4322/)\\e[0m\"; fi'"
         - exec: echo -e "To troubleshoot any issues run \e[35mddev describe\e[0m or \e[35mddev logs --follow --time\e[0m"
         - exec: echo -e "================================================================================"
 omit_containers: [db]
