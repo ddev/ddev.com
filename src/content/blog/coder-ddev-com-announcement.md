@@ -1,6 +1,6 @@
 ---
 title: "Introducing coder.ddev.com: DDEV in the Cloud"
-pubDate: 2026-03-10
+pubDate: 2026-03-11
 summary: "coder.ddev.com provides free, experimental cloud-based DDEV workspaces powered by Coder. Start a Drupal contribution environment in under 30 seconds, with full VS Code, Xdebug, and CLI support."
 author: Randy Fay
 featureImage:
@@ -19,17 +19,19 @@ categories:
 This is an experimental service with no guarantees of data retention, uptime, or long-term availability. The future of its maintenance and sustainability is uncertain. Do not store irreplaceable work here without pushing it to Git. Treat it as a convenience, not a platform to depend on.
 :::
 
-Want a quick overview? Watch the 5-minute intro video:
+Want a quick overview? Watch the 6-minute intro video starting from the very beginning:
 
-<!-- TODO: embed video here -->
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GGzh3yJo30E?si=q1BbZ4ZDBkosNrNr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 ## Table of Contents
 
 ## How It Works
 
-coder.ddev.com runs on [Coder](https://coder.com), an open-source platform for remote development environments. Each workspace is an isolated container (using the [Sysbox](https://github.com/nestybox/sysbox) runtime for secure Docker-in-Docker) with DDEV, Docker, Node.js, and VS Code pre-installed.
+coder.ddev.com runs on [Coder](https://coder.com), an open-source platform for remote development environments. Each workspace is an isolated container (using the [Sysbox](https://github.com/nestybox/sysbox) runtime for secure Docker-in-Docker) with DDEV, Docker, and VS Code pre-installed.
 
-Your files persist on a remote volume across workspace restarts. When you delete a workspace, the data is gone — so push your work to Git. (But until you delete the workspace, or it's garbage-collected, your work persists. We don't have an implementation for garbage collection yet...)
+Your files persist on a remote volume across workspace restarts. When you delete a workspace, the data is gone — so push your work to Git before deleting. (But until you delete the workspace, or it's garbage-collected, your work persists. We don't have an implementation for garbage collection yet...)
 
 The source code for the templates and Docker image is at [github.com/ddev/coder-ddev](https://github.com/ddev/coder-ddev). Other projects can use this and deploy their own fully-DDEV-capable Coder instances.
 
@@ -71,22 +73,14 @@ Choose your Drupal version when creating the workspace:
 
 The template automatically selects the correct PHP version and DDEV project type for the chosen branch.
 
-Log in to the site with `admin` / `admin`, or get a one-time login link: `ddev drush uli`.
+Log in to the site with `admin` / `admin`.
 
-### user-defined-web
+This takes less than 4 minutes, try it out:
 
-The general-purpose template. Create a workspace, SSH in or open VS Code, clone your project, run `ddev config && ddev start`, and access it via the port forwarding links in the Coder dashboard.
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RxMpI4WgX-A?si=RTfezKbVQ61Erw_G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
-```bash
-# Example: a Drupal site
-cd ~/projects
-git clone git@github.com:your-org/your-site.git
-cd your-site
-ddev config --auto
-ddev start
-```
-
-Your project is accessible via the **DDEV Web** app link in the Coder dashboard.
 
 ### freeform
 
@@ -105,6 +99,12 @@ Paste any drupal.org issue URL (for example, `https://www.drupal.org/project/dru
 - Composer dependencies resolved
 
 This replaces the workflow that DrupalPod (Gitpod-based) provided for contribution days. You can hand someone an issue URL, they paste it into the picker, and within 30 seconds they have a working environment with the issue branch ready.
+
+Demonstrating this from start to finish in about 6 minutes:
+
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2BCOl86SFvw?si=TmUqzEUrjHZMqlA8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 ## Development Tools
 
@@ -159,7 +159,7 @@ coder stop my-workspace
 
 ## Accessing Your Project
 
-Because DDEV runs inside a cloud container, the usual `*.ddev.site` URLs don't work. Instead, access your project via the **DDEV Web** app link in the Coder dashboard, or use port forwarding.
+Because DDEV runs inside a cloud container, the usual `*.ddev.site` URLs don't work. Instead, access your project via the **DDEV Web** app link in the Coder dashboard, or use port forwarding, and `ddev start`, `ddev launch` and `ddev describe` also give URL information.
 
 The freeform template handles this automatically with Traefik routing — you get stable subdomain URLs like `https://<workspace>--<workspace>--<owner>.coder.ddev.com/`.
 
@@ -169,7 +169,9 @@ The freeform template handles this automatically with Traefik routing — you ge
 
 **Delete**: Permanently removes the workspace and all data. Always push your code to Git before deleting.
 
+This can also be done from the command-line on your local machine (after `coder login https://coder.ddev.com`):
 ```bash
+coder list
 coder stop my-workspace   # Stop (data preserved)
 coder delete my-workspace # Delete (data lost permanently)
 ```
@@ -179,6 +181,8 @@ coder delete my-workspace # Delete (data lost permanently)
 - **How do I pull/push to GitHub/GitLab/Drupalcode? (or use SSH)?**
 
 Use the `coder publickey` command to get the publickey associated with your coder.ddev.com projects (it's the same for all projects). You can then add that to GitHub/GitLab/Drupalcode/Remote SSH to allow you to access those resources.
+
+You can also use `coder config-ssh` to set up and use your local SSH key.
 
 - **How do I set this up myself for my own initiative?**
 
