@@ -184,6 +184,10 @@ Use the `coder publickey` command to get the publickey associated with your code
 
 The full details are in the repo at [github.com/ddev/coder-ddev](https://github.com/ddev/coder-ddev).
 
+* **Where is this running?**
+
+This is running on a 64GB Hetzner bare-metal Ubuntu 24.04 machine in Helsinki, Finland. It has lots of disk and costs about $50/month.
+
 ## Thanks to Coder.com
 
 The world of open source is amazing. Coder.com is a shockingly mature project, and so many of these things worked just great out of the box. 
