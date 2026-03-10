@@ -81,7 +81,6 @@ This takes less than 4 minutes, try it out:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RxMpI4WgX-A?si=RTfezKbVQ61Erw_G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
-
 ### freeform
 
 The freeform template adds Traefik routing integration so your DDEV project and services like Mailpit get stable subdomain URLs (no port numbers). After creating a workspace, run `ddev coder-setup` once in your project directory, then `ddev start`. Routing updates automatically on every start.
@@ -170,6 +169,7 @@ The freeform template handles this automatically with Traefik routing — you ge
 **Delete**: Permanently removes the workspace and all data. Always push your code to Git before deleting.
 
 This can also be done from the command-line on your local machine (after `coder login https://coder.ddev.com`):
+
 ```bash
 coder list
 coder stop my-workspace   # Stop (data preserved)
