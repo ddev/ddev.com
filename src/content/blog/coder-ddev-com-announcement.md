@@ -176,21 +176,21 @@ coder delete my-workspace # Delete (data lost permanently)
 
 ## FAQ
 
-* **How do I pull/push to GitHub/GitLab/Drupalcode? (or use ssh)?**
+- **How do I pull/push to GitHub/GitLab/Drupalcode? (or use SSH)?**
 
 Use the `coder publickey` command to get the publickey associated with your coder.ddev.com projects (it's the same for all projects). You can then add that to GitHub/GitLab/Drupalcode/Remote SSH to allow you to access those resources.
 
-* **How do I set this up myself for my own initiative?**
+- **How do I set this up myself for my own initiative?**
 
-The full details are in the repo at [github.com/ddev/coder-ddev](https://github.com/ddev/coder-ddev).
+The full details are in the repository at [github.com/ddev/coder-ddev](https://github.com/ddev/coder-ddev).
 
-* **Where is this running?**
+- **Where is this running?**
 
 This is running on a 64GB Hetzner bare-metal Ubuntu 24.04 machine in Helsinki, Finland. It has lots of disk and costs about $50/month.
 
 ## Thanks to Coder.com
 
-The world of open source is amazing. Coder.com is a shockingly mature project, and so many of these things worked just great out of the box. 
+The world of open source is amazing. Coder.com is a shockingly mature project, and so many of these things worked just great out of the box.
 
 ## What's Next
 
