@@ -203,7 +203,7 @@ The templates and image are open source at [github.com/ddev/coder-ddev](https://
 ## Getting Help
 
 - **Documentation**: [github.com/ddev/coder-ddev/docs](https://github.com/ddev/coder-ddev/tree/main/docs)
-- **DDEV Discord**: [discord.gg/hCZFfAMc5k](https://discord.gg/hCZFfAMc5k) — `#coder-ddev` channel
+- **DDEV Discord**: [Discord](https://ddev.com/s/discord) — `#support-and-discussion` channel
 - **Issues**: [github.com/ddev/coder-ddev/issues](https://github.com/ddev/coder-ddev/issues)
 - **DDEV Docs**: [docs.ddev.com](https://docs.ddev.com)
-- **Coder.com**: [coder.com] or [github.com/coder/coder](https://github.com/coder/coder)
+- **Coder.com**: [coder.com](https://coder.com) or [github.com/coder/coder](https://github.com/coder/coder)
