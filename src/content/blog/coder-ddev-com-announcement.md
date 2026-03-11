@@ -110,7 +110,7 @@ Demonstrating this from start to finish in about 6 minutes:
 
 "VS Code Web" runs in the browser and supports most extensions. You can install extensions from the marketplace, configure settings, and use the integrated terminal — all without installing anything locally.
 
-### VS Code Desktop 
+### VS Code Desktop
 
 Clicking on "VS Code Desktop" opens up your local installation of VS Code and then automatically uses the [**Remote-SSH** extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) to connect to your Coder workspace. It's nice, I used it a lot in preparing this blog and even in some recent work on Coder.ddev.com itself. All VS Code features work.
 
