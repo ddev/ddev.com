@@ -53,11 +53,10 @@ Give your workspace a name and click **Create Workspace**. Most workspaces start
 
 ### 3. Access Your Workspace
 
-Once running, you have several options on your workspace:
+Once running, you have several options to use your workspace:
 
-- **VS Code for Web**: Opens the full IDE of VSCode in your  browser.
-- **SSH**: Install the [Coder CLI](https://github.com/coder/coder/releases), then `coder login https://coder.ddev.com` and `coder ssh <workspace-name>`.
-- **Desktop VS Code with Remote-SSH**: Run `coder config-ssh` after logging in, then use VS Code's Remote-SSH extension to connect to `coder.<workspace-name>`.
+- **Web Browser**: From `coder.ddev.com`, use the many options, including web-based terminal, VS Code for Web, and VS Code Desktop.
+- **SSH with `coder` CLI**: Install the Coder CLI, then `coder login https://coder.ddev.com` and `coder ssh <workspace-name>`.
 
 ## Template Overview
 
@@ -113,33 +112,17 @@ Demonstrating this from start to finish in about 6 minutes:
 
 ### VS Code Desktop 
 
-For a native IDE experience, install the [Coder CLI](https://github.com/coder/coder/releases) and run:
-
-```bash
-coder login https://coder.ddev.com
-coder config-ssh
-```
-
-Coder uses the [**Remote-SSH** extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) to connect to `coder.<workspace-name>`. All VS Code features work, including extensions that require a desktop environment.
+Clicking on "VS Code Desktop" opens up your local installation of VS Code and then automatically uses the [**Remote-SSH** extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) to connect to your Coder workspace. It's nice, I used it a lot in preparing this blog and even in some recent work on Coder.ddev.com itself. All VS Code features work.
 
 ### Xdebug
 
-Xdebug works in Coder workspaces the same way as local DDEV:
-
-```bash
-ddev xdebug on
-```
-
-With "VS Code desktop" connected via Remote-SSH, configure your `launch.json` for remote debugging as you would with any remote PHP interpreter. With "VS Code Web", use the browser debugger integration.
+Xdebug works in Coder workspaces the same way as local DDEV with the DDEV VS Code Extension.
 
 ### Coder CLI
 
-The Coder CLI provides SSH access, port forwarding, file transfer, and workspace management:
+The Coder CLI provides SSH access, port forwarding, file transfer, and workspace management. It's a completely different way of interacting with your workspace. Install with `brew install coder` or [other options](https://coder.com/docs/install).
 
 ```bash
-# Install
-curl -L https://coder.com/install.sh | sh
-
 # Login
 coder login https://coder.ddev.com
 
@@ -181,8 +164,6 @@ coder delete my-workspace # Delete (data lost permanently)
 - **How do I pull/push to GitHub/GitLab/Drupalcode? (or use SSH)?**
 
 Use the `coder publickey` command to get the publickey associated with your coder.ddev.com projects (it's the same for all projects). You can then add that to GitHub/GitLab/Drupalcode/Remote SSH to allow you to access those resources.
-
-You can also use `coder config-ssh` to set up and use your local SSH key.
 
 - **How do I set this up myself for my own initiative?**
 
