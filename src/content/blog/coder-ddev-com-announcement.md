@@ -22,7 +22,7 @@ This is an experimental service with no guarantees of data retention, uptime, or
 Want a quick overview? Watch the 6-minute intro video starting from the very beginning:
 
 <div class="video-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GGzh3yJo30E?si=q1BbZ4ZDBkosNrNr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TPz2xnFdQLk?si=r8MroZZjOjx7OToK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 ## Table of Contents
@@ -39,7 +39,7 @@ The source code for the templates and Docker image is at [github.com/ddev/coder-
 
 ### 1. Log In with GitHub
 
-Go to [coder.ddev.com](https://coder.ddev.com) and click **Login with GitHub**. No separate account needed. `coder.ddev.com` is only allowed to read out your email address.
+Go to [coder.ddev.com](https://coder.ddev.com) and click **Login with GitHub**. No separate account needed. `coder.ddev.com` receives read-only access to your email addresses, public profile, and GitHub organization membership — no code access, no write access.
 
 ### 2. Create a Workspace
 
@@ -77,7 +77,7 @@ Log in to the site with `admin` / `admin`.
 This takes less than 4 minutes, try it out:
 
 <div class="video-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RxMpI4WgX-A?si=RTfezKbVQ61Erw_G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IAF_CyzR6_g?si=q-cr63OxnWq4mX4g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 ### freeform
@@ -101,7 +101,7 @@ This replaces the workflow that DrupalPod (Gitpod-based) provided for contributi
 Demonstrating this from start to finish in about 6 minutes:
 
 <div class="video-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2BCOl86SFvw?si=TmUqzEUrjHZMqlA8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M48zdeqNXlA?si=15tSEqIuHDHXaAg1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 ## Development Tools
