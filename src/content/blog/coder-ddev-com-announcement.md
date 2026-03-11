@@ -31,7 +31,7 @@ Want a quick overview? Watch the 6-minute intro video starting from the very beg
 
 coder.ddev.com runs on [Coder](https://coder.com), an open-source platform for remote development environments. Each workspace is an isolated container (using the [Sysbox](https://github.com/nestybox/sysbox) runtime for secure Docker-in-Docker) with DDEV, Docker, and VS Code pre-installed.
 
-Your files persist on a remote volume across workspace restarts. When you delete a workspace, the data is gone — so push your work to Git before deleting. (But until you delete the workspace, or it's garbage-collected, your work persists. We don't have an implementation for garbage collection yet...)
+Your files persist on a remote volume across workspace restarts. When you delete a workspace, the data is gone — so push your work to Git before deleting. But until you delete the workspace, or it's garbage-collected (not yet implemented), your work persists..
 
 The source code for the templates and Docker image is at [github.com/ddev/coder-ddev](https://github.com/ddev/coder-ddev). Other projects can use this and deploy their own fully-DDEV-capable Coder instances.
 
@@ -39,7 +39,7 @@ The source code for the templates and Docker image is at [github.com/ddev/coder-
 
 ### 1. Log In with GitHub
 
-Go to [coder.ddev.com](https://coder.ddev.com) and click **Login with GitHub**. No separate account needed. `coder.ddev.com` gets only your email address.
+Go to [coder.ddev.com](https://coder.ddev.com) and click **Login with GitHub**. No separate account needed. `coder.ddev.com` is only allowed to read out your email address.
 
 ### 2. Create a Workspace
 
@@ -53,9 +53,9 @@ Give your workspace a name and click **Create Workspace**. Most workspaces start
 
 ### 3. Access Your Workspace
 
-Once running, your workspace has several access points:
+Once running, you have several options on your workspace:
 
-- **VS Code for Web**: Click **VS Code** under Apps in the Coder dashboard. A full IDE opens in the browser.
+- **VS Code for Web**: Opens the full IDE of VSCode in your  browser.
 - **SSH**: Install the [Coder CLI](https://github.com/coder/coder/releases), then `coder login https://coder.ddev.com` and `coder ssh <workspace-name>`.
 - **Desktop VS Code with Remote-SSH**: Run `coder config-ssh` after logging in, then use VS Code's Remote-SSH extension to connect to `coder.<workspace-name>`.
 
@@ -107,11 +107,11 @@ Demonstrating this from start to finish in about 6 minutes:
 
 ## Development Tools
 
-### VS Code for Web
+### VS Code Web
 
-VS Code for Web runs in the browser and supports most extensions. You can install extensions from the marketplace, configure settings, and use the integrated terminal — all without installing anything locally.
+"VS Code Web" runs in the browser and supports most extensions. You can install extensions from the marketplace, configure settings, and use the integrated terminal — all without installing anything locally.
 
-### Desktop VS Code
+### VS Code Desktop 
 
 For a native IDE experience, install the [Coder CLI](https://github.com/coder/coder/releases) and run:
 
@@ -120,7 +120,7 @@ coder login https://coder.ddev.com
 coder config-ssh
 ```
 
-Then use VS Code's **Remote-SSH** extension to connect to `coder.<workspace-name>`. All VS Code features work, including extensions that require a desktop environment.
+Coder uses the [**Remote-SSH** extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) to connect to `coder.<workspace-name>`. All VS Code features work, including extensions that require a desktop environment.
 
 ### Xdebug
 
@@ -130,7 +130,7 @@ Xdebug works in Coder workspaces the same way as local DDEV:
 ddev xdebug on
 ```
 
-With desktop VS Code connected via Remote-SSH, configure your `launch.json` for remote debugging as you would with any remote PHP interpreter. With VS Code for Web, use the browser debugger integration.
+With "VS Code desktop" connected via Remote-SSH, configure your `launch.json` for remote debugging as you would with any remote PHP interpreter. With "VS Code Web", use the browser debugger integration.
 
 ### Coder CLI
 
