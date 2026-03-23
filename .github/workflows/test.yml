@@ -30,6 +30,6 @@ jobs:
       - name: Prettier
         run: npm run prettier || { printf "\nRun 'ddev prettier' locally to fix it.\n\n"; exit 1; }
       - name: Install, build, and upload your site output
-        uses: withastro/action@v5
+        uses: withastro/action@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
