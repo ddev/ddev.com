@@ -28,13 +28,13 @@
     "isLeading": false
   },
   {
-    "name": "Agaric",
-    "type": "standard",
-    "logo": "/logos/agaric.svg",
-    "darklogo": "/logos/agaric.svg",
-    "squareLogo": "/logos/agaric-square.svg",
-    "url": "https://agaric.coop/",
-    "github": "agaric"
+    "name": "Institute for Advanced Study",
+    "type": "major",
+    "logo": "/logos/ias.svg",
+    "darklogo": "/logos/ias-dark.svg",
+    "squareLogo": "/logos/ias-square.svg",
+    "url": "https://www.ias.edu/",
+    "isLeading": false
   },
   {
     "name": "b13",
