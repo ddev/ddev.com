@@ -13,11 +13,11 @@ categories:
 
 `git worktree` lets you check out multiple branches of the same repository into separate directories—all sharing one `.git` directory. Combined with DDEV, this gives you multiple running versions of the same project without duplicate clones.
 
-There are many ways to use this and your way is the best, but:
+There are many ways to use this, but some common patterns:
 
-- Always have directories that match the branch name they're working on.
+- Keep directories named after the branch they contain.
 - Work on a hotfix and a feature branch without them interfering with each other.
-- Set claude code working on two features at once in two distinct directories.
+- Set up Claude Code to work on two features at once in two distinct directories.
 
 Here's our March 26, 2026 [Contributor Training](/blog/category/training) on using `git worktree` with DDEV:
 
@@ -36,7 +36,7 @@ git clone git@github.com:ddev/d11simple fancy-feature-1
 git clone git@github.com:ddev/d11simple fancy-feature-2
 ```
 
-This works, but you end up with duplicate `.git` histories, and syncing between them is awkward.
+This works, but each clone is a full redundant copy, and sharing objects or refs between them is awkward.
 
 ## DDEV Project Names and Directories
 
@@ -62,7 +62,13 @@ git worktree add ../fancy-feature-1
 git worktree add ../fancy-feature-2
 ```
 
-This creates branches named `fancy-feature-1` and `fancy-feature-2` matching the directory names. The resulting layout:
+Without a branch argument, `git worktree add` creates a **new branch** named after the directory. To check out an existing branch instead:
+
+```bash
+git worktree add ../fancy-feature-1 origin/fancy-feature-1
+```
+
+The resulting layout:
 
 ```
 D11SIMPLE/
@@ -73,14 +79,16 @@ D11SIMPLE/
 
 ## Setting Up the Database and Files
 
-Export from your primary project once, then import into each worktree:
+Export database and files from your primary project once, then import into each worktree:
 
 ```bash
-# Export from primary
-cd D11SIMPLE
+# From ~/workspace/D11SIMPLE — create a shared tarball directory
 mkdir .tarballs
-cd d11simple # first running project
+
+# Export from the primary clone
+cd d11simple
 ddev export-db --file=../.tarballs/db.sql.gz
+# Adjust the path below for your CMS; web/sites/default/files is Drupal
 tar -C web/sites/default/files -czf ../.tarballs/files.tgz .
 
 # Import into a worktree
@@ -101,7 +109,7 @@ git worktree remove <name>  # Remove a worktree
 ## Summary
 
 - Remove `name:` from `.ddev/config.yaml` so each worktree uses its directory name as the project name
-- Consider `ddev config global --omit-project-name-by-default` to make this the default for all projects
+- Consider `ddev config global --omit-project-name-by-default` to make this behavior the default for all projects
 - `git worktree add <path>` creates a new checkout sharing the same `.git`
 - Import a database snapshot and files tarball into each worktree
 - Each worktree gets its own DDEV project URL automatically
