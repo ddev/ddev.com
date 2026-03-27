@@ -286,5 +286,14 @@
     "squareLogo": "/logos/freelygive-square.webp",
     "url": "https://freelygive.io/",
     "github": "FreelyGive"
+  },
+  {
+    "name": "8mylez GmbH",
+    "type": "standard",
+    "logo": "/logos/8mylez.svg",
+    "darklogo": "/logos/8mylez-dark.svg",
+    "squareLogo": "/logos/8mylez-square.svg",
+    "url": "https://www.8mylez.com/",
+    "github": "8mylez"
   }
 ]
