@@ -1,5 +1,5 @@
 ---
-title: "Contributor Training: git worktree for Multiple DDEV Projects"
+title: "Contributor Training: `git worktree` for Multiple DDEV Projects"
 pubDate: 2026-03-27
 summary: "Using git worktree with DDEV to run multiple versions of the same project simultaneously, sharing a single .git directory."
 author: Randy Fay
@@ -29,7 +29,7 @@ The slides are available at [rfay.github.io/git-worktree-ddev](https://rfay.gith
 
 ## The Problem: Multiple Versions of a Project
 
-When you need to work on several branches of a project simultaneously—say, a feature branch and a hotfix branch—the naive approach is to clone the repo twice:
+When you need to work on several branches of a project simultaneously—say, a feature branch and a hotfix branch—the naive approach is to clone the repository twice:
 
 ```bash
 git clone git@github.com:ddev/d11simple fancy-feature-1
@@ -50,7 +50,7 @@ ddev config global --omit-project-name-by-default
 
 With that in place, `fancy-feature-1/` becomes `https://fancy-feature-1.ddev.site` and `fancy-feature-2/` becomes `https://fancy-feature-2.ddev.site`—no manual naming is required.
 
-## Using git worktree
+## Using `git worktree`
 
 `git worktree` solves the duplicate-clone problem. All worktrees share one `.git` directory:
 
@@ -98,7 +98,7 @@ ddev import-db --file=../.tarballs/db.sql.gz
 ddev import-files --source=../.tarballs/files.tgz
 ```
 
-## Key git worktree Commands
+## Key `git worktree` Commands
 
 ```bash
 git worktree add <path>     # Usually a relative path
