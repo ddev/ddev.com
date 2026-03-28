@@ -375,6 +375,13 @@ Videos should be wrapped in a `.video-container` div for responsive sizing:
   ></iframe>
 </div>
 
+## Featured Sponsors
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="/resources/featured-sponsors-darkmode.svg">
+  <img alt="DDEV Sponsor logos with light and dark mode variants" src="/resources/featured-sponsors.svg">
+</picture>
+
 ## Mermaid Diagrams
 
 Mermaid lets you create diagrams from text using fenced code blocks with the `mermaid` language identifier. See the [Mermaid documentation](https://mermaid.js.org/intro/) for the full list of diagram types and syntax.

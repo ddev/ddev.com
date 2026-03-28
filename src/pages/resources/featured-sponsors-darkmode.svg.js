@@ -193,5 +193,7 @@ const getScaledImageDimensions = (width, height, isLeadSponsor = false) => {
 }
 
 export async function GET({ params, request }) {
-  return new Response(buildResponse())
+  return new Response(buildResponse(), {
+    headers: { "Content-Type": "image/svg+xml" },
+  })
 }
