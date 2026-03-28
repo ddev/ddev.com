@@ -39,7 +39,8 @@ Florida Drupalcamp in February was also a good time — the `git worktree` sessi
 
 The DDEV board and advisory group met on March 4, 2026. See all the [details and recording](https://github.com/orgs/ddev/discussions/8197).
 
-The next meeting is in May. <!-- TODO: add calendar link when available -->
+The next meeting is **May 6, 2026 at 8:00 AM US Mountain / 10:00 AM US Eastern / 16:00 CEST**.
+[Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=DDEV%20Board%20and%20Advisory%20Group%20Meeting&dates=20260506T140000Z/20260506T150000Z&details=DDEV%20Board%20and%20Advisory%20Group%20Meeting%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online&trp=true) • [Discussion and details](https://github.com/orgs/ddev/discussions/8256)
 
 ## Scaling Maintainership
 
