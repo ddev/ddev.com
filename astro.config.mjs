@@ -43,6 +43,9 @@ export default defineConfig({
     // Configure CORS for the dev server (security)
     cors: { origin: process.env.DDEV_PRIMARY_URL },
     plugins: [tailwindcss()],
+    optimizeDeps: {
+      include: ["astro/toolbar"],
+    },
   },
   integrations: [
     react(),
@@ -69,6 +72,7 @@ export default defineConfig({
     prefetch(),
     mermaid({
       autoTheme: true,
+      enableLog: false,
     }),
   ],
   markdown: {
