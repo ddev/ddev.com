@@ -14,12 +14,16 @@ Whew, I think I just barely made it for March!
 
 I spent the last week at DrupalCon Chicago, seeing lots of old friends and having lots of discussions about the impact of AI on open-source developers everywhere.
 
+## Scaling Maintainership
+
 I'm noticing that because of AI it's getting easier for our lovely community to contribute to DDEV. But I'm also seeing that our PR queue is getting longer, and Stas and I are feeling more pressure from it, because we sure don't like to frustrate contributors. In many cases, we have been getting good quality and nontrivial contributions, and contributions that have been prioritized. But they may not be exactly the things that we were hoping to put our own energy toward.
 
 We'd love to have your comments and feedback about this cycle. Here are some thoughts that came up in various conversations:
 
 - We need to keep trying to turn contributors into maintainers. AI doesn't really do that. It helps people toss tings in, or figure out how to scratch an itch, but it doesn't typically help with overall maintenance activities. If we can get more community members to build their skills in reviewing other PRs (both looking at code and manually testing) and giving their feedback about issues and priorities, maybe thats a good path.
 - We probably need to add a little more conversation to contributions *before* people spend time on them. I opened an [issue for discussion](https://github.com/ddev/ddev/issues/8255) about changing to requiring an issue (and conversation) before PR creation. I'd love your comments.
+
+If you're interested in contributing more deeply, the [contributor training sessions](/blog/category/training) are a good way to get started. And join us for conversations and community support in [Discord](/s/discord) and the [issue queue](https://github.com/ddev/ddev/issues).
 
 ## What's New
 
@@ -41,15 +45,6 @@ The DDEV board and advisory group met on March 4, 2026. See all the [details and
 
 The next meeting is **May 6, 2026 at 8:00 AM US Mountain / 10:00 AM US Eastern / 16:00 CEST**.
 [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=DDEV%20Board%20and%20Advisory%20Group%20Meeting&dates=20260506T140000Z/20260506T150000Z&details=DDEV%20Board%20and%20Advisory%20Group%20Meeting%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online&trp=true) • [Discussion and details](https://github.com/orgs/ddev/discussions/8256)
-
-## Scaling Maintainership
-
-One recurring conversation this month: how do we grow the number of people who can help maintain DDEV? A few principles that have worked:
-
-- **Discuss in an issue first** before opening a pull request. This avoids wasted effort and helps maintainers understand context before reviewing code.
-- **Make sure you understand your contribution's scope.** Small, focused PRs are easier to review and merge than large ones.
-
-If you're interested in contributing more deeply, the [contributor training sessions](/blog/category/training) are the best way to get oriented.
 
 ## Community Highlights
 
