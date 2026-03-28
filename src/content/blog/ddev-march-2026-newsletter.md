@@ -21,9 +21,10 @@ I'm noticing that because of AI it's getting easier for our lovely community to 
 We'd love to have your comments and feedback about this cycle. Here are some thoughts that came up in various conversations:
 
 - We need to keep trying to turn contributors into maintainers. AI doesn't really do that. It helps people toss things in, or figure out how to scratch an itch, but it doesn't typically help with overall maintenance activities. If we can get more community members to build their skills in reviewing other PRs (both looking at code and manually testing) and giving their feedback about issues and priorities, maybe that's a good path.
-- We probably need to add a little more conversation to contributions *before* people spend time on them. I opened an [issue for discussion](https://github.com/ddev/ddev/issues/8255) about changing to requiring an issue (and conversation) before PR creation. I'd love your comments.
+- We probably need to add a little more conversation to contributions _before_ people spend time on them. I opened an [issue for discussion](https://github.com/ddev/ddev/issues/8255) about changing to requiring an issue (and conversation) before PR creation. I'd love your comments.
+- Guarding against burnout is critical for our project, especially for Stas and me. We want to be smart about this and properly manage all of our resources for the long term.
 
-If you're interested in contributing more deeply, the [contributor training sessions](/blog/category/training) are a good way to get started. And join us for conversations and community support in [Discord](/s/discord) and the [issue queue](https://github.com/ddev/ddev/issues).
+If you're interested in contributing more deeply and moving toward a maintainer role, the [contributor training sessions](/blog/category/training) are a good way to get started. And join us for conversations and community support in [Discord](/s/discord) and the [issue queue](https://github.com/ddev/ddev/issues).
 
 ## What's New
 
@@ -33,7 +34,7 @@ If you're interested in contributing more deeply, the [contributor training sess
 
 ## DrupalCon Chicago and Florida Drupal Camp
 
-DrupalCon Chicago was a highlight of the month. Birds-of-a-Feather (BoF) sessions are informal, attendee-organized meetups at DrupalCon where people with a common interest gather to talk — no slides required. I led several DDEV BoFs, including Git Worktrees and DDEV, DDEV Office Hours, What's New in DDEV, [New `ddev share` features](share-providers.md)), Xdebug in DDEV, and [Using coder.ddev.com (DDEV in the Cloud)](coder-ddev-com-announcement.md). 
+DrupalCon Chicago was a highlight of the month. Birds-of-a-Feather (BoF) sessions are informal, attendee-organized meetups at DrupalCon where people with a common interest gather to talk — no slides required. I led several DDEV BoFs, including Git Worktrees and DDEV, DDEV Office Hours, What's New in DDEV, [New `ddev share` features](share-providers.md)), Xdebug in DDEV, and [Using coder.ddev.com (DDEV in the Cloud)](coder-ddev-com-announcement.md).
 
 <!-- TODO: Mentored Contribution -->
 
