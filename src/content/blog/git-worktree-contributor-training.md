@@ -27,6 +27,8 @@ Here's our March 26, 2026 [Contributor Training](/blog/category/training) on usi
 
 The slides are available at [rfay.github.io/git-worktree-ddev](https://rfay.github.io/git-worktree-ddev/).
 
+See also the [presentation at Florida Drupal Camp](https://www.fldrupal.camp/session/use-git-worktree-ddev-run-multiple-versions-same-site).
+
 ## The Problem: Multiple Versions of a Project
 
 When you need to work on several branches of a project simultaneously—say, a feature branch and a hotfix branch—the naive approach is to clone the repository twice:
