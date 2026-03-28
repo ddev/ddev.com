@@ -33,7 +33,9 @@ If you're interested in contributing more deeply, the [contributor training sess
 
 ## DrupalCon Chicago and Florida Drupal Camp
 
-DrupalCon Chicago was a highlight of the month. Birds-of-a-Feather (BoF) sessions are informal, attendee-organized meetups at DrupalCon where people with a common interest gather to talk — no slides required. I led several DDEV BoFs, including Git Worktrees and DDEV, DDEV Office Hours, What's New in DDEV, [New `ddev share` features](share-providers.md)), Xdebug in DDEV, and [Using coder.ddev.com (DDEV in the Cloud)](coder-ddev-com-announcement.md).
+DrupalCon Chicago was a highlight of the month. Birds-of-a-Feather (BoF) sessions are informal, attendee-organized meetups at DrupalCon where people with a common interest gather to talk — no slides required. I led several DDEV BoFs, including Git Worktrees and DDEV, DDEV Office Hours, What's New in DDEV, [New `ddev share` features](share-providers.md)), Xdebug in DDEV, and [Using coder.ddev.com (DDEV in the Cloud)](coder-ddev-com-announcement.md). 
+
+<!-- TODO: Mentored Contribution -->
 
 If you attended and have thoughts (or are just interested) join us to discuss in [Discord](/s/discord).
 
