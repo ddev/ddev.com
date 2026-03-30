@@ -55,7 +55,6 @@ const promptSymbol = promptSymbols[type];
 const stripAndMarkPromptLines = (code: string, symbol: string) => {
   // Escape special regex characters like $
   let searchSymbol = (symbol === '$') ? '\\$' : symbol;
-  const search = new RegExp(`^${searchSymbol} `, "gm")
 
   const lines = code.split('\n');
   const promptLineIndices = new Set<number>();
@@ -102,17 +101,15 @@ const addPromptSymbol = (symbol: string, lineIndices: Set<number>): ShikiTransfo
   }
 }
 
-// Custom transformer to modify copy button's data-code attribute
+// Custom transformer to modify copy button behavior
 const customizeCopyButton = (text: string): ShikiTransformer => {
+  const escapedText = text.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/\n/g, '&#10;');
   return {
     name: 'customize-copy-button',
     postprocess(html) {
-      // Replace the data-code attribute value in the generated HTML
-      // This runs after all transformations, so the button is already generated
-      return html.replace(
-        /data-code="[^"]*"/,
-        `data-code="${text.replace(/"/g, '&quot;')}"`
-      );
+      return html
+        .replace(/class="copy"/, `class="copy" data-copy="${escapedText}"`)
+        .replace(/onclick="[^"]*"/, `onclick="navigator.clipboard.writeText(this.dataset.copy);this.classList.add('copied');setTimeout(()=>this.classList.remove('copied'),3000)"`);
     }
   }
 }
