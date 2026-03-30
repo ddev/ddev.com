@@ -29,7 +29,7 @@ If you're interested in contributing more deeply and moving toward a maintainer 
 ## What's New
 
 - **coder.ddev.com Launched** → Free, experimental cloud-based DDEV workspaces powered by Coder. Start a Drupal contribution environment in under 30 seconds with full VS Code, Xdebug, and CLI support. [Read the announcement↗](coder-ddev-com-announcement.md). Some folks used this for contributions at the DrupalCon Chicago Contribution Day. I've been using it on the train on the way home.
-- **New TUI Dashboard** → DDEV now includes an interactive terminal dashboard for managing projects, checking service status, and running common commands without leaving the terminal. Watch a [Two-minute Screenshare](https://www.youtube.com/watch?v=bdfpeq74ewo&t=7s). Inspired by community member [Olivier Dobberkau's](https://github.com/dkd-dobberkau) `ddev-mngr` add-on.
+- **New TUI Dashboard** → DDEV now includes an interactive terminal dashboard for managing projects, checking service status, and running common commands without leaving the terminal. Watch a [Two-minute Screenshare](https://www.youtube.com/watch?v=bdfpeq74ewo). Inspired by community member [Olivier Dobberkau's](https://github.com/dkd-dobberkau) `ddev-mngr` add-on.
 - **`git worktree` Contributor Training** → Our March 26 session covered using `git worktree` with DDEV to run multiple versions of the same project simultaneously. [Watch the recording and read the post↗](git-worktree-contributor-training.md)
 
 ## DrupalCon Chicago and Florida Drupal Camp
