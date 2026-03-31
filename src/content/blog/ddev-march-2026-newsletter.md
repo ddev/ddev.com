@@ -4,8 +4,8 @@ pubDate: 2026-03-27
 summary: "Maintainership and AI, DrupalCon Chicago recap, new terminal dashboard, coder.ddev.com launch, sponsorship at 77% of goal, and community highlights from around the web."
 author: Randy Fay
 featureImage:
-  src: /img/blog/2026/03/ddev-march-2026.png
-  alt: DDEV March 2026 Newsletter
+  src: /img/blog/2026/03/contribution-mentors-drupalcon-chicago.jpg
+  alt: Mentors for contributors at DrupalCon Chicago
 categories:
   - Newsletters
 ---
@@ -34,7 +34,7 @@ If you're interested in contributing more deeply and moving toward a maintainer 
 
 ## DrupalCon Chicago and Florida Drupal Camp
 
-DrupalCon Chicago was a highlight of the month. Birds-of-a-Feather (BoF) sessions are informal, attendee-organized meetups at DrupalCon where people with a common interest gather to talk — no slides required. I led several DDEV BoFs, including Git Worktrees and DDEV, DDEV Office Hours, What's New in DDEV, [New `ddev share` features](share-providers.md)), Xdebug in DDEV, and [Using coder.ddev.com (DDEV in the Cloud)](coder-ddev-com-announcement.md).
+DrupalCon Chicago was a highlight of the month. Birds-of-a-Feather (BoF) sessions are informal, attendee-organized meetups at DrupalCon where people with a common interest gather to talk — no slides required. I led several DDEV BoFs, including Git Worktrees and DDEV, DDEV Office Hours, What's New in DDEV, [New `ddev share` features](share-providers.md), Xdebug in DDEV, and [Using coder.ddev.com (DDEV in the Cloud)](coder-ddev-com-announcement.md).
 
 <!-- TODO: Mentored Contribution -->
 
@@ -72,7 +72,7 @@ Two pieces this month featuring DDEV maintainer Stas Zhuk:
 
 ---
 
-## DDEV Training Continues
+## Upcoming Training
 
 Join us for upcoming training sessions for contributors and users.
 
@@ -81,9 +81,7 @@ Join us for upcoming training sessions for contributors and users.
   [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Creating%2C%20maintaining%20and%20testing%20add-ons&dates=20260423T140000Z/20260423T150000Z&details=Join%20the%20DDEV%20training%20session%20via%20Zoom.%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online&trp=true) •
   [Download .ics](/files/ics/ddev-2026-04-23.ics)
 
-Zoom Info:
-Link: [Join Zoom Meeting](https://us02web.zoom.us/j/7315692237?pwd=RHR6NUkwb0g5WXIzS2NOcXRucCthZz09)
-Passcode: 12345
+[Join Zoom Meeting](https://us02web.zoom.us/j/7315692237?pwd=RHR6NUkwb0g5WXIzS2NOcXRucCthZz09) — Meeting ID: 731 569 2237 — Passcode: 12345
 
 ---
 
