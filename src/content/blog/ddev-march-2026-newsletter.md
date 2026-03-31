@@ -42,10 +42,9 @@ DrupalCon Chicago was a highlight of the month. Birds-of-a-Feather (BoF) session
 
 If you attended and have thoughts (or are just interested) join us to discuss in [Discord](/s/discord).
 
- ## Florida Drupal Camp
+## Florida Drupal Camp
 
 Florida Drupalcamp in February was also a good time — see the [`git worktree` session recording](https://www.fldrupal.camp/session/use-git-worktree-ddev-run-multiple-versions-same-site) was well-received. Thanks to everyone who came out and shared their DDEV experiences.
-
 
 ## Governance
 
