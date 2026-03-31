@@ -10,17 +10,19 @@ categories:
   - Newsletters
 ---
 
-Whew, I think I just barely made it for March!
+Just under the deadline for the March newsletter!
 
 I spent the last week at DrupalCon Chicago, seeing lots of old friends and having lots of discussions about the impact of AI on open-source developers everywhere.
 
-## Scaling Maintainership
+## Scaling Maintainership for DDEV (and everywhere)
 
-I'm noticing that because of AI it's getting easier for our lovely community to contribute to DDEV. But I'm also seeing that our PR queue is getting longer, and Stas and I are feeling more pressure from it, because we sure don't like to frustrate contributors. In many cases, we have been getting good quality and nontrivial contributions, and contributions that have been prioritized. But they may not be exactly the things that we were hoping to put our own energy toward.
+I'm noticing that because of AI it's getting easier for our lovely community to contribute to DDEV. But I'm also seeing that our PR queue is getting longer, and Stas and I are feeling more pressure from it, because we sure don't like to frustrate contributors. In many cases, we have been getting good quality and nontrivial contributions, and contributions that have been prioritized. But they may not be exactly the things that we were hoping to put our own energy toward. And a couple of them are difficult to review because they touch low-level areas.
+
+And I even notice that I am tempted to create too many new PRs because it's easy. On the train back from Chicago (30 hours) I couldn't help myself and did two new diagnostic commands for DDEV (using Claude Code). It's all well and good, but that's two more PRs that I have to study carefully, manually test on multiple platforms, and that Stas has to look at and test.
 
 We'd love to have your comments and feedback about this cycle. Here are some thoughts that came up in various conversations:
 
-- We need to keep trying to turn contributors into maintainers. AI doesn't really do that. It helps people toss things in, or figure out how to scratch an itch, but it doesn't typically help with overall maintenance activities. If we can get more community members to build their skills in reviewing other PRs (both looking at code and manually testing) and giving their feedback about issues and priorities, maybe that's a good path.
+- We need to keep trying to turn contributors into maintainers. AI doesn't really do that. It helps people create things, or figure out how to scratch an itch, but it doesn't typically help with overall maintenance activities. If we can get more community members to build their skills in reviewing other PRs (both looking at code and manually testing) and giving their feedback about issues and priorities, maybe that's a good path.
 - We probably need to add a little more conversation to contributions _before_ people spend time on them. I opened an [issue for discussion](https://github.com/ddev/ddev/issues/8255) about changing to requiring an issue (and conversation) before PR creation. I'd love your comments.
 - Guarding against burnout is critical for our project, especially for Stas and me. We want to be smart about this and properly manage all of our resources for the long term.
 
@@ -32,7 +34,7 @@ If you're interested in contributing more deeply and moving toward a maintainer 
 - **New TUI Dashboard** → DDEV now includes an interactive terminal dashboard for managing projects, checking service status, and running common commands without leaving the terminal. Watch a [Two-minute Screenshare](https://www.youtube.com/watch?v=bdfpeq74ewo). Inspired by community member [Olivier Dobberkau's](https://github.com/dkd-dobberkau) `ddev-mngr` add-on.
 - **`git worktree` Contributor Training** → Our March 26 session covered using `git worktree` with DDEV to run multiple versions of the same project simultaneously. [Watch the recording and read the post↗](git-worktree-contributor-training.md)
 
-## DrupalCon Chicago and Florida Drupal Camp
+## DrupalCon Chicago
 
 DrupalCon Chicago was a highlight of the month. Birds-of-a-Feather (BoF) sessions are informal, attendee-organized meetups at DrupalCon where people with a common interest gather to talk — no slides required. I led several DDEV BoFs, including Git Worktrees and DDEV, DDEV Office Hours, What's New in DDEV, [New `ddev share` features](share-providers.md), Xdebug in DDEV, and [Using coder.ddev.com (DDEV in the Cloud)](coder-ddev-com-announcement.md).
 
@@ -40,7 +42,10 @@ DrupalCon Chicago was a highlight of the month. Birds-of-a-Feather (BoF) session
 
 If you attended and have thoughts (or are just interested) join us to discuss in [Discord](/s/discord).
 
-Florida Drupalcamp in February was also a good time — the `git worktree` session was well-received. Thanks to everyone who came out and shared their DDEV experiences.
+ ## Florida Drupal Camp
+
+Florida Drupalcamp in February was also a good time — see the [`git worktree` session recording](https://www.fldrupal.camp/session/use-git-worktree-ddev-run-multiple-versions-same-site) was well-received. Thanks to everyone who came out and shared their DDEV experiences.
+
 
 ## Governance
 
@@ -52,7 +57,7 @@ The next meeting is **May 6, 2026 at 8:00 AM US Mountain / 10:00 AM US Eastern /
 ## Community Highlights
 
 - **ddev-drupal-code-quality** → [UltraBob](https://github.com/UltraBob) published a DDEV add-on for Drupal code quality tooling. [View on GitHub↗](https://github.com/UltraBob/ddev-drupal-code-quality)
-- **ddev-joomla** → René Kreijveld published a DDEV add-on for Joomla development. [View on GitHub↗](https://github.com/renekreijveld/ddev-joomla)
+- **ddev-joomla** → René Kreijveld published a DDEV add-on for Joomla development. [View on GitHub↗](https://github.com/renekreijveld/ddev-joomla). He also has a PR going for explicit Joomla support in DDEV core.
 - **ddev-drupal-contrib** → The `ddev-drupal-contrib` add-on continues to be a go-to for Drupal contrib module development. [View on GitHub↗](https://github.com/ddev/ddev-drupal-contrib)
 
 ## Interviews and Articles About Stas
@@ -91,7 +96,7 @@ Sponsorship is at **77% of goal** — thank you to everyone who has contributed!
 
 **February 2026**: ~$8,422/month (70% of goal)
 
-**March 2026**: ~$9,284/month (77% of goal) - Great progress, thank you!
+**March 2026**: ~$9,294/month (77% of goal) - Great progress, thank you!
 
 If DDEV has helped your team, consider sponsoring. Whether you're an individual developer, an agency, or an organization, your contribution makes a difference. → [Become a sponsor↗](https://github.com/sponsors/ddev)
 
