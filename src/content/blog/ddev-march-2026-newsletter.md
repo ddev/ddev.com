@@ -1,6 +1,6 @@
 ---
 title: "DDEV March 2026: Maintainership and AI, DrupalCon, New TUI, coder.ddev.com, and 77% of Goal"
-pubDate: 2026-03-27
+pubDate: 2026-03-31
 summary: "Maintainership and AI, DrupalCon Chicago recap, new terminal dashboard, coder.ddev.com launch, sponsorship at 77% of goal, and community highlights from around the web."
 author: Randy Fay
 featureImage:
