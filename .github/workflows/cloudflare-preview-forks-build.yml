@@ -1,0 +1,96 @@
+# Build job for fork PRs. Uses pull_request (NOT pull_request_target) so it runs
+# with no access to repository secrets. Untrusted fork code is safe to execute here.
+# The deploy job in cloudflare-preview-forks-deploy.yml picks up the artifact.
+name: Cloudflare Pages preview (forked PRs) - Build
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+
+env:
+  NODE_VERSION: 24
+
+concurrency:
+  group: fork-preview-build-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build site (no secrets)
+    if: ${{ github.event.pull_request.head.repo.fork == true }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout PR code (from fork)
+        uses: actions/checkout@v6
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          check-latest: true
+
+      - name: Content validation and security checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "Running content validation and security checks..."
+
+          # Check for potentially malicious files
+          if find . -name "*.php" -o -name "*.exe" -o -name "*.sh" -path "*/src/content/*" | grep -q .; then
+            echo "::warning::Executable files found in content directory. Manual review recommended."
+          fi
+
+          # Validate blog post frontmatter structure
+          if [ -d "src/content/blog" ]; then
+            echo "Validating blog post structure..."
+            for file in src/content/blog/*.md; do
+              if [ -f "$file" ]; then
+                if ! grep -q "^title:" "$file" || ! grep -q "^pubDate:" "$file" || ! grep -q "^author:" "$file"; then
+                  echo "::error::Blog post $file missing required frontmatter (title, pubDate, author)"
+                  exit 1
+                fi
+                if grep -qi "javascript:" "$file" || grep -qi "<script" "$file"; then
+                  echo "::warning::Potentially unsafe content detected in $file. Manual review recommended."
+                fi
+              fi
+            done
+          fi
+
+          # Check for oversized images
+          if find public -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" 2>/dev/null | xargs -I {} sh -c 'size=$(stat -c%s "{}"); if [ $size -gt 2097152 ]; then echo "::warning::Large image detected: {} ($(($size/1024))KB)"; fi' 2>/dev/null || true; then
+            echo "Image size check completed"
+          fi
+
+          echo "Content validation completed"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run textlint || { printf "Run 'ddev textlint' locally to fix it.\n\n"; exit 1; }
+
+      - name: Prettier
+        run: npm run prettier || { printf "\nRun 'ddev prettier' locally to fix it.\n\n"; exit 1; }
+
+      - name: Build
+        run: npm run build
+
+      - name: Save PR number
+        run: echo "${{ github.event.pull_request.number }}" > dist/pr-number.txt
+
+      - name: Upload built artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: site-dist
+          path: dist
+          if-no-files-found: error
+          retention-days: 7
