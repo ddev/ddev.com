@@ -4,7 +4,7 @@ pubDate: 2026-04-07
 summary: "A roundup of recent DDEV improvements relevant to TYPO3 developers: improved ddev share with TYPO3 hooks, a new TUI dashboard, better Windows installation, new diagnostic utilities, and rootless container support."
 author: Randy Fay
 featureImage:
-  src: /img/blog/2026/03/ddev-typo3.png
+  src: /img/blog/2026/04/ddev-dashboard-tui-typo3.png
   alt: DDEV and TYPO3 logos
 categories:
   - Announcements
