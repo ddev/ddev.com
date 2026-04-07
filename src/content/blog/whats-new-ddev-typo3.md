@@ -66,7 +66,7 @@ The [Podman and Docker Rootless blog post](https://ddev.com/blog/podman-and-dock
 In addition to the items above, [DDEV v1.25](https://ddev.com/blog/release-v1250) has some important changes that don't affect many people, but are important to note:
 
 - PHP 8.4 is the default for new projects.
-- Node.JS 24 is the default Node version
+- Node.js 24 is the default Node version
 - MariaDB 11.8 is the default database version for new projects.
 - Debian 13 Trixie is now the base image for the key ddev/ddev-webserver Docker image. This has no impact for basic projects, but projects with extra Debian package installations (`webimage_extra_packages`) may be affected. We're happy to help.
 - `ddev nvm` command was removed, but you can add it back with the [`ddev-nvm` add-on](https://github.com/ddev/ddev-nvm) if you like `nvm`.
@@ -74,4 +74,3 @@ In addition to the items above, [DDEV v1.25](https://ddev.com/blog/release-v1250
 ## Thanks for your support
 
 We've appreciated our collaboration with the TYPO3 project for nearly a decade now. Thanks for helping to maintain the TYPO3 support and for your [financial support](https://github.com/sponsors/ddev) of the DDEV project.
-
