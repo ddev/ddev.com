@@ -23,7 +23,13 @@ const title = `Search`
   const response = await fetch(indexPath)
   const searchData = await response.json()
   const searchIndex = loadIndex(searchData, {
+    fields: ["title", "heading", "text"],
     storeFields: ["title", "heading", "pubDate", "modifiedDate"],
+    // Keep hyphenated words as single tokens, then strip the hyphen so
+    // "add-on" and "addon" both resolve to the same indexed term.
+    tokenize: (string: string) =>
+      string.match(/[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*/g) || [],
+    processTerm: (term: string) => term.toLowerCase().replace(/-/g, ""),
   })
 
   let selectedResultIndex: number = -1
