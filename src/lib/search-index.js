@@ -118,7 +118,13 @@ export default function searchIndex(config) {
 
         // Generate the index in the format we need
         let index = await getSearchIndex(items, {
+          fields: ["title", "heading", "text"],
           storeFields: ["title", "heading", "pubDate", "modifiedDate"],
+          // Keep hyphenated words as single tokens, then strip the hyphen so
+          // "add-on" and "addon" both resolve to the same indexed term.
+          tokenize: (string) =>
+            string.match(/[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*/g) || [],
+          processTerm: (term) => term.toLowerCase().replace(/-/g, ""),
         })
 
         // Write the index contents to a file
