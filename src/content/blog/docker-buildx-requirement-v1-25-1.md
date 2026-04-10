@@ -100,7 +100,10 @@ The official Docker repositories provide current versions of all Docker componen
 
 ### NixOS
 
-NixOS users should track [DDEV issue #8183](https://github.com/ddev/ddev/issues/8183). A [NixOS patch](https://github.com/NixOS/nixpkgs/pull/494539) is available - once merged, you'll get the fix through normal system updates without manual intervention.
+NixOS has already patched the `ddev` package. History:
+
+- [DDEV issue #8183](https://github.com/ddev/ddev/issues/8183)
+- [NixOS patch](https://github.com/NixOS/nixpkgs/pull/494539)
 
 ### Generic Solution
 
