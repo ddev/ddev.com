@@ -136,7 +136,7 @@ Alternatively, place the binary anywhere and configure Docker to find it by addi
 
 We're working to make this smoother in upcoming releases:
 
-**DDEV v1.25.3** (upcoming) will bundle a private Docker Buildx that DDEV uses exclusively. This eliminates the system configuration requirement for most users. I'm working on this in [PR #8198](https://github.com/ddev/ddev/pull/8198).
+**DDEV v1.25.3** will bundle a private Docker Buildx that DDEV uses exclusively. This eliminates the system configuration requirement for most users. I'm working on this in [PR #8234](https://github.com/ddev/ddev/pull/8234).
 
 **Future releases** will transition from our private Docker Compose binary to the Docker Compose SDK. This gives DDEV more control over upstream dependencies and reduces configuration complexity.
 
