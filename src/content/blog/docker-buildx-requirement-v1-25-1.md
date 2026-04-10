@@ -1,6 +1,8 @@
 ---
 title: "DDEV v1.25.1 Docker Buildx Requirement"
 pubDate: 2026-03-05
+modifiedDate: 2026-02-17
+modifiedComment: Move Buildx update to v1.25.3 to get more testing time.
 summary: Why DDEV v1.25.1 requires Docker Buildx, who's affected, and how to resolve configuration issues.
 author: Stas Zhuk
 featureImage:
@@ -10,7 +12,7 @@ categories:
   - DevOps
 ---
 
-DDEV v1.25.1 introduced validation that checks for Docker Buildx, and you may encounter an error when running `ddev start` if your system isn't configured correctly. This post explains why this dependency exists, who's affected, and how to resolve it. Note that DDEV v1.25.2 will bundle a private Docker Buildx to eliminate this configuration requirement.
+DDEV v1.25.1 introduced validation that checks for Docker Buildx, and you may encounter an error when running `ddev start` if your system isn't configured correctly. This post explains why this dependency exists, who's affected, and how to resolve it. Note that DDEV v1.25.3 will bundle a private Docker Buildx to eliminate this configuration requirement.
 
 ## Table of Contents
 
@@ -102,7 +104,7 @@ NixOS users should track [DDEV issue #8183](https://github.com/ddev/ddev/issues/
 
 ### Generic Solution
 
-If the platform-specific solutions above don't work, you can manually place the `docker-buildx` binary in one of Docker's expected plugin directories:
+If the platform-specific solutions above don't work, you can manually place the `docker-buildx` [binary](https://github.com/docker/buildx#installing) in one of Docker's expected plugin directories:
 
 **Linux/macOS:**
 
@@ -131,7 +133,7 @@ Alternatively, place the binary anywhere and configure Docker to find it by addi
 
 We're working to make this smoother in upcoming releases:
 
-**DDEV v1.25.2** (upcoming) will likely bundle a private Docker Buildx that DDEV uses exclusively. This eliminates the system configuration requirement for most users. I'm working on this in [PR #8198](https://github.com/ddev/ddev/pull/8198).
+**DDEV v1.25.3** (upcoming) will bundle a private Docker Buildx that DDEV uses exclusively. This eliminates the system configuration requirement for most users. I'm working on this in [PR #8198](https://github.com/ddev/ddev/pull/8198).
 
 **Future releases** will transition from our private Docker Compose binary to the Docker Compose SDK. This gives DDEV more control over upstream dependencies and reduces configuration complexity.
 
