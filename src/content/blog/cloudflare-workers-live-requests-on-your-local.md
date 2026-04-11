@@ -1,22 +1,22 @@
 ---
-title: "Using cloudflare workers to tunnel matching traffic into your local"
+title: "Using Cloudflare Workers to tunnel matching traffic into your local"
 pubDate: 2026-04-07
 summary: "A Cloudflare Worker that selectively routes your production traffic to a local DDEV tunnel — so you can set breakpoints on requests you can't easily reproduce anywhere else."
 author: Ariel Barreiro
 featureImage:
   src: /img/blog/2026/04/cloudflare-worker-ddev-cover.png
-  alt: A graphic connecting traffic handled by a cloudflare worker sending some traffic to your tunnel.
+  alt: A graphic connecting traffic handled by a Cloudflare Worker sending some traffic to your tunnel.
 categories:
   - DevOps
 ---
 
 ## Why Would You Ever Do This?
 
-You probalby wouldn't ever. I needed it for a SAML integration I was working on. The IdP was locked to the production URL, and every small tweak meant a full deploy cycle just to see if it worked. I wanted to iterate fast — and for some edge cases with Xdebug — without touching production. So I built a small Cloudflare Worker that quietly routes my browser session to my local DDEV environment while everyone else keeps hitting the real server.
+You probably wouldn't ever. I needed it for a SAML integration I was working on. The IdP was locked to the production URL, and every small tweak meant a full deploy cycle just to see if it worked. I wanted to iterate fast — and for some edge cases with Xdebug — without touching production. So I built a small Cloudflare Worker that quietly routes my browser session to my local DDEV environment while everyone else keeps hitting the real server.
 
 ## How It Works
 
-The key insight is that this only works if your domain is already **proxied through Cloudflare** (the orange cloud ☁️ in your DNS settings). When that's the case, every request passes through Cloudflare's edge before reaching your origin, which means you can intercept and reroute it with a Worker.
+This only works if your domain is already **proxied through Cloudflare** (the orange cloud ☁️ in your DNS settings). When that's the case, every request passes through Cloudflare's edge before reaching your origin, which means you can intercept and reroute it with a Worker.
 
 The Worker adds a simple opt-in toggle: you visit your production URL with `?cf_local_debug=1`, and the Worker checks that the request comes from your IP. If it does, it sets a short-lived cookie and redirects you back. From that point on, as long as that cookie is present _and_ the request comes from your IP, the Worker transparently proxies all traffic to your local DDEV tunnel instead of the normal origin. Everyone else continues hitting production as if nothing happened.
 
@@ -28,9 +28,9 @@ Here's the full flow:
 2. You run `ddev share --provider=cloudflared` (or any other share provider) to expose your local environment via a Cloudflare Tunnel URL (e.g. `https://foo-bar.trycloudflare.com`).
 3. You set that URL as the `DEBUG_ORIGIN` secret on the Worker, along with your current public IP as `DEBUG_IP`.
 4. You visit `https://myapp.example.com/?cf_local_debug=1`.
-5. The Worker sets the debug cookie and redirects you back, loading your local ddev instead.
+5. The Worker sets the debug cookie and redirects you to the clean URL.
 6. Subsequent requests from your browser go to your local DDEV — Xdebug, local database, local code and all.
-7. When you're done, you can visit `?cf_local_debug=0` to clear the cookie and return to normal (there's a short validity on the cookie as well).
+7. When you're done, visit `?cf_local_debug=0` to clear the cookie, or let it expire on its own.
 
 ## Setting Up the Worker
 
@@ -185,11 +185,11 @@ export default {
 }
 ```
 
-A few deliberate decisions worth noting:
+A few design decisions worth noting:
 
 - **Image passthrough** — image requests skip the worker entirely to avoid unnecessary tunnel traffic for static assets.
 - **IP lock** — the debug cookie can only be set from `DEBUG_IP`, so no other visitor can accidentally activate it.
-- **`x-forwarded-host` is omitted** — Cloudflare Tunnel (and ngrok) might drop connections when this header doesn't match the tunnel's SNI hostname, so it's left out intentionally.
+- **`x-forwarded-host` is omitted** — Cloudflare Tunnel (and ngrok) may drop connections when this header doesn't match the tunnel's SNI hostname.
 - **`redirect: "manual"`** — redirects from the tunnel are forwarded as-is rather than followed internally, which matters for things like SAML assertion callbacks.
 
 **Deploy**
@@ -277,6 +277,6 @@ Set a breakpoint in your IDE, trigger the request (or let the IdP do it for you)
 
 This setup scratches a very specific itch. No staging deploys, no IdP reconfiguration, no "works on my machine" guesswork. Just your real production URL, your local DDEV environment, and Xdebug ready to catch whatever comes in.
 
-The code above is working sample code — it does exactly what I needed — but it's intentionally simple and easy to adapt to different workflows, cookie strategies, or tunnel providers.
+The code is intentionally simple and easy to adapt to different workflows, cookie strategies, or tunnel providers.
 
 The full worker source is at [hanoii/cloudflare-worker-ddev](https://github.com/hanoii/cloudflare-worker-ddev).
