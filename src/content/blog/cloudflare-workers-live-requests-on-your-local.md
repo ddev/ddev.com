@@ -225,8 +225,6 @@ npx wrangler secret put DEBUG_MAX_AGE
 
 In the Cloudflare dashboard, go to **Workers & Pages → your Worker → Settings → Domains & Routes** and add `myapp.example.com/*`.
 
-<!-- SCREENSHOT: Cloudflare dashboard showing the Worker route attached to the domain -->
-
 > **Important:** This only works if your DNS record is set to **Proxied** (orange cloud) in Cloudflare. If it's DNS-only, the Worker never sees the traffic.
 
 ## Starting the Tunnel
@@ -247,8 +245,6 @@ npx wrangler secret put DEBUG_ORIGIN
 
 > **Note:** The tunnel URL is ephemeral — it changes every time you run `ddev share`. Remember to update `DEBUG_ORIGIN` each session.
 
-<!-- SCREENSHOT: terminal output of `ddev share --provider=cloudflared` showing the tunnel URL -->
-
 ## Activating Debug Mode
 
 With the Worker deployed, the route configured, and the tunnel running, visit your production URL with the toggle parameter:
@@ -259,8 +255,6 @@ https://myapp.example.com/?cf_local_debug=1
 
 The Worker checks your IP against `DEBUG_IP`, sets the cookie, and redirects you to the clean URL. Your browser is now transparently receiving responses from your local DDEV environment.
 
-<!-- SCREENSHOT: side-by-side or before/after of production site title vs. local DDEV site title at the same URL -->
-
 ## Debugging with Xdebug
 
 Since traffic is now being served from your local DDEV, Xdebug works exactly as it normally would:
@@ -270,8 +264,6 @@ ddev xdebug on
 ```
 
 Set a breakpoint in your IDE, trigger the request (or let the IdP do it for you), and the debugger will pause execution right where you need it — even though the URL in the browser says `myapp.example.com`.
-
-<!-- SCREENSHOT: IDE (PhpStorm or VS Code) with an Xdebug breakpoint hit on a request that came through the production URL -->
 
 ## Wrapping Up
 
