@@ -69,7 +69,7 @@ jobs:
 
       - name: Comment preview URL
         if: always()
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         env:
           DEPLOYMENT_URL: ${{ steps.pages.outputs.deployment-url }}
           BRANCH_URL: ${{ steps.pages.outputs.pages-deployment-alias-url }}
@@ -117,7 +117,7 @@ jobs:
     permissions:
       pull-requests: write
     steps:
-      - uses: actions/github-script@v8
+      - uses: actions/github-script@v9
         with:
           script: |
             await github.rest.issues.createComment({
