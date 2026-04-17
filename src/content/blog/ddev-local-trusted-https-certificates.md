@@ -1,7 +1,7 @@
 ---
 title: "DDEV Trusted HTTPS Certificates"
 pubDate: 2019-05-23
-modifiedDate: 2026-03-28
+modifiedDate: 2026-04-17
 modifiedComment: Added WSL2 two-computer model explanation, CAROOT/WSLENV propagation, Firefox variant trust store caveats, and ddev utility tls-diagnose reference.
 summary: The importance of local HTTPS, and how to take advantage of it with DDEV.
 author: Randy Fay
@@ -21,7 +21,7 @@ With [DDEV](http://github.com/ddev/ddev) you can use the HTTPS version of your p
 
 You don't have to read or understand the rest of this :) There's a one-time installation of trusted HTTPS for DDEV:
 
-```
+```bash
 mkcert -install && ddev poweroff && ddev start
 ```
 
@@ -146,9 +146,9 @@ mkcert -CAROOT
 
 ### Firefox on Windows
 
-Firefox on Windows is a special case. Unlike Chrome and Edge, Firefox does **not** use the Windows system certificate store. It maintains its own trust store, so even a correctly configured CAROOT won't automatically make Firefox trust DDEV certificates.
+Modern Firefox on Windows can use the Windows system certificate store automatically. If you see certificate errors in Firefox on Windows, go to **Settings → Privacy & Security** and enable **"Allow Firefox to automatically trust third-party root certificates you install"**. This is usually all that is needed.
 
-To use DDEV with Firefox on Windows, you must manually import the CA:
+If that setting is already enabled and Firefox still shows errors, import the CA manually:
 
 1. Find the CA file: it's `rootCA.pem` inside the directory shown by `mkcert -CAROOT` (translated to a Windows path, e.g., `C:\Users\you\AppData\Local\mkcert\rootCA.pem`)
 2. In Firefox: **Settings → Privacy & Security → View Certificates → Authorities tab → Import**
@@ -156,32 +156,47 @@ To use DDEV with Firefox on Windows, you must manually import the CA:
 
 Firefox Nightly, Developer Edition, and ESR each maintain a **separate** trust store from standard Firefox. If you use any of these, repeat the import for each one.
 
-### Diagnosing WSL2 Certificate Problems
+### Diagnosing Certificate Problems
 
-DDEV v1.25.2 and later include a built-in diagnostic tool that checks every part of the certificate trust chain:
+DDEV v1.25.2 and later include a built-in diagnostic tool that checks every part of the certificate trust chain. It works on all platforms, not just WSL2:
 
 ```bash
+# Run from any directory for mkcert, trust store, and cert file checks
 ddev utility tls-diagnose
+
+# Run from a running project directory to also check live HTTPS connectivity
+cd my-project && ddev start && ddev utility tls-diagnose
 ```
 
 It checks:
 
 - `mkcert` installation and `CAROOT` path
-- Whether `CAROOT` points to the Windows filesystem
-- Whether `WSLENV` is configured correctly
-- Whether the mkcert CA is in the Windows certificate store
-- Whether your project certificates are valid and signed by the current CA
-- Whether Chrome/Edge would actually trust a live HTTPS request (via PowerShell `Invoke-WebRequest`)
+- OS trust store installation
+- Certificate file validity
+- Live HTTPS connectivity (when run from a running project directory)
 
-Run this first when something isn't working.
+On WSL2, it also checks:
+
+- Whether `CAROOT` points to the Windows filesystem
+- Whether `CAROOT` is in `WSLENV`
+- Whether the mkcert CA is in the Windows certificate store
+- Whether the Windows-side and WSL2-side CA fingerprints match
+
+Try this first when something isn't working.
 
 ## Troubleshooting
 
 ### Browsers Still Show Warnings
 
-Some browsers don't automatically pick up the system trust store. Firefox, in particular, maintains its own certificate store. Run `mkcert -install` which should handle Firefox, but if issues persist, see the [browser configuration documentation](https://docs.ddev.com/en/stable/users/install/configuring-browsers/).
+Run `ddev utility tls-diagnose` first — it identifies the specific problem and prints actionable fix instructions. (This was new in DDEV v1.25.2.)
 
-**WSL2 users**: run `ddev utility tls-diagnose` — it will tell you exactly what's wrong and how to fix it.
+Some browsers don't automatically pick up the system trust store. Firefox, in particular, sometimes maintains its own certificate store.
+
+- **Firefox on Windows**: enable **"Allow Firefox to automatically trust third-party root certificates you install"** in Settings → Privacy & Security. If that doesn't resolve it, see the [Firefox on Windows](#firefox-on-windows) section above for manual import steps.
+- **Firefox on Linux**: relies on `certutil` (from `libnss3-tools`) for `mkcert -install` to register the CA. Install it with `sudo apt install libnss3-tools`, then run `mkcert -install` again.
+- **Firefox Nightly, Developer Edition, ESR**: may maintain a separate trust store and need the manual CA import treatment.
+
+If issues persist, see the [browser configuration documentation](https://docs.ddev.com/en/stable/users/install/configuring-browsers/).
 
 ### cURL Doesn't Trust Certificates
 
