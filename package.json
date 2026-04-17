@@ -54,7 +54,7 @@
     "remark-directive": "^4.0.0",
     "remark-gfm": "^4.0.1",
     "remark-toc": "^9.0.0",
-    "sanitize-html": "^2.11.0",
+    "sanitize-html": "^2.17.3",
     "sass": "^1.68.0",
     "sharp": "^0.34.5",
     "tailwindcss": "^4.0.3",
