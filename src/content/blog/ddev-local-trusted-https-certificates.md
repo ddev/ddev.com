@@ -17,6 +17,8 @@ Security is critical on the modern web, and all sites should ideally be develope
 
 With [DDEV](http://github.com/ddev/ddev) you can use the HTTPS version of your project in a browser that trusts your project, without clicking through security warnings.
 
+## Table of Contents
+
 ## TL;DR
 
 You don't have to read or understand the rest of this :) There's a one-time installation of trusted HTTPS for DDEV:
