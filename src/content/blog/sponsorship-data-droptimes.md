@@ -62,7 +62,7 @@ More than a year later, [The Drop Times](https://thedroptimes.com) is still feat
 
 ![The Drop Times Sponsorship Banner](/public/img/blog/2026/04/tdt_banner.png)
 
-Thank you for your support, and thank you for your encouragement to go down this path, which has resulted in better communication with our stakeholders and a sense of community around DDEV's future. 
+Thank you for your support, and thank you for your encouragement to go down this path. It has resulted in better communication with our stakeholders and a real sense of community around DDEV's future.
 
 ## Join in
 
