@@ -1,41 +1,31 @@
 import PhotoSwipeLightbox from "photoswipe/lightbox"
 import "photoswipe/dist/photoswipe.css"
 
-async function initPhotoSwipe() {
+function initPhotoSwipe() {
   const prose = document.querySelector(".prose")
-  if (!prose) return
+  if (prose) {
+    prose.querySelectorAll("img:not(a img):not(picture img)").forEach((img) => {
+      const width = img.naturalWidth || +img.getAttribute("width") || 1200
+      const height = img.naturalHeight || +img.getAttribute("height") || 800
+      const a = document.createElement("a")
+      a.href = img.src
+      a.className = "cursor-zoom-in"
+      a.dataset.pswpSrc = img.src
+      a.dataset.pswpWidth = String(width)
+      a.dataset.pswpHeight = String(height)
+      img.replaceWith(a)
+      a.appendChild(img)
+    })
+  }
 
-  const imgs = [...prose.querySelectorAll("img")].filter(
-    (img) => !img.closest("a") && !img.closest("picture")
-  )
-  if (!imgs.length) return
+  const galleries = document.querySelectorAll(".pswp-feature, .prose")
+  if (![...galleries].some((g) => g.querySelector("a[data-pswp-src]"))) return
 
-  await Promise.all(
-    imgs.map((img) =>
-      img.complete
-        ? Promise.resolve()
-        : new Promise((r) => {
-            img.onload = img.onerror = () => r()
-          })
-    )
-  )
-
-  imgs.forEach((img) => {
-    const a = document.createElement("a")
-    a.href = img.src
-    a.dataset.pswpSrc = img.src
-    a.dataset.pswpWidth = String(img.naturalWidth || 1200)
-    a.dataset.pswpHeight = String(img.naturalHeight || 800)
-    img.parentNode.insertBefore(a, img)
-    a.appendChild(img)
-  })
-
-  const lightbox = new PhotoSwipeLightbox({
-    gallery: ".prose",
+  new PhotoSwipeLightbox({
+    gallery: galleries,
     children: "a[data-pswp-src]",
     pswpModule: () => import("photoswipe"),
-  })
-  lightbox.init()
+  }).init()
 }
 
 initPhotoSwipe()
