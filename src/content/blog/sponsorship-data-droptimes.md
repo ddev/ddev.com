@@ -11,13 +11,6 @@ categories:
   - Announcements
 ---
 
-<!--
-TODO:
-* So much thanks to Anoop for the support and the inspiration
-* So much thanks to The Drop Times for continuing to promote
-* Banner: The Drop Times banner
--->
-
 Over a year ago, Anoop John of [TheDropTimes](https://www.thedroptimes.com/) sent a generous and useful message that sparked something bigger than any of us expected:
 
 > "Happy New Year. I was thinking we could put a live sponsorship tracker for DDEV on TDT. We should ask for people for $5 per month and we need 1000 people to hit the target right? What do you think?"
@@ -32,7 +25,7 @@ What we needed was a data feed that could be consumed anywhere, updated (mostly)
 
 ## The sponsorship-data Repository
 
-Anoop's request spurred the creation of a public repository: [ddev/sponsorship-data](https://github.com/ddev/sponsorship-data), aggregates sponsorship information from GitHub Sponsors and other sources, and is updated automatically. The data is available as structured JSON that any site or tool can consume.
+Anoop's request spurred the creation of a public repository: [ddev/sponsorship-data](https://github.com/ddev/sponsorship-data), which aggregates sponsorship information from GitHub Sponsors and other sources, and is updated automatically. The data is available as structured JSON that any site or tool can consume.
 
 ## Mark Conroy's Web Component
 
@@ -60,7 +53,7 @@ The path from Anoop's January email to live sponsor feeds across multiple proper
 
 More than a year later, [The Drop Times](https://thedroptimes.com) is still featuring the DDEV sponsorship banner!
 
-![The Drop Times Sponsorship Banner](/public/img/blog/2026/04/tdt_banner.png)
+![The Drop Times Sponsorship Banner](/img/blog/2026/04/tdt_banner.png)
 
 Thank you for your support, and thank you for your encouragement to go down this path. It has resulted in better communication with our stakeholders and a real sense of community around DDEV's future.
 
