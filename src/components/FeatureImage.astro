@@ -23,9 +23,18 @@ const resolveImage = async (path: string) => {
 }
 const resolvedSrc = await resolveImage(src)
 const resolvedSrcDark = srcDark ? await resolveImage(srcDark) : null
+
+function imgProps(resolved: ImageMetadata | string) {
+  if (typeof resolved !== 'object') return { pswpWidth: 1200, pswpHeight: 800, displayHeight: 500 }
+  const { width, height } = resolved
+  return { pswpWidth: width, pswpHeight: height, displayHeight: Math.round((900 * height) / width) }
+}
+
+const light = imgProps(resolvedSrc)
+const dark = resolvedSrcDark ? imgProps(resolvedSrcDark) : null
 ---
 
-<figure class={`w-full mx-auto mb-24 z-10 px-6 lg:px-0`}>
+<figure class={`pswp-feature w-full mx-auto mb-24 z-10 px-6 lg:px-0`}>
   {
     src.includes(".svg") ? (
       <>
@@ -34,25 +43,37 @@ const resolvedSrcDark = srcDark ? await resolveImage(srcDark) : null
       </>
     ) : (
       <>
-        <div class={`block rounded-lg overflow-hidden${shadow ? " shadow-xl" : ""}${resolvedSrcDark ? " dark:hidden" : ""}`}>
+        <a
+          href={src}
+          data-pswp-src={src}
+          data-pswp-width={String(light.pswpWidth)}
+          data-pswp-height={String(light.pswpHeight)}
+          class={`block rounded-lg overflow-hidden cursor-zoom-in${shadow ? " shadow-xl" : ""}${dark ? " dark:hidden" : ""}`}
+        >
           <Picture
             class="block w-full h-auto rounded-lg"
             src={resolvedSrc as any}
             alt={alt}
             width={900}
-            height={500}
+            height={light.displayHeight}
           />
-        </div>
-        {resolvedSrcDark && (
-          <div class={`hidden dark:block rounded-lg overflow-hidden${shadow ? " shadow-xl" : ""}`}>
+        </a>
+        {dark && (
+          <a
+            href={srcDark}
+            data-pswp-src={srcDark}
+            data-pswp-width={String(dark.pswpWidth)}
+            data-pswp-height={String(dark.pswpHeight)}
+            class={`hidden dark:block rounded-lg overflow-hidden cursor-zoom-in${shadow ? " shadow-xl" : ""}`}
+          >
             <Picture
               class="block w-full h-auto rounded-lg"
               src={resolvedSrcDark as any}
               alt={alt}
               width={900}
-              height={500}
+              height={dark.displayHeight}
             />
-          </div>
+          </a>
         )}
       </>
     )
