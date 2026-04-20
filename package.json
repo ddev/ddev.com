@@ -40,6 +40,7 @@
     "mdast-util-to-string": "^4.0.0",
     "nanoid": "^5.0.1",
     "octokit": "^5.0.5",
+    "photoswipe": "^5.4.4",
     "postcss-import": "^16.1.1",
     "postcss-nested": "^7.0.2",
     "react": "^19.2.4",

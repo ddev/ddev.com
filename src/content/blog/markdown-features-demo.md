@@ -346,13 +346,15 @@ Here's a workflow with embedded callouts:
 
 ## Images and Figures
 
-Images are automatically wrapped in semantic `<figure>` elements with captions generated from alt text:
-
-![Installation speed](/img/blog/2022/03/macos-m1-vs.-drupal-drush-install-seconds.png)
+Images are automatically wrapped in semantic `<figure>` elements with captions generated from alt text. Click any image to open it fullscreen.
 
 The alt text becomes the figure caption, improving both accessibility and visual presentation:
 
-![Weird installation graph](/img/blog/2022/03/macos-m1-vs.-drupal-drush-install-seconds.png)
+![macOS M1 vs x86 Drupal installation time in seconds](/img/blog/2022/03/macos-m1-vs.-drupal-drush-install-seconds.png)
+
+![DDEV 2025 roadmap and plans overview](/img/blog/2025/02/ddev-2025-plans.png)
+
+![DDEV add-on search demo animation](/img/blog/2025/03/ddev-addon-search.gif)
 
 :::tip[Image Best Practices]
 
