@@ -35,7 +35,11 @@ The component makes it trivial to embed a live sponsor list on any site—no bac
 
 ## Integration into DDEV Web Properties
 
-With the data feed and component in place, we integrated the live sponsor display into ddev.com. Since then it has been added to [addons.ddev.com](https://addons.ddev.com) and [docs.ddev.com](https://docs.ddev.com).
+With the data feed and component in place, we integrated the live sponsor display into ddev.com. Since then, it has been added to [addons.ddev.com](https://addons.ddev.com) and [docs.ddev.com](https://docs.ddev.com). Source for each:
+
+- [ddev.com SponsorsBanner.astro](https://github.com/ddev/ddev.com/blob/main/src/components/SponsorsBanner.astro)
+- [addons.ddev.com sponsors-banner.html](https://github.com/ddev/addon-registry/blob/main/_includes/sponsors-banner.html)
+- [docs.ddev.com sponsors-banner.html](https://github.com/ddev/ddev/blob/main/docs/overrides/partials/sponsors-banner.html)
 
 Now, when sponsors join or leave, the banner updates automatically. No manual edits, no stale lists.
 
