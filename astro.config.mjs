@@ -17,7 +17,6 @@ import rehypeUnwrapImages from "rehype-unwrap-images"
 import remarkDirective from "remark-directive"
 import remarkGfm from "remark-gfm"
 import remarkToc from "remark-toc"
-import mermaid from "astro-mermaid"
 import robotsTxt from "astro-robots-txt"
 import searchIndex from "./src/lib/search-index.js"
 import sitemap from "@astrojs/sitemap"
@@ -70,16 +69,9 @@ export default defineConfig({
     }),
     downloadDdevRedirects(),
     prefetch(),
-    mermaid({
-      autoTheme: true,
-      enableLog: false,
-    }),
   ],
   markdown: {
-    syntaxHighlight: {
-      type: "shiki",
-      excludeLangs: ["mermaid", "math"],
-    },
+    syntaxHighlight: "shiki",
     // https://github.com/shikijs/shiki/blob/main/docs/languages.md
     shikiConfig: {
       themes: SHIKI_THEMES,

@@ -9,6 +9,21 @@ featureImage:
 categories:
   - DevOps
   - Performance
+# Diagram source for ddev-ci-warpbuild-diagram.svg (light) and ddev-ci-warpbuild-diagram-dark.svg (dark).
+# To regenerate: paste into https://mermaid.live/, set Config theme to "default" (light) or "dark",
+# then use the "Open diagram in mermaid.ink" link to download the SVG.
+diagramSource: |
+  flowchart TD
+      A[determine-snapshot: <br>Hash key files] --> B[Request WarpBuild runner<br>with snapshot key]
+      B --> C{Snapshot exists?}
+      C -->|"Yes (fast path)"| D[Restore snapshot<br>DDEV pre-installed]
+      C -->|"No (first run)"| E[Install DDEV, browsers,<br>and dependencies]
+      D --> F[Start DDEV & run tests]
+      E --> F
+      F --> G{First run?}
+      G -->|Yes| H[Clean up & save snapshot]
+      G -->|No| I[Done!]
+      H --> I
 ---
 
 For most developers, DDEV solves a common challenge: making sure that each developer has a consistent, stable local environment for building their web application. We had more and more success with DDEV at Lullabot, but another related issue kept coming up: how do we grow and develop our use of continuous integration and automated testing while avoiding the same challenges DDEV solved for us?
@@ -35,19 +50,8 @@ After linking WarpBuild to our GitHub repository, we had to update our workflows
 
 Here is an example representing the changes we made to our workflow [after enabling Snapshots](https://docs.warpbuild.com/ci/snapshot-runners) in the WarpBuild UI. At a high level, here's the flow we want to create with our GitHub jobs:
 
-```mermaid
-flowchart TD
-    A[determine-snapshot: <br>Hash key files] --> B[Request WarpBuild runner<br>with snapshot key]
-    B --> C{Snapshot exists?}
-    C -->|"Yes (fast path)"| D[Restore snapshot<br>DDEV pre-installed]
-    C -->|"No (first run)"| E[Install DDEV, browsers,<br>and dependencies]
-    D --> F[Start DDEV & run tests]
-    E --> F
-    F --> G{First run?}
-    G -->|Yes| H[Clean up & save snapshot]
-    G -->|No| I[Done!]
-    H --> I
-```
+<img class="dark:hidden" src="/img/blog/2026/02/ddev-ci-warpbuild-diagram.svg" alt="CI workflow diagram showing the snapshot-based build flow">
+<img class="hidden dark:block" src="/img/blog/2026/02/ddev-ci-warpbuild-diagram-dark.svg" alt="CI workflow diagram showing the snapshot-based build flow">
 
 Start with a basic workflow to trigger on pull requests and on merges to `main`.
 

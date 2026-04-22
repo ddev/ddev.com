@@ -379,110 +379,62 @@ Videos should be wrapped in a `.video-container` div for responsive sizing:
 
 ## Featured Sponsors
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="/resources/featured-sponsors-darkmode.svg">
-  <img alt="DDEV Sponsor logos with light and dark mode variants" src="/resources/featured-sponsors.svg">
-</picture>
+<img class="dark:hidden" src="/resources/featured-sponsors.svg" alt="DDEV Sponsor logos with light and dark mode variants">
+<img class="hidden dark:block" src="/resources/featured-sponsors-darkmode.svg" alt="DDEV Sponsor logos with light and dark mode variants">
 
 ## Mermaid Diagrams
 
-Mermaid lets you create diagrams from text using fenced code blocks with the `mermaid` language identifier. See the [Mermaid documentation](https://mermaid.js.org/intro/) for the full list of diagram types and syntax.
+Mermaid diagrams are rendered as static SVGs - no client-side JavaScript. To add a diagram:
 
-### Flowchart
+1. Write the diagram source using [Mermaid syntax](https://mermaid.js.org/intro/)
+2. Paste it into [mermaid.live](https://mermaid.live/), set the Config `theme` to `"default"` (light) or `"dark"`
+3. Use the "Opens diagram in mermaid.ink" link to download the SVG
+4. Save both variants to `public/img/blog/YYYY/MM/`
 
-```mermaid
-flowchart TD
-    A[Developer] -->|git push| B[CI Pipeline]
-    B --> C{Tests pass?}
-    C -->|Yes| D[Build]
-    C -->|No| E[Notify developer]
-    D --> F[Deploy to staging]
-    F --> G{Approved?}
-    G -->|Yes| H[Deploy to production]
-    G -->|No| E
+![Mermaid diagram workflow demo](/img/blog/2022/01/mermaid-diagram-svg.gif)
+
+Store the diagram source in a custom frontmatter key (any name works) so it can be regenerated later. HTML comments cannot be used because `-->` arrows in the syntax close the comment prematurely.
+
+```yaml
+# Diagram source for my-diagram.svg (light) and my-diagram-dark.svg (dark).
+# To regenerate: paste into https://mermaid.live/, set Config theme to "default" (light) or "dark",
+# then use the "Opens diagram in mermaid.ink" link to download the SVG.
+diagramSource: |
+  flowchart TD
+      A[Start] --> B[Process]
+      B --> C{Done?}
+      C -->|Yes| D[End]
+      C -->|No| A
 ```
 
-### Sequence Diagram
+To display both variants, use two `<img>` tags with Tailwind's `dark:` classes. The `.dark` class on `<html>` drives the switch, so the site's theme toggle works correctly - not just the OS preference:
 
-```mermaid
-sequenceDiagram
-    participant Browser
-    participant Server
-    participant DB
-
-    Browser->>Server: GET /api/users
-    Server->>DB: SELECT * FROM users
-    DB-->>Server: rows
-    Server-->>Browser: 200 OK (JSON)
-
-    Browser->>Server: POST /api/users
-    Server->>DB: INSERT INTO users
-    DB-->>Server: OK
-    Server-->>Browser: 201 Created
+```html
+<img
+  class="dark:hidden"
+  src="/img/blog/2026/02/my-diagram.svg"
+  alt="Diagram description"
+/>
+<img
+  class="hidden dark:block"
+  src="/img/blog/2026/02/my-diagram-dark.svg"
+  alt="Diagram description"
+/>
 ```
 
-### Class Diagram
+### Fix SVG width for the lightbox
 
-```mermaid
-classDiagram
-    class Animal {
-        +String name
-        +int age
-        +speak() String
-    }
-    class Dog {
-        +String breed
-        +fetch() void
-    }
-    class Cat {
-        +bool indoor
-        +purr() void
-    }
-    Animal <|-- Dog
-    Animal <|-- Cat
+mermaid.live exports SVGs with `width="100%"`, which causes the PhotoSwipe lightbox to display them very small - `img.naturalWidth` returns `0` for percentage-width SVGs, so PhotoSwipe falls back to a default 1200×800 box that dwarfs the actual content.
+
+Fix: open the SVG file and replace `width="100%"` with explicit pixel dimensions from the `viewBox`. For example, `viewBox="0 0 489.53125 1107.4375"` becomes:
+
+```html
+<svg width="490" height="1108" ... viewBox="0 0 489.53125 1107.4375" ...></svg>
 ```
 
-### State Diagram
+Keep the existing `style="max-width: ..."` attribute - it preserves the responsive display on the page. Do this for both the light and dark SVG variants.
 
-```mermaid
-stateDiagram-v2
-    [*] --> Pending
-    Pending --> Running: start
-    Running --> Succeeded: complete
-    Running --> Failed: error
-    Failed --> Pending: retry
-    Succeeded --> [*]
-    Failed --> [*]: give up
-```
-
-### Pie Chart
-
-```mermaid
-pie showData
-    title Operating Systems in Use
-    "Linux" : 42
-    "macOS" : 35
-    "Windows" : 23
-```
-
-### Git Graph
-
-```mermaid
-gitGraph
-    commit id: "Initial commit"
-    branch feature/login
-    checkout feature/login
-    commit id: "Add login form"
-    commit id: "Add validation"
-    checkout main
-    branch feature/api
-    checkout feature/api
-    commit id: "Add REST endpoints"
-    checkout main
-    merge feature/login id: "Merge login"
-    merge feature/api id: "Merge API"
-    commit id: "Release v1.0"
-```
+The [Using WarpBuild to speed up DDEV in CI](ddev-ci-warpbuild.md) post stores its diagram source in frontmatter.
 
 ## Complex Combinations
 
