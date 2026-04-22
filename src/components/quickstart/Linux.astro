@@ -55,14 +55,13 @@ const { latestVersion } = Astro.props
       <div class="prose py-5 dark:prose-invert">
         <Terminal
           type="ubuntu"
-          code={`$ sudo sh -c 'echo ""'
+          code={`$ sudo true
 $ sudo apt-get update && sudo apt-get install -y curl
 $ sudo install -m 0755 -d /etc/apt/keyrings
-$ curl -fsSL https://pkg.ddev.com/apt/gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/ddev.gpg > /dev/null
-$ sudo chmod a+r /etc/apt/keyrings/ddev.gpg
-$ sudo sh -c 'echo ""'
-$ echo "deb [signed-by=/etc/apt/keyrings/ddev.gpg] https://pkg.ddev.com/apt/ * *" | sudo tee /etc/apt/sources.list.d/ddev.list >/dev/null
-$ sudo sh -c 'echo ""'
+$ curl -fsSL https://pkg.ddev.com/apt/gpg.key | sudo tee /etc/apt/keyrings/ddev.asc > /dev/null
+$ sudo chmod a+r /etc/apt/keyrings/ddev.asc
+$ sudo rm -f /etc/apt/keyrings/ddev.gpg /etc/apt/sources.list.d/ddev.list
+$ printf "Types: deb\\nURIs: https://pkg.ddev.com/apt/\\nSuites: *\\nComponents: *\\nSigned-By: /etc/apt/keyrings/ddev.asc\\n" | sudo tee /etc/apt/sources.list.d/ddev.sources >/dev/null
 $ sudo apt-get update && sudo apt-get install -y ddev
 `}
         />
@@ -72,12 +71,8 @@ $ sudo apt-get update && sudo apt-get install -y ddev
       <div class="prose py-5 dark:prose-invert">
         <Terminal
           type="ubuntu"
-          code={`$ sudo sh -c 'echo ""'
-$ echo '[ddev]\nname=ddev
-baseurl=https://pkg.ddev.com/yum/
-gpgcheck=0
-enabled=1' | perl -p -e 's/^ +//' | sudo tee /etc/yum.repos.d/ddev.repo >/dev/null
-$ sudo sh -c 'echo ""'
+          code={`$ sudo true
+$ printf "[ddev]\\nname=ddev\\nbaseurl=https://pkg.ddev.com/yum/\\ngpgcheck=0\\nenabled=1\\n" | sudo tee /etc/yum.repos.d/ddev.repo >/dev/null
 $ sudo dnf install --refresh ddev
 `}
         />
