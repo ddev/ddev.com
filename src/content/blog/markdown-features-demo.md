@@ -388,8 +388,10 @@ Mermaid diagrams are rendered as static SVGs - no client-side JavaScript. To add
 
 1. Write the diagram source using [Mermaid syntax](https://mermaid.js.org/intro/)
 2. Paste it into [mermaid.live](https://mermaid.live/), set the Config `theme` to `"default"` (light) or `"dark"`
-3. Use the "Open diagram in mermaid.ink" link to download the SVG
+3. Use the "Opens diagram in mermaid.ink" link to download the SVG
 4. Save both variants to `public/img/blog/YYYY/MM/`
+
+![Mermaid diagram workflow demo](/img/blog/2022/01/mermaid-diagram-svg.gif)
 
 Store the diagram source in a custom frontmatter key (any name works) so it can be regenerated later. HTML comments cannot be used because `-->` arrows in the syntax close the comment prematurely.
 
