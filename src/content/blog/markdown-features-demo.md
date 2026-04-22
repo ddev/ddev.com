@@ -422,7 +422,7 @@ To display both variants, use two `<img>` tags with Tailwind's `dark:` classes. 
 
 ### Fix SVG width for the lightbox
 
-mermaid.live exports SVGs with `width="100%"`, which causes the [PhotoSwipe lightbox](photoswipe-init.js) to display them very small — `img.naturalWidth` returns `0` for percentage-width SVGs, so PhotoSwipe falls back to a default 1200×800 box that dwarfs the actual content.
+mermaid.live exports SVGs with `width="100%"`, which causes the PhotoSwipe lightbox to display them very small - `img.naturalWidth` returns `0` for percentage-width SVGs, so PhotoSwipe falls back to a default 1200×800 box that dwarfs the actual content.
 
 Fix: open the SVG file and replace `width="100%"` with explicit pixel dimensions from the `viewBox`. For example, `viewBox="0 0 489.53125 1107.4375"` becomes:
 
@@ -430,7 +430,7 @@ Fix: open the SVG file and replace `width="100%"` with explicit pixel dimensions
 <svg width="490" height="1108" ... viewBox="0 0 489.53125 1107.4375" ...></svg>
 ```
 
-Keep the existing `style="max-width: ..."` attribute — it preserves the responsive display on the page. Do this for both the light and dark SVG variants.
+Keep the existing `style="max-width: ..."` attribute - it preserves the responsive display on the page. Do this for both the light and dark SVG variants.
 
 The [Using WarpBuild to speed up DDEV in CI](ddev-ci-warpbuild.md) post stores its diagram source in frontmatter.
 
