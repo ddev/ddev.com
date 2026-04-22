@@ -1,8 +1,8 @@
 ---
 title: "DDEV Add-on Maintenance Guide"
 pubDate: 2025-05-01
-modifiedDate: 2025-11-20
-modifiedComment: Added new features from DDEV v1.24.10
+modifiedDate: 2026-04-22
+modifiedComment: Added info on PHP add-ons
 summary: Maintaining an add-on involves regularly updating it to stay compatible with new features in both the upstream ddev-addon-template and DDEV itself.
 author: Stas Zhuk
 featureImage:
@@ -36,7 +36,7 @@ Here are some high-level practices to follow:
 - Add the `ddev-get` [topic](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics) to your GitHub repository if it should be discoverable by the wider community. (If your add-on is currently just an experiment or a fork, wait until it matures to add the topic.)
 - Write a clear [description](https://github.com/orgs/community/discussions/60507) and include relevant keywords to improve discoverability
 - Use `#!/usr/bin/env bash` instead of `#!/bin/bash` at the top of your command scripts, it's more portable and works better across different environments.
-- Ensure your add-on cleans up after itself: both `ddev add-on get` and `ddev add-on remove` should be idempotent. All files added via `project_files` and `global_files` must include a `#ddev-generated` stanza to support proper removal
+- Ensure your add-on cleans up after itself: both `ddev add-on get` and `ddev add-on remove` should be idempotent. All files added via `project_files` and `global_files` must include a `#ddev-generated` comment. DDEV uses this marker to replace files on re-install (if unmodified) and to delete them on `ddev add-on remove`. Files without this comment are left in place and must be cleaned up via `removal_actions`.
 - Remember to publish a new release after any update (unless it's just a `README.md` change)
 
 ## What's New in the DDEV Ecosystem
@@ -55,7 +55,7 @@ This ensures compatibility and resolves known issues, such as those related to t
 
 ### Customizing `ddev describe` Output
 
-With DDEV v1.24.10, add-ons can now customize the output of the `ddev describe` with `x-ddev.describe-*` extension.
+DDEV add-ons can now customize the output of the `ddev describe` with `x-ddev.describe-*` extension.
 
 [This feature](https://docs.ddev.com/en/stable/users/extend/custom-docker-services/#customizing-ddev-describe-output) is useful for showing credentials, URLs, or usage notes for custom services.
 
@@ -65,7 +65,7 @@ Example:
 
 ### Changing `ddev ssh` Shell
 
-DDEV v1.24.10 also introduced the ability for add-ons to specify a custom shell for the `ddev ssh -s my-service` command using the [`x-ddev.ssh-shell`](https://docs.ddev.com/en/stable/users/extend/in-container-configuration/#changing-ddev-ssh-shell) extension.
+DDEV v1.24.10 introduced the ability for add-ons to specify a custom shell for the `ddev ssh -s my-service` command using the [`x-ddev.ssh-shell`](https://docs.ddev.com/en/stable/users/extend/in-container-configuration/#changing-ddev-ssh-shell) extension.
 
 ```yaml
 services:
@@ -92,7 +92,7 @@ health_checks() {
 
 ### MutagenSync Annotation for Commands
 
-With DDEV v1.24.4, custom commands can now use the [`MutagenSync`](https://docs.ddev.com/en/stable/users/extend/custom-commands/#mutagensync-annotation) annotation.
+Custom commands can use the [`MutagenSync`](https://docs.ddev.com/en/stable/users/extend/custom-commands/#mutagensync-annotation) annotation.
 
 You should use this annotation if your `host` or `web` commands modify, add, or remove files in the project directory. It ensures that file sync is handled correctly when Mutagen is enabled, preventing unexpected behavior or sync delays. (It does no harm and causes no performance issues if Mutagen is not in use.)
 
@@ -102,7 +102,7 @@ Example:
 
 ### Support for Optional Compose Profiles
 
-The same DDEV v1.24.4 release introduced support for [optional docker-compose profiles](https://docs.ddev.com/en/stable/users/extend/custom-compose-files/#optional-services), which can be used by add-ons to offer more flexible configuration.
+[Optional docker-compose profiles](https://docs.ddev.com/en/stable/users/extend/custom-compose-files/#optional-services) can be used by add-ons to offer more flexible configuration.
 
 Example:
 
@@ -111,9 +111,28 @@ Example:
 
 ### `ddev get` Deprecation
 
-The classic `ddev get` command is deprecated in DDEV v1.23.5 and replaced by `ddev add-on get`.
+The classic `ddev get` command is deprecated and replaced by `ddev add-on get`.
 
-Huge thanks to [@GuySartorelli](https://github.com/GuySartorelli) for implementing this feature, and also for proactively updating many add-on `README.md` files. You've likely already seen a pull request for your add-on!
+### PHP-based Actions
+
+DDEV now supports PHP as an alternative to Bash for add-on actions. PHP actions are a good fit for complex configuration processing — reading and writing YAML, conditional logic based on project type, or generating files that would be awkward in Bash:
+
+```yaml
+post_install_actions:
+  - |
+    <?php
+    #ddev-description: Generate service configuration
+    $projectType = $_ENV['DDEV_PROJECT_TYPE'];
+    if ($projectType === 'drupal') {
+        $settings = "<?php\n// DDEV-generated Redis settings\n";
+        file_put_contents(
+            "/var/www/html/{$_ENV['DDEV_DOCROOT']}/sites/default/settings.ddev.redis.php",
+            "#ddev-generated\n" . $settings
+        );
+    }
+```
+
+DDEV detects PHP actions by the `<?php` opening tag. They run inside the web container with the built-in `php-yaml` extension available. See the [creating add-ons documentation](https://docs.ddev.com/en/stable/users/extend/creating-add-ons/) for a full reference.
 
 ### Better Testing with Bats Libraries
 
@@ -146,7 +165,7 @@ Example:
 
 ### Advanced Customization with Flags
 
-Starting with DDEV v1.23.5, you can now use [`ddev dotenv set`](https://docs.ddev.com/en/stable/users/usage/commands/#dotenv-set) to manage environment variables more cleanly. This allows your add-on to read custom environment variables defined in `.ddev/.env.*` files, and use them inside your `docker-compose.*.yaml` configuration.
+You can use [`ddev dotenv set`](https://docs.ddev.com/en/stable/users/usage/commands/#dotenv-set) to manage environment variables more cleanly. This allows your add-on to read custom environment variables defined in `.ddev/.env.*` files, and use them inside your `docker-compose.*.yaml` configuration.
 
 This feature is especially useful for advanced setups where flexibility and dynamic configuration are needed.
 
