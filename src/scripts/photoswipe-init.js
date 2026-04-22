@@ -4,7 +4,14 @@ import "photoswipe/dist/photoswipe.css"
 function initPhotoSwipe() {
   const prose = document.querySelector(".prose")
   if (prose) {
+    // Unwrap any previously-wrapped images so we can re-evaluate visibility
+    prose.querySelectorAll("a[data-pswp-src]").forEach((a) => {
+      const img = a.querySelector("img")
+      if (img) a.replaceWith(img)
+    })
+
     prose.querySelectorAll("img:not(a img):not(picture img)").forEach((img) => {
+      if (getComputedStyle(img).display === "none") return
       const width = img.naturalWidth || +img.getAttribute("width") || 1200
       const height = img.naturalHeight || +img.getAttribute("height") || 800
       const a = document.createElement("a")
@@ -29,3 +36,10 @@ function initPhotoSwipe() {
 }
 
 initPhotoSwipe()
+
+// Re-initialize when theme changes so the correct image variant is in the gallery
+const observer = new MutationObserver(() => initPhotoSwipe())
+observer.observe(document.documentElement, {
+  attributes: true,
+  attributeFilter: ["class", "data-theme"],
+})
