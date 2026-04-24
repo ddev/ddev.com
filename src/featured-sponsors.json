@@ -295,5 +295,14 @@
     "squareLogo": "/logos/8mylez-square.svg",
     "url": "https://www.8mylez.com/",
     "github": "8mylez"
+  },
+  {
+    "name": "Douglas Vann",
+    "type": "standard",
+    "logo": "/logos/dougvann.jpeg",
+    "darklogo": "/logos/dougvann.jpeg",
+    "squareLogo": "/logos/dougvann.jpeg",
+    "url": "https://dougvann.com/",
+    "github": "dougvann"
   }
 ]
