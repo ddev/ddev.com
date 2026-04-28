@@ -1,8 +1,8 @@
 ---
 title: "Contributor Training: Advanced Add-On Techniques"
 pubDate: 2024-07-23
-modifiedDate: 2025-05-01
-modifiedComment: "Want to learn more? Check out the [DDEV Add-on Maintenance Guide](/blog/ddev-add-on-maintenance-guide)."
+modifiedDate: 2026-04-28
+modifiedComment: "Want to learn more? Check out the [DDEV Add-on Maintenance Guide](/blog/ddev-add-on-maintenance-guide) and the [Add-on Training: Creating and Maintaining](/blog/creating-maintaining-ddev-addons-training)."
 summary: Advanced Add-On Techniques for Contributors
 author: Randy Fay
 featureImage:
@@ -23,7 +23,7 @@ Here's our July 10, 2024 [Contributor Training](/blog/category/training) on Adva
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DzFa6CiHxzs?si=cMMx19RcIwQm23gs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
-The basics of creating a DDEV Add-on are super easy, you can click a button on the Add-on template and you're off and running. There are more details in the [Add-on Template](https://github.com/ddev/ddev-addon-template), in the [DDEV docs](https://docs.ddev.com/en/stable/users/extend/additional-services/#creating-an-additional-service-for-ddev-get), and in the [original add-on training](https://www.youtube.com/watch?v=TmXqQe48iqE).
+The basics of creating a DDEV Add-on are super easy, you can click a button on the Add-on template and you're off and running. There are more details in the [Add-on Template](https://github.com/ddev/ddev-addon-template), in the [DDEV docs](https://docs.ddev.com/en/stable/users/extend/additional-services/#creating-an-additional-service-for-ddev-get), and in the [original add-on training](creating-maintaining-ddev-addons-training.md).
 
 ## Adding project (or global) custom commands
 
@@ -157,7 +157,7 @@ In addition, the `~/.ddev/global_config.yaml` is read into the variable `DdevGlo
 
 ## Tips from previous trainings
 
-A [previous training in November 2023](https://youtu.be/TmXqQe48iqE) covered many add-on topics, including testing with `bats` and debugging your tests. There you can learn about creating and testing add-ons.
+A [2026 training](creating-maintaining-ddev-addons-training.md) covered many add-on topics, including creating, testing, and maintaining add-ons.
 
 ### Checking in add-ons
 
@@ -176,7 +176,7 @@ And of course you can add a `config.<add-on-name>_extra.yaml` to override what t
 - [DDEV Add-on Registry](https://addons.ddev.com)
 - [DDEV Add-on Maintenance Guide](ddev-add-on-maintenance-guide.md)
 - [DDEV docs](https://docs.ddev.com/en/stable/users/extend/additional-services/) on add-ons
-- [Previous Add-on Training](https://www.youtube.com/watch?v=TmXqQe48iqE)
+- [Add-on Training: Creating and Maintaining](creating-maintaining-ddev-addons-training.md)
 - `docker-compose.*.yaml` [docs](https://docs.ddev.com/en/stable/users/extend/custom-compose-files/)
 - ddev-addon-template [README](https://github.com/ddev/ddev-addon-template)
 - Learn by studying other add-ons. Official ones at `ddev add-on list` and all at `ddev add-on list --all`
