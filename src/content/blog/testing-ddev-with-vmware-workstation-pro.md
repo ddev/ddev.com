@@ -1,7 +1,8 @@
 ---
 title: "Testing DDEV with VMware Workstation Pro"
 pubDate: 2025-07-10
-#modifiedDate: 2025-07-10
+modifiedDate: 2026-04-28
+modifiedComment: Add setup instructions for standard users.
 summary: A guide to using VMware Workstation Pro to install and test DDEV on Windows and Linux environments, including optimization tips for virtual machine performance and configuration.
 author: Stas Zhuk
 featureImage:
@@ -152,14 +153,13 @@ Windows configuration:
 - Settings > System > Sound > More sound settings > Sounds > No Sounds, uncheck "Play Windows Startup sound"
 - Settings > Personalization > Taskbar > Task View (uncheck), Widgets (uncheck)
 - Settings > Personalization > Taskbar > Taskbar behaviors > Taskbar alignment > Left
+- Settings > Apps > Startup > Disable Microsoft OneDrive
 
 Registry configuration:
 
 ```powershell
 # Remove recommended applications from the Windows 11 start menu
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Cloud Content" /v DisableWindowsConsumerFeatures /t REG_DWORD /d 1 /f
-# Disable automatic update for APPX applications in Microsoft Store
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsStore" /v AutoDownload /t REG_DWORD /d 2 /f
 # Disable Meltdown and Spectre fixes that slow down Windows
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v FeatureSettingsOverride /t REG_DWORD /d 3 /f
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v FeatureSettingsOverrideMask /t REG_DWORD /d 3 /f
@@ -176,6 +176,18 @@ start explorer.exe
 dism /Online /Get-ReservedStorageState
 dism /Online /Set-ReservedStorageState /State:Disabled
 ```
+
+:::note[Create a standard user account for broader testing coverage]
+Testing with both an administrator and a standard user account catches permission-related issues that only surface for non-admin users.
+
+To add a standard user account: **Settings > Accounts > Other Users > Add account > I don't have this person's sign-in information > Add a user without a Microsoft account**, then set a username and password.
+
+Apply the same Windows configuration steps to the new account as well.
+:::
+
+:::warning
+When switching between accounts, use **Sign Out** - not **Lock**. Locking prevents VMware Tools from loading in the other account's session.
+:::
 
 Shutdown the virtual machine, press "Edit virtual machine settings":
 
