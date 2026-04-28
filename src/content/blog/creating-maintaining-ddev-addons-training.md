@@ -11,7 +11,7 @@ categories:
   - Add-ons
 ---
 
-[Stas Zhuk](https://github.com/stasadev) and I recently did a [Contributor Training](/blog/category/training) session on creating and maintaining DDEV add-ons:
+Stas and I recently did a [Contributor Training](/blog/category/training) session on creating and maintaining DDEV add-ons:
 
 <div class="video-container">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/OtmVJtwsHMg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -21,7 +21,11 @@ The [slides are available online](https://rfay.github.io/addons-creating-maintai
 
 ## What Are DDEV Add-ons?
 
-Add-ons extend DDEV projects with additional services, commands, and configuration. They can add databases, search engines, queue systems, custom web servers, or any other tool your project needs. Add-ons are installed with `ddev add-on get <owner>/<repo>` and their configuration lives in `.ddev/`.
+Most people first encounter add-ons as service providers — Redis, Elasticsearch, Solr, Mailpit — but Bill Seremetis (bserem) put it well in his [DrupalDevDays Athens 2026 talk](https://bserem.github.io/presentations/DrupalDevDays%20Athens%202026%20-%20From%20Chaos%20to%20Consistency%20-%20DevOps%20Session.pdf): "an add-on is a set of files: hooks + commands + scripts + config — it's a distribution mechanism." His agency uses a single custom add-on across 100+ Drupal projects to encode institutional knowledge, enforce quality gates, and deliver the team's workflows to the terminal. One update to the add-on propagates improvements to every project. That framing opens up a lot: custom commands that automate your team's processes, DDEV hooks that fire at key checkpoints (sanitize the database on import, install git hooks on project start), and boilerplate configs or scripts distributed automatically to wherever they're needed.
+
+The heart of every add-on is an `install.yaml`, which defines what files get placed at the project-level or globally, plus `pre_install_actions` and `post_install_actions` that can run shell or PHP scripts during install. 
+
+Getting started with a new add-on is straightforward: use the [ddev-addon-template](https://github.com/ddev/ddev-addon-template), which wires up GitHub Actions CI and a `tests/test.bats` Bats test suite from the start. You can test locally before publishing with `ddev add-on get /path/to/your/addon`, against a branch with `--version branch-name`, or against an open PR with `--pr 54`. When ready to publish to the world (if you want to), add the `ddev-get` topic to your GitHub repository and it will appear in [addons.ddev.com](https://addons.ddev.com) within about 24 hours.
 
 ## Resources
 
