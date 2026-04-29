@@ -12,6 +12,7 @@ categories:
 
 ## What's New
 
+- **Ubuntu 26.04 and Fedora 44** were released this week. We checked, and we're proud to say that DDEV works great on both. We have [one small docs change](https://github.com/ddev/ddev/issues/8350) for the Ubuntu 26.04 native install. The Windows Installer did fail with an Ubuntu 26.04 distro because the `wslu` package has been removed, but we fixed that in [PR](https://github.com/ddev/ddev/pull/8351), and it has an easy workaround anyway. 
 - **coder.ddev.com Updates** → More work is ongoing with Coder.ddev.com, we're hoping to make it fulfil even more of your ambitions. Drush works again for the `main` branch, so it's working and available there again. Lots of other updates. [Visit coder.ddev.com](https://coder.ddev.com) and [start.coder.ddev.com](https://start.coder.ddev.com) for more, and we'd love to hear your suggestions and experiences at [coder-ddev repository](https://github.com/ddev/coder-ddev) or in the [DDEV Discord](/s/discord). We've deployed a staging server, and have plans for automated testing of changes so we don't just deploy and try them out.
 - **Intel Macs have run their course** We'll be retiring our three macOS AMD64 test runners. There's not much more for them to do, so we're going to turn them off. Only 7.3% of you are still using Intel Macs and it's been a very long time since we saw a regression or problem on the Intel test runners that wasn't also caught by the Apple Silicon runners. [See the stats](https://app.amplitude.com/analytics/share/5aedd7e813a642cab03306e179604836).
 
