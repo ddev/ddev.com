@@ -4,7 +4,7 @@ pubDate: 2026-04-30
 summary: "April 2026 DDEV Newsletter, the latest from the DDEV community"
 author: Randy Fay
 featureImage:
-  src: "/img/blog/2026/04/catching-up-with-ddev-team-talking-drupal.jpeg"
+  src: "/img/blog/2026/04/catching-up-with-ddev-team-talking-drupal.jpg"
   alt: "Talking Drupal: Catching Up with the DDEV Team"
 categories:
   - Newsletters
