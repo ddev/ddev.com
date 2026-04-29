@@ -4,14 +4,14 @@ pubDate: 2026-04-28
 summary: A walkthrough of how to create, test, and maintain DDEV add-ons, with Stas Zhuk.
 author: Randy Fay
 featureImage:
-  src: /img/blog/2025/03/ddev-addon-registry.png
-  alt: DDEV Add-on Registry
+  src: /img/blog/2026/04/creating-maintaining-addons-training-thumb.jpg
+  alt: Creating and Maintaining DDEV Add-Ons training session title card
 categories:
   - Training
   - Add-ons
 ---
 
-Stas and I recently did a [Contributor Training](/blog/category/training) session on creating and maintaining DDEV add-ons:
+Stas Zhuk and I covered the full add-on lifecycle in this [Contributor Training](/blog/category/training) session: bootstrapping from the [ddev-addon-template](https://github.com/ddev/ddev-addon-template), writing Bats tests, testing locally and against branches or open PRs, and publishing to the registry. The session also covers use cases beyond service providers — custom commands, DDEV hooks, and distributing team workflows across projects.
 
 <div class="video-container">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/OtmVJtwsHMg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
