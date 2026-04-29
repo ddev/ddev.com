@@ -1,11 +1,11 @@
 ---
-title: "DDEV April 2026: coder.ddev.com, Intel Macs fade away, Add-ons as delivery mechanism"
+title: "DDEV April 2026: Ubuntu 26.04, coder.ddev.com, Intel Macs fade away, Add-ons as delivery mechanism"
 pubDate: 2026-04-30
 summary: "April 2026 DDEV Newsletter, the latest from the DDEV community"
 author: Randy Fay
-# featureImage:
-#   src: /img/blog/2026/04/<!-- TODO: image filename -->
-#   alt: <!-- TODO: alt text -->
+featureImage:
+  src: /img/blog/2026/04/catching-up-with-ddev-team-talking-drupal.jpeg
+  alt: Talking Drupal: Catching Up with the DDEV Team
 categories:
   - Newsletters
 ---
