@@ -16,6 +16,10 @@ categories:
 - **coder.ddev.com Updates** → More work is ongoing with Coder.ddev.com, we're hoping to make it fulfil even more of your ambitions. Drush works again for the `main` branch, so it's working and available there again. Lots of other updates. [Visit coder.ddev.com](https://coder.ddev.com) and [start.coder.ddev.com](https://start.coder.ddev.com) for more, and we'd love to hear your suggestions and experiences at [coder-ddev repository](https://github.com/ddev/coder-ddev) or in the [DDEV Discord](/s/discord). We've deployed a staging server, and have plans for automated testing of changes so we don't just deploy and try them out.
 - **Intel Macs have run their course** → We'll be retiring our three macOS AMD64 test runners. There's not much more for them to do, so we're going to turn them off. Only 7.3% of you are still using Intel Macs and it's been a very long time since we saw a regression or problem on the Intel test runners that wasn't also caught by the Apple Silicon runners. [See the stats](https://app.amplitude.com/analytics/share/5aedd7e813a642cab03306e179604836).
 
+## Talking Drupal Podcast
+
+Stas and Randy appeared on episode 549 of the Talking Drupal podcast. Get the inside scoop on latest DDEV updates, the [DDEV Drupal Contrib](https://github.com/ddev/ddev-drupal-contrib) add-on, `coder.ddev.com`, and more. [Listen to episode 549↗](https://talkingdrupal.com/549)
+
 ## DrupalDevDays Athens 2026
 
 Community member [bserem](https://github.com/bserem) presented "From Chaos to Consistency" at DrupalDevDays Athens 2026, a DevOps session covering how DDEV brings order to local development environments. [View the presentation slides↗](https://bserem.github.io/presentations/DrupalDevDays%20Athens%202026%20-%20From%20Chaos%20to%20Consistency%20-%20DevOps%20Session.pdf). His correct and well-explained thesis is that DDEV add-ons are just a file/feature delivery mechanism that can be used to systematize your team's projects. Watch here for a blog from him!
@@ -26,9 +30,9 @@ Community member [bserem](https://github.com/bserem) presented "From Chaos to Co
 
 Who remembers Mike Anello's 2018 book [Local Web Development With DDEV Explained: Your Step-by-Step Guide to Local Web Development With DDEV](https://www.amazon.com/Local-Development-Explained-Step-Step-ebook/dp/B07KBFR5GQ/)? It says clearly "Up-to-Date: Constantly updated, the material in Local Web Development With DDEV Explained is always current". 4.6 stars! (Mike is now Treasurer and Board Member of DDEV Foundation, this is how you move up in the world!) My bet is that most of what he described there still works, although many things probably work better now.
 
-## Talking Drupal Podcast
+## Contributor Training
 
-Stas and Randy appeared on episode 549 of the Talking Drupal podcast. Get the inside scoop on latest DDEV updates, the [DDEV Drupal Contrib](https://github.com/ddev/ddev-drupal-contrib) add-on, `coder.ddev.com`, and more. [Listen to episode 549↗](https://talkingdrupal.com/549)
+**Add-on Creation and Maintenance** Contributor Training: [Watch it↗](creating-maintaining-ddev-addons-training.md)
 
 ## TYPO3 Update for DDEV
 
