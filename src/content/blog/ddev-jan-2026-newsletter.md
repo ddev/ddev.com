@@ -1,6 +1,8 @@
 ---
 title: "DDEV January 2026: Year in Review, Looking Ahead, and Community Momentum"
 pubDate: 2026-01-20
+modifiedData: 2026-04-30
+modifiedComment: Fixed reference to Klemens Arro
 summary: "Reflecting on 2025's growth, mapping 2026's roadmap, celebrating a 10% sponsorship surge, and discovering global community contributions from macOS tools to international tutorials"
 author: Randy Fay
 featureImage:
@@ -22,7 +24,7 @@ This is the time of year that many of us look backward and forward to inform our
 Many DDEV users love the [PhpStorm/IntelliJ DDEV Integration Plugin](https://plugins.jetbrains.com/plugin/18813-ddev-integration) maintained by AkibaAT and the [VS Code DDEV Manager](https://marketplace.visualstudio.com/items?itemName=biati.ddev-manager) by Biati Digital, but there are new experimental entries in the GUI manager space:
 
 - **DevWorkspacePro** by damms005 is a commercial entry in the wrapper-GUI space that has had lots of energy applied to it. There isn't currently a free trial available, and it's a bit pricey, but see it at <https://devworkspacepro.com/>.
-- **DDEVBar for macOS** → Klemens Starybrat built a native Mac menu bar app that makes managing DDEV projects simpler. [Check it out↗](https://klemens.ee/ddevbar/)
+- **DDEVBar for macOS** → Klemens Arro built a native Mac menu bar app that makes managing DDEV projects simpler. [Check it out↗](https://klemens.ee/ddevbar/)
 - **DDEV Manager GUI** → VonLoxx created another DDEV wrapper GUI. [Try it out↗](https://github.com/DDEV-Manager/ddev-manager)
 - **DDEV GUI** by ChaosKing (only tested on Linux) is another entry in this category. [Experiment and give feedback↗](https://github.com/theChaosCoder/ddev-gui)
 
