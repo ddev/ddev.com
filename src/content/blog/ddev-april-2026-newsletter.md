@@ -28,7 +28,7 @@ Community member [bserem](https://github.com/bserem) presented "From Chaos to Co
 
 **A new book on DDEV!** _Set Up Drupal in 10 Minutes: A Practical DDEV & Composer Guide for Developers_. [English on Amazon](https://www.amazon.com/dp/B0GRTL7ZRH/), [Italian on Amazon Italy](https://www.amazon.it/dp/B0GHWZS9LQ).
 
-Who remembers Mike Anello's 2018 book [Local Web Development With DDEV Explained: Your Step-by-Step Guide to Local Web Development With DDEV](https://www.amazon.com/Local-Development-Explained-Step-Step-ebook/dp/B07KBFR5GQ/)? It says clearly "Up-to-Date: Constantly updated, the material in Local Web Development With DDEV Explained is always current". 4.6 stars! (Mike is now Treasurer and Board Member of DDEV Foundation, this is how you move up in the world!) My bet is that most of what he described there still works, although many things probably work better now.
+Who remembers Mike Anello's 2018 book [Local Web Development With DDEV Explained: Your Step-by-Step Guide to Local Web Development With DDEV](https://www.amazon.com/Local-Development-Explained-Step-Step-ebook/dp/B07KBFR5GQ/)? 4.6 stars! (Mike is now Treasurer and Board Member of DDEV Foundation, this is how you move up in the world!) My bet is that most of what he described there still works, although many things probably work better now.
 
 ## Contributor Training
 
