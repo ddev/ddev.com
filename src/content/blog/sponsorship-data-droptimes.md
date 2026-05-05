@@ -1,6 +1,6 @@
 ---
 title: "From a Single Chat to a Live Sponsorship Feed: DDEV's Sponsorship Data Story"
-pubDate: 2026-04-21
+pubDate: 2026-05-05
 summary: "How a request from TheDropTimes to track DDEV sponsorship data led to a web component, a public data feed, and live sponsor displays across DDEV properties."
 author: Randy Fay
 featureImage:
