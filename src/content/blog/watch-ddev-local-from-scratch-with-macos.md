@@ -5,7 +5,7 @@ pubDate: 2026-05-06
 summary: Screencast guide to running DDEV on macOS.
 author: Randy Fay
 featureImage:
-  src: /img/blog/2026/05/DDEV-from-scratch-on-macOS.png
+  src: /img/blog/2026/05/DDEV-from-scratch-on-macOS.jpg
   alt: Screen grab of DDEV from Scratch on macOS video title frame
 categories:
   - Guides
