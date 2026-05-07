@@ -1,6 +1,8 @@
 ---
 title: "Introducing coder.ddev.com: DDEV in the Cloud"
 pubDate: 2026-03-11
+modifiedDate: 2026-05-07
+modifiedComment: "Updated access requirements: sign-in is now restricted to ddev org members, $100+/mo sponsor orgs, and approved individuals. Added Requesting Access section."
 summary: "coder.ddev.com provides free, experimental cloud-based DDEV workspaces powered by Coder. Start a Drupal contribution environment in under 30 seconds, with full VS Code, Xdebug, and CLI support."
 author: Randy Fay
 featureImage:
