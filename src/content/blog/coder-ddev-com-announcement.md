@@ -39,7 +39,19 @@ The source code for the templates and Docker image is at [github.com/ddev/coder-
 
 ### 1. Log In with GitHub
 
-Go to [coder.ddev.com](https://coder.ddev.com) and click **Login with GitHub**. No separate account needed. `coder.ddev.com` receives read-only access to your email addresses, public profile, and GitHub organization membership — no code access, no write access.
+Access to coder.ddev.com requires a GitHub account and membership in an approved GitHub organization. Sign in using the **Sign in with GitHub** button — no separate Coder account registration is needed. coder.ddev.com receives read-only access to your email addresses, public profile, and GitHub organization membership — no code access, no write access.
+
+**Who has access:**
+
+- Members of the [ddev](https://github.com/ddev) GitHub organization
+- Members of organizations that sponsor DDEV at $100+/month (see the [DDEV sponsors page](https://ddev.com/support-ddev/)) — all members of a qualifying sponsor org can sign in without individual enrollment
+- Individuals approved by the DDEV maintainers
+
+If you are a `ddev` org member or your organization is a $100+/month sponsor, you can sign in immediately — no request needed.
+
+### Requesting Access
+
+If you do not have access through one of the paths above, open an issue in the [coder-ddev-com/access-requests](https://github.com/coder-ddev-com/access-requests) repository. Include your GitHub username and a brief description of how you plan to use the environment. The DDEV maintainers review requests and add approved users to the `coder-ddev-com` GitHub organization — once added, you can sign in immediately.
 
 ### 2. Create a Workspace
 
