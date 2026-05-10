@@ -133,8 +133,8 @@ One of the most useful features for Drupal contributors is the **Drupal Issue Pi
 
 The picker accepts drupal.org issue URLs for both core and contrib projects and routes automatically to the right template:
 
-- **Core issues** (e.g. `https://www.drupal.org/project/drupal/issues/3568144`) → **drupal-core** template, with the correct Drupal version detected and the issue fork branch checked out
-- **Contrib issues** (e.g. `https://www.drupal.org/project/token/issues/3568144`) → **drupal-contrib** template, with the module cloned and the issue fork branch checked out
+- **Core issues** (e.g. [Deprecate update.compare functions](https://www.drupal.org/project/drupal/issues/3580705)) → **drupal-core** template, with the correct Drupal version detected and the issue fork branch checked out
+- **Contrib issues** (e.g. [Better PHP Standards](https://www.drupal.org/project/languages_dropdown/issues/3581165)) → **drupal-contrib** template, with the module cloned and the issue fork branch checked out
 
 The picker also accepts a project URL (e.g. `drupal.org/project/token`) or machine name (e.g. `token`) for plain contrib development without a specific issue — it opens the drupal-contrib template with the project at HEAD.
 
