@@ -2,7 +2,7 @@
 title: "Introducing coder.ddev.com: DDEV in the Cloud"
 pubDate: 2026-03-11
 modifiedDate: 2026-05-10
-modifiedComment: "Added drupal-contrib template for contrib module/theme development; removed deprecated user-defined-web template; updated Issue Picker to cover both core and contrib issues."
+modifiedComment: "Significant updates to coder behavior, including Drupal contrib issue setup and new authentication requirements."
 summary: "coder.ddev.com provides free, experimental cloud-based DDEV workspaces powered by Coder. Start a Drupal contribution environment in under 30 seconds, with full VS Code, Xdebug, and CLI support."
 author: Randy Fay
 featureImage:
