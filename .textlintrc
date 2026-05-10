@@ -26,10 +26,12 @@
         ["(\\s)SSH", "SSH"],
         ["vs?code", "VS Code"],
         ["web-?server", "web server"],
+        ["\\baddon\\b", "add-on"],
       ],
       "exclude": [
         "back[- ]end(\\w*)",
         "command ?line tool(s)?",
+        "ddev-addon[-\\w]*",
         "front[- ]end(\\w*)",
         "readme(s)?",
         "V[ -]?S[ -]?Code",

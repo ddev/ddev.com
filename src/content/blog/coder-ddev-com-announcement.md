@@ -1,8 +1,8 @@
 ---
 title: "Introducing coder.ddev.com: DDEV in the Cloud"
 pubDate: 2026-03-11
-modifiedDate: 2026-05-07
-modifiedComment: "Updated access requirements: sign-in is now restricted to ddev org members, $100+/mo sponsor orgs, and approved individuals. Added Requesting Access section."
+modifiedDate: 2026-05-10
+modifiedComment: "Added drupal-contrib template for contrib module/theme development; removed deprecated user-defined-web template; updated Issue Picker to cover both core and contrib issues."
 summary: "coder.ddev.com provides free, experimental cloud-based DDEV workspaces powered by Coder. Start a Drupal contribution environment in under 30 seconds, with full VS Code, Xdebug, and CLI support."
 author: Randy Fay
 featureImage:
@@ -21,7 +21,7 @@ categories:
 This is an experimental service with no guarantees of data retention, uptime, or long-term availability. The future of its maintenance and sustainability is uncertain. Do not store irreplaceable work here without pushing it to Git. Treat it as a convenience, not a platform to depend on.
 :::
 
-Want a quick overview? Watch the 6-minute intro video starting from the very beginning:
+Want a quick overview? Watch the 6-minute intro video starting from the very beginning (note: this video shows an older version of the interface — the current template list includes drupal-contrib instead of user-defined-web):
 
 <div class="video-container">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TPz2xnFdQLk?si=r8MroZZjOjx7OToK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -60,7 +60,7 @@ If you do not have access through one of the paths above, open an issue in the [
 From the dashboard, click **Create Workspace** and choose a template:
 
 - **drupal-core** — automated Drupal core development environment
-- **user-defined-web** — general-purpose DDEV for any project
+- **drupal-contrib** — Drupal contrib module/theme development environment
 - **freeform** — DDEV with Traefik routing integration for stable URLs
 
 Give your workspace a name and click **Create Workspace**. Most workspaces start in under a minute. The drupal-core template (with seed cache) is ready in about 30 seconds.
@@ -94,6 +94,33 @@ This takes less than 4 minutes, try it out:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IAF_CyzR6_g?si=q-cr63OxnWq4mX4g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
+### drupal-contrib
+
+The drupal-contrib template sets up a development environment for any Drupal contrib module or theme using the [ddev-drupal-contrib](https://github.com/ddev/ddev-drupal-contrib) add-on.
+
+Specify the project machine name when creating the workspace (e.g. `token`, `views`, `webform`). Drupal core is installed as a dev dependency, and your module or theme is symlinked into the web root automatically via `ddev symlink-project`.
+
+Choose your Drupal version (10, 11, or 12) and optionally provide an issue number and branch to have the issue fork checked out automatically.
+
+Dev tools available inside the workspace:
+
+- `ddev phpunit` — run PHPUnit tests
+- `ddev phpcs` / `ddev phpcbf` — check/fix Drupal coding standards
+- `ddev phpstan` — static analysis
+- `ddev eslint` / `ddev stylelint` — JavaScript and CSS linting
+
+Setup time is reasonable on first workspace creation and much faster on subsequent starts.
+
+**Key parameters:**
+
+| Parameter        | Notes                                            |
+| ---------------- | ------------------------------------------------ |
+| `project_name`   | Drupal.org machine name, e.g. `token` (required) |
+| `project_type`   | `module` or `theme`                              |
+| `drupal_version` | `10`, `11`, or `12`                              |
+| `issue_fork`     | Issue number; omit for plain HEAD development    |
+| `issue_branch`   | Branch name; omit to use the default branch      |
+
 ### freeform
 
 The freeform template adds Traefik routing integration so your DDEV project and services like Mailpit get stable subdomain URLs (no port numbers). After creating a workspace, run `ddev coder-setup` once in your project directory, then `ddev start`. Routing updates automatically on every start.
@@ -102,17 +129,18 @@ The freeform template adds Traefik routing integration so your DDEV project and 
 
 One of the most useful features for Drupal contributors is the **Drupal Issue Picker** at [start.coder.ddev.com/drupal-issue](https://start.coder.ddev.com/drupal-issue).
 
-![Drupal Core Issue Picker — enter an issue URL or number to launch a pre-configured workspace](/img/blog/2026/03/drupal-issue-picker.png)
+![Drupal Issue Picker — enter an issue URL or number to launch a pre-configured workspace](/img/blog/2026/03/drupal-issue-picker.png)
 
-Paste any drupal.org issue URL (for example, `https://www.drupal.org/project/drupal/issues/3568144`) and the picker launches a drupal-core workspace with:
+The picker accepts drupal.org issue URLs for both core and contrib projects and routes automatically to the right template:
 
-- The correct Drupal version (10.x, 11.x, or main) detected from the issue
-- The issue fork branch already checked out
-- Composer dependencies resolved
+- **Core issues** (e.g. `https://www.drupal.org/project/drupal/issues/3568144`) → **drupal-core** template, with the correct Drupal version detected and the issue fork branch checked out
+- **Contrib issues** (e.g. `https://www.drupal.org/project/token/issues/3568144`) → **drupal-contrib** template, with the module cloned and the issue fork branch checked out
 
-This replaces the workflow that DrupalPod (Gitpod-based) provided for contribution days. You can hand someone an issue URL, they paste it into the picker, and within 30 seconds they have a working environment with the issue branch ready.
+The picker also accepts a project URL (e.g. `drupal.org/project/token`) or machine name (e.g. `token`) for plain contrib development without a specific issue — it opens the drupal-contrib template with the project at HEAD.
 
-Demonstrating this from start to finish in about 6 minutes:
+This replaces the workflow that DrupalPod (Gitpod-based) provided for contribution days. You can hand someone an issue URL, they paste it into the picker, and within 30 seconds (core) or a few minutes (contrib) they have a working environment with the issue branch ready.
+
+The video below demonstrates the core issue flow (about 6 minutes). Note that it shows the original core-only version of the picker — the current picker handles contrib issues too:
 
 <div class="video-container">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/M48zdeqNXlA?si=15tSEqIuHDHXaAg1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
