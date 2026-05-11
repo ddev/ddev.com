@@ -76,7 +76,7 @@ Once running, you have several options to use your workspace:
 
 ### drupal-core
 
-The drupal-core template sets up a complete Drupal core contribution environment automatically using [joachim-n/drupal-core-development-project](https://github.com/joachim-n/drupal-core-development-project). Drupal core is cloned, Composer dependencies are installed, and a demo site is installed — all in about 30 seconds when a seed cache is available.
+The drupal-core template sets up a complete Drupal core contribution environment automatically using the [amateescu/ddev-drupal-dev](https://github.com/amateescu/ddev-drupal-dev) DDEV add-on. Drupal core is cloned directly as the project root (no composer project wrapper), Composer dependencies are installed, and a demo site is installed.
 
 Choose your Drupal version when creating the workspace:
 
