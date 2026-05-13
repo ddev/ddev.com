@@ -2,7 +2,7 @@
 title: "Introducing coder.ddev.com: DDEV in the Cloud"
 pubDate: 2026-03-11
 modifiedDate: 2026-05-13
-modifiedComment: "Significant updates to coder behavior, including Drupal contrib issue setup, bettter 'freeform' template, and new authentication requirements."
+modifiedComment: "Significant updates to coder behavior, including Drupal contrib issue setup, better 'freeform' template, and new authentication requirements."
 summary: "coder.ddev.com provides free, experimental cloud-based DDEV workspaces powered by Coder. Start a Drupal contribution environment in under 30 seconds, with full VS Code, Xdebug, and CLI support."
 author: Randy Fay
 featureImage:
@@ -21,10 +21,10 @@ categories:
 This is an experimental service with no guarantees of data retention, uptime, or long-term availability. The future of its maintenance and sustainability is uncertain. Do not store irreplaceable work here without pushing it to Git. Treat it as a convenience, not a platform to depend on.
 :::
 
-Want a quick overview? Watch the 6-minute intro video starting from the very beginning (note: this video shows an older version of the interface — the current template list includes drupal-contrib instead of user-defined-web):
+Want a quick overview? This video walks through creating a workspace and using the freeform template for basic site setup:
 
 <div class="video-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TPz2xnFdQLk?si=r8MroZZjOjx7OToK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sKjAUZ0ISJU?start=59" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 ## Table of Contents
@@ -63,7 +63,7 @@ From the dashboard, click **Create Workspace** and choose a template:
 - **drupal-contrib** — Drupal contrib module/theme development environment
 - **freeform** — DDEV with Traefik routing integration for stable URLs
 
-Give your workspace a name and click **Create Workspace**. Most workspaces start in under a minute. The drupal-core template (with seed cache) is ready in about 30 seconds.
+Give your workspace a name and click **Create Workspace**. The drupal-core and drupal-contrib templates take several minutes on first creation; subsequent starts are much faster.
 
 ### 3. Access Your Workspace
 
@@ -87,12 +87,6 @@ Choose your Drupal version when creating the workspace:
 The template automatically selects the correct PHP version and DDEV project type for the chosen branch.
 
 Log in to the site with `admin` / `admin`.
-
-This takes less than 4 minutes, try it out:
-
-<div class="video-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/IAF_CyzR6_g?si=q-cr63OxnWq4mX4g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
 
 ### drupal-contrib
 
@@ -123,7 +117,7 @@ Setup time is reasonable on first workspace creation and much faster on subseque
 
 ### freeform
 
-The freeform template adds Traefik routing integration so your DDEV project and services like Mailpit get stable subdomain URLs (no port numbers). After creating a workspace, run `ddev coder-setup` once in your project directory, then `ddev start`. Routing updates automatically on every start.
+The freeform template supports multiple DDEV projects in one workspace, each accessible via its own subdomain through ddev-router Host-header routing — no port numbers needed. After creating a workspace, run `ddev coder-setup` once in your project directory, then `ddev start`. Routing updates automatically on every start.
 
 ## The Drupal Issue Picker
 
@@ -138,12 +132,10 @@ The picker accepts drupal.org issue URLs for both core and contrib projects and 
 
 The picker also accepts a project URL (e.g. `drupal.org/project/token`) or machine name (e.g. `token`) for plain contrib development without a specific issue — it opens the drupal-contrib template with the project at HEAD.
 
-This replaces the workflow that DrupalPod (Gitpod-based) provided for contribution days. You can hand someone an issue URL, they paste it into the picker, and within 30 seconds (core) or a few minutes (contrib) they have a working environment with the issue branch ready.
-
-The video below demonstrates the core issue flow (about 6 minutes). Note that it shows the original core-only version of the picker — the current picker handles contrib issues too:
+This replaces the workflow that DrupalPod (Gitpod-based) provided for contribution days. You can hand someone an issue URL, they paste it into the picker, and they have a working environment with the issue branch ready.
 
 <div class="video-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/M48zdeqNXlA?si=15tSEqIuHDHXaAg1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-3WuVekQOmc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 ## Development Tools
