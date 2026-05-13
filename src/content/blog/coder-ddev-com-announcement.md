@@ -24,7 +24,7 @@ This is an experimental service with no guarantees of data retention, uptime, or
 Want a quick overview? This video walks through creating a workspace and using the freeform template for basic site setup:
 
 <div class="video-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sKjAUZ0ISJU?start=59" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sKjAUZ0ISJU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 ## Table of Contents
