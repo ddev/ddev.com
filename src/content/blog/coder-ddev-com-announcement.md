@@ -1,6 +1,8 @@
 ---
 title: "Introducing coder.ddev.com: DDEV in the Cloud"
 pubDate: 2026-03-11
+modifiedDate: 2026-05-13
+modifiedComment: "Significant updates to coder behavior, including Drupal contrib issue setup, better 'freeform' template, and new authentication requirements."
 summary: "coder.ddev.com provides free, experimental cloud-based DDEV workspaces powered by Coder. Start a Drupal contribution environment in under 30 seconds, with full VS Code, Xdebug, and CLI support."
 author: Randy Fay
 featureImage:
@@ -19,10 +21,10 @@ categories:
 This is an experimental service with no guarantees of data retention, uptime, or long-term availability. The future of its maintenance and sustainability is uncertain. Do not store irreplaceable work here without pushing it to Git. Treat it as a convenience, not a platform to depend on.
 :::
 
-Want a quick overview? Watch the 6-minute intro video starting from the very beginning:
+Want a quick overview? This video walks through creating a workspace and using the freeform template for basic site setup:
 
 <div class="video-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TPz2xnFdQLk?si=r8MroZZjOjx7OToK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sKjAUZ0ISJU?start=59" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 ## Table of Contents
@@ -39,17 +41,29 @@ The source code for the templates and Docker image is at [github.com/ddev/coder-
 
 ### 1. Log In with GitHub
 
-Go to [coder.ddev.com](https://coder.ddev.com) and click **Login with GitHub**. No separate account needed. `coder.ddev.com` receives read-only access to your email addresses, public profile, and GitHub organization membership — no code access, no write access.
+Access to coder.ddev.com requires a GitHub account and membership in an approved GitHub organization. Sign in using the **Sign in with GitHub** button — no separate Coder account registration is needed. coder.ddev.com receives read-only access to your email addresses, public profile, and GitHub organization membership — no code access, no write access.
+
+**Who has access:**
+
+- Members of the [ddev](https://github.com/ddev) GitHub organization
+- Members of organizations that sponsor DDEV at $100+/month (see the [DDEV sponsors page](https://ddev.com/support-ddev/)) — all members of a qualifying sponsor org can sign in without individual enrollment
+- Individuals approved by the DDEV maintainers
+
+If you are a `ddev` org member or your organization is a $100+/month sponsor, you can sign in immediately — no request needed.
+
+### Requesting Access
+
+If you do not have access through one of the paths above, open an issue in the [coder-ddev-com/access-requests](https://github.com/coder-ddev-com/access-requests) repository. Include your GitHub username and a brief description of how you plan to use the environment. The DDEV maintainers review requests and add approved users to the `coder-ddev-com` GitHub organization — once added, you can sign in immediately.
 
 ### 2. Create a Workspace
 
 From the dashboard, click **Create Workspace** and choose a template:
 
 - **drupal-core** — automated Drupal core development environment
-- **user-defined-web** — general-purpose DDEV for any project
+- **drupal-contrib** — Drupal contrib module/theme development environment
 - **freeform** — DDEV with Traefik routing integration for stable URLs
 
-Give your workspace a name and click **Create Workspace**. Most workspaces start in under a minute. The drupal-core template (with seed cache) is ready in about 30 seconds.
+Give your workspace a name and click **Create Workspace**. The drupal-core and drupal-contrib templates take several minutes on first creation; subsequent starts are much faster.
 
 ### 3. Access Your Workspace
 
@@ -62,7 +76,7 @@ Once running, you have several options to use your workspace:
 
 ### drupal-core
 
-The drupal-core template sets up a complete Drupal core contribution environment automatically using [joachim-n/drupal-core-development-project](https://github.com/joachim-n/drupal-core-development-project). Drupal core is cloned, Composer dependencies are installed, and a demo site is installed — all in about 30 seconds when a seed cache is available.
+The drupal-core template sets up a complete Drupal core contribution environment automatically using the [amateescu/ddev-drupal-dev](https://github.com/amateescu/ddev-drupal-dev) DDEV add-on. Drupal core is cloned directly as the project root (no composer project wrapper), Composer dependencies are installed, and a demo site is installed.
 
 Choose your Drupal version when creating the workspace:
 
@@ -74,34 +88,54 @@ The template automatically selects the correct PHP version and DDEV project type
 
 Log in to the site with `admin` / `admin`.
 
-This takes less than 4 minutes, try it out:
+### drupal-contrib
 
-<div class="video-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/IAF_CyzR6_g?si=q-cr63OxnWq4mX4g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
+The drupal-contrib template sets up a development environment for any Drupal contrib module or theme using the [ddev-drupal-contrib](https://github.com/ddev/ddev-drupal-contrib) add-on.
+
+Specify the project machine name when creating the workspace (e.g. `token`, `views`, `webform`). Drupal core is installed as a dev dependency, and your module or theme is symlinked into the web root automatically via `ddev symlink-project`.
+
+Choose your Drupal version (10, 11, or 12) and optionally provide an issue number and branch to have the issue fork checked out automatically.
+
+Dev tools available inside the workspace:
+
+- `ddev phpunit` — run PHPUnit tests
+- `ddev phpcs` / `ddev phpcbf` — check/fix Drupal coding standards
+- `ddev phpstan` — static analysis
+- `ddev eslint` / `ddev stylelint` — JavaScript and CSS linting
+
+Setup time is reasonable on first workspace creation and much faster on subsequent starts.
+
+**Key parameters:**
+
+| Parameter        | Notes                                            |
+| ---------------- | ------------------------------------------------ |
+| `project_name`   | Drupal.org machine name, e.g. `token` (required) |
+| `project_type`   | `module` or `theme`                              |
+| `drupal_version` | `10`, `11`, or `12`                              |
+| `issue_fork`     | Issue number; omit for plain HEAD development    |
+| `issue_branch`   | Branch name; omit to use the default branch      |
 
 ### freeform
 
-The freeform template adds Traefik routing integration so your DDEV project and services like Mailpit get stable subdomain URLs (no port numbers). After creating a workspace, run `ddev coder-setup` once in your project directory, then `ddev start`. Routing updates automatically on every start.
+The freeform template supports multiple DDEV projects in one workspace, each accessible via its own subdomain through ddev-router Host-header routing — no port numbers needed. After creating a workspace, run `ddev coder-setup` once in your project directory, then `ddev start`. Routing updates automatically on every start.
 
 ## The Drupal Issue Picker
 
 One of the most useful features for Drupal contributors is the **Drupal Issue Picker** at [start.coder.ddev.com/drupal-issue](https://start.coder.ddev.com/drupal-issue).
 
-![Drupal Core Issue Picker — enter an issue URL or number to launch a pre-configured workspace](/img/blog/2026/03/drupal-issue-picker.png)
+![Drupal Issue Picker — enter an issue URL or number to launch a pre-configured workspace](/img/blog/2026/03/drupal-issue-picker.png)
 
-Paste any drupal.org issue URL (for example, `https://www.drupal.org/project/drupal/issues/3568144`) and the picker launches a drupal-core workspace with:
+The picker accepts drupal.org issue URLs for both core and contrib projects and routes automatically to the right template:
 
-- The correct Drupal version (10.x, 11.x, or main) detected from the issue
-- The issue fork branch already checked out
-- Composer dependencies resolved
+- **Core issues** (e.g. [Deprecate update.compare functions](https://www.drupal.org/project/drupal/issues/3580705)) → **drupal-core** template, with the correct Drupal version detected and the issue fork branch checked out
+- **Contrib issues** (e.g. [Better PHP Standards](https://www.drupal.org/project/languages_dropdown/issues/3581165)) → **drupal-contrib** template, with the module cloned and the issue fork branch checked out
 
-This replaces the workflow that DrupalPod (Gitpod-based) provided for contribution days. You can hand someone an issue URL, they paste it into the picker, and within 30 seconds they have a working environment with the issue branch ready.
+The picker also accepts a project URL (e.g. `drupal.org/project/token`) or machine name (e.g. `token`) for plain contrib development without a specific issue — it opens the drupal-contrib template with the project at HEAD.
 
-Demonstrating this from start to finish in about 6 minutes:
+This replaces the workflow that DrupalPod (Gitpod-based) provided for contribution days. You can hand someone an issue URL, they paste it into the picker, and they have a working environment with the issue branch ready.
 
 <div class="video-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/M48zdeqNXlA?si=15tSEqIuHDHXaAg1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-3WuVekQOmc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 ## Development Tools
