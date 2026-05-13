@@ -32,7 +32,7 @@ const { latestVersion } = Astro.props
 
   <p>Run the following in PowerShell terminal:</p>
 
-  <Terminal type="powershell" code={`> wsl --install`} />
+  <Terminal type="powershell" code={`> wsl --install --no-distribution`} />
 
   <p>You’ll probably need to reboot.</p>
 
@@ -42,7 +42,7 @@ const { latestVersion } = Astro.props
   
   <p>Then, install an Ubuntu distro named "DDEV":</p>
 
-  <Terminal type="powershell" code={`> wsl --install Ubuntu --name DDEV`} />
+  <Terminal type="powershell" code={`> wsl --install Ubuntu-24.04 --name DDEV`} />
   
   <p>Verify that you now have an Ubuntu distro set as default:</p>
 
