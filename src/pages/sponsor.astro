@@ -1,0 +1,418 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Heading from "../components/Heading.astro"
+import CtaButton from "../components/CtaButton.astro"
+import FeaturedSponsors from "../components/FeaturedSponsors.astro"
+import Sponsors from "../components/Sponsors.astro"
+
+const title = `Sponsor DDEV`
+const description = `Help fund DDEV's two full-time maintainers. Monthly recurring sponsorship via GitHub, PayPal, or invoice — live progress, transparent breakdown.`
+
+/**
+ * Live sponsorship totals from the published GitHub Pages snapshot at
+ * https://ddev.github.io/sponsorship-data/data/all-sponsorships.json
+ * (alias: https://ddev.com/s/sponsorship-data.json). Updated daily by
+ * the github-sponsorships.sh script in ddev/sponsorship-data.
+ *
+ * Fetched at build time. If the endpoint is unreachable we render the
+ * page with the most-recent known totals so the build never breaks on a
+ * transient network failure.
+ */
+const SPONSORSHIP_DATA_URL =
+  "https://ddev.github.io/sponsorship-data/data/all-sponsorships.json"
+
+interface SourceTotals {
+  monthly: number
+  sponsors: number
+}
+
+interface SponsorshipSnapshot {
+  github: SourceTotals
+  monthly_invoiced: SourceTotals
+  annual_invoiced_monthly_equivalent: SourceTotals
+  paypal_monthly: number
+  total_monthly: number
+  goal_amount: number
+  progress_percentage: number
+  one_week_ago_monthly: number | null
+  updated_iso: string | null
+  fallback: boolean
+}
+
+const fallback: SponsorshipSnapshot = {
+  github: { monthly: 5484, sponsors: 239 },
+  monthly_invoiced: { monthly: 3048, sponsors: 8 },
+  annual_invoiced_monthly_equivalent: { monthly: 879, sponsors: 9 },
+  paypal_monthly: 45,
+  total_monthly: 9456,
+  goal_amount: 12000,
+  progress_percentage: 78.8,
+  one_week_ago_monthly: 7853,
+  updated_iso: null,
+  fallback: true,
+}
+
+async function fetchSponsorshipData(): Promise<SponsorshipSnapshot> {
+  try {
+    const res = await fetch(SPONSORSHIP_DATA_URL, {
+      signal: AbortSignal.timeout(8000),
+    })
+    if (!res.ok) return fallback
+    const data: any = await res.json()
+    const ghDdev = data.github_ddev_sponsorships ?? {}
+    const ghRfay = data.github_rfay_sponsorships ?? {}
+    const mi = data.monthly_invoiced_sponsorships ?? {}
+    const ai = data.annual_invoiced_sponsorships ?? {}
+    return {
+      github: {
+        monthly:
+          (ghDdev.total_monthly_sponsorship ?? 0) +
+          (ghRfay.total_monthly_sponsorship ?? 0),
+        sponsors: (ghDdev.total_sponsors ?? 0) + (ghRfay.total_sponsors ?? 0),
+      },
+      monthly_invoiced: {
+        monthly: mi.total_monthly_sponsorship ?? 0,
+        sponsors: mi.total_sponsors ?? 0,
+      },
+      annual_invoiced_monthly_equivalent: {
+        monthly: ai.monthly_equivalent_sponsorship ?? 0,
+        sponsors: ai.total_sponsors ?? 0,
+      },
+      paypal_monthly: data.paypal_sponsorships ?? 0,
+      total_monthly: data.total_monthly_average_income ?? 0,
+      goal_amount: data.current_goal?.target_amount ?? 12000,
+      progress_percentage: data.current_goal?.progress_percentage ?? 0,
+      one_week_ago_monthly: data.historical_data?.one_week_ago ?? null,
+      updated_iso: data.updated_datetime ?? null,
+      fallback: false,
+    }
+  } catch {
+    return fallback
+  }
+}
+
+const data = await fetchSponsorshipData()
+
+const usd = (n: number) =>
+  `$${n.toLocaleString("en-US", { maximumFractionDigits: 0 })}`
+
+const sevenDayDelta =
+  data.one_week_ago_monthly != null
+    ? data.total_monthly - data.one_week_ago_monthly
+    : null
+
+const updatedHuman = data.updated_iso
+  ? new Date(data.updated_iso).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })
+  : null
+
+// Clamp progress for the bar; the real percentage is also shown numerically.
+const barPercent = Math.min(100, Math.max(0, data.progress_percentage))
+
+const sources = [
+  {
+    name: "GitHub Sponsors",
+    amount: data.github.monthly,
+    sponsors: data.github.sponsors,
+    note: "ddev org + rfay",
+    url: "https://github.com/sponsors/ddev",
+  },
+  {
+    name: "Monthly invoiced",
+    amount: data.monthly_invoiced.monthly,
+    sponsors: data.monthly_invoiced.sponsors,
+    note: "direct billing",
+    url: "/contact",
+  },
+  {
+    name: "Annual invoiced",
+    amount: data.annual_invoiced_monthly_equivalent.monthly,
+    sponsors: data.annual_invoiced_monthly_equivalent.sponsors,
+    note: "monthly equivalent",
+    url: "/contact",
+  },
+  {
+    name: "PayPal",
+    amount: data.paypal_monthly,
+    sponsors: null,
+    note: "monthly equivalent",
+    url: "https://www.paypal.com/donate/?hosted_button_id=MCNCSZHC7LHSQ",
+  },
+]
+---
+
+<Layout
+  title={title}
+  description={description}
+  ogImage="/img/og-support.png"
+  ogImageAlt="Sponsor DDEV"
+>
+  <main class="max-w-5xl mx-auto mb-24 px-6 lg:px-0">
+    <Heading
+      title={title}
+      subtitle="Help fund two full-time maintainers."
+    />
+
+    {/* --- Live progress block --- */}
+    <section
+      class="mt-4 mb-12 rounded-2xl border border-gray-200 dark:border-white/15 bg-gray-50 dark:bg-white/[3%] p-6 md:p-10"
+      aria-labelledby="progress-heading"
+    >
+      <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2">
+        <div>
+          <p class="text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">
+            Monthly recurring sponsorship
+          </p>
+          <h2
+            id="progress-heading"
+            class="m-0 text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white"
+          >
+            {usd(data.total_monthly)}
+            <span class="text-xl md:text-2xl font-medium text-gray-500 dark:text-gray-400">
+              &nbsp;/&nbsp;{usd(data.goal_amount)}
+            </span>
+          </h2>
+        </div>
+        <p class="text-sm md:text-base text-gray-600 dark:text-gray-300 md:text-right">
+          <span class="font-semibold text-emerald-700 dark:text-emerald-400">
+            {data.progress_percentage.toFixed(1)}%
+          </span>
+          of the {usd(data.goal_amount)}/month goal
+          {sevenDayDelta != null && sevenDayDelta !== 0 && (
+            <>
+              <br />
+              <span class="text-gray-500 dark:text-gray-400">
+                {sevenDayDelta > 0 ? "+" : ""}
+                {usd(sevenDayDelta)} vs. one week ago
+              </span>
+            </>
+          )}
+        </p>
+      </div>
+
+      <div
+        class="mt-6 h-3 w-full overflow-hidden rounded-full bg-gray-200 dark:bg-white/10"
+        role="progressbar"
+        aria-valuenow={Math.round(data.progress_percentage)}
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-label={`Sponsorship progress: ${data.progress_percentage.toFixed(1)} percent of ${usd(data.goal_amount)} monthly goal`}
+      >
+        <div
+          class="h-full bg-gradient-to-r from-emerald-500 to-cyan-500"
+          style={`width: ${barPercent}%`}
+        >
+        </div>
+      </div>
+
+      {updatedHuman && !data.fallback && (
+        <p class="mt-4 text-xs text-gray-500 dark:text-gray-400">
+          Data updated daily &middot; last update {updatedHuman} &middot;{" "}
+          <a
+            href={SPONSORSHIP_DATA_URL}
+            class="underline hover:no-underline"
+            target="_blank"
+            rel="noopener"
+          >
+            view raw JSON
+          </a>
+        </p>
+      )}
+    </section>
+
+    {/* --- Three primary CTAs --- */}
+    <section class="mb-16" aria-labelledby="ways-heading">
+      <h2
+        id="ways-heading"
+        class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2"
+      >
+        Three ways to sponsor
+      </h2>
+      <p class="text-gray-600 dark:text-gray-300 mb-8">
+        Any amount helps. Monthly recurring is what funds the maintainers; we
+        list each channel separately so you can pick the one that fits.
+      </p>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        {/* GitHub Sponsors */}
+        <article class="flex flex-col rounded-xl border border-gray-200 dark:border-white/15 bg-white dark:bg-white/[3%] p-6">
+          <h3 class="m-0 text-xl font-bold text-gray-900 dark:text-white">
+            GitHub Sponsors
+          </h3>
+          <p class="mt-2 mb-4 text-sm text-gray-600 dark:text-gray-300 grow">
+            For individuals and organizations who already use GitHub. Monthly
+            recurring; tiers from $1 to $530.
+          </p>
+          <CtaButton
+            text="Sponsor on GitHub →"
+            href="https://github.com/sponsors/ddev"
+            target="_blank"
+          />
+        </article>
+
+        {/* PayPal */}
+        <article class="flex flex-col rounded-xl border border-gray-200 dark:border-white/15 bg-white dark:bg-white/[3%] p-6">
+          <h3 class="m-0 text-xl font-bold text-gray-900 dark:text-white">
+            PayPal
+          </h3>
+          <p class="mt-2 mb-4 text-sm text-gray-600 dark:text-gray-300 grow">
+            One-time gift or recurring without a GitHub account. Supports any
+            amount.
+          </p>
+          <CtaButton
+            text="Sponsor via PayPal →"
+            href="https://www.paypal.com/donate/?hosted_button_id=MCNCSZHC7LHSQ"
+            target="_blank"
+          />
+        </article>
+
+        {/* Invoice */}
+        <article class="flex flex-col rounded-xl border border-gray-200 dark:border-white/15 bg-white dark:bg-white/[3%] p-6">
+          <h3 class="m-0 text-xl font-bold text-gray-900 dark:text-white">
+            Direct invoice
+          </h3>
+          <p class="mt-2 mb-4 text-sm text-gray-600 dark:text-gray-300 grow">
+            For organizations with a procurement process. The DDEV Foundation
+            is a US 501(c)(3); invoices and W-9 available on request.
+          </p>
+          <CtaButton text="Contact for invoicing →" href="/contact" type="hollow" />
+        </article>
+      </div>
+    </section>
+
+    {/* --- Source breakdown table --- */}
+    <section class="mb-16" aria-labelledby="breakdown-heading">
+      <h2
+        id="breakdown-heading"
+        class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2"
+      >
+        Where the {usd(data.total_monthly)} comes from
+      </h2>
+      <p class="text-gray-600 dark:text-gray-300 mb-6">
+        Monthly recurring equivalent, by source. Annual sponsorships are
+        normalized to a monthly figure.
+      </p>
+
+      <div class="overflow-x-auto rounded-xl border border-gray-200 dark:border-white/15">
+        <table class="w-full text-left">
+          <thead class="bg-gray-50 dark:bg-white/[3%] text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400">
+            <tr>
+              <th scope="col" class="px-4 py-3 font-medium">Source</th>
+              <th scope="col" class="px-4 py-3 font-medium text-right">
+                Monthly
+              </th>
+              <th scope="col" class="px-4 py-3 font-medium text-right">
+                Sponsors
+              </th>
+              <th scope="col" class="px-4 py-3 font-medium hidden md:table-cell">
+                Notes
+              </th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 dark:divide-white/10">
+            {sources.map((s) => (
+              <tr class="bg-white dark:bg-transparent">
+                <td class="px-4 py-3 font-medium text-gray-900 dark:text-white">
+                  <a
+                    href={s.url}
+                    class="underline hover:no-underline"
+                    target={s.url.startsWith("http") ? "_blank" : undefined}
+                    rel={s.url.startsWith("http") ? "noopener" : undefined}
+                  >
+                    {s.name}
+                  </a>
+                </td>
+                <td class="px-4 py-3 text-right font-mono tabular-nums text-gray-900 dark:text-white">
+                  {usd(s.amount)}
+                </td>
+                <td class="px-4 py-3 text-right font-mono tabular-nums text-gray-600 dark:text-gray-300">
+                  {s.sponsors != null ? s.sponsors : "—"}
+                </td>
+                <td class="px-4 py-3 text-sm text-gray-500 dark:text-gray-400 hidden md:table-cell">
+                  {s.note}
+                </td>
+              </tr>
+            ))}
+            <tr class="bg-gray-50 dark:bg-white/[4%] font-semibold">
+              <td class="px-4 py-3 text-gray-900 dark:text-white">Total</td>
+              <td class="px-4 py-3 text-right font-mono tabular-nums text-gray-900 dark:text-white">
+                {usd(data.total_monthly)}
+              </td>
+              <td class="px-4 py-3 text-right font-mono tabular-nums text-gray-600 dark:text-gray-300">
+                —
+              </td>
+              <td class="px-4 py-3 text-sm text-gray-500 dark:text-gray-400 hidden md:table-cell">
+                {data.progress_percentage.toFixed(1)}% of {usd(data.goal_amount)} goal
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    {/* --- Featured organizations --- */}
+    <section class="mb-16" aria-labelledby="featured-heading">
+      <h2
+        id="featured-heading"
+        class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2"
+      >
+        Featured organizations
+      </h2>
+      <p class="text-gray-600 dark:text-gray-300 mb-8">
+        Companies whose support keeps DDEV maintained. Want your logo here?
+        Sponsor at the major tier (≥ $200/month on GitHub Sponsors, or contact
+        us for invoicing).
+      </p>
+      <FeaturedSponsors />
+    </section>
+
+    {/* --- Bubble grid of all sponsors --- */}
+    <section class="mb-16" aria-labelledby="all-sponsors-heading">
+      <h2
+        id="all-sponsors-heading"
+        class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2"
+      >
+        All current sponsors
+      </h2>
+      <p class="text-gray-600 dark:text-gray-300 mb-6">
+        Every account currently sponsoring DDEV on GitHub, plus our featured
+        organizations.
+      </p>
+      <Sponsors includeFeatured={true} size="large" />
+    </section>
+
+    {/* --- Closing CTAs + foundation note --- */}
+    <section class="mt-12 mb-8">
+      <div class="grid gap-4 sm:max-w-2xl sm:mx-auto">
+        <div class="grid gap-4 sm:grid-cols-2">
+          <CtaButton
+            text="Sponsor on GitHub →"
+            href="https://github.com/sponsors/ddev"
+            target="_blank"
+          />
+          <CtaButton
+            text="Sponsor via PayPal →"
+            href="https://www.paypal.com/donate/?hosted_button_id=MCNCSZHC7LHSQ"
+            target="_blank"
+          />
+        </div>
+        <CtaButton
+          text="Contact for invoicing →"
+          href="/contact"
+          type="hollow"
+        />
+      </div>
+
+      <p class="mt-8 text-sm text-gray-500 dark:text-gray-400 text-center">
+        The DDEV Foundation is a Colorado, USA 501(c)(3) non-profit. See{" "}
+        <a href="/foundation" class="underline hover:no-underline">
+          DDEV Foundation
+        </a>{" "}
+        for board, financials, and tax status.
+      </p>
+    </section>
+  </main>
+</Layout>
