@@ -1,0 +1,83 @@
+---
+import featuredSponsors from "../featured-sponsors.json"
+
+/**
+ * Top-N featured organizations by tracked monthly contribution.
+ *
+ * Data comes from `src/featured-sponsors.json`. Entries that have an
+ * explicit `monthlyEquivalent` field are sorted descending and included
+ * in this list. Entries without that field are not shown (they still
+ * render in `<FeaturedSponsors />` and in the all-sponsors bubble grid).
+ *
+ * The set of tracked entries will grow as `monthlyEquivalent` values are
+ * filled in. The current floor is $200/month, which matches the major-tier
+ * GitHub Sponsors threshold.
+ */
+type Sponsor = {
+  name: string
+  type: string
+  logo: string
+  darklogo: string
+  squareLogo: string
+  url: string
+  github?: string
+  isLeading?: boolean
+  monthlyEquivalent?: number
+}
+
+const sponsors = featuredSponsors as Sponsor[]
+
+interface Props {
+  /** Maximum number of sponsors to show. Defaults to 10. */
+  limit?: number
+}
+
+const { limit = 10 } = Astro.props as Props
+
+const tracked = sponsors
+  .filter((s): s is Sponsor & { monthlyEquivalent: number } =>
+    typeof s.monthlyEquivalent === "number" && s.monthlyEquivalent > 0,
+  )
+  .slice()
+  .sort((a, b) => b.monthlyEquivalent - a.monthlyEquivalent)
+  .slice(0, limit)
+
+const usd = (n: number) =>
+  `$${n.toLocaleString("en-US", { maximumFractionDigits: 0 })}`
+---
+
+{tracked.length > 0 && (
+  <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+    {tracked.map((sponsor, idx) => (
+      <a
+        href={sponsor.url}
+        target="_blank"
+        rel="noopener"
+        title={sponsor.name}
+        class="group flex flex-col items-center rounded-xl border border-gray-200 dark:border-white/15 bg-white dark:bg-white/[3%] p-4 transition hover:border-gray-300 dark:hover:border-white/25"
+      >
+        <span class="text-xs font-mono text-gray-400 dark:text-gray-500 self-start">
+          #{idx + 1}
+        </span>
+        <div class="flex items-center justify-center h-12 w-full mt-1 mb-3">
+          <img
+            src={sponsor.logo}
+            alt={`${sponsor.name} logo`}
+            class="block max-h-12 w-auto max-w-full dark:hidden"
+          />
+          <img
+            src={sponsor.darklogo}
+            alt={`${sponsor.name} logo`}
+            class="hidden max-h-12 w-auto max-w-full dark:block"
+          />
+        </div>
+        <p class="m-0 text-sm font-semibold text-gray-900 dark:text-white text-center">
+          {sponsor.name}
+        </p>
+        <p class="m-0 mt-1 text-xs text-gray-500 dark:text-gray-400 font-mono tabular-nums">
+          {usd(sponsor.monthlyEquivalent)}+/mo
+        </p>
+      </a>
+    ))}
+  </div>
+)}
