@@ -37,6 +37,15 @@
     "isLeading": false
   },
   {
+    "name": "safefive",
+    "type": "major",
+    "logo": "/logos/safefive.svg",
+    "darklogo": "/logos/safefive.svg",
+    "squareLogo": "/logos/safefive-square.svg",
+    "url": "https://safefive.de/en/home/",
+    "isLeading": false
+  },
+  {
     "name": "b13",
     "type": "standard",
     "logo": "/logos/b13.svg",
