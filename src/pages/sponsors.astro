@@ -1,0 +1,360 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Heading from "../components/Heading.astro"
+import Sponsors from "../components/Sponsors.astro"
+
+const title = "Sponsor DDEV"
+
+const individualTiers = [
+  {
+    price: "$50",
+    name: "Supporting Sponsor",
+    description:
+      "Help fund more dedicated development time and project improvements.",
+    rewards: [
+      "Sponsor badge on your GitHub profile",
+      "Extra support for ongoing development work",
+    ],
+  },
+  {
+    price: "$25",
+    name: "Sponsor",
+    description:
+      "Show your support publicly and help strengthen the DDEV ecosystem.",
+    rewards: ["Sponsor badge on your GitHub profile"],
+  },
+  {
+    price: "$5",
+    name: "Community Supporter",
+    description:
+      "For less than the cost of a monthly coffee, you can help make DDEV sustainable.",
+    rewards: ["Supports ongoing maintenance, bug fixes, and community support"],
+  },
+]
+
+const enterpriseTiers = [
+  {
+    price: "$5,000",
+    name: "Sustainability Partner",
+    description:
+      "Help fund the full-time co-maintainer DDEV needs for long-term sustainability.",
+    rewards: [
+      "Help fund a dedicated DDEV co-maintainer",
+      "Option to sponsor an employee to contribute substantially to DDEV",
+      "Strategic collaboration with DDEV maintainers",
+    ],
+  },
+  {
+    price: "$2,000",
+    name: "Infrastructure Sponsor",
+    description:
+      "Help accelerate development, maintenance, and ecosystem improvements for teams depending on DDEV every day.",
+    rewards: [
+      "Strategic collaboration opportunities",
+      "Direct communication channel with maintainers",
+      "Visibility as a major ecosystem supporter",
+    ],
+  },
+  {
+    price: "$1,000",
+    name: "Strategic Sponsor",
+    description:
+      "Become a major supporter of the DDEV ecosystem with direct support access.",
+    rewards: [
+      "DDEV Tip of the Day thanks you by name",
+      "DDEV joins your company chat app for help and support",
+    ],
+  },
+  {
+    price: "$200",
+    name: "Priority Support Sponsor",
+    description:
+      "Ideal for teams and organizations that rely on DDEV in their workflows.",
+    rewards: ["Priority consideration for bug reports"],
+  },
+  {
+    price: "$100",
+    name: "Featured Sponsor",
+    description:
+      "Get recognized as an organization helping sustain the future of DDEV.",
+    rewards: ["Logo or name in the DDEV README"],
+  },
+]
+---
+
+<Layout title={title}>
+  <main class="px-6 max-w-6xl mx-auto">
+    <section>
+      <div class="mx-auto max-w-4xl text-center">
+        <Heading title="Sponsor" />
+      </div>
+    </section>
+
+    <section class="px-6 pb-24 lg:px-0">
+      <div class="mx-auto max-w-6xl">
+        <div class="mb-10">
+          <p class="text-sm font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">
+            Enterprise Sponsors
+          </p>
+
+          <h2 class="text-3xl font-bold text-gray-950 dark:text-white">
+            Sustain DDEV at the Organizational Level
+          </h2>
+
+          <p class="mt-4 max-w-3xl text-gray-700 dark:text-gray-300">
+            Built for companies and teams that depend on DDEV in production
+            workflows and want to invest in its long-term sustainability.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {
+            enterpriseTiers.map((tier) => (
+              <article class="flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:border-blue-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-blue-500">
+                <p class="text-4xl font-bold text-gray-950 dark:text-white">
+                  {tier.price}
+                  <span class="text-base font-medium text-gray-500 dark:text-gray-400">
+                    /month
+                  </span>
+                </p>
+
+                <h3 class="mt-4 text-2xl font-bold text-gray-950 dark:text-white">
+                  {tier.name}
+                </h3>
+
+                <p class="mt-3 text-gray-600 dark:text-gray-300">
+                  {tier.description}
+                </p>
+
+                <ul class="mt-6 flex-1 space-y-3 text-gray-600 dark:text-gray-300">
+                  {tier.rewards.map((reward) => <li>✓ {reward}</li>)}
+                </ul>
+
+                <div class="mt-8 grid gap-3">
+                  <a
+                    href="https://github.com/sponsors/ddev"
+                    class="inline-flex items-center justify-center gap-2 rounded-full bg-gray-950 px-5 py-3 font-bold text-white transition hover:bg-blue-700 dark:bg-white dark:text-gray-950 dark:hover:bg-gray-200"
+                  >
+                    <span aria-hidden="true">
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="h-5 w-5 fill-current"
+                      >
+                        <path d="M12 0C5.37 0 0 5.5 0 12.3c0 5.44 3.44 10.05 8.2 11.68.6.11.82-.27.82-.59 0-.29-.01-1.26-.02-2.28-3.34.74-4.04-1.46-4.04-1.46-.55-1.42-1.34-1.8-1.34-1.8-1.09-.77.08-.75.08-.75 1.2.09 1.84 1.27 1.84 1.27 1.07 1.88 2.82 1.34 3.5 1.03.11-.8.42-1.34.76-1.65-2.67-.31-5.47-1.37-5.47-6.1 0-1.35.47-2.45 1.24-3.31-.12-.31-.54-1.57.12-3.26 0 0 1.01-.33 3.3 1.26A11.2 11.2 0 0 1 12 5.93c1.02 0 2.05.14 3.01.41 2.29-1.59 3.3-1.26 3.3-1.26.66 1.69.24 2.95.12 3.26.77.86 1.24 1.96 1.24 3.31 0 4.74-2.81 5.78-5.49 6.09.43.38.81 1.12.81 2.27 0 1.64-.01 2.96-.01 3.36 0 .33.22.71.83.59A12.26 12.26 0 0 0 24 12.3C24 5.5 18.63 0 12 0Z" />
+                      </svg>
+                    </span>
+
+                    GitHub Sponsors
+                  </a>
+
+                  <a
+                    href="https://www.paypal.com/donate/?hosted_button_id=MCNCSZHC7LHSQ"
+                    class="inline-flex flex-col items-center justify-center gap-2 rounded-full border border-gray-300 bg-white px-5 py-3 font-bold text-gray-950 transition hover:border-blue-500 hover:text-blue-700 dark:border-gray-600 dark:bg-gray-900 dark:text-white dark:hover:border-blue-400 dark:hover:text-blue-400"
+                  >
+                    <span class="inline-flex items-center gap-2">
+                      <span aria-hidden="true">
+                        <svg
+                          viewBox="0 0 24 24"
+                          class="h-5 w-5 fill-current"
+                        >
+                          <path d="M7.2 22h-4l3.1-20h7.5c3.8 0 6.3 2.1 6.3 5.4 0 4.4-3.3 7.1-8.2 7.1H9.4L8.7 19c-.2 1.7-.7 3-1.5 3Zm2.7-10.9h2.2c2.2 0 3.7-1.2 3.7-3.1 0-1.5-1.1-2.4-2.9-2.4h-2.1l-.9 5.5Z" />
+                          <path d="M10.8 17.8h2.1c4.4 0 7.5-2.4 8.4-6.4.7.8 1.1 1.9 1.1 3.2 0 4.1-3.1 6.8-7.9 6.8h-1.8L12.3 24H8.5l2.3-6.2Z" />
+                        </svg>
+                      </span>
+
+                      <span>PayPal</span>
+                    </span>
+
+                    <span class="flex items-center gap-2 text-xs font-medium opacity-80">
+                      <span class="rounded bg-blue-500 px-2 py-0.5 text-white">
+                        Venmo
+                      </span>
+
+                      <span class="rounded border border-gray-400 px-2 py-0.5 dark:border-gray-500">
+                        Credit Card
+                      </span>
+                    </span>
+                  </a>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 pb-12 lg:px-0">
+      <div class="mx-auto max-w-6xl">
+        <div class="mb-10">
+          <p class="text-sm font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">
+            Individual Sponsors
+          </p>
+
+          <h2 class="text-3xl font-bold text-gray-950 dark:text-white">
+            Support DDEV as an Individual
+          </h2>
+
+          <p class="mt-4 max-w-3xl text-gray-700 dark:text-gray-300">
+            Perfect for developers, freelancers, and community members who want
+            to help keep DDEV healthy and sustainable.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {
+            individualTiers.map((tier) => (
+              <article class="flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:border-blue-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-blue-500">
+                <p class="text-4xl font-bold text-gray-950 dark:text-white">
+                  {tier.price}
+                  <span class="text-base font-medium text-gray-500 dark:text-gray-400">
+                    /month
+                  </span>
+                </p>
+
+                <h3 class="mt-4 text-2xl font-bold text-gray-950 dark:text-white">
+                  {tier.name}
+                </h3>
+
+                <p class="mt-3 text-gray-600 dark:text-gray-300">
+                  {tier.description}
+                </p>
+
+                <ul class="mt-6 flex-1 space-y-3 text-gray-600 dark:text-gray-300">
+                  {tier.rewards.map((reward) => <li>✓ {reward}</li>)}
+                </ul>
+
+                <div class="mt-8 grid gap-3">
+                  <a
+                    href="https://github.com/sponsors/ddev"
+                    class="inline-flex items-center justify-center gap-2 rounded-full bg-gray-950 px-5 py-3 font-bold text-white transition hover:bg-blue-700 dark:bg-white dark:text-gray-950 dark:hover:bg-gray-200"
+                  >
+                    <span aria-hidden="true">
+                      <svg
+                        viewBox="0 0 24 24"
+                        class="h-5 w-5 fill-current"
+                      >
+                        <path d="M12 0C5.37 0 0 5.5 0 12.3c0 5.44 3.44 10.05 8.2 11.68.6.11.82-.27.82-.59 0-.29-.01-1.26-.02-2.28-3.34.74-4.04-1.46-4.04-1.46-.55-1.42-1.34-1.8-1.34-1.8-1.09-.77.08-.75.08-.75 1.2.09 1.84 1.27 1.84 1.27 1.07 1.88 2.82 1.34 3.5 1.03.11-.8.42-1.34.76-1.65-2.67-.31-5.47-1.37-5.47-6.1 0-1.35.47-2.45 1.24-3.31-.12-.31-.54-1.57.12-3.26 0 0 1.01-.33 3.3 1.26A11.2 11.2 0 0 1 12 5.93c1.02 0 2.05.14 3.01.41 2.29-1.59 3.3-1.26 3.3-1.26.66 1.69.24 2.95.12 3.26.77.86 1.24 1.96 1.24 3.31 0 4.74-2.81 5.78-5.49 6.09.43.38.81 1.12.81 2.27 0 1.64-.01 2.96-.01 3.36 0 .33.22.71.83.59A12.26 12.26 0 0 0 24 12.3C24 5.5 18.63 0 12 0Z" />
+                      </svg>
+                    </span>
+
+                    GitHub Sponsors
+                  </a>
+
+                  <a
+                    href="https://www.paypal.com/donate/?hosted_button_id=MCNCSZHC7LHSQ"
+                    class="inline-flex flex-col items-center justify-center gap-2 rounded-full border border-gray-300 bg-white px-5 py-3 font-bold text-gray-950 transition hover:border-blue-500 hover:text-blue-700 dark:border-gray-600 dark:bg-gray-900 dark:text-white dark:hover:border-blue-400 dark:hover:text-blue-400"
+                  >
+                    <span class="inline-flex items-center gap-2">
+                      <span aria-hidden="true">
+                        <svg
+                          viewBox="0 0 24 24"
+                          class="h-5 w-5 fill-current"
+                        >
+                          <path d="M7.2 22h-4l3.1-20h7.5c3.8 0 6.3 2.1 6.3 5.4 0 4.4-3.3 7.1-8.2 7.1H9.4L8.7 19c-.2 1.7-.7 3-1.5 3Zm2.7-10.9h2.2c2.2 0 3.7-1.2 3.7-3.1 0-1.5-1.1-2.4-2.9-2.4h-2.1l-.9 5.5Z" />
+                          <path d="M10.8 17.8h2.1c4.4 0 7.5-2.4 8.4-6.4.7.8 1.1 1.9 1.1 3.2 0 4.1-3.1 6.8-7.9 6.8h-1.8L12.3 24H8.5l2.3-6.2Z" />
+                        </svg>
+                      </span>
+
+                      <span>PayPal</span>
+                    </span>
+
+                    <span class="flex items-center gap-2 text-xs font-medium opacity-80">
+                      <span class="rounded bg-blue-500 px-2 py-0.5 text-white">
+                        Venmo
+                      </span>
+
+                      <span class="rounded border border-gray-400 px-2 py-0.5 dark:border-gray-500">
+                        Credit Card
+                      </span>
+                    </span>
+                  </a>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 pb-24 lg:px-0">
+      <div class="mx-auto max-w-4xl">
+        <article class="overflow-hidden rounded-3xl border border-gray-200 p-8">
+          <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div class="max-w-2xl">
+              <p class="text-sm font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">
+                One-Time Support
+              </p>
+    
+              <h2 class="mt-2 text-3xl font-bold text-gray-950 dark:text-white">
+                Prefer a One-Time Contribution?
+              </h2>
+    
+              <p class="mt-4 text-lg leading-8 text-gray-700 dark:text-gray-300">
+                Not ready for a monthly sponsorship? You can still help support
+                DDEV development, maintenance, infrastructure, and community work
+                with a one-time contribution.
+              </p>
+            </div>
+    
+            <div class="flex w-full max-w-sm flex-col gap-3">
+              <a
+                href="https://github.com/sponsors/ddev"
+                class="inline-flex items-center justify-center gap-2 rounded-full bg-[#24292f] px-6 py-4 font-bold text-white transition hover:bg-[#1b1f23] dark:bg-white dark:text-gray-950 dark:hover:bg-gray-200"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  class="h-5 w-5 fill-current"
+                  aria-hidden="true"
+                >
+                  <path d="M12 0C5.37 0 0 5.5 0 12.3c0 5.44 3.44 10.05 8.2 11.68.6.11.82-.27.82-.59 0-.29-.01-1.26-.02-2.28-3.34.74-4.04-1.46-4.04-1.46-.55-1.42-1.34-1.8-1.34-1.8-1.09-.77.08-.75.08-.75 1.2.09 1.84 1.27 1.84 1.27 1.07 1.88 2.82 1.34 3.5 1.03.11-.8.42-1.34.76-1.65-2.67-.31-5.47-1.37-5.47-6.1 0-1.35.47-2.45 1.24-3.31-.12-.31-.54-1.57.12-3.26 0 0 1.01-.33 3.3 1.26A11.2 11.2 0 0 1 12 5.93c1.02 0 2.05.14 3.01.41 2.29-1.59 3.3-1.26 3.3-1.26.66 1.69.24 2.95.12 3.26.77.86 1.24 1.96 1.24 3.31 0 4.74-2.81 5.78-5.49 6.09.43.38.81 1.12.81 2.27 0 1.64-.01 2.96-.01 3.36 0 .33.22.71.83.59A12.26 12.26 0 0 0 24 12.3C24 5.5 18.63 0 12 0Z" />
+                </svg>
+    
+                <span>One-Time via GitHub</span>
+              </a>
+    
+              <a
+                href="https://www.paypal.com/donate/?hosted_button_id=MCNCSZHC7LHSQ"
+                class="inline-flex items-center justify-between rounded-full border border-gray-300 bg-white px-6 py-4 font-bold text-gray-950 transition hover:border-blue-500 hover:text-blue-700 dark:border-gray-600 dark:bg-gray-900 dark:text-white dark:hover:border-blue-400 dark:hover:text-blue-400"
+              >
+                <span class="inline-flex items-center gap-2">
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="h-5 w-5 fill-current"
+                    aria-hidden="true"
+                  >
+                    <path d="M7.2 22h-4l3.1-20h7.5c3.8 0 6.3 2.1 6.3 5.4 0 4.4-3.3 7.1-8.2 7.1H9.4L8.7 19c-.2 1.7-.7 3-1.5 3Zm2.7-10.9h2.2c2.2 0 3.7-1.2 3.7-3.1 0-1.5-1.1-2.4-2.9-2.4h-2.1l-.9 5.5Z" />
+                    <path d="M10.8 17.8h2.1c4.4 0 7.5-2.4 8.4-6.4.7.8 1.1 1.9 1.1 3.2 0 4.1-3.1 6.8-7.9 6.8h-1.8L12.3 24H8.5l2.3-6.2Z" />
+                  </svg>
+    
+                  <span>PayPal / Venmo</span>
+                </span>
+    
+                <span class="ml-3 rounded bg-gray-100 px-2 py-1 text-xs font-semibold text-gray-700 dark:bg-gray-700 dark:text-gray-200">
+                  Cards Accepted
+                </span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    
+    <section class="px-6 pb-24 lg:px-0">
+      <div class="mx-auto max-w-6xl rounded-3xl bg-gray-100 p-8 dark:bg-gray-900">
+        <h2 class="text-3xl font-bold text-gray-950 dark:text-white">
+          Join our Current Sponsors
+        </h2>
+
+        <p class="mt-4 max-w-3xl text-gray-700 dark:text-gray-300">
+          Sponsorship helps keep the project
+          sustainable, and funds long-term
+          maintenance and development.
+        </p>
+
+        <div class="mt-8">
+          <Sponsors size="large" align="center" includeFeatured={true} />
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
