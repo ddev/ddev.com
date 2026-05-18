@@ -27,7 +27,7 @@ The DDEV Foundation is the independent, community-governed home for the DDEV pro
 
 This is exactly the kind of long-term resilience that open-source projects need to thrive across decades, not just years.
 
-You can learn more about the foundation's structure and mission at [ddev.com/foundation](/foundation).
+You can learn more about the foundation's structure, board, finances, and mission at [ddev.com/foundation](/foundation).
 
 ## Thank You, Upsun
 
@@ -37,7 +37,7 @@ Upsun/Platform.sh has done so much for this project over the years:
 - Sponsored DDEV at a lead level for several years, funding core development
 - Held and maintained the trademark until the foundation was ready to receive it
 - Completed this transfer now, with no strings attached
-- Continued sponsoring DDEV at $1,000/month even after reducing their prior commitment
+- Continued sponsoring DDEV at $1,000/month level!
 
 This is a real contribution to the open-source ecosystem, and we're grateful for it.
 
