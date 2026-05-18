@@ -11,7 +11,7 @@ categories:
   - Community
 ---
 
-We're thrilled and thankful to announce that Upsun has completed the transfer of the DDEV trademarks to the [DDEV Foundation](/foundation).
+We're thrilled and thankful to announce that [Upsun](https://upsun.com/) has completed the transfer of the DDEV trademarks to the [DDEV Foundation](/foundation).
 
 The DDEV Foundation now owns the DDEV name outright, and DDEV's name and identity belong to its community.
 
