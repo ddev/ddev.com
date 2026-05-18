@@ -1,8 +1,8 @@
 ---
 title: "Watch: DDEV From Scratch with macOS"
-pubDate: 2026-05-06
+pubDate: 2026-05-18
 #modifiedDate: 2026-05-04
-summary: Screencast guide to running DDEV on macOS.
+summary: Screencast guide to installing and running DDEV on macOS.
 author: Randy Fay
 featureImage:
   src: /img/blog/2026/05/DDEV-from-scratch-on-macOS.jpg
@@ -12,11 +12,13 @@ categories:
   - Videos
 ---
 
-> **Using Windows or Linux?** See [DDEV on Windows in 10 Minutes](watch-new-windows-installer.md), [DDEV on WSL2 from Scratch](watch-ddev-local-from-scratch-with-windows-wsl2.md), or [DDEV on Linux in 10 Minutes](ddev-on-linux-in-10-minutes.md).
+**TL;DR** This 30-minute video shows DDEV from zero to everything on a completely blank new MacBook Neo (exactly the same on any macOS device.)
 
 <div class="video-container">
 <iframe loading="lazy" title="DDEV from Scratch on macOS" width="500" height="281" src="https://www.youtube.com/embed/XHUR4VWPfU8?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </div>
+
+> **Using Windows or Linux?** See [DDEV on Windows in 10 Minutes](watch-new-windows-installer.md), [DDEV on WSL2 from Scratch](watch-ddev-local-from-scratch-with-windows-wsl2.md), or [DDEV on Linux in 10 Minutes](ddev-on-linux-in-10-minutes.md).
 
 [DDEV](https://github.com/ddev/ddev) is a local development environment based on Docker containers that gets you up and working on your project fast. When you’re ready for [additional configuration and customization](https://docs.ddev.com/en/stable/users/extend/customization-extendibility/), you won’t be starting from scratch and can lean on [the expertise of the DDEV community](https://docs.ddev.com/en/stable/users/support/).
 
