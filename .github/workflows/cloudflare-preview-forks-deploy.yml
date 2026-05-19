@@ -60,7 +60,7 @@ jobs:
 
       - name: Deploy to Cloudflare Pages
         id: pages
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ env.CF_API_TOKEN }}
           accountId: ${{ vars.CF_ACCOUNT_ID }}
