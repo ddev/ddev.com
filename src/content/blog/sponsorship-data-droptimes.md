@@ -25,7 +25,7 @@ What we needed was a data feed that could be consumed anywhere, updated (mostly)
 
 ## The sponsorship-data Repository
 
-Anoop's request spurred the creation of [ddev/sponsorship-data](https://github.com/ddev/sponsorship-data), a public repository that aggregates sponsorship information from GitHub Sponsors and other sources, updated automatically. The data is published as structured JSON—for example, [all-sponsorships.json](https://ddev.github.io/sponsorship-data/data/all-sponsorships.json)—that any site or tool can consume.
+Anoop's request spurred the creation of [ddev/sponsorship-data](https://github.com/ddev/sponsorship-data), a public repository that aggregates sponsorship information from GitHub Sponsors and other sources, updated automatically. The data is published as structured JSON—for example, [all sponsorships](https://ddev.github.io/sponsorship-data/) feed—that any site or tool can consume.
 
 ## Mark Conroy's Web Component
 
