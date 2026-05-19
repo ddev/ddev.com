@@ -162,7 +162,7 @@ To test the workflow:
 
 ### Solution Implemented
 
-The workflow now uses `cloudflare/wrangler-action@v3` which provides stable branch URLs through the `pages-deployment-alias-url` output. This ensures consistent preview URLs for each PR:
+The workflow now uses `cloudflare/wrangler-action` which provides stable branch URLs through the `pages-deployment-alias-url` output. This ensures consistent preview URLs for each PR:
 
 - **Branch URL**: Stable per PR (e.g., `https://pr-123.project-name.pages.dev`)
 - **Deployment URL**: Commit-specific for debugging if needed
@@ -176,6 +176,6 @@ The workflow now uses `cloudflare/wrangler-action@v3` which provides stable bran
 
 ### Migration Notes
 
-- Migrated from deprecated `cloudflare/pages-action@v1` to `cloudflare/wrangler-action@v3`
+- Migrated from deprecated `cloudflare/pages-action@v1` to `cloudflare/wrangler-action`
 - Updated output variable handling (`url` → `pages-deployment-alias-url`)
 - Maintained backward compatibility with existing project configuration
