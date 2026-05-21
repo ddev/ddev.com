@@ -76,7 +76,7 @@ http:
       service: "example-web-3000"
       ruleSyntax: v3
       tls: false
-      priority: 100
+      priority: 1000
 
     # Router for HTTPS (port 443)
     example-web-80-https-frontend:
@@ -86,7 +86,7 @@ http:
       service: "example-web-3000"
       ruleSyntax: v3
       tls: true
-      priority: 100
+      priority: 1000
 
   services:
     # The custom service that routes to your Node app
