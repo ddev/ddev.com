@@ -35,15 +35,6 @@ That’s where Traefik comes in.
 
 ## Step 1: Update Your `.ddev/config.yaml`
 
-In your project’s `.ddev/config.yaml`, define the project name and the additional hostname you want to use. For example:
-
-```yaml
-name: example
-
-additional_hostnames:
-  - frontend.example
-```
-
 _(Optional)_ You can still use web_extra_exposed_ports to expose the Node.js port if you want:
 
 ```yaml
