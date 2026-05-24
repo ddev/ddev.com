@@ -16,7 +16,7 @@ I've been working on DDEV for years now, and there's something I don't say often
 
 Stas and I love to get up in the morning to hear what you have to say, learn from your experiences, share our path together.
 
-We feel so thankful to be creating something useful in collaboration with you. 
+We feel so thankful to be creating something useful in collaboration with you.
 
 All of us have had jobs before where some boss was making random decisions on product features that we knew might be irrelevant in weeks or months. It's a frustrating feeling, and that lack of control is so terrible. With DDEV and your guidance, we always know that you're keeping us on track about real needs for real features. It's fantastic.
 
