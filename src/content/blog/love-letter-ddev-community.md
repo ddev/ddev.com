@@ -14,11 +14,15 @@ I've been working on DDEV for years now, and there's something I don't say often
 
 **You make this so worthwhile.**
 
-Stas an I love to get up in the morning to hear what you have to say, learn from your experiences, share our path together.
+Stas and I love to get up in the morning to hear what you have to say, learn from your experiences, share our path together.
+
+We feel so thankful to be creating something useful in collaboration with you. 
+
+All of us have had jobs before where some boss was making random decisions on product features that we knew might be irrelevant in weeks or months. It's a frustrating feeling, and that lack of control is so terrible. With DDEV and your guidance, we always know that you're keeping us on track about real needs for real features. It's fantastic.
 
 ## Real Feedback About Real Problems
 
-Your questions in Discord or Slack and the issues you file aren't noise. They're the signal. When something breaks in your workflow, you tell us, often with enough detail that we can reproduce it immediately. When something is confusing, you ask questions that reveal where our assumptions were wrong.
+Your questions in Discord or Slack and the issues you file aren't noise. They're signal. When something breaks in your workflow, you tell us, often with enough detail that we can reproduce it immediately. When something is confusing, you ask questions that reveal where our assumptions were wrong.
 
 That feedback shapes DDEV in ways that internal testing never could. We don't use DDEV on every possible OS, with every PHP framework, in every hosting environment. You do. And you tell us what you find.
 
@@ -32,7 +36,7 @@ Those questions are gifts to all of us. They push us to look at things we've got
 
 The DDEV ecosystem is full of people who built something useful for themselves and then shared it with everyone. Add-ons, CI configurations, documentation fixes, screencasts, blog posts.
 
-Every person who took time to answer another user's question in the [DDEV issue tracker](https://github.com/ddev/ddev/issues) or [Discord](https://ddev.com/s/discord) or [Drupal Slack](https://drupal.slack.com/app_redirect?channel=ddev) freed up time for the maintainers to work on the next feature. That compounds.
+Every person who took time to answer another user's question in the [DDEV issue tracker](https://github.com/ddev/ddev/issues) or [Discord](https://ddev.com/s/discord) or [Drupal Slack](https://drupal.slack.com/app_redirect?channel=ddev) freed up time for the maintainers to work on the next feature.
 
 ## We Learn from You
 
