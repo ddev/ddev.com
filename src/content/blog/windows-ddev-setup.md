@@ -1,7 +1,7 @@
 ---
 title: "Setting up a Windows Machine for DDEV Development"
 pubDate: 2024-11-04
-modifiedDate: 2025-12-30
+modifiedDate: 2026-06-08
 summary`: Setting up a new Windows machine for DDEV maintenance or development is pretty easy. Here are my opinionated steps.
 author: Randy Fay
 featureImage:
@@ -9,7 +9,7 @@ featureImage:
   alt: Windows, DDEV, Ubuntu logos demonstrating setting up a Windows machine for DDEV.
 categories:
   - DevOps
-modifiedComment: "Ongoing updates, including claude code and better use of brew for some things now that arm64 is supported"
+modifiedComment: "Update Homebrew instructions"
 ---
 
 I've recently set up a few Windows machines for DDEV maintenance and development, and wanted to share how I do it. It's surprisingly easy. My approach here is opinionated, but it works for me. You'll do things a little differently I'm sure.
@@ -67,7 +67,7 @@ Two recent Windows machines I set up were the new ARM64/Qualcomm/CoPilot variety
 21. Install `git` for Windows (and `git-bash`)
 22. Use [sharpkeys](https://github.com/randyrants/sharpkeys) to disable the Caps Lock key.
 23. Install Homebrew for just a few uses: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-24. Install a few things with `brew tap bats-core/bats-core` and `brew install bats-core bats-assert bats-support bats-file claude go golangci-lint`
+24. Install a few things with `brew install bats-core bats-core/bats-core/bats-assert bats-core/bats-core/bats-file bats-core/bats-core/bats-support claude go golangci-lint`
 25. Install [goreleaser pro](https://goreleaser.com/install/#apt-repository)
 
 We'd love to hear your own hints and tips on how you set up a Windows machine (or any other computer!). You can contribute to this article with a [PR to the blog](https://github.com/ddev/ddev.com) or make your suggestions on [Discord](/s/discord). We welcome guest blogs too!
