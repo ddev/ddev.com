@@ -1,7 +1,7 @@
 ---
 title: "Setting up a Windows Machine for DDEV Development"
 pubDate: 2024-11-04
-modifiedDate: 2025-12-30
+modifiedDate: 2026-06-08
 summary`: Setting up a new Windows machine for DDEV maintenance or development is pretty easy. Here are my opinionated steps.
 author: Randy Fay
 featureImage:
@@ -9,7 +9,7 @@ featureImage:
   alt: Windows, DDEV, Ubuntu logos demonstrating setting up a Windows machine for DDEV.
 categories:
   - DevOps
-modifiedComment: "Ongoing updates, including claude code and better use of brew for some things now that arm64 is supported"
+modifiedComment: "Update Homebrew instructions"
 ---
 
 I've recently set up a few Windows machines for DDEV maintenance and development, and wanted to share how I do it. It's surprisingly easy. My approach here is opinionated, but it works for me. You'll do things a little differently I'm sure.
