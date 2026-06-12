@@ -1,5 +1,5 @@
 ---
-title: "DDEV June 2026: [headline items here]"
+title: "DDEV June 2026: DDEV Logo with the community, "
 pubDate: 2026-06-30
 summary: "June 2026 DDEV Newsletter, the latest from the DDEV community"
 author: Randy Fay
@@ -16,9 +16,8 @@ Upsun has finished transferring the DDEV trademark to the DDEV Foundation — a 
 
 ## What's New
 
-- **coder.ddev.com: Organization-Gated Access** → `coder.ddev.com` now requires GitHub organization membership to access, improving security for the hosted environment. [Visit start.coder.ddev.com](https://start.coder.ddev.com). See the [blog](coder-ddev-com-announcement.md).
 - **coder.ddev.com: Drupal Contrib** → The hosted Coder.ddev.com environment now supports Drupal contrib projects via the [DDEV Drupal Contrib](https://github.com/ddev/ddev-drupal-contrib) add-on workflow.
-- **Joomla Support** → Joomla users have loved DDEV for years, but in DDEV v1.25.2+ we have an explicit `joomla` project type. Community member [renekreijveld](https://github.com/renekreijveld) also maintains the [ddev-joomla↗](https://github.com/renekreijveld/ddev-joomla) add-on for extended Joomla workflows.
+- **Joomla Explicit Support** → Joomla users have loved DDEV for years, but in DDEV v1.25.2+ we have an explicit `joomla` project type. Community member [renekreijveld](https://github.com/renekreijveld) also maintains the [ddev-joomla↗](https://github.com/renekreijveld/ddev-joomla) add-on for extended Joomla workflows.
 - **[mayfly.live](https://mayfly.live)** → DDEV-based online preview environments, in open beta. 
 - **[Drupal AI Learner's Club AI Safety Session]** → Randy was co-host of [AI Security 'Opportunities': Guardrails, Sandboxes, and Keeping Your Agents on a Leash](https://www.drupal.org/docs/develop/development-tools/ai-coding-tools-for-drupal-development/drupal-ai-learners-club-sessions/2026-05-18-%E2%80%94-ai-security-opportunities-guardrails-sandboxes-and-keeping-your-agents-on-a-leash) and introduced a couple of the many add-ons.
 
