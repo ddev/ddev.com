@@ -1,11 +1,11 @@
 ---
-title: "DDEV June 2026: DDEV Logo with the community, "
+title: "DDEV June 2026: Upsun transfers DDEV trademarks, lots of community news, "
 pubDate: 2026-06-30
 summary: "June 2026 DDEV Newsletter, the latest from the DDEV community"
 author: Randy Fay
 featureImage:
-  src: "/img/blog/2026/06/[image-filename].jpg"
-  alt: "[Image alt text]"
+  src: "/img/blog/2026/06/ddev-june-2026-featureimage.svg"
+  alt: "DDEV June 2026 Newsletter"
 categories:
   - Newsletters
 ---
