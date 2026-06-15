@@ -100,15 +100,6 @@
     "github": "mobilistics"
   },
   {
-    "name": "optasy",
-    "type": "standard",
-    "logo": "/logos/optasy-full.svg",
-    "darklogo": "/logos/optasy-darkmode.svg",
-    "squareLogo": "/logos/optasy-square.svg",
-    "url": "https://www.optasy.com/",
-    "github": "OPTASY"
-  },
-  {
     "name": "Redfin Solutions",
     "type": "standard",
     "logo": "/logos/redfin-solutions.svg",
