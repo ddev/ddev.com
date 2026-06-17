@@ -12,14 +12,14 @@ categories:
 
 ## Upsun Completes DDEV Trademark Transfer
 
-Upsun has finished transferring the DDEV trademark to the DDEV Foundation — a milestone for the DDEV project's long-term independence and health. This is a hugely generous and important step for DDEV. (At one time before Upsun/Platform's involvement, we were ready to fork and rename the project due to trademark issues.) [Read our announcement↗](upsun-trademark-transfer-complete.md). And see Upsun's generous explanation as well: [DDEV is in Good Hands↗](https://developer.upsun.com/posts/insights/ddev-is-in-good-hands).
+Upsun has finished transferring the DDEV trademark to the DDEV Foundation — a milestone for the DDEV project's long-term independence and health. This is a generous and important step for DDEV. (At one time before Upsun/Platform's involvement, we were ready to fork and rename the project due to trademark issues.) [Read our announcement↗](upsun-trademark-transfer-complete.md). And see Upsun's generous explanation as well: [DDEV is in Good Hands↗](https://developer.upsun.com/posts/insights/ddev-is-in-good-hands).
 
 ## What's New
 
 - **coder.ddev.com: Drupal Contrib** → The hosted Coder.ddev.com environment now supports Drupal contrib projects via the [DDEV Drupal Contrib](https://github.com/ddev/ddev-drupal-contrib) add-on workflow.
 - **Joomla Explicit Support** → Joomla users have loved DDEV for years, but in DDEV v1.25.2+ we have an explicit `joomla` project type. Community member [renekreijveld](https://github.com/renekreijveld) also maintains the [ddev-joomla↗](https://github.com/renekreijveld/ddev-joomla) add-on for extended Joomla workflows.
 - **[mayfly.live](https://mayfly.live)** → DDEV-based online preview environments, in open beta.
-- **[Drupal AI Learner's Club AI Safety Session]** → Randy was co-host of [AI Security 'Opportunities': Guardrails, Sandboxes, and Keeping Your Agents on a Leash](https://www.drupal.org/docs/develop/development-tools/ai-coding-tools-for-drupal-development/drupal-ai-learners-club-sessions/2026-05-18-%E2%80%94-ai-security-opportunities-guardrails-sandboxes-and-keeping-your-agents-on-a-leash) and introduced a couple of the many add-ons.
+- **Drupal AI Learner's Club AI Safety Session** → Randy was co-host of [AI Security 'Opportunities': Guardrails, Sandboxes, and Keeping Your Agents on a Leash](https://www.drupal.org/docs/develop/development-tools/ai-coding-tools-for-drupal-development/drupal-ai-learners-club-sessions/2026-05-18-%E2%80%94-ai-security-opportunities-guardrails-sandboxes-and-keeping-your-agents-on-a-leash) and introduced a couple of the many add-ons.
 
 ## New DDEV GUIs
 
@@ -55,7 +55,7 @@ Community member [Bill Seremetis (bserem)](https://github.com/bserem)'s "From Ch
 
 The DDEV board and community are working on updated sponsorship tiers and improved communication around them. Discussion at [ddev/sponsorship-data#42↗](https://github.com/ddev/sponsorship-data/pull/42) and [ddev.com#647↗](https://github.com/ddev/ddev.com/issues/647).
 
-The first-ever [DDEV Foundation Board](/board) meeting was be June 17!
+The first-ever [DDEV Foundation Board](/board) meeting was held on June 17!
 
 The next DDEV board and advisory group meeting is **July 1, 2026 at 8:00 AM US Mountain / 10:00 AM US Eastern / 16:00 CEST**.
 [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=DDEV%20Board%20and%20Advisory%20Group%20Meeting&dates=20260701T140000Z/20260701T150000Z&details=DDEV%20Board%20and%20Advisory%20Group%20Meeting%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online&trp=true) • See the [agenda](https://github.com/orgs/ddev/discussions/8472).
