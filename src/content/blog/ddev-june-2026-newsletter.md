@@ -48,6 +48,7 @@ Community member [Bill Seremetis (bserem)](https://github.com/bserem)'s "From Ch
 - **Getting Started with DDEV for Drupal Development** → WebWash covers installation, project setup, commands, database management, and debugging with DDEV and Drupal. [Read on WebWash↗](https://www.webwash.net/getting-started-ddev-drupal-development/)
 - **DDEV Linux Installation with WordPress** → Step-by-step guide to installing DDEV on Ubuntu and setting up a WordPress project with WP-CLI. [Read on rueegger.me in German↗](https://rueegger.me/ddev-linux-installation-wordpress/)
 - **DDEV + a-blog cms** (Japanese) → A guide to using DDEV as a local development environment for a-blog cms, covering multi-project management and Mailpit. [Read on kazumich.com↗](https://kazumich.com/cms/ddev-ablogcms-install.html)
+- **Lando & DDEV: Replacing Custom Shell Scripts — Drainpipe** → Lullabot explores how Drainpipe, a Composer plugin for Drupal CI/CD, can use either Lando or DDEV as its local environment. [Read on Lullabot↗](https://www.lullabot.com/articles/lando-ddev-replacing-custom-shell-scripts-drainpipe)
 
 ---
 
