@@ -10,6 +10,7 @@ categories:
   - Community
 ---
 
+<!-- TODO: Request support interactions, based on https://ddev.com/blog/ddev-june-2026-newsletter/ -->
 I've been working on DDEV for years now, and there's something I don't say often enough:
 
 **You make this so worthwhile.**
