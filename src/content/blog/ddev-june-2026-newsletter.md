@@ -1,7 +1,7 @@
 ---
-title: "DDEV June 2026: Upsun transfers DDEV trademarks, lots of community news"
+title: "DDEV June 2026: Support experience determines DDEV's future, Upsun transfers DDEV trademarks"
 pubDate: 2026-06-22
-summary: "June 2026 DDEV Newsletter, the latest from the DDEV community"
+summary: "June 2026 DDEV Newsletter, Support experience determines DDEV's future, Upsun transfers DDEV trademarks"
 author: Randy Fay
 featureImage:
   src: "/img/blog/2026/06/ddev-june-2026-featureimage.svg"
@@ -9,6 +9,18 @@ featureImage:
 categories:
   - Newsletters
 ---
+
+## We Love To Hear Your Support Questions!
+
+As you know and have experienced personally, AI has been replacing human interaction in support situations, and in some cases doing a decent job. It generally does a good job with questions about DDEV.
+
+But, getting answers to questions is not the only purpose of support. It's also a great way to communicate problems and ambiguities to project maintainers.
+
+We **want*** you to ask us questions! We live for your questions. We miss the fact that you've been absent from [Discord](https://ddev.com/s/discord), #ddev in Drupal Slack, and the [issue queue](https://github.com/ddev/ddev/issues). When you ask, it helps us to understand what your struggles are and how DDEV can get better.
+
+As you know, Stack Overflow died because of AI. And as you also know, there aren't new answers going up there, because people use the AI answers. But DDEV is not static and its future depends on you and your needs. If we don't hear you ask about those, we can't react to your experience.
+
+Join us in all the support channels!
 
 ## Upsun Completes DDEV Trademark Transfer
 
