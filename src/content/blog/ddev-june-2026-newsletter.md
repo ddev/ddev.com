@@ -12,13 +12,13 @@ categories:
 
 ## Upsun Completes DDEV Trademark Transfer
 
-Upsun has finished transferring the DDEV trademark to the DDEV Foundation — a milestone for the DDEV project's long-term independence and health. This is a generous and important step for DDEV. (At one time before Upsun/Platform's involvement, we were ready to fork and rename the project due to trademark issues.) [Read our announcement↗](upsun-trademark-transfer-complete.md). And see Upsun's generous explanation as well: [DDEV is in Good Hands↗](https://developer.upsun.com/posts/insights/ddev-is-in-good-hands).
+Upsun has finished transferring the DDEV trademark to the DDEV Foundation — a milestone for the DDEV project's long-term independence and health. This is a generous and important step for DDEV. (At one time before Upsun/Platform's involvement, we were ready to fork and rename the project due to trademark issues.) [Read our announcement↗](upsun-trademark-transfer-complete.md) and see [Upsun's generous response↗](https://developer.upsun.com/posts/insights/ddev-is-in-good-hands) as well.
 
 ## What's New
 
 - **coder.ddev.com: Drupal Contrib** → The hosted Coder.ddev.com environment now supports Drupal contrib projects via the [DDEV Drupal Contrib](https://github.com/ddev/ddev-drupal-contrib) add-on workflow.
-- **Joomla Explicit Support** → Joomla users have loved DDEV for years, but in DDEV v1.25.2+ we have an explicit `joomla` project type. Community member [renekreijveld](https://github.com/renekreijveld) also maintains the [ddev-joomla↗](https://github.com/renekreijveld/ddev-joomla) repository, which provides scripts and tooling for extended Joomla workflows.
-- **[mayfly.live](https://mayfly.live)** → DDEV-based online preview environments, in open beta.
+- **Joomla Explicit Support** → Joomla users have loved DDEV for years, and DDEV v1.25.2 we introduced an explicit `joomla` project type. Community member [renekreijveld](https://github.com/renekreijveld) also maintains the [ddev-joomla↗](https://github.com/renekreijveld/ddev-joomla) repository, which provides scripts and tooling for extended Joomla workflows.
+- **[mayfly.live](https://mayfly.live)** → Zero-config DDEV-based online preview environments, in open beta.
 - **Drupal AI Learner's Club AI Safety Session** → Randy was co-host of [AI Security 'Opportunities': Guardrails, Sandboxes, and Keeping Your Agents on a Leash](https://www.drupal.org/docs/develop/development-tools/ai-coding-tools-for-drupal-development/drupal-ai-learners-club-sessions/2026-05-18-%E2%80%94-ai-security-opportunities-guardrails-sandboxes-and-keeping-your-agents-on-a-leash) and introduced a couple of the many add-ons.
 
 ## New DDEV GUIs
@@ -27,7 +27,7 @@ New community-built GUI tools have appeared for DDEV:
 
 - **ddevbar** → A macOS menu bar app for managing DDEV projects with a single click — start, stop, and restart without touching the terminal. [klemens.ee/ddevbar↗](https://klemens.ee/ddevbar/)
 - **DDEVUI** → A native macOS app (Swift/SwiftUI) that puts a visual front-end on DDEV. [github.com/dave-agilepixel/DDEV-Apple-GUI↗](https://github.com/dave-agilepixel/DDEV-Apple-GUI)
-- **ddev-ui** → A cross-platform desktop app (macOS, Windows, Linux) built with Electron and React. Covers project management, database import/export, snapshots, add-on management, log streaming, and more. [github.com/shiv122/ddev-ui↗](https://github.com/shiv122/ddev-ui)
+- **ddev-ui** → A cross-platform desktop app for macOS, Windows, and Linux built with Electron and React. Covers project management, database import/export, snapshots, add-on management, log streaming, and more. [github.com/shiv122/ddev-ui↗](https://github.com/shiv122/ddev-ui)
 
 ## Stanford WebCamp: Pre-Flight Checklist for Drupal Developers
 
