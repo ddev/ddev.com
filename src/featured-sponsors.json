@@ -6,7 +6,8 @@
     "darklogo": "/logos/upsun-darkmode.svg",
     "squareLogo": "/logos/upsun-square.svg",
     "url": "https://upsun.com",
-    "isLeading": false
+    "isLeading": false,
+    "monthlyEquivalent": 200
   },
   {
     "name": "Tag1",
@@ -15,7 +16,8 @@
     "darklogo": "/logos/dark-tag1.svg",
     "squareLogo": "/logos/tag1-square.svg",
     "url": "https://tag1.com",
-    "isLeading": false
+    "isLeading": false,
+    "monthlyEquivalent": 200
   },
   {
     "name": "safefive",
@@ -34,7 +36,8 @@
     "squareLogo": "/logos/i-gelb-square.svg",
     "url": "https://i-gelb.net",
     "github": "i-gelb",
-    "isLeading": false
+    "isLeading": false,
+    "monthlyEquivalent": 200
   },
   {
     "name": "Institute for Advanced Study",
@@ -43,7 +46,8 @@
     "darklogo": "/logos/ias-dark.svg",
     "squareLogo": "/logos/ias-square.svg",
     "url": "https://www.ias.edu/",
-    "isLeading": false
+    "isLeading": false,
+    "monthlyEquivalent": 200
   },
   {
     "name": "b13",
