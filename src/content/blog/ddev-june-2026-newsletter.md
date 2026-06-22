@@ -16,7 +16,7 @@ As you know and have experienced personally, AI has been replacing human interac
 
 But, getting answers to questions is not the only purpose of support. It's also a great way to communicate problems and ambiguities to project maintainers.
 
-We **want*** you to ask us questions! We live for your questions. We miss the fact that you've been absent from [Discord](https://ddev.com/s/discord), #ddev in Drupal Slack, and the [issue queue](https://github.com/ddev/ddev/issues). When you ask, it helps us to understand what your struggles are and how DDEV can get better.
+We **want** you to ask us questions! We live for your questions. We miss the fact that you've been absent from [Discord](https://ddev.com/s/discord), #ddev in Drupal Slack, and the [issue queue](https://github.com/ddev/ddev/issues). When you ask, it helps us to understand what your struggles are and how DDEV can get better.
 
 As you know, Stack Overflow died because of AI. And as you also know, there aren't new answers going up there, because people use the AI answers. But DDEV is not static and its future depends on you and your needs. If we don't hear you ask about those, we can't react to your experience.
 
