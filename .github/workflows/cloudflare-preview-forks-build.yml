@@ -26,7 +26,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout PR code (from fork)
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.sha }}
