@@ -4,6 +4,25 @@ import Heading from "../components/Heading.astro"
 
 const title = `Sponsor DDEV`
 
+const parseReward = (text: string) => {
+  return text.split(/(\[[^\]]+\]\([^)]+\))/g).map((part) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
+
+    if (!match) {
+      return {
+        type: "text",
+        text: part,
+      }
+    }
+
+    return {
+      type: "link",
+      text: match[1],
+      href: match[2],
+    }
+  })
+}
+
 const sponsorshipTiers = [
   {
     amount: "25",
@@ -21,9 +40,10 @@ const sponsorshipTiers = [
     description: "Great for small agencies.",
     featured: true,
     rewards: [
+      "All the benefits of lower tiers.",
       "Your logo and link in the DDEV README",
-      "Your entire team gets to use Coder.ddev.com to experience DDEV in the cloud. See announcement.",
-      "Free Diffy visual regression testing Pro plan license for one year ($800 value).",
+      "Your entire team gets to use [Coder.ddev.com](https://coder.ddev.com/) to experience DDEV in the cloud. See announcement.",
+      "Free [Diffy](https://diffy.website/) visual regression testing Pro plan license for one year ($800 value).",
     ],
   },
   {
@@ -31,7 +51,8 @@ const sponsorshipTiers = [
     name: "Organization Sponsor",
     description: "Great for large organizations.",
     rewards: [
-      'Your logo and link on ddev.com/support-ddev and github.com/sponsors/ddev in the "Featured Sponsors" section',
+      "All the benefits of lower tiers",
+      'Your logo and link on [ddev.com/support-ddev](https://ddev.com/support-ddev/) and [github.com/sponsors/ddev](https://github.com/sponsors/ddev) in the "Featured Sponsors" section',
       "Prioritized bug reports",
       "DDEV Tip of the Day names and thanks you — seen by thousands of developers every day in the terminal",
       "Sponsor spotlight blog post on ddev.com",
@@ -42,6 +63,7 @@ const sponsorshipTiers = [
     name: "Strategic Sponsor",
     description: "Great for large organizations.",
     rewards: [
+      "All the benefits of lower tiers",
       "We join your company chat app (Slack, Teams, etc.) for direct help and support",
       "Direct line to the maintainers for your team's DDEV questions",
     ],
@@ -57,12 +79,14 @@ const sponsorshipTiers = [
 >
   <main class="max-w-4xl mx-auto mb-24 px-6 lg:px-0">
     <div class="mx-auto max-w-4xl">
-      <Heading
-        title={title}
-        subtitle="Why Recurring Monthly Sponsorship Matters"
-      />
+      <div class="mt-24 mb-12 lg:px-0">
+        <h1 class="font-bold text-4xl dark:text-white">{title}</h1>
+        <p class="text-2xl text-gray-600 my-4 dark:text-slate-400">
+          Why Recurring Monthly Sponsorship Matters
+        </p>
+      </div>
 
-      <section class="mt-16">
+      <section class="mt-4">
         <div class="mx-auto max-w-4xl">
           <div class="prose max-w-none dark:prose-invert">
             <h2>Sponsorship Levels</h2>
@@ -76,8 +100,6 @@ const sponsorshipTiers = [
               your tier. For example, a $1,200/€1,200 annual contribution qualifies
               for the $100/€100 per month Featured tier.
             </p>
-
-            <p>Each tier includes all benefits of lower tiers.</p>
           </div>
         </div>
 
@@ -85,12 +107,6 @@ const sponsorshipTiers = [
           {
             sponsorshipTiers.map((tier) => (
               <article class="relative flex flex-col rounded-2xl border border-gray-200 bg-gray-100 p-6 shadow-sm transition hover:border-blue-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-blue-500">
-                {tier.featured && (
-                  <span class="absolute right-4 top-4 rounded-full border border-green-500/20 bg-green-500/10 px-3 py-1 text-xs font-bold text-green-700 dark:text-green-400">
-                    Most Popular
-                  </span>
-                )}
-
                 <p class="text-4xl font-bold text-gray-950 dark:text-white">
                   ${tier.amount} / €{tier.amount}
                   <span class="text-base font-medium text-gray-500 dark:text-gray-400">
@@ -108,29 +124,44 @@ const sponsorshipTiers = [
 
                 <ul class="mt-6 flex-1 space-y-3 text-gray-600 dark:text-gray-300">
                   {tier.rewards.map((reward) => (
-                    <li>✓ {reward}</li>
+                    <li>
+                      ✓{" "}
+                      {parseReward(reward).map((part) =>
+                        part.type === "link" ? (
+                          <a
+                            href={part.href}
+                            class="font-bold text-blue-700 underline hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300"
+                          >
+                            {part.text}
+                          </a>
+                        ) : (
+                          part.text
+                        )
+                      )}
+                    </li>
                   ))}
                 </ul>
 
                 <div class="mt-8 grid gap-3">
                   <a
-                    href="https://github.com/sponsors/ddev"
+                    href={`https://github.com/sponsors/ddev?amount=${tier.amount.replace(",", "")}`}
                     class="inline-flex items-center justify-center gap-2 rounded-full bg-gray-950 px-5 py-3 font-bold text-white transition hover:bg-blue-700 dark:bg-white dark:text-gray-950 dark:hover:bg-gray-200"
                   >
-                    GitHub Sponsors
+                    Sponsor via GitHub
+                    <span class="flex items-center gap-2 text-xs font-medium opacity-80">
+                      <span class="rounded border border-gray-400 px-2 py-0.5 dark:border-gray-500">
+                        Credit Card
+                      </span>
+                    </span>
                   </a>
 
                   <a
                     href="https://www.paypal.com/donate/?hosted_button_id=MCNCSZHC7LHSQ"
                     class="inline-flex flex-col items-center justify-center gap-2 rounded-full border border-gray-300 bg-white px-5 py-3 font-bold text-gray-950 transition hover:border-blue-500 hover:text-blue-700 dark:border-gray-600 dark:bg-gray-900 dark:text-white dark:hover:border-blue-400 dark:hover:text-blue-400"
                   >
-                    <span>PayPal</span>
+                    <span>Sponsor via PayPal</span>
 
                     <span class="flex items-center gap-2 text-xs font-medium opacity-80">
-                      <span class="rounded bg-blue-500 px-2 py-0.5 text-white">
-                        Venmo
-                      </span>
-
                       <span class="rounded border border-gray-400 px-2 py-0.5 dark:border-gray-500">
                         Credit Card
                       </span>
@@ -155,6 +186,7 @@ const sponsorshipTiers = [
             focused on DDEV instead of splitting their attention with outside
             work.
           </p>
+
           <p>
             The <a href="https://ddev.com/foundation/">Foundation's</a> goal is <strong
               >$12,000/month</strong
