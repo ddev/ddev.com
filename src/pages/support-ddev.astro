@@ -1,130 +1,266 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import Heading from "../components/Heading.astro"
-import CtaButton from "../components/CtaButton.astro"
-import { DISCORD_URL, GITHUB_URL } from "../const"
-import Sponsors from "../components/Sponsors.astro"
 
-const title = `Support DDEV`
+const title = `Sponsor DDEV`
+
+const parseReward = (text: string) => {
+  return text.split(/(\[[^\]]+\]\([^)]+\))/g).map((part) => {
+    const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
+
+    if (!match) {
+      return {
+        type: "text",
+        text: part,
+      }
+    }
+
+    return {
+      type: "link",
+      text: match[1],
+      href: match[2],
+    }
+  })
+}
+
+const sponsorshipTiers = [
+  {
+    amount: "25",
+    name: "Freelancer Sponsor",
+    description: "Great for freelancers.",
+    rewards: [
+      "A heartfelt thank-you from the DDEV team",
+      "Sponsor badge on your GitHub profile",
+      "Universities and educational institutions: A one-time annual contribution of $400 qualifies for this tier. Multiple departments at the same institution can each sponsor independently.",
+    ],
+  },
+  {
+    amount: "100",
+    name: "Featured Sponsor",
+    description: "Great for small agencies.",
+    featured: true,
+    rewards: [
+      "All the benefits of lower tiers.",
+      "Your logo and link in the DDEV README",
+      "Your entire team gets to use [Coder.ddev.com](https://coder.ddev.com/) to experience DDEV in the cloud. See announcement.",
+      "Free [Diffy](https://diffy.website/) visual regression testing Pro plan license for one year ($800 value).",
+    ],
+  },
+  {
+    amount: "500",
+    name: "Organization Sponsor",
+    description: "Great for large organizations.",
+    rewards: [
+      "All the benefits of lower tiers",
+      'Your logo and link on [ddev.com/support-ddev](https://ddev.com/support-ddev/) and [github.com/sponsors/ddev](https://github.com/sponsors/ddev) in the "Featured Sponsors" section',
+      "Prioritized bug reports",
+      "DDEV Tip of the Day names and thanks you — seen by thousands of developers every day in the terminal",
+      "Sponsor spotlight blog post on ddev.com",
+    ],
+  },
+  {
+    amount: "1,000",
+    name: "Strategic Sponsor",
+    description: "Great for large organizations.",
+    rewards: [
+      "All the benefits of lower tiers",
+      "We join your company chat app (Slack, Teams, etc.) for direct help and support",
+      "Direct line to the maintainers for your team's DDEV questions",
+    ],
+  },
+]
 ---
 
 <Layout
   title={title}
   ogImage="/img/og-support.png"
   ogImageAlt="Support DDEV title card"
-  description="Help ensure DDEV's sustainable future through financial support and community involvement."
+  description="Help ensure DDEV's sustainable future through recurring sponsorship."
 >
   <main class="max-w-4xl mx-auto mb-24 px-6 lg:px-0">
-    <Heading title={title} subtitle="Help Us Build a Sustainable Future" />
-
-    <div class="prose dark:prose-invert space-y-16">
-      <section>
-        <p>
-          DDEV serves over <strong>19,000 developers every week</strong>, eliminating environment setup headaches and enabling teams to focus on what matters: building great software. This impact is only possible through the generous financial support of our community.
+    <div class="mx-auto max-w-4xl">
+      <div class="mt-24 mb-12 lg:px-0">
+        <h1 class="font-bold text-4xl dark:text-white">{title}</h1>
+        <p class="text-2xl text-gray-600 my-4 dark:text-slate-400">
+          Why Recurring Monthly Sponsorship Matters
         </p>
-        <p>
-          Like many open-source projects, DDEV faces the challenge of sustainability. We need consistent funding to maintain the level of support and rapid response to technology changes that you depend on. <strong>Your financial support directly funds the full-time maintainers who keep DDEV working seamlessly with the latest PHP versions, databases, and frameworks.</strong>
-        </p>
-        <p>Ready to invest in DDEV's future?</p>
-        <ul>
-          <li><a href="#financial-support">🎯 Financial Support</a></li>
-          <li><a href="#community-contributions">🤝 Community Contributions</a></li>
-          <li><a href="#spread-the-word">📢 Spread the Word</a></li>
-          <li><a href="#make-a-difference">🌟 Ready to Make a Difference?</a></li>
-        </ul>
-      </section>
+      </div>
 
-      <section>
-        <h2 id="financial-support">🎯 Financial Support</h2>
-        <p>
-          <strong>Why Financial Support Matters:</strong> DDEV requires two full-time maintainers to provide the level of support and responsiveness you depend on. We actively maintain compatibility with rapidly changing upstream technologies—PHP 8.5, PostgreSQL 18, MariaDB 11.8, and emerging frameworks—often before you even realize these changes could break your workflow.
-        </p>
-        <p>
-          <strong>Our Current Goal:</strong> We need <strong>$12,000/month</strong> to fully fund both maintainers. We're currently at $6,300/month (See the header for current status!). Your contribution directly ensures DDEV's sustainability and continued excellence.
-        </p>
-        <div class="bg-cyan-100 dark:bg-cyan-900/50 p-6 rounded-lg border-l-4 border-cyan-600 dark:border-cyan-400 my-8">
-          <h3 class="font-semibold text-slate-900 dark:text-slate-100 mt-0">Ways to Support Financially</h3>
-          <ul class="mb-0">
-            <li><strong>GitHub Sponsors:</strong> Perfect for individuals and organizations who prefer monthly recurring support</li>
-            <li><strong>Direct Invoicing:</strong> Many organizations prefer direct billing. <a href="/contact">Contact us</a> to set this up</li>
-            <li><strong>Annual Commitments:</strong> Help us plan ahead with annual sponsorship agreements</li>
-          </ul>
-        </div>
+      <section class="mt-4">
+        <div class="mx-auto max-w-4xl">
+          <div class="prose max-w-none dark:prose-invert">
+            <h2>Sponsorship Levels</h2>
 
-        <p class="text-center text-lg"><strong>Every contribution matters—from $5/month individuals to $1,000/month organizations.</strong></p>
-
-        <div class="my-16 max-w-xl not-prose">
-          <Sponsors includeFeatured={true} />
-          <p class="text-sm text-gray-600 dark:text-gray-400 mt-4">
-            Join these amazing sponsors who make DDEV possible. <a href="/foundation" class="underline">Learn more about the DDEV Foundation</a>, our 501(c)(3) nonprofit organization.
-          </p>
-        </div>
-
-        <div class="grid gap-4 sm:max-w-fit sm:mx-auto not-prose">
-          <div class="grid gap-4 sm:grid-cols-2">
-            <CtaButton text="Sponsor on GitHub →" href="https://github.com/sponsors/ddev" target="_blank" />
-            <CtaButton text="Sponsor on PayPal →" href="https://www.paypal.com/donate/?hosted_button_id=MCNCSZHC7LHSQ" target="_blank" />
+            <p>
+              <strong>
+                Sponsor at any amount you'd like — every contribution helps.
+              </strong>
+              The four levels below are simply where benefits kick in. Annual or one-time
+              contributions are also welcome; divide the amount by 12 to determine
+              your tier. For example, a $1,200/€1,200 annual contribution qualifies
+              for the $100/€100 per month Featured tier.
+            </p>
           </div>
-          <CtaButton text="Contact for Direct Billing →" href="/contact" type="hollow" />
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+          {
+            sponsorshipTiers.map((tier) => (
+              <article class="relative flex flex-col rounded-2xl border border-gray-200 bg-gray-100 p-6 shadow-sm transition hover:border-blue-300 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:border-blue-500">
+                <p class="text-4xl font-bold text-gray-950 dark:text-white">
+                  ${tier.amount} / €{tier.amount}
+                  <span class="text-base font-medium text-gray-500 dark:text-gray-400">
+                    per month
+                  </span>
+                </p>
+
+                <h3 class="mt-4 text-2xl font-bold text-gray-950 dark:text-white">
+                  {tier.name}
+                </h3>
+
+                <p class="mt-3 text-gray-600 dark:text-gray-300">
+                  {tier.description}
+                </p>
+
+                <ul class="mt-6 flex-1 space-y-3 text-gray-600 dark:text-gray-300">
+                  {tier.rewards.map((reward) => (
+                    <li>
+                      ✓{" "}
+                      {parseReward(reward).map((part) =>
+                        part.type === "link" ? (
+                          <a
+                            href={part.href}
+                            class="font-bold text-blue-700 underline hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300"
+                          >
+                            {part.text}
+                          </a>
+                        ) : (
+                          part.text
+                        )
+                      )}
+                    </li>
+                  ))}
+                </ul>
+
+                <div class="mt-8 grid gap-3">
+                  <a
+                    href={`https://github.com/sponsors/ddev?amount=${tier.amount.replace(",", "")}`}
+                    class="inline-flex items-center justify-center gap-2 rounded-full bg-gray-950 px-5 py-3 font-bold text-white transition hover:bg-blue-700 dark:bg-white dark:text-gray-950 dark:hover:bg-gray-200"
+                  >
+                    Sponsor via GitHub
+                  </a>
+
+                  <a
+                    href="https://www.paypal.com/donate/?hosted_button_id=MCNCSZHC7LHSQ"
+                    class="inline-flex flex-col items-center justify-center gap-2 rounded-full border border-gray-300 bg-white px-5 py-3 font-bold text-gray-950 transition hover:border-blue-500 hover:text-blue-700 dark:border-gray-600 dark:bg-gray-900 dark:text-white dark:hover:border-blue-400 dark:hover:text-blue-400"
+                  >
+                    <span>Sponsor via PayPal</span>
+                  </a>
+                </div>
+              </article>
+            ))
+          }
         </div>
       </section>
+
+      <div class="prose max-w-none dark:prose-invert">
+        <section>
+          <p>
+            Open-source projects like <a href="https://ddev.com/">DDEV</a> face a
+            fundamental challenge: the software is free, but building and maintaining
+            it is not. Recurring monthly sponsorships are the lifeblood of the DDEV
+            project — they let our two full-time maintainers, <a
+              href="https://github.com/rfay">Randy Fay</a
+            > and <a href="https://github.com/stasadev">Stas Zhuk</a>, stay
+            focused on DDEV instead of splitting their attention with outside
+            work.
+          </p>
+
+          <p>
+            The <a href="https://ddev.com/foundation/">Foundation's</a> goal is <strong
+              >$12,000/month</strong
+            > to fully fund both maintainers. Whether you contribute $5/month or $1,000/month,
+            every recurring sponsorship brings the project closer to sustainability
+            — and signals to the wider community that DDEV is a healthy project organizations
+            can rely on for years to come.
+          </p>
+        </section>
+      </div>
     </div>
 
-    <div class="prose dark:prose-invert space-y-16">
-      <section>
-        <h2 id="community-contributions">🤝 Community Contributions</h2>
-        <p>
-          Community contributions help reduce the maintenance burden on our funded maintainers, allowing them to focus on core development and new features.
-        </p>
-        <div class="grid md:grid-cols-2 gap-6 my-8">
-          <div class="bg-green-100 dark:bg-green-900/50 p-6 rounded-lg border-l-4 border-green-600 dark:border-green-400">
-            <h3 class="font-semibold mb-3 mt-0 text-slate-900 dark:text-slate-100">💬 Help Others in the Community</h3>
-            <p class="mb-4 text-slate-800 dark:text-slate-200">Answer questions on <a href={DISCORD_URL} target="_blank">Discord</a> and in the <a href="https://github.com/ddev/ddev/issues" target="_blank">GitHub Issue Queue</a>. Every question you answer helps our maintainers focus on development.</p>
-            <a href={DISCORD_URL} target="_blank" class="text-blue-600 dark:text-blue-400 font-medium">Join Discord →</a>
-          </div>
-          <div class="bg-green-100 dark:bg-green-900/50 p-6 rounded-lg border-l-4 border-green-600 dark:border-green-400">
-            <h3 class="font-semibold mb-3 mt-0 text-slate-900 dark:text-slate-100">🛠 Contribute Code & Docs</h3>
-            <p class="mb-4 text-slate-800 dark:text-slate-200">File issues, submit PRs, improve documentation—every contribution helps.</p>
-            <a href="https://github.com/ddev/ddev/blob/main/CONTRIBUTING.md" target="_blank" class="text-blue-600 dark:text-blue-400 font-medium">Contributing Guide →</a>
-          </div>
-        </div>
-      </section>
+    <div class="mx-auto mt-16 max-w-4xl">
+      <div class="prose max-w-none dark:prose-invert space-y-16">
+        <section>
+          <h2>How to Sponsor</h2>
 
-      <section>
-        <h2 id="spread-the-word">📢 Spread the Word</h2>
-        <p>
-          If DDEV has improved your development workflow, help others discover it too! <strong>The more developers who use DDEV, the stronger our case for sustainable funding becomes.</strong>
-        </p>
-        <ul>
-          <li>⭐ <a href={GITHUB_URL} target="_blank">Star the project on GitHub</a></li>
-          <li>📝 Write about your DDEV experience in blog posts</li>
-          <li>🗣 Mention DDEV in conference talks and meetups</li>
-          <li>📺 Create videos showing DDEV workflows</li>
-          <li>💬 Share on social media when DDEV saves you time</li>
-        </ul>
-        <p class="text-center"><strong>Got a DDEV success story?</strong> <a href="/contact">Let us know!</a></p>
-        <p class="text-center">We love hearing how DDEV has helped your team.</p>
-      </section>
+          <p>
+            <strong>GitHub Sponsors</strong> — <a
+              href="https://github.com/sponsors/ddev"
+              >github.com/sponsors/ddev</a
+            >. 100% of personal sponsorships go directly to the Foundation;
+            GitHub charges no fees for personal accounts.
+          </p>
 
-      <section>
-        <h2 id="make-a-difference">🌟 Ready to Make a Difference?</h2>
-        <p>
-          DDEV's future depends on our community stepping up to ensure financial sustainability. Whether you're an individual developer who relies on DDEV or an organization that saves countless hours with our tool, your financial support makes the difference between DDEV thriving and struggling to survive.
-        </p>
-        <p class="text-center"><strong>Join the movement to make DDEV sustainable.</strong></p>
+          <p>
+            <strong>PayPal</strong> — <a
+              href="https://www.paypal.com/donate/?hosted_button_id=MCNCSZHC7LHSQ"
+              >Donate via PayPal</a
+            > for one-time or recurring contributions.
+          </p>
 
-        <div class="grid gap-4 sm:max-w-fit sm:mx-auto my-8 not-prose">
-          <div class="grid gap-4 sm:grid-cols-2">
-            <CtaButton text="Sponsor on GitHub →" href="https://github.com/sponsors/ddev" target="_blank" />
-            <CtaButton text="Sponsor on PayPal →" href="https://www.paypal.com/donate/?hosted_button_id=MCNCSZHC7LHSQ" target="_blank" />
-          </div>
-          <CtaButton text="Contact for Organization Support →" href="/contact" type="hollow" />
-        </div>
+          <p>
+            <strong>Direct Billing</strong> — The Foundation accepts ACH, Wise, bank
+            transfer, IBAN, SWIFT, and checks. Contact us at <a
+              href="https://ddev.com/contact">ddev.com/contact</a
+            >.
+          </p>
 
-        <p class="text-sm text-gray-600 dark:text-gray-400 text-center mt-16">
-          Questions? Join our <a href={DISCORD_URL} target="_blank" class="underline">Discord community</a> or check out the <a href="https://github.com/orgs/ddev/discussions/categories/ddev-advisory-group" target="_blank" class="underline">DDEV Advisory Group</a> discussions.
-        </p>
-      </section>
+          <p>
+            As a US 501(c)(3) nonprofit, sponsorships to the DDEV Foundation may
+            be tax-deductible. Please consult your tax advisor.
+          </p>
+        </section>
+
+        <section>
+          <h2>About DDEV</h2>
+
+          <p>
+            DDEV is the open-source local development environment trusted by
+            19,000+ active developers worldwide for PHP, JavaScript, and HTML
+            projects — Drupal, WordPress, Laravel, TYPO3, Craft CMS, Magento,
+            and more. Since 2016 it has grown to 3,600+ GitHub stars, 222
+            releases, and 399 contributors.
+          </p>
+        </section>
+
+        <section>
+          <h2>About the Foundation</h2>
+
+          <p>
+            The DDEV Foundation is a US 501(c)(3) nonprofit registered in
+            Colorado. It owns the project's infrastructure, manages funds, and
+            ensures long-term sustainability through community governance. There
+            are no shareholders, no venture capital, and no paywalled features —
+            every dollar of sponsorship goes toward infrastructure and paying
+            maintainers.
+          </p>
+
+          <p>
+            Learn more at <a href="https://ddev.com/foundation"
+              >ddev.com/foundation</a
+            >.
+          </p>
+
+          <hr />
+
+          <p>
+            <em>
+              For questions about sponsorship or custom arrangements, contact us
+              at <a href="https://ddev.com/contact">ddev.com/contact</a>.
+            </em>
+          </p>
+        </section>
+      </div>
     </div>
   </main>
 </Layout>
