@@ -24,16 +24,6 @@ You'll see one of these when running `ddev start`:
 
 `compose build requires buildx 0.17.0 or later. Installed docker buildx: 0.13.1 (plugin path: /usr/lib/docker/cli-plugins/docker-buildx)`
 
-:::tip[Solution]
-Install Docker Buildx using the [platform instructions below](#solutions-by-platform). On DDEV v1.25.3 and later, also run:
-
-```bash
-ddev config global --docker-buildx-version=system
-```
-
-Use `--docker-buildx-version=<version>` (e.g. [`0.33.0`](https://github.com/docker/buildx/releases)) only if you can't install a system Buildx.
-:::
-
 ## Solutions by Platform
 
 ### macOS (Lima, Colima)
@@ -90,6 +80,20 @@ Alternatively, place the binary anywhere and configure Docker to find it by addi
 ```
 
 NixOS users: the `ddev` package has been patched upstream ([issue #8183](https://github.com/ddev/ddev/issues/8183), [NixOS patch](https://github.com/NixOS/nixpkgs/pull/494539)).
+
+## DDEV-Managed Buildx
+
+If none of the solutions above work, DDEV v1.25.3 and later can download and manage its own Buildx via the [`docker_buildx_version`](https://docs.ddev.com/en/stable/users/configuration/config/#docker_buildx_version) setting. Use this only as a fallback; a system Buildx is preferred.
+
+Set it to any [Buildx release](https://github.com/docker/buildx/releases) (≥0.17.0), or to `system` to return to your system Buildx:
+
+```bash
+# Download and use a DDEV-managed Buildx in `$HOME/.ddev/bin/docker-buildx`:
+ddev config global --docker-buildx-version=0.35.0
+
+# Revert to the Buildx installed on your system:
+ddev config global --docker-buildx-version=system
+```
 
 ## Why This Requirement Exists
 
