@@ -33,7 +33,7 @@ Post-healthcheck tasks now run concurrently instead of one after another, reduci
 
 A bug in the web server startup script also added a ~10-second delay to `ddev stop`. That delay is now gone.
 
-In a benchmark of `ddev start` from a stopped state on macOS, v1.25.3 is about 28% faster than v1.25.2: a median of 7.91s versus 11.03s. Numbers vary by machine, but you can reproduce it with [`scripts/compare-start-perf.sh`](https://github.com/ddev/ddev/blob/main/scripts/compare-start-perf.sh):
+We benchmarked `ddev start` from a stopped state on both macOS and Linux, and v1.25.3 is faster on both. Numbers vary by machine, but you can reproduce it with [`scripts/compare-start-perf.sh`](https://github.com/ddev/ddev/blob/main/scripts/compare-start-perf.sh):
 
 ```bash
 git clone https://github.com/ddev/ddev ddev-upstream
@@ -41,12 +41,24 @@ cd ddev-upstream
 bash scripts/compare-start-perf.sh v1.25.2 v1.25.3
 ```
 
+On macOS, v1.25.3 is about 28% faster than v1.25.2 (benchmarked by [@rfay](https://github.com/rfay)):
+
 ```
 Summary (ddev start from stopped state)
 -------------------------------------------------------------------
   A (v1.25.2): median=11.03s  trimmed-mean=10.49s
   B (v1.25.3): median=7.91s   trimmed-mean=7.84s
   B is FASTER than A by 3.12s (-28.3%) on median
+```
+
+On Linux, it's about 21% faster (benchmarked by [@stasadev](https://github.com/stasadev)):
+
+```
+Summary (ddev start from stopped state)
+-------------------------------------------------------------------
+  A (v1.25.2): median=18.03s  trimmed-mean=18.25s
+  B (v1.25.3): median=14.18s  trimmed-mean=14.96s
+  B is FASTER than A by 3.85s (-21.4%) on median
 ```
 
 ## New Docker Compose Library
