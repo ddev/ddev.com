@@ -29,10 +29,10 @@ Use DDEV for all development tasks:
 - `ddev npm run dev` - Start development server with hot reloading
 - `ddev npm run build` - Build production site to `./dist/`
 - `ddev npm run preview` - Preview built site locally
-- `ddev npm run prettier` - Check code formatting
-- `ddev npm run prettier:fix` - Auto-fix formatting issues
-- `ddev npm run textlint` - Check content for writing issues
-- `ddev npm run textlint:fix` - Auto-fix content issues
+- `ddev prettier` - Auto-fix formatting (custom command, runs `npm run prettier:fix` in the web container)
+- `ddev textlint` - Auto-fix content writing issues (custom command, runs `npm run textlint:fix` in the web container)
+
+Prefer the `ddev prettier` and `ddev textlint` custom commands (defined in `.ddev/commands/web/`). The underlying npm scripts are also available if you need the check-only variants: `ddev npm run prettier`, `ddev npm run prettier:fix`, `ddev npm run textlint`, `ddev npm run textlint:fix`.
 
 ### Site Access
 
@@ -43,8 +43,8 @@ Use DDEV for all development tasks:
 
 Before committing changes, always run:
 
-1. `ddev npm run prettier:fix` - Fix formatting
-2. `ddev npm run textlint:fix` - Check content quality
+1. `ddev prettier` - Fix formatting
+2. `ddev textlint` - Fix content quality issues
 3. `ddev start` - Ensure environment is working
 4. Spellcheck and check links in any new content
 
@@ -222,13 +222,13 @@ Add `.astro` files to `src/pages/` where filename becomes URL slug.
 - Configuration in `.textlintrc`
 - Runs against `src/content/**`
 - Enforces consistent language and terminology
-- Run `ddev npm run textlint` before committing
+- Run `ddev textlint` before committing
 
 ### Prettier
 
 - Configuration in `.prettierrc`
 - Auto-formats code
-- Run `ddev npm run prettier:fix` before committing
+- Run `ddev prettier` before committing
 - VS Code: Auto-format on save enabled
 
 ### Recommended VS Code Extensions
