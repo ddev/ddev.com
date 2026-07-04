@@ -13,7 +13,7 @@ categories:
   - Guides
 ---
 
-TYPO3 projects sometimes provide a special challenge for `git worktree` if they have the full URL specified in `config/sites/*/config.yaml`'s `base`, like `base: https://typo3.ddev.site/`. When you add a second `git worktree` checkout, DDEV names that project after its directory, giving it a different `*.ddev.site` hostname—but TYPO3's `base` still points at the first worktree's hostname, so the second one 404s or serves the wrong site.
+TYPO3 projects sometimes provide a special challenge for `git worktree` if they have the full URL specified in `config/sites/*/config.yaml`'s `base`, like `base: https://typo3.ddev.site/`. When you add a second `git worktree` checkout, DDEV names that project after its directory, giving it a different `*.ddev.site` hostname—but TYPO3's `base` still points at the first worktree's hostname, so the second one fails with a 404 "not found".
 
 This is the same underlying problem covered in [Sharing Your TYPO3 Project with `ddev share`](ddev-share-with-typo3.md), just triggered by a different hostname change. If your `base` is already a relative path like `/camino`, as in the [DDEV TYPO3 quickstart](https://docs.ddev.com/en/stable/users/quickstart/#typo3), there's nothing to fix—every worktree works out of the box.
 
@@ -46,9 +46,9 @@ By default, DDEV names a project after the directory it lives in. Remove the `na
 
 That's exactly what you want for running several branches side by side, as covered in [Contributor Training: `git worktree` for Multiple DDEV Projects](git-worktree-contributor-training.md)—but it means a TYPO3 project with a hardcoded `base` with a URL will only work correctly in whichever single worktree happens to match that hostname.
 
-## The Fix: a `post-start` Hook
+## The Fix: `post-start` and `post-stop` Hooks
 
-Unlike `ddev share`, where the tunnel URL is temporary and the `pre-share`/`post-share` hooks restore the original `base` afterward, a worktree's hostname is permanent for the life of that checkout. So instead of a temporary swap, use a `post-start` hook that sets `base` to match whatever hostname the current worktree actually has, every time it starts:
+Unlike `ddev share`, where the tunnel URL is temporary and the `pre-share`/`post-share` hooks restore the original `base` afterward, a worktree's hostname is permanent for the life of that checkout. So instead of a temporary swap, use a `post-start` hook that sets `base` to match whatever hostname the current worktree actually has, every time it starts, and optionally `git restore` on `ddev stop`:
 
 ```yaml
 # .ddev/config.yaml
@@ -56,14 +56,18 @@ hooks:
   post-start:
     - exec: |
         for f in config/sites/*/config.yaml; do
-          yq -i ".base = \"${DDEV_PRIMARY_URL}/\"" "$f"
+          cp "$f" "$f.post-start-backup"
+          newbase=$(yq '.base' "$f" | sed -E 's#^https?://[^/]+##')
+          [ -z "$newbase" ] && newbase="/"
+          yq -i ".base = \"$newbase\"" "$f"
         done
         typo3 cache:flush
+  post-stop:
+    - exec-host: |
+        git restore config/sites/*/config.yaml
 ```
 
-`$DDEV_PRIMARY_URL` is DDEV's environment variable for the project's own URL, so this hook works unmodified in every worktree—each one sets `base` to its own hostname on every `ddev start`, with no manual editing and nothing to revert.
-
-If you don't need an absolute `base` at all, the simpler fix is to make it relative—`base: /` (or `/your-path/` for a subpath)—which is hostname-independent and needs no hook. That works for `git worktree`, `ddev share`, and any other hostname change alike, as described in [New `ddev share` Provider System](share-providers.md).
+The simplest answer is not to use the absolute `base` at all, just make it relative in the first place—`base: /` (or `/your-path/` for a subpath)—which is hostname-independent and needs no hook. That works for `git worktree`, `ddev share`, and any other hostname change alike, as described in [New `ddev share` Provider System](share-providers.md).
 
 ## Trusted Host Patterns
 
