@@ -12,6 +12,8 @@ categories:
   - Guides
 ---
 
+`ddev share` lets you share your running local project with anybody in the world. It can be used for collaboration or demonstration to clients. All the details are in the [DDEV docs](https://docs.ddev.com/en/stable/users/topics/sharing/#using-ddev-share-easiest).
+
 TYPO3 projects sometimes provide a special challenge for `ddev share` if they have the full URL specified in the `config/sites/*/config.yaml` `base`, like `base: https://typo3demo.ddev.site`. When you `ddev share` and get an arbitrary URL from Cloudflared or ngrok, TYPO3 refuses to show the site because it's not the specified URL.
 
 This isn't a problem at all if the `base` element doesn't include the URL. For example, with `base: /camino` on a project like the [DDEV TYPO3 quickstart](https://docs.ddev.com/en/stable/users/quickstart/#typo3), everything works fine out of the box, there's nothing to do. The share URL with `/camino` will work fine.
