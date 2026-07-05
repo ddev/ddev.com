@@ -5,7 +5,7 @@ summary: "How to use DDEV's `ddev share` command to expose a local TYPO3 project
 author: Randy Fay
 featureImage:
   src: /img/blog/2026/07/ddev-share-typo3.png
-  alt: DDEV and TYPO3 logos side by side
+  alt: TYPO3 logo above an arrow pointing down to the DDEV logo with the word "share" below it
 categories:
   - Training
   - Videos
