@@ -5,8 +5,7 @@ summary: "How multiple git worktree checkouts of a TYPO3 project interact with D
 author: Randy Fay
 featureImage:
   src: /img/blog/2026/07/git-worktree-typo3.png
-  alt: git worktree with TYPO3 and DDEV
-  # TODO: suggested featureImage - a graphic combining a git branching/worktree diagram with the TYPO3 logo
+  alt: Git, DDEV, and TYPO3 logos combined with a "git worktree" caption
 categories:
   - Training
   - Videos
