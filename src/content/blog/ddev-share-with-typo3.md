@@ -22,16 +22,8 @@ But we can solve this problem with DDEV's pre-share hooks, see below
 
 ## Watch the Video
 
-<!-- TODO: replace VIDEO_ID with the real YouTube video ID once published -->
-<!-- TODO: video contents
-  - Simple ddev share with base: / (cloudflared)
-  - ddev share with ngrok
-  - Demonstration with a base URL and failure
-  - Added hooks to solve problem
--->
-
 <div class="video-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZdAPNBllACs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 ## What You'll See
