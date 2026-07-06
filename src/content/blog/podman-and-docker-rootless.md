@@ -107,7 +107,7 @@ Windows users can use Podman Desktop or install Podman inside WSL2, following th
 | **Has automated testing in DDEV** | ✅               | ✅                            | ❌                               | ✅                                       |
 | **Mutagen**                       | ✅               | ✅                            | ✅                               | ✅                                       |
 | **Bind Mounts**                   | ✅               | ✅                            | ✅                               | ✅ (with `--userns=keep-id`)             |
-| **Performance**                   | Excellent        | Good                          | Slow compared to Docker          | Slow compared to Docker                  |
+| **Performance**                   | Excellent        | Excellent                     | Slow compared to Docker          | Slow compared to Docker                  |
 | **Privileged Ports (<1024)**      | Works by default | Requires `sysctl` config      | Works by default                 | Requires `sysctl` config or may not work |
 | **Setup Complexity**              | Simple           | Moderate                      | Moderate                         | Moderate                                 |
 | **Maturity**                      | Most mature      | Supported                     | No explicit support              | Supported                                |
