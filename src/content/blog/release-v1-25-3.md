@@ -11,7 +11,7 @@ categories:
   - Announcements
 ---
 
-We're announcing [DDEV v1.25.3](https://github.com/ddev/ddev/releases/tag/v1.25.3): faster `ddev start` and `ddev stop`, built-in Docker Compose, stable Podman and Docker Rootless support, Node.js improvements, `XDG_CONFIG_HOME` changes, and more.
+We're announcing [DDEV v1.25.3](https://github.com/ddev/ddev/releases/tag/v1.25.3): faster `ddev start` and `ddev stop`, built-in Docker Compose, stable Podman and Docker Rootless support, MariaDB 12.3 LTS support, Node.js improvements, `XDG_CONFIG_HOME` changes, and more.
 
 This release represents 131 PRs from the entire DDEV community: your suggestions, bug reports, code, and financial support made it possible.
 
@@ -70,6 +70,20 @@ DDEV now uses the Docker Compose SDK directly instead of shelling out to a separ
 Driving Compose through the SDK is also what gives you the cleaner output and live per-step timer in the GIFs above: DDEV now controls how progress is displayed instead of passing through whatever the external binary printed.
 
 This is the same underlying change that added the optional `ddev config global --docker-buildx-version` setting in this release. See [Docker Buildx Requirement in DDEV](docker-buildx-requirement-v1-25-1.md) for the full background on Buildx and the Compose SDK switch.
+
+## MariaDB 12.3 LTS Support
+
+DDEV now supports MariaDB 12.3, the latest LTS release. For new projects, set it with:
+
+```bash
+ddev config --database=mariadb:12.3
+```
+
+To migrate an existing project's database, use:
+
+```bash
+ddev utility migrate-database mariadb:12.3
+```
 
 ## Podman and Docker Rootless Are No Longer Experimental
 
