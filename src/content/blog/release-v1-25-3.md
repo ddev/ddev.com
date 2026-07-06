@@ -13,7 +13,7 @@ categories:
 
 We're announcing [DDEV v1.25.3](https://github.com/ddev/ddev/releases/tag/v1.25.3): faster `ddev start` and `ddev stop`, built-in Docker Compose, stable Podman and Docker Rootless support, Node.js improvements, `XDG_CONFIG_HOME` changes, and more.
 
-This release represents contributions from the entire DDEV community: your suggestions, bug reports, code, and financial support made it possible.
+This release represents 128 PRs from the entire DDEV community: your suggestions, bug reports, code, and financial support made it possible.
 
 ## Table of Contents
 
@@ -27,7 +27,13 @@ This release represents contributions from the entire DDEV community: your sugge
 
 ![`ddev stop` v1.25.2 (top) vs v1.25.3 (bottom)](/img/blog/2026/07/ddev-stop-v1-25-2-vs-v1-25-3.gif)
 
-As the GIFs show, `ddev start` is faster and `ddev stop` is significantly faster.
+`ddev restart` stops a running project and starts it again, so it benefits from both improvements, including the faster warm start.
+
+`ddev restart` in v1.25.2 (top) vs v1.25.3 (bottom):
+
+![`ddev restart` v1.25.2 (top) vs v1.25.3 (bottom)](/img/blog/2026/07/ddev-restart-v1-25-2-vs-v1-25-3.gif)
+
+As the GIFs show, `ddev start` is faster and `ddev stop` is significantly faster. The `ddev stop` improvement also applies to `ddev poweroff` and `ddev delete`, since both use the same code path.
 
 Post-healthcheck tasks now run concurrently instead of one after another, reducing overall `ddev start` time, thanks to [@jonesrussell](https://github.com/jonesrussell).
 
