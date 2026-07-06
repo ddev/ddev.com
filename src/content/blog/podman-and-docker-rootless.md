@@ -55,14 +55,14 @@ Setup instructions for every runtime now live in the DDEV docs: [Docker Installa
 
 Linux and WSL2 are the primary focus for these runtimes, and most features are well-tested here, with automated test coverage for Linux.
 
-| Runtime                | Why would you do this?                               | Key trade-offs                                    | Performance        | Setup    | Recommendation                                   |
-| ---------------------- | ---------------------------------------------------- | ------------------------------------------------- | ------------------ | -------- | ------------------------------------------------ |
-| **Traditional Docker** | Standard, widely-used option                         | None                                              | Excellent          | Simple   | **Recommended for most users**                   |
-| **Docker Rootless**    | Security requirement for rootless daemon             | Container runs as root (UID 0) inside; more setup | Good               | Moderate | Only if rootless security is required            |
-| **Podman Rootful**     | Organization forbids Docker                          | Slower than Docker, different behavior            | Slower than Docker | Moderate | Only if Docker not allowed                       |
-| **Podman Rootless**    | Organization forbids Docker + want rootless security | May need sysctl changes for ports <1024, slower   | Slower than Docker | Moderate | Only if Docker not allowed and rootless required |
+| Runtime                | Why would you do this?                               | Key trade-offs                                    | Performance        | Setup    | Recommendation                              |
+| ---------------------- | ---------------------------------------------------- | ------------------------------------------------- | ------------------ | -------- | ------------------------------------------- |
+| **Traditional Docker** | Standard, widely-used option                         | None                                              | Excellent          | Simple   | **Recommended for most users**              |
+| **Docker Rootless**    | Security requirement for rootless daemon             | Container runs as root (UID 0) inside; more setup | Excellent          | Moderate | If rootless security is required            |
+| **Podman Rootful**     | Organization forbids Docker                          | Slower than Docker, different behavior            | Slower than Docker | Moderate | If Docker not allowed                       |
+| **Podman Rootless**    | Organization forbids Docker + want rootless security | May need sysctl changes for ports <1024, slower   | Slower than Docker | Moderate | If Docker not allowed and rootless required |
 
-**Bottom line**: Stick with traditional Docker unless organizational policy or security requirements force you to use an alternative. The alternatives work, but have significant trade-offs. Follow the setup for [Docker Rootless](https://docs.ddev.com/en/stable/users/install/docker-installation/#linux-docker-rootless) or [Podman Rootless](https://docs.ddev.com/en/stable/users/install/docker-installation/#linux-podman-rootless) in the Docker installation docs.
+**Bottom line**: Traditional Docker and Docker Rootless are both solid choices with no significant trade-offs. Pick [Docker Rootless](https://docs.ddev.com/en/stable/users/install/docker-installation/#linux-docker-rootless) if you want rootless security while keeping full Docker compatibility. Use [Podman Rootless](https://docs.ddev.com/en/stable/users/install/docker-installation/#linux-podman-rootless) if your organization forbids Docker, keeping in mind that some operations (like `ddev start`) are slower.
 
 #### Configuring Podman Rootful on Linux (not recommended)
 
@@ -83,7 +83,7 @@ macOS users can use Podman and Podman Desktop, but setup has its own challenges.
 | Runtime                | Why would you do this?                        | Key trade-offs                                                           | Performance        | Setup    | Recommendation                 |
 | ---------------------- | --------------------------------------------- | ------------------------------------------------------------------------ | ------------------ | -------- | ------------------------------ |
 | **Traditional Docker** | Standard, widely-used option                  | None                                                                     | Excellent          | Simple   | **Recommended for most users** |
-| **Podman**             | Avoid Docker entirely (organizational policy) | Cannot use ports 80/443 (must use 8080/8443 instead), different behavior | Slower than Docker | Moderate | Only if Docker not allowed     |
+| **Podman**             | Avoid Docker entirely (organizational policy) | Cannot use ports 80/443 (must use 8080/8443 instead), different behavior | Slower than Docker | Moderate | If Docker not allowed          |
 
 **Bottom line**: Use traditional Docker (OrbStack, Docker Desktop, Lima, Colima, or Rancher Desktop) unless your organization forbids it. The inability to use standard ports 80/443 with Podman creates a significantly different development experience. Follow the setup for [Podman Rootless on macOS](https://docs.ddev.com/en/stable/users/install/docker-installation/#macos-podman-rootless) in the Docker installation docs.
 
@@ -94,7 +94,7 @@ Windows users can use Podman Desktop or install Podman inside WSL2, following th
 | Runtime                | Why would you do this?                        | Key trade-offs                             | Performance        | Setup    | Recommendation                 |
 | ---------------------- | --------------------------------------------- | ------------------------------------------ | ------------------ | -------- | ------------------------------ |
 | **Traditional Docker** | Standard, widely-used option                  | None                                       | Excellent          | Simple   | **Recommended for most users** |
-| **Podman**             | Avoid Docker entirely (organizational policy) | Different behavior, less mature on Windows | Slower than Docker | Moderate | Only if Docker not allowed     |
+| **Podman**             | Avoid Docker entirely (organizational policy) | Different behavior, less mature on Windows | Slower than Docker | Moderate | If Docker not allowed          |
 
 **Bottom line**: Use traditional Docker (Docker Desktop or alternatives) unless your organization forbids it. Podman on Windows works but is less mature than on Linux.
 
