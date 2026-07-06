@@ -85,7 +85,7 @@ NixOS users: the `ddev` package has been patched upstream ([issue #8183](https:/
 
 If none of the solutions above work, DDEV v1.25.3 and later can download and manage its own Buildx via the [`docker_buildx_version`](https://docs.ddev.com/en/stable/users/configuration/config/#docker_buildx_version) setting. Use this only as a fallback; a system Buildx is preferred.
 
-Set it to any [Buildx release](https://github.com/docker/buildx/releases) (≥0.17.0), or to `system` to return to your system Buildx:
+Set it to a recent [Buildx release](https://github.com/docker/buildx/releases) (≥0.35.0), or to `system` to return to your system Buildx:
 
 ```bash
 # Download and use a DDEV-managed Buildx in `$HOME/.ddev/bin/docker-buildx`:
