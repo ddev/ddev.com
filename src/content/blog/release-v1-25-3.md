@@ -1,7 +1,7 @@
 ---
-title: "DDEV v1.25.3: Faster Start and Stop, Built-in Docker Compose, Stable Podman, Node.js Fixes"
+title: "DDEV v1.25.3: Faster Start and Stop, Built-in Docker Compose, Stable Podman, MariaDB 12.3 LTS"
 pubDate: 2026-07-06
-summary: DDEV v1.25.3 brings faster `ddev start` and `ddev stop`, built-in Docker Compose, stable Podman and Docker rootless support, and Node.js configuration fixes.
+summary: DDEV v1.25.3 brings faster `ddev start` and `ddev stop`, built-in Docker Compose, stable Podman and Docker rootless support, MariaDB 12.3 LTS support, and Node.js configuration fixes.
 author: Stas Zhuk
 featureImage:
   src: /img/blog/2026/07/banner-ddev-v1-25-3.svg
