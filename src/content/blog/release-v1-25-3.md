@@ -17,7 +17,7 @@ This release represents 128 PRs from the entire DDEV community: your suggestions
 
 ## Table of Contents
 
-## Faster `ddev start` and `ddev stop`
+## Faster `ddev start`, `ddev stop`, and `ddev restart`
 
 `ddev start` is faster in v1.25.2 (top) vs v1.25.3 (bottom), including a faster warm start:
 
