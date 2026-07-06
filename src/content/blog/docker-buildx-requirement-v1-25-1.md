@@ -1,9 +1,9 @@
 ---
-title: "DDEV v1.25.1 Docker Buildx Requirement"
+title: "Docker Buildx Requirement in DDEV"
 pubDate: 2026-03-05
-modifiedDate: 2026-05-12
+modifiedDate: 2026-07-06
 modifiedComment: Update for DDEV v1.25.3 Docker Buildx configuration options and Docker Compose SDK.
-summary: Why DDEV v1.25.1 requires Docker Buildx, who's affected, and how to resolve configuration issues.
+summary: Why DDEV requires Docker Buildx, who's affected, and how to resolve configuration issues.
 author: Stas Zhuk
 featureImage:
   src: /img/blog/2026/02/docker-buildx-releases.png
@@ -12,7 +12,7 @@ categories:
   - DevOps
 ---
 
-DDEV v1.25.1 introduced validation that checks for Docker Buildx. DDEV v1.25.3 will switch to the Docker Compose SDK exclusively and add optional Buildx configuration via `ddev config global --docker-buildx-version`. Docker Desktop, OrbStack, and Rancher Desktop users are not affected—Docker Buildx is bundled in those environments.
+DDEV v1.25.1 introduced validation that checks for Docker Buildx. DDEV v1.25.3 switched to the Docker Compose SDK exclusively and added optional Buildx configuration via `ddev config global --docker-buildx-version`. Docker Desktop, OrbStack, and Rancher Desktop users are not affected, since Docker Buildx is bundled in those environments.
 
 ## Table of Contents
 
@@ -23,16 +23,6 @@ You'll see one of these when running `ddev start`:
 `compose build requires buildx 0.17.0 or later: docker CLI plugin "buildx" not found`
 
 `compose build requires buildx 0.17.0 or later. Installed docker buildx: 0.13.1 (plugin path: /usr/lib/docker/cli-plugins/docker-buildx)`
-
-:::tip[Solution]
-Install Docker Buildx using the [platform instructions below](#solutions-by-platform). On DDEV v1.25.3 and later, also run:
-
-```bash
-ddev config global --docker-buildx-version=system
-```
-
-Use `--docker-buildx-version=<version>` (e.g. [`0.33.0`](https://github.com/docker/buildx/releases)) only if you can't install a system Buildx.
-:::
 
 ## Solutions by Platform
 
@@ -91,6 +81,20 @@ Alternatively, place the binary anywhere and configure Docker to find it by addi
 
 NixOS users: the `ddev` package has been patched upstream ([issue #8183](https://github.com/ddev/ddev/issues/8183), [NixOS patch](https://github.com/NixOS/nixpkgs/pull/494539)).
 
+## DDEV-Managed Buildx
+
+If none of the solutions above work, DDEV v1.25.3 and later can download and manage its own Buildx via the [`docker_buildx_version`](https://docs.ddev.com/en/stable/users/configuration/config/#docker_buildx_version) setting. Use this only as a fallback; a system Buildx is preferred.
+
+Set it to a recent [Buildx release](https://github.com/docker/buildx/releases) (≥0.35.0), or to `system` to return to your system Buildx:
+
+```bash
+# Download and use a DDEV-managed Buildx in `$HOME/.ddev/bin/docker-buildx`:
+ddev config global --docker-buildx-version=0.35.0
+
+# Revert to the Buildx installed on your system:
+ddev config global --docker-buildx-version=system
+```
+
 ## Why This Requirement Exists
 
 This is an upstream dependency from Docker Compose, not a DDEV-specific choice:
@@ -99,7 +103,7 @@ This is an upstream dependency from Docker Compose, not a DDEV-specific choice:
 2. **Docker Compose v2.40.2** (released October 2025) [introduced a minimum version requirement](https://github.com/docker/compose/pull/13295) for Docker Buildx (≥0.17.0)
 3. **DDEV v1.24.8** (released September 2025) [updated to Docker Compose v2.39.3](https://github.com/ddev/ddev/releases/tag/v1.24.8), which uses the bake builder by default
 4. **DDEV v1.25.1** (released February 2026) [added validation to catch this configuration issue early](https://github.com/ddev/ddev/releases/tag/v1.25.1) and provide clear guidance
-5. **DDEV v1.25.3** (upcoming) will switch to the Docker Compose SDK exclusively and add optional Buildx configuration
+5. **DDEV v1.25.3** (released July 2026) [switched to the Docker Compose SDK](https://github.com/ddev/ddev/releases/tag/v1.25.3) exclusively and added optional Buildx configuration
 
 ## Need Help?
 
