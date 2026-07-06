@@ -19,15 +19,15 @@ This release represents 128 PRs from the entire DDEV community: your suggestions
 
 ## Faster `ddev start`, `ddev stop`, and `ddev restart`
 
-`ddev start` is faster in v1.25.2 (top) vs v1.25.3 (bottom), including a faster warm start:
+`ddev start` in v1.25.3 (bottom) is faster than in v1.25.2 (top), including a faster warm start:
 
 ![`ddev start` v1.25.2 (top) vs v1.25.3 (bottom)](/img/blog/2026/07/ddev-start-v1-25-2-vs-v1-25-3.gif)
 
-`ddev stop` is significantly faster in v1.25.2 (top) vs v1.25.3 (bottom), and the same improvement also applies to `ddev poweroff` and `ddev delete`, since all three share the same code path:
+`ddev stop` in v1.25.3 (bottom) is significantly faster than in v1.25.2 (top), and the same improvement also applies to `ddev poweroff` and `ddev delete`, since all three share the same code path:
 
 ![`ddev stop` v1.25.2 (top) vs v1.25.3 (bottom)](/img/blog/2026/07/ddev-stop-v1-25-2-vs-v1-25-3.gif)
 
-`ddev restart` is significantly faster in v1.25.2 (top) vs v1.25.3 (bottom), since it stops and starts a project and benefits from both improvements:
+`ddev restart` in v1.25.3 (bottom) is significantly faster than in v1.25.2 (top), since it stops and starts a project and benefits from both improvements:
 
 ![`ddev restart` v1.25.2 (top) vs v1.25.3 (bottom)](/img/blog/2026/07/ddev-restart-v1-25-2-vs-v1-25-3.gif)
 
