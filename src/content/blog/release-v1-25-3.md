@@ -13,7 +13,7 @@ categories:
 
 We're announcing [DDEV v1.25.3](https://github.com/ddev/ddev/releases/tag/v1.25.3): faster `ddev start` and `ddev stop`, built-in Docker Compose, stable Podman and Docker Rootless support, Node.js improvements, `XDG_CONFIG_HOME` changes, and more.
 
-This release represents 128 PRs from the entire DDEV community: your suggestions, bug reports, code, and financial support made it possible.
+This release represents 131 PRs from the entire DDEV community: your suggestions, bug reports, code, and financial support made it possible.
 
 ## Table of Contents
 
