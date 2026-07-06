@@ -97,9 +97,9 @@ We received several reports of DDEV recreating `$HOME/.ddev` repeatedly:
 
 IDEs such as PhpStorm don't always see `XDG_CONFIG_HOME` from the terminal, so DDEV fell back to and recreated `$HOME/.ddev` repeatedly. See the upstream issue [IJPL-1055](https://youtrack.jetbrains.com/projects/IJPL/issues/IJPL-1055/Load-interactive-shell-environment-variables-on-Linux) for details.
 
-To avoid this problem, DDEV now reads its own environment variable, `DDEV_XDG_CONFIG_HOME`, and no longer respects `XDG_CONFIG_HOME`. If you were relying on `XDG_CONFIG_HOME` to point DDEV at a config location, set `DDEV_XDG_CONFIG_HOME` to that same value instead.
+To avoid this problem, DDEV now reads its own environment variable, `DDEV_XDG_CONFIG_HOME`, and no longer respects `XDG_CONFIG_HOME`. If you had set `XDG_CONFIG_HOME` to something other than its default of `$HOME/.config`, set `DDEV_XDG_CONFIG_HOME` to that same value instead.
 
-Support for `$HOME/.config/ddev` on Linux is unchanged.
+Support for using `$HOME/.config/ddev` as the global configuration directory on Linux is unchanged.
 
 ## Everything Else
 
