@@ -89,7 +89,7 @@ Both Podman rootless and Docker rootless are now stable. We introduced this supp
 - `N_PREFIX` moved from `/usr/local` to `/usr/local/n`.
 - See the updated [`nodejs_version`](https://docs.ddev.com/en/stable/users/configuration/config/#nodejs_version) documentation for more details.
 
-## `XDG_CONFIG_HOME` Is Replaced by `DDEV_XDG_CONFIG_HOME`
+## `XDG_CONFIG_HOME` Is No Longer Respected, but `DDEV_XDG_CONFIG_HOME` Is Available
 
 We received several reports of DDEV recreating `$HOME/.ddev` repeatedly:
 
