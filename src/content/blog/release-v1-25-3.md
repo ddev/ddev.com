@@ -19,21 +19,17 @@ This release represents 128 PRs from the entire DDEV community: your suggestions
 
 ## Faster `ddev start` and `ddev stop`
 
-`ddev start` in v1.25.2 (top) vs v1.25.3 (bottom):
+`ddev start` is faster in v1.25.2 (top) vs v1.25.3 (bottom), including a faster warm start:
 
 ![`ddev start` v1.25.2 (top) vs v1.25.3 (bottom)](/img/blog/2026/07/ddev-start-v1-25-2-vs-v1-25-3.gif)
 
-`ddev stop` in v1.25.2 (top) vs v1.25.3 (bottom):
+`ddev stop` is significantly faster in v1.25.2 (top) vs v1.25.3 (bottom), and the same improvement also applies to `ddev poweroff` and `ddev delete`, since all three share the same code path:
 
 ![`ddev stop` v1.25.2 (top) vs v1.25.3 (bottom)](/img/blog/2026/07/ddev-stop-v1-25-2-vs-v1-25-3.gif)
 
-`ddev restart` stops a running project and starts it again, so it benefits from both improvements, including the faster warm start.
-
-`ddev restart` in v1.25.2 (top) vs v1.25.3 (bottom):
+`ddev restart` is significantly faster in v1.25.2 (top) vs v1.25.3 (bottom), since it stops and starts a project and benefits from both improvements:
 
 ![`ddev restart` v1.25.2 (top) vs v1.25.3 (bottom)](/img/blog/2026/07/ddev-restart-v1-25-2-vs-v1-25-3.gif)
-
-As the GIFs show, `ddev start` is faster and `ddev stop` is significantly faster. The `ddev stop` improvement also applies to `ddev poweroff` and `ddev delete`, since both use the same code path.
 
 Post-healthcheck tasks now run concurrently instead of one after another, reducing overall `ddev start` time, thanks to [@jonesrussell](https://github.com/jonesrussell).
 
