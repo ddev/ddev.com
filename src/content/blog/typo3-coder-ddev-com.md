@@ -12,7 +12,7 @@ categories:
   - Guides
 ---
 
-[coder.ddev.com](https://coder.ddev.com) gives you a full DDEV environment in the cloud, no local Docker required. This is a quick look at using it for a TYPO3 project with the **freeform** template, which provides stable subdomain URLs via Traefik routing instead of the port-forwarding you'd otherwise need in a cloud container.
+[coder.ddev.com](https://coder.ddev.com) gives you a full DDEV environment in the cloud, no local Docker required. This is a quick look at using it for a TYPO3 project with the **freeform** template.
 
 For general background on coder.ddev.com, including access requirements and the other available templates, see [the announcement post](coder-ddev-com-announcement.md).
 
@@ -22,17 +22,19 @@ For general background on coder.ddev.com, including access requirements and the 
 
 ## What You'll See
 
-- Creating a workspace with the **freeform** template
+- How to get access to coder.ddev.com
+- Creating a Coder.ddev.com TYPO3 workspace with the **freeform** template
 - Cloning a TYPO3 project and running `ddev coder-setup` + `ddev start`
 - Accessing the project on its stable `*.coder.ddev.com` subdomain
 - Setting TYPO3's `base` URL to match, since the subdomain doesn't change between restarts
 
 ## Steps
 
+1. Get access to coder.ddev.com either via your organization having "partner" status with DDEV Foundation or by [asking for access](https://github.com/coder-ddev-com/access-requests).
 1. Log in to [coder.ddev.com](https://coder.ddev.com) with GitHub and create a workspace using the **freeform** template.
-2. Open a terminal in the workspace (web terminal, VS Code Web, or SSH via the `coder` CLI) and clone your TYPO3 project.
-3. Run `ddev coder-setup` once in the project directory, then `ddev start`.
-4. Find the project's stable URL with `ddev describe` or `ddev launch` — it looks like `https://<workspace>--<workspace>--<owner>.coder.ddev.com/`.
+1. Open a terminal in the workspace (web terminal, VS Code Web, or SSH via the `coder` CLI) and clone your TYPO3 project.
+1. Run `ddev coder-setup` once in the project directory, then `ddev start`.
+1. Find the project's stable URL with `ddev describe` or `ddev launch` — it looks like `https://<workspace>--<workspace>--<owner>.coder.ddev.com/`.
 
 ## A Stable URL Means No `base` Workaround
 
