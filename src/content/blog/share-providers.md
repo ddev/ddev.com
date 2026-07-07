@@ -3,6 +3,8 @@ title: "New `ddev share` Provider System: Cloudflare tunnel with no login or tok
 pubDate: 2026-02-12
 summary: "DDEV v1.25.0 introduces a flexible provider system for `ddev share`, adding free Cloudflare tunnel support, automation capabilities, and extensibility for custom sharing solutions."
 author: Randy Fay
+modifiedDate: 2026-07-04
+modifiedComment: "Updated the TYPO3 example to match DDEV's official host-stripping approach, and linked to a dedicated TYPO3 screencast"
 featureImage:
   src: /img/blog/2026/02/ddev-share-banner.png
   alt: DDEV now supports many ways to do `ddev share` including cloudflared, ngrok, and even custom share providers
@@ -10,6 +12,10 @@ categories:
   - Announcements
   - Training
   - DevOps
+---
+
+**Update (2026-07-04)**: The TYPO3 example below has been updated to match DDEV's official host-stripping approach. See [Sharing Your TYPO3 Project with `ddev share`](ddev-share-with-typo3.md) for a screencast walkthrough.
+
 ---
 
 Sharing your local development environment with clients, colleagues, or testing services has always been a valuable DDEV feature. DDEV v1.25.0 makes this easier and more flexible than ever with a complete redesign of `ddev share`. The biggest news is that you can now share your projects for free using Cloudflare Tunnel—no account signup or token setup required.
@@ -33,7 +39,7 @@ ddev share --provider=cloudflared
 
 No account creation, no authentication setup, no subscription tiers—just immediate access to share your work. This removes barriers for individual developers and teams who need occasional sharing without the overhead of managing service accounts.
 
-When should you use cloudflared vs ngrok? Use cloudflared for quick, free sharing during development and testing. Choose ngrok if you need stable subdomains, custom domains, or advanced features like IP allowlisting and OAuth protection. (However, if you control a domain registered at Cloudflare you can use that for stable domains. This will be covered in a future blog.)
+When should you use cloudflared vs ngrok? Use cloudflared for quick, free sharing during development and testing. Choose ngrok if you need stable subdomains, custom domains, or advanced features like IP allowlisting and OAuth protection. (However, if you control a domain registered at Cloudflare, you can set up a named tunnel for a stable, permanent URL—see [Setting up a Stable Cloudflared Domain](https://docs.ddev.com/en/stable/users/topics/sharing/#setting-up-a-stable-cloudflared-domain) in the docs.)
 
 ## Configuration Flexibility
 
@@ -86,24 +92,32 @@ This approach works for any CMS that stores base URLs in its configuration or da
 
 ### TYPO3 Example
 
-TYPO3 usually puts the site URL into config/sites/\*/config.yaml as `base: <url>`, and then it won't respond to the different URLs in a `ddev share`. The hooks here temporarily remove the `base:` element:
+TYPO3 stores each site's base URL in `config/sites/<identifier>/config.yaml` as an absolute `base:` URL, for example `base: 'https://typo3.ddev.site/'`. TYPO3 only routes requests whose Host header exactly matches `base`, so a `ddev share` tunnel hostname 404s until `base` is adjusted.
+
+The simplest, permanent fix is to set `base: /` (or `/your-path/` for a site under a subpath) by hand, then run `ddev typo3 cache:flush` to clear the derived routing caches.
+
+For an automatic, reversible fix that's safe for multi-site projects, use `pre-share`/`post-share` hooks that strip only the scheme and host from `base`, preserving any existing path. This matters for multi-site projects—blanking every `base` collapses all sites to the same host-less `/` route, and only one of them wins:
 
 ```yaml
 hooks:
   pre-share:
-    # Make a backup of config/sites
-    - exec: cp -r ${DDEV_APPROOT}/config/sites ${DDEV_APPROOT}/config/sites.bak
-    - exec-host: echo "removing 'base' from site config for sharing to ${DDEV_SHARE_URL}"
-    # Remove `base:` from the various site configs
-    - exec: sed -i 's|^base:|#base:|g' ${DDEV_APPROOT}/config/sites/*/config.yaml
-    - exec-host: echo "shared on ${DDEV_SHARE_URL}"
+    - exec: |
+        for f in config/sites/*/config.yaml; do
+          cp "$f" "$f.pre-share-backup"
+          newbase=$(yq '.base' "$f" | sed -E 's#^https?://[^/]+##')
+          [ -z "$newbase" ] && newbase="/"
+          yq -i ".base = \"$newbase\"" "$f"
+        done
+        typo3 cache:flush
   post-share:
-    # Restore the original configuration
-    - exec: rm -rf ${DDEV_APPROOT}/config/sites
-    - exec: mv ${DDEV_APPROOT}/config/sites.bak ${DDEV_APPROOT}/config/sites
-    - exec-host: ddev mutagen sync
-    - exec-host: echo "changes to config/sites reverted"
+    - exec: |
+        for f in config/sites/*/config.yaml.pre-share-backup; do
+          mv "$f" "${f%.pre-share-backup}"
+        done
+        typo3 cache:flush
 ```
+
+This doesn't handle `baseVariants` entries or per-language `base` overrides, which are more advanced, less common setups. See [Sharing Your TYPO3 Project with `ddev share`](ddev-share-with-typo3.md) for a full walkthrough and screencast, and a ready-to-clone example at [rfay/typo3demo](https://github.com/rfay/typo3demo).
 
 ### Magento 2 Example
 

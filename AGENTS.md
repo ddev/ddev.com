@@ -203,6 +203,8 @@ Post content here...
 
 **Images**: Production-ready, <2MB, reasonable dimensions, optimized
 
+**Logo/text banner images**: For a `featureImage` that combines project logos and/or text on a solid background, see [FEATURE_IMAGE_GUIDE.md](FEATURE_IMAGE_GUIDE.md).
+
 ### Authors
 
 Add new authors to `src/content/authors/` with schema:
