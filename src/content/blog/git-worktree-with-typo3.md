@@ -20,16 +20,8 @@ This is the same underlying problem covered in [Sharing Your TYPO3 Project with 
 
 ## Watch the Video
 
-<!-- TODO: replace VIDEO_ID with the real YouTube video ID once published -->
-<!-- TODO: video contents
-  - Cloning a TYPO3 project and adding a second git worktree checkout
-  - Omitting `name:` so each worktree gets its own hostname automatically
-  - Demonstrating the `base` URL mismatch breaking the second worktree
-  - Fixing it with a `post-start` hook
--->
-
 <div class="video-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bNyKWh8wuEA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 ## What You'll See
@@ -39,7 +31,7 @@ This is the same underlying problem covered in [Sharing Your TYPO3 Project with 
 - Setting up a second `git worktree` checkout of a TYPO3 project
 - Each project getting its own hostname from its directory name
 - The `base` URL mismatch breaking the second worktree
-- Fixing it with a `post-start` hook
+- Fixing it with a `post-start` hook which checks out the original TYPO3 `config.yaml`
 
 ## Why Worktrees Get Different Hostnames
 
@@ -93,6 +85,8 @@ A pre-built example project based on the TYPO3 docs and DDEV quickstart is at [r
 ## Learn More
 
 For background on `git worktree` with DDEV in general, see [Contributor Training: `git worktree` for Multiple DDEV Projects](git-worktree-contributor-training.md). For more on TYPO3's `base` URL and the `ddev share` version of this problem, see [Sharing Your TYPO3 Project with `ddev share`](ddev-share-with-typo3.md) and the [docs on `ddev share`](https://docs.ddev.com/en/stable/users/topics/sharing/#using-ddev-share-easiest).
+
+For another way to manage TYPO3 system routing check out the [b13/host_variants](https://github.com/b13/host_variants) extension, a more sophisticated way to manage what routes the TYPO3 router will accept and work with.
 
 If you have questions, reach out in any of the [support channels](https://docs.ddev.com/en/stable/users/support/).
 
