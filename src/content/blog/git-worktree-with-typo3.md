@@ -12,7 +12,7 @@ categories:
   - Guides
 ---
 
-People have increasingly been discovering `git worktree` for use in working on multiple features or bugs at the same time, or for having an AI agents work in parallel. A [DDEV contributor training](git-worktree-contributor-training.md) covered this, and a [Drupal Florida presentation](https://www.fldrupal.camp/session/use-git-worktree-ddev-run-multiple-versions-same-site).)
+People have increasingly been discovering `git worktree` for use in working on multiple features or bugs at the same time, or for having AI agents work in parallel. A [DDEV contributor training](git-worktree-contributor-training.md) covered this, and a [Drupal Florida presentation](https://www.fldrupal.camp/session/use-git-worktree-ddev-run-multiple-versions-same-site).
 
 TYPO3 projects sometimes provide a special challenge for `git worktree` if they have the full URL specified in `config/sites/*/config.yaml`'s `base`, like `base: https://typo3.ddev.site/`. When you add a second `git worktree` checkout, DDEV names that project after its directory, giving it a different `*.ddev.site` hostname—but TYPO3's `base` still points at the first worktree's hostname, so the second one fails with a 404 "not found".
 
@@ -27,7 +27,7 @@ This is the same underlying problem covered in [Sharing Your TYPO3 Project with 
 ## What You'll See
 
 - Removing `name` from project `.ddev/config.yaml`
-- Using `ddev config global --omit-name-by-default`
+- Using `ddev config global --omit-project-name-by-default`
 - Setting up a second `git worktree` checkout of a TYPO3 project
 - Each project getting its own hostname from its directory name
 - The `base` URL mismatch breaking the second worktree
