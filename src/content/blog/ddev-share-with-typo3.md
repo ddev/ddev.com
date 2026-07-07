@@ -67,11 +67,14 @@ Of course your project should be under Git source control in case anything shoul
 DDEV already automatically adds the `trustedHostsPattern` to the `additional.php` which is used only running with DDEV. This allows the project to work on a shared URL.
 
 ```php
-  'SYS' => [
-      'trustedHostsPattern' => '.*.*',
-      'devIPmask' => '*',
-      'displayErrors' => 1,
-  ],
+return [
+    # ...
+    'SYS' => [
+        'trustedHostsPattern' => '.*.*',
+        'devIPmask' => '*',
+        'displayErrors' => 1,
+    ],
+];
 ```
 
 ## Example project: `rfay/typo3demo`
