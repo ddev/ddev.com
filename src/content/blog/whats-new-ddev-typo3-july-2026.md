@@ -50,7 +50,7 @@ A few new `ddev utility` commands help track down environment problems:
 - **`ddev utility check-custom-config`** lists custom configuration files in your project, flagging ones that don't look like they came from a recognized add-on, so you know what's overriding DDEV's defaults.
 - **`ddev utility addon-update-checker`**, for anyone maintaining a DDEV add-on (like the TYPO3 ones below), checks that your add-on's scripts and tooling are current with DDEV's add-on template.
 
-## TYPO3 Add-ons
+## TYPO3 Add-ons and Tools
 
 A few TYPO3-specific DDEV tools worth knowing about:
 
@@ -72,4 +72,4 @@ Two governance milestones landed recently. [Upsun completed the transfer](https:
 
 If you're working on something DDEV-related in the TYPO3 space, or have run into a rough edge we should know about, reach out on the [DDEV Discord](/s/discord) or any of the other [support channels](https://docs.ddev.com/en/stable/users/support/) — we'd like these updates to reflect what's actually useful to you, not just what we happened to notice.
 
-Thanks for nearly a decade of collaboration with the TYPO3 project, and for your continued support of DDEV.
+Thanks for nearly a decade of collaboration between DDEV and TYPO3 and for your continued support of DDEV.
