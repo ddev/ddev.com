@@ -25,11 +25,11 @@ But remember what is happening here! We need to hear from you to understand your
 
 ## TYPO3 `git worktree` for working on multiple features (or multiple AI agents)
 
-[Git Worktree with TYPO3 (video)](git-worktree-with-typo3) demonstrates how you can run multiple DDEV projects from the same Git repository at the same time, with separate code changes, databases and URLs. Even when projects hardcode a full URL in `config/sites/*/config.yaml`'s `base`, a simple set of `post-start` hooks can fix that. The fix there is elegant once you see it: a `pre-share` hook strips `base` down to just its path (dropping the scheme and hostname entirely), so it matches whatever hostname the request actually arrives on, and a `post-share` hook restores the original value afterward.
+[Git Worktree with TYPO3 (video)](git-worktree-with-typo3.md) demonstrates how you can run multiple DDEV projects from the same Git repository at the same time, with separate code changes, databases and URLs. Even when projects hardcode a full URL in `config/sites/*/config.yaml`'s `base`, a simple set of `post-start` hooks can fix that. The fix there is elegant once you see it: a `pre-share` hook strips `base` down to just its path (dropping the scheme and hostname entirely), so it matches whatever hostname the request actually arrives on, and a `post-share` hook restores the original value afterward.
 
 ## TYPO3 on coder.ddev.com
 
-[coder.ddev.com](https://coder.ddev.com) runs a full DDEV environment in the cloud, no local Docker required. [TYPO3 Projects on Coder.ddev.com](https://ddev.com/blog/typo3-coder-ddev-com/) walks through using it with the **freeform** template.
+[coder.ddev.com](https://coder.ddev.com) runs a full DDEV environment in the cloud, no local Docker required. [TYPO3 Projects on Coder.ddev.com](typo3-coder-ddev-com.md) walks through using it with the **freeform** template.
 
 Unlike `ddev share`'s temporary tunnel, coder.ddev.com gives each workspace a stable `*.coder.ddev.com` subdomain via Traefik host-header routing, which maps that stable external hostname to the right project every time.
 
@@ -37,7 +37,7 @@ Access to coder.ddev.com is a perk for organizations that sponsor DDEV at $100+/
 
 ## DDEV v1.25.3: Faster, and Docker/Podman Rootless Is Stable
 
-[DDEV v1.25.3](https://ddev.com/blog/release-v1-25-3/) is out, with `ddev start` about 28% faster than v1.25.2, and a similar improvement to `ddev stop`, `ddev restart`, and `ddev poweroff`.
+[DDEV v1.25.3](release-v1-25-3.md) is out, with `ddev start` about 28% faster than v1.25.2, and a similar improvement to `ddev stop`, `ddev restart`, and `ddev poweroff`.
 
 Podman and Docker Rootless, introduced as experimental in v1.25.0, are now stable. Other changes include a built-in Docker Compose SDK (no more separate `docker-compose` binary to manage), MariaDB 12.3 LTS support, and several Node.js fixes.
 
@@ -60,7 +60,7 @@ A few TYPO3-specific DDEV tools worth knowing about:
 
 ## DDEV Foundation: Trademark and Governance
 
-Two governance milestones landed recently. [Upsun completed the transfer](https://ddev.com/blog/upsun-trademark-transfer-complete/) of the DDEV trademark to the DDEV Foundation, so DDEV's name and identity are now fully owned by the community-governed foundation rather than any external entity. And the [DDEV Foundation's Board of Directors](https://ddev.com/blog/board-of-directors-established/) had its first meeting in June. The board includes Benni Mack, TYPO3 CMS Project Lead, alongside Drupal and Backdrop community members.
+Two governance milestones landed recently. [Upsun completed the transfer](upsun-trademark-transfer-complete.md) of the DDEV trademark to the DDEV Foundation, so DDEV's name and identity are now fully owned by the community-governed foundation rather than any external entity. And the [DDEV Foundation's Board of Directors](board-of-directors-established.md) had its first meeting in June. The board includes Benni Mack, TYPO3 CMS Team Lead, alongside Drupal and Backdrop community members.
 
 ## From the Community
 
