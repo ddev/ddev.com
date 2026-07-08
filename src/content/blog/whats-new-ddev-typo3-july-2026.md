@@ -60,6 +60,8 @@ Two governance milestones landed recently. [Upsun completed the transfer](https:
 
 [ochorocho](https://gitlab.com/ochorocho)'s [GitLab Runner DDEV executor](https://gitlab.com/ochorocho/gitlab-runner-ddev-executor-tester) runs GitLab CI/CD jobs inside isolated, rootless-Docker DDEV environments, one unprivileged Linux user and Docker daemon per project, for running untrusted code safely on shared runner infrastructure.
 
+[Knecht](https://knecht.works/) is a third-party automation dashboard that boots up your existing DDEV projects and runs maintenance workflows, like security updates, bugfixes, and database migrations, against a real running environment, producing a pull request with a preview link at the end. It uses the DDEV configuration already in your project, with no extra tooling required. Knecht is [looking for beta testers](https://knecht.works/updates/beta-tester/) among agencies running multiple DDEV-based projects, including TYPO3 ones, offering free setup and OpenCode credit in exchange for feedback.
+
 ## What Should We Cover Next?
 
 If you're working on something DDEV-related in the TYPO3 space, or have run into a rough edge we should know about, reach out on the [DDEV Discord](/s/discord) or any of the other [support channels](https://docs.ddev.com/en/stable/users/support/) — we'd like these updates to reflect what's actually useful to you, not just what we happened to notice.
