@@ -25,7 +25,7 @@ But! Interaction with maintainers is not just about you getting an answer to mov
 
 ## TYPO3 `git worktree` for working on multiple features (or multiple AI agents)
 
-[Git Worktree with TYPO3 (video)](git-worktree-with-typo3) demonstrates how you can run multiple DDEV projects from the same git repository at the same time, with separate code changes, databases and URLs. Even when projects hardcode a full URL in `config/sites/*/config.yaml`'s `base`, a simple set of `post-start` hooks can fix that. The fix there is elegant once you see it: a `pre-share` hook strips `base` down to just its path (dropping the scheme and hostname entirely), so it matches whatever hostname the request actually arrives on, and a `post-share` hook restores the original value afterward.
+[Git Worktree with TYPO3 (video)](git-worktree-with-typo3) demonstrates how you can run multiple DDEV projects from the same Git repository at the same time, with separate code changes, databases and URLs. Even when projects hardcode a full URL in `config/sites/*/config.yaml`'s `base`, a simple set of `post-start` hooks can fix that. The fix there is elegant once you see it: a `pre-share` hook strips `base` down to just its path (dropping the scheme and hostname entirely), so it matches whatever hostname the request actually arrives on, and a `post-share` hook restores the original value afterward.
 
 ## TYPO3 on coder.ddev.com
 
