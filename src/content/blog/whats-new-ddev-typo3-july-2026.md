@@ -17,7 +17,7 @@ Here's our latest TYPO3-with-DDEV news wrap-up, following up [April's roundup](h
 
 I think you've all seen the change AI has brought in interaction with software. It's mighty effective in answering questions, often correctly, and it does a great job with DDEV and TYPO3 issues, because both are so widely and openly documented.
 
-But! Interaction with maintainers is not just about you getting an answer to move forward, it's about maintainers getting the feedback they need about frictions, missing features, and inadequate documentation. When you have a question or problem with DDEV, it's OK to get an answer from AI, but please ask us and help us understand it as well. Join us in [Discord](/s/discord) or the [issue queue](https://github.com/ddev/ddev/issues). We delight in interacting with you.
+But remember what is happening here! We need to hear from you to understand your experience. We love to hear from you! All this is not just about you getting an answer to move forward, it's about maintainers getting the feedback they need about frictions, missing features, and inadequate documentation. When you have a question or problem with DDEV, it's OK to get an answer from AI, but please ask us and help us understand it as well. Join us in [Discord](/s/discord) or the [issue queue](https://github.com/ddev/ddev/issues). We delight in interacting with you.
 
 ## TYPO3 `ddev share` is even better, with screencast
 
