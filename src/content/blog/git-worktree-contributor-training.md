@@ -1,6 +1,8 @@
 ---
 title: "Contributor Training: `git worktree` for Multiple DDEV Projects"
 pubDate: 2026-03-30
+modifiedDate: 2026-07-07
+modifiedComment: Added link to usage with TYPO3 projects
 summary: "Using git worktree with DDEV to run multiple versions of the same project simultaneously, sharing a single .git directory."
 author: Randy Fay
 featureImage:
@@ -115,6 +117,7 @@ git worktree remove <name>  # Remove a worktree
 - `git worktree add <path>` creates a new checkout sharing the same `.git`
 - Import a database snapshot and files tarball into each worktree
 - Each worktree gets its own DDEV project URL automatically
+- If you're using TYPO3, see [Using `git worktree` with TYPO3](git-worktree-with-typo3.md)—TYPO3's absolute `base` URL needs a `post-start` hook to work across worktrees
 
 ## Join us for future trainings
 
