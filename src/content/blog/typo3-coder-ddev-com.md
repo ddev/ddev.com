@@ -1,7 +1,7 @@
 ---
 title: "TYPO3 Projects on Coder.ddev.com"
 pubDate: 2026-07-09
-summary: "A short demo of running a TYPO3 project on coder.ddev.com using the 'freeform' Coder template, with stable subdomain URLs via Traefik routing."
+summary: "A short demo of running a TYPO3 project on coder.ddev.com using the 'freeform' Coder template, including a trustedHostsPattern fix and two ways to share the result."
 author: Randy Fay
 featureImage:
   src: /img/blog/2026/07/typo3-coder-ddev-com.png
@@ -18,29 +18,32 @@ For general background on coder.ddev.com, including access requirements and the 
 
 ## Watch the Video
 
-<!-- TODO: add video embed once the screencast is recorded -->
+<div class="video-container">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Qg_LRV_mz2c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 ## What You'll See
 
 - How to get access to coder.ddev.com
-- Creating a Coder.ddev.com TYPO3 workspace with the **freeform** template
-- Cloning a TYPO3 project and running `ddev coder-setup` + `ddev start`
-- Accessing the project on its stable `*.coder.ddev.com` subdomain
-- Setting TYPO3's `base` URL to match, since the subdomain doesn't change between restarts
+- Creating a coder.ddev.com workspace with the **freeform** template
+- Cloning the [rfay/typo3demo](https://github.com/rfay/typo3demo) project and running `ddev coder-setup` + `ddev start`
+- Fixing a `trustedHostsPattern` error with `ddev restart` after Composer brings in the rest of the code
+- The working site and TYPO3 backend on the workspace's `*.coder.ddev.com` subdomain
+- Two ways to share it: natively with other coder.ddev.com users, or publicly with `ddev share`
 
 ## Steps
 
 1. Get access to coder.ddev.com either via your organization having "partner" status with DDEV Foundation or by [asking for access](https://github.com/coder-ddev-com/access-requests).
-1. Log in to [coder.ddev.com](https://coder.ddev.com) with GitHub and create a workspace using the **freeform** template.
+1. Log in to [coder.ddev.com](https://coder.ddev.com) with GitHub and create a workspace using the **freeform** template. The project name you choose matters, since coder.ddev.com uses it to set up proxying.
 1. Open a terminal in the workspace (web terminal, VS Code Web, or SSH via the `coder` CLI) and clone your TYPO3 project.
-1. Run `ddev coder-setup` once in the project directory, then `ddev start`.
-1. Find the project's stable URL with `ddev describe` or `ddev launch` — it looks like `https://<workspace>--<workspace>--<owner>.coder.ddev.com/`.
+1. Run `ddev coder-setup` once in the project directory, then `ddev start`. If the project has a `post-start` Composer install hook, like [rfay/typo3demo](https://github.com/rfay/typo3demo), it'll finish setting itself up automatically.
+1. If `ddev launch` shows a trusted-host error, it's because Composer brought in the rest of the code after the first `ddev start` already generated `additional.php`. Run `ddev restart` to regenerate it, then reload.
 
-## A Stable URL Means No `base` Workaround
+## Sharing What You Built
 
-TYPO3 projects that hardcode a full URL in `config/sites/*/config.yaml`'s `base` setting need special handling with `ddev share`, because each share session gets a new random tunnel URL — see [Sharing Your TYPO3 Project with `ddev share`](ddev-share-with-typo3.md) for the pre-share/post-share hook fix.
+The workspace can be shared with other coder.ddev.com users directly, without any extra setup.
 
-The freeform template doesn't have this problem: the `*.coder.ddev.com` subdomain for a given workspace and project stays the same across restarts. Set `base` to that URL directly, and it keeps working without any hooks.
+It can also be shared with `ddev share`, since `rfay/typo3demo` uses a relative `base` (`/camino`) instead of a hardcoded URL. Projects that do hardcode a full URL in `base` need the pre-share/post-share hook fix described in [Sharing Your TYPO3 Project with `ddev share`](ddev-share-with-typo3.md).
 
 ## Learn More
 
