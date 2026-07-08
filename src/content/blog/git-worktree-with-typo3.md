@@ -37,7 +37,7 @@ This is the same underlying problem covered in [Sharing Your TYPO3 Project with 
 
 By default, DDEV names a project after the directory it lives in. Remove the `name:` key from `.ddev/config.yaml` (or set this globally with `ddev config global --omit-project-name-by-default`) and every `git worktree` checkout gets its own project name and `*.ddev.site` hostname automatically, matching its directory.
 
-That's exactly what you want for running several branches side by side, as covered in [Contributor Training: `git worktree` for Multiple DDEV Projects](git-worktree-contributor-training.md)—but it means a TYPO3 project with a hardcoded `base` with a URL will only work correctly in whichever single worktree happens to match that hostname.
+That's what you want for running several branches side by side, as covered in [Contributor Training: `git worktree` for Multiple DDEV Projects](git-worktree-contributor-training.md)—but it means a TYPO3 project with a hardcoded `base` containing a URL will only route correctly in whichever single worktree happens to match that hostname.
 
 ## The Fix: `post-start` and `post-stop` Hooks
 
