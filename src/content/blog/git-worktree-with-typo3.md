@@ -67,11 +67,14 @@ The simplest answer is not to use the absolute `base` at all, just make it relat
 DDEV already automatically adds a `trustedHostsPattern` to `additional.php` for any hostname running under DDEV, so PHP's own host validation isn't a concern here—only TYPO3's `base` setting is.
 
 ```php
-  'SYS' => [
-      'trustedHostsPattern' => '.*.*',
-      'devIPmask' => '*',
-      'displayErrors' => 1,
-  ],
+return [
+    # ...
+    'SYS' => [
+        'trustedHostsPattern' => '.*.*',
+        'devIPmask' => '*',
+        'displayErrors' => 1,
+    ],
+];
 ```
 
 ## Setting Up the Database and Files
