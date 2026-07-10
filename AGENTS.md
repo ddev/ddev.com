@@ -58,6 +58,8 @@ When making commits after major changes, use AI-assisted commit messages that in
 
 Only commit when explicitly requested by the user.
 
+**Never run `git push` (or any command that pushes to a remote), under any circumstances, even if explicitly asked.** The user always pushes their own branches/commits themselves.
+
 ## Working with Claude Code
 
 ### Branch Naming
