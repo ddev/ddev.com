@@ -1,6 +1,6 @@
 ---
 title: "DDEV Xdebug Quickstart with PhpStorm (Video)"
-pubDate: 2026-07-11
+pubDate: 2026-07-13
 summary: "A less-than-5-minute screencast showing how to set a breakpoint, enable Xdebug with `ddev xdebug on`, and step through PHP code in PhpStorm."
 author: Randy Fay
 featureImage:
@@ -48,7 +48,8 @@ This screencast uses PhpStorm, but the same setup works identically with [VS Cod
 
 ## More on Xdebug and DDEV
 
-- [Xdebug in DDEV: Understanding, Debugging, and Troubleshooting Step Debugging](xdebug-step-debugging-understanding-and-troubleshooting.md) — the current, comprehensive guide, including `ddev utility xdebug-diagnose`
+- The `ddev utility xdebug-diagnose --interactive` command can help with port conflict and related setup problems. Try it out!
+- [Xdebug in DDEV: Understanding, Debugging, and Troubleshooting Step Debugging](xdebug-step-debugging-understanding-and-troubleshooting.md) — the updated guide
 - [DDEV and Xdebug: Debugging and sorting out problems](xdebug-debugging.md)
 - [Xdebug.org](https://xdebug.org/) and its [step debugging documentation](https://xdebug.org/docs/step_debug)
 
@@ -56,7 +57,8 @@ Xdebug is created and maintained by Derick Rethans. He's been maintaining it for
 
 ## Learn More
 
-Full details on DDEV's Xdebug integration, including troubleshooting, are in the [DDEV documentation](https://docs.ddev.com/en/stable/users/debugging-profiling/step-debugging/).
+
+* Full details on DDEV's Xdebug integration, including troubleshooting, are in the [DDEV documentation](https://docs.ddev.com/en/stable/users/debugging-profiling/step-debugging/).
 
 If you have questions, reach out in any of the [support channels](https://docs.ddev.com/en/stable/users/support/).
 
