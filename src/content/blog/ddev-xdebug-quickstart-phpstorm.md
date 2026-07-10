@@ -57,8 +57,7 @@ Xdebug is created and maintained by Derick Rethans. He's been maintaining it for
 
 ## Learn More
 
-
-* Full details on DDEV's Xdebug integration, including troubleshooting, are in the [DDEV documentation](https://docs.ddev.com/en/stable/users/debugging-profiling/step-debugging/).
+- Full details on DDEV's Xdebug integration, including troubleshooting, are in the [DDEV documentation](https://docs.ddev.com/en/stable/users/debugging-profiling/step-debugging/).
 
 If you have questions, reach out in any of the [support channels](https://docs.ddev.com/en/stable/users/support/).
 
