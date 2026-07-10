@@ -10,7 +10,6 @@ categories:
   - Community
 ---
 
-<!-- TODO: Request support interactions, based on https://ddev.com/blog/ddev-june-2026-newsletter/ -->
 I've been working on DDEV for years now, and there's something I don't say often enough:
 
 **You make this so worthwhile.**
@@ -26,6 +25,14 @@ All of us have had jobs before where some boss was making random decisions on pr
 Your questions in Discord or Slack and the issues you file aren't noise. They're signal. When something breaks in your workflow, you tell us, often with enough detail that we can reproduce it immediately. When something is confusing, you ask questions that reveal where our assumptions were wrong.
 
 That feedback shapes DDEV in ways that internal testing never could. We don't use DDEV on every possible OS, with every PHP framework, in every hosting environment. You do. And you tell us what you find.
+
+**We Love Your Questions and Comments.**
+
+AI has been replacing human interaction in support situations, and in many cases doing a decent job. It usually does a good job with questions about DDEV.
+
+But getting answers to questions is not the only purpose of support. It's also a great way to communicate problems and ambiguities to project maintainers.
+
+We **want** you to ask us questions! We live for your questions. We miss the fact that you've been absent from [Discord](https://ddev.com/s/discord), #ddev in Drupal Slack, and the [issue queue](https://github.com/ddev/ddev/issues). When you ask, it helps us to understand what your struggles are and how DDEV can get better. DDEV's strength has always been the community's willingness to engage and share their needs and frictions and hopes for the project.
 
 ## Hard Questions Lead Somewhere
 
