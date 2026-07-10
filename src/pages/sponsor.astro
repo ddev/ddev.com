@@ -6,6 +6,16 @@ const title = `Sponsor DDEV`
 const linkClass =
   "font-bold text-blue-700 underline hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300"
 
+const paypalCta = {
+  label: "Sponsor via PayPal",
+  href: "https://www.paypal.com/donate/?hosted_button_id=MCNCSZHC7LHSQ",
+}
+
+const invoiceCta = {
+  label: "Contact us to sponsor",
+  href: "/contact#sponsorship",
+}
+
 const parseReward = (text: string) => {
   return text.split(/(\[[^\]]+\]\([^)]+\))/g).map((part) => {
     const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
@@ -34,6 +44,7 @@ const sponsorshipTiers = [
       "A heartfelt thank-you from the DDEV team",
       "Sponsor badge on your GitHub profile",
     ],
+    secondaryCta: paypalCta,
   },
   {
     amount: "100",
@@ -42,10 +53,11 @@ const sponsorshipTiers = [
     featured: true,
     rewards: [
       "All the benefits of lower tiers.",
-      "Your logo and link in the DDEV README and on ddev.com",
+      "Your logo and link in the DDEV [README](https://github.com/ddev/ddev#featured-sponsors) and on [ddev.com](/#supporters) in the \"Featured Sponsors\" section",
       "Your entire team gets to use [coder.ddev.com](https://coder.ddev.com/) to experience DDEV in the cloud. See [description](/blog/coder-ddev-com-announcement/).",
       "Free [Diffy](https://diffy.website/) visual regression testing Pro plan license for one year ($800 value).",
     ],
+    secondaryCta: paypalCta,
   },
   {
     amount: "500",
@@ -53,11 +65,12 @@ const sponsorshipTiers = [
     description: "Great for large organizations.",
     rewards: [
       "All the benefits of lower tiers",
-      'Your logo and link on [ddev.com/sponsor](https://ddev.com/sponsor/) and [github.com/sponsors/ddev](https://github.com/sponsors/ddev) in the "Featured Sponsors" section',
+      'Your logo and link on [ddev.com/sponsor](/sponsor/) and [github.com/sponsors/ddev](https://github.com/sponsors/ddev) in the "Featured Sponsors" section',
       "Prioritized bug reports",
       "DDEV Tip of the Day names and thanks you — seen by thousands of developers every day in the terminal",
-      "Sponsor spotlight blog post on ddev.com",
+      "Sponsor spotlight blog post on [ddev.com/blog](/blog/)",
     ],
+    secondaryCta: invoiceCta,
   },
   {
     amount: "1,000",
@@ -68,6 +81,7 @@ const sponsorshipTiers = [
       "We join your company chat app (Slack, Teams, etc.) for direct help and support",
       "Direct line to the maintainers for your team's DDEV questions",
     ],
+    secondaryCta: invoiceCta,
   },
 ]
 ---
@@ -147,10 +161,10 @@ const sponsorshipTiers = [
                   </a>
 
                   <a
-                    href="https://www.paypal.com/donate/?hosted_button_id=MCNCSZHC7LHSQ"
+                    href={tier.secondaryCta.href}
                     class="inline-flex flex-col items-center justify-center gap-2 rounded-full border border-gray-300 bg-white px-5 py-3 font-bold text-gray-950 transition hover:border-blue-500 hover:text-blue-700 dark:border-gray-600 dark:bg-gray-900 dark:text-white dark:hover:border-blue-400 dark:hover:text-blue-400"
                   >
-                    <span>Sponsor via PayPal</span>
+                    <span>{tier.secondaryCta.label}</span>
                   </a>
                 </div>
               </article>
@@ -162,7 +176,7 @@ const sponsorshipTiers = [
       <div class="prose max-w-none dark:prose-invert">
         <section>
           <p>
-            Open-source projects like <a href="https://ddev.com/">DDEV</a> face a
+            Open-source projects like <a href="/">DDEV</a> face a
             fundamental challenge: the software is free, but building and maintaining
             it is not. Recurring monthly sponsorships are the lifeblood of the DDEV
             project — they let our two full-time maintainers, <a
@@ -173,7 +187,7 @@ const sponsorshipTiers = [
           </p>
 
           <p>
-            The <a href="https://ddev.com/foundation/">Foundation's</a> goal is <strong
+            The <a href="/foundation/">Foundation's</a> goal is <strong
               >$12,000/month</strong
             > to fully fund both maintainers. Whether you contribute $5/month or $1,000/month,
             every recurring sponsorship brings the project closer to sustainability
@@ -207,7 +221,7 @@ const sponsorshipTiers = [
           <p>
             <strong>Direct Billing</strong> — The Foundation accepts ACH, Wise, bank
             transfer, IBAN, SWIFT, and checks. Contact us at <a
-              href="https://ddev.com/contact">ddev.com/contact</a
+              href="/contact">ddev.com/contact</a
             >.
           </p>
 
@@ -242,7 +256,7 @@ const sponsorshipTiers = [
           </p>
 
           <p>
-            Learn more at <a href="https://ddev.com/foundation"
+            Learn more at <a href="/foundation"
               >ddev.com/foundation</a
             >.
           </p>
@@ -252,7 +266,7 @@ const sponsorshipTiers = [
           <p>
             <em>
               For questions about sponsorship or custom arrangements, contact us
-              at <a href="https://ddev.com/contact">ddev.com/contact</a>.
+              at <a href="/contact">ddev.com/contact</a>.
             </em>
           </p>
         </section>
