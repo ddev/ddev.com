@@ -47,6 +47,7 @@ Before committing changes, always run:
 2. `ddev textlint` - Fix content quality issues
 3. `ddev start` - Ensure environment is working
 4. Spellcheck and check links in any new content
+5. Check image sizes for any new/changed images: `find public \( -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" \) -exec sh -c 'size=$(stat -f%z "$1" 2>/dev/null || stat -c%s "$1"); if [ "$size" -gt 2097152 ]; then echo "Large image: $1 ($((size/1024))KB)"; fi' _ {} \;` - CI warns on any image over 2MB under `public/`; resize/recompress (or convert photographic PNGs to JPEG) before committing instead of fixing it in a follow-up PR
 
 ### Commits
 
