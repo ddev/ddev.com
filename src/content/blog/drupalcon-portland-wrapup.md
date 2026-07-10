@@ -5,7 +5,7 @@ pubDate: 2024-05-14
 summary: DrupalCon Portland 2024 Wrapup
 author: Randy Fay
 featureImage:
-  src: /img/blog/2024/05/platform.sh-booth-with-ddev-block.png
+  src: /img/blog/2024/05/platform.sh-booth-with-ddev-block.jpg
   alt: Platform.sh Booth With "Proud Sponsor of DDEV" block
 categories:
   - Community

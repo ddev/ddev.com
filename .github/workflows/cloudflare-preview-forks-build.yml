@@ -58,7 +58,10 @@ jobs:
                   echo "::error::Blog post $file missing required frontmatter (title, pubDate, author)"
                   exit 1
                 fi
-                if grep -qi "javascript:" "$file" || grep -qi "<script" "$file"; then
+                # Strip fenced code blocks before scanning prose, since code samples
+                # legitimately contain <script> tags and the word "javascript:".
+                prose=$(awk '/^```/{f=!f; next} !f' "$file")
+                if echo "$prose" | grep -qi "[\"'(]javascript:" || echo "$prose" | grep -qi "<script"; then
                   echo "::warning::Potentially unsafe content detected in $file. Manual review recommended."
                 fi
               fi

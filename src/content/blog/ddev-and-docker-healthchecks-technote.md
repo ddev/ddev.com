@@ -5,7 +5,7 @@ pubDate: 2024-07-22
 summary: "DDEV and Docker Healthchecks (Tech Note)"
 author: Randy Fay
 featureImage:
-  src: /img/blog/2024/07/technote.png
+  src: /img/blog/2024/07/technote.jpg
   alt: "DDEV and Docker Healthchecks (Tech Note)"
   credit: 'Dall-E: A banner graphic representing a "technical note" concept. The design should feature a paper background suggestive of a technical document'
 categories:

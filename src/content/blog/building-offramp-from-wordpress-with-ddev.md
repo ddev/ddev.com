@@ -4,7 +4,7 @@ pubDate: 2025-04-11
 summary: DDEV used to develop WordPress content exporter plugin for use in Grav CMS.
 author: Jeremy Gonyea
 featureImage:
-  src: /img/blog/2025/04/wordpress-offramp.png
+  src: /img/blog/2025/04/wordpress-offramp.jpg
   alt: Road exit sign with "Grav CMS" text. Original image by Skyler Smith at Unsplash.com
 categories:
   - Community
