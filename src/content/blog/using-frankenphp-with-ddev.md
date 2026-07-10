@@ -108,4 +108,4 @@ Samsung 870 Evo SSD (530w/560r MB/s)
 
 ![Latency Distribution (HTTP Request Endpoint)](/img/blog/2025/07/frankenphp-latency-distribution-http-request.png)
 
-If you find DDEV (and its add-ons like FrankenPHP) useful, consider [supporting its development](/support-ddev/#sponsor-development). Thank you!
+If you find DDEV (and its add-ons like FrankenPHP) useful, consider [supporting its development](/sponsor/). Thank you!

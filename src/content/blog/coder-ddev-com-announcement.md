@@ -46,7 +46,7 @@ Access to coder.ddev.com requires a GitHub account and membership in an approved
 **Who has access:**
 
 - Members of the [ddev](https://github.com/ddev) GitHub organization
-- Members of organizations that sponsor DDEV at $100+/month (see the [DDEV sponsors page](https://ddev.com/support-ddev/)) — all members of a qualifying sponsor org can sign in without individual enrollment
+- Members of organizations that sponsor DDEV at $100+/month (see the [DDEV sponsor page](/sponsor/) — all members of a qualifying sponsor org can sign in without individual enrollment
 - Individuals approved by the DDEV maintainers
 
 If you are a `ddev` org member or your organization is a $100+/month sponsor, you can sign in immediately — no request needed.

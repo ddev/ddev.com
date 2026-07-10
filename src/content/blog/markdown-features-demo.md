@@ -204,7 +204,7 @@ Internal blog links use filename references: [Learn about DDEV performance](dock
 
 ### Links to Other Site Pages
 
-Root-relative links: [Visit our support page](/support-ddev)
+Root-relative links: [Visit our sponsor page](/sponsor/)
 
 ### External Links
 

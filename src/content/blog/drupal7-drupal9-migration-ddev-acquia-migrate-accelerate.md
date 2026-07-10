@@ -317,7 +317,7 @@ The effort required to recreate the Views and Pages is justified despite the dra
 
 I’m pleased with the 98.92% data migration and have the content necessary to move forward. However, I’m also feeling burned out on this site. As satisfying as the migration results are, the site ultimately requires Drupal 10 before going live. I’m taking a few weeks off to consider the next steps for theming, Views, and page layouts.
 
-I’m torn between investing time in coaxing [AM:A to work with Drupal 10](https://www.drupal.org/project/acquia_migrate/issues/3399733), then making another attempt at the migration as AM:A to D10. Or continuing to migrate the current AM:A D9 site to D10. I plan to update this blog post as needed and encourage others to contribute, correct, and enhance this information - [Support DDEV](/support-ddev/#file-an-issue-or-pr)!
+I’m torn between investing time in coaxing [AM:A to work with Drupal 10](https://www.drupal.org/project/acquia_migrate/issues/3399733), then making another attempt at the migration as AM:A to D10. Or continuing to migrate the current AM:A D9 site to D10. I plan to update this blog post as needed and encourage others to contribute, correct, and enhance this information!
 
 ---
 

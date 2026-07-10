@@ -219,6 +219,6 @@ Keeping your add-on current means less work for users and fewer issues for you t
 
 Have questions, suggestions, or something cool to share? Join the conversation in our [Discord](/s/discord), [open an issue](https://github.com/ddev/ddev/issues), or reach out via [email](mailto:support%40ddev.com). Your feedback helps improve the tools we all rely on.
 
-If DDEV is helping you or your organization, please consider [supporting its ongoing financial sustainability](/support-ddev/#sponsor-development). Every bit helps keep the ecosystem growing and maintained.
+If DDEV is helping you or your organization, please consider [supporting its ongoing financial sustainability](/sponsor/). Every bit helps keep the ecosystem growing and maintained.
 
 Happy maintaining!
