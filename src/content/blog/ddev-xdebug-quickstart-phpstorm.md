@@ -53,7 +53,7 @@ This screencast uses PhpStorm, but the same setup works identically with [VS Cod
 - [DDEV and Xdebug: Debugging and sorting out problems](xdebug-debugging.md)
 - [Xdebug.org](https://xdebug.org/) and its [step debugging documentation](https://xdebug.org/docs/step_debug)
 
-Xdebug is created and maintained by Derick Rethans. He's been maintaining it for 20+ years. [Send money to the project!](https://xdebug.org/support). The DDEV Foundation supports it as an upstream project, you can too.
+Xdebug is created and maintained by Derick Rethans. He's been maintaining it for 20+ years. [Send money to the Xdebug project!](https://xdebug.org/support). The DDEV Foundation supports it as an upstream project, you can too.
 
 ## Learn More
 
