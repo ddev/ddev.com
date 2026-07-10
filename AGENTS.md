@@ -59,7 +59,10 @@ When making commits after major changes, use AI-assisted commit messages that in
 
 Only commit when explicitly requested by the user.
 
+Always write the commit message to a file first, then commit with `git commit -F <file>`. Inline HEREDOCs inside `$(...)` (e.g. `git commit -m "$(cat <<'EOF' ... EOF)"`) are unreliable in bash — apostrophes or other special characters in the message can produce a confusing `unexpected EOF` parse error. Writing to a file (e.g. under the scratchpad directory) and using `-F` avoids this.
+
 **Never run `git push` (or any command that pushes to a remote), under any circumstances, even if explicitly asked.** The user always pushes their own branches/commits themselves.
+
 
 ## Working with Claude Code
 
