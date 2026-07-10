@@ -46,8 +46,8 @@ coder.ddev.com is [experimental](coder-ddev-com-announcement.md) with no guarant
 
 ## Steps
 
-1. Create a **freeform** workspace at [coder.ddev.com](https://coder.ddev.com). A short-lived, single-purpose workspace works well here — you don't need a long-running one for a single task.
-1. Connect over SSH with `coder ssh <workspace-name>` rather than the web terminal — it's a more natural fit for the rest of this workflow.
+1. Create a **freeform** workspace at [coder.ddev.com](https://coder.ddev.com).
+1. Connect over SSH with `coder ssh <workspace-name>` rather than the web terminal — it's a more natural fit for the rest of this workflow. (But the web terminal would work fine too.)
 1. Clone the project you want to work on and `cd` into it.
 1. Log in to Claude Code (`claude`) the first time, following the device-login flow in your browser.
 1. Start Claude inside a named `tmux` session using `cc-remote-control.sh`, a small wrapper script that keeps it running whether or not you're connected:
@@ -69,7 +69,7 @@ coder.ddev.com is [experimental](coder-ddev-com-announcement.md) with no guarant
    Run it with a session name that matches the task, for example `cc-remote-control.sh caminofix`.
 
 1. Claude Code prints instructions for connecting from claude.ai/code or the Claude mobile app the moment the session starts.
-1. Describe the problem to Claude. Because the workspace is sandboxed (coder.ddev.com runs each workspace in a Docker-in-Docker [Sysbox](https://github.com/nestybox/sysbox) container), it's reasonable to switch to auto-accept mode and let Claude keep going without approving every step.
+1. Describe the problem to Claude. Because the workspace is sandboxed (coder.ddev.com runs each workspace in a Docker-in-Docker [Sysbox](https://github.com/nestybox/sysbox) container), it's reasonable to switch to auto mode and let Claude keep going without approving every step.
 1. Check in from your phone or from claude.ai/code whenever you like — the local session doesn't care whether anything is watching.
 1. When Claude has a working fix, ask it to coach you through the contribution process for the upstream project, even if you aren't familiar with that project's conventions.
 
