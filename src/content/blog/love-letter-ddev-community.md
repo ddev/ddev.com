@@ -1,11 +1,11 @@
 ---
 title: "A Love Letter to the DDEV Community"
-pubDate: 2026-06-01
+pubDate: 2026-07-20
 summary: "The DDEV community makes this project what it is—through real feedback, hard questions, generous contributions, and genuine collaboration."
 author: Randy Fay
-# featureImage:
-#   src: /img/blog/2026/03/ddev-community.png
-#   alt: DDEV community members collaborating
+featureImage:
+  src: /img/blog/2026/07/love-letter-ddev-community.png
+  alt: A big red heart with the DDEV logo at its center, surrounded by scattered blue dots representing the community
 categories:
   - Community
 ---
