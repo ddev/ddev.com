@@ -3,6 +3,9 @@ import Layout from "../layouts/Layout.astro"
 
 const title = `Sponsor DDEV`
 
+const linkClass =
+  "font-bold text-blue-700 underline hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300"
+
 const parseReward = (text: string) => {
   return text.split(/(\[[^\]]+\]\([^)]+\))/g).map((part) => {
     const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
@@ -40,7 +43,7 @@ const sponsorshipTiers = [
     rewards: [
       "All the benefits of lower tiers.",
       "Your logo and link in the DDEV README and on ddev.com",
-      "Your entire team gets to use [Coder.ddev.com](https://coder.ddev.com/) to experience DDEV in the cloud. See [description](/blog/coder-ddev-com-announcement/).",
+      "Your entire team gets to use [coder.ddev.com](https://coder.ddev.com/) to experience DDEV in the cloud. See [description](/blog/coder-ddev-com-announcement/).",
       "Free [Diffy](https://diffy.website/) visual regression testing Pro plan license for one year ($800 value).",
     ],
   },
@@ -126,12 +129,7 @@ const sponsorshipTiers = [
                       ✓{" "}
                       {parseReward(reward).map((part) =>
                         part.type === "link" ? (
-                          <a
-                            href={part.href}
-                            class="font-bold text-blue-700 underline hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300"
-                          >
-                            {part.text}
-                          </a>
+                          <a href={part.href} class={linkClass}>{part.text}</a>
                         ) : (
                           part.text
                         )
