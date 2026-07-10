@@ -5,7 +5,7 @@ pubDate: 2024-07-30
 summary: "Contributor Training: DDEV Docker Image Maintenance"
 author: Randy Fay
 featureImage:
-  src: /img/blog/2024/07/image-maintenance.png
+  src: /img/blog/2024/07/image-maintenance.jpg
   alt: "a banner image showing a carved stone image being maintained by a number of workmen"
   credit: "ChatGPT: A banner image showing a carved stone image being maintained by a number of workmen"
 categories:
