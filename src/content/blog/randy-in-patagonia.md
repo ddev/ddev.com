@@ -46,4 +46,4 @@ The DDEV community will be going strong as usual. Join us to give and receive su
 
 ## Making DDEV Sustainable in the Long Term
 
-Don't forget that one of DDEV's big goals is financial and community sustainability over the long term. We all know no individual will be around forever, and we want our favorite projects and communities to continue on even when change is all around us. [Join us in working toward that sustainabililty goal](/support-ddev/#sponsor-development).
+Don't forget that one of DDEV's big goals is financial and community sustainability over the long term. We all know no individual will be around forever, and we want our favorite projects and communities to continue on even when change is all around us. [Join us in working toward that sustainabililty goal](/sponsor/).

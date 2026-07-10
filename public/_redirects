@@ -16,6 +16,9 @@
 
 # Generic redirects
 /board /foundation#board 301
+/board/ /foundation#board 301
+/support-ddev /sponsor/ 301
+/support-ddev/ /sponsor/ 301
 
 # Removed blog post redirects (add both links with and without trailing slash)
 /blog/ddev-wsl2-getting-started https://docs.ddev.com/en/stable/users/install/ddev-installation/#ddev-installation-windows 301

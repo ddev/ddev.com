@@ -252,7 +252,7 @@ Use the markdown filename (without path):
 Use root-relative paths:
 
 ```markdown
-[Visit our support page](/support-ddev)
+[Visit our sponsor page](/sponsor)
 ```
 
 ### External Links

@@ -196,8 +196,7 @@ While it’s a bit of a pain and [still relies on coercion](https://github.com/d
 It’s used to display sponsor details in a few places:
 
 1. The [homepage](https://ddev.com) “Featured Sponsors” list.
-2. The leading bubbles on the [Support DDEV page](https://ddev.com/support-ddev/)’s “Sponsor Development” grid.
-3. The [procedurally-generated](https://github.com/ddev/ddev.com/blob/main/src/pages/resources/featured-sponsors.svg.js) featured sponsors [light](https://ddev.com/resources/featured-sponsors.svg) and [dark](https://ddev.com/resources/featured-sponsors-darkmode.svg) SVG images used in the [main project readme](https://github.com/ddev/ddev#wonderful-sponsors).
+2. The [procedurally-generated](https://github.com/ddev/ddev.com/blob/main/src/pages/resources/featured-sponsors.svg.js) featured sponsors [light](https://ddev.com/resources/featured-sponsors.svg) and [dark](https://ddev.com/resources/featured-sponsors-darkmode.svg) SVG images used in the [main project readme](https://github.com/ddev/ddev#wonderful-sponsors).
 
 ## Redirects/Short Links/Shortcuts
 
