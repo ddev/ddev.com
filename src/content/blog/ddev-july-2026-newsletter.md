@@ -75,6 +75,8 @@ A run of short screencasts landed on the blog this month, mostly using TYPO3 as 
 
 ## Governance
 
+DDEV has a new [Privacy Policy](/privacy), part of the Foundation's ongoing work on formal governance.
+
 The next DDEV advisory group meeting is **September 2, 2026 at 8:00 AM US Mountain / 10:00 AM US Eastern / 16:00 CEST**.
 [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=DDEV%20Board%20and%20Advisory%20Group%20Meeting&dates=20260902T140000Z/20260902T150000Z&details=DDEV%20Board%20and%20Advisory%20Group%20Meeting%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online&trp=true) • See the [agenda](https://github.com/orgs/ddev/discussions/8546).
 
