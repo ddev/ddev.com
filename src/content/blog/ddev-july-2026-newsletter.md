@@ -5,7 +5,7 @@ summary: "July 2026 DDEV Newsletter, DDEV v1.25.3, first DDEV Foundation Board m
 author: Randy Fay
 featureImage:
   src: "/img/blog/2026/07/ddev-july-2026-featureimage.jpg"
-  alt: "Nancy Lewis: Oil painting of a dramatic sunset sky with orange-lit clouds"
+  alt: "Nancy Lewis: Palisade Sunset, Oil painting of a dramatic sunset sky with orange-lit clouds"
 categories:
   - Newsletters
 ---
