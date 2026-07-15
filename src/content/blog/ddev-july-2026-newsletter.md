@@ -40,7 +40,7 @@ Organizations sponsoring at $100/month or more now receive additional partner pe
 
 $100/month+ Partners get
 
-- Full unrestricted access to [coder.ddev.com](coder-ddev-com-announcement.md) for every member of their organization.
+- Full unrestricted access for your whole organization to [coder.ddev.com](coder-ddev-com-announcement.md) for every member of their organization.
 - One year of free [diffy.website](https://diffy.website) Visual Regression Testing.
 
 ## What's New on the Blog: TYPO3 Screencasts and coder.ddev.com
@@ -54,15 +54,15 @@ A run of short screencasts landed on the blog this month, mostly using TYPO3 as 
 
 ## Community Highlights
 
-**Beta Testers Wanted: Dashboard for Agencies** — The team at knecht.works is building a dashboard for agencies managing many DDEV projects. It automates tasks like security updates by booting projects with full database environments and generating pull requests with previews. They're looking for beta testers. [Read the announcement↗](https://knecht.works/updates/beta-tester/) and see the [LinkedIn post (German)↗](https://www.linkedin.com/posts/dependabot-kann-kein-cms-updaten-ein-security-update-share-7478345983739998208-tWrP/) on why Dependabot can't update a CMS.
+**Knecht.works Beta Testers Wanted: Dashboard for Agencies** — The team at knecht.works is building a dashboard for agencies managing many DDEV projects. It automates tasks like security updates by booting projects with full database environments and generating pull requests with previews. They're looking for beta testers. [Read the announcement↗](https://knecht.works/updates/beta-tester/) and see the [LinkedIn post (German)↗](https://www.linkedin.com/posts/dependabot-kann-kein-cms-updaten-ein-security-update-share-7478345983739998208-tWrP/) on why Dependabot can't update a CMS.
 
 **How a Broken Installer Reload Led to Two Patches** — Michael Staatz debugged a TYPO3 installer issue, uncovered a SQLite PRAGMA ordering quirk, and ended up submitting patches to both TYPO3 Core and DDEV. A nice story about how one bug report can improve two projects. [Read it↗](https://staatzstreich.de/blog/en/20260713-140301-how-a-broken-installer-reload-led-to-two-patches/)
 
 ## Community Tutorials from Around the Web
 
+- **Switching from nvm to Node.js Versions in DDEV** → John Henry covers moving from host-side nvm to DDEV's built-in Node.js version management. [Read on johnhenry.ie↗](https://johnhenry.ie/blog/2026/07/switching-from-nvm-to-nodejs-version-in-ddev)
 - **Setting Up DDEV for WordPress Development, Part One** → Ryan Stubbs walks through DDEV project configuration, WordPress installation with WP-CLI, Mailpit, Adminer, and using bind mounts to keep plugins and themes organized outside the main WordPress installation. [Read on ryanstubbs.co.uk↗](https://ryanstubbs.co.uk/2026/06/setting-up-ddev-for-wordpress-development-part-one/). We're holding our breath for part 2!
 - **Alias Your Local DDEV Commands** → Martin Anderson-Clutz shares shell wrappers that let you type `drush`, `composer`, and friends without the `ddev` prefix — automatically detecting whether you're in a DDEV project and falling back to host execution when you're not. [Read on mandclu.com↗](https://www.mandclu.com/blog/alias-your-local-ddev-commands)
-- **Switching from nvm to Node.js Versions in DDEV** → John Henry covers moving from host-side nvm to DDEV's built-in Node.js version management. [Read on johnhenry.ie↗](https://johnhenry.ie/blog/2026/07/switching-from-nvm-to-nodejs-version-in-ddev)
 - **Porting a DDEV MySQL/MariaDB Database to PostgreSQL with pgloader** → Erik Pöhler walks through migrating a DDEV project's database to PostgreSQL 17 using pgloader, then reconfiguring the project for PostgreSQL. [Read on erikpoehler.com↗](https://erikpoehler.com/2025/08/18/porting-a-ddev-mysql-mariadb-database-to-postgresql-with-pgloader/)
 
 ---
@@ -82,11 +82,11 @@ The board members are there to represent you and the project. If you have insigh
 
 ## Sponsorship Update
 
-Sponsorship dipped slightly this month — thank you to everyone who has contributed!
+Sponsorship dipped slightly this month, people on vacation! — thank you to everyone who has contributed!
 
 **June 2026**: ~$10,075/month (84% of goal)
 
-**July 2026**: ~$9,931/month (82.8% of goal)
+**July 2026**: ~$9,931/month (82.8% of goal).
 
 If DDEV has helped your team, consider sponsoring. → [Become a sponsor↗](/sponsor)
 
