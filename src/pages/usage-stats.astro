@@ -20,6 +20,8 @@ import { getSponsorshipData, getSponsorshipHistory } from "../lib/api"
 
 const title = "DDEV Live Usage Statistics"
 
+const linkClass = "underline dark:text-white"
+
 // Fetched sequentially (not Promise.all) to avoid bursting past Amplitude's
 // rate limit — cached responses make this a one-time cost per cache reset.
 const environment = await getAmplitudeChart(AMPLITUDE_CHARTS.environment)
@@ -121,7 +123,11 @@ const sponsorshipGoal = sponsorshipData?.current_goal
             <UsageStatBars rows={environmentRows} valueFormat="count" />
             {AMPLITUDE_SHARE_LINKS.environment && (
               <p class="mt-2 text-sm">
-                <a href={AMPLITUDE_SHARE_LINKS.environment} target="_blank">
+                <a
+                  href={AMPLITUDE_SHARE_LINKS.environment}
+                  target="_blank"
+                  class={linkClass}
+                >
                   Live values for DDEV Environment Usage
                 </a>
               </p>
@@ -152,7 +158,11 @@ const sponsorshipGoal = sponsorshipData?.current_goal
             />
             {AMPLITUDE_SHARE_LINKS.commands && (
               <p class="mt-2 text-sm">
-                <a href={AMPLITUDE_SHARE_LINKS.commands} target="_blank">
+                <a
+                  href={AMPLITUDE_SHARE_LINKS.commands}
+                  target="_blank"
+                  class={linkClass}
+                >
                   Live values for DDEV commands
                 </a>
               </p>
@@ -175,7 +185,11 @@ const sponsorshipGoal = sponsorshipData?.current_goal
             />
             {AMPLITUDE_SHARE_LINKS.cmsProjectTypes && (
               <p class="mt-2 text-sm">
-                <a href={AMPLITUDE_SHARE_LINKS.cmsProjectTypes} target="_blank">
+                <a
+                  href={AMPLITUDE_SHARE_LINKS.cmsProjectTypes}
+                  target="_blank"
+                  class={linkClass}
+                >
                   Live version of CMS Project Types
                 </a>
               </p>
@@ -234,6 +248,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
                 <a
                   href={AMPLITUDE_SHARE_LINKS.macosDockerProviders}
                   target="_blank"
+                  class={linkClass}
                 >
                   Live results on macOS Docker Providers
                 </a>
@@ -261,6 +276,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
                 <a
                   href={AMPLITUDE_SHARE_LINKS.wsl2DockerProviders}
                   target="_blank"
+                  class={linkClass}
                 >
                   Live results for WSL2 Docker Provider
                 </a>
@@ -298,7 +314,11 @@ const sponsorshipGoal = sponsorshipData?.current_goal
             <UsageStatBars rows={addOnRows} limit={10} valueFormat="count" />
             {AMPLITUDE_SHARE_LINKS.addOns && (
               <p class="mt-2 text-sm">
-                <a href={AMPLITUDE_SHARE_LINKS.addOns} target="_blank">
+                <a
+                  href={AMPLITUDE_SHARE_LINKS.addOns}
+                  target="_blank"
+                  class={linkClass}
+                >
                   Live version of Add-on usage in Amplitude
                 </a>
               </p>
@@ -350,7 +370,11 @@ const sponsorshipGoal = sponsorshipData?.current_goal
             />
             {AMPLITUDE_SHARE_LINKS.ddevPull && (
               <p class="mt-2 text-sm">
-                <a href={AMPLITUDE_SHARE_LINKS.ddevPull} target="_blank">
+                <a
+                  href={AMPLITUDE_SHARE_LINKS.ddevPull}
+                  target="_blank"
+                  class={linkClass}
+                >
                   Live version of `ddev pull` usage
                 </a>
               </p>
@@ -372,7 +396,11 @@ const sponsorshipGoal = sponsorshipData?.current_goal
             />
             {AMPLITUDE_SHARE_LINKS.versions && (
               <p class="mt-2 text-sm">
-                <a href={AMPLITUDE_SHARE_LINKS.versions} target="_blank">
+                <a
+                  href={AMPLITUDE_SHARE_LINKS.versions}
+                  target="_blank"
+                  class={linkClass}
+                >
                   Live version of versions in use
                 </a>
               </p>
@@ -395,7 +423,11 @@ const sponsorshipGoal = sponsorshipData?.current_goal
             />
             {AMPLITUDE_SHARE_LINKS.timezones && (
               <p class="mt-2 text-sm">
-                <a href={AMPLITUDE_SHARE_LINKS.timezones} target="_blank">
+                <a
+                  href={AMPLITUDE_SHARE_LINKS.timezones}
+                  target="_blank"
+                  class={linkClass}
+                >
                   Live version of Users by Timezone
                 </a>
               </p>
@@ -464,7 +496,10 @@ const sponsorshipGoal = sponsorshipData?.current_goal
               }
             />
             <p class="mt-2 text-sm">
-              <a href="https://ddev.com/s/sponsorship-data.json">
+              <a
+                href="https://ddev.com/s/sponsorship-data.json"
+                class={linkClass}
+              >
                 Live sponsorship data (JSON)
               </a>
             </p>
