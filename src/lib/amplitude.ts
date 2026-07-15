@@ -185,6 +185,7 @@ export function toPercentageRows(
     const counts = chart.rows
       .filter((row) => !exclude.has(row.label))
       .map((row) => ({ label: row.label, count: row.values[0] ?? 0 }))
+      .filter((row) => row.count > 0)
     const grandTotal = counts.reduce((sum, row) => sum + row.count, 0) || 1
 
     return counts
@@ -209,6 +210,10 @@ export function toPercentageRows(
           ? row.values.reduce((sum, value) => sum + value, 0)
           : (row.values[uniquesColumnIndex] ?? 0),
     }))
+    // A count of 0 in the selected column usually just means that row had
+    // usage in an earlier or later (excluded, partial) column instead —
+    // not that it's genuinely unused. Not worth showing either way.
+    .filter((row) => row.count > 0)
   const grandTotal = counts.reduce((sum, row) => sum + row.count, 0) || 1
 
   return counts

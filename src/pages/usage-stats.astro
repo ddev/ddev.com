@@ -4,6 +4,7 @@ import Heading from "../components/Heading.astro"
 import PostBody from "../components/PostBody.astro"
 import UsageStatBars from "../components/UsageStatBars.astro"
 import UsageTrendChart from "../components/UsageTrendChart.astro"
+import CtaButton from "../components/CtaButton.astro"
 import {
   AMPLITUDE_CHARTS,
   AMPLITUDE_SHARE_LINKS,
@@ -39,6 +40,17 @@ const environmentRows = environment
   ? toPercentageRows(environment, "composition").map((row) =>
       row.label === "darwin" ? { ...row, label: "macOS" } : row
     )
+  : []
+const addOnRows = addOns
+  ? toPercentageRows(addOns, "segmentation", { exclude: ["(none)"] })
+  : []
+// "python" and "django4" are long-abandoned project types that shouldn't
+// still be showing up in current usage; excluded rather than investigated
+// further here.
+const cmsProjectTypeRows = cmsProjectTypes
+  ? toPercentageRows(cmsProjectTypes, "segmentation", {
+      exclude: ["python", "django4"],
+    })
   : []
 const monthlyUserHistory = await getMonthlyUserHistory()
 ---
@@ -130,6 +142,7 @@ const monthlyUserHistory = await getMonthlyUserHistory()
             </p>
             <UsageStatBars
               rows={toPercentageRows(commands, "segmentation")}
+              limit={18}
               valueFormat="count"
             />
             {AMPLITUDE_SHARE_LINKS.commands && (
@@ -150,10 +163,11 @@ const monthlyUserHistory = await getMonthlyUserHistory()
               CMS Project Types
             </h2>
             <p class="my-4 dark:text-slate-300">
-              The most popular project types DDEV is configured for.
+              Every project type DDEV is configured for.
             </p>
             <UsageStatBars
-              rows={toPercentageRows(cmsProjectTypes, "segmentation")}
+              rows={cmsProjectTypeRows}
+              limit={cmsProjectTypeRows.length}
               valueFormat="count"
             />
             {AMPLITUDE_SHARE_LINKS.cmsProjectTypes && (
@@ -206,7 +220,9 @@ const monthlyUserHistory = await getMonthlyUserHistory()
               The Docker providers DDEV users choose on WSL2.
             </p>
             <UsageStatBars
-              rows={toPercentageRows(wsl2DockerProviders, "composition")}
+              rows={toPercentageRows(wsl2DockerProviders, "composition", {
+                exclude: ["(none)"],
+              })}
               valueFormat="count"
             />
             {AMPLITUDE_SHARE_LINKS.wsl2DockerProviders && (
@@ -247,23 +263,42 @@ const monthlyUserHistory = await getMonthlyUserHistory()
                 DDEV add-ons
               </a> in use, based on unique users in the last month, among
               users who have at least one add-on installed. There's a long
-              tail beyond what's shown here — see the live chart below for
-              the complete list.
+              tail beyond what's shown here — expand below for the full list,
+              or <a href="/usage-stats/add-ons.csv">download it as CSV</a>.
             </p>
-            <UsageStatBars
-              rows={toPercentageRows(addOns, "segmentation", {
-                exclude: ["(none)"],
-              })}
-              limit={10}
-              valueFormat="count"
-            />
+            <UsageStatBars rows={addOnRows} limit={10} valueFormat="count" />
             {AMPLITUDE_SHARE_LINKS.addOns && (
               <p class="mt-2 text-sm">
                 <a href={AMPLITUDE_SHARE_LINKS.addOns} target="_blank">
-                  Live version of Add-on usage (full list)
+                  Live version of Add-on usage in Amplitude
                 </a>
               </p>
             )}
+            <details class="mt-4">
+              <summary class="cursor-pointer text-sm font-mono dark:text-slate-300">
+                Show all {addOnRows.length} discovered add-ons
+              </summary>
+              <div class="overflow-x-auto mt-3">
+                <table class="w-full font-mono text-sm">
+                  <thead>
+                    <tr class="border-b dark:border-slate-600 text-left dark:text-white">
+                      <th class="py-2 pr-4">Add-on</th>
+                      <th class="py-2 text-right">Users</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {addOnRows.map((row) => (
+                      <tr class="border-b border-gray-100 dark:border-slate-700 dark:text-slate-200">
+                        <td class="py-1.5 pr-4">{row.label}</td>
+                        <td class="py-1.5 text-right">
+                          {row.count.toLocaleString("en-US")}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </details>
           </section>
         )
       }
@@ -362,6 +397,18 @@ const monthlyUserHistory = await getMonthlyUserHistory()
           on <a href="/s/discord">Discord</a>.
         </p>
       </PostBody>
+
+      <div class="my-12 rounded-lg border border-gray-200 p-8 text-center dark:border-slate-600">
+        <h2 class="text-2xl font-bold dark:text-white">
+          Does DDEV matter to you?
+        </h2>
+        <p class="my-4 dark:text-slate-300">
+          Want to keep it growing and healthy?
+        </p>
+        <div class="flex justify-center">
+          <CtaButton text="Sponsor DDEV" href="/sponsor" />
+        </div>
+      </div>
     </div>
   </main>
 </Layout>
