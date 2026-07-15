@@ -1,0 +1,39 @@
+---
+import type { PercentageRow } from "../lib/amplitude"
+
+export interface Props {
+  rows: PercentageRow[]
+  limit?: number
+  // "percent" (default) labels each bar with its share of the total.
+  // "count" labels each bar with its raw count instead (bar width is still
+  // proportional to share, just the label differs).
+  valueFormat?: "percent" | "count"
+}
+
+const { rows, limit = 8, valueFormat = "percent" } = Astro.props
+const topRows = rows.slice(0, limit)
+const maxPercent = Math.max(...topRows.map((row) => row.percent), 1)
+---
+
+<ul class="space-y-2 font-mono text-sm">
+  {
+    topRows.map((row) => (
+      <li>
+        <div class="flex justify-between dark:text-white">
+          <span>{row.label}</span>
+          <span>
+            {valueFormat === "count"
+              ? row.count.toLocaleString("en-US")
+              : `${row.percent.toFixed(1)}%`}
+          </span>
+        </div>
+        <div class="h-2 bg-gray-200 dark:bg-slate-700 rounded">
+          <div
+            class="h-2 bg-blue-600 dark:bg-blue-500 rounded"
+            style={`width: ${(row.percent / maxPercent) * 100}%`}
+          />
+        </div>
+      </li>
+    ))
+  }
+</ul>

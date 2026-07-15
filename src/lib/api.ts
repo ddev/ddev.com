@@ -287,7 +287,7 @@ export async function getSponsorshipData() {
  * @param filename Name of the file to look for in the cache directory.
  * @returns file contents or null
  */
-const getCache = (filename: string) => {
+export const getCache = (filename: string) => {
   const dir = path.resolve("./" + DEVELOPMENT_CACHE_DIR)
   const filePath = dir + "/" + filename
 
@@ -304,7 +304,7 @@ const getCache = (filename: string) => {
  * @param filename Name of the file to write to the cache directory.
  * @param contents Contents of the file.
  */
-const putCache = (filename: string, contents: string) => {
+export const putCache = (filename: string, contents: string) => {
   const dir = path.resolve("./" + DEVELOPMENT_CACHE_DIR)
   const filePath = dir + "/" + filename
 
