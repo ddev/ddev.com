@@ -94,10 +94,6 @@ If DDEV has helped your team, consider sponsoring. → [Become a sponsor↗](/sp
 
 ---
 
-### Statistical Tidbits of the Month
-
-<!-- TODO: Add this month's statistical tidbit(s) — June's newsletter already used the "20,000 weekly users" figure, so find fresh data (e.g. a different metric or the updated weekly-user count) rather than repeating it -->
-
 ## Stay in the Loop—Follow Us and Join the Conversation
 
 - [Blog↗](https://ddev.com/blog/)
