@@ -10,11 +10,11 @@ categories:
   - Newsletters
 ---
 
-## First DDEV Foundation Board Meeting
+## Get Involved with the DDEV Foundation Board
 
-The [DDEV Foundation Board](/board) held its first meeting on June 17, and plans to meet quarterly from here on. Formal governance and growing power for the board are key strategies for the DDEV Foundation.
+The [DDEV Foundation Board](/board) is meeting quarterly, with formal governance and growing board authority as key strategies for the Foundation.
 
-The board members are there to represent you and the project. If you have insights, thoughts, or direction about where DDEV should go, please contact them.
+The board members are there to represent you and the project. If you have insights, thoughts, or direction about where DDEV should go, please contact them — and if you're a board member reading this, think about how you can represent DDEV in your own situations: your company, your community, your events.
 
 ## DDEV v1.25.3 Released
 
@@ -98,9 +98,7 @@ If DDEV has helped your team, consider sponsoring. → [Become a sponsor↗](/sp
 
 ### Statistical Tidbits of the Month
 
-<!-- TODO: Add this month's statistical tidbit(s) -->
-
-- About [20,000](https://app.amplitude.com/analytics/share/a366cd04ea484324b7751fb87a720b55) users report using DDEV each week, [live graph](https://app.amplitude.com/analytics/share/a366cd04ea484324b7751fb87a720b55).
+<!-- TODO: Add this month's statistical tidbit(s) — June's newsletter already used the "20,000 weekly users" figure, so find fresh data (e.g. a different metric or the updated weekly-user count) rather than repeating it -->
 
 ## Stay in the Loop—Follow Us and Join the Conversation
 
