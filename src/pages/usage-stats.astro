@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import Heading from "../components/Heading.astro"
+import SectionHeading from "../components/SectionHeading.astro"
 import PostBody from "../components/PostBody.astro"
 import UsageStatBars from "../components/UsageStatBars.astro"
 import UsageTrendChart from "../components/UsageTrendChart.astro"
@@ -9,8 +10,10 @@ import {
   AMPLITUDE_CHARTS,
   AMPLITUDE_SHARE_LINKS,
   getAmplitudeChart,
+  getDatabaseTypes,
   getMacosArchitecture,
   getMonthlyUserHistory,
+  getPhpVersions,
   toPercentageRows,
 } from "../lib/amplitude"
 import { getSponsorshipData, getSponsorshipHistory } from "../lib/api"
@@ -31,6 +34,8 @@ const wsl2DockerProviders = await getAmplitudeChart(
   AMPLITUDE_CHARTS.wsl2DockerProviders
 )
 const macosArchitecture = await getMacosArchitecture()
+const phpVersions = await getPhpVersions()
+const databaseTypes = await getDatabaseTypes()
 const addOns = await getAmplitudeChart(AMPLITUDE_CHARTS.addOns)
 const ddevPull = await getAmplitudeChart(AMPLITUDE_CHARTS.ddevPull)
 const versions = await getAmplitudeChart(AMPLITUDE_CHARTS.versions)
@@ -88,9 +93,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
       {
         monthlyUserHistory && (
           <section class="my-12">
-            <h2 class="text-2xl font-bold dark:text-white">
-              DDEV Usage Growth
-            </h2>
+            <SectionHeading title="DDEV Usage Growth" />
             <p class="my-4 dark:text-slate-300">
               Unique monthly users over the last year (as far back as
               Amplitude's data retention allows). Shown monthly rather than
@@ -109,9 +112,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
       {
         environment && (
           <section class="my-12">
-            <h2 class="text-2xl font-bold dark:text-white">
-              DDEV Environments
-            </h2>
+            <SectionHeading title="DDEV Environments" />
             <p class="my-4 dark:text-slate-300">
               Which operating systems and environments people run DDEV on.
               Codespaces and GitPod don't normally report information by
@@ -132,7 +133,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
       {
         commands && (
           <section class="my-12">
-            <h2 class="text-2xl font-bold dark:text-white">DDEV Commands</h2>
+            <SectionHeading title="DDEV Commands" />
             <p class="my-4 dark:text-slate-300">
               The most popular <code>ddev</code> subcommands (excluding <code
                 >drush</code
@@ -163,9 +164,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
       {
         cmsProjectTypes && (
           <section class="my-12">
-            <h2 class="text-2xl font-bold dark:text-white">
-              CMS Project Types
-            </h2>
+            <SectionHeading title="CMS Project Types" />
             <p class="my-4 dark:text-slate-300">
               Every project type DDEV is configured for.
             </p>
@@ -186,11 +185,37 @@ const sponsorshipGoal = sponsorshipData?.current_goal
       }
 
       {
+        phpVersions && (
+          <section class="my-12">
+            <SectionHeading title="PHP Version" />
+            <p class="my-4 dark:text-slate-300">
+              The <a href="https://docs.ddev.com/en/stable/users/configuration/config/#php_version">
+                PHP versions
+              </a> DDEV projects are configured for.
+            </p>
+            <UsageStatBars rows={phpVersions.rows} valueFormat="count" />
+          </section>
+        )
+      }
+
+      {
+        databaseTypes && (
+          <section class="my-12">
+            <SectionHeading title="Database Type" />
+            <p class="my-4 dark:text-slate-300">
+              The <a href="https://docs.ddev.com/en/stable/users/configuration/config/#database">
+                database types
+              </a> DDEV projects are configured for.
+            </p>
+            <UsageStatBars rows={databaseTypes.rows} valueFormat="count" />
+          </section>
+        )
+      }
+
+      {
         macosDockerProviders && (
           <section class="my-12">
-            <h2 class="text-2xl font-bold dark:text-white">
-              macOS Docker Providers
-            </h2>
+            <SectionHeading title="macOS Docker Providers" />
             <p class="my-4 dark:text-slate-300">
               The <a href="https://docs.ddev.com/en/stable/users/install/docker-installation/#docker-installation-macos">
                 Docker providers
@@ -217,9 +242,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
       {
         wsl2DockerProviders && (
           <section class="my-12">
-            <h2 class="text-2xl font-bold dark:text-white">
-              WSL2 Docker Providers
-            </h2>
+            <SectionHeading title="WSL2 Docker Providers" />
             <p class="my-4 dark:text-slate-300">
               The Docker providers DDEV users choose on WSL2.
             </p>
@@ -246,9 +269,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
       {
         macosArchitecture && (
           <section class="my-12">
-            <h2 class="text-2xl font-bold dark:text-white">
-              macOS Architecture
-            </h2>
+            <SectionHeading title="macOS Architecture" />
             <p class="my-4 dark:text-slate-300">
               Apple Silicon (arm64) vs. Intel (amd64) usage, among macOS
               users specifically.
@@ -261,7 +282,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
       {
         addOns && (
           <section class="my-12">
-            <h2 class="text-2xl font-bold dark:text-white">Add-on Usage</h2>
+            <SectionHeading title="Add-on Usage" />
             <p class="my-4 dark:text-slate-300">
               The most popular <a href="https://addons.ddev.com/">
                 DDEV add-ons
@@ -310,9 +331,9 @@ const sponsorshipGoal = sponsorshipData?.current_goal
       {
         ddevPull && (
           <section class="my-12">
-            <h2 class="text-2xl font-bold dark:text-white">
+            <SectionHeading title="Bundled ddev pull Usage">
               Bundled <code>ddev pull</code> Usage
-            </h2>
+            </SectionHeading>
             <p class="my-4 dark:text-slate-300">
               Usage of DDEV's bundled <a href="https://docs.ddev.com/en/stable/users/providers/">
                 hosting provider integrations
@@ -337,7 +358,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
       {
         versions && (
           <section class="my-12">
-            <h2 class="text-2xl font-bold dark:text-white">DDEV Versions</h2>
+            <SectionHeading title="DDEV Versions" />
             <p class="my-4 dark:text-slate-300">
               The DDEV versions currently in use.
             </p>
@@ -359,9 +380,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
       {
         timezones && (
           <section class="my-12">
-            <h2 class="text-2xl font-bold dark:text-white">
-              Users by Timezone
-            </h2>
+            <SectionHeading title="Users by Timezone" />
             <p class="my-4 dark:text-slate-300">
               DDEV doesn't collect user-identifiable information, but
               timezones give a rough sense of where users are.
@@ -382,7 +401,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
       }
 
       <PostBody>
-        <h2>Explore them yourself!</h2>
+        <SectionHeading title="Explore them yourself!" />
         <p>
           <strong
             >You can explore these yourself, ask for permission.</strong
@@ -405,9 +424,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
       {
         sponsorshipHistory.monthlyIncome.length > 0 && (
           <section class="my-12">
-            <h2 class="text-2xl font-bold dark:text-white">
-              DDEV Sponsorship
-            </h2>
+            <SectionHeading title="DDEV Sponsorship" />
             <p class="my-4 dark:text-slate-300">
               Not Amplitude data, but just as important:{" "}
               <a href="https://ddev.com/foundation">the DDEV Foundation</a>{" "}
@@ -452,9 +469,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
       }
 
       <div class="my-12 rounded-lg border border-gray-200 p-8 text-center dark:border-slate-600">
-        <h2 class="text-2xl font-bold dark:text-white">
-          Does DDEV matter to you?
-        </h2>
+        <SectionHeading title="Does DDEV matter to you?" />
         <p class="my-4 dark:text-slate-300">
           Want to keep it growing and healthy?
         </p>

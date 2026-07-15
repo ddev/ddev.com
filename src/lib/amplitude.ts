@@ -329,7 +329,7 @@ export async function getMonthlyUserHistory(): Promise<MonthlyUserHistory | null
   return history
 }
 
-export type ArchitectureBreakdown = {
+export type PropertyBreakdown = {
   rows: PercentageRow[]
 }
 
@@ -340,7 +340,7 @@ export type ArchitectureBreakdown = {
  * Linux/Windows amd64 machines and understates Apple Silicon's real share
  * among macOS users.
  */
-export async function getMacosArchitecture(): Promise<ArchitectureBreakdown | null> {
+export async function getMacosArchitecture(): Promise<PropertyBreakdown | null> {
   const cacheFilename = "amplitude-macos-architecture.json"
   const cachedData = getCache(cacheFilename)
 
@@ -395,7 +395,7 @@ export async function getMacosArchitecture(): Promise<ArchitectureBreakdown | nu
     0
   )
 
-  const breakdown: ArchitectureBreakdown = {
+  const breakdown: PropertyBreakdown = {
     rows: counts
       .map((row) => ({
         ...row,
@@ -407,4 +407,99 @@ export async function getMacosArchitecture(): Promise<ArchitectureBreakdown | nu
   putCache(cacheFilename, JSON.stringify(breakdown))
 
   return breakdown
+}
+
+/**
+ * Gets a breakdown of unique users by a property scoped to DDEV's "Project"
+ * event (e.g. "PHP Version", "Database Type"), via an ad hoc Events
+ * Segmentation query. These properties only exist on that one event type,
+ * so they need an inline `group_by` in the event definition rather than the
+ * top-level `g` param used above for `platform` (a property Amplitude
+ * tracks globally on every event).
+ */
+async function getProjectPropertyBreakdown(
+  propertyName: string,
+  options: { exclude?: string[] } = {}
+): Promise<PropertyBreakdown | null> {
+  const cacheKey = propertyName.toLowerCase().replace(/[^a-z0-9]+/g, "-")
+  const cacheFilename = `amplitude-project-property-${cacheKey}.json`
+  const cachedData = getCache(cacheFilename)
+
+  if (cachedData) {
+    return cachedData
+  }
+
+  if (!amplitudeCredentialsSet) {
+    return null
+  }
+
+  const end = new Date()
+  const start = new Date(end.getTime() - 7 * 24 * 60 * 60 * 1000)
+  const toYyyymmdd = (date: Date) =>
+    date.toISOString().slice(0, 10).replace(/-/g, "")
+
+  const params = new URLSearchParams({
+    e: JSON.stringify({
+      event_type: "Project",
+      group_by: [{ type: "event", value: propertyName }],
+    }),
+    start: toYyyymmdd(start),
+    end: toYyyymmdd(end),
+    i: "1",
+    m: "uniques",
+  })
+
+  const response = await fetch(
+    `https://amplitude.com/api/2/events/segmentation?${params.toString()}`,
+    {
+      headers: { Authorization: authHeader() },
+    }
+  )
+
+  if (!response.ok) {
+    throw new Error(
+      `Amplitude segmentation request failed: HTTP ${response.status}`
+    )
+  }
+
+  const { data } = await response.json()
+  const exclude = new Set(options.exclude ?? [])
+  // Inline group_by returns seriesLabels as [groupIndex, label] pairs,
+  // unlike the plain string labels the top-level `g` param returns above.
+  const counts = data.seriesLabels
+    .map((entry: string | [number, string], index: number) => ({
+      label: Array.isArray(entry) ? entry[1] : entry,
+      count: data.seriesCollapsed[index]?.[0]?.value ?? 0,
+    }))
+    .filter(
+      (row: { label: string; count: number }) =>
+        !exclude.has(row.label) && row.count > 0
+    )
+  const grandTotal = counts.reduce(
+    (sum: number, row: { count: number }) => sum + row.count,
+    0
+  )
+
+  const breakdown: PropertyBreakdown = {
+    rows: counts
+      .map((row) => ({
+        ...row,
+        percent: grandTotal ? (row.count / grandTotal) * 100 : 0,
+      }))
+      .sort((a, b) => b.count - a.count),
+  }
+
+  putCache(cacheFilename, JSON.stringify(breakdown))
+
+  return breakdown
+}
+
+export function getPhpVersions(): Promise<PropertyBreakdown | null> {
+  return getProjectPropertyBreakdown("PHP Version")
+}
+
+export function getDatabaseTypes(): Promise<PropertyBreakdown | null> {
+  return getProjectPropertyBreakdown("Database Type", {
+    exclude: ["(none)"],
+  })
 }
