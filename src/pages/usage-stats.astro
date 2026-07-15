@@ -193,7 +193,11 @@ const sponsorshipGoal = sponsorshipData?.current_goal
                 PHP versions
               </a> DDEV projects are configured for.
             </p>
-            <UsageStatBars rows={phpVersions.rows} valueFormat="count" />
+            <UsageStatBars
+              rows={phpVersions.rows}
+              limit={phpVersions.rows.length}
+              valueFormat="count"
+            />
           </section>
         )
       }

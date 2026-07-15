@@ -495,7 +495,7 @@ async function getProjectPropertyBreakdown(
 }
 
 export function getPhpVersions(): Promise<PropertyBreakdown | null> {
-  return getProjectPropertyBreakdown("PHP Version")
+  return getProjectPropertyBreakdown("PHP Version", { exclude: ["(none)"] })
 }
 
 export function getDatabaseTypes(): Promise<PropertyBreakdown | null> {
