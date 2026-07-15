@@ -282,6 +282,68 @@ export async function getSponsorshipData() {
   return sponsorshipData ?? []
 }
 
+export type SponsorshipHistory = {
+  monthStartDates: string[]
+  monthlyIncome: number[]
+}
+
+/**
+ * Fetches monthly DDEV sponsorship income history from the daily snapshots
+ * published on the `history` branch of ddev/sponsorship-data
+ * (https://github.com/ddev/sponsorship-data). Unlike GitHub Sponsors data
+ * elsewhere in this file, these are plain public raw-file reads and need no
+ * GITHUB_TOKEN.
+ */
+export async function getSponsorshipHistory(): Promise<SponsorshipHistory> {
+  const cacheFilename = "sponsorship-history.json"
+  const cachedData = getCache(cacheFilename)
+
+  if (cachedData) {
+    return cachedData
+  }
+
+  const listResponse = await fetch(
+    "https://api.github.com/repos/ddev/sponsorship-data/contents/data/history?ref=history"
+  )
+
+  if (!listResponse.ok) {
+    throw new Error(`HTTP error! status: ${listResponse.status}`)
+  }
+
+  const files: { name: string }[] = await listResponse.json()
+  // One snapshot per calendar month (the last available day in that month),
+  // so the trend reads as a monthly series rather than a noisy daily one.
+  const lastDateByMonth = new Map<string, string>()
+  for (const name of files.map((file) => file.name)) {
+    const match = name.match(/^(\d{4}-\d{2})-\d{2}\.json$/)
+    if (match) {
+      lastDateByMonth.set(match[1], name.replace(/\.json$/, ""))
+    }
+  }
+  const sampleDates = Array.from(lastDateByMonth.values()).sort()
+
+  const monthStartDates: string[] = []
+  const monthlyIncome: number[] = []
+
+  for (const date of sampleDates) {
+    const response = await fetch(
+      `https://raw.githubusercontent.com/ddev/sponsorship-data/history/data/history/${date}.json`
+    )
+    if (!response.ok) {
+      continue
+    }
+    const snapshot = await response.json()
+    monthStartDates.push(`${date.slice(0, 7)}-01`)
+    monthlyIncome.push(snapshot.total_monthly_average_income ?? 0)
+  }
+
+  const history: SponsorshipHistory = { monthStartDates, monthlyIncome }
+
+  putCache(cacheFilename, JSON.stringify(history))
+
+  return history
+}
+
 /**
  * Returns JSON-parsed value from a cached file if it exists.
  * @param filename Name of the file to look for in the cache directory.

@@ -3,9 +3,23 @@ export interface Props {
   // ISO date strings, one per bucket (e.g. month start dates)
   labels: string[]
   values: number[]
+  ariaLabel?: string
+  tooltipUnit?: string
+  valuePrefix?: string
+  // Optional horizontal reference line (e.g. a sponsorship goal)
+  goalValue?: number
+  goalLabel?: string
 }
 
-const { labels, values } = Astro.props
+const {
+  labels,
+  values,
+  ariaLabel = "Chart of unique monthly DDEV users over the past year",
+  tooltipUnit = "unique users",
+  valuePrefix = "",
+  goalValue,
+  goalLabel,
+} = Astro.props
 
 const width = 800
 const height = 300
@@ -14,8 +28,9 @@ const plotWidth = width - margin.left - margin.right
 const plotHeight = height - margin.top - margin.bottom
 
 // Start the y-axis at zero (rather than at the data minimum) so the trend
-// isn't visually exaggerated by a truncated baseline.
-const maxValue = Math.max(...values, 1)
+// isn't visually exaggerated by a truncated baseline. Includes the goal
+// value, if any, so the goal line is never clipped off the top.
+const maxValue = Math.max(...values, goalValue ?? 0, 1)
 const yMax = Math.ceil(maxValue / 5000) * 5000 || 1
 const gridlineCount = 5
 
@@ -49,7 +64,7 @@ const areaPoints =
   viewBox={`0 0 ${width} ${height}`}
   class="w-full h-auto text-blue-600 dark:text-blue-400"
   role="img"
-  aria-label="Chart of unique monthly DDEV users over the past year"
+  aria-label={ariaLabel}
 >
   <defs>
     <linearGradient id="trend-fill" x1="0" y1="0" x2="0" y2="1">
@@ -80,7 +95,7 @@ const areaPoints =
             class="fill-gray-500 dark:fill-slate-400"
             font-size="11"
           >
-            {formatK(value)}
+            {valuePrefix}{formatK(value)}
           </text>
         </g>
       )
@@ -88,6 +103,33 @@ const areaPoints =
   }
 
   <polygon points={areaPoints} fill="url(#trend-fill)" />
+
+  {
+    goalValue !== undefined && (
+      <g>
+        <line
+          x1={margin.left}
+          x2={width - margin.right}
+          y1={yFor(goalValue)}
+          y2={yFor(goalValue)}
+          class="stroke-emerald-500 dark:stroke-emerald-400"
+          stroke-width="1.5"
+          stroke-dasharray="4 3"
+        />
+        <text
+          x={width - margin.right}
+          y={yFor(goalValue) - 6}
+          text-anchor="end"
+          class="fill-emerald-600 dark:fill-emerald-400"
+          font-size="11"
+          font-weight="bold"
+        >
+          {goalLabel ?? `Goal: ${valuePrefix}${formatK(goalValue)}`}
+        </text>
+      </g>
+    )
+  }
+
   <polyline
     points={linePoints}
     fill="none"
@@ -104,7 +146,7 @@ const areaPoints =
         fill="currentColor"
       >
         <title>
-          {formatMonthLabel(labels[index])}: {value.toLocaleString("en-US")} unique users
+          {formatMonthLabel(labels[index])}: {valuePrefix}{value.toLocaleString("en-US")} {tooltipUnit}
         </title>
       </circle>
     ))
@@ -133,7 +175,7 @@ const areaPoints =
         font-size="11"
         font-weight="bold"
       >
-        {formatK(value)}
+        {valuePrefix}{formatK(value)}
       </text>
     ))
   }
