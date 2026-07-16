@@ -54,6 +54,9 @@ const macosDockerProviders = await getAmplitudeChart(
 const wsl2DockerProviders = await getAmplitudeChart(
   AMPLITUDE_CHARTS.wsl2DockerProviders
 )
+const linuxDockerProviders = await getAmplitudeChart(
+  AMPLITUDE_CHARTS.linuxDockerProviders
+)
 const macosArchitecture = await getAmplitudeChart(
   AMPLITUDE_CHARTS.macosArchitecture
 )
@@ -310,6 +313,32 @@ const sponsorshipGoal = sponsorshipData?.current_goal
                   class={linkClass}
                 >
                   Live results for WSL2 Docker Provider
+                </a>
+              </p>
+            )}
+          </section>
+        )
+      }
+
+      {
+        linuxDockerProviders && (
+          <section class="my-12">
+            <SectionHeading title="Linux Docker Providers" />
+            <p class="my-4 dark:text-slate-300">
+              The Docker providers DDEV users choose on Linux.
+            </p>
+            <UsageStatChart
+              rows={toPercentageRows(linuxDockerProviders, "composition")}
+              valueFormat="count"
+            />
+            {AMPLITUDE_SHARE_LINKS.linuxDockerProviders && (
+              <p class="mt-2 text-sm">
+                <a
+                  href={AMPLITUDE_SHARE_LINKS.linuxDockerProviders}
+                  target="_blank"
+                  class={linkClass}
+                >
+                  Live results for Linux Docker Providers
                 </a>
               </p>
             )}

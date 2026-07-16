@@ -148,6 +148,24 @@ const CHART_SPECS: Record<string, ChartSpec> = {
       "podman",
     ],
   },
+  linuxDockerProviders: {
+    // Real data is heavily dominated by native linux-docker (~95%), so a
+    // steep decay is used rather than the gentler 0.4 the macOS/WSL2 charts
+    // use.
+    title: "Linux Docker Providers",
+    base: 4300,
+    decay: 0.05,
+    labels: [
+      "linux-docker",
+      "docker-desktop",
+      "linux-docker-selinux",
+      "podman-rootless-selinux",
+      "linux-docker-rootless",
+      "podman-rootless",
+      "lima",
+      "rancher-desktop",
+    ],
+  },
   macosArchitecture: {
     title: "macOS Architecture",
     base: 11000,
