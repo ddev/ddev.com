@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import SectionHeading from "../components/SectionHeading.astro"
 
 const title = `Sponsor DDEV`
 
@@ -104,7 +105,7 @@ const sponsorshipTiers = [
       <section class="mt-4">
         <div class="mx-auto max-w-4xl">
           <div class="prose max-w-none dark:prose-invert">
-            <h2>Sponsorship Levels</h2>
+            <SectionHeading title="Sponsorship Levels" />
 
             <p>
               <strong>
@@ -201,7 +202,7 @@ const sponsorshipTiers = [
     <div class="mx-auto mt-16 max-w-4xl">
       <div class="prose max-w-none dark:prose-invert space-y-16">
         <section>
-          <h2>How to Sponsor</h2>
+          <SectionHeading title="How to Sponsor" />
 
           <p>
             <strong>GitHub Sponsors</strong> — <a
@@ -221,7 +222,7 @@ const sponsorshipTiers = [
           <p>
             <strong>Direct Billing</strong> — The Foundation accepts ACH, Wise, bank
             transfer, IBAN, SWIFT, and checks. Contact us at <a
-              href="/contact">ddev.com/contact</a
+              href="/contact#sponsorship">ddev.com/contact</a
             >.
           </p>
 
@@ -232,7 +233,7 @@ const sponsorshipTiers = [
         </section>
 
         <section>
-          <h2>About DDEV</h2>
+          <SectionHeading title="About DDEV" />
 
           <p>
             DDEV is the open-source local development environment trusted by
@@ -244,7 +245,7 @@ const sponsorshipTiers = [
         </section>
 
         <section>
-          <h2>About the Foundation</h2>
+          <SectionHeading title="About the Foundation" />
 
           <p>
             The DDEV Foundation is a US 501(c)(3) nonprofit registered in
@@ -266,7 +267,7 @@ const sponsorshipTiers = [
           <p>
             <em>
               For questions about sponsorship or custom arrangements, contact us
-              at <a href="/contact">ddev.com/contact</a>.
+              at <a href="/contact#sponsorship">ddev.com/contact</a>.
             </em>
           </p>
         </section>
