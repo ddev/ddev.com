@@ -4,10 +4,16 @@
 
 import dotenv from "dotenv"
 import { getCache, putCache } from "./api"
+import {
+  getSampleChart,
+  getSampleMacosArchitecture,
+  getSampleMonthlyUserHistory,
+  getSampleProjectProperty,
+} from "./amplitude-sample-data"
 
 dotenv.config()
 
-// Saved chart IDs behind each usage-stats section (see amplitude.com/analytics/ddev)
+// Saved chart IDs behind each usage-stats section (see https://app.amplitude.com/analytics/ddev/home)
 export const AMPLITUDE_CHARTS = {
   environment: "vkdc4w6s",
   commands: "bzk6dz2u",
@@ -57,6 +63,12 @@ const amplitudeCredentialsSet: boolean = (() => {
   }
   return true
 })()
+
+// Without credentials, fall back to sample data (see ./amplitude-sample-data),
+// except on the real Cloudflare Pages deploy (CF_PAGES), which should show the
+// "data isn't available" notice rather than fabricated numbers. Not PROD-gated:
+// `astro build` sets PROD for the local build too, where we do want samples.
+const useSampleData = !amplitudeCredentialsSet && !process.env.CF_PAGES
 
 const authHeader = () =>
   "Basic " +
@@ -236,7 +248,9 @@ export async function getAmplitudeChart(
   }
 
   if (!amplitudeCredentialsSet) {
-    return null
+    return useSampleData
+      ? getSampleChart(SAMPLE_CHART_KEY_BY_ID[chartId] ?? "")
+      : null
   }
 
   const response = await fetch(
@@ -284,7 +298,7 @@ export async function getMonthlyUserHistory(): Promise<MonthlyUserHistory | null
   }
 
   if (!amplitudeCredentialsSet) {
-    return null
+    return useSampleData ? getSampleMonthlyUserHistory() : null
   }
 
   const end = new Date()
@@ -349,7 +363,7 @@ export async function getMacosArchitecture(): Promise<PropertyBreakdown | null> 
   }
 
   if (!amplitudeCredentialsSet) {
-    return null
+    return useSampleData ? getSampleMacosArchitecture() : null
   }
 
   const end = new Date()
@@ -430,7 +444,7 @@ async function getProjectPropertyBreakdown(
   }
 
   if (!amplitudeCredentialsSet) {
-    return null
+    return useSampleData ? getSampleProjectProperty(propertyName) : null
   }
 
   const end = new Date()
@@ -503,3 +517,9 @@ export function getDatabaseTypes(): Promise<PropertyBreakdown | null> {
     exclude: ["(none)"],
   })
 }
+
+// Maps each saved chart's ID back to its AMPLITUDE_CHARTS key, so the
+// chartId-based getAmplitudeChart() can look up sample data (keyed by name).
+const SAMPLE_CHART_KEY_BY_ID: Record<string, string> = Object.fromEntries(
+  Object.entries(AMPLITUDE_CHARTS).map(([key, id]) => [id, key])
+)
