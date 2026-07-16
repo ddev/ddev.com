@@ -76,7 +76,7 @@ The [Usage Stats page](/usage-stats) replaces our old static usage-stats blog po
 
 - The [DDEV Foundation Board](/board) is meeting quarterly, with formal governance and growing board authority as key strategies for the Foundation.
 
-  *The board members are there to represent you and the project.* If you have insights, thoughts, or direction about where DDEV should go, please contact them. If you see possibilities for them at your community events, invite them!
+  _The board members are there to represent you and the project._ If you have insights, thoughts, or direction about where DDEV should go, please contact them. If you see possibilities for them at your community events, invite them!
 
 - DDEV has a new [Privacy Policy](/privacy), part of the Foundation's ongoing work on formal governance.
 
