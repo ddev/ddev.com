@@ -150,51 +150,51 @@ const CHART_SPECS: Record<string, ChartSpec> = {
   },
   addOns: {
     title: "Add-on Usage",
-    base: 8000,
-    decay: 0.82,
+    base: 5000,
+    decay: 0.72,
     labels: [
-      "ddev-redis",
-      "ddev-adminer",
-      "ddev-solr",
-      "ddev-elasticsearch",
+      "redis",
+      "solr",
+      "adminer",
       "ddev-cron",
-      "ddev-memcached",
-      "ddev-phpmyadmin",
+      "elasticsearch",
+      "ddev-opensearch",
       "ddev-selenium-standalone-chrome",
-      "ddev-mongo",
-      "ddev-platformsh",
-      "ddev-drupal-contrib",
-      "ddev-varnish",
-      "ddev-beanstalkd",
-      "ddev-mailpit",
+      "memcached",
+      "varnish",
+      "rabbitmq",
+      "ddev-browsersync",
+      "ddev-vite-sidecar",
+      "typo3-solr",
+      "minio",
     ],
   },
   ddevPull: {
     title: "Bundled ddev pull Usage",
-    base: 3400,
-    decay: 0.62,
-    labels: ["platform", "pantheon", "acquia", "upsun", "rds"],
+    base: 10000,
+    decay: 0.5,
+    labels: ["pantheon", "acquia", "platform", "upsun", "lagoon"],
   },
   versions: {
     title: "DDEV Versions",
-    base: 28000,
+    base: 10000,
     decay: 0.45,
-    labels: ["v1.24.9", "v1.24.8", "v1.24.7", "v1.24.6", "v1.23.5", "v1.24.5"],
+    labels: [
+      "v1.25.2",
+      "v1.25.3",
+      "v1.25.1",
+      "v1.24.10",
+      "v1.25.0",
+      "v1.24.7",
+      "v1.24.6",
+      "v1.24.8",
+    ],
   },
   timezones: {
     title: "Users by Timezone",
-    base: 9000,
-    decay: 0.72,
-    labels: [
-      "Europe/Berlin",
-      "Europe/Paris",
-      "America/New_York",
-      "Europe/London",
-      "Europe/Amsterdam",
-      "America/Chicago",
-      "Asia/Kolkata",
-      "America/Los_Angeles",
-    ],
+    base: 10000,
+    decay: 0.5,
+    labels: ["CEST", "EDT", "IST", "EEST", "BST", "UTC", "CDT", "PDT"],
   },
 }
 
@@ -256,7 +256,7 @@ export function getSampleProjectProperty(
 
 // Sample macOS architecture breakdown (Apple Silicon vs. Intel).
 export function getSampleMacosArchitecture(): PropertyBreakdown {
-  return toBreakdown(decayingCounts(["arm64", "amd64"], 9000, 0.28))
+  return toBreakdown(decayingCounts(["arm64", "amd64"], 11000, 0.065))
 }
 
 // Sample trailing-11-month user history, trending up, dated to end last month.
