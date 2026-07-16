@@ -1,0 +1,83 @@
+---
+import type { PercentageRow } from "../lib/amplitude"
+import UsageStatBars from "./UsageStatBars.astro"
+import UsageDonut from "./UsageDonut.astro"
+
+export interface Props {
+  rows: PercentageRow[]
+  limit?: number
+  valueFormat?: "percent" | "count"
+  // Slices beyond this fold into "Other" in the donut view.
+  donutMaxSlices?: number
+}
+
+const {
+  rows,
+  limit = 8,
+  valueFormat = "percent",
+  donutMaxSlices = 7,
+} = Astro.props
+---
+
+<div data-usage-chart>
+  <div class="mb-3 flex justify-end">
+    <div
+      role="group"
+      aria-label="Chart view"
+      class="inline-flex overflow-hidden rounded border border-gray-200 font-mono text-xs dark:border-slate-600"
+    >
+      <button
+        type="button"
+        data-view-btn="bars"
+        aria-pressed="true"
+        class="px-3 py-1 text-gray-600 transition-colors aria-pressed:bg-blue-600 aria-pressed:text-white dark:text-slate-300"
+      >
+        Bars
+      </button>
+      <button
+        type="button"
+        data-view-btn="pie"
+        aria-pressed="false"
+        class="border-l border-gray-200 px-3 py-1 text-gray-600 transition-colors aria-pressed:bg-blue-600 aria-pressed:text-white dark:border-slate-600 dark:text-slate-300"
+      >
+        Pie
+      </button>
+    </div>
+  </div>
+
+  <div data-view-panel="bars">
+    <UsageStatBars rows={rows} limit={limit} valueFormat={valueFormat} />
+  </div>
+  <div data-view-panel="pie" hidden>
+    <UsageDonut rows={rows} maxSlices={donutMaxSlices} />
+  </div>
+</div>
+
+<script>
+  // A single view choice drives every chart on the page: clicking "Pie" (or
+  // "Bars") on any one section switches all of them, and keeps their toggle
+  // buttons in sync.
+  const applyView = (target: string) => {
+    document
+      .querySelectorAll<HTMLButtonElement>("[data-view-btn]")
+      .forEach((button) => {
+        button.setAttribute(
+          "aria-pressed",
+          button.dataset.viewBtn === target ? "true" : "false"
+        )
+      })
+    document
+      .querySelectorAll<HTMLElement>("[data-view-panel]")
+      .forEach((panel) => {
+        panel.hidden = panel.dataset.viewPanel !== target
+      })
+  }
+
+  document
+    .querySelectorAll<HTMLButtonElement>("[data-view-btn]")
+    .forEach((button) => {
+      button.addEventListener("click", () => {
+        if (button.dataset.viewBtn) applyView(button.dataset.viewBtn)
+      })
+    })
+</script>

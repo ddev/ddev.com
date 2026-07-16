@@ -1,0 +1,165 @@
+---
+import type { PercentageRow } from "../lib/amplitude"
+
+export interface Props {
+  rows: PercentageRow[]
+  // Slices beyond this are folded into a single "Other" slice, so the ring
+  // never degrades into unreadable slivers. The categorical palette has 8
+  // hues; the last is reserved for "Other".
+  maxSlices?: number
+}
+
+const { rows, maxSlices = 7 } = Astro.props
+
+// Fold the long tail into "Other" so the donut stays legible. Rows arrive
+// sorted descending by count from toPercentageRows().
+const kept = rows.slice(0, maxSlices)
+const tail = rows.slice(maxSlices)
+const slices = [...kept]
+if (tail.length > 0) {
+  slices.push({
+    label: "Other",
+    count: tail.reduce((sum, row) => sum + row.count, 0),
+    percent: tail.reduce((sum, row) => sum + row.percent, 0),
+  })
+}
+
+const total = slices.reduce((sum, row) => sum + row.count, 0)
+// Normalize against the shown total rather than assuming percents sum to
+// exactly 100 (rounding, excluded rows).
+const totalPercent = slices.reduce((sum, row) => sum + row.percent, 0) || 1
+
+const size = 200
+const center = size / 2
+const radius = 70
+const strokeWidth = 30
+const circumference = 2 * Math.PI * radius
+const gap = 2 // px of surface between slices
+
+let acc = 0
+const segments = slices.map((row, index) => {
+  const fraction = row.percent / totalPercent
+  const length = fraction * circumference
+  const dash = Math.max(length - gap, 0.001)
+  const segment = {
+    row,
+    // "Other" always takes the reserved last slot (index 8); real slices
+    // fill slots 1..maxSlices in order.
+    slot: row.label === "Other" ? 8 : index + 1,
+    dasharray: `${dash} ${circumference - dash}`,
+    dashoffset: -acc,
+    sharePercent: fraction * 100,
+  }
+  acc += length
+  return segment
+})
+
+const formatCount = (value: number) =>
+  value >= 1000
+    ? `${Math.round(value / 1000)}K`
+    : value.toLocaleString("en-US")
+---
+
+<div class="usage-donut flex flex-col sm:flex-row sm:items-center gap-6">
+  <svg
+    viewBox={`0 0 ${size} ${size}`}
+    class="w-full max-w-[200px] mx-auto sm:mx-0 shrink-0"
+    role="img"
+    aria-label="Donut chart of the breakdown below"
+  >
+    <circle
+      cx={center}
+      cy={center}
+      r={radius}
+      fill="none"
+      class="stroke-gray-200 dark:stroke-slate-700"
+      stroke-width={strokeWidth}
+    />
+    <g transform={`rotate(-90 ${center} ${center})`}>
+      {
+        segments.map((segment) => (
+          <circle
+            cx={center}
+            cy={center}
+            r={radius}
+            fill="none"
+            stroke-width={strokeWidth}
+            stroke-dasharray={segment.dasharray}
+            stroke-dashoffset={segment.dashoffset}
+            style={`stroke: var(--slice-${segment.slot})`}
+          >
+            <title>
+              {segment.row.label}: {segment.sharePercent.toFixed(1)}% (
+              {segment.row.count.toLocaleString("en-US")})
+            </title>
+          </circle>
+        ))
+      }
+    </g>
+    <text
+      x={center}
+      y={center - 4}
+      text-anchor="middle"
+      class="fill-gray-800 dark:fill-slate-100"
+      font-size="24"
+      font-weight="bold"
+    >
+      {formatCount(total)}
+    </text>
+    <text
+      x={center}
+      y={center + 16}
+      text-anchor="middle"
+      class="fill-gray-500 dark:fill-slate-400"
+      font-size="11"
+    >
+      total
+    </text>
+  </svg>
+
+  <ul class="flex-1 space-y-1.5 font-mono text-sm min-w-0">
+    {
+      segments.map((segment) => (
+        <li class="flex items-center gap-2">
+          <span
+            class="inline-block h-3 w-3 shrink-0 rounded-sm"
+            style={`background: var(--slice-${segment.slot})`}
+          />
+          <span class="truncate dark:text-white">{segment.row.label}</span>
+          <span class="ml-auto shrink-0 tabular-nums dark:text-slate-300">
+            {segment.sharePercent.toFixed(1)}%
+          </span>
+          <span class="w-16 shrink-0 text-right tabular-nums text-gray-500 dark:text-slate-400">
+            {segment.row.count.toLocaleString("en-US")}
+          </span>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  /* Categorical palette (validated for CVD safety in both modes). Light
+     column; the dark column is the same eight hues re-stepped for the dark
+     surface. Slot 8 is the reserved "Other" gray. */
+  .usage-donut {
+    --slice-1: #2a78d6;
+    --slice-2: #008300;
+    --slice-3: #e87ba4;
+    --slice-4: #eda100;
+    --slice-5: #1baf7a;
+    --slice-6: #eb6834;
+    --slice-7: #4a3aa7;
+    --slice-8: #898781;
+  }
+  :global(.dark) .usage-donut {
+    --slice-1: #3987e5;
+    --slice-2: #008300;
+    --slice-3: #d55181;
+    --slice-4: #c98500;
+    --slice-5: #199e70;
+    --slice-6: #d95926;
+    --slice-7: #9085e9;
+    --slice-8: #898781;
+  }
+</style>

@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro"
 import Heading from "../components/Heading.astro"
 import SectionHeading from "../components/SectionHeading.astro"
 import UsageStatBars from "../components/UsageStatBars.astro"
+import UsageStatChart from "../components/UsageStatChart.astro"
 import UsageTrendChart from "../components/UsageTrendChart.astro"
 import CtaButton from "../components/CtaButton.astro"
 import {
@@ -149,7 +150,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
             <p class="my-4 dark:text-slate-300">
               Which operating systems and environments people run DDEV on.
             </p>
-            <UsageStatBars rows={environmentRows} valueFormat="count" />
+            <UsageStatChart rows={environmentRows} valueFormat="count" />
             {AMPLITUDE_SHARE_LINKS.environment && (
               <p class="mt-2 text-sm">
                 <a
@@ -207,7 +208,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
             <p class="my-4 dark:text-slate-300">
               Every project type DDEV is configured for.
             </p>
-            <UsageStatBars
+            <UsageStatChart
               rows={cmsProjectTypeRows}
               limit={cmsProjectTypeRows.length}
               valueFormat="count"
@@ -236,7 +237,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
                 PHP versions
               </a> DDEV projects are configured for.
             </p>
-            <UsageStatBars
+            <UsageStatChart
               rows={phpVersions.rows}
               limit={phpVersions.rows.length}
               valueFormat="count"
@@ -254,7 +255,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
                 database types
               </a> DDEV projects are configured for.
             </p>
-            <UsageStatBars rows={databaseTypes.rows} valueFormat="count" />
+            <UsageStatChart rows={databaseTypes.rows} valueFormat="count" />
           </section>
         )
       }
@@ -268,7 +269,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
                 Docker providers
               </a> DDEV users choose on macOS.
             </p>
-            <UsageStatBars
+            <UsageStatChart
               rows={toPercentageRows(macosDockerProviders, "composition")}
               valueFormat="count"
             />
@@ -294,7 +295,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
             <p class="my-4 dark:text-slate-300">
               The Docker providers DDEV users choose on WSL2.
             </p>
-            <UsageStatBars
+            <UsageStatChart
               rows={toPercentageRows(wsl2DockerProviders, "composition", {
                 exclude: ["(none)"],
               })}
@@ -323,7 +324,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
               Apple Silicon (arm64) vs. Intel (amd64) usage, among macOS
               users specifically.
             </p>
-            <UsageStatBars
+            <UsageStatChart
               rows={toPercentageRows(macosArchitecture, "composition")}
               valueFormat="count"
             />
@@ -433,7 +434,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
             <p class="my-4 dark:text-slate-300">
               The DDEV versions currently in use.
             </p>
-            <UsageStatBars
+            <UsageStatChart
               rows={toPercentageRows(versions, "composition")}
               valueFormat="count"
             />
@@ -460,7 +461,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
               DDEV doesn't collect user-identifiable information, but
               timezones give a rough sense of where users are.
             </p>
-            <UsageStatBars
+            <UsageStatChart
               rows={toPercentageRows(timezones, "segmentation")}
               valueFormat="count"
             />
