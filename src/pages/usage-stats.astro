@@ -148,8 +148,6 @@ const sponsorshipGoal = sponsorshipData?.current_goal
             <SectionHeading title="DDEV Environments" />
             <p class="my-4 dark:text-slate-300">
               Which operating systems and environments people run DDEV on.
-              Codespaces and GitPod don't normally report information by
-              default, so those results are likely undercounted.
             </p>
             <UsageStatBars rows={environmentRows} valueFormat="count" />
             {AMPLITUDE_SHARE_LINKS.environment && (
