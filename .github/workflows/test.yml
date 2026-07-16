@@ -29,6 +29,21 @@ jobs:
         run: npm run textlint || { printf "Run 'ddev textlint' locally to fix it.\n\n"; exit 1; }
       - name: Prettier
         run: npm run prettier || { printf "\nRun 'ddev prettier' locally to fix it.\n\n"; exit 1; }
+      - name: Load Amplitude secrets
+        # Skipped for forked-repo PRs: GitHub Actions never exposes secrets to those
+        # anyway, but this avoids depending on that alone and skips a step that
+        # would otherwise fail with no OP_SERVICE_ACCOUNT_TOKEN available.
+        # Non-fatal (continue-on-error) since live Amplitude data is optional —
+        # src/lib/amplitude.ts degrades gracefully when these aren't set.
+        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+        continue-on-error: true
+        uses: 1password/load-secrets-action@v4
+        with:
+          export-env: true
+        env:
+          OP_SERVICE_ACCOUNT_TOKEN: "${{ secrets.TESTS_SERVICE_ACCOUNT_TOKEN }}"
+          AMPLITUDE_API_KEY: "op://test-secrets/AMPLITUDE_API_QUERY_KEY/credential"
+          AMPLITUDE_SECRET_KEY: "op://test-secrets/AMPLITUDE_API_QUERY_SECRET_KEY/credential"
       - name: Install, build, and upload your site output
         uses: withastro/action@v6
         with:

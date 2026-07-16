@@ -1,0 +1,616 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Heading from "../components/Heading.astro"
+import SectionHeading from "../components/SectionHeading.astro"
+import UsageStatBars from "../components/UsageStatBars.astro"
+import UsageStatChart from "../components/UsageStatChart.astro"
+import UsageTrendChart from "../components/UsageTrendChart.astro"
+import CtaButton from "../components/CtaButton.astro"
+import {
+  AMPLITUDE_CHARTS,
+  AMPLITUDE_SHARE_LINKS,
+  getAmplitudeChart,
+  getDatabaseTypes,
+  getMonthlyUserHistory,
+  getPhpVersions,
+  toPercentageRows,
+  withTimezoneOffsets,
+  useSampleData as amplitudeUsesSampleData,
+} from "../lib/amplitude"
+import {
+  getSponsorshipData,
+  getSponsorshipHistory,
+  useSampleData as sponsorshipUsesSampleData,
+} from "../lib/api"
+
+const title = "DDEV Live Usage Statistics"
+
+// A build timestamp rather than a hand-maintained date (as on /privacy):
+// this page is regenerated from live data on every build, not manually
+// edited, so "as of" reflects when the numbers below were actually pulled.
+const lastUpdated = new Date().toLocaleDateString("en-US", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+})
+
+const linkClass = "underline dark:text-white"
+
+// Fetched sequentially (not Promise.all) to avoid bursting past Amplitude's
+// rate limit; cached responses make this a one-time cost per cache reset.
+//
+// getAmplitudeChart() exports an existing saved chart's CSV as-is; the ad
+// hoc getX() calls below build a custom Events Segmentation query instead,
+// for properties/filters no saved chart covers correctly (see each
+// function's own comment in lib/amplitude.ts for why).
+const environment = await getAmplitudeChart(AMPLITUDE_CHARTS.environment)
+const commands = await getAmplitudeChart(AMPLITUDE_CHARTS.commands)
+const cmsProjectTypes = await getAmplitudeChart(
+  AMPLITUDE_CHARTS.cmsProjectTypes
+)
+const macosDockerProviders = await getAmplitudeChart(
+  AMPLITUDE_CHARTS.macosDockerProviders
+)
+const wsl2DockerProviders = await getAmplitudeChart(
+  AMPLITUDE_CHARTS.wsl2DockerProviders
+)
+const linuxDockerProviders = await getAmplitudeChart(
+  AMPLITUDE_CHARTS.linuxDockerProviders
+)
+const macosArchitecture = await getAmplitudeChart(
+  AMPLITUDE_CHARTS.macosArchitecture
+)
+// These two are the ad hoc queries; see comment above.
+const phpVersions = await getPhpVersions()
+const databaseTypes = await getDatabaseTypes()
+const addOns = await getAmplitudeChart(AMPLITUDE_CHARTS.addOns)
+const ddevPull = await getAmplitudeChart(AMPLITUDE_CHARTS.ddevPull)
+const versions = await getAmplitudeChart(AMPLITUDE_CHARTS.versions)
+const timezones = await getAmplitudeChart(AMPLITUDE_CHARTS.timezones)
+
+// Amplitude's raw property value is "darwin"; DDEV users know it as "macOS".
+const environmentRows = environment
+  ? toPercentageRows(environment, "composition").map((row) =>
+      row.label === "darwin" ? { ...row, label: "macOS" } : row
+    )
+  : []
+const addOnRows = addOns
+  ? toPercentageRows(addOns, "segmentation", { exclude: ["(none)"] })
+  : []
+// "python" and "django4" are long-abandoned project types that shouldn't
+// still be showing up in current usage; excluded rather than investigated
+// further here.
+const cmsProjectTypeRows = cmsProjectTypes
+  ? toPercentageRows(cmsProjectTypes, "segmentation", {
+      exclude: ["python", "django4"],
+    })
+  : []
+// Also ad hoc (see the comment near the top of this block); a saved
+// chart's date range is fixed, and this needs a rolling trailing-12-months
+// window instead.
+const monthlyUserHistory = await getMonthlyUserHistory()
+const sponsorshipHistory = await getSponsorshipHistory()
+const sponsorshipData = await getSponsorshipData()
+const sponsorshipGoal = sponsorshipData?.current_goal
+---
+
+<Layout
+  title={title}
+  description="Live DDEV usage statistics pulled from Amplitude at every site build."
+>
+  <main class="max-w-4xl mx-auto mb-24">
+    <Heading title={title} subtitle={`Data as of ${lastUpdated}`} />
+    <div class="px-6 lg:px-0">
+      <p class="my-4 dark:text-slate-300">
+        These are live DDEV usage numbers from DDEV's opt-in usage reporting,
+        pulled from Amplitude each time this site is built. Most sections cover
+        about the last 7 days, and many link to the public Amplitude chart
+        behind them, so you can look deeper yourself.
+      </p>
+      <p class="my-4 dark:text-slate-300">
+        Every user who keeps reporting on helps shape DDEV's future: it tells
+        maintainers which platforms, versions, and features matter most, and
+        where to spend their limited time. The <a
+          href="https://docs.ddev.com/en/stable/users/usage/diagnostics/#opt-in-usage-information"
+          target="_blank"
+          class={linkClass}
+        >
+          usage reporting docs</a
+        > explain what data is collected and how to opt out.
+      </p>
+
+      {
+        amplitudeUsesSampleData && (
+          <p class="my-6 rounded border border-yellow-500 bg-yellow-50 p-4 text-yellow-900 dark:border-yellow-400 dark:bg-yellow-950 dark:text-yellow-100">
+            <strong>Heads up:</strong> Amplitude credentials aren't configured
+            for this build, so the usage stats below are
+            <strong>generated placeholder data</strong>, not live analytics.
+          </p>
+        )
+      }
+
+      {
+        !environment && (
+          <p class="my-6 rounded border border-yellow-500 bg-yellow-50 p-4 text-yellow-900 dark:border-yellow-400 dark:bg-yellow-950 dark:text-yellow-100">
+            Amplitude credentials aren't configured for this build, so live
+            data isn't available right now.
+          </p>
+        )
+      }
+
+      {
+        monthlyUserHistory && (
+          <section class="my-12">
+            <SectionHeading title="DDEV Usage Growth" />
+            <p class="my-4 dark:text-slate-300">
+              Unique monthly users over the last year (as far back as
+              Amplitude's data retention allows). Shown monthly rather than
+              weekly, since a single quiet holiday week reads as a cliff at
+              weekly resolution but is barely visible once averaged across a
+              whole month.
+            </p>
+            <UsageTrendChart
+              labels={monthlyUserHistory.monthStartDates}
+              values={monthlyUserHistory.uniqueUsers}
+            />
+          </section>
+        )
+      }
+
+      {
+        environment && (
+          <section class="my-12">
+            <SectionHeading title="DDEV Environments" />
+            <p class="my-4 dark:text-slate-300">
+              Which operating systems and environments people run DDEV on.
+            </p>
+            <UsageStatChart rows={environmentRows} valueFormat="count" />
+            {AMPLITUDE_SHARE_LINKS.environment && (
+              <p class="mt-2 text-sm">
+                <a
+                  href={AMPLITUDE_SHARE_LINKS.environment}
+                  target="_blank"
+                  class={linkClass}
+                >
+                  Live values for DDEV Environment Usage
+                </a>
+              </p>
+            )}
+          </section>
+        )
+      }
+
+      {
+        commands && (
+          <section class="my-12">
+            <SectionHeading title="DDEV Commands" />
+            <p class="my-4 dark:text-slate-300">
+              The most popular <code>ddev</code> subcommands, excluding
+              <code>drush</code>, which dwarfs everything else and is likely
+              run in automation.
+            </p>
+            <UsageStatBars
+              rows={toPercentageRows(commands, "segmentation")}
+              limit={18}
+              valueFormat="count"
+            />
+            {AMPLITUDE_SHARE_LINKS.commands && (
+              <p class="mt-2 text-sm">
+                <a
+                  href={AMPLITUDE_SHARE_LINKS.commands}
+                  target="_blank"
+                  class={linkClass}
+                >
+                  Live values for DDEV commands
+                </a>
+              </p>
+            )}
+          </section>
+        )
+      }
+
+      {
+        cmsProjectTypes && (
+          <section class="my-12">
+            <SectionHeading title="CMS Project Types" />
+            <p class="my-4 dark:text-slate-300">
+              Every project type DDEV is configured for.
+            </p>
+            <UsageStatChart
+              rows={cmsProjectTypeRows}
+              limit={cmsProjectTypeRows.length}
+              valueFormat="count"
+            />
+            {AMPLITUDE_SHARE_LINKS.cmsProjectTypes && (
+              <p class="mt-2 text-sm">
+                <a
+                  href={AMPLITUDE_SHARE_LINKS.cmsProjectTypes}
+                  target="_blank"
+                  class={linkClass}
+                >
+                  Live version of CMS Project Types
+                </a>
+              </p>
+            )}
+          </section>
+        )
+      }
+
+      {
+        phpVersions && (
+          <section class="my-12">
+            <SectionHeading title="PHP Version" />
+            <p class="my-4 dark:text-slate-300">
+              The <a href="https://docs.ddev.com/en/stable/users/configuration/config/#php_version">
+                PHP versions
+              </a> DDEV projects are configured for.
+            </p>
+            <UsageStatChart
+              rows={phpVersions.rows}
+              limit={phpVersions.rows.length}
+              valueFormat="count"
+            />
+          </section>
+        )
+      }
+
+      {
+        databaseTypes && (
+          <section class="my-12">
+            <SectionHeading title="Database Type" />
+            <p class="my-4 dark:text-slate-300">
+              The <a href="https://docs.ddev.com/en/stable/users/configuration/config/#database">
+                database types
+              </a> DDEV projects are configured for.
+            </p>
+            <UsageStatChart rows={databaseTypes.rows} valueFormat="count" />
+          </section>
+        )
+      }
+
+      {
+        macosDockerProviders && (
+          <section class="my-12">
+            <SectionHeading title="macOS Docker Providers" />
+            <p class="my-4 dark:text-slate-300">
+              The <a href="https://docs.ddev.com/en/stable/users/install/docker-installation/#docker-installation-macos">
+                Docker providers
+              </a> DDEV users choose on macOS.
+            </p>
+            <UsageStatChart
+              rows={toPercentageRows(macosDockerProviders, "composition")}
+              valueFormat="count"
+            />
+            {AMPLITUDE_SHARE_LINKS.macosDockerProviders && (
+              <p class="mt-2 text-sm">
+                <a
+                  href={AMPLITUDE_SHARE_LINKS.macosDockerProviders}
+                  target="_blank"
+                  class={linkClass}
+                >
+                  Live results on macOS Docker Providers
+                </a>
+              </p>
+            )}
+          </section>
+        )
+      }
+
+      {
+        wsl2DockerProviders && (
+          <section class="my-12">
+            <SectionHeading title="WSL2 Docker Providers" />
+            <p class="my-4 dark:text-slate-300">
+              The Docker providers DDEV users choose on WSL2.
+            </p>
+            <UsageStatChart
+              rows={toPercentageRows(wsl2DockerProviders, "composition", {
+                exclude: ["(none)"],
+              })}
+              valueFormat="count"
+            />
+            {AMPLITUDE_SHARE_LINKS.wsl2DockerProviders && (
+              <p class="mt-2 text-sm">
+                <a
+                  href={AMPLITUDE_SHARE_LINKS.wsl2DockerProviders}
+                  target="_blank"
+                  class={linkClass}
+                >
+                  Live results for WSL2 Docker Provider
+                </a>
+              </p>
+            )}
+          </section>
+        )
+      }
+
+      {
+        linuxDockerProviders && (
+          <section class="my-12">
+            <SectionHeading title="Linux Docker Providers" />
+            <p class="my-4 dark:text-slate-300">
+              The Docker providers DDEV users choose on Linux.
+            </p>
+            <UsageStatChart
+              rows={toPercentageRows(linuxDockerProviders, "composition")}
+              valueFormat="count"
+            />
+            {AMPLITUDE_SHARE_LINKS.linuxDockerProviders && (
+              <p class="mt-2 text-sm">
+                <a
+                  href={AMPLITUDE_SHARE_LINKS.linuxDockerProviders}
+                  target="_blank"
+                  class={linkClass}
+                >
+                  Live results for Linux Docker Providers
+                </a>
+              </p>
+            )}
+          </section>
+        )
+      }
+
+      {
+        macosArchitecture && (
+          <section class="my-12">
+            <SectionHeading title="macOS Architecture" />
+            <p class="my-4 dark:text-slate-300">
+              Apple Silicon (arm64) vs. Intel (amd64) usage, among macOS
+              users specifically.
+            </p>
+            <UsageStatChart
+              rows={toPercentageRows(macosArchitecture, "composition")}
+              valueFormat="count"
+            />
+            {AMPLITUDE_SHARE_LINKS.macosArchitecture && (
+              <p class="mt-2 text-sm">
+                <a
+                  href={AMPLITUDE_SHARE_LINKS.macosArchitecture}
+                  target="_blank"
+                  class={linkClass}
+                >
+                  Live values for macOS Architecture
+                </a>
+              </p>
+            )}
+          </section>
+        )
+      }
+
+      {
+        addOns && (
+          <section class="my-12">
+            <SectionHeading title="Add-on Usage" />
+            <p class="my-4 dark:text-slate-300">
+              The most popular <a href="https://addons.ddev.com/">
+                DDEV add-ons
+              </a> in use, based on unique users in the last month, among
+              users who have at least one add-on installed. There's a long
+              tail beyond what's shown here. Expand below for the full list,
+              or <a href="/usage-stats/add-ons.csv">download it as CSV</a>.
+            </p>
+            <UsageStatBars rows={addOnRows} limit={10} valueFormat="count" />
+            {AMPLITUDE_SHARE_LINKS.addOns && (
+              <p class="mt-2 text-sm">
+                <a
+                  href={AMPLITUDE_SHARE_LINKS.addOns}
+                  target="_blank"
+                  class={linkClass}
+                >
+                  Live version of Add-on usage in Amplitude
+                </a>
+              </p>
+            )}
+            <details class="mt-4">
+              <summary class="cursor-pointer text-sm font-mono dark:text-slate-300">
+                Show all {addOnRows.length} discovered add-ons
+              </summary>
+              <div class="overflow-x-auto mt-3">
+                <table class="w-full font-mono text-sm">
+                  <thead>
+                    <tr class="border-b dark:border-slate-600 text-left dark:text-white">
+                      <th class="py-2 pr-4">Add-on</th>
+                      <th class="py-2 text-right">Users</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {addOnRows.map((row) => (
+                      <tr class="border-b border-gray-100 dark:border-slate-700 dark:text-slate-200">
+                        <td class="py-1.5 pr-4">{row.label}</td>
+                        <td class="py-1.5 text-right">
+                          {row.count.toLocaleString("en-US")}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          </section>
+        )
+      }
+
+      {
+        ddevPull && (
+          <section class="my-12">
+            <SectionHeading title="Bundled ddev pull Usage">
+              Bundled <code>ddev pull</code> Usage
+            </SectionHeading>
+            <p class="my-4 dark:text-slate-300">
+              Usage of DDEV's bundled <a href="https://docs.ddev.com/en/stable/users/providers/">
+                hosting provider integrations
+              </a> for <code>ddev pull</code>. Many other integrations exist as
+              custom or add-on providers and aren't reflected here.
+            </p>
+            <UsageStatChart
+              rows={toPercentageRows(ddevPull, "segmentation")}
+              valueFormat="count"
+            />
+            {AMPLITUDE_SHARE_LINKS.ddevPull && (
+              <p class="mt-2 text-sm">
+                <a
+                  href={AMPLITUDE_SHARE_LINKS.ddevPull}
+                  target="_blank"
+                  class={linkClass}
+                >
+                  Live version of `ddev pull` usage
+                </a>
+              </p>
+            )}
+          </section>
+        )
+      }
+
+      {
+        versions && (
+          <section class="my-12">
+            <SectionHeading title="DDEV Versions" />
+            <p class="my-4 dark:text-slate-300">
+              The DDEV versions currently in use.
+            </p>
+            <UsageStatChart
+              rows={toPercentageRows(versions, "composition")}
+              valueFormat="count"
+            />
+            {AMPLITUDE_SHARE_LINKS.versions && (
+              <p class="mt-2 text-sm">
+                <a
+                  href={AMPLITUDE_SHARE_LINKS.versions}
+                  target="_blank"
+                  class={linkClass}
+                >
+                  Live version of versions in use
+                </a>
+              </p>
+            )}
+          </section>
+        )
+      }
+
+      {
+        timezones && (
+          <section class="my-12">
+            <SectionHeading title="Users by Timezone" />
+            <p class="my-4 dark:text-slate-300">
+              DDEV doesn't collect user-identifiable information, but
+              timezones give a rough sense of where users are.
+            </p>
+            <UsageStatChart
+              rows={withTimezoneOffsets(
+                toPercentageRows(timezones, "segmentation")
+              )}
+              valueFormat="count"
+            />
+            {AMPLITUDE_SHARE_LINKS.timezones && (
+              <p class="mt-2 text-sm">
+                <a
+                  href={AMPLITUDE_SHARE_LINKS.timezones}
+                  target="_blank"
+                  class={linkClass}
+                >
+                  Live version of Users by Timezone
+                </a>
+              </p>
+            )}
+          </section>
+        )
+      }
+
+      <section class="my-12">
+        <SectionHeading title="Explore them yourself!" />
+        <p class="my-4 dark:text-slate-300">
+          <strong
+            >You can explore these yourself, ask for permission.</strong
+          > If you're a known community member, we'll happily add your access
+          to Amplitude to explore. See <a
+            href="/blog/amplitude-ddev-analytics-contributor-training"
+            class={linkClass}>Amplitude Contributor Training</a
+          >.
+        </p>
+        <p class="my-4 dark:text-slate-300">
+          Want to keep up as the month goes along? Follow our <a
+            href="https://ddev.com/blog/" class={linkClass}>blog</a
+          >, <a
+            href="https://www.linkedin.com/company/ddev-foundation"
+            class={linkClass}>LinkedIn</a
+          >, <a href="https://fosstodon.org/@ddev" class={linkClass}
+            >Mastodon</a
+          >, and join us on <a href="/s/discord" class={linkClass}>Discord</a
+          >.
+        </p>
+      </section>
+
+      <section class="my-12">
+        <SectionHeading title="DDEV Sponsorship" />
+        {sponsorshipUsesSampleData && (
+          <p class="my-6 rounded border border-yellow-500 bg-yellow-50 p-4 text-yellow-900 dark:border-yellow-400 dark:bg-yellow-950 dark:text-yellow-100">
+            <strong>Heads up:</strong> GitHub credentials aren't configured for
+            this build, so the sponsorship figures below are{" "}
+            <strong>generated placeholder data</strong>, not live.
+          </p>
+        )}
+        {sponsorshipHistory.monthlyIncome.length > 0 ? (
+          <>
+            <p class="my-4 dark:text-slate-300">
+              Not Amplitude data, but just as important: the{" "}
+              <a href="https://ddev.com/foundation" class={linkClass}
+                >DDEV Foundation</a
+              >{" "}runs on sponsorship, and{" "}
+              <a
+                href="https://github.com/ddev/sponsorship-data"
+                class={linkClass}
+                >daily-updated sponsorship figures</a
+              >{" "}are published as an open JSON feed. Here's monthly recurring
+              sponsorship income over the period that feed has history for{
+                sponsorshipGoal && (
+                  <span
+                    >, against the current goal of{" "}
+                    <strong
+                      >${sponsorshipGoal.target_amount.toLocaleString("en-US")}/month</strong
+                    >{" "}({sponsorshipGoal.progress_percentage.toFixed(1)}%
+                    there so far)</span
+                  >
+                )
+              }.
+            </p>
+            <UsageTrendChart
+              labels={sponsorshipHistory.monthStartDates}
+              values={sponsorshipHistory.monthlyIncome}
+              ariaLabel="Chart of monthly DDEV sponsorship income over time"
+              tooltipUnit="in monthly sponsorship"
+              valuePrefix="$"
+              goalValue={sponsorshipGoal?.target_amount}
+              goalLabel={
+                sponsorshipGoal &&
+                `Goal: $${sponsorshipGoal.target_amount.toLocaleString("en-US")}/mo`
+              }
+            />
+            <p class="mt-2 text-sm">
+              <a
+                href="https://ddev.com/s/sponsorship-data.json"
+                class={linkClass}
+              >
+                Live sponsorship data (JSON)
+              </a>
+            </p>
+          </>
+        ) : (
+          <p class="my-6 rounded border border-yellow-500 bg-yellow-50 p-4 text-yellow-900 dark:border-yellow-400 dark:bg-yellow-950 dark:text-yellow-100">
+            GitHub credentials aren't configured for this build, so sponsorship
+            data isn't available right now.
+          </p>
+        )}
+      </section>
+
+      <div class="my-12 rounded-lg border border-gray-200 p-8 text-center dark:border-slate-600">
+        <SectionHeading title="Does DDEV matter to you?" />
+        <p class="my-4 dark:text-slate-300">
+          Want to keep it growing and healthy?
+        </p>
+        <div class="flex justify-center">
+          <CtaButton text="Sponsor DDEV" href="/sponsor" />
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>

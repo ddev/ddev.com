@@ -33,6 +33,8 @@
 /blog/ddev-local-and-phpstorm-debugging-with-wsl2/ https://docs.ddev.com/en/stable/users/debugging-profiling/step-debugging/#phpstorm-debugging-setup 301
 /blog/contributor-training /blog/category/training/ 301
 /blog/contributor-training/ /blog/category/training/ 301
+/blog/stats-on-ddev-usage-nov-2024 /usage-stats 301
+/blog/stats-on-ddev-usage-nov-2024/ /usage-stats 301
 
 # Authors redirects
 /meet-the-team /blog/author/ 301

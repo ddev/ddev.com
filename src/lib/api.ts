@@ -8,6 +8,10 @@ import path from "path"
 import Slugger from "github-slugger"
 import { Octokit } from "octokit"
 import { GITHUB_REPO } from "./../const"
+import {
+  getSampleSponsorshipData,
+  getSampleSponsorshipHistory,
+} from "./sponsorship-sample-data"
 
 dotenv.config()
 
@@ -31,6 +35,13 @@ const githubTokenIsSet: boolean = (() => {
   }
   return true
 })()
+
+// Without a token, the sponsorship fetchers fall back to sample data (see
+// ./sponsorship-sample-data) so the usage-stats page still renders locally —
+// same approach as the Amplitude fallback. Excluded on the real Cloudflare
+// Pages deploy (CF_PAGES), which should show nothing rather than fabricated
+// sponsorship numbers if its token ever breaks.
+export const useSampleData = !githubTokenIsSet && !process.env.CF_PAGES
 
 /**
  * Returns an instance of Octokit, which uses the `GITHUB_TOKEN` environment
@@ -255,7 +266,7 @@ export async function getReleases() {
 
 export async function getSponsorshipData() {
   if (!githubTokenIsSet) {
-    return []
+    return useSampleData ? getSampleSponsorshipData() : []
   }
 
   const cacheFilename = "all-sponsorships.json"
@@ -282,12 +293,81 @@ export async function getSponsorshipData() {
   return sponsorshipData ?? []
 }
 
+export type SponsorshipHistory = {
+  monthStartDates: string[]
+  monthlyIncome: number[]
+}
+
+/**
+ * Fetches monthly DDEV sponsorship income from the daily snapshots on the
+ * `history` branch of ddev/sponsorship-data. Gated on GITHUB_TOKEN for
+ * consistency with the other fetchers; without a token it returns sample data
+ * locally (see ./sponsorship-sample-data) or empty on the real deploy.
+ */
+export async function getSponsorshipHistory(): Promise<SponsorshipHistory> {
+  if (!githubTokenIsSet) {
+    return useSampleData
+      ? getSampleSponsorshipHistory()
+      : { monthStartDates: [], monthlyIncome: [] }
+  }
+
+  const cacheFilename = "sponsorship-history.json"
+  const cachedData = getCache(cacheFilename)
+
+  if (cachedData) {
+    return cachedData
+  }
+
+  const listResponse = await octokit().request(
+    "GET /repos/{owner}/{repo}/contents/{path}",
+    {
+      owner: "ddev",
+      repo: "sponsorship-data",
+      path: "data/history",
+      ref: "history",
+    }
+  )
+
+  const files = listResponse.data as { name: string }[]
+  // One snapshot per calendar month (the last available day in that month),
+  // so the trend reads as a monthly series rather than a noisy daily one.
+  const lastDateByMonth = new Map<string, string>()
+  for (const name of files.map((file) => file.name)) {
+    const match = name.match(/^(\d{4}-\d{2})-\d{2}\.json$/)
+    if (match) {
+      lastDateByMonth.set(match[1], name.replace(/\.json$/, ""))
+    }
+  }
+  const sampleDates = Array.from(lastDateByMonth.values()).sort()
+
+  const monthStartDates: string[] = []
+  const monthlyIncome: number[] = []
+
+  for (const date of sampleDates) {
+    const response = await fetch(
+      `https://raw.githubusercontent.com/ddev/sponsorship-data/history/data/history/${date}.json`
+    )
+    if (!response.ok) {
+      continue
+    }
+    const snapshot = await response.json()
+    monthStartDates.push(`${date.slice(0, 7)}-01`)
+    monthlyIncome.push(snapshot.total_monthly_average_income ?? 0)
+  }
+
+  const history: SponsorshipHistory = { monthStartDates, monthlyIncome }
+
+  putCache(cacheFilename, JSON.stringify(history))
+
+  return history
+}
+
 /**
  * Returns JSON-parsed value from a cached file if it exists.
  * @param filename Name of the file to look for in the cache directory.
  * @returns file contents or null
  */
-const getCache = (filename: string) => {
+export const getCache = (filename: string) => {
   const dir = path.resolve("./" + DEVELOPMENT_CACHE_DIR)
   const filePath = dir + "/" + filename
 
@@ -304,7 +384,7 @@ const getCache = (filename: string) => {
  * @param filename Name of the file to write to the cache directory.
  * @param contents Contents of the file.
  */
-const putCache = (filename: string, contents: string) => {
+export const putCache = (filename: string, contents: string) => {
   const dir = path.resolve("./" + DEVELOPMENT_CACHE_DIR)
   const filePath = dir + "/" + filename
 

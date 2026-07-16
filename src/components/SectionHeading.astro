@@ -1,0 +1,18 @@
+---
+import { getSlug } from "../lib/api"
+
+export interface Props {
+  // Plain text used to derive the anchor slug (and as the visible heading
+  // text, unless overridden via the default slot for richer markup)
+  title: string
+}
+
+const { title } = Astro.props
+const slug = getSlug(title)
+---
+
+<h2 id={slug} class="text-2xl font-bold dark:text-white scroll-mt-5">
+  <a href={`#${slug}`}>
+    <slot>{title}</slot>
+  </a>
+</h2>

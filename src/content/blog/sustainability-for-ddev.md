@@ -11,7 +11,7 @@ categories:
   - Community
 ---
 
-Over the last nine years DDEV has grown from a tiny side project to a development environment and ecosystem that serves [about 17,000 weekly developer-users](stats-on-ddev-usage-nov-2024.md) and is critical to so many developers' workflows.
+Over the last nine years DDEV has grown from a tiny side project to a development environment and ecosystem that serves [about 17,000 weekly developer-users](/usage-stats) and is critical to so many developers' workflows.
 
 We love this amazing open-source world that we're a part of. It's astonishing when communities can [work together](open-source-for-the-win.md) and of course the fact that we all stand on the shoulders of such giants like Linux, Debian, and hundreds of other projects.
 

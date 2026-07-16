@@ -1,0 +1,182 @@
+---
+export interface Props {
+  // ISO date strings, one per bucket (e.g. month start dates)
+  labels: string[]
+  values: number[]
+  ariaLabel?: string
+  tooltipUnit?: string
+  valuePrefix?: string
+  // Optional horizontal reference line (e.g. a sponsorship goal)
+  goalValue?: number
+  goalLabel?: string
+}
+
+const {
+  labels,
+  values,
+  ariaLabel = "Chart of unique monthly DDEV users over the past year",
+  tooltipUnit = "unique users",
+  valuePrefix = "",
+  goalValue,
+  goalLabel,
+} = Astro.props
+
+const width = 800
+const height = 300
+const margin = { top: 20, right: 16, bottom: 56, left: 56 }
+const plotWidth = width - margin.left - margin.right
+const plotHeight = height - margin.top - margin.bottom
+
+// Start the y-axis at zero (rather than at the data minimum) so the trend
+// isn't visually exaggerated by a truncated baseline. Includes the goal
+// value, if any, so the goal line is never clipped off the top.
+const maxValue = Math.max(...values, goalValue ?? 0, 1)
+const yMax = Math.ceil(maxValue / 5000) * 5000 || 1
+const gridlineCount = 5
+
+const formatK = (value: number) =>
+  value >= 1000 ? `${Math.round(value / 1000)}K` : String(Math.round(value))
+
+const formatMonthLabel = (isoDate: string) =>
+  new Date(`${isoDate}T00:00:00Z`).toLocaleDateString("en-US", {
+    month: "short",
+    year: "2-digit",
+    timeZone: "UTC",
+  })
+
+const xFor = (index: number) =>
+  margin.left +
+  (values.length > 1 ? (index / (values.length - 1)) * plotWidth : 0)
+const yFor = (value: number) =>
+  margin.top + plotHeight - (value / yMax) * plotHeight
+
+const linePoints = values
+  .map((value, index) => `${xFor(index).toFixed(1)},${yFor(value).toFixed(1)}`)
+  .join(" ")
+
+const areaPoints =
+  `${xFor(0).toFixed(1)},${yFor(0).toFixed(1)} ` +
+  linePoints +
+  ` ${xFor(values.length - 1).toFixed(1)},${yFor(0).toFixed(1)}`
+---
+
+<svg
+  viewBox={`0 0 ${width} ${height}`}
+  class="w-full h-auto text-blue-600 dark:text-blue-400"
+  role="img"
+  aria-label={ariaLabel}
+>
+  <defs>
+    <linearGradient id="trend-fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="currentColor" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="currentColor" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  {
+    Array.from({ length: gridlineCount }).map((_, i) => {
+      const value = (yMax / (gridlineCount - 1)) * i
+      const y = yFor(value)
+      return (
+        <g>
+          <line
+            x1={margin.left}
+            x2={width - margin.right}
+            y1={y}
+            y2={y}
+            class="stroke-gray-200 dark:stroke-slate-700"
+            stroke-width="1"
+          />
+          <text
+            x={margin.left - 8}
+            y={y}
+            text-anchor="end"
+            dominant-baseline="middle"
+            class="fill-gray-500 dark:fill-slate-400"
+            font-size="11"
+          >
+            {valuePrefix}{formatK(value)}
+          </text>
+        </g>
+      )
+    })
+  }
+
+  <polygon points={areaPoints} fill="url(#trend-fill)" />
+
+  {
+    goalValue !== undefined && (
+      <g>
+        <line
+          x1={margin.left}
+          x2={width - margin.right}
+          y1={yFor(goalValue)}
+          y2={yFor(goalValue)}
+          class="stroke-emerald-500 dark:stroke-emerald-400"
+          stroke-width="1.5"
+          stroke-dasharray="4 3"
+        />
+        <text
+          x={width - margin.right}
+          y={yFor(goalValue) - 6}
+          text-anchor="end"
+          class="fill-emerald-600 dark:fill-emerald-400"
+          font-size="11"
+          font-weight="bold"
+        >
+          {goalLabel ?? `Goal: ${valuePrefix}${formatK(goalValue)}`}
+        </text>
+      </g>
+    )
+  }
+
+  <polyline
+    points={linePoints}
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+  />
+
+  {
+    values.map((value, index) => (
+      <circle
+        cx={xFor(index)}
+        cy={yFor(value)}
+        r="3.5"
+        fill="currentColor"
+      >
+        <title>
+          {formatMonthLabel(labels[index])}: {valuePrefix}{value.toLocaleString("en-US")} {tooltipUnit}
+        </title>
+      </circle>
+    ))
+  }
+
+  {
+    labels.map((label, index) => (
+      <text
+        x={xFor(index)}
+        y={height - margin.bottom + 20}
+        text-anchor="middle"
+        class="fill-gray-500 dark:fill-slate-400"
+        font-size="11"
+      >
+        {formatMonthLabel(label)}
+      </text>
+    ))
+  }
+  {
+    values.map((value, index) => (
+      <text
+        x={xFor(index)}
+        y={height - margin.bottom + 34}
+        text-anchor="middle"
+        class="fill-gray-700 dark:fill-slate-300"
+        font-size="11"
+        font-weight="bold"
+      >
+        {valuePrefix}{formatK(value)}
+      </text>
+    ))
+  }
+</svg>

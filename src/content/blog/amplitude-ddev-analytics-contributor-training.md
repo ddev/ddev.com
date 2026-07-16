@@ -1,7 +1,8 @@
 ---
 title: "Contributor Training: DDEV Analytics with Amplitude"
 pubDate: 2023-10-31
-modifiedDate: 2024-11-03
+modifiedDate: 2026-07-15
+modifiedComment: Added a link to the live [DDEV Usage Statistics](/usage-stats) page, which now pulls current numbers directly from Amplitude on every site build.
 summary: Contributor training - DDEV Analytics with Amplitude.
 author: Randy Fay
 #featureImage:
@@ -28,6 +29,7 @@ Here's our October 31, 2023 [Contributor Training](/blog/category/training) on e
 
 **Amplitude Demo and Exploration**:
 
+- See the live [DDEV Usage Statistics](/usage-stats) page for current numbers, pulled directly from Amplitude on every site build
 - Visit main [DDEV Direct Dashboard](https://app.amplitude.com/analytics/ddev/dashboard/kd4mm9ft)
 - Explore the various contents there
 - Study `ddev debug *` by using `command path`

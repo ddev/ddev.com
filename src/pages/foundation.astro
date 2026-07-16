@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro"
 import Heading from "../components/Heading.astro"
 import PostBody from "../components/PostBody.astro"
+import SectionHeading from "../components/SectionHeading.astro"
 
 import {
   ORG_NAME,
@@ -37,7 +38,7 @@ const description = `Learn about the DDEV Foundation, a Colorado, USA 501(c)(3) 
 
           <section class="mb-8">
             <a id="board"></a>
-            <h2>Board of Directors</h2>
+            <SectionHeading title="Board of Directors" />
             <p>
               The DDEV Foundation is governed by a Board of Directors, established to ensure the long-term sustainability and stability of the project. Learn more about this milestone in our <a href="/blog/board-of-directors-established">Board of Directors announcement</a>.
             </p>
@@ -91,14 +92,14 @@ const description = `Learn about the DDEV Foundation, a Colorado, USA 501(c)(3) 
           </section>
 
           <section class="mb-8">
-            <h2>Where does the money go?</h2>
+            <SectionHeading title="Where does the money go?" />
             <p>
               DDEV Foundation funds are used for infrastructure costs and to pay part-time and full-time maintainers.
             </p>
           </section>
 
           <section class="mb-8">
-            <h2>Contact Information</h2>
+            <SectionHeading title="Contact Information" />
             <p class="mb-4">Contact <a href=/contact>support</a>.</p>
             
             <h3 class="text-lg font-semibold mb-2">Postal Address & Phone</h3>
@@ -111,7 +112,7 @@ const description = `Learn about the DDEV Foundation, a Colorado, USA 501(c)(3) 
           </section>
 
           <section class="mb-8">
-            <h2>Legal Registration and Articles of Incorporation</h2>
+            <SectionHeading title="Legal Registration and Articles of Incorporation" />
             <ul>
               <li>Review our <a href="https://www.sos.state.co.us/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20211820326&entityId2=20211820326&fileId=20211820326&srchTyp=ENTITY" target="_blank" rel="noopener">Colorado nonprofit corporation registration</a>.</li>
               <li>Our <a href="https://www.sos.state.co.us/biz/ViewImage.do?masterFileId=20211820326&fileId=20258242147" target="_blank" rel="noopener">Articles of Incorporation</a> are posted with the State of Colorado, USA.</li>
