@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro"
 import Heading from "../components/Heading.astro"
 import SectionHeading from "../components/SectionHeading.astro"
-import PostBody from "../components/PostBody.astro"
 import UsageStatBars from "../components/UsageStatBars.astro"
 import UsageTrendChart from "../components/UsageTrendChart.astro"
 import CtaButton from "../components/CtaButton.astro"
@@ -82,15 +81,13 @@ const sponsorshipGoal = sponsorshipData?.current_goal
   <main class="max-w-4xl mx-auto mb-24">
     <Heading title={title} subtitle={`Data as of ${lastUpdated}`} />
     <div class="px-6 lg:px-0">
-      <PostBody>
-        <p>
-          These are live DDEV usage statistics, fetched directly from
-          Amplitude every time this site is built — no manual screenshots, no
-          stale numbers. Most sections show roughly the last 7 days of
-          activity. Each section links to the live, public Amplitude chart
-          behind it, so you can explore further yourself.
-        </p>
-      </PostBody>
+      <p class="my-4 dark:text-slate-300">
+        These are live DDEV usage statistics, fetched directly from Amplitude
+        every time this site is built — no manual screenshots, no stale
+        numbers. Most sections show roughly the last 7 days of activity. Each
+        section links to the live, public Amplitude chart behind it, so you
+        can explore further yourself.
+      </p>
 
       {
         !environment && (
@@ -445,26 +442,29 @@ const sponsorshipGoal = sponsorshipData?.current_goal
         )
       }
 
-      <PostBody>
+      <section class="my-12">
         <SectionHeading title="Explore them yourself!" />
-        <p>
+        <p class="my-4 dark:text-slate-300">
           <strong
             >You can explore these yourself, ask for permission.</strong
           > If you're a known community member, we'll happily add your access
           to Amplitude to explore. See <a
             href="/blog/amplitude-ddev-analytics-contributor-training"
-            >Amplitude Contributor Training</a
+            class={linkClass}>Amplitude Contributor Training</a
           >.
         </p>
-        <p>
+        <p class="my-4 dark:text-slate-300">
           Want to keep up as the month goes along? Follow our <a
-            href="https://ddev.com/blog/">blog</a
-          >, <a href="https://www.linkedin.com/company/ddev-foundation"
-            >LinkedIn</a
-          >, <a href="https://fosstodon.org/@ddev">Mastodon</a>, and join us
-          on <a href="/s/discord">Discord</a>.
+            href="https://ddev.com/blog/" class={linkClass}>blog</a
+          >, <a
+            href="https://www.linkedin.com/company/ddev-foundation"
+            class={linkClass}>LinkedIn</a
+          >, <a href="https://fosstodon.org/@ddev" class={linkClass}
+            >Mastodon</a
+          >, and join us on <a href="/s/discord" class={linkClass}>Discord</a
+          >.
         </p>
-      </PostBody>
+      </section>
 
       {
         sponsorshipHistory.monthlyIncome.length > 0 && (
