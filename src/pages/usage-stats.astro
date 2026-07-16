@@ -37,7 +37,7 @@ const lastUpdated = new Date().toLocaleDateString("en-US", {
 const linkClass = "underline dark:text-white"
 
 // Fetched sequentially (not Promise.all) to avoid bursting past Amplitude's
-// rate limit — cached responses make this a one-time cost per cache reset.
+// rate limit; cached responses make this a one-time cost per cache reset.
 //
 // getAmplitudeChart() exports an existing saved chart's CSV as-is; the ad
 // hoc getX() calls below build a custom Events Segmentation query instead,
@@ -60,7 +60,7 @@ const linuxDockerProviders = await getAmplitudeChart(
 const macosArchitecture = await getAmplitudeChart(
   AMPLITUDE_CHARTS.macosArchitecture
 )
-// These two are the ad hoc queries — see comment above.
+// These two are the ad hoc queries; see comment above.
 const phpVersions = await getPhpVersions()
 const databaseTypes = await getDatabaseTypes()
 const addOns = await getAmplitudeChart(AMPLITUDE_CHARTS.addOns)
@@ -85,7 +85,7 @@ const cmsProjectTypeRows = cmsProjectTypes
       exclude: ["python", "django4"],
     })
   : []
-// Also ad hoc (see the comment near the top of this block) — a saved
+// Also ad hoc (see the comment near the top of this block); a saved
 // chart's date range is fixed, and this needs a rolling trailing-12-months
 // window instead.
 const monthlyUserHistory = await getMonthlyUserHistory()
@@ -102,11 +102,21 @@ const sponsorshipGoal = sponsorshipData?.current_goal
     <Heading title={title} subtitle={`Data as of ${lastUpdated}`} />
     <div class="px-6 lg:px-0">
       <p class="my-4 dark:text-slate-300">
-        These are live DDEV usage statistics, fetched directly from Amplitude
-        every time this site is built — no manual screenshots, no stale
-        numbers. Most sections show roughly the last 7 days of activity. Each
-        section links to the live, public Amplitude chart behind it, so you
-        can explore further yourself.
+        These are live DDEV usage numbers from DDEV's opt-in usage reporting,
+        pulled from Amplitude each time this site is built. Most sections cover
+        about the last 7 days, and many link to the public Amplitude chart
+        behind them, so you can look deeper yourself.
+      </p>
+      <p class="my-4 dark:text-slate-300">
+        Every user who keeps reporting on helps shape DDEV's future: it tells
+        maintainers which platforms, versions, and features matter most, and
+        where to spend their limited time. The <a
+          href="https://docs.ddev.com/en/stable/users/usage/diagnostics/#opt-in-usage-information"
+          target="_blank"
+          class={linkClass}
+        >
+          usage reporting docs</a
+        > explain what data is collected and how to opt out.
       </p>
 
       {
@@ -175,15 +185,9 @@ const sponsorshipGoal = sponsorshipData?.current_goal
           <section class="my-12">
             <SectionHeading title="DDEV Commands" />
             <p class="my-4 dark:text-slate-300">
-              The most popular <code>ddev</code> subcommands (excluding <code
-                >drush</code
-              >, which dwarfs everything else and is likely run in
-              automation). DDEV already skips reporting automatically when a
-              standard <code>CI=true</code> environment variable is set, so this
-              is mostly automation outside of typical CI systems. If you need
-              to opt out manually, use <code
-                >ddev config global --instrumentation-opt-in=false</code
-              > or <code>export DDEV_NO_INSTRUMENTATION=true</code>.
+              The most popular <code>ddev</code> subcommands, excluding
+              <code>drush</code>, which dwarfs everything else and is likely
+              run in automation.
             </p>
             <UsageStatBars
               rows={toPercentageRows(commands, "segmentation")}
@@ -382,7 +386,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
                 DDEV add-ons
               </a> in use, based on unique users in the last month, among
               users who have at least one add-on installed. There's a long
-              tail beyond what's shown here — expand below for the full list,
+              tail beyond what's shown here. Expand below for the full list,
               or <a href="/usage-stats/add-ons.csv">download it as CSV</a>.
             </p>
             <UsageStatBars rows={addOnRows} limit={10} valueFormat="count" />
