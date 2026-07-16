@@ -299,13 +299,10 @@ export type SponsorshipHistory = {
 }
 
 /**
- * Fetches monthly DDEV sponsorship income history from the daily snapshots
- * published on the `history` branch of ddev/sponsorship-data
- * (https://github.com/ddev/sponsorship-data). These are plain public raw-file
- * reads that don't strictly need a token, but this is gated on GITHUB_TOKEN
- * for consistency with the other fetchers here. Without a token it returns
- * sample data locally (see ./sponsorship-sample-data) or empty on the real
- * deploy.
+ * Fetches monthly DDEV sponsorship income from the daily snapshots on the
+ * `history` branch of ddev/sponsorship-data. Gated on GITHUB_TOKEN for
+ * consistency with the other fetchers; without a token it returns sample data
+ * locally (see ./sponsorship-sample-data) or empty on the real deploy.
  */
 export async function getSponsorshipHistory(): Promise<SponsorshipHistory> {
   if (!githubTokenIsSet) {
@@ -321,15 +318,17 @@ export async function getSponsorshipHistory(): Promise<SponsorshipHistory> {
     return cachedData
   }
 
-  const listResponse = await fetch(
-    "https://api.github.com/repos/ddev/sponsorship-data/contents/data/history?ref=history"
+  const listResponse = await octokit().request(
+    "GET /repos/{owner}/{repo}/contents/{path}",
+    {
+      owner: "ddev",
+      repo: "sponsorship-data",
+      path: "data/history",
+      ref: "history",
+    }
   )
 
-  if (!listResponse.ok) {
-    throw new Error(`HTTP error! status: ${listResponse.status}`)
-  }
-
-  const files: { name: string }[] = await listResponse.json()
+  const files = listResponse.data as { name: string }[]
   // One snapshot per calendar month (the last available day in that month),
   // so the trend reads as a monthly series rather than a noisy daily one.
   const lastDateByMonth = new Map<string, string>()
