@@ -68,7 +68,7 @@ const amplitudeCredentialsSet: boolean = (() => {
 // except on the real Cloudflare Pages deploy (CF_PAGES), which should show the
 // "data isn't available" notice rather than fabricated numbers. Not PROD-gated:
 // `astro build` sets PROD for the local build too, where we do want samples.
-const useSampleData = !amplitudeCredentialsSet && !process.env.CF_PAGES
+export const useSampleData = !amplitudeCredentialsSet && !process.env.CF_PAGES
 
 const authHeader = () =>
   "Basic " +

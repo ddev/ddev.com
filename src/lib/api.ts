@@ -8,6 +8,10 @@ import path from "path"
 import Slugger from "github-slugger"
 import { Octokit } from "octokit"
 import { GITHUB_REPO } from "./../const"
+import {
+  getSampleSponsorshipData,
+  getSampleSponsorshipHistory,
+} from "./sponsorship-sample-data"
 
 dotenv.config()
 
@@ -31,6 +35,13 @@ const githubTokenIsSet: boolean = (() => {
   }
   return true
 })()
+
+// Without a token, the sponsorship fetchers fall back to sample data (see
+// ./sponsorship-sample-data) so the usage-stats page still renders locally —
+// same approach as the Amplitude fallback. Excluded on the real Cloudflare
+// Pages deploy (CF_PAGES), which should show nothing rather than fabricated
+// sponsorship numbers if its token ever breaks.
+export const useSampleData = !githubTokenIsSet && !process.env.CF_PAGES
 
 /**
  * Returns an instance of Octokit, which uses the `GITHUB_TOKEN` environment
@@ -255,7 +266,7 @@ export async function getReleases() {
 
 export async function getSponsorshipData() {
   if (!githubTokenIsSet) {
-    return []
+    return useSampleData ? getSampleSponsorshipData() : []
   }
 
   const cacheFilename = "all-sponsorships.json"
@@ -290,11 +301,19 @@ export type SponsorshipHistory = {
 /**
  * Fetches monthly DDEV sponsorship income history from the daily snapshots
  * published on the `history` branch of ddev/sponsorship-data
- * (https://github.com/ddev/sponsorship-data). Unlike GitHub Sponsors data
- * elsewhere in this file, these are plain public raw-file reads and need no
- * GITHUB_TOKEN.
+ * (https://github.com/ddev/sponsorship-data). These are plain public raw-file
+ * reads that don't strictly need a token, but this is gated on GITHUB_TOKEN
+ * for consistency with the other fetchers here. Without a token it returns
+ * sample data locally (see ./sponsorship-sample-data) or empty on the real
+ * deploy.
  */
 export async function getSponsorshipHistory(): Promise<SponsorshipHistory> {
+  if (!githubTokenIsSet) {
+    return useSampleData
+      ? getSampleSponsorshipHistory()
+      : { monthStartDates: [], monthlyIncome: [] }
+  }
+
   const cacheFilename = "sponsorship-history.json"
   const cachedData = getCache(cacheFilename)
 
