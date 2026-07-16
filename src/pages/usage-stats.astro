@@ -20,6 +20,15 @@ import { getSponsorshipData, getSponsorshipHistory } from "../lib/api"
 
 const title = "DDEV Live Usage Statistics"
 
+// A build timestamp rather than a hand-maintained date (as on /privacy):
+// this page is regenerated from live data on every build, not manually
+// edited, so "as of" reflects when the numbers below were actually pulled.
+const lastUpdated = new Date().toLocaleDateString("en-US", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+})
+
 const linkClass = "underline dark:text-white"
 
 // Fetched sequentially (not Promise.all) to avoid bursting past Amplitude's
@@ -71,7 +80,7 @@ const sponsorshipGoal = sponsorshipData?.current_goal
   description="Live DDEV usage statistics pulled from Amplitude at every site build."
 >
   <main class="max-w-4xl mx-auto mb-24">
-    <Heading title={title} />
+    <Heading title={title} subtitle={`Data as of ${lastUpdated}`} />
     <div class="px-6 lg:px-0">
       <PostBody>
         <p>
