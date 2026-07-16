@@ -235,6 +235,77 @@ export function toPercentageRows(
     .sort((a, b) => b.count - a.count)
 }
 
+// Amplitude reports timezones as abbreviations (CEST, EDT, …), which most
+// readers can't place. This maps the common ones to a UTC offset shown in
+// parentheses, e.g. "CEST (UTC+2)". A handful of abbreviations are genuinely
+// ambiguous across regions; those resolve to the interpretation most likely
+// among DDEV users (noted inline). Unknown abbreviations are left untouched.
+const TIMEZONE_OFFSETS: Record<string, string> = {
+  UTC: "UTC",
+  GMT: "UTC+0",
+  // Western/Central/Eastern Europe (standard + summer)
+  WET: "UTC+0",
+  WEST: "UTC+1",
+  BST: "UTC+1", // British Summer Time
+  IST_IE: "UTC+1", // (Irish Standard Time — not the default IST below)
+  CET: "UTC+1",
+  CEST: "UTC+2",
+  EET: "UTC+2",
+  EEST: "UTC+3",
+  MSK: "UTC+3",
+  // Americas
+  EST: "UTC-5",
+  EDT: "UTC-4",
+  CST: "UTC-6", // US Central (ambiguous with China Standard Time, UTC+8)
+  CDT: "UTC-5",
+  MST: "UTC-7",
+  MDT: "UTC-6",
+  PST: "UTC-8",
+  PDT: "UTC-7",
+  AKST: "UTC-9",
+  AKDT: "UTC-8",
+  HST: "UTC-10",
+  BRT: "UTC-3",
+  ART: "UTC-3",
+  // Asia / Oceania / Africa
+  IST: "UTC+5:30", // India Standard Time (most likely for DDEV usage)
+  PKT: "UTC+5",
+  NPT: "UTC+5:45",
+  BDT: "UTC+6",
+  ICT: "UTC+7",
+  WIB: "UTC+7",
+  HKT: "UTC+8",
+  SGT: "UTC+8",
+  AWST: "UTC+8",
+  PHT: "UTC+8",
+  JST: "UTC+9",
+  KST: "UTC+9",
+  ACST: "UTC+9:30",
+  AEST: "UTC+10",
+  AEDT: "UTC+11",
+  NZST: "UTC+12",
+  NZDT: "UTC+13",
+  GST: "UTC+4",
+  WAT: "UTC+1",
+  CAT: "UTC+2",
+  SAST: "UTC+2",
+  EAT: "UTC+3",
+}
+
+/**
+ * Appends a UTC offset to timezone-abbreviation labels, e.g. "EDT" ->
+ * "EDT (UTC-4)". Labels with no known mapping (and "UTC" itself) are left
+ * unchanged.
+ */
+export function withTimezoneOffsets(rows: PercentageRow[]): PercentageRow[] {
+  return rows.map((row) => {
+    const offset = TIMEZONE_OFFSETS[row.label]
+    return offset && offset !== row.label
+      ? { ...row, label: `${row.label} (${offset})` }
+      : row
+  })
+}
+
 /**
  * Gets the parsed data for a saved Amplitude chart by chart ID.
  * Returns null when Amplitude credentials aren't configured.

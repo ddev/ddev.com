@@ -14,6 +14,7 @@ import {
   getMonthlyUserHistory,
   getPhpVersions,
   toPercentageRows,
+  withTimezoneOffsets,
   useSampleData as amplitudeUsesSampleData,
 } from "../lib/amplitude"
 import {
@@ -462,7 +463,9 @@ const sponsorshipGoal = sponsorshipData?.current_goal
               timezones give a rough sense of where users are.
             </p>
             <UsageStatChart
-              rows={toPercentageRows(timezones, "segmentation")}
+              rows={withTimezoneOffsets(
+                toPercentageRows(timezones, "segmentation")
+              )}
               valueFormat="count"
             />
             {AMPLITUDE_SHARE_LINKS.timezones && (
