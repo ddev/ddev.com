@@ -1,6 +1,6 @@
 ---
 title: "DDEV July 2026: New Screencasts, Partner Perks"
-pubDate: 2026-07-20
+pubDate: 2026-07-16
 summary: "July 2026 DDEV Newsletter, DDEV v1.25.3, first DDEV Foundation Board meeting, perks for $100+ partners"
 author: Randy Fay
 featureImage:
@@ -52,6 +52,10 @@ A run of short screencasts landed on the blog this month, mostly using TYPO3 as 
 - **[TYPO3 Projects on Coder.ddev.com](typo3-coder-ddev-com.md)** → Running a TYPO3 project on [coder.ddev.com](https://coder.ddev.com) using the "freeform" template, with a `trustedHostsPattern` fix and two ways to share the result.
 - **[DDEV Xdebug Quickstart with PhpStorm](ddev-xdebug-quickstart-phpstorm.md)** → A less-than-5-minute screencast: set a breakpoint, enable Xdebug with `ddev xdebug on`, and step through PHP code in PhpStorm.
 
+## New Usage Stats Page
+
+The [Usage Stats page](/usage-stats) replaces our old static usage-stats blog post with live charts pulled directly from Amplitude at build time. It's now the up-to-date place to see DDEV adoption and usage trends.
+
 ## Community Highlights
 
 **Knecht.works Beta Testers Wanted: Dashboard for Agencies** — The team at knecht.works is building a dashboard for agencies managing many DDEV projects. It automates tasks like security updates by booting projects with full database environments and generating pull requests with previews. They're looking for beta testers. [Read the announcement↗](https://knecht.works/updates/beta-tester/) and see the [LinkedIn post (German)↗](https://www.linkedin.com/posts/dependabot-kann-kein-cms-updaten-ein-security-update-share-7478345983739998208-tWrP/) on why Dependabot can't update a CMS.
@@ -64,6 +68,7 @@ A run of short screencasts landed on the blog this month, mostly using TYPO3 as 
 - **Setting Up DDEV for WordPress Development, Part One** → Ryan Stubbs walks through DDEV project configuration, WordPress installation with WP-CLI, Mailpit, Adminer, and using bind mounts to keep plugins and themes organized outside the main WordPress installation. [Read on ryanstubbs.co.uk↗](https://ryanstubbs.co.uk/2026/06/setting-up-ddev-for-wordpress-development-part-one/). We're holding our breath for part 2!
 - **Alias Your Local DDEV Commands** → Martin Anderson-Clutz shares shell wrappers that let you type `drush`, `composer`, and friends without the `ddev` prefix — automatically detecting whether you're in a DDEV project and falling back to host execution when you're not. [Read on mandclu.com↗](https://www.mandclu.com/blog/alias-your-local-ddev-commands)
 - **Porting a DDEV MySQL/MariaDB Database to PostgreSQL with pgloader** → Erik Pöhler walks through migrating a DDEV project's database to PostgreSQL 17 using pgloader, then reconfiguring the project for PostgreSQL. [Read on erikpoehler.com↗](https://erikpoehler.com/2025/08/18/porting-a-ddev-mysql-mariadb-database-to-postgresql-with-pgloader/)
+- **What's New in DDEV for TYPO3 Folks, July 2026** → A TYPO3-focused wrap-up covering v1.25.3, Docker/Podman rootless stability, new diagnostic utilities, and DDEV Foundation governance milestones. [Read on news.typo3.com↗](https://news.typo3.com/article/whats-new-in-ddev-for-typo3-folks-july-2026)
 
 ---
 
