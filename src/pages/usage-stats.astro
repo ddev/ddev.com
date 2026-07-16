@@ -32,6 +32,11 @@ const linkClass = "underline dark:text-white"
 
 // Fetched sequentially (not Promise.all) to avoid bursting past Amplitude's
 // rate limit — cached responses make this a one-time cost per cache reset.
+//
+// getAmplitudeChart() exports an existing saved chart's CSV as-is; the ad
+// hoc getX() calls below build a custom Events Segmentation query instead,
+// for properties/filters no saved chart covers correctly (see each
+// function's own comment in lib/amplitude.ts for why).
 const environment = await getAmplitudeChart(AMPLITUDE_CHARTS.environment)
 const commands = await getAmplitudeChart(AMPLITUDE_CHARTS.commands)
 const cmsProjectTypes = await getAmplitudeChart(
@@ -43,6 +48,7 @@ const macosDockerProviders = await getAmplitudeChart(
 const wsl2DockerProviders = await getAmplitudeChart(
   AMPLITUDE_CHARTS.wsl2DockerProviders
 )
+// These three are the ad hoc queries — see comment above.
 const macosArchitecture = await getMacosArchitecture()
 const phpVersions = await getPhpVersions()
 const databaseTypes = await getDatabaseTypes()
@@ -68,6 +74,9 @@ const cmsProjectTypeRows = cmsProjectTypes
       exclude: ["python", "django4"],
     })
   : []
+// Also ad hoc (see the comment near the top of this block) — a saved
+// chart's date range is fixed, and this needs a rolling trailing-12-months
+// window instead.
 const monthlyUserHistory = await getMonthlyUserHistory()
 const sponsorshipHistory = await getSponsorshipHistory()
 const sponsorshipData = await getSponsorshipData()
