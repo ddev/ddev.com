@@ -10,7 +10,6 @@ import {
   AMPLITUDE_SHARE_LINKS,
   getAmplitudeChart,
   getDatabaseTypes,
-  getMacosArchitecture,
   getMonthlyUserHistory,
   getPhpVersions,
   toPercentageRows,
@@ -53,8 +52,10 @@ const macosDockerProviders = await getAmplitudeChart(
 const wsl2DockerProviders = await getAmplitudeChart(
   AMPLITUDE_CHARTS.wsl2DockerProviders
 )
-// These three are the ad hoc queries — see comment above.
-const macosArchitecture = await getMacosArchitecture()
+const macosArchitecture = await getAmplitudeChart(
+  AMPLITUDE_CHARTS.macosArchitecture
+)
+// These two are the ad hoc queries — see comment above.
 const phpVersions = await getPhpVersions()
 const databaseTypes = await getDatabaseTypes()
 const addOns = await getAmplitudeChart(AMPLITUDE_CHARTS.addOns)
@@ -322,7 +323,21 @@ const sponsorshipGoal = sponsorshipData?.current_goal
               Apple Silicon (arm64) vs. Intel (amd64) usage, among macOS
               users specifically.
             </p>
-            <UsageStatBars rows={macosArchitecture.rows} valueFormat="count" />
+            <UsageStatBars
+              rows={toPercentageRows(macosArchitecture, "composition")}
+              valueFormat="count"
+            />
+            {AMPLITUDE_SHARE_LINKS.macosArchitecture && (
+              <p class="mt-2 text-sm">
+                <a
+                  href={AMPLITUDE_SHARE_LINKS.macosArchitecture}
+                  target="_blank"
+                  class={linkClass}
+                >
+                  Live values for macOS Architecture
+                </a>
+              </p>
+            )}
           </section>
         )
       }

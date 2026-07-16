@@ -6,7 +6,6 @@ import dotenv from "dotenv"
 import { getCache, putCache } from "./api"
 import {
   getSampleChart,
-  getSampleMacosArchitecture,
   getSampleMonthlyUserHistory,
   getSampleProjectProperty,
 } from "./amplitude-sample-data"
@@ -20,6 +19,7 @@ export const AMPLITUDE_CHARTS = {
   cmsProjectTypes: "jz0wqx1w",
   macosDockerProviders: "2orxojlh",
   wsl2DockerProviders: "5o615zus",
+  macosArchitecture: "mdfdgo7k",
   addOns: "3iqv1isv",
   ddevPull: "3amvlqjp",
   versions: "p2qwr8n6",
@@ -42,6 +42,8 @@ export const AMPLITUDE_SHARE_LINKS: Partial<
     "https://app.amplitude.com/analytics/share/07d652c6e14e44c68b192625ea8ee066",
   wsl2DockerProviders:
     "https://app.amplitude.com/analytics/share/dad41af1c2a44bb6af1d6ec8cad65bd7",
+  macosArchitecture:
+    "https://app.amplitude.com/analytics/share/5aedd7e813a642cab03306e179604836",
   addOns:
     "https://app.amplitude.com/analytics/share/4e4959f0f36c49d6a24cc2726e8231e5",
   ddevPull:
@@ -345,82 +347,6 @@ export async function getMonthlyUserHistory(): Promise<MonthlyUserHistory | null
 
 export type PropertyBreakdown = {
   rows: PercentageRow[]
-}
-
-/**
- * Gets macOS CPU architecture (Apple Silicon vs. Intel) usage, scoped to
- * darwin users only via an ad hoc Events Segmentation query. The saved
- * "Usage by Architecture" chart has no OS filter at all, so it mixes in
- * Linux/Windows amd64 machines and understates Apple Silicon's real share
- * among macOS users.
- */
-export async function getMacosArchitecture(): Promise<PropertyBreakdown | null> {
-  const cacheFilename = "amplitude-macos-architecture.json"
-  const cachedData = getCache(cacheFilename)
-
-  if (cachedData) {
-    return cachedData
-  }
-
-  if (!amplitudeCredentialsSet) {
-    return useSampleData ? getSampleMacosArchitecture() : null
-  }
-
-  const end = new Date()
-  const start = new Date(end.getTime() - 7 * 24 * 60 * 60 * 1000)
-  const toYyyymmdd = (date: Date) =>
-    date.toISOString().slice(0, 10).replace(/-/g, "")
-
-  const params = new URLSearchParams({
-    e: JSON.stringify({ event_type: "_all" }),
-    start: toYyyymmdd(start),
-    end: toYyyymmdd(end),
-    i: "1",
-    m: "uniques",
-    s: JSON.stringify([
-      { prop: "gp:DDEV Environment", op: "is", values: ["darwin"] },
-    ]),
-    g: "platform",
-  })
-
-  const response = await fetch(
-    `https://amplitude.com/api/2/events/segmentation?${params.toString()}`,
-    {
-      headers: { Authorization: authHeader() },
-    }
-  )
-
-  if (!response.ok) {
-    throw new Error(
-      `Amplitude segmentation request failed: HTTP ${response.status}`
-    )
-  }
-
-  const { data } = await response.json()
-  // seriesCollapsed gives the properly deduplicated unique count across the
-  // whole date range per group, avoiding both the "sum double-counts
-  // uniques across days" and "last day is partial" pitfalls.
-  const counts = data.seriesLabels.map((label: string, index: number) => ({
-    label,
-    count: data.seriesCollapsed[index]?.[0]?.value ?? 0,
-  }))
-  const grandTotal = counts.reduce(
-    (sum: number, row: { count: number }) => sum + row.count,
-    0
-  )
-
-  const breakdown: PropertyBreakdown = {
-    rows: counts
-      .map((row) => ({
-        ...row,
-        percent: grandTotal ? (row.count / grandTotal) * 100 : 0,
-      }))
-      .sort((a, b) => b.count - a.count),
-  }
-
-  putCache(cacheFilename, JSON.stringify(breakdown))
-
-  return breakdown
 }
 
 /**

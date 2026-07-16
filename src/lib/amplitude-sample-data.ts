@@ -148,6 +148,12 @@ const CHART_SPECS: Record<string, ChartSpec> = {
       "podman",
     ],
   },
+  macosArchitecture: {
+    title: "macOS Architecture",
+    base: 11000,
+    decay: 0.065,
+    labels: ["arm64", "amd64"],
+  },
   addOns: {
     title: "Add-on Usage",
     base: 5000,
@@ -252,11 +258,6 @@ export function getSampleProjectProperty(
     return null
   }
   return toBreakdown(decayingCounts(spec.labels, spec.base, spec.decay))
-}
-
-// Sample macOS architecture breakdown (Apple Silicon vs. Intel).
-export function getSampleMacosArchitecture(): PropertyBreakdown {
-  return toBreakdown(decayingCounts(["arm64", "amd64"], 11000, 0.065))
 }
 
 // Sample trailing-11-month user history, trending up, dated to end last month.
