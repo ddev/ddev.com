@@ -8,6 +8,7 @@ import {
   getSponsors,
   getReleases,
 } from "../lib/api"
+import { getMonthlyUserHistory } from "../lib/amplitude"
 import { GITHUB_REPO } from "../const"
 
 const title = `About DDEV`
@@ -15,6 +16,15 @@ const repoData = await getRepoDetails(GITHUB_REPO)
 const contributorData = await getContributors(true)
 const sponsorData = await getSponsors()
 const releaseData = await getReleases()
+
+// Active users: the most recent complete month's unique-user count from
+// Amplitude, rounded down to a clean thousands figure for the "+" display.
+// Falls back to a static estimate when Amplitude data isn't available.
+const monthlyUserHistory = await getMonthlyUserHistory()
+const latestMonthlyUsers = monthlyUserHistory?.uniqueUsers.at(-1)
+const activeUsers = latestMonthlyUsers
+  ? Math.floor(latestMonthlyUsers / 1000) * 1000
+  : 20000
 ---
 
 <Layout
@@ -72,7 +82,7 @@ const releaseData = await getReleases()
         <ul class="flex flex-wrap lg:block dark:text-white">
           <li class="mb-4 p-6 lg:p-0">
             <span class="text-5xl font-thin"
-              >{(19000).toLocaleString("en-US")}+</span
+              >{activeUsers.toLocaleString("en-US")}+</span
             >
             <span class="block font-mono text-sm">active users</span>
           </li>
@@ -101,21 +111,6 @@ const releaseData = await getReleases()
               }</span
             >
             <span class="block font-mono text-sm">GitHub stars</span>
-            <div class="mt-2 dark:text-slate-400">
-              <figure>
-                <img
-                  src="https://stars.medv.io/ddev/ddev.svg"
-                  alt="Sparkline chart of DDEV’s GitHub stars over time"
-                />
-                <figcaption class="dark:text-slate-400">
-                  Project GitHub stars over time, courtesy of <a
-                    class="dark:text-slate-200"
-                    href="https://stars.medv.io/"
-                    target="_blank">stars.medv.io</a
-                  >.
-                </figcaption>
-              </figure>
-            </div>
           </li>
         </ul>
       </div>
