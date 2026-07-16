@@ -1,8 +1,11 @@
 ---
 title: "Shopware on DDEV: notes from years of client projects"
-pubDate: 2026-07-16
+pubDate: 2026-07-18
 summary: Why DDEV and Shopware fit together, from a first DDEV onboarding to conclusions drawn over years of agency practice.
 author: Benny Poensgen
+featureImage:
+  src: /img/blog/2026/07/shopware-on-ddev.png
+  alt: DDEV and Shopware logos joined by a plus sign
 categories:
   - Community
 ---
