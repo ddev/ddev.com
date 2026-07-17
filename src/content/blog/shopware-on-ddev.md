@@ -99,7 +99,8 @@ but also lets you upload new media files to your local environment for testing.
 ### Shopware tooling
 
 `shopware-cli` is increasingly being developed into a one-stop tool for development, and of course I want to use it in
-my projects too. No problem—there's an add-on for that: `ddev add-on get vanwittlaer/ddev-shopware-cli`. The add-on
+my projects too. No problem—there's an add-on for that:
+[`ddev add-on get vanwittlaer/ddev-shopware-cli`](https://github.com/vanWittlaer/ddev-shopware-cli). The add-on
 also lets you reach the storefront and admin watcher URLs directly and, more importantly, over HTTPS.
 
 ### Project lifecycle support
@@ -113,8 +114,24 @@ the push direction, although I have never come across a use case for it so far.
 
 At the time of writing, I use [Claude Code](https://www.claude.com/product/claude-code) for my debugging and development
 work. To keep it isolated from my local environment, I run it inside the DDEV container—yes, there's an add-on for that:
-`ddev add-on get vanwittlaer/ddev-claude-code`. Pair it with Playwright (also in the DDEV container, via
-`ddev add-on get codingsasi/ddev-playwright`) and watch Claude do interactive frontend development.
+[`ddev add-on get vanwittlaer/ddev-claude-code`](https://github.com/vanWittlaer/ddev-claude-code).
+Pair it with Playwright (also in the DDEV container, via
+[`ddev add-on get codingsasi/ddev-playwright`](https://github.com/codingsasi/ddev-playwright)) and watch Claude do
+interactive frontend development.
+
+### Support
+
+DDEV has a great community on Discord. I have yet to see a support request go unanswered in the support channel, let
+alone unsolved. The maintainers are extremely helpful and responsive, and established tools (`ddev diagnose`) and
+processes make issues quicker to work through.
+
+### DDEV add-ons
+
+I have mentioned a few add-ons already. There is an abundance of them—browse them at
+[addons.ddev.com](https://addons.ddev.com). Using one is a matter of `ddev add-on get <add-on-name>`, and writing your
+own is not much harder. I have added a couple of my own recently and am happy to share them. (Check out this one if
+you're interested in Docker-based hosting for Shopware:
+[`ddev add-on get vanwittlaer/ddev-coolify-shopware`](https://github.com/vanWittlaer/ddev-coolify-shopware).)
 
 ## How to get started
 
@@ -169,7 +186,7 @@ environment that mirrors the production setup are predefined and stable within a
 4. implementing and testing Shopware and third-party plugin upgrades.
 
 So what matters to me is an efficient setup for a given set of dependencies and versions, ease of use, integration with
-testing and dev tools (Xdebug, Claude Code, Playwright, the storefront and admin watchers), reliability, support (DDEV
-has a great Discord community), and—last but not least—not losing time when switching between client projects.
+testing and dev tools (Xdebug, Claude Code, Playwright, the storefront and admin watchers), reliability, support,
+and—last but not least—not losing time when switching between client projects.
 
 **tl;dr:** my answer to the question—how good a fit is DDEV for Shopware?—is a resounding yes.
