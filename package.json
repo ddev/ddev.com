@@ -17,7 +17,7 @@
   "dependencies": {
     "@astrojs/prefetch": "^0.4.1",
     "@astrojs/react": "^5.0.5",
-    "@astrojs/rss": "^4.0.18",
+    "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.2",
     "@barnabask/astro-minisearch": "^2.1.1",
     "@heroicons/react": "^2.0.13",
