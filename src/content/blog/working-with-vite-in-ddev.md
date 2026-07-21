@@ -1,7 +1,7 @@
 ---
 title: "Working with Vite in DDEV - an introduction"
 pubDate: 2023-11-08
-modifiedDate: 2025-10-27
+modifiedDate: 2026-07-21
 modifiedComment: "Added a link to the [official DDEV Vite Integration documentation](https://docs.ddev.com/en/stable/users/usage/vite/)."
 summary: Working with Vite in DDEV
 author: Matthias Andrasch
@@ -193,6 +193,10 @@ export default defineConfig({
 })
 ```
 
+:::note
+The [`DDEV_PRIMARY_URL_WITHOUT_PORT`](https://docs.ddev.com/en/stable/users/extend/custom-commands/#environment-variables-provided) environment variable requires DDEV v1.24.5 or later. We recommend keeping DDEV updated to the [latest stable release](/download/).
+:::
+
 Technical explanation:
 
 - We need to define an entry file to let vite know where to start, this is done in `rollupOptions`.
@@ -255,8 +259,8 @@ And we will need a simple PHP index file of course. We put it in the root folder
     <title>Hello Vite!</title>
 
     <!-- This is just an example for local development, no full integration: -->
-    <script type="module" src="<?php echo preg_replace('/:\d+$/', '', $_SERVER['DDEV_PRIMARY_URL_WITHOUT_PORT']); ?>:5173/@vite/client"></script>
-    <script type="module" src="<?php echo preg_replace('/:\d+$/', '', $_SERVER['DDEV_PRIMARY_URL_WITHOUT_PORT']); ?>:5173/src/main.js"></script>
+    <script type="module" src="<?php echo getenv('DDEV_PRIMARY_URL_WITHOUT_PORT'); ?>:5173/@vite/client"></script>
+    <script type="module" src="<?php echo getenv('DDEV_PRIMARY_URL_WITHOUT_PORT'); ?>:5173/src/main.js"></script>
     <!-- see https://vitejs.dev/guide/backend-integration.html -->
 
 </head>
