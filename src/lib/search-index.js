@@ -1,4 +1,4 @@
-import fs2 from "fs"
+import fs from "fs"
 import { glob } from "glob"
 import { getSearchIndex } from "@barnabask/astro-minisearch"
 import { fileURLToPath } from "node:url"
@@ -128,7 +128,7 @@ export default function searchIndex(config) {
         })
 
         // Write the index contents to a file
-        fs2.writeFileSync(new URL(output, dir), index.body)
+        fs.writeFileSync(new URL(output, dir), index.body)
 
         logger.success("`" + config.output + "` is created.")
       },

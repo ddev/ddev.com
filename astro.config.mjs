@@ -24,6 +24,7 @@ import sitemap from "@astrojs/sitemap"
 import tailwindcss from "@tailwindcss/vite"
 import { addCopyButton } from "shiki-transformer-copy-button"
 import { SHIKI_THEMES } from "./src/const.ts"
+import { unified } from "@astrojs/markdown-remark"
 
 // https://astro.build/config
 export default defineConfig({
@@ -72,6 +73,49 @@ export default defineConfig({
     prefetch(),
   ],
   markdown: {
+    processor: unified({
+      remarkPlugins: [
+        remarkPublicImages,
+        remarkReadingTime,
+        remarkDirective,
+        remarkCallouts,
+        remarkGfm, // GitHub Flavored Markdown (tables, strikethrough, task lists, autolinks)
+        [
+          remarkToc,
+          {
+            heading: "table of contents", // Case-insensitive heading to look for
+            tight: true, // Compact lists
+          },
+        ],
+      ],
+      rehypePlugins: [
+        rehypeSlug,
+        rehypeHeadingScrollMargin,
+        [
+          rehypeAutolinkHeadings,
+          {
+            behavior: "wrap",
+          },
+        ],
+        [
+          rehypeExternalLinks,
+          {
+            target: "_blank",
+            rel: ["noopener", "noreferrer"],
+          },
+        ],
+        rehypeFigure, // Wrap images in <figure> with <figcaption>
+        rehypeUnwrapImages, // Remove paragraph wrappers after figure processing
+        rehypeAccessibleEmojis, // Add accessible labels to emojis
+        plainTextPlugin({
+          contentKey: "plainText",
+          removeEmoji: false,
+          headingTags: ["h2", "h3"],
+        }),
+        rehypeAstroRelativeMarkdownLinks,
+        rehypeWrapTables,
+      ],
+    }),
     syntaxHighlight: "shiki",
     // https://github.com/shikijs/shiki/blob/main/docs/languages.md
     shikiConfig: {
@@ -86,47 +130,6 @@ export default defineConfig({
         }),
       ],
     },
-    remarkPlugins: [
-      remarkPublicImages,
-      remarkReadingTime,
-      remarkDirective,
-      remarkCallouts,
-      remarkGfm, // GitHub Flavored Markdown (tables, strikethrough, task lists, autolinks)
-      [
-        remarkToc,
-        {
-          heading: "table of contents", // Case-insensitive heading to look for
-          tight: true, // Compact lists
-        },
-      ],
-    ],
-    rehypePlugins: [
-      rehypeSlug,
-      rehypeHeadingScrollMargin,
-      [
-        rehypeAutolinkHeadings,
-        {
-          behavior: "wrap",
-        },
-      ],
-      [
-        rehypeExternalLinks,
-        {
-          target: "_blank",
-          rel: ["noopener", "noreferrer"],
-        },
-      ],
-      rehypeFigure, // Wrap images in <figure> with <figcaption>
-      rehypeUnwrapImages, // Remove paragraph wrappers after figure processing
-      rehypeAccessibleEmojis, // Add accessible labels to emojis
-      plainTextPlugin({
-        contentKey: "plainText",
-        removeEmoji: false,
-        headingTags: ["h2", "h3"],
-      }),
-      rehypeAstroRelativeMarkdownLinks,
-      rehypeWrapTables,
-    ],
   },
   image: {
     domains: ["avatars.githubusercontent.com"],
