@@ -7,6 +7,12 @@ const title = `Sponsor DDEV`
 const linkClass =
   "font-bold text-blue-700 underline hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300"
 
+// External links open in a new tab, matching the rehypeExternalLinks
+// behavior used for markdown content (see astro.config.mjs).
+const isExternal = (href: string) => /^https?:\/\//.test(href)
+const externalAttrs = (href: string) =>
+  isExternal(href) ? { target: "_blank", rel: "noopener noreferrer" } : {}
+
 const paypalCta = {
   label: "Sponsor via PayPal",
   href: "https://www.paypal.com/donate/?hosted_button_id=MCNCSZHC7LHSQ",
@@ -144,7 +150,7 @@ const sponsorshipTiers = [
                       ✓{" "}
                       {parseReward(reward).map((part) =>
                         part.type === "link" ? (
-                          <a href={part.href} class={linkClass}>{part.text}</a>
+                          <a href={part.href} class={linkClass} {...externalAttrs(part.href)}>{part.text}</a>
                         ) : (
                           part.text
                         )
@@ -157,6 +163,8 @@ const sponsorshipTiers = [
                   <a
                     href={`https://github.com/sponsors/ddev?amount=${tier.amount.replace(",", "")}`}
                     class="inline-flex items-center justify-center gap-2 rounded-full bg-neutral-900 px-5 py-3 font-bold text-white transition hover:bg-neutral-800 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Sponsor via GitHub
                   </a>
@@ -164,6 +172,7 @@ const sponsorshipTiers = [
                   <a
                     href={tier.secondaryCta.href}
                     class="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-400 bg-white px-5 py-3 font-bold text-neutral-900 transition hover:bg-neutral-200 dark:border-neutral-600 dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800"
+                    {...externalAttrs(tier.secondaryCta.href)}
                   >
                     <span>{tier.secondaryCta.label}</span>
                   </a>
@@ -181,8 +190,14 @@ const sponsorshipTiers = [
             fundamental challenge: the software is free, but building and maintaining
             it is not. Recurring monthly sponsorships are the lifeblood of the DDEV
             project — they let our two full-time maintainers, <a
-              href="https://github.com/rfay">Randy Fay</a
-            > and <a href="https://github.com/stasadev">Stas Zhuk</a>, stay
+              href="https://github.com/rfay"
+              target="_blank"
+              rel="noopener noreferrer">Randy Fay</a
+            > and <a
+              href="https://github.com/stasadev"
+              target="_blank"
+              rel="noopener noreferrer">Stas Zhuk</a
+            >, stay
             focused on DDEV instead of splitting their attention with outside
             work.
           </p>
@@ -207,7 +222,8 @@ const sponsorshipTiers = [
           <p>
             <strong>GitHub Sponsors</strong> — <a
               href="https://github.com/sponsors/ddev"
-              >github.com/sponsors/ddev</a
+              target="_blank"
+              rel="noopener noreferrer">github.com/sponsors/ddev</a
             >. 100% of personal sponsorships go directly to the Foundation;
             GitHub charges no fees for personal accounts.
           </p>
@@ -215,7 +231,8 @@ const sponsorshipTiers = [
           <p>
             <strong>PayPal</strong> — <a
               href="https://www.paypal.com/donate/?hosted_button_id=MCNCSZHC7LHSQ"
-              >Donate via PayPal</a
+              target="_blank"
+              rel="noopener noreferrer">Donate via PayPal</a
             > for one-time or recurring contributions.
           </p>
 
