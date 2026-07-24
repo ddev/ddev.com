@@ -183,6 +183,7 @@ Create interactive checkboxes:
 - [x] Completed task
 - [ ] Incomplete task
 - [ ] Another task
+
 <!-- textlint-enable no-todo -->
 ```
 

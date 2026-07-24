@@ -35,22 +35,22 @@ One of the great things about open source technology is the fact that we can all
   - Suggest they run `ddev debug test` and share their output. This command is useful because it provides information about someone's computer architecture, operating system, and whether DDEV is functioning properly.
   - Make a test repository.
 - **Try to recreate the problem**  
-   Learn as you help someone by trying to recreate their problem. A test repository is a good place to recreate a problem, and can be referenced later in the [issue queue](https://github.com/ddev/ddev/issues).
+  Learn as you help someone by trying to recreate their problem. A test repository is a good place to recreate a problem, and can be referenced later in the [issue queue](https://github.com/ddev/ddev/issues).
 - **Give people tools, not only answers.**  
-   Help them find the place in the [DDEV docs](https://docs.ddev.com/en/stable/) or [Stack Overflow](https://stackoverflow.com/tags/ddev) where their question is answered. Remember that we’re trying to make them members of the community who can support others.
+  Help them find the place in the [DDEV docs](https://docs.ddev.com/en/stable/) or [Stack Overflow](https://stackoverflow.com/tags/ddev) where their question is answered. Remember that we’re trying to make them members of the community who can support others.
 
 #### For those receiving support:
 
 - When you receive an answer, be respectful of the community by **documenting the answer** if it hasn't been done already.  
-   Remember that someone spent time with you _for free_. And you’re saying you don’t have the time to write up an issue on GitHub or a question on Stack Overflow?
+  Remember that someone spent time with you _for free_. And you’re saying you don’t have the time to write up an issue on GitHub or a question on Stack Overflow?
 - **If someone gives you an answer, respond** to let them know you received it and whether (or not) it worked.
 
 ### Don'ts
 
 - **Don't forget that everybody comes from a different background.**  
-   There are many layers of knowledge and experience required to understand something. Someone asking for help may not know how to change directories from the command line or they could be an experienced web developer. When you're giving support, it's important to recognize what knowledge someone may be missing even though it's not always possible to fill in those knowledge gaps.
+  There are many layers of knowledge and experience required to understand something. Someone asking for help may not know how to change directories from the command line or they could be an experienced web developer. When you're giving support, it's important to recognize what knowledge someone may be missing even though it's not always possible to fill in those knowledge gaps.
 - **Don't be afraid that you're not smart or experienced enough to give support.**  
-   Even if you don't know the exact answer to someone's question, participating in a conversation or trying to recreate their issue can eventually help them or help someone else solve the problem.
+  Even if you don't know the exact answer to someone's question, participating in a conversation or trying to recreate their issue can eventually help them or help someone else solve the problem.
 
 ## Venues for Giving and Receiving Support
 
