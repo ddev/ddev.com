@@ -1,0 +1,36 @@
+---
+/**
+ * A single "Get Support" option card used on the Contact page. The description
+ * is passed as a prop (not slotted markdown) so the surrounding MDX/prettier
+ * can't reflow it into a nested markdown paragraph.
+ */
+import Icon from "./Icon.astro"
+
+export interface Props {
+  icon: string
+  iconClass: string
+  title: string
+  description: string
+  href: string
+  linkText: string
+}
+
+const { icon, iconClass, title, description, href, linkText } = Astro.props
+---
+
+<div
+  class="flex items-start gap-3 p-4 border border-gray-200 dark:border-gray-700 rounded-lg"
+>
+  <div class={`w-15 h-15 mt-1 ${iconClass}`}>
+    <Icon name={icon} />
+  </div>
+  <div>
+    <h3 class="font-semibold text-lg mb-2">{title}</h3>
+    <p class="text-gray-600 dark:text-gray-400 mb-3">{description}</p>
+    <a
+      href={href}
+      class="text-navy-300 dark:text-navy-100 hover:underline font-medium"
+      >{linkText}</a
+    >
+  </div>
+</div>
