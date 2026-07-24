@@ -7,6 +7,7 @@ description: Get in touch with the DDEV team through Discord, GitHub, email, or 
 ---
 
 import SupportCard from "../components/SupportCard.astro"
+import OrgAddress from "../components/OrgAddress.astro"
 import {
   DISCORD_URL,
   GITHUB_ISSUES_URL,
@@ -14,12 +15,6 @@ import {
   SUPPORT_EMAIL_URL,
   MEETING_URL,
   ORG_NAME,
-  ORG_STREET,
-  ORG_CITY,
-  ORG_STATE_ABBR,
-  ORG_POSTAL_CODE,
-  ORG_COUNTRY,
-  ORG_PHONE,
 } from "../const"
 
 ## Get Support
@@ -77,11 +72,4 @@ We'll reply with an invoice and payment details. As a [US 501(c)(3) nonprofit](/
 
 Learn more about the [DDEV Foundation](/foundation), our mission, and how we support the DDEV project.
 
-<address class="not-italic">
-  <div>{ORG_NAME}</div>
-  <div>{ORG_STREET}</div>
-  <div>{`${ORG_CITY}, ${ORG_STATE_ABBR} ${ORG_POSTAL_CODE} ${ORG_COUNTRY}`}</div>
-  <div>
-    <a href={`tel:${ORG_PHONE}`}>{ORG_PHONE}</a>
-  </div>
-</address>
+<OrgAddress />

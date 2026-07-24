@@ -5,17 +5,8 @@ subtitle: "Last updated: July 12, 2026"
 description: Privacy policy for the DDEV Foundation, covering ddev.com and the DDEV CLI tool's opt-in usage statistics.
 ---
 
-import {
-  ORG_NAME,
-  ORG_STREET,
-  ORG_CITY,
-  ORG_STATE_ABBR,
-  ORG_POSTAL_CODE,
-  ORG_COUNTRY,
-  ORG_PHONE,
-  SUPPORT_EMAIL,
-  SUPPORT_EMAIL_URL,
-} from "../const"
+import OrgAddress from "../components/OrgAddress.astro"
+import { ORG_NAME, SUPPORT_EMAIL, SUPPORT_EMAIL_URL } from "../const"
 
 {ORG_NAME} ("DDEV," "we," "us") develops [DDEV](https://github.com/ddev/ddev), an open source local development tool, and operates this website, ddev.com. We don't build user accounts or profiles, and we try to collect as little personal data as possible. This policy explains what we do collect, why, and how you can control it.
 
@@ -71,11 +62,4 @@ We may update this policy as the project or website changes. We'll update the "L
 
 Questions about this policy? Contact [support](/contact).
 
-<address class="not-italic">
-  <div>{ORG_NAME}</div>
-  <div>{ORG_STREET}</div>
-  <div>{`${ORG_CITY}, ${ORG_STATE_ABBR} ${ORG_POSTAL_CODE} ${ORG_COUNTRY}`}</div>
-  <div>
-    <a href={`tel:${ORG_PHONE}`}>{ORG_PHONE}</a>
-  </div>
-</address>
+<OrgAddress />
