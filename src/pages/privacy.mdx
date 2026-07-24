@@ -1,0 +1,81 @@
+---
+layout: ../layouts/MarkdownLayout.astro
+title: Privacy Policy
+subtitle: "Last updated: July 12, 2026"
+description: Privacy policy for the DDEV Foundation, covering ddev.com and the DDEV CLI tool's opt-in usage statistics.
+---
+
+import {
+  ORG_NAME,
+  ORG_STREET,
+  ORG_CITY,
+  ORG_STATE_ABBR,
+  ORG_POSTAL_CODE,
+  ORG_COUNTRY,
+  ORG_PHONE,
+  SUPPORT_EMAIL,
+  SUPPORT_EMAIL_URL,
+} from "../const"
+
+{ORG_NAME} ("DDEV," "we," "us") develops [DDEV](https://github.com/ddev/ddev), an open source local development tool, and operates this website, ddev.com. We don't build user accounts or profiles, and we try to collect as little personal data as possible. This policy explains what we do collect, why, and how you can control it.
+
+If anything here is unclear, or you have a concern about your data, contact us at <a href={SUPPORT_EMAIL_URL}>{SUPPORT_EMAIL}</a>.
+
+## The DDEV command-line tool
+
+The `ddev` command-line tool itself does not collect any data unless you opt in.
+
+### Opt-in usage statistics
+
+On first install, or after a new release, DDEV asks whether you want to share anonymous usage statistics and error reports. Telemetry is **off by default** — nothing is sent unless you answer yes. You can change your answer at any time:
+
+- `ddev config global --instrumentation-opt-in=false` to turn it off
+- `ddev config global --instrumentation-opt-in=true` to turn it on
+
+When enabled, DDEV sends events to [Amplitude](https://amplitude.com), a third-party analytics service, which may include:
+
+- A one-way hash derived from your machine's ID, used only to recognize repeat events from the same machine or project. It cannot be reversed to identify your machine, and is never linked to your name, email, or GitHub account.
+- The command you ran (for built-in commands only — custom shell commands you've added yourself are recorded as `custom-command` with no arguments, so anything project-specific in them stays local)
+- DDEV version, operating system, CPU architecture, and language/locale
+- Environment details such as Docker version, WSL2 or Codespaces/devcontainer status, and time zone
+- Non-identifying project configuration: PHP/Node.js version, project type, web server and database type/version, router type, installed add-on names, and whether the command is running in a CI environment
+
+We do not collect your project name, file paths, source code, or the contents of your project. See [Opt-In Usage Information](https://docs.ddev.com/en/stable/users/usage/diagnostics/) in the DDEV docs for more, and [Amplitude's privacy policy](https://amplitude.com/privacy) for how they handle data on their end (including that they may see the IP address a request came from, which we don't otherwise collect ourselves).
+
+## This website (ddev.com)
+
+We don't run visitor tracking or advertising analytics (no Google Analytics, ad pixels, or similar) on ddev.com, and we don't use cookies to track you across visits. The site is hosted on [Cloudflare Pages](https://www.cloudflare.com/), which processes standard web server logs (such as IP address and request details) as part of delivering the site; see [Cloudflare's privacy policy](https://www.cloudflare.com/privacypolicy/).
+
+A few parts of the site involve third-party services, each governed by that service's own privacy policy:
+
+- **Newsletter signup** — our [newsletter form](/newsletter) is processed by Zoho CRM. We use your email address only to send the newsletter; see [Zoho's privacy policy](https://www.zoho.com/privacy.html).
+- **Blog and add-on comments** — comments use [giscus](https://giscus.app/), which stores comments as GitHub issues and requires you to sign in with GitHub. See [GitHub's privacy statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement).
+- **Donations and sponsorship** — our [sponsor page](/sponsor) links to PayPal and GitHub Sponsors for processing payments. We don't receive or store your payment card details; see [PayPal's privacy statement](https://www.paypal.com/us/legalhub/privacy-full) and GitHub's privacy statement linked above.
+- **Contact** — messages sent to <a href={SUPPORT_EMAIL_URL}>{SUPPORT_EMAIL}</a> or scheduled via our meeting link are handled like normal email/calendar correspondence and are not shared outside the Foundation.
+
+## What we don't do
+
+- We don't sell or rent personal data to anyone.
+- We don't require an account or password to use DDEV or browse ddev.com.
+- We don't knowingly collect data from children under 13.
+
+## Your choices
+
+You can use DDEV entirely without sending any telemetry by declining (or later disabling) instrumentation as described above. For data handled by a third-party service linked above (Amplitude, Zoho, GitHub, PayPal, Cloudflare), that service's own privacy policy explains your rights and how to exercise them with that service directly. For anything we hold ourselves, such as an email you've sent us, contact <a href={SUPPORT_EMAIL_URL}>{SUPPORT_EMAIL}</a> to ask us to access, correct, or delete it.
+
+## Changes to this policy
+
+We may update this policy as the project or website changes. We'll update the "Last updated" date above when we do; material changes will be noted on our [blog](/blog).
+
+## Contact us
+
+Questions about this policy? Contact [support](/contact).
+
+<address class="not-italic">
+  <div>{ORG_NAME}</div>
+  <div>{ORG_STREET}</div>
+  <div>{`${ORG_CITY}, ${ORG_STATE_ABBR} ${ORG_POSTAL_CODE} ${ORG_COUNTRY}`}</div>
+  <div>
+    <a href={`tel:${ORG_PHONE}`}>{ORG_PHONE}</a>
+  </div>
+</address>

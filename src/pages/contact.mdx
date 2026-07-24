@@ -1,0 +1,113 @@
+---
+layout: ../layouts/MarkdownLayout.astro
+title: Contact Us
+heading: Contact DDEV
+subtitle: We're here to help with your local development needs
+description: Get in touch with the DDEV team through Discord, GitHub, email, or schedule a meeting. We're here to help with your local development needs.
+---
+
+import Icon from "../components/Icon.astro"
+import {
+  DISCORD_URL,
+  GITHUB_ISSUES_URL,
+  SUPPORT_EMAIL,
+  SUPPORT_EMAIL_URL,
+  MEETING_URL,
+  ORG_NAME,
+  ORG_STREET,
+  ORG_CITY,
+  ORG_STATE_ABBR,
+  ORG_POSTAL_CODE,
+  ORG_COUNTRY,
+  ORG_PHONE,
+} from "../const"
+
+## Get Support
+
+Need help with DDEV? Choose the best option for your situation:
+
+<div class="grid gap-6 md:grid-cols-2 not-prose">
+  <div class="flex items-start gap-3 p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
+    <div class="w-15 h-15 mt-1 text-navy-300 dark:text-navy-100">
+      <Icon name="Discord" />
+    </div>
+    <div>
+      <h3 class="font-semibold text-lg mb-2">Discord Community</h3>
+      <p class="text-gray-600 dark:text-gray-400 mb-3">Join our active community for quick help, discussions, and connecting with other developers.</p>
+      <a href={DISCORD_URL} class="text-navy-300 dark:text-navy-100 hover:underline font-medium">Join Discord →</a>
+    </div>
+  </div>
+
+<div class="flex items-start gap-3 p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
+  <div class="w-15 h-15 mt-1 text-gray-700 dark:text-gray-300">
+    <Icon name="GitHub" />
+  </div>
+  <div>
+    <h3 class="font-semibold text-lg mb-2">GitHub Issues</h3>
+    <p class="text-gray-600 dark:text-gray-400 mb-3">
+      Report bugs, request features, or get technical support through our issue
+      tracker.
+    </p>
+    <a
+      href={GITHUB_ISSUES_URL}
+      class="text-navy-300 dark:text-navy-100 hover:underline font-medium"
+    >
+      Open Issue →
+    </a>
+  </div>
+</div>
+
+<div class="flex items-start gap-3 p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
+  <div class="w-15 h-15 mt-1 text-blue-600 dark:text-blue-400">
+    <Icon name="Email" />
+  </div>
+  <div>
+    <h3 class="font-semibold text-lg mb-2">Email Support</h3>
+    <p class="text-gray-600 dark:text-gray-400 mb-3">
+      Email us for detailed questions or private support requests.
+    </p>
+    <a
+      href={SUPPORT_EMAIL_URL}
+      class="text-navy-300 dark:text-navy-100 hover:underline font-medium"
+    >
+      Send Email →
+    </a>
+  </div>
+</div>
+
+  <div class="flex items-start gap-3 p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
+    <div class="w-15 h-15 mt-1 text-green-600 dark:text-green-400">
+      <Icon name="Calendar" />
+    </div>
+    <div>
+      <h3 class="font-semibold text-lg mb-2">Schedule a Meeting</h3>
+      <p class="text-gray-600 dark:text-gray-400 mb-3">Book a one-on-one session for complex questions or consultation.</p>
+      <a href={MEETING_URL} class="text-navy-300 dark:text-navy-100 hover:underline font-medium">Book Meeting →</a>
+    </div>
+  </div>
+</div>
+
+## Sponsorship
+
+Prefer to pay by invoice or bank transfer instead of GitHub Sponsors or PayPal? Email us at <a href={SUPPORT_EMAIL_URL}>{SUPPORT_EMAIL}</a> and include:
+
+- Organization / legal name and billing address
+- Billing contact email
+- Monthly amount or sponsorship tier
+- Preferred payment method (ACH, Wise, bank transfer, IBAN, SWIFT, or check)
+- Any purchase order, VAT ID, or tax forms (for example a W-9) you need
+
+We'll reply with an invoice and payment details. As a [US 501(c)(3) nonprofit](/blog/501c3), sponsorships to the {ORG_NAME} may be tax-deductible.
+
+## DDEV Foundation Information
+
+Learn more about the [DDEV Foundation](/foundation), our mission, and how we support the DDEV project.
+
+<address class="not-italic">
+  <div>{ORG_NAME}</div>
+  <div>{ORG_STREET}</div>
+  <div>{`${ORG_CITY}, ${ORG_STATE_ABBR} ${ORG_POSTAL_CODE} ${ORG_COUNTRY}`}</div>
+  <div>
+    <a href={`tel:${ORG_PHONE}`}>{ORG_PHONE}</a>
+  </div>
+</address>

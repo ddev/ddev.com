@@ -1,0 +1,38 @@
+---
+/**
+ * Layout for standalone markdown/MDX pages in `src/pages/*.mdx`, referenced via
+ * each page's `layout` frontmatter key.
+ *
+ * Frontmatter props (via `Astro.props.frontmatter`):
+ *   title       – required; used for the document <title> and OG metadata
+ *   heading     – optional on-page <h1>; falls back to `title`
+ *   subtitle    – optional text beneath the heading
+ *   description – optional meta description
+ *   ogImage     – optional Open Graph image path
+ *   ogImageAlt  – optional Open Graph image alt text
+ *
+ * Shared values from `src/const.ts` can be imported directly in each MDX file.
+ */
+import Layout from "./Layout.astro"
+import Heading from "../components/Heading.astro"
+import PostBody from "../components/PostBody.astro"
+
+const { title, heading, subtitle, description, ogImage, ogImageAlt } =
+  Astro.props.frontmatter
+---
+
+<Layout
+  title={title}
+  description={description}
+  ogImage={ogImage}
+  ogImageAlt={ogImageAlt}
+>
+  <main class="max-w-4xl mx-auto mb-24">
+    <Heading title={heading ?? title} subtitle={subtitle} />
+    <div class="px-6 lg:px-0">
+      <PostBody>
+        <slot />
+      </PostBody>
+    </div>
+  </main>
+</Layout>
