@@ -1,8 +1,27 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import SectionHeading from "../components/SectionHeading.astro"
+import {
+  getRepoDetails,
+  getContributors,
+  getReleases,
+  getSponsorshipData,
+} from "../lib/api"
+import { getActiveUsers } from "../lib/amplitude"
+import { GITHUB_REPO } from "../const"
 
 const title = `Sponsor DDEV`
+
+const repoData = await getRepoDetails(GITHUB_REPO)
+const contributorData = await getContributors(true)
+const releaseData = await getReleases()
+
+// Monthly funding goal for both maintainers, from the live sponsorship data
+const sponsorshipData = await getSponsorshipData()
+const fundingGoal = sponsorshipData?.current_goal?.target_amount || 12000
+
+const activeUsers = await getActiveUsers()
+const stargazers = repoData.stargazers_count || 0
 
 const linkClass =
   "font-bold text-blue-700 underline hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300"
@@ -204,7 +223,7 @@ const sponsorshipTiers = [
 
           <p>
             The <a href="/foundation/">Foundation's</a> goal is <strong
-              >$12,000/month</strong
+              >${fundingGoal.toLocaleString("en-US")}/month</strong
             > to fully fund both maintainers. Whether you contribute $5/month or $1,000/month,
             every recurring sponsorship brings the project closer to sustainability
             — and signals to the wider community that DDEV is a healthy project organizations
@@ -244,7 +263,7 @@ const sponsorshipTiers = [
           </p>
 
           <p>
-            As a US 501(c)(3) nonprofit, sponsorships to the DDEV Foundation may
+            As a <a href="/blog/501c3/">US 501(c)(3) nonprofit</a>, sponsorships to the DDEV Foundation may
             be tax-deductible. Please consult your tax advisor.
           </p>
         </section>
@@ -253,11 +272,13 @@ const sponsorshipTiers = [
           <SectionHeading title="About DDEV" />
 
           <p>
-            DDEV is the open-source local development environment trusted by
-            19,000+ active developers worldwide for PHP, JavaScript, and HTML
-            projects — Drupal, WordPress, Laravel, TYPO3, Craft CMS, Magento,
-            and more. Since 2016 it has grown to 3,600+ GitHub stars, 222
-            releases, and 399 contributors.
+            DDEV is the open-source local development environment trusted by{" "}
+            {activeUsers.toLocaleString("en-US")}+ active developers worldwide for
+            PHP, JavaScript, and HTML projects — Drupal, WordPress, Laravel, TYPO3,
+            Craft CMS, Magento, and more. Since 2016 it has grown to {
+              stargazers.toLocaleString("en-US")
+            } GitHub stars, {releaseData.length.toLocaleString("en-US")} releases,
+            and {contributorData.length.toLocaleString("en-US")} contributors.
           </p>
         </section>
 

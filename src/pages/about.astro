@@ -8,7 +8,7 @@ import {
   getSponsors,
   getReleases,
 } from "../lib/api"
-import { getMonthlyUserHistory } from "../lib/amplitude"
+import { getActiveUsers } from "../lib/amplitude"
 import { GITHUB_REPO } from "../const"
 
 const title = `About DDEV`
@@ -17,14 +17,7 @@ const contributorData = await getContributors(true)
 const sponsorData = await getSponsors()
 const releaseData = await getReleases()
 
-// Active users: the most recent complete month's unique-user count from
-// Amplitude, rounded down to a clean thousands figure for the "+" display.
-// Falls back to a static estimate when Amplitude data isn't available.
-const monthlyUserHistory = await getMonthlyUserHistory()
-const latestMonthlyUsers = monthlyUserHistory?.uniqueUsers.at(-1)
-const activeUsers = latestMonthlyUsers
-  ? Math.floor(latestMonthlyUsers / 1000) * 1000
-  : 20000
+const activeUsers = await getActiveUsers()
 ---
 
 <Layout

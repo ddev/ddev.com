@@ -419,6 +419,20 @@ export async function getMonthlyUserHistory(): Promise<MonthlyUserHistory | null
   return history
 }
 
+/**
+ * Active-user count for display: the most recent complete month's unique-user
+ * count from {@link getMonthlyUserHistory}, rounded down to a clean thousands
+ * figure (paired with a "+" in the UI). Falls back to a static estimate when
+ * Amplitude data isn't available.
+ */
+export async function getActiveUsers(fallback = 20000): Promise<number> {
+  const monthlyUserHistory = await getMonthlyUserHistory()
+  const latestMonthlyUsers = monthlyUserHistory?.uniqueUsers.at(-1)
+  return latestMonthlyUsers
+    ? Math.floor(latestMonthlyUsers / 1000) * 1000
+    : fallback
+}
+
 export type PropertyBreakdown = {
   rows: PercentageRow[]
 }
