@@ -13,9 +13,10 @@ export interface Props {
   description: string
   href: string
   linkText: string
+  target?: "_blank"
 }
 
-const { icon, iconClass, title, description, href, linkText } = Astro.props
+const { icon, iconClass, title, description, href, linkText, target } = Astro.props
 ---
 
 <div
@@ -29,6 +30,8 @@ const { icon, iconClass, title, description, href, linkText } = Astro.props
     <p class="text-gray-600 dark:text-gray-400 mb-3">{description}</p>
     <a
       href={href}
+      target={target}
+      rel={target === "_blank" ? "noopener noreferrer" : undefined}
       class="text-navy-300 dark:text-navy-100 hover:underline font-medium"
       >{linkText}</a
     >
