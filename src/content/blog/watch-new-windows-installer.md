@@ -54,7 +54,7 @@ This setup process is detailed in [Get Started - Windows](/get-started) and expl
 
 **Cross-Platform Compatibility:** DDEV works the same on macOS, Linux, Traditional Windows, and WSL2, see [Getting Started](/get-started). Your whole team can work on their preferred environment instead of fighting about it. It supports development of [so many different web environments](https://docs.ddev.com/en/stable/users/quickstart/), so you're not stuck with using different tools for different CMSs.
 
-**Support the Project:** DDEV is fully open-source and free to use, and run by the nonprofit DDEV Foundation. We ask you to help make us a sustainable project by sponsoring yourself or getting your organization to sponsor the project. [Sponsor us on GitHub](https://github.com/sponsors/ddev).
+**Support the Project:** DDEV is fully open-source and free to use, and run by the nonprofit DDEV Foundation. We ask you to help make us a sustainable project by [sponsoring yourself or getting your organization to sponsor the project](/sponsor).
 
 Questions? Issues? We're here to help:
 

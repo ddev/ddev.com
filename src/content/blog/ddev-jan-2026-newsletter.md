@@ -84,7 +84,7 @@ When we shared the news about Upsun lowering their sponsorship, the community re
 
 ![DDEV Sponsorship Growth Chart](/img/blog/2026/01/DDEV-sponsorship-status-2026-01-19.svg)
 
-If DDEV has helped your team, now is the time to give back. Whether you're an individual developer, an agency, or an organization — your contribution makes a difference. → [Become a sponsor↗](https://github.com/sponsors/ddev)
+If DDEV has helped your team, now is the time to give back. Whether you're an individual developer, an agency, or an organization — your contribution makes a difference. → [Become a sponsor↗](/sponsor)
 
 [Contact us](/contact) to discuss sponsorship options that work for your organization.
 

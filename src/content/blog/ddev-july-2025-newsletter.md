@@ -41,7 +41,7 @@ This month: Downgrading Terminus for old PHP, FrankenPHP, Advisory Group meeting
 
 ## Sponsorship Status
 
-- **Monthly average income** down slightly from $7,809 to $7,759 (65% of $12,000 goal). Every contribution helps sustain our work—thank you! → [Become a sponsor↗](https://github.com/sponsors/ddev)
+- **Monthly average income** down slightly from $7,809 to $7,759 (65% of $12,000 goal). Every contribution helps sustain our work—thank you! → [Become a sponsor↗](/sponsor)
 
 ## Stay in the loop—follow us and join the conversation
 

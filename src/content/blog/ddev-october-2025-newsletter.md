@@ -65,7 +65,7 @@ Randy will be presenting DDEV training at [TYPO3Camp RheinRuhr](https://www.typo
 
 ## Sponsorship Update
 
-As of the v1.24.8 release the daily reminders of DDEV sponsorship status on `ddev start` have been successful, and we've had a number of new sponsors, thank you! Your contributions help us maintain and grow DDEV for the entire community. As of today, the monthly sponsorship commitment is up to 69% of our goal, at $8,231. Thank you! That's up from 66% and $7,958 last month. → [Become a sponsor↗](https://github.com/sponsors/ddev)
+As of the v1.24.8 release the daily reminders of DDEV sponsorship status on `ddev start` have been successful, and we've had a number of new sponsors, thank you! Your contributions help us maintain and grow DDEV for the entire community. As of today, the monthly sponsorship commitment is up to 69% of our goal, at $8,231. Thank you! That's up from 66% and $7,958 last month. → [Become a sponsor↗](/sponsor)
 
 ## Stay in the Loop—Follow Us and Join the Conversation
 

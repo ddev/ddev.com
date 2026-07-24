@@ -89,7 +89,7 @@ This support is more than just hardware. It shows what open source communities c
 
 I don't know when things will get better. But I know I have what I need to keep working, thanks to you. Every contribution makes a real difference in keeping DDEV maintained and supported.
 
-If you want to support DDEV, visit [DDEV's GitHub Sponsors page](https://github.com/sponsors/ddev).
+If you want to support DDEV, visit [DDEV's sponsor page](/sponsor).
 
 I'm grateful for everyone who supports DDEV. Your help lets me keep working, keep contributing, and keep helping this community grow, even in the darkest times.
 

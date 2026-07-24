@@ -69,4 +69,4 @@ Mark, your packaging of a nice banner made things so much easier!
 
 ## Join in
 
-If you use DDEV and find it valuable, consider sponsoring at [github.com/sponsors/ddev](https://github.com/sponsors/ddev). Every bit that you and your organization can contribute helps all of us. Thank you!
+If you use DDEV and find it valuable, consider sponsoring at [ddev.com/sponsor](/sponsor). Every bit that you and your organization can contribute helps all of us. Thank you!

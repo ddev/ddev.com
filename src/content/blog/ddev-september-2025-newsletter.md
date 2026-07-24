@@ -65,7 +65,7 @@ Passcode: 12345
 
 ## Sponsorship Status
 
-- **Monthly average income** up from $7,878 to $7,958 (66% of $12,000 goal). Every contribution helps sustain our work—thank you! → [Become a sponsor↗](https://github.com/sponsors/ddev)
+- **Monthly average income** up from $7,878 to $7,958 (66% of $12,000 goal). Every contribution helps sustain our work—thank you! → [Become a sponsor↗](/sponsor)
 
 ## Stay in the Loop—Follow Us and Join the Conversation
 

@@ -25,7 +25,7 @@ If you know something about Docker, you know that you can throw one or two Docke
 ### **DDEV:**
 
 - [Open-source project](https://github.com/ddev/ddev) with no vendor lock-in.
-- Has already undergone more than 6 years of development, adding requested features and collaborating with community contributors. [Sponsor DDEV on GitHub!](https://github.com/sponsors/ddev)
+- Has already undergone more than 6 years of development, adding requested features and collaborating with community contributors. Consider [sponsoring DDEV](/sponsor) to help keep it going.
 - Explicit support for [many CMS types](https://docs.ddev.com/en/stable/users/quickstart/), including Drupal, Backdrop, TYPO3, Magento, Laravel, WordPress, Shopware and generic PHP, HTML, JavaScript, and Python projects. DDEV will set up basic settings files for you so you’re set up in moments, but you can [turn feature that off](controlling-cms-settings-files-in-ddev-local.md) when you don’t need it.
 - Support for nearly all versions of both MySQL, MariaDB, and PostgreSQL.
 - Native support for macOS (Apple Silicon and Intel), Windows, WSL2, Linux, both AMD64 and ARM64 architectures, great for diverse teams.

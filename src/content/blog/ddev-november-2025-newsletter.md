@@ -80,7 +80,7 @@ The DDEV Foundation now has a formal board. Join us for our annual extended advi
 
 ## Sponsorship Update
 
-As of today, the monthly sponsorship commitment is up to 70% of our goal, at $8,376. Thank you! That's up from 69% and $8,231 last month. → [Become a sponsor↗](https://github.com/sponsors/ddev)
+As of today, the monthly sponsorship commitment is up to 70% of our goal, at $8,376. Thank you! That's up from 69% and $8,231 last month. → [Become a sponsor↗](/sponsor)
 
 ## Stay in the Loop—Follow Us and Join the Conversation
 

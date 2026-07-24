@@ -47,7 +47,7 @@ Trademark ownership is a milestone, but it doesn't pay for development. The DDEV
 
 We're excited that we've made it to 78% of our monthly sponsorship goal. Here's how you can help to get us over the top:
 
-- **[GitHub Sponsors](https://github.com/sponsors/ddev)** — Fast and flexible, any amount, personal or organizational
+- **[GitHub Sponsors](/sponsor)** — Fast and flexible, any amount, personal or organizational
 - **Support contracts** — Priority support while funding the project
 - **Custom invoicing** — We work with your procurement process
 - **One-time contributions** — Always welcome

@@ -102,7 +102,7 @@ With Upsun lowering their sponsorship in January, we'll drop from 70% to about 5
 
 **After January**: ~$6,964/month (58% of goal)
 
-If DDEV has helped your team, now is the time to give back. Whether you're an individual developer, an agency, or an organization — your contribution makes a difference. → [Become a sponsor↗](https://github.com/sponsors/ddev)
+If DDEV has helped your team, now is the time to give back. Whether you're an individual developer, an agency, or an organization — your contribution makes a difference. → [Become a sponsor↗](/sponsor)
 
 [Contact us](/contact) to discuss sponsorship options that work for your organization.
 

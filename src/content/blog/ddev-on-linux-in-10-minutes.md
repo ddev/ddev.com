@@ -83,7 +83,7 @@ Here's what happens in this screencast. You can do it yourself in just a few min
   - [Step-Debugging](https://docs.ddev.com/en/stable/users/debugging-profiling/step-debugging/)
   - [DDEV FAQ](https://docs.ddev.com/en/stable/users/faq/)
 
-- **Support the DDEV Project:** DDEV is fully open-source and free to use, and run by the nonprofit DDEV Foundation. We ask you to help make us a sustainable project by sponsoring yourself or getting your organization to sponsor the project. [Sponsor us on GitHub](https://github.com/sponsors/ddev).
+- **Support the DDEV Project:** DDEV is fully open-source and free to use, and run by the nonprofit DDEV Foundation. We ask you to help make us a sustainable project by [sponsoring yourself or getting your organization to sponsor the project](/sponsor).
 
 Questions? Issues? We're here to help:
 

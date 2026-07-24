@@ -50,7 +50,7 @@ For me, the story here isn't about the vulnerability that didn't actually make i
 
 DDEV is one of those tiny projects that you depend on! You know that we've been working on [building our maintainer team](expanding-ddev-maintainer-team.md) and [training contributors](contributor-training.md). We absolutely need to continue **building DDEV's financial stability** and **train contributors and maintainers**. Please:
 
-- Join us in [financially supporting the project](https://github.com/sponsors/ddev). You or your company can support us directly (we invoice for support, accept funds many ways) or you can support via GitHub Sponsors.
+- Join us in [financially supporting the project](/sponsor). You or your company can support us directly (we invoice for support, accept funds many ways) or you can support via GitHub Sponsors.
 - Join us as we restart the Contributor Training in coming months. We need lots of competent eyes on the project.
 - Take security seriously! Pay attention. Although DDEV may seem to be too small for an attacker to take time with, it probably isn't. Imagine the consequences if someone were able to plant something that affected your project code or your computer in general. It might be worth it to attack DDEV. It's possible to imagine a targeted multilevel attack that used DDEV to compromise a particular site that just one team was working on.
 
@@ -61,4 +61,4 @@ DDEV is one of those tiny projects that you depend on! You know that we've been 
 - [Timeline and links](https://boehs.org/node/everything-i-know-about-the-xz-backdoor)
 - [Arch Linux information](https://archlinux.org/news/the-xz-package-has-been-backdoored/).
 
-Thanks to all of you for working toward realizing our goal of a sustainable project! For more information about how you can support the project, the various ways are explained in [sponsors page](https://github.com/sponsors/ddev). See more about our long-term financial goals at [Expanding the DDEV maintainer team - how we'll fund it](expanding-ddev-maintainer-team.md).
+Thanks to all of you for working toward realizing our goal of a sustainable project! For more information about how you can support the project, the various ways are explained in [sponsors page](/sponsor). See more about our long-term financial goals at [Expanding the DDEV maintainer team - how we'll fund it](expanding-ddev-maintainer-team.md).

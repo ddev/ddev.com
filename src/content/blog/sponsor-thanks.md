@@ -26,7 +26,7 @@ We just want to take a moment to thank all of the amazing sponsors of the DDEV o
 
 ## So many more wonderful sponsors!
 
-Here are some of many sponsors who help out via [GitHub Sponsors](https://github.com/sponsors/ddev).
+Here are some of many sponsors who help out via [sponsorship](/sponsor).
 
 ![GitHub Sponsors](/img/blog/2025/03/ddev-github-sponsors.png)
 
@@ -46,7 +46,7 @@ We recently set up a [full updated JSON feed](/s/sponsorship-data.json) that can
 
 We have almost too many ways that you can sponsor, but we want to make it easy for you and your organization.
 
-- For individuals and some organizations, [GitHub Sponsors](https://github.com/sponsors/ddev) is super easy, takes moments and can be changed any time.
+- For individuals and some organizations, [sponsoring](/sponsor) is super easy, takes moments and can be changed any time.
 - We are happy to invoice your organization and do more of a "support contract" so that you don't have to explain open-source to your finance department. We accept ACH, Wise.com, bank transfer, IBAN, SWIFT, checks, we'll work with your organization to make it work for you. Just send us a note [via the contact page](/contact) or any other way.
 - [PayPal to DDEV](https://www.paypal.com/donate?hosted_button_id=R42QBRNKKSFFL)
 

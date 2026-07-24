@@ -134,7 +134,7 @@ Podman and Docker Rootless were developed together: both center on rootless oper
 
 This work was made possible by [community financial support](sustainability-for-ddev.md). The changes required hundreds of hours of development, code reviews, and testing.
 
-DDEV relies on the individuals and organizations who use it. If you or your organization does, please consider [sponsoring the project](https://github.com/sponsors/ddev) to help keep DDEV free and open source.
+DDEV relies on the individuals and organizations who use it. If you or your organization does, please consider [sponsoring the project](/sponsor) to help keep DDEV free and open source.
 
 ## Conclusion
 

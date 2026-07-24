@@ -26,7 +26,7 @@ DDEV is free and open-source because sponsors like you make it possible. Whether
 
 **Ways to sponsor:**
 
-- **[GitHub Sponsors](https://github.com/sponsors/ddev)** - Quick and easy, starting at any amount, personal or organizational.
+- **[GitHub Sponsors](/sponsor)** - Quick and easy, starting at any amount, personal or organizational.
 - **Support contracts** - Get priority support while funding development
 - **Custom invoicing** - We work with your procurement process
 - **One-time contributions** - Every bit helps!

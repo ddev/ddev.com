@@ -53,7 +53,7 @@ This month: special-networking guides, add-on maintenance tips, community tool h
 
 ## Sponsorship Status
 
-- **Monthly average income** up from $7,639 to $7,659 (64% of $12,000 goal) → [Become a sponsor↗](https://github.com/sponsors/ddev)
+- **Monthly average income** up from $7,639 to $7,659 (64% of $12,000 goal) → [Become a sponsor↗](/sponsor)
 
 ## Stay Connected
 

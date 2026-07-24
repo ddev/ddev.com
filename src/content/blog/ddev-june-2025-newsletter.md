@@ -48,7 +48,7 @@ This month: TYPO3 Community Budget Proposal (**VOTE NOW**), Randy is back from b
 
 ## Sponsorship Status
 
-- **Monthly average income** up from $7,639 to $7,809 (65% of $12,000 goal, up a percent since early May!). Every contribution helps sustain our work—thank you! → [Become a sponsor↗](https://github.com/sponsors/ddev)
+- **Monthly average income** up from $7,639 to $7,809 (65% of $12,000 goal, up a percent since early May!). Every contribution helps sustain our work—thank you! → [Become a sponsor↗](/sponsor)
 
 ## Stay in the loop—follow us and join the conversation
 

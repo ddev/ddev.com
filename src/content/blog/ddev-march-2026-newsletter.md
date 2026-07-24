@@ -97,7 +97,7 @@ Sponsorship is at **77% of goal** — thank you to everyone who has contributed!
 
 **March 2026**: ~$9,294/month (77% of goal) - Great progress, thank you!
 
-If DDEV has helped your team, consider sponsoring. Whether you're an individual developer, an agency, or an organization, your contribution makes a difference. → [Become a sponsor↗](https://github.com/sponsors/ddev)
+If DDEV has helped your team, consider sponsoring. Whether you're an individual developer, an agency, or an organization, your contribution makes a difference. → [Become a sponsor↗](/sponsor)
 
 [Contact us](/contact) to discuss sponsorship options that work for your organization.
 

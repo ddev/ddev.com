@@ -62,7 +62,7 @@ No funding to the DDEV Foundation goes to Randy.
 ### How can Your Agency, Hosting Company, or you as an Individual Help?
 
 - **We can invoice you for support contracts or donations**. We can accept funds in several different ways, and generous agencies in both the US and Europe have already successfully done this. Join those incredible major supporters!
-- **Smaller amounts** from individuals or agencies are easier to handle via [GitHub Sponsors](https://github.com/sponsors/ddev).
+- **Smaller amounts** from individuals or agencies are easier to handle via [sponsorship](/sponsor).
 - **Your contributions in all other ways are so welcome**! Financial is a topic for this blog, but the bottom line is that we’re a community working together by helping each other. Thank you!
 
 **Do you want to talk more? Drop by [Discord](/s/discord) or send [an email](mailto:support%40ddev.com)**
