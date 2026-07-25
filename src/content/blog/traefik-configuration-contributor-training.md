@@ -1,7 +1,8 @@
 ---
 title: "Contributor Training: Traefik Configuration"
 pubDate: 2024-07-08
-# modifiedDate: 2024-07-23
+modifiedDate: 2026-07-25
+modifiedComment: "Recorded that the nginx-proxy router was removed in DDEV v1.24 and that Traefik casual hosting shipped in v1.23.4, both of which were still described as upcoming"
 summary: Traefik Custom Configuration for DDEV
 author: Randy Fay
 featureImage:
@@ -22,7 +23,7 @@ Here's our June 19, 2024 [Contributor Training](/blog/category/training) on how 
 
 ## What is Traefik and the `ddev-router`?
 
-DDEV's `ddev-router` is based on the very popular open-source [Traefik Proxy](https://traefik.io/traefik/). Only a single router runs to route to all of your DDEV projects that are running at any given time. (The older `nginx-proxy` version of `ddev-router` has been deprecated and will be removed in DDEV v1.24.)
+DDEV's `ddev-router` is based on the very popular open-source [Traefik Proxy](https://traefik.io/traefik/). Only a single router runs to route to all of your DDEV projects that are running at any given time. (The older `nginx-proxy` version of `ddev-router` was deprecated and then removed in DDEV v1.24, so Traefik is now the only router.)
 
 The router's basic jobs are
 
@@ -131,7 +132,7 @@ DDEV can be configured for ["casual hosting"](https://docs.ddev.com/en/stable/us
 
 "Casual hosting" even encompasses using [Let's Encrypt](https://letsencrypt.org/) to get free "real" TLS/SSL certificates.
 
-In DDEV v1.23.4+ Casual hosting will be possible using Traefik, but until that release it requires the deprecated nginx-proxy router. The new capabilities use Traefik features, and were just [pulled into DDEV HEAD recently](https://github.com/ddev/ddev/pull/6317).
+Casual hosting works with the Traefik router as of DDEV v1.23.4, which [updated DDEV to Traefik v3 and made Let's Encrypt work with it](https://github.com/ddev/ddev/pull/6317). Earlier versions needed the `nginx-proxy` router for this, which has since been removed.
 
 ## Contributions welcome!
 

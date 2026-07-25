@@ -37,7 +37,7 @@ export DOCKER_DEFAULT_PLATFORM=linux/amd64
 ddev start
 ```
 
-In my case I had trouble with the traefik image and had to explicitly pull the `linux/amd64` version of it listed by `ddev version`. `docker pull --platform linux/amd64 ddev/ddev-traefik-router:v1.23.4` You would pull the image shown for `router` in `ddev version`.
+In my case I had trouble with the traefik image and had to explicitly pull the `linux/amd64` version of it listed by `ddev version`. `docker pull --platform linux/amd64 ddev/ddev-traefik-router:<version>`, using the tag shown for `router` in `ddev version`.
 
 This was the easiest to use and most performant of the options.
 

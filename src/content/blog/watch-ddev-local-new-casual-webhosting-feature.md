@@ -27,7 +27,7 @@ Ever since the beginning of DDEV, folks have found its simplicity and per-projec
 
 We call it “casual” and “experimental” for a reason. It’s unknown how many sites or how much traffic can be handled. This is not managed hosting – if you set it up, you manage it. This is not a scalable solution (although you could always increase the size of the VM you were running it on, or move projects to a new VM). And from a security standpoint… there is no team of security experts vetting this. Some modest efforts have been undertaken to “harden” the images used here, but they may not be adequate.
 
-I personally have a few trivial sites running on this casual webhosting setup on a single $20/month Linode server, and have had no problems in the four years years I've been running them. (See [randyfay.com](http://randyfay.com) for the list of sites).
+I personally have a few trivial sites running on this casual webhosting setup on a single $20/month Linode server, and have had no problems in the four years I've been running them. (See [randyfay.com](http://randyfay.com) for the list of sites).
 
 If you want to show a site to your colleagues or customers, you might get by fine with the `ddev share` command, which requires [no setup at all](sharing-a-ddev-local-project-with-other-collaborators.md).
 

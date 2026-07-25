@@ -2,7 +2,7 @@
 title: "Setting up a Windows Machine for DDEV Development"
 pubDate: 2024-11-04
 modifiedDate: 2026-06-08
-summary`: Setting up a new Windows machine for DDEV maintenance or development is pretty easy. Here are my opinionated steps.
+summary: Setting up a new Windows machine for DDEV maintenance or development is pretty easy. Here are my opinionated steps.
 author: Randy Fay
 featureImage:
   src: /img/blog/2024/11/windows-install-blog-logos.png
@@ -35,7 +35,7 @@ Two recent Windows machines I set up were the new ARM64/Qualcomm/CoPilot variety
    - `sudo apt update && sudo apt install -y apt-transport-https autojump bats build-essential ca-certificates ccache clang curl direnv dirmngr etckeeper expect git gnupg htop inetutils-telnet jq libcurl4-gnutls-dev libnss3-tools lsb-release mariadb-client nagios-plugins net-tools nsis pipx postgresql-client unzip vim xdg-utils zip && sudo apt upgrade -y`
    - `sudo snap install --classic go`
    - `sudo snap install --classic node`
-   - `sudo snap install ngrok and ngrok config add-authtoken <token>`
+   - `sudo snap install ngrok` and then `ngrok config add-authtoken <token>`
 9. In Windows Explorer, add my WSL2 home directory to favorites by copying it into the favorites area.
 10. Install DDEV using the [DDEV installation instructions](https://docs.ddev.com/en/stable/users/install/). The new GUI Windows installer makes it easy to do any kind of install, but I always recommend WSL2 with Docker-CE.
 11. Install and test the [1Password SSH agent](https://developer.1password.com/docs/ssh/agent/).
