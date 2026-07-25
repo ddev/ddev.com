@@ -1,7 +1,8 @@
 ---
 title: "Securing DDEV’s Future: Our Commitment to Financial & Community Sustainability"
 pubDate: 2025-06-10
-#modifiedDate: 2025-06-09
+modifiedDate: 2026-07-25
+modifiedComment: "Recorded that the governance goal was met with the December 2025 Board of Directors, and replaced the June 2025 financial snapshot with pointers to the live figures"
 summary: How we’re building governance, financial, and community structures to ensure DDEV thrives beyond any single maintainer.
 author: Randy Fay
 featureImage:
@@ -40,7 +41,7 @@ Vim had serious challenges in all these areas, as there was only one "owner" of 
 
 We work hard to identify areas that are dependent on a single maintainer, and to resolve those. But it's a perpetual process!
 
-- **Governance**: From the beginning of DDEV, Randy has been the leader, acting as what's commonly called a "Benevolent Dictator for Life", or "BDFL". While that's a common model in open source, it's not a great model for overall sustainability. The BDFL model means that leadership can be concentrated in one person, preventing the development of community decision-making capabilities. One of our key goals for 2025 is to at least _start_ moving past that model.
+- **Governance**: From the beginning of DDEV, Randy has been the leader, acting as what's commonly called a "Benevolent Dictator for Life", or "BDFL". While that's a common model in open source, it's not a great model for overall sustainability. The BDFL model means that leadership can be concentrated in one person, preventing the development of community decision-making capabilities. One of our key goals for 2025 was to at least _start_ moving past that model — and we did, [establishing a Board of Directors](board-of-directors-established.md) in December 2025.
 - **Regulatory**: Randy has dealt with Colorado and US regulatory requirements, including getting the 501(c)(3) tax-exempt designation, changing the name of the organization to "DDEV Foundation", filing annual reports.
 - **Finance and Reporting**: Randy does the bimonthly financial reporting, tracks invoices, corresponds with donors, sends thank-you notes to donors, pays maintainers.
 - **Promotion/Marketing**: Randy seems to keep these roles year-in and year-out despite attempts to spread out the work
@@ -50,13 +51,13 @@ We work hard to identify areas that are dependent on a single maintainer, and to
 
 - **Improved Marketing/Monetization**: As discussed above, open-source projects generally have a hard time asking for money because people take them for granted. We do hope to move toward adding premium features and premium support options that will encourage organizations and individuals to step up to the plate and do their fair share of support.
 - **Financial**: More than one person should know how to do (and have power to do) all the financial things, like paying contributors and other bills.
-- **Governance**: Figure out how to move from BDFL to something that lasts beyond one person. A [proposal](https://github.com/orgs/ddev/discussions/7293) is in progress.
+- **Governance**: Move from BDFL to something that lasts beyond one person. The [proposal](https://github.com/orgs/ddev/discussions/7293) that was in progress when this was written became the [DDEV Foundation Board of Directors](board-of-directors-established.md) in December 2025. The next part is the harder part: the Board growing into a real oversight and priority-setting role.
 - **Write up regulatory and financial tasks**: We have a good set of documents and a private repository that explain maintainer tasks. This all needs to be done for governance, regulatory, financial, and marketing tasks.
 - **You**: DDEV is a collaborative open-source project. Are you interested in a role?
 
-## Current Financial Status
+## Financial Status
 
-As of June, 2025, DDEV's monthly support is at the $7800 USD level. Our goal is $12,000. You can see this at any time on the top of [ddev.com](/), and a full accounting updated daily is in the [sponsorship-data](https://github.com/ddev/sponsorship-data/) repository. Our current bank balance is about $19,000 USD.
+When this was written in June 2025, DDEV's monthly support was at the $7,800 USD level against a goal of $12,000. Rather than repeat a number that goes stale, we'll point you at the live figures: the current recurring total is on the [sponsor page](/sponsor) and at the top of [ddev.com](/), and a full accounting updated daily is in the [sponsorship-data](https://github.com/ddev/sponsorship-data/) repository. Financial reports are also presented at each [Advisory Group](https://github.com/orgs/ddev/discussions/categories/ddev-advisory-group) meeting.
 
 ## Share Your Thoughts!
 
