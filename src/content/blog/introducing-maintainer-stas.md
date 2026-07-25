@@ -1,6 +1,8 @@
 ---
 title: "Introducing New DDEV Maintainer Stas Zhuk"
 pubDate: 2023-10-24
+modifiedDate: 2026-07-25
+modifiedComment: "Added a note that Stas has worked on DDEV full-time since 2024"
 summary: Introducing New Maintainer Stas Zhuk
 author: Randy Fay
 featureImage:
@@ -10,9 +12,13 @@ categories:
   - Community
 ---
 
+**Update (2026-07-25)**: Stas has worked on DDEV full-time since 2024. See [Let's Fully Fund Maintainer Stas](lets-fund-stas-maintainer.md) for where funding for that role stands now. The introduction below is from October 2023.
+
+---
+
 I'm so happy to introduce new DDEV maintainer [Stas Zhuk](https://github.com/stasadev). He now has all privileges on the project and is beginning the onboarding to know how to use all those privileges, including maintaining tests, test runners, code, contributions, and everything else. He joins [Simon Gilli](https://github.com/gilbertsoft) and me as maintainer.
 
-It's your support that has made it possible for the DDEV Foundation to pay Stas on a part-time basis, so THANK YOU for supporting DDEV! This is a part of our path to a [long-term sustainable project](/blog/expanding-ddev-maintainer-team).
+It's your support that has made it possible for the DDEV Foundation to pay Stas on a part-time basis, so THANK YOU for supporting DDEV! This is a part of our path to a [long-term sustainable project](expanding-ddev-maintainer-team.md).
 
 Stas's arrival is very timely, as my wife Nancy Lewis and I will be traveling in Patagonia for 2 months in December and January, and I'll have very limited internet access. I'm so happy to have Stas on board to help with project support and maintenance!
 
