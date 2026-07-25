@@ -10,6 +10,7 @@ import {
   AMPLITUDE_CHARTS,
   AMPLITUDE_SHARE_LINKS,
   getAmplitudeChart,
+  getCommandUsage,
   getDatabaseTypes,
   getMonthlyUserHistory,
   getPhpVersions,
@@ -44,7 +45,7 @@ const linkClass = "underline dark:text-white"
 // for properties/filters no saved chart covers correctly (see each
 // function's own comment in lib/amplitude.ts for why).
 const environment = await getAmplitudeChart(AMPLITUDE_CHARTS.environment)
-const commands = await getAmplitudeChart(AMPLITUDE_CHARTS.commands)
+const commandUsage = await getCommandUsage()
 const cmsProjectTypes = await getAmplitudeChart(
   AMPLITUDE_CHARTS.cmsProjectTypes
 )
@@ -181,30 +182,47 @@ const sponsorshipGoal = sponsorshipData?.current_goal
       }
 
       {
-        commands && (
+        commandUsage && (
           <section class="my-12">
             <SectionHeading title="DDEV Commands" />
             <p class="my-4 dark:text-slate-300">
-              The most popular <code>ddev</code> subcommands, excluding
-              <code>drush</code>, which dwarfs everything else and is likely
-              run in automation.
+              Total invocations of built-in <code>ddev</code> commands over the
+              past week. Counts for commands like <code>exec</code> and{" "}
+              <code>drush</code> are inflated by scripting and automated
+              workflows. Expand below for the full list of documented commands
+              with usage.
             </p>
             <UsageStatBars
-              rows={toPercentageRows(commands, "segmentation")}
-              limit={18}
+              rows={commandUsage.rows}
+              limit={20}
               valueFormat="count"
             />
-            {AMPLITUDE_SHARE_LINKS.commands && (
-              <p class="mt-2 text-sm">
-                <a
-                  href={AMPLITUDE_SHARE_LINKS.commands}
-                  target="_blank"
-                  class={linkClass}
-                >
-                  Live values for DDEV commands
-                </a>
-              </p>
-            )}
+            <details class="mt-4">
+              <summary class="cursor-pointer text-sm font-mono dark:text-slate-300">
+                Show all {commandUsage.rows.length} documented commands with
+                usage
+              </summary>
+              <div class="overflow-x-auto mt-3">
+                <table class="w-full font-mono text-sm">
+                  <thead>
+                    <tr class="border-b dark:border-slate-600 text-left dark:text-white">
+                      <th class="py-2 pr-4">Command</th>
+                      <th class="py-2 text-right">Invocations</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {commandUsage.rows.map((row) => (
+                      <tr class="border-b border-gray-100 dark:border-slate-700 dark:text-slate-200">
+                        <td class="py-1.5 pr-4">{row.label}</td>
+                        <td class="py-1.5 text-right">
+                          {row.count.toLocaleString("en-US")}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </details>
           </section>
         )
       }

@@ -71,31 +71,6 @@ const CHART_SPECS: Record<string, ChartSpec> = {
       "wsl2-virtioproxy",
     ],
   },
-  commands: {
-    title: "DDEV Commands",
-    base: 900000,
-    decay: 0.72,
-    labels: [
-      "exec",
-      "mysql",
-      "describe",
-      "wp",
-      "custom-command",
-      "status",
-      "composer",
-      "php",
-      "start",
-      "artisan",
-      "xdebug",
-      "typo3",
-      "npm",
-      "restart",
-      "stop",
-      "ssh",
-      "craft",
-      "magento",
-    ],
-  },
   cmsProjectTypes: {
     title: "CMS Project Types",
     base: 5000,
@@ -224,6 +199,34 @@ const CHART_SPECS: Record<string, ChartSpec> = {
 
 type PropertySpec = { labels: string[]; base: number; decay: number }
 
+// Sample fallback for getCommandUsage(): documented ddev commands in roughly
+// their real popularity order (Totals). Not a saved chart, so it lives outside
+// CHART_SPECS.
+const COMMAND_USAGE_SPEC: PropertySpec = {
+  base: 900000,
+  decay: 0.72,
+  labels: [
+    "exec",
+    "drush",
+    "mysql",
+    "describe",
+    "wp",
+    "composer",
+    "php",
+    "start",
+    "artisan",
+    "xdebug",
+    "typo3",
+    "npm",
+    "restart",
+    "stop",
+    "ssh",
+    "craft",
+    "magento",
+    "import-db",
+  ],
+}
+
 // Keyed by the property names passed to getProjectPropertyBreakdown().
 const PROPERTY_SPECS: Record<string, PropertySpec> = {
   "PHP Version": {
@@ -265,6 +268,12 @@ export function getSampleChart(key: string): AmplitudeChart | null {
       ([label, count]) => ({ label, values: [count] })
     ),
   }
+}
+
+// Sample breakdown of command usage (see getCommandUsage).
+export function getSampleCommandUsage(): PropertyBreakdown {
+  const spec = COMMAND_USAGE_SPEC
+  return toBreakdown(decayingCounts(spec.labels, spec.base, spec.decay))
 }
 
 // Sample breakdown for a "Project" property name, or null if unknown.
