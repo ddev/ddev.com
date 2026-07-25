@@ -47,7 +47,7 @@ Building DDEV for ARM64 was a monumental task, and a huge demonstration of the b
 - Reworking all the DDEV Docker images (ddev-webserver, ddev-dbserver, ddev-ssh-agent, ddev-router) so they could be built for ARM64.
 - Providing ARM64 builds of certain key upstream tools which were incorporated into Docker images or required alongside DDEV, like mkcert, mailhog, and docker-gen.
 - Reworking the image build process to use Docker’s new [multi-platform](https://docs.docker.com/build/building/multi-platform/) support, which allows a single image on [hub.docker.com](http://hub.docker.com) to have both AMD64 and ARM64 versions, and to pull the correct one as needed.
-- Building the DDEV Go binary for AMD64.
+- Building the DDEV Go binary for ARM64.
 
 That was all cutting-edge stuff at the time!
 

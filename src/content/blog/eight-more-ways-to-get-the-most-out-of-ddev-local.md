@@ -76,7 +76,7 @@ This will help you keep Docker running smoothly.
 
 ### What’s your DDEV project up to? Check the logs.
 
-DDEV’s logs feature is useful to show you what your project is up to. It could be useful when you’re [debugging issues with Docker and DDEV](debugging-docker-on-windows-mac-and-linux.md), too. Check out the docs on [log access](https://docs.ddev.com/en/stable/users/cli-usage/#log-access). Run `ddev logs` command to easily view logs from the web container. To follow the log in real time, use this command from within the project root folder:
+DDEV’s logs feature is useful to show you what your project is up to. It could be useful when you’re [debugging issues with Docker and DDEV](https://docs.ddev.com/en/stable/users/usage/troubleshooting/), too. Check out the docs on [log access](https://docs.ddev.com/en/stable/users/cli-usage/#log-access). Run `ddev logs` command to easily view logs from the web container. To follow the log in real time, use this command from within the project root folder:
 
 `ddev logs -f`
 

@@ -30,7 +30,7 @@ For documentation covering Laravel, WordPress, Drupal, Craft CMS, and other fram
 
 ### A plain PHP example
 
-Let's try it out with a simple example project. We will use Vite v4 for this.
+Let's try it out with a simple example project. We will use Vite v6 for this.
 
 First we create a new DDEV project called `test-vite`:
 
