@@ -6,6 +6,7 @@ import dotenv from "dotenv"
 import { getCache, putCache } from "./api"
 import {
   getSampleChart,
+  getSampleCommandUsage,
   getSampleMonthlyUserHistory,
   getSampleProjectProperty,
 } from "./amplitude-sample-data"
@@ -15,7 +16,6 @@ dotenv.config()
 // Saved chart IDs behind each usage-stats section (see https://app.amplitude.com/analytics/ddev/home)
 export const AMPLITUDE_CHARTS = {
   environment: "vkdc4w6s",
-  commands: "bzk6dz2u",
   cmsProjectTypes: "jz0wqx1w",
   macosDockerProviders: "2orxojlh",
   wsl2DockerProviders: "5o615zus",
@@ -35,8 +35,6 @@ export const AMPLITUDE_SHARE_LINKS: Partial<
 > = {
   environment:
     "https://app.amplitude.com/analytics/share/1238aca77448459aac7473f2fedbe109",
-  commands:
-    "https://app.amplitude.com/analytics/share/f4e48d8678134561ae034f9a020faab4",
   cmsProjectTypes:
     "https://app.amplitude.com/analytics/share/0619ab47f9cd433cb14bdea4b4aab3e2",
   macosDockerProviders:
@@ -510,11 +508,164 @@ async function getProjectPropertyBreakdown(
 
   const breakdown: PropertyBreakdown = {
     rows: counts
-      .map((row) => ({
+      .map((row: { label: string; count: number }) => ({
         ...row,
         percent: grandTotal ? (row.count / grandTotal) * 100 : 0,
       }))
-      .sort((a, b) => b.count - a.count),
+      .sort((a: PercentageRow, b: PercentageRow) => b.count - a.count),
+  }
+
+  putCache(cacheFilename, JSON.stringify(breakdown))
+
+  return breakdown
+}
+
+// Built-in ddev commands documented at
+// https://docs.ddev.com/en/stable/users/usage/commands/. The command-usage
+// breakdown filters Amplitude's raw "Command Name" values to this set so it
+// shows only real ddev subcommands. Everything else Amplitude records under
+// that property is deliberately dropped: the "custom-command" aggregate and
+// project-specific custom command names, second-level sub-args tracked as
+// their own name (e.g. "pantheon"/"acquia" from `ddev pull pantheon`), and
+// undocumented/legacy names. Keep sorted for easy scanning.
+export const DDEV_COMMANDS: readonly string[] = [
+  "add-on",
+  "aliases",
+  "artisan",
+  "asterios",
+  "auth",
+  "blackfire",
+  "cake",
+  "clean",
+  "composer",
+  "config",
+  "console",
+  "craft",
+  "dbeaver",
+  "delete",
+  "describe",
+  "dotenv",
+  "dr",
+  "drush",
+  "exec",
+  "export-db",
+  "heidisql",
+  "help",
+  "hostname",
+  "import-db",
+  "import-files",
+  "launch",
+  "list",
+  "logs",
+  "magento",
+  "mailpit",
+  "mariadb",
+  "mutagen",
+  "mysql",
+  "npm",
+  "npx",
+  "php",
+  "poweroff",
+  "psql",
+  "pull",
+  "push",
+  "querious",
+  "restart",
+  "sake",
+  "self-upgrade",
+  "sequelace",
+  "share",
+  "snapshot",
+  "spark",
+  "ssh",
+  "start",
+  "stop",
+  "tableplus",
+  "tui",
+  "typo3",
+  "utility",
+  "version",
+  "wp",
+  "xdebug",
+  "xhgui",
+  "xhprof",
+  "yarn",
+]
+
+/**
+ * Gets total invocations per ddev command over the last 7 days, via an ad hoc
+ * Events Segmentation query on the "Command" event grouped by "Command Name",
+ * then filtered to DDEV_COMMANDS. Done in code (rather than an Amplitude saved
+ * chart's allow-list) so the filter is version-controlled and reviewable, and
+ * stays a single source of truth. Percentages are relative to the displayed
+ * (documented) commands only.
+ */
+export async function getCommandUsage(): Promise<PropertyBreakdown | null> {
+  const cacheFilename = "amplitude-command-usage.json"
+  const cachedData = getCache(cacheFilename)
+
+  if (cachedData) {
+    return cachedData
+  }
+
+  if (!amplitudeCredentialsSet) {
+    return useSampleData ? getSampleCommandUsage() : null
+  }
+
+  const end = new Date()
+  const start = new Date(end.getTime() - 7 * 24 * 60 * 60 * 1000)
+  const toYyyymmdd = (date: Date) =>
+    date.toISOString().slice(0, 10).replace(/-/g, "")
+
+  const params = new URLSearchParams({
+    e: JSON.stringify({
+      event_type: "Command",
+      group_by: [{ type: "event", value: "Command Name" }],
+    }),
+    start: toYyyymmdd(start),
+    end: toYyyymmdd(end),
+    i: "1",
+    m: "totals",
+    limit: "1000",
+  })
+
+  const response = await fetch(
+    `https://amplitude.com/api/2/events/segmentation?${params.toString()}`,
+    {
+      headers: { Authorization: authHeader() },
+    }
+  )
+
+  if (!response.ok) {
+    throw new Error(
+      `Amplitude segmentation request failed: HTTP ${response.status}`
+    )
+  }
+
+  const { data } = await response.json()
+  const allowed = new Set(DDEV_COMMANDS)
+  // Inline group_by returns seriesLabels as [groupIndex, label] pairs.
+  const counts = data.seriesLabels
+    .map((entry: string | [number, string], index: number) => ({
+      label: Array.isArray(entry) ? entry[1] : entry,
+      count: data.seriesCollapsed[index]?.[0]?.value ?? 0,
+    }))
+    .filter(
+      (row: { label: string; count: number }) =>
+        allowed.has(row.label) && row.count > 0
+    )
+  const grandTotal = counts.reduce(
+    (sum: number, row: { count: number }) => sum + row.count,
+    0
+  )
+
+  const breakdown: PropertyBreakdown = {
+    rows: counts
+      .map((row: { label: string; count: number }) => ({
+        ...row,
+        percent: grandTotal ? (row.count / grandTotal) * 100 : 0,
+      }))
+      .sort((a: PercentageRow, b: PercentageRow) => b.count - a.count),
   }
 
   putCache(cacheFilename, JSON.stringify(breakdown))
