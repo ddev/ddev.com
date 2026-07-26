@@ -17,7 +17,7 @@ categories:
 
 Docker providers for macOS have been getting better and faster (mostly) over time, and [DDEV has recently added OrbStack and Rancher Desktop to its officially supported providers](docker-providers.md). It's time to take a look and see what is happening with DDEV and Docker provider performance.
 
-This test used an update of the same technique used in [December 2022](ddev-docker-desktop-and-colima-benchmarking-updated-dec-2022.md).
+This test used an update of the same technique used in December 2022.
 
 ## Test Methodology
 
