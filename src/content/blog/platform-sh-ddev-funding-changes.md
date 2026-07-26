@@ -1,7 +1,8 @@
 ---
 title: "Changes in Platform.sh Funding of DDEV"
 pubDate: 2025-01-06
-#modifiedDate: 2024-09-06
+modifiedDate: 2026-07-25
+modifiedComment: "Platform.sh is now known as Upsun, and the trademark/domain transfer described below as upcoming was [completed in May 2026](upsun-trademark-transfer-complete.md). Sponsorship levels have changed more than once since this post; see [/sponsor](/sponsor) for the current status."
 summary: Changes in Platform.sh Funding of DDEV
 author: Randy Fay
 featureImage:
