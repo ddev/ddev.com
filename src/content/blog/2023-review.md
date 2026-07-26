@@ -54,7 +54,7 @@ categories:
   - Mike Anello interviewed Randy for [DrupalEasy Podcast S15E1 - Randy Fay - DDEV project governance and health](https://www.drupaleasy.com/podcast/2023/06/drupaleasy-podcast-s15e1-randy-fay-ddev-project-governance-and-health).
 
 - Contributors and Maintainers:
-  - **Contributor and Maintainer Training**: A key focus of the year was to enable and train people to contribute to the project. We had many [Contributor Live Training](contributor-training.md) events, almost all recorded. In the process, we updated many docs, and many people contributed additional documentation.
+  - **Contributor and Maintainer Training**: A key focus of the year was to enable and train people to contribute to the project. We had many [Contributor Live Training](/blog/category/training) events, almost all recorded. In the process, we updated many docs, and many people contributed additional documentation.
   - **[Stas Zhuk](introducing-maintainer-stas.md)** became a fully-privileged maintainer (part-time, paid).
   - **Matt Stein** made incredible advances for ddev.com and for the docs while he had availability to do so, but has stepped back (mostly) into the background now. He remains a fully-privileged maintainer.
   - **Simon Gilli** stepped away from the project, and we have lost contact with him. It is normal for contributors and maintainers to ebb and flow, but we're very sorry to have lost touch with Simon. However, we recognize that we need to keep encouraging new contributors to balance the natural ebb and flow.

@@ -28,7 +28,7 @@ After watching this tutorial, you’ll be able to run websites on your computer 
 
 **This screencast references the regular [DDEV documentation](https://docs.ddev.com/):**
 
-- [DDEV Installation](https://docs.ddev.com/en/stable/users/install/ddev/)
+- [DDEV Installation](https://docs.ddev.com/en/stable/users/install/ddev-installation/)
 - [Using the CLI](https://docs.ddev.com/en/stable/users/usage/cli/)
 - [Drupal 11 Quickstart](https://docs.ddev.com/en/stable/users/quickstart/#drupal)
 - [Step Debugging with Xdebug](https://docs.ddev.com/en/stable/users/debugging-profiling/step-debugging/)

@@ -25,4 +25,4 @@ One of our upcoming goals is to try to get all the macOS and Windows test runner
 
 ![Test Runners in Randy's House](/img/blog/2024/07/test-runners-randys-house.jpg)
 
-Try out DDEV for yourself, and consider contributing to it as an open source project! We have a [contribution guide for this project](https://github.com/ddev/ddev/blob/main/CONTRIBUTING.md) as well as a [Community Guide and Code of Conduct](https://github.com/ddev/community) for all of our projects.
+Try out DDEV for yourself, and consider contributing to it as an open source project! We have a [contribution guide for this project](https://github.com/ddev/ddev/blob/main/CONTRIBUTING.md) as well as a [Community Guide and Code of Conduct](https://github.com/ddev/.github) for all of our projects.

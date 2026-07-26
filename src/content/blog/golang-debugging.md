@@ -14,7 +14,7 @@ categories:
   - Guides
 ---
 
-It's not hard to work with DDEV's Go code, but you definitely need a development environment and the know-how to do step-debugging. Here's our [Contributor Training](contributor-training.md) showing some of the nuances with DDEV, followed by a short summary of the details.
+It's not hard to work with DDEV's Go code, but you definitely need a development environment and the know-how to do step-debugging. Here's our [Contributor Training](/blog/category/training) showing some of the nuances with DDEV, followed by a short summary of the details.
 
 <div class="video-container">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MZkgTjWRJLM?si=jO_BWehQx_-EDiEl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -83,4 +83,4 @@ Running tests is almost exactly the same as in GoLand. Right-click the arrow nex
 
 When you try this out in your own environment, you'll certainly have suggestions to improve it. Please do a PR to this blog adding your techniques. Info and a training session on how to do a PR to anything in ddev.com is at [DDEV Website For Contributors](ddev-website-for-contributors.md).
 
-And join us most Wednesdays for [DDEV Live Contributor Training](contributor-training.md).
+And join us most Wednesdays for [DDEV Live Contributor Training](/blog/category/training).

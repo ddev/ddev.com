@@ -18,7 +18,7 @@ categories:
 
 - **Board of Directors Established**: In December 2025, we formally established a Board of Directors for the DDEV Foundation, enhancing governance and setting the stage for long-term sustainability. We're super proud of this as it's something we've been working toward for years. [Read all about it](board-of-directors-established.md).
 - **Advisory Group Continues**: Our Advisory Group meetings continued throughout the year, providing valuable input and oversight. It will continue just about the same even though we now have a formal Board.
-- **"Almost Everybody Loves DDEV"**: The [Ironstar Developer Survey 2025](https://www.ironstar.io/devsurvey25/#almost-everybody-loves-ddev) confirmed what we suspected - DDEV has strong community support and satisfaction.
+- **"Almost Everybody Loves DDEV"**: The [Ironstar Developer Survey 2025](https://web.archive.org/web/20260212040038/https://www.ironstar.io/devsurvey25/) confirmed what we suspected - DDEV has strong community support and satisfaction.
 
 ## Community Engagement
 

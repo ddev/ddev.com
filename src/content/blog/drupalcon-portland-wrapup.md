@@ -17,10 +17,10 @@ We go to DrupalCon because it's a great way to stay in touch with one of our val
 
 **Drupal Starshot**: The founder of Drupal, Dries Buytaert, did his regular "Driesnote" and launched a new initiative called "[Starshot](https://www.drupal.org/starshot)" to build a more usable out-of-the-box experience with Drupal. This initiative will proceed in parallel with normal Drupal core development and may have an impact on DDEV's Drupal support, as Drupal 11 has also forced us to be ready for new requirements.
 
-**60% DDEV Drupal Usage**: The annual [Drupal Developer Survey](https://www.ironstar.io/devsurvey24/) was released in a Birds-of-a-feature (BoF) session. 60% of survey respondents reported using DDEV, compared to 42% in 2023. Many of you know that DDEV was chosen as Drupal's recommended local development solution in the last year.
+**60% DDEV Drupal Usage**: The annual [Drupal Developer Survey](https://web.archive.org/web/20251122215514/https://www.ironstar.io/devsurvey24/) was released in a Birds-of-a-feature (BoF) session. 60% of survey respondents reported using DDEV, compared to 42% in 2023. Many of you know that DDEV was chosen as Drupal's recommended local development solution in the last year.
 
 ![Drupal Developer DDEV Usage 2024](/img/blog/2024/05/local-environment-tools.png "Drupal Developer DDEV Usage 2024")
-_Image credit: [Ironstar.io 2024 Developer Survey](https://www.ironstar.io/devsurvey24/)_
+_Image credit: [Ironstar.io 2024 Developer Survey](https://web.archive.org/web/20251122215514/https://www.ironstar.io/devsurvey24/)_
 
 **BoFs on DDEV**: "Birds-of-a-Feather" sessions, or BoFs, are small, informal sessions that do not require going through the session submission process.
 

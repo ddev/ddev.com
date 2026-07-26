@@ -158,7 +158,7 @@ ddev exec COMPOSER_ALLOW_XDEBUG=1 composer install
 
 ## Advanced Features
 
-**xdebugctl**: DDEV includes the [`xdebugctl` utility](https://github.com/xdebug/xdebugctl) for dynamically querying and modifying Xdebug settings, switching modes (debug, profile, trace), and more. Run `ddev exec xdebugctl --help`. See the [xdebugctl documentation](https://xdebug.org/docs/xdebugctl).
+**xdebugctl**: DDEV includes the `xdebugctl` utility for dynamically querying and modifying Xdebug settings, switching modes (debug, profile, trace), and more. Run `ddev exec xdebugctl --help`. See the [xdebugctl documentation](https://xdebug.org/docs/xdebugctl).
 
 **Xdebug map feature**: Recent Xdebug versions can remap file paths during debugging, useful when container paths don't match local paths in complex ways. This complements IDE path mappings.
 

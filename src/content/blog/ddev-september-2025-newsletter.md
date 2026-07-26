@@ -24,7 +24,7 @@ Tell us what you need for 2025–2026. [Contact us↗](/contact).
 
 ## Community Tutorials
 
-- **2025 Drupal Developer Survey**: "Almost everybody loves DDEV" [Read more↗](https://www.ironstar.io/devsurvey25/)
+- **2025 Drupal Developer Survey**: "Almost everybody loves DDEV" [Read more↗](https://web.archive.org/web/20260212040038/https://www.ironstar.io/devsurvey25/)
 - **Mike Anello: Reclaim Docker disk space when using DDEV** [Read more↗](https://www.drupaleasy.com/quicktips/reclaim-docker-disk-space-when-using-ddev)
 
 ## DDEV Training Has Started Up Again!

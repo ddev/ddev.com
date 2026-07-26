@@ -464,7 +464,7 @@ Before deploying to production, verify:
    - Optimize images
    - Clear caches
 
-For more information, see the [README](https://github.com/ddev/ddev.com/README) or ask in [DDEV Discord](/s/discord).
+For more information, see the [README](https://github.com/ddev/ddev.com/blob/main/README.md) or ask in [DDEV Discord](/s/discord).
 :::
 
 ## Conclusion

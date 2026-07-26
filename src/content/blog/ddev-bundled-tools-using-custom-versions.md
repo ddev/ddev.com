@@ -44,7 +44,7 @@ RUN curl -L --fail -o /usr/local/bin/terminus https://github.com/pantheon-system
 
 `terminus` is just an example here, it could be any command you wish,
 [either because you are running an older PHP version](https://github.com/pantheon-systems/terminus/releases/tag/4.0.0)
-or the bundled version [has a bug that ruins things for you](https://github.com/platformsh/cli/discussions/166).
+or the bundled version has a bug that ruins things for you.
 
 ## Installing custom tools
 
