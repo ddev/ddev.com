@@ -1,7 +1,8 @@
 ---
 title: "DDEV's Database Support Gets MySQL 8.4 and Better Import Speeds"
 pubDate: 2025-01-02
-modifiedDate: 2025-02-18
+modifiedDate: 2026-07-25
+modifiedComment: "The switch to bitnami/mysql described below didn't stick: after Bitnami changed the terms of its Docker Hub images in 2025 ([#7470](https://github.com/ddev/ddev/issues/7470)), DDEV moved MySQL 8+ images to Docker Hardened Image bases instead."
 summary: "DDEV gets MySQL 8.4 and many related upgrades and performance improvements"
 author: Randy Fay
 featureImage:

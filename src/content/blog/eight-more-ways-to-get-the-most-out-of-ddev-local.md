@@ -1,7 +1,8 @@
 ---
 title: "Eight (more) ways to get the most out of DDEV"
 pubDate: 2018-12-06
-modifiedDate: 2024-07-06
+modifiedDate: 2026-07-25
+modifiedComment: "Updated the PHP version example and supported range, removed the reference to the now-defunct DDEV-UI, and updated the telemetry section from 'coming soon' to reflect that it has shipped"
 summary: A look at some useful and often-overlooked DDEV features.
 author: Randy Fay
 featureImage:
@@ -94,11 +95,11 @@ If you want to check to be sure, you can type `ddev ssh` and `ps -ef` to see wha
 
 It’s easy to change the PHP versions on a per-project basis either in the config.yaml file, or by running `ddev config` (for example, when you’re setting up and configuring a project) and setting the PHP version.
 
-`ddev config --php-version 7.4`
+`ddev config --php-version 8.4`
 
 Check the docs on how to [change the PHP versions](https://docs.ddev.com/en/stable/users/extend/customization-extendibility/#changing-php-version).
 
-DDEV directly supports versions from 5.6 through 7.4, and you can even go back farther into the past using the [Old PHP recipe in github.com/ddev/ddev-contrib](https://github.com/ddev/ddev-contrib/tree/master/docker-compose-services/old%5Fphp).
+DDEV directly supports versions from 5.6 through 8.5, and you can even go back farther into the past using the [Old PHP recipe in github.com/ddev/ddev-contrib](https://github.com/ddev/ddev-contrib/tree/master/docker-compose-services/old%5Fphp).
 
 ### Windows users: make sure to remove inactive hostnames
 
@@ -120,7 +121,7 @@ This command outputs the fully preprocessed docker-compose configuration of the 
 
 ### JSON output for geeks
 
-This is a cool feature fellow geeks will appreciate. You can get JSON output from any command. We use this output from DDEV to feed data to [DDEV-UI](https://github.com/ddev/ddev-ui/releases), our GUI version of DDEV built for those whose working style is better suited to using a friendly graphical user interface.
+This is a cool feature fellow geeks will appreciate. You can get JSON output from any command, which is handy for scripting or feeding DDEV data into other tools.
 
 To get the JSON output on the command line, add this global flag to any command: `-j` or `--json-output`. for example:
 
@@ -132,6 +133,6 @@ I’ve seen this used in some creative ways. In one case, I saw someone use JSON
 
 Part of building this project is working directly with our users to improve DDEV. A lot of the tips in this post are based on [community discussions](https://docs.ddev.com/en/stable/users/support/) in Slack and on Stack Overflow. When you find something new, we get it into the documentation and the help files as fast as we can. It’s also a very important channel for us to find out how and where we can make improvements.
 
-Coming soon: We’ll be rolling out opt-in data collection and error reporting to help us make DDEV even better even faster. When you opt-in, you’ll be contributing data on how you’re using our open source tool and where you’re hitting issues. This will be a big factor in guiding product decisions. The more people who opt-in, the better the tool will become. Keep an eye out on future releases!
+DDEV has opt-in usage instrumentation (`ddev config global --instrumentation-opt-in=true`), which has guided quite a few product decisions over the years. If you haven't opted in, consider it—the more people who do, the better we can prioritize what to build next.
 
 ### Want more tips? Subscribe to the newsletter.

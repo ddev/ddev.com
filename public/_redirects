@@ -39,6 +39,8 @@
 /blog/debugging-docker-on-windows-mac-and-linux/ https://docs.ddev.com/en/stable/users/usage/troubleshooting/ 301
 /blog/drupal7-drupal9-migration-ddev-acquia-migrate-accelerate https://www.drupal.org/docs/upgrading-drupal 301
 /blog/drupal7-drupal9-migration-ddev-acquia-migrate-accelerate/ https://www.drupal.org/docs/upgrading-drupal 301
+/blog/ddev-docker-desktop-and-colima-benchmarking-updated-dec-2022 /blog/docker-performance-2023/ 301
+/blog/ddev-docker-desktop-and-colima-benchmarking-updated-dec-2022/ /blog/docker-performance-2023/ 301
 
 # Authors redirects
 /meet-the-team /blog/author/ 301

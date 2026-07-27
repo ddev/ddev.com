@@ -1,6 +1,8 @@
 ---
 title: "Supercharge your DDEV performance with Mutagen"
 pubDate: 2021-07-28
+modifiedDate: 2026-07-25
+modifiedComment: "This is the original 2021 announcement, kept as a historical record. Mutagen is no longer experimental: it's the default, mature performance mode on macOS and Windows, and NFS (mentioned in the docs link below) was removed in DDEV v1.25.0. See the [performance docs](https://docs.ddev.com/en/stable/users/install/performance/) for current guidance."
 summary: Overview of DDEV v1.18.0-alpha1’s Mutagen-powered performance boost.
 author: Randy Fay
 featureImage:

@@ -1,21 +1,17 @@
 ---
-title: "Watch: DDEV New Casual Webhosting Feature"
+title: "DDEV Casual Webhosting Feature"
 pubDate: 2020-12-14
-modifiedDate: 2024-07-06
-summary: Video overview of DDEV’s "casual hosting" setup.
+modifiedDate: 2026-07-25
+modifiedComment: "Removed an outdated screencast showing an old DDEV UI, and fixed a dead docs anchor"
+summary: Overview of DDEV’s "casual hosting" setup.
 author: Randy Fay
 featureImage:
   src: /img/blog/2020/12/casual-diy-webhosting.png
-  alt: Screen grab of video’s title frame
+  alt: DDEV casual webhosting
   hide: true
 categories:
   - Guides
-  - Videos
 ---
-
-<div class="video-container">
-<iframe loading="lazy" title="DDEV Casual Webhosting" width="500" height="281" src="https://www.youtube.com/embed/beC46R_61gw?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-</div>
 
 [DDEV](https://github.com/ddev/ddev) supports “[Casual webhosting](https://docs.ddev.com/en/stable/users/topics/hosting/) including Let’s Encrypt.” DDEV users have often requested the ability to use DDEV as a self-managed low-end web server, for things like small sites, demonstrating projects to stakeholders, etc.
 
@@ -62,7 +58,7 @@ If you want to show a site to your colleagues or customers, you might get by fin
 After you have the site running, you’ll want to consider a number of other actions; see the [docs](https://docs.ddev.com/en/stable/users/topics/hosting/) for full current details.
 
 - Add the real fqdn to your project, `ddev config --additional-hostnames=<your.fqdn,test.<your.fqdn>` and `ddev start` – don’t forget other hostnames that may be expected, like “www”.
-- Set up DDEV to start automatically on system startup ([docs](https://docs.ddev.com/en/stable/users/topics/hosting/)).
+- Set up DDEV to start automatically on system startup ([docs](https://docs.ddev.com/en/stable/users/topics/hosting/#additional-server-setup)).
 - Set projects/containers to auto-restart if they fail for any reason: `ddev config global --auto-restart-containers`
 - Enable outgoing mail from the site (for transactional emails, for example). In general the most sustainable way to do this is to use an SMTP module for your CMS and point it at a service like [Mailgun](https://mailgun.com).
 - Enable outgoing mail from the _server_ and have it forwarded to you. This lets system mail notifications be delivered.
