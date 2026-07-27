@@ -1,18 +1,18 @@
 ---
 title: "Let's Fully Fund Maintainer Stas"
 pubDate: 2024-08-01
-modifiedDate: 2026-07-25
-modifiedComment: "Updated for 2026: Stas has been full-time on DDEV since 2024, but the role is only about 80% funded and sponsorship is at 83% of the $12,000/month goal; refreshed the Upsun funding history, Stas' contribution numbers, and the maintenance examples"
+modifiedDate: 2026-07-27
+modifiedComment: "Updated for 2026: Stas has been full-time on DDEV since 2024, but the role is only about 80% funded and sponsorship is at 83% of the $12,000/month goal; refreshed the Upsun funding history, Stas' contribution numbers, and the maintenance examples; updated feature image with a new photo of Stas wearing DDEV swag"
 summary: "Let's fully fund DDEV maintainer Stas Zhuk"
 author: Randy Fay
 featureImage:
-  src: /img/blog/2023/10/stas-bench-cropped.jpg
+  src: /img/blog/2026/07/stas-ddev-t-shirt.jpg
   alt: Stas Zhuk, DDEV Maintainer
 categories:
   - Announcements
 ---
 
-**Update (2026-07-25)**: You did it — mostly. Stas left client work behind and has been working on DDEV full-time since 2024, which is exactly what this post asked for. What hasn't caught up is the funding: his full-time maintainer role is only about 80% funded. Recurring sponsorship is about $9,900/month, or 83% of the DDEV Foundation's $12,000/month goal for both maintainers, leaving a gap of roughly $2,000/month. So the title still applies, just for a different reason: DDEV already depends on a full-time maintainer that the community isn't yet fully paying for. The numbers and examples below have been updated for 2026; the [sponsor page](/sponsor) always shows the current live total.
+**Update (2026-07-27)**: You did it — mostly. Stas left client work behind and has been working on DDEV full-time since 2024, which is exactly what this post asked for. What hasn't caught up is the funding: his full-time maintainer role is only about 80% funded. Recurring sponsorship is about $9,900/month, or 83% of the DDEV Foundation's $12,000/month goal for both maintainers, leaving a gap of roughly $2,000/month. So the title still applies, just for a different reason: DDEV already depends on a full-time maintainer that the community isn't yet fully paying for. The numbers and examples below have been updated for 2026; the [sponsor page](/sponsor) always shows the current live total.
 
 ---
 
