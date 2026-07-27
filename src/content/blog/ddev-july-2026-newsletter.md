@@ -60,7 +60,7 @@ The [Usage Stats page](/usage-stats) replaces our old static usage-stats blog po
 
 **Knecht.works Beta Testers Wanted: Dashboard for Agencies** — The team at knecht.works is building a dashboard for agencies managing many DDEV projects. It automates tasks like security updates by booting projects with full database environments and generating pull requests with previews. They're looking for beta testers. [Read the announcement↗](https://knecht.works/updates/beta-tester/) and see the [LinkedIn post (German)↗](https://www.linkedin.com/posts/dependabot-kann-kein-cms-updaten-ein-security-update-share-7478345983739998208-tWrP/) on why Dependabot can't update a CMS.
 
-**How a Broken Installer Reload Led to Two Patches** — Michael Staatz debugged a TYPO3 installer issue, uncovered a SQLite PRAGMA ordering quirk, and ended up submitting patches to both TYPO3 Core and DDEV. A nice story about how one bug report can improve two projects. [Read it↗](https://staatzstreich.de/blog/wie-ein-kaputter-installer-reload-zu-zwei-open-source-patche-2)
+**How a Broken Installer Reload Led to Two Patches** — Michael Staatz debugged a TYPO3 installer issue, uncovered a SQLite PRAGMA ordering quirk, and ended up submitting patches to both TYPO3 Core and DDEV. A nice story about how one bug report can improve two projects. [Read it↗](https://staatzstreich.de/blog/wie-ein-kaputter-installer-reload-zu-zwei-open-source-patche)
 
 ## Community Tutorials from Around the Web
 
