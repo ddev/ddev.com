@@ -94,4 +94,4 @@ On any platform you can use `DDEV_DEBUG=true ddev start` and it will explain to 
 
 We always love to hear your experiences with DDEV, so please do a PR to this blog adding your experience. Info and a training session on how to do a PR to anything in ddev.com is at [DDEV Website For Contributors](ddev-website-for-contributors.md). And if you can improve the DDEV docs, click the pencil at the top of any docs page to add your suggestion.
 
-Past trainings are recorded at [contributor training](contributor-training.md).
+Past trainings are recorded at [contributor training](/blog/category/training).

@@ -1,0 +1,28 @@
+dirs:
+  - src/content/blog
+ignorePatterns:
+  - pattern: "^mailto:"
+  # Root-relative internal links (e.g. /contact, /img/...) aren't checked here;
+  # Astro doesn't have a build-time internal link checker like docs/ has with zensical.
+  - pattern: "^/"
+  # *.ddev.site is DDEV's wildcard local-dev domain; it always resolves to
+  # 127.0.0.1 and only exists while a matching project is running locally.
+  - pattern: "\\.ddev\\.site"
+  # Known to block or reject linkspector's headless-browser / CI requests,
+  # even though the pages are reachable from a normal browser.
+  - pattern: "^https://(www\\.)?linkedin\\.com"
+  - pattern: "^https://(www\\.)?tag1consulting\\.com"
+  - pattern: "^https://(www\\.)?packtpub\\.com"
+  - pattern: "^https://buildkite\\.com/ddev/"
+  - pattern: "^https://(www\\.)?npmjs\\.com"
+  - pattern: "^https://medium\\.com"
+  # Unsplash's anti-bot challenge intermittently blocks GitHub Actions
+  # runner IPs, even for plain referral/attribution links.
+  - pattern: "^https://(www\\.)?unsplash\\.com"
+  # Wayback Machine snapshots (used as archive links for otherwise-dead
+  # pages) can be slow or rate-limit headless-browser checks.
+  - pattern: "^https://web\\.archive\\.org/"
+aliveStatusCodes:
+  - 200
+  - 206
+  - 301

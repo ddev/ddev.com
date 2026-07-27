@@ -17,7 +17,7 @@ categories:
 <iframe loading="lazy" title="DDEV Casual Webhosting" width="500" height="281" src="https://www.youtube.com/embed/beC46R_61gw?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </div>
 
-[DDEV](https://github.com/ddev/ddev) supports “[Casual webhosting](https://docs.ddev.com/en/stable/users/alternate-uses/#casual-project-webosting-on-the-internet-including-lets-encrypt) including Let’s Encrypt.” DDEV users have often requested the ability to use DDEV as a self-managed low-end web server, for things like small sites, demonstrating projects to stakeholders, etc.
+[DDEV](https://github.com/ddev/ddev) supports “[Casual webhosting](https://docs.ddev.com/en/stable/users/topics/hosting/) including Let’s Encrypt.” DDEV users have often requested the ability to use DDEV as a self-managed low-end web server, for things like small sites, demonstrating projects to stakeholders, etc.
 
 ## Why “Casual Webhosting”?
 
@@ -62,7 +62,7 @@ If you want to show a site to your colleagues or customers, you might get by fin
 After you have the site running, you’ll want to consider a number of other actions; see the [docs](https://docs.ddev.com/en/stable/users/topics/hosting/) for full current details.
 
 - Add the real fqdn to your project, `ddev config --additional-hostnames=<your.fqdn,test.<your.fqdn>` and `ddev start` – don’t forget other hostnames that may be expected, like “www”.
-- Set up DDEV to start automatically on system startup ([docs](https://docs.ddev.com/en/stable/users/alternate-uses/#casual-project-webosting-on-the-internet-including-lets-encrypt)).
+- Set up DDEV to start automatically on system startup ([docs](https://docs.ddev.com/en/stable/users/topics/hosting/)).
 - Set projects/containers to auto-restart if they fail for any reason: `ddev config global --auto-restart-containers`
 - Enable outgoing mail from the site (for transactional emails, for example). In general the most sustainable way to do this is to use an SMTP module for your CMS and point it at a service like [Mailgun](https://mailgun.com).
 - Enable outgoing mail from the _server_ and have it forwarded to you. This lets system mail notifications be delivered.

@@ -1,0 +1,35 @@
+name: Link check
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths:
+      - "src/content/blog/**"
+      - ".linkspector.yml"
+      - ".github/workflows/link-check.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  checks: write
+  contents: read
+  pull-requests: read
+
+jobs:
+  linkspector:
+    name: Check blog links
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - name: Run linkspector
+        uses: umbrelladocs/action-linkspector@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-check
+          fail_on_error: true
+          # Check links only in the added lines for PRs, but check everything otherwise
+          filter_mode: ${{ github.event_name == 'pull_request' && 'added' || 'nofilter' }}
+          config_file: ".linkspector.yml"

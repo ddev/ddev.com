@@ -51,7 +51,7 @@ Your add-on should encourage users to keep DDEV updated. The current recommendat
 ddev_version_constraint: ">= v1.24.10"
 ```
 
-This ensures compatibility and resolves known issues, such as those related to the [Mutagen Problem Report](open-source-for-the-win.md#mutagen-problemreport).
+This ensures compatibility and resolves known issues, such as those related to the [Mutagen Problem Report](open-source-for-the-win.md#mutagen-problem-report).
 
 ### Customizing `ddev describe` Output
 

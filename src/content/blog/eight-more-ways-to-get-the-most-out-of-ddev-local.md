@@ -7,7 +7,7 @@ author: Randy Fay
 featureImage:
   src: /img/blog/2018/12/marvin-ronsdorf-196913-unsplash-e1544104467254.jpg
   alt: Top-down photo of the numbered lanes on a running track
-  credit: "Photo by Marvin Ronsdorf on [Unsplash](https://unsplash.com/search/photos/eight?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
+  credit: "Photo by Marvin Ronsdorf on [Unsplash](https://unsplash.com/?utm%5Fsource=unsplash&utm%5Fmedium=referral&utm%5Fcontent=creditCopyText)."
 categories:
   - DevOps
 ---
@@ -86,7 +86,7 @@ To access full log information of the dbserver container, use the command:
 
 ### Hey, why am I seeing NGINX headers when I’m using Apache?
 
-This is something newcomers stumble over sometimes. There’s a Stack Overflow question explaining [why you’d see NGINX headers](https://stackoverflow.com/questions/52774173/why-do-i-see-nginx-headers-when-ddev-is-configured-to-use-apache/52780601#52780601), even when you’re running Apache. NGINX runs as a [reverse proxy](https://www.nginx.com/resources/glossary/reverse-proxy-server/), directing requests to the appropriate server, no matter what you’re running in your containers. Even though apache is the web server in your web container, there’s an nginx server in front of it, so you’ll normally see the nginx headers on a request. If you want to access the apache server without the nginx reverse proxy in front of it, both \`ddev start\` and \`ddev describe\` provide a direct URL like \`<http://127.0.0.1>:<port>\` that goes straight to the web container.
+This is something newcomers stumble over sometimes. There’s a Stack Overflow question explaining [why you’d see NGINX headers](https://stackoverflow.com/questions/52774173/why-do-i-see-nginx-headers-when-ddev-is-configured-to-use-apache/52780601#52780601), even when you’re running Apache. NGINX runs as a [reverse proxy](https://www.nginx.com/resources/glossary/reverse-proxy-server/), directing requests to the appropriate server, no matter what you’re running in your containers. Even though apache is the web server in your web container, there’s an nginx server in front of it, so you’ll normally see the nginx headers on a request. If you want to access the apache server without the nginx reverse proxy in front of it, both `ddev start` and `ddev describe` provide a direct URL like `http://127.0.0.1:<port>` that goes straight to the web container.
 
 If you want to check to be sure, you can type `ddev ssh` and `ps -ef` to see what server is running.
 
