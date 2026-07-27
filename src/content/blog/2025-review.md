@@ -102,7 +102,7 @@ Upcoming v1.25.0:
 
 ## ddev.com Website and Documentation
 
-- **[Downloads page](/downloads)** with improved installer access
+- **[Downloads page](/download)** with improved installer access
 - **Theme switch button** for light/dark mode
 - **Copy button** for code blocks thanks to Bernardo Martinez
 - **Giscus** commenting system for community discussions on blog posts
