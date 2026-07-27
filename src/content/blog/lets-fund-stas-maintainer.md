@@ -1,12 +1,12 @@
 ---
 title: "Let's Fully Fund Maintainer Stas"
 pubDate: 2024-08-01
-modifiedDate: 2026-07-25
-modifiedComment: "Updated for 2026: Stas has been full-time on DDEV since 2024, but the role is only about 80% funded and sponsorship is at 83% of the $12,000/month goal; refreshed the Upsun funding history, Stas' contribution numbers, and the maintenance examples"
+modifiedDate: 2026-07-27
+modifiedComment: "Updated for 2026: Stas has been full-time on DDEV since 2024, but the role is only about 80% funded and sponsorship is at 83% of the $12,000/month goal; refreshed the Upsun funding history, Stas' contribution numbers, and the maintenance examples; updated feature image with a new photo of Stas wearing DDEV swag"
 summary: "Let's fully fund DDEV maintainer Stas Zhuk"
 author: Randy Fay
 featureImage:
-  src: /img/blog/2023/10/stas-bench-cropped.jpg
+  src: /img/blog/2026/07/stas-ddev-t-shirt.jpg
   alt: Stas Zhuk, DDEV Maintainer
 categories:
   - Announcements
