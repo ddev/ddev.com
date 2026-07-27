@@ -44,6 +44,8 @@ Those questions are gifts to all of us. They push us to look at things we've got
 
 The DDEV ecosystem is full of people who built something useful for themselves and then shared it with everyone. Add-ons, CI configurations, documentation fixes, screencasts, blog posts.
 
+Stas, who joined the project more recently, was surprised by how much DDEV could be extended and customized, and how good the documentation was for figuring it out. Looking back, that didn't happen by accident. It came from years of feature requests and contributions from people who solved their own problems and then shared the solution.
+
 Every person who took time to answer another user's question in the [DDEV issue tracker](https://github.com/ddev/ddev/issues) or [Discord](/s/discord) or [Drupal Slack](https://drupal.slack.com/app_redirect?channel=ddev) freed up time for the maintainers to work on the next feature.
 
 ## We Learn from You
