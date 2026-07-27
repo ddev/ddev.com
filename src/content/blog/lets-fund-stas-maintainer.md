@@ -12,7 +12,7 @@ categories:
   - Announcements
 ---
 
-**Update (2026-07-25)**: You did it — mostly. Stas left client work behind and has been working on DDEV full-time since 2024, which is exactly what this post asked for. What hasn't caught up is the funding: his full-time maintainer role is only about 80% funded. Recurring sponsorship is about $9,900/month, or 83% of the DDEV Foundation's $12,000/month goal for both maintainers, leaving a gap of roughly $2,000/month. So the title still applies, just for a different reason: DDEV already depends on a full-time maintainer that the community isn't yet fully paying for. The numbers and examples below have been updated for 2026; the [sponsor page](/sponsor) always shows the current live total.
+**Update (2026-07-27)**: You did it — mostly. Stas left client work behind and has been working on DDEV full-time since 2024, which is exactly what this post asked for. What hasn't caught up is the funding: his full-time maintainer role is only about 80% funded. Recurring sponsorship is about $9,900/month, or 83% of the DDEV Foundation's $12,000/month goal for both maintainers, leaving a gap of roughly $2,000/month. So the title still applies, just for a different reason: DDEV already depends on a full-time maintainer that the community isn't yet fully paying for. The numbers and examples below have been updated for 2026; the [sponsor page](/sponsor) always shows the current live total.
 
 ---
 
