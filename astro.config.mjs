@@ -6,6 +6,7 @@ import { remarkCallouts } from "./src/lib/remark-callouts.mjs"
 import downloadDdevRedirects from "./src/lib/download-ddev-redirects.js"
 import prefetch from "@astrojs/prefetch"
 import mdx from "@astrojs/mdx"
+import linkValidator from "astro-link-validator"
 import react from "@astrojs/react"
 import { rehypeAccessibleEmojis } from "rehype-accessible-emojis"
 import rehypeAstroRelativeMarkdownLinks from "astro-rehype-relative-markdown-links"
@@ -73,6 +74,11 @@ export default defineConfig({
     }),
     downloadDdevRedirects(),
     prefetch(),
+    linkValidator({
+      checkExternal: false,
+      failOnBrokenLinks: true,
+      exclude: ["/_astro/*", "/s/*", "/board", "/download/*"],
+    }),
   ],
   markdown: {
     processor: unified({

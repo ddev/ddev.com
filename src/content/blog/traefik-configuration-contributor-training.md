@@ -120,7 +120,7 @@ This means that some tutorials you may find which use the "Docker" provider will
 
 ## Traefik Dashboard
 
-DDEV provides the Traefik dashboard graphical representation at http://127.0.0.1:10999. This link is shown at the bottom of `ddev list`.
+DDEV provides the Traefik dashboard graphical representation at `http://127.0.0.1:10999`. This link is shown at the bottom of `ddev list`.
 
 ## Experimenting with dynamic configuration
 

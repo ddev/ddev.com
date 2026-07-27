@@ -3,7 +3,7 @@ dirs:
 ignorePatterns:
   - pattern: "^mailto:"
   # Root-relative internal links (e.g. /contact, /img/...) aren't checked here;
-  # Astro doesn't have a build-time internal link checker like docs/ has with zensical.
+  # astro-link-validator covers these separately.
   - pattern: "^/"
   # *.ddev.site is DDEV's wildcard local-dev domain; it always resolves to
   # 127.0.0.1 and only exists while a matching project is running locally.
@@ -22,6 +22,14 @@ ignorePatterns:
   # Wayback Machine snapshots (used as archive links for otherwise-dead
   # pages) can be slow or rate-limit headless-browser checks.
   - pattern: "^https://web\\.archive\\.org/"
+  # Blocks linkspector's headless-browser / CI requests with 403s.
+  - pattern: "^https://(www\\.)?lullabot\\.com"
+  # Intermittently times out headless-browser navigation from CI runners.
+  - pattern: "^https://www\\.gnu\\.org/software/make/$"
+  # Blocks linkspector's headless-browser / CI requests with 403s.
+  - pattern: "^https://(www\\.)?reddit\\.com"
+  # Rejects linkspector's HTTP/2 requests from CI runners.
+  - pattern: "^https://firesphere\\.dev/articles/ddev-elasticsearch-and-silverstripe$"
 aliveStatusCodes:
   - 200
   - 206
