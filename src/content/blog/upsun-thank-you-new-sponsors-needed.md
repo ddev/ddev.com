@@ -1,6 +1,8 @@
 ---
 title: "Thanks to Upsun, and Your Help is Needed Now!"
 pubDate: 2025-12-08
+modifiedDate: 2026-07-25
+modifiedComment: "Added a note that the community filled the funding gap this post warned about — sponsorship recovered from a projected 53% of goal to 83%"
 summary: A thank-you to Upsun for years of support and ongoing support, but recognition that we need new sponsors after their support level decreases again next month.
 featureImage:
   src: /img/blog/2025/12/upsun-ddev.png
@@ -8,6 +10,10 @@ featureImage:
 author: Randy Fay
 categories:
   - Community
+---
+
+**Update (2026-07-25)**: You filled the gap. This post projected sponsorship dropping to about 53% of goal in January 2026; instead it recovered to about $9,900/month, or 83% of the $12,000/month goal, and Upsun [completed the transfer of the DDEV trademark to the DDEV Foundation](upsun-trademark-transfer-complete.md). Thank you to everyone who stepped up. The work isn't finished — the remaining gap is described in [Let's Fully Fund Maintainer Stas](lets-fund-stas-maintainer.md), and the [sponsor page](/sponsor) always shows the live total. The appeal below is from December 2025.
+
 ---
 
 **TL;DR** [Upsun](https://upsun.com) has been (and remains) a great sponsor of DDEV, but is lowering their support level next month. We need you to fill the gap!
@@ -26,7 +32,7 @@ DDEV is free and open-source because sponsors like you make it possible. Whether
 
 **Ways to sponsor:**
 
-- **[GitHub Sponsors](/sponsor)** - Quick and easy, starting at any amount, personal or organizational.
+- **[Sponsorship](/sponsor)** - Quick and easy, starting at any amount, personal or organizational.
 - **Support contracts** - Get priority support while funding development
 - **Custom invoicing** - We work with your procurement process
 - **One-time contributions** - Every bit helps!

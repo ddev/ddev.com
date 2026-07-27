@@ -1,14 +1,19 @@
 ---
 title: "Expanding the DDEV maintainer team - how we'll fund it"
 pubDate: 2023-09-28
-modifiedDate: 2024-07-31
-summary: Why is DDEV adding a new full-time maintainer, and how do the finances work?
+modifiedDate: 2026-07-25
+modifiedComment: "Removed the 2023 funding figures and maintainership roster, which are long out of date, and pointed to the sponsor page and current funding post instead"
+summary: What do DDEV maintainers actually do, and why does the project need more than one paid full-time?
 author: Randy Fay
 featureImage:
   src: /img/blog/2023/08/contributors-working.png
   alt: Contributors working together on DDEV
 categories:
   - Community
+---
+
+**Update (2026-07-25)**: The case for paid maintainers below still holds, and DDEV now has two working full-time. The specific 2023 dollar figures and maintainer roster that used to appear here were badly out of date, so they've been removed — see the [sponsor page](/sponsor) for the live funding total and [Let's Fully Fund Maintainer Stas](lets-fund-stas-maintainer.md) for where things stand today.
+
 ---
 
 ## Why does DDEV want to hire another full-time maintainer?
@@ -39,25 +44,15 @@ But first, what do maintainers do? Why are they so busy? Why is it important to 
 
 **The community and its needs are growing**: More CMSs have adopted DDEV as their go-to local development environment (Silverstripe this year, Craft CMS last year, etc.). That means we have new and different users with new and different needs. What fun! So great! But this will eventually strain our current abilities to support.
 
-### What is DDEV’s Current Funding Situation and What are the Goals?
+### What is DDEV’s Funding Situation and What are the Goals?
 
-**Current Funding**:
-
-- **[Platform.sh](http://Platform.sh)** pays Randy’s salary and provides benefits to him as an employee. That is an amazing benefit for this community and goes a long way! THANK YOU!
-- **Major sponsors [Tag1](https://tag1.com/), and [i-gelb](https://i-gelb.net/)** together account for USD$1500/month in funding. THANK YOU!
-- **Many other agencies and individuals** via GitHub Sponsors account for about USD$1500. THANK YOU!
-
-**Funding Goal**: Our goal is salary for a full-time paid maintainer, estimated at about USD$7,000/month or USD$84,000/year. Thanks you we’re already about 50% of the way there!
-
-### What is the Current Maintainership Situation?
-
-Currently **[Randy Fay](https://github.com/rfay), [Simon Gilli](https://github.com/gilbertsoft) and [Stas Zhuk](https://github.com/stasadev)** have maintainer privileges. Simon has made enormous contributions over the years and knows how to handle most maintainer roles. He has been periodically paid by the DDEV Foundation for his work, but his available time is sometimes spotty. Stas is new to the role after many, many important contributions and thanks to your contributions he is already being paid for part-time work.
+The goal is enough recurring sponsorship to pay maintainers for the work described above, rather than fitting it around client work. Because the numbers move every month, they live on the [sponsor page](/sponsor), which shows the current recurring total against the Foundation’s goal. For the story of how the funding has evolved — including [Platform.sh becoming lead sponsor](platform-sh-becomes-a-lead-sponsor-of-ddev.md), the [2025 change in that arrangement](platform-sh-ddev-funding-changes.md), and the [ongoing push to fully fund maintainer Stas Zhuk](lets-fund-stas-maintainer.md) — follow those posts.
 
 ### What is the DDEV Foundation?
 
 **The [DDEV Foundation](/foundation)** is the “fiscal entity” that is used for DDEV funding and is used to pay contributors. It is a certified [US 501(c)(3) nonprofit](501c3.md). The DDEV Foundation owns the bank account.
 
-No funding to the DDEV Foundation goes to Randy.
+(When this was written in 2023, no Foundation funding went to Randy, since Platform.sh employed him directly. That [changed in 2025](platform-sh-ddev-funding-changes.md), and the Foundation now budgets for both maintainers.)
 
 ### How can Your Agency, Hosting Company, or you as an Individual Help?
 
