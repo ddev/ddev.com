@@ -1,6 +1,8 @@
 ---
 title: "DDEV share: Sharing a DDEV project with other collaborators in real time"
 pubDate: 2020-03-17
+modifiedDate: 2026-07-28
+modifiedComment: "Updated for the v1.25.0 multi-provider `ddev share` (ngrok/cloudflared), replaced the ngrok-only stable-subdomain and per-CMS walkthroughs with a link to the current hook-based approach, and fixed the defunct xip.io reference to sslip.io."
 summary: How to share a local DDEV project with others.
 author: Randy Fay
 featureImage:
@@ -20,47 +22,22 @@ Even though [DDEV](https://github.com/ddev/ddev) is intended for local developme
 
 There are at least three different ways to share a running DDEV project outside the local developer machine:
 
-1. `ddev share` (using ngrok to share over the internet)
+1. `ddev share` (using a tunnel provider like ngrok or cloudflared to share over the internet)
 2. Local name resolution and sharing the project on the local network
 3. Sharing the HTTP port of the local machine on the local network
 
 ## **1\. Using `ddev share` to share project (easiest)**
 
-`ddev share` proxies the project via [ngrok](http://ngrok.com), and it’s by far the easiest way to solve the problem of sharing your project with others on your team or around the world. It’s built into DDEV and works for most people even without a paid ngrok account. Run `ddev share` and give the resultant URL to your collaborator or use it on your mobile device. [Read the basic how-to from DrupalEasy](https://www.drupaleasy.com/blogs/ultimike/2019/06/sharing-your-ddev-local-site-public-url-using-ddev-share-and-ngrok) or run `ddev share -h` for more.
+`ddev share` proxies the project via a tunnel provider, and it’s by far the easiest way to solve the problem of sharing your project with others on your team or around the world. DDEV ships with two built-in providers:
 
-There are CMSs that make this a little harder, especially WordPress and Magento 2. Both of those only respond to a single base URL, and that URL is coded into the database, so it makes this a little harder. For both of these I recommend paying ngrok the $5/month for a[ basic plan](https://ngrok.com/pricing) so you can use a stable subdomain with ngrok.
+- **ngrok** (the default) — free to use, though a paid plan gets you a stable subdomain. Configured with a token stored in `~/.config/ngrok/ngrok.yml`.
+- **cloudflared** — free, and doesn’t require an account at all.
 
-#### **Setting up a stable subdomain with ngrok**
+Run `ddev share` to use the default provider, or `ddev share --provider=cloudflared` to use Cloudflare’s tunnel instead. Either way, DDEV prints the resulting URL, ready to hand to a collaborator or open on your mobile device. Run `ddev share -h` for more, or set a default provider globally with `ddev config global --share-default-provider=cloudflared`.
 
-1. Get a paid token with at least the basic plan, and configure it. (It will be in `~/.ngrok2/ngrok.yml` as `authtoken`.
-2. Configure `ngrok_args` to use a stable subdomain. In `.ddev/config.yaml`, `ngrok_args: –subdomain wp23` will result in ngrok always using `wp23.ngrok.io` as the URL, so it’s not changing on you all the time.
+CMSs like WordPress and Magento 2 make this a little harder, since they only respond to a single base URL that’s coded into the database. See [New `ddev share` Provider System](share-providers.md) for `pre-share`/`post-share` hooks that automate the URL swap for WordPress, Magento 2, and TYPO3, and the [sharing docs](https://docs.ddev.com/en/stable/users/topics/sharing/) for setting up a stable subdomain with either provider.
 
-#### **WordPress: Change the URL with wp search-replace**
-
-WordPress only has the one base URL, but the wp command is built into DDEV’s web container.
-
-This set of steps assumes an ngrok subdomain of “wp23” and a starting URL of `https://wordpress.ddev.site`.
-
-1. Configure `.ddev/config.yaml` to use a custom subdomain: `ngrok_args: --subdomain wp23`
-2. Make a backup of your database with `ddev export-db` or `ddev shapshot`
-3. Edit `wp-config-ddev.php` (or whatever your config is) to change `WP_HOME`, for example, `define('WP_HOME', '[<https://wp23.ngrok.io>](<https://wp23.ngrok.io/>)');`
-4. `ddev ssh`
-5. `wp search-replace [<https://wordpress.ddev.site>](<https://wordpress.ddev.site/>) [<https://wp23.ngrok.io>](<https://wp23.ngrok.io/>)`
-   (assuming your project is configured for `https://wordpress.ddev.site` and your `ngrok_args` are configured for the wp23 subdomain)
-6. Now `ddev share`
-
-#### **Magento2: Change the URL with magento tool**
-
-This set of steps assumes an ngrok subdomain “mg2”
-
-1. Configure `.ddev/config.yaml` to use a custom subdomain: `ngrok_args: --subdomain mg2`
-2. Make a backup of your database.
-3. Edit your `.ddev/config.yaml`
-4. `ddev ssh` and
-5. `bin/magento setup:store-config:set --base-url="[<https://mg2.ngrok.io/>](<https://mg2.ngrok.io/>)"`
-6. `ddev share` and you’ll see your project on `mg2.ngrok.io`
-
-## **2\. Using xip.io and or your own name resolution and open up to the local network**
+## **2\. Using sslip.io and or your own name resolution and open up to the local network**
 
 The second solution is to _not_ use \*.ddev.site as your project URLs, but to use DNS that you control (and that points to the host machine where your project lives). In general you’ll want to use HTTP URLs with this approach, because it requires manual configuration of the client machine to get it to trust the development certificate that ddev uses (and configures with mkcert on the local machine).
 
@@ -68,7 +45,7 @@ The second solution is to _not_ use \*.ddev.site as your project URLs, but to us
 2. Configure \~/.ddev/global_config.yaml to bind to all ports:` ddev config global --router-bind-all-interfaces && ddev poweroff && ddev start`
 3. Now mobile apps or other computers which are on your _local_ network should be able to access your project. Use the http URL rather than the HTTPS URL because computers outside yours don’t know how to trust the developer TLS certificate you’re using. (You can use `ddev describe` to see the HTTP URL, but it’s typically the same as the HTTPS URL, but with `http://` instead of `https://`.)
 4. Make sure your firewall allows access from your local network to the main interface you’re using. In the example here you should be able to ping 192.168.5.101 and `curl [<http://192.168.5.101>](<http://192.168.5.101>)` and get an answer in each case.
-5. If you’re using WordPress or Magento 2 you’ll need to change the base URL as described in the `ddev share` instructions above.
+5. If you’re using WordPress or Magento 2 you’ll need to change the base URL, as described in [New `ddev share` Provider System](share-providers.md).
 
 ## **3\. Exposing a port from the host**
 
@@ -85,7 +62,7 @@ DDEV’s web container also exposes an HTTP port directly (in addition to the no
    ```
 2. `ddev start`
 3. Make sure your firewall allows access to the port on your host machine.
-4. If you’re using WordPress or Magento 2 you’ll need to change the base URL as described in the `ddev share` instructions above.
+4. If you’re using WordPress or Magento 2 you’ll need to change the base URL, as described in [New `ddev share` Provider System](share-providers.md).
 5. Each site on your computer must use different ports or you’ll have port conflicts, and you can’t typically use ports 80 or 443 because ddev-router is already using those for normal routing.
 
 Computers and mobile devices on your local network should now be able to access port 8080, on the (example) host address 192.168.5.23, so `http://192.168.5.23:8080`. You’ll probably want to use the HTTP URL your coworker’s browser will not trust the developer TLS certificate you’re using.

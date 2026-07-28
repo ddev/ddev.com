@@ -1,7 +1,8 @@
 ---
 title: "Why use DDEV instead of rolling your own Docker-based local dev solution?"
 pubDate: 2022-12-22
-modifiedDate: 2023-05-18
+modifiedDate: 2026-07-29
+modifiedComment: "Updated the years-of-development figure, PHP version range (to 5.6-8.5), a dead step-debugging doc anchor, the Platform.sh link to Upsun, and added Lagoon to the hosting-provider integration list."
 summary: The benefits of using DDEV instead of a custom Docker setup for local development.
 author: Randy Fay
 featureImage:
@@ -25,22 +26,22 @@ If you know something about Docker, you know that you can throw one or two Docke
 ### **DDEV:**
 
 - [Open-source project](https://github.com/ddev/ddev) with no vendor lock-in.
-- Has already undergone more than 6 years of development, adding requested features and collaborating with community contributors. Consider [sponsoring DDEV](/sponsor) to help keep it going.
+- Has already undergone more than 10 years of development, adding requested features and collaborating with community contributors. Consider [sponsoring DDEV](/sponsor) to help keep it going.
 - Explicit support for [many CMS types](https://docs.ddev.com/en/stable/users/quickstart/), including Drupal, Backdrop, TYPO3, Magento, Laravel, WordPress, Shopware and generic PHP, HTML, JavaScript, and Python projects. DDEV will set up basic settings files for you so you’re set up in moments, but you can [turn feature that off](controlling-cms-settings-files-in-ddev-local.md) when you don’t need it.
 - Support for nearly all versions of both MySQL, MariaDB, and PostgreSQL.
 - Native support for macOS (Apple Silicon and Intel), Windows, WSL2, Linux, both AMD64 and ARM64 architectures, great for diverse teams.
-- Out-of-the-box support for both Nginx and Apache and PHP 5.6-8.2.
+- Out-of-the-box support for both Nginx and Apache and PHP 5.6-8.5.
 - Trusted HTTPS for every project.
 - Import, export, and snapshot databases.
 - Run or start as many projects as you want to, all at the same time, depending on the resources you have available. Each project can have different PHP version, use apache instead of nginx, etc.
 - SSH integration (ssh-agent bundled so you can use your keys inside the container for accessing hosts or private composer repositories.
 - Composer support built into the web container and accessed with `ddev composer`.
-- [Xdebug step-debugging](https://docs.ddev.com/en/stable/users/step-debugging/#step-debugging-with-ddev-and-xdebug) out of the box. Run `ddev xdebug on` and go.
+- [Xdebug step-debugging](https://docs.ddev.com/en/stable/users/debugging-profiling/step-debugging/) out of the box. Run `ddev xdebug on` and go.
 - Add-ons for facilities not built into core DDEV, like Elasticsearch, Apache Solr, Redis, and lots more.
 
 [![DDEV, PhpStorm and Xdebug video and blog post](/img/blog/2020/12/screen-shot-2020-12-28-at-12.49.31-pm.png)](ddev-local-phpstorm-and-xdebug-debugging.md)
 
-- Integration with [Platform.sh](https://platform.sh), [Pantheon.io](https://docs.ddev.com/en/stable/users/providers/pantheon/), Acquia Cloud.
+- Integration with [Upsun](https://docs.ddev.com/en/stable/users/providers/upsun/) (formerly Platform.sh), [Pantheon.io](https://docs.ddev.com/en/stable/users/providers/pantheon/), [Lagoon](https://docs.ddev.com/en/stable/users/providers/lagoon/), and [Acquia Cloud](https://docs.ddev.com/en/stable/users/providers/acquia/).
 - `ddev share` lets you show work in progress to anyone anywhere in the world.
 - Respect for other tools and production environments: DDEV doesn’t reconfigure your computer or require exact versions of Docker, etc.
 - Extensive customization available, including [maintained add-ons with automated tests](https://docs.ddev.com/en/stable/users/extend/additional-services/).

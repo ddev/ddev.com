@@ -1,6 +1,7 @@
 ---
 title: "Moving CMS sites around (server-to-server, server-to-local, local-to-server)"
 pubDate: 2020-12-08
+modifiedDate: 2026-07-28
 summary: Moving PHP-based, database-driven sites from one server to another, with examples for Drupal and TYPO3.
 author: Randy Fay
 featureImage:
@@ -36,8 +37,8 @@ Up through Drupal 7, all you had to do to move a site in many cases was to check
 **On the target server** (which can be DDEV or anything else):
 
 1. Check out or update the code from your Git repository or wherever it’s stored.
-2. Copy your database dump to the server and load it into the database server using a tool like `mysql`, for example `gzip -dc sitename.db.sql.gz | mysql <databasename>` (or on DDEV `ddev import-db --src=/path/to/sitename_db.sql.gz`)
-3. Copy your user-generated files tarball to the target server and untar it in the correct directory: `cd <docroot>/sites/default/files && tar -zxf /path/to/sitename_files.tar.gz`. (Or on DDEV `ddev import-files --src=/path/to/sitename_files.tar.gz`)
+2. Copy your database dump to the server and load it into the database server using a tool like `mysql`, for example `gzip -dc sitename.db.sql.gz | mysql <databasename>` (or on DDEV `ddev import-db --file=/path/to/sitename_db.sql.gz`)
+3. Copy your user-generated files tarball to the target server and untar it in the correct directory: `cd <docroot>/sites/default/files && tar -zxf /path/to/sitename_files.tar.gz`. (Or on DDEV `ddev import-files --source=/path/to/sitename_files.tar.gz`)
 4. Edit your `settings.php` or `settings.local.php` (preferred) to point to the database you’ve loaded.
 
 ### Drupal 8+ deployment: code, database, files, config, site build
@@ -57,7 +58,7 @@ Drupal 8+ is Drupal 7 with some extras, including copying the exported configura
 3. If there are other build steps discovered for the site, like an `npm install` or `compass`, add those processes.
 4. Copy the exported configuration to the target server if necessary and put it in the configuration directory specified in your settings.php or settings.local.php (preferred). Then `drush cim` to import it. Best practices include checking to make sure config hasn’t been changed in the database on the target server.
 
-### TYPO3 deployment (based on TYPO3 v10)
+### TYPO3 deployment
 
 TYPO3 is mostly the same as Drupal 7 plus a composer build, but there are often (generated) files on the local system that need to be checked into Git.
 
@@ -72,8 +73,8 @@ TYPO3 is mostly the same as Drupal 7 plus a composer build, but there are often 
 
 1. Check out or update the code from your Git repository or wherever it’s stored.
 2. Run `composer install` (on DDEV, `ddev composer install`). If there are other build activities like a `yarn install`, do those.
-3. Copy your database dump to the target server and load it into the database server using a tool like MySQL, for example `gzip -dc sitename.db.sql.gz | mysql <databasename>` (or on DDEV, `ddev import-db --src=/path/to/sitename_db.sql.gz`)
-4. Copy your user-generated files tarball to the target server and untar it in the correct directory: `cd sites/default/files && tar -zxf /path/to/sitename_files.tar.gz`. (Or on DDEV, `ddev import-files --src=/path/to/sitename_files.tar.gz`.)
+3. Copy your database dump to the target server and load it into the database server using a tool like MySQL, for example `gzip -dc sitename.db.sql.gz | mysql <databasename>` (or on DDEV, `ddev import-db --file=/path/to/sitename_db.sql.gz`)
+4. Copy your user-generated files tarball to the target server and untar it in the correct directory: `cd sites/default/files && tar -zxf /path/to/sitename_files.tar.gz`. (Or on DDEV, `ddev import-files --source=/path/to/sitename_files.tar.gz`.)
 5. Edit your `public/typo3conf/LocalConfiguration.php` or `public/typo3conf/AdditionalConfiguration.php` (or `.env` file, preferred) to point to the database you’ve loaded. If the target is DDEV, it will already take care of this for you.
 
 ### From DDEV to Pantheon

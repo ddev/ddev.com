@@ -1,7 +1,8 @@
 ---
 title: "DDEV Database Management"
 pubDate: 2020-04-03
-modifiedDate: 2020-12-07
+modifiedDate: 2026-07-29
+modifiedComment: "Noted that phpMyAdmin is now an add-on rather than built in, and linked to the docs' Database GUIs section, which lists many more current browsers."
 summary: A detailed look at using DDEV to work with databases.
 author: Randy Fay
 featureImage:
@@ -16,17 +17,17 @@ categories:
 
 Remember, you can run `ddev [command] --help` for more info on many of the topics below.
 
-**Many database backends**: You can use a vast array of different database types, including MariaDB from 5.5 through 10.4 and MySQL from 5.5 through 8.0 ([docs](https://docs.ddev.com/en/stable/users/extend/database%5Ftypes/#database-server-types)). Note that if you want to _change_ database type, especially to downgrade, you need to export your database and then `ddev delete` the project (to kill off the existing database), make the change to a new db type, start again, and import.
+**Many database backends**: You can use a vast array of different database types, including MariaDB 5.5-10.8/10.11/11.4/11.8/12.3, MySQL 5.5-8.0/8.4, and Postgres 9-18 ([docs](https://docs.ddev.com/en/stable/users/extend/database%5Ftypes/#database-server-types)). Note that if you want to _change_ database type, especially to downgrade, you need to export your database and then `ddev delete` the project (to kill off the existing database), make the change to a new db type, start again, and import.
 
 **Default database**: DDEV creates a default database named “db” and default permissions for the “db” user with password “db”, and it’s on the (inside Docker) hostname “db”.
 
-**Extra databases**: In [DDEV v1.13+](https://github.com/ddev/ddev/releases) you can easily create and populate other databases as well. For example, `ddev import-db --target-db=backend --src=backend.sql.gz` will create the database named “backend” with permissions for that same “db” user and import from the backend.sql.gz dumpfile.
+**Extra databases**: You can easily create and populate other databases as well. For example, `ddev import-db --database=backend --file=backend.sql.gz` will create the database named “backend” with permissions for that same “db” user and import from the backend.sql.gz dumpfile.
 
-**Exporting extra databases**: You can export in the same way: `ddev export-db -f mysite.sql.gz` will export your default database (“db”). `ddev export-db --target-db=backend -f backend-export.sql.gz` will dump the database named “backend”.
+**Exporting extra databases**: You can export in the same way: `ddev export-db -f mysite.sql.gz` will export your default database (“db”). `ddev export-db --database=backend -f backend-export.sql.gz` will dump the database named “backend”.
 
 **Database snapshots**: With _snapshots_ you can easily save the entire status of all of your databases. It’s great for when you’re working incrementally on migrations or updates and want to save state so you can start right back where you were.
 
-I like to name my snapshots so I can find them later, so `ddev snapshot --name=two-dbs` would make a snapshot named “two-dbs” in the `.ddev/db_snapshots` directory. It includes the entire state of the db server, so in the case of our two databases above, both databases and the system level `mysql` database will all be snapshotted. Then if you want to delete everything with `ddev delete -O` (omitting the snapshot since we have one already), and then `ddev start` again, we can `ddev restore-snapshot two-dbs` and we’ll be right back where we were.
+I like to name my snapshots so I can find them later, so `ddev snapshot --name=two-dbs` would make a snapshot named “two-dbs” in the `.ddev/db_snapshots` directory. It includes the entire state of the db server, so in the case of our two databases above, both databases and the system level `mysql` database will all be snapshotted. Then if you want to delete everything with `ddev delete -O` (omitting the snapshot since we have one already), and then `ddev start` again, we can `ddev snapshot restore two-dbs` and we’ll be right back where we were.
 
 **`ddev mysql`**: `ddev mysql` gives you direct access to the MySQL client in the db container. I like to use it for lots of things because I like the command line. I might run `ddev mysql` and give an interactive command like `DROP DATABASE backend;`. Or `SHOW TABLES;`. You can also do things like `` echo "SHOW TABLES;" | ddev mysql or `ddev mysql -uroot -proot` `` to get root privileges.
 
@@ -36,8 +37,9 @@ I like to name my snapshots so I can find them later, so `ddev snapshot --name=t
 
 **Other database explorers**: There are lots of alternatives for GUI database explorers:
 
-- macOS users love `ddev sequelpro`, which launches the free Sequelpro database browser. However, it’s gotten little love in recent years, so DDEV now supports TablePlus and SequelAce if they’re installed. `ddev tableplus` and `ddev sequelace`.
-- `ddev describe` tells you the URL for the built-in phpMyAdmin database browser (Hint: It’s `http://<yourproject>.ddev.site:8036`).
+- macOS users can use `ddev sequelace` to launch the free [Sequel Ace](https://sequel-ace.com/) database browser, or `ddev tableplus` for [TablePlus](https://tableplus.com), if they’re installed.
+- phpMyAdmin is no longer built into DDEV core, but you can add it back with `ddev add-on get ddev/ddev-phpmyadmin` (Adminer is another popular option: `ddev add-on get ddev/ddev-adminer`).
+- See the [Database GUIs](https://docs.ddev.com/en/stable/users/usage/database-management/#database-guis) docs for the full, current list of supported browsers, including TablePro, Querious, DBeaver, and HeidiSQL.
 - PhpStorm (and all JetBrains tools) have a nice database browser:
   - Choose a static `host_db_port` for your project. For example `host_db_port: 59002` (each project’s db port has to be different). (`ddev start` to make it take effect)
   - Use the “database” tool to create a source from “localhost”, with type `mysql` and the port you chose, credentials username: db and password: db

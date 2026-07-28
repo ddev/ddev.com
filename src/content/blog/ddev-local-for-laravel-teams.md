@@ -1,6 +1,7 @@
 ---
 title: "DDEV for Laravel Teams"
 pubDate: 2020-09-24
+modifiedDate: 2026-07-28
 summary: Sergey Fayngold on Laravel teams working with DDEV.
 author: Sergey Fayngold
 featureImage:
@@ -35,7 +36,7 @@ Meanwhile, I was searching for one solution which would help to unify the experi
 
 [DDEV](https://docs.ddev.com/en/stable/) combines a lot of the benefits of the other Laravel LDEs into one solution. In the context of a team, DDEV can bring additional benefits. It’s easy to learn for the members who set it up and customize it. And it’s super easy to use for the rest of the team to run multiple projects on any OS.
 
-After initial setup and configuration of the project, you can commit the DDEV configuration in your project repository. The next team member only need clone the repository and run `ddev start`, `ddev composer install` and `ddev exec artisan` (to run migrations, etc) inside of the project (or you can define a custom command that will replace them). Every team member can override parts of the config (like enabling NFS support or Xdebug) without committing it. The time between cloning and starting work on the code is reduced to almost nothing.
+After initial setup and configuration of the project, you can commit the DDEV configuration in your project repository. The next team member only need clone the repository and run `ddev start`, `ddev composer install` and `ddev artisan` (to run migrations, etc) inside of the project (or you can define a custom command that will replace them). Every team member can override parts of the config (like enabling Xdebug) without committing it. The time between cloning and starting work on the code is reduced to almost nothing.
 
 In the end, the switch to DDEV did save a lot of time on the team (I have not heard about any LDE problems, since we switched 😀 ). That’s also the reason why I decided to [“officially” add Laravel to DDEV](https://docs.ddev.com/en/stable/users/quickstart/#laravel) as a contribution to the open source project.
 
@@ -114,10 +115,11 @@ router_https_port: "4430"
 # as leaving xdebug enabled all the time is a big performance hit.
 xdebug_enabled: false
 
-# nfs_mount_enabled: false
-# Great performance improvement but requires host configuration first.
-# See https://docs.ddev.com/en/stable/users/performance/#using-nfs-to-mount-the-project-into-the-container
-nfs_mount_enabled: false
+# performance_mode: "mutagen"
+# Mutagen is enabled by default on macOS and traditional Windows for a big
+# performance boost, and can also be turned on for Linux/WSL2.
+# See https://docs.ddev.com/en/stable/users/install/performance/
+performance_mode: "mutagen"
 ```
 
 ## Conclusion

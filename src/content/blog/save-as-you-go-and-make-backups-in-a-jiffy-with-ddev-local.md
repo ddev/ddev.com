@@ -1,7 +1,7 @@
 ---
 title: "Save-as-you-go and make backups in a jiffy with DDEV"
 pubDate: 2018-11-20
-modifiedDate: 2024-04-03
+modifiedDate: 2026-07-28
 summary: Working fluidly with DDEV’s database snapshots and backups.
 author: Randy Fay
 featureImage:
@@ -13,7 +13,7 @@ categories:
   - Videos
 ---
 
-To us, the ideal local development environment should be fast and easy to use and give you what you need to get your job done. DDEV’s `ddev snapshot` command helps you recover quickly, and the new \`export-db\` command makes you portable backups in a jiffy.
+To us, the ideal local development environment should be fast and easy to use and give you what you need to get your job done. DDEV’s `ddev snapshot` command helps you recover quickly, and the `export-db` command makes you portable backups in a jiffy.
 
 Here’s how to easily save and restore databases with DDEV, so you can recover if something goes wrong or you change your mind about the development direction you’re going.
 
@@ -33,7 +33,7 @@ The snapshot is automatically named with the project name and timestamp. Make it
 
 Then, down the line when you’ve done something you wish you hadn’t, restore it with:
 
-`ddev restore-snapshot before-mucking`
+`ddev snapshot restore before-mucking`
 
 And you’re back to the working version of the database you had before you mucked with it.
 
@@ -45,7 +45,7 @@ Here’s a video showing you how to use it.
 
 DDEV snapshotting uses native hot backup tools for MariaDB, MySQL, and PostgreSQL inside the database container. This is super, super fast in both directions. It’s not a copy of the database directory, the state of the database is properly preserved. This means when you come back to work, everything is as you left it.
 
-**Important:** DDEV snapshotas are per-database type and version. Snapshots from MariaDB 10.11 can't be used with MySQL 8.0 for example.
+**Important:** DDEV snapshots are per-database type and version. Snapshots from MariaDB 10.11 can't be used with MySQL 8.0 for example.
 
 ## Backing up with `ddev export-db` and with `mysqldump`
 
@@ -98,7 +98,7 @@ mysqldump db | gzip >/var/www/html/.tarballs/db.YYYYMMDD.sql.gz
 
 To restore an SQL dump like that on the host you would use this command:
 
-`ddev import-db --src=.tarballs/db.YYYYMMDD.sql.gz`
+`ddev import-db --file=.tarballs/db.YYYYMMDD.sql.gz`
 
 A text-format database dump created with either this technique or `ddev export-db` can typically be restored on any MySQL/MariaDB server without trouble. It’s not as fast as `ddev snapshot`, and the restore is much slower. But it’s much more portable.
 
