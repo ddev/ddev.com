@@ -9,6 +9,10 @@ categories:
 
 This demonstration post showcases all the Markdown formatting features available for blog posts on ddev.com. It's designed for testing the rendering of various Markdown elements.
 
+:::note[Blog Posts Are Markdown, Not MDX]
+Some standalone site pages (like [Contact](/contact) and [Foundation](/foundation)) are written in MDX and can import Astro components. Blog posts are different: they're loaded from plain `.md` files only, so MDX syntax and component imports aren't available here. Stick to the Markdown and directive syntax demonstrated in this post.
+:::
+
 ## Table of Contents
 
 ## Callout Boxes
@@ -51,8 +55,8 @@ This command will delete your database. Make a backup first with `ddev snapshot`
 
 ### Danger Callout
 
-:::danger[Breaking Change]
-Version 2.0 removes support for the legacy configuration format. You'll need to migrate your `.ddev/config.yaml` file.
+:::danger[Breaking Change (hypothetical example)]
+Imagine a future release removes support for a legacy configuration format, requiring you to migrate your `.ddev/config.yaml` file. That's the kind of announcement this callout style is meant for.
 :::
 
 Critical warning example:
@@ -102,6 +106,16 @@ Emojis are automatically made accessible for screen readers:
 - ⚠️ Warning message
 - 💡 Helpful tip
 - 🎉 Celebrate your success!
+
+### Footnotes
+
+GFM footnotes are also supported. Docker Desktop isn't the only container runtime DDEV works with[^1], and DDEV detects which one you have automatically[^2].
+
+[^1]: See [Docker installation](https://docs.ddev.com/en/stable/users/install/docker-installation/) for supported providers like Colima, OrbStack, Rancher Desktop, and Lima.
+
+[^2]: Detection happens at `ddev start` time; no manual configuration is required.
+
+Footnote definitions can be written anywhere in the document - they're automatically collected into a numbered "Footnotes" section at the very end of the rendered page, each with a back-link to its reference.
 
 ## Standard Markdown Blockquotes
 
@@ -370,7 +384,7 @@ Videos should be wrapped in a `.video-container` div for responsive sizing:
 
 <div class="video-container">
   <iframe
-    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+    src="https://www.youtube.com/embed/VIDEO_ID"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen
