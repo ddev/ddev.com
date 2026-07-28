@@ -7,7 +7,7 @@ This guide covers special markdown formatting features available for blog posts 
 The site supports:
 
 - **Callout Boxes** - Styled note, tip, warning, and danger boxes with custom titles
-- **GitHub Flavored Markdown** - Tables, task lists, strikethrough, automatic URL linking
+- **GitHub Flavored Markdown** - Tables, task lists, strikethrough, automatic URL linking, footnotes
 - **Code Blocks** - Syntax highlighting with copy buttons (via Shiki)
 - **Automatic Table of Contents** - Generated from headings
 - **Smart External Links** - Auto-added security attributes for external URLs
@@ -15,6 +15,10 @@ The site supports:
 - **Accessible Emojis** - Screen reader labels added automatically
 - **Internal Link Resolution** - Simple filename references between blog posts
 - **Standard Markdown** - Full CommonMark support plus extras
+
+## Blog Posts Are Markdown, Not MDX
+
+Some standalone site pages (like `/contact`, `/foundation`, `/newsletter`, and `/privacy`) are written as `.mdx` files and can import Astro components directly. Blog posts don't have this option: the blog content collection only loads plain `.md` files, so MDX syntax and component imports don't work in `src/content/blog/`. Everything in this guide is plain Markdown plus the directive/plugin syntax described below.
 
 ## Callout Boxes
 
@@ -195,6 +199,18 @@ Create interactive checkboxes:
 - [x] Create project
 - [ ] Configure add-ons
 - [ ] Deploy
+
+### Footnotes
+
+Add footnote references with `[^label]` and their definitions anywhere in the document:
+
+```markdown
+Docker Desktop isn't the only supported runtime[^1].
+
+[^1]: See the docs for other options like Colima and OrbStack.
+```
+
+Definitions are automatically collected into a numbered "Footnotes" section at the end of the rendered page, regardless of where in the source they're defined, with a back-link to each reference.
 
 ## Table of Contents
 
