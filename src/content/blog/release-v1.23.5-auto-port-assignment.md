@@ -17,7 +17,7 @@ I'm happy to announce that [DDEV v1.23.5](https://github.com/ddev/ddev/releases/
 
 **Automatic Time Zones**: It's been possible to specify the time zone for the web container for years, but automating it was suggested by community member [Martin Anderson-Clutz (mandclu)](https://www.drupal.org/u/mandclu) in the Drupal Slack and implemented by Stas. We think that it will "just work" for almost everybody.
 
-**`ddev get` becomes `ddev add-on`**: Community member [Guy Sartorelli](https://github.com/GuySartorelli) took this one on and nailed it. He noticed that `ddev get` had outgrown its name and now had too many weird permutations, so now we have `ddev add-on list` and `ddev add-on remove` and things that make more sense. Don't worry, the same capabilities are still there, and `ddev get` still works the way it did, it just nags you a little bit when you use the old command.
+**`ddev get` becomes `ddev add-on`**: Community member [Chloe Sartorelli](https://github.com/ChloeSartorelli) took this one on and nailed it. They noticed that `ddev get` had outgrown its name and now had too many weird permutations, so now we have `ddev add-on list` and `ddev add-on remove` and things that make more sense. Don't worry, the same capabilities are still there, and `ddev get` still works the way it did, it just nags you a little bit when you use the old command.
 
 **Windows ARM64 Support**: Those fancy new Windows ARM64 laptops are being promoted for their AI, but they're fantastic machines for performance and battery life. DDEV has full support for them, both on WSL2 and traditional Windows.
 
