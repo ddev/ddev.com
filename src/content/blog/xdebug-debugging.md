@@ -14,7 +14,7 @@ categories:
   - Videos
 ---
 
-**Update**: For current guidance, including DDEV v1.25's `ddev utility xdebug-diagnose` tool and full troubleshooting steps, see [Xdebug in DDEV: Understanding, Debugging, and Troubleshooting Step Debugging](xdebug-step-debugging-understanding-and-troubleshooting.md). This post remains as the recording of our original **Xdebug contributor training**, plus a hands-on demo of the Xdebug protocol using `nc`/netcat that isn't repeated elsewhere.
+**Update**: For current guidance, including DDEV v1.25's `ddev utility xdebug-diagnose` tool and full troubleshooting steps, see [Xdebug in DDEV: Understanding, Debugging, and Troubleshooting Step Debugging](xdebug-step-debugging-understanding-and-troubleshooting.md). This post remains as the recording of our original **Xdebug contributor training**, plus a hands-on demo of the Xdebug protocol using `nc`/`netcat` that isn't repeated elsewhere.
 
 ---
 
@@ -30,7 +30,7 @@ Second, please [contribute to the Xdebug project](https://xdebug.org/support). D
 
 DDEV's Xdebug [documentation](https://docs.ddev.com/en/stable/users/debugging-profiling/step-debugging/) covers basic usage and setup for PhpStorm, VS Code, and other IDEs. In short: `ddev xdebug on`, make your IDE listen for Xdebug, then visit a page in your browser. If you have trouble, the [updated guide](xdebug-step-debugging-understanding-and-troubleshooting.md) and its `ddev utility xdebug-diagnose` tool cover troubleshooting in depth, including WSL2.
 
-Here's a demo that isn't repeated elsewhere: watching the Xdebug protocol itself with `nc`/netcat, which makes it obvious that Xdebug is just a network connection from PHP to your IDE over `host.docker.internal:9003`.
+Here's a demo that isn't repeated elsewhere: watching the Xdebug protocol itself with `nc`/`netcat`, which makes it obvious that Xdebug is just a network connection from PHP to your IDE over `host.docker.internal:9003`.
 
 ## Demonstrating Xdebug's behavior
 
