@@ -1,7 +1,8 @@
 ---
 title: "Contributor Training: Using Claude Code for a DDEV PR"
 pubDate: 2025-09-09
-#modifiedDate: 2025-02-26
+modifiedDate: 2026-07-28
+modifiedComment: "The billing/usage complaints in the Problems section below reflected the confusing state of things in September 2025. Anthropic has since made usage more visible (in-session usage indicators, separate weekly and 5-hour limits) — see [Claude's current plans](https://claude.com/pricing) for what's available today."
 summary: Contributor training demonstrating use of Claude Code for a DDEV PR.
 author: Randy Fay
 featureImage:
@@ -48,7 +49,7 @@ Here's our August 21, 2025 [Contributor Training](/blog/category/training) on us
 
 ## Problems
 
-- The current billing situation for Claude is confusing. It's based on the number of tokens you're using, but it doesn't give you feedback until you've almost used it all up. Then (on the $20/month plan) you're not able to use it for a number of hours, which seems to be arbitrary. You can spend more for a higher monthly plan, and you can also pay-as-you-go for tokens. I haven't done either of those. Clear context (`/clear`) at key points to limit the amount of context you're carrying forward and limit the number of tokens you're using.
+- The current billing situation for Claude is confusing. It's based on the number of tokens you're using, but it doesn't give you feedback until you've almost used it all up. Then (on the $20/month plan) you're not able to use it for a number of hours, which seems to be arbitrary. You can spend more for a higher monthly plan, and you can also pay-as-you-go for tokens. I haven't done either of those. Clear context (`/clear`) at key points to limit the amount of context you're carrying forward and limit the number of tokens you're using. **Update**: this was a fair complaint about the September 2025 experience; Anthropic has since added clearer in-session usage indicators and separate weekly/5-hour limits, see [Claude's current plans](https://claude.com/pricing).
 - Claude can get stuck and go in circles, like other AI. Clear context to try to get around that. Have an overall plan to get around it.
 - I'm annoyed by how verbose and flowery the commit/issue/PR language is sometimes, but have tried to calm it down using directives in the `CLAUDE.md` file, but without success. It also is complimenting me all the time and always agreeing with what I say. I haven't been able to calm that down either.
 - I find that the amount of code I can create quickly for a significant feature is amazing. But then I have to understand it. And since I didn't create it at the micro level, it can be exhausting to work with.
