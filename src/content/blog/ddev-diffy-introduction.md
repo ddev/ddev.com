@@ -2,7 +2,7 @@
 title: "Introduction: The Diffy DDEV plugin"
 pubDate: 2024-08-09
 modifiedDate: 2026-07-28
-modifiedComment: "Verified the [ddev-diffy add-on](https://github.com/diffywebsite/ddev-diffy) and `ddev screenshot` are still active and maintained, updated the credential setup step to use `ddev dotenv set`, and noted the free Diffy Pro license included with DDEV sponsorship."
+modifiedComment: "The [ddev-diffy add-on](https://github.com/diffywebsite/ddev-diffy) and `ddev screenshot` are still active and maintained, updated the credential setup step to use `ddev dotenv set`, and noted the free Diffy Pro license included with DDEV sponsorship."
 summary: Visual regression testing tool Diffy got DDEV integration!
 author: Yuri Gerasymov
 featureImage:
