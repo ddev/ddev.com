@@ -30,6 +30,8 @@ ignorePatterns:
   - pattern: "^https://(www\\.)?reddit\\.com"
   # Rejects linkspector's HTTP/2 requests from CI runners.
   - pattern: "^https://firesphere\\.dev/articles/ddev-elasticsearch-and-silverstripe$"
+  # Blocks or is unreachable from CI runners, even though the site is up.
+  - pattern: "^https://(www\\.)?rueegger\\.me"
 aliveStatusCodes:
   - 200
   - 206
