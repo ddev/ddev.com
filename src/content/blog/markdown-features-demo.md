@@ -55,8 +55,8 @@ This command will delete your database. Make a backup first with `ddev snapshot`
 
 ### Danger Callout
 
-:::danger[Breaking Change]
-Version 2.0 removes support for the legacy configuration format. You'll need to migrate your `.ddev/config.yaml` file.
+:::danger[Breaking Change (hypothetical example)]
+Imagine a future release removes support for a legacy configuration format, requiring you to migrate your `.ddev/config.yaml` file. That's the kind of announcement this callout style is meant for.
 :::
 
 Critical warning example:
@@ -384,7 +384,7 @@ Videos should be wrapped in a `.video-container` div for responsive sizing:
 
 <div class="video-container">
   <iframe
-    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+    src="https://www.youtube.com/embed/VIDEO_ID"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen
