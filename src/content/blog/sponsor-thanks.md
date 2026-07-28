@@ -1,7 +1,8 @@
 ---
 title: "Thanks to our Amazing Sponsors!"
 pubDate: 2025-03-17
-#modifiedDate: 2025-02-06
+modifiedDate: 2026-07-28
+modifiedComment: "Platform.sh is now Upsun, sponsorship levels have changed more than once since this was written, and the April 2025 Docker Hub pull-limit change came and went without affecting DDEV users. See [Thanks to Upsun, and Your Help is Needed Now!](/blog/upsun-thank-you-new-sponsors-needed/) and the [sponsor page](/sponsor) for the current picture."
 summary: Thank You to our Amazing Sponsors!
 author: Randy Fay
 featureImage:
@@ -19,7 +20,8 @@ We just want to take a moment to thank all of the amazing sponsors of the DDEV o
 
 ## Major Sponsors
 
-- [Platform.sh](https://platform.sh) has been a major sponsor of DDEV for a few years now. You may know that they recently reduced their sponsorship, but they remain our largest single supporter, and we appreciate it greatly. Platform.sh has also transferred the "ddev" domain names to the [DDEV Foundation](/foundation) and will be transferring the "DDEV" trademark. And they're funding Randy's plane ticket to Drupalcon Atlanta!
+- **Update**: [Platform.sh](https://platform.sh) is now [Upsun](https://upsun.com), and their sponsorship level (and DDEV's overall sponsorship total) has changed more than once since this list was written. See [Thanks to Upsun, and Your Help is Needed Now!](upsun-thank-you-new-sponsors-needed.md) and the [sponsor page](/sponsor) for the current status, and [Upsun Completes Transfer of the DDEV Trademark](upsun-trademark-transfer-complete.md) for the domain/trademark handoff mentioned below.
+- Platform.sh has been a major sponsor of DDEV for a few years now. You may know that they recently reduced their sponsorship, but they remain our largest single supporter, and we appreciate it greatly. Platform.sh has also transferred the "ddev" domain names to the [DDEV Foundation](/foundation) and will be transferring the "DDEV" trademark. And they're funding Randy's plane ticket to Drupalcon Atlanta!
 - [Tag1 Consulting](https://tag1consulting.com) stepped up to generously support DDEV at a very significant level so many years ago, and has continued doing that. And they don't just offer outstanding financial support, they're always making clear that they use and support DDEV, and we get to see them at conferences.
 - [Mobilistics](https://mobilistics.de/) and [i-gelb](https://i-gelb.net) both sponsor at the $500/month level.
 - All these lovely organizations sponsor at the $100/month (or a bit higher) level: [Lullabot](https://lullabot.com), [Affinity Bridge](https://affinitybridge.com/), [Webikon](https://github.com/claudiu-cristea), [FameHelsinki](https://fame.fi/), [OPTASY](https://www.optasy.com/), [Gizra](https://gizra.com), [Cambrico](https://cambrico.net/), [Agaric](https://agaric.coop), [Centarro](https://centarro.io), [Craft CMS](https://craftcms.com/), [Redfin Solutions](https://redfinsolutions.com/), [b13](https://b13.com). And brand new this week (welcome!) [Full Fat Things](https://www.fullfatthings.com/).
@@ -34,7 +36,7 @@ Here are some of many sponsors who help out via [sponsorship](/sponsor).
 
 The open-source community has lots of folks helping out multiple collaborators. In our case, [MacStadium](https://macstadium.com) provides us testing resources, and [JetBrains](https://jetbrains.com) provides a subscription to their IDE products, thanks!
 
-But we never forget Docker. Docker has adopted us in the [Docker-Sponsored-Open-Source (DSOS)](https://docs.docker.com/docker-hub/repos/manage/trusted-content/dsos-program/) program for a few years now, and this means that all of your image pulls are sponsored in that project. You may know that normal image pulls will be strictly limited starting April 1, 2025, but because of the DSOS, users of DDEV won't hit that restriction.
+But we never forget Docker. Docker has adopted us in the [Docker-Sponsored-Open-Source (DSOS)](https://docs.docker.com/docker-hub/repos/manage/trusted-content/dsos-program/) program for a few years now, and this means that all of your image pulls are sponsored in that project. Docker's stricter pull-rate limits took effect April 1, 2025, but thanks to the DSOS, DDEV's images were unaffected.
 
 And please don't forget that the [open-source Docker project](https://github.com/moby/moby) underlies every single Docker provider. It doesn't matter if you're using OrbStack or Lima or Docker Desktop or whatever, they're all built on top of the amazing Docker open-source project.
 

@@ -1,8 +1,8 @@
 ---
 title: "Contributor Training: Advanced Add-On Techniques"
 pubDate: 2024-07-23
-modifiedDate: 2026-04-28
-modifiedComment: "Want to learn more? Check out the [DDEV Add-on Maintenance Guide](/blog/ddev-add-on-maintenance-guide) and the [Add-on Training: Creating and Maintaining](/blog/creating-maintaining-ddev-addons-training)."
+modifiedDate: 2026-07-28
+modifiedComment: "Want to learn more? Check out the [DDEV Add-on Maintenance Guide](/blog/ddev-add-on-maintenance-guide) and the [Add-on Training: Creating and Maintaining](/blog/creating-maintaining-ddev-addons-training). Also note: `ddev-platformsh`, used below for several Bash/Go-template examples, is now deprecated in favor of [`ddev-upsun`](/blog/ddev-upsun-platformsh-addon/), which is written using DDEV's newer [PHP-based add-on actions](https://docs.ddev.com/en/stable/users/extend/creating-add-ons/#php-based-actions-new). The Bash/template patterns shown here remain valid for add-ons that use them, but new complex add-ons should consider PHP-based actions instead."
 summary: Advanced Add-On Techniques for Contributors
 author: Randy Fay
 featureImage:
@@ -90,7 +90,7 @@ See the [general docs on extra services](https://docs.ddev.com/en/stable/users/e
 
 ## Interacting with users during `install.yaml` installs
 
-Although unusual, it is sometimes useful to interact with the user during the `ddev add-on get` process. For example, [`ddev-platformsh`](https://github.com/ddev/ddev-platformsh) checks to make sure that the `PLATFORMSH_CLI_TOKEN` has been properly configured, and, if not, requests it and configures it:
+Although unusual, it is sometimes useful to interact with the user during the `ddev add-on get` process. For example, [`ddev-platformsh`](https://github.com/ddev/ddev-platformsh) (now deprecated in favor of [`ddev-upsun`](ddev-upsun-platformsh-addon.md)) checks to make sure that the `PLATFORMSH_CLI_TOKEN` has been properly configured, and, if not, requests it and configures it:
 
 ```yaml
 pre_install_actions:
