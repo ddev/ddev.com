@@ -1,8 +1,8 @@
 ---
 title: "Customizing DDEV images with a custom Dockerfile"
 pubDate: 2020-04-07
-modifiedDate: 2024-12-31
-modifiedComment: Updated obsolete content.
+modifiedDate: 2026-07-28
+modifiedComment: Updated the MailHog example to Mailpit, and fixed a stale php7.1 mcrypt path.
 summary: How to use a custom Dockerfile to tailor DDEV’s images, complete with examples.
 author: Randy Fay
 featureImage:
@@ -42,13 +42,13 @@ Then the (global) `npm install` to install gulp-cli will be done (once) at build
 
 ### Modifying configuration files
 
-If you want to add files or override configuration files, it’s easy enough to do. For example, in this[ Stack Overflow question](https://stackoverflow.com/questions/60162842/how-can-i-add-basic-authentication-to-the-mailhog-service-in-ddev-local), a user wanted to put basic authentication in front of the MailHog configuration. The easiest way to do this is to override the `/etc/supervisor/conf.d/mailhog.conf`. So as that answer suggests:
+If you want to add files or override configuration files, it’s easy enough to do. For example, [this Stack Overflow question](https://stackoverflow.com/questions/60162842/how-can-i-add-basic-authentication-to-the-mailhog-service-in-ddev-local) shows a user wanting to put basic authentication in front of DDEV's built-in email-capture tool (MailHog at the time, replaced by Mailpit in DDEV v1.22). The same technique applies today: override `/etc/supervisor/conf.d/mailpit.conf`.
 
-- Put the new `mailhog.conf` and `mailhog-auth.txt` into the `.ddev/web-build` directory.
+- Put the new `mailpit.conf` and an auth file into the `.ddev/web-build` directory.
 - Add a Dockerfile to `.ddev/web-build` that uses the Docker build ADD command to put them into place:
   ```docker
-  ADD mailhog-auth.txt /etc
-  ADD .ddev/web-build/mailhog.conf /etc/supervisor/conf.d
+  ADD mailpit-auth.txt /etc
+  ADD .ddev/web-build/mailpit.conf /etc/supervisor/conf.d
   ```
 
 But you could use this same technique for so many things. Do you need to completely override the /etc/php/8.4/fpm/php-fpm.conf file? Do it. Do you need to completely revamp the entire nginx configuration directory? You can do it. You can also add scripts into the container or even Linux binaries. And you can check the whole thing into your project so that other members of your team automatically have it.
@@ -74,8 +74,8 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -o Dpkg:
 # The "echo" below forces accepting the "automatic" configuration, the same as hitting <RETURN>
 RUN echo | sudo pecl install mcrypt
 
-# Because php7.1-mcrypt is already installed in web container, we can copy its `mcrypt.ini`
-RUN cp /etc/php/7.1/mods-available/mcrypt.ini /etc/php/${DDEV_PHP_VERSION}/mods-available/ && phpenmod mcrypt
+# Write the module ini directly and enable it
+RUN echo "extension=mcrypt.so" > /etc/php/${DDEV_PHP_VERSION}/mods-available/mcrypt.ini && phpenmod mcrypt
 ```
 
 ## Join the conversation!
