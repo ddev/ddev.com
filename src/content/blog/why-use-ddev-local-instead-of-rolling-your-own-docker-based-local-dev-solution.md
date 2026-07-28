@@ -2,7 +2,7 @@
 title: "Why use DDEV instead of rolling your own Docker-based local dev solution?"
 pubDate: 2022-12-22
 modifiedDate: 2026-07-29
-modifiedComment: "Updated the years-of-development figure, PHP version range (to 5.6-8.5), a dead step-debugging doc anchor, and the Platform.sh link to Upsun."
+modifiedComment: "Updated the years-of-development figure, PHP version range (to 5.6-8.5), a dead step-debugging doc anchor, the Platform.sh link to Upsun, and added Lagoon to the hosting-provider integration list."
 summary: The benefits of using DDEV instead of a custom Docker setup for local development.
 author: Randy Fay
 featureImage:
@@ -41,7 +41,7 @@ If you know something about Docker, you know that you can throw one or two Docke
 
 [![DDEV, PhpStorm and Xdebug video and blog post](/img/blog/2020/12/screen-shot-2020-12-28-at-12.49.31-pm.png)](ddev-local-phpstorm-and-xdebug-debugging.md)
 
-- Integration with [Upsun](https://upsun.com/) (formerly Platform.sh), [Pantheon.io](https://docs.ddev.com/en/stable/users/providers/pantheon/), Acquia Cloud.
+- Integration with [Upsun](https://docs.ddev.com/en/stable/users/providers/upsun/) (formerly Platform.sh), [Pantheon.io](https://docs.ddev.com/en/stable/users/providers/pantheon/), [Lagoon](https://docs.ddev.com/en/stable/users/providers/lagoon/), and [Acquia Cloud](https://docs.ddev.com/en/stable/users/providers/acquia/).
 - `ddev share` lets you show work in progress to anyone anywhere in the world.
 - Respect for other tools and production environments: DDEV doesn’t reconfigure your computer or require exact versions of Docker, etc.
 - Extensive customization available, including [maintained add-ons with automated tests](https://docs.ddev.com/en/stable/users/extend/additional-services/).
