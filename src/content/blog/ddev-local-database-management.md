@@ -1,7 +1,8 @@
 ---
 title: "DDEV Database Management"
 pubDate: 2020-04-03
-modifiedDate: 2026-07-28
+modifiedDate: 2026-07-29
+modifiedComment: "Noted that phpMyAdmin is now an add-on rather than built in, and linked to the docs' Database GUIs section, which lists many more current browsers."
 summary: A detailed look at using DDEV to work with databases.
 author: Randy Fay
 featureImage:
@@ -37,7 +38,8 @@ I like to name my snapshots so I can find them later, so `ddev snapshot --name=t
 **Other database explorers**: There are lots of alternatives for GUI database explorers:
 
 - macOS users can use `ddev sequelace` to launch the free [Sequel Ace](https://sequel-ace.com/) database browser, or `ddev tableplus` for [TablePlus](https://tableplus.com), if they’re installed.
-- `ddev describe` tells you the URL for the built-in phpMyAdmin database browser (Hint: It’s `http://<yourproject>.ddev.site:8036`).
+- phpMyAdmin is no longer built into DDEV core, but you can add it back with `ddev add-on get ddev/ddev-phpmyadmin` (Adminer is another popular option: `ddev add-on get ddev/ddev-adminer`).
+- See the [Database GUIs](https://docs.ddev.com/en/stable/users/usage/database-management/#database-guis) docs for the full, current list of supported browsers, including TablePro, Querious, DBeaver, and HeidiSQL.
 - PhpStorm (and all JetBrains tools) have a nice database browser:
   - Choose a static `host_db_port` for your project. For example `host_db_port: 59002` (each project’s db port has to be different). (`ddev start` to make it take effect)
   - Use the “database” tool to create a source from “localhost”, with type `mysql` and the port you chose, credentials username: db and password: db
