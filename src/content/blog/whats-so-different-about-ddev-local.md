@@ -1,8 +1,8 @@
 ---
 title: "What’s so different about DDEV?"
 pubDate: 2022-10-30
-modifiedDate: 2026-07-28
-modifiedComment: 'Updated the Docker-provider list (added OrbStack, Rancher Desktop, Podman), replaced the removed NFS reference with Mutagen, fixed a dead ddev.com/ddev-local link, dropped the stale "PHP 8.2/Drupal 10 not yet released" claim, and updated the deb.sury.org PHP version range.'
+modifiedDate: 2026-07-29
+modifiedComment: 'Updated the Docker-provider list (added OrbStack, Rancher Desktop, Podman), replaced the removed NFS reference with Mutagen, fixed a dead ddev.com/ddev-local link, dropped the stale "PHP 8.2/Drupal 10 not yet released" claim, and updated the deb.sury.org PHP version range to 5.6-8.5.'
 summary: What makes DDEV stand out among other local development tools.
 author: Randy Fay
 featureImage:
@@ -47,6 +47,6 @@ These days users from designers to developers to testers and open source contrib
   - **Docker project**: We’re very involved with the Docker project, because DDEV users are always pushing the limits. We participate heavily in the [Compose](https://github.com/docker/compose/issues), [Docker Desktop for Mac](https://github.com/docker/for-mac/issues) and [Docker Desktop for Windows](https://github.com/docker/for-win/issues) issue queues, along with several others.
   - **mkcert**: The [mkcert](https://github.com/FiloSottile/mkcert) tool allows DDEV to provided trusted HTTPS in your local development environment. We’ve benefited enormously from it and have contributed back tests and bugfixes.
   - **Xdebug**: DDEV is great with [Xdebug](https://xdebug.org/), and of course we hear right away when there are problems and have been right in there in the issue queue.
-  - **deb.sury.org PHP Packages**: The Debian PHP packages (5.6 all the way through 8.4 at this point) that we use come from [deb.sury.org](https://deb.sury.org), and because the DDEV community is an early consumer of those packages, we’re often in that [issue queue](https://github.com/oerdnj/deb.sury.org/issues) too.
+  - **deb.sury.org PHP Packages**: The Debian PHP packages (5.6 all the way through 8.5 at this point) that we use come from [deb.sury.org](https://deb.sury.org), and because the DDEV community is an early consumer of those packages, we’re often in that [issue queue](https://github.com/oerdnj/deb.sury.org/issues) too.
 
 We’d love to hear what makes DDEV _your_ favorite, and we’re always [listening](https://docs.ddev.com/en/stable/users/support/) to hear what you want in the future… and of course we want to hear when things don’t work the way you want or expect. Hop in to the [open source repository on GitHub](https://github.com/ddev/ddev) to contribute!
