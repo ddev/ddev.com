@@ -6,6 +6,12 @@ description: Guidelines for using the DDEV name, logo, and colors, plus links to
 
 import { BRAND_GUIDE_URL, LOGOS_REPO_URL, ORG_NAME } from "../const"
 
+export const card =
+  "group grid grid-rows-[4.5rem_auto_auto] justify-items-center gap-2 rounded-lg border-2 border-slate-300 p-4 no-underline transition-colors hover:border-blue-500 dark:border-slate-600 dark:hover:border-blue-400"
+export const logo = "max-h-full max-w-full self-center p-2"
+export const cta =
+  "text-sm font-bold text-blue-600 group-hover:text-blue-700 dark:text-blue-400 dark:group-hover:text-blue-300"
+
 Quick reference for using the DDEV name and logo. For the full brand guide, additional PNG resolutions, and the logo-generation script, see the <a href={BRAND_GUIDE_URL}>Brand Guide</a> in the DDEV documentation.
 
 ## Naming
@@ -15,55 +21,51 @@ Quick reference for using the DDEV name and logo. For the full brand guide, addi
 
 ## Logos
 
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 not-prose">
-  <div class="flex flex-col items-center gap-3 rounded-lg border border-gray-200 p-6 dark:border-slate-700">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 not-prose">
+  <a href="/logos/ddev-mark.svg" download class={card}>
     <img
       src="/logos/ddev-mark.svg"
       alt="DDEV figurative mark"
-      class="h-16 w-16"
-      width="64"
-      height="64"
+      class="h-full w-auto self-center"
+      width="91"
+      height="91"
     />
-    <span class="text-sm font-mono text-navy-300 dark:text-navy-100">
-      Figurative mark
-    </span>
-    <a href="/logos/ddev-mark.svg" download class="text-sm">
-      Download SVG
-    </a>
-  </div>
-  <div class="flex flex-col items-center gap-3 rounded-lg border border-gray-200 p-6 dark:border-slate-700">
+    <span class="text-sm">Figurative mark</span>
+    <span class={cta}>Download SVG</span>
+  </a>
+  <a href="/logos/ddev-auto.svg" download class={card}>
+    <img
+      src="/logos/ddev-auto.svg"
+      alt="DDEV word mark that follows the system color scheme"
+      class={logo}
+      width="293"
+      height="69"
+    />
+    <span class="text-sm">Word and figurative mark, auto</span>
+    <span class={cta}>Download SVG</span>
+  </a>
+  <a href="/logos/ddev.svg" download class={card}>
     <img
       src="/logos/ddev.svg"
       alt="DDEV word mark for light backgrounds"
-      class="h-16"
+      class={`${logo} rounded bg-white`}
       width="293"
       height="69"
     />
-    <span class="text-sm font-mono text-navy-300 dark:text-navy-100">
-      Word mark, light backgrounds
-    </span>
-    <a href="/logos/ddev.svg" download class="text-sm">
-      Download SVG
-    </a>
-  </div>
-  <div
-    class="flex flex-col items-center gap-3 rounded-lg p-6"
-    style="background:#1e2127"
-  >
+    <span class="text-sm">Word and figurative mark, light</span>
+    <span class={cta}>Download SVG</span>
+  </a>
+  <a href="/logos/dark-ddev.svg" download class={card}>
     <img
       src="/logos/dark-ddev.svg"
       alt="DDEV word mark for dark backgrounds"
-      class="h-16"
+      class={`${logo} rounded bg-[#1e2127]`}
       width="293"
       height="69"
     />
-    <span class="text-sm font-mono text-white">
-      Word mark, dark backgrounds
-    </span>
-    <a href="/logos/dark-ddev.svg" download class="text-sm text-white">
-      Download SVG
-    </a>
-  </div>
+    <span class="text-sm">Word and figurative mark, dark</span>
+    <span class={cta}>Download SVG</span>
+  </a>
 </div>
 
 More formats, including PNG exports at multiple resolutions, are in the <a href={LOGOS_REPO_URL}>logos directory on GitHub</a>.
