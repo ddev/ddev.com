@@ -2,7 +2,7 @@
 title: "Thanks to our Amazing Sponsors!"
 pubDate: 2025-03-17
 modifiedDate: 2026-07-28
-modifiedComment: "Platform.sh is now Upsun, sponsorship levels have changed more than once since this was written, and the April 2025 Docker Hub pull-limit change came and went without affecting DDEV users. See [Thanks to Upsun, and Your Help is Needed Now!](upsun-thank-you-new-sponsors-needed.md) and the [sponsor page](/sponsor) for the current picture."
+modifiedComment: "Platform.sh is now Upsun, sponsorship levels have changed more than once since this was written, and the April 2025 Docker Hub pull-limit change came and went without affecting DDEV users. See [Thanks to Upsun, and Your Help is Needed Now!](/blog/upsun-thank-you-new-sponsors-needed/) and the [sponsor page](/sponsor) for the current picture."
 summary: Thank You to our Amazing Sponsors!
 author: Randy Fay
 featureImage:

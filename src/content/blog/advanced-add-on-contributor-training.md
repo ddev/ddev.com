@@ -2,7 +2,7 @@
 title: "Contributor Training: Advanced Add-On Techniques"
 pubDate: 2024-07-23
 modifiedDate: 2026-07-28
-modifiedComment: "Want to learn more? Check out the [DDEV Add-on Maintenance Guide](/blog/ddev-add-on-maintenance-guide) and the [Add-on Training: Creating and Maintaining](/blog/creating-maintaining-ddev-addons-training). Also note: `ddev-platformsh`, used below for several Bash/Go-template examples, is now deprecated in favor of [`ddev-upsun`](ddev-upsun-platformsh-addon.md), which is written using DDEV's newer [PHP-based add-on actions](https://docs.ddev.com/en/stable/users/extend/creating-add-ons/#php-based-actions-new). The Bash/template patterns shown here remain valid for add-ons that use them, but new complex add-ons should consider PHP-based actions instead."
+modifiedComment: "Want to learn more? Check out the [DDEV Add-on Maintenance Guide](/blog/ddev-add-on-maintenance-guide) and the [Add-on Training: Creating and Maintaining](/blog/creating-maintaining-ddev-addons-training). Also note: `ddev-platformsh`, used below for several Bash/Go-template examples, is now deprecated in favor of [`ddev-upsun`](/blog/ddev-upsun-platformsh-addon/), which is written using DDEV's newer [PHP-based add-on actions](https://docs.ddev.com/en/stable/users/extend/creating-add-ons/#php-based-actions-new). The Bash/template patterns shown here remain valid for add-ons that use them, but new complex add-ons should consider PHP-based actions instead."
 summary: Advanced Add-On Techniques for Contributors
 author: Randy Fay
 featureImage:

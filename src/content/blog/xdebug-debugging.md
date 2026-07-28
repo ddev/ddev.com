@@ -2,7 +2,7 @@
 title: "DDEV and Xdebug: Debugging and sorting out problems"
 pubDate: 2024-05-28
 modifiedDate: 2026-07-28
-modifiedComment: "Repositioned this post as the contributor-training-recording archive: trimmed the general Xdebug explanation and the Troubleshooting/WSL2 sections, which are now covered in more depth by the updated guide, and kept the unique training video and nc/netcat demo. See [Xdebug in DDEV: Understanding, Debugging, and Troubleshooting Step Debugging](xdebug-step-debugging-understanding-and-troubleshooting.md) for the current primary reference."
+modifiedComment: "Repositioned this post as the contributor-training-recording archive: trimmed the general Xdebug explanation and the Troubleshooting/WSL2 sections, which are now covered in more depth by the updated guide, and kept the unique training video and nc/netcat demo. See [Xdebug in DDEV: Understanding, Debugging, and Troubleshooting Step Debugging](/blog/xdebug-step-debugging-understanding-and-troubleshooting/) for the current primary reference."
 summary: Recording of the DDEV Xdebug contributor training, plus a hands-on nc/netcat demo of how the Xdebug protocol connects
 author: Randy Fay
 featureImage:

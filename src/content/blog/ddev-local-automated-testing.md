@@ -2,7 +2,7 @@
 title: "DDEV Automated Testing"
 pubDate: 2019-04-04
 modifiedDate: 2026-07-28
-modifiedComment: "Removed the Docker Toolbox/CircleCI references (both retired years ago; testing is all GitHub Actions now) and the stale line-count figures, which go out of date quickly. If you're looking to speed up your own project's CI with DDEV rather than DDEV's own test infrastructure, see [Using WarpBuild to speed up DDEV in CI](ddev-ci-warpbuild.md)."
+modifiedComment: "Removed the Docker Toolbox/CircleCI references (both retired years ago; testing is all GitHub Actions now) and the stale line-count figures, which go out of date quickly. If you're looking to speed up your own project's CI with DDEV rather than DDEV's own test infrastructure, see [Using WarpBuild to speed up DDEV in CI](/blog/ddev-ci-warpbuild/)."
 summary: What DDEV’s automatic tests look like behind the scenes.
 author: Randy Fay
 featureImage:
