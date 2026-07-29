@@ -4,30 +4,13 @@ export interface Props {
 }
 
 const { activeSlug } = Astro.props
-import { getCollection } from "astro:content"
+import { getAdjacentPosts } from "../lib/posts"
 
-let next, prev
-
-const posts = await getCollection("blog")
-const orderedPosts = posts.sort((a, b) => {
-  return new Date(a.data.pubDate) > new Date(b.data.pubDate) ? -1 : 1
-})
-
-orderedPosts.forEach((post, index) => {
-  if (post.id === activeSlug) {
-    if (posts[index - 1]) {
-      prev = posts[index - 1]
-    }
-
-    if (posts[index + 1]) {
-      next = posts[index + 1]
-    }
-  }
-})
+const { prev, next } = await getAdjacentPosts(activeSlug)
 ---
 
 <nav
-  class="max-w-4xl mx-auto px-6 lg:px-0 md:flex md:gap-2 md:columns-3 mt-32 py-4"
+  class="site-container site-gutter md:flex md:gap-2 md:columns-3 mt-32 py-4"
 >
   {
     prev && (
@@ -38,7 +21,7 @@ orderedPosts.forEach((post, index) => {
         title={`Previous: ${prev.data.title}`}
       >
         <div>
-          <span class="font-mono text-sm block text-navy-300 tracking-wider dark:text-navy-100">
+          <span class="sidebar-label">
             Previous Post
           </span>
           <span class="py-3 md:w-full font-bold dark:text-slate-400">{prev.data.title}</span>
@@ -55,7 +38,7 @@ orderedPosts.forEach((post, index) => {
         title={`Next: ${next.data.title}`}
       >
         <div>
-          <span class="font-mono text-sm block text-navy-300 tracking-wider dark:text-navy-100">
+          <span class="sidebar-label">
             Next Post
           </span>
           <span class="py-3 md:w-full font-bold dark:text-slate-400">{next.data.title}</span>

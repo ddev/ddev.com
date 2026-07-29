@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import SectionHeading from "../components/SectionHeading.astro"
+import HelpLinks from "../components/HelpLinks.astro"
+import ReleaseLinks from "../components/ReleaseLinks.astro"
 import { getLatestReleaseVersion } from "../lib/api"
 import { GITHUB_URL } from "../const"
 
@@ -162,8 +164,8 @@ const downloads = {
   title={title}
   description="Download DDEV binaries for Windows, macOS, Linux, and WSL2."
 >
-  <main class="max-w-4xl mx-auto mb-24">
-    <div class="my-24 px-6 lg:px-0">
+  <main class="site-container mb-24 site-gutter">
+    <div class="my-24">
       <h1 class="font-bold text-4xl dark:text-white">{title}</h1>
       <p class="text-2xl text-gray-600 my-4 dark:text-slate-400">
         <a
@@ -182,43 +184,52 @@ const downloads = {
       </p>
     </div>
 
-    <div class="px-6 lg:px-0">
-      <div class="mb-8 space-y-2">
-        <p class="dark:text-slate-300">
-          Most users (except on Windows) should use package managers like Homebrew (macOS) and apt (Ubuntu).
-        </p>
-        <p class="dark:text-slate-300">
-          See <a href="/get-started" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">quick instructions</a> or <a href={`https://docs.ddev.com/en/stable/users/install/ddev-installation/`} target="_blank" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">full installation docs</a>.
-        </p>
+    <div class="page-grid">
+      <div class="content-column">
+        <div class="mb-8 space-y-2">
+          <p class="dark:text-slate-300">
+            Most users (except on Windows) should use package managers like Homebrew (macOS) and apt (Ubuntu).
+          </p>
+          <p class="dark:text-slate-300">
+            See <a href="/get-started" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">quick instructions</a> or <a href={`https://docs.ddev.com/en/stable/users/install/ddev-installation/`} target="_blank" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">full installation docs</a>.
+          </p>
+        </div>
+
+        {
+          Object.entries(downloads).map(([_key, section]) => (
+            <div class="mb-12">
+              <SectionHeading title={section.title} />
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
+                {section.items.map((item) => (
+                  <a
+                    href={item.url || item.path}
+                    class="block border-2 border-slate-300 dark:border-slate-600 rounded-lg p-4 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                  >
+                    <div class="flex-1">
+                      <h3 class="font-semibold text-lg dark:text-white mb-1">
+                        {item.name}
+                      </h3>
+                      <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">
+                        {item.description}
+                      </p>
+                      <code class="text-xs text-slate-600 dark:text-slate-400 break-all">
+                        {item.file}
+                      </code>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))
+        }
       </div>
 
-      {
-        Object.entries(downloads).map(([_key, section]) => (
-          <div class="mb-12">
-            <SectionHeading title={section.title} />
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
-              {section.items.map((item) => (
-                <a
-                  href={item.url || item.path}
-                  class="block border-2 border-slate-300 dark:border-slate-600 rounded-lg p-4 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer"
-                >
-                  <div class="flex-1">
-                    <h3 class="font-semibold text-lg dark:text-white mb-1">
-                      {item.name}
-                    </h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">
-                      {item.description}
-                    </p>
-                    <code class="text-xs text-slate-600 dark:text-slate-400 break-all">
-                      {item.file}
-                    </code>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-        ))
-      }
+      <aside class="sidebar-column">
+        <div class="lg:sticky lg:top-8 space-y-8">
+          <ReleaseLinks rawVersion={rawVersion} />
+          <HelpLinks />
+        </div>
+      </aside>
     </div>
   </main>
 </Layout>

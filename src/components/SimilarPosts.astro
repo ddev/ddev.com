@@ -1,0 +1,82 @@
+---
+/**
+ * A compact list of the posts most like the current one, for the blog post
+ * sidebar. The ranking is getSimilarPosts() in lib/posts.ts.
+ */
+import type { CollectionEntry } from "astro:content"
+import { Picture } from "astro:assets"
+import { formatDate } from "../lib/api"
+import { resolveImage } from "../lib/images"
+
+export interface Props {
+  posts: CollectionEntry<"blog">[]
+}
+
+const { posts } = Astro.props
+
+// Framed like the cards on the blog listing: a logo on a near-white background
+// has no visible edge of its own in light mode.
+const thumbnailClass =
+  "block w-full aspect-3/2 object-cover rounded border border-gray-200 dark:border-slate-600"
+
+const items = await Promise.all(
+  posts.map(async (post) => {
+    const image = post.data.featureImage
+    const sources = [image?.src ?? `/img/generic-thumbnail.png`]
+    if (image?.srcDark) sources.push(image.srcDark)
+
+    // Two variants where a post has a dark version of its feature image, so the
+    // thumbnail follows the theme the way the post's own image does.
+    const themed =
+      sources.length > 1 ? ["dark:hidden", "hidden dark:block"] : [""]
+
+    return {
+      post,
+      alt: image?.alt ?? ``,
+      variants: await Promise.all(
+        sources.map(async (src, i) => ({
+          src,
+          resolved: await resolveImage(src),
+          class: `${thumbnailClass} ${themed[i]}`.trim(),
+        }))
+      ),
+    }
+  })
+)
+---
+
+<ul>
+  {
+    items.map(({ post, alt, variants }) => (
+      <li class="mb-4">
+        <a href={`/blog/${post.id}`} rel="prefetch" class="group flex gap-3">
+          {/* The span holds the thumbnail's size: `Picture` renders a
+              `picture` element, which would otherwise shrink in the flex row. */}
+          <span class="block w-24 shrink-0">
+            {variants.map((variant) =>
+              variant.src.includes(".svg") ? (
+                <img src={variant.src} alt={alt} class={variant.class} />
+              ) : (
+                <Picture
+                  class={variant.class}
+                  src={variant.resolved as any}
+                  alt={alt}
+                  width={240}
+                  height={160}
+                />
+              )
+            )}
+          </span>
+          <span class="min-w-0">
+            <span class="block text-sm font-bold group-hover:underline dark:text-slate-300">
+              {post.data.title}
+            </span>
+            <span class="mt-1 block text-xs text-gray-500 dark:text-slate-400">
+              {formatDate(post.data.pubDate.toISOString())}
+            </span>
+          </span>
+        </a>
+      </li>
+    ))
+  }
+</ul>

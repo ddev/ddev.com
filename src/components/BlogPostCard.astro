@@ -5,13 +5,14 @@
 import type { CollectionEntry } from "astro:content"
 import { render } from "astro:content"
 import { Picture } from 'astro:assets'
-import type { ImageMetadata } from 'astro'
+import { resolveImage } from "../lib/images"
 interface Props {
   post: CollectionEntry<"blog">
 }
 
+import CategoryPills from "./CategoryPills.astro"
 import { getEntry } from "astro:content"
-import { getSlug, formatDate, getCategoryUrl } from "../lib/api"
+import { getSlug, formatDate } from "../lib/api"
 
 const { post } = Astro.props
 const { remarkPluginFrontmatter } = await render(post)
@@ -25,13 +26,6 @@ const featureImageUrl = featureImage?.src ?? `/img/generic-thumbnail.png`
 const featureImageAlt = featureImage?.alt ?? ``
 const featureImageDarkUrl = featureImage?.srcDark ?? null
 
-const images = import.meta.glob<{ default: ImageMetadata }>(
-  '/public/img/**/*.{png,jpg,jpeg,webp,gif}'
-)
-const resolveImage = async (path: string) => {
-  const key = `/public${path}`
-  return images[key] ? (await images[key]()).default : path
-}
 const resolvedSrc = await resolveImage(featureImageUrl)
 const resolvedSrcDark = featureImageDarkUrl ? await resolveImage(featureImageDarkUrl) : null
 
@@ -42,15 +36,19 @@ const categories = post.data.categories.length ? post.data.categories : []
   /* `isolation: isolate` is here to convince Safari not to display un-rounded corners during animation */
 }
 <div
-  class="relative flex flex-col rounded-lg overflow-hidden"
+  class="relative flex flex-col rounded-lg overflow-hidden border border-gray-200 dark:border-slate-500"
   style="isolation: isolate;"
 >
-  <div class="shrink-0">
+  {/* No background of its own: logo SVGs are drawn to sit on the page. The rule
+      is what separates the image from the text below it. */}
+  <div class="shrink-0 border-b border-gray-200 dark:border-slate-500">
     {
       featureImageUrl.includes(".svg") ? (
+        /* The same box, filled the same way, as the raster images below, so the
+           cards in a row line up. */
         <>
-          <img src={featureImageUrl} alt={featureImageAlt} class={featureImageDarkUrl ? "dark:hidden" : ""} />
-          {featureImageDarkUrl && <img src={featureImageDarkUrl} alt={featureImageAlt} class="hidden dark:block" />}
+          <img src={featureImageUrl} alt={featureImageAlt} class={`block w-full aspect-3/2 object-cover${featureImageDarkUrl ? " dark:hidden" : ""}`} />
+          {featureImageDarkUrl && <img src={featureImageDarkUrl} alt={featureImageAlt} class="hidden dark:block w-full aspect-3/2 object-cover" />}
         </>
       ) : (
         <>
@@ -76,16 +74,7 @@ const categories = post.data.categories.length ? post.data.categories : []
   </div>
   <div class="flex-1 bg-gray-100 p-6 flex flex-col justify-between dark:bg-slate-600">
     <div class="flex-1">
-      <div class="flex flex-wrap gap-1">
-        {categories.map((category) => (
-          <a
-            href={getCategoryUrl(category)}
-            class="relative z-10 text-xs font-mono px-2 py-0.5 rounded-full border border-indigo-400 text-indigo-600 hover:border-indigo-600 dark:border-cyan-500 dark:text-cyan-300 dark:hover:border-cyan-300"
-          >
-            {category}
-          </a>
-        ))}
-      </div>
+      <CategoryPills categories={categories} />
       <a href={`/blog/${post.id}`} class="block mt-2 after:absolute after:inset-0">
         <p class="text-xl font-semibold text-gray-900 dark:text-white">
           {post.data.title}

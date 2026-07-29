@@ -1,0 +1,50 @@
+---
+/**
+ * The ways to sponsor, kept beside the page that explains them. It repeats the
+ * tier cards' links on purpose: someone who has read far enough down to decide
+ * shouldn't have to scroll back up to act on it.
+ */
+import CtaButton from "./CtaButton.astro"
+import SidebarLinks from "./SidebarLinks.astro"
+import { GITHUB_SPONSORS_URL, PAYPAL_DONATE_URL, STORE_URL } from "src/const"
+
+const otherWays = [
+  { label: "Buy DDEV swag", href: STORE_URL },
+  { label: "About the Foundation", href: "/foundation" },
+]
+---
+
+<div class="lg:sticky lg:top-8 space-y-8">
+  <div class="sidebar-card">
+    <span class="sidebar-label">Ways to Sponsor</span>
+
+    <div class="mt-3 space-y-2">
+      <CtaButton
+        text="GitHub Sponsors"
+        href={GITHUB_SPONSORS_URL}
+        size="small"
+        target="_blank"
+      />
+      <CtaButton
+        text="PayPal"
+        href={PAYPAL_DONATE_URL}
+        type="hollow"
+        size="small"
+        target="_blank"
+      />
+      <CtaButton
+        text="Invoice or transfer"
+        href="/contact#sponsorship"
+        type="hollow"
+        size="small"
+      />
+    </div>
+
+    <p class="mt-3 text-sm text-gray-600 dark:text-slate-400">
+      Sponsor at any amount. As a US 501(c)(3) nonprofit, sponsorships to the
+      Foundation may be tax-deductible.
+    </p>
+  </div>
+
+  <SidebarLinks label="Other Ways to Help" links={otherWays} />
+</div>

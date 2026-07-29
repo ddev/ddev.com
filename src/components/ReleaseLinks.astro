@@ -1,0 +1,24 @@
+---
+/**
+ * What someone on the download page needs that isn't a file: which release
+ * they're looking at, and where the instructions are.
+ */
+import SidebarLinks from "./SidebarLinks.astro"
+import { GITHUB_URL } from "src/const"
+
+export interface Props {
+  // The tag as GitHub returns it, with the leading "v"
+  rawVersion: string
+}
+
+const { rawVersion } = Astro.props
+
+const links = [
+  { label: "Release notes", href: `${GITHUB_URL}/releases/tag/${rawVersion}` },
+  { label: "All releases", href: `${GITHUB_URL}/releases` },
+  { label: "Checksums", href: "/download/checksums.txt" },
+  { label: "Installation steps", href: "/get-started" },
+]
+---
+
+<SidebarLinks label={rawVersion} links={links} />

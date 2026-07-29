@@ -2,9 +2,11 @@
 layout: ../layouts/MarkdownLayout.astro
 title: DDEV Foundation
 description: Learn about the DDEV Foundation, a Colorado, USA 501(c)(3) nonprofit corporation that develops and maintains DDEV, the local development environment tool.
+index: true
 ---
 
 import OrgAddress from "../components/OrgAddress.astro"
+import SponsorCTA from "../components/SponsorCTA.astro"
 import { ORG_NAME } from "../const"
 
 The {ORG_NAME}, a Colorado (USA) nonprofit corporation, is the developer of [DDEV](https://ddev.com). It was formerly named the Localdev Foundation. It serves as the fiscal entity for the project and owns the bank account, etc. For more, see [About DDEV](/about).
@@ -83,3 +85,5 @@ Contact [support](/contact).
 - Our [Articles of Incorporation](https://www.sos.state.co.us/biz/ViewImage.do?masterFileId=20211820326&fileId=20258242147) are posted with the State of Colorado, USA.
 - US 501(c)(3) nonprofit information available at [IRS Tax Exempt Organization Search](https://apps.irs.gov/app/eos/), search for "DDEV Foundation".
 - Read our [Privacy Policy](/privacy).
+
+<SponsorCTA />

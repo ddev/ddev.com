@@ -1,0 +1,29 @@
+---
+/**
+ * Where to go next from a blog post. Previous and next live in the footer, at
+ * the point where someone has finished reading; this is what's worth having
+ * beside the post the whole way down.
+ */
+import type { CollectionEntry } from "astro:content"
+import SimilarPosts from "./SimilarPosts.astro"
+import { getSimilarPosts } from "../lib/posts"
+
+export interface Props {
+  entry: CollectionEntry<"blog">
+}
+
+const { entry } = Astro.props
+
+const similar = await getSimilarPosts(entry.id)
+---
+
+{
+  similar.length > 0 && (
+    <div>
+      <span class="sidebar-label">Similar Posts</span>
+      <div class="mt-3">
+        <SimilarPosts posts={similar} />
+      </div>
+    </div>
+  )
+}

@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro"
 import Heading from "../components/Heading.astro"
 import PostBody from "../components/PostBody.astro"
+import SponsorCTA from "../components/SponsorCTA.astro"
 import {
   getRepoDetails,
   getContributors,
@@ -18,16 +19,27 @@ const sponsorData = await getSponsors()
 const releaseData = await getReleases()
 
 const activeUsers = await getActiveUsers()
+
+const count = (value: number | string) =>
+  parseInt(String(value)).toLocaleString("en-US")
+
+const stats = [
+  { value: `${activeUsers.toLocaleString("en-US")}+`, label: "active users" },
+  { value: count(releaseData.length), label: "releases" },
+  { value: count(contributorData.length), label: "contributors" },
+  { value: count(sponsorData.length), label: "sponsors" },
+  { value: count(repoData.stargazers_count || 0), label: "GitHub stars" },
+]
 ---
 
 <Layout
   title={title}
   description={`A brief look at DDEV’s backstory and contributors.`}
 >
-  <main class="max-w-4xl mx-auto mb-24">
+  <main class="site-container mb-24">
     <Heading title={`The Story of DDEV`} />
-    <div class="lg:flex">
-      <div class="px-6 lg:px-0 lg:w-2/3">
+    <div class="page-grid">
+      <div class="site-gutter content-column">
         <PostBody>
           <p>
             DDEV is a local development environment for web developers. It
@@ -69,44 +81,31 @@ const activeUsers = await getActiveUsers()
             DDEV is an open-source project, free to all, and now has community governance via
             the <a href="/foundation">DDEV Foundation</a> and its Board of Directors.
           </p>
+
+          <SponsorCTA />
         </PostBody>
       </div>
-      <div class="mt-16 lg:mt-0 lg:w-1/3 lg:pl-16">
-        <ul class="flex flex-wrap lg:block dark:text-white">
-          <li class="mb-4 p-6 lg:p-0">
-            <span class="text-5xl font-thin"
-              >{activeUsers.toLocaleString("en-US")}+</span
+      <aside class="site-gutter sidebar-column">
+        <div class="lg:sticky lg:top-8">
+          <div class="sidebar-card">
+            <span
+              class="sidebar-label"
             >
-            <span class="block font-mono text-sm">active users</span>
-          </li>
-          <li class="mb-4 p-6 lg:p-0">
-            <span class="text-5xl font-thin"
-              >{parseInt(releaseData.length).toLocaleString("en-US")}</span
-            >
-            <span class="block font-mono text-sm">releases</span>
-          </li>
-          <li class="mb-4 p-6 lg:p-0">
-            <span class="text-5xl font-thin"
-              >{parseInt(contributorData.length).toLocaleString("en-US")}</span
-            >
-            <span class="block font-mono text-sm">contributors</span>
-          </li>
-          <li class="mb-4 p-6 lg:p-0">
-            <span class="text-5xl font-thin"
-              >{parseInt(sponsorData.length).toLocaleString("en-US")}</span
-            >
-            <span class="block font-mono text-sm">sponsors</span>
-          </li>
-          <li class="p-6 lg:p-0">
-            <span class="text-5xl font-thin"
-              >{
-                parseInt(repoData.stargazers_count || 0).toLocaleString("en-US")
-              }</span
-            >
-            <span class="block font-mono text-sm">GitHub stars</span>
-          </li>
-        </ul>
-      </div>
+              DDEV Today
+            </span>
+            <ul class="mt-3 flex flex-wrap gap-x-8 lg:block dark:text-white">
+              {
+                stats.map((stat) => (
+                  <li class="mt-4 first:mt-0">
+                    <span class="text-4xl font-thin">{stat.value}</span>
+                    <span class="block font-mono text-sm">{stat.label}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </aside>
     </div>
   </main>
 </Layout>

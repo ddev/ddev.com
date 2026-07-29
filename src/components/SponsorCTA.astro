@@ -1,0 +1,27 @@
+---
+/**
+ * One sponsorship ask, worded and spaced the same way on every page that ends
+ * with it. Its look and its top margin are `.sponsor-cta` in global.css;
+ * `not-prose` keeps it identical inside a prose column and outside one.
+ */
+import CtaButton from "./CtaButton.astro"
+import { DISCORD_URL } from "src/const"
+---
+
+<div class="not-prose sponsor-cta">
+  <h2 class="text-2xl font-bold dark:text-white">Does DDEV matter to you?</h2>
+  <p class="mt-3 text-gray-600 dark:text-slate-400">
+    DDEV is free and open source, paid for by the people and companies that use
+    it. Recurring sponsorship is what keeps its two maintainers on it full time.
+    There are other ways to help, too.
+  </p>
+  <div class="mt-6 flex flex-wrap gap-3">
+    <CtaButton text="Sponsor DDEV" href="/sponsor" size="small" />
+    <CtaButton
+      text="Join the community"
+      href={DISCORD_URL}
+      type="hollow"
+      size="small"
+    />
+  </div>
+</div>

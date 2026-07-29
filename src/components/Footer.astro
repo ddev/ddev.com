@@ -1,6 +1,8 @@
 ---
 /**
- * Global site footer.
+ * Global site footer: who this is, where to go next, and the legal line. Each
+ * social account is named once, as an icon in the top band, rather than being
+ * listed again in a column.
  */
 import {
   GITHUB_ISSUES_URL,
@@ -18,172 +20,102 @@ import {
 
 import Icon from "./Icon.astro"
 
-const navigation = {
-  support: [
-    { name: "Documentation", href: DOCUMENTATION_URL, target: "_blank" },
-    { name: "Add-on Registry", href: ADDON_REGISTRY_URL, target: "_blank" },
-    { name: "Issues", href: GITHUB_ISSUES_URL, target: "_blank" },
-    { name: "Discord", href: DISCORD_URL, target: "_blank", me: true },
-    { name: "Contact", href: "/contact", me: true }
-  ],
-  product: [
-    { name: "About", href: "/about" },
-    { name: "Download", href: "/download" },
-    { name: "Swag Shop", href: STORE_URL, target: "_blank"},
-    { name: "Sponsor", href: "/sponsor" },
-    { name: "Contributor Live Training", href: "/blog/category/training"},
-    { name: "Blog", href: "/blog" },
-    { name: "Foundation", href: "/foundation" },
-    { name: "Newsletter", href: "/newsletter"},
-    { name: "Brand", href: "/brand" },
-  ],
-  social: [
-    {
-      name: "Discord",
-      href: DISCORD_URL,
-      me: true
-    },
-    {
-      name: "YouTube",
-      href: YOUTUBE_URL,
-      me: true
-    },
-    {
-      name: "Bluesky",
-      href: BLUESKY_URL,
-      me: true
-    },
-    {
-      name: "Mastodon",
-      href: MASTODON_URL,
-      me: true
-    },
-    {
-      name: "LinkedIn",
-      href: LINKEDIN_URL,
-      me: true
-    },
-    {
-      name: "GitHub",
-      href: GITHUB_URL,
-      me: true
-    },
-  ],
-  feeds: [
-    { name: "RSS", href: "/blog/rss.xml" },
-    { name: "JSON", href: "/blog/feed.json" },
-    { name: "Live Usage Stats", href: "/usage-stats/" }
-  ],
+/* `me` marks a link that identifies the project itself, for rel="me". */
+interface FooterLink {
+  name: string
+  href: string
+  target?: string
+  me?: boolean
 }
+
+/* From the thing itself, through the people around it, to the organization
+ * behind it. */
+const columns: { heading: string; links: FooterLink[] }[] = [
+  {
+    heading: "Product",
+    links: [
+      { name: "Get Started", href: "/get-started" },
+      { name: "Download", href: "/download" },
+      { name: "Documentation", href: DOCUMENTATION_URL, target: "_blank" },
+      { name: "Add-on Registry", href: ADDON_REGISTRY_URL, target: "_blank" },
+      { name: "Live Usage Stats", href: "/usage-stats/" },
+    ],
+  },
+  {
+    heading: "Community",
+    links: [
+      { name: "Discord", href: DISCORD_URL, target: "_blank", me: true },
+      { name: "Blog", href: "/blog" },
+      { name: "Newsletter", href: "/newsletter" },
+      { name: "Contributor Live Training", href: "/blog/category/training" },
+      { name: "Issues", href: GITHUB_ISSUES_URL, target: "_blank" },
+    ],
+  },
+  {
+    heading: "Project",
+    links: [
+      { name: "About", href: "/about" },
+      { name: "Contact", href: "/contact", me: true },
+      { name: "Foundation", href: "/foundation" },
+      { name: "Sponsor", href: "/sponsor" },
+      { name: "Swag Shop", href: STORE_URL, target: "_blank" },
+      { name: "Brand", href: "/brand" },
+    ],
+  },
+]
+
+const social = [
+  { name: "Discord", href: DISCORD_URL },
+  { name: "YouTube", href: YOUTUBE_URL },
+  { name: "Bluesky", href: BLUESKY_URL },
+  { name: "Mastodon", href: MASTODON_URL },
+  { name: "LinkedIn", href: LINKEDIN_URL },
+  { name: "GitHub", href: GITHUB_URL },
+] as const
+
+/* Feeds sit with the legal line rather than in a column: nobody browses for them. */
+const feeds = [
+  { name: "RSS", href: "/blog/rss.xml" },
+  { name: "JSON", href: "/blog/feed.json" },
+]
 ---
 
 <footer class="dark:bg-transparent">
-  <div class="max-w-4xl mx-auto py-12 px-6 lg:px-0 lg:py-16">
-    <div class="pb-8 xl:grid xl:grid-cols-3 xl:gap-8">
-      <div class="grid grid-cols-auto gap-8 xl:col-span-4">
-        <div class="md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-8">
-          <div class="mt-12 md:mt-0">
-            <h2 class="text-sm font-mono text-navy-300 tracking-wider dark:text-navy-100">
-              Support
-            </h2>
-            <ul class="mt-4 space-y-4 dark:text-white">
-              {
-                navigation.support.map((item) => (
-                  <li>
-                    <a
-                      href={item.href}
-                      class="text-base"
-                      rel={item.hasOwnProperty('me') && item.me ? 'me' : 'prefetch'}
-                      target={item.target || '_self'}
-                    >
-                      {item.name}
-                    </a>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-          <div class="mt-12 md:mt-0">
-            <h2 class="text-sm font-mono text-navy-300 tracking-wider dark:text-navy-100">
-              Product
-            </h2>
-            <ul class="mt-4 space-y-4 dark:text-white">
-              {
-                navigation.product.map((item) => (
-                  <li>
-                    <a
-                      href={item.href}
-                      class="text-base"
-                      rel={item.hasOwnProperty('me') && item.me ? 'me' : 'prefetch'}
-                      target={item.target || '_self'}
-                    >
-                      {item.name}
-                    </a>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-          <div class="mt-12 md:mt-0">
-            <h2 class="text-sm font-mono text-navy-300 tracking-wider dark:text-navy-100">
-              Social
-            </h2>
-            <ul class="mt-4 space-y-4 dark:text-white">
-              {
-                navigation.social.map((item) => (
-                    <li>
-                      <a
-                        href={item.href}
-                        class="text-base"
-                        rel={item.hasOwnProperty('me') && item.me ? 'me' : 'prefetch'}
-                        target="_blank"
-                      >
-                        {item.name}
-                      </a>
-                    </li>
-                ))
-              }
-            </ul>
-          </div>
-          <div class="mt-12 md:mt-0">
-            <h2 class="text-sm font-mono text-navy-300 tracking-wider dark:text-navy-100">
-              Feeds
-            </h2>
-            <ul class="mt-4 space-y-4 dark:text-white">
-              {
-                navigation.feeds.map((item) => (
-                  <li>
-                    <a
-                      href={item.href}
-                      class="text-base"
-                      target={item.target || '_self'}
-                    >
-                      {item.name}
-                    </a>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="mt-8 border-t border-gray-300 pt-8 md:flex md:items-center md:justify-between dark:border-slate-700"
-    >
-      <div
-        class="flex flex-wrap gap-6 md:order-2 items-center justify-center content-center"
-      >
+  <div class="site-container py-12 site-gutter lg:py-16">
+    <div class="flex items-center justify-between gap-6 pb-8">
+      {/* The logo and the icons don't fit on one line on a phone, and the header
+          already shows the logo, so below `sm` the icons are the whole band. */}
+      <a href="/" class="relative hidden cursor-pointer sm:block">
+        <span class="sr-only">DDEV home</span>
+        <img
+          class="h-8 w-auto dark:hidden"
+          src="/logos/ddev.svg"
+          alt="DDEV logo"
+          aria-hidden="true"
+          width="293"
+          height="69"
+        />
+        <img
+          class="h-8 w-auto hidden dark:block"
+          src="/logos/dark-ddev.svg"
+          alt="DDEV logo"
+          aria-hidden="true"
+          width="293"
+          height="69"
+        />
+      </a>
+      {/* Centered while it's alone in the band, opposite the logo once there is one. */}
+      <div class="mx-auto flex flex-wrap items-center justify-center gap-6 sm:mx-0">
         {
-          navigation.social.map((item) => (
+          social.map((item) => (
             <a
               href={item.href}
               title={item.name}
               target="_blank"
+              rel="me"
               class={`text-gray-500 hover:text-gray-800 hover:dark:text-gray-400 ${
                 ["Discord", "Bluesky"].includes(item.name) ? `w-5` : `w-6`
               }`}
-              rel={item.hasOwnProperty('me') && item.me ? 'me' : null}
             >
               <span class="sr-only">{item.name}</span>
               <Icon name={item.name} aria-hidden="true" />
@@ -191,14 +123,51 @@ const navigation = {
           ))
         }
       </div>
-      <p
-        class="mt-8 text-sm text-gray-600 font-mono text-center md:text-left md:mt-0 md:order-1 dark:text-white"
-      >
+    </div>
+    <div
+      class="grid gap-8 border-t border-gray-300 pt-10 sm:grid-cols-2 lg:grid-cols-3 dark:border-slate-700"
+    >
+      {
+        columns.map((column) => (
+          <div>
+            <h2 class="sidebar-label">
+              {column.heading}
+            </h2>
+            <ul class="mt-4 space-y-4 dark:text-white">
+              {column.links.map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="text-base"
+                    rel={item.me ? "me" : "prefetch"}
+                    target={item.target || "_self"}
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+    <div
+      class="mt-12 border-t border-gray-300 pt-8 text-sm font-mono text-gray-600 md:flex md:items-center md:justify-between dark:border-slate-700 dark:text-white"
+    >
+      <p class="text-center md:text-left">
         &copy; {new Date().getFullYear()}
         {" "}
         {COPYRIGHT_HOLDER}
-        {" "}·{" "}
+      </p>
+      <p class="mt-4 flex flex-wrap justify-center gap-x-4 md:mt-0">
         <a href="/privacy" class="hover:underline">Privacy</a>
+        {
+          feeds.map((feed) => (
+            <a href={feed.href} class="hover:underline">
+              {feed.name}
+            </a>
+          ))
+        }
       </p>
     </div>
   </div>

@@ -9,61 +9,64 @@ import AnimatedTerminal from "./AnimatedTerminal.astro"
 import { CloudIcon } from "@heroicons/react/24/solid/index.js"
 ---
 
-<div class="mt-2 pt-8 sm:mt-12 sm:pt-24 pb-32 relative overflow-x-hidden">
-  <div class="z-10 max-w-4xl mx-auto relative">
-    <div class="max-w-2xl px-6 lg:px-0">
-      <h1 class="text-5xl font-bold dark:text-white">
-        Docker-based PHP development environments.
-      </h1>
-      <h2 class="text-2xl my-6 dark:text-slate-400">
-        Container superpowers with zero required Docker skills: environments in
-        minutes, multiple concurrent projects, and less time to deployment.
-      </h2>
+<div class="mt-2 pt-8 pb-24 sm:mt-12 sm:pt-16 sm:pb-32 overflow-x-hidden">
+  <div class="site-container site-gutter">
+    <div class="md:flex md:items-center md:gap-6">
+      <div class="max-w-2xl md:flex-1 md:min-w-[26rem]">
+        <h1 class="text-4xl xl:text-5xl font-bold dark:text-white">
+          Docker-based PHP and Node.js development environments.
+        </h1>
+        <h2 class="text-xl sm:text-2xl my-6 dark:text-slate-400">
+          Ready in minutes, the same for everyone on your team, and as many
+          projects at once as you need. No Docker skills required.
+        </h2>
 
-      <div
-        class="my-8 flex-cols space-y-4 md:flex md:space-x-4 md:space-y-0 md:w-3/4"
-      >
-        <CtaButton text="Get Started" href="/get-started" />
-        <CtaButton
-          text="Documentation"
-          href="https://docs.ddev.com/"
-          type="hollow"
-          target="_blank"
-        />
+        <div class="my-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+          <CtaButton text="Get Started" href="/get-started" />
+          <CtaButton
+            text="Documentation"
+            href="https://docs.ddev.com/"
+            type="hollow"
+            target="_blank"
+          />
+        </div>
+
+        <ul
+          class="mt-4 flex flex-wrap gap-x-7 gap-y-1 text-slate-500 justify-center md:justify-start dark:text-slate-400"
+        >
+          <li class="whitespace-nowrap">
+            <span class="w-4 h-4 inline-block mr-1 relative top-[2px]"
+              ><Icon name="Apple" />
+            </span>macOS
+          </li>
+          <li class="whitespace-nowrap">
+            <span class="w-4 h-4 inline-block mr-1 relative top-[2px]"
+              ><Icon name="Windows" />
+            </span>Windows
+          </li>
+          <li class="whitespace-nowrap">
+            <span class="w-4 h-4 inline-block mr-1 relative top-[2px]"
+              ><Icon name="Linux" />
+            </span>Linux
+          </li>
+          <li class="whitespace-nowrap">
+            <span class="w-4 h-4 inline-block mr-1 relative top-[2px]"
+              ><CloudIcon />
+            </span>Cloud
+          </li>
+        </ul>
       </div>
-    </div>
 
-    <div class="mt-4 text-slate-500 max-w-2xl px-6 lg:px-0">
-      <ul class="flex flex-wrap space-x-7 justify-center md:justify-start dark:text-slate-400">
-        <li class="whitespace-nowrap my-1">
-          <span class="w-4 h-4 inline-block mr-1 relative top-[2px]"
-            ><Icon name="Apple" />
-          </span>
-          macOS <Badge>M Series</Badge><Badge>Intel</Badge>
-        </li>
-        <li class="whitespace-nowrap my-1">
-          <span class="w-4 h-4 inline-block mr-1 relative top-[2px]"
-            ><Icon name="Windows" />
-          </span>Windows
-        </li>
-        <li class="whitespace-nowrap my-1">
-          <span class="w-4 h-4 inline-block mr-1 relative top-[2px]"
-            ><Icon name="Linux" />
-          </span>Linux
-        </li>
-        <li class="whitespace-nowrap my-1">
-          <span class="w-4 h-4 inline-block mr-1 relative top-[2px]"
-            ><CloudIcon />
-          </span>Cloud
-          <Badge>Codespaces</Badge>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="w-full h-72 absolute top-0 z-0" style="right: -40rem;">
-    <div class="mx-auto h-full" style="max-width: 49.25rem;">
-      <AnimatedTerminal />
+      <!--
+        The terminal is a fixed 40rem: its output is a character grid that cannot
+        reflow, so it keeps its size at every width. It stays beside the copy,
+        which holds a minimum width, so between md and the point where both fit
+        the terminal runs past the right edge and is clipped to a peek by the
+        section's overflow-x-hidden. Below md it's hidden.
+      -->
+      <div class="hidden md:block w-[40rem] shrink-0">
+        <AnimatedTerminal />
+      </div>
     </div>
   </div>
 </div>

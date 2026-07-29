@@ -2,7 +2,7 @@
 import Terminal from "@components/Terminal.astro"
 import Tabs from "@components/Tabs.astro"
 import { Code } from "astro/components"
-import CommunityCTA from "./CommunityCTA.astro"
+import SponsorCTA from "@components/SponsorCTA.astro"
 import Examples from "./Examples.astro"
 import { SHIKI_THEMES } from "../../const"
 
@@ -76,6 +76,4 @@ const { latestVersion } = Astro.props
 
 <Examples itemNumber="2/2" terminalType="default" terminalSymbol="→" />
 
-<div class="prose dark:prose-invert">
-  <CommunityCTA />
-</div>
+<SponsorCTA />

@@ -2,6 +2,7 @@
 import { marked } from "marked"
 import { Picture } from 'astro:assets'
 import type { ImageMetadata } from 'astro'
+import { resolveImage } from "../lib/images"
 
 export interface Props {
   src: string
@@ -14,13 +15,6 @@ export interface Props {
 
 const { src, srcDark, alt, caption = "", credit, shadow = false } = Astro.props
 
-const images = import.meta.glob<{ default: ImageMetadata }>(
-  '/public/img/**/*.{png,jpg,jpeg,webp,gif}'
-)
-const resolveImage = async (path: string) => {
-  const key = `/public${path}`
-  return images[key] ? (await images[key]()).default : path
-}
 const resolvedSrc = await resolveImage(src)
 const resolvedSrcDark = srcDark ? await resolveImage(srcDark) : null
 
@@ -32,14 +26,18 @@ function imgProps(resolved: ImageMetadata | string) {
 
 const light = imgProps(resolvedSrc)
 const dark = resolvedSrcDark ? imgProps(resolvedSrcDark) : null
+
+// Framed: many of these are logos on a background close to the page's own, which
+// in light mode leaves no edge to see. A 1px border doesn't hurt photographs.
+const frame = `rounded-lg border border-gray-200 dark:border-slate-600`
 ---
 
-<figure class={`pswp-feature w-full mx-auto mb-24 z-10 px-6 lg:px-0`}>
+<figure class={`pswp-feature w-full z-10`}>
   {
     src.includes(".svg") ? (
       <>
-        <img src={src} alt={alt} class={srcDark ? "dark:hidden" : ""} />
-        {srcDark && <img src={srcDark} alt={alt} class="hidden dark:block" />}
+        <img src={src} alt={alt} class={`w-full h-auto ${frame}${srcDark ? " dark:hidden" : ""}`} />
+        {srcDark && <img src={srcDark} alt={alt} class={`hidden dark:block w-full h-auto ${frame}`} />}
       </>
     ) : (
       <>
@@ -48,7 +46,7 @@ const dark = resolvedSrcDark ? imgProps(resolvedSrcDark) : null
           data-pswp-src={src}
           data-pswp-width={String(light.pswpWidth)}
           data-pswp-height={String(light.pswpHeight)}
-          class={`block rounded-lg overflow-hidden cursor-zoom-in${shadow ? " shadow-xl" : ""}${dark ? " dark:hidden" : ""}`}
+          class={`block overflow-hidden cursor-zoom-in ${frame}${shadow ? " shadow-xl" : ""}${dark ? " dark:hidden" : ""}`}
         >
           <Picture
             class="block w-full h-auto rounded-lg"
@@ -64,7 +62,7 @@ const dark = resolvedSrcDark ? imgProps(resolvedSrcDark) : null
             data-pswp-src={srcDark}
             data-pswp-width={String(dark.pswpWidth)}
             data-pswp-height={String(dark.pswpHeight)}
-            class={`hidden dark:block rounded-lg overflow-hidden cursor-zoom-in${shadow ? " shadow-xl" : ""}`}
+            class={`hidden dark:block overflow-hidden cursor-zoom-in ${frame}${shadow ? " shadow-xl" : ""}`}
           >
             <Picture
               class="block w-full h-auto rounded-lg"

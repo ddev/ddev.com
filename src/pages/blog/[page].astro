@@ -34,7 +34,7 @@ const title = `Blog Posts`
 ---
 
 <Layout title={title + `, Page ${currentPage}`} noindex={true}>
-  <main class="max-w-4xl mx-auto">
+  <main class="site-container">
     <Heading title={title} subtitle={`DDEV, Docker, and local development.`} />
     <BlogPostGrid posts={posts} prevUrl={prevUrl} nextUrl={nextUrl} />
   </main>

@@ -1,0 +1,31 @@
+---
+/**
+ * A labelled list of links in a page's sidebar column. Links off the site open
+ * in a new tab.
+ */
+export interface Props {
+  label: string
+  links: { label: string; href: string }[]
+}
+
+const { label, links } = Astro.props
+---
+
+<div class="sidebar-card">
+  <span class="sidebar-label">{label}</span>
+  <ul class="mt-3 space-y-2">
+    {
+      links.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            target={link.href.startsWith("http") ? "_blank" : undefined}
+            class="font-bold hover:underline dark:text-slate-300"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
