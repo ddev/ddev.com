@@ -11,6 +11,10 @@ export const GITHUB_URL_WEBSITE =
   "https://github.com/ddev/ddev.com/tree/main/src/content/blog"
 export const GITHUB_ISSUES_URL = "https://github.com/ddev/ddev/issues"
 export const DOCUMENTATION_URL = "https://docs.ddev.com/"
+export const BRAND_GUIDE_URL =
+  "https://docs.ddev.com/en/stable/developers/brand-guide/"
+export const LOGOS_REPO_URL =
+  "https://github.com/ddev/ddev/tree/main/docs/content/developers/logos"
 export const ADDON_REGISTRY_URL = "https://addons.ddev.com/"
 export const DISCORD_URL = "/s/discord"
 export const SUPPORT_EMAIL = "support@ddev.com"
