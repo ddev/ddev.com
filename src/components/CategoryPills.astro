@@ -1,0 +1,27 @@
+---
+/**
+ * Category tags, rendered the same way on post cards and on the post itself.
+ */
+import { getCategoryUrl } from "../lib/api"
+
+interface Props {
+  categories: string[]
+}
+
+const { categories } = Astro.props
+---
+
+{
+  categories.length > 0 && (
+    <div class="flex flex-wrap gap-1">
+      {categories.map((category) => (
+        <a
+          href={getCategoryUrl(category)}
+          class="relative z-10 text-xs font-mono px-2 py-0.5 rounded-full border border-indigo-400 text-indigo-600 hover:border-indigo-600 dark:border-cyan-500 dark:text-cyan-300 dark:hover:border-cyan-300"
+        >
+          {category}
+        </a>
+      ))}
+    </div>
+  )
+}

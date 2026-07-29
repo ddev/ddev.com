@@ -56,9 +56,11 @@ import ThemeToggle from "./ThemeToggle.astro"
 
 <SponsorsBanner />
 
-<header class="w-full p-8">
+<header class="w-full py-8">
+  <!-- Gutters match the rest of the site's containers, so the logo lines up
+       with the page content at every width. -->
   <nav
-    class="flex justify-between items-center content-center max-w-4xl mx-auto"
+    class="flex justify-between items-center content-center site-container site-gutter"
     aria-label="Main"
   >
     <a href="/" class="relative block cursor-pointer -ml-2">

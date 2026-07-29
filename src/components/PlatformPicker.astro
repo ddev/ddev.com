@@ -106,7 +106,8 @@ const { heading, inputName = "platform" } = Astro.props
   }
 </script>
 
-<div class="choose px-6 lg:px-0 dark:text-slate-400">
+{/* The caller supplies the gutter, so this lines up with the page's text. */}
+<div class="choose dark:text-slate-400">
   {heading && <h2 class="dark:text-white">{heading}</h2>}
   <div class="choose-platform flex">
     <div class="w-full">

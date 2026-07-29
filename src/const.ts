@@ -10,6 +10,9 @@ export const GITHUB_URL = "https://github.com/ddev/ddev"
 export const GITHUB_URL_WEBSITE =
   "https://github.com/ddev/ddev.com/tree/main/src/content/blog"
 export const GITHUB_ISSUES_URL = "https://github.com/ddev/ddev/issues"
+export const GITHUB_SPONSORS_URL = "https://github.com/sponsors/ddev"
+export const PAYPAL_DONATE_URL =
+  "https://www.paypal.com/donate/?hosted_button_id=MCNCSZHC7LHSQ"
 export const DOCUMENTATION_URL = "https://docs.ddev.com/"
 export const BRAND_GUIDE_URL =
   "https://docs.ddev.com/en/stable/developers/brand-guide/"

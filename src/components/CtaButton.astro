@@ -3,21 +3,31 @@ export interface Props {
   text: string
   href: string
   type?: string
+  // "small" fits a sidebar column, where the page-level size is too heavy
+  size?: string
   target?: string
   title?: string
 }
 
 const typeClasses = {
   default: `border border-transparent text-white bg-blue-650 hover:bg-blue-800`,
-  hollow: `border border-blue-650 text-blue-650 hover:border-blue-800 hover:text-blue-800 dark:hover:text-blue-500 hover:border-blue-500`,
+  hollow: `border border-blue-650 text-blue-650 hover:border-blue-800 hover:text-blue-800 dark:border-slate-400 dark:text-slate-300 dark:hover:border-white dark:hover:text-white`,
 }
 
-const { text, href, type = "default", target, title } = Astro.props
+const sizeClasses = {
+  default: `px-8 py-3 text-base md:py-4 md:text-lg md:px-10`,
+  small: `px-5 py-2.5 text-base`,
+}
+
+const { text, href, type = "default", size = "default", target, title } =
+  Astro.props
 ---
 
 <a
   href={href}
-  class={`flex items-center justify-center px-8 py-3 text-base font-bold rounded-md md:py-4 md:text-lg md:px-10 no-underline whitespace-pre-line ` +
+  class={`flex items-center justify-center font-bold rounded-md no-underline whitespace-pre-line ` +
+    sizeClasses[size] +
+    ` ` +
     typeClasses[type]}
   target={target}
   title={title}

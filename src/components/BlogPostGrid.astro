@@ -17,54 +17,60 @@ interface Props {
 const { posts, nextUrl, prevUrl } = Astro.props
 ---
 
-<div
-  id="post-grid"
-  data-next-url={nextUrl}
-  class="mt-12 px-6 sm:px-4 lg:px-0 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
->
-  {posts.map((post) => <BlogPostCard post={post} />)}
-</div>
+{/* One gutter for the whole listing, so the cards, the toggle and the button
+    share their left and right edges. */}
+<div class="site-gutter">
+  <div>
+    <div
+      id="post-grid"
+      data-next-url={nextUrl}
+      class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+    >
+      {posts.map((post) => <BlogPostCard post={post} />)}
+    </div>
 
-<div
-  id="load-mode-toggle"
-  class="flex justify-end mt-6 px-6 lg:px-0"
-  style="display: none"
->
-  <label class="flex items-center gap-2 text-sm text-gray-500 dark:text-slate-400 cursor-pointer select-none">
-    <input type="checkbox" id="scroll-toggle" class="cursor-pointer" />
-    Auto-load on scroll
-  </label>
-</div>
+    <div
+      id="load-mode-toggle"
+      class="flex justify-end mt-6"
+      style="display: none"
+    >
+      <label class="flex items-center gap-2 text-sm text-gray-500 dark:text-slate-400 cursor-pointer select-none">
+        <input type="checkbox" id="scroll-toggle" class="cursor-pointer" />
+        Auto-load on scroll
+      </label>
+    </div>
 
-{
-  nextUrl && (
-    <>
-      <div
-        id="load-more-container"
-        class="flex justify-center my-8 pb-16"
-        style="display: none"
-      >
-        <button
-          id="load-more-btn"
-          class="px-6 py-2 border border-blue-650 text-blue-650 hover:border-blue-800 hover:text-blue-800 dark:border-slate-400 dark:text-slate-300 dark:hover:border-white dark:hover:text-white font-bold rounded-md transition-colors cursor-pointer"
-        >
-          Load More
-        </button>
-      </div>
-      <div id="scroll-sentinel" class="h-16" />
-    </>
-  )
-}
-{
-  (prevUrl || nextUrl) && (
-    <noscript>
-      <nav class="max-w-4xl mx-auto my-8 pb-24 flex px-6 lg:px-0">
-        {prevUrl && <a href={prevUrl} class="font-bold text-black">← Newer Posts</a>}
-        {nextUrl && <a href={nextUrl} class="font-bold text-black ml-auto">Older Posts →</a>}
-      </nav>
-    </noscript>
-  )
-}
+    {
+      nextUrl && (
+        <>
+          <div
+            id="load-more-container"
+            class="flex justify-center my-8 pb-16"
+            style="display: none"
+          >
+            <button
+              id="load-more-btn"
+              class="px-6 py-2 border border-blue-650 text-blue-650 hover:border-blue-800 hover:text-blue-800 dark:border-slate-400 dark:text-slate-300 dark:hover:border-white dark:hover:text-white font-bold rounded-md transition-colors cursor-pointer"
+            >
+              Load More
+            </button>
+          </div>
+          <div id="scroll-sentinel" class="h-16" />
+        </>
+      )
+    }
+    {
+      (prevUrl || nextUrl) && (
+        <noscript>
+          <nav class="my-8 pb-24 flex">
+            {prevUrl && <a href={prevUrl} class="font-bold text-black">← Newer Posts</a>}
+            {nextUrl && <a href={nextUrl} class="font-bold text-black ml-auto">Older Posts →</a>}
+          </nav>
+        </noscript>
+      )
+    }
+  </div>
+</div>
 
 <script>
   const STORAGE_KEY = "blogLoadMode"

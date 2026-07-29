@@ -1,11 +1,14 @@
 ---
 import { getCollection, getEntry, render } from "astro:content"
-import { formatDate, getCategoryUrl, getSlug } from "./../../lib/api"
+import BlogPostLinks from "./../../components/BlogPostLinks.astro"
+import CategoryPills from "./../../components/CategoryPills.astro"
+import FeatureImage from "./../../components/FeatureImage.astro"
+import NewsletterCallout from "./../../components/NewsletterCallout.astro"
+import { formatDate, getSlug } from "./../../lib/api"
 import Layout from "./../../layouts/Layout.astro"
 import PostBody from "./../../components/PostBody.astro"
 import Heading from "./../../components/Heading.astro"
 import BlogPostFooter from "./../../components/BlogPostFooter.astro"
-import FeatureImage from "./../../components/FeatureImage.astro"
 import PostUpdate from "./../../components/PostUpdate.astro"
 import { BLOG_DESCRIPTION, GITHUB_URL_WEBSITE } from "src/const"
 
@@ -86,7 +89,7 @@ const blogPostSchema = [
   pubDate={entry.data.pubDate}
   modifiedDate={entry.data.modifiedDate}
 >
-  <main class="max-w-4xl mx-auto mb-24">
+  <main class="site-container mb-24">
     <Heading
       title={entry.data.title}
       date={formatDate(entry.data.pubDate, { month: "long" })}
@@ -95,55 +98,52 @@ const blogPostSchema = [
       authorAvatar={authorImage}
       readTime={remarkPluginFrontmatter.minutesRead}
       editUrl={GITHUB_URL_WEBSITE+`/`+originalFilename+`.md`}
-    />
-    {
-      hasFeatureImage && shouldDisplayFeatureImage && (
-        <FeatureImage
-          src={entry.data.featureImage.src}
-          srcDark={entry.data.featureImage.srcDark}
-          alt={entry.data.featureImage.alt}
-          caption={entry.data.featureImage.caption}
-          credit={entry.data.featureImage.credit}
-          shadow={entry.data.featureImage.shadow}
-        />
-      )
-    }
-    {
-      entry.data.modifiedDate && (
-        <PostUpdate
-          date={entry.data.modifiedDate}
-          comment={entry.data.modifiedComment}
-        />
-      )
-    }
-    <div class="lg:flex">
-      <div class="px-6 lg:px-0 lg:w-2/3">
+    >
+      {
+        entry.data.categories.length > 0 && (
+          <div class="mt-6">
+            <CategoryPills categories={entry.data.categories} />
+          </div>
+        )
+      }
+      {/* Beside the title, so the post starts at the top of the page. */}
+      {
+        shouldDisplayFeatureImage && entry.data.featureImage && (
+          <Fragment slot="aside">
+            <FeatureImage
+              src={entry.data.featureImage.src}
+              srcDark={entry.data.featureImage.srcDark}
+              alt={entry.data.featureImage.alt ?? ``}
+              caption={entry.data.featureImage.caption ?? undefined}
+              credit={entry.data.featureImage.credit ?? undefined}
+              shadow={entry.data.featureImage.shadow}
+            />
+          </Fragment>
+        )
+      }
+    </Heading>
+    <div class="page-grid">
+      <div class="site-gutter content-column">
+        {
+          entry.data.modifiedDate && (
+            <PostUpdate
+              date={entry.data.modifiedDate}
+              comment={entry.data.modifiedComment}
+            />
+          )
+        }
         <PostBody>
           <Content />
           <giscus-comments></giscus-comments>
           <script src="/src/scripts/giscus-comments.js"></script>
         </PostBody>
       </div>
-      <div class="px-6 lg:px-0 lg:w-1/3 lg:pl-24 mt-12 lg:mt-1">
-        {
-          entry.data.categories.length && (
-            <>
-              <span class="font-mono text-sm block text-navy-300 tracking-wider dark:text-navy-100">
-                Posted In
-              </span>
-              <ul class="mt-1 dark:text-slate-400">
-                {entry.data.categories.map((category) => (
-                  <li class="my-1">
-                    <a href={getCategoryUrl(category)} class="font-bold">
-                      {category}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </>
-          )
-        }
-      </div>
+      <aside class="site-gutter sidebar-column">
+        <div class="lg:sticky lg:top-8">
+          <NewsletterCallout />
+          <BlogPostLinks entry={entry} />
+        </div>
+      </aside>
     </div>
   </main>
   <BlogPostFooter activeSlug={entry.id} />

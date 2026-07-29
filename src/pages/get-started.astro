@@ -13,6 +13,7 @@
 import { getLatestReleaseVersion } from "../lib/api"
 import Cloud from "@components/quickstart/Cloud.astro"
 import Heading from "@components/Heading.astro"
+import HelpLinks from "@components/HelpLinks.astro"
 import Layout from "@layouts/Layout.astro"
 import Linux from "@components/quickstart/Linux.astro"
 import Mac from "@components/quickstart/Mac.astro"
@@ -27,7 +28,7 @@ const latestRelease = await getLatestReleaseVersion()
   title={title}
   description={`Start here if you want to give DDEV a try!`}
 >
-  <main class="max-w-4xl mx-auto mb-24">
+  <main class="site-container mb-24">
     <Heading title={title} subtitle={`Install and start using DDEV.`} />
     <style>
       /* Show selected platform via CSS (works without JS) */
@@ -39,30 +40,42 @@ const latestRelease = await getLatestReleaseVersion()
       }
     </style>
 
-    <div class="prose mb-16 dark:prose-invert">
-      <PlatformPicker heading={`Choose your platform:`} />
-    </div>
+    <div class="page-grid">
+      <div class="site-gutter content-column">
+        {/* prose-h2:mt-0: as a grid item, the heading's top margin no longer
+            collapses into the space above it. */}
+        <div class="prose prose-h2:mt-0 mb-16 dark:prose-invert">
+          <PlatformPicker heading={`Choose your platform:`} />
+        </div>
 
-    <div class="px-6 lg:px-0">
-      {/* Mac instructions */}
-      <div data-platform="mac" class="hidden">
-        <Mac latestVersion={latestRelease} />
+        {/* Mac instructions */}
+        <div data-platform="mac" class="hidden">
+          <Mac latestVersion={latestRelease} />
+        </div>
+
+        {/* Windows instructions */}
+        <div data-platform="windows" class="hidden">
+          <Windows latestVersion={latestRelease} />
+        </div>
+
+        {/* Linux instructions */}
+        <div data-platform="linux" class="hidden">
+          <Linux latestVersion={latestRelease} />
+        </div>
+
+        {/* Cloud instructions */}
+        <div data-platform="cloud" class="hidden">
+          <Cloud latestVersion={latestRelease} />
+        </div>
       </div>
 
-      {/* Windows instructions */}
-      <div data-platform="windows" class="hidden">
-        <Windows latestVersion={latestRelease} />
-      </div>
-
-      {/* Linux instructions */}
-      <div data-platform="linux" class="hidden">
-        <Linux latestVersion={latestRelease} />
-      </div>
-
-      {/* Cloud instructions */}
-      <div data-platform="cloud" class="hidden">
-        <Cloud latestVersion={latestRelease} />
-      </div>
+      <!-- Sticky beside the instructions, so it's there whichever step someone
+           is stuck on. -->
+      <aside class="site-gutter sidebar-column">
+        <div class="lg:sticky lg:top-8">
+          <HelpLinks />
+        </div>
+      </aside>
     </div>
   </main>
 </Layout>

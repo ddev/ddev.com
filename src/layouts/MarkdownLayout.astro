@@ -10,14 +10,18 @@
  *   description – optional meta description
  *   ogImage     – optional Open Graph image path
  *   ogImageAlt  – optional Open Graph image alt text
+ *   index       – optional; `true` puts an “On This Page” nav in a right column,
+ *                 built from the page's own `h2`s. For a page long enough to be
+ *                 scanned rather than read.
  *
  * Shared values from `src/const.ts` can be imported directly in each MDX file.
  */
 import Layout from "./Layout.astro"
 import Heading from "../components/Heading.astro"
+import PageIndex from "../components/PageIndex.astro"
 import PostBody from "../components/PostBody.astro"
 
-const { title, heading, subtitle, description, ogImage, ogImageAlt } =
+const { title, heading, subtitle, description, ogImage, ogImageAlt, index } =
   Astro.props.frontmatter
 ---
 
@@ -27,12 +31,26 @@ const { title, heading, subtitle, description, ogImage, ogImageAlt } =
   ogImage={ogImage}
   ogImageAlt={ogImageAlt}
 >
-  <main class="max-w-4xl mx-auto mb-24">
+  <main class="site-container mb-24">
     <Heading title={heading ?? title} subtitle={subtitle} />
-    <div class="px-6 lg:px-0">
-      <PostBody>
-        <slot />
-      </PostBody>
+    <div class={index ? "page-grid" : ""}>
+      <div
+        class:list={["site-gutter", index && "content-column"]}
+        id="page-content"
+      >
+        <PostBody>
+          <slot />
+        </PostBody>
+      </div>
+      {
+        index && (
+          <aside class="site-gutter sidebar-column">
+            <div class="lg:sticky lg:top-8">
+              <PageIndex contentSelector="#page-content" />
+            </div>
+          </aside>
+        )
+      }
     </div>
   </main>
 </Layout>

@@ -40,8 +40,8 @@ const { Content } = await render(author)
   title={title}
   description={`List of blog posts by ${author.data.name}.`}
 >
-  <main class="max-w-4xl mx-auto mb-24">
-    <div class="lg:flex lg:space-x-12 py-24 px-6 lg:px-0">
+  <main class="site-container mb-24">
+    <div class="lg:flex lg:space-x-12 py-24 site-gutter">
       <div>
         <p class="text-sm font-mono mb-4">
           <a href="/blog/author" class="text-indigo-600 dark:text-cyan-300 hover:underline">
@@ -55,7 +55,7 @@ const { Content } = await render(author)
       </div>
     </div>
 
-    <h2 class="text-base font-mono text-navy-300 px-6 lg:px-0 dark:text-navy-100">
+    <h2 class="text-base font-mono text-navy-300 site-gutter dark:text-navy-100">
       {author.data.firstName || author.data.name}'s {
         totalPosts == 1 ? `Post` : `Posts`
       }

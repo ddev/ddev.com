@@ -16,9 +16,9 @@ const authorsWithCounts = authors
 ---
 
 <Layout title="Blog Authors" description="Index of DDEV blog authors.">
-  <main class="max-w-4xl mx-auto">
+  <main class="site-container">
     <Heading title="Blog Authors" />
-    <div class="mt-12 mb-24 px-6 lg:px-0 columns-1 sm:columns-2 lg:columns-3 gap-x-8">
+    <div class="mt-12 mb-24 site-gutter columns-1 sm:columns-2 lg:columns-3 gap-x-8">
       {
         authorsWithCounts.map(({ author, count }) => (
           <div class="mb-4 break-inside-avoid dark:text-white">

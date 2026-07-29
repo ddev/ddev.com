@@ -1,0 +1,27 @@
+---
+/**
+ * The things people need when an installation step doesn't go to plan, kept
+ * beside the instructions on the “Get Started” and “Download” pages.
+ */
+import SidebarLinks from "./SidebarLinks.astro"
+import { DISCORD_URL, GITHUB_ISSUES_URL } from "src/const"
+
+const links = [
+  {
+    label: "Installing Docker",
+    href: "https://docs.ddev.com/en/stable/users/install/docker-installation/",
+  },
+  {
+    label: "Installing DDEV",
+    href: "https://docs.ddev.com/en/stable/users/install/ddev-installation/",
+  },
+  {
+    label: "Troubleshooting",
+    href: "https://docs.ddev.com/en/stable/users/usage/troubleshooting/",
+  },
+  { label: "Ask on Discord", href: DISCORD_URL },
+  { label: "Report an issue", href: GITHUB_ISSUES_URL },
+]
+---
+
+<SidebarLinks label="Need Help?" links={links} />

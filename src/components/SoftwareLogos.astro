@@ -1,49 +1,74 @@
 ---
+/**
+ * The stack DDEV runs for you, as logos. Heights are per-logo because the marks'
+ * proportions differ wildly: `h-16` on the MySQL dolphin reads about the same
+ * size as `h-4` on the nginx wordmark. Spacing is a gap rather than padding on
+ * each mark, so all eight fit on one line at the site's full width.
+ */
+const logos = [
+  {
+    href: "https://docs.ddev.com/en/stable/users/configuration/config/#php_version",
+    src: "/logos/php.svg",
+    title: "PHP",
+    class: "h-12 dark:invert",
+  },
+  {
+    href: "https://docs.ddev.com/en/stable/users/extend/customization-extendibility/#using-nodejs-with-ddev",
+    src: "/logos/node.svg",
+    title: "Node.js",
+    class: "h-6 dark:invert",
+  },
+  {
+    href: "https://docs.ddev.com/en/stable/users/extend/database-types/",
+    src: "/logos/mysql.svg",
+    title: "MySQL",
+    class: "h-16",
+  },
+  {
+    href: "https://docs.ddev.com/en/stable/users/extend/database-types/",
+    src: "/logos/postgresql.svg",
+    title: "PostgreSQL",
+    class: "h-8",
+  },
+  {
+    href: "https://docs.ddev.com/en/stable/users/configuration/config/#webserver_type",
+    src: "/logos/nginx.svg",
+    title: "nginx",
+    class: "h-4 dark:invert",
+  },
+  {
+    href: "https://docs.ddev.com/en/stable/users/configuration/config/#webserver_type",
+    src: "/logos/apache.svg",
+    title: "Apache",
+    class: "h-4 dark:invert-50",
+  },
+  {
+    href: "https://github.com/ddev/ddev-frankenphp",
+    src: "/logos/frankenphp.svg",
+    title: "FrankenPHP",
+    class: "h-4 dark:invert-25",
+  },
+  {
+    href: "https://github.com/ddev/ddev-redis",
+    src: "/logos/redis.svg",
+    title: "Redis",
+    class: "h-5 dark:invert-50",
+  },
+]
 ---
 
 <div class="opacity-60">
-  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-center content-center flex-wrap">
-      <div class="p-10">
-        <a href="https://docs.ddev.com/en/stable/users/configuration/config/#php_version" target="_blank" rel="noopener noreferrer">
-          <img class="h-12 dark:invert" src="/logos/php.svg" alt="PHP logo" title="PHP" />
-        </a>
-      </div>
-      <div class="p-10 mt-2">
-        <a href="https://docs.ddev.com/en/stable/users/extend/customization-extendibility/#using-nodejs-with-ddev" target="_blank" rel="noopener noreferrer">
-          <img class="h-6 dark:invert" src="/logos/node.svg" alt="Node.js logo" title="Node.js" />
-        </a>
-      </div>
-      <div class="p-10">
-        <a href="https://docs.ddev.com/en/stable/users/extend/database-types/" target="_blank" rel="noopener noreferrer">
-          <img class="h-16 -mt-4" src="/logos/mysql.svg" alt="MySQL logo" title="MySQL" />
-        </a>
-      </div>
-      <div class="p-10">
-        <a href="https://docs.ddev.com/en/stable/users/extend/database-types/" target="_blank" rel="noopener noreferrer">
-          <img class="h-8 mt-1" src="/logos/postgresql.svg" alt="PostgreSQL logo" title="PostgreSQL" />
-        </a>
-      </div>
-      <div class="p-10">
-        <a href="https://docs.ddev.com/en/stable/users/configuration/config/#webserver_type" target="_blank" rel="noopener noreferrer">
-          <img class="h-4 mt-3 dark:invert" src="/logos/nginx.svg" alt="nginx logo" title="nginx" />
-        </a>
-      </div>
-      <div class="p-10">
-        <a href="https://docs.ddev.com/en/stable/users/configuration/config/#webserver_type" target="_blank" rel="noopener noreferrer">
-          <img class="h-4 mt-3 dark:invert-50" src="/logos/apache.svg" alt="Apache logo" title="Apache" />
-        </a>
-      </div>
-      <div class="p-10">
-        <a href="https://github.com/ddev/ddev-frankenphp" target="_blank" rel="noopener noreferrer">
-          <img class="h-4 mt-3 dark:invert-25" src="/logos/frankenphp.svg" alt="FrankenPHP logo" title="FrankenPHP" />
-        </a>
-      </div>
-      <div class="p-10">
-        <a href="https://github.com/ddev/ddev-redis" target="_blank" rel="noopener noreferrer">
-          <img class="h-5 mt-2 dark:invert-50" src="/logos/redis.svg" alt="Redis logo" title="Redis" />
-        </a>
-      </div>
+  <div class="site-container py-12 site-gutter">
+    <div
+      class="flex flex-wrap items-center justify-center gap-x-8 gap-y-10 lg:gap-x-10"
+    >
+      {
+        logos.map((logo) => (
+          <a href={logo.href} target="_blank" rel="noopener noreferrer">
+            <img class={logo.class} src={logo.src} alt={`${logo.title} logo`} title={logo.title} />
+          </a>
+        ))
+      }
     </div>
   </div>
 </div>

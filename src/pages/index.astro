@@ -25,9 +25,7 @@ const jsonUrl = new URL(`/blog/feed.json`, Astro.site).toString()
   <main>
     <Hero />
 
-    <div class="max-w-6xl mx-auto">
-      <Features />
-    </div>
+    <Features />
 
     <SoftwareLogos />
     <Benefits />
@@ -35,7 +33,7 @@ const jsonUrl = new URL(`/blog/feed.json`, Astro.site).toString()
     <BlogFeatures />
     <Contributors />
     <div>
-      <div class="max-w-4xl mx-auto py-24 px-6 lg:px-0">
+      <div class="site-container py-24 site-gutter">
         <div
           class="grid gap-x-6 gap-y-8 md:gap-y-12 grid-cols-1 md:grid-cols-3 dark:text-white"
         >

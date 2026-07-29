@@ -5,6 +5,65 @@
 :root {
   --code-bg-light: #dfe2e7;
   --code-bg-dark: #2e3440;
+
+  /* Page width and gutter, for .site-container and .site-gutter below. Every
+   * top-level container uses them, so all blocks on a page line up. */
+  --site-width: 72rem;
+  --site-gutter: 2rem;
+
+  /* Measure for long-form text, set by legibility rather than by the page.
+   * `.prose` uses it too (see tailwind.config.cjs). */
+  --reading-measure: 42rem;
+}
+
+.site-container {
+  @apply w-full mx-auto;
+  max-width: var(--site-width);
+}
+
+.site-gutter {
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 64rem) {
+  .site-gutter {
+    padding-inline: var(--site-gutter);
+  }
+}
+
+/* The three-column page: content in the wide column, sidebar beside it, the two
+ * stacked below `lg`. */
+.page-grid {
+  @apply lg:grid lg:grid-cols-3;
+}
+
+.content-column {
+  @apply lg:col-span-2;
+}
+
+.sidebar-column {
+  @apply mt-16 lg:col-start-3 lg:mt-0 lg:pl-12;
+}
+
+/* A block of links or a small call to action in a page's sidebar column. */
+.sidebar-card {
+  @apply rounded-lg border border-gray-200 bg-gray-50 p-5 dark:border-slate-600 dark:bg-slate-800;
+}
+
+/* Small heading above a sidebar card's contents, or a footer column's. */
+.sidebar-label {
+  @apply block font-mono text-sm tracking-wider text-navy-300 dark:text-navy-100;
+}
+
+/* The sponsorship ask that ends a page (see SponsorCTA.astro). The measure keeps
+ * it the same width in a prose column and in a page's wider content column. The
+ * second selector is what sets the top margin inside a prose column, where the
+ * typography plugin's `> :first-child { margin-top: 0 }` outweighs a class on
+ * the element itself. */
+.sponsor-cta,
+.prose > .sponsor-cta {
+  @apply mt-24 rounded-lg border border-gray-200 bg-gray-50 p-8 dark:border-slate-600 dark:bg-slate-800;
+  max-width: var(--reading-measure);
 }
 
 header {

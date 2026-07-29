@@ -1,0 +1,52 @@
+---
+/**
+ * A sticky index of a long page's sections, built in the browser from the
+ * headings SectionHeading already gives ids to — so it can't drift from the
+ * page. Hidden without JS, where it would be an empty box.
+ */
+export interface Props {
+  // Selector for the element whose `h2` headings make up the index
+  contentSelector: string
+}
+
+const { contentSelector } = Astro.props
+---
+
+<nav
+  id="page-index"
+  class="sidebar-card hidden"
+  data-content={contentSelector}
+  aria-label="Sections on this page"
+>
+  <span
+    class="sidebar-label"
+  >
+    On This Page
+  </span>
+  <ul class="mt-3 space-y-2"></ul>
+</nav>
+
+<script>
+  const nav = document.getElementById("page-index")
+  const list = nav?.querySelector("ul")
+  const selector = nav?.dataset.content
+  const content = selector ? document.querySelector(selector) : null
+  const headings = content?.querySelectorAll("h2[id]")
+
+  if (nav && list && headings?.length) {
+    headings.forEach((heading) => {
+      const item = document.createElement("li")
+      const link = document.createElement("a")
+
+      link.href = `#${heading.id}`
+      link.textContent = heading.textContent?.trim() ?? ""
+      link.className =
+        "block text-sm font-bold hover:underline dark:text-slate-300"
+
+      item.appendChild(link)
+      list.appendChild(item)
+    })
+
+    nav.classList.remove("hidden")
+  }
+</script>

@@ -38,6 +38,8 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
+            // Reading measure, defined once in global.css
+            maxWidth: "var(--reading-measure)",
             // remove automatic quote marks from blockquotes
             "blockquote p:first-of-type::before": null,
             "blockquote p:last-of-type::after": null,

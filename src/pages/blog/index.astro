@@ -23,7 +23,7 @@ const jsonUrl = new URL(`/blog/feed.json`, Astro.site).toString()
     { rel: "alternate", href: jsonUrl, type: "application/json" },
   ]}
 >
-  <main class="max-w-4xl mx-auto">
+  <main class="site-container">
     <Heading title={title} subtitle={`DDEV, Docker, and local development.`} />
     <BlogPostGrid
       posts={allPosts.slice(0, BLOG_PAGE_SIZE)}
