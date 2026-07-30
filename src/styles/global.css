@@ -45,6 +45,28 @@
   @apply mt-16 lg:col-start-3 lg:mt-0 lg:pl-12;
 }
 
+/* A page title with something beside it, such as a blog post's feature image
+ * (see Heading.astro). The image column is fluid, so the two can sit side by
+ * side well before the title has to give up its own width. */
+.title-grid {
+  @apply grid items-start gap-8;
+}
+
+.title-aside {
+  @apply mt-8;
+}
+
+@media (min-width: 52rem) {
+  .title-grid {
+    grid-template-columns: 1fr clamp(16rem, 36%, 25rem);
+    gap: 3rem;
+  }
+
+  .title-aside {
+    margin-top: 0;
+  }
+}
+
 /* A block of links or a small call to action in a page's sidebar column. */
 .sidebar-card {
   @apply rounded-lg border border-gray-200 bg-gray-50 p-5 dark:border-slate-600 dark:bg-slate-800;
@@ -136,12 +158,35 @@ mark {
   @apply dark:bg-[blue];
 }
 
+/* The panel `details` opens, positioned against the page rather than the
+ * summary, so it hangs from the top right corner as it always has. */
 .menu {
-  @apply hidden absolute top-0 right-0 max-w-full bg-white px-8 py-4 z-30 text-center shadow-2xl rounded-lg m-3 dark:bg-slate-800 dark:text-white;
+  @apply absolute top-0 right-0 max-w-full bg-white px-8 py-4 z-30 text-center shadow-2xl rounded-lg m-3 dark:bg-slate-800 dark:text-white;
+}
 
-  &.open {
-    @apply block;
+/* The summary is the menu button, so it loses the disclosure triangle. */
+.nav-summary {
+  @apply flex cursor-pointer p-1;
+  list-style: none;
+
+  &::-webkit-details-marker {
+    display: none;
   }
+}
+
+/* Set once Header.astro's script can measure what fits, replacing the
+ * `hidden lg:flex` fallback in the markup. Two classes beat one, no
+ * `!important` needed. */
+.nav-measured .nav-links {
+  display: flex;
+}
+
+.nav-measured .nav-menu {
+  display: block;
+}
+
+.nav-measured [data-nav-hidden] {
+  display: none;
 }
 
 input[type="radio"]:checked + label {
