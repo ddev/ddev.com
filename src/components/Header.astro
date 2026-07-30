@@ -3,54 +3,100 @@
  * Global site header.
  */
 import { GITHUB_URL, DOCUMENTATION_URL } from "../const"
-import {
-  MagnifyingGlassIcon,
-  Bars2Icon,
-  XMarkIcon,
-} from "@heroicons/react/24/solid/index.js"
+import { MagnifyingGlassIcon, Bars2Icon } from "@heroicons/react/24/solid/index.js"
 import SponsorsBanner from "./SponsorsBanner.astro"
 import ThemeToggle from "./ThemeToggle.astro"
+
+// Links leave the bar from the end as it runs out of room, so this is also
+// least-important-last.
+const navItems = [
+  { label: "Get Started", href: "/get-started" },
+  { label: "Download", href: "/download" },
+  { label: "Docs", href: DOCUMENTATION_URL, external: true },
+  { label: "Blog", href: "/blog" },
+  { label: "GitHub", href: GITHUB_URL, external: true },
+  { label: "❤️ Sponsor DDEV", href: "/sponsor" },
+]
 ---
 
 <script>
-  const menuToggle = document.getElementById("mobile-trigger")
-  const menuClose = document.getElementById("mobile-close")
-  const menuContainer = document.getElementById("mobile-menu")
-  let expanded = false
+  const nav = document.getElementById("main-nav")
+  const list = document.getElementById("nav-links")
+  const logo = document.getElementById("nav-logo")
+  const icons = document.getElementById("nav-icons")
+  const menu = document.getElementById("nav-menu") as HTMLDetailsElement | null
 
-  const initListeners = () => {
-    menuToggle.addEventListener("click", () => {
-      toggleMenu()
-    })
+  const HIDDEN = "data-nav-hidden"
 
-    menuClose.addEventListener("click", () => {
-      toggleMenu(true)
-    })
+  // Links leave the bar one at a time as it fills up, instead of all at once at
+  // a breakpoint that can only guess whether they fit. Opening and closing the
+  // menu is the browser's job, so there's none of it here.
+  if (nav && list && logo && icons && menu) {
+    const items = Array.from(list.querySelectorAll<HTMLElement>("[data-nav-item]"))
+    const menuItems = Array.from(menu.querySelectorAll<HTMLElement>("[data-nav-item]"))
 
-    window.addEventListener(
-      "resize",
-      (event) => {
-        let width = document.body.clientWidth
-        if (width > 1024) {
-          toggleMenu(true)
-        }
-      },
-      true
-    )
-  }
+    let itemWidths: number[] = []
+    let gap = 0
 
-  const toggleMenu = (forceClosed?: boolean) => {
-    if (expanded || forceClosed) {
-      menuContainer.classList.remove("open")
-      expanded = false
-    } else {
-      menuContainer.classList.add("open")
-      expanded = true
+    // Nothing here yields, so no paint happens while `elements` are shown.
+    const unhidden = <T,>(elements: HTMLElement[], read: () => T): T => {
+      const hidden = elements.filter((element) => element.hasAttribute(HIDDEN))
+      hidden.forEach((element) => element.removeAttribute(HIDDEN))
+      const value = read()
+      hidden.forEach((element) => element.setAttribute(HIDDEN, ""))
+      return value
     }
-  }
 
-  if (menuToggle && menuClose && menuContainer) {
-    initListeners()
+    // Link widths don't change with the viewport, so they're measured once.
+    const measure = () => {
+      gap = parseFloat(getComputedStyle(list).columnGap) || 0
+      itemWidths = unhidden(items, () =>
+        items.map((item) => item.getBoundingClientRect().width)
+      )
+    }
+
+    const widthOf = (visible: Set<number>) => {
+      if (!visible.size) return 0
+      let width = gap * (visible.size - 1)
+      visible.forEach((index) => {
+        width += itemWidths[index]
+      })
+      return width
+    }
+
+    const fit = () => {
+      const style = getComputedStyle(nav)
+      const inner =
+        nav.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight)
+      // The menu counts as showing even when it isn't, so hiding it can only
+      // free space and this can't oscillate.
+      const reserved =
+        logo.getBoundingClientRect().width +
+        unhidden([menu], () => icons.getBoundingClientRect().width) +
+        gap
+      const available = inner - reserved
+
+      const visible = new Set(items.map((_, index) => index))
+      for (let index = items.length - 1; index >= 0; index--) {
+        if (widthOf(visible) <= available) break
+        visible.delete(index)
+      }
+
+      items.forEach((item, index) => {
+        item.toggleAttribute(HIDDEN, !visible.has(index))
+        menuItems[index].toggleAttribute(HIDDEN, visible.has(index))
+      })
+
+      const complete = visible.size === items.length
+      menu.toggleAttribute(HIDDEN, complete)
+      if (complete) menu.open = false
+    }
+
+    // Takes over from the `lg` fallback in the markup (see global.css).
+    nav.classList.add("nav-measured")
+    measure()
+    fit()
+    new ResizeObserver(fit).observe(nav)
   }
 </script>
 
@@ -60,10 +106,11 @@ import ThemeToggle from "./ThemeToggle.astro"
   <!-- Gutters match the rest of the site's containers, so the logo lines up
        with the page content at every width. -->
   <nav
+    id="main-nav"
     class="flex justify-between items-center content-center site-container site-gutter"
     aria-label="Main"
   >
-    <a href="/" class="relative block cursor-pointer -ml-2">
+    <a href="/" id="nav-logo" class="relative block shrink-0 cursor-pointer -ml-2">
       <span class="sr-only">DDEV logo</span>
       <img
         class="h-8 w-auto sm:h-10 dark:hidden"
@@ -82,113 +129,54 @@ import ThemeToggle from "./ThemeToggle.astro"
         height="69"
       />
     </a>
-    <div class="w-2/3 flex justify-end items-center gap-6">
-      <ul class="hidden lg:flex items-center gap-6">
-        <li>
-          <a
-            class="font-bold whitespace-nowrap dark:text-white"
-            href="/get-started"
-            rel="prefetch">Get Started</a
-          >
-        </li>
-        <li>
-          <a
-            class="font-bold whitespace-nowrap dark:text-white"
-            href="/download"
-            rel="prefetch">Download</a
-          >
-        </li>
-        <li>
-          <a
-            class="font-bold whitespace-nowrap dark:text-white"
-            href={DOCUMENTATION_URL}
-            target="_blank">Docs</a
-          >
-        </li>
-        <li>
-          <a class="font-bold whitespace-nowrap dark:text-white" href="/blog" rel="prefetch"
-            >Blog</a
-          >
-        </li>
-        <li>
-          <a
-            class="font-bold whitespace-nowrap dark:text-white"
-            href={GITHUB_URL}
-            target="_blank">GitHub</a
-          >
-        </li>
-        <li>
-          <a
-            class="font-bold whitespace-nowrap dark:text-white"
-            href="/sponsor"
-            rel="prefetch">❤️ Sponsor DDEV</a
-          >
-        </li>
+    <div class="flex shrink-0 justify-end items-center gap-6">
+      <ul id="nav-links" class="nav-links hidden lg:flex shrink-0 items-center gap-6">
+        {
+          navItems.map((item, index) => (
+            <li class="shrink-0" data-nav-item={index}>
+              <a
+                class="font-bold whitespace-nowrap dark:text-white"
+                href={item.href}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? undefined : "prefetch"}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
       </ul>
-      <div class="flex items-center gap-3">
+      <div id="nav-icons" class="flex shrink-0 items-center gap-3">
         <a href="/search" class="p-1 dark:text-white">
           <span class="sr-only">Search</span>
           <MagnifyingGlassIcon className="w-6 h-6 " aria-hidden={true} />
         </a>
         <ThemeToggle />
-        <button id="mobile-trigger" class="flex lg:hidden p-1">
-          <span class="sr-only">Menu</span>
-          <Bars2Icon className="w-6 h-6 dark:text-white" />
-        </button>
+        <!-- `details` rather than a button and a script, so the links are still
+             reachable with JavaScript turned off. -->
+        <details id="nav-menu" class="nav-menu lg:hidden">
+          <summary class="nav-summary">
+            <span class="sr-only">Menu</span>
+            <Bars2Icon className="w-6 h-6 dark:text-white" />
+          </summary>
+          <ul class="menu">
+            {
+              navItems.map((item, index) => (
+                <li data-nav-item={index}>
+                  <a
+                    class="font-bold block py-3 px-4 text-lg border-t border-dotted"
+                    href={item.href}
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? undefined : "prefetch"}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </details>
       </div>
-    </div>
-    <div id="mobile-menu" class="menu">
-      <div class="flex w-full justify-end mb-2">
-        <button id="mobile-close" class="flex p-2 py-3 -mr-4">
-          <span class="sr-only">Close</span>
-          <XMarkIcon className="w-6 h-6 " />
-        </button>
-      </div>
-
-      <ul>
-        <li>
-          <a
-            class="font-bold block py-3 px-4 text-lg border-t border-dotted"
-            href="/get-started"
-            rel="prefetch">Get Started</a
-          >
-        </li>
-        <li>
-          <a
-            class="font-bold block py-3 px-4 text-lg border-t border-dotted"
-            href="/download"
-            rel="prefetch">Download</a
-          >
-        </li>
-        <li>
-          <a
-            class="font-bold block py-3 px-4 text-lg border-t border-dotted"
-            href={DOCUMENTATION_URL}
-            target="_blank">Docs</a
-          >
-        </li>
-        <li>
-          <a
-            class="font-bold block py-3 px-4 text-lg border-t border-dotted"
-            href="/blog"
-            rel="prefetch">Blog</a
-          >
-        </li>
-        <li>
-          <a
-            class="font-bold block py-3 px-4 text-lg border-t border-dotted"
-            href={GITHUB_URL}
-            target="_blank">GitHub</a
-          >
-        </li>
-        <li>
-          <a
-            class="font-bold block py-3 px-4 text-lg border-t border-dotted"
-            href="/sponsor"
-            rel="prefetch">❤️ Sponsor DDEV</a
-          >
-        </li>
-      </ul>
     </div>
   </nav>
 </header>

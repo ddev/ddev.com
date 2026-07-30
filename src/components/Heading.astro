@@ -34,12 +34,7 @@ const hasByline = Boolean(author || date || readTime || editUrl)
 ---
 
 <div
-  class:list={[
-    "my-24 site-gutter",
-    // Wider than the sidebar below it, and top-aligned so the title starts
-    // where it does on every other page.
-    hasAside && "lg:grid lg:grid-cols-[1fr_25rem] lg:gap-12 lg:items-start",
-  ]}
+  class:list={["my-24 site-gutter", hasAside && "title-grid"]}
 >
   <div>
     <h1 class="font-bold text-4xl dark:text-white">{title}</h1>
@@ -51,7 +46,7 @@ const hasByline = Boolean(author || date || readTime || editUrl)
         carried its margins, pushing those pages' content down. */}
     {
       hasByline && (
-        <div class="md:flex md:flex-wrap md:items-center md:content-center gap-y-2 my-6 font-mono">
+        <div class="md:flex md:flex-wrap md:items-center md:content-center gap-y-2 my-6 max-w-[var(--reading-measure)] font-mono">
           {
         author && (
               <div class="flex items-center content-center mr-2">
@@ -125,7 +120,7 @@ const hasByline = Boolean(author || date || readTime || editUrl)
 
   {
     hasAside && (
-      <div class="mt-8 lg:mt-0">
+      <div class="title-aside">
         <Fragment set:html={aside} />
       </div>
     )
