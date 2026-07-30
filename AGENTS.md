@@ -54,8 +54,15 @@ Before committing changes, always run:
 When making commits after major changes, use AI-assisted commit messages that include:
 
 - Clear description of changes made
+- A body following `.github/PULL_REQUEST_TEMPLATE.md`, HTML comments removed and empty sections dropped, so it can be reused as the pull request description
+- A short body: a few lines per section, no restating the diff, no padding
 - End with: `🤖 Developed with assistance from [Claude Code](https://claude.ai/code)`
-- Include: `Co-Authored-By: Claude <noreply@anthropic.com>`
+- A trailer naming the model, such as `Co-authored-by: Claude Opus 5 <noreply@anthropic.com>`, model name only
+
+Manual Testing Instructions link the pull request's Cloudflare preview, not a local dev server. Ask where the branch will be pushed, since the URL differs, and use a `REPLACE_ME`-style placeholder for anything not known yet:
+
+- `ddev/ddev.com`: `https://<branch-with-dashes>.ddev-com-front-end.pages.dev/`, cut to 28 characters
+- A fork: `https://pr-<number>.ddev-com-fork-previews.pages.dev/`
 
 Only commit when explicitly requested by the user.
 
