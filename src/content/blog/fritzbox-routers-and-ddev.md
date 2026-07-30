@@ -1,6 +1,8 @@
 ---
 title: "Fritz!Box Routers and DDEV"
 pubDate: 2025-11-18
+modifiedDate: 2026-07-30
+modifiedComment: "Newer Fritz!OS versions moved DNS rebinding protection behind **Advanced network settings**, so the instructions below now cover both the newer and the older interface."
 summary: Solving DNS Rebinding issues with Fritz!Box routers (also spelled "Fritzbox" or "Fritz Box")
 featureImage:
   src: /img/blog/2025/11/FritzBox-DNS-Rebind-Schutz.png
@@ -45,13 +47,33 @@ The Fritz!Box can't distinguish between a legitimate local development tool like
 
 Rather than relying on DDEV's hosts file fallback, it's better to solve the underlying DNS problem by configuring your Fritz!Box router to allow the `ddev.site` domain.
 
-Here's how to fix it:
+Where the setting lives depends on your Fritz!OS version, so start the same way in both cases:
 
 1. Access your Fritz!Box router settings - the factory defaults are `http://fritz.box` and `http://192.168.178.1`
 2. Navigate to **Home Network** (Heimnetz) > **Network** (Netzwerk) > **Network Settings** (Netzwerkeinstellungen)
-3. Look for the DNS rebinding protection section
-4. Add `ddev.site` to the exceptions list
-5. Save your settings
+
+Then follow the steps for your firmware below.
+
+### Newer Fritz!OS versions
+
+On newer firmware the DNS rebinding settings are no longer on the **Network Settings** page itself; they moved to a separate expert area:
+
+1. Scroll to the bottom of the **Network Settings** (Netzwerkinstellingen) tab and click **Change advanced network settings** (Geavanceerde netwerkinstellingen wijzigen)
+2. Open the **DNS Rebind Protection** (DNS-rebindbeveiliging) tab
+3. Click **Add exception** (Uitzondering toevoegen) and enter `ddev.site`
+4. Click **Apply** (Toepassen)
+
+![Step 1: the "Change advanced network settings" button at the bottom of the Fritz!Box Network Settings tab](/img/blog/2026/07/fritzbox-advanced-network-settings.png)
+
+![Steps 2-4: adding ddev.site as an exception on the Fritz!Box DNS Rebind Protection tab](/img/blog/2026/07/fritzbox-dns-rebind-exception.png)
+
+### Older Fritz!OS versions
+
+On older firmware the **DNS Rebind Protection** (DNS-Rebind-Schutz) section is directly on the **Network Settings** (Netzwerkeinstellungen) tab:
+
+1. Find the **DNS Rebind Protection** (DNS-Rebind-Schutz) section
+2. Add `ddev.site` to the **Hostname exceptions** (Hostnamen-Ausnahmen) box
+3. Save your settings
 
 ![Fritz!Box DNS Rebinding Protection Settings with callouts showing where to add exceptions](/img/blog/2025/11/FritzBox-DNS-Rebind-Schutz-callouts.png)
 
@@ -79,7 +101,7 @@ If you want to request that AVM (the makers of Fritz!Box) consider adding `ddev.
 
 ## Thanks!
 
-Thanks to [Ingo Schmitt](https://my.typo3.org/u/ischmittis) for investigating and demonstrating the fix. Thanks to [npostnik](https://www.npostnik.de/ueber-mich/) for already having documented this in a German blog post.
+Thanks to [Ingo Schmitt](https://my.typo3.org/u/ischmittis) for investigating and demonstrating the fix. Thanks to [npostnik](https://www.npostnik.de/ueber-mich/) for already having documented this in a German blog post. Thanks to [Heine Deelstra](https://github.com/HeineDeelstra) for reporting the changed interface in newer Fritz!OS versions and providing the screenshots.
 
 ## Keep in touch!
 
