@@ -18,6 +18,8 @@ However, one particular brand of router, the Fritz!Box, has a different DNS conf
 
 **TL;DR:** _If you use a Fritz!Box router, add `ddev.site` to the router's DNS Rebinding Protection exceptions._
 
+## Table of Contents
+
 ## The Problem
 
 When you first set up DDEV with a Fritz!Box router, you might encounter a failure to resolve the domain name when trying to access your `*.ddev.site` project, even though your site is accessible via the `127.0.0.1` direct URL given in `ddev describe`. This happens because Fritz!Box routers enable DNS Rebinding Protection that suppresses DNS responses pointing to your own network.
