@@ -37,7 +37,7 @@ jobs:
         # src/lib/amplitude.ts degrades gracefully when these aren't set.
         if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
         continue-on-error: true
-        uses: 1password/load-secrets-action@v4
+        uses: 1password/load-secrets-action@v5
         with:
           export-env: true
         env:
