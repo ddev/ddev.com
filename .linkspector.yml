@@ -11,7 +11,7 @@ ignorePatterns:
   # Known to block or reject linkspector's headless-browser / CI requests,
   # even though the pages are reachable from a normal browser.
   - pattern: "^https://(www\\.)?linkedin\\.com"
-  - pattern: "^https://(www\\.)?tag1consulting\\.com"
+  - pattern: "^https://(www\\.)?tag1(consulting)?\\.com"
   - pattern: "^https://(www\\.)?packtpub\\.com"
   - pattern: "^https://buildkite\\.com/ddev/"
   - pattern: "^https://(www\\.)?npmjs\\.com"
@@ -32,6 +32,22 @@ ignorePatterns:
   - pattern: "^https://firesphere\\.dev/articles/ddev-elasticsearch-and-silverstripe$"
   # Blocks or is unreachable from CI runners, even though the site is up.
   - pattern: "^https://(www\\.)?rueegger\\.me"
+  # Serves a Cloudflare bot challenge ("cf-mitigated: challenge", HTTP 403) to
+  # anything that isn't an interactive browser, which is what linkspector's
+  # headless Chrome looks like. Cloudflare's "Agent" bot category, offered to
+  # site owners starting 2026-07-01, explicitly covers browser-driving agents:
+  # https://blog.cloudflare.com/content-independence-day-ai-options/
+  # The linked pages are all live; verified out-of-band via api.stackexchange.com.
+  - pattern: "^https://stackoverflow\\.com"
+  # Same challenge. Kept even though no post currently links here: meeting
+  # announcements use timeanddate.com for timezone-aware times, so new links
+  # will appear. A stale link to a past meeting should be removed from the post
+  # rather than left for this pattern to hide.
+  - pattern: "^https://(www\\.)?timeanddate\\.com"
+  # Same challenge, but only intermittently: failed in the 2026-07-30 and
+  # 2026-07-31 runs, passed on 2026-08-03. Used only for image-credit
+  # attribution links.
+  - pattern: "^https://(www\\.)?pixabay\\.com"
 aliveStatusCodes:
   - 200
   - 206
