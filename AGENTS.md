@@ -68,6 +68,16 @@ Only commit when explicitly requested by the user.
 
 **Never run `git push` (or any command that pushes to a remote), under any circumstances, even if explicitly asked.** The user always pushes their own branches/commits themselves.
 
+### Avoiding Hard Line Breaks in Issue/PR/Comment Bodies
+
+GitHub renders issue, PR, and comment bodies (`gh issue create`, `gh pr create`, `gh pr comment`, `gh issue comment`, etc.) with GFM's hard-line-break behavior: a single `\n` inside a paragraph becomes an actual `<br>`. This is different from how GitHub renders committed Markdown files (this file, docs, READMEs), which follow standard CommonMark, where a lone `\n` is just whitespace and the paragraph reflows to the container width.
+
+Hand-wrapping prose to a fixed column width — normal, good practice for a text file — produces a ragged, too-short-lined paragraph when posted as an issue/PR/comment body, because each wrapped line becomes its own forced line instead of reflowing.
+
+When writing a `--body-file` for any of these commands, write each paragraph as one continuous line with no embedded newlines. Only use actual blank lines to separate paragraphs, headings, and list items. This does not apply to code blocks, tables, or files meant to be read as source.
+
+Because a commit body here is reused verbatim as the pull request description, write commit bodies the same way: one continuous line per paragraph, rather than wrapping to a fixed column width as git convention would otherwise suggest. The same applies to any report a workflow generates and posts through `gh`.
+
 ## Working with Claude Code
 
 ### Branch Naming

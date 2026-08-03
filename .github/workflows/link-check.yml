@@ -1,12 +1,15 @@
 name: Link check
 on:
-  push:
-    branches: [main]
   pull_request:
     paths:
       - "src/content/blog/**"
       - ".linkspector.yml"
       - ".github/workflows/link-check.yml"
+  # The full sweep re-checks every external link in every post, including ones
+  # nobody touched. Third-party rot is a chore, not a reason to break main, so
+  # it runs weekly and files an issue instead of failing a required check.
+  schedule:
+    - cron: "17 6 * * 1"
   workflow_dispatch:
 
 concurrency:
@@ -14,14 +17,19 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  checks: write
   contents: read
-  pull-requests: read
 
 jobs:
-  linkspector:
+  # Blocking, and scoped to links the author actually added or changed. A typo'd
+  # URL in a new post fails here, where the author can still fix it.
+  pr:
     name: Check blog links
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-24.04
+    permissions:
+      checks: write
+      contents: read
+      pull-requests: read
     steps:
       - uses: actions/checkout@v7
       - name: Run linkspector
@@ -30,6 +38,96 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-check
           fail_on_error: true
-          # Check links only in the added lines for PRs, but check everything otherwise
-          filter_mode: ${{ github.event_name == 'pull_request' && 'added' || 'nofilter' }}
+          filter_mode: added
           config_file: ".linkspector.yml"
+
+  # Non-blocking. Reports into a single reusable issue so link rot accumulates in
+  # one place instead of turning main red.
+  sweep:
+    name: Sweep all blog links
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      issues: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ISSUE_TITLE: "Link check: broken external links in blog content"
+      NODE_VERSION: 24
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Run linkspector
+        id: check
+        run: |
+          # A non-zero exit means broken links were found, which is not a job
+          # failure here. Unparseable output means the tool itself broke, which is.
+          npx --yes @umbrelladocs/linkspector@0.5.6 check \
+            -c .linkspector.yml -j > result.json || true
+          if ! jq -e 'has("diagnostics")' result.json >/dev/null 2>&1; then
+            echo "::error::linkspector produced no usable JSON"
+            head -c 2000 result.json || true
+            exit 1
+          fi
+          echo "broken=$(jq '.diagnostics | length' result.json)" >> "$GITHUB_OUTPUT"
+
+      - name: Build report
+        if: steps.check.outputs.broken != '0'
+        run: |
+          {
+            # Each paragraph is one long line on purpose: GitHub renders issue
+            # bodies with GFM hard line breaks, so a wrapped paragraph would come
+            # out ragged. See "Avoiding Hard Line Breaks" in AGENTS.md.
+            echo "${{ steps.check.outputs.broken }} link(s) in \`src/content/blog\` did not resolve."
+            echo
+            echo "A Cloudflare bot challenge returns 403 whether or not the page exists, so confirm by hand before editing a post. If a link is genuinely dead, fix the post; only add an entry to \`.linkspector.yml\` when the page is fine and the checker is being blocked."
+            echo
+            jq -r '
+              .diagnostics
+              | map(((.message | capture("Cannot reach (?<url>.+?) Status: (?<st>.*)$")?)
+                     // {url: .message, st: "?"}) as $m
+                    | {url: $m.url, st: $m.st, path: .location.path,
+                       line: .location.range.start.line})
+              | group_by(.url | sub("^https?://"; "") | sub("/.*$"; ""))
+              | map("### \(.[0].url | sub("^https?://"; "") | sub("/.*$"; "")) (\(length))\n"
+                    + (map("- [\(.path):\(.line)](\(env.BLOB)/\(.path)#L\(.line)) — `\(.st)`\n  \(.url)")
+                       | join("\n")))
+              | join("\n\n")
+            ' result.json
+            echo
+            echo "---"
+            echo "[Sweep run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"
+          } > report.md
+        env:
+          BLOB: ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.sha }}
+
+      - name: Open or update the tracking issue
+        if: steps.check.outputs.broken != '0'
+        run: |
+          existing=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open \
+            --search "\"$ISSUE_TITLE\" in:title" --json number,title \
+            | jq -r --arg t "$ISSUE_TITLE" \
+                '[.[] | select(.title == $t)] | first | .number // empty')
+          if [ -n "$existing" ]; then
+            gh issue edit "$existing" --repo "$GITHUB_REPOSITORY" --body-file report.md
+            echo "Updated issue #$existing"
+          else
+            gh issue create --repo "$GITHUB_REPOSITORY" \
+              --title "$ISSUE_TITLE" --body-file report.md
+          fi
+
+      - name: Close the tracking issue when everything resolves
+        if: steps.check.outputs.broken == '0'
+        run: |
+          existing=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open \
+            --search "\"$ISSUE_TITLE\" in:title" --json number,title \
+            | jq -r --arg t "$ISSUE_TITLE" \
+                '[.[] | select(.title == $t)] | first | .number // empty')
+          if [ -n "$existing" ]; then
+            gh issue close "$existing" --repo "$GITHUB_REPOSITORY" \
+              --comment "All blog links resolved in the latest sweep."
+          fi
