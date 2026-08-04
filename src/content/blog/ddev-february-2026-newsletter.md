@@ -35,7 +35,7 @@ Then in March I'll be at [DrupalCon Chicago](https://events.drupal.org/chicago20
 - **ddev-mngr** → A Go-based command-line tool with an interactive terminal UI for managing multiple DDEV projects at once — start, stop, check status, and open URLs across projects. With this add-on [Olivier Dobberkau](https://github.com/dkd-dobberkau) inspired a new TUI approach for DDEV core as well! [View on GitHub↗](https://github.com/dkd-dobberkau/ddev-mngr)
 - **TYPO3 DDEV Agent Skill** → Netresearch built an Agent Skill (compatible with Claude Code, Cursor, Windsurf, and GitHub Copilot) that automates DDEV environment setup for TYPO3 extension development, including multi-version testing environments for TYPO3 11.5, 12.4, and 13.4 LTS. [View on GitHub↗](https://github.com/netresearch/typo3-ddev-skill)
 - **Using Laravel Boost with DDEV** → Russell Jones explains how to integrate Laravel Boost (an official MCP server) with DDEV, giving AI coding agents contextual access to routes, database schema, logs, and configuration. [Read on Dev.to↗](https://dev.to/jonesrussell/using-laravel-boost-with-ddev-1kc6)
-- **Laravel VS Code Extension v1.4.2** → Now includes Docker integration support and a fix for Pint functionality within DDEV environments. [Read more↗](https://news.extly.com/more-news/2030-dev-news/24693-docker-support-in-laravel-vs-code-extension-v1-4-2.html)
+- **Laravel VS Code Extension v1.4.2** → Now includes Docker integration support and a fix for Pint functionality within DDEV environments. [Read on Laravel News↗](https://laravel-news.com/laravel-vscode-extension-v1-4-2)
 
 ## Community Tutorials from Around the World
 

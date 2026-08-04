@@ -40,7 +40,7 @@ This month: v1.24.7 release, Contributor Training starts up again, ddev-hostname
 - **Creating a Simple Donation Form in Drupal with Stripe & Webforms**  
   Setup payments in minutes with DDEV and Webform. → [Read more↗](https://picozzi.com/notebook/2025/jul/creating-simple-donation-form-drupal-stripe-and-webforms)
 - **Free Local AI with Ollama & DDEV**  
-  How to Set Up Ollama as a Free, Local AI Provider for Your local Drupal Development. → [Read more↗](https://www.linkedin.com/pulse/how-set-up-ollama-free-local-ai-provider-your-drupal-rakesh-james-gedje/)
+  How to Set Up Ollama as a Free, Local AI Provider for Your local Drupal Development. → [Read more↗](https://www.thedroptimes.com/50560/set-ollama-free-local-ai-provider-in-your-drupal-ddev-environment)
 
 ## DDEV Training Starting Up Again!
 
