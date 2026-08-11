@@ -304,5 +304,13 @@
     "squareLogo": "/logos/dougvann.jpeg",
     "url": "https://dougvann.com/",
     "github": "dougvann"
+  },
+  {
+    "name": "in2code GmbH",
+    "type": "standard",
+    "logo": "/logos/in2code.svg",
+    "darklogo": "/logos/in2code-dark.svg",
+    "url": "https://www.in2code.de/",
+    "github": "in2code-pro"
   }
 ]
