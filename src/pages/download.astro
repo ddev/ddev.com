@@ -219,6 +219,48 @@ const downloads = {
                   </a>
                 ))}
               </div>
+              {_key === "linux" && (
+                <div class="mt-4 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 p-4">
+                  <a
+                    href="https://cloudsmith.com"
+                    target="_blank"
+                    rel="noopener"
+                    class="inline-block"
+                  >
+                    <span class="sr-only">Cloudsmith</span>
+                    <img
+                      class="h-6 w-auto dark:hidden"
+                      src="/logos/cloudsmith.svg"
+                      alt="Cloudsmith logo"
+                      aria-hidden="true"
+                      width="164"
+                      height="28"
+                    />
+                    <img
+                      class="h-6 w-auto hidden dark:block"
+                      src="/logos/cloudsmith-dark.svg"
+                      alt="Cloudsmith logo"
+                      aria-hidden="true"
+                      width="164"
+                      height="28"
+                    />
+                  </a>
+                  <p class="mt-3 text-sm text-slate-600 dark:text-slate-400">
+                    Linux package repository hosting is graciously provided by{" "}
+                    <a
+                      href="https://cloudsmith.com"
+                      target="_blank"
+                      rel="noopener"
+                      class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                    >
+                      Cloudsmith
+                    </a>
+                    . Cloudsmith is the only fully hosted, cloud-native, universal package
+                    management solution, that enables your organization to create, store and share
+                    packages in any format, to any place, with total confidence.
+                  </p>
+                </div>
+              )}
             </div>
           ))
         }
