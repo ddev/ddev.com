@@ -1,6 +1,6 @@
 ---
 title: "Umbraco on DDEV: .NET, SQL Server, and the generic project type"
-pubDate: 2026-08-06
+pubDate: 2026-08-20
 summary: An experiment in running Umbraco CMS and .NET 10 under DDEV, using the generic project type, a custom web image, and Azure SQL Edge.
 author: Lee Mills
 featureImage:
