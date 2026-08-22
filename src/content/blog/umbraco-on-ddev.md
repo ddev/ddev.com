@@ -120,7 +120,7 @@ web_extra_daemons:
 
 That puts `dotnet watch` under the web container's supervisord, so supervisord restarts it on failure. Overriding the compose command instead would displace DDEV's own entrypoint, and a build error would leave you with a container that is up but serving nothing.
 
-### TLS stops at the router
+### TLS is terminated on the router
 
 Three environment variables. The first two are there because the router sits in front of Kestrel:
 
