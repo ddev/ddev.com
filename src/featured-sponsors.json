@@ -6,7 +6,8 @@
     "darklogo": "/logos/upsun-darkmode.svg",
     "squareLogo": "/logos/upsun-square.svg",
     "url": "https://upsun.com",
-    "isLeading": false
+    "isLeading": false,
+    "tier": "large"
   },
   {
     "name": "Tag1",
@@ -15,7 +16,8 @@
     "darklogo": "/logos/dark-tag1.svg",
     "squareLogo": "/logos/tag1-square.svg",
     "url": "https://tag1.com",
-    "isLeading": false
+    "isLeading": false,
+    "tier": "large"
   },
   {
     "name": "safefive",
@@ -24,7 +26,8 @@
     "darklogo": "/logos/safefive.svg",
     "squareLogo": "/logos/safefive-square.svg",
     "url": "https://safefive.de/en/home/",
-    "isLeading": false
+    "isLeading": false,
+    "tier": "regular"
   },
   {
     "name": "i-gelb",
@@ -34,7 +37,8 @@
     "squareLogo": "/logos/i-gelb-square.svg",
     "url": "https://i-gelb.net",
     "github": "i-gelb",
-    "isLeading": false
+    "isLeading": false,
+    "tier": "regular"
   },
   {
     "name": "Institute for Advanced Study",
@@ -43,7 +47,8 @@
     "darklogo": "/logos/ias-dark.svg",
     "squareLogo": "/logos/ias-square.svg",
     "url": "https://www.ias.edu/",
-    "isLeading": false
+    "isLeading": false,
+    "tier": "regular"
   },
   {
     "name": "b13",
@@ -52,7 +57,8 @@
     "darklogo": "/logos/b13-darkmode.svg",
     "squareLogo": "/logos/b13.svg",
     "url": "https://b13.com/",
-    "github": "b13"
+    "github": "b13",
+    "tier": "regular"
   },
   {
     "name": "Cambrico",
@@ -61,7 +67,8 @@
     "darklogo": "/logos/logo-cambrico-color-dark-mode_con-nombre.svg",
     "squareLogo": "/logos/logo-cambrico-color-light-mode_con-nombre.svg",
     "url": "https://cambrico.net/",
-    "github": "Cambrico"
+    "github": "Cambrico",
+    "tier": "regular"
   },
   {
     "name": "Centarro",
@@ -70,7 +77,8 @@
     "darklogo": "/logos/centarro-logo-text-dark.svg",
     "squareLogo": "/logos/centarro-logo-light.svg",
     "url": "https://centarro.io/",
-    "github": "centarro"
+    "github": "centarro",
+    "tier": "regular"
   },
   {
     "name": "Fame Helsinki",
@@ -79,7 +87,8 @@
     "darklogo": "/logos/fame-darkmode.svg",
     "squareLogo": "/logos/fame-square.svg",
     "url": "https://fame.fi/",
-    "github": "FameHelsinki"
+    "github": "FameHelsinki",
+    "tier": "regular"
   },
   {
     "name": "Gizra",
@@ -88,7 +97,8 @@
     "darklogo": "/logos/gizra.svg",
     "squareLogo": "/logos/gizra.svg",
     "url": "https://gizra.com/",
-    "github": "gizra"
+    "github": "gizra",
+    "tier": "regular"
   },
   {
     "name": "mobilistics",
@@ -97,7 +107,8 @@
     "darklogo": "/logos/mobilistics-dark.svg",
     "squareLogo": "/logos/mobilistics-square.svg",
     "url": "https://mobilistics.de/",
-    "github": "mobilistics"
+    "github": "mobilistics",
+    "tier": "regular"
   },
   {
     "name": "Redfin Solutions",
@@ -106,7 +117,8 @@
     "darklogo": "/logos/dark-redfin-solutions.svg",
     "squareLogo": "/logos/redfin-solutions-square.svg",
     "url": "https://redfinsolutions.com/",
-    "github": "redfinsolutions"
+    "github": "redfinsolutions",
+    "tier": "regular"
   },
   {
     "name": "MacStadium",
@@ -114,7 +126,8 @@
     "logo": "/logos/mac-stadium.svg",
     "darklogo": "/logos/dark-mac-stadium.svg",
     "squareLogo": "/logos/mac-stadium-square.svg",
-    "url": "https://www.macstadium.com"
+    "url": "https://www.macstadium.com",
+    "tier": "regular"
   },
   {
     "name": "Lullabot",
@@ -123,7 +136,8 @@
     "darklogo": "/logos/dark-lullabot.svg",
     "squareLogo": "/logos/lullabot-square.svg",
     "url": "https://www.lullabot.com",
-    "github": "Lullabot"
+    "github": "Lullabot",
+    "tier": "regular"
   },
   {
     "name": "Craft CMS",
@@ -132,7 +146,8 @@
     "darklogo": "/logos/craft-cms.svg",
     "squareLogo": "/logos/craft-cms-square.svg",
     "url": "https://craftcms.com/",
-    "github": "craftcms"
+    "github": "craftcms",
+    "tier": "regular"
   },
   {
     "name": "Webikon",
@@ -141,7 +156,8 @@
     "darklogo": "/logos/webikon.com-dark.svg",
     "squareLogo": "/logos/webikon.com.svg",
     "url": "https://github.com/claudiu-cristea",
-    "github": "claudiu-cristea"
+    "github": "claudiu-cristea",
+    "tier": "regular"
   },
   {
     "name": "Passbolt",
@@ -150,7 +166,8 @@
     "darklogo": "/logos/passbolt-logo-primary-white.svg",
     "squareLogo": "/logos/passbolt-logo-square.svg",
     "url": "https://www.passbolt.com/",
-    "github": "passbolt"
+    "github": "passbolt",
+    "tier": "regular"
   },
   {
     "name": "JetBrains",
@@ -159,16 +176,18 @@
     "darklogo": "/logos/jetbrains-dark.svg",
     "squareLogo": "/logos/jetbrains-square.svg",
     "url": "https://www.jetbrains.com/community/opensource/?utm_source=ddev.com",
-    "github": "jetbrains"
+    "github": "jetbrains",
+    "tier": "regular"
   },
   {
-    "name": "Værsågod",
+    "name": "V\u00e6rs\u00e5god",
     "type": "standard",
     "logo": "/logos/vaersaagod.svg",
     "darklogo": "/logos/vaersaagod.svg",
     "squareLogo": "/logos/vaersaagod.svg",
     "url": "https://www.vaersaagod.no/en",
-    "github": "vaersaagod"
+    "github": "vaersaagod",
+    "tier": "regular"
   },
   {
     "name": "Affinity Bridge",
@@ -177,7 +196,8 @@
     "darklogo": "/logos/affinity-bridge-dark.svg",
     "squareLogo": "/logos/affinity-bridge-square.svg",
     "url": "https://affinitybridge.com/",
-    "github": "affinitybridge"
+    "github": "affinitybridge",
+    "tier": "regular"
   },
   {
     "name": "Agiledrop",
@@ -186,7 +206,8 @@
     "darklogo": "/logos/agiledrop-dark.svg",
     "squareLogo": "/logos/agiledrop-square.svg",
     "url": "https://www.agiledrop.com/",
-    "github": "AGILEDROP"
+    "github": "AGILEDROP",
+    "tier": "regular"
   },
   {
     "name": "Amedick Sommer",
@@ -195,7 +216,8 @@
     "darklogo": "/logos/amedick-sommer.svg",
     "squareLogo": "/logos/amedick-sommer-square.svg",
     "url": "https://www.amedick-sommer.de/",
-    "github": "AmedickSommer"
+    "github": "AmedickSommer",
+    "tier": "regular"
   },
   {
     "name": "NPO Applications GmbH",
@@ -204,7 +226,8 @@
     "darklogo": "/logos/npo-applications-dark.png",
     "squareLogo": "/logos/npo-applications-square.png",
     "url": "https://www.npo-applications.de/",
-    "github": "NPO-Applications-GmbH"
+    "github": "NPO-Applications-GmbH",
+    "tier": "regular"
   },
   {
     "name": "Pottkinder GmbH",
@@ -213,7 +236,8 @@
     "darklogo": "/logos/pottkinder-dark.png",
     "squareLogo": "/logos/pottkinder-square.png",
     "url": "https://pottkinder.de/",
-    "github": "AgenturPottkinder"
+    "github": "AgenturPottkinder",
+    "tier": "regular"
   },
   {
     "name": "Let's Talk",
@@ -222,7 +246,8 @@
     "darklogo": "/logos/lets-talk-dark.svg",
     "squareLogo": "/logos/lets-talk.svg",
     "url": "https://letstalk.nl/",
-    "github": "Lets-Talk-NL"
+    "github": "Lets-Talk-NL",
+    "tier": "regular"
   },
   {
     "name": "Aten Design Group",
@@ -231,7 +256,8 @@
     "darklogo": "/logos/atendesigngroup-dark.svg",
     "squareLogo": "/logos/atendesigngroup-square.svg",
     "url": "https://atendesigngroup.com/",
-    "github": "AtenDesignGroup"
+    "github": "AtenDesignGroup",
+    "tier": "regular"
   },
   {
     "name": "dkd Internet Service GmbH",
@@ -240,7 +266,8 @@
     "darklogo": "/logos/dkd.svg",
     "squareLogo": "/logos/dkd.svg",
     "url": "https://www.dkd.de/en/",
-    "github": "dkd"
+    "github": "dkd",
+    "tier": "regular"
   },
   {
     "name": "WEBKINDER",
@@ -249,7 +276,8 @@
     "darklogo": "/logos/webkinder-dark.svg",
     "squareLogo": "/logos/webkinder-square.svg",
     "url": "https://www.webkinder.ch/",
-    "github": "webkinder"
+    "github": "webkinder",
+    "tier": "regular"
   },
   {
     "name": "Code Enigma",
@@ -258,7 +286,8 @@
     "darklogo": "/logos/codeenigma-dark.svg",
     "squareLogo": "/logos/codeenigma-square.svg",
     "url": "https://www.codeenigma.com/",
-    "github": "codeenigma"
+    "github": "codeenigma",
+    "tier": "regular"
   },
   {
     "name": "coding. powerful. systems. CPS GmbH",
@@ -267,7 +296,8 @@
     "darklogo": "/logos/cps-dark.svg",
     "squareLogo": "/logos/cps-square.svg",
     "url": "https://www.cps-it.de/",
-    "github": "CPS-IT"
+    "github": "CPS-IT",
+    "tier": "regular"
   },
   {
     "name": "webdna",
@@ -276,7 +306,8 @@
     "darklogo": "/logos/webdna-dark.svg",
     "squareLogo": "/logos/webdna-square.png",
     "url": "https://webdna.co.uk/",
-    "github": "webdna"
+    "github": "webdna",
+    "tier": "regular"
   },
   {
     "name": "FreelyGive",
@@ -285,7 +316,8 @@
     "darklogo": "/logos/freelygive.svg",
     "squareLogo": "/logos/freelygive-square.webp",
     "url": "https://freelygive.io/",
-    "github": "FreelyGive"
+    "github": "FreelyGive",
+    "tier": "regular"
   },
   {
     "name": "8mylez GmbH",
@@ -294,7 +326,8 @@
     "darklogo": "/logos/8mylez-dark.svg",
     "squareLogo": "/logos/8mylez-square.svg",
     "url": "https://www.8mylez.com/",
-    "github": "8mylez"
+    "github": "8mylez",
+    "tier": "regular"
   },
   {
     "name": "Douglas Vann",
@@ -303,7 +336,8 @@
     "darklogo": "/logos/dougvann.jpeg",
     "squareLogo": "/logos/dougvann.jpeg",
     "url": "https://dougvann.com/",
-    "github": "dougvann"
+    "github": "dougvann",
+    "tier": "regular"
   },
   {
     "name": "in2code GmbH",
@@ -311,6 +345,7 @@
     "logo": "/logos/in2code.svg",
     "darklogo": "/logos/in2code-dark.svg",
     "url": "https://www.in2code.de/",
-    "github": "in2code-pro"
+    "github": "in2code-pro",
+    "tier": "regular"
   }
 ]

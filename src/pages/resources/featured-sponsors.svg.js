@@ -9,6 +9,8 @@ const baseUrl = import.meta.env.SITE
 const overallWidth = 814
 // Maximum height a logo may have
 const maxHeight = 50
+// Large sponsor height (1.5x regular, distinct from lead's 2x)
+const largeSponsorHeight = Math.round(maxHeight * 1.5)
 // Lead sponsor height (doubled from regular sponsors)
 const leadSponsorHeight = maxHeight * 2
 // Maximum width a logo may have
@@ -28,10 +30,16 @@ const buildResponse = () => {
 
   // First process lead sponsors
   const leadSponsors = featuredSponsors.filter(
-    (sponsor) => sponsor.isLeading === true
+    (sponsor) => sponsor.tier === "lead" || sponsor.isLeading === true
+  )
+  const largeSponsors = featuredSponsors.filter(
+    (sponsor) => sponsor.tier === "large"
   )
   const regularSponsors = featuredSponsors.filter(
-    (sponsor) => sponsor.isLeading !== true
+    (sponsor) =>
+      sponsor.tier !== "lead" &&
+      sponsor.tier !== "large" &&
+      sponsor.isLeading !== true
   )
 
   console.log("Processing lead sponsors")
@@ -88,6 +96,50 @@ const buildResponse = () => {
     })
 
     currentY += leadSponsorHeight + leadSponsorBottomPadding
+  }
+
+  // Handle large sponsors (1.5x regular height, own grouped row)
+  if (largeSponsors.length > 0) {
+    const largeSponsorInfo = largeSponsors
+      .map((sponsor) => {
+        const logoPath = sponsor.logo ? `./public${sponsor.logo}` : null
+        if (!logoPath) return null
+        try {
+          const dimensions = sizeOf(fs.readFileSync(logoPath))
+          const [width, height] = getScaledImageDimensions(
+            dimensions.width,
+            dimensions.height,
+            false,
+            largeSponsorHeight
+          )
+          return { sponsor, width, height, logoPath }
+        } catch (error) {
+          console.error(`Error processing logo for ${sponsor.name}:`, error)
+          return null
+        }
+      })
+      .filter(Boolean)
+
+    const totalLargeWidth = largeSponsorInfo.reduce(
+      (sum, info, index) =>
+        sum + info.width + (index < largeSponsorInfo.length - 1 ? xPadding : 0),
+      0
+    )
+    let largeStartX = (overallWidth - totalLargeWidth) / 2
+    largeSponsorInfo.forEach(({ sponsor, width, height, logoPath }) => {
+      images.push({
+        href: baseUrl + sponsor.logo,
+        path: logoPath,
+        x: largeStartX,
+        y: currentY + (largeSponsorHeight - height) / 2,
+        height,
+        width,
+        url: sponsor.url,
+        isLead: false,
+      })
+      largeStartX += width + xPadding
+    })
+    currentY += largeSponsorHeight + leadSponsorBottomPadding / 2
   }
 
   // Now process regular sponsors
@@ -176,9 +228,14 @@ function imgToBase64(filePath) {
   )
 }
 
-const getScaledImageDimensions = (width, height, isLeadSponsor = false) => {
+const getScaledImageDimensions = (
+  width,
+  height,
+  isLeadSponsor = false,
+  customMaxH = null
+) => {
   const ratio = width / height
-  const maxH = isLeadSponsor ? leadSponsorHeight : maxHeight
+  const maxH = customMaxH || (isLeadSponsor ? leadSponsorHeight : maxHeight)
   const maxW = isLeadSponsor ? leadSponsorMaxWidth : maxWidth
 
   let h = maxH
