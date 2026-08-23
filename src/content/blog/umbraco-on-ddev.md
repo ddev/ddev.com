@@ -11,13 +11,18 @@ categories:
   - TechNotes
 ---
 
-DDEV's `generic` project type will run anything that brings its own web server, and people already use it for Node and other stacks. Umbraco is a less travelled case: .NET, Kestrel, and SQL Server. I wanted to know how much of the DDEV experience still holds up there. Clone a repository, run one command, have a working site and database a few minutes later.
+DDEV's `generic` project type will run anything that brings its own web server, and people already use it for Node and other stacks. Umbraco is a less-travelled case: .NET, [Kestrel](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel), and SQL Server. I wanted to know how much of the DDEV experience still holds up there. Clone a repository, run one command, have a working site and database a few minutes later.
 
-Most of it holds up. The result is [umbraco-clean-ddev](https://github.com/millnut/umbraco-clean-ddev), which runs Umbraco on .NET 10 with SQL Server and Adminer, and gets a new developer going with a single `ddev setup`. What took the time was a handful of places where DDEV expected something I had not worked out yet.
+Most of it holds up. The result is [umbraco-clean-ddev](https://github.com/millnut/umbraco-clean-ddev), which runs Umbraco on .NET 10 with SQL Server and Adminer, and gets a new developer going with a single `ddev start`. What took the time was a handful of places where DDEV expected something I had not worked out yet.
 
 ## What I wanted out of it
 
-Four things, and nothing more ambitious than that. One command for someone joining the project. Nothing installed on my own machine: no SQL Server, no .NET SDK, none of the project's other dependencies. Projects that stay out of each other's way. A way to take a backup from Umbraco Cloud and debug against it locally.
+I wanted four things out of this, and nothing more ambitious than that.
+
+1. One command for someone joining the project
+2. Nothing installed on my own machine: no SQL Server, no .NET SDK, none of the project's other dependencies.
+3. Projects that stay out of each other's way.
+4. A way to take a backup from Umbraco Cloud and debug against it locally.
 
 DDEV already does all of this elsewhere. The Umbraco Cloud backup turned out to be the least transferable: `ddev import-db` and `ddev export-db` work on the database container DDEV manages, and this project omits that container entirely. Anything equivalent I would have to write myself.
 
@@ -39,7 +44,7 @@ omit_containers: [db]
 disable_settings_management: true
 ```
 
-`omit_containers: [db]` drops DDEV's MariaDB, since SQL Server runs as a separate service and MariaDB would only sit there idling. `disable_settings_management: true` stops DDEV writing a `php.ini` and an `nginx.conf` that nothing in the project would ever read.
+`omit_containers: [db]` drops DDEV's MariaDB, since SQL Server runs as a separate service and MariaDB would only sit there idling.
 
 A generic web server type also emits no default router configuration, so without one, every request 404s. `web_extra_exposed_ports` supplies it:
 
@@ -56,10 +61,10 @@ Those two port numbers being equal matters. DDEV builds the Traefik backend URL 
 
 ### The .NET SDK is not in the web image
 
-DDEV's web image has no .NET SDK, so `.ddev/web-build/Dockerfile` adds one. The important thing about that file is what it does not contain:
+DDEV's web image has no .NET SDK, so `.ddev/web-build/Dockerfile.dotnet` adds one. The important thing about that file is what it does not contain:
 
 ```dockerfile
-# .ddev/web-build/Dockerfile
+# .ddev/web-build/Dockerfile.dotnet
 RUN curl -fsSL https://packages.microsoft.com/config/debian/13/packages-microsoft-prod.deb -o /tmp/pmp.deb \
     && dpkg -i /tmp/pmp.deb \
     && rm /tmp/pmp.deb \
@@ -95,6 +100,8 @@ services:
     environment:
       - ACCEPT_EULA=Y
       - MSSQL_SA_PASSWORD=${MSSQL_SA_PASSWORD}
+    volumes:
+      - sqlserver-data:/var/opt/mssql
     healthcheck:
       test:
         - CMD-SHELL
@@ -104,7 +111,22 @@ services:
 
 The healthcheck is a raw socket connection because Azure SQL Edge ships no `sqlcmd` to query with. It only proves the port is open, and the server accepts logins a moment after that, so the check is weaker than I would like. The 30 second grace period covers the initialisation of the system databases on a first run, which takes about 20 seconds and would otherwise exhaust the retries.
 
-Only `sqlserver` and `adminer` are defined in that compose file. The web container is configured entirely through `config.yaml`, so DDEV keeps ownership of its lifecycle.
+The named volume is why the database survives a `ddev restart`: without it every restart would hand Umbraco an empty server and trigger the unattended install again.
+
+Alongside `sqlserver` and `adminer`, the compose file carries a short `web` block, the one place this project reaches into the container DDEV owns:
+
+```yaml
+# .ddev/docker-compose.umbraco.yaml
+services:
+  web:
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    environment:
+      - Umbraco__CMS__WebRouting__UmbracoApplicationUrl=${DDEV_PRIMARY_URL}
+```
+
+`condition: service_healthy` is what the healthcheck above exists for. It holds the web container until SQL Server answers, so `dotnet watch` is not racing a database that has not finished booting. `UmbracoApplicationUrl` hands Umbraco the site's real external address rather than letting it infer one from a request that arrived over plain HTTP from the router. Everything else about the web container is configured through `config.yaml`, so DDEV keeps ownership of its lifecycle.
 
 ### Keeping Kestrel alive
 
@@ -122,30 +144,43 @@ That puts `dotnet watch` under the web container's supervisord, so supervisord r
 
 ### TLS is terminated on the router
 
-Three environment variables. The first two are there because the router sits in front of Kestrel:
+Five environment variables, two of them there because the router sits in front of Kestrel:
 
 ```yaml
 # .ddev/config.yaml
 web_environment:
+  - ASPNETCORE_ENVIRONMENT=Development
   - ASPNETCORE_URLS=http://0.0.0.0:80
   - ASPNETCORE_FORWARDEDHEADERS_ENABLED=true
+  - DOTNET_CLI_TELEMETRY_OPTOUT=1
   - NUGET_PACKAGES=/mnt/ddev-global-cache/nuget
 ```
 
 Kestrel has to bind `0.0.0.0` because the router reaches it across the Docker network rather than over loopback. The forwarded headers setting is easy to miss and confusing when it's absent: the router terminates TLS and forwards plain HTTP, so without it Kestrel decides the request was insecure and generates `http://` links on an `https://` site.
 
-The NuGet line has nothing to do with the router. It moves the package cache onto a DDEV volume, so a rebuilt container no longer re-downloads every package.
+The NuGet line has nothing to do with the router. It moves the package cache onto a DDEV volume, so a rebuilt container no longer re-downloads every package. The remaining two are ordinary .NET settings that happen to belong here rather than in a launch profile.
 
 ## Getting it running
 
 ```bash
-ddev setup
+ddev start
 ```
 
-That copies `appsettings.Local.json.example` into place, installs the Adminer add-on and starts the environment. On first boot Umbraco runs its unattended install, creating the schema and the default admin user, `admin@example.com` with password `1234567890`.
+A `pre-start` hook copies `appsettings.Local.json.example` into place when it is missing:
+
+```yaml
+# .ddev/config.yaml
+hooks:
+  pre-start:
+    - exec-host: "bash -c '[ -f MyProject/appsettings.Local.json ] || cp MyProject/appsettings.Local.json.example MyProject/appsettings.Local.json'"
+```
+
+`pre-start` rather than `post-start`, because Kestrel comes up with the container: a `post-start` hook would write the file after the application had already read its configuration. That phase also forces `exec-host`, since there is no container yet to run the command inside.
+
+On first boot Umbraco runs its unattended install, creating the schema and the default admin user, `admin@example.com` with password `1234567890`.
 
 :::warning[Error 4060 on first boot]
-The first boot logs `Cannot open database "UmbracoDb"` with error number 4060. The database does not exist until the unattended install creates it, so Umbraco logs the error once during startup. It does not recur, and you do not need to do anything.
+The first boot logs `Cannot open database "UmbracoDb"` with error number 4060. The database does not exist until the unattended install creates it, so Umbraco logs the error a couple of times during startup until it can connect and action the unattended install.
 :::
 
 After that, `ddev dotnet` is a passthrough that runs the CLI in the project directory, so nobody needs the SDK on their host to run `ddev dotnet build`.
@@ -175,14 +210,14 @@ END"
 
 ## Things that look wrong and are deliberate
 
-`.ddev/.env` holds the SA password, the Umbraco connection string and the SMTP configuration for mailpit, and it is committed. That is a fixed local development credential in the same spirit as DDEV's own db/db/db, and committing it is what makes a fresh clone work with no manual step. On a project with real secrets I would not do this: the file would move somewhere untracked, and `ddev setup` would grow a prompt to fill it in.
+`.ddev/.env` holds the SA password, the Umbraco connection string and the SMTP configuration for mailpit, and it is committed. That is a fixed local development credential in the same spirit as DDEV's own db/db/db, and committing it is what makes a fresh clone work with no manual step. On a project with real secrets I would not do this: the file would move somewhere untracked, and a setup step would have to prompt for the values.
 
 `appsettings.Local.json` is git-ignored and exists for per-developer overrides such as logging levels. `Program.cs` registers it after `CreateBuilder` has already added the environment variable provider, so that file wins over `.ddev/.env`. A `ConnectionStrings` block there will override the environment, and someone who then edits the password in `.ddev/.env` will find it has no effect.
 
-The Adminer add-on's `docker-compose.adminer.yaml` is committed with one edit: its default `depends_on: [db]` is gone, because this project has no `db` container. The committed copy carries no `#ddev-generated` marker, so DDEV treats it as mine and leaves it alone. The cost is that it no longer updates with the add-on.
+Both files the Adminer add-on provides are committed here, the compose file and the `ddev adminer` launcher, so `ddev add-on get` never has to run and a clone starts with Adminer already working. `docker-compose.adminer.yaml` carries one edit: its default `depends_on: [db]` is gone, because this project has no `db` container. Adminer's connection defaults are set in `docker-compose.umbraco.yaml` instead, pointing it at the `sqlserver` service. Neither committed copy carries a `#ddev-generated` marker, so DDEV treats them as mine and leaves them alone. The cost is that they no longer update with the add-on.
 
 ## Try it
 
-The repository is at [millnut/umbraco-clean-ddev](https://github.com/millnut/umbraco-clean-ddev), built on Paul Seal's [Clean](https://github.com/prjseal/Clean) starter kit. Clone it, run `ddev setup`, and you should have Umbraco and SQL Server running without either of them touching your machine directly.
+The repository is at [millnut/umbraco-clean-ddev](https://github.com/millnut/umbraco-clean-ddev), built on Paul Seal's [Clean](https://github.com/prjseal/Clean) starter kit. Clone it, run `ddev start`, and you should have Umbraco and SQL Server running without either of them touching your machine directly.
 
 It is still a bespoke setup rather than something reusable. The .NET SDK install, the SQL Server service and the bacpac commands are all things I now maintain by hand, and an add-on would be a better home for most of them. If you work with Umbraco or .NET and want to try it, I would be glad to hear what breaks: I have only run this on my own machine, against one project.
