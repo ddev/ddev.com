@@ -61,6 +61,17 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
+      # ubuntu-24.04 runners restrict unprivileged user namespaces via AppArmor,
+      # which Chromium's sandbox needs to launch. action-linkspector (used in the
+      # pr job above) works around this itself; a bare `npx linkspector` here
+      # does not, so it crashes with "No usable sandbox!" on every scheduled run.
+      # See https://chromium.googlesource.com/chromium/src/+/main/docs/security/apparmor-userns-restrictions.md
+      - name: Allow Chromium's user-namespace sandbox
+        run: |
+          if [ -f /proc/sys/kernel/apparmor_restrict_unprivileged_userns ]; then
+            echo 0 | sudo tee /proc/sys/kernel/apparmor_restrict_unprivileged_userns
+          fi
+
       - name: Run linkspector
         id: check
         run: |
