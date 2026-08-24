@@ -18,6 +18,41 @@ If DDEV has saved you time, the easiest way to say so costs nothing: head over t
 
 The [DDEV Integration plugin for IntelliJ/PhpStorm↗](https://plugins.jetbrains.com/plugin/18813-ddev-integration), maintained by [@AkibaAT](https://github.com/AkibaAT), has been transferred into the `ddev` GitHub organization. This was on our [2026 plans](2026-plans.md) list, and it's great to see it land. AkibaAT has kept the plugin in excellent shape, and this move gives it a permanent home alongside the rest of the DDEV ecosystem.
 
+## Coming Soon: v1.25.4
+
+It's been about seven weeks since [v1.25.3↗](https://github.com/ddev/ddev/releases/tag/v1.25.3) shipped on July 6, and roughly 100 commits have landed on `main` since then, including a lot of `feat:` work. That volume has us wondering whether this lands as v1.26.0 rather than a `.4` patch — we'll leave the final call to the maintainers — but here's a preview of what's coming either way:
+
+### Database and snapshots
+
+- `--seed-snapshot` and `--reset-database` flags added; the `initializer` config option is renamed to `seed` ([#8705↗](https://github.com/ddev/ddev/pull/8705))
+- Uncompressed `mariabackup`/`xtrabackup` snapshot and seed support ([#8704↗](https://github.com/ddev/ddev/pull/8704))
+- `zstd`-compressed `base_db` for faster first-boot restores ([#8608↗](https://github.com/ddev/ddev/pull/8608))
+- `dbimage` config option reimplemented, mirroring `webimage` ([#8610↗](https://github.com/ddev/ddev/pull/8610))
+- `ddev snapshot --list` now shows size and DB version ([#8642↗](https://github.com/ddev/ddev/pull/8642))
+- MySQL 9.7 LTS support added ([#8629↗](https://github.com/ddev/ddev/pull/8629)); the MySQL client now builds from Docker Hardened Images ([#8535↗](https://github.com/ddev/ddev/pull/8535))
+
+### Add-ons and project types
+
+- `ddev add-on update` updates all installed add-ons at once ([#8717↗](https://github.com/ddev/ddev/pull/8717))
+- New MODX Revolution (2.x/3.x) project type ([#8560↗](https://github.com/ddev/ddev/pull/8560)) and Maho project type ([#8606↗](https://github.com/ddev/ddev/pull/8606))
+- Shopware 6 now bundles `shopware-cli` and hot-reload watchers ([#8597↗](https://github.com/ddev/ddev/pull/8597))
+
+### Router and web server
+
+- Informative explanations for webserver-level 403s and 404s ([#8641↗](https://github.com/ddev/ddev/pull/8641), [#8590↗](https://github.com/ddev/ddev/pull/8590)), and for unmatched router routes ([#8591↗](https://github.com/ddev/ddev/pull/8591))
+- Network aliases updated in place instead of recreated on start, for faster `ddev start` ([#8561↗](https://github.com/ddev/ddev/pull/8561))
+- Router fix: ephemeral port substitutions now recorded correctly ([#8653↗](https://github.com/ddev/ddev/pull/8653))
+
+### Other notable
+
+- Global Dockerfile support ([#8405↗](https://github.com/ddev/ddev/pull/8405))
+- `TERM`/`COLORTERM` forwarded to `ddev ssh`/`exec` sessions ([#8669↗](https://github.com/ddev/ddev/pull/8669))
+- Image tag recorded in a `com.ddev.image-tag` label; warns when a pinned image is stale ([#8682↗](https://github.com/ddev/ddev/pull/8682))
+- apt/rpm packages now published to Cloudsmith, replacing Gemfury, as a gradual migration ([#8698↗](https://github.com/ddev/ddev/pull/8698))
+- `ddev tablepro` global host command added ([#8580↗](https://github.com/ddev/ddev/pull/8580))
+
+Watch for the release announcement in the coming weeks.
+
 ## What's New on the Blog
 
 - **[A Love Letter to the DDEV Community](love-letter-ddev-community.md)** → Randy on what the DDEV community — real feedback, hard questions, generous contributions, genuine collaboration — makes this project what it is.
@@ -47,7 +82,7 @@ Live training is back for the fall, three sessions open to contributors and user
 ### Upcoming DDEV Live Contributor and User Training Sessions
 
 - **September 23, 2026 at 8:00 AM US Mountain / 10:00 AM US Eastern / 16:00 CEST — Managing Huge Databases with DDEV, with [Moshe Weitzman](https://github.com/weitzman)**  
-  Covers the new embedded snapshot and uncompressed snapshot features shipping in DDEV v1.25.4.  
+  Covers the new embedded snapshot and uncompressed snapshot features shipping in the [next DDEV release](#coming-soon-v1254-or-v1260).  
   [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Managing%20huge%20databases%20with%20DDEV%2C%20with%20Moshe%20Weitzman&dates=20260923T140000Z/20260923T150000Z&details=Join%20the%20DDEV%20training%20session%20via%20Zoom.%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online&trp=true) •
   [Download .ics](/files/ics/ddev-2026-09-23.ics)
 
