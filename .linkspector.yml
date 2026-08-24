@@ -48,6 +48,10 @@ ignorePatterns:
   # 2026-07-31 runs, passed on 2026-08-03. Used only for image-credit
   # attribution links.
   - pattern: "^https://(www\\.)?pixabay\\.com"
+  # Slack workspace deep links require being signed into that workspace, so
+  # linkspector's headless browser always gets a 403 even though the page is
+  # fine for a logged-in member.
+  - pattern: "^https://drupal\\.slack\\.com"
 aliveStatusCodes:
   - 200
   - 206

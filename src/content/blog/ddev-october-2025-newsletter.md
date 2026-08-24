@@ -26,7 +26,6 @@ Have ideas for DDEV in 2026? [Contact us↗](/contact).
 - **Metadrop Releases Aljibe**: Quality and testing toolkit for Drupal development with DDEV [Read more↗](https://metadrop.net/en/articles/aljibe-quality-and-testing-drupal-developments-ddev) • [The Drop Times coverage↗](https://www.thedroptimes.com/54668/metadrop-releases-aljibe-qa-and-testing-toolkit-drupal-development-with-ddev)
 - **WordPress Development with `ddev pull`**: Guide to using `ddev pull` for WordPress projects [Read more↗](https://www.koehnlein.dev/en/blog/2025/wordpress-ddev-pull/)
 - **WebHaven Now Powered by DDEV**: Development workflow success story [Read more↗](https://webhaven.io/blog/webhaven-now-powered-ddev-local-development)
-- **DDEV and PHPStorm's Node.js Remote Interpreter**: Workflow guide for ESLint, Prettier, and more [Read more↗](https://kitemetric.com/blogs/ddev-and-phpstorm-s-nodejs-remote-interpreter-a-smooth-workflow-for-eslint-prettier-and-more)
 
 ## Community Video Tutorials
 
