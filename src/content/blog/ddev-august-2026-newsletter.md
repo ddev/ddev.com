@@ -29,7 +29,7 @@ The [DDEV Integration plugin for IntelliJ/PhpStorm↗](https://plugins.jetbrains
 
 **TYPO3 Snapshot: Pull and Anonymize Production Data Locally** — Ramon Herrmann released Snapshot, an open-source TYPO3 extension that pulls databases and fileadmin from live/staging into a local DDEV environment, with built-in anonymization for GDPR compliance. [Read the announcement↗](https://www.linkedin.com/posts/ramon-herrmann-b79665212_typo3-opensource-php-share-7487427301668876288-FlxY/)
 
-**Quick DDEV Previews: A Self-Hosted Preview Service** — Matthias Andrasch built a proof-of-concept service that spins up DDEV preview environments from any branch of a connected GitHub repository. Two screencasts show it running: one locally on macOS, one deployed on a Hetzner VPS. [View the repo↗](https://github.com/mandrasch/quick-ddev-previews) • [Local install↗](https://www.youtube.com/watch?v=sS0WUtyXYm4) • [Hetzner VPS↗](https://www.youtube.com/watch?v=FRNQ9RinErQ)
+**Quick DDEV Previews: A Self-Hosted Preview Service** — Matthias Andrasch built a proof-of-concept service that spins up DDEV preview environments from any branch of a connected GitHub repository, based on Samuel Reichör's technical work. Screencast: [Using it on Hetzner VPS↗](https://www.youtube.com/watch?v=FRNQ9RinErQ) • [View the repo↗](https://github.com/mandrasch/quick-ddev-previews) 
 
 ## Community Tutorials from Around the Web
 
