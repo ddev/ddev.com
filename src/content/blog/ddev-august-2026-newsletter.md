@@ -22,6 +22,7 @@ The [DDEV Integration plugin for IntelliJ/PhpStorm↗](https://plugins.jetbrains
 
 - **[A Love Letter to the DDEV Community](love-letter-ddev-community.md)** → Randy on what the DDEV community — real feedback, hard questions, generous contributions, genuine collaboration — makes this project what it is.
 - **[Shopware on DDEV: notes from years of client projects](shopware-on-ddev.md)** → Benny Poensgen on why DDEV and Shopware fit together, from a first onboarding to conclusions drawn over years of agency practice.
+- **[Umbraco on DDEV: .NET, SQL Server, and the generic project type](umbraco-on-ddev.md)** → Lee Mills on running Umbraco CMS and .NET 10 under DDEV's `generic` project type, with a custom web image and Azure SQL Edge.
 
 ## Community Highlights
 
