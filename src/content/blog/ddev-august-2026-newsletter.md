@@ -36,11 +36,9 @@ The [DDEV Integration plugin for IntelliJ/PhpStorm↗](https://plugins.jetbrains
 
 - **Migrating a Local WordPress Site to DDEV on Windows/WSL2** (Spanish) → Adam Martín walks through moving a WordPress project from Local to DDEV running inside WSL2, including database import, URL fixes, SSL certificates, and troubleshooting port conflicts. [Read on dev.adammartin.es↗](https://dev.adammartin.es/migrar-local-ddev-wordpress-windows/)
 - **Installing DDEV on Linux** (French) → An updated walkthrough covering Docker prerequisites and DDEV installation on Ubuntu/Debian, Fedora, and openSUSE, plus mkcert certificate setup. [Read on kgaut.net↗](https://kgaut.net/blog/2026/installer-ddev-sous-linux-ubuntu-debian-fedora-opensuse)
-- **Two Global Commands for Database Dumps** (French) → `ddev db-import` and `ddev db-export`, a pair of global DDEV commands for restoring and exporting Drupal databases with `drush` cache-clear and login-link steps built-in. [Read on kgaut.net↗](https://kgaut.net/blog/2026/db-import-db-export-deux-commandes-ddev-globales-pour-gerer-ses-dumps)
-- **Pulling Remote Databases into DDEV** (French) → A follow-up set of global commands (`db-prod-import`, `ssh-prod`, and their preprod equivalents) for dumping, downloading, and importing a remote database in one step, packaged as the [ddev-drupal-tools↗](https://github.com/kgaut/ddev-drupal-tools) add-on. [Read on kgaut.net↗](https://kgaut.net/blog/2026/db-prod-import-ssh-prod-encore-des-commandes-ddev-pour-rapatrier-des-db-distantes)
+- **Global Commands for Database Dumps and Remote Imports** (French) → `ddev db-import` and `ddev db-export`, a pair of global DDEV commands for restoring and exporting Drupal databases with `drush` cache-clear and login-link steps built-in, plus a follow-up set (`db-prod-import`, `ssh-prod`, and their preprod equivalents) for pulling a remote database in one step, packaged as the [ddev-drupal-tools↗](https://github.com/kgaut/ddev-drupal-tools) add-on. [Read the first post↗](https://kgaut.net/blog/2026/db-import-db-export-deux-commandes-ddev-globales-pour-gerer-ses-dumps) • [Read the follow-up↗](https://kgaut.net/blog/2026/db-prod-import-ssh-prod-encore-des-commandes-ddev-pour-rapatrier-des-db-distantes)
 - **DDEV + a-blogcms as a MAMP Alternative** (Japanese) → An introduction to DDEV for a-blogcms developers used to MAMP, covering setup, useful commands, and Mailpit for email testing. [Read on kazumich.com↗](https://kazumich.com/cms/ddev-ablogcms-install.html)
 - **Running Drupal's GitLab CI Checks Locally** → How Kalamuna's `ddev checks` and `ddev checks-fixes` commands mirror the Drupal.org GitLab CI template, so code that passes locally passes in CI. [Read on kalamuna.com↗](https://www.kalamuna.com/blog/run-drupal-gitlab-ci-checks-locally-ddev-and-make-it-stick)
-- **Umbraco CMS on DDEV** → A clean Docker Compose setup for running Umbraco CMS on .NET with DDEV orchestrating SQL Server and the web container. [View on GitHub↗](https://github.com/millnut/umbraco-clean-ddev)
 
 ## DDEV Training Starting Up Again This Fall
 
@@ -69,7 +67,7 @@ Passcode: 12345
 
 ## Events & Community
 
-**DrupalCamp Tokyo 2026** — ANNAI presented on AI-driven Drupal development and sustainable open-source CMS strategy, including using DDEV with `git worktree` to run parallel Drupal environments. [Read the report↗](https://annai.co.jp/article/drupalcamp-tokyo-2026-annai-report)
+**DrupalCamp Tokyo 2026** — ANNAI presented on AI-driven Drupal development and sustainable open-source CMS strategy, including using DDEV with `git worktree` to run parallel Drupal environments. [Read the report↗](https://annai.co.jp/article/drupalcamp-tokyo-2026-annai-report) (Japanese) — for English coverage of `git worktree` with DDEV, see [Contributor Training: `git worktree` for Multiple DDEV Projects](git-worktree-contributor-training.md) and [Using `git worktree` with TYPO3](git-worktree-with-typo3.md).
 
 ## What We're Working On
 
