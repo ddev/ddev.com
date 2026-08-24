@@ -30,7 +30,7 @@ The [DDEV Integration plugin for IntelliJ/PhpStorm↗](https://plugins.jetbrains
 
 **TYPO3 Snapshot: Pull and Anonymize Production Data Locally** — Ramon Herrmann released Snapshot, an open-source TYPO3 extension that pulls databases and fileadmin from live/staging into a local DDEV environment, with built-in anonymization for GDPR compliance. [Read the announcement↗](https://www.linkedin.com/posts/ramon-herrmann-b79665212_typo3-opensource-php-share-7487427301668876288-FlxY/)
 
-**Quick DDEV Previews: A Self-Hosted Preview Service** — Matthias Andrasch built a proof-of-concept service that spins up DDEV preview environments from any branch of a connected GitHub repository, based on Samuel Reichör's technical work. Screencast: [Using it on Hetzner VPS↗](https://www.youtube.com/watch?v=FRNQ9RinErQ) • [View the repo↗](https://github.com/mandrasch/quick-ddev-previews) 
+**Quick DDEV Previews: A Self-Hosted Preview Service** — Matthias Andrasch built a proof-of-concept service that spins up DDEV preview environments from any branch of a connected GitHub repository, based on Samuel Reichör's technical work. Screencast: [Using it on Hetzner VPS↗](https://www.youtube.com/watch?v=FRNQ9RinErQ) • [View the repo↗](https://github.com/mandrasch/quick-ddev-previews)
 
 ## Community Tutorials from Around the Web
 
@@ -41,6 +41,31 @@ The [DDEV Integration plugin for IntelliJ/PhpStorm↗](https://plugins.jetbrains
 - **DDEV + a-blogcms as a MAMP Alternative** (Japanese) → An introduction to DDEV for a-blogcms developers used to MAMP, covering setup, useful commands, and Mailpit for email testing. [Read on kazumich.com↗](https://kazumich.com/cms/ddev-ablogcms-install.html)
 - **Running Drupal's GitLab CI Checks Locally** → How Kalamuna's `ddev checks` and `ddev checks-fixes` commands mirror the Drupal.org GitLab CI template, so code that passes locally passes in CI. [Read on kalamuna.com↗](https://www.kalamuna.com/blog/run-drupal-gitlab-ci-checks-locally-ddev-and-make-it-stick)
 - **Umbraco CMS on DDEV** → A clean Docker Compose setup for running Umbraco CMS on .NET with DDEV orchestrating SQL Server and the web container. [View on GitHub↗](https://github.com/millnut/umbraco-clean-ddev)
+
+## DDEV Training Starting Up Again This Fall
+
+Live training is back for the fall, three sessions open to contributors and users alike.
+
+### Upcoming DDEV Live Contributor and User Training Sessions
+
+- **September 23, 2026 at 8:00 AM US Mountain / 10:00 AM US Eastern / 16:00 CEST — Managing Huge Databases with DDEV, with [Moshe Weitzman](https://github.com/weitzman)**  
+  Covers the new embedded snapshot and uncompressed snapshot features shipping in DDEV v1.25.4.  
+  [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Managing%20huge%20databases%20with%20DDEV%2C%20with%20Moshe%20Weitzman&dates=20260923T140000Z/20260923T150000Z&details=Join%20the%20DDEV%20training%20session%20via%20Zoom.%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online&trp=true) •
+  [Download .ics](/files/ics/ddev-2026-09-23.ics)
+
+- **October 21, 2026 at 8:00 AM US Mountain / 10:00 AM US Eastern / 16:00 CEST — Shopware with DDEV, with [Benny Poensgen](https://github.com/vanWittlaer)**  
+  A look at running Shopware on DDEV, from Benny's [earlier post on the blog](shopware-on-ddev.md).  
+  [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Shopware%20with%20DDEV%2C%20with%20Benny%20Poensgen&dates=20261021T140000Z/20261021T150000Z&details=Join%20the%20DDEV%20training%20session%20via%20Zoom.%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online&trp=true) •
+  [Download .ics](/files/ics/ddev-2026-10-21.ics)
+
+- **November 11, 2026 at 8:00 AM US Mountain / 10:00 AM US Eastern / 16:00 CET — Advanced Coder.ddev.com Techniques**  
+  Using the `coder` CLI, local and web-based VS Code, and remote-controlling Claude, including the `freeform` template.  
+  [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Advanced%20Coder.ddev.com%20Techniques&dates=20261111T150000Z/20261111T160000Z&details=Join%20the%20DDEV%20training%20session%20via%20Zoom.%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online&trp=true) •
+  [Download .ics](/files/ics/ddev-2026-11-11.ics)
+
+Zoom Join Info:  
+Link: [Join Zoom Meeting](https://us02web.zoom.us/j/7315692237?pwd=RHR6NUkwb0g5WXIzS2NOcXRucCthZz09)  
+Passcode: 12345
 
 ## Events & Community
 
