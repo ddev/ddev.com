@@ -47,7 +47,7 @@ Live training is back for the fall, three sessions open to everybody.
 ### Upcoming DDEV Live Contributor and User Training Sessions
 
 - **September 23, 2026 at 8:00 AM US Mountain / 10:00 AM US Eastern / 16:00 CEST — Managing Huge Databases with DDEV, with [Moshe Weitzman](https://github.com/weitzman)**  
-  Covers the new embedded snapshot and uncompressed snapshot features shipping in the [next DDEV release](#coming-soon-v1254-or-v1260).  
+  Covers the new embedded snapshot and uncompressed snapshot features shipping in the upcoming v1.25.4 DDEV release.  
   [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Managing%20huge%20databases%20with%20DDEV%2C%20with%20Moshe%20Weitzman&dates=20260923T140000Z/20260923T150000Z&details=Join%20the%20DDEV%20training%20session%20via%20Zoom.%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online&trp=true) •
   [Download .ics](/files/ics/ddev-2026-09-23.ics)
 
