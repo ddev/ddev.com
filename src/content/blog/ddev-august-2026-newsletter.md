@@ -1,6 +1,6 @@
 ---
 title: "DDEV August 2026: Star Us on GitHub, PhpStorm Plugin Comes Home"
-pubDate: 2026-08-19
+pubDate: 2026-08-27
 summary: "August 2026 DDEV Newsletter: help us grow by starring ddev/ddev on GitHub, the DDEV IntelliJ/PhpStorm plugin moves into the DDEV org, plus community highlights and tutorials from around the web."
 author: Randy Fay
 featureImage:
@@ -12,46 +12,11 @@ categories:
 
 ## Help DDEV Grow: Star Us on GitHub
 
-If DDEV has saved you time, the easiest way to say so costs nothing: head over to [github.com/ddev/ddev↗](https://github.com/ddev/ddev) and click **Star**. It takes five seconds, and it genuinely helps — a star count is one of the first things new users, sponsors, and conference organizers check before trusting an open source tool. If you're already a star, thank you — and consider pointing a teammate at the repository too.
+If you use DDEV, a simple way to mention the project is to star the GitHub repo. Head over to [github.com/ddev/ddev↗](https://github.com/ddev/ddev) and click **Star**. It takes five seconds, and it can help us — a star count is one of the things new users, sponsors, and and AI check before trusting an open source tool. If you're already a star, thank you!
 
-## DDEV IntelliJ/PhpStorm Plugin Joins the DDEV Org
+## DDEV IntelliJ/PhpStorm Plugin Lands in the DDEV Org
 
-The [DDEV Integration plugin for IntelliJ/PhpStorm↗](https://plugins.jetbrains.com/plugin/18813-ddev-integration), maintained by [@AkibaAT](https://github.com/AkibaAT), has been transferred into the `ddev` GitHub organization. This was on our [2026 plans](2026-plans.md) list, and it's great to see it land. AkibaAT has kept the plugin in excellent shape, and this move gives it a permanent home alongside the rest of the DDEV ecosystem.
-
-## Coming Soon: v1.25.4
-
-It's been about seven weeks since [v1.25.3↗](https://github.com/ddev/ddev/releases/tag/v1.25.3) shipped on July 6, and roughly 100 commits have landed on `main` since then, including a lot of `feat:` work. That volume has us wondering whether this lands as v1.26.0 rather than a `.4` patch — we'll leave the final call to the maintainers — but here's a preview of what's coming either way:
-
-### Database and snapshots
-
-- `--seed-snapshot` and `--reset-database` flags added; the `initializer` config option is renamed to `seed` ([#8705↗](https://github.com/ddev/ddev/pull/8705))
-- Uncompressed `mariabackup`/`xtrabackup` snapshot and seed support ([#8704↗](https://github.com/ddev/ddev/pull/8704))
-- `zstd`-compressed `base_db` for faster first-boot restores ([#8608↗](https://github.com/ddev/ddev/pull/8608))
-- `dbimage` config option reimplemented, mirroring `webimage` ([#8610↗](https://github.com/ddev/ddev/pull/8610))
-- `ddev snapshot --list` now shows size and DB version ([#8642↗](https://github.com/ddev/ddev/pull/8642))
-- MySQL 9.7 LTS support added ([#8629↗](https://github.com/ddev/ddev/pull/8629)); the MySQL client now builds from Docker Hardened Images ([#8535↗](https://github.com/ddev/ddev/pull/8535))
-
-### Add-ons and project types
-
-- `ddev add-on update` updates all installed add-ons at once ([#8717↗](https://github.com/ddev/ddev/pull/8717))
-- New MODX Revolution (2.x/3.x) project type ([#8560↗](https://github.com/ddev/ddev/pull/8560)) and Maho project type ([#8606↗](https://github.com/ddev/ddev/pull/8606))
-- Shopware 6 now bundles `shopware-cli` and hot-reload watchers ([#8597↗](https://github.com/ddev/ddev/pull/8597))
-
-### Router and web server
-
-- Informative explanations for webserver-level 403s and 404s ([#8641↗](https://github.com/ddev/ddev/pull/8641), [#8590↗](https://github.com/ddev/ddev/pull/8590)), and for unmatched router routes ([#8591↗](https://github.com/ddev/ddev/pull/8591))
-- Network aliases updated in place instead of recreated on start, for faster `ddev start` ([#8561↗](https://github.com/ddev/ddev/pull/8561))
-- Router fix: ephemeral port substitutions now recorded correctly ([#8653↗](https://github.com/ddev/ddev/pull/8653))
-
-### Other notable
-
-- Global Dockerfile support ([#8405↗](https://github.com/ddev/ddev/pull/8405))
-- `TERM`/`COLORTERM` forwarded to `ddev ssh`/`exec` sessions ([#8669↗](https://github.com/ddev/ddev/pull/8669))
-- Image tag recorded in a `com.ddev.image-tag` label; warns when a pinned image is stale ([#8682↗](https://github.com/ddev/ddev/pull/8682))
-- apt/rpm packages now published to Cloudsmith, replacing Gemfury, as a gradual migration ([#8698↗](https://github.com/ddev/ddev/pull/8698))
-- `ddev tablepro` global host command added ([#8580↗](https://github.com/ddev/ddev/pull/8580))
-
-Watch for the release announcement in the coming weeks.
+The [DDEV Integration plugin for IntelliJ/PhpStorm↗](https://plugins.jetbrains.com/plugin/18813-ddev-integration), maintained by [@AkibaAT](https://github.com/AkibaAT), has been transferred into the `ddev` GitHub organization. This was on our [2026 plans](2026-plans.md) list, and it's great to see it land. Awesome maintainer AkibaAT has kept the plugin in excellent shape, and this move gives it a permanent home alongside the rest of the DDEV ecosystem.
 
 ## What's New on the Blog
 
