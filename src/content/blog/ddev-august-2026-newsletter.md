@@ -42,7 +42,7 @@ The [DDEV Integration plugin for IntelliJ/PhpStorm↗](https://plugins.jetbrains
 
 ## DDEV Training Starting Up Again This Fall
 
-Live training is back for the fall, three sessions open to contributors and users alike.
+Live training is back for the fall, three sessions open to everybody.
 
 ### Upcoming DDEV Live Contributor and User Training Sessions
 
@@ -69,21 +69,9 @@ Passcode: 12345
 
 **DrupalCamp Tokyo 2026** — ANNAI presented on AI-driven Drupal development and sustainable open-source CMS strategy, including using DDEV with `git worktree` to run parallel Drupal environments. [Read the report↗](https://annai.co.jp/article/drupalcamp-tokyo-2026-annai-report) (Japanese) — for English coverage of `git worktree` with DDEV, see [Contributor Training: `git worktree` for Multiple DDEV Projects](git-worktree-contributor-training.md) and [Using `git worktree` with TYPO3](git-worktree-with-typo3.md).
 
-## What We're Working On
-
-A quick check-in against our [2026 plans](2026-plans.md):
-
-**Shipped this year so far**: the IntelliJ/PhpStorm plugin's move into the DDEV org (above), [coder.ddev.com](coder-ddev-com-announcement.md), the new TUI dashboard, the new Docker Compose library with faster `ddev start`/`ddev stop`, and stable (non-experimental) Podman and Docker rootless support.
-
-**Still ahead**: a clearer AI/MCP strategy for DDEV users, AI sandboxing as a core feature, subdomain support for extra ports and services, and continued conversation about Mutagen's long-term future and whether a freemium model makes sense. These are exactly the kind of questions we want the [Board](/board) and [Advisory Group](https://github.com/orgs/ddev/discussions/categories/ddev-advisory-group) weighing in on.
-
 ---
 
 ## Governance
-
-- The [DDEV Foundation Board](/board) is meeting quarterly, with formal governance and growing board authority as key strategies for the Foundation.
-
-  _The board members are there to represent you and the project._ If you have insights, thoughts, or direction about where DDEV should go, please contact them. If you see possibilities for them at your community events, invite them!
 
 - The next DDEV advisory group meeting, open to everybody, is **September 2, 2026 at 8:00 AM US Mountain / 10:00 AM US Eastern / 16:00 CEST**.
   [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=DDEV%20Board%20and%20Advisory%20Group%20Meeting&dates=20260902T140000Z/20260902T150000Z&details=DDEV%20Board%20and%20Advisory%20Group%20Meeting%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online&trp=true) • See the [agenda](https://github.com/orgs/ddev/discussions/8546). We love to hear from our community!
