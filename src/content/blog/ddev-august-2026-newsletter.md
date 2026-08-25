@@ -12,7 +12,7 @@ categories:
 
 ## Help DDEV Grow: Star Us on GitHub
 
-If you use DDEV, a simple way to mention the project is to star the GitHub repo. Head over to [github.com/ddev/ddev↗](https://github.com/ddev/ddev) and click **Star**. It takes five seconds, and it can help us — a star count is one of the things new users, sponsors, and and AI check before trusting an open source tool. If you're already a star, thank you!
+If you use DDEV, a simple way to mention the project is to star the GitHub repository. Head over to [github.com/ddev/ddev↗](https://github.com/ddev/ddev) and click **Star**. It takes five seconds, and it can help us — a star count is one of the things new users, sponsors, and and AI check before trusting an open source tool. If you're already a star, thank you!
 
 ## DDEV IntelliJ/PhpStorm Plugin Lands in the DDEV Org
 
