@@ -49,7 +49,7 @@ Flaky tests are the worst, because they may depend on the execution environment,
 - Review the test output from Buildkite or GitHub workflow to try to understand what's actually going on. There may be an earlier error that's reported that causes the actual failure.
 - Try to run it manually, perhaps step-debugging and introducing slower execution.
 - Try to run it on GitHub Codespaces, which is a more similar environment.
-- Try to run it using [tmate](https://github.com/mxschmitt/action-tmate) on the GitHub workflow, which is as close as you can get to the real test environment. (Tmate is built into each of the DDEV test workflows.)
+- Try to run it using [upterm](https://github.com/owenthereal/action-upterm) on the GitHub workflow, which is as close as you can get to the real test environment. (Upterm is built into each of the DDEV test workflows.)
 
 ### Fragile or brittle tests
 

@@ -1,7 +1,8 @@
 ---
 title: "Contributor Training: Tmate for Debugging GitHub Actions Workflows"
 pubDate: 2024-10-23
-modifiedDate: 2025-02-26
+modifiedDate: 2026-09-01
+modifiedComment: "The tmate servers have been shut down, so the tmate action no longer works. DDEV workflows now use owenthereal/action-upterm instead, which works the same way: check the debug box when you dispatch a workflow, then SSH into the runner. Everything below still describes the approach, just with a different action."
 summary: Contributor training - Using tmate to debug and experiment with GitHub Actions.
 author: Randy Fay
 featureImage:
