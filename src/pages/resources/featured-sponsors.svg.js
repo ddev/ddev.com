@@ -1,7 +1,7 @@
 import featuredSponsors from "../../featured-sponsors.json"
 import fs from "fs"
 import path from "path"
-import sizeOf from "image-size"
+import sharp from "sharp"
 
 const baseUrl = import.meta.env.SITE
 
@@ -22,9 +22,27 @@ const yPadding = 20
 // Additional padding below lead sponsors
 const leadSponsorBottomPadding = 80
 
-const buildResponse = () => {
+const buildResponse = async () => {
   let images = []
   let currentY = 30
+
+  // sharp only reports dimensions asynchronously, so collect them up front and
+  // keep the layout below synchronous
+  const logoDimensions = new Map(
+    await Promise.all(
+      featuredSponsors
+        .filter((sponsor) => sponsor.logo)
+        .map(async (sponsor) => {
+          const logoPath = `./public${sponsor.logo}`
+          try {
+            return [logoPath, await sharp(logoPath).metadata()]
+          } catch (error) {
+            console.error(`Error reading logo for ${sponsor.name}:`, error)
+            return [logoPath, null]
+          }
+        })
+    )
+  )
 
   // First process lead sponsors
   const leadSponsors = featuredSponsors.filter(
@@ -49,7 +67,7 @@ const buildResponse = () => {
         }
 
         try {
-          const dimensions = sizeOf(fs.readFileSync(logoPath))
+          const dimensions = logoDimensions.get(logoPath)
           const [width, height] = getScaledImageDimensions(
             dimensions.width,
             dimensions.height,
@@ -101,7 +119,7 @@ const buildResponse = () => {
     }
 
     try {
-      const dimensions = sizeOf(fs.readFileSync(logoPath))
+      const dimensions = logoDimensions.get(logoPath)
       let [width, height] = getScaledImageDimensions(
         dimensions.width,
         dimensions.height,
@@ -193,7 +211,7 @@ const getScaledImageDimensions = (width, height, isLeadSponsor = false) => {
 }
 
 export async function GET({ params, request }) {
-  return new Response(buildResponse(), {
+  return new Response(await buildResponse(), {
     headers: { "Content-Type": "image/svg+xml" },
   })
 }
