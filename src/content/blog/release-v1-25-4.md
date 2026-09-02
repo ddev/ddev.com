@@ -13,7 +13,7 @@ categories:
 
 [DDEV v1.25.4](https://github.com/ddev/ddev/releases/tag/v1.25.4) is here: 142 PRs from the entire DDEV community. Your suggestions, bug reports, code, and financial support made it possible.
 
-The theme this time is doing less by hand. A new project can start with the database you already have, and image and environment customizations can be set once for every project instead of in each one.
+The theme of this release is doing less by hand. A new project can start with a "seed" database you already have, and image and environment customizations can be set globally instead of in every project.
 
 :::note[Linux and WSL2: new package repositories]
 DDEV's apt and rpm packages are now published to Cloudsmith at `packages.ddev.com`. Gemfury (`pkg.ddev.com`) keeps working, so switch over whenever it suits you by re-running the [Linux installation steps](https://docs.ddev.com/en/stable/users/install/ddev-installation/#ddev-installation-linux).
@@ -25,11 +25,11 @@ Package repository hosting is graciously provided by [Cloudsmith](https://clouds
 
 ## Database Seeding and Reset
 
-Until now, a fresh project meant a fresh empty database, and getting your data back in meant importing a dump every time. DDEV can now restore a snapshot directly into a brand-new database volume, which is far quicker than replaying a SQL file.
+Until now, a fresh project always started with an empty database, and getting your data back in there meant importing a dump or snapshot every time. DDEV can now automatically use a snapshot, which is far quicker than importing a SQL file.
 
 - [`ddev start --seed-snapshot=<name-or-path>`](https://docs.ddev.com/en/stable/users/usage/database-management/#seeding-a-fresh-database-from-a-snapshot) fills a brand-new database from a snapshot in `.ddev/db_snapshots`, or from a path to one anywhere else on your machine. It works with MariaDB, MySQL, and PostgreSQL.
-- `seed` is a reserved snapshot name. Run `ddev snapshot --name=seed` once, and from then on any `ddev delete` followed by `ddev start` brings that database back, with no flag to remember.
-- [`ddev start --reset-database`](https://docs.ddev.com/en/stable/users/usage/database-management/#starting-over-with-a-new-database) throws the current database away and starts over, taking a snapshot first. The two flags combine: `ddev start --reset-database --seed-snapshot=large-dataset`.
+- `seed` is a reserved snapshot name. Run `ddev snapshot --name=seed` once, and from then on any `ddev delete` followed by `ddev start` brings that database back, with no flag to remember. You can even check `.ddev/db_snapshots/seed*` into Git if it's not annoyingly large.
+- [`ddev start --reset-database`](https://docs.ddev.com/en/stable/users/usage/database-management/#starting-over-with-a-new-database) throws the current database away and starts over, taking a snapshot first. The flags can be combined (works with both `ddev start` and `ddev restart`): `ddev start --reset-database --seed-snapshot=large-dataset --omit-snapshot`.
 
 There's more to snapshots in this release: sizes and database versions in `ddev snapshot --list`, [snapshots shared across Git worktrees](https://docs.ddev.com/en/stable/users/usage/database-management/#sharing-snapshots-between-git-worktrees), and [uncompressed snapshots](https://docs.ddev.com/en/stable/users/usage/database-management/#uncompressed-snapshots) for faster restores. See [Snapshots](https://docs.ddev.com/en/stable/users/usage/database-management/#snapshots) for all of it.
 
@@ -44,11 +44,11 @@ ddev config --database=mysql:9.7
 ddev utility migrate-database mysql:9.7
 ```
 
-MySQL 8.0 and 8.4 also switched base image, from `bitnamilegacy/mysql`, which no longer receives updates, to [Docker Hardened Images](https://hub.docker.com/hardened-images/catalog/dhi/mysql/images) (`dhi.io/mysql`).
+MySQL 8.0 and 8.4 also switched base images, from `bitnamilegacy/mysql`, which no longer receives updates, to [Docker Hardened Images](https://hub.docker.com/hardened-images/catalog/dhi/mysql/images) (`dhi.io/mysql`).
 
 ## Global Configuration: Set It Once, for Every Project
 
-If you've ever added the same company CA certificate, the same apt package, or the same API token to every project you work on, this release is for you.
+If you've ever added the same company CA certificate, apt package, or API token to every project you work on, this release is for you.
 
 **[Global Dockerfiles](https://docs.ddev.com/en/stable/users/extend/customizing-images/#global-dockerfiles)** in `~/.ddev/web-build/` and `~/.ddev/db-build/` apply the same image customization everywhere: system tools, extra packages, or [container-level SSL trust for `curl`, Composer, and Node.js](https://docs.ddev.com/en/stable/users/usage/networking/#container-level-ssl-trust-for-curl-composer-nodejs-etc), which used to be a per-project chore. A project overrides any of it with the same filename in its own `.ddev/web-build/`. Thanks to [@rmott-littler](https://github.com/rmott-littler).
 
@@ -61,14 +61,14 @@ ddev dotenv global set .ddev/.env.web --api-url=https://example.com
 
 [Project env files](https://docs.ddev.com/en/stable/users/configuration/environment-variables/#project-env-files) gained two pieces in their names, too. A trailing `.local`, as in `.ddev/.env.local`, tells DDEV to gitignore the file, which is where credentials belong. A label, as in `.ddev/.env.web.myaddon`, keeps files from different sources apart, so an add-on isn't editing the same file you are.
 
-## New Project Types, and Shopware 6 Without an Add-on
+## New Project Types and Shopware 6 Without an Add-on
 
 Two project types joined DDEV:
 
 - [Maho](https://docs.ddev.com/en/stable/users/quickstart/#maho), thanks to [@fballiano](https://github.com/fballiano)
 - [MODX Revolution](https://docs.ddev.com/en/stable/users/quickstart/#modx-revolution) 2.x and 3.x, thanks to [@casparml](https://github.com/casparml)
 
-Shopware 6 projects now get [`shopware-cli` right in the web image](https://docs.ddev.com/en/stable/users/quickstart/#shopware-cli-and-hot-reload-watchers), along with `ddev admin-watch` and `ddev storefront-watch` and the ports they need. The [ddev-shopware-cli](https://github.com/vanWittlaer/ddev-shopware-cli) add-on isn't needed anymore. Thanks to [@vanWittlaer](https://github.com/vanWittlaer).
+Shopware 6 projects now get [`shopware-cli` right in the web image](https://docs.ddev.com/en/stable/users/quickstart/#shopware-cli-and-hot-reload-watchers), along with `ddev admin-watch`, `ddev storefront-watch`, and the ports they need. The [ddev-shopware-cli](https://github.com/vanWittlaer/ddev-shopware-cli) add-on isn't needed anymore. Thanks to [@vanWittlaer](https://github.com/vanWittlaer).
 
 ## New Commands and Flags
 
@@ -80,7 +80,7 @@ Shopware 6 projects now get [`shopware-cli` right in the web image](https://docs
 
 ## DDEV Tells You What's Wrong
 
-A wrong `docroot` used to produce a bare 404 page with nothing to go on. Now `ddev-webserver` explains the 403s and 404s it generates itself, and `ddev-router` does the same for a hostname that doesn't match any project:
+A wrong `docroot` used to produce a bare 404/403 page with no hints about why. Now `ddev-webserver` explains the 403s and 404s it generates itself, and `ddev-router` does the same for a hostname that doesn't match any project:
 
 ![The `ddev-router` 404 page, shown for a hostname with no running DDEV project](/img/blog/2026/09/ddev-router-404-no-route-found.png)
 
@@ -112,6 +112,8 @@ This release includes many more features and bugfixes. See the [full release not
 From the entire team, thanks for using, promoting, contributing, and supporting DDEV!
 
 If you have questions, reach out in any of the [support channels](https://docs.ddev.com/en/stable/users/support/).
+
+If you're amazed by how much is in this release, we are too! If you wonder how all this could be done, it's because of generous sponsors who let two of us work on this every day. If you and your team aren't already financially supporting DDEV, consider [joining our sponsors](/sponsor).
 
 Follow our [blog](https://ddev.com/blog/), [Bluesky](https://bsky.app/profile/ddev.bsky.social), [LinkedIn](https://www.linkedin.com/company/ddev-foundation), [Mastodon](https://fosstodon.org/@ddev), and join us on [Discord](/s/discord). Sign up for the [monthly newsletter](/newsletter).
 
