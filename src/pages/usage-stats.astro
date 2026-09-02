@@ -141,6 +141,79 @@ const sponsorshipGoal = sponsorshipData?.current_goal
           )
         }
 
+        <p class="my-6 rounded border border-yellow-500 bg-yellow-50 p-4 text-yellow-900 dark:border-yellow-400 dark:bg-yellow-950 dark:text-yellow-100">
+          <strong>Heads up:</strong> Amplitude changed its terms for free
+          projects, and DDEV's usage tracking now exceeds the free event
+          quota partway through most months. The Amplitude-based stats below
+          are significantly incomplete as a result. See <a
+            href="https://github.com/ddev/ddev/issues/8614"
+            target="_blank"
+            class={linkClass}>ddev/ddev#8614</a
+          > for details and status.
+        </p>
+
+        <section class="my-12">
+          <SectionHeading title="DDEV Sponsorship" />
+          {sponsorshipUsesSampleData && (
+            <p class="my-6 rounded border border-yellow-500 bg-yellow-50 p-4 text-yellow-900 dark:border-yellow-400 dark:bg-yellow-950 dark:text-yellow-100">
+              <strong>Heads up:</strong> GitHub credentials aren't configured for
+              this build, so the sponsorship figures below are{" "}
+              <strong>generated placeholder data</strong>, not live.
+            </p>
+          )}
+          {sponsorshipHistory.monthlyIncome.length > 0 ? (
+            <>
+              <p class="my-4 dark:text-slate-300">
+                Not Amplitude data, but just as important: the{" "}
+                <a href="https://ddev.com/foundation" class={linkClass}
+                  >DDEV Foundation</a
+                >{" "}runs on sponsorship, and{" "}
+                <a
+                  href="https://github.com/ddev/sponsorship-data"
+                  class={linkClass}
+                  >daily-updated sponsorship figures</a
+                >{" "}are published as an open JSON feed. Here's monthly recurring
+                sponsorship income over the period that feed has history for{
+                  sponsorshipGoal && (
+                    <span
+                      >, against the current goal of{" "}
+                      <strong
+                        >${sponsorshipGoal.target_amount.toLocaleString("en-US")}/month</strong
+                      >{" "}({sponsorshipGoal.progress_percentage.toFixed(1)}%
+                      there so far)</span
+                    >
+                  )
+                }.
+              </p>
+              <UsageTrendChart
+                labels={sponsorshipHistory.monthStartDates}
+                values={sponsorshipHistory.monthlyIncome}
+                ariaLabel="Chart of monthly DDEV sponsorship income over time"
+                tooltipUnit="in monthly sponsorship"
+                valuePrefix="$"
+                goalValue={sponsorshipGoal?.target_amount}
+                goalLabel={
+                  sponsorshipGoal &&
+                  `Goal: $${sponsorshipGoal.target_amount.toLocaleString("en-US")}/mo`
+                }
+              />
+              <p class="mt-2 text-sm">
+                <a
+                  href="https://ddev.com/s/sponsorship-data.json"
+                  class={linkClass}
+                >
+                  Live sponsorship data (JSON)
+                </a>
+              </p>
+            </>
+          ) : (
+            <p class="my-6 rounded border border-yellow-500 bg-yellow-50 p-4 text-yellow-900 dark:border-yellow-400 dark:bg-yellow-950 dark:text-yellow-100">
+              GitHub credentials aren't configured for this build, so sponsorship
+              data isn't available right now.
+            </p>
+          )}
+        </section>
+
         {
           monthlyUserHistory && (
             <section class="my-12">
@@ -558,68 +631,6 @@ const sponsorshipGoal = sponsorshipData?.current_goal
             >, and join us on <a href="/s/discord" class={linkClass}>Discord</a
             >.
           </p>
-        </section>
-
-        <section class="my-12">
-          <SectionHeading title="DDEV Sponsorship" />
-          {sponsorshipUsesSampleData && (
-            <p class="my-6 rounded border border-yellow-500 bg-yellow-50 p-4 text-yellow-900 dark:border-yellow-400 dark:bg-yellow-950 dark:text-yellow-100">
-              <strong>Heads up:</strong> GitHub credentials aren't configured for
-              this build, so the sponsorship figures below are{" "}
-              <strong>generated placeholder data</strong>, not live.
-            </p>
-          )}
-          {sponsorshipHistory.monthlyIncome.length > 0 ? (
-            <>
-              <p class="my-4 dark:text-slate-300">
-                Not Amplitude data, but just as important: the{" "}
-                <a href="https://ddev.com/foundation" class={linkClass}
-                  >DDEV Foundation</a
-                >{" "}runs on sponsorship, and{" "}
-                <a
-                  href="https://github.com/ddev/sponsorship-data"
-                  class={linkClass}
-                  >daily-updated sponsorship figures</a
-                >{" "}are published as an open JSON feed. Here's monthly recurring
-                sponsorship income over the period that feed has history for{
-                  sponsorshipGoal && (
-                    <span
-                      >, against the current goal of{" "}
-                      <strong
-                        >${sponsorshipGoal.target_amount.toLocaleString("en-US")}/month</strong
-                      >{" "}({sponsorshipGoal.progress_percentage.toFixed(1)}%
-                      there so far)</span
-                    >
-                  )
-                }.
-              </p>
-              <UsageTrendChart
-                labels={sponsorshipHistory.monthStartDates}
-                values={sponsorshipHistory.monthlyIncome}
-                ariaLabel="Chart of monthly DDEV sponsorship income over time"
-                tooltipUnit="in monthly sponsorship"
-                valuePrefix="$"
-                goalValue={sponsorshipGoal?.target_amount}
-                goalLabel={
-                  sponsorshipGoal &&
-                  `Goal: $${sponsorshipGoal.target_amount.toLocaleString("en-US")}/mo`
-                }
-              />
-              <p class="mt-2 text-sm">
-                <a
-                  href="https://ddev.com/s/sponsorship-data.json"
-                  class={linkClass}
-                >
-                  Live sponsorship data (JSON)
-                </a>
-              </p>
-            </>
-          ) : (
-            <p class="my-6 rounded border border-yellow-500 bg-yellow-50 p-4 text-yellow-900 dark:border-yellow-400 dark:bg-yellow-950 dark:text-yellow-100">
-              GitHub credentials aren't configured for this build, so sponsorship
-              data isn't available right now.
-            </p>
-          )}
         </section>
 
         <SponsorCTA />
