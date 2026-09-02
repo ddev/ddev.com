@@ -1,8 +1,8 @@
 ---
 title: "DDEV Add-on Maintenance Guide"
 pubDate: 2025-05-01
-modifiedDate: 2026-04-22
-modifiedComment: Added info on PHP add-ons
+modifiedDate: 2026-09-02
+modifiedComment: Added info on gitignored env files for credentials
 summary: Maintaining an add-on involves regularly updating it to stay compatible with new features in both the upstream ddev-addon-template and DDEV itself.
 author: Stas Zhuk
 featureImage:
@@ -52,6 +52,14 @@ ddev_version_constraint: ">= v1.24.10"
 ```
 
 This ensures compatibility and resolves known issues, such as those related to the [Mutagen Problem Report](open-source-for-the-win.md#mutagen-problem-report).
+
+### Gitignored Env Files for Credentials
+
+DDEV v1.25.4 added a `.local` suffix to the naming scheme for [project env files](https://docs.ddev.com/en/stable/users/configuration/environment-variables/#project-env-files). A trailing `.local`, as in `.ddev/.env.local` or `.ddev/.env.<service>.local`, tells DDEV to gitignore the file.
+
+If your add-on asks users for an API key, a token, or any other secret, point them at a `.local` file rather than the one you ship. The value reaches the container the same way, but it stays out of their repository.
+
+The same release added labels, as in `.ddev/.env.web.myaddon`, so your add-on's variables can live in a file of their own instead of sharing one with the user and other add-ons. Labeled files now reach the service's container too; before, they were only expanded into `docker-compose.*.yaml`.
 
 ### Customizing `ddev describe` Output
 
@@ -173,6 +181,8 @@ Example:
 
 - https://github.com/ddev/ddev-adminer#advanced-customization
 - https://github.com/ddev/ddev-adminer/blob/main/docker-compose.adminer.yaml
+
+For secrets, point users at a [gitignored `.local` file](#gitignored-env-files-for-credentials) instead of the one your add-on ships.
 
 ### Making Small Changes to Docker Images
 
