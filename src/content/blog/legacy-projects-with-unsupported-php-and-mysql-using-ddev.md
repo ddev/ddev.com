@@ -69,6 +69,7 @@ services:
         cp /docker-entrypoint.sh ~/docker-entrypoint.sh
         sed -i '157s|.*|if false; then|' ~/docker-entrypoint.sh
         sed -i '175s|.*|echo mysql_8.0 >/var/lib/mysql/db_mariadb_version.txt|' ~/docker-entrypoint.sh
+        sed -i '81i\  chmod -f -R u+w /etc/mysql/conf.d/* 2>/dev/null || true' ~/docker-entrypoint.sh
         exec ~/docker-entrypoint.sh
 ```
 
@@ -77,6 +78,7 @@ Three things are noteworthy:
 - Setting `linux/amd64` as the platform will require Rosetta to be available on the macOS ARM64 platform
 - The `BASE_IMAGE` is set to a DDEV `db` container of legacy Docker images that are still provided.
 - Changing the `entrypoint` is a workaround to prevent DDEV complaining about a mismatching MySQL version after restarting the project. The small script "tricks" the DDEV inspection into believing, the version matches the one configured in `.ddev/config.yaml`.
+- The `mysql-5.5:v1.24.6` image removes write permission from copied custom `.cnf` files, which can cause `Permission denied` when restarting an existing DB container; the added `chmod` makes this example restart-safe. This underlying issue was fixed in DDEV v1.24.7.
 
 ## Step 3: Rewire PHP
 
