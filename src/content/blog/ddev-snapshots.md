@@ -1,6 +1,6 @@
 ---
 title: "DDEV Snapshots: Checkpoints, Restores, and Seeded Databases"
-pubDate: 2026-09-03
+pubDate: 2026-09-12
 summary: How DDEV database snapshots work, how to use them as checkpoints during migrations, and how to seed new projects or containers from a snapshot instead of a full import.
 author: Randy Fay
 categories:
@@ -105,3 +105,10 @@ ddev stop && docker volume rm <project>-mariadb && ddev start
 ```
 
 Don't skip the volume-removal step — without it, DDEV keeps the existing database volume instead of pulling and using the seeded image.
+
+
+## Examples and resources
+
+* List of example images with seeds built in
+* `build-and-push-seeded-image.sh --snapshot=seed --output-image=randyfay/d11_normal:v1.25.4 --push --base-image=ddev/ddev-dbserver-mariadb-11.8:v1.25.4`
+
