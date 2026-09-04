@@ -20,20 +20,24 @@ categories:
 
 ## Table of Contents
 
+<!-- TODO: TOC -->
+<!-- TODO: Update ddev-local-database-management.md, noting --reset-database and maybe other things -->
+
 ## What Snapshots Are
 
-A DDEV snapshot is a physical, "hot" backup of your database — `mariabackup`/`xtrabackup` for MySQL and MariaDB, or `pg_basebackup` for Postgres — not a `mysqldump`. Because it copies the database's on-disk files instead of dumping SQL statements, it's much faster to create and restore, especially on large databases.
+A DDEV snapshot is a physical, "hot" backup of your database — `maria-backup`/`xtrabackup` for MySQL and MariaDB, or `pg_basebackup` for Postgres — not a `mysqldump`. Because it copies the database's on-disk files instead of dumping SQL statements, it's much faster to create and restore, especially on large databases.
 
 Snapshots live in `.ddev/db_snapshots/`, and the filename encodes the database type and version, for example `mariadb_11.8`. That's why a snapshot only restores cleanly against a matching engine and version — restoring a `mariadb_11.8` snapshot into a `mariadb_10.11` project will fail unless you pass `--force`.
 
-Snapshots are compressed by default. `--uncompressed` skips the decompression step on restore, trading a much larger file on disk for a faster restore. Postgres doesn't support uncompressed snapshots.
+Snapshots are compressed with `zstd` by default. `--uncompressed` skips the decompression step on restore, trading a much larger file on disk for a faster restore. Postgres doesn't support uncompressed snapshots.
 
 ## Core Commands
 
 - `ddev snapshot --name=<name>` — create a snapshot
-- `ddev snapshot restore <name>` — restore a snapshot; an interactive TUI picker appears if you omit the name
+- `ddev snapshot restore` - opens a TUI allowing you to select snapshot to restore
+- `ddev snapshot restore <name>` — restore a named snapshot
 - `ddev snapshot restore --latest` — restore the most recent snapshot
-- `ddev snapshot restore $HOME/tmp/mysnapshot-mariadb_11.8.zst` — restore from an arbitrary path, not just `.ddev/db_snapshots/`
+- `ddev snapshot restore $HOME/tmp/mysnapshot-mariadb_11.8.zst` — restore from an arbitrary path, not from the default `.ddev/db_snapshots/`
 - `ddev snapshot --list` (`-l`) — table of snapshot name, created date, size, database version, and compression; shows a Worktree column when relevant
 - `ddev snapshot --cleanup` (`-C`) — delete one snapshot (`--name=<name>`) or all of them (prompts for confirmation unless `-y`)
 - `ddev snapshot --all` (`-a`) — snapshot every project at once
@@ -42,11 +46,11 @@ If your project has multiple Git worktrees, snapshots taken from other worktrees
 
 ## Snapshots as Migration Checkpoints
 
-Take a snapshot before each step of a migration or update: `ddev snapshot --name=pre-migration-step3`. If a step breaks something, restore the last good snapshot instead of re-importing the database from scratch.
+Take a snapshot before each step of a migration or update: `ddev snapshot --name=pre-migration-step3`. If a step breaks something, restore the last good snapshot instead of restarting the migration from scratch. (`ddev snapshot restore --latest` can be a great technique if you do this religiously.)
 
 `ddev snapshot --list` becomes a log of checkpoints, and `restore <name>` or `restore --latest` jumps back to any of them instantly.
 
-This builds on the workflow described in [DDEV Database Management](ddev-local-database-management.md): snapshot, `ddev delete -O`, `ddev start`, restore. It's also a natural lead-in to seeding a new database volume directly from a snapshot, covered next.
+This builds on the workflow described in [DDEV Database Management](ddev-local-database-management.md): snapshot, `ddev restart --reset-database`, restore. It's also a natural lead-in to seeding a new database volume directly from a snapshot, covered next.
 
 ## Seeding New Projects with `--seed-snapshot`
 
