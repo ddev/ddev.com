@@ -312,5 +312,13 @@
     "darklogo": "/logos/in2code-dark.svg",
     "url": "https://www.in2code.de/",
     "github": "in2code-pro"
+  },
+  {
+    "name": "84EM",
+    "type": "standard",
+    "logo": "/logos/84em.svg",
+    "darklogo": "/logos/84em-dark.svg",
+    "url": "https://84em.com/",
+    "github": "84em"
   }
 ]
