@@ -22,10 +22,7 @@ categories:
 
 ## Table of Contents
 
-<!-- TODO: TOC -->
-
 <!-- markdownlint-disable-next-line MD026 -->
-
 ## Snapshots are easy!
 
 A DDEV snapshot is a physical, "hot" backup of your database — `mariadb-backup`/`xtrabackup` for MariaDB and MySQL, or `pg_basebackup` for Postgres — not a text-based `mysqldump`. Because it copies the database's on-disk files instead of dumping SQL statements, it's much faster to create and restore, especially on large databases.
