@@ -92,7 +92,7 @@ Once you have a `seed` snapshot, `ddev restart --reset-database -Oy` repeatedly 
 
 ## Building a Seeded Database Image
 
-You can also create a replacement database image that has an alternate seed database built into it. This is especially great for delivering huge databases, as the process can be handled by the image, or an upstream process.
+You can also create a replacement database image that has an alternate seed database built into it. This is especially great for delivering huge databases, as the process can be handled by the image, or an upstream process. All the image building does is copy a `base_db.zst` or `base_db.mbstream` into the `/mysqlbase/custom` directory of the DB image.
 
 For teams that want to share a ready-to-go database via a container registry instead of a snapshot file, [build-and-push-seeded-image.sh](https://github.com/rfay/database-performance/blob/main/scripts/build-and-push-seeded-image.sh) is an example that a real multi-arch (linux/AMD64, linux/ARM64) image with a snapshot baked in:
 
