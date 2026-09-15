@@ -25,6 +25,7 @@ categories:
 <!-- TODO: TOC -->
 
 <!-- markdownlint-disable-next-line MD026 -->
+
 ## Snapshots are easy!
 
 A DDEV snapshot is a physical, "hot" backup of your database — `mariadb-backup`/`xtrabackup` for MariaDB and MySQL, or `pg_basebackup` for Postgres — not a text-based `mysqldump`. Because it copies the database's on-disk files instead of dumping SQL statements, it's much faster to create and restore, especially on large databases.
@@ -78,7 +79,7 @@ ddev restart --reset-database --seed-snapshot=<name> -Oy
 
 This is the lightweight alternative to baking a seeded database image: no custom image or registry, just a snapshot file — good for local or small-team use where a shared registry is overkill.
 
-If you're working on a project that can always start with a seeded database, you can actually check in the seed and it will always be used by default on an empty project. 
+If you're working on a project that can always start with a seeded database, you can actually check in the seed and it will always be used by default on an empty project.
 
 ```bash
 git add -f .ddev/db_snapshots/seed-*
@@ -128,4 +129,3 @@ ddev restart --reset-database --omit-snapshot -y
   - MySQL 9.7 databases: <https://hub.docker.com/r/randyfay/mysql-97-tagbase/tags>
 - Example image builder [build-and-push-seeded-image.sh](https://github.com/rfay/database-performance/blob/main/scripts/build-and-push-seeded-image.sh)
 - Example invocation: `build-and-push-seeded-image.sh --snapshot=seed --output-image=randyfay/d11_normal:v1.25.4 --push --base-image=ddev/ddev-dbserver-mariadb-11.8:v1.25.4`
-
