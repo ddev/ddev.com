@@ -3,8 +3,8 @@ title: "New `ddev share` Provider System: Cloudflare tunnel with no login or tok
 pubDate: 2026-02-12
 summary: "DDEV v1.25.0 introduces a flexible provider system for `ddev share`, adding free Cloudflare tunnel support, automation capabilities, and extensibility for custom sharing solutions."
 author: Randy Fay
-modifiedDate: 2026-07-04
-modifiedComment: "Updated the TYPO3 example to match DDEV's official host-stripping approach, and linked to a dedicated TYPO3 screencast"
+modifiedDate: 2026-09-16
+modifiedComment: "Amended WordPress example to work on remote endpoint."
 featureImage:
   src: /img/blog/2026/02/ddev-share-banner.png
   alt: DDEV now supports many ways to do `ddev share` including cloudflared, ngrok, and even custom share providers
@@ -13,7 +13,7 @@ categories:
   - Training
   - DevOps
 ---
-
+**Update (2026-09-16)**: The WordPress example has been amended to work correctly on a remote endpoint, similar to the manual changes at [Sharing Your Project](sharing.md).
 **Update (2026-07-04)**: The TYPO3 example below has been updated to match DDEV's official host-stripping approach. See [Sharing Your TYPO3 Project with `ddev share`](ddev-share-with-typo3.md) for a screencast walkthrough.
 
 ---
@@ -77,10 +77,10 @@ hooks:
     # Save database for restore later
     - exec-host: ddev export-db --file=/tmp/tmpdump.sql.gz
     # Change the URL in the database
-    - exec: wp search-replace ${DDEV_PRIMARY_URL} $(cat /mnt/ddev_config/share_url.txt) | grep Success
+    - exec: wp search-replace ${DDEV_PRIMARY_URL} $(cat .ddev/share_url.txt) | grep Success
     # Fix the wp-config-ddev.php to use the DDEV_SHARE_URL
     - exec: cp wp-config-ddev.php wp-config-ddev.php.bak
-    - exec: sed -i.bak "s|${DDEV_PRIMARY_URL}|$(cat /mnt/ddev_config/share_url.txt)|g" wp-config-ddev.php
+    - exec: sed -i.bak -r "s|getenv\(\s'DDEV_PRIMARY_URL'\s\)|'$(cat .ddev/share_url.txt)'|g" wp-config-ddev.php
     - exec: wp cache flush
   post-share:
     # Put back the things we changed
