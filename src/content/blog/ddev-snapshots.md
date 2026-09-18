@@ -18,23 +18,24 @@ categories:
 
 -->
 
-<!-- TODO: Update ddev-local-database-management.md, noting --reset-database and maybe other things -->
-
 ## Table of Contents
 
-<!-- markdownlint-disable-next-line MD026 -->
+<!-- markdownlint-disable MD026 -->
+
 ## Snapshots are easy!
+
+<!-- markdownlint-enable MD026 -->
 
 A DDEV snapshot is a physical, "hot" backup of your database — `mariadb-backup`/`xtrabackup` for MariaDB and MySQL, or `pg_basebackup` for Postgres — not a text-based `mysqldump`. Because it copies the database's on-disk files instead of dumping SQL statements, it's much faster to create and restore, especially on large databases.
 
-Normally snapshots live in `.ddev/db_snapshots/`, and the filename encodes the database type and version, for example `mariadb_11.8`. That's why a snapshot only restores against a matching engine and version — restoring a `mariadb_11.8` snapshot into a `mariadb_10.11` project will fail unless you pass `--force`.
+Normally snapshots live in `.ddev/db_snapshots/`, and the filename encodes the database type and version, for example `mariadb_11.8`. That's why a snapshot only restores against a matching engine and version — restoring a `mariadb_11.8` snapshot into a `mariadb_10.11` project will fail.
 
-Snapshots are compressed with `zstd` by default. `--uncompressed` skips the decompression step on restore, trading a much larger file on disk for a faster restore. Postgres doesn't support uncompressed snapshots.
+Snapshots are compressed with `zstd` by default. [`--uncompressed`](https://docs.ddev.com/en/stable/users/usage/database-management/#uncompressed-snapshots) skips the decompression step on restore, trading a much larger file on disk for a faster restore. Postgres doesn't support uncompressed snapshots.
 
 ## Core Commands
 
 - `ddev snapshot --name=<name>` — create a snapshot
-- `ddev snapshot restore` - opens a TUI allowing you to select snapshot to restore
+- `ddev snapshot restore` — opens a TUI allowing you to select snapshot to restore
 - `ddev snapshot restore <name>` — restore a named snapshot
 - `ddev snapshot restore --latest` — restore the most recent snapshot
 - `ddev snapshot restore $HOME/tmp/mysnapshot-mariadb_11.8.zst` — restore from an arbitrary path, not from the default `.ddev/db_snapshots/`
@@ -42,7 +43,7 @@ Snapshots are compressed with `zstd` by default. `--uncompressed` skips the deco
 - `ddev snapshot --cleanup` (`-C`) — delete one snapshot (`--name=<name>`) or all of them (prompts for confirmation unless `-y`)
 - `ddev snapshot --all` (`-a`) — snapshot all projects (automatically starts stopped projects to accomplish this)
 
-If your project has multiple Git worktrees, snapshots taken from other worktrees of the same repository are available too — by name, with `--latest`, or through the interactive list.
+If your project has multiple Git worktrees, [snapshots taken from other worktrees](https://docs.ddev.com/en/stable/users/usage/database-management/#sharing-snapshots-between-git-worktrees) of the same repository are available too — by name, with `--latest`, or through the interactive list.
 
 ## Snapshots as Migration Checkpoints
 
@@ -54,7 +55,7 @@ This builds on the workflow described in [DDEV Database Management](ddev-local-d
 
 ## Seeding New Projects with `--seed-snapshot`
 
-DDEV's automatic starter database, or "seed" database, is normally built into the DB image. However, you can easily use a "seed" with more in it. For example, if you want to start a project with an alternate seed snapshot, `ddev start` and `ddev restart` accept `--seed-snapshot=<name-or-path>`, which seeds the database volume from a snapshot instead of the stock seed database. This only applies when there's no existing database — DDEV errors otherwise, telling you to add `--reset-database` or use `ddev snapshot restore`.
+DDEV's automatic starter database, or "seed" database, is normally built into the DB image. However, you can easily use a "seed" with more in it. For example, if you want to start a project with an alternate seed snapshot, `ddev start` and `ddev restart` accept [`--seed-snapshot=<name-or-path>`](https://docs.ddev.com/en/stable/users/usage/database-management/#seeding-a-fresh-database-from-a-snapshot), which seeds the database volume from a snapshot instead of the stock seed database. This only applies when there's no existing database — DDEV errors otherwise, telling you to add `--reset-database` or use `ddev snapshot restore`.
 
 `<name-or-path>` can be a short name from `.ddev/db_snapshots/` or a full path:
 
@@ -85,13 +86,13 @@ git commit -m "Add default seed db for clean startup"
 
 ## Seed Snapshots + `--reset-database`
 
-Once you have a `seed` snapshot, `ddev restart --reset-database -Oy` repeatedly returns the project to that known-good state — handy between test runs.
+Once you have a `seed` snapshot, [`ddev restart --reset-database`](https://docs.ddev.com/en/stable/users/usage/database-management/#starting-over-with-a-new-database) `-Oy` repeatedly returns the project to that known-good state — handy between test runs.
 
 ## Building a Seeded Database Image
 
 You can also create a replacement database image that has an alternate seed database built into it. This is especially great for delivering huge databases, as the process can be handled by the image, or an upstream process. All the image building does is copy a `base_db.zst` or `base_db.mbstream` into the `/mysqlbase/custom` directory of the DB image.
 
-For teams that want to share a ready-to-go database via a container registry instead of a snapshot file, [build-and-push-seeded-image.sh](https://github.com/rfay/database-performance/blob/main/scripts/build-and-push-seeded-image.sh) is an example that a real multi-arch (linux/AMD64, linux/ARM64) image with a snapshot baked in:
+For teams that want to share a ready-to-go database via a container registry instead of a snapshot file, [build-and-push-seeded-image.sh](https://github.com/rfay/database-performance/blob/main/scripts/build-and-push-seeded-image.sh) is an example that builds a real multi-arch (linux/AMD64, linux/ARM64) image with a snapshot baked in:
 
 ```bash
 build-and-push-seeded-image.sh --snapshot=uncompressed-2g \
@@ -99,7 +100,7 @@ build-and-push-seeded-image.sh --snapshot=uncompressed-2g \
   --base-image=ddev/ddev-dbserver-mariadb-11.8:v1.25.4
 ```
 
-This technique relies on `mariabackup`/`xtrabackup`, so it doesn't support Postgres.
+This technique relies on `mariadb-backup`/`xtrabackup`, so it doesn't support Postgres.
 
 Uncompressed seeds make for a much larger image and a slower push, but a faster, decompress-free container startup. It's worth comparing the actual image sizes to see the bandwidth cost of each trade-off.
 
