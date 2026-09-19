@@ -6,18 +6,19 @@ author: Randy Fay
 featureImage:
   src: /img/blog/2026/09/ddev-snapshots.jpg
   alt: A retro instant camera producing photos of a glowing database server, with database checkpoints lined up below.
+  credit: "Codex"
 categories:
   - Guides
   - Videos
 ---
 
-Screenshots have been a beloved feature of DDEV for years, but in v1.25.4 there is so much more.
+Snapshots have been a beloved feature of DDEV for years, but in v1.25.4 there is so much more.
 
-Read on (or watch, or both) to see
+Read on (or watch, or both) to see:
 
-- Basic simple use of screenshots
+- Basic use of snapshots
 - Use of a `seed` snapshot to automatically provide content to a project on first start
-- Committing a seed snapshot into Git repository
+- Committing a seed snapshot into a Git repository
 - Starting/restarting with a seed snapshot
 - Embedding a snapshot (usually for huge databases) into a custom database image
 
@@ -62,9 +63,9 @@ Take a snapshot before each step of a migration or update: `ddev snapshot --name
 
 This builds on the workflow described in [DDEV Database Management](ddev-local-database-management.md): snapshot, `ddev restart --reset-database`, restore. It's also a natural lead-in to seeding a new database volume directly from a snapshot, covered next.
 
-## The "seed" snapshot
+## The `seed` Snapshot
 
-DDEV projects have always automatically created a database named `db` to help you get started fast. But it's been an empty database, with no content. Now in DDEV v1.25.4+ the "seed" snapshot has been added. You can create a snapshot named `seed` (with whatever content you want) and when somebody starts up a project for the first time, the content on the `seed` snapshot will automatically be loaded. You can even check the snapshot named `seed` into your Git repository if you don't object to its size, and it can help folks new to the project to get started that much faster. (The `seed` snapshot is only used when there is no database; your changes to the database are kept as always.)
+DDEV projects have always automatically created a database named `db` to help you get started fast. But it's been an empty database, with no content. Now, in DDEV v1.25.4+, the `seed` snapshot has been added. You can create a snapshot named `seed` (with whatever content you want) and when somebody starts up a project for the first time, the content on the `seed` snapshot will automatically be loaded. You can even check the snapshot named `seed` into your Git repository if you don't object to its size, and it can help folks new to the project to get started that much faster. (The `seed` snapshot is only used when there is no database; your changes to the database are kept as always.)
 
 To add the seed snapshot to Git:
 
@@ -75,7 +76,7 @@ git commit -m "Add default seed db for clean startup"
 
 ## Seeding New Projects with `--seed-snapshot`
 
- If you want to start a project with an alternate seed snapshot, `ddev start` and `ddev restart` accept [`--seed-snapshot=<name-or-path>`](https://docs.ddev.com/en/stable/users/usage/database-management/#seeding-a-fresh-database-from-a-snapshot), which seeds the database volume from a snapshot instead of the stock seed database. This only applies when there's no existing database — DDEV errors otherwise, telling you to add `--reset-database` or use `ddev snapshot restore`.
+If you want to start a project with an alternate seed snapshot, `ddev start` and `ddev restart` accept [`--seed-snapshot=<name-or-path>`](https://docs.ddev.com/en/stable/users/usage/database-management/#seeding-a-fresh-database-from-a-snapshot), which seeds the database volume from a snapshot instead of the stock seed database. This only applies when there's no existing database — DDEV errors otherwise, telling you to add `--reset-database` or use `ddev snapshot restore`.
 
 `<name-or-path>` can be a short name from `.ddev/db_snapshots/` or a full path:
 
@@ -95,8 +96,6 @@ ddev restart --reset-database --seed-snapshot=<name> -Oy
 
 This is the lightweight alternative to baking a seeded database image: no custom image or registry, just a snapshot file — good for local or small-team use where a shared registry is overkill.
 
-If you're working on a project that can always start with a seeded database, you can actually check in the seed and it will always be used by default on an empty project.
-
 ## Seed Snapshots + `--reset-database`
 
 Once you have a `seed` snapshot, [`ddev restart --reset-database`](https://docs.ddev.com/en/stable/users/usage/database-management/#starting-over-with-a-new-database) `-Oy` repeatedly returns the project to that known-good state — handy between test runs.
@@ -105,7 +104,7 @@ Once you have a `seed` snapshot, [`ddev restart --reset-database`](https://docs.
 
 You can also create a replacement database image that has an alternate seed database built into it. This is especially great for delivering huge databases, as the process can be handled by the image, or an upstream process. All the image building does is copy a `base_db.zst` or `base_db.mbstream` into the `/mysqlbase/custom` directory of the DB image.
 
-For teams that want to share a ready-to-go database via a docker image registry instead of a snapshot file, [build-and-push-seeded-image.sh](https://github.com/rfay/database-performance/blob/main/scripts/build-and-push-seeded-image.sh) is an example that builds a real multi-arch (linux/AMD64, linux/ARM64) image with a snapshot baked in:
+For teams that want to share a ready-to-go database via a Docker image registry instead of a snapshot file, [build-and-push-seeded-image.sh](https://github.com/rfay/database-performance/blob/main/scripts/build-and-push-seeded-image.sh) is an example that builds a real multi-arch (linux/AMD64, linux/ARM64) image with a snapshot baked in:
 
 ```bash
 build-and-push-seeded-image.sh --snapshot=uncompressed-2g \
@@ -141,3 +140,7 @@ ddev restart --reset-database --omit-snapshot -y
   - MySQL 9.7 databases: <https://hub.docker.com/r/randyfay/mysql-97-tagbase/tags>
 - Example image builder [build-and-push-seeded-image.sh](https://github.com/rfay/database-performance/blob/main/scripts/build-and-push-seeded-image.sh)
 - Example invocation: `build-and-push-seeded-image.sh --snapshot=seed --output-image=randyfay/d11_normal:v1.25.4 --push --base-image=ddev/ddev-dbserver-mariadb-11.8:v1.25.4`
+
+---
+
+_This article was edited and refined with assistance from Claude Code._
