@@ -3,12 +3,13 @@ title: "DDEV Snapshots: Checkpoints, Restores, and Seeded Databases"
 pubDate: 2026-09-12
 summary: How DDEV database snapshots work, how to use them as checkpoints during migrations, and how to seed new projects or containers from a snapshot instead of a full import.
 author: Randy Fay
+featureImage:
+  src: /img/blog/2026/09/ddev-snapshots.jpg
+  alt: A retro instant camera producing photos of a glowing database server, with database checkpoints lined up below.
 categories:
   - Guides
   - Videos
 ---
-
-<!-- TODO: featureImage -->
 
 <div class="video-container">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/079LW-PiLCg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
