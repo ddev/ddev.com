@@ -1,8 +1,8 @@
 ---
 title: "DDEV Database Management"
 pubDate: 2020-04-03
-modifiedDate: 2026-07-29
-modifiedComment: "Noted that phpMyAdmin is now an add-on rather than built in, and linked to the docs' Database GUIs section, which lists many more current browsers."
+modifiedDate: 2026-09-15
+modifiedComment: "Noted `--reset-database` as a simpler alternative to `ddev delete -O` + `ddev start` + restore, mentioned `--seed-snapshot`, and linked to the new DDEV Snapshots post for checkpoints and seeding."
 summary: A detailed look at using DDEV to work with databases.
 author: Randy Fay
 featureImage:
@@ -27,7 +27,9 @@ Remember, you can run `ddev [command] --help` for more info on many of the topic
 
 **Database snapshots**: With _snapshots_ you can easily save the entire status of all of your databases. It’s great for when you’re working incrementally on migrations or updates and want to save state so you can start right back where you were.
 
-I like to name my snapshots so I can find them later, so `ddev snapshot --name=two-dbs` would make a snapshot named “two-dbs” in the `.ddev/db_snapshots` directory. It includes the entire state of the db server, so in the case of our two databases above, both databases and the system level `mysql` database will all be snapshotted. Then if you want to delete everything with `ddev delete -O` (omitting the snapshot since we have one already), and then `ddev start` again, we can `ddev snapshot restore two-dbs` and we’ll be right back where we were.
+I like to name my snapshots so I can find them later, so `ddev snapshot --name=two-dbs` would make a snapshot named “two-dbs” in the `.ddev/db_snapshots` directory. It includes the entire state of the db server, so in the case of our two databases above, both databases and the system level `mysql` database will all be snapshotted. To get back to that state, [`ddev restart --reset-database`](https://docs.ddev.com/en/stable/users/usage/database-management/#starting-over-with-a-new-database) throws away the current database and starts fresh in one step — simpler than the older `ddev delete -O` / `ddev start` / `ddev snapshot restore two-dbs` sequence, though that still works too.
+
+You can also seed a brand-new project's database straight from a snapshot with `--seed-snapshot`, instead of importing a full dump. See [DDEV Snapshots](ddev-snapshots.md) for more on using snapshots as migration checkpoints, seeding new projects, and building seeded database images.
 
 **`ddev mysql`**: `ddev mysql` gives you direct access to the MySQL client in the db container. I like to use it for lots of things because I like the command line. I might run `ddev mysql` and give an interactive command like `DROP DATABASE backend;`. Or `SHOW TABLES;`. You can also do things like `` echo "SHOW TABLES;" | ddev mysql or `ddev mysql -uroot -proot` `` to get root privileges.
 
