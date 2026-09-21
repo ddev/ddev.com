@@ -1,6 +1,6 @@
 ---
 title: "DDEV Snapshots: Checkpoints, Restores, and Seeded Databases"
-pubDate: 2026-09-12
+pubDate: 2026-09-21
 summary: How DDEV database snapshots work, how to use them as checkpoints during migrations, and how to seed new projects or containers from a snapshot instead of a full import.
 author: Randy Fay
 featureImage:
@@ -36,7 +36,7 @@ Read on (or watch, or both) to see:
 
 <!-- markdownlint-enable MD026 -->
 
-A DDEV snapshot is a physical, "hot" backup of your database — `mariadb-backup`/`xtrabackup` for MariaDB and MySQL, or `pg_basebackup` for Postgres — not a text-based `mysqldump`. Because it copies the database's on-disk files instead of dumping SQL statements, it's much faster to create and restore, especially on large databases.
+A DDEV snapshot is a physical, "hot" backup of your database — `mariadb-backup`/`xtrabackup` for MariaDB and MySQL, or `pg_basebackup` for Postgres — not a text-based `mysqldump`. Because it copies the database's on-disk files instead of dumping SQL statements, it's much faster to create and restore, especially on large databases. All the basics about snapshots are in the [docs](https://docs.ddev.com/en/stable/users/usage/database-management/#snapshots).
 
 Normally snapshots live in `.ddev/db_snapshots/`, and the filename encodes the database type and version, for example `mariadb_11.8`. That's why a snapshot only restores against a matching engine and version — restoring a `mariadb_11.8` snapshot into a `mariadb_10.11` project will fail.
 
@@ -65,7 +65,7 @@ This builds on the workflow described in [DDEV Database Management](ddev-local-d
 
 ## The `seed` Snapshot
 
-DDEV projects have always automatically created a database named `db` to help you get started fast. But it's been an empty database, with no content. Now, in DDEV v1.25.4+, the `seed` snapshot has been added. You can create a snapshot named `seed` (with whatever content you want) and when somebody starts up a project for the first time, the content on the `seed` snapshot will automatically be loaded. You can even check the snapshot named `seed` into your Git repository if you don't object to its size, and it can help folks new to the project to get started that much faster. (The `seed` snapshot is only used when there is no database; your changes to the database are kept as always.)
+DDEV projects have always automatically created a database named `db` to help you get started fast. But it's been an empty database, with no content. Now, in DDEV v1.25.4+, [the `seed` snapshot](https://docs.ddev.com/en/stable/users/usage/database-management/#seeding-a-fresh-database-from-a-snapshot) has been added. You can create a snapshot named `seed` (with whatever content you want) and when somebody starts up a project for the first time, the content on the `seed` snapshot will automatically be loaded. You can even check the snapshot named `seed` into your Git repository if you don't object to its size, and it can help folks new to the project to get started that much faster. (The `seed` snapshot is only used when there is no database; your changes to the database are kept as always.)
 
 To add the seed snapshot to Git:
 
@@ -102,7 +102,7 @@ Once you have a `seed` snapshot, [`ddev restart --reset-database`](https://docs.
 
 ## Building a Seeded Database Image
 
-You can also create a replacement database image that has an alternate seed database built into it. This is especially great for delivering huge databases, as the process can be handled by the image, or an upstream process. All the image building does is copy a `base_db.zst` or `base_db.mbstream` into the `/mysqlbase/custom` directory of the DB image.
+You can also create a [replacement database image](https://docs.ddev.com/en/stable/users/extend/customizing-images/#seeding-a-custom-starter-database-in-dbimage) that has an alternate seed database built into it. This is especially great for delivering huge databases, as the process can be handled by the image, or an upstream process. All the image building does is copy a `base_db.zst` or `base_db.mbstream` into the `/mysqlbase/custom` directory of the DB image.
 
 For teams that want to share a ready-to-go database via a Docker image registry instead of a snapshot file, [build-and-push-seeded-image.sh](https://github.com/rfay/database-performance/blob/main/scripts/build-and-push-seeded-image.sh) is an example that builds a real multi-arch (linux/AMD64, linux/ARM64) image with a snapshot baked in:
 
@@ -118,7 +118,7 @@ Uncompressed seeds make for a much larger image and a slower push, but a faster,
 
 ## Using a Seeded Image via `dbimage:`
 
-Point a project at the seeded image in `.ddev/config.yaml` (or `.ddev/config.local.yaml`):
+Point a project at the seeded image using [`dbimage`](https://docs.ddev.com/en/stable/users/configuration/config/#dbimage) in `.ddev/config.yaml` (or `.ddev/config.local.yaml`):
 
 ```yaml
 # .ddev/config.yaml or .ddev/config.db.yaml or .ddev/config.local.yaml
