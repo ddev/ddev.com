@@ -214,7 +214,7 @@ nodejs_version: "20"
 
 ### Links Between Blog Posts
 
-Internal blog links use filename references: [Learn about DDEV performance](docker-performance-2023.md)
+Internal blog links use filename references: [Learn about DDEV performance](docker-performance-2026.md)
 
 ### Links to Other Site Pages
 
