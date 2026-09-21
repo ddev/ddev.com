@@ -3,10 +3,9 @@ title: "DDEV September 2026: Hobobiker Rides Again, v1.25.4 Ships, Pressable Goe
 pubDate: 2026-09-22
 summary: "September 2026 DDEV Newsletter: a three-part live series migrating a Drupal 6 site with Claude, DDEV v1.25.4 with database seeding and reset, a deep dive on snapshots with screencast, Pressable's official DDEV add-on, and tutorials from around the web."
 author: Randy Fay
-# REPLACE_ME: feature image not chosen yet.
-# featureImage:
-#   src: "/img/blog/2026/09/ddev-september-2026-featureimage.jpg"
-#   alt: "REPLACE_ME"
+featureImage:
+  src: "/img/blog/2026/09/ddev-september-2026-featureimage.jpg"
+  alt: "Nancy Lewis: The Yampa River Flows Again, pastel painting of a river winding between yellow-green trees toward blue mountains under a bright sky"
 categories:
   - Newsletters
 ---
