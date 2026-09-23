@@ -1,6 +1,8 @@
 ---
 title: "DDEV Snapshots: Checkpoints, Restores, and Seeded Databases"
 pubDate: 2026-09-21
+modifiedData: 2026-09-23
+modifiedComment: "Added snapshot/dbimage contributor training from 2026-09-23"
 summary: How DDEV database snapshots work, how to use them as checkpoints during migrations, and how to seed new projects or containers from a snapshot instead of a full import.
 author: Randy Fay
 featureImage:
@@ -29,6 +31,10 @@ Read on (or watch, or both) to see:
 <div class="video-container">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/079LW-PiLCg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
+
+## Contributor Training Video and Resources
+
+See the [2026-09-23 Contributor Training](https://youtu.be/zdprgaQi_Cc) for more on snapshots, seeds, and embedded images. [Slides and Resources](https://rfay.github.io/snapshots-and-huge-databases/) and [Moshe Weitzman Demo repository](https://github.com/weitzman/dbimage)
 
 <!-- markdownlint-disable MD026 -->
 
