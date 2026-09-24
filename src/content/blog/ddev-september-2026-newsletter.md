@@ -30,23 +30,23 @@ The older [DDEV Database Management](ddev-local-database-management.md) post has
 
 ## Hobobiker Rides Again: A Three-Part Live Series on Drupal 6 → Drupal 11 with Claude
 
-The [Drupal AI Learners Club↗](https://www.drupal.org/about/ai/initiatives/drupal-ai-learners-club) — the initiative led by Amber Matz and Angie Byron that meets regularly for show-and-tell on AI tools and workflows — has scheduled a three-part live series with Randy Fay as guest host, migrating [hobobiker.com](https://hobobiker.com) — a Drupal 6 site with years of content — two different ways.
+The [Drupal AI Learners Club↗](https://www.drupal.org/about/ai/initiatives/drupal-ai-learners-club) — the initiative led by Amber Matz and Angie Byron that meets regularly for show-and-tell on AI tools and workflows — has scheduled a three-part live series with Randy Fay joining Amber and Angie as host, migrating [hobobiker.com](https://hobobiker.com) — a Drupal 6 site with years of content — two different ways.
 
-After Jamie Abrahams showed the club a static-site-to-Drupal migration driven by evals in [One Command, One Migration: AI Best Practices in Action↗](https://luma.com/jfy6b75b), Randy tried the approach on his own very old site. The results made one thing clear: Claude does its best work with a guided plan, a clear view of the source and destination, and success criteria it has to prove it has met. So the series takes hobobiker.com on two journeys — one ending in static HTML, the other in Drupal 11 — and checks both against the same test suite.
+After Jamie Abrahams migrated a site live and checked the result with evals in [One Command, One Migration: AI Best Practices in Action↗](https://luma.com/jfy6b75b), Randy tried the approach on his own very old site. The results made one thing clear: Claude does its best work with a guided plan, a clear view of the source and destination, and success criteria it has to prove it has met. So the series takes hobobiker.com on two journeys — one ending in static HTML, the other in Drupal 11 — and checks both against the same test suite.
 
 These are working sessions, not polished demos. Bring your questions, suggestions, and opinions; the peanut gallery is part of the show.
 
 All three are on the club's [Luma calendar↗](https://luma.com/drupal-ai), and recaps of past sessions are collected in the [session list on drupal.org↗](https://www.drupal.org/docs/develop/development-tools/ai-coding-tools-for-drupal-development/drupal-ai-learners-club-sessions).
 
-- **October 16 — Part 1: Road Test: Having Claude Write the Tests Before the Trip**  
+- **October 16, 2026 at 9:30 AM US Pacific / 12:30 PM US Eastern / 18:30 CEST — Part 1: Road Test: Having Claude Write the Tests Before the Trip**  
   Before any migration starts, we need a way to know whether it worked. Randy works with Claude to explore the Drupal 6 site and design automated tests covering content and design: pages, paths, images, menus, and how things look. The goal is a test suite that doesn't depend on any particular destination, so the same tests can run against a static archive and a Drupal 11 rebuild. Along the way: how to push Claude past "looks good to me" toward a complete verification plan, and how a sandboxed environment like [coder.ddev.com](https://coder.ddev.com) smooths out the process.  
   [RSVP↗](https://luma.com/grosjf6h)
 
-- **October 23 — Part 2: The Last Ride: Sending a Drupal Site into Retirement**  
+- **October 23, 2026 at 9:30 AM US Pacific / 12:30 PM US Eastern / 18:30 CEST — Part 2: The Last Ride: Sending a Drupal Site into Retirement**  
   Not every old Drupal site needs an upgrade; some just need a dignified retirement. Randy has archived plenty of legacy sites as static HTML, and this time Claude does the work — given a proven strategy (Lullabot's "Sending a Drupal Site into Retirement"), clear success criteria, and the tests from Part 1. Can it turn hobobiker.com into a static site that holds up, in an hour, in a way everyone watching can follow? A practical use case for anyone with an aging site that still has content worth keeping.  
   [RSVP↗](https://luma.com/tg3gd3ej)
 
-- **October 30 — Part 3: The Long Haul: Planning and Running a Drupal 6 to Drupal 11 Migration**  
+- **October 30, 2026 at 9:30 AM US Pacific / 12:30 PM US Eastern / 17:30 CET — Part 3: The Long Haul: Planning and Running a Drupal 6 to Drupal 11 Migration**  
   This is the hard one. Drupal 6 to Drupal 11 skips many major versions and hits most of the snags that come with them. Instead of turning Claude loose, we prepare it the way you'd onboard a new team member: first it explores the D6 source database and files, then it learns what the D11 destination offers, then it writes a migration plan before touching any code. Randy follows that plan live, with plenty of input from the peanut gallery, stopping at sensible checkpoints and picking up in later sessions if needed. The finish line is the same test suite from Road Test, now running against a working Drupal 11 site.  
   [RSVP↗](https://luma.com/2g0u28yn)
 
@@ -54,7 +54,7 @@ All three are on the club's [Luma calendar↗](https://luma.com/drupal-ai), and 
 
 [Pressable↗](https://pressable.com) released an official, open-source DDEV add-on for syncing WordPress sites between their hosting and a local DDEV environment.
 
-- **What it does** — `ddev pull pressable` and `ddev push pressable` sync the database and uploads over SSH and WP-CLI, with no API tokens or plugins required. `--skip-db` and `--skip-files` let you move one or the other, and pushes are restricted to staging environments as a production safeguard.
+- **What it does** — `ddev pull pressable` and `ddev push pressable` sync the database and uploads over SSH and WP-CLI, with no API tokens or plugins required. `--skip-db` and `--skip-files` let you move one or the other, and Pressable limits pushes to non-production staging sites, with confirmation prompts, as a safeguard.
 - **Install** — `ddev add-on get pressable/ddev-pressable`
 - Links: [changelog entry↗](https://pressable.com/changelog/feature-release-official-open-source-ddev-add-on/) • [source on GitHub↗](https://github.com/pressable/ddev-pressable)
 
@@ -68,7 +68,7 @@ There's also a French write-up from KingLand looking at how Pressable combines t
 
 **TYPO3 Quickstarter 0.7.0** — The CLI that scaffolds local TYPO3 environments on DDEV added support for legacy TYPO3 9 and 10 on PHP 7.4, so older extensions can be worked on before modernizing, plus a built-in phpMyAdmin that auto-logs in. [Release notes↗](https://github.com/pagea-dev/typo3quickstarter/releases/tag/0.7.0)
 
-**Knecht Cloud, hands-on** — Matthias Andrasch walks through installing Knecht Cloud on a Hetzner VPS: project setup, AI-driven workflows, a browser terminal, and online previews for DDEV projects across TYPO3, Drupal, and Craft CMS. [Read part 1↗](https://matthias-andrasch.eu/blog/2026/exploring-knecht-cloud-for-ddev-ai-installation-part-1/)
+**Knecht Cloud, hands-on** — Matthias Andrasch walks through installing Knecht Cloud on a Hetzner VPS: project setup, AI-driven workflows, a browser terminal, and online previews, in a tool built for DDEV projects on TYPO3, Drupal, and Craft CMS. [Read part 1↗](https://matthias-andrasch.eu/blog/2026/exploring-knecht-cloud-for-ddev-ai-installation-part-1/)
 
 ## Talks and Tutorials from Around the Web
 
@@ -109,7 +109,7 @@ We so appreciate all of you supporting the project!
 
 **August 2026**: ~$10,038/month (83.7% of goal)
 
-**September 2026**: ~10,099/month (84.2% of goal)
+**September 2026**: ~$10,099/month (84.2% of goal)
 
 If DDEV has helped your team, consider sponsoring. → [Become a sponsor↗](/sponsor)
 
