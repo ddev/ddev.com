@@ -1,6 +1,6 @@
 ---
 title: "DDEV September 2026: v1.25.4 Ships, Hobobiker Rides Again, Pressable Goes Official"
-pubDate: 2026-09-22
+pubDate: 2026-09-25
 summary: "September 2026 DDEV Newsletter: a three-part live series migrating a Drupal 6 site with Claude, DDEV v1.25.4 with database seeding and reset, a deep dive on snapshots with screencast, Pressable's official DDEV add-on, and tutorials from around the web."
 author: Randy Fay
 featureImage:
