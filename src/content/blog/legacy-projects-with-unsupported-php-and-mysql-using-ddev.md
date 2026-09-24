@@ -172,6 +172,9 @@ To execute PHP with our external PHP Docker image, I created the following file 
     SetEnvIf X-Forwarded-Proto "https" HTTPS=on
 
     Alias "/phpstatus" "/var/www/phpstatus.php"
+    <Location "/phpstatus">
+        SetHandler "proxy:unix:/var/run/php/php-fpm.sock|fcgi://localhost"
+    </Location>
     DocumentRoot /var/www/html/htdocs
     <Directory "/var/www/html/htdocs">
       AllowOverride All
