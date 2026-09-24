@@ -1,5 +1,5 @@
 ---
-title: "DDEV September 2026: Hobobiker Rides Again, v1.25.4 Ships, Pressable Goes Official"
+title: "DDEV September 2026: v1.25.4 Ships, Hobobiker Rides Again, Pressable Goes Official"
 pubDate: 2026-09-22
 summary: "September 2026 DDEV Newsletter: a three-part live series migrating a Drupal 6 site with Claude, DDEV v1.25.4 with database seeding and reset, a deep dive on snapshots with screencast, Pressable's official DDEV add-on, and tutorials from around the web."
 author: Randy Fay
@@ -9,6 +9,24 @@ featureImage:
 categories:
   - Newsletters
 ---
+
+## DDEV v1.25.4 Is Out
+
+[DDEV v1.25.4](release-v1-25-4.md) landed on September 2 with 142 PRs from the community. The theme is doing less by hand:
+
+- **Database seeding** — a new project can start from a `seed` snapshot instead of an import step.
+- **`ddev start --reset-database`** — throw away a project's database and start clean without `ddev delete -O`.
+- **Global Dockerfiles and env files** — image and environment customizations applied to every project at once, instead of per-project.
+- **MySQL 9.7 LTS**, plus **MODX Revolution** and **Maho** project types.
+- **Linux packages moved to Cloudsmith** at `packages.ddev.com` (Gemfury keeps working).
+
+Read the [full release post](release-v1-25-4.md) for details.
+
+## Snapshots, Explained (with Screencast)
+
+The snapshot work in v1.25.4 got its own post: [DDEV Snapshots: Checkpoints, Restores, and Seeded Databases](ddev-snapshots.md). It covers basic snapshot use, checkpointing during a migration, uncompressed snapshots, snapshots embedded in the project, and seeding a new project from a snapshot — with a [screencast↗](https://www.youtube.com/watch?v=079LW-PiLCg) walking through old and new behavior.
+
+The older [DDEV Database Management](ddev-local-database-management.md) post has been updated to match.
 
 ## Hobobiker Rides Again: A Three-Part Live Series on Drupal 6 → Drupal 11 with Claude
 
@@ -31,24 +49,6 @@ All three are on the club's [Luma calendar↗](https://luma.com/drupal-ai), and 
 - **October 30 — Part 3: The Long Haul: Planning and Running a Drupal 6 to Drupal 11 Migration**  
   This is the hard one. Drupal 6 to Drupal 11 skips many major versions and hits most of the snags that come with them. Instead of turning Claude loose, we prepare it the way you'd onboard a new team member: first it explores the D6 source database and files, then it learns what the D11 destination offers, then it writes a migration plan before touching any code. Randy follows that plan live, with plenty of input from the peanut gallery, stopping at sensible checkpoints and picking up in later sessions if needed. The finish line is the same test suite from Road Test, now running against a working Drupal 11 site.  
   [RSVP↗](https://luma.com/2g0u28yn)
-
-## DDEV v1.25.4 Is Out
-
-[DDEV v1.25.4](release-v1-25-4.md) landed on September 2 with 142 PRs from the community. The theme is doing less by hand:
-
-- **Database seeding** — a new project can start from a `seed` snapshot instead of an import step.
-- **`ddev start --reset-database`** — throw away a project's database and start clean without `ddev delete -O`.
-- **Global Dockerfiles and env files** — image and environment customizations applied to every project at once, instead of per-project.
-- **MySQL 9.7 LTS**, plus **MODX Revolution** and **Maho** project types.
-- **Linux packages moved to Cloudsmith** at `packages.ddev.com` (Gemfury keeps working).
-
-Read the [full release post](release-v1-25-4.md) for details.
-
-## Snapshots, Explained (with Screencast)
-
-The snapshot work in v1.25.4 got its own post: [DDEV Snapshots: Checkpoints, Restores, and Seeded Databases](ddev-snapshots.md). It covers basic snapshot use, checkpointing during a migration, uncompressed snapshots, snapshots embedded in the project, and seeding a new project from a snapshot — with a [screencast↗](https://www.youtube.com/watch?v=079LW-PiLCg) walking through old and new behavior.
-
-The older [DDEV Database Management](ddev-local-database-management.md) post has been updated to match.
 
 ## Pressable Ships an Official DDEV Add-On
 
@@ -80,11 +80,6 @@ There's also a French write-up from KingLand looking at how Pressable combines t
 
 Sessions are open to everybody.
 
-- **September 23, 2026 at 8:00 AM US Mountain / 10:00 AM US Eastern / 16:00 CEST — Managing Huge Databases with DDEV, with [Moshe Weitzman](https://github.com/weitzman)**  
-  Covers the embedded snapshot and uncompressed snapshot features in v1.25.4.  
-  [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Managing%20huge%20databases%20with%20DDEV%2C%20with%20Moshe%20Weitzman&dates=20260923T140000Z/20260923T150000Z&details=Join%20the%20DDEV%20training%20session%20via%20Zoom.%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online&trp=true) •
-  [Download .ics](/files/ics/ddev-2026-09-23.ics)
-
 - **October 21, 2026 at 8:00 AM US Mountain / 10:00 AM US Eastern / 16:00 CEST — Shopware with DDEV, with [Benny Poensgen](https://github.com/vanWittlaer)**  
   A look at running Shopware on DDEV, from Benny's [earlier post on the blog](shopware-on-ddev.md).  
   [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Shopware%20with%20DDEV%2C%20with%20Benny%20Poensgen&dates=20261021T140000Z/20261021T150000Z&details=Join%20the%20DDEV%20training%20session%20via%20Zoom.%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online&trp=true) •
@@ -110,11 +105,11 @@ Passcode: 12345
 
 ## Sponsorship Update
 
-REPLACE_ME one-line comment on the month.
+We so appreciate all of you supporting the project!
 
 **August 2026**: ~$10,038/month (83.7% of goal)
 
-**September 2026**: ~$REPLACE_ME/month (REPLACE_ME% of goal)
+**September 2026**: ~10,099/month (84.2% of goal)
 
 If DDEV has helped your team, consider sponsoring. → [Become a sponsor↗](/sponsor)
 
