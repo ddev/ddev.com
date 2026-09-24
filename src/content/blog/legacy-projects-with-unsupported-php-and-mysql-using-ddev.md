@@ -77,7 +77,7 @@ services:
     build:
       args:
         BASE_IMAGE: ${DDEV_DB_LEGACY_IMAGE}
-    image: ${DDEV_DB_LEGACY_IMAGE}-${DDEV_SITENAME}-built
+    #image: ${DDEV_DB_LEGACY_IMAGE}-${DDEV_SITENAME}-built
     entrypoint:
       - sh
       - -c
