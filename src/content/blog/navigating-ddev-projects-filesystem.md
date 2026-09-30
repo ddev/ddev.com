@@ -24,11 +24,13 @@ To see only the projects that are running, use `ddev list --active-only` (or `dd
 
 ## The DDEV Dashboard: Just Type `ddev`
 
-Running `ddev` with no arguments opens an interactive terminal dashboard that lists all of your projects and their status. You can start, stop, and restart projects, open a project's URL or Mailpit in the browser, filter the list with `/`, and press Enter for a project's details. For someone with 52 projects, this may be the quickest way to see what is running. See the [interactive dashboard documentation](https://docs.ddev.com/en/stable/users/usage/cli/#interactive-dashboard) for the full list of keys.
+Running `ddev` or `ddev tui` with no arguments opens an interactive terminal dashboard that lists all of your projects and their status. You can start, stop, and restart projects, open a project's URL or Mailpit in the browser, and press Enter for a project's details. For someone with 52 projects, this may be the quickest way to see what is running.
+
+With many projects, the most useful key is `/`, which filters the list as you type. The filter matches part of a project's name, type, status, or directory, ignoring case, so `dr` finds every Drupal project, `running` shows only running projects, and `client` finds every project under a `client` directory. Move to the project you want, and start it with `s` or open it with `l`. See the [interactive dashboard documentation](https://docs.ddev.com/en/stable/users/usage/cli/#interactive-dashboard) for the full list of keys.
 
 ![DDEV interactive dashboard listing projects with status, type, and location](/img/blog/2026/09/navigating-ddev-tui.png)
 
-To get the classic help text instead, set `no_tui: true` in the global configuration or `DDEV_NO_TUI=true` in the environment.
+![DDEV dashboard filtered by typing "dr" after pressing the slash key, showing only matching projects](/img/blog/2026/09/tui-filter.png)
 
 ## `ddevcd`: Built-In Project Jump
 
