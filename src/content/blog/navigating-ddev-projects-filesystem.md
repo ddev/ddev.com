@@ -10,8 +10,6 @@ categories:
   - Guides
 ---
 
-<!-- TODO: Verify every command below by running it before publishing. -->
-
 A recent [post on Bluesky](https://bsky.app/profile/bymayo.bsky.social/post/3mwq6twgb6l2v) asked a common question: with dozens of DDEV projects, what is the fastest way to get to one? The current routine was to open Finder, dig three folders deep, drag the folder into an editor, and then run `ddev start`. Another post mentioned 52 projects and no idea which ones are running. Here are the techniques we use and that came up in the replies.
 
 ## See What Is Running: `ddev list`
