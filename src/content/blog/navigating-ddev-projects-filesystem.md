@@ -134,13 +134,33 @@ code "$(ddev list -j | jq -r '.raw[]
   | .approot')"
 ```
 
-## Screencast
+## Community! Third-Party DDEV GUIs
 
-<!-- TODO: Record the screencast demonstrating ddev list, ddevcd, autojump, code ., and ddev describe, upload to YouTube, and paste the embed here. -->
+If you would rather click than type, the community has built several graphical front ends for DDEV. They sit on top of the DDEV command line, so your projects and `.ddev` configuration stay the same. The DDEV project doesn't maintain or endorse any of these, and this list comes from [our newsletters](ddev-jan-2026-newsletter.md) and from reports by their authors. Try them and judge for yourself.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/REPLACE_ME" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+### In Your IDE
 
-## Tell Us What We Can Do To Make It Better
+- [DDEV Integration](https://plugins.jetbrains.com/plugin/18813-ddev-integration) plugin for PhpStorm and IntelliJ, maintained by AkibaAT.
+- [DDEV Manager](https://marketplace.visualstudio.com/items?itemName=biati.ddev-manager) extension for VS Code, by Biati Digital.
+
+### macOS
+
+- [DDrovr](https://ddrovr.com/) is a new native macOS app from Bison Digital that shows all your projects on one dashboard. It offers one-click access to URLs, terminal shells, and logs, detects the project's CMS, highlights startup failures, and searches projects with Cmd-K. It needs macOS 14 or later and DDEV v1.24 or later, and works with OrbStack, Docker Desktop, and Colima. It is a download from the site, and the site lists no pricing or source repository.
+- [ddevbar](https://klemens.ee/ddevbar/) is a menu bar app by Klemens Arro for starting, stopping, and restarting projects with a click.
+- [DDEVUI](https://github.com/dave-agilepixel/DDEV-Apple-GUI) is a native app written in Swift and SwiftUI.
+
+### Cross-Platform
+
+- [ddev-ui](https://github.com/shiv122/ddev-ui) is an Electron and React app for macOS, Windows, and Linux. It covers project management, database import and export, snapshots, add-ons, and log streaming.
+- [DDEV Manager GUI](https://github.com/DDEV-Manager/ddev-manager) by VonLoxx is another desktop wrapper.
+- [DDEV GUI](https://github.com/theChaosCoder/ddev-gui) by ChaosKing has been tested only on Linux.
+
+### Commercial and Agency Tools
+
+- [DevWorkspacePro](https://devworkspacepro.com/) by damms005 is a commercial wrapper GUI. When we last looked it had no free trial.
+Didn't find yours? The [June 2026 newsletter](ddev-june-2026-newsletter.md) covers some of these tools as well. If you built a DDEV GUI, send a PR adding it here.
+
+## Tell Us What We Can Do To Make DDEV Better For You!
 
 We know this is awkward territory, and we're always listening to you, and want to know what we can do to make it better.
 
