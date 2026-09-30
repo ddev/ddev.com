@@ -112,11 +112,7 @@ ddevcd myproject && ddev start && phpstorm .
 
 ![ddev st output with the project location underlined as a clickable link](/img/blog/2026/09/navigating-ddev-describe.png)
 
-The project location (`~/workspace/ddev.com` in the header above) is a terminal hyperlink to the project directory. Click it (usually Cmd-click on macOS, Ctrl-click on Linux and Windows) and your file manager opens at the project root.
-
-DDEV turns these links on for terminals known to support them: iTerm2, Ghostty, WezTerm, Kitty, Alacritty, Windows Terminal, VS Code's integrated terminal, GNOME Terminal and other VTE-based terminals, Konsole, and a few others.
-
-Terminals that handle these links well include iTerm2 on macOS, Windows Terminal, and on Linux the default terminals on Ubuntu (tested on 24.04 and later) and Fedora, plus Terminator. The macOS Terminal app doesn't support them, so on a Mac, iTerm2 is a good choice if you want clickable project links or even if you just want to live a long and happy life.
+The project location (`~/workspace/ddev.com` in the header above) is a [clickable link](#clickable-links) that opens your file manager at the project root.
 
 ## Advanced: Answer Fancy Questions With `ddev list -j` and `jq`
 
