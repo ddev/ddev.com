@@ -52,7 +52,7 @@ Medians of the nightly runs from 2026-08-31 through 2026-09-30, `drupal_install_
 
 The headline is how boring this table is. Five of the six Mutagen-enabled macOS providers land within 1.4 seconds of each other on the flagship metric, and their `drush_install_s` numbers are within 0.6 seconds. **On macOS with Mutagen, your choice of Docker provider is mostly not a performance decision anymore.** Pick based on licensing, maintenance, and how the tool fits your workflow.
 
-That is a real change from 2023, when OrbStack was clearly ahead and Colima and Rancher Desktop looked sluggish. Those gaps have largely closed.
+That is a significant change from 2023, when OrbStack was clearly ahead and Colima and Rancher Desktop looked sluggish. Those gaps have largely closed (all are now using VZ/VirtioFS).
 
 ### Compared with the 2023 numbers
 
