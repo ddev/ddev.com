@@ -22,6 +22,18 @@ A recent [post on Bluesky](https://bsky.app/profile/bymayo.bsky.social/post/3mwq
 
 To see only the projects that are running, use `ddev list --active-only` (or `ddev list -A`). `ddev poweroff` stops every running project at once.
 
+### Clickable Links
+
+Hold Cmd (macOS) or Ctrl (Linux and Windows) and click a link. A location opens in your file manager, and a URL opens in your browser.
+
+DDEV adds links only in terminals it recognizes, including iTerm2, Ghostty, WezTerm, Kitty, Alacritty, Windows Terminal, VS Code's integrated terminal, GNOME Terminal, and Konsole. The macOS Terminal app doesn't support them, so on a Mac, iTerm2 is a good choice if you want clickable links or even if you just want to live a long and happy life.
+
+If nothing is underlined:
+
+- [Upgrade DDEV](https://docs.ddev.com/en/stable/users/install/ddev-upgrade/). Links need v1.25.3 or later.
+- Check that links are turned on in your terminal. Konsole has them off by default. To turn them on, enable "Allow escape sequences for links" under Settings > Edit Current Profile > Mouse > Miscellaneous.
+- If you use tmux or screen, DDEV can't detect your terminal. Add `export FORCE_HYPERLINK=1` to your shell startup file to turn links on anyway.
+
 ## The DDEV Dashboard: Just Type `ddev`
 
 Running `ddev` or `ddev tui` with no arguments opens an interactive terminal dashboard that lists all of your projects and their status. You can start, stop, and restart projects, open a project's URL or Mailpit in the browser, and press Enter for a project's details. For someone with 52 projects, this may be the quickest way to see what is running.
