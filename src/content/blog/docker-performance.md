@@ -60,7 +60,7 @@ The 2023 test did a Drupal 10 web install with Mutagen and got OrbStack 20s, Doc
 
 Treat these as a rough comparison, not a like-for-like benchmark. The 2023 numbers came from one MacBook Air M1 (2020) on a single afternoon, with DDEV v1.22.5, Drupal 10.1.6, and PHP 8.1. The nightly runs use CI runner machines, and newer DDEV, Drupal, and PHP versions. Both tests drive the `demo_umami` install through Puppeteer. Each Docker provider has also shipped many releases since 2023, and the Colima leg now uses VZ where one of the 2023 legs used QEMU with sshfs. Some of the improvement comes from the hardware, and some from the software.
 
-When DDEV was young, a web install with Docker Desktop took SEVEN MINUTES. You'd just watch it poke along at each section. Now you don't even see those as they flash by.
+When DDEV was young, a web install with Docker Desktop took SEVEN MINUTES. You'd just watch it poke along at each section. Now you don't even see those as they flash by. Now it takes 12-17 seconds. That's progress!
 
 ### Mutagen is still doing the work
 
