@@ -40,11 +40,9 @@ DDEV ships a shell function that changes to a project's root directory by name:
 ddevcd some-project
 ```
 
-It needs a one-time addition to your shell startup file. `ddev utility cd` (also `ddev debug cd`) prints the exact line for Bash, Zsh, or fish. See the [`utility cd` documentation](https://docs.ddev.com/en/stable/users/usage/commands/#utility-cd).
+It needs a one-time addition to your shell startup file. `ddev utility cd` prints the exact line for Bash, Zsh, or fish. See the [`utility cd` documentation](https://docs.ddev.com/en/stable/users/usage/commands/#utility-cd).
 
 `ddevcd` works from any directory, and it has tab completion for project names like the rest of DDEV. Typing `ddevcd pr<tab>` completes to something like `ddevcd pr8859-test`.
-
-<!-- TODO: Show the exact output of `ddev utility cd` on macOS. Mention `ddev utility cd --list`. Credit Stas (stasadev) as in the v1.24.0 release post. -->
 
 ## autojump: Jump by Partial Name
 
@@ -136,18 +134,18 @@ code "$(ddev list -j | jq -r '.raw[]
   | .approot')"
 ```
 
-<!-- TODO: Run the `code` example with a real project name before publishing. -->
-
 ## Screencast
 
 <!-- TODO: Record the screencast demonstrating ddev list, ddevcd, autojump, code ., and ddev describe, upload to YouTube, and paste the embed here. -->
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/REPLACE_ME" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-## Which One to Use
+## Tell Us What We Can Do To Make It Better
 
-<!-- TODO: Two or three sentences on when each fits. Suggested: ddevcd if you want no extra tools; autojump if you want one tool for all directories; ddev describe link for a one-off visit to the folder in Finder. -->
+We know this is awkward territory, and we're always listening to you, and want to know what we can do to make it better.
 
-## Contributions and Feedback
+## Contributions welcome!
 
-<!-- TODO: Standard closing. Link to Discord, the DDEV issue queue, and the Bluesky threads. Credit people from the replies by name once their replies are collected. -->
+Your suggestions to improve this blog are welcome. If you have a technique for getting around your projects that isn't here, you can do a PR to this blog adding it. Info and a training session on how to do a PR to anything in ddev.com is at [DDEV Website For Contributors](ddev-website-for-contributors.md).
+
+Follow the [DDEV Newsletter](/newsletter) for information about upcoming user and contributor training sessions.
