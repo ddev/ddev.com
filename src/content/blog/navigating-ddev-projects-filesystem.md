@@ -16,20 +16,11 @@ A recent [post on Bluesky](https://bsky.app/profile/bymayo.bsky.social/post/3mwq
 
 ## See What Is Running: `ddev list`
 
-`ddev list` shows every project DDEV knows about, with its status, location, URL, and type. To see only the projects that are running, use `ddev list --active-only` (or `ddev list -A`):
+`ddev list` shows every project DDEV knows about, with its status, location, URL, and type. The underlined locations and URLs are terminal hyperlinks you can click.
 
-```text
-┌──────────┬─────────┬────────────────┬─────────────────────────┬──────────┐
-│ NAME     │ STATUS  │ LOCATION       │ URL                     │ TYPE     │
-├──────────┼─────────┼────────────────┼─────────────────────────┼──────────┤
-│ randyfay │ running │ ~/workspace/r… │ https://randyfay.ddev.… │ backdrop │
-│          │ (ok)    │                │                         │          │
-├──────────┼─────────┼────────────────┼─────────────────────────┼──────────┤
-│ Router   │ OK      │ ~/.ddev        │ http://127.0.0.1:11999  │          │
-└──────────┴─────────┴────────────────┴─────────────────────────┴──────────┘
-```
+![ddev list output showing projects with status, location, URL, and type](/img/blog/2026/09/navigating-ddev-list.png)
 
-`ddev poweroff` stops every running project at once.
+To see only the projects that are running, use `ddev list --active-only` (or `ddev list -A`). `ddev poweroff` stops every running project at once.
 
 ## The DDEV Dashboard: Just Type `ddev`
 
@@ -88,22 +79,13 @@ ddevcd myproject && ddev start && code .
 
 `ddev describe` has a short alias, `ddev st`, which is easy to type and worth adopting. It prints the project's details, including the project's location on disk.
 
-The header of the output looks like this:
+![ddev st output with the project location underlined as a clickable link](/img/blog/2026/09/navigating-ddev-describe.png)
 
-```text
-Project: randyfay ~/workspace/randyfay.com https://randyfay.ddev.site
-Docker platform: orbstack
-Router: traefik
-DDEV version: v1.25.4
-```
-
-The project location (`~/workspace/randyfay.com`) is a terminal hyperlink to the project directory. Click it (usually Cmd-click on macOS, Ctrl-click on Linux and Windows) and your file manager opens at the project root. `ddev list` has the same link in its LOCATION column.
+The project location (`~/workspace/ddev.com` in the header above) is a terminal hyperlink to the project directory. Click it (usually Cmd-click on macOS, Ctrl-click on Linux and Windows) and your file manager opens at the project root. `ddev list` has the same link in its LOCATION column.
 
 DDEV turns these links on for terminals known to support them: iTerm2, Ghostty, WezTerm, Kitty, Alacritty, Windows Terminal, VS Code's integrated terminal, GNOME Terminal and other VTE-based terminals, Konsole, and a few others. If your terminal isn't detected, set `FORCE_HYPERLINK=1` to enable them, for example `FORCE_HYPERLINK=1 ddev st`.
 
-![ddev st output with the project location underlined as a clickable link](/img/blog/2026/09/navigating-ddev-describe.png)
-
-<!-- TODO: Replace or supplement with an iTerm2 screenshot showing the link hovered. Verify whether Apple Terminal.app supports OSC 8 links when forced. -->
+<!-- TODO: Supplement or supplement with an iTerm2 screenshot showing the link hovered. Verify whether Apple Terminal.app supports OSC 8 links when forced. -->
 
 ## Advanced: Answer Questions With `ddev list -j` and `jq`
 
