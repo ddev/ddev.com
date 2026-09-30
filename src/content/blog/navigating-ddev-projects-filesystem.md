@@ -59,20 +59,39 @@ If you only need to start a project, you don't have to change directories at all
 
 <!-- TODO: Note that autojump only knows directories you have already visited (unlike ddevcd, which knows every project DDEV has seen). Mention the apt package for Linux/WSL2 (see windows-ddev-setup.md). Consider whether to mention zoxide as a maintained alternative. -->
 
-## `code .`: Open the Editor From the Project Directory
+## `code .` or `phpstorm .`: Open the Editor From the Project Directory
 
-Once you are in the project directory, open it in your editor from the terminal:
+Once you are in the project directory, open it in your editor from the terminal.
+
+For VS Code:
 
 ```bash
 code .
 ```
 
-Other editors follow the same pattern. Cursor has `cursor .`. PhpStorm has `phpstorm .`, which you create with Tools > Create Command-line Launcher in PhpStorm, or with the shell scripts setting in JetBrains Toolbox. On macOS, `open -a PhpStorm .` also works without a launcher script. VS Code's `code` command is installed with "Shell Command: Install 'code' command in PATH" from the Command Palette.
+For PhpStorm:
+
+```bash
+phpstorm .
+```
+
+Each command opens the current directory as the project, and reuses the window if that project is already open.
+
+The commands have to be installed first:
+
+- **VS Code:** Run "Shell Command: Install 'code' command in PATH" from the Command Palette.
+- **PhpStorm:** Use Tools > Create Command-line Launcher in PhpStorm, or the shell scripts setting in JetBrains Toolbox. On macOS, `open -a PhpStorm .` also works without a launcher script.
+
+Other editors follow the same pattern, for example `cursor .` for Cursor.
 
 Put it all together to get from anywhere to a running project in your editor:
 
 ```bash
 ddevcd myproject && ddev start && code .
+```
+
+```bash
+ddevcd myproject && ddev start && phpstorm .
 ```
 
 ## Click the Link in `ddev describe`
@@ -85,7 +104,7 @@ The project location (`~/workspace/ddev.com` in the header above) is a terminal 
 
 DDEV turns these links on for terminals known to support them: iTerm2, Ghostty, WezTerm, Kitty, Alacritty, Windows Terminal, VS Code's integrated terminal, GNOME Terminal and other VTE-based terminals, Konsole, and a few others. If your terminal isn't detected, set `FORCE_HYPERLINK=1` to enable them, for example `FORCE_HYPERLINK=1 ddev st`.
 
-<!-- TODO: Supplement or supplement with an iTerm2 screenshot showing the link hovered. Verify whether Apple Terminal.app supports OSC 8 links when forced. -->
+Terminals that handle these links well include iTerm2 on macOS, Windows Terminal, and on Linux the default terminals on Ubuntu (tested on 24.04 and later) and Fedora, plus Terminator. The macOS Terminal app doesn't support them, so on a Mac, iTerm2 is a good choice if you want clickable project links.
 
 ## Advanced: Answer Questions With `ddev list -j` and `jq`
 
