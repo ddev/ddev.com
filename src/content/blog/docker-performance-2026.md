@@ -54,6 +54,14 @@ The headline is how boring this table is. Five of the six Mutagen-enabled macOS 
 
 That is a real change from 2023, when OrbStack was clearly ahead and Colima and Rancher Desktop looked sluggish. Those gaps have largely closed.
 
+### Compared with the 2023 numbers
+
+The 2023 test did a Drupal 10 web install with Mutagen and got OrbStack 20s, Docker Desktop 22s, Rancher Desktop 22s, Colima QEMU 33s, and Colima VZ 35s. The fastest then (OrbStack, 20s) compares with 12.0s for the fastest now (Rancher Desktop), and with 13.4s for OrbStack. The slowest providers gained the most: Rancher Desktop went from 22s to 12.0s and Colima VZ from 35s to 12.6s. The spread between providers went from 15 seconds to about 1.4 (excluding Docker Desktop).
+
+Treat these as a rough comparison, not a like-for-like benchmark. The 2023 numbers came from one MacBook Air M1 (2020) on a single afternoon, with DDEV v1.22.5, Drupal 10.1.6, and PHP 8.1. The nightly runs use CI runner machines, and newer DDEV, Drupal, and PHP versions. Both tests drive the `demo_umami` install through Puppeteer. Each Docker provider has also shipped many releases since 2023, and the Colima leg now uses VZ where one of the 2023 legs used QEMU with sshfs. Some of the improvement comes from the hardware, and some from the software.
+
+When DDEV was young, a web install with Docker Desktop took SEVEN MINUTES. You'd just watch it poke along at each section. Now you don't even see those as they flash by.
+
 ### Mutagen is still doing the work
 
 The most interesting row is the last one. OrbStack with Mutagen finishes the browser install in 13.4s; the same provider without Mutagen takes 16.8s — about 25% slower. Note that the no-Mutagen leg is _faster_ on `ddev_start_cold_s` (9.2s vs. 12.2s), because there's no sync session to establish, and closer on `drush_install_s` (11.2s vs. 10.4s), because Drush never goes through the web server. The penalty concentrates in exactly the browser-driven path, which is what you use all day.
