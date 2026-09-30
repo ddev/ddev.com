@@ -61,15 +61,15 @@ The most interesting row is the last one. OrbStack with Mutagen finishes the bro
 Mutagen is on by default on macOS for this reason, and these numbers say to leave it on.
 
 :::warning[Read the hardware caveat before comparing rows]
-The Docker Desktop leg runs on **older M1 testbot machines** that have dedicated hardware. OrbStack, Rancher Desktop, Colima, Lima, and Podman share a pool of **newer** machines. Some of the Docker Desktop gap in the table above is that hardware difference, not the provider. We didn't normalize it — the dashboard deliberately doesn't either — so treat Docker Desktop's row as "somewhat pessimistic" rather than as a clean like-for-like comparison.
+The Docker Desktop leg runs on **older M1 test runner machines** that have dedicated hardware. OrbStack, Rancher Desktop, Colima, Lima, and Podman share a pool of **newer** machines. Some of the Docker Desktop gap in the table above is that hardware difference, not the provider. We didn't normalize it — the dashboard deliberately doesn't either — so treat Docker Desktop's row as "somewhat pessimistic" rather than as a clean like-for-like comparison.
 :::
 
 ## The other platforms, and why you shouldn't rank them against macOS
 
-The dashboard also carries Linux, WSL2, and traditional Windows legs. They're genuinely useful for spotting regressions _within_ a leg over time, but the cross-platform bar chart is misleading if you read it as a platform ranking:
+The dashboard also carries Linux, WSL2, and traditional Windows legs. They're useful for spotting regressions _within_ a leg over time, but the cross-platform bar chart is misleading if you read it as a platform ranking:
 
-- The **Linux** leg runs on ephemeral GitHub-hosted runners. It provisions the Drupal codebase from scratch every night and starts with cold image, Composer, and OS page caches. Every macOS and Windows leg reuses a persistent codebase and warm caches.
-- The **Windows and WSL2** legs run on entirely different physical hardware from the macOS testbots.
+- The **Linux** leg runs on ephemeral GitHub-hosted runner VMs. It provisions the Drupal codebase from scratch every night and starts with cold image, Composer, and OS page caches. Every macOS and Windows leg reuses a persistent codebase and warm caches.
+- The **Windows and WSL2** legs run on entirely different physical hardware from the macOS test runners.
 
 Trends within a leg: meaningful. Bar-chart comparisons across legs: only meaningful when the machines are comparable, which across platforms they aren't.
 
@@ -102,3 +102,9 @@ It needs `jq` and Node.js on your `PATH` in addition to the usual DDEV prerequis
 Three years ago the answer to "which Docker provider is fastest on macOS?" was worth a blog post with charts. Today the simple answer is that, with Mutagen on, they're close enough that the question is mostly settled, and any lingering differences are small next to the hardware you're running on.
 
 What's better than a fresh answer is a standing one. The nightly harness means the next time performance shifts — a provider regression, a Mutagen improvement, a DDEV build-layer mistake — it shows up on the [dashboard](https://ddev.github.io/ddev/perf/) within a day, instead of waiting for somebody to run the numbers by hand and write another post.
+
+Have questions, or numbers that look different from the dashboard? Join the conversation in our [Discord](/s/discord), [open an issue](https://github.com/ddev/ddev/issues), or reach out via [email](mailto:support%40ddev.com).
+
+Follow our [blog](https://ddev.com/blog/), [Bluesky](https://bsky.app/profile/ddev.bsky.social), [LinkedIn](https://www.linkedin.com/company/ddev-foundation), [Mastodon](https://fosstodon.org/@ddev), and join us on [Discord](/s/discord). Sign up for the [monthly newsletter](/newsletter).
+
+_This article was edited and refined with assistance from Claude Code._
