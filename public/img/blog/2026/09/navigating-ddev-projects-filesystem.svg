@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1672" height="940" viewBox="0 0 1672 940">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#06202e"/>
+      <stop offset="0.6" stop-color="#0b3a4a"/>
+      <stop offset="1" stop-color="#0e4a57"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ff9a3c" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#ff9a3c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="stoneglow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#5eead4" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#5eead4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hero" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffb35c"/>
+      <stop offset="1" stop-color="#f27a1a"/>
+    </linearGradient>
+    <linearGradient id="heroTab" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffc986"/>
+      <stop offset="1" stop-color="#ffb35c"/>
+    </linearGradient>
+    <symbol id="folder" viewBox="0 0 100 80">
+      <path d="M6 14 a6 6 0 0 1 6 -6 h26 l9 10 h41 a6 6 0 0 1 6 6 v46 a6 6 0 0 1 -6 6 h-76 a6 6 0 0 1 -6 -6 z" fill="currentColor"/>
+    </symbol>
+  </defs>
+  <rect width="1672" height="940" fill="url(#bg)"/>
+  <use href="#folder" x="520" y="40" width="90" height="72" color="#7dd3e8" opacity="0.12"/>
+  <use href="#folder" x="660" y="40" width="80" height="64" color="#7dd3e8" opacity="0.14"/>
+  <use href="#folder" x="800" y="40" width="70" height="56" color="#7dd3e8" opacity="0.17"/>
+  <use href="#folder" x="940" y="40" width="90" height="72" color="#7dd3e8" opacity="0.19"/>
+  <use href="#folder" x="1080" y="40" width="80" height="64" color="#7dd3e8" opacity="0.22"/>
+  <use href="#folder" x="1220" y="40" width="70" height="56" color="#7dd3e8" opacity="0.24"/>
+  <use href="#folder" x="1360" y="40" width="90" height="72" color="#7dd3e8" opacity="0.27"/>
+  <use href="#folder" x="1500" y="40" width="80" height="64" color="#7dd3e8" opacity="0.29"/>
+  <use href="#folder" x="1640" y="40" width="70" height="56" color="#7dd3e8" opacity="0.31"/>
+  <use href="#folder" x="590" y="160" width="70" height="56" color="#7dd3e8" opacity="0.13"/>
+  <use href="#folder" x="730" y="160" width="90" height="72" color="#7dd3e8" opacity="0.16"/>
+  <use href="#folder" x="870" y="160" width="80" height="64" color="#7dd3e8" opacity="0.18"/>
+  <use href="#folder" x="1010" y="160" width="70" height="56" color="#7dd3e8" opacity="0.21"/>
+  <use href="#folder" x="1150" y="160" width="90" height="72" color="#7dd3e8" opacity="0.23"/>
+  <use href="#folder" x="1430" y="160" width="70" height="56" color="#7dd3e8" opacity="0.28"/>
+  <use href="#folder" x="1570" y="160" width="90" height="72" color="#7dd3e8" opacity="0.30"/>
+  <use href="#folder" x="520" y="280" width="90" height="72" color="#7dd3e8" opacity="0.12"/>
+  <use href="#folder" x="660" y="280" width="80" height="64" color="#7dd3e8" opacity="0.14"/>
+  <use href="#folder" x="800" y="280" width="70" height="56" color="#7dd3e8" opacity="0.17"/>
+  <use href="#folder" x="940" y="280" width="90" height="72" color="#7dd3e8" opacity="0.19"/>
+  <use href="#folder" x="1640" y="280" width="70" height="56" color="#7dd3e8" opacity="0.31"/>
+  <use href="#folder" x="590" y="400" width="70" height="56" color="#7dd3e8" opacity="0.13"/>
+  <use href="#folder" x="730" y="400" width="90" height="72" color="#7dd3e8" opacity="0.16"/>
+  <use href="#folder" x="870" y="400" width="80" height="64" color="#7dd3e8" opacity="0.18"/>
+  <use href="#folder" x="1570" y="400" width="90" height="72" color="#7dd3e8" opacity="0.30"/>
+  <use href="#folder" x="520" y="520" width="90" height="72" color="#7dd3e8" opacity="0.12"/>
+  <use href="#folder" x="660" y="520" width="80" height="64" color="#7dd3e8" opacity="0.14"/>
+  <use href="#folder" x="1640" y="520" width="70" height="56" color="#7dd3e8" opacity="0.31"/>
+  <use href="#folder" x="1010" y="640" width="70" height="56" color="#7dd3e8" opacity="0.21"/>
+  <use href="#folder" x="1150" y="640" width="90" height="72" color="#7dd3e8" opacity="0.23"/>
+  <use href="#folder" x="1430" y="640" width="70" height="56" color="#7dd3e8" opacity="0.28"/>
+  <use href="#folder" x="1570" y="640" width="90" height="72" color="#7dd3e8" opacity="0.30"/>
+  <use href="#folder" x="800" y="760" width="70" height="56" color="#7dd3e8" opacity="0.17"/>
+  <use href="#folder" x="940" y="760" width="90" height="72" color="#7dd3e8" opacity="0.19"/>
+  <use href="#folder" x="1080" y="760" width="80" height="64" color="#7dd3e8" opacity="0.22"/>
+  <use href="#folder" x="1220" y="760" width="70" height="56" color="#7dd3e8" opacity="0.24"/>
+  <use href="#folder" x="1360" y="760" width="90" height="72" color="#7dd3e8" opacity="0.27"/>
+  <use href="#folder" x="1500" y="760" width="80" height="64" color="#7dd3e8" opacity="0.29"/>
+  <use href="#folder" x="1640" y="760" width="70" height="56" color="#7dd3e8" opacity="0.31"/>
+  <use href="#folder" x="590" y="880" width="70" height="56" color="#7dd3e8" opacity="0.13"/>
+  <use href="#folder" x="730" y="880" width="90" height="72" color="#7dd3e8" opacity="0.16"/>
+  <use href="#folder" x="870" y="880" width="80" height="64" color="#7dd3e8" opacity="0.18"/>
+  <use href="#folder" x="1010" y="880" width="70" height="56" color="#7dd3e8" opacity="0.21"/>
+  <use href="#folder" x="1150" y="880" width="90" height="72" color="#7dd3e8" opacity="0.23"/>
+  <use href="#folder" x="1290" y="880" width="80" height="64" color="#7dd3e8" opacity="0.25"/>
+  <use href="#folder" x="1430" y="880" width="70" height="56" color="#7dd3e8" opacity="0.28"/>
+  <use href="#folder" x="1570" y="880" width="90" height="72" color="#7dd3e8" opacity="0.30"/>
+  <ellipse cx="250" cy="830" rx="140" ry="52" fill="url(#stoneglow)"/>
+  <ellipse cx="390" cy="770" rx="124" ry="46" fill="url(#stoneglow)"/>
+  <ellipse cx="520" cy="715" rx="110" ry="40" fill="url(#stoneglow)"/>
+  <ellipse cx="640" cy="660" rx="98" ry="36" fill="url(#stoneglow)"/>
+  <ellipse cx="750" cy="612" rx="86" ry="32" fill="url(#stoneglow)"/>
+  <ellipse cx="850" cy="570" rx="76" ry="28" fill="url(#stoneglow)"/>
+  <ellipse cx="940" cy="533" rx="66" ry="24" fill="url(#stoneglow)"/>
+  <ellipse cx="1020" cy="500" rx="58" ry="22" fill="url(#stoneglow)"/>
+  <ellipse cx="250" cy="838" rx="70" ry="26" fill="#0a2a36"/>
+  <ellipse cx="250" cy="830" rx="70" ry="26" fill="#2dd4bf" opacity="0.9"/>
+  <ellipse cx="250" cy="827" rx="56" ry="18" fill="#99f6e4" opacity="0.55"/>
+  <ellipse cx="390" cy="778" rx="62" ry="23" fill="#0a2a36"/>
+  <ellipse cx="390" cy="770" rx="62" ry="23" fill="#2dd4bf" opacity="0.9"/>
+  <ellipse cx="390" cy="767" rx="49" ry="16" fill="#99f6e4" opacity="0.55"/>
+  <ellipse cx="520" cy="723" rx="55" ry="20" fill="#0a2a36"/>
+  <ellipse cx="520" cy="715" rx="55" ry="20" fill="#2dd4bf" opacity="0.9"/>
+  <ellipse cx="520" cy="712" rx="44" ry="14" fill="#99f6e4" opacity="0.55"/>
+  <ellipse cx="640" cy="668" rx="49" ry="18" fill="#0a2a36"/>
+  <ellipse cx="640" cy="660" rx="49" ry="18" fill="#2dd4bf" opacity="0.9"/>
+  <ellipse cx="640" cy="657" rx="39" ry="12" fill="#99f6e4" opacity="0.55"/>
+  <ellipse cx="750" cy="620" rx="43" ry="16" fill="#0a2a36"/>
+  <ellipse cx="750" cy="612" rx="43" ry="16" fill="#2dd4bf" opacity="0.9"/>
+  <ellipse cx="750" cy="609" rx="34" ry="11" fill="#99f6e4" opacity="0.55"/>
+  <ellipse cx="850" cy="578" rx="38" ry="14" fill="#0a2a36"/>
+  <ellipse cx="850" cy="570" rx="38" ry="14" fill="#2dd4bf" opacity="0.9"/>
+  <ellipse cx="850" cy="567" rx="30" ry="9" fill="#99f6e4" opacity="0.55"/>
+  <ellipse cx="940" cy="541" rx="33" ry="12" fill="#0a2a36"/>
+  <ellipse cx="940" cy="533" rx="33" ry="12" fill="#2dd4bf" opacity="0.9"/>
+  <ellipse cx="940" cy="530" rx="26" ry="8" fill="#99f6e4" opacity="0.55"/>
+  <ellipse cx="1020" cy="508" rx="29" ry="11" fill="#0a2a36"/>
+  <ellipse cx="1020" cy="500" rx="29" ry="11" fill="#2dd4bf" opacity="0.9"/>
+  <ellipse cx="1020" cy="497" rx="23" ry="7" fill="#99f6e4" opacity="0.55"/>
+  <!-- Destination folder -->
+  <ellipse cx="1290" cy="470" rx="330" ry="250" fill="url(#glow)"/>
+  <ellipse cx="1290" cy="585" rx="150" ry="22" fill="#041821" opacity="0.6"/>
+  <g transform="translate(1150 340)">
+    <path d="M14 34 a14 14 0 0 1 14 -14 h62 l22 26 h108 a14 14 0 0 1 14 14 v150 a14 14 0 0 1 -14 14 h-192 a14 14 0 0 1 -14 -14 z" fill="url(#heroTab)"/>
+    <path d="M14 70 a14 14 0 0 1 14 -14 h224 a14 14 0 0 1 14 14 v134 a14 14 0 0 1 -14 14 h-224 a14 14 0 0 1 -14 -14 z" fill="url(#hero)"/>
+    <rect x="28" y="64" width="224" height="6" rx="3" fill="#fff" opacity="0.25"/>
+  </g>
+  <!-- Terminal prompt above the folder -->
+  <g transform="translate(1190 215)">
+    <rect width="150" height="68" rx="12" fill="#04141c" stroke="#5eead4" stroke-width="3"/>
+    <path d="M26 22 l18 12 -18 12" fill="none" stroke="#5eead4" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="62" y="42" width="34" height="6" rx="3" fill="#5eead4"/>
+  </g>
+  <!-- Cursor arrow pointing at the folder -->
+  <g transform="translate(1322 410) rotate(-8)">
+    <path d="M0 0 L0 62 L17 47 L29 76 L42 70 L30 42 L53 42 Z" fill="#ffffff" stroke="#04141c" stroke-width="4" stroke-linejoin="round"/>
+  </g>
+</svg>
