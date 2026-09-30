@@ -106,7 +106,7 @@ DDEV turns these links on for terminals known to support them: iTerm2, Ghostty, 
 
 Terminals that handle these links well include iTerm2 on macOS, Windows Terminal, and on Linux the default terminals on Ubuntu (tested on 24.04 and later) and Fedora, plus Terminator. The macOS Terminal app doesn't support them, so on a Mac, iTerm2 is a good choice if you want clickable project links or even if you just want to live a long and happy life.
 
-## Advanced: Answer Questions With `ddev list -j` and `jq`
+## Advanced: Answer Fancy Questions With `ddev list -j` and `jq`
 
 `ddev list -j` prints the project list as JSON, and [`jq`](https://jqlang.org/) can answer more specific questions. The project data is under `.raw`. Each entry has fields including `name`, `approot`, `status`, `type`, and `primary_url`.
 
