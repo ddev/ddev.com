@@ -158,6 +158,7 @@ If you would rather click than type, the community has built several graphical f
 ### Commercial and Agency Tools
 
 - [DevWorkspacePro](https://devworkspacepro.com/) by damms005 is a commercial wrapper GUI. When we last looked it had no free trial.
+
   Didn't find yours? The [June 2026 newsletter](ddev-june-2026-newsletter.md) covers some of these tools as well. If you built a DDEV GUI, send a PR adding it here.
 
 ## Tell Us What We Can Do To Make DDEV Better For You!
