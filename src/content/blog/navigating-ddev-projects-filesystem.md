@@ -94,19 +94,25 @@ DDEV turns these links on for terminals known to support them: iTerm2, Ghostty, 
 Running projects and their directories:
 
 ```bash
-ddev list -j | jq -r '.raw[] | select(.status=="running") | "\(.name)\t\(.approot)"'
+ddev list -j | jq -r '.raw[]
+  | select(.status=="running")
+  | "\(.name)\t\(.approot)"'
 ```
 
 Names of all Drupal 11 projects:
 
 ```bash
-ddev list -j | jq -r '.raw[] | select(.type=="drupal11") | .name'
+ddev list -j | jq -r '.raw[]
+  | select(.type=="drupal11")
+  | .name'
 ```
 
 The directory of one project, which you can use with `cd` or `code`:
 
 ```bash
-code "$(ddev list -j | jq -r '.raw[] | select(.name=="myproject") | .approot')"
+code "$(ddev list -j | jq -r '.raw[]
+  | select(.name=="myproject")
+  | .approot')"
 ```
 
 <!-- TODO: Run the `code` example with a real project name before publishing. -->
