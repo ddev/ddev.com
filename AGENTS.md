@@ -225,6 +225,22 @@ Post content here...
 
 **Logo/text banner images**: For a `featureImage` that combines project logos and/or text on a solid background, see [FEATURE_IMAGE_GUIDE.md](FEATURE_IMAGE_GUIDE.md).
 
+### Terminal Screenshots
+
+For screenshots of DDEV command output (`ddev list`, `ddev st`, the `ddev` dashboard), render them with [VHS](https://github.com/charmbracelet/vhs) (`brew install vhs`, which also needs `ttyd` and `ffmpeg`). Work in `~/tmp`, then copy the final image into `public/img/blog/YYYY/MM/`.
+
+- Write a `.tape` file that hides the `cd` and `clear`, shows the command, sleeps a few seconds, and ends with `Screenshot`. Run it as `bash -c "cd ~/tmp/shots && timeout 100 vhs name.tape"` with stdin from `/dev/null`.
+- The `Screenshot` directive can silently produce nothing. The GIF is still written, so take its last frame: `magick name.gif -coalesce -delete 0--2 +repage name.png`.
+- Use a terminal about 820px wide (`Set Width 820`, `Set FontSize 16`) for `ddev list`. `ddev st` needs about 900px wide and 1000px tall. At 640px DDEV's tables overflow the right edge. Too short a height scrolls the top of the output off.
+- Crop with `magick in.png -crop WxH+0+0 +repage out.png`. To leave room for callout arrows, add space above with `-background "<bg color>" -gravity north -splice 0x70`.
+- The OSC 8 hyperlinks DDEV prints appear underlined in the VHS terminal, which is how to show "clickable" output. DDEV only emits them when stdout is a terminal, so text captured from a pipe or file has no links (set `FORCE_HYPERLINK=1` to force them).
+- Do not use `freeze` (charmbracelet) for DDEV tables: it draws the box characters badly. A hover or click state needs a real terminal such as iTerm2 and must be captured by hand.
+- Keep the screenshots under 2MB, use a descriptive alt text, and view the result before adding it. If reads under `public/` are denied, copy the image to `~/tmp` and view it there.
+
+### SVG Feature Images
+
+An illustration can be a hand-written SVG referenced directly from `featureImage.src`. Generate it from a script kept in `~/tmp` (not the repository), preview it with `rsvg-convert -w 1672 -o out.png in.svg`, and install only the `.svg`. Match the 1672x940 size of the other feature images and leave the left side clear for the title.
+
 ### Authors
 
 Add new authors to `src/content/authors/` with schema:
