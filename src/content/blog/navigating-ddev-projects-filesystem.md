@@ -94,7 +94,7 @@ ddevcd myproject && ddev start && code .
 ddevcd myproject && ddev start && phpstorm .
 ```
 
-## Click the Link in `ddev describe`
+## Click the Link in `ddev describe` or `ddev list`
 
 `ddev describe` has a short alias, `ddev st`, which is easy to type and worth adopting. It prints the project's details, including the project's location on disk.
 
@@ -102,9 +102,9 @@ ddevcd myproject && ddev start && phpstorm .
 
 The project location (`~/workspace/ddev.com` in the header above) is a terminal hyperlink to the project directory. Click it (usually Cmd-click on macOS, Ctrl-click on Linux and Windows) and your file manager opens at the project root. `ddev list` has the same link in its LOCATION column.
 
-DDEV turns these links on for terminals known to support them: iTerm2, Ghostty, WezTerm, Kitty, Alacritty, Windows Terminal, VS Code's integrated terminal, GNOME Terminal and other VTE-based terminals, Konsole, and a few others. If your terminal isn't detected, set `FORCE_HYPERLINK=1` to enable them, for example `FORCE_HYPERLINK=1 ddev st`.
+DDEV turns these links on for terminals known to support them: iTerm2, Ghostty, WezTerm, Kitty, Alacritty, Windows Terminal, VS Code's integrated terminal, GNOME Terminal and other VTE-based terminals, Konsole, and a few others.
 
-Terminals that handle these links well include iTerm2 on macOS, Windows Terminal, and on Linux the default terminals on Ubuntu (tested on 24.04 and later) and Fedora, plus Terminator. The macOS Terminal app doesn't support them, so on a Mac, iTerm2 is a good choice if you want clickable project links.
+Terminals that handle these links well include iTerm2 on macOS, Windows Terminal, and on Linux the default terminals on Ubuntu (tested on 24.04 and later) and Fedora, plus Terminator. The macOS Terminal app doesn't support them, so on a Mac, iTerm2 is a good choice if you want clickable project links or even if you just want to live a long and happy life.
 
 ## Advanced: Answer Questions With `ddev list -j` and `jq`
 
