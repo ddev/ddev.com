@@ -94,15 +94,13 @@ ddevcd myproject && ddev start && code .
 ddevcd myproject && ddev start && phpstorm .
 ```
 
-## Click the Link in `ddev describe` or `ddev list`
+## Click the Link in `ddev describe`
 
 `ddev describe` has a short alias, `ddev st`, which is easy to type and worth adopting. It prints the project's details, including the project's location on disk.
 
 ![ddev st output with the project location underlined as a clickable link](/img/blog/2026/09/navigating-ddev-describe.png)
 
-The project location (`~/workspace/ddev.com` in the header above) is a terminal hyperlink to the project directory. Click it (usually Cmd-click on macOS, Ctrl-click on Linux and Windows) and your file manager opens at the project root. `ddev list` has the same link in its LOCATION column, and its URL column links are clickable too.
-
-![ddev list --active-only output with the location and URL columns underlined as clickable links](/img/blog/2026/09/navigating-ddev-list-links.png)
+The project location (`~/workspace/ddev.com` in the header above) is a terminal hyperlink to the project directory. Click it (usually Cmd-click on macOS, Ctrl-click on Linux and Windows) and your file manager opens at the project root.
 
 DDEV turns these links on for terminals known to support them: iTerm2, Ghostty, WezTerm, Kitty, Alacritty, Windows Terminal, VS Code's integrated terminal, GNOME Terminal and other VTE-based terminals, Konsole, and a few others.
 
