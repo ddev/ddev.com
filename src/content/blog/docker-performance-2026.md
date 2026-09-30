@@ -1,6 +1,6 @@
 ---
 title: "Docker Provider Performance, 2026: Now Measured Every Night"
-pubDate: 2026-09-21
+pubDate: 2026-10-05
 summary: DDEV now runs a nightly benchmark across every supported platform and Docker provider, and publishes the history. Here's what the numbers say about macOS Docker providers three years after the 2023 hand-run comparison.
 author: Randy Fay
 featureImage:
@@ -99,6 +99,6 @@ It needs `jq` and Node.js on your `PATH` in addition to the usual DDEV prerequis
 
 ## Summary
 
-Three years ago the answer to "which Docker provider is fastest on macOS?" was worth a blog post with charts. Today the honest answer is that, with Mutagen on, they're close enough that the question is mostly settled, and any lingering differences are small next to the hardware you're running on.
+Three years ago the answer to "which Docker provider is fastest on macOS?" was worth a blog post with charts. Today the simple answer is that, with Mutagen on, they're close enough that the question is mostly settled, and any lingering differences are small next to the hardware you're running on.
 
 What's better than a fresh answer is a standing one. The nightly harness means the next time performance shifts — a provider regression, a Mutagen improvement, a DDEV build-layer mistake — it shows up on the [dashboard](https://ddev.github.io/ddev/perf/) within a day, instead of waiting for somebody to run the numbers by hand and write another post.
