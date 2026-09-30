@@ -32,7 +32,7 @@ The dashboard has two views. **Trend over time** plots one line per leg so you c
 
 The harness collects six metrics per run. The one that lines up with the 2023 post is **`drupal_install_s`**: Puppeteer drives the Drupal web install wizard end-to-end, in a real browser, through the DDEV router, the web server, and PHP-FPM.
 
-I think it's important that it uses a web-intensive install process for studying webserver performance. The interactive installer deliberately breaks each batch step into its own HTTP request and page reload, so every one of those round trips exercises exactly the layer where Docker provider differences show up — bind mount vs. Mutagen, gRPC-FUSE vs. virtiofs, and so on. It's the closest thing in the suite to "what does it feel like to actually use this."
+I think it's important that it uses a web-intensive install process for studying web server performance. The interactive installer deliberately breaks each batch step into its own HTTP request and page reload, so every one of those round trips exercises exactly the layer where Docker provider differences show up — bind mount vs. Mutagen, gRPC-FUSE vs. virtiofs, and so on. It's the closest thing in the suite to "what does it feel like to actually use this."
 
 The companion metric `drush_install_s` runs the same install non-interactively via `ddev drush si`, which never touches the router or web server at all. If the two track together, filesystem I/O dominates; if they diverge, the gap isolates router/web server overhead. The [perf/README.md](https://github.com/ddev/ddev/tree/main/perf) describes all six metrics and why each one is there.
 
@@ -60,7 +60,7 @@ The most interesting row is the last one. OrbStack with Mutagen finishes the bro
 
 Mutagen is on by default on macOS for this reason, and these numbers say to leave it on.
 
-However, plenty of people are perfectly happy with turning off Mutagen. Some folks don't like the additional complexity and don't want the speed tradeoff. `ddev config global --performance-mode=none` turns it off. (Mutagen has more benefits than just performance though; with Mutagen, the webserver in the container is dealing with a Linux filesystem, more like the real deployment environment, instead of a Docker bind-mount, which is more like a network filesystem.)
+However, plenty of people are perfectly happy with turning off Mutagen. Some folks don't like the additional complexity and don't want the speed trade-off. `ddev config global --performance-mode=none` turns it off. (Mutagen has more benefits than just performance though; with Mutagen, the web server in the container is dealing with a Linux filesystem, more like the real deployment environment, instead of a Docker bind-mount, which is more like a network filesystem.)
 
 :::warning[Read the hardware caveat before comparing rows]
 The Docker Desktop leg runs on **older M1 test runner machines** that have dedicated hardware. OrbStack, Rancher Desktop, Colima, Lima, and Podman share a pool of **newer** machines. Some of the Docker Desktop gap in the table above is that hardware difference, not the provider. We didn't normalize it — the dashboard deliberately doesn't either — so treat Docker Desktop's row as "somewhat pessimistic" rather than as a clean like-for-like comparison.
