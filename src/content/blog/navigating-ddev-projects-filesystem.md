@@ -4,8 +4,8 @@ pubDate: 2026-09-30
 summary: Ways to jump to a DDEV project's directory and open it in an editor without digging through Finder, including ddevcd, autojump, code ., and the project link in ddev describe.
 author: Randy Fay
 featureImage:
-  src: /img/blog/2026/09/navigating-ddev-projects-filesystem.jpg
-  alt: REPLACE_ME Descriptive alt text
+  src: /img/blog/2026/09/navigating-ddev-projects-filesystem.svg
+  alt: Illustration of a glowing path leading through many dim folders to one highlighted project folder, representing fast navigation between DDEV projects
 categories:
   - Guides
 ---
@@ -76,7 +76,13 @@ Once you are in the project directory, open it in your editor from the terminal:
 code .
 ```
 
-<!-- TODO: VS Code's `code` command (Shell Command: Install 'code' command in PATH). Cursor has `cursor .`, PhpStorm has `phpstorm .` (created via Tools > Create Command-line Launcher), and so on. Combine: `ddevcd myproject && ddev start && code .` -->
+Other editors follow the same pattern. Cursor has `cursor .`. PhpStorm has `phpstorm .`, which you create with Tools > Create Command-line Launcher in PhpStorm, or with the shell scripts setting in JetBrains Toolbox. On macOS, `open -a PhpStorm .` also works without a launcher script. VS Code's `code` command is installed with "Shell Command: Install 'code' command in PATH" from the Command Palette.
+
+Put it all together to get from anywhere to a running project in your editor:
+
+```bash
+ddevcd myproject && ddev start && code .
+```
 
 ## Click the Link in `ddev describe`
 
