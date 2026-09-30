@@ -32,33 +32,35 @@ The dashboard has two views. **Trend over time** plots one line per leg so you c
 
 The harness collects six metrics per run. The one that lines up with the 2023 post is **`drupal_install_s`**: Puppeteer drives the Drupal web install wizard end-to-end, in a real browser, through the DDEV router, the web server, and PHP-FPM.
 
-That matters. The interactive installer deliberately breaks each batch step into its own HTTP request and page reload, so every one of those round trips exercises exactly the layer where Docker provider differences show up — bind mount vs. Mutagen, gRPC-FUSE vs. virtiofs, and so on. It's the closest thing in the suite to "what does it feel like to actually use this."
+I think it's important that it uses a web-intensive install process for studying webserver performance. The interactive installer deliberately breaks each batch step into its own HTTP request and page reload, so every one of those round trips exercises exactly the layer where Docker provider differences show up — bind mount vs. Mutagen, gRPC-FUSE vs. virtiofs, and so on. It's the closest thing in the suite to "what does it feel like to actually use this."
 
 The companion metric `drush_install_s` runs the same install non-interactively via `ddev drush si`, which never touches the router or web server at all. If the two track together, filesystem I/O dominates; if they diverge, the gap isolates router/web server overhead. The [perf/README.md](https://github.com/ddev/ddev/tree/main/perf) describes all six metrics and why each one is there.
 
 ## macOS results
 
-Medians of the nightly runs from 2026-08-22 through 2026-09-21, `drupal_install_s` in seconds, fastest first. All legs are Apple Silicon (ARM64), all with Mutagen enabled except where noted.
+Medians of the nightly runs from 2026-08-31 through 2026-09-30, `drupal_install_s` in seconds, fastest first. All legs are Apple Silicon (ARM64), all with Mutagen enabled except where noted.
 
 | Docker provider      | `drupal_install_s` | `drush_install_s` | `ddev_start_cold_s` |
 | -------------------- | ------------------ | ----------------- | ------------------- |
-| Rancher Desktop      | 12.1               | 10.1              | 16.5                |
-| Lima                 | 12.2               | 10.1              | 15.6                |
-| Podman (rootless)    | 12.4               | 10.1              | 46.0                |
-| Colima (vz)          | 12.7               | 10.2              | 14.3                |
-| OrbStack             | 13.8               | 10.7              | 12.4                |
-| Docker Desktop       | 17.1               | 13.4              | 23.1                |
-| OrbStack, no Mutagen | 17.2               | 11.7              | 9.3                 |
+| Rancher Desktop      | 12.0               | 9.8               | 16.5                |
+| Lima                 | 12.1               | 9.9               | 15.8                |
+| Podman (rootless)    | 12.3               | 9.9               | 46.0                |
+| Colima (vz)          | 12.6               | 10.0              | 14.4                |
+| OrbStack             | 13.4               | 10.4              | 12.2                |
+| Docker Desktop       | 16.7               | 13.4              | 21.0                |
+| OrbStack, no Mutagen | 16.8               | 11.2              | 9.2                 |
 
-The headline is how boring this table is. Five of the six Mutagen-enabled macOS providers land within 1.7 seconds of each other on the flagship metric, and their `drush_install_s` numbers are within 0.6 seconds. **On macOS with Mutagen, your choice of Docker provider is mostly not a performance decision anymore.** Pick based on licensing, maintenance, and how the tool fits your workflow.
+The headline is how boring this table is. Five of the six Mutagen-enabled macOS providers land within 1.4 seconds of each other on the flagship metric, and their `drush_install_s` numbers are within 0.6 seconds. **On macOS with Mutagen, your choice of Docker provider is mostly not a performance decision anymore.** Pick based on licensing, maintenance, and how the tool fits your workflow.
 
 That is a real change from 2023, when OrbStack was clearly ahead and Colima and Rancher Desktop looked sluggish. Those gaps have largely closed.
 
 ### Mutagen is still doing the work
 
-The most interesting row is the last one. OrbStack with Mutagen finishes the browser install in 13.8s; the same provider without Mutagen takes 17.2s — about 25% slower. Note that the no-Mutagen leg is _faster_ on `ddev_start_cold_s` (9.3s vs. 12.4s), because there's no sync session to establish, and closer on `drush_install_s` (11.7s vs. 10.7s), because Drush never goes through the web server. The penalty concentrates in exactly the browser-driven path, which is what you use all day.
+The most interesting row is the last one. OrbStack with Mutagen finishes the browser install in 13.4s; the same provider without Mutagen takes 16.8s — about 25% slower. Note that the no-Mutagen leg is _faster_ on `ddev_start_cold_s` (9.2s vs. 12.2s), because there's no sync session to establish, and closer on `drush_install_s` (11.2s vs. 10.4s), because Drush never goes through the web server. The penalty concentrates in exactly the browser-driven path, which is what you use all day.
 
 Mutagen is on by default on macOS for this reason, and these numbers say to leave it on.
+
+However, plenty of people are perfectly happy with turning off Mutagen. Some folks don't like the additional complexity and don't want the speed tradeoff. `ddev config global --performance-mode=none` turns it off. (Mutagen has more benefits than just performance though; with Mutagen, the webserver in the container is dealing with a Linux filesystem, more like the real deployment environment, instead of a Docker bind-mount, which is more like a network filesystem.)
 
 :::warning[Read the hardware caveat before comparing rows]
 The Docker Desktop leg runs on **older M1 test runner machines** that have dedicated hardware. OrbStack, Rancher Desktop, Colima, Lima, and Podman share a pool of **newer** machines. Some of the Docker Desktop gap in the table above is that hardware difference, not the provider. We didn't normalize it — the dashboard deliberately doesn't either — so treat Docker Desktop's row as "somewhat pessimistic" rather than as a clean like-for-like comparison.
