@@ -51,7 +51,7 @@ It needs a one-time addition to your shell startup file. `ddev utility cd` (also
 [autojump](https://github.com/wting/autojump) learns the directories you visit and lets you jump to them with `j` and part of the name. It works for any directory, not only DDEV projects.
 
 ```bash
-brew install autojump
+brew install autojump # Or `sudo apt install autojump`, etc
 # Follow the post-install instructions to source it from your shell rc file
 j myproject
 ddev start
@@ -59,7 +59,7 @@ ddev start
 
 If you only need to start a project, you don't have to change directories at all: `ddev start <projectname>` works from anywhere.
 
-<!-- TODO: Note that autojump only knows directories you have already visited (unlike ddevcd, which knows every project DDEV has seen). Mention the apt package for Linux/WSL2 (see windows-ddev-setup.md). Consider whether to mention zoxide as a maintained alternative. -->
+Note that `autojump` only knows directories you have already visited (unlike ddevcd, which knows every project DDEV has seen).
 
 ## `code .` or `phpstorm .`: Open the Editor From the Project Directory
 
