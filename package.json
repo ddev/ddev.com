@@ -9,10 +9,10 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "prettier": "./node_modules/.bin/prettier --check .",
-    "prettier:fix": "./node_modules/.bin/prettier --write .",
-    "textlint": "./node_modules/.bin/textlint 'src/content/**'",
-    "textlint:fix": "./node_modules/.bin/textlint 'src/content/**' --fix"
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "textlint": "textlint 'src/content/**'",
+    "textlint:fix": "textlint 'src/content/**' --fix"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.3.1",

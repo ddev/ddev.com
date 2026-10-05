@@ -1,304 +1,124 @@
 # AGENTS.md
 
-This file provides guidance to AI agents when working with code in this repository.
+Guidance for AI agents working on ddev.com, the static Astro site for
+[DDEV](https://github.com/ddev/ddev), hosted on Cloudflare Pages. Setup without
+DDEV is in `README.md`.
 
-## Tool Preferences
+## Where the rest of the guidance lives
 
-- Prefer `jq` over Python for JSON processing in shell commands
+Read the file that matches what you are touching. Claude Code loads these on
+its own.
 
-## Communication Style
+| Working on                                        | Read                                  |
+| ------------------------------------------------- | ------------------------------------- |
+| Blog posts (voice, frontmatter), authors, pages   | `.claude/rules/content.md`            |
+| Markdown features (callouts, code blocks, images) | `MARKDOWN_FORMATTING.md`              |
+| Screenshots or feature images for a post          | `.claude/skills/blog-images/SKILL.md` |
+| Adding or updating a featured sponsor             | `.claude/skills/add-sponsor/SKILL.md` |
+| Bumping npm dependencies                          | `.claude/skills/bump-deps/SKILL.md`   |
+| A commit or PR                                    | `.claude/skills/ddev-commit/SKILL.md` |
+| A comment, in any code file                       | `.claude/rules/comments.md`           |
 
-- Use direct, concise language without unnecessary adjectives or adverbs
-- Avoid flowery or marketing-style language ("tremendous", "dramatically", "revolutionary", etc.)
-- Don't use vague superlatives ("comprehensive", "complete", "full", "entire", "thorough", "detailed")
-- Don't include flattery or excessive praise ("excellent!", "perfect!", "great job!")
-- State facts and findings directly without embellishment
-- Skip introductory phrases like "I'm excited to", "I'd be happy to", "Let me dive into"
-- Avoid concluding with summary statements unless specifically requested
-- When presenting options or analysis, lead with the core information, not commentary about it
+Fetch files from GitHub through `raw.githubusercontent.com`; a
+`github.com/.../blob/...` page wraps the file in markup that costs tokens and
+can be summarized instead of read. DDEV's
+[organization-wide patterns](https://raw.githubusercontent.com/ddev/.github/main/AGENTS.md)
+mostly restate this file, which **wins where they differ**, for example on
+never pushing.
 
-## Project Overview
+## Claude Code automation
 
-This is the source code for ddev.com, a static website built with Astro and hosted on Cloudflare Pages. The site features a blog, documentation, sponsor information, and project resources for DDEV, a local development environment tool.
+<!--
+Maintainer note: anything the harness can enforce belongs in
+.claude/settings.json, and guidance for one area belongs in a rule or skill.
+See .claude/README.md.
+-->
 
-## Development Commands
+`.claude/settings.json` enforces some rules in this file, so Claude Code should
+treat them as facts about the environment rather than steps to repeat:
 
-Use DDEV for all development tasks:
+- Before every `git commit`, the check-only `ddev npm run prettier` and
+  `ddev npm run textlint` run, and a failure or a stopped project blocks the
+  commit.
+- Editing a file runs `ddev prettier` on it, and `ddev textlint` too under
+  `src/content/`. Errors they cannot fix are shown to Claude.
+- `git push` is denied.
 
-- `ddev start` - Start project with all dependencies
-- `ddev npm run dev` - Start development server with hot reloading
-- `ddev npm run build` - Build production site to `./dist/`
-- `ddev npm run preview` - Preview built site locally
-- `ddev prettier` - Auto-fix formatting (custom command, runs `npm run prettier:fix` in the web container)
-- `ddev textlint` - Auto-fix content writing issues (custom command, runs `npm run textlint:fix` in the web container)
+## Commands
 
-Prefer the `ddev prettier` and `ddev textlint` custom commands (defined in `.ddev/commands/web/`). The underlying npm scripts are also available if you need the check-only variants: `ddev npm run prettier`, `ddev npm run prettier:fix`, `ddev npm run textlint`, `ddev npm run textlint:fix`.
+Run everything through DDEV:
 
-### Site Access
+```bash
+ddev start              # Installs dependencies, starts the Astro dev server
+ddev npm run build      # Production build to ./dist/
+ddev prettier [file]    # Fix formatting, of the whole tree or the given files
+ddev textlint [file]    # Fix content wording in src/content/**, then report what is left
+ddev logs               # Dev server output, from the astro-dev-daemon
+```
 
-- Dev server: `https://<projectname>.ddev.site:4321`
-- Built site: `https://<projectname>.ddev.site`
+The dev server with hot reload is at `https://<projectname>.ddev.site:4321`,
+and the last build at `https://<projectname>.ddev.site`. File arguments to
+`ddev prettier` and `ddev textlint` are relative to the project root. CI runs
+the check-only `npm run prettier` and `npm run textlint` on every PR.
 
-### Testing and Quality
+## Before committing
 
-Before committing changes, always run:
-
-1. `ddev prettier` - Fix formatting
-2. `ddev textlint` - Fix content quality issues
-3. `ddev start` - Ensure environment is working
-4. Spellcheck and check links in any new content
-5. Check image sizes for any new/changed images: `find public \( -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" \) -exec sh -c 'size=$(stat -f%z "$1" 2>/dev/null || stat -c%s "$1"); if [ "$size" -gt 2097152 ]; then echo "Large image: $1 ($((size/1024))KB)"; fi' _ {} \;` - CI warns on any image over 2MB under `public/`; resize/recompress (or convert photographic PNGs to JPEG) before committing instead of fixing it in a follow-up PR
-
-### Commits
-
-When making commits after major changes, use AI-assisted commit messages that include:
-
-- Clear description of changes made
-- A body following `.github/PULL_REQUEST_TEMPLATE.md`, HTML comments removed and empty sections dropped, so it can be reused as the pull request description
-- A short body: a few lines per section, no restating the diff, no padding
-- End with: `🤖 Developed with assistance from [Claude Code](https://claude.ai/code)`
-- A trailer naming the model, such as `Co-authored-by: Claude Opus 5 <noreply@anthropic.com>`, model name only
-
-Manual Testing Instructions link the pull request's Cloudflare preview, not a local dev server. Ask where the branch will be pushed, since the URL differs, and use a `REPLACE_ME`-style placeholder for anything not known yet:
-
-- `ddev/ddev.com`: `https://<branch-with-dashes>.ddev-com-front-end.pages.dev/`, cut to 28 characters
-- A fork: `https://pr-<number>.ddev-com-fork-previews.pages.dev/`
-
-Only commit when explicitly requested by the user.
-
-**Never run `git push` (or any command that pushes to a remote), under any circumstances, even if explicitly asked.** The user always pushes their own branches/commits themselves.
-
-### Avoiding Hard Line Breaks in Issue/PR/Comment Bodies
-
-GitHub renders issue, PR, and comment bodies (`gh issue create`, `gh pr create`, `gh pr comment`, `gh issue comment`, etc.) with GFM's hard-line-break behavior: a single `\n` inside a paragraph becomes an actual `<br>`. This is different from how GitHub renders committed Markdown files (this file, docs, READMEs), which follow standard CommonMark, where a lone `\n` is just whitespace and the paragraph reflows to the container width.
-
-Hand-wrapping prose to a fixed column width — normal, good practice for a text file — produces a ragged, too-short-lined paragraph when posted as an issue/PR/comment body, because each wrapped line becomes its own forced line instead of reflowing.
-
-When writing a `--body-file` for any of these commands, write each paragraph as one continuous line with no embedded newlines. Only use actual blank lines to separate paragraphs, headings, and list items. This does not apply to code blocks, tables, or files meant to be read as source.
-
-Because a commit body here is reused verbatim as the pull request description, write commit bodies the same way: one continuous line per paragraph, rather than wrapping to a fixed column width as git convention would otherwise suggest. The same applies to any report a workflow generates and posts through `gh`.
-
-## Working with Claude Code
-
-### Branch Naming
-
-Use descriptive branch names that include:
-
-- Date in YYYYMMDD format
-- Your GitHub username
-- Brief description of the work
-
-Format: `YYYYMMDD_<username>_<short_description>`
-
-Examples:
-
-- `20250919_rfay_update_quickstart`
-- `20250919_username_fix_blog_styling`
-- `20250919_contributor_add_sponsor`
-
-### Whitespace and Formatting
-
-- **Never add trailing whitespace** - Blank lines must be completely empty (no spaces or tabs)
-- Match existing indentation style exactly (spaces vs tabs, indentation depth)
-- Preserve the file's existing line ending style
-- Run linting tools to catch whitespace issues before committing
+1. `ddev prettier` and `ddev textlint`
+2. `ddev npm run build` when code, config, or dependencies changed; it also
+   fails on broken internal links
+3. For new content, spell check it and check images as described in
+   `.claude/rules/content.md`
 
 ## Architecture
 
-### Technology Stack
+The layout under `src/` is standard Astro (`components/`, `content/`,
+`layouts/`, `lib/`, `pages/`, `styles/`). The parts that are not obvious:
 
-- **[Astro](https://astro.build)** - Static site generator
-- **[Tailwind CSS](https://tailwindcss.com)** - Utility-first CSS framework
-- **[Tailwind Typography](https://tailwindcss.com/docs/typography-plugin)** - Typography plugin
-- **[Heroicons](https://heroicons.com)** - Icon library
-- **[Textlint](https://textlint.github.io)** - Content linting
-- **[Giscus](https://giscus.app)** - GitHub-based commenting system
+- Content collections are validated by `src/content.config.ts`, so a bad
+  author or category fails the build.
+- `src/lib/api.ts` fetches GitHub data with `GITHUB_TOKEN` from `.env` (see
+  `.env.example` and `README.md`) and caches responses in `cache/` during
+  development. Content work needs no token; without one, sponsorship data
+  falls back to sample data.
+- `src/featured-sponsors.json` also generates the SVG sponsor badges
+  (`src/pages/resources/featured-sponsors*.svg.js`) used in the main DDEV
+  repository's README.
+- Redirects and short links are in `public/_redirects`.
 
-### Project Structure
+## Writing style
 
-```
-├── cache/              # GitHub API response cache for local development
-├── public/             # Static assets copied to dist/
-│   ├── logos/          # Sponsor and technology logos (prefer SVG)
-│   └── _redirects      # Cloudflare Pages redirects
-├── src/
-│   ├── components/     # Reusable Astro components
-│   ├── content/        # Content collections (blog, authors)
-│   ├── layouts/        # Page layout wrapper
-│   ├── lib/            # Utilities (GitHub API, search, read time)
-│   ├── pages/          # Direct route mapping (.astro files)
-│   └── styles/         # Global PostCSS styles
-├── .env.example        # Environment variables template
-├── astro.config.mjs    # Astro configuration
-├── package.json        # Dependencies and scripts
-└── tailwind.config.cjs # Tailwind configuration
-```
+Applies to conversation, commit messages, PR text, content, and comments:
 
-### Content Management
+- Direct, concise language. State findings plainly, including what failed or
+  was not verified.
+- **Never use any of these, in any form:** `comprehensive`, `complete`,
+  `full`, `entire`, `thorough`, `detailed`, `seamless`, `genuine`,
+  `genuinely`, `honest`, `honestly`, `truly`, `really` (as an intensifier),
+  `perfect`, `perfectly`, `robust`, `powerful`, `effortless`,
+  `production-ready`, `tremendous`, `dramatically`, `revolutionary`, `delve`,
+  `elevate`, `unleash`. They assert importance instead of showing it; delete
+  the word, and if that changes the meaning, the claim needed evidence.
+- No flattery (`You're absolutely right`, `Great question`), no introductory
+  phrases ("I'd be happy to"), and no closing summary unless asked. Lead with
+  the substance.
+- Prefer `jq` over Python for JSON in shell commands.
 
-The site uses Astro's Content Collections with strict schema validation:
+## Files
 
-- **Blog posts**: `src/content/blog/*.md` - Markdown with frontmatter, validated against categories and author schemas
-- **Authors**: `src/content/authors/*.md` - Author profiles with name, firstName, and optional avatarUrl
-- **Static pages**: `src/pages/*.astro` - Direct route mapping
+- **Never add trailing whitespace.** Empty lines must contain no spaces or tabs.
+- Match the file's indentation and line endings, and the surrounding
+  component patterns. Prettier has no Astro plugin here, so nothing formats
+  `.astro` files; match their style by hand.
+- Use kebab-case for blog post filenames, and SVG for logos in
+  `public/logos/`.
+- Put temporary files and scripts in `~/tmp`, not the repository.
 
-### Content Schema
+## Git workflow
 
-Blog posts require:
+**Commit only when asked, and never run `git push`** or anything else that
+pushes to a remote, even when asked. The maintainer pushes.
 
-- Valid author (must exist in authors collection)
-- Categories from predefined list: Announcements, Community, DevOps, Performance, Guides, Newsletters, TechNotes, Training, Videos
-- pubDate as Date object
-- Optional featureImage with alt text
-
-For special markdown formatting features (callout boxes, code blocks, etc.), see [MARKDOWN_FORMATTING.md](MARKDOWN_FORMATTING.md).
-
-### Content Linking
-
-- **Internal blog links**: Use markdown filename references (e.g., `[link text](filename.md)`) for links between blog posts. Astro automatically resolves these to proper URLs.
-- **Other internal links**: Use root-relative paths (e.g., `[Contact](/contact)`) for links to other site pages
-- **External links**: Use full URLs for links outside the site
-
-### GitHub Integration
-
-The site fetches dynamic data from GitHub API:
-
-- Requires `GITHUB_TOKEN` environment variable
-- Uses local `cache/` directory to reduce API calls during development
-- Token needs: `repo`, `read:org`, `read:user`, `read:project` scopes
-
-### Sponsor Management
-
-Featured sponsors are managed in `src/featured-sponsors.json` with specific schema for logos, URLs, and types. This data generates sponsor displays and SVG badges used in the main DDEV repository.
-
-## Development Setup
-
-### DDEV Setup (Recommended)
-
-1. Run `ddev start` to start and set up the project's dependencies
-2. Open `https://<projectname>.ddev.site:4321` in your browser
-3. To rebuild static site: `ddev npm run build`
-4. Static site available at: https://<projectname>.ddev.site
-
-### Setup Without DDEV
-
-1. Run `nvm use` to use appropriate Node.js version
-2. Run `npm install` to install dependencies
-3. Run `npm run dev` to start development server
-4. Visit `http://localhost:4321/`
-
-### GitHub Token Setup
-
-For dynamic GitHub data (not required for blog posts):
-
-1. Run `cp .env.example .env`
-2. Create [classic GitHub access token](https://github.com/settings/tokens) with scopes: `repo`, `read:org`, `read:user`, `read:project`
-3. Add token to `.env` as `GITHUB_TOKEN=your_token_here`
-
-## Content Creation
-
-### Blog Posts
-
-Template for new blog posts in `src/content/blog/`:
-
-```markdown
----
-title: "Post Title"
-pubDate: 2023-01-01
-summary: Brief description
-author: Author Name
-featureImage:
-  src: /img/blog/kebab-case.jpg
-  alt: Descriptive alt text
-  caption: Optional caption
-  credit: Optional credit
-categories:
-  - Category Name
----
-
-Post content here...
-```
-
-**Categories**: Announcements, Community, DevOps, Performance, Guides, Newsletters, TechNotes, Training, Videos
-
-**Images**: Production-ready, <2MB, reasonable dimensions, optimized
-
-**Logo/text banner images**: For a `featureImage` that combines project logos and/or text on a solid background, see [FEATURE_IMAGE_GUIDE.md](FEATURE_IMAGE_GUIDE.md).
-
-### Terminal Screenshots
-
-For screenshots of DDEV command output (`ddev list`, `ddev st`, the `ddev` dashboard), render them with [VHS](https://github.com/charmbracelet/vhs) (`brew install vhs`, which also needs `ttyd` and `ffmpeg`). Work in `~/tmp`, then copy the final image into `public/img/blog/YYYY/MM/`.
-
-- Write a `.tape` file that hides the `cd` and `clear`, shows the command, sleeps a few seconds, and ends with `Screenshot`. Run it as `bash -c "cd ~/tmp/shots && timeout 100 vhs name.tape"` with stdin from `/dev/null`.
-- The `Screenshot` directive can silently produce nothing. The GIF is still written, so take its last frame: `magick name.gif -coalesce -delete 0--2 +repage name.png`.
-- Use a terminal about 820px wide (`Set Width 820`, `Set FontSize 16`) for `ddev list`. `ddev st` needs about 900px wide and 1000px tall. At 640px DDEV's tables overflow the right edge. Too short a height scrolls the top of the output off.
-- Crop with `magick in.png -crop WxH+0+0 +repage out.png`. To leave room for callout arrows, add space above with `-background "<bg color>" -gravity north -splice 0x70`.
-- The OSC 8 hyperlinks DDEV prints appear underlined in the VHS terminal, which is how to show "clickable" output. DDEV only emits them when stdout is a terminal, so text captured from a pipe or file has no links (set `FORCE_HYPERLINK=1` to force them).
-- Do not use `freeze` (charmbracelet) for DDEV tables: it draws the box characters badly. A hover or click state needs a real terminal such as iTerm2 and must be captured by hand.
-- Keep the screenshots under 2MB, use a descriptive alt text, and view the result before adding it. If reads under `public/` are denied, copy the image to `~/tmp` and view it there.
-
-### SVG Feature Images
-
-An illustration can be a hand-written SVG referenced directly from `featureImage.src`. Generate it from a script kept in `~/tmp` (not the repository), preview it with `rsvg-convert -w 1672 -o out.png in.svg`, and install only the `.svg`. Match the 1672x940 size of the other feature images and leave the left side clear for the title.
-
-### Authors
-
-Add new authors to `src/content/authors/` with schema:
-
-- name (must match blog post frontmatter)
-- firstName
-- avatarUrl (optional)
-
-### Pages
-
-Add `.astro` files to `src/pages/` where filename becomes URL slug.
-
-## Quality Control
-
-### Textlint
-
-- Configuration in `.textlintrc`
-- Runs against `src/content/**`
-- Enforces consistent language and terminology
-- Run `ddev textlint` before committing
-
-### Prettier
-
-- Configuration in `.prettierrc`
-- Auto-formats code
-- Run `ddev prettier` before committing
-- VS Code: Auto-format on save enabled
-
-### Recommended VS Code Extensions
-
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
-- [Astro](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode)
-
-## Build & Deployment
-
-- GitHub Actions tests on every push to main
-- Cloudflare Pages automatically builds and deploys from main branch
-- Preview builds created for all PR branches
-- Redirects managed via `public/_redirects` file
-
-### Secrets
-
-Production requires `GITHUB_TOKEN` environment variable in Cloudflare Pages settings.
-
-## Important Notes
-
-- Always preserve existing code style and component patterns
-- Blog images should be production-ready: optimized, < 2MB, reasonable dimensions
-- All content goes through textlint validation for consistency
-- The site is configured for DDEV development with special CORS and host settings
-- Use kebab-case for blog post filenames
-- Prefer SVG logos in `public/logos/`
-- Internal blog links use markdown filename references
-- External links use full URLs
-
-## Resources
-
-- [Astro Documentation](https://docs.astro.build)
-- [DDEV Documentation](https://docs.ddev.com/)
-- [Contributing to ddev.com Training](https://ddev.com/blog/ddev-website-for-contributors/)
+Branch names are `YYYYMMDD_<username>_<short_description>`, for example
+`20250919_rfay_update_quickstart`. Commit titles follow Conventional Commits,
+and the commit body is reused as the PR description; see
+`.claude/skills/ddev-commit/SKILL.md` before writing either.

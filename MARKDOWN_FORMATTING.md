@@ -175,7 +175,7 @@ Strike through text using double tildes:
 
 ### Tables
 
-Create tables using pipes and hyphens (already documented below in the standard markdown section).
+Create tables with pipes and hyphens, as on GitHub. Each table is wrapped in a `div.table-wrapper`, so a wide table scrolls horizontally instead of overflowing the page.
 
 ### Task Lists
 
@@ -282,12 +282,12 @@ Use full URLs:
 
 **Automatic Security Enhancement:**
 
-All external links (links to domains other than ddev.com) automatically receive:
+Every absolute `http` or `https` link, including one to `https://ddev.com`, automatically receives:
 
 - `target="_blank"` - Opens in a new tab
 - `rel="noopener noreferrer"` - Security attributes to prevent potential exploits
 
-You don't need to add these attributes manually. Internal links (to ddev.com pages) are not affected.
+You don’t need to add these attributes manually. Root-relative links such as `/blog/` are not affected, so use them for pages on this site.
 
 ## Images
 
@@ -302,14 +302,18 @@ Images are automatically wrapped in semantic HTML `<figure>` elements with capti
 This automatically generates:
 
 ```html
-<figure>
+<figure class="rehype-figure">
   <img
-    src="/img/blog/2022/03/macos-m1-vs.-drupal-drush-install-seconds.png"
     alt="Descriptive alt text"
+    loading="lazy"
+    decoding="async"
+    src="/_astro/my-image.<hash>.webp"
   />
   <figcaption>Descriptive alt text</figcaption>
 </figure>
 ```
+
+PNG, JPEG, and GIF images under `/img/` are converted to WebP at build time. SVG images are not converted.
 
 The alt text serves dual purposes:
 
@@ -397,12 +401,11 @@ The site uses Tailwind Typography for consistent, beautiful text rendering:
 
 Check out these resources for markdown formatting examples:
 
-- **Demo Post** - A complete demonstration of all available formatting features (hidden from blog listings)
+- **Demo Post** - A demonstration of the available formatting features, dated 2022 so it does not appear among recent posts
   - [Rendered version](https://ddev.com/blog/markdown-features-demo) - See how the features look on the site
   - [Source code](https://github.com/ddev/ddev.com/blob/main/src/content/blog/markdown-features-demo.md) - View the raw markdown
 - Any post in `src/content/blog/` that uses the `:::` directive syntax
 - Posts using blockquote-style callouts with `> **Label**:` format
-- [Mermaid diagram documentation](https://mermaid.js.org/intro/)
 
 ## Questions?
 

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(ddev npm run *)",
+      "Bash(ddev npm outdated)",
+      "Bash(ddev npm audit)",
+      "Bash(ddev npm ls *)",
+      "Bash(ddev npm install-scripts ls)",
+      "Bash(ddev prettier *)",
+      "Bash(ddev textlint *)",
+      "Bash(ddev logs *)",
+      "Bash(ddev describe *)",
+      "Bash(jq *)",
+      "Bash(gh pr list *)",
+      "Bash(gh pr view *)",
+      "Bash(gh pr checks *)",
+      "Bash(gh pr diff *)",
+      "Bash(gh issue list *)",
+      "Bash(gh issue view *)",
+      "Bash(gh run list *)",
+      "Bash(gh run view *)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:docs.astro.build)",
+      "WebFetch(domain:docs.ddev.com)",
+      "WebFetch(domain:ddev.com)",
+      "WebFetch(domain:code.claude.com)"
+    ],
+    "deny": ["Bash(git push *)"]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(git commit *)",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/check-before-commit.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/format-edited-file.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
