@@ -1,6 +1,6 @@
 ---
 title: "Docker Provider Performance, 2026: Now Measured Every Night"
-pubDate: 2026-10-05
+pubDate: 2026-10-06
 summary: DDEV now runs a nightly benchmark across every supported platform and Docker provider, and publishes the history. Here's what the numbers say about macOS Docker providers three years after the 2023 hand-run comparison.
 author: Randy Fay
 featureImage:
@@ -11,6 +11,12 @@ categories:
   - DevOps
   - Performance
 ---
+
+## TL;DR
+
+macOS Docker provider performance has improved significantly over the years, and now all the providers seem to be performing about equivalently. So OrbStack, Docker Desktop, Lima, Colima, and Rancher Desktop are fast and working well.
+
+## Introduction
 
 Back in November 2023 we published a hand-run comparison of macOS Docker providers. It was a snapshot: one laptop, one afternoon, one set of versions, and a Google Sheet. It answered the question people were asking, and then it started going stale the moment it was published.
 
