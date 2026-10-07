@@ -88,7 +88,7 @@ ddev npm run build 2>&1 | tee ~/tmp/build.log
 grep -niE 'warn|error|deprecat' ~/tmp/build.log   # GITHUB_TOKEN/AMPLITUDE notices are expected locally
 ddev restart && ddev logs                         # astro-dev-daemon must reach RUNNING
 ddev npm audit
-ddev npm run prettier
+ddev prettier
 ```
 
 - The build must finish with astro-link-validator reporting no broken links.
