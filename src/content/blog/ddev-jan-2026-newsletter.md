@@ -1,7 +1,7 @@
 ---
 title: "DDEV January 2026: Year in Review, Looking Ahead, and Community Momentum"
 pubDate: 2026-01-20
-modifiedData: 2026-04-30
+modifiedDate: 2026-04-30
 modifiedComment: Fixed reference to Klemens Arro
 summary: "Reflecting on 2025's growth, mapping 2026's roadmap, celebrating a 10% sponsorship surge, and discovering global community contributions from macOS tools to international tutorials"
 author: Randy Fay

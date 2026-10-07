@@ -4,10 +4,10 @@ This guide explains how to configure the automated preview generation for forked
 
 ## Overview
 
-The workflow in `.github/workflows/cloudflare-preview-forks.yml` implements a secure two-stage process:
+Two workflows implement a two-stage process:
 
-1. **Build Stage**: Safely builds the site from fork code without exposing secrets
-2. **Deploy Stage**: Uses Cloudflare API to deploy the built site with secure credentials
+1. **Build stage**, `.github/workflows/cloudflare-preview-forks-build.yml`: builds the site from fork code on `pull_request`, with no access to secrets
+2. **Deploy stage**, `.github/workflows/cloudflare-preview-forks-deploy.yml`: runs on `workflow_run` after a successful build and deploys the artifact with the Cloudflare credentials, without checking out fork code
 
 ## Required Setup
 
@@ -45,20 +45,12 @@ Add these in GitHub repository settings → Secrets and variables → Actions:
 - `CF_ACCOUNT_ID`: Your Cloudflare Account ID (found in dashboard sidebar)
 - `CF_PAGES_PROJECT`: Set to `ddev-com-fork-previews` (dedicated fork preview project)
 
-### 4. Repository Variables (Optional)
+### 4. Enable Workflow
 
-For custom build configurations, set these in GitHub repository settings → Secrets and variables → Actions → Variables:
+The workflows run automatically for PRs from forks only:
 
-- `PAGES_BUILD_CMD`: Custom build command (e.g., `npm ci && npm run build`)
-- `PAGES_OUTPUT_DIR`: Build output directory (e.g., `dist`, `public`, `build`)
-- `PAGES_WORKING_DIR`: Project subdirectory if not root (e.g., `site`, `docs`)
-
-### 5. Enable Workflow
-
-The workflow is triggered automatically for:
-
-- Forked repository PRs only
-- Events: `opened`, `synchronize`, `reopened`, `ready_for_review`, `closed`
+- Build: `opened`, `synchronize`, `reopened`, `ready_for_review`
+- Deploy: after each successful build, and on `closed` (through `pull_request_target`) to add a closing note
 
 ## Security Features
 
@@ -73,29 +65,28 @@ The workflow is triggered automatically for:
 - Validates blog post frontmatter structure
 - Detects potentially unsafe content patterns
 - Warns about oversized images (>2MB)
-- Runs textlint and prettier if available
+- Runs textlint and prettier, and a failure in either stops the preview
 
 ### Access Controls
 
 - Only processes PRs from forked repositories
-- Uses `pull_request_target` with explicit fork checkout
+- Builds on `pull_request`, so fork code never runs with secrets; `pull_request_target` is used only for the closing note, which checks out no code
 - Separates untrusted code execution from credential access
 
 ## Workflow Behavior
 
 ### Build Process
 
-1. Detects build system (npm/yarn/pnpm/hugo/custom)
-2. Runs content validation and security checks
-3. Installs dependencies and runs linting
-4. Builds the site
-5. Packages output as artifact
+1. Runs content validation and security checks
+2. Installs dependencies with `npm ci`, then runs textlint and prettier
+3. Builds the site with `npm run build`
+4. Packages `dist/` and the PR number as an artifact
 
 ### Deployment Process
 
 1. Downloads build artifact from Stage 1
 2. Deploys to Cloudflare Pages using wrangler-action
-3. Creates stable branch URL for consistent preview access
+3. Deploys under the `pr-<number>` alias, see [Preview URLs](#preview-urls)
 4. Comments preview URL on the PR
 5. Updates comment on subsequent pushes
 
@@ -116,7 +107,7 @@ The workflow is triggered automatically for:
 ### Missing Secrets
 
 - Workflow will fail with clear error messages
-- Verify all three secrets are set correctly
+- Verify the `TESTS_SERVICE_ACCOUNT_TOKEN` secret, the `CF_API_TOKEN` item in the 1Password `test-secrets` vault, and the `CF_ACCOUNT_ID` and `CF_PAGES_PROJECT` variables
 - Check Cloudflare API token permissions
 
 ### Content Validation Errors
@@ -124,8 +115,8 @@ The workflow is triggered automatically for:
 - Review security check output
 - Fix frontmatter issues in blog posts
 - Address linting warnings locally with:
-  - `ddev npm run textlint:fix`
-  - `ddev npm run prettier:fix`
+  - `ddev textlint`
+  - `ddev prettier`
 
 ### Preview URL Issues
 
@@ -143,39 +134,11 @@ To test the workflow:
 4. Watch GitHub Actions for build/deploy progress
 5. Check for preview URL comment on the PR
 
+## Preview URLs
+
+The deploy step passes `--branch=pr-<number>` to `wrangler pages deploy`, so each PR keeps one URL across pushes, `https://pr-<number>.ddev-com-fork-previews.pages.dev`. The PR comment links that alias, or the commit-specific deployment URL when there is no alias.
+
 ## Maintenance
 
-### Regular Tasks
-
-- Monitor Cloudflare Pages usage and costs
-- Review security warnings in build logs
-- Update dependencies in fork validation steps
-- Clean up old preview deployments if needed
-
-### Updates
-
-- Keep `cloudflare/wrangler-action` version current
-- Monitor Cloudflare API changes
-- Update content validation rules as needed
-
-## Stable URL Implementation
-
-### Solution Implemented
-
-The workflow now uses `cloudflare/wrangler-action` which provides stable branch URLs through the `pages-deployment-alias-url` output. This ensures consistent preview URLs for each PR:
-
-- **Branch URL**: Stable per PR (e.g., `https://pr-123.project-name.pages.dev`)
-- **Deployment URL**: Commit-specific for debugging if needed
-
-### Benefits
-
-1. **Stable bookmarking**: Preview URLs remain constant across pushes to the same PR
-2. **Better collaboration**: Team members can bookmark and share stable URLs
-3. **Future-proof**: Uses the recommended, actively maintained Cloudflare action
-4. **Enhanced debugging**: Both stable and commit-specific URLs available
-
-### Migration Notes
-
-- Migrated from deprecated `cloudflare/pages-action@v1` to `cloudflare/wrangler-action`
-- Updated output variable handling (`url` → `pages-deployment-alias-url`)
-- Maintained backward compatibility with existing project configuration
+- Keep the `cloudflare/wrangler-action` version current.
+- Review the security warnings in the build logs, and update the validation rules when the content structure changes.

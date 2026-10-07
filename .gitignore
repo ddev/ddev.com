@@ -28,4 +28,8 @@ pnpm-debug.log*
 
 .astro
 
-.claude
+# .claude/ is shared team configuration and is committed; only personal
+# overrides stay private. https://code.claude.com/docs/en/claude-directory
+**/.claude/settings.local.json
+.claude/agent-memory-local/
+CLAUDE.local.md

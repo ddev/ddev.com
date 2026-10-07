@@ -1,10 +1,15 @@
 #!/usr/bin/env bash
 
 #ddev-silent-no-warn
-## Description: Run textlint inside the web container
-## Usage: textlint
-## Example: "ddev textlint"
+## Description: Run textlint inside the web container, on src/content/** or the given files
+## Usage: textlint [file ...]
+## Example: "ddev textlint" or "ddev textlint src/content/blog/my-post.md" (paths relative to the project root)
 ## ExecRaw: true
 ## MutagenSync: true
 
-npm run textlint:fix
+# --fix exits 0 even when errors it cannot fix remain, so check again after it.
+if [ $# -eq 0 ]; then
+  npm run textlint:fix && npm run textlint
+else
+  "$DDEV_APPROOT"/node_modules/.bin/textlint --fix "$@" && "$DDEV_APPROOT"/node_modules/.bin/textlint "$@"
+fi

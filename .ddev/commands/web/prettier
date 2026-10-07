@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
 #ddev-silent-no-warn
-## Description: Run prettier inside the web container
-## Usage: prettier
-## Example: "ddev prettier"
+## Description: Run prettier inside the web container, on the whole tree or the given files
+## Usage: prettier [file ...]
+## Example: "ddev prettier" or "ddev prettier src/lib/api.ts" (paths relative to the project root)
 ## ExecRaw: true
 ## MutagenSync: true
 
-npm run prettier:fix
+if [ $# -eq 0 ]; then
+  npm run prettier:fix
+else
+  "$DDEV_APPROOT"/node_modules/.bin/prettier --write --ignore-unknown "$@"
+fi

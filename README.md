@@ -1,114 +1,84 @@
-# ddev.com Astro code
+<div align="center">
 
-Source code for [ddev.com](https://ddev.com)’s static front end, built with [Astro](https://astro.build) to keep things organized, maintainable, and fast.
+<a href="https://ddev.com">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="public/logos/dark-ddev.svg">
+    <img alt="DDEV" src="public/logos/ddev.svg" width="320">
+  </picture>
+</a>
 
-## Overview
+### Source code for ddev.com
 
-### Main Ingredients
+The static site for [DDEV](https://github.com/ddev/ddev), built with [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com), and hosted on Cloudflare Pages.
 
-- [Astro](https://astro.build)
-- [Tailwind CSS](https://tailwindcss.com)
-- [Tailwind Typography](https://tailwindcss.com/docs/typography-plugin) plugin
-- [Heroicons](https://heroicons.com)
-- [Textlint](https://textlint.github.io)
-- [Giscus](https://giscus.app)
+[![Website](https://img.shields.io/badge/website-ddev.com-blue)](https://ddev.com)
+[![Test](https://img.shields.io/github/actions/workflow/status/ddev/ddev.com/test.yml?branch=main&label=test)](https://github.com/ddev/ddev.com/actions/workflows/test.yml)
+[![Discord](https://img.shields.io/discord/664580571770388500?logo=discord&logoColor=%23fff&label=Discord&link=https%3A%2F%2Fddev.com%2Fs%2Fdiscord)](https://ddev.com/s/discord)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 
-### Project Structure
+[**Contributor Training**](https://ddev.com/blog/ddev-website-for-contributors/) · [**Markdown Formatting**](MARKDOWN_FORMATTING.md) · [**Agent Guidance**](AGENTS.md) · [**Sponsor DDEV**](https://ddev.com/sponsor)
 
-The file structure follows a typical Astro [project layout](https://docs.astro.build/en/core-concepts/project-structure/).
+</div>
 
-Most pages are built with [Astro components](https://docs.astro.build/en/core-concepts/astro-components/), while blog posts and authors are sourced from local Markdown that’s validated with tidy schemas we get using [content collections](https://docs.astro.build/en/guides/content-collections/).
+---
 
-- **`cache/`** – custom, project-specific folder for caching GitHub responses in local developent to reduce API calls.
-- **`public/`** – images and [redirects](https://developers.cloudflare.com/pages/platform/redirects) that will be copied verbatim into the generated `dist/` directory.
-- **`src/`** – components, layouts, styles, and supporting TypeScript/JavaScript.
-  - **`components/`** – individual `.astro` components used in pages. (You can also use [components for UI frameworks](https://docs.astro.build/en/core-concepts/framework-components/) like Vue, React, and Svelte!)
-  - **`content/`** – configuration and Markdown for the blog’s [content collections](https://docs.astro.build/en/guides/content-collections/).
-  - **`layouts/`** – contains the single component we use for every page.
-  - **`lib/`** – helper code for fetching data from GitHub, building the search index, injecting read time into frontmatter, and handling common formatting.
-  - **`pages/`** – `.astro` pages whose filenames directly translate into routes for the site.
-  - **`styles/`** – global PostCSS that’s not already handled by the [Tailwind plugin](https://docs.astro.build/en/guides/integrations-guide/tailwind/).
-- **`.env.example`** – file you’ll want to rename `.env` and populate for a new environment.
-- **`.nvmrc`** – Node.js version to support `nvm use`.
-- **`.prettierrc`** – rules for [Prettier](https://prettier.io) code formatting.
-- **`astro.config.mjs`** – Astro configuration.
-- **`package.json`** – standard file that details the project’s packages and versions.
-- **`README.md`** – you are here! 👋
-- **`tailwind.config.cjs`** – [configuration for Tailwind](https://tailwindcss.com/docs/configuration) and the Tailwind Typography plugin we’re using.
-- **`tsconfig.json`** – [TypeScript configuration](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
+## Project Structure
+
+The layout follows Astro’s [project structure](https://docs.astro.build/en/basics/project-structure/). The parts specific to this site:
+
+- **`cache/`** – GitHub API responses cached during local development, to reduce API calls.
+- **`public/`** – images, logos, and [redirects](https://developers.cloudflare.com/pages/configuration/redirects/), copied as they are into `dist/`.
+- **`src/content/`** – Markdown for the blog posts and authors, validated by the [content collections](https://docs.astro.build/en/guides/content-collections/) schemas in `src/content.config.ts`.
+- **`src/pages/`** – `.astro` and `.mdx` pages whose filenames become routes.
+- **`src/layouts/`** – `Layout.astro`, used by every page, and `MarkdownLayout.astro`, used by the `.mdx` pages.
+- **`src/lib/`** – GitHub API fetching, the search index, and the remark and rehype plugins for blog Markdown.
+- **`src/featured-sponsors.json`** – the featured sponsors, see [Sponsor Management](#sponsor-management).
 
 ## Development
 
-### Commands
+### DDEV Setup
 
-All commands are run from the root of the project, from a terminal:
+DDEV includes all the dependencies.
 
-| Command                | Action                                             |
-| :--------------------- | :------------------------------------------------- |
-| `npm install`          | Installs dependencies                              |
-| `npm run dev`          | Starts local dev server at `localhost:3000`        |
-| `npm run build`        | Build your production site to `./dist/`            |
-| `npm run preview`      | Preview your build locally, before deploying       |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
-| `npm run astro --help` | Get help using the Astro CLI                       |
-| `npm run prettier`     | Run prettier in the project root                   |
-| `npm run prettier:fix` | Apply fixable updates to resolve prettier errors   |
-| `npm run textlint`     | Run textlint on content collections                |
-| `npm run textlint:fix` | Apply fixable updates to resolve textlint errors   |
+1. Run `ddev start`. It installs dependencies and starts the dev server.
+2. Open `https://<projectname>.ddev.site:4321`. The dev server reloads as you edit.
 
-### Local Development Setup
+| Command                | Action                                                                            |
+| :--------------------- | :-------------------------------------------------------------------------------- |
+| `ddev npm run build`   | Build the production site to `dist/`, served at `https://<projectname>.ddev.site` |
+| `ddev prettier [file]` | Fix formatting of the whole tree, or of the given files                           |
+| `ddev textlint [file]` | Fix wording in `src/content/**`, or in the given files, then report what is left  |
+| `ddev logs`            | Dev server output, for troubleshooting                                            |
 
-#### DDEV setup
+Run `ddev prettier` and `ddev textlint` before committing. CI runs the same checks.
 
-DDEV already has all the dependencies included.
+### Setup Without DDEV
 
-1. Run `ddev start` to start and set up the project’s dependencies.
-2. Open `https://<projectname>.ddev.site:4321` in your browser.
+1. Run `nvm use` to use the Node.js version in `.nvmrc`.
+2. Run `npm install`.
+3. Run `npm run dev`, and open `http://localhost:4321/`. If it fails, run `npm cache clean --force && npm install && npm run dev`.
 
-To rebuild a static copy of the site, run `ddev npm run build`. The contents of the `dist/` folder are what gets [deployed to Cloudflare Pages](#build--deployment) and can be found at `https://<projectname>.ddev.site`. The dev server runs on a `web_extra_daemons`, it includes Vite HMR (hot module reloading) among other features, and it can be found at `https://<projectname>.ddev.site:4321`.
+`npm run build` builds to `dist/`, and `npm run preview` serves the build. `npm run prettier:fix` and `npm run textlint:fix && npm run textlint` replace the DDEV commands above.
 
-Troubleshooting steps: Check `ddev logs`.
+When switching from this setup to DDEV, delete `node_modules/` and run `ddev npm install`, since the two architectures can conflict.
 
-#### Setup without DDEV
+### GitHub Token
 
-Check out the project in your favorite Node.js environment, ideally running [`nvm`](https://github.com/nvm-sh/nvm). We’ll install dependencies, add a GitHub API key, and run a local dev server with a hot-reloading browser URL.
+Not needed to contribute a blog post. Contributors, sponsors, releases, and other DDEV data come from the GitHub API; without a token, sponsorship data falls back to sample data. To use the real data:
 
-1. Run `nvm use` to make sure you’re running an appropriate Node.js version.
-2. Run `npm install` to set up the project’s dependencies.
-3. Run `npm run dev` to start Astro’s dev server. If it fails then run `npm cache clean --force && npm install && npm run dev`.
-4. Visit the URL displayed in your terminal. (Probably `http://localhost:4321/`.) The site will automatically refresh as you work on it, displaying errors in the relevant terminal or browser console.
+1. Run `cp .env.example .env`. Don’t commit `.env`.
+2. Create a [classic GitHub access token](https://github.com/settings/tokens) with the scopes `repo`, `read:org`, `read:user`, and `read:project`.
+3. Paste the token after `GITHUB_TOKEN=` in `.env`.
 
-To generate a static copy of the site, run `npm run build`. The contents of the `dist/` folder are exactly what get [deployed to Cloudflare Pages](#build--deployment). You can preview locally by running `npm run preview` or using a tool like [`serve`](https://www.npmjs.com/package/serve).
+### Editor Setup
 
-#### Switching from Without DDEV to with DDEV
-
-Make sure to delete your `node_modules/` directory and run `ddev npm install`. The change in architecture can create odd issues otherwise.
-
-#### GitHub Token
-
-This step is not required if you just want to contribute a blog post to ddev.com.
-
-Contributors, sponsors, releases and more data about DDEV is retrieved dynamically from the GitHub API. To test this, please follow these steps:
-
-1. Run `cp .env.example .env` to create a `.env` file for environment variables. (Don’t check this in!)
-2. Create a [classic GitHub access token](https://github.com/settings/tokens) with these scopes: `repo`, `read:org`, `read:user`, and `read:project`.
-3. Paste the GitHub token after `.env`’s `GITHUB_TOKEN=`.
-
-There is a local `cache/` to reduce API calls.
+`.editorconfig` and `.prettierrc` hold the formatting rules. VS Code suggests the extensions in `.vscode/extensions.json` (Prettier, EditorConfig, Astro), and `.vscode/settings.json` formats on save.
 
 ## Managing Content
 
-The site’s content lives in either `.astro` components that resemble souped-up HTML, or Markdown files organized into schema-validated [content collections](https://docs.astro.build/en/guides/content-collections/).
+### Blog Posts
 
-### Blog Posts and Guest Blog Posts
-
-Hint: There's a full contributor training on [contributing to ddev.com](https://ddev.com/blog/ddev-website-for-contributors/).
-
-Blog posts are Markdown files with frontmatter that live in `src/content/blog/`.
-
-For details on special markdown formatting features like callout boxes, see [MARKDOWN_FORMATTING.md](MARKDOWN_FORMATTING.md).
-
-To add a new blog post, use this Markdown as a template:
+Blog posts are Markdown files in `src/content/blog/`, named with a kebab-case slug, for example `my-new-post.md`. For callouts, code blocks, images, and other features, see [MARKDOWN_FORMATTING.md](MARKDOWN_FORMATTING.md). Use this frontmatter:
 
 ```markdown
 ---
@@ -119,7 +89,7 @@ modifiedComment: "This got updated"
 summary:
 author: Randy Fay
 featureImage:
-  src: /img/blog/kebab-case.jpg
+  src: /img/blog/2026/01/kebab-case.jpg
   srcDark:
   alt:
   caption:
@@ -129,99 +99,40 @@ categories:
 ---
 ```
 
-Name your file with a kebab-case, URL-and-SEO-friendly slug with a `.md` extension, and drop it in the `src/content/blog/` directory.
+- `author` must match the `name` of an author in `src/content/authors/`. Add one there for a new author.
+- Write descriptive `alt` text for the feature image. `caption` and `credit` can use Markdown, wrapped in straight quotes (`"`).
+- Choose categories from `allowedCategories` in `src/content.config.ts`. The first one shows on post cards: _Add-ons_, _Announcements_ (releases, organization news), _Community_ (events, third-party developments), _DevOps_ (workflows, infrastructure), _Performance_ (benchmarks, tips), _Guides_ (how-to posts), _Newsletters_, _TechNotes_ (code-level discussions), _Training_ (contributor training), _Videos_.
+- Put images in `public/img/blog/YYYY/MM/`. The build converts PNG, JPEG, and GIF images to WebP, but the source files are committed as they are, so keep them under 2MB and no wider than about 2000px. [ImageOptim](https://imageoptim.com) applies lossless compression.
 
-Give it a succinct title, and if you include a feature image be sure to write descriptive alt text along with an optional caption and image credit. The `caption:` and `credit:` fields can both use Markdown, but you’ll probably need to wrap the whole value in straight quotes (`"`).
-
-The Astro build doesn’t do any fancy image sizing or optimization, so be sure any images you add are production-ready: an appropriate format for the image type (JPEG, PNG, or SVG), with size no larger than ~1–2MB and dimensions no greater than 2000px or so. Use an app like [ImageOptim](https://imageoptim.com) to quickly apply lossless compression.
-
-Choose whichever categories apply, with special attention to the first because it’ll be displayed on post summary cards:
-
-- _Add-ons_ (Info about add-ons)
-- _Announcements_ (releases, organization news, etc.)
-- _Community_ (events, third-party developments, etc.)
-- _DevOps_ (workflows, infrastructure, etc.)
-- _Performance_ (benchmarking, tips, etc.)
-- _Guides_ (how-to style posts)
-- _Newsletters_ (monthly newsletters)
-- _Podcasts_ (podcasts)
-- _Releases_ (new features, bug fixes, etc.)
-- _Showcase_ (showcase of DDEV projects)
-- _Tutorials_ (tutorials)
-- _Videos_ (videos)
-- _TechNotes_ (more technical code-level discussions)
-- _Training_ (contributor training)
-- _Videos_ (posts that include or primarily feature video content)
-
-> 💡 **If you’re publishing work from a new author**, add an entry for them in `src/content/authors/`! The `"name"` value needs to match the one you’re using in your post frontmatter.
-
-Blog comments are managed by [giscus integration](https://github.com/ddev/giscus-comments).
+Blog comments use [giscus](https://github.com/ddev/giscus-comments).
 
 ### Pages
 
-Add a `.astro` file to the `pages/` directory, where its name will become the page slug. Use an existing page to grab and re-use whatever layout and components you can to save yourself time and encourage consistency with the rest of the site.
-
-If you need to dynamically add multiple pages, see files with brackets like `src/blog/[page].astro`, `src/blog/category/[slug].astro`, and `src/blog/author/[slug].astro` for examples.
+Add a `.astro` or `.mdx` file to `src/pages/`, and its name becomes the URL. Reuse the layout and components of an existing page. For generated pages, see `src/pages/blog/[page].astro`, `src/pages/blog/category/[slug].astro`, and `src/pages/blog/author/[id].astro`.
 
 ### Textlint
 
-A basic textlint configuration lives in `.textlintrc` and runs against `src/content/**` to try and help keep language consistent and accurate. This doesn’t yet conform to the DDEV docs [spellcheck rules](https://github.com/ddev/ddev/blob/main/.spellcheck.yml) and [massive exclusion list](https://github.com/ddev/ddev/blob/main/.spellcheckwordlist.txt), but ideally the two can someday converge.
-
-Textlint’s [default terminology](https://github.com/sapegin/textlint-rule-terminology/blob/master/terms.jsonc) catches a lot of accepted best practices on its own, where the only major override is to allow “website” (instead of its suggested “site”) because it’s rampant in blog posts and documentation. Same with the “front end” and “back end” conundrum and two-word “command line”.
-
-Run `ddev textlint` before committing your changes.
-
-### Prettier and EditorConfig
-
-Prettier is used for auto-formatting files, see `.prettierrc`. EditorConfig is used for basic IDE settings, see `.editorconfig`. The EditorConfig configuration is [automatically parsed by Prettier](https://prettier.io/docs/en/configuration.html#editorconfig).
-
-If you work with Visual Studio Code, please install these three extensions:
-
-- https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
-- https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
-- https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode
-
-Automatically "Format on Save" setting is activated via `.vscode/settings.json` for Visual Studio Code.
-
-Run `ddev prettier` before committing your changes.
+`.textlintrc` checks `src/content/**` for terminology and stop words, using textlint’s [default terminology](https://github.com/sapegin/textlint-rule-terminology/blob/master/terms.jsonc) with a few overrides, such as allowing “website”, “front end”, and “command line”.
 
 ### Sponsor Management
 
-How to add a new featured sponsor: see [instructions](README_SPONSOR.md).
+`src/featured-sponsors.json` lists the featured sponsors shown on the [home page](https://ddev.com/#supporters) and in the [light](https://ddev.com/resources/featured-sponsors.svg) and [dark](https://ddev.com/resources/featured-sponsors-darkmode.svg) badges generated for the [main DDEV README](https://github.com/ddev/ddev#sponsor-ddev). To add one, follow [.claude/skills/add-sponsor/SKILL.md](.claude/skills/add-sponsor/SKILL.md), or ask Claude Code to add the sponsor’s website.
 
-The `src/featured-sponsors.json` file is used for manually curating prominent sponsors.
+## Redirects and Short Links
 
-While it’s a bit of a pain and [still relies on coercion](https://github.com/ddev/ddev.com/blob/main/src/components/FeaturedSponsors.astro#L4-L20) in some places, it lets us collect pristine, brand-friendly resources in one place and use them in different contexts.
+Add redirects to `public/_redirects`. They can point to pages on the site, the DDEV docs, or external resources.
 
-It’s used to display sponsor details in a few places:
+- Most redirects should be `301`, a permanent redirect.
+- Prefix short links with `/s`, for example `/s/port-conflict`.
 
-1. The [homepage](https://ddev.com) “Featured Sponsors” list.
-2. The [procedurally-generated](https://github.com/ddev/ddev.com/blob/main/src/pages/resources/featured-sponsors.svg.js) featured sponsors [light](https://ddev.com/resources/featured-sponsors.svg) and [dark](https://ddev.com/resources/featured-sponsors-darkmode.svg) SVG images used in the [main project readme](https://github.com/ddev/ddev#wonderful-sponsors).
+## Build and Deployment
 
-## Redirects/Short Links/Shortcuts
-
-Any redirect can be added to ddev.com by editing `public/_redirects`. This can be useful to provide short redirects in a variety of contexts. Redirects can be to local URLs, DDEV docs, or external resources.
-
-- Most redirects should be listed as `301` for a permanent redirect.
-- Short links can be prefixed with `/s` to imply their nature. For example, `/s/port-conflict`
-
-## Build & Deployment
-
-For the site to exist at `ddev.com`, it needs to be built and hosted somewhere. Cloudflare Pages responds to commits in order to build and deploy the site.
-
-On every push to the `main` branch, the following happens:
-
-- GitHub Actions tests the site using [this workflow](https://github.com/ddev/ddev.com/blob/main/.github/workflows/test.yml).
-- [Cloudflare Pages](https://pages.cloudflare.com) runs `npm run build`, and deploys the resulting output from `dist/`.
-  - Cloudflare Pages is also configured to build previews for branches on this repository. It will automatically add a comment with the build status and eventual URL(s) to any PR.
+- GitHub Actions runs [the test workflow](.github/workflows/test.yml) on every push to `main` and every pull request.
+- [Cloudflare Pages](https://pages.cloudflare.com) runs `npm run build` on every push to `main` and deploys `dist/`. It also builds a preview for each branch and comments the URL on its PR. Pull requests from forks get previews from GitHub Actions instead, see [FORK_PREVIEW_SETUP.md](.github/FORK_PREVIEW_SETUP.md).
 
 ### Secrets
 
-The site [uses Octokit to make REST and GraphQL API requests](https://github.com/ddev/ddev.com/blob/main/src/lib/api.ts) for repository and contribution details from github.com. It needs an API token to authenticate these requests to function and avoid hitting quota limits.
-
-GitHub supplies its own private `GITHUB_TOKEN` in the GitHub Actions build environment. In any other environment, including local development, you’ll need to populate a `GITHUB_TOKEN` environment variable with a **classic** GitHub personal access token that has `repo`, `read:org`, `read:user`, and `read:project` scopes.
-
-A valid Personal Access Token (PAT) must also be supplied to [Cloudflare](https://dash.cloudflare.com/2aecb1c6b99f9d2274b12efc45152be2/pages/view/ddev-com-front-end/settings/environment-variables).
+The site [uses Octokit](src/lib/api.ts) for GitHub REST and GraphQL requests, which need a token to authenticate and to stay within quota. GitHub Actions supplies its own `GITHUB_TOKEN`. Anywhere else, including local development and [Cloudflare](https://dash.cloudflare.com/2aecb1c6b99f9d2274b12efc45152be2/pages/view/ddev-com-front-end/settings/environment-variables), set `GITHUB_TOKEN` to a classic personal access token with the scopes listed under [GitHub Token](#github-token).
 
 ## Resources
 
