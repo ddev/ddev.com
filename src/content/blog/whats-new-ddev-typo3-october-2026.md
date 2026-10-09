@@ -19,7 +19,7 @@ Here's the October TYPO3-with-DDEV news. This quarter's theme is databases: gett
 
 ## Snapshots Grew Up in DDEV v1.25.4
 
-`ddev snapshot` has been around for years. It takes a physical backup of your database (`mariadb-backup`, `xtrabackup`, or `pg_basebackup`), not a SQL dump, so creating and restoring one is much faster than `ddev export-db` and `ddev import-db`, especially on a large TYPO3 database with a lot of `sys_log` and cache tables in it.
+`ddev snapshot` has been around for years. It takes a physical backup of your database (`mariadb-backup`, `xtrabackup`, or `pg_basebackup`), not a SQL dump, so creating and restoring one is much faster than `ddev export-db` and `ddev import-db`, especially on a big TYPO3 database.
 
 [DDEV v1.25.4](release-v1-25-4.md) adds a set of features on top of that:
 
@@ -30,7 +30,7 @@ Here's the October TYPO3-with-DDEV news. This quarter's theme is databases: gett
 - **Uncompressed snapshots** (`--uncompressed`) trade disk space for a faster restore, on MariaDB and MySQL.
 - **`ddev snapshot --list`** now shows size, database version, and compression for each snapshot.
 
-A pattern we like for TYPO3 major upgrades: snapshot before each step (`ddev snapshot --name=pre-v14-wizards`), and when an upgrade wizard or a `typo3 database:updateschema` run goes wrong, `ddev snapshot restore --latest` puts you back in seconds.
+A pattern for TYPO3 major upgrades might be: snapshot before each step (`ddev snapshot --name=pre-v14-wizards`), and when an upgrade wizard (`typo3 upgrade:run`) or a database schema update goes wrong, `ddev snapshot restore --latest` puts you back in seconds. A snapshot covers only the database, so roll back code and `composer.lock` with Git, and `fileadmin` changes separately.
 
 [DDEV Snapshots: Checkpoints, Restores, and Seeded Databases](ddev-snapshots.md) has all of it, with a screencast. For huge databases, the [September 23 contributor training](https://youtu.be/zdprgaQi_Cc) with Moshe Weitzman covers baking a snapshot into a custom database image and distributing it through a registry, so a team can pull a multi-gigabyte database as a Docker image. The [slides and resources](https://rfay.github.io/snapshots-and-huge-databases/) and Moshe's [dbimage demo repository](https://github.com/weitzman/dbimage) go with it.
 
@@ -38,19 +38,21 @@ A pattern we like for TYPO3 major upgrades: snapshot before each step (`ddev sna
 
 Ramon Herrmann's [Snapshot](https://github.com/yellow-twins/snapshot) extension, now in public beta at 0.9.0, solves the step before DDEV's snapshots: getting the database and `fileadmin` from your DEV, Stage, or Live environment onto your machine in the first place. Despite the shared name, it isn't related to `ddev snapshot`.
 
-It pulls over SSH, and anonymizes personal data and password hashes before they reach your local machine. It also has a backend module for admins without SSH access, protected by an IP allowlist, mandatory MFA, and single-use download tokens. It is not a backup tool; there's no scheduler and no push back to production.
+The CLI pulls the database and `fileadmin` (with `rsync`) over SSH, then anonymizes frontend and backend user data and password hashes in your local database. Anonymization is on by default and can be turned off with `--no-scrub`. There's also a backend module for admins without SSH access, which is off until you enable it with an environment variable, and requires MFA. That module anonymizes on the server, before the download. It is not a backup tool; there's no scheduler and no push back to production.
 
-It ships a DDEV add-on:
+It's a Composer `require-dev` package configured with a `.snapshot.yaml` in the project root (copy the shipped `.snapshot.yaml.dist`), and it ships a DDEV add-on that wraps its commands:
 
 ```bash
+ddev composer require --dev yellow-twins/snapshot
 ddev add-on get yellow-twins/snapshot
 ddev auth ssh
+ddev snapshot-doctor --from=live
 ddev snapshot-pull --from=live
 ```
 
-`ddev snapshot-doctor --from=stage` checks a connection, and `ddev snapshot-list-envs` lists the configured environments. It requires TYPO3 13.4 or 14 and PHP 8.2+.
+`ddev snapshot-doctor` checks SSH and database access before you pull, and `ddev snapshot-list-envs` lists the configured environments. It requires TYPO3 13.4 or 14, PHP 8.2+, `helhum/typo3-console`, and `rsync` on the remote server.
 
-The two fit together: pull an anonymized database with the extension, then `ddev snapshot --name=seed` to make it the team's starting point.
+The two fit together: pull an anonymized database with the extension, then `ddev snapshot --name=seed` (and commit the seed if it's small enough for you) to make it the team's starting point.
 
 ## Branchery: A Worktree, URL, PHP Version, and Database per Branch
 
