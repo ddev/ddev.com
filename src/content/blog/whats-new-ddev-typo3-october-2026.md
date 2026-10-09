@@ -5,13 +5,11 @@ summary: "An update for TYPO3 developers: seeded databases and snapshot improvem
 author: Randy Fay
 featureImage:
   src: /img/blog/2026/10/typo3-ddev-october-2026-roundup.png
-  alt: DDEV and TYPO3 logos
+  alt: TYPO3 and DDEV logos, October 2026
 categories:
   - Announcements
   - Community
 ---
-
-<!-- TODO: link the July roundup on news.typo3.com once its URL is known -->
 
 Here's the October TYPO3-with-DDEV news. This quarter's theme is databases: getting one into a project faster, keeping known-good copies of it, and running several of them side by side.
 
@@ -21,18 +19,18 @@ Here's the October TYPO3-with-DDEV news. This quarter's theme is databases: gett
 
 `ddev snapshot` has been around for years. It takes a physical backup of your database (`mariadb-backup`, `xtrabackup`, or `pg_basebackup`), not a SQL dump, so creating and restoring one is much faster than `ddev export-db` and `ddev import-db`, especially on a big TYPO3 database.
 
-[DDEV v1.25.4](release-v1-25-4.md) adds a set of features on top of that:
+[DDEV v1.25.4](https://ddev.com/blog/release-v1-25-4/) adds a set of features on top of that:
 
 - **A `seed` snapshot.** Run `ddev snapshot --name=seed` once, and any time the project starts with no database (a new teammate's first `ddev start`, or after `ddev delete`), DDEV loads that snapshot instead of an empty `db` database. If the size is acceptable, commit it with `git add -f .ddev/db_snapshots/seed-*` and a new team member gets a working TYPO3 backend without asking anyone for a dump.
 - **`--seed-snapshot=<name-or-path>`** on `ddev start` and `ddev restart` seeds a new database from any snapshot, by name or from a path anywhere on your machine. It works with MariaDB, MySQL, and PostgreSQL.
 - **`--reset-database`** throws the current database away and starts over (taking a snapshot first, unless you add `-O`). Combined with a seed, `ddev restart --reset-database -Oy` returns the project to a known state, which is useful between test runs or before trying an upgrade wizard again.
-- **Snapshots shared across Git worktrees.** If you use [`git worktree` with TYPO3](git-worktree-with-typo3.md), a snapshot taken in one worktree can be restored in another.
+- **Snapshots shared across Git worktrees.** If you use [`git worktree` with TYPO3](https://ddev.com/blog/git-worktree-with-typo3/), a snapshot taken in one worktree can be restored in another.
 - **Uncompressed snapshots** (`--uncompressed`) trade disk space for a faster restore, on MariaDB and MySQL.
 - **`ddev snapshot --list`** now shows size, database version, and compression for each snapshot.
 
 A pattern for TYPO3 major upgrades might be: snapshot before each step (`ddev snapshot --name=pre-v14-wizards`), and when an upgrade wizard (`typo3 upgrade:run`) or a database schema update goes wrong, `ddev snapshot restore --latest` puts you back in seconds. A snapshot covers only the database, so roll back code and `composer.lock` with Git, and `fileadmin` changes separately.
 
-[DDEV Snapshots: Checkpoints, Restores, and Seeded Databases](ddev-snapshots.md) has all of it, with a screencast. For huge databases, the [September 23 contributor training](https://youtu.be/zdprgaQi_Cc) with Moshe Weitzman covers baking a snapshot into a custom database image and distributing it through a registry, so a team can pull a multi-gigabyte database as a Docker image. The [slides and resources](https://rfay.github.io/snapshots-and-huge-databases/) and Moshe's [dbimage demo repository](https://github.com/weitzman/dbimage) go with it.
+[DDEV Snapshots: Checkpoints, Restores, and Seeded Databases](https://ddev.com/blog/ddev-snapshots/) has all of it, with a screencast. For huge databases, the [September 23 contributor training](https://youtu.be/zdprgaQi_Cc) with Moshe Weitzman covers baking a snapshot into a custom database image and distributing it through a registry, so a team can pull a multi-gigabyte database as a Docker image. The [slides and resources](https://rfay.github.io/snapshots-and-huge-databases/) and Moshe's [dbimage demo repository](https://github.com/weitzman/dbimage) go with it.
 
 ## The Snapshot TYPO3 Extension (a Different Snapshot)
 
@@ -56,7 +54,7 @@ The two fit together: pull an anonymized database with the extension, then `ddev
 
 ## Branchery: A Worktree, URL, PHP Version, and Database per Branch
 
-Benjamin Kott's [ddev-branchery](https://benjaminkott.github.io/ddev-branchery/index.html) add-on gives each branch its own worktree beside the main checkout, each with its own hostname such as `feature-checkout.<project>.ddev.site`, its own PHP version (8.2 or newer), and its own database, either empty or a copy of the main project's. The main project keeps running while you do this. It ships profiles for TYPO3 applications and TYPO3 Core, written to `.ddev/branchery.yaml`; without that file, a worktree gets only a checkout, a hostname, and an empty database.
+Benjamin Kott's [ddev-branchery](https://benjaminkott.github.io/ddev-branchery/index.html) add-on gives each branch its own worktree beside the main checkout, with its own hostname such as `feature-checkout.<project>.ddev.site`, its own PHP version (8.2 or newer), and its own database, either empty or a copy of the main project's. The main project keeps running while you do this. It ships profiles for TYPO3 applications and TYPO3 Core, written to `.ddev/branchery.yaml`; without that file, a worktree gets only a checkout, a hostname, and an empty database.
 
 ```bash
 ddev add-on get benjaminkott/ddev-branchery
@@ -95,25 +93,25 @@ On the server-side, a [July 26 update](https://knecht.works/updates/sandbox-roll
 
 Since July:
 
-- [DDEV v1.25.4](release-v1-25-4.md) also adds global Dockerfiles and env files in `~/.ddev/` that apply to every project, `ddev add-on update`, and MySQL 9.7 LTS.
-- [DDEV Xdebug Quickstart with PhpStorm](ddev-xdebug-quickstart-phpstorm.md) is a short screencast, and the PhpStorm plugin [moved into the DDEV organization](ddev-august-2026-newsletter.md).
-- [Docker Provider Performance, 2026](docker-performance.md): DDEV now benchmarks every night across platforms and Docker providers.
-- [A Love Letter to the DDEV Community](love-letter-ddev-community.md) is about why your questions and issues matter to us, even when AI already gave you an answer.
+- [DDEV v1.25.4](https://ddev.com/blog/release-v1-25-4/) also adds global Dockerfiles and env files in `~/.ddev/` that apply to every project, `ddev add-on update`, and MySQL 9.7 LTS.
+- [DDEV Xdebug Quickstart with PhpStorm](https://ddev.com/blog/ddev-xdebug-quickstart-phpstorm/) is a short screencast, and the PhpStorm plugin [moved into the DDEV organization](https://ddev.com/blog/ddev-august-2026-newsletter/).
+- [Docker Provider Performance, 2026](https://ddev.com/blog/docker-performance/): DDEV now benchmarks every night across platforms and Docker providers.
+- [A Love Letter to the DDEV Community](https://ddev.com/blog/love-letter-ddev-community/) is about why your questions and issues matter to us, even when AI already gave you an answer.
 
-Coming up: an [Advanced Coder.ddev.com Techniques](ddev-september-2026-newsletter.md#ddev-live-training) training on November 11, and the open [DDEV advisory group meeting](https://github.com/orgs/ddev/discussions/8794) on November 4. Everyone is welcome at both.
+Coming up: an [Advanced Coder.ddev.com Techniques](https://ddev.com/blog/ddev-september-2026-newsletter/#ddev-live-training) training on November 11, and the open [DDEV advisory group meeting](https://github.com/orgs/ddev/discussions/8794) on November 4. Everyone is welcome at both.
 
 ## Why Your DDEV Sponsorship Matters
 
-DDEV is maintained by two people, Stas Zhuk and me, working on it full time, and that is only possible because of sponsorship. Everything above (142 PRs in one release, snapshot seeding, nightly performance testing, quick answers in Discord) comes from that time. DDEV and its trademark belong to the community-governed DDEV Foundation, with TYPO3's Benni Mack on its [Board of Directors](board-of-directors-established.md), so the money goes to the project, not to a company.
+DDEV is maintained by two people, Stas Zhuk and me, working on it full time, and that is only possible because of sponsorship. Everything above (142 PRs in one release, snapshot seeding, nightly performance testing, quick answers in Discord) comes from that time. DDEV and its trademark belong to the community-governed DDEV Foundation, with TYPO3's Benni Mack on its [Board of Directors](https://ddev.com/blog/board-of-directors-established/), so the money goes to the project, not to a company.
 
 As of today, sponsorship is about $10,134/month, 84.5% of our $12,000/month goal. The gap is about $1,870 a month, so 19 agencies at the $100 Featured tier would close it.
 
-That's our ask to TYPO3 agencies. If your team runs DDEV on every project and your company isn't a sponsor yet, please take this to whoever owns the budget. At $100/month, your logo goes in the [DDEV README](https://github.com/ddev/ddev#featured-sponsors) and on ddev.com, your whole team gets [coder.ddev.com](https://coder.ddev.com), and you get a year of [Diffy](https://diffy.website/) Pro. At $500/month, DDEV's Tip of the Day thanks you by name in thousands of terminals every day, and your bug reports get priority. Freelancers and individuals often start at $25/month.
+That's our ask to TYPO3 agencies. If your team runs DDEV on every project and your company isn't a sponsor yet, please take this to whoever owns the budget. At $100/month, your logo goes in the [DDEV README](https://github.com/ddev/ddev#featured-sponsors) and on ddev.com, your whole team gets [coder.ddev.com](https://coder.ddev.com), and you get a year of [Diffy](https://diffy.website/) Pro. At $500/month, DDEV's Tip of the Day thanks you by name in thousands of terminals every day, and your bug reports get priority. Freelancers and individuals can start at $25/month.
 
-Annual payment works too: €1,200 a year counts as the $100 tier. [Sponsor on GitHub or PayPal](/sponsor), or [contact us](/contact#sponsorship) to get an invoice your accounting department can pay.
+Annual payment works too: €1,200 a year counts as the $100 tier. [Sponsor on GitHub or PayPal](https://ddev.com/sponsor), or [contact us](https://ddev.com/contact#sponsorship) to get an invoice your accounting department can pay.
 
 ## Tell Us What You're Building
 
-If you're working on something DDEV-related in the TYPO3 world, or have hit a rough edge, find us on the [DDEV Discord](/s/discord) or any of the other [support channels](https://docs.ddev.com/en/stable/users/support/). Several items in this update came from people telling us about their projects.
+If you're working on something DDEV-related in the TYPO3 world, or have hit a rough edge, find us on the [DDEV Discord](https://ddev.com/s/discord) or any of the other [support channels](https://docs.ddev.com/en/stable/users/support/). Several items in this update came from people telling us about their projects.
 
 Thanks for nearly a decade of collaboration between DDEV and TYPO3.
