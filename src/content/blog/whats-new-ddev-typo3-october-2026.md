@@ -100,13 +100,13 @@ Since July:
 - [Docker Provider Performance, 2026](docker-performance.md): DDEV now benchmarks every night across platforms and Docker providers.
 - [A Love Letter to the DDEV Community](love-letter-ddev-community.md) is about why your questions and issues matter to us, even when AI already gave you an answer.
 
-Coming up: an [Advanced Coder.ddev.com Techniques](ddev-september-2026-newsletter.md#ddev-live-training) training on November 11, and the open DDEV advisory group meeting on November 4. Everyone is welcome at both.
+Coming up: an [Advanced Coder.ddev.com Techniques](ddev-september-2026-newsletter.md#ddev-live-training) training on November 11, and the open [DDEV advisory group meeting](https://github.com/orgs/ddev/discussions/8794) on November 4. Everyone is welcome at both.
 
-## Why Sponsorship Matters
+## Why Your DDEV Sponsorship Matters
 
 DDEV is maintained by two people, Stas Zhuk and me, working on it full time, and that is only possible because of sponsorship. Everything above (142 PRs in one release, snapshot seeding, nightly performance testing, quick answers in Discord) comes from that time. DDEV and its trademark belong to the community-governed DDEV Foundation, with TYPO3's Benni Mack on its [Board of Directors](board-of-directors-established.md), so the money goes to the project, not to a company.
 
-As of September, sponsorship is about $10,099/month, 84.2% of our goal. That's steady, and we're grateful, but it isn't yet enough to plan on with confidence. Many TYPO3 agencies use DDEV for every project and every developer; if yours is one of them and isn't a sponsor yet, a monthly sponsorship from the company budget makes a bigger difference than you might expect. Organizations sponsoring at $100/month or more also get access to [coder.ddev.com](https://coder.ddev.com).
+As of today, sponsorship is about $10,134/month, 84.5% of our goal. That's steady, and we're grateful, but it isn't yet enough to plan on with confidence. Many TYPO3 agencies use DDEV for every project and every developer; if yours is one of them and isn't a sponsor yet, a monthly sponsorship from the company budget makes a bigger difference than you might expect. Organizations sponsoring at $100/month or more also get access to [coder.ddev.com](https://coder.ddev.com).
 
 See [ddev.com/sponsor](/sponsor), or [contact us](/contact) to talk about invoicing or other arrangements that work for your organization.
 
