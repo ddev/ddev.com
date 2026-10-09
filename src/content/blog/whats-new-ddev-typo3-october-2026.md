@@ -56,20 +56,22 @@ The two fit together: pull an anonymized database with the extension, then `ddev
 
 ## Branchery: A Worktree, URL, PHP Version, and Database per Branch
 
-Benjamin Kott's [ddev-branchery](https://benjaminkott.github.io/ddev-branchery/index.html) add-on gives each branch its own worktree beside the main checkout, each with its own hostname such as `feature-checkout.<project>.ddev.site`, its own PHP version, and its own database (empty, copied from the main project, or restored from a dump). The main project keeps running while you do this. It ships profiles for TYPO3 applications and TYPO3 Core, configured in `.ddev/branchery.yaml`:
+Benjamin Kott's [ddev-branchery](https://benjaminkott.github.io/ddev-branchery/index.html) add-on gives each branch its own worktree beside the main checkout, each with its own hostname such as `feature-checkout.<project>.ddev.site`, its own PHP version (8.2 or newer), and its own database, either empty or a copy of the main project's. The main project keeps running while you do this. It ships profiles for TYPO3 applications and TYPO3 Core, written to `.ddev/branchery.yaml`; without that file, a worktree gets only a checkout, a hostname, and an empty database.
 
 ```bash
 ddev add-on get benjaminkott/ddev-branchery
 ddev restart
-ddev branchery worktree:add feature/checkout
+ddev branchery config:example --profile=typo3-app --write
+ddev branchery worktree:fork feature/checkout   # new branch
+ddev branchery worktree:add 13.4                # existing branch
 ddev branchery worktree:list
 ```
 
-There's a web interface for the same operations. Branchery is a prerelease (v0.2.1 as of this writing), so its interface may still change.
+`ddev branchery launch` opens a web interface for the same operations, at `<project>.ddev.site:8041`. The Branchery container has access to the Docker socket and its API doesn't authenticate callers, so keep it on your own machine.
 
 ## TYPO3 Quickstarter 0.7.0
 
-[TYPO3 Quickstarter](https://github.com/pagea-dev/typo3quickstarter) is a Bash script that creates disposable TYPO3 instances on DDEV with one command, picking the right PHP version and running the non-interactive TYPO3 setup for you. It's handy for comparing behavior across TYPO3 versions or reproducing a bug report.
+[TYPO3 Quickstarter](https://github.com/pagea-dev/typo3quickstarter) is a Bash script that creates disposable TYPO3 instances on DDEV with one command, picking the right PHP version and running the non-interactive TYPO3 setup for you. It's handy for comparing behavior across TYPO3 versions or reproducing a bug report, since `--release` takes a major version (9 through 14, or 15 from `dev-main`) or an exact patch release such as `--release=12.4.20`. Because the instances are throwaway, every Composer run uses `--no-security-blocking`, so don't use them for anything that will run in production.
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/pagea-dev/typo3quickstarter/main/install.sh | bash
