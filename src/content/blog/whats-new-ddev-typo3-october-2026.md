@@ -1,7 +1,7 @@
 ---
 title: "What's New in DDEV for TYPO3 Folks: October 2026"
 pubDate: 2026-10-08
-summary: "An update for TYPO3 developers: seeded databases and snapshot improvements in DDEV v1.25.4, the yellow-twins Snapshot extension, Branchery worktrees, TYPO3 Quickstarter 0.7.0, Knecht's new architecture, and why sponsorship matters."
+summary: "An update for TYPO3 developers: seeded databases and snapshot improvements in DDEV v1.25.4, the yellow-twins Snapshot extension, Branchery worktrees, TYPO3 Quickstarter 0.7.0, Knecht's agent sessions on GitHub issues, and why sponsorship matters."
 author: Randy Fay
 featureImage:
   src: /img/blog/2026/10/typo3-ddev-october-2026-roundup.png
@@ -80,11 +80,16 @@ typo3quickstarter --release=13
 
 [Release 0.7.0](https://github.com/pagea-dev/typo3quickstarter/releases/tag/0.7.0) adds TYPO3 9 and 10 on PHP 7.4, for working on old extensions before modernizing them, and installs the [phpMyAdmin add-on](https://github.com/ddev/ddev-phpmyadmin) in every new instance (`--no-pma` skips it).
 
-## Knecht Rolls Back Its Sandboxes
+## Knecht: Agent Sessions on GitHub Issues, with a DDEV Environment Each
 
-In July we mentioned [Knecht](https://knecht.works/), the automation dashboard that runs maintenance workflows against your DDEV projects and opens a pull request with a preview link. Their [July 26 update](https://knecht.works/updates/sandbox-rollback) describes moving away from a per-run Sysbox sandbox, which had its own Docker daemon and DDEV stack, back to DDEV running directly on the host. Memory per active preview dropped from about 3 GB to about 180 MB, and waking a stopped preview went from minutes to seconds.
+In July we mentioned [Knecht](https://knecht.works/), which boots your DDEV projects on a server and runs AI-driven maintenance workflows against them, ending in a pull request with a preview link. It has shipped a lot since, all listed on its [updates page](https://knecht.works/updates):
 
-The run itself has no Docker access, and project commands such as `composer install` run only inside the project's web container. It's a useful read if you are thinking about running many DDEV projects on one server. Matthias Andrasch also wrote up [installing Knecht Cloud on a Hetzner VPS](https://matthias-andrasch.eu/blog/2026/exploring-knecht-cloud-for-ddev-ai-installation-part-1/).
+- [GitHub sessions](https://knecht.works/updates/sessions-and-mentions): each issue or PR gets its own DDEV environment and agent conversation. The agent replies in the thread with its findings and a preview URL, and mentioning it sends it back to work in the same environment.
+- [A browser terminal, SSH, and VS Code](https://knecht.works/updates/web-terminal-vscode) for each run, and [buttons for Mailpit and add-on services](https://knecht.works/updates/environment-tools) such as Adminer or Solr. Since Knecht runs DDEV without `ddev-router`, it reads each container's `HTTP_EXPOSE` and `HTTPS_EXPOSE` and forwards those ports itself.
+- [Per-project agent memory](https://knecht.works/updates/agent-memory), so the agent doesn't explore the project from scratch on every run.
+- [Repos without a DDEV config](https://knecht.works/updates/repos-without-ddev-config) now boot with a generated `.ddev/config.yaml`, but without a database container, so a TYPO3 project still needs its own `.ddev/config.yaml`.
+
+On the server-side, a [July 26 update](https://knecht.works/updates/sandbox-rollback) replaced per-run Sysbox sandboxes with DDEV on the host, cutting memory per active preview from about 3 GB to about 180 MB. Knecht is [source-available under the Functional Source License](https://knecht.works/updates/license-decision): you can self-host it, including for customer work, and each version becomes Apache 2.0 two years after release. Matthias Andrasch wrote up [installing Knecht Cloud on a Hetzner VPS](https://matthias-andrasch.eu/blog/2026/exploring-knecht-cloud-for-ddev-ai-installation-part-1/) and, in part 2, [talking to the agent in GitHub issues](https://matthias-andrasch.eu/blog/2026/exploring-knecht-cloud-talking-to-an-ai-agent-in-github-issues-part-2), including mentions, follow-up prompts, and tracking what the AI costs.
 
 ## Catching Up
 
