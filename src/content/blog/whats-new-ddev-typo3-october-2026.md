@@ -106,9 +106,11 @@ Coming up: an [Advanced Coder.ddev.com Techniques](ddev-september-2026-newslette
 
 DDEV is maintained by two people, Stas Zhuk and me, working on it full time, and that is only possible because of sponsorship. Everything above (142 PRs in one release, snapshot seeding, nightly performance testing, quick answers in Discord) comes from that time. DDEV and its trademark belong to the community-governed DDEV Foundation, with TYPO3's Benni Mack on its [Board of Directors](board-of-directors-established.md), so the money goes to the project, not to a company.
 
-As of today, sponsorship is about $10,134/month, 84.5% of our goal. That's steady, and we're grateful, but it isn't yet enough to plan on with confidence. Many TYPO3 agencies use DDEV for every project and every developer; if yours is one of them and isn't a sponsor yet, a monthly sponsorship from the company budget makes a bigger difference than you might expect. Organizations sponsoring at $100/month or more also get access to [coder.ddev.com](https://coder.ddev.com).
+As of today, sponsorship is about $10,134/month, 84.5% of our $12,000/month goal. The gap is about $1,870 a month, so 19 agencies at the $100 Featured tier would close it.
 
-See [ddev.com/sponsor](/sponsor), or [contact us](/contact) to talk about invoicing or other arrangements that work for your organization.
+That's our ask to TYPO3 agencies. If your team runs DDEV on every project and your company isn't a sponsor yet, please take this to whoever owns the budget. At $100/month, your logo goes in the [DDEV README](https://github.com/ddev/ddev#featured-sponsors) and on ddev.com, your whole team gets [coder.ddev.com](https://coder.ddev.com), and you get a year of [Diffy](https://diffy.website/) Pro. At $500/month, DDEV's Tip of the Day thanks you by name in thousands of terminals every day, and your bug reports get priority. Freelancers and individuals often start at $25/month.
+
+Annual payment works too: €1,200 a year counts as the $100 tier. [Sponsor on GitHub or PayPal](/sponsor), or [contact us](/contact#sponsorship) to get an invoice your accounting department can pay.
 
 ## Tell Us What You're Building
 
