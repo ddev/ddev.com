@@ -74,11 +74,14 @@ On the server-side, a [July 26 update](https://knecht.works/updates/sandbox-roll
 Since July:
 
 - [DDEV v1.25.4](https://ddev.com/blog/release-v1-25-4/) also adds global Dockerfiles and env files in `~/.ddev/` that apply to every project, `ddev add-on update`, and MySQL 9.7 LTS.
+- TYPO3 on SQLite, or with `omit_containers: [db]`, works in v1.25.4. Before, DDEV pointed `additional.php` at a `db` host that wasn't running, and switched a SQLite install back to MySQL on every `ddev restart`. Now it writes the connection only when the project has a db container and the configured driver is one that container provides ([ddev/ddev#8594](https://github.com/ddev/ddev/pull/8594), from a diagnosis by [@staatzstreich](https://github.com/staatzstreich)).
 - [DDEV Xdebug Quickstart with PhpStorm](https://ddev.com/blog/ddev-xdebug-quickstart-phpstorm/) is a short screencast, and the PhpStorm plugin [moved into the DDEV organization](https://ddev.com/blog/ddev-august-2026-newsletter/).
 - [Docker Provider Performance, 2026](https://ddev.com/blog/docker-performance/): DDEV now benchmarks every night across platforms and Docker providers.
 - [A Love Letter to the DDEV Community](https://ddev.com/blog/love-letter-ddev-community/) is about why your questions and issues matter to us, even when AI already gave you an answer.
 
-Coming up: an [Advanced Coder.ddev.com Techniques](https://ddev.com/blog/ddev-september-2026-newsletter/#ddev-live-training) training on November 11, and the open [DDEV advisory group meeting](https://github.com/orgs/ddev/discussions/8794) on November 4. Everyone is welcome at both.
+Coming in v1.25.5: `ddev share` prints the tunnel URL as a QR code, so you can open your TYPO3 site on a phone, and `ddev launch --qr` prints the project URL and its QR code instead of just showing a URL. This obsoletes the `ddev-qr` add-on, since the feature is built into DDEV core..
+
+Also coming up: an [Advanced Coder.ddev.com Techniques](https://ddev.com/blog/ddev-september-2026-newsletter/#ddev-live-training) training on November 11, and the open [DDEV advisory group meeting](https://github.com/orgs/ddev/discussions/8794) on November 4. Everyone is welcome at both.
 
 ## Why Your DDEV Sponsorship Matters
 
