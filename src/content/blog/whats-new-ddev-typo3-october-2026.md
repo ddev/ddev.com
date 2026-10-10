@@ -1,7 +1,7 @@
 ---
 title: "What's New in DDEV for TYPO3 Folks: October 2026"
 pubDate: 2026-10-08
-summary: "An update for TYPO3 developers: seeded databases and snapshot improvements in DDEV v1.25.4, the yellow-twins Snapshot extension, Branchery worktrees, TYPO3 Quickstarter 0.7.0, Knecht's agent sessions on GitHub issues, and why sponsorship matters."
+summary: "An update for TYPO3 developers: seeded databases and snapshot improvements in DDEV v1.25.4, Branchery worktrees, TYPO3 Quickstarter 0.7.0, Knecht's agent sessions on GitHub issues, and why sponsorship matters."
 author: Randy Fay
 featureImage:
   src: /img/blog/2026/10/typo3-ddev-october-2026-roundup.png
@@ -31,26 +31,6 @@ Here's the October TYPO3-with-DDEV news. This quarter's theme is databases: gett
 A pattern for TYPO3 major upgrades might be: snapshot before each step (`ddev snapshot --name=pre-v14-wizards`), and when an upgrade wizard (`typo3 upgrade:run`) or a database schema update goes wrong, `ddev snapshot restore --latest` puts you back in seconds. A snapshot covers only the database, so roll back code and `composer.lock` with Git, and `fileadmin` changes separately.
 
 [DDEV Snapshots: Checkpoints, Restores, and Seeded Databases](https://ddev.com/blog/ddev-snapshots/) has all of it, with a screencast. For huge databases, the [September 23 contributor training](https://youtu.be/zdprgaQi_Cc) with Moshe Weitzman covers baking a snapshot into a custom database image and distributing it through a registry, so a team can pull a multi-gigabyte database as a Docker image. The [slides and resources](https://rfay.github.io/snapshots-and-huge-databases/) and Moshe's [dbimage demo repository](https://github.com/weitzman/dbimage) go with it.
-
-## The Snapshot TYPO3 Extension (a Different Snapshot)
-
-Ramon Herrmann's [Snapshot](https://github.com/yellow-twins/snapshot) extension, now in public beta at 0.9.0, solves the step before DDEV's snapshots: getting the database and `fileadmin` from your DEV, Stage, or Live environment onto your machine in the first place. Despite the shared name, it isn't related to `ddev snapshot`.
-
-The CLI pulls the database and `fileadmin` (with `rsync`) over SSH, then anonymizes frontend and backend user data and password hashes in your local database. Anonymization is on by default and can be turned off with `--no-scrub`. There's also a backend module for admins without SSH access, which is off until you enable it with an environment variable, and requires MFA. That module anonymizes on the server, before the download. It is not a backup tool; there's no scheduler and no push back to production.
-
-It's a Composer `require-dev` package configured with a `.snapshot.yaml` in the project root (copy the shipped `.snapshot.yaml.dist`), and it ships a DDEV add-on that wraps its commands:
-
-```bash
-ddev composer require --dev yellow-twins/snapshot
-ddev add-on get yellow-twins/snapshot
-ddev auth ssh
-ddev snapshot-doctor --from=live
-ddev snapshot-pull --from=live
-```
-
-`ddev snapshot-doctor` checks SSH and database access before you pull, and `ddev snapshot-list-envs` lists the configured environments. It requires TYPO3 13.4 or 14, PHP 8.2+, `helhum/typo3-console`, and `rsync` on the remote server.
-
-The two fit together: pull an anonymized database with the extension, then `ddev snapshot --name=seed` (and commit the seed if it's small enough for you) to make it the team's starting point.
 
 ## Branchery: A Worktree, URL, PHP Version, and Database per Branch
 
