@@ -79,7 +79,7 @@ Since July:
 - [Docker Provider Performance, 2026](https://ddev.com/blog/docker-performance/): DDEV now benchmarks every night across platforms and Docker providers.
 - [A Love Letter to the DDEV Community](https://ddev.com/blog/love-letter-ddev-community/) is about why your questions and issues matter to us, even when AI already gave you an answer.
 
-Coming in v1.25.5: `ddev share` prints the tunnel URL as a QR code, so you can open your TYPO3 site on a phone, and `ddev launch --qr` prints the project URL and its QR code instead of just showing a URL. This obsoletes the `ddev-qr` add-on, since the feature is built into DDEV core..
+Coming in v1.25.5: `ddev share` prints the tunnel URL as a QR code, so you can open your TYPO3 site on a phone, and `ddev launch --qr` prints the project URL and its QR code instead of opening a browser. This obsoletes the `ddev-qr` add-on, since the feature is built into DDEV core.
 
 Also coming up: an [Advanced Coder.ddev.com Techniques](https://ddev.com/blog/ddev-september-2026-newsletter/#ddev-live-training) training on November 11, and the open [DDEV advisory group meeting](https://github.com/orgs/ddev/discussions/8794) on November 4. Everyone is welcome at both.
 
