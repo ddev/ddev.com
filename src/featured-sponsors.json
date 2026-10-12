@@ -12,7 +12,7 @@
     "name": "Tag1",
     "type": "major",
     "logo": "/logos/tag1.svg",
-    "darklogo": "/logos/dark-tag1.svg",
+    "darklogo": "/logos/tag1.svg",
     "squareLogo": "/logos/tag1-square.svg",
     "url": "https://tag1.com",
     "isLeading": false
