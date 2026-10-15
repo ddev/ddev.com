@@ -69,7 +69,7 @@
     "logo": "/logos/centarro-logo-text-light.svg",
     "darklogo": "/logos/centarro-logo-text-dark.svg",
     "squareLogo": "/logos/centarro-logo-light.svg",
-    "url": "https://centarro.io/",
+    "url": "https://www.centarro.io/",
     "github": "centarro"
   },
   {
@@ -78,7 +78,7 @@
     "logo": "/logos/fame-logo.svg",
     "darklogo": "/logos/fame-darkmode.svg",
     "squareLogo": "/logos/fame-square.svg",
-    "url": "https://fame.fi/",
+    "url": "https://www.fame.fi/",
     "github": "FameHelsinki"
   },
   {
@@ -87,7 +87,7 @@
     "logo": "/logos/gizra.svg",
     "darklogo": "/logos/gizra.svg",
     "squareLogo": "/logos/gizra.svg",
-    "url": "https://gizra.com/",
+    "url": "https://www.gizra.com/",
     "github": "gizra"
   },
   {
@@ -96,7 +96,7 @@
     "logo": "/logos/mobilistics.svg",
     "darklogo": "/logos/mobilistics-dark.svg",
     "squareLogo": "/logos/mobilistics-square.svg",
-    "url": "https://mobilistics.de/",
+    "url": "https://www.mobilistics.de/",
     "github": "mobilistics"
   },
   {
@@ -114,7 +114,7 @@
     "logo": "/logos/mac-stadium.svg",
     "darklogo": "/logos/dark-mac-stadium.svg",
     "squareLogo": "/logos/mac-stadium-square.svg",
-    "url": "https://www.macstadium.com"
+    "url": "https://macstadium.com/"
   },
   {
     "name": "Lullabot",
@@ -200,8 +200,8 @@
   {
     "name": "NPO Applications GmbH",
     "type": "standard",
-    "logo": "/logos/npo-applications.png",
-    "darklogo": "/logos/npo-applications-dark.png",
+    "logo": "/logos/npo-applications.svg",
+    "darklogo": "/logos/npo-applications-dark.svg",
     "squareLogo": "/logos/npo-applications-square.png",
     "url": "https://www.npo-applications.de/",
     "github": "NPO-Applications-GmbH"
@@ -209,8 +209,8 @@
   {
     "name": "Pottkinder GmbH",
     "type": "standard",
-    "logo": "/logos/pottkinder.png",
-    "darklogo": "/logos/pottkinder-dark.png",
+    "logo": "/logos/pottkinder.svg",
+    "darklogo": "/logos/pottkinder-dark.svg",
     "squareLogo": "/logos/pottkinder-square.png",
     "url": "https://pottkinder.de/",
     "github": "AgenturPottkinder"
@@ -220,7 +220,7 @@
     "type": "standard",
     "logo": "/logos/lets-talk.svg",
     "darklogo": "/logos/lets-talk-dark.svg",
-    "squareLogo": "/logos/lets-talk.svg",
+    "squareLogo": "/logos/lets-talk-square.svg",
     "url": "https://letstalk.nl/",
     "github": "Lets-Talk-NL"
   },
