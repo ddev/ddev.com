@@ -21,7 +21,8 @@ the site does not settle.
 
 ## 1. Find the official logo
 
-Use the sponsor's own logo file. Never redraw or approximate one.
+Use the sponsor's own logo file. Never draw one from memory or a description;
+every part must come from the sponsor's own files.
 
 1. Fetch the raw page with `curl -sL <url>`, not WebFetch, which summarizes
    instead of returning markup. Look for, in this order:
@@ -30,12 +31,52 @@ Use the sponsor's own logo file. Never redraw or approximate one.
    - an inline `<svg>` in the header logo link
    - a press, brand, or media kit page (`/press`, `/brand`, `/media`)
    - `<link rel="icon" type="image/svg+xml">`, which is often only the mark
-2. If there is no SVG, use the largest PNG available, and say so in the PR.
-   The organization's GitHub avatar (`https://github.com/<org>.png?size=400`)
+2. If there is no SVG, rebuild one from the largest raster, as described
+   below. A WordPress site lists its uploads at
+   `/wp-json/wp/v2/media?search=logo`. Check a larger file against the logo
+   the site shows now, since an old upload can be outdated or distorted.
+3. The organization's GitHub avatar (`https://github.com/<org>.png?size=400`)
    is the last resort, and right for a person, as with `dougvann.jpeg`.
 
 Save it as `public/logos/<slug>.svg`, where `<slug>` is the lowercase name with
 dashes.
+
+### Rebuilding a raster logo
+
+Build each part from what it is, and trace only what is left:
+
+- **Lettering:** set it in its font. The site's CSS often names it
+  (`@font-face`, Google Fonts links); otherwise compare glyph proportions with
+  installed fonts. One word uses one font, so a glyph that does not fit means
+  the wrong font. Convert with
+  `inkscape in.svg --export-text-to-path --export-plain-svg --export-filename=out.svg`,
+  then fit the scale, baseline, and each glyph's position to the raster, since
+  logo text is often kerned or rotated by hand. A font the site serves works
+  without installing it: point `FONTCONFIG_FILE` at a config that includes
+  `/etc/fonts/fonts.conf` and adds the download folder. If a few likely fonts
+  do not fit, trace the lettering instead.
+- **Shapes:** draw a rectangle, circle, regular polygon, or rounded corner as
+  that shape, with dimensions measured from the raster, instead of tracing it.
+- **Anything else,** such as a brush mark, is traced with potrace.
+
+A source under about 2000 px wide traces with wavy stems and notched corners
+at its own size, so enlarge and blur it first; a larger one traces cleanly as
+is, and the blur would round its sharp corners:
+
+```bash
+magick logo.webp -alpha extract -filter Lanczos -resize 400% -blur 0x3 \
+  -negate -threshold 50% ~/tmp/<slug>.pbm
+potrace ~/tmp/<slug>.pbm -s --tight -O 1 -t 4 -o ~/tmp/<slug>.svg
+```
+
+For a logo on a white background instead of a transparent one, replace
+`-alpha extract` and `-negate` with `-colorspace Gray`. For several colors,
+trace one mask per color, built from a channel that separates them, and stack
+the layers, leaving out `--tight` so they line up. A gradient goes on after svgo has applied the transforms to the
+paths, with `gradientUnits="userSpaceOnUse"`, so it spans the whole word
+instead of restarting in each glyph. Remove the `width` and `height` that
+potrace adds, set `fill` on the root `<svg>`, and compare the render with the
+original, magnified on thin strokes, corners, counters, and line ends.
 
 ## 2. Make it self-contained
 
@@ -45,9 +86,16 @@ An SVG cut out of a page often depends on that page:
 - Replace `currentColor`, CSS classes, and `var(--...)` fills with explicit
   colors taken from the site.
 - Remove `<script>`, event handlers, and references to external files or
-  fonts. Text has to be paths already; if it is `<text>`, find another file.
-- Trim empty space around the artwork by tightening the `viewBox`, since the
-  badges size each logo by its bounds.
+  fonts. Convert `<text>` to paths with Inkscape, with the font installed.
+- Set the padding in the `viewBox` so the logo carries the same visual weight
+  as its neighbors. The home page gives every logo the same height and the
+  badges fit each into 200×50, both by the `viewBox`, so a wordmark trimmed
+  to its bounds looks larger than the rest. Judge by both renders in step 5,
+  not by the bounds.
+- Keep it under 16 KB; most logos here are around 5 KB.
+  `ddev exec npx svgo -p 1 public/logos/<slug>.svg` optimizes it in place. A
+  file still over the limit usually embeds raster data or was traced with more
+  points than the artwork needs.
 
 Then render it on both backgrounds and look at the result:
 
