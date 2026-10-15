@@ -320,5 +320,12 @@
     "darklogo": "/logos/84em-dark.svg",
     "url": "https://84em.com/",
     "github": "84em"
+  },
+  {
+    "name": "Webblandskapet",
+    "type": "standard",
+    "logo": "/logos/webblandskapet.svg",
+    "darklogo": "/logos/webblandskapet-dark.svg",
+    "url": "https://webblandskapet.se/"
   }
 ]
