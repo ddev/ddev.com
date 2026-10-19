@@ -15,25 +15,23 @@
     "textlint:fix": "textlint 'src/content/**' --fix"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "^7.3.1",
-    "@astrojs/mdx": "^8.0.2",
+    "@astrojs/markdown-remark": "^7.3.3",
+    "@astrojs/mdx": "^8.1.0",
     "@astrojs/prefetch": "^0.4.1",
-    "@astrojs/react": "^7.0.0",
+    "@astrojs/react": "^7.1.0",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
     "@barnabask/astro-minisearch": "^2.1.1",
     "@heroicons/react": "^2.2.0",
-    "@octokit/auth-app": "^8.2.0",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.3",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
-    "astro": "^7.3.5",
+    "astro": "^7.4.0",
     "astro-link-validator": "^1.1.1",
     "astro-rehype-relative-markdown-links": "^0.19.2",
     "astro-robots-txt": "^1.0.0",
     "astro-seo": "^1.1.0",
-    "autoprefixer": "^10.5.4",
     "github-slugger": "^2.0.0",
     "glob": "^13.0.6",
     "linkedom": "^0.18.13",
@@ -42,8 +40,6 @@
     "nanoid": "^6.0.0",
     "octokit": "^5.0.5",
     "photoswipe": "^5.4.4",
-    "postcss-import": "^17.0.0",
-    "postcss-nested": "^8.0.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "reading-time": "^1.5.0",
@@ -57,7 +53,6 @@
     "remark-gfm": "^4.0.1",
     "remark-toc": "^9.0.0",
     "sanitize-html": "^2.17.6",
-    "sass": "^1.101.7",
     "sharp": "^0.35.3",
     "tailwindcss": "^4.3.3",
     "unist-util-visit": "^5.1.0"
@@ -75,9 +70,5 @@
   "optionalDependencies": {
     "@tailwindcss/oxide-linux-x64-gnu": "^4.3.3",
     "lightningcss-linux-x64-gnu": "^1.33.0"
-  },
-  "allowScripts": {
-    "@parcel/watcher@2.6.0": true,
-    "esbuild@0.28.2": true
   }
 }

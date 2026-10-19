@@ -74,7 +74,7 @@ Markdown, component markup, TypeScript constants, and a JSON blob.
 The content attempts to follow Astro conventions, follow DRY principle, and be sparing with additional complexity.
 
 1. [Astro config](https://github.com/ddev/ddev.com/blob/main/astro.config.mjs).
-2. [PostCSS](https://github.com/ddev/ddev.com/blob/main/postcss.config.cjs) + [Tailwind](https://github.com/ddev/ddev.com/blob/main/tailwind.config.cjs) + [Tailwind Typography](https://github.com/ddev/ddev.com/blob/main/tailwind.config.cjs#L48)
+2. [Tailwind](https://github.com/ddev/ddev.com/blob/main/tailwind.config.cjs) + [Tailwind Typography](https://github.com/tailwindlabs/tailwindcss-typography)
 3. [`src/lib/api.ts`](https://github.com/ddev/ddev.com/blob/main/src/lib/api.ts).
    - Bonus: the `cache/` directory.
 4. Development server vs. building.
