@@ -28,10 +28,8 @@ web_extra_exposed_ports:
 web_extra_daemons:
     - name: astro-dev-daemon
       # npm passes the flags after `--` to `astro dev`. 4321 is Astro's default
-      # port, set explicitly to match web_extra_exposed_ports. --ignore-lock keeps
-      # the server in the foreground for supervisor, which Astro would otherwise
-      # background when an AI agent runs `ddev start`.
-      command: bash -c 'npm install && touch /var/tmp/npm-install-done && npm run dev -- --host --port 4321 --ignore-lock'
+      # port, set explicitly to match web_extra_exposed_ports.
+      command: bash -c 'npm install && touch /var/tmp/npm-install-done && npm run dev -- --host --port 4321'
       directory: /var/www/html
 disable_upload_dirs_warning: true
 ddev_version_constraint: '>= v1.24.10'

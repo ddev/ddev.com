@@ -94,9 +94,8 @@ ddev prettier
 
 - The build must finish with astro-link-validator reporting no broken links.
 - `astro-dev-daemon` must start once and stay running. If supervisor respawns
-  it every few seconds, `astro dev` moved to the background and exited, which
-  Astro does when it detects an AI agent. The `--ignore-lock` flag in
-  `.ddev/config.yaml` prevents that, so check that it survived the bump.
+  it every few seconds, `astro dev` exited on its own, and `ddev logs` shows
+  why.
 - If an audit finding has no fix, say so in the PR with the advisory or
   upstream issue, as #637 and #734 did. Replace an unmaintained package
   instead of carrying the finding, if one of the existing dependencies can do
