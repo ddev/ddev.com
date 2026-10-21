@@ -32,9 +32,9 @@ Your production servers are exposed to the internet, so update PHP there first; 
 
 ## Getting the Fixed PHP Into DDEV Before v1.25.5
 
-DDEV gets PHP from [deb.sury.org](https://deb.sury.org/). When we checked around 16:00 UTC on October 21, it had fixed packages for PHP 5.6 through 8.5 for AMD64, which covers most Linux and Windows computers and Intel Macs. The ARM64 builds, for Apple Silicon, [come later](https://codeberg.org/oerdnj/deb.sury.org/issues/145), and v1.25.5 waits for them.
+DDEV gets PHP from [deb.sury.org](https://deb.sury.org/). When we checked around 16:00 UTC on October 21, it had fixed packages for PHP 5.6 through 8.5 for Intel and AMD processors (AMD64), which run the vast majority of the world's web servers, most Windows and Linux computers, and Intel Macs. The builds for ARM processors (ARM64), such as Apple Silicon Macs (M1 and later), [come later](https://codeberg.org/oerdnj/deb.sury.org/issues/145), and v1.25.5 waits for them.
 
-On AMD64, you don't have to wait for v1.25.5:
+On Intel and AMD computers, you don't have to wait for v1.25.5:
 
 - **PHP 5.6 through 8.1** aren't in the `ddev-webserver` image. DDEV installs them when it builds the project's web image, so a rebuild installs the fixed packages. The version number doesn't change for these old versions, so check that `ddev php -v` shows `built: Oct 21 2026` or later:
 
@@ -56,7 +56,7 @@ On AMD64, you don't have to wait for v1.25.5:
   ddev php -v
   ```
 
-We tested both cases on DDEV v1.25.4 on AMD64, with and without `use_hardened_images`. On ARM64, wait for deb.sury.org's ARM64 builds or for v1.25.5.
+We tested both cases on DDEV v1.25.4 on an Intel computer, with and without `use_hardened_images`. On Apple Silicon Macs (M1 and later) and other ARM computers, wait for deb.sury.org's ARM64 builds or for v1.25.5.
 
 ## Reducing Exposure Until You Can Update
 
@@ -75,7 +75,7 @@ On PHP 8.5, also add `fatal_error_backtraces = 0`. DDEV adds `.ddev/php` files t
 
 ## Thanks, Ondřej
 
-[Ondřej Surý](https://codeberg.org/oerdnj), who maintains the PHP packages for Debian and Ubuntu that DDEV and much of the PHP world use, published fixed AMD64 packages for every version back to PHP 5.6 on the day PHP released the fixes, with ARM64 builds to follow. If your work depends on those packages, consider [sponsoring him](https://github.com/sponsors/oerdnj).
+[Ondřej Surý](https://codeberg.org/oerdnj), who maintains the PHP packages for Debian and Ubuntu that DDEV and much of the PHP world use, published fixed packages for Intel and AMD processors for every version back to PHP 5.6 on the day PHP released the fixes, with ARM builds to follow. If your work depends on those packages, consider [sponsoring him](https://github.com/sponsors/oerdnj).
 
 We'll update this post when DDEV v1.25.5 is out. If you have questions, reach out in any of the [support channels](https://docs.ddev.com/en/stable/users/support/).
 
