@@ -47,7 +47,7 @@ On Intel and AMD computers, you don't have to wait for v1.25.5:
 
   ```dockerfile
   # .ddev/web-build/Dockerfile.php2shell
-  # Delete this file after upgrading to DDEV v1.25.5
+  # Safe to keep; you can delete it after upgrading to DDEV v1.25.5
   RUN (apt-get update || true) && apt-get install -y --only-upgrade 'php*'
   ```
 
