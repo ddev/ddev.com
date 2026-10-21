@@ -53,12 +53,13 @@ jq -r '.packages | to_entries[] | select(.key | test("(lightningcss|tailwindcss/
 npm runs a dependency's install scripts only when `package.json`
 `allowScripts` has an entry for it, pinned to `pkg@version` by default.
 Otherwise it skips them without failing and lists the skipped packages at the
-end of the install output, so a bump of `esbuild` or `@parcel/watcher` that is
-not re-approved breaks quietly:
+end of the install output, so a package with install scripts that is bumped
+or added without approval breaks quietly. `prune` deletes the key once no
+installed package has install scripts.
 
 ```bash
 ddev npm install-scripts ls                # unreviewed install scripts
-ddev npm install-scripts approve esbuild   # rewrites the pin to the installed version
+ddev npm install-scripts approve <pkg>     # rewrites the pin to the installed version
 ddev npm install-scripts prune --dry-run   # entries that match nothing installed
 ddev npm install-scripts prune
 ```
@@ -92,10 +93,9 @@ ddev prettier
 ```
 
 - The build must finish with astro-link-validator reporting no broken links.
-- If `astro-dev-daemon` exits once with "Another astro dev server is already
-  running" right after a restart, the old `.astro/dev.json` PID collided with a
-  new process; supervisor restarts it. It is a problem only if it keeps
-  exiting.
+- `astro-dev-daemon` must start once and stay running. If supervisor respawns
+  it every few seconds, `astro dev` exited on its own, and `ddev logs` shows
+  why.
 - If an audit finding has no fix, say so in the PR with the advisory or
   upstream issue, as #637 and #734 did. Replace an unmaintained package
   instead of carrying the finding, if one of the existing dependencies can do

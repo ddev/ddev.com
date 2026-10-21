@@ -27,10 +27,8 @@ web_extra_exposed_ports:
       https_port: 4321
 web_extra_daemons:
     - name: astro-dev-daemon
-      # The extra -- in `npm run dev -- --host` is a Vite requirement
-      # See https://github.com/vitejs/vite/discussions/3396
-      # 4321 is the default port for Astro, set it explicitly anyway
-      # See https://docs.astro.build/en/reference/configuration-reference/#serverport
+      # npm passes the flags after `--` to `astro dev`. 4321 is Astro's default
+      # port, set explicitly to match web_extra_exposed_ports.
       command: bash -c 'npm install && touch /var/tmp/npm-install-done && npm run dev -- --host --port 4321'
       directory: /var/www/html
 disable_upload_dirs_warning: true
