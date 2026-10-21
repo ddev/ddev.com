@@ -36,11 +36,11 @@ DDEV gets PHP from [deb.sury.org](https://deb.sury.org/). When we checked around
 
 On AMD64, you don't have to wait for v1.25.5:
 
-- **PHP 5.6 through 8.1** aren't in the `ddev-webserver` image. DDEV installs them when it builds the project's web image, so a rebuild installs the fixed packages. The version number doesn't change for these old versions, so check that the package build date is `20261021` or later:
+- **PHP 5.6 through 8.1** aren't in the `ddev-webserver` image. DDEV installs them when it builds the project's web image, so a rebuild installs the fixed packages. The version number doesn't change for these old versions, so check that `ddev php -v` shows `built: Oct 21 2026` or later:
 
   ```bash
   ddev restart --no-cache  # or: ddev utility rebuild
-  ddev exec 'dpkg-query -W php$DDEV_PHP_VERSION-fpm'
+  ddev php -v
   ```
 
 - **PHP 8.2 through 8.5** are in the image. Create this file in the project, rebuild, and check that `ddev php -v` shows 8.5.12, 8.4.27, 8.3.36, or 8.2.35:
