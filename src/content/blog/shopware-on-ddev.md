@@ -1,6 +1,8 @@
 ---
 title: "Shopware on DDEV: notes from years of client projects"
 pubDate: 2026-07-27
+modifiedDate: 2026-10-22
+modifiedComment: "Added the October 21 live training recording and slides, noted that DDEV v1.25.4 bundles `shopware-cli` and the watchers, and updated the media proxy configuration."
 summary: Why DDEV and Shopware fit together, from a first DDEV onboarding to conclusions drawn over years of agency practice.
 author: Benny Poensgen
 featureImage:
@@ -11,6 +13,17 @@ categories:
 ---
 
 Are DDEV and Shopware a good fit? If you ask me, yes. Let me tell you why.
+
+:::note[Watch the live training]
+On October 21, 2026, I gave a live DDEV training on Shopware 6, covering much of this post with live demos.
+[Watch the recording](https://youtu.be/JjcRapymIX8), browse the
+[slides](https://vanwittlaer.github.io/pt-ddev-live-training-oct-2026/), or read the
+[slide source on GitHub](https://github.com/vanWittlaer/pt-ddev-live-training-oct-2026). The demo projects are
+[sissy-demo](https://github.com/vanWittlaer/sissy-demo), a minimal setup with just the database and Mailpit, and
+[swoofy](https://github.com/vanWittlaer/swoofy), with Redis, RabbitMQ, and Elasticsearch. For more on `shopware-cli`
+with DDEV, see my [slides from Shopware Open-Stage](https://vanwittlaer.github.io/pt-ddev-shopware-cli/) on
+September 17, 2026.
+:::
 
 I first got to know DDEV a few years ago as a freelancer working on an agency Shopware project. Up until then,
 every time I switched to a different agency, it was a painful process: Would the development environment
@@ -73,9 +86,12 @@ A shop's media files can run to tens of gigabytes—so why copy them over at all
 which makes an nginx reverse proxy the easy answer. Add a `.ddev/nginx/media.conf` file with the following contents:
 
 ```nginx
+set $media_proxy_url "https://www.example.com";
+
 location @mediaserver {
-    resolver 1.1.1.1;
-    proxy_pass https://www.example.com$request_uri;
+    resolver 1.1.1.1 ipv6=off;
+    proxy_ssl_server_name on;
+    proxy_pass $media_proxy_url$request_uri;
     # Uncomment if the remote environment is behind HTTP basic auth:
     # proxy_set_header Authorization "Basic <base64-of-user:password>";
 }
@@ -83,13 +99,15 @@ location @mediaserver {
 location ^~ /media/ {
     access_log off;
     expires max;
-    try_files $uri @mediaserver;
+    try_files $uri $uri/ @mediaserver;
+    break;
 }
 
 location ^~ /thumbnail/ {
     access_log off;
     expires max;
-    try_files $uri @mediaserver;
+    try_files $uri $uri/ @mediaserver;
+    break;
 }
 ```
 
@@ -99,8 +117,12 @@ but also lets you upload new media files to your local environment for testing.
 ### Shopware tooling
 
 `shopware-cli` is increasingly being developed into a one-stop tool for development, and of course I want to use it in
-my projects too. No problem—there's an add-on for that: `ddev add-on get vanwittlaer/ddev-shopware-cli`. The add-on
-also lets you reach the storefront and admin watcher URLs directly and, more importantly, over HTTPS.
+my projects too. Since [DDEV v1.25.4](https://github.com/ddev/ddev/releases/tag/v1.25.4), `shopware6` projects come
+with `shopware-cli` in the web container, so `ddev shopware-cli` just works. `ddev storefront-watch` and
+`ddev admin-watch <plugin-dir>` start the hot-reload watchers, which you reach over HTTPS on your project URL, for example
+`https://my-shop.ddev.site:9998` for the storefront. The bundled watchers need Shopware 6.7.4.2 or newer; on older
+DDEV versions, my [ddev-shopware-cli](https://github.com/vanWittlaer/ddev-shopware-cli) add-on does the same job.
+See [the DDEV docs](https://docs.ddev.com/en/stable/users/quickstart/#shopware-cli-and-hot-reload-watchers) for details.
 
 ### Project lifecycle support
 
