@@ -43,10 +43,13 @@ Pass every page type the change can reach. For a change to the layout,
 header, footer, or `global.css`, that is all of them:
 
 ```text
-/ /about/ /blog/ /blog/<a recent post>/ /blog/author/ /blog/author/<id>/
-/blog/category/ /blog/category/<slug>/ /download/ /get-started/ /sponsor/
-/usage-stats/
+/ /about/ /blog/ /blog/<a post>/ /blog/author/ /blog/author/<id>/
+/blog/category/ /blog/category/<slug>/ /brand/ /download/ /get-started/
+/sponsor/ /usage-stats/
 ```
+
+For the post, pick one whose code blocks have comments in them, such as
+`/blog/shopware-on-ddev/`, since comments are the lightest code color.
 
 The script checks each path in light and dark at 1400 and 390 px wide, since
 some problems show in only one theme or at one width. It emulates reduced

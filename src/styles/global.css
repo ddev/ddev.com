@@ -341,6 +341,12 @@ pre.astro-code span {
   background-color: var(--code-bg-light) !important;
 }
 
+/* The light theme's comment color reads at 3.9:1 on --code-bg-light, below
+ * the 4.5:1 WCAG asks for. The dark rule below is more specific. */
+pre.astro-code span[style*="--shiki-light:#66707B"] {
+  color: #59626c !important;
+}
+
 html.dark pre.astro-code,
 html.dark pre.astro-code span {
   color: var(--shiki-dark) !important;

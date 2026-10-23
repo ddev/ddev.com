@@ -6,12 +6,13 @@ index: true
 ---
 
 import { BRAND_GUIDE_URL, LOGOS_REPO_URL, ORG_NAME } from "../const"
+import { logoUrl } from "../lib/images"
 
 export const card =
   "group grid grid-rows-[4.5rem_auto_auto] justify-items-center gap-2 rounded-lg border-2 border-slate-300 p-4 no-underline transition-colors hover:border-blue-500 dark:border-slate-600 dark:hover:border-blue-400"
 export const logo = "max-h-full max-w-full self-center p-2"
 export const cta =
-  "text-sm font-bold text-blue-600 group-hover:text-blue-700 dark:text-blue-400 dark:group-hover:text-blue-300"
+  "text-sm font-bold text-blue-700 group-hover:text-blue-800 dark:text-blue-400 dark:group-hover:text-blue-300"
 
 Quick reference for using the DDEV name and logo. For the full brand guide, additional PNG resolutions, and the logo-generation script, see the <a href={BRAND_GUIDE_URL}>Brand Guide</a> in the DDEV documentation.
 
@@ -25,7 +26,7 @@ Quick reference for using the DDEV name and logo. For the full brand guide, addi
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 not-prose">
   <a href="/logos/ddev-mark.svg" download class={card}>
     <img
-      src="/logos/ddev-mark.svg"
+      src={logoUrl("/logos/ddev-mark.svg")}
       alt="DDEV figurative mark"
       class="h-full w-auto self-center"
       width="91"
@@ -36,7 +37,7 @@ Quick reference for using the DDEV name and logo. For the full brand guide, addi
   </a>
   <a href="/logos/ddev-auto.svg" download class={card}>
     <img
-      src="/logos/ddev-auto.svg"
+      src={logoUrl("/logos/ddev-auto.svg")}
       alt="DDEV word mark that follows the system color scheme"
       class={`${logo} scheme-light dark:scheme-dark`}
       width="293"
@@ -47,7 +48,7 @@ Quick reference for using the DDEV name and logo. For the full brand guide, addi
   </a>
   <a href="/logos/ddev.svg" download class={card}>
     <img
-      src="/logos/ddev.svg"
+      src={logoUrl("/logos/ddev.svg")}
       alt="DDEV word mark for light backgrounds"
       class={`${logo} rounded bg-white`}
       width="293"
@@ -58,7 +59,7 @@ Quick reference for using the DDEV name and logo. For the full brand guide, addi
   </a>
   <a href="/logos/dark-ddev.svg" download class={card}>
     <img
-      src="/logos/dark-ddev.svg"
+      src={logoUrl("/logos/dark-ddev.svg")}
       alt="DDEV word mark for dark backgrounds"
       class={`${logo} rounded bg-[#1e2127]`}
       width="293"
