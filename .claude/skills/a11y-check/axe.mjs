@@ -39,34 +39,53 @@ for (const path of paths) {
         timeout: 60000,
       })
       await page.evaluate(axeSource)
-      const result = await page.evaluate(() =>
-        axe.run(document, {
-          runOnly: {
-            type: "tag",
-            values: [
-              "wcag2a",
-              "wcag2aa",
-              "wcag21a",
-              "wcag21aa",
-              "wcag22aa",
-              "best-practice",
-            ],
-          },
-        })
-      )
-      for (const violation of result.violations) {
-        for (const node of violation.nodes) {
-          violations.push({
-            path,
-            scheme,
-            width: viewport.width,
-            id: violation.id,
-            impact: violation.impact,
-            target: node.target.join(" "),
-            html: node.html.slice(0, 160),
-            summary: node.failureSummary?.split("\n")[1]?.trim(),
-          })
+      const check = async (context) => {
+        const result = await page.evaluate(
+          (context) =>
+            axe.run(context, {
+              runOnly: {
+                type: "tag",
+                values: [
+                  "wcag2a",
+                  "wcag2aa",
+                  "wcag21a",
+                  "wcag21aa",
+                  "wcag22aa",
+                  "best-practice",
+                ],
+              },
+            }),
+          context
+        )
+        for (const violation of result.violations) {
+          for (const node of violation.nodes) {
+            violations.push({
+              path,
+              scheme,
+              width: viewport.width,
+              id: violation.id,
+              impact: violation.impact,
+              target: node.target.join(" "),
+              html: node.html.slice(0, 160),
+              summary: node.failureSummary?.split("\n")[1]?.trim(),
+            })
+          }
         }
+      }
+      await check("html")
+      // The terminal's other screen, `ddev start`, plays once and is paused
+      // at its end, since reduced motion only ever shows `ddev describe`.
+      if (await page.$("#animation-toggle").then((e) => e?.isVisible())) {
+        await page.click("#animation-toggle")
+        await page.waitForFunction(
+          () =>
+            document
+              .getElementById("animation-stage")
+              .textContent.includes("alternate URLs"),
+          { timeout: 60000 }
+        )
+        await page.click("#animation-toggle")
+        await check(".terminal-wrapper")
       }
       await page.close()
     }

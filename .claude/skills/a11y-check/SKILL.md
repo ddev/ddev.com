@@ -53,7 +53,8 @@ For the post, pick one whose code blocks have comments in them, such as
 
 The script checks each path in light and dark at 1400 and 390 px wide, since
 some problems show in only one theme or at one width. It emulates reduced
-motion, which stops the home page terminal on its `ddev describe` screen.
+motion, which stops the home page terminal on its `ddev describe` screen,
+then plays the `ddev start` screen and checks the terminal again.
 
 Fix every violation the change introduced. To tell which were there before,
 run the same paths with `https://ddev.com` as the base; report those, and
