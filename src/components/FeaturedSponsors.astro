@@ -2,20 +2,14 @@
 import featuredSponsors from "../featured-sponsors.json"
 
 /**
- * Sketchy array of classes that should be applied to specific logos
- * in this context. Match the name from `featured-sponsors.json` if
- * you need to add one.
+ * Heights for logos that must render larger than the rest, keyed by the name
+ * in `featured-sponsors.json`, for phones and from `sm` up. A logo that should
+ * look smaller gets padding in its SVG `viewBox` instead, which the README
+ * badges also respect.
  */
 const nudges = {
-  Tag1: "h-9 self-center", // Added self-center to align it vertically
-  "Oliver Wand": "h-12 w-12",
-  DrupalEasy: "h-10",
-  "Redfin Solutions": "h-16 w-16",
-  MacStadium: "h-15",
-  Lullabot: "h-9",
-  "Craft CMS": "h-11",
-  undpaul: "h-9",
-  "1xINTERNET": "h-11",
+  "Redfin Solutions": "h-11 w-11 sm:h-16 sm:w-16",
+  MacStadium: "h-10 sm:h-15",
 }
 
 // Separate lead sponsors from regular sponsors
@@ -36,7 +30,7 @@ regularSponsors.map((sponsor) => {
       <div class="w-full flex justify-center pb-8 border-b border-gray-200 dark:border-white">
         {leadSponsors.map((sponsor) => (
             <a
-                class="block relative overflow-hidden cursor-pointer h-16 mx-6"
+                class="block relative overflow-hidden cursor-pointer h-11 mx-4 sm:h-16 sm:mx-6"
                 title={sponsor.name}
                 href={sponsor.url}
                 target="_blank"
@@ -58,13 +52,13 @@ regularSponsors.map((sponsor) => {
 
   {/* Regular Sponsors Section */}
   <div
-      class="flex flex-wrap gap-y-12 justify-center items-center"
+      class="flex flex-wrap gap-y-8 sm:gap-y-12 justify-center items-center"
   >
     {regularSponsors.map((sponsor) => (
         <a
             class={
-                `block relative overflow-hidden cursor-pointer h-12 mx-6` +
-                (sponsor.hasOwnProperty("class") ? ` ` + sponsor.class : ``)
+                `block relative overflow-hidden cursor-pointer mx-4 sm:mx-6 ` +
+                (sponsor.class ?? `h-8 sm:h-12`)
             }
             title={sponsor.name}
             href={sponsor.url}

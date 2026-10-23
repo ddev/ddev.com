@@ -8,30 +8,35 @@ import Sponsors from "./Sponsors.astro"
 const contributors = await getContributors()
 ---
 
-<div class="relative mt-36 mb-24">
+<div class="relative section">
   <div class="site-container site-gutter relative">
-    <div id="supporters" class="text-center mb-12">
-      <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl dark:text-white">
-        Our Wonderful Supporters
-      </h2>
+    <div class="text-center mb-12">
+      <h2 id="supporters" class="section-label"><a href="#supporters">Supporters</a></h2>
+      <p class="section-title">
+        Our wonderful supporters.
+      </p>
+      <p class="section-lead">
+        These organizations and people keep DDEV free and open source.{" "}
+        <a href="/sponsor" class="font-medium text-navy-300 underline dark:text-navy-100">Join them</a>.
+      </p>
     </div>
 
-    <h3 class="mt-24 mb-8 text-base font-mono text-navy-300 text-center dark:text-navy-100">
-      Featured Sponsors
+    <h3 id="featured-sponsors" class="section-subheading mb-8 text-center">
+      <a href="#featured-sponsors">Featured Sponsors</a>
     </h3>
     <div class="max-w-4xl mx-auto flex flex-wrap justify-center">
       <FeaturedSponsors />
     </div>
 
-    <h3 class="mt-24 mb-8 text-base font-mono text-navy-300 text-center dark:text-navy-100">
-      GitHub Sponsors
+    <h3 id="github-sponsors" class="section-subheading mt-24 mb-8 text-center">
+      <a href="#github-sponsors">GitHub Sponsors</a>
     </h3>
     <div class="max-w-4xl mx-auto flex flex-wrap justify-center mb-8">
       <Sponsors size="large" align="center" />
     </div>
 
-    <h3 class="mt-24 mb-8 text-base font-mono text-navy-300 text-center dark:text-navy-100">
-      GitHub Contributors
+    <h3 id="github-contributors" class="section-subheading mt-24 mb-8 text-center">
+      <a href="#github-contributors">GitHub Contributors</a>
     </h3>
     <div class="max-w-5xl mx-auto flex flex-wrap justify-center">
       {

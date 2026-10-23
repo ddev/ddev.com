@@ -9,7 +9,7 @@ import {
   KeyIcon,
   AdjustmentsVerticalIcon,
   BoltIcon,
-  CloudArrowUpIcon,
+  CloudArrowDownIcon,
   PuzzlePieceIcon,
   LockOpenIcon,
 } from "@heroicons/react/24/solid/index.js"
@@ -18,7 +18,7 @@ const features = [
   {
     name: "Modern Development Stack",
     description:
-      "PHP, Node.js, MySQL, PostgreSQL, nginx, Apache, Redis, Mailpit, and more.",
+      "PHP, Node.js, MariaDB, MySQL, PostgreSQL, nginx, Apache, Mailpit, Redis, and more.",
     icon: CheckCircleIcon,
   },
   {
@@ -30,7 +30,7 @@ const features = [
   {
     name: "Multi-Platform",
     description:
-      "Supported and rigorously tested on macOS, Windows, and Linux.",
+      "Supported and rigorously tested on macOS, Windows, and Linux. Also runs in GitHub Codespaces.",
     icon: GlobeAltIcon,
   },
   {
@@ -42,20 +42,20 @@ const features = [
   {
     name: "App Ready",
     description:
-      "Presets for Laravel, WordPress, Drupal, TYPO3, Backdrop, Magento, Craft CMS and more.",
+      "Project types and quickstarts for Drupal, WordPress, Laravel, TYPO3, Craft CMS, Symfony, and over 25 more.",
     icon: AdjustmentsVerticalIcon,
   },
   {
     name: "Great Performance",
     description:
-      "Always evolving to incorporate features and practices that maximize speed.",
+      "Mutagen file sync, on by default on macOS and Windows, keeps large codebases fast.",
     icon: BoltIcon,
   },
   {
-    name: "Custom Deployments",
+    name: "Hosting Integrations",
     description:
-      "Integrate with other providers and environments for fast, controlled deployment.",
-    icon: CloudArrowUpIcon,
+      "Pull databases and files from Upsun, Pantheon, Acquia, Lagoon, and other hosts.",
+    icon: CloudArrowDownIcon,
   },
   {
     name: "Extensible",
@@ -72,15 +72,15 @@ const features = [
 ]
 ---
 
-<div class="relative py-16 sm:py-24 lg:py-32">
+<div class="relative section">
   <div
     class="site-container site-gutter text-center"
   >
-    <h2 class="text-base font-mono text-navy-300 dark:text-navy-100">Features</h2>
-    <p class="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl dark:text-white">
+    <h2 id="features" class="section-label"><a href="#features">Features</a></h2>
+    <p class="section-title">
       Running in minutes, ready for the long haul.
     </p>
-    <p class="mx-auto mt-5 max-w-prose text-xl text-gray-500 dark:text-slate-400">
+    <p class="section-lead">
       Start new DDEV projects in seconds. Customize, share, and extend with
       ease.
     </p>

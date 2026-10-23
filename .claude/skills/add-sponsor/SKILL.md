@@ -151,10 +151,13 @@ rsvg-convert -w 800 -b '#0d1117' ~/tmp/badge-darkmode.svg -o ~/tmp/badge-darkmod
 View both PNGs. The new logo must be visible, in proportion with its
 neighbors, and not cut off. A badge route that fails to build usually means
 `sharp` could not read the SVG, so go back to step 2. Then check `/#supporters`
-on the dev server in both themes, using the theme toggle in the header. If the
-logo looks too large or small there next to the others, add a Tailwind height
-class for it to `nudges` in `src/components/FeaturedSponsors.astro`, keyed by
-`name`.
+on the dev server in both themes, using the theme toggle in the header, at
+desktop and phone width. If the logo looks too large there next to the others,
+add padding to its `viewBox` as in step 2 and set `height` to match, which also
+shrinks it in the badges. Only a logo that must look larger than its tight
+`viewBox` allows gets an entry in `nudges` in
+`src/components/FeaturedSponsors.astro`, keyed by `name`, with a height for
+phones and one from `sm` up, such as `h-10 sm:h-15`.
 
 ## 6. Commit
 

@@ -1,34 +1,54 @@
 ---
 /**
- * Supported framework names and logos used on the homepage.
+ * Quickstarts for popular CMSes and frameworks, as named logos, used on the
+ * homepage: the six project types used most on /usage-stats/, in that order,
+ * which "App Ready" in Features.astro names in the same order.
  */
+const QUICKSTART_URL = "https://docs.ddev.com/en/stable/users/quickstart/"
+
 const logos = [
   { name: "Drupal", src: "/logos/drupal.svg", quickstart: "drupal", extraClasses: [] },
   { name: "WordPress", src: "/logos/wordpress.svg", quickstart: "wordpress", extraClasses: [] },
-  { name: "TYPO3", src: "/logos/typo3.svg", quickstart: "typo3", extraClasses: [] },
-  { name: "Magento 2", src: "/logos/magento.svg", quickstart: "magento-2",extraClasses: [] },
-  { name: "Backdrop", src: "/logos/backdrop.svg", quickstart: "backdrop", extraClasses: [] },
-  { name: "Craft CMS", src: "/logos/craft.svg", quickstart: "craft-cms", extraClasses: ["w-7"] },
   { name: "Laravel", src: "/logos/laravel.svg", quickstart: "laravel", extraClasses: ["w-7"] },
+  { name: "TYPO3", src: "/logos/typo3.svg", quickstart: "typo3", extraClasses: [] },
+  { name: "Craft CMS", src: "/logos/craft.svg", quickstart: "craft-cms", extraClasses: ["w-7"] },
+  { name: "Symfony", src: "/logos/symfony.svg", quickstart: "symfony", extraClasses: [] },
 ]
 ---
 
-<div class="opacity-60">
-  <div class="site-container py-12 site-gutter">
-    <div class="flex justify-center content-center flex-wrap">
-      {
-        logos.map((logo) => (
-          <div class="px-12 py-6">
-            <a href={`https://docs.ddev.com/en/stable/users/quickstart/#${logo.quickstart}`} target="_blank" title={logo.name}>
-              <img
-                class={["h-12 dark:invert", ...logo.extraClasses].join(" ")}
-                src={logo.src}
-                alt={`${logo.name} logo`}
-              />
-            </a>
-          </div>
-        ))
-      }
-    </div>
-  </div>
+<div class="site-container site-gutter section text-center">
+  <h2 id="quickstarts" class="section-label"><a href="#quickstarts">Quickstarts</a></h2>
+  <p class="section-title">
+    Your CMS or framework, ready to go.
+  </p>
+  <p class="section-lead">
+    Step-by-step setup for these and many more, for new and existing projects.
+  </p>
+  <ul class="mt-12 flex flex-wrap justify-center gap-x-6 gap-y-10 sm:gap-x-14">
+    {
+      logos.map((logo) => (
+        <li class="w-20">
+          <a
+            href={`${QUICKSTART_URL}#${logo.quickstart}`}
+            target="_blank"
+            class="group flex flex-col items-center gap-3 text-sm text-gray-500 hover:text-gray-900 dark:text-slate-400 dark:hover:text-white"
+          >
+            <img
+              class={["h-12 opacity-75 group-hover:opacity-100 dark:invert", ...logo.extraClasses].join(" ")}
+              src={logo.src}
+              alt=""
+            />
+            {logo.name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <a
+    href={QUICKSTART_URL}
+    target="_blank"
+    class="mt-12 inline-block font-medium text-navy-300 hover:underline dark:text-navy-100"
+  >
+    All quickstarts →
+  </a>
 </div>
