@@ -327,5 +327,13 @@
     "logo": "/logos/webblandskapet.svg",
     "darklogo": "/logos/webblandskapet-dark.svg",
     "url": "https://webblandskapet.se/"
+  },
+  {
+    "name": "RedirHub",
+    "type": "standard",
+    "logo": "/logos/redirhub.svg",
+    "darklogo": "/logos/redirhub-dark.svg",
+    "url": "https://www.redirhub.com/",
+    "github": "redirhub"
   }
 ]
