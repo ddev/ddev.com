@@ -19,6 +19,7 @@ import {
 } from "../const"
 
 import Icon from "./Icon.astro"
+import { logoUrl } from "../lib/images"
 
 /* `me` marks a link that identifies the project itself, for rel="me". */
 interface FooterLink {
@@ -89,7 +90,7 @@ const feeds = [
         <span class="sr-only">DDEV home</span>
         <img
           class="h-8 w-auto dark:hidden"
-          src="/logos/ddev.svg"
+          src={logoUrl("/logos/ddev.svg")}
           alt="DDEV logo"
           aria-hidden="true"
           width="293"
@@ -97,7 +98,7 @@ const feeds = [
         />
         <img
           class="h-8 w-auto hidden dark:block"
-          src="/logos/dark-ddev.svg"
+          src={logoUrl("/logos/dark-ddev.svg")}
           alt="DDEV logo"
           aria-hidden="true"
           width="293"

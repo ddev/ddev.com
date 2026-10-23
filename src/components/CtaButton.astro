@@ -11,7 +11,7 @@ export interface Props {
 
 const typeClasses = {
   default: `border border-transparent text-white bg-blue-650 hover:bg-blue-800`,
-  hollow: `border border-blue-650 text-blue-650 hover:border-blue-800 hover:text-blue-800 dark:border-slate-400 dark:text-slate-300 dark:hover:border-white dark:hover:text-white`,
+  hollow: `border border-blue-700 text-blue-700 hover:border-blue-800 hover:text-blue-800 dark:border-slate-400 dark:text-slate-300 dark:hover:border-white dark:hover:text-white`,
 }
 
 const sizeClasses = {
@@ -31,7 +31,6 @@ const { text, href, type = "default", size = "default", target, title } =
     typeClasses[type]}
   target={target}
   title={title}
-  role="button"
 >
   {text}
 </a>

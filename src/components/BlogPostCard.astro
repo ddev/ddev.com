@@ -8,13 +8,16 @@ import { Picture } from 'astro:assets'
 import { resolveImage } from "../lib/images"
 interface Props {
   post: CollectionEntry<"blog">
+  // The title's heading level: 3 under a section heading, 2 on a listing page
+  level?: 2 | 3
 }
 
 import CategoryPills from "./CategoryPills.astro"
 import { getEntry } from "astro:content"
 import { getSlug, formatDate } from "../lib/api"
 
-const { post } = Astro.props
+const { post, level = 2 } = Astro.props
+const Title = `h${level}`
 const { remarkPluginFrontmatter } = await render(post)
 
 const author = await getEntry("authors", getSlug(post.data.author))
@@ -75,11 +78,11 @@ const categories = post.data.categories.length ? post.data.categories : []
   <div class="flex-1 bg-gray-100 p-6 flex flex-col justify-between dark:bg-slate-600">
     <div class="flex-1">
       <CategoryPills categories={categories} />
-      <a href={`/blog/${post.id}`} class="block mt-2 after:absolute after:inset-0">
-        <p class="text-xl font-semibold text-gray-900 dark:text-white">
+      <Title class="mt-2 text-xl font-semibold text-gray-900 dark:text-white">
+        <a href={`/blog/${post.id}`} class="after:absolute after:inset-0">
           {post.data.title}
-        </p>
-      </a>
+        </a>
+      </Title>
     </div>
     <div class="mt-6 flex items-center">
       {

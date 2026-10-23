@@ -143,8 +143,13 @@ import "../styles/global.css"
     <StructuredData data={jsonLd} />
   </head>
   <body class="dark:bg-slate-800">
+    <a
+      href="#content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:font-bold focus:text-navy-300 focus:shadow-lg dark:focus:bg-slate-700 dark:focus:text-white"
+      >Skip to content</a
+    >
     <Header />
-    <div class="mx-auto">
+    <div id="content" tabindex="-1" class="mx-auto outline-none">
       <slot />
     </div>
     <Footer />

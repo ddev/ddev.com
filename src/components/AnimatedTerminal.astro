@@ -6,43 +6,44 @@
  * things drift out of sync!)
  */
 import { getLatestReleaseVersion } from "../lib/api"
+import { PauseIcon, PlayIcon } from "@heroicons/react/20/solid/index.js"
 const latestRelease = await getLatestReleaseVersion()
 
 // Pre-rendered ddev describe output — used for both the animation and noscript fallback
 const versionText = `DDEV version: ${latestRelease}`
-const versionLine = `│ ${versionText}${" ".repeat(83 - versionText.length)} │`
+const versionLine = `│ ${versionText}${" ".repeat(85 - versionText.length)} │`
 const describeOutput = `ddev describe
-┌─────────────────────────────────────────────────────────────────────────────────────┐
-│ Project: my-project ~/dev/my-project https://my-project.ddev.site                   │
-│ Docker platform: docker-desktop                                                     │
-│ Router: traefik                                                                     │
+┌───────────────────────────────────────────────────────────────────────────────────────┐
+│ Project: my-project ~/dev/my-project https://my-project.ddev.site                     │
+│ Docker platform: linux-docker                                                         │
+│ Router: traefik                                                                       │
 ${versionLine}
-├────────────┬──────┬────────────────────────────────────────────┬────────────────────┤
-│ SERVICE    │ STAT │ URL/PORT                                   │ INFO               │
-├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
-│ web        │ <span class="text-green-500">OK</span>   │ https://my-project.ddev.site               │ php PHP 8.4        │
-│            │      │ InDocker -> Host:                          │ Server: nginx-fpm  │
-│            │      │  - web:80 -> 127.0.0.1:51046               │ Docroot: ''        │
-│            │      │  - web:443 -> 127.0.0.1:51047              │ Perf mode: none    │
-│            │      │  - web:8025 -> 127.0.0.1:51048             │ NodeJS: 24         │
-├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
-│ db         │ <span class="text-green-500">OK</span>   │ InDocker -> Host:                          │ mysql:8.0          │
-│            │      │  - db:3306 -> 127.0.0.1:51045              │ User/Pass: 'db/db' │
-│            │      │                                            │ or 'root/root'     │
-├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
-│ xhgui      │ <span class="text-green-500">OK</span>   │ https://my-project.ddev.site:8142          │                    │
-│            │      │ InDocker:                                  │                    │
-│            │      │  - xhgui:80                                │                    │
-│            │      │ Launch: ddev xhgui                         │                    │
-├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
-│ Mailpit    │      │ Mailpit: https://my-project.ddev.site:8026 │                    │
-│            │      │ Launch: ddev mailpit                       │                    │
-├────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
-│ All URLs   │      │ https://my-project.ddev.site,              │                    │
-│            │      │ https://127.0.0.1:51047,                   │                    │
-│            │      │ http://my-project.ddev.site,               │                    │
-│            │      │ http://127.0.0.1:51046                     │                    │
-└────────────┴──────┴────────────────────────────────────────────┴────────────────────┘`
+├──────────────┬──────┬────────────────────────────────────────────┬────────────────────┤
+│ SERVICE      │ STAT │ URL/PORT                                   │ INFO               │
+├──────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
+│ web          │ <span class="text-green-400">OK</span>   │ https://my-project.ddev.site               │ php PHP 8.4        │
+│              │      │ InDocker -> Host:                          │ Server: nginx-fpm  │
+│              │      │  - web:80 -> 127.0.0.1:32865               │ Docroot: 'public'  │
+│              │      │  - web:443 -> 127.0.0.1:32866              │ Perf mode: none    │
+│              │      │  - web:8025 -> 127.0.0.1:32867             │ Node.js: 24        │
+├──────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
+│ db           │ <span class="text-green-400">OK</span>   │ InDocker -> Host:                          │ mariadb:11.8       │
+│              │      │  - db:3306 -> 127.0.0.1:32868              │ User/Pass: 'db/db' │
+│              │      │                                            │ or 'root/root'     │
+├──────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
+│ xhgui        │ <span class="text-green-400">OK</span>   │ https://my-project.ddev.site:8142          │                    │
+│              │      │ InDocker:                                  │                    │
+│              │      │  - xhgui:80                                │                    │
+│              │      │ Launch: ddev xhgui                         │                    │
+├──────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
+│ Mailpit      │      │ Mailpit: https://my-project.ddev.site:8026 │                    │
+│              │      │ Launch: ddev mailpit                       │                    │
+├──────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
+│ Project URLs │      │ https://my-project.ddev.site               │                    │
+│              │      │ https://127.0.0.1:32866                    │                    │
+│              │      │ http://my-project.ddev.site                │                    │
+│              │      │ http://127.0.0.1:32865                     │                    │
+└──────────────┴──────┴────────────────────────────────────────────┴────────────────────┘`
 ---
 
 <script>
@@ -52,6 +53,8 @@ ${versionLine}
   interface Screen {
     clumps: Clump[]
     output: string
+    // Seconds it stays up once finished, before the next screen
+    hold: number
   }
 
   /**
@@ -66,6 +69,9 @@ ${versionLine}
   const terminalWrapper = document.querySelector('.terminal-wrapper') as HTMLElement
   const describeOutput = terminalWrapper?.dataset.describeOutput ?? ''
 
+  // Where a line holds until DDEV finishes its work, as in "... ready in 2.0s"
+  const WORK = "\v"
+
   /**
    * Output and animation settings for the things we want to show in the terminal.
    */
@@ -73,44 +79,81 @@ ${versionLine}
     {
       clumps: [
         { transition: "type", lines: 1, wait: 1000 },
-        { transition: "roll", lines: 4, wait: 1000 },
-        { transition: "roll", lines: 4, wait: 1000 },
-        { transition: "roll", lines: 3, wait: 1000 },
+        { transition: "roll", lines: 2, wait: 500 },
+        { transition: "roll", lines: 1, wait: 500 },
+        { transition: "roll", lines: 5, wait: 500 },
+        { transition: "roll", lines: 4, wait: 500 },
         { transition: "show", lines: 3 },
       ],
       output: `ddev start
 
 Starting my-project...
-Building project images...
-<span class="text-green-500">Project images built in 1s.</span>
- Network ddev-my-project_default  Created
- Container ddev-my-project-web  Started
- Container ddev-my-project-db  Started
-Waiting for containers to become ready: [web db]... ready in 1.0s
+Building project images....${WORK} built in 1.0s
+[+] up 3/3
+ <span class="text-green-400">✓</span> Network ddev-my-project_default <span class="text-green-400">Created</span>                                           <span class="text-violet-400">0.1s</span>
+ <span class="text-green-400">✓</span> Container ddev-my-project-web   <span class="text-green-400">Created</span>                                           <span class="text-violet-400">0.5s</span>
+ <span class="text-green-400">✓</span> Container ddev-my-project-db    <span class="text-green-400">Created</span>                                           <span class="text-violet-400">0.5s</span>
+Waiting for containers to become ready: [web db]...${WORK} ready in 2.0s
 Starting ddev-router, pushing config...
- Container ddev-router  Started
-Waiting for ddev-router to become ready... ready in 1.0s
-<span class="text-green-500">Successfully started my-project</span>
-<span class="text-green-500">Your project can be reached at https://my-project.ddev.site</span>
-<span class="text-green-500">See 'ddev describe' for alternate URLs.</span>`,
+[+] up 1/1
+ <span class="text-green-400">✓</span> Container ddev-router <span class="text-green-400">Created</span>                                                     <span class="text-violet-400">0.5s</span>
+Waiting for ddev-router to become ready...${WORK} ready in 1.0s
+<span class="text-green-400">Successfully started my-project</span>
+<span class="text-green-400">Your project can be reached at https://my-project.ddev.site</span>
+<span class="text-green-400">See 'ddev describe' for alternate URLs.</span>`,
+      hold: 4,
     },
     {
       clumps: [
-        { transition: "type", lines: 1, wait: 250 },
+        { transition: "type", lines: 1, wait: 1000 },
         { transition: "show", lines: 31 },
       ],
       output: describeOutput,
+      hold: 6,
     },
   ]
 
   // Element whose inner HTML will be our terminal output
   const stage = document.getElementById("animation-stage")
 
-  // Seconds to wait after animation’s finished, before moving on to the next screen
-  const secondsBetweenScreens = 5
-
   // Milliseconds between characters when “typing” in a line
   const typeCharacterDelay = 35
+
+  // The animation loops, so WCAG 2.2.2 asks for a way to pause it. With reduced
+  // motion it starts paused, on the last screen.
+  const toggle = document.getElementById("animation-toggle") as HTMLButtonElement
+  let paused = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  let timer: ReturnType<typeof setTimeout> | undefined
+  let pending: (() => void) | undefined
+
+  // The animation's only `setTimeout()`, so pausing can hold the next step
+  const schedule = (callback: () => void, delay: number) => {
+    pending = callback
+    if (!paused) {
+      timer = setTimeout(() => {
+        pending = undefined
+        callback()
+      }, delay)
+    }
+  }
+
+  const setPaused = (value: boolean) => {
+    paused = value
+    toggle.setAttribute("aria-label", paused ? "Play animation" : "Pause animation")
+    toggle.querySelector("[data-icon='pause']")?.toggleAttribute("hidden", paused)
+    toggle.querySelector("[data-icon='play']")?.toggleAttribute("hidden", !paused)
+  }
+
+  toggle.addEventListener("click", () => {
+    setPaused(!paused)
+    if (paused) {
+      clearTimeout(timer)
+    } else if (pending) {
+      const callback = pending
+      pending = undefined
+      callback()
+    }
+  })
 
   // Initialize state variables
   let currentScreenIndex: number,
@@ -159,7 +202,7 @@ Waiting for ddev-router to become ready... ready in 1.0s
     const chars = outputLines[currentLine].split("")
 
     if (currentChar < chars.length) {
-      setTimeout(() => {
+      schedule(() => {
         appendOutput(chars[currentChar])
         currentChar += 1
         typeInText(callback)
@@ -168,6 +211,22 @@ Waiting for ddev-router to become ready... ready in 1.0s
       appendOutput("\n")
       callback()
     }
+  }
+
+  // Holds at `WORK` for as long as the rest of the line reports
+  const appendLine = (line: string, then: () => void) => {
+    const [before, after] = line.split(WORK)
+    if (after === undefined) {
+      appendOutput(line + "\n")
+      then()
+      return
+    }
+    appendOutput(before)
+    const seconds = parseFloat(after.match(/in ([\d.]+)s/)?.[1] ?? "1")
+    schedule(() => {
+      appendOutput(after + "\n")
+      then()
+    }, seconds * 1000)
   }
 
   /**
@@ -183,16 +242,16 @@ Waiting for ddev-router to become ready... ready in 1.0s
       })
     } else if (currentClump.transition === "roll") {
       // show + delay
-      appendOutput(outputLines[currentLine] + "\n")
+      const line = outputLines[currentLine]
       currentClumpLine += 1
       currentLine += 1
-      setTimeout(next, 100)
+      appendLine(line, () => schedule(next, 100))
     } else if (currentClump.transition === "show") {
       // show + no delay
-      appendOutput(outputLines[currentLine] + "\n")
+      const line = outputLines[currentLine]
       currentClumpLine += 1
       currentLine += 1
-      next()
+      appendLine(line, next)
     }
   }
 
@@ -200,7 +259,7 @@ Waiting for ddev-router to become ready... ready in 1.0s
    * Advance to the next clump after the given duration.
    */
   const nextClump = (duration: number) => {
-    setTimeout(() => {
+    schedule(() => {
       currentClumpIndex += 1
       currentClump = currentScreen.clumps[currentClumpIndex]
       currentClumpLine = 0
@@ -212,7 +271,7 @@ Waiting for ddev-router to become ready... ready in 1.0s
    * Advance to the next screen after a predefined duration.
    */
   const nextScreen = () => {
-    setTimeout(() => {
+    schedule(() => {
       if (currentScreenIndex < screens.length - 1) {
         currentScreenIndex += 1
       } else {
@@ -221,7 +280,7 @@ Waiting for ddev-router to become ready... ready in 1.0s
 
       initScreen(currentScreenIndex)
       next()
-    }, secondsBetweenScreens * 1000)
+    }, currentScreen.hold * 1000)
   }
 
   /**
@@ -242,8 +301,17 @@ Waiting for ddev-router to become ready... ready in 1.0s
    * On load, initialize the first screen and start playing.
    */
   window.addEventListener("load", () => {
-    initScreen(0)
-    next()
+    setPaused(paused)
+    if (paused) {
+      stage.innerHTML = describeOutput
+      pending = () => {
+        initScreen(0)
+        next()
+      }
+    } else {
+      initScreen(0)
+      next()
+    }
   })
 </script>
 
@@ -251,9 +319,10 @@ Waiting for ddev-router to become ready... ready in 1.0s
   /* data-theme is set by the inline head script before body renders,
    * so these rules apply on the very first paint with no flash. */
   html[data-theme] #noscript-pre { display: none; }
-  html:not([data-theme]) #animated-pre { display: none; }
+  html:not([data-theme]) #animated-pre,
+  html:not([data-theme]) #animation-toggle { display: none; }
 
-  /* The output is a fixed 87x32 character grid: this font size fits 87 columns
+  /* The output is a fixed 89x32 character grid: this font size fits 89 columns
    * inside the 40rem the caller gives it, and the height is in `em` so the box
    * stays in step with the font. */
   .terminal-body {
@@ -264,12 +333,26 @@ Waiting for ddev-router to become ready... ready in 1.0s
 </style>
 
 <div class="terminal-wrapper rounded-lg shadow-lg" style="background: #2e3440;" data-describe-output={describeOutput}>
-  <div class="top-bar flex p-3 space-x-2 rounded-t-lg" style="background: #2e3440;">
+  <div class="top-bar flex items-center gap-2 p-3 rounded-t-lg" style="background: #2e3440;">
     <div class="block rounded-full bg-slate-500 w-3 h-3"></div>
     <div class="block rounded-full bg-slate-500 w-3 h-3"></div>
     <div class="block rounded-full bg-slate-500 w-3 h-3"></div>
+    <!-- Beside the dots, since narrower screens clip the terminal's right edge -->
+    <button
+      id="animation-toggle"
+      type="button"
+      class="ml-2 -my-1 rounded p-1 text-slate-400 hover:text-white"
+      aria-label="Pause animation"
+    >
+      <PauseIcon className="w-4 h-4" aria-hidden={true} data-icon="pause" />
+      <PlayIcon className="w-4 h-4" aria-hidden={true} data-icon="play" hidden />
+    </button>
   </div>
-  <div class="overflow-hidden my-0">
+  <p class="sr-only">
+    A terminal runs ddev start, which starts the project's containers, then ddev
+    describe, which lists the project's services and their URLs.
+  </p>
+  <div class="overflow-hidden my-0" aria-hidden="true">
     <div class="terminal-body p-4 text-slate-300">
       <pre id="animated-pre"><span class="select-none text-slate-400">→ </span><span id="animation-stage" /></pre>
       <pre id="noscript-pre"><span class="select-none text-slate-400">→ </span><span set:html={describeOutput} /></pre>

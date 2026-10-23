@@ -6,6 +6,7 @@ import { GITHUB_URL, DOCUMENTATION_URL } from "../const"
 import { MagnifyingGlassIcon, Bars2Icon } from "@heroicons/react/24/solid/index.js"
 import SponsorsBanner from "./SponsorsBanner.astro"
 import ThemeToggle from "./ThemeToggle.astro"
+import { logoUrl } from "../lib/images"
 
 // Links leave the bar from the end as it runs out of room, so this is also
 // least-important-last.
@@ -28,9 +29,22 @@ const navItems = [
 
   const HIDDEN = "data-nav-hidden"
 
+  // `details` opens and closes the menu on its own, but not on Escape or a
+  // click elsewhere, as a menu is expected to.
+  if (menu) {
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && menu.open) {
+        menu.open = false
+        menu.querySelector("summary")?.focus()
+      }
+    })
+    document.addEventListener("click", (event) => {
+      if (menu.open && !menu.contains(event.target as Node)) menu.open = false
+    })
+  }
+
   // Links leave the bar one at a time as it fills up, instead of all at once at
-  // a breakpoint that can only guess whether they fit. Opening and closing the
-  // menu is the browser's job, so there's none of it here.
+  // a breakpoint that can only guess whether they fit.
   if (nav && list && logo && icons && menu) {
     const items = Array.from(list.querySelectorAll<HTMLElement>("[data-nav-item]"))
     const menuItems = Array.from(menu.querySelectorAll<HTMLElement>("[data-nav-item]"))
@@ -111,10 +125,10 @@ const navItems = [
     aria-label="Main"
   >
     <a href="/" id="nav-logo" class="relative block shrink-0 cursor-pointer -ml-2">
-      <span class="sr-only">DDEV logo</span>
+      <span class="sr-only">DDEV home</span>
       <img
         class="h-8 w-auto sm:h-10 dark:hidden"
-        src="/logos/ddev.svg"
+        src={logoUrl("/logos/ddev.svg")}
         alt="DDEV logo"
         aria-hidden="true"
         width="293"
@@ -122,7 +136,7 @@ const navItems = [
       />
       <img
         class="h-8 w-auto sm:h-10 hidden dark:block"
-        src="/logos/dark-ddev.svg"
+        src={logoUrl("/logos/dark-ddev.svg")}
         alt="DDEV logo"
         aria-hidden="true"
         width="293"

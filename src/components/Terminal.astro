@@ -14,8 +14,10 @@ import { Code } from "astro/components" // Keep this import
 
 // 1. Import the transformer here!
 import { addCopyButton } from 'shiki-transformer-copy-button';
+import { focusableCode } from '../lib/shiki-focusable-code.mjs';
 import type { ShikiTransformer } from 'shiki';
 import { SHIKI_THEMES } from '../const';
+import { logoUrl } from '../lib/images';
 
 export interface Props {
   code: string
@@ -117,7 +119,8 @@ const customizeCopyButton = (text: string): ShikiTransformer => {
 // 2. Define the transformers array for this component
 const componentTransformers = [
     addPromptSymbol(promptSymbol, promptLineIndices),
-    addCopyButton(),
+    addCopyButton({ button: { 'aria-label': 'Copy code' } }),
+    focusableCode(),
     customizeCopyButton(copyText)
 ];
 ---
@@ -130,7 +133,7 @@ const componentTransformers = [
       <div class="block rounded-full bg-slate-500 w-3 h-3"></div>
     )}
     {type == "powershell" && (
-      <img src="/logos/powershell.svg" alt="" class="block w-3 h-3 m-0 self-start" />
+      <img src={logoUrl("/logos/powershell.svg")} alt="" class="block w-3 h-3 m-0 self-start" />
       <div class="flex space-x-2">
         <div class="block w-3 h-3 items-end"><MinusIcon /></div>
         <div class="block w-3 h-3 items-end"><StopIcon /></div>
@@ -138,7 +141,7 @@ const componentTransformers = [
       </div>
     )}
     {type == "powershell-ubuntu" && (
-      <img src="/logos/tux.svg" alt="" class="block w-3 h-3 m-0 self-start" />
+      <img src={logoUrl("/logos/tux.svg")} alt="" class="block w-3 h-3 m-0 self-start" />
       <div class="flex space-x-2">
         <div class="block w-3 h-3 items-end"><MinusIcon /></div>
         <div class="block w-3 h-3 items-end"><StopIcon /></div>

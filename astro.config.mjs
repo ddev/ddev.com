@@ -25,6 +25,7 @@ import searchIndex from "./src/lib/search-index.js"
 import sitemap from "@astrojs/sitemap"
 import tailwindcss from "@tailwindcss/vite"
 import { addCopyButton } from "shiki-transformer-copy-button"
+import { focusableCode } from "./src/lib/shiki-focusable-code.mjs"
 import { SHIKI_THEMES } from "./src/const.ts"
 import { unified } from "@astrojs/markdown-remark"
 
@@ -134,8 +135,9 @@ export default defineConfig({
       // toggle: 3000, // 3 seconds
       transformers: [
         addCopyButton({
-          // visibility: 'hover', // if you want it to only show on hover
+          button: { "aria-label": "Copy code" },
         }),
+        focusableCode(),
       ],
     },
   },

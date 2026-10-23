@@ -1,4 +1,6 @@
 ---
+import { logoUrl } from "../lib/images"
+
 /**
  * The stack DDEV runs for you: languages and databases, the databases in order
  * of use on /usage-stats/, then web servers and the two most used service
@@ -89,7 +91,7 @@ const rows = [
         <div class="contents sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-10 sm:gap-y-10 lg:gap-x-14">
           {row.map((logo) => (
             <a href={logo.href} target="_blank" rel="noopener noreferrer" class="opacity-75 hover:opacity-100">
-              <img class={`${logo.class} dark:invert`} src={logo.src} alt={logo.title} />
+              <img class={`${logo.class} dark:invert`} src={logoUrl(logo.src)} alt={logo.title} />
             </a>
           ))}
         </div>
