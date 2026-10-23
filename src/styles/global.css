@@ -77,6 +77,29 @@
   @apply block font-mono text-sm tracking-wider text-navy-300 dark:text-navy-100;
 }
 
+/* A home page section and its heading: a short label that carries the
+ * section's anchor, the title and lead under it, and, in a section with parts,
+ * a heading for each part. */
+.section {
+  @apply py-12 sm:py-16;
+}
+
+.section-label {
+  @apply scroll-mt-5 font-mono text-base text-navy-300 dark:text-navy-100;
+}
+
+.section-title {
+  @apply mt-2 text-3xl font-bold text-balance text-gray-900 sm:text-4xl dark:text-white;
+}
+
+.section-lead {
+  @apply mx-auto mt-4 max-w-prose text-lg text-pretty text-gray-500 dark:text-slate-400;
+}
+
+.section-subheading {
+  @apply scroll-mt-5 text-xl font-semibold text-gray-900 dark:text-white;
+}
+
 /* The sponsorship ask that ends a page (see SponsorCTA.astro). The measure keeps
  * it the same width in a prose column and in a page's wider content column. The
  * second selector is what sets the top margin inside a prose column, where the

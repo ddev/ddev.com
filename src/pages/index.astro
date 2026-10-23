@@ -33,9 +33,18 @@ const jsonUrl = new URL(`/blog/feed.json`, Astro.site).toString()
     <BlogFeatures />
     <Contributors />
     <div>
-      <div class="site-container py-24 site-gutter">
+      <div class="site-container site-gutter section">
+        <div class="text-center">
+          <h2 id="repositories" class="section-label"><a href="#repositories">Repositories</a></h2>
+          <p class="section-title">
+            Explore the code.
+          </p>
+          <p class="section-lead">
+            DDEV and its tools are developed in the open on GitHub.
+          </p>
+        </div>
         <div
-          class="grid gap-x-6 gap-y-8 md:gap-y-12 grid-cols-1 md:grid-cols-3 dark:text-white"
+          class="mt-12 grid gap-x-6 gap-y-8 md:gap-y-12 grid-cols-1 md:grid-cols-3 dark:text-white"
         >
           <RepoCard
             name={GITHUB_REPO}

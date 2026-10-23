@@ -1,74 +1,99 @@
 ---
 /**
- * The stack DDEV runs for you, as logos. Heights are per-logo because the marks'
- * proportions differ wildly: `h-16` on the MySQL dolphin reads about the same
- * size as `h-4` on the nginx wordmark. Spacing is a gap rather than padding on
- * each mark, so all eight fit on one line at the site's full width.
+ * The stack DDEV runs for you: languages and databases, the databases in order
+ * of use on /usage-stats/, then web servers and the two most used service
+ * add-ons. Two rows from `sm` up, one two-column grid on phones so no logo is
+ * left alone on a line. All one gray, inverted in dark mode, like the
+ * quickstart logos. Heights are per-logo because the marks' proportions differ.
  */
-const logos = [
-  {
-    href: "https://docs.ddev.com/en/stable/users/configuration/config/#php_version",
-    src: "/logos/php.svg",
-    title: "PHP",
-    class: "h-12 dark:invert",
-  },
-  {
-    href: "https://docs.ddev.com/en/stable/users/extend/customization-extendibility/#using-nodejs-with-ddev",
-    src: "/logos/node.svg",
-    title: "Node.js",
-    class: "h-6 dark:invert",
-  },
-  {
-    href: "https://docs.ddev.com/en/stable/users/extend/database-types/",
-    src: "/logos/mysql.svg",
-    title: "MySQL",
-    class: "h-16",
-  },
-  {
-    href: "https://docs.ddev.com/en/stable/users/extend/database-types/",
-    src: "/logos/postgresql.svg",
-    title: "PostgreSQL",
-    class: "h-8",
-  },
-  {
-    href: "https://docs.ddev.com/en/stable/users/configuration/config/#webserver_type",
-    src: "/logos/nginx.svg",
-    title: "nginx",
-    class: "h-4 dark:invert",
-  },
-  {
-    href: "https://docs.ddev.com/en/stable/users/configuration/config/#webserver_type",
-    src: "/logos/apache.svg",
-    title: "Apache",
-    class: "h-4 dark:invert-50",
-  },
-  {
-    href: "https://github.com/ddev/ddev-frankenphp",
-    src: "/logos/frankenphp.svg",
-    title: "FrankenPHP",
-    class: "h-4 dark:invert-25",
-  },
-  {
-    href: "https://github.com/ddev/ddev-redis",
-    src: "/logos/redis.svg",
-    title: "Redis",
-    class: "h-5 dark:invert-50",
-  },
+const rows = [
+  [
+    {
+      href: "https://docs.ddev.com/en/stable/users/configuration/config/#php_version",
+      src: "/logos/php.svg",
+      title: "PHP",
+      class: "h-8",
+    },
+    {
+      href: "https://docs.ddev.com/en/stable/users/extend/customization-extendibility/#using-nodejs-with-ddev",
+      src: "/logos/node.svg",
+      title: "Node.js",
+      class: "h-8",
+    },
+    {
+      href: "https://docs.ddev.com/en/stable/users/extend/database-types/",
+      src: "/logos/mariadb.svg",
+      title: "MariaDB",
+      class: "h-8",
+    },
+    {
+      href: "https://docs.ddev.com/en/stable/users/extend/database-types/",
+      src: "/logos/mysql.svg",
+      title: "MySQL",
+      class: "h-11",
+    },
+    {
+      href: "https://docs.ddev.com/en/stable/users/extend/database-types/",
+      src: "/logos/postgresql.svg",
+      title: "PostgreSQL",
+      class: "h-10",
+    },
+  ],
+  [
+    {
+      href: "https://docs.ddev.com/en/stable/users/configuration/config/#webserver_type",
+      src: "/logos/nginx.svg",
+      title: "nginx",
+      class: "h-5",
+    },
+    {
+      href: "https://docs.ddev.com/en/stable/users/configuration/config/#webserver_type",
+      src: "/logos/apache.svg",
+      title: "Apache",
+      class: "h-6",
+    },
+    {
+      href: "https://github.com/ddev/ddev-frankenphp",
+      src: "/logos/frankenphp.svg",
+      title: "FrankenPHP",
+      class: "h-4",
+    },
+    {
+      href: "https://github.com/ddev/ddev-redis",
+      src: "/logos/redis.svg",
+      title: "Redis",
+      class: "h-7",
+    },
+    {
+      href: "https://github.com/ddev/ddev-solr",
+      src: "/logos/solr.svg",
+      title: "Solr",
+      class: "h-9",
+    },
+  ],
 ]
 ---
 
-<div class="opacity-60">
-  <div class="site-container py-12 site-gutter">
-    <div
-      class="flex flex-wrap items-center justify-center gap-x-8 gap-y-10 lg:gap-x-10"
-    >
-      {
-        logos.map((logo) => (
-          <a href={logo.href} target="_blank" rel="noopener noreferrer">
-            <img class={logo.class} src={logo.src} alt={`${logo.title} logo`} title={logo.title} />
-          </a>
-        ))
-      }
-    </div>
+<div class="site-container site-gutter section text-center">
+  <h2 id="stack" class="section-label"><a href="#stack">Stack</a></h2>
+  <p class="section-title">
+    Your stack, your versions.
+  </p>
+  <p class="section-lead">
+    Choose PHP and Node.js versions, a database, a web server, and extra
+    services for each project.
+  </p>
+  <div class="mt-12 grid grid-cols-2 items-center justify-items-center gap-y-10 sm:flex sm:flex-col">
+    {
+      rows.map((row) => (
+        <div class="contents sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-10 sm:gap-y-10 lg:gap-x-14">
+          {row.map((logo) => (
+            <a href={logo.href} target="_blank" rel="noopener noreferrer" class="opacity-75 hover:opacity-100">
+              <img class={`${logo.class} dark:invert`} src={logo.src} alt={logo.title} />
+            </a>
+          ))}
+        </div>
+      ))
+    }
   </div>
 </div>
