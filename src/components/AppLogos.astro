@@ -1,4 +1,6 @@
 ---
+import { logoUrl } from "../lib/images"
+
 /**
  * Quickstarts for popular CMSes and frameworks, as named logos, used on the
  * homepage: the six project types used most on /usage-stats/, in that order,
@@ -35,7 +37,7 @@ const logos = [
           >
             <img
               class={["h-12 opacity-75 group-hover:opacity-100 dark:invert", ...logo.extraClasses].join(" ")}
-              src={logo.src}
+              src={logoUrl(logo.src)}
               alt=""
             />
             {logo.name}

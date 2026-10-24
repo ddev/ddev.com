@@ -1,5 +1,6 @@
 ---
 import featuredSponsors from "../featured-sponsors.json"
+import { logoUrl } from "../lib/images"
 
 /**
  * Heights for logos that must render larger than the rest, keyed by the name
@@ -36,12 +37,12 @@ regularSponsors.map((sponsor) => {
                 target="_blank"
             >
               <img
-                  src={sponsor.logo}
+                  src={logoUrl(sponsor.logo)}
                   class="block w-auto h-full dark:hidden"
                   alt={`${sponsor.name} logo`}
               />
               <img
-                  src={sponsor.darklogo}
+                  src={logoUrl(sponsor.darklogo)}
                   class="hidden dark:block w-auto h-full"
                   alt={`${sponsor.name} logo`}
               />
@@ -65,12 +66,12 @@ regularSponsors.map((sponsor) => {
             target="_blank"
         >
           <img
-              src={sponsor.logo}
+              src={logoUrl(sponsor.logo)}
               class="block w-auto h-full dark:hidden"
               alt={`${sponsor.name} logo`}
           />
           <img
-              src={sponsor.darklogo}
+              src={logoUrl(sponsor.darklogo)}
               class="hidden dark:block w-auto h-full"
               alt={`${sponsor.name} logo`}
           />

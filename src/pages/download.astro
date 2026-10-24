@@ -5,6 +5,7 @@ import HelpLinks from "../components/HelpLinks.astro"
 import ReleaseLinks from "../components/ReleaseLinks.astro"
 import { getLatestReleaseVersion } from "../lib/api"
 import { GITHUB_URL } from "../const"
+import { logoUrl } from "../lib/images"
 
 const title = "Download DDEV"
 
@@ -170,13 +171,13 @@ const downloads = {
       <p class="text-2xl text-gray-600 my-4 dark:text-slate-400">
         <a
         href={`${GITHUB_URL}/releases/tag/${rawVersion}`}
-        class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+        class="text-blue-700 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
         target="_blank"
         >
           {rawVersion} release notes
         </a> · <a
           href={`${GITHUB_URL}/releases`}
-          class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+          class="text-blue-700 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
           target="_blank"
         >
         View all releases
@@ -191,7 +192,7 @@ const downloads = {
             Most users (except on Windows) should use package managers like Homebrew (macOS) and apt (Ubuntu).
           </p>
           <p class="dark:text-slate-300">
-            See <a href="/get-started" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">quick instructions</a> or <a href={`https://docs.ddev.com/en/stable/users/install/ddev-installation/`} target="_blank" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">full installation docs</a>.
+            See <a href="/get-started" class="text-blue-700 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">quick instructions</a> or <a href={`https://docs.ddev.com/en/stable/users/install/ddev-installation/`} target="_blank" class="text-blue-700 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">full installation docs</a>.
           </p>
         </div>
 
@@ -230,7 +231,7 @@ const downloads = {
                     <span class="sr-only">Cloudsmith</span>
                     <img
                       class="h-6 w-auto dark:hidden"
-                      src="/logos/cloudsmith.svg"
+                      src={logoUrl("/logos/cloudsmith.svg")}
                       alt="Cloudsmith logo"
                       aria-hidden="true"
                       width="164"
@@ -238,7 +239,7 @@ const downloads = {
                     />
                     <img
                       class="h-6 w-auto hidden dark:block"
-                      src="/logos/cloudsmith-dark.svg"
+                      src={logoUrl("/logos/cloudsmith-dark.svg")}
                       alt="Cloudsmith logo"
                       aria-hidden="true"
                       width="164"
@@ -251,11 +252,10 @@ const downloads = {
                       href="https://cloudsmith.com"
                       target="_blank"
                       rel="noopener"
-                      class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                      class="text-blue-700 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
                     >
-                      Cloudsmith
-                    </a>
-                    . Cloudsmith is the only fully hosted, cloud-native, universal package
+                      Cloudsmith</a
+                    >. Cloudsmith is the only fully hosted, cloud-native, universal package
                     management solution, that enables your organization to create, store and share
                     packages in any format, to any place, with total confidence.
                   </p>

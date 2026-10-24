@@ -16,6 +16,7 @@ its own.
 | Screenshots or feature images for a post          | `.claude/skills/blog-images/SKILL.md` |
 | Adding or updating a featured sponsor             | `.claude/skills/add-sponsor/SKILL.md` |
 | Bumping npm dependencies                          | `.claude/skills/bump-deps/SKILL.md`   |
+| Accessibility checks with axe-core and Lighthouse | `.claude/skills/a11y-check/SKILL.md`  |
 | A commit or PR                                    | `.claude/skills/ddev-commit/SKILL.md` |
 | A comment, in any code file                       | `.claude/rules/comments.md`           |
 

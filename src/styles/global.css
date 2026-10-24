@@ -181,10 +181,14 @@ mark {
   @apply dark:bg-[blue];
 }
 
-/* The panel `details` opens, positioned against the page rather than the
- * summary, so it hangs from the top right corner as it always has. */
+/* The panel `details` opens, hung below the summary so the button that
+ * closes it stays visible. */
+.nav-menu {
+  @apply relative;
+}
+
 .menu {
-  @apply absolute top-0 right-0 max-w-full bg-white px-8 py-4 z-30 text-center shadow-2xl rounded-lg m-3 dark:bg-slate-800 dark:text-white;
+  @apply absolute top-full right-0 mt-3 w-max max-w-[calc(100vw-2rem)] bg-white px-8 py-4 z-30 text-center shadow-2xl rounded-lg dark:bg-slate-800 dark:text-white;
 }
 
 /* The summary is the menu button, so it loses the disclosure triangle. */
@@ -279,7 +283,7 @@ html.dark .terminal-wrapper .top-bar {
 }
 
 .tab {
-  @apply px-3 py-1 leading-none font-mono font-bold text-sm text-gray-500 hover:text-black;
+  @apply px-3 py-1 leading-none font-mono font-bold text-sm text-gray-500 hover:text-black dark:text-gray-400;
 
   &:hover {
     @apply dark:text-white;
@@ -290,10 +294,10 @@ html.dark .terminal-wrapper .top-bar {
   }
 
   &.active {
-    @apply text-black dark:text-gray-300;
+    @apply text-black dark:text-white;
 
     span {
-      @apply border-solid border-black dark:border-gray-300;
+      @apply border-solid border-black dark:border-white;
     }
   }
 }
@@ -335,6 +339,12 @@ pre.astro-code,
 pre.astro-code span {
   color: var(--shiki-light) !important;
   background-color: var(--code-bg-light) !important;
+}
+
+/* The light theme's comment color reads at 3.9:1 on --code-bg-light, below
+ * the 4.5:1 WCAG asks for. The dark rule below is more specific. */
+pre.astro-code span[style*="--shiki-light:#66707B"] {
+  color: #59626c !important;
 }
 
 html.dark pre.astro-code,
