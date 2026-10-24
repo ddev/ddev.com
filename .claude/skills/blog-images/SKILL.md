@@ -1,10 +1,11 @@
 ---
 name: blog-images
-description: Make images for ddev.com blog posts, including terminal screenshots of DDEV output rendered with VHS, hand-written SVG feature images, and logo-and-text feature banners. Use when a post needs a screenshot of `ddev list`, `ddev st`, or other command output, or a new feature image.
+description: Make images for ddev.com blog posts, including terminal screenshots of DDEV output rendered with VHS, animated before/after comparisons of two DDEV versions, hand-written SVG feature images, and logo-and-text feature banners. Use when a post needs a screenshot of `ddev list`, `ddev st`, or other command output, a GIF or WebP recording, or a new feature image.
 when_to_use: >
-  Triggered by "screenshot of ddev list", "terminal screenshot", "feature
-  image", "banner image", "illustration for the post", "Mermaid diagram", or
-  adding any image under public/img/blog/.
+  Triggered by "screenshot of ddev list", "terminal screenshot", "gif",
+  "webp comparison", "before/after recording", "vhs", "feature image",
+  "banner image", "illustration for the post", "Mermaid diagram", or adding
+  any image under public/img/blog/.
 ---
 
 # Images for blog posts
@@ -19,6 +20,9 @@ Render DDEV command output (`ddev list`, `ddev st`, the `ddev` dashboard) with
 [VHS](https://github.com/charmbracelet/vhs) (`brew install vhs`, which also
 needs `ttyd` and `ffmpeg`).
 
+- Never show the maintainer's real projects. Record demo projects with
+  realistic names, registered under `DDEV_XDG_CONFIG_HOME`, as described in
+  [gif-comparison.md](gif-comparison.md#binaries-and-projects).
 - Write a `.tape` file that hides the `cd` and `clear`, shows the command,
   sleeps a few seconds, and ends with `Screenshot`. Run it as
   `bash -c "cd ~/tmp/shots && timeout 100 vhs name.tape"` with stdin from
@@ -40,6 +44,12 @@ needs `ttyd` and `ffmpeg`).
 - Do not use `freeze` (charmbracelet) for DDEV tables: it draws the box
   characters badly. A hover or click state needs a real terminal such as
   iTerm2 and must be captured by hand.
+
+## Animated before/after comparisons
+
+To show a change between two DDEV versions, such as a faster command or a
+rebuilt `ddev tui`, record both with VHS and stack them in one animated
+WebP. Follow [gif-comparison.md](gif-comparison.md) in this directory.
 
 ## SVG feature images
 
