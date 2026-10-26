@@ -19,6 +19,7 @@ import {
   ORG_PHONE,
 } from "../const"
 import themeToggleInitScript from "../scripts/theme-toggle-init.js?raw"
+import { ogImageSize } from "../lib/images"
 
 export interface Props {
   title: string
@@ -91,13 +92,26 @@ let jsonLd = {
   ],
 }
 
+// Preview builds point og:image at their own deployment, so share checkers can
+// load images that aren't on production yet. PREVIEW_URL is set for forks.
+const ogImageBase =
+  process.env.PREVIEW_URL ||
+  (process.env.CF_PAGES_URL && process.env.CF_PAGES_BRANCH !== 'main'
+    ? process.env.CF_PAGES_URL
+    : Astro.site)
+
 const ensureAbsoluteUrl = (url: string) => {
   if (url.startsWith('/')) {
-    return `${Astro.site}${url.slice(1)}`
+    return new URL(url, ogImageBase).toString()
   }
 
   return url;
 }
+
+const ogImagePath = ogImage ? ogImage : `/img/og-default.png`
+// Lets Facebook and LinkedIn show the image on the first share, before they
+// have downloaded it
+const ogImageDimensions = await ogImageSize(ogImagePath)
 
 import "../styles/global.css"
 ---
@@ -120,19 +134,24 @@ import "../styles/global.css"
           title: title !== '' ? title : 'DDEV',
           url: canonicalUrl,
           type: `website`,
-          image: ensureAbsoluteUrl(ogImage ? ogImage : `${Astro.site}img/og-default.png`),
+          image: ensureAbsoluteUrl(ogImagePath),
         },
         image: {
           alt: ogImageAlt ? ogImageAlt : `DDEV logo`,
+          ...ogImageDimensions,
         },
         optional: {
           description: description,
+          locale: `en_US`,
           siteName: SITE_TITLE,
         },
         article: pubDate ? {
           publishedTime: pubDate.toISOString(),
           modifiedTime: modifiedDate ? modifiedDate.toISOString() : undefined,
         } : undefined,
+      }}
+      twitter={{
+        card: `summary_large_image`,
       }}
       extend={{
         link: link,

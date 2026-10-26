@@ -56,7 +56,9 @@ WebP. Follow [gif-comparison.md](gif-comparison.md) in this directory.
 An illustration can be a hand-written SVG referenced directly from
 `featureImage.src`. Generate it from a script kept in `~/tmp`, not the
 repository, preview it with `rsvg-convert -w 1600 -o out.png in.svg`, and
-install only the `.svg`.
+install only the `.svg`. The build renders a PNG copy of it for `og:image`,
+since social networks don't show SVG there, and fails if a PNG with the same
+name is already next to it.
 
 Blog listing cards crop every feature image to 3:2 (`BlogPostCard.astro`), so
 prefer a 3:2 canvas. On a wider one, keep anything that must stay visible
