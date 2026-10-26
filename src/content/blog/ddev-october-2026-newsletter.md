@@ -18,7 +18,7 @@ Local DDEV projects listen only on your own computer, so nobody on the internet 
 
 [DDEV v1.25.5](release-v1-25-5.md) shipped on October 26 with the fixed PHP in `ddev-webserver`. PHP 8.1 and older are past end of life and get no fixes from PHP, but deb.sury.org patched every version it ships, so PHP 5.6 through 8.1 in DDEV are fixed too. Upgrade, run `ddev restart`, and check `ddev php -v`. If you haven't updated PHP on the servers where your sites are hosted, do that first.
 
-v1.25.5 also brings 131 community PRs that were waiting for the next release:
+v1.25.5 also brings 142 community PRs that were waiting for the next release:
 
 - A rebuilt `ddev tui` that fits any window and shows database addresses, snapshots, ports, and add-on updates
 - `ddev config global --ssh-agent-upstream=host`, so containers use the SSH agent you already run (macOS agent, 1Password, Secretive, YubiKey)
@@ -26,7 +26,7 @@ v1.25.5 also brings 131 community PRs that were waiting for the next release:
 - QR codes from `ddev share` and `ddev launch --qr`, replacing the ddev-qr add-on
 - zstd for `ddev import-db`, `ddev export-db`, and `ddev import-files`
 - Global hooks, and `global_config.*.yaml` files merged over `global_config.yaml`
-- Initial PHP 8.6 support
+- Initial PHP 8.6 support (RC3, which doesn't have the PHP2Shell fixes yet)
 
 The [release post](release-v1-25-5.md) covers these and the changes that might affect you.
 
@@ -36,7 +36,7 @@ DDEV couldn't have shipped a PHP fix this way on its own. It has always depended
 
 **Ondřej Surý** has packaged PHP for Debian since PHP 5, and maintains [deb.sury.org↗](https://deb.sury.org/), the repository that `ddev-webserver`, the `ondrej/php` PPA, and a large part of the PHP world install from. On the day of the PHP release, he published fixed AMD64 packages for every PHP version back to 5.6, including versions PHP itself no longer supports. As he writes on his site, "The PHP packaging is time consuming and I do this mostly in my free time." The BBC told his story in [How one man became the unsung hero of the internet during a cyber-security scramble↗](https://www.bbc.com/news/articles/cw30ejqljl43o). His day job is director of DNS engineering at [ISC↗](https://www.isc.org/), the nonprofit behind the BIND DNS server, and when the PHP2Shell details leaked early he had less time than planned to build the packages: "The feeling is like I am responsible for all these people and I can't fail them." Donations that week passed $10,000, which he said was "basically about a year's worth of the contributions that I got before." His message to the companies that depend on his packages: "If you just take and don't give back then it will backfire."
 
-**The PHP Foundation** leads developmen and maintenance of PHP itself, including the security work behind releases like this one. The team is small for a language that runs so much of the web. "We have one full-time staff member (that's me) and 14 mostly part-time contractors," Executive Director Elizabeth Barron told [CNA↗](https://www.channelnewsasia.com/business/php-foundation-under-funded-one-full-time-staff-member-director-says-6488116) after the release, adding that "it is clear that PHP is incredibly under-funded." In 2025 its developers made 2,929 commits and 1,685 code reviews to PHP ([2025 impact report↗](https://thephp.foundation/blog/2026/05/27/impact-and-transparency-report-2025/)). On release day it also published [Today's PHP Security Release, and How We're Strengthening PHP Security↗](https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/).
+**The PHP Foundation** leads development and maintenance of PHP itself, including the security work behind releases like this one. The team is small for a language that runs so much of the web. "We have one full-time staff member (that's me) and 14 mostly part-time contractors," Executive Director Elizabeth Barron told [CNA↗](https://www.channelnewsasia.com/business/php-foundation-under-funded-one-full-time-staff-member-director-says-6488116) after the release, adding that "it is clear that PHP is incredibly under-funded." In 2025 its developers made 2,929 commits across 9 PHP repositories and reviewed 1,685 community PRs in php-src ([2025 impact report↗](https://thephp.foundation/blog/2026/05/27/impact-and-transparency-report-2025/)). On release day it also published [Today's PHP Security Release, and How We're Strengthening PHP Security↗](https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/).
 
 The DDEV Foundation has sponsored both for years, because DDEV is built on their work. If PHP is part of how you make a living, please support them too:
 
