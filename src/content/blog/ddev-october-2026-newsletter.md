@@ -5,7 +5,7 @@ summary: "October 2026 DDEV Newsletter: PHP2Shell and DDEV v1.25.5, the upstream
 author: Randy Fay
 featureImage:
   src: "/img/blog/2026/10/ddev-october-2026-featureimage.jpg"
-  alt: "TODO: feature image alt text"
+  alt: "Nancy Lewis: Spring Along the Colorado River, watercolor painting of the river winding past green trees below red canyon cliffs"
 categories:
   - Newsletters
 ---
@@ -41,7 +41,7 @@ DDEV couldn't have shipped a PHP fix in a day on its own. It depended on two ups
 The DDEV Foundation sponsors both, because DDEV is built on their work. If PHP is part of how you make a living, please support them too:
 
 - Ondřej Surý: [GitHub Sponsors↗](https://github.com/sponsors/oerdnj) or [Open Collective↗](https://opencollective.com/debsuryorg). Companies that need a supported PHP for older versions can look at [PHP LTS from Freexian↗](https://www.freexian.com/lts/php/).
-- The PHP Foundation:   [Open Collective↗](https://opencollective.com/phpfoundation/contribute). Company memberships are on the [sponsor page↗](https://thephp.foundation/sponsor/).
+- The PHP Foundation: [Open Collective↗](https://opencollective.com/phpfoundation/contribute). Company memberships are on the [sponsor page↗](https://thephp.foundation/sponsor/).
 
 ## Community Projects
 
