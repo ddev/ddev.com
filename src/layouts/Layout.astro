@@ -19,6 +19,7 @@ import {
   ORG_PHONE,
 } from "../const"
 import themeToggleInitScript from "../scripts/theme-toggle-init.js?raw"
+import { ogImageSize } from "../lib/images"
 
 export interface Props {
   title: string
@@ -107,6 +108,11 @@ const ensureAbsoluteUrl = (url: string) => {
   return url;
 }
 
+const ogImagePath = ogImage ? ogImage : `/img/og-default.png`
+// Lets Facebook and LinkedIn show the image on the first share, before they
+// have downloaded it
+const ogImageDimensions = await ogImageSize(ogImagePath)
+
 import "../styles/global.css"
 ---
 
@@ -128,19 +134,24 @@ import "../styles/global.css"
           title: title !== '' ? title : 'DDEV',
           url: canonicalUrl,
           type: `website`,
-          image: ensureAbsoluteUrl(ogImage ? ogImage : `/img/og-default.png`),
+          image: ensureAbsoluteUrl(ogImagePath),
         },
         image: {
           alt: ogImageAlt ? ogImageAlt : `DDEV logo`,
+          ...ogImageDimensions,
         },
         optional: {
           description: description,
+          locale: `en_US`,
           siteName: SITE_TITLE,
         },
         article: pubDate ? {
           publishedTime: pubDate.toISOString(),
           modifiedTime: modifiedDate ? modifiedDate.toISOString() : undefined,
         } : undefined,
+      }}
+      twitter={{
+        card: `summary_large_image`,
       }}
       extend={{
         link: link,

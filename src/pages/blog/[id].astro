@@ -40,7 +40,7 @@ const shouldDisplayFeatureImage =
     entry.data.featureImage?.hide === false)
 const authorImage = author?.data.avatarUrl
 
-// Social networks don't render SVG, so use the PNG from img/blog/[...path].png.js
+// An SVG feature image gets a PNG copy from img/blog/[...path].png.js
 let ogImage = entry.data.featureImage?.src ?? null
 if (ogImage?.startsWith("/img/blog/") && ogImage.endsWith(".svg")) {
   ogImage = ogImage.replace(/\.svg$/, ".png")
