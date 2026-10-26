@@ -84,6 +84,8 @@ jobs:
         run: npm run build
         env:
           PREVIEW_BUILD: "true"
+          # The pr-<number> alias that cloudflare-preview-forks-deploy.yml deploys to
+          PREVIEW_URL: https://pr-${{ github.event.pull_request.number }}.${{ vars.CF_PAGES_PROJECT || 'ddev-com-fork-previews' }}.pages.dev
 
       - name: Save PR number
         run: echo "${{ github.event.pull_request.number }}" > dist/pr-number.txt

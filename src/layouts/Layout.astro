@@ -91,12 +91,13 @@ let jsonLd = {
   ],
 }
 
-// Cloudflare preview builds point og:image at their own deployment, so share
-// checkers can load images that aren't on production yet
+// Preview builds point og:image at their own deployment, so share checkers can
+// load images that aren't on production yet. PREVIEW_URL is set for forks.
 const ogImageBase =
-  process.env.CF_PAGES_URL && process.env.CF_PAGES_BRANCH !== 'main'
+  process.env.PREVIEW_URL ||
+  (process.env.CF_PAGES_URL && process.env.CF_PAGES_BRANCH !== 'main'
     ? process.env.CF_PAGES_URL
-    : Astro.site
+    : Astro.site)
 
 const ensureAbsoluteUrl = (url: string) => {
   if (url.startsWith('/')) {
