@@ -56,8 +56,7 @@ The DDEV Foundation sponsors both, because DDEV is built on their work. If PHP i
 ## Talks and Tutorials from Around the Web
 
 - **What's New in DDEV for TYPO3 Folks, October 2026** → Snapshots and seeded databases, Branchery, TYPO3 Quickstarter, Knecht, and PHP2Shell, for TYPO3 developers. [Read on news.typo3.com↗](https://news.typo3.com/article/whats-new-in-ddev-for-typo3-folks-october-2026)
-- **René Kreijveld at JoomlaDagen NL** → TODO: talk title and summary. [View the slides↗](https://slides.renekreijveld.nl/jd26nl/)
-- **René Kreijveld at Joomla World Conference** → TODO: talk title and summary. [View the slides↗](https://slides.renekreijveld.nl/jwc26/)
+- **René Kreijveld at Joomla World Conference** → Joomla development with DDEV. [View the slides↗](https://slides.renekreijveld.nl/jwc26/)
 - **DDEV for Drupal: setup, import, and export** → Nadeem Mir of Dynamosys on setting up a Drupal 11 project, importing a site's database and files, and exporting it again, with warnings about what `ddev import-db` and `ddev import-files` overwrite. [Read on dynamosys.com↗](https://www.dynamosys.com/insights/2026/ddev-drupal-set-local-development-import-sites-and-export-projects)
 - **Migrating a 13-year-old WordPress blog to Drupal CMS** → Christian López Espínola (penyaskito) moved a 722-post blog to Drupal CMS 2.2. The WordPress clone ran as its own DDEV project, and the Drupal project read its database container directly with `wordpress_migrate_sql` across 24 migrations. [Read on penyaskito.com↗](https://penyaskito.com/articles/2026/10/10/can-it-be-all-so-simple-migrating-13-year-old-wordpress-blog-drupal-cms)
 - **Import a WordPress site with BackWPup** → Matthias Andrasch shows how to pull a BackWPup backup into DDEV with a custom provider and `ddev pull backup`. It's from 2023, so adjust the versions in the example config. [Read on dev.to↗](https://dev.to/mandrasch/import-wordpress-site-into-local-project-via-ddev-backwpup-18p6)
