@@ -15,8 +15,10 @@ env:
   NODE_VERSION: 24
 
 jobs:
-  build:
-    timeout-minutes: 15
+  # A separate job, so a wording or formatting problem fails this check
+  # without stopping the build.
+  lint:
+    timeout-minutes: 10
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
@@ -28,7 +30,17 @@ jobs:
       - name: Lint
         run: npm run textlint || { printf "Run 'ddev textlint' locally to fix it.\n\n"; exit 1; }
       - name: Prettier
+        if: ${{ !cancelled() }}
         run: npm run prettier || { printf "\nRun 'ddev prettier' locally to fix it.\n\n"; exit 1; }
+
+  build:
+    timeout-minutes: 15
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
       - name: Load Amplitude secrets
         # Skipped for forked-repo PRs: GitHub Actions never exposes secrets to those
         # anyway, but this avoids depending on that alone and skips a step that
