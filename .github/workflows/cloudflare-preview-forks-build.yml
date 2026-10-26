@@ -78,10 +78,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # textlint and prettier run in test.yml. They are left out here so a
-      # wording or formatting problem doesn't hold back the preview.
+      # textlint, prettier, and failing on broken links run in test.yml. They
+      # are left out here so those problems don't hold back the preview.
       - name: Build
         run: npm run build
+        env:
+          PREVIEW_BUILD: "true"
 
       - name: Save PR number
         run: echo "${{ github.event.pull_request.number }}" > dist/pr-number.txt
