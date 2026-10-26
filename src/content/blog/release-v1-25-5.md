@@ -1,7 +1,7 @@
 ---
-title: "DDEV v1.25.5: PHP Security Fixes, Rebuilt TUI, Your Own SSH Agent, QR Codes"
-pubDate: 2026-10-21
-summary: DDEV v1.25.5 ships the PHP fixes for CVE-2026-109618 and CVE-2026-109619 and initial PHP 8.6 support, a rebuilt `ddev tui`, containers that use the SSH agent you already run, `ddev restart -s` for single services, QR codes for `ddev share` and `ddev launch`, zstd database dumps, and global hooks.
+title: "DDEV v1.25.5: PHP Security Fixes, PHP 8.6, Rebuilt TUI, SSH Agent Passthrough, QR Codes"
+pubDate: 2026-10-26
+summary: DDEV v1.25.5 ships the PHP fixes for CVE-2026-109618 and CVE-2026-109619, initial PHP 8.6 support, a rebuilt `ddev tui`, containers that use your existing SSH agent, `ddev restart -s` for single services, QR codes for `ddev share` and `ddev launch`, zstd database dumps, and global hooks.
 author: Stas Zhuk
 featureImage:
   src: /img/blog/2026/10/banner-ddev-v1-25-5.svg
@@ -11,46 +11,25 @@ categories:
   - Announcements
 ---
 
-[DDEV v1.25.5](https://github.com/ddev/ddev/releases/tag/v1.25.5) is out sooner than we planned, because PHP published fixes for two critical vulnerabilities and we wanted `ddev-webserver` to ship them. It also brings 131 PRs from the DDEV community that were already waiting for the next release: your suggestions, bug reports, code, and financial support made them possible.
+[DDEV v1.25.5](https://github.com/ddev/ddev/releases/tag/v1.25.5) is out sooner than we planned, because PHP published fixes for two critical vulnerabilities and we wanted `ddev-webserver` to ship them. It also brings 142 PRs from the DDEV community that were already waiting for the next release: your suggestions, bug reports, code, and financial support made them possible.
 
 ## Table of Contents
 
-## PHP Fixes for CVE-2026-109618 and CVE-2026-109619
+## PHP Security Fixes
 
-`ddev-webserver` now ships PHP 8.5.XX, 8.4.XX, 8.3.XX, and 8.2.XX, which fix CVE-2026-109618 and CVE-2026-109619 ("PHP2Shell"); see the [PHP announcement](https://www.php.net/). PHP 8.1 and older are past end of life and get no fix from PHP, but deb.sury.org, where `ddev-webserver` gets its PHP packages, [patches every PHP version it ships](https://codeberg.org/oerdnj/deb.sury.org/issues/145#issuecomment-25974932), so PHP 5.6 through 8.1 in DDEV are fixed too.
+`ddev-webserver` now ships PHP 8.5.12, 8.4.27, 8.3.36, and 8.2.35, which fix CVE-2026-109618 and CVE-2026-109619 ("PHP2Shell"). Projects on PHP 5.6 through 8.1 get deb.sury.org's fixed packages too, because upgrading DDEV rebuilds their web image. Every project picks up the fixed PHP the next time it starts. [PHP2Shell: What DDEV Users Need to Know](php2shell-what-ddev-users-need-to-know.md) explains who is affected.
 
-For most DDEV users these vulnerabilities don't matter locally, because a DDEV project can only be reached from your own computer. They do when you expose a project with `ddev share` or use DDEV for [casual hosting](https://docs.ddev.com/en/stable/users/topics/hosting/). After upgrading DDEV, run `ddev restart` and check the version with `ddev php -v`.
-
-:::warning[Update PHP where your sites are hosted]
-The servers your sites run on in production are the ones exposed to the internet, so make sure your hosting provider or your own servers get the PHP update.
-:::
-
-### If You Can't Upgrade DDEV Yet
-
-Existing projects can get the fixed packages without a new DDEV version:
-
-- PHP 5.6 through 8.1 aren't part of the `ddev-webserver` image. DDEV installs them from deb.sury.org when it builds the project's web image and reuses that image afterwards, so run `ddev restart --no-cache` once deb.sury.org has published the fixed packages. They come for AMD64 first and ARM64 later, so a project you upgrade to v1.25.5 before then needs the same command later.
-- PHP 8.2 through 8.5 are part of the image. To update them before you upgrade to v1.25.5, add `.ddev/web-build/Dockerfile.update` to the project and run `ddev restart`:
-
-  ```dockerfile
-  RUN (apt-get update || true) && apt-get upgrade -y
-  ```
-
-  Delete the file once you've upgraded to v1.25.5. If you added it before the fixed packages were out, run `ddev restart --no-cache` to apply them, because Docker reuses the layer it built earlier.
-
-We tried both on v1.25.4: `Dockerfile.update` took a project from the image's PHP 8.3.33 to 8.3.35, the newest build on deb.sury.org at the time, and `ddev restart --no-cache` reinstalled PHP 7.4 from deb.sury.org.
-
-There's a second change in the same area. With `nginx-fpm`, PHP files in CMS upload directories no longer run. Drupal, Backdrop, Magento 1 and 2, Maho, and Silverstripe protect those directories only with an `.htaccess` file, which nginx ignores, so DDEV's nginx templates now deny them, as the WordPress template already did for `uploads`.
+DDEV also turns off `session.upload_progress.enabled`, as PHP's [October 23 advisory](https://www.php.net/archive/2026.php#2026-10-23-1) suggests, answers `/phpstatus` only from inside the web container, and with `nginx-fpm` no longer runs PHP files in CMS upload directories.
 
 ## Initial PHP 8.6 Support
 
-PHP 8.6 isn't released yet, but you can try it:
+You can test a project on PHP 8.6 before its final release:
 
 ```bash
-ddev config --php-version=8.6
+ddev config --php-version=8.6 && ddev restart
 ```
 
-deb.sury.org doesn't package every extension for 8.6 yet, and enabling Xdebug, XHProf, or Blackfire on it gives a clear error instead of a broken container.
+DDEV ships 8.6.0 RC3, which doesn't have the PHP2Shell fixes yet, because deb.sury.org hasn't packaged RC4, so don't expose a PHP 8.6 project. Some extensions aren't packaged for 8.6 yet either, and enabling Xdebug, XHProf, or Blackfire on it shows an error instead of breaking the container.
 
 ## A Rebuilt `ddev tui`
 
@@ -68,7 +47,7 @@ Paths and URLs are clickable links, and `o`, `v`, and `p` open the project in yo
 
 Two keys changed: `R` restarts and `r` refreshes, swapped from before, and only `enter` opens the project view.
 
-## Use the SSH Agent You Already Run
+## SSH Agent Passthrough
 
 If your SSH keys live in an agent instead of `~/.ssh`, such as the macOS agent, 1Password, Secretive, a YubiKey through `gpg-agent`, or an agent forwarded with `ssh -A`, DDEV's containers can now use it directly:
 
@@ -134,8 +113,8 @@ New [`pre-delete` and `post-delete` hooks](https://docs.ddev.com/en/stable/users
 ## Changes That Might Affect You
 
 - WP-CLI, Drush 8, the Backdrop Drush extension, magerun, magerun2, and Symfony CLI are installed only in the project types that use them. To use one elsewhere, add it in a `web-build` Dockerfile; see [Project-Specific Utilities](https://docs.ddev.com/en/stable/users/extend/customizing-images/#project-specific-utilities).
-- DDEV assigns host ports itself. Unconfigured db, web, and Mailpit host ports move to 20000-29999 the next time their containers are created, and the router's fallback ports move to 30000-32000. Ports you set with `host_*_port` don't change.
 - A custom service or add-on whose `container_name` isn't `ddev-<project>-<service>` is renamed, with a warning. Reach it by its service name instead.
+- DDEV assigns host ports itself. Unconfigured db, web, and Mailpit host ports move to 20000-29999 the next time their containers are created, and the router's fallback ports move to 30000-32000. Ports you set with `host_*_port` don't change.
 - `--profiles` replaces `COMPOSE_PROFILES`, as in Docker Compose, so on a stopped project `ddev start --profiles=x` no longer starts the profiles in `COMPOSE_PROFILES` as well.
 - `DDEV_DEBUG` no longer shows per-layer image download progress or routine start messages; [`DDEV_VERBOSE`](https://docs.ddev.com/en/stable/users/usage/troubleshooting/#debug-environment-variables) does.
 
@@ -147,7 +126,7 @@ New [`pre-delete` and `post-delete` hooks](https://docs.ddev.com/en/stable/users
 
 ## Everything Else
 
-`ddev list`, `ddev describe`, and `ddev tui` respond faster, and the more projects you have running, the bigger the difference. Running `ddev start` or `ddev poweroff` in several terminals at once no longer breaks the shared router, and nginx passes `PATH_INFO` to PHP, so URLs like `/index.php/foo/bar` work as they do with Apache. See the [release notes](https://github.com/ddev/ddev/releases/tag/v1.25.5) for the rest.
+`ddev list`, `ddev describe`, and `ddev tui` respond faster, and the more projects you have running, the bigger the difference. nginx passes `PATH_INFO` to PHP, so URLs like `/index.php/foo/bar` work as they do with Apache, and running `ddev start` or `ddev poweroff` in several terminals at once no longer breaks the shared router. See the [release notes](https://github.com/ddev/ddev/releases/tag/v1.25.5) for the rest.
 
 From all of us, thanks for using, promoting, contributing, and supporting DDEV!
 
