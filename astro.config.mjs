@@ -77,7 +77,12 @@ export default defineConfig({
     prefetch(),
     linkValidator({
       checkExternal: false,
-      failOnBrokenLinks: true,
+      // Previews report broken links without failing, like textlint and
+      // prettier; the build in test.yml is the check that fails.
+      failOnBrokenLinks: !(
+        process.env.PREVIEW_BUILD ||
+        (process.env.CF_PAGES && process.env.CF_PAGES_BRANCH !== "main")
+      ),
       exclude: ["/_astro/*", "/s/*", "/board", "/download/*"],
     }),
   ],
