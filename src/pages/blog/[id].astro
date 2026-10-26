@@ -40,6 +40,12 @@ const shouldDisplayFeatureImage =
     entry.data.featureImage?.hide === false)
 const authorImage = author?.data.avatarUrl
 
+// Social networks don't render SVG, so use the PNG from img/blog/[...path].png.js
+let ogImage = entry.data.featureImage?.src ?? null
+if (ogImage?.startsWith("/img/blog/") && ogImage.endsWith(".svg")) {
+  ogImage = ogImage.replace(/\.svg$/, ".png")
+}
+
 // Items we want to add to the JSON-LD schema specifically for blog posts
 const blogPostSchema = [
   {
@@ -67,9 +73,7 @@ const blogPostSchema = [
     datePublished: entry.data.pubDate,
     description: entry.data.summary ?? ``,
     headline: entry.data.title,
-    image: hasFeatureImage
-      ? entry.data.featureImage.src
-      : `/img/og-default.png`,
+    image: ogImage ?? `/img/og-default.png`,
     keywords: entry.data.categories.join(","),
     mainEntityOfPage: `${Astro.site}blog/${entry.id}`,
     publisher: {
@@ -83,7 +87,7 @@ const blogPostSchema = [
 <Layout
   title={entry.data.title}
   description={entry.data.summary ? entry.data.summary : null}
-  ogImage={hasFeatureImage ? entry.data.featureImage.src : null}
+  ogImage={ogImage}
   ogImageAlt={hasFeatureImage ? entry.data.featureImage.alt : null}
   structuredData={blogPostSchema}
   pubDate={entry.data.pubDate}
