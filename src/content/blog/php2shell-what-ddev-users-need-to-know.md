@@ -73,6 +73,8 @@ post_max_size = 8M
 upload_max_filesize = 6M
 ```
 
+DDEV v1.25.5 already sets `session.upload_progress.enabled = 0`, and `fatal_error_backtraces = 0` on PHP 8.6.
+
 On PHP 8.5, also add `fatal_error_backtraces = 0`. DDEV adds `.ddev/php` files to PHP-FPM's configuration, so they apply before PHP parses a request, as the advisory requires. On other servers, the same lines go in `php.ini` or PHP's `conf.d` directory, followed by a restart of every PHP worker. The [advisory](https://www.php.net/archive/2026.php#2026-10-21-5) has the full list.
 
 ## Thanks, Ondřej

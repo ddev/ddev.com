@@ -19,7 +19,9 @@ categories:
 
 `ddev-webserver` now ships PHP 8.5.12, 8.4.27, 8.3.36, and 8.2.35, which fix CVE-2026-109618 and CVE-2026-109619 ("PHP2Shell"). Projects on PHP 5.6 through 8.1 get deb.sury.org's fixed packages too, because upgrading DDEV rebuilds their web image. Every project picks up the fixed PHP the next time it starts. [PHP2Shell: What DDEV Users Need to Know](php2shell-what-ddev-users-need-to-know.md) explains who is affected.
 
-DDEV also turns off `session.upload_progress.enabled`, as PHP's [October 23 advisory](https://www.php.net/archive/2026.php#2026-10-23-1) suggests, answers `/phpstatus` only from inside the web container, and with `nginx-fpm` no longer runs PHP files in CMS upload directories.
+DDEV now applies two of PHP's mitigations by default: `session.upload_progress.enabled` is `0` in every PHP version, as PHP's [October 23 advisory](https://www.php.net/archive/2026.php#2026-10-23-1) suggests, and `fatal_error_backtraces` is `0` in PHP 8.6. Few applications use session upload progress, and the PECL `uploadprogress` extension that Drupal uses isn't affected. To turn either back on, see [Custom PHP Configuration](https://docs.ddev.com/en/stable/users/extend/customization-extendibility/#custom-php-configuration-phpini).
+
+`/phpstatus` now answers only requests from inside the web container, and with `nginx-fpm`, PHP files in CMS upload directories no longer run. If you removed `#ddev-generated` from `.ddev/nginx_full/nginx-site.conf`, merge the new rule into your copy.
 
 ## Initial PHP 8.6 Support
 
@@ -29,7 +31,7 @@ You can test a project on PHP 8.6 before its final release:
 ddev config --php-version=8.6 && ddev restart
 ```
 
-DDEV ships 8.6.0 RC3, which doesn't have the PHP2Shell fixes yet, because deb.sury.org hasn't packaged RC4, so don't expose a PHP 8.6 project. Some extensions aren't packaged for 8.6 yet either, and enabling Xdebug, XHProf, or Blackfire on it shows an error instead of breaking the container.
+DDEV ships 8.6.0 RC3, which doesn't have the PHP2Shell fixes yet, because deb.sury.org hasn't packaged RC4. The mitigations above don't cover everything, so don't expose a PHP 8.6 project. Some extensions aren't packaged for 8.6 yet either, and enabling Xdebug, XHProf, or Blackfire on it shows an error instead of breaking the container.
 
 ## A Rebuilt `ddev tui`
 
@@ -116,7 +118,9 @@ New [`pre-delete` and `post-delete` hooks](https://docs.ddev.com/en/stable/users
 - A custom service or add-on whose `container_name` isn't `ddev-<project>-<service>` is renamed, with a warning. Reach it by its service name instead.
 - DDEV assigns host ports itself. Unconfigured db, web, and Mailpit host ports move to 20000-29999 the next time their containers are created, and the router's fallback ports move to 30000-32000. Ports you set with `host_*_port` don't change.
 - `--profiles` replaces `COMPOSE_PROFILES`, as in Docker Compose, so on a stopped project `ddev start --profiles=x` no longer starts the profiles in `COMPOSE_PROFILES` as well.
+- `ddev delete` exits with an error and keeps the project listed when it can't remove a volume. Before, it reported success.
 - `DDEV_DEBUG` no longer shows per-layer image download progress or routine start messages; [`DDEV_VERBOSE`](https://docs.ddev.com/en/stable/users/usage/troubleshooting/#debug-environment-variables) does.
+- The database buffer pool drops from 1024M to 512M, which can slow large imports, and each project's database volume grows by about 160-210M on the first start after upgrading. On MySQL 8.0, 8.4, and 9.7 and MariaDB 11 and later, the connection collation is now `utf8mb4_unicode_520_ci`, matching the server's.
 
 ## Regressions, Fixed
 
