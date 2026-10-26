@@ -79,7 +79,7 @@ On PHP 8.5, also add `fatal_error_backtraces = 0`. DDEV adds `.ddev/php` files t
 
 ## Thanks, Ondřej
 
-[Ondřej Surý](https://codeberg.org/oerdnj) maintains the PHP packages for Debian and Ubuntu that DDEV and much of the PHP world use, and built the fixes for every PHP version back to 5.6. If your work depends on those packages, consider [sponsoring him](https://github.com/sponsors/oerdnj).
+[Ondřej Surý](https://github.com/oerdnj) maintains the PHP packages for Debian and Ubuntu that DDEV and much of the PHP world use, and built the fixes for every PHP version back to 5.6. If your work depends on those packages, consider [sponsoring him](https://github.com/sponsors/oerdnj).
 
 If you have questions, reach out in any of the [support channels](https://docs.ddev.com/en/stable/users/support/).
 
