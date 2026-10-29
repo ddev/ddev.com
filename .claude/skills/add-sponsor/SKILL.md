@@ -161,6 +161,6 @@ phones and one from `sm` up, such as `h-10 sm:h-15`.
 
 ## 6. Commit
 
-Title `chore(sponsor): add <name>`. Follow the `ddev-commit` skill. Manual
+Title `chore(sponsor): add <name>`. Follow `/ddev:commit`. Manual
 Testing Instructions compare the preview's `/#supporters` and both badge URLs
 against https://ddev.com/, and the PR should include the two badge renders.
