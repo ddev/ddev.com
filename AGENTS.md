@@ -17,7 +17,7 @@ its own.
 | Adding or updating a featured sponsor             | `.claude/skills/add-sponsor/SKILL.md` |
 | Bumping npm dependencies                          | `.claude/skills/bump-deps/SKILL.md`   |
 | Accessibility checks with axe-core and Lighthouse | `.claude/skills/a11y-check/SKILL.md`  |
-| A commit or PR                                    | `.claude/skills/ddev-commit/SKILL.md` |
+| A commit or PR                                    | `/ddev:commit`, see Git workflow      |
 | A comment, in any code file                       | `.claude/rules/comments.md`           |
 
 Fetch files from GitHub through `raw.githubusercontent.com`; a
@@ -121,5 +121,30 @@ pushes to a remote, even when asked. The maintainer pushes.
 
 Branch names are `YYYYMMDD_<username>_<short_description>`, for example
 `20250919_rfay_update_quickstart`. Commit titles follow Conventional Commits,
-and the commit body is reused as the PR description; see
-`.claude/skills/ddev-commit/SKILL.md` before writing either.
+and the commit body is reused as the PR description. Write both with the
+`/ddev:commit` skill from [ddev/agent-skills](https://github.com/ddev/agent-skills).
+Install it in Claude Code with
+`claude plugin install ddev --marketplace ddev/agent-skills`. Without it,
+follow the organization patterns linked above.
+
+### PR preview
+
+Manual Testing Instructions link the PR's Cloudflare preview, not a local dev
+server, and compare it against the same path on https://ddev.com/. Name the
+exact pages and what to look for. Ask where the branch will be pushed, since
+the URL differs, and use a `REPLACE_ME`-style placeholder for anything not
+known yet:
+
+- `ddev/ddev.com`: `https://<branch-with-dashes>.ddev-com-front-end.pages.dev/`,
+  with the subdomain cut to 28 characters
+- A fork: `https://pr-<number>.ddev-com-fork-previews.pages.dev/`
+
+Once the PR exists, take the real URL from the Cloudflare comment. It differs
+from the computed one when the cut alias collides with an earlier branch's,
+which gets a random suffix such as `-kgcv`:
+
+```bash
+gh pr view <number> --json comments --jq '.comments[].body' \
+  | grep -oE 'https://[a-z0-9-]+\.ddev-com-(front-end|fork-previews)\.pages\.dev' \
+  | grep -vE '^https://[0-9a-f]{8}\.' | sort -u
+```

@@ -103,7 +103,7 @@ ddev prettier
 
 ## 6. Pull request
 
-Write the commit and PR with the `ddev-commit` skill. Title:
+Write the commit and PR with `/ddev:commit`. Title:
 `build(deps): bump astro from v<old> to v<new>`, plus any other notable major.
 
 - **Short Summary (TL;DR):** which packages moved to a new major, and whether
@@ -126,8 +126,8 @@ Write the commit and PR with the `ddev-commit` skill. Title:
   mobile views: `/blog/markdown-features-demo/`, `/get-started/`,
   `/usage-stats/`, site search, the theme toggle, and anything a major touched
   (for example `#featured-sponsors` on the demo post after an image library
-  change). Take the preview URL from the Cloudflare comment, as the
-  `ddev-commit` skill describes, because Dependabot aliases always collide and
+  change). Take the preview URL from the Cloudflare comment, as
+  `AGENTS.md` describes under PR preview, because Dependabot aliases always collide and
   get a random suffix.
 
 - **Release/Deployment Notes:** the majors to watch in the Cloudflare build.
