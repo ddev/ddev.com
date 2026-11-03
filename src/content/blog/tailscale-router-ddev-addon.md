@@ -1,8 +1,8 @@
 ---
 title: "Tailscale for DDEV: Simple and Secure Project Sharing"
 pubDate: 2025-09-09
-modifiedDate: 2025-10-20
-modifiedComment: "Updated for v3.0.0!"
+modifiedDate: 2026-11-02
+modifiedComment: "Updated for v3.0.1: DDEV v1.25.4+ required, project-only auth key storage, daemon startup fix for DDEV v1.25."
 summary: "Tired of temporary sharing links? Learn how to use the ddev-tailscale-router add-on to get a stable, secure, and private URL for your DDEV projects."
 author: Ajith Thampi Joseph
 featureImage:
@@ -32,11 +32,11 @@ I've found this approach to be particularly useful for:
 
 The `ddev-tailscale-router` add-on works by installing Tailscale directly into your DDEV project's web container using userspace networking. This approach provides better macOS compatibility and improved reliability compared to running a separate container. The add-on automatically connects to your Tailscale network and securely proxies requests to your project.
 
-> **Update:** Version 3.0.0 brought significant architectural improvements! The add-on now uses YAML-based configuration, improved command structure, and better error handling. If you're upgrading from an earlier version, see the [migration instructions](https://github.com/atj4me/ddev-tailscale-router/releases/tag/v3.0.0) in the release notes.
+> **Update:** Version 3.0.0 brought significant architectural improvements! The add-on now uses YAML-based configuration, improved command structure, and better error handling. If you're upgrading from an earlier version, see the [migration instructions](https://github.com/atj4me/ddev-tailscale-router/releases/tag/v3.0.0) in the release notes. Version 3.0.1 (November 2026) is a maintenance release that keeps the add-on working on current DDEV versions: it fixes daemon startup on DDEV v1.25, restores installation on older v1.24.10 images, and makes the auth key optional.
 
 ### Prerequisites
 
-Before installing the add-on, you need to set up Tailscale:
+The add-on requires DDEV v1.25.4 or later. Before installing the add-on, you need to set up Tailscale:
 
 1. **Install Tailscale** on at least two devices (phone, tablet, or computer) by following the [installation guide](https://tailscale.com/download). This is required to generate an auth key.
 2. **Enable HTTPS** by following the [Tailscale HTTPS documentation](https://tailscale.com/kb/1153/enabling-https). This is required for TLS certificate generation.
@@ -47,16 +47,15 @@ Before installing the add-on, you need to set up Tailscale:
 To get started, follow these steps:
 
 1.  First, **set up your auth key** (recommended approach):
-    Add the auth key to your shell environment:
+    Store the key in this project only, in `.ddev/.env.web.local`. The file is loaded into the web container only and is not committed to git by default:
 
     ```bash
-    echo 'export TS_AUTHKEY=tskey-auth-your-key-here' >> ~/.bashrc
-    source ~/.bashrc
+    ddev dotenv set .ddev/.env.web.local --ts-authkey=tskey-auth-your-key-here
     ```
 
-    Replace `~/.bashrc` with `~/.zshrc` if you use Zsh, or your relevant shell configuration file.
+    Earlier versions of this post recommended exporting the key into every shell session via `~/.bashrc`; a project-only key is safer and is the recommended approach now.
 
-    Alternatively, you can use interactive authentication after installation by running `ddev tailscale login` after your project starts.
+    Alternatively, you can skip the key entirely and use interactive authentication after installation by running `ddev tailscale login` after your project starts. It prints a link to authenticate in your browser.
 
 2.  Next, **install the add-on:**
 
