@@ -47,7 +47,7 @@ Before installing the add-on, you need to set up Tailscale:
 To get started, follow these steps:
 
 1.  First, **set up your auth key** (recommended approach):
-    Store the key in the project itself, in `.ddev/.env.web.local`. DDEV loads that file into the web container only, and it is not committed to git by default, so the key stays with this project:
+    Store the key in the project itself, in `.ddev/.env.web.local`. DDEV loads that file into the web container only, and it is not committed to Git by default, so the key stays with this project:
 
     ```bash
     ddev dotenv set .ddev/.env.web.local --ts-authkey=tskey-auth-your-key-here
