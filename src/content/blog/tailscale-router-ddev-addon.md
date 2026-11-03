@@ -32,7 +32,7 @@ I've found this approach to be particularly useful for:
 
 The `ddev-tailscale-router` add-on works by installing Tailscale directly into your DDEV project's web container using userspace networking. This approach provides better macOS compatibility and improved reliability compared to running a separate container. The add-on automatically connects to your Tailscale network and securely proxies requests to your project.
 
-> **Update (November 2026):** A few things have changed since this post was published. The add-on now needs DDEV v1.25.4 or later, `ddev tailscale login` works without an auth key, and a startup problem on DDEV v1.25 is fixed. If you're upgrading from a version before 3.0.0, see the [migration instructions](https://github.com/atj4me/ddev-tailscale-router/releases/tag/v3.0.0) in the release notes.
+> **Update (November 2026):** A few things have changed since this post was published. The add-on now needs DDEV v1.25.4 or later, `ddev tailscale login` works without an auth key, a startup problem on DDEV v1.25 is fixed, and `ddev tailscale share` prints a QR code for the URL. If you're upgrading from a version before 3.0.0, see the [migration instructions](https://github.com/atj4me/ddev-tailscale-router/releases/tag/v3.0.0) in the release notes.
 
 ### Prerequisites
 
@@ -113,6 +113,39 @@ Share privately (default, only accessible to your Tailscale devices):
 
 ```bash
 ddev tailscale share
+```
+
+Here is what `share` prints. The QR code works the same way as the one in `ddev share`: scan it to open the site on your phone instead of typing the address.
+
+```
+$ ddev tailscale share
+Starting Tailscale serve on port 80...
+Available within your tailnet:
+
+https://demo.your-tailnet.ts.net/
+|-- proxy http://127.0.0.1:80
+
+Serve started and running in the background.
+To disable the proxy, run: ddev tailscale stop
+
+🔒 Your site is shared privately within your Tailscale network
+
+Scan to open on your phone:
+█████████████████████████████
+██ ▄▄▄▄▄ █▀█▀▄▀▄▀▀██ ▄▄▄▄▄ ██
+██ █   █ █▀▄▀ ▀▀ ▀▀█ █   █ ██
+██ █▄▄▄█ █▀ ▀▄▄█ ▀ █ █▄▄▄█ ██
+██▄▄▄▄▄▄▄█▄▀ ▀ █▄▀ █▄▄▄▄▄▄▄██
+██▄▄ ▄ ▀▄ ▄▀ ▀█▄▄▄ ▄█ █▄█ ███
+███▄█▄▀ ▄▄█ ▄█▄█▀▄   ▀█▄█▄ ██
+██▀ █▀█▄▄█▀ █▀█ ▄█▀▄▄▀▄▀▄ ▄██
+██ █ ▄ █▄▀ ▀█▀▄█▀ ▄ ▀  ▄█▄ ██
+██▄█▄███▄█▀█    ▄█ ▄▄▄ ▀▄████
+██ ▄▄▄▄▄ █▄▀▄█▄█▄█ █▄█ ▀▄▄ ██
+██ █   █ █  █▀█ ▄    ▄ ▀ █▄██
+██ █▄▄▄█ █ █▀██▄▄▀ ▀█▀▀ ▄█ ██
+██▄▄▄▄▄▄▄█▄███▄▄▄▄█▄█▄▄▄▄▄▄██
+█████████████████████████████
 ```
 
 Stop sharing:
