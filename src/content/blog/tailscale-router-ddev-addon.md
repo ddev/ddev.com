@@ -1,8 +1,8 @@
 ---
 title: "Tailscale for DDEV: Simple and Secure Project Sharing"
 pubDate: 2025-09-09
-modifiedDate: 2025-10-20
-modifiedComment: "Updated for v3.0.0!"
+modifiedDate: 2026-11-02
+modifiedComment: "Updated the install and auth key guidance."
 summary: "Tired of temporary sharing links? Learn how to use the ddev-tailscale-router add-on to get a stable, secure, and private URL for your DDEV projects."
 author: Ajith Thampi Joseph
 featureImage:
@@ -32,31 +32,30 @@ I've found this approach to be particularly useful for:
 
 The `ddev-tailscale-router` add-on works by installing Tailscale directly into your DDEV project's web container using userspace networking. This approach provides better macOS compatibility and improved reliability compared to running a separate container. The add-on automatically connects to your Tailscale network and securely proxies requests to your project.
 
-> **Update:** Version 3.0.0 brought significant architectural improvements! The add-on now uses YAML-based configuration, improved command structure, and better error handling. If you're upgrading from an earlier version, see the [migration instructions](https://github.com/atj4me/ddev-tailscale-router/releases/tag/v3.0.0) in the release notes.
+> **Update (November 2026):** A few things have changed since this post was published. The add-on now needs DDEV v1.25.4 or later, `ddev tailscale login` works without an auth key, a startup problem on DDEV v1.25 is fixed, and `ddev tailscale share` prints a QR code for the URL. If you're upgrading from a version before 3.0.0, see the [migration instructions](https://github.com/atj4me/ddev-tailscale-router/releases/tag/v3.0.0) in the release notes.
 
 ### Prerequisites
 
 Before installing the add-on, you need to set up Tailscale:
 
-1. **Install Tailscale** on at least two devices (phone, tablet, or computer) by following the [installation guide](https://tailscale.com/download). This is required to generate an auth key.
+1. **Create a Tailscale account and install Tailscale** on the devices you want to open your sites from (phone, tablet, or another computer), following the [installation guide](https://tailscale.com/download).
 2. **Enable HTTPS** by following the [Tailscale HTTPS documentation](https://tailscale.com/kb/1153/enabling-https). This is required for TLS certificate generation.
-3. **Generate an auth key** by following the [Tailscale auth keys documentation](https://tailscale.com/kb/1085/auth-keys). Ephemeral, reusable keys are recommended.
+3. **Generate an auth key** by following the [Tailscale auth keys documentation](https://tailscale.com/kb/1085/auth-keys). Ephemeral, reusable keys are recommended. You can also skip the key and log in from your browser after installing the add-on, as described below.
 
 ### Installation
 
 To get started, follow these steps:
 
 1.  First, **set up your auth key** (recommended approach):
-    Add the auth key to your shell environment:
+    Store the key in the project itself, in `.ddev/.env.web.local`. DDEV loads that file into the web container only, and it is not committed to Git by default, so the key stays with this project:
 
     ```bash
-    echo 'export TS_AUTHKEY=tskey-auth-your-key-here' >> ~/.bashrc
-    source ~/.bashrc
+    ddev dotenv set .ddev/.env.web.local --ts-authkey=tskey-auth-your-key-here
     ```
 
-    Replace `~/.bashrc` with `~/.zshrc` if you use Zsh, or your relevant shell configuration file.
+    The shell environment route from the first version of this post still works: if `TS_AUTHKEY` is exported in your shell (from `~/.bashrc`, for example), the add-on picks it up from there. I no longer recommend it as the default. The key ends up in every shell session on the machine, and a shell that does not load `~/.bashrc` will not have it when you run `ddev`.
 
-    Alternatively, you can use interactive authentication after installation by running `ddev tailscale login` after your project starts.
+    Alternatively, skip the key and use interactive authentication: run `ddev tailscale login` after your project starts, and log in from your browser.
 
 2.  Next, **install the add-on:**
 
@@ -116,6 +115,39 @@ Share privately (default, only accessible to your Tailscale devices):
 ddev tailscale share
 ```
 
+Here is what `share` prints. The QR code works the same way as the one in `ddev share`: scan it to open the site on your phone instead of typing the address.
+
+```
+$ ddev tailscale share
+Starting Tailscale serve on port 80...
+Available within your tailnet:
+
+https://demo.your-tailnet.ts.net/
+|-- proxy http://127.0.0.1:80
+
+Serve started and running in the background.
+To disable the proxy, run: ddev tailscale stop
+
+🔒 Your site is shared privately within your Tailscale network
+
+Scan to open on your phone:
+█████████████████████████████
+██ ▄▄▄▄▄ █▀█▀▄▀▄▀▀██ ▄▄▄▄▄ ██
+██ █   █ █▀▄▀ ▀▀ ▀▀█ █   █ ██
+██ █▄▄▄█ █▀ ▀▄▄█ ▀ █ █▄▄▄█ ██
+██▄▄▄▄▄▄▄█▄▀ ▀ █▄▀ █▄▄▄▄▄▄▄██
+██▄▄ ▄ ▀▄ ▄▀ ▀█▄▄▄ ▄█ █▄█ ███
+███▄█▄▀ ▄▄█ ▄█▄█▀▄   ▀█▄█▄ ██
+██▀ █▀█▄▄█▀ █▀█ ▄█▀▄▄▀▄▀▄ ▄██
+██ █ ▄ █▄▀ ▀█▀▄█▀ ▄ ▀  ▄█▄ ██
+██▄█▄███▄█▀█    ▄█ ▄▄▄ ▀▄████
+██ ▄▄▄▄▄ █▄▀▄█▄█▄█ █▄█ ▀▄▄ ██
+██ █   █ █  █▀█ ▄    ▄ ▀ █▄██
+██ █▄▄▄█ █ █▀██▄▄▀ ▀█▀▀ ▄█ ██
+██▄▄▄▄▄▄▄█▄███▄▄▄▄█▄█▄▄▄▄▄▄██
+█████████████████████████████
+```
+
 Stop sharing:
 
 ```bash
@@ -164,4 +196,4 @@ I hope this add-on helps streamline your development workflow! If you run into a
 
 ---
 
-_This blog post was updated with the assistance of GitHub Copilot (Claude). I used it to help update the content based on the latest add-on changes, improve accuracy, and maintain consistency. The original version was written with assistance from Amazon Q and Google Gemini._
+_The original version of this post was written with assistance from Amazon Q and Google Gemini, and a later update used GitHub Copilot (Claude). This update was prepared with my AI agent, Ryan (Muse), which also worked on the add-on changes described here._
