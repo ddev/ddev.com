@@ -22,7 +22,7 @@ drush sql-sync @prod @self
 
 One command, and the local site has a copy of the production database.
 
-I use Drush a lot, so I wanted the same thing for my personal projects. They are Laravel, WordPress and plain PHP sites, and they live on all sorts of servers: a VPS here, a cPanel host there, some on shared servers. What I had instead was the usual mix of phpMyAdmin exports and one-off scripts that I had to remember each time.
+I use Drush a lot, so I wanted the same thing for my personal projects. They are Laravel, WordPress and plain PHP sites, and they live on all sorts of hosting: shared accounts, VPSs, dedicated boxes — a good number of them running cPanel, which itself runs on shared and dedicated hosting alike. What I had instead was the usual mix of phpMyAdmin exports and one-off scripts that I had to remember each time.
 
 DDEV does have pull providers. The ready-made ones are for hosted platforms like Pantheon and Acquia, but the examples it ships also include an rsync one, for pulling a dump down from a plain server over SSH. I do not want to overstate the gap: that example works. But it is a starting point you adapt, not a finished tool. Every project needs its own provider file, written and kept up to date separately, and sanitize is on you. I kept missing the Drush shape: one aliases file, the same command in every project, and sanitize taken care of. So this add-on is that shape, packaged: [`ddev-sql-sync`](https://github.com/atj4me/ddev-sql-sync).
 
@@ -32,7 +32,7 @@ Where I use it:
 
 - **Refreshing local data.** I can bring a local site up to date with production content before I start work on it.
 - **Debugging with real data.** I can reproduce a production issue locally, with user emails and passwords already scrubbed.
-- **Any server I can SSH into.** VPS, cPanel host, shared server — if it runs MySQL or MariaDB, it works. There is no platform account or API in between.
+- **Any server I can SSH into.** Shared hosting, a VPS, a dedicated server, with or without cPanel — if it runs MySQL or MariaDB, it works. There is no platform account or API in between.
 
 ### How it Works
 
@@ -55,7 +55,7 @@ Two things to sort out first:
    ssh your-server-alias 'echo ok'
    ```
 
-   If that asks for a password, set up key login first (`ssh-copy-id`). If the host uses a different SSH port, which is common on cPanel and shared hosting, put the port in the `~/.ssh/config` entry for that alias.
+   If that asks for a password, set up key login first (`ssh-copy-id`). If the host uses a different SSH port, which is common on shared hosting (most cPanel accounts, for instance), put the port in the `~/.ssh/config` entry for that alias.
 
 2. **A way to dump the database on the server.** If the app has an export tool of its own, the add-on uses that (see _Dump strategies_ below). Otherwise the server needs `mysqldump`. You do not have to guess: the `--dry-run` check further down will tell you if it is missing.
 
@@ -144,7 +144,7 @@ ddev sql-sync @prod @self --dry-run # preflight checks only — nothing is dumpe
 | `-y`, `--yes`                  | Do not ask for confirmation.                                                                                                                                                                                        |
 | `-h`, `--help`                 | Show help.                                                                                                                                                                                                          |
 
-Downloaded dumps are saved as `<dump-dir>/<alias>.sql` and **kept** after import, which is handy if you want to import the same dump again. They do contain production data, so delete them when you are done with them: `rm ~/sql-sync/*.sql`.
+Downloaded dumps are saved as `<dump-dir>/<alias>.sql` — or `<alias>.sql.gz`, if the dump turns out to be gzipped — and **kept** after import, which is handy if you want to import the same dump again. They do contain production data, so delete them when you are done with them: `rm ~/sql-sync/*.sql*`.
 
 ### Dump Strategies and Platforms
 
@@ -159,9 +159,9 @@ For each alias, the dump is made in one of these ways, in this order:
 
 The run tells you which strategy it used.
 
-The platform is worked out per alias: the alias's `platform:` key if you set one, else this project's DDEV type from `.ddev/config.yaml` (the `laravel`, `wordpress` and `drupal` types map to themselves), else `php`. Some notes per platform:
+The platform is worked out per alias: the alias's `platform:` key if you set one, else this project's DDEV type from `.ddev/config.yaml` (the `laravel` and `wordpress` types map to themselves, and every Drupal variant — `drupal7` through `drupal11` — maps to `drupal`), else `php`. Some notes per platform:
 
-- **Laravel / any `.env` app** — credentials come from `<root>/.env`. Bedrock-style WordPress fits here too (set `platform: laravel`).
+- **Laravel / any `.env` app** — credentials come from `<root>/.env`, under the usual Laravel key names (`DB_DATABASE`, `DB_USERNAME`, and so on). One caution: Bedrock-style WordPress uses different key names in its `.env` (`DB_NAME`, `DB_USER`), so for a Bedrock site, pin at least the name and username in the alias's `database:` block.
 - **WordPress (classic)** — credentials come from the `DB_*` defines in `<root>/wp-config.php`, or one level up, as WordPress allows. The table prefix is read from the config, so sites with a prefix sanitize properly.
 - **PHP (generic)** — DDEV's generic `php` type, and the fallback when nothing else matches. No app export tool, so it always uses mysqldump. Credentials come from `<root>/.env` if there is one, merged under the alias's `database:` block — for a generic app, that block is the expected main source. There is no bundled sanitize: a `sanitize:` file is honoured if you set one, otherwise the run reports that no sanitize ran.
 - **Drupal** — dump through Drush when it is available. Otherwise credentials are read from the default `$databases` entry in `settings.php`. That read is best-effort: a settings file that gets its credentials from the environment may not give them up, and then a `dump:` override or a pinned `database:` block is the way out. A `sanitize:` file on the alias, if set, takes precedence over `drush sql-sanitize`.
