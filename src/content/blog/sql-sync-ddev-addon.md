@@ -1,7 +1,7 @@
 ---
 title: "SQL Sync for DDEV: Drush-Style Database Sync for Any SSH Server"
 pubDate: 2026-11-05
-summary: "If you have used Drush, you know sql-sync: one command copies a production database into your local site. The ddev-sql-sync add-on brings that shape to any plain SSH-accessible server — Laravel, WordPress, Drupal, or plain PHP — with aliases, a private staging folder on the server, and sanitize on by default."
+summary: "If you have used Drush, you know sql-sync: one command copies a production database into your local site. The ddev-sql-sync add-on brings that shape to any SSH-accessible server — Laravel, WordPress, Drupal, or plain PHP — with aliases, a private staging folder on the server, and sanitize on by default."
 author: Ajith Thampi Joseph
 featureImage:
   src: /img/blog/2026/11/sql-sync-ddev-addon.svg
@@ -20,42 +20,44 @@ Anyone who has worked with Drupal knows this command:
 drush sql-sync @prod @self
 ```
 
-One command, and your local site has a copy of the production database. I use Drush day to day, so that shape is second nature — but I did not have the same thing for my personal projects: Laravel, WordPress, and plain PHP sites on plain servers I reach over SSH — VPS, cPanel hosts, and shared servers alike. DDEV's pull providers are built around hosted platforms, and none of those are a platform.
+One command, and the local site has a copy of the production database.
 
-So there is now an add-on in Drush's shape: [`ddev-sql-sync`](https://github.com/atj4me/ddev-sql-sync). It syncs a production MySQL database into your local DDEV project, from any SSH-accessible server.
+I use Drush a lot, so I wanted the same thing for my personal projects. They are Laravel, WordPress and plain PHP sites, and they live on all sorts of servers: a VPS here, a cPanel host there, some on shared servers. What I had instead was the usual mix of phpMyAdmin exports and one-off scripts that I had to remember each time.
 
-A short note on how it was made: the add-on was designed by me and built and tested with an AI agent, Ryan (Muse), working under my direction. A little more on that at the end.
+DDEV does have pull providers, and the examples it ships include an rsync one that works fine for this. I have used variants of it myself. But every project needed its own provider file, written and kept up to date separately, and I kept missing the Drush shape: one aliases file, the same command in every project, and sanitize taken care of. So this add-on is that shape, packaged: [`ddev-sql-sync`](https://github.com/atj4me/ddev-sql-sync).
 
-Typical uses:
+One thing to state up front: I designed this add-on, and it was built and tested with the help of an AI agent, Ryan (Muse), working under my direction. There is a bit more about that at the end.
 
-- **Refreshing local data:** bring a local Laravel or WordPress site up to date with production content before working on it.
-- **Debugging with real data:** reproduce a production issue locally, with user emails and passwords already scrubbed.
-- **Any plain server:** a VPS, a cPanel host, a shared server — if you can SSH to it and it runs MySQL or MariaDB, it works — no platform account or API involved.
+Where I use it:
+
+- **Refreshing local data.** I can bring a local site up to date with production content before I start work on it.
+- **Debugging with real data.** I can reproduce a production issue locally, with user emails and passwords already scrubbed.
+- **Any server I can SSH into.** VPS, cPanel host, shared server — if it runs MySQL or MariaDB, it works. There is no platform account or API in between.
 
 ### How it Works
 
-The configuration is one YAML file of named aliases, in the same spirit as Drush site aliases. A run of `ddev sql-sync @prod @self` then does four things:
+The configuration is one YAML file of named aliases, much like Drush site aliases. A run of `ddev sql-sync @prod @self` then does four things:
 
-1. **Dump** — SSH to the server and create a database dump in a private temp folder there.
-2. **Download** — rsync the dump into a local folder (default `~/sql-sync`), then delete the server's temp copy.
-3. **Import** — `ddev import-db` into this project. You are asked to confirm first; the current local database is replaced.
+1. **Dump** — SSH to the server and make a database dump in a private temp folder there.
+2. **Download** — rsync the dump to a local folder (by default `~/sql-sync`), then delete the copy on the server.
+3. **Import** — `ddev import-db` into this project. You are asked to confirm first. The current local database is replaced.
 4. **Sanitize** — scrub user emails and passwords in the _local_ database. On by default.
 
-Note the destination in the command. Every sync or copy command — `cp`, `rsync`, `scp`, Drush's own `sql-sync` — takes a source and a destination, so this one does too. `@self` is the only target it accepts; anything else is rejected. The add-on only ever _reads_ from the server, and stating the target on every run keeps that in front of you.
+Note the target in the command. `cp`, `rsync`, `scp` and Drush's own `sql-sync` all take a source and a destination, so this one does too. `@self` is the only target it accepts; anything else is refused. The add-on only ever reads from the server, and having the target in the command keeps that in front of you.
 
 ### Prerequisites
 
-Before installing the add-on, check two server-side things first:
+Two things to sort out first:
 
-1. **You can SSH to the server non-interactively** (key-based login, no password prompt):
+1. **SSH from your own machine.** The add-on is a host command. It runs `ssh` and `rsync` on your computer, using your `~/.ssh/config` and your keys, the same way you would by hand. It does not use `ddev auth ssh`, and nothing SSHes from inside the web container. So this has to work first:
 
    ```bash
    ssh your-server-alias 'echo ok'
    ```
 
-   If that prompts for a password, set up a key first (`ssh-copy-id`), and if you use a short alias like `myserver`, add a matching entry to your `~/.ssh/config`. This is your own machine's SSH setup — the add-on does not manage keys.
+   If that asks for a password, set up key login first (`ssh-copy-id`). If the host uses a different SSH port, which is common on cPanel and shared hosting, put the port in the `~/.ssh/config` entry for that alias.
 
-2. **The server can make a dump.** If the app has its own export tool it will be used (see _Dump strategies_ below); otherwise the server needs `mysqldump`. The preflight check described below will tell you plainly if it is missing.
+2. **A way to dump the database on the server.** If the app has an export tool of its own, the add-on uses that (see _Dump strategies_ below). Otherwise the server needs `mysqldump`. You do not have to guess: the `--dry-run` check further down will tell you if it is missing.
 
 You also need DDEV v1.24.10 or later.
 
@@ -73,7 +75,7 @@ You also need DDEV v1.24.10 or later.
    ddev restart
    ```
 
-Installing the add-on creates `.ddev/sql-sync/aliases.yml` from the shipped example if you do not have one yet. Your `aliases.yml` is never overwritten by add-on updates and never removed when the add-on is removed.
+Installing the add-on creates `.ddev/sql-sync/aliases.yml` from the example that ships with it, if you do not have one yet. Add-on updates never overwrite your `aliases.yml`, and removing the add-on does not remove it either.
 
 ### Configuration: `.ddev/sql-sync/aliases.yml`
 
@@ -90,9 +92,9 @@ prod:
   tmp: /tmp # optional; temp folder on the server
 ```
 
-Define as many aliases as you like (`prod`, `staging`, …) and pick one per run: `ddev sql-sync @staging @self`.
+Define as many aliases as you like (`prod`, `staging`, and so on) and pick one per run: `ddev sql-sync @staging @self`.
 
-Each alias has two required keys, `host` and `root`. The optional keys:
+Each alias needs two keys, `host` and `root`. The optional keys:
 
 | Key         | Purpose                                                                                                                                             |
 | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -105,9 +107,9 @@ Each alias has two required keys, `host` and `root`. The optional keys:
 
 #### Where the database credentials come from
 
-Normally you configure no credentials at all. At dump time, the add-on reads them from the app's own config **on the server**: `.env` for Laravel, `wp-config.php` for WordPress, `sites/default/settings.php` for Drupal.
+Normally you do not configure any credentials at all. When it is time to dump, the add-on reads them from the app's own config **on the server**: `.env` for Laravel, `wp-config.php` for WordPress, `sites/default/settings.php` for Drupal.
 
-For setups where that cannot work — a managed database host, split credentials — an alias can pin values explicitly:
+For setups where that cannot work — a managed database host, or credentials split across files — an alias can pin the values itself:
 
 ```yaml
 prod:
@@ -122,7 +124,7 @@ prod:
 
 Any field you leave out falls back to the app's config, field by field. You can pin just the password, or just the host and port for an RDS-style endpoint.
 
-> **Treat a filled-in `password:` as a secret.** `aliases.yml` lives under `.ddev/`, which many projects gitignore — check yours — and `chmod 600 .ddev/sql-sync/aliases.yml` is a good idea if you use this block. The password is passed to mysqldump through the `MYSQL_PWD` environment variable only, never as a command-line argument and never printed.
+> **Treat a filled-in `password:` as a secret.** `aliases.yml` sits under `.ddev/`, which many projects gitignore — check yours — and `chmod 600 .ddev/sql-sync/aliases.yml` is a good idea if you use this block. The password is passed to mysqldump through the `MYSQL_PWD` environment variable only, never as a command-line argument, and it is never printed.
 
 ### Usage
 
@@ -132,75 +134,75 @@ ddev sql-sync @prod @self -y        # skip the confirmation prompt
 ddev sql-sync @prod @self --dry-run # preflight checks only — nothing is dumped or imported
 ```
 
-| Flag                           | Meaning                                                                                                                                                                                                                          |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--sanitize` / `--no-sanitize` | Sanitize after import (default on) / skip it. Skipping prints a loud warning: the local database then holds real production emails and password hashes.                                                                          |
-| `--dump-dir=<path>`            | Where the dump is downloaded to (overrides `local.dir`).                                                                                                                                                                         |
-| `--no-dump`                    | Do not create a new dump; fetch the dump file an earlier `--no-sync` run left on the server. It is verified against its completion marker before anything is imported.                                                           |
-| `--no-sync`                    | Only create the dump on the server and leave it there; do not download, import, or sanitize.                                                                                                                                     |
-| `--dry-run`                    | Preflight only: check SSH connectivity, platform, dump strategy, credentials (the password is never shown), database size and disk space, then print the plan. Takes no dump, imports nothing, and writes nothing on the server. |
-| `-y`, `--yes`                  | Do not ask for confirmation.                                                                                                                                                                                                     |
-| `-h`, `--help`                 | Show help.                                                                                                                                                                                                                       |
+| Flag                           | Meaning                                                                                                                                                                                                             |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--sanitize` / `--no-sanitize` | Sanitize after import (on by default), or skip it. Skipping prints a loud warning: the local database then holds real production emails and password hashes.                                                        |
+| `--dump-dir=<path>`            | Where the dump is downloaded to (overrides `local.dir`).                                                                                                                                                            |
+| `--no-dump`                    | Do not make a new dump; fetch the dump file an earlier `--no-sync` run left on the server. It is verified against its completion marker before anything is imported.                                                |
+| `--no-sync`                    | Only create the dump on the server and leave it there; do not download, import, or sanitize.                                                                                                                        |
+| `--dry-run`                    | Preflight only: check SSH, platform, dump strategy, credentials (the password is never shown), database size and disk space, then print the plan. Takes no dump, imports nothing, and writes nothing on the server. |
+| `-y`, `--yes`                  | Do not ask for confirmation.                                                                                                                                                                                        |
+| `-h`, `--help`                 | Show help.                                                                                                                                                                                                          |
 
-Downloaded dumps land at `<dump-dir>/<alias>.sql` and are **kept** after import, which is handy for re-importing. They contain production data — delete them when you no longer need them: `rm ~/sql-sync/*.sql`.
+Downloaded dumps are saved as `<dump-dir>/<alias>.sql` and **kept** after import, which is handy if you want to import the same dump again. They do contain production data, so delete them when you are done with them: `rm ~/sql-sync/*.sql`.
 
 ### Dump Strategies and Platforms
 
-The dump strategy per alias, in order:
+For each alias, the dump is made in one of these ways, in this order:
 
 1. **`dump:` override** — if the alias sets one, it always wins.
-2. **The app's own export tool**, run on the server in the app root, if the platform has one and it is installed there (if it is missing, the next strategy is used instead of failing):
+2. **The app's own export tool**, run on the server in the app root, if the platform has one and it is installed there. If it is missing, the next strategy is used instead of failing:
    - WordPress → `wp db export` (WP-CLI)
    - Drupal → `drush sql-dump`
-   - Laravel → no native data export exists (`schema:dump` is structure-only), so Laravel always uses strategy 3.
+   - Laravel → there is no native data export (`schema:dump` is structure-only), so Laravel always uses strategy 3.
 3. **`mysqldump`** — with credentials resolved as described above.
 
 The run tells you which strategy it used.
 
-The platform is resolved per alias: the alias's `platform:` key if you set one, else this project's DDEV type from `.ddev/config.yaml` (the `laravel`, `wordpress` and `drupal` types map to themselves), else `php`. Platform notes:
+The platform is worked out per alias: the alias's `platform:` key if you set one, else this project's DDEV type from `.ddev/config.yaml` (the `laravel`, `wordpress` and `drupal` types map to themselves), else `php`. Some notes per platform:
 
-- **Laravel / any `.env` app** — credentials from `<root>/.env`. Bedrock-style WordPress also fits here (set `platform: laravel`).
-- **WordPress (classic)** — credentials from the `DB_*` defines in `<root>/wp-config.php` (or one level up, as WordPress allows). The table prefix is read from the config, so prefixed sites sanitize correctly.
-- **PHP (generic)** — DDEV's generic `php` type, and the default when nothing else matches. No app-native export, so it always uses mysqldump; credentials come from `<root>/.env` if there is one, merged under the alias's `database:` block — for a generic app, that block is the expected primary source. No bundled sanitize: a `sanitize:` file is honoured, otherwise the run reports that no sanitize ran.
-- **Drupal** — dump via Drush when available; otherwise credentials are read from the default `$databases` entry in `settings.php` (best-effort: a settings file that pulls credentials from the environment may not yield them — then use a `dump:` override or pin a `database:` block). An alias `sanitize:` file, if set, takes precedence over `drush sql-sanitize`.
+- **Laravel / any `.env` app** — credentials come from `<root>/.env`. Bedrock-style WordPress fits here too (set `platform: laravel`).
+- **WordPress (classic)** — credentials come from the `DB_*` defines in `<root>/wp-config.php`, or one level up, as WordPress allows. The table prefix is read from the config, so sites with a prefix sanitize properly.
+- **PHP (generic)** — DDEV's generic `php` type, and the fallback when nothing else matches. No app export tool, so it always uses mysqldump. Credentials come from `<root>/.env` if there is one, merged under the alias's `database:` block — for a generic app, that block is the expected main source. There is no bundled sanitize: a `sanitize:` file is honoured if you set one, otherwise the run reports that no sanitize ran.
+- **Drupal** — dump through Drush when it is available. Otherwise credentials are read from the default `$databases` entry in `settings.php`. That read is best-effort: a settings file that gets its credentials from the environment may not give them up, and then a `dump:` override or a pinned `database:` block is the way out. A `sanitize:` file on the alias, if set, takes precedence over `drush sql-sanitize`.
 
 ### Sanitize
 
-Sanitize runs after import, on the local database only:
+Sanitize runs after the import, and only on the local database:
 
 - **Laravel** — bundled SQL: `users.email` becomes `user<id>@example.test`, `users.password` becomes a hash of `password`, `remember_token` becomes `NULL`.
-- **WordPress** — bundled SQL on the users table (using the site's actual table prefix): email becomes `user<id>@example.test`, password becomes `MD5('password')`, which WordPress accepts at login and rehashes transparently.
-- **Drupal** — `ddev drush sql-sanitize` when the local project has Drush; otherwise a `sanitize:` file from the alias; if neither exists, the run says plainly that no sanitize ran.
-- **Any platform** — an explicit `sanitize:` file in the alias is honoured.
+- **WordPress** — bundled SQL on the users table, using the site's actual table prefix: email becomes `user<id>@example.test`, password becomes `MD5('password')`, which WordPress accepts at login and rehashes on its own.
+- **Drupal** — `ddev drush sql-sanitize` when the local project has Drush; otherwise a `sanitize:` file from the alias; if neither exists, the run says so.
+- **Any platform** — a `sanitize:` file set on the alias is always honoured.
 
-One rule applies everywhere: if sanitize is switched on but nothing could actually be applied, the run ends with "completed WITHOUT sanitize" and a non-zero exit code, instead of reporting success over a local database that still holds live production data.
+If sanitize is switched on but nothing could actually be applied, the run ends with "completed WITHOUT sanitize" and a non-zero exit code. It does not report success and leave live production data sitting in your local database.
 
 ### What Happens on the Server
 
-Since this runs against production, here is the complete list of what a run does there:
+Since this runs against production, here is everything a run does there:
 
-- Reads the app's config file to resolve credentials.
-- Creates **one dump file** in a dedicated subfolder of the alias's temp folder — `/tmp/ddev-dumps` by default. The folder is mode 700 and the dump mode 600, so on a shared server other accounts cannot read it. A partial dump left by a failed run is removed, not left behind.
-- On success, writes a small completion marker next to the dump recording its exact byte size. The local side verifies that size before trusting the file — including on a later `--no-dump` run, so a truncated dump is never imported as if it were whole.
-- Deletes the temp dump and marker after the download (if the import itself then fails, the server copy is kept and the run tells you how to retry with `--no-dump`).
+- It reads the app's config file to get the credentials.
+- It creates **one dump file** in a subfolder of the alias's temp folder — `/tmp/ddev-dumps` by default. The folder is mode 700 and the dump mode 600, so on a shared server the other accounts cannot read it. If a run fails partway, the partial dump is removed rather than left behind.
+- On success, it writes a small completion marker next to the dump with the dump's exact size in bytes. The local side checks that size before trusting the file, including on a later `--no-dump` run, so a truncated dump is never imported as if it were whole.
+- After the download, it deletes the dump and the marker on the server. If the import itself then fails, the server copy is kept, and the run tells you how to retry with `--no-dump`.
 
-Nothing else. No writes to the app or its database, no cache clears, no migrations, no restarts. Before dumping, every run also estimates the database size and aborts if the temp filesystem has less free space than that — a dump filling the disk is the one realistic way a sync could hurt a small server. If the size cannot be estimated, the run prints that the check was skipped rather than staying silent.
+That is all. Nothing is written to the app or its database: no cache clears, no migrations, no restarts. Before dumping, the run also estimates the database size and stops if the temp filesystem has less free space than that, because a dump filling the disk is the one realistic way a sync could hurt a small server. If the size cannot be estimated, the run says the check was skipped instead of saying nothing.
 
 ### Testing Safely
 
-New server, or just cautious? Work up in steps:
+New server, or you would rather be careful? Work up in steps:
 
-1. **`ddev sql-sync @prod @self --dry-run`** — preflight only, as above. You get a verdict per check plus the plan, then it stops.
-2. **`ddev sql-sync @prod @self --no-sync`** — a real dump, created on the server and left there; nothing downloaded or imported.
+1. **`ddev sql-sync @prod @self --dry-run`** — preflight only, as above. You get a result per check, plus the plan, and then it stops.
+2. **`ddev sql-sync @prod @self --no-sync`** — a real dump, made on the server and left there. Nothing is downloaded or imported.
 3. **`ddev sql-sync @prod @self --no-dump`** — fetch that dump, verify it against its marker, import and sanitize.
 4. **`ddev sql-sync @prod @self`** — the full run.
 
 ### Troubleshooting
 
-- **"mysqldump is not installed on this server"** — the preflight found no `mysqldump` in the SSH session's PATH and no usable app export tool. Install the MariaDB/MySQL client tools on the server, or give the alias a `dump:` command that produces the dump another way.
-- **Credentials look right but authentication fails** — check for a stale `~/.my.cnf` on the server (in the sync user's home). A `[client]` password in that file silently overrides the `MYSQL_PWD` environment variable for MariaDB clients, this tool included. I hit exactly this in my own testing.
-- **The run asks for an SSH password or hangs** — the add-on expects non-interactive SSH. Test with `ssh your-server-alias 'echo ok'` and fix your key setup first.
-- **"unknown alias"** — the alias name after `@` must match a top-level key in `aliases.yml` exactly.
+- **"mysqldump is not installed on this server"** — the preflight found no `mysqldump` in the SSH session's PATH and no usable app export tool. Install the MariaDB/MySQL client tools on the server, or give the alias a `dump:` command that makes the dump another way.
+- **Credentials look right but authentication fails** — check for a stale `~/.my.cnf` on the server, in the sync user's home. A `[client]` password in that file silently overrides the `MYSQL_PWD` environment variable for MariaDB clients, this tool included. I ran into exactly this in my own testing.
+- **The run asks for an SSH password or hangs** — the add-on expects SSH without prompts. Test with `ssh your-server-alias 'echo ok'` and fix your key setup first.
+- **"unknown alias"** — the name after `@` has to match a top-level key in `aliases.yml` exactly.
 
 ### Uninstalling the Add-on
 
@@ -208,11 +210,11 @@ New server, or just cautious? Work up in steps:
 ddev add-on remove sql-sync
 ```
 
-This removes the command and the bundled files. Your `aliases.yml` and any downloaded dumps are left in place — delete them manually if you want them gone.
+This removes the command and the files that came with it. Your `aliases.yml` and any downloaded dumps are left where they are — delete them yourself if you want them gone.
 
 ### How This Add-on Was Made
 
-My first instinct is usually a workaround with the tools I already know, and Tailscale and Drush have carried me through more situations than I can count. This one started the same way: a personal project needed its production database locally, and the sync had to suit my workflow. As noted at the top, I designed the add-on and an AI agent built and tested it under my direction. Before it was released, the code also went through an independent read-only audit and an end-to-end rehearsal against a container standing in for a production server, and what those turned up was fixed. It is shared here in case it suits someone else's workflow too.
+My first instinct is usually a workaround with the tools I already know, and Tailscale and Drush have carried me through more situations than I can count. This one started the same way: a personal project needed its production database locally, and the sync had to suit my workflow. As noted at the top, I designed the add-on and an AI agent built and tested it under my direction. Before it was released, the code went through an independent read-only audit and an end-to-end rehearsal against a container standing in for a production server, and what those turned up was fixed. It is here in case it suits someone else's workflow too.
 
 ### Additional Resources
 
