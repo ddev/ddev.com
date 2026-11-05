@@ -212,7 +212,11 @@ This removes the command and the bundled files. Your `aliases.yml` and any downl
 
 ### How This Add-on Was Made
 
-As noted at the top: I designed it, and an AI agent built and tested it under my direction. Two short observations from that process, because they shaped the tool. The tests were green at every stage, and I still caught real bugs by reading the code myself — the first release's remote script had the platform silently hardcoded to Laravel, and an early version let you omit the `@self` target entirely, which I sent back on the source-and-destination principle above. Before I called it ready, the code also went through an independent, read-only audit and an end-to-end rehearsal against a container pretending to be a production server; the real server was never the test subject. Fifteen audit findings were fixed along the way. The judgment calls stayed human — I think the division of labour is exactly why the safety features above exist.
+As noted at the top: I designed it, and an AI agent built and tested it under my direction.
+
+A word on why it exists at all. My first instinct is usually a workaround with the tools I already know, and Tailscale and Drush have carried me through more situations than I can count. I did not build this because I wanted another project; I built it because the sync needed to suit my workflow, and I am sharing it in case it suits someone else's too.
+
+Two short observations from the build process, because they shaped the tool. The tests were green at every stage, and I still caught real bugs by reading the code myself — the first release's remote script had the platform silently hardcoded to Laravel, and an early version let you omit the `@self` target entirely, which I sent back on the source-and-destination principle above. Before I called it ready, the code also went through an independent, read-only audit and an end-to-end rehearsal against a container pretending to be a production server; the real server was never the test subject. Fifteen audit findings were fixed along the way. The judgment calls stayed human — I think the division of labour is exactly why the safety features above exist.
 
 ### Additional Resources
 
