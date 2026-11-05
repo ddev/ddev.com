@@ -20,13 +20,13 @@ Anyone who has worked with Drupal knows this command:
 drush sql-sync @prod @self
 ```
 
-One command, and your local site has a copy of the production database. I'm a web developer at the Ottawa Public Library, and my day-to-day work there is still Drupal, so I use that shape at work all the time. What I did not have was the same thing for my personal projects — Laravel, WordPress, and plain PHP sites on plain servers I reach over SSH. DDEV's pull providers are built around hosted platforms, and a VPS is not a platform.
+One command, and your local site has a copy of the production database. I use Drush day to day, so that shape is second nature — but I did not have the same thing for my personal projects: Laravel, WordPress, and plain PHP sites on plain servers I reach over SSH. DDEV's pull providers are built around hosted platforms, and a VPS is not a platform.
 
-So I had one built in Drush's shape: the [`ddev-sql-sync`](https://github.com/atj4me/ddev-sql-sync) add-on. It syncs a production MySQL database into your local DDEV project, from any SSH-accessible server.
+So there is now an add-on in Drush's shape: [`ddev-sql-sync`](https://github.com/atj4me/ddev-sql-sync). It syncs a production MySQL database into your local DDEV project, from any SSH-accessible server.
 
-A short note on how it was made, stated plainly: I designed this add-on — the interface, the safety rules, the decisions — and it was built and tested with my AI agent, Ryan (Muse), doing the labour under my direction. There is a little more about that at the end.
+A short note on how it was made: the add-on was designed by me and built and tested with an AI agent, Ryan (Muse), working under my direction. A little more on that at the end.
 
-I've found it useful for:
+Typical uses:
 
 - **Refreshing local data:** bring a local Laravel or WordPress site up to date with production content before working on it.
 - **Debugging with real data:** reproduce a production issue locally, with user emails and passwords already scrubbed.
@@ -212,11 +212,7 @@ This removes the command and the bundled files. Your `aliases.yml` and any downl
 
 ### How This Add-on Was Made
 
-As noted at the top: I designed it, and an AI agent built and tested it under my direction.
-
-A word on why it exists at all. My first instinct is usually a workaround with the tools I already know, and Tailscale and Drush have carried me through more situations than I can count. I did not build this because I wanted another project; I built it because the sync needed to suit my workflow, and I am sharing it in case it suits someone else's too.
-
-Two short observations from the build process, because they shaped the tool. The tests were green at every stage, and I still caught real bugs by reading the code myself — the first release's remote script had the platform silently hardcoded to Laravel, and an early version let you omit the `@self` target entirely, which I sent back on the source-and-destination principle above. Before I called it ready, the code also went through an independent, read-only audit and an end-to-end rehearsal against a container pretending to be a production server; the real server was never the test subject. Fifteen audit findings were fixed along the way. The judgment calls stayed human — I think the division of labour is exactly why the safety features above exist.
+My first instinct is usually a workaround with the tools I already know, and Tailscale and Drush have carried me through more situations than I can count. This one started the same way: a personal project needed its production database locally, and the sync had to suit my workflow. As noted at the top, I designed the add-on and an AI agent built and tested it under my direction. Before it was released, the code also went through an independent read-only audit and an end-to-end rehearsal against a container standing in for a production server, and what those turned up was fixed. It is shared here in case it suits someone else's workflow too.
 
 ### Additional Resources
 
