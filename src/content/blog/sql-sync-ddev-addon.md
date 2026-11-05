@@ -24,7 +24,7 @@ One command, and the local site has a copy of the production database.
 
 I use Drush a lot, so I wanted the same thing for my personal projects. They are Laravel, WordPress and plain PHP sites, and they live on all sorts of servers: a VPS here, a cPanel host there, some on shared servers. What I had instead was the usual mix of phpMyAdmin exports and one-off scripts that I had to remember each time.
 
-DDEV does have pull providers, and the examples it ships include an rsync one that works fine for this. I have used variants of it myself. But every project needed its own provider file, written and kept up to date separately, and I kept missing the Drush shape: one aliases file, the same command in every project, and sanitize taken care of. So this add-on is that shape, packaged: [`ddev-sql-sync`](https://github.com/atj4me/ddev-sql-sync).
+DDEV does have pull providers. The ready-made ones are for hosted platforms like Pantheon and Acquia, but the examples it ships also include an rsync one, for pulling a dump down from a plain server over SSH. I do not want to overstate the gap: that example works. But it is a starting point you adapt, not a finished tool. Every project needs its own provider file, written and kept up to date separately, and sanitize is on you. I kept missing the Drush shape: one aliases file, the same command in every project, and sanitize taken care of. So this add-on is that shape, packaged: [`ddev-sql-sync`](https://github.com/atj4me/ddev-sql-sync).
 
 One thing to state up front: I designed this add-on, and it was built and tested with the help of an AI agent, Ryan (Muse), working under my direction. There is a bit more about that at the end.
 
