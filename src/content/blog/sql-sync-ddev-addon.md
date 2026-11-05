@@ -221,6 +221,6 @@ My first instinct is usually a workaround with the tools I already know, and Tai
 - **[ddev-sql-sync on GitHub](https://github.com/atj4me/ddev-sql-sync)**: source, issues, and the full README.
 - **[Releases](https://github.com/atj4me/ddev-sql-sync/releases)**: release notes for every version.
 - **[DDEV add-ons](https://docs.ddev.com/en/stable/users/extend/additional-services/)**: how add-ons work and how to write your own.
-- **[Drush sql-sync](https://www.drush.org/latest/commands/sql-sync/)**: the command this add-on is modelled on.
+- **[Drush sql-sync](https://www.drush.org/latest/commands/sql_sync/)**: the command this add-on is modelled on.
 
 I hope this helps anyone else who has wanted `drush sql-sync` for the sites they run outside Drupal. If you run into issues or have suggestions, feel free to open an issue on the GitHub repository.
