@@ -11,7 +11,7 @@ categories:
   - Guides
 ---
 
-[coder.ddev.com](https://coder.ddev.com) gives you a DDEV environment in the cloud, in about a minute, with nothing installed on your own machine. Since the [announcement](coder-ddev-com-announcement.md) it has grown a Drupal issue picker, a freeform template for any DDEV project, and several ways to run Claude Code inside a workspace.
+[coder.ddev.com](https://coder.ddev.com) gives you a DDEV environment in the cloud, with nothing installed on your own machine. Since the [announcement](coder-ddev-com-announcement.md) it has grown a Drupal issue picker, a freeform template for any DDEV project, and several ways to run Claude Code inside a workspace.
 
 Here's our November 11, 2026 [Contributor Training](/blog/category/training) on advanced coder.ddev.com usage:
 
@@ -31,17 +31,17 @@ It is experimental. There are no guarantees about uptime or data retention, and 
 
 Sign in with GitHub at [coder.ddev.com/login](https://coder.ddev.com/login). Members of any organization that [sponsors DDEV](/sponsor) at $100/month or more can sign in directly. Everyone else can open an issue in [coder-ddev-com/access-requests](https://github.com/coder-ddev-com/access-requests) with their GitHub username and how they plan to use it. Coder gets read-only access to your email, public profile, and organization membership, not to your code.
 
-The code is all at [github.com/ddev/coder-ddev](https://github.com/ddev/coder-ddev) and the docs are at [docs.coder.ddev.com](https://docs.coder.ddev.com/), including instructions for self-hosting.
+The code is all at [github.com/ddev/coder-ddev](https://github.com/ddev/coder-ddev) and the docs are at [docs.coder.ddev.com](https://docs.coder.ddev.com/), including instructions for hosting it on your own infrastructure.
 
 ## Three Templates
 
 - `drupal-core`: a clean Drupal core checkout for working on core issues, using [amateescu/ddev-drupal-dev](https://github.com/amateescu/ddev-drupal-dev).
 - `drupal-contrib`: any contrib module or theme, using [ddev/ddev-drupal-contrib](https://github.com/ddev/ddev-drupal-contrib).
-- `freeform`: your own DDEV projects, one or many per workspace.
+- `freeform`: your own DDEV projects (or other types of projects), one or many per workspace.
 
 ## Drupal Contribution With the Issue Picker
 
-The [Drupal issue picker](https://start.coder.ddev.com/drupal-issue) is the replacement for Gitpod-based DrupalPod. Paste a drupal.org issue URL, issue number, or project name. The picker works out whether it's core or contrib and which Drupal version it needs, checks out the issue fork branch, installs Composer dependencies, and installs the site. Hand someone an issue URL at a contribution day and they get a working site with the branch ready, with no local Docker.
+The [Drupal issue picker](https://start.coder.ddev.com/drupal-issue) is the replacement for the old Gitpod-based DrupalPod. Paste a drupal.org issue URL, issue number, or project name. The picker works out whether it's core or contrib and which Drupal version it needs, checks out the issue fork branch, installs Composer dependencies, and installs the site. Hand someone an issue URL at a contribution day and they get a working site with the branch ready, with no local Docker.
 
 The first creation of a Drupal workspace takes several minutes. Watch the Logs tab, and don't click Cancel at "Confirm and Create"; if something goes wrong, start over in the picker.
 
@@ -60,7 +60,7 @@ To push to the issue fork, add the workspace's public key (from `coder publickey
 
 The dashboard gives you VS Code for the Web, a web terminal, and app buttons for the DDEV site, Mailpit, and XHGui. VS Code for the Web is a full VS Code in a browser tab, and its terminal has `ddev`, `docker`, `git`, and `claude`.
 
-For daily work, local VS Code is more comfortable. Use the "VS Code Desktop" button, `coder open vscode my-site`, or Remote-SSH to the host `coder.my-site`. Xdebug works the same as with local DDEV. JetBrains IDEs connect through the Toolbox Coder plugin or Gateway over SSH.
+For daily work, I usually prefer local VS Code (VS Code on my machine but using ssh to the workspace). Use the "VS Code Desktop" button, `coder open vscode my-site`, or Remote-SSH to the host `coder.my-site`. Xdebug works the same as with local DDEV. JetBrains IDEs connect through the Toolbox Coder plugin or Gateway over SSH.
 
 ### The Coder CLI
 
@@ -168,9 +168,9 @@ The runner handles one to four concurrent sessions; `claude-sessions` lists them
 
 If you want to limit what an agent can do, removing `sudo` in a startup script keeps it from installing system software or reversing other restrictions.
 
-## What Freely Give Is Doing With It
+## What FreelyGive Is Doing With It
 
-The Freely Give team joined the session and showed how they use coder.ddev.com for AI agent work. They have agents that browse Drupal modules, look for vulnerabilities, and file security issues with reproduction videos; about 150 of those issues have been verified so far. They also have a one-line installer that sets up DDEV and runs scripts to migrate a site into Drupal CMS, often with a Storybook design system, and they've used a workspace to benchmark Drupal on a Rust port of PHP.
+The FreelyGive team (featured sponsors of DDEV) joined the session and showed how they use coder.ddev.com for AI agent work. They have agents that browse Drupal modules, look for vulnerabilities, and file security issues with reproduction videos; about 150 of those issues have been verified so far. They also have a one-line installer that sets up DDEV and runs scripts to migrate a site into Drupal CMS, often with a Storybook design system, and they've used a workspace to benchmark Drupal on a Rust port of PHP.
 
 The discussion raised questions we don't have settled answers to yet:
 
