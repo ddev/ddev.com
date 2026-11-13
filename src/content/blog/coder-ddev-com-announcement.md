@@ -1,8 +1,8 @@
 ---
 title: "Introducing coder.ddev.com: DDEV in the Cloud"
 pubDate: 2026-03-11
-modifiedDate: 2026-05-13
-modifiedComment: "Significant updates to coder behavior, including Drupal contrib issue setup, better 'freeform' template, and new authentication requirements."
+modifiedDate: 2026-11-13
+modifiedComment: "Updated workspace lifecycle, freeform URLs, and documentation links, and added a link to the November 2026 contributor training on advanced coder.ddev.com usage."
 summary: "coder.ddev.com provides free, experimental cloud-based DDEV workspaces powered by Coder. Start a Drupal contribution environment in under 30 seconds, with full VS Code, Xdebug, and CLI support."
 author: Randy Fay
 featureImage:
@@ -27,13 +27,15 @@ Want a quick overview? This video walks through creating a workspace and using t
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sKjAUZ0ISJU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
+For the freeform template, the Coder CLI and SSH, workspace lifecycle, and running Claude Code in a workspace, see the November 2026 [Contributor Training: Advanced coder.ddev.com Usage](coder-ddev-com-contributor-training.md), with its recording and slides. The [coder.ddev.com docs](https://docs.coder.ddev.com/) have the current details.
+
 ## Table of Contents
 
 ## How It Works
 
-coder.ddev.com runs on [Coder](https://coder.com), an open-source platform for remote development environments. Each workspace is an isolated container (using the [Sysbox](https://github.com/nestybox/sysbox) runtime for secure Docker-in-Docker) with DDEV, Docker, and VS Code pre-installed.
+coder.ddev.com runs on [Coder](https://coder.com), an open-source platform for remote development environments. Each workspace is an isolated container (using the [Sysbox](https://github.com/nestybox/sysbox) runtime for secure Docker-in-Docker) with DDEV, Docker, VS Code, and Claude Code pre-installed.
 
-Your files persist on a remote volume across workspace restarts. When you delete a workspace, the data is gone — so push your work to Git before deleting. But until you delete the workspace, or it's garbage-collected (not yet implemented), your work persists..
+Your files persist on a remote volume across workspace restarts. When you delete a workspace, the data is gone — so push your work to Git before deleting. A workspace that sits idle for 7 days gets a warning email, and 7 days after that it is deleted.
 
 The source code for the templates and Docker image is at [github.com/ddev/coder-ddev](https://github.com/ddev/coder-ddev). Other projects can use this and deploy their own fully-DDEV-capable Coder instances.
 
@@ -117,7 +119,7 @@ Setup time is reasonable on first workspace creation and much faster on subseque
 
 ### freeform
 
-The freeform template supports multiple DDEV projects in one workspace, each accessible via its own subdomain through ddev-router Host-header routing — no port numbers needed. After creating a workspace, run `ddev coder-setup` once in your project directory, then `ddev start`. Routing updates automatically on every start.
+The freeform template supports multiple DDEV projects in one workspace, each accessible via its own subdomain through ddev-router Host-header routing — no port numbers needed. When creating the workspace, list your DDEV project names in the "DDEV project names" parameter (for example `shop,blog`). Then run `ddev coder-setup` once in each project directory, followed by `ddev start`. Routing updates automatically on every start.
 
 ## The Drupal Issue Picker
 
@@ -177,11 +179,11 @@ coder stop my-workspace
 
 Because DDEV runs inside a cloud container, the usual `*.ddev.site` URLs don't work. Instead, access your project via the **DDEV Web** app link in the Coder dashboard, or use port forwarding, and `ddev start`, `ddev launch` and `ddev describe` also give URL information.
 
-The freeform template handles this automatically with Traefik routing — you get stable subdomain URLs like `https://<workspace>--<workspace>--<owner>.coder.ddev.com/`.
+The freeform template handles this automatically with Traefik routing — you get stable subdomain URLs like `https://<project>--<workspace>--<username>.coder.ddev.com/`.
 
 ## Stopping and Deleting Workspaces
 
-**Stop**: Stops the container and frees compute resources. All files in `/home/coder` are preserved. Use this when you are done for the day.
+**Stop**: Stops the container and frees compute resources. All files in `/home/coder` are preserved, along with databases and Docker volumes. Running processes, `/tmp`, and anything installed with `apt-get` are lost. Use this when you are done for the day. Freeform workspaces also stop on their own after 24 hours of inactivity.
 
 **Delete**: Permanently removes the workspace and all data. Always push your code to Git before deleting.
 
@@ -217,7 +219,8 @@ The templates and image are open source at [github.com/ddev/coder-ddev](https://
 
 ## Getting Help
 
-- **Documentation**: [github.com/ddev/coder-ddev/docs](https://github.com/ddev/coder-ddev/tree/main/docs)
+- **Documentation**: [docs.coder.ddev.com](https://docs.coder.ddev.com/)
+- **Training**: [Contributor Training: Advanced coder.ddev.com Usage](coder-ddev-com-contributor-training.md)
 - **DDEV Discord**: [Discord](https://ddev.com/s/discord) — `#support-and-discussion` channel
 - **Issues**: [github.com/ddev/coder-ddev/issues](https://github.com/ddev/coder-ddev/issues)
 - **DDEV Docs**: [docs.ddev.com](https://docs.ddev.com)

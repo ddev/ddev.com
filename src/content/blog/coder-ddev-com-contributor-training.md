@@ -60,7 +60,7 @@ To push to the issue fork, add the workspace's public key (from `coder publickey
 
 The dashboard gives you VS Code for the Web, a web terminal, and app buttons for the DDEV site, Mailpit, and XHGui. VS Code for the Web is a full VS Code in a browser tab, and its terminal has `ddev`, `docker`, `git`, and `claude`.
 
-For daily work, I usually prefer local VS Code (VS Code on my machine but using ssh to the workspace). Use the "VS Code Desktop" button, `coder open vscode my-site`, or Remote-SSH to the host `coder.my-site`. Xdebug works the same as with local DDEV. JetBrains IDEs connect through the Toolbox Coder plugin or Gateway over SSH.
+For daily work, I usually prefer local VS Code (VS Code on your machine, connected to the workspace over SSH). Use the "VS Code Desktop" button, `coder open vscode my-site`, or Remote-SSH to the host `coder.my-site`. Xdebug works the same as with local DDEV. JetBrains IDEs connect through the Toolbox Coder plugin or Gateway over SSH.
 
 ### The Coder CLI
 
@@ -121,7 +121,7 @@ ddev coder-setup
 ddev start
 ```
 
-The site is at `https://hello--hello--<username>.coder.ddev.com`; use the app button or `ddev launch`. `*.ddev.site` URLs don't work in the cloud.
+The site is at `https://hello--<workspace>--<username>.coder.ddev.com`; use the app button or `ddev launch`. `*.ddev.site` URLs don't work in the cloud.
 
 Bringing your own project is the same pattern:
 
@@ -172,7 +172,7 @@ If you want to limit what an agent can do, removing `sudo` in a startup script k
 
 The FreelyGive team (featured sponsors of DDEV) joined the session and showed how they use coder.ddev.com for AI agent work. They have agents that browse Drupal modules, look for vulnerabilities, and file security issues with reproduction videos; about 150 of those issues have been verified so far. They also have a one-line installer that sets up DDEV and runs scripts to migrate a site into Drupal CMS, often with a Storybook design system, and they've used a workspace to benchmark Drupal on a Rust port of PHP.
 
-The discussion raised questions we don't have settled answers to yet:
+Open topics from the discussion:
 
 - Whether a complex AI workflow should be its own Coder template or a script run in a freeform workspace.
 - Adding an app button for a service like phpMyAdmin is easy in a template, but automatic URL mapping for every DDEV service isn't there yet.
