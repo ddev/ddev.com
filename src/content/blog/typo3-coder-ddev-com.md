@@ -1,6 +1,8 @@
 ---
 title: "TYPO3 Projects on Coder.ddev.com"
 pubDate: 2026-07-09
+modifiedDate: 2026-11-13
+modifiedComment: "Updated access requirements and freeform project setup, and linked the advanced coder.ddev.com contributor training."
 summary: "A short demo of running a TYPO3 project on coder.ddev.com using the 'freeform' Coder template, including a trustedHostsPattern fix and two ways to share the result."
 author: Randy Fay
 featureImage:
@@ -14,7 +16,7 @@ categories:
 
 [coder.ddev.com](https://coder.ddev.com) gives you a full DDEV environment in the cloud, no local Docker required. This is a quick look at using it for a TYPO3 project with the **freeform** template.
 
-For general background on coder.ddev.com, including access requirements and the other available templates, see [the announcement post](coder-ddev-com-announcement.md).
+For general background on coder.ddev.com, including access requirements and the other available templates, see [the announcement post](coder-ddev-com-announcement.md). For the freeform template in more depth, see the [advanced coder.ddev.com contributor training](coder-ddev-com-contributor-training.md).
 
 ## Watch the Video
 
@@ -33,8 +35,8 @@ For general background on coder.ddev.com, including access requirements and the 
 
 ## Steps
 
-1. Get access to coder.ddev.com either via your organization having "partner" status with DDEV Foundation or by [asking for access](https://github.com/coder-ddev-com/access-requests).
-1. Log in to [coder.ddev.com](https://coder.ddev.com) with GitHub and create a workspace using the **freeform** template. The project name you choose matters, since coder.ddev.com uses it to set up proxying.
+1. Get access to coder.ddev.com either via your organization [sponsoring DDEV](/sponsor) at $100/month or more or by [asking for access](https://github.com/coder-ddev-com/access-requests).
+1. Log in to [coder.ddev.com](https://coder.ddev.com) with GitHub and create a workspace using the **freeform** template. Put your project's DDEV name in the "DDEV project names" parameter, since coder.ddev.com uses it to set up proxying.
 1. Open a terminal in the workspace (web terminal, VS Code Web, or SSH via the `coder` CLI) and clone your TYPO3 project.
 1. Run `ddev coder-setup` once in the project directory, then `ddev start`. If the project has a `post-start` Composer install hook, like [rfay/typo3demo](https://github.com/rfay/typo3demo), it'll finish setting itself up automatically.
 1. If `ddev launch` shows a trusted-host error, it's because Composer brought in the rest of the code after the first `ddev start` already generated `additional.php`. Run `ddev restart` to regenerate it, then reload.
@@ -48,6 +50,8 @@ It can also be shared with `ddev share`, since `rfay/typo3demo` uses a relative 
 ## Learn More
 
 - [Introducing coder.ddev.com: DDEV in the Cloud](coder-ddev-com-announcement.md)
+- [Contributor Training: Advanced coder.ddev.com Usage](coder-ddev-com-contributor-training.md)
+- [coder.ddev.com docs](https://docs.coder.ddev.com/)
 - [github.com/ddev/coder-ddev](https://github.com/ddev/coder-ddev) — templates and source for the freeform, drupal-core, and drupal-contrib templates
 - [DDEV TYPO3 quickstart](https://docs.ddev.com/en/stable/users/quickstart/#typo3)
 
