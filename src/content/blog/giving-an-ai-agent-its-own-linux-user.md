@@ -15,6 +15,12 @@ categories:
 
 The surprise came quickly: My agent had a terminal open in a client project, about to run `ddev composer install`, and I wanted to know what it could reach if a task ever went sideways. The answer was: everything. The agent ran as my user, so it could read my SSH keys, push with my Git and gh credentials, reach everything on the Windows side through `/mnt/c`, and talk to a Docker daemon running as root. Its permission system asked before every Bash command, and I approved commands in five-second intervals, all day. At some point I stopped reading the prompts and clicked _allow_ blindly. That was the moment I knew the agent and I needed a different kind of protection.
 
+## What an agent can do to your machine
+
+An agent with a shell can wreck the machine it runs on (delete files, fill the disk), take it over (steal credentials, plant a backdoor, use the Docker socket), write code that does more than the task asked, ship private code and secrets somewhere else, or reach network services it was never meant to touch. Wherever it runs, those risks travel with it.
+
+This post is about the second one: taking over the machine, through everything the agent can reach because it runs as my user. A separate Linux user shrinks exactly that blast radius. It does not stop malicious code from being written or project files from leaving; reviews and network policy are the answers there, and the end of this post is honest about what remains unsolved.
+
 So I turned the question around. Instead of asking what I could withhold from the agent, I asked what the smallest identity is that still lets it do the job.
 
 ## What an agent inherits when it runs as you
@@ -78,6 +84,18 @@ Two UIDs, one working tree: most tools are not designed for that. The concept ha
 
 Where the operating system actually protects me is everything outside the project trees. Credentials under `/home/dev/private/credentials.json`, or on the Windows side under `/mnt/c/Users/steffenmaechtel/.ssh/`, are unreachable for the agent: a `cat` fails at the filesystem, no matter which command I approve. Inside the project tree, protection stays soft-only. I deny reads on `auth.json` in the agent's configuration; if I blindly approve a Bash command like `cat auth.json`, the content ends up in the prompt anyway. That is deliberate: `auth.json` holds the credentials for external private Composer repositories, and even that file cannot carry an operating-system deny. `ddev composer install` runs Composer inside the web container, as the same host UID as the agent, and Composer needs it to reach those repositories. The hard boundary is my home directory. Inside the projects, the agent's own rules and my reading of the prompts do the work.
 
+## What this setup protects against, and what it does not
+
+| Risk of an agent with a shell                   | Covered by this setup?                                                                                     |
+| ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| Wrecking the machine                            | Partly. Your home, the system, and the Windows side survive; disk, CPU, and the project trees stay shared. |
+| Taking over the machine                         | Yes. That is what the separate user, rootless Docker, and the missing Windows interop are for.             |
+| Writing code that does more than the task asked | No. Reviews and CI are the answer.                                                                         |
+| Exfiltrating code and secrets                   | Partly. What the agent cannot read, it cannot leak. Project files can still leave.                         |
+| Unwanted network access                         | No. Nothing here restricts the network.                                                                    |
+
+Most of these risks are triggered by injected instructions in content the agent reads. An identity boundary does not fix that; it only shrinks what a hijacked agent can reach.
+
 ## If you want this
 
 This is a WSL2, Linux, and macOS approach. It leans on users, groups, and filesystem ACLs, so it does not carry over to traditional Windows.
@@ -88,5 +106,6 @@ You can build the whole thing by hand: `useradd`, `dockerd-rootless-setuptool.sh
 
 - [Podman and Docker Rootless in DDEV](podman-and-docker-rootless.md) — how DDEV supports rootless container backends
 - [Docker Rootless setup in the DDEV docs](https://docs.ddev.com/en/stable/users/install/docker-installation/) — installation and requirements
+- [coder.ddev.com](coder-ddev-com-announcement.md) — DDEV in a cloud workspace, an alternative boundary
 - [opencode](https://opencode.ai) — the agent used in this post
 - [opencode-permissions-kit](https://github.com/steffenmaechtel/opencode-permissions-kit) — the setup from this post, ready to run (MIT, community project in beta)
