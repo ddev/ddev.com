@@ -223,7 +223,7 @@ My first instinct is usually a workaround with the tools I already know, and Tai
 - **[DDEV add-ons](https://docs.ddev.com/en/stable/users/extend/additional-services/)**: how add-ons work and how to write your own.
 - **[DDEV hosting providers](https://docs.ddev.com/en/stable/users/providers/)**: how `ddev pull` and provider files work in DDEV itself.
 - **[rsync.yaml.example](https://github.com/ddev/ddev/blob/main/pkg/ddevapp/dotddev_assets/providers/rsync.yaml.example)**: DDEV's shipped example rsync provider — it runs inside the web container after `ddev auth ssh`, and pulls a database dump and files tarball that already exist on the server.
-- **[Example providers](https://github.com/ddev/ddev/tree/main/pkg/ddevapp/dotddev_assets/providers)**: the git and localfile examples that ship alongside the rsync one.
+- **[Example providers](https://github.com/ddev/ddev/tree/main/pkg/ddevapp/dotddev_assets/providers)**: the `git.yaml.example` and `localfile.yaml.example` examples that ship alongside the rsync one.
 - **[Drush sql-sync](https://www.drush.org/latest/commands/sql_sync/)**: the command this add-on is modelled on.
 
 I hope this helps anyone else who has wanted `drush sql-sync` for the sites they run outside Drupal. If you run into issues or have suggestions, feel free to open an issue on the GitHub repository.
