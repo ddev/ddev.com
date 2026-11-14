@@ -13,7 +13,7 @@ categories:
 
 **TL;DR:** My coding agent runs on my WSL2 machine as its own Linux user, with its own home directory and its own rootless Docker daemon. DDEV runs as that same user, in my terminal and in the agent's. My workflow did not change. This post explains why I did it, what it took, and what broke along the way.
 
-The moment was small. My agent had a terminal open in a client project, about to run `composer install`, and I wanted to know what it could reach if a task ever went sideways. The answer was: everything. The agent ran as my user, so it could read my SSH keys, push with my Git and gh credentials, reach everything on the Windows side through `/mnt/c`, and talk to a Docker daemon running as root. Its permission system asked before every Bash command, and I approved commands in five-second intervals, all day. At some point I stopped reading the prompts and clicked _allow_ blindly. That was the moment I knew the agent and I needed a different kind of protection.
+The surprise came quickly: My agent had a terminal open in a client project, about to run `ddev composer install`, and I wanted to know what it could reach if a task ever went sideways. The answer was: everything. The agent ran as my user, so it could read my SSH keys, push with my Git and gh credentials, reach everything on the Windows side through `/mnt/c`, and talk to a Docker daemon running as root. Its permission system asked before every Bash command, and I approved commands in five-second intervals, all day. At some point I stopped reading the prompts and clicked _allow_ blindly. That was the moment I knew the agent and I needed a different kind of protection.
 
 So I turned the question around. Instead of asking what I could withhold from the agent, I asked what the smallest identity is that still lets it do the job.
 
@@ -25,7 +25,7 @@ On a typical WSL2 setup, an agent running as your user inherits the blast radius
 - The Docker socket, which on a default rootful installation is root-equivalent.
 - Windows interop: `/mnt/c` and the ability to run `.exe` files. On WSL2, the Linux side reaches straight into Windows; a shell command is all it takes.
 
-Approval prompts don't solve this, because I stopped reading them. They had become background noise long before the agent got productive.
+Approval prompts don't solve this, because I stopped reading them. They had become background noise long before the agent got productive. Newer agents don't even ask that much: Claude Code has defaulted to `auto` mode since August 2026, which approves most commands on its own.
 
 ## The old answer from Unix
 
@@ -33,7 +33,9 @@ Services on a Linux machine have not run as the admin's personal user for decade
 
 An **agent** that edits my code, runs my tests, and starts my containers **is a new coworker** on the machine, and **coworkers get their own account**.
 
-The obvious alternative, especially for DDEV users, is to run the agent inside the web container. I ruled that out, for a DDEV-specific reason. DDEV projects can define custom host commands in `.ddev/commands/host/`, and DDEV executes those directly on the host, as the invoking user, with no container around them. Through the shared project tree, that directory stays writable for the agent, so an agent inside the web container could still plant a command there. The boundary has to hold on the host itself.
+The obvious alternative, especially for DDEV users, is to run the agent inside the web container. I ruled that out, for a DDEV-specific reason. An agent inside the container cannot execute host commands itself, but it does not have to: through the shared project tree it stays writable for the agent, so it can plant a custom command in `.ddev/commands/host/` and register it as a hook in `.ddev/config.yaml`. The next time I start the project, DDEV runs that hook on the host, as my user, with no container around it. The boundary has to hold on the host itself.
+
+The other escape is the cloud: [coder.ddev.com](coder-ddev-com-announcement.md) runs DDEV in a cloud workspace, not on your machine at all.
 
 So that is what I did: the agent, [opencode](https://opencode.ai), now runs as a dedicated `opencode` user on my WSL2 box, and I kept the rest of the machine mine.
 
@@ -78,6 +80,13 @@ Where the operating system actually protects me is everything outside the projec
 
 ## If you want this
 
-One boundary to name first: this is a WSL2 and Linux story. It leans on Linux users, groups, and filesystem ACLs, so it does not carry over to macOS or plain Windows.
+This is a WSL2, Linux, and macOS approach. It leans on users, groups, and filesystem ACLs, so it does not carry over to traditional Windows.
 
 You can build the whole thing by hand: `useradd`, `dockerd-rootless-setuptool.sh`, recursive ACLs, four sudoers rules, a wrapper script, and a shell function. When I started, I estimated three days, agent-assisted. It took longer than that; there is more to it than a second user and a rootless daemon. That is the reason I packed the result into [opencode-permissions-kit](https://github.com/steffenmaechtel/opencode-permissions-kit) (MIT, community project in beta): so nobody else spends a weekend on it.
+
+## Resources
+
+- [Podman and Docker Rootless in DDEV](podman-and-docker-rootless.md) — how DDEV supports rootless container backends
+- [Docker Rootless setup in the DDEV docs](https://docs.ddev.com/en/stable/users/install/docker-installation/) — installation and requirements
+- [opencode](https://opencode.ai) — the agent used in this post
+- [opencode-permissions-kit](https://github.com/steffenmaechtel/opencode-permissions-kit) — the setup from this post, ready to run (MIT, community project in beta)
