@@ -67,22 +67,13 @@ All sessions are open to everybody.
 
 **Shopware with DDEV, with Benny Poensgen** — The October 21 session is recorded. [Watch the recording↗](https://youtu.be/JjcRapymIX8), browse the [slides↗](https://vanwittlaer.github.io/pt-ddev-live-training-oct-2026/), or read Benny's [Shopware on DDEV](shopware-on-ddev.md) post.
 
+**Advanced coder.ddev.com Techniques** — The November 11 session covers the `coder` CLI, local and web-based VS Code, the `freeform` template, and Claude Code remote control. [Watch the recording and browse the slides](coder-ddev-com-contributor-training.md).
+
 **Hobobiker Rides Again, at the Drupal AI Learners Club** — Randy, Amber Matz, and Angie Byron are migrating hobobiker.com, a Drupal 6 site from 2009, with Claude, live and in three parts. Everything runs in DDEV, and the repository, a sanitized database, and the slides are linked from the [hobobiker.com README↗](https://github.com/rfay/hobobiker.com).
 
 - **Part 1, Road Test (October 16)** → Before migrating anything, Claude wrote a Playwright test suite against the old site. Working from the raw Drupal 6 database, it found the content types on its own, knew to use only the latest node revisions, and flagged problems nobody asked about, including database backups that anyone could download. [Watch the recording↗](https://www.youtube.com/watch?v=qd6R-e2EvOc) or read the [club's recap↗](https://www.drupal.org/docs/develop/development-tools/ai-coding-tools-for-drupal-development/drupal-ai-learners-club-sessions/2026-10-16-%E2%80%94-part-1-hobobiker-rides-again-plan-it-test-it-migrate-it-%E2%80%94-road-test-having-claude).
 - **Part 2, The Last Ride (October 23)** → Claude retired the site as static HTML, following Lullabot's "Sending a Drupal Site into Retirement" and checked against the tests from Part 1. The archive is now live at [static.hobobiker.com↗](https://static.hobobiker.com). [Watch the recording↗](https://www.youtube.com/watch?v=hQR7G39FeRw) or read the [club's recap↗](https://www.drupal.org/docs/develop/development-tools/ai-coding-tools-for-drupal-development/drupal-ai-learners-club-sessions/2026-10-23-%E2%80%94-part-2-hobobiker-rides-again-plan-it-test-it-migrate-it-%E2%80%94-the-last-ride-sending-a).
 - **Part 3, The Long Haul (Friday, October 30 at 10:30 AM US Mountain / 12:30 PM US Eastern / 17:30 CET)** → Drupal 6 to Drupal 11. Claude explores the source and the destination and writes a migration plan before touching any code, and the finished site has to pass the same test suite. [Register on Luma↗](https://luma.com/2g0u28yn)
-
-The next DDEV training session:
-
-- **November 11, 2026 at 8:00 AM US Mountain / 10:00 AM US Eastern / 16:00 CET — Advanced Coder.ddev.com Techniques**  
-  Using the `coder` CLI, local and web-based VS Code, and remote-controlling Claude, including the `freeform` template.  
-  [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Advanced%20Coder.ddev.com%20Techniques&dates=20261111T150000Z/20261111T160000Z&details=Join%20the%20DDEV%20training%20session%20via%20Zoom.%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online&trp=true) •
-  [Download .ics](/files/ics/ddev-2026-11-11.ics)
-
-Zoom Join Info:  
-Link: [Join Zoom Meeting](https://us02web.zoom.us/j/7315692237?pwd=RHR6NUkwb0g5WXIzS2NOcXRucCthZz09)  
-Passcode: 12345
 
 ---
 

@@ -61,6 +61,8 @@ Live training is back for the fall, three sessions open to everybody.
   [Add to Google Calendar](https://calendar.google.com/calendar/render?action=TEMPLATE&text=Advanced%20Coder.ddev.com%20Techniques&dates=20261111T150000Z/20261111T160000Z&details=Join%20the%20DDEV%20training%20session%20via%20Zoom.%0ALink%3A%20https%3A%2F%2Fus02web.zoom.us%2Fj%2F7315692237%3Fpwd%3DRHR6NUkwb0g5WXIzS2NOcXRucCthZz09%0AMeeting%20ID%3A%20731%20569%202237%0APasscode%3A%2012345&location=Online&trp=true) •
   [Download .ics](/files/ics/ddev-2026-11-11.ics)
 
+  **November 18 update** — [Watch the recording and browse the slides](coder-ddev-com-contributor-training.md).
+
 Zoom Join Info:  
 Link: [Join Zoom Meeting](https://us02web.zoom.us/j/7315692237?pwd=RHR6NUkwb0g5WXIzS2NOcXRucCthZz09)  
 Passcode: 12345
