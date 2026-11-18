@@ -1,8 +1,8 @@
 ---
 title: "Contributor Training: `git worktree` for Multiple DDEV Projects"
 pubDate: 2026-03-30
-modifiedDate: 2026-07-07
-modifiedComment: Added link to usage with TYPO3 projects
+modifiedDate: 2026-11-19
+modifiedComment: Added sharing database snapshots between worktrees
 summary: "Using git worktree with DDEV to run multiple versions of the same project simultaneously, sharing a single .git directory."
 author: Randy Fay
 featureImage:
@@ -102,6 +102,25 @@ ddev import-db --file=../.tarballs/db.sql.gz
 ddev import-files --source=../.tarballs/files.tgz
 ```
 
+## Sharing Database Snapshots Between Worktrees
+
+Another way to bring the database over is with `ddev snapshot`. An `export-db` file is a SQL dump you write to a shared path and import elsewhere. A snapshot is a physical backup of the database server, so creating and restoring it is often quicker on large databases. See [Snapshots](https://docs.ddev.com/en/stable/users/usage/database-management/#snapshots) and [Sharing Snapshots Between Git Worktrees](https://docs.ddev.com/en/stable/users/usage/database-management/#sharing-snapshots-between-git-worktrees).
+
+You take the snapshot in one checkout and restore it by name in the other. There is no dump file for you to write, move, or point at by path—DDEV reads the sibling worktree's snapshot file for you:
+
+```bash
+# In the source worktree
+ddev snapshot --name=before-feature
+
+# In the new worktree
+ddev start
+ddev snapshot restore before-feature
+```
+
+Run `ddev snapshot restore` with no name to pick from your other worktrees' snapshots, each labeled with the worktree it came from, or `ddev snapshot restore --latest` to take the most recent one. `ddev snapshot --list` shows them the same way.
+
+Two limits to keep in mind: snapshots hold the database only, so move uploaded files separately with `ddev import-files` as shown above. And a snapshot restores only to the same database type and version it came from, in another worktree of the same repository.
+
 ## Key `git worktree` Commands
 
 ```bash
@@ -115,7 +134,7 @@ git worktree remove <name>  # Remove a worktree
 - Remove `name:` from `.ddev/config.yaml` so each worktree uses its directory name as the project name
 - Consider `ddev config global --omit-project-name-by-default` to make this behavior the default for all projects
 - `git worktree add <path>` creates a new checkout sharing the same `.git`
-- Import a database snapshot and files tarball into each worktree
+- Copy the database with `export-db`/`import-db` or a [shared snapshot](https://docs.ddev.com/en/stable/users/usage/database-management/#sharing-snapshots-between-git-worktrees), and files with `import-files`
 - Each worktree gets its own DDEV project URL automatically
 - If you're using TYPO3, see [Using `git worktree` with TYPO3](git-worktree-with-typo3.md)—TYPO3's absolute `base` URL needs a `post-start` hook to work across worktrees
 
