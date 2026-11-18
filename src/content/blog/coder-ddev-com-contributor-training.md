@@ -1,6 +1,6 @@
 ---
 title: "Contributor Training: Advanced coder.ddev.com Usage"
-pubDate: 2026-11-11
+pubDate: 2026-11-18
 summary: "Contributor training on coder.ddev.com: Drupal issue workspaces, the freeform template, the Coder CLI and SSH, and running Claude Code in an isolated cloud workspace."
 author: Randy Fay
 featureImage:
@@ -23,7 +23,7 @@ The slides are available at [rfay.github.io/advanced-coder-presentation](https:/
 
 ## What coder.ddev.com Is
 
-coder.ddev.com is a free, experimental service built on the open source [Coder](https://coder.com) project. Each workspace is an isolated Docker-in-Docker container (using Sysbox) with DDEV, Docker, Git, VS Code, and Claude Code already installed. Because it runs on someone else's machine, it doesn't depend on your laptop, your local network, or where you are, and an AI agent running there can't touch your local credentials or configuration.
+coder.ddev.com is a free, experimental service built on the open source [Coder](https://coder.com) project. Each workspace is an isolated Docker-in-Docker container (using Sysbox) with DDEV, Docker, Git, VS Code, and Claude Code already installed. The tools run on the server and use the workspace's files and configuration.
 
 It is experimental. There are no guarantees about uptime or data retention, and a workspace that sits idle for 14 days is deleted, so keep your work in Git.
 
@@ -60,7 +60,7 @@ To push to the issue fork, add the workspace's public key (from `coder publickey
 
 The dashboard gives you VS Code for the Web, a web terminal, and app buttons for the DDEV site, Mailpit, and XHGui. VS Code for the Web is a full VS Code in a browser tab, and its terminal has `ddev`, `docker`, `git`, and `claude`.
 
-For daily work, I usually prefer local VS Code (VS Code on your machine, connected to the workspace over SSH). Use the "VS Code Desktop" button, `coder open vscode my-site`, or Remote-SSH to the host `coder.my-site`. Xdebug works the same as with local DDEV. JetBrains IDEs connect through the Toolbox Coder plugin or Gateway over SSH.
+For daily work, I usually prefer local VS Code (VS Code on your machine, connected to the workspace over SSH). Use the "VS Code Desktop" button, `coder open vscode my-site`, or Remote-SSH to the host `my-site.coder` after running `coder config-ssh`. Xdebug works the same as with local DDEV. JetBrains IDEs connect through the Toolbox Coder plugin or Gateway over SSH.
 
 ### The Coder CLI
 
@@ -83,18 +83,20 @@ coder ssh my-site -- ddev list
 coder ssh -A my-site
 ```
 
-`coder config-ssh` writes entries in `~/.ssh/config` so plain `ssh`, `scp`, and `rsync` work against `coder.<workspace>`. Run it again after creating a new workspace.
+When you forward your SSH agent, processes in the workspace, including Claude Code, can ask it to sign with your local keys while it’s connected. Leave agent forwarding off unless you need those keys in the workspace. See [Git and SSH keys](https://docs.coder.ddev.com/workspaces/editors-and-ssh/#git-and-ssh-keys).
+
+`coder config-ssh` writes entries in `~/.ssh/config` so plain `ssh`, `scp`, and `rsync` work against `<workspace>.coder`. Run it again after creating a new workspace.
 
 ```bash
 coder config-ssh --yes
-ssh coder.my-site
-rsync -av ./files/ coder.my-site:~/my-site/web/sites/default/files/
+ssh my-site.coder
+rsync -av ./files/ my-site.coder:~/my-site/web/sites/default/files/
 ```
 
 Importing a database is an `scp` followed by `ddev import-db`:
 
 ```bash
-scp ~/Downloads/dump.sql.gz coder.my-site:~/my-site/
+scp ~/Downloads/dump.sql.gz my-site.coder:~/my-site/
 coder ssh my-site -- env -C /home/coder/my-site \
   ddev import-db --file=dump.sql.gz
 ```
@@ -104,7 +106,7 @@ And exporting is the reverse:
 ```bash
 coder ssh my-site -- env -C /home/coder/my-site \
   ddev export-db --file=backup.sql.gz
-scp coder.my-site:~/my-site/backup.sql.gz .
+scp my-site.coder:~/my-site/backup.sql.gz .
 ```
 
 ## The Freeform Template
@@ -139,7 +141,14 @@ Public sharing is off by default, so workspaces are private. If you turn it on, 
 
 Freeform workspaces auto-stop after 24 hours of inactivity. Check or extend that with `coder schedule show my-site` and `coder schedule extend my-site 2h`, or turn auto-stop off in the workspace settings; that may change if usage grows. After 7 idle days you get a warning email, and 7 days after that the workspace is deleted.
 
-Stopping a workspace keeps `/home/coder`, databases, Docker volumes, and Homebrew packages. It loses running processes, `/tmp`, and anything installed with `apt-get`, so install tools with `brew` or `npm -g`. DDEV projects aren't restarted automatically, but `~/.coder-startup.sh` runs on every start, so put `cd ~/my-site && ddev start` there.
+Stopping a workspace keeps `/home/coder`, databases, Docker volumes, and Homebrew packages. It loses running processes, `/tmp`, and anything installed with `apt-get`, so install tools with `brew` or `npm -g`. To start a DDEV project when the workspace starts, create `~/.coder-startup.sh` with these contents:
+
+```bash
+#!/usr/bin/env bash
+cd ~/my-site && ddev start
+```
+
+Run `chmod +x ~/.coder-startup.sh` so the workspace can run the script on each start.
 
 ## Claude Code in a Workspace
 
@@ -166,7 +175,7 @@ chmod 600 ~/.claude-runner/environment-secret
 
 The runner handles one to four concurrent sessions; `claude-sessions` lists them. It rewrites `~/.gitconfig` before each session and logs to the `claude-runner` tmux session and `/tmp/claude-runner-N.log`.
 
-If you want to limit what an agent can do, removing `sudo` in a startup script keeps it from installing system software or reversing other restrictions.
+Claude Code runs as the workspace user and can access that user's files and credentials. Keep permission prompts enabled if you want to review the commands it runs.
 
 ## What FreelyGive Is Doing With It
 
