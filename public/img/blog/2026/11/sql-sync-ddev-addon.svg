@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#10243e"/>
+  <text x="600" y="105" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="44" font-weight="bold" fill="#ffffff">ddev sql-sync @prod @self</text>
+  <text x="600" y="150" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" fill="#9db8d6">Drush-style database sync for any SSH server</text>
+
+  <g font-family="Helvetica, Arial, sans-serif" font-size="21" fill="#ffffff" text-anchor="middle">
+    <rect x="60" y="270" width="220" height="110" rx="12" fill="#1d4e79"/>
+    <text x="170" y="318">Production</text>
+    <text x="170" y="348">server (SSH)</text>
+
+    <rect x="350" y="270" width="220" height="110" rx="12" fill="#1d4e79"/>
+    <text x="460" y="318">Dump</text>
+    <text x="460" y="348" font-size="18" fill="#cfe0f2">private temp folder</text>
+
+    <rect x="640" y="270" width="220" height="110" rx="12" fill="#1d4e79"/>
+    <text x="750" y="318">Download</text>
+    <text x="750" y="348" font-size="18" fill="#cfe0f2">rsync to ~/sql-sync</text>
+
+    <rect x="930" y="270" width="220" height="110" rx="12" fill="#b25f06"/>
+    <text x="1040" y="318">Import + Sanitize</text>
+    <text x="1040" y="348" font-size="18" fill="#ffe1bd">into local DDEV</text>
+  </g>
+
+  <g stroke="#f2a541" stroke-width="5" fill="none">
+    <path d="M285 325 L340 325 M340 325 L328 313 M340 325 L328 337"/>
+    <path d="M575 325 L630 325 M630 325 L618 313 M630 325 L618 337"/>
+    <path d="M865 325 L920 325 M920 325 L908 313 M920 325 L908 337"/>
+  </g>
+
+  <text x="600" y="500" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#9db8d6">Laravel · WordPress · Drupal · plain PHP — any MySQL or MariaDB over SSH</text>
+  <text x="600" y="560" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="19" fill="#5f7fa3">github.com/atj4me/ddev-sql-sync</text>
+</svg>
