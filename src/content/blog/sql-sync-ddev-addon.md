@@ -1,6 +1,6 @@
 ---
 title: "SQL Sync for DDEV: Drush-Style Database Sync for Any SSH Server"
-pubDate: 2026-11-05
+pubDate: 2026-11-19
 summary: "If you have used Drush, you know sql-sync: one command copies a production database into your local site. The ddev-sql-sync add-on brings that shape to any SSH-accessible server — Laravel, WordPress, Drupal, or plain PHP — with aliases, a private staging folder on the server, and sanitize on by default."
 author: Ajith Thampi Joseph
 featureImage:
