@@ -1,7 +1,7 @@
 ---
 title: "Contributor Training: `git worktree` for Multiple DDEV Projects"
 pubDate: 2026-03-30
-modifiedDate: 2026-11-14
+modifiedDate: 2026-11-19
 modifiedComment: Added sharing database snapshots between worktrees
 summary: "Using git worktree with DDEV to run multiple versions of the same project simultaneously, sharing a single .git directory."
 author: Randy Fay
