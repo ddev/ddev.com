@@ -335,5 +335,12 @@
     "darklogo": "/logos/redirhub-dark.svg",
     "url": "https://www.redirhub.com/",
     "github": "redirhub"
+  },
+  {
+    "name": "New England Drupal Camp",
+    "type": "standard",
+    "logo": "/logos/nedcamp.svg",
+    "darklogo": "/logos/nedcamp-dark.svg",
+    "url": "https://nedcamp.org/"
   }
 ]
