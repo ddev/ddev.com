@@ -12,7 +12,7 @@ categories:
 
 Every few weeks someone shows me a new local development tool. Lately many of them were written in a weekend with an AI agent, and the announcement often includes the words "ditching Docker". One I looked at this week has about 37,000 lines of Rust, a desktop app, a CLI, an MCP server, and native packages for four platforms, and the repository is five days old. It starts nginx or Apache, PHP-FPM, MariaDB, Redis, and Mailpit directly on your computer, with HTTPS and a `.test` hostname for each project.
 
-That's impressive work, and I mean that. It's also not a new idea. MAMP, XAMPP, Valet, [Laravel Herd](https://herd.laravel.com/), and [Local](https://localwp.com/) have all been "run the web components natively" tools for years, and plenty of people are happy with them.
+That's impressive work, and I mean that. It's also not a new idea. MAMP, XAMPP, Laravel Valet, [Laravel Herd](https://herd.laravel.com/), and [Local](https://localwp.com/) have all been "run the web components natively" tools for years, and plenty of people are happy with them.
 
 But I think a lot of people don't see the difference between running web components and a local development environment. Starting nginx, PHP, and a database is the easy part. AI has made it easier still. The hard parts are what happens with the second project, the tenth project, the second developer on the team, the client who needs Solr, the legacy site on PHP 7.2, and the operating system update next spring. Those are what DDEV has spent more than ten years on.
 
