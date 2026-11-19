@@ -1,8 +1,8 @@
 ---
 title: "What’s so different about DDEV?"
 pubDate: 2022-10-30
-modifiedDate: 2026-07-29
-modifiedComment: 'Updated the Docker-provider list (added OrbStack, Rancher Desktop, Podman), replaced the removed NFS reference with Mutagen, fixed a dead ddev.com/ddev-local link, dropped the stale "PHP 8.2/Drupal 10 not yet released" claim, and updated the deb.sury.org PHP version range to 5.6-8.5.'
+modifiedDate: 2026-11-19
+modifiedComment: "Added the DDEV Foundation, sponsorship, and a link to the newer comparison with native and vibe-coded local development tools."
 summary: What makes DDEV stand out among other local development tools.
 author: Randy Fay
 featureImage:
@@ -13,6 +13,8 @@ categories:
 ---
 
 These days users from designers to developers to testers and open source contributors have a wide variety of local development environments to choose from. Because most of the tools and platforms we use will run in many different operating systems and environments, we have the option of rolling our own, using a commercial project like [MAMP](https://www.mamp.info/en/mamp-pro/mac/) or [Local](https://localwp.com/) (for WordPress), or using one of the many Docker-based solutions like [DDEV](https://docs.ddev.com/), [Docksal](https://docksal.io/), or [Lando](https://lando.dev/).
+
+If you're comparing DDEV with tools that run PHP and a database directly on your computer, like Laravel Herd, Local, or something you built with an AI agent, see [Vibe-Code Your Own Local Dev Environment, or Use DDEV? What's the Difference](vibe-code-your-own-or-use-ddev.md).
 
 **But what’s so special about DDEV**? What makes it different from other Docker-based solutions like [Lando](https://lando.dev/) or [Docksal](https://docksal.io/)? I recently spent a little time exploring several similar platforms and was impressed with what I saw, but definitely came away wanting to highlight a number of DDEV features.
 
@@ -42,6 +44,7 @@ These days users from designers to developers to testers and open source contrib
 ## Most importantly: the DDEV community
 
 - **Amazing community involvement and support**: The DDEV community has been phenomenal through the years, contributing ideas, code, and shared support. There are open collections of [DDEV services, tools, snippets, approaches](https://docs.ddev.com/en/stable/users/extend/additional-services/) as well as [blogs and presentations](https://github.com/ddev/awesome-ddev) and more from users around the world. You’ll find very deep [community support](https://docs.ddev.com/en/stable/users/support/) in a [Discord](/s/discord) and [Stack Overflow](https://stackoverflow.com/tags/ddev), etc. We are beyond grateful to all who have contributed to and shared DDEV, thank you!
+- **The [DDEV Foundation](/foundation)**, a [US 501(c)(3) nonprofit](501c3.md) with a [Board of Directors](board-of-directors-established.md), owns DDEV and pays its maintainers. DDEV is free and open-source software, and it's sustained by its [sponsors](/sponsor), not by selling hosting or a Pro tier.
 - **The [DDEV Advisory Group](https://github.com/ddev/ddev/discussions/categories/ddev-advisory-group)** provides oversight, direction and feedback for the project. Anyone is welcome to join.
 - **DDEV in the Open Source ecosystem:** Upstream and downstream, we’re pleased to contribute and collaborate to a variety of open source projects, including:
   - **Docker project**: We’re very involved with the Docker project, because DDEV users are always pushing the limits. We participate heavily in the [Compose](https://github.com/docker/compose/issues), [Docker Desktop for Mac](https://github.com/docker/for-mac/issues) and [Docker Desktop for Windows](https://github.com/docker/for-win/issues) issue queues, along with several others.
@@ -49,4 +52,4 @@ These days users from designers to developers to testers and open source contrib
   - **Xdebug**: DDEV is great with [Xdebug](https://xdebug.org/), and of course we hear right away when there are problems and have been right in there in the issue queue.
   - **deb.sury.org PHP Packages**: The Debian PHP packages (5.6 all the way through 8.5 at this point) that we use come from [deb.sury.org](https://deb.sury.org), and because the DDEV community is an early consumer of those packages, we’re often in that [issue queue](https://github.com/oerdnj/deb.sury.org/issues) too.
 
-We’d love to hear what makes DDEV _your_ favorite, and we’re always [listening](https://docs.ddev.com/en/stable/users/support/) to hear what you want in the future… and of course we want to hear when things don’t work the way you want or expect. Hop in to the [open source repository on GitHub](https://github.com/ddev/ddev) to contribute!
+We’d love to hear what makes DDEV _your_ favorite, and we’re always [listening](https://docs.ddev.com/en/stable/users/support/) to hear what you want in the future… and of course we want to hear when things don’t work the way you want or expect. Hop in to the [open source repository on GitHub](https://github.com/ddev/ddev) to contribute, and if DDEV saves you time, please consider [sponsoring DDEV](/sponsor)!
