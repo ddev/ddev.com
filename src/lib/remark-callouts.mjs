@@ -57,11 +57,15 @@ export function remarkCallouts() {
         if (!style) return
 
         const data = node.data || (node.data = {})
-        const hast = data.hDirectiveLabel || {}
 
-        // Get the label from attributes or use default
-        const label =
-          node.attributes?.label || hast.children?.[0]?.value || style.title
+        // remark-directive puts the `[Title]` of `:::tip[Title]` in a first
+        // paragraph marked as the directive label
+        const labelNode = node.children[0]?.data?.directiveLabel
+          ? node.children.shift()
+          : undefined
+        const title = labelNode?.children ?? [
+          { type: "text", value: node.attributes?.label || style.title },
+        ]
 
         // Transform to HTML
         data.hName = "div"
@@ -69,22 +73,14 @@ export function remarkCallouts() {
           class: style.containerClass,
         }
 
-        // Add title if label exists
-        if (label) {
-          node.children.unshift({
-            type: "paragraph",
-            data: {
-              hName: "div",
-              hProperties: { class: "callout-title" },
-            },
-            children: [
-              {
-                type: "text",
-                value: `${style.icon} ${label}`,
-              },
-            ],
-          })
-        }
+        node.children.unshift({
+          type: "paragraph",
+          data: {
+            hName: "div",
+            hProperties: { class: "callout-title" },
+          },
+          children: [{ type: "text", value: `${style.icon} ` }, ...title],
+        })
       }
     })
   }
