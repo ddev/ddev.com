@@ -56,7 +56,7 @@ A script that pipes answers into bare `ddev config` now needs a leading `no` lin
 
 ## New Tables in `ddev list` and `ddev describe`
 
-[`ddev list`](https://docs.ddev.com/en/stable/users/usage/commands/#list), `ddev describe`, and [`ddev snapshot --list`](https://docs.ddev.com/en/stable/users/usage/commands/#snapshot) now fit the terminal width and look like `ddev tui`. Here are eight demo projects in v1.25.5 (top) and v1.25.6 (bottom):
+[`ddev list`](https://docs.ddev.com/en/stable/users/usage/commands/#list), [`ddev describe`](https://docs.ddev.com/en/stable/users/usage/commands/#describe), and [`ddev snapshot --list`](https://docs.ddev.com/en/stable/users/usage/commands/#snapshot) now fit the terminal width and look like [`ddev tui`](https://docs.ddev.com/en/stable/users/usage/commands/#tui). Here are eight demo projects in v1.25.5 (top) and v1.25.6 (bottom):
 
 ![`ddev list` in v1.25.5 (top) and v1.25.6 (bottom)](/img/blog/2026/11/ddev-list-v1-25-5-vs-v1-25-6.png)
 
@@ -81,17 +81,17 @@ docker volume rm ddev-global-cache
 
 - A crafted archive in `ddev add-on get`, `ddev import-db`, or `ddev import-files` could write outside its destination through relative symlinks. This is fixed, see [GHSA-vxj4-5gfg-97c2](https://github.com/ddev/ddev/security/advisories/GHSA-vxj4-5gfg-97c2).
 - PHP files in directories that DDEV's nginx configuration denies, such as TYPO3 `vendor`, CodeIgniter `system`, and hidden directories, no longer run, thanks to [@Atesca](https://github.com/Atesca).
-- nginx now denies what the CMS's `.htaccess` denies on Apache, such as Drupal's `*.yml` and `*.twig` files, Magento 1's `app/etc/local.xml` with the database credentials, and Maho's customer uploads. Apache denies dotfiles such as `.env` and `.git/`. If you removed `#ddev-generated` from `.ddev/nginx_full/nginx-site.conf` or `.ddev/apache/apache-site.conf`, merge the changes from the new template.
+- nginx now denies what the CMS's `.htaccess` denies on Apache, such as Drupal's `*.yml` and `*.twig` files, Magento 1's `app/etc/local.xml` with the database credentials, and Maho's customer uploads. Apache denies dotfiles such as `.env` and `.git/`. If you removed `#ddev-generated` from [`.ddev/nginx_full/nginx-site.conf`](https://docs.ddev.com/en/stable/users/extend/customization-extendibility/#custom-nginx-configuration) or [`.ddev/apache/apache-site.conf`](https://docs.ddev.com/en/stable/users/extend/customization-extendibility/#custom-apache-configuration), merge the changes from the new template.
 - The `ddev-xhgui` image had PHP and nginx from July 2025, and now gets current Alpine packages.
 
 ## Regressions, Fixed
 
-- Usage data is sent again if you opted in. v1.25.5 sent nothing.
+- Usage data is sent again if you [opted in](https://docs.ddev.com/en/stable/users/usage/diagnostics/). v1.25.5 sent nothing.
 - Lines you type after a command that reads the terminal, like the Craft CMS setup wizard, are no longer dropped. This broke in v1.25.3.
 
 ## Everything Else
 
-When you run DDEV in GitHub Actions, GitLab CI, or another CI system, `ddev start` [passes its `CI` variable into the `web` container](https://docs.ddev.com/en/stable/users/configuration/environment-variables/#ci-from-the-host), so tools there skip prompts and progress bars. The [Wagtail quickstart](https://docs.ddev.com/en/stable/users/quickstart/#wagtail) builds its virtual environment in the web image. A restarted `web` or `xhgui` container no longer takes about 60 seconds to become healthy, and custom command files keep their group-write bit and ACLs, thanks to [@steffenmaechtel](https://github.com/steffenmaechtel). See the [release notes](https://github.com/ddev/ddev/releases/tag/v1.25.6) for the rest.
+When you run DDEV in GitHub Actions, GitLab CI, or another CI system, `ddev start` [passes its `CI` variable into the `web` container](https://docs.ddev.com/en/stable/users/configuration/environment-variables/#ci-from-the-host), so tools there skip prompts and progress bars. The [Wagtail quickstart](https://docs.ddev.com/en/stable/users/quickstart/#wagtail) builds its virtual environment in the web image. A restarted `web` or `xhgui` container no longer takes about 60 seconds to become healthy, and [custom command](https://docs.ddev.com/en/stable/users/extend/custom-commands/) files keep their group-write bit and ACLs, thanks to [@steffenmaechtel](https://github.com/steffenmaechtel). See the [release notes](https://github.com/ddev/ddev/releases/tag/v1.25.6) for the rest.
 
 From all of us, thanks for using, promoting, contributing, and supporting DDEV!
 
