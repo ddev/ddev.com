@@ -19,7 +19,7 @@ categories:
 
 `ddev-webserver` now ships PHP 8.5.13, 8.4.28, 8.3.37, and 8.2.36, which fix [17 advisories](https://github.com/php/php-src/security/advisories). Projects on PHP 5.6 through 8.1 get the same fixes from deb.sury.org, with unchanged version numbers. Each project picks them up the next time it starts.
 
-None of the advisories looks urgent for a default DDEV project. DDEV's `session.upload_progress.enabled = 0` and `zend.exception_ignore_args = On` block two of the critical ones, and the way DDEV runs PHP-FPM avoids the FPM ones. A custom configuration, such as a file-based `error_log` or `fastcgi_keep_conn on`, can open some of them again.
+None of the advisories looks urgent for a default DDEV project. DDEV's `session.upload_progress.enabled = 0` and `zend.exception_ignore_args = On` block two of the critical ones, and the way DDEV runs PHP-FPM makes the FPM ones unreachable or harmless. A custom configuration, such as a file-based `error_log` or `fastcgi_keep_conn on`, can open some of them again. Nine others depend on your project's own code, such as session handling or SOAP endpoints, and only the PHP update fixes them.
 
 :::tip[Getting a new PHP patch release before DDEV ships it]
 New PHP patch releases, such as security fixes, reach deb.sury.org before the next DDEV release. This file upgrades the PHP packages in your project's web image when you rebuild it:
@@ -95,7 +95,7 @@ docker volume rm ddev-global-cache
 
 ## Everything Else
 
-When you run DDEV in GitHub Actions, GitLab CI, or another CI system, `ddev start` [passes its `CI` variable into the `web` container](https://docs.ddev.com/en/stable/users/configuration/environment-variables/#ci-from-the-host), so tools there skip prompts and progress bars. The [Wagtail quickstart](https://docs.ddev.com/en/stable/users/quickstart/#wagtail) builds its virtual environment in the web image. A restarted `web` or `xhgui` container no longer takes about 60 seconds to become healthy, and [custom command](https://docs.ddev.com/en/stable/users/extend/custom-commands/) files keep their group-write bit and ACLs, thanks to [@steffenmaechtel](https://github.com/steffenmaechtel). See the [release notes](https://github.com/ddev/ddev/releases/tag/v1.25.6) for the rest.
+When you run DDEV in GitHub Actions, GitLab CI, or another CI system, `ddev start` [passes its `CI` variable into the `web` container](https://docs.ddev.com/en/stable/users/configuration/environment-variables/#ci-from-the-host), so tools there skip prompts and progress bars. The [Wagtail quickstart](https://docs.ddev.com/en/stable/users/quickstart/#wagtail-python-generic) builds its virtual environment in the web image. A restarted `web` or `xhgui` container no longer takes about 60 seconds to become healthy, and [custom command](https://docs.ddev.com/en/stable/users/extend/custom-commands/) files keep their group-write bit and ACLs, thanks to [@steffenmaechtel](https://github.com/steffenmaechtel). See the [release notes](https://github.com/ddev/ddev/releases/tag/v1.25.6) for the rest.
 
 From all of us, thanks for using, promoting, contributing, and supporting DDEV!
 
