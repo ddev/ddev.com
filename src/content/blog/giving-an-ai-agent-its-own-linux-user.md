@@ -1,6 +1,6 @@
 ---
 title: "Giving an AI Agent Its Own Linux User (Without Breaking DDEV)"
-pubDate: 2026-11-20
+pubDate: 2026-11-18
 summary: A coding agent on your WSL2 machine does not need to run as you. How I gave mine a dedicated Linux user, one shared DDEV home, and a rootless Docker backend, and kept my daily workflow exactly as it was.
 author: Steffen Maechtel
 featureImage:

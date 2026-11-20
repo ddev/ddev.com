@@ -10,40 +10,35 @@ import { PauseIcon, PlayIcon } from "@heroicons/react/20/solid/index.js"
 const latestRelease = await getLatestReleaseVersion()
 
 // Pre-rendered ddev describe output — used for both the animation and noscript fallback
-const versionText = `DDEV version: ${latestRelease}`
-const versionLine = `│ ${versionText}${" ".repeat(85 - versionText.length)} │`
 const describeOutput = `ddev describe
-┌───────────────────────────────────────────────────────────────────────────────────────┐
-│ Project: my-project ~/dev/my-project https://my-project.ddev.site                     │
-│ Docker platform: linux-docker                                                         │
-│ Router: traefik                                                                       │
-${versionLine}
-├──────────────┬──────┬────────────────────────────────────────────┬────────────────────┤
-│ SERVICE      │ STAT │ URL/PORT                                   │ INFO               │
-├──────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
-│ web          │ <span class="text-green-400">OK</span>   │ https://my-project.ddev.site               │ php PHP 8.4        │
-│              │      │ InDocker -> Host:                          │ Server: nginx-fpm  │
-│              │      │  - web:80 -> 127.0.0.1:32865               │ Docroot: 'public'  │
-│              │      │  - web:443 -> 127.0.0.1:32866              │ Perf mode: none    │
-│              │      │  - web:8025 -> 127.0.0.1:32867             │ Node.js: 24        │
-├──────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
-│ db           │ <span class="text-green-400">OK</span>   │ InDocker -> Host:                          │ mariadb:11.8       │
-│              │      │  - db:3306 -> 127.0.0.1:32868              │ User/Pass: 'db/db' │
-│              │      │                                            │ or 'root/root'     │
-├──────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
-│ xhgui        │ <span class="text-green-400">OK</span>   │ https://my-project.ddev.site:8142          │                    │
-│              │      │ InDocker:                                  │                    │
-│              │      │  - xhgui:80                                │                    │
-│              │      │ Launch: ddev xhgui                         │                    │
-├──────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
-│ Mailpit      │      │ Mailpit: https://my-project.ddev.site:8026 │                    │
-│              │      │ Launch: ddev mailpit                       │                    │
-├──────────────┼──────┼────────────────────────────────────────────┼────────────────────┤
-│ Project URLs │      │ https://my-project.ddev.site               │                    │
-│              │      │ https://127.0.0.1:32866                    │                    │
-│              │      │ http://my-project.ddev.site                │                    │
-│              │      │ http://127.0.0.1:32865                     │                    │
-└──────────────┴──────┴────────────────────────────────────────────┴────────────────────┘`
+<span class="font-bold">my-project</span>  ~/dev/my-project  <span class="underline">https://my-project.ddev.site</span>
+Docker platform: linux-docker<span class="text-slate-400"> · </span>Router: traefik<span class="text-slate-400"> · </span>DDEV version: ${latestRelease}
+<span class="text-slate-400">╭───────────────────────────────────────────────────────────────────────────╮</span>
+<span class="text-slate-400">│</span> <span class="font-bold">SERVICE</span>       <span class="font-bold">STAT</span>  <span class="font-bold">URL/PORT</span>                           <span class="font-bold">INFO</span>               <span class="text-slate-400">│</span>
+<span class="text-slate-400">├───────────────────────────────────────────────────────────────────────────┤</span>
+<span class="text-slate-400">│</span> <span class="font-bold">web</span>           <span class="text-green-400">● OK</span>  <span class="underline">https://my-project.ddev.site</span>       php PHP 8.4        <span class="text-slate-400">│</span>
+<span class="text-slate-400">│</span>                     <span class="text-slate-400">InDocker -&gt; Host:</span>                  Server: nginx-fpm  <span class="text-slate-400">│</span>
+<span class="text-slate-400">│</span>                      - web:80 -&gt; 127.0.0.1:28630       Docroot: 'public'  <span class="text-slate-400">│</span>
+<span class="text-slate-400">│</span>                      - web:443 -&gt; 127.0.0.1:20813      Perf mode: none    <span class="text-slate-400">│</span>
+<span class="text-slate-400">│</span>                      - web:8025 -&gt; 127.0.0.1:23624     Node.js: 24        <span class="text-slate-400">│</span>
+<span class="text-slate-400">├───────────────────────────────────────────────────────────────────────────┤</span>
+<span class="text-slate-400">│</span> <span class="font-bold">db</span>            <span class="text-green-400">● OK</span>  <span class="text-slate-400">InDocker -&gt; Host:</span>                  mariadb:11.8       <span class="text-slate-400">│</span>
+<span class="text-slate-400">│</span>                      - db:3306 -&gt; 127.0.0.1:24243      User/Pass: 'db/db' <span class="text-slate-400">│</span>
+<span class="text-slate-400">│</span>                                                        or 'root/root'     <span class="text-slate-400">│</span>
+<span class="text-slate-400">├───────────────────────────────────────────────────────────────────────────┤</span>
+<span class="text-slate-400">│</span> <span class="font-bold">xhgui</span>         <span class="text-green-400">● OK</span>  <span class="underline">https://my-project.ddev.site:8142</span>                     <span class="text-slate-400">│</span>
+<span class="text-slate-400">│</span>                     <span class="text-slate-400">InDocker:</span>                                             <span class="text-slate-400">│</span>
+<span class="text-slate-400">│</span>                      - xhgui:80                                           <span class="text-slate-400">│</span>
+<span class="text-slate-400">│</span>                     Launch: ddev xhgui                                    <span class="text-slate-400">│</span>
+<span class="text-slate-400">├───────────────────────────────────────────────────────────────────────────┤</span>
+<span class="text-slate-400">│</span> <span class="font-bold">Mailpit</span>             <span class="underline">https://my-project.ddev.site:8026</span>                     <span class="text-slate-400">│</span>
+<span class="text-slate-400">│</span>                     Launch: ddev mailpit                                  <span class="text-slate-400">│</span>
+<span class="text-slate-400">├───────────────────────────────────────────────────────────────────────────┤</span>
+<span class="text-slate-400">│</span> <span class="font-bold">Project URLs</span>        <span class="underline">https://my-project.ddev.site</span>                          <span class="text-slate-400">│</span>
+<span class="text-slate-400">│</span>                     <span class="underline">https://127.0.0.1:20813</span>                               <span class="text-slate-400">│</span>
+<span class="text-slate-400">│</span>                     <span class="underline">http://my-project.ddev.site</span>                           <span class="text-slate-400">│</span>
+<span class="text-slate-400">│</span>                     <span class="underline">http://127.0.0.1:28630</span>                                <span class="text-slate-400">│</span>
+<span class="text-slate-400">╰───────────────────────────────────────────────────────────────────────────╯</span>`
 ---
 
 <script>
@@ -106,7 +101,7 @@ Waiting for ddev-router to become ready...${WORK} ready in 1.0s
     {
       clumps: [
         { transition: "type", lines: 1, wait: 1000 },
-        { transition: "show", lines: 31 },
+        { transition: "show", lines: 28 },
       ],
       output: describeOutput,
       hold: 6,
