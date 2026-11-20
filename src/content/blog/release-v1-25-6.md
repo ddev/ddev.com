@@ -21,7 +21,8 @@ categories:
 
 None of the advisories looks urgent for a default DDEV project. DDEV's `session.upload_progress.enabled = 0` and `zend.exception_ignore_args = On` block two of the critical ones, and the way DDEV runs PHP-FPM avoids the FPM ones. A custom configuration, such as a file-based `error_log` or `fastcgi_keep_conn on`, can open some of them again.
 
-Next time, you don't have to wait for a DDEV release. New PHP releases reach deb.sury.org first, and the tip in [`php_version`](https://docs.ddev.com/en/stable/users/configuration/config/#php_version) installs them. Add this file and rebuild:
+:::tip[Getting a new PHP patch release before DDEV ships it]
+New PHP patch releases, such as security fixes, reach deb.sury.org before the next DDEV release. This file upgrades the PHP packages in your project's web image when you rebuild it:
 
 ```dockerfile
 # .ddev/web-build/Dockerfile.php-upgrade
@@ -33,6 +34,9 @@ RUN (apt-get update || true) && apt-get install -y --only-upgrade 'php*'
 ddev restart --no-cache
 ddev php -v
 ```
+
+See [`php_version`](https://docs.ddev.com/en/stable/users/configuration/config/#php_version).
+:::
 
 ## PHP 8.6.0
 
