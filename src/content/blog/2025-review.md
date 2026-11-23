@@ -434,7 +434,7 @@ I know this is "Too Much Information" but here is a simple and inadequate list o
 
 - fix: add timeout for netutil::IsPortActive check for WSL2 with "mirrored networking mode" as opposed to default "NAT mode", fixes #6245 (#7166)
 
-**RubenColpaert** - [RubenColpaert](https://github.com/RubenColpaert) - [1 contribution](https://github.com/ddev/ddev/commits?author=RubenColpaert&since=2025-01-01&until=2025-12-31)
+**RubenColpaert** - 1 contribution
 
 - fix: use `charset=utf8mb4` in DATABASE_URL for Symfony environment variables, fixes #7068 (#7076)
 
