@@ -124,8 +124,34 @@ jobs:
             | jq -r --arg t "$ISSUE_TITLE" \
                 '[.[] | select(.title == $t)] | first | .number // empty')
           if [ -n "$existing" ]; then
+            # Editing the body sends no notification, so also comment on every
+            # run, listing what changed since the previous report.
+            url_list() { tr -d '\r' | sed -n 's/^  \(https\?:\/\/[^ ]*\)$/\1/p' | sort -u; }
+            gh issue view "$existing" --repo "$GITHUB_REPOSITORY" --json body --jq .body \
+              | url_list > previous.txt
+            url_list < report.md > current.txt
+            comm -13 previous.txt current.txt > new.txt
+            comm -23 previous.txt current.txt > resolved.txt
+            {
+              echo "[Sweep run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}): ${{ steps.check.outputs.broken }} broken link(s). The issue description has the current list."
+              if [ -s new.txt ]; then
+                echo
+                echo "New since the last sweep:"
+                sed 's/^/- /' new.txt
+              fi
+              if [ -s resolved.txt ]; then
+                echo
+                echo "Resolved since the last sweep:"
+                sed 's/^/- /' resolved.txt
+              fi
+              if [ ! -s new.txt ] && [ ! -s resolved.txt ]; then
+                echo
+                echo "No change since the last sweep."
+              fi
+            } > comment.md
             gh issue edit "$existing" --repo "$GITHUB_REPOSITORY" --body-file report.md
-            echo "Updated issue #$existing"
+            gh issue comment "$existing" --repo "$GITHUB_REPOSITORY" --body-file comment.md
+            echo "Updated and commented on issue #$existing"
           else
             gh issue create --repo "$GITHUB_REPOSITORY" \
               --title "$ISSUE_TITLE" --body-file report.md

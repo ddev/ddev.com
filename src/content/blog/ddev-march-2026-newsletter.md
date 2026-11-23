@@ -44,7 +44,7 @@ If you attended and have thoughts (or are just interested) join us to discuss in
 
 ## Florida Drupal Camp
 
-Florida Drupalcamp in February was also a good time — see the [`git worktree` session recording](https://www.fldrupal.camp/session/use-git-worktree-ddev-run-multiple-versions-same-site) was well-received. Thanks to everyone who came out and shared their DDEV experiences.
+Florida Drupalcamp in February was also a good time — see the [`git worktree` session recording](https://www.youtube.com/watch?v=nQ0z6Cz2hxk) was well-received. Thanks to everyone who came out and shared their DDEV experiences.
 
 ## Governance
 

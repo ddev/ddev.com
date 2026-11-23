@@ -29,7 +29,7 @@ Here's our March 26, 2026 [Contributor Training](/blog/category/training) on usi
 
 The slides are available at [rfay.github.io/git-worktree-ddev](https://rfay.github.io/git-worktree-ddev/).
 
-See also the [presentation at Florida Drupal Camp](https://www.fldrupal.camp/session/use-git-worktree-ddev-run-multiple-versions-same-site).
+See also the [presentation at Florida Drupal Camp](https://www.youtube.com/watch?v=nQ0z6Cz2hxk).
 
 ## The Problem: Multiple Versions of a Project
 

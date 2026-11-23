@@ -44,6 +44,15 @@ ignorePatterns:
   # will appear. A stale link to a past meeting should be removed from the post
   # rather than left for this pattern to hide.
   - pattern: "^https://(www\\.)?timeanddate\\.com"
+  # Same challenge. Verified 2026-11-23: HEAD returns 200, GET returns 403 with
+  # "cf-mitigated: challenge".
+  - pattern: "^https://thenewstack\\.io"
+  - pattern: "^https://(www\\.)?drupaleasy\\.com"
+  # Vercel's bot challenge ("x-vercel-mitigated: challenge", HTTP 429) is the
+  # same idea on Vercel-hosted sites: the 429 is not real rate limiting, and the
+  # pages load in a normal browser.
+  - pattern: "^https://(www\\.)?viget\\.com"
+  - pattern: "^https://deepwiki\\.com"
   # Same challenge, but only intermittently: failed in the 2026-07-30 and
   # 2026-07-31 runs, passed on 2026-08-03. Used only for image-credit
   # attribution links.
