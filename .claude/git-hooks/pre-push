@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# Runs only for git commands Claude Code issues: SessionStart points
+# core.hooksPath here through GIT_CONFIG_* variables in Claude's shells.
+# Claude Code asks before each push; this refuses the pushes never allowed.
+set -euo pipefail
+
+remote=$1
+url=$(printf '%s' "$2" | tr '[:upper:]' '[:lower:]')
+url=${url%/}
+url=${url%.git}
+
+deny() {
+  echo "pre-push (.claude/git-hooks): $*" >&2
+  exit 1
+}
+
+case "$url" in
+  *[:/]ddev/ddev.com) deny "agents push only to forks, never to ddev/ddev.com (remote '$remote')" ;;
+esac
+
+input=$(cat)
+while read -r local_ref local_sha remote_ref remote_sha; do
+  if [[ -z $local_ref ]]; then
+    continue
+  fi
+  if [[ $remote_ref != refs/heads/* ]]; then
+    deny "only branches may be pushed, not $remote_ref"
+  fi
+  if [[ $local_sha =~ ^0+$ ]]; then
+    deny "deleting $remote_ref is not allowed"
+  fi
+  # Non-fast-forward pushes are allowed: every remote left is a fork, and
+  # AGENTS.md asks for --force-with-lease to the task's own branch there.
+done <<<"$input"
+
+# core.hooksPath hides the repository's own hooks, so run its pre-push too.
+hook="$(git rev-parse --git-common-dir)/hooks/pre-push"
+if [[ -x $hook ]]; then
+  printf '%s\n' "$input" | "$hook" "$@"
+fi

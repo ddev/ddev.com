@@ -27,7 +27,18 @@
       "WebFetch(domain:ddev.com)",
       "WebFetch(domain:code.claude.com)"
     ],
-    "deny": ["Bash(git push *)"]
+    "deny": [
+      "Bash(git push *--no-verify*)",
+      "Bash(git push --force *)",
+      "Bash(git push * --force)",
+      "Bash(git push * --force *)",
+      "Bash(git push -f *)",
+      "Bash(git push * -f)",
+      "Bash(git push * -f *)",
+      "Bash(git push * +*)",
+      "Bash(git *core.hooksPath*)"
+    ],
+    "ask": ["Bash(git push *)"]
   },
   "hooks": {
     "PreToolUse": [
@@ -49,6 +60,20 @@
           {
             "type": "command",
             "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/format-edited-file.sh"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash",
+            "args": [
+              "-c",
+              "n=${GIT_CONFIG_COUNT:-0}; printf 'export GIT_CONFIG_KEY_%d=core.hooksPath GIT_CONFIG_VALUE_%d=%q GIT_CONFIG_COUNT=%d\\n' \"$n\" \"$n\" \"$CLAUDE_PROJECT_DIR/.claude/git-hooks\" $((n + 1)) >> \"$CLAUDE_ENV_FILE\""
+            ]
           }
         ]
       }
