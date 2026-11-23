@@ -24,8 +24,7 @@ Fetch files from GitHub through `raw.githubusercontent.com`; a
 `github.com/.../blob/...` page wraps the file in markup that costs tokens and
 can be summarized instead of read. DDEV's
 [organization-wide patterns](https://raw.githubusercontent.com/ddev/.github/main/AGENTS.md)
-mostly restate this file, which **wins where they differ**, for example on
-never pushing.
+mostly restate this file, which **wins where they differ**.
 
 ## Claude Code automation
 
@@ -43,7 +42,10 @@ treat them as facts about the environment rather than steps to repeat:
   commit.
 - Editing a file runs `ddev prettier` on it, and `ddev textlint` too under
   `src/content/`. Errors they cannot fix are shown to Claude.
-- `git push` is denied.
+- `git push` asks for approval every time, and a `pre-push` hook in
+  `.claude/git-hooks/` refuses pushes to `ddev/ddev.com`, deletions, and
+  anything but a branch. Force-pushes to a fork pass the hook; plain
+  `--force`, `-f`, and `+<refspec>` are denied, so use `--force-with-lease`.
 
 ## Commands
 
@@ -116,8 +118,15 @@ Applies to conversation, commit messages, PR text, content, and comments:
 
 ## Git workflow
 
-**Commit only when asked, and never run `git push`** or anything else that
-pushes to a remote, even when asked. The maintainer pushes.
+**Commit only when asked; push only to a fork, with approval.** Push a branch
+only after the user approves that push, only to a fork such as
+`rfay/ddev.com`, **never to `ddev/ddev.com`**, and never with `--delete` or
+`--no-verify`. Force-pushing is allowed only to the task's own branch on the
+fork, for example after a rebase or an amend on a PR branch; use
+`--force-with-lease`, not `--force`, and say in the approval request that the
+push rewrites the branch. When there is no fork to push to, finish at the
+commit, report which commits are unpushed, and say the next step needs the
+maintainer to push.
 
 Branch names are `YYYYMMDD_<username>_<short_description>`, for example
 `20250919_rfay_update_quickstart`. Commit titles follow Conventional Commits,

@@ -33,7 +33,20 @@ are skipped because no Prettier plugin parses them. An error the tools cannot
 fix exits 2, so Claude sees it; a payload without a file path or a stopped
 project exits 1, which only the user sees.
 
-## Permissions
+## Pushes
 
-`Bash(git push *)` also matches a bare `git push`. It does not match a push
-written another way, such as `git -C . push`; `AGENTS.md` covers those.
+The `ask` rule makes Claude prompt for every `git push`, in every permission
+mode including auto and bypass. `Bash(git push *)` also matches a bare
+`git push`. It cannot see forms like `git -C dir push` or `bash -c "git push"`,
+so `git-hooks/pre-push` is the backstop: it refuses pushes to `ddev/ddev.com`
+under any remote name, tag pushes, and deletions, whatever command started the
+push. Non-fast-forward pushes to a fork pass, since `AGENTS.md` allows
+`--force-with-lease` to the task's own branch; the deny rules catch `--force`,
+`-f`, and `+<refspec>`.
+
+A SessionStart hook sets `core.hooksPath` to `.claude/git-hooks` through
+`GIT_CONFIG_*` variables, so it applies only to Claude's shells and leaves
+`.git/config` alone. While it is set, git skips the repository's own
+`.git/hooks` other than `pre-push`, which the hook chains to. The deny rules on
+`--no-verify` and `core.hooksPath` keep Claude from switching the backstop off
+by accident; they are not a security boundary.
