@@ -22,9 +22,7 @@ FFmpeg is a Debian package, so [`webimage_extra_packages`](https://docs.ddev.com
 ddev config --webimage-extra-packages=ffmpeg
 ddev restart
 ddev exec ffmpeg -version
-```
 
-```text
 ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers
 ```
 
@@ -153,9 +151,7 @@ function run(array $cmd): bool
 
 ```bash
 ddev exec "ffprobe -v trace -i public/videos/91df5790335e596b.mp4 2>&1 | grep -o \"type:'\(moov\|mdat\)'\" | head -2"
-```
 
-```text
 type:'moov'
 type:'mdat'
 ```
@@ -193,9 +189,7 @@ DDEV's router and nginx answer byte-range requests with no extra configuration, 
 
 ```bash
 curl -sk -o /dev/null -D - -r 0-1023 https://vidlab2.ddev.site/videos/91df5790335e596b.mp4
-```
 
-```text
 HTTP/2 206
 content-range: bytes 0-1023/110554096
 content-type: video/mp4
