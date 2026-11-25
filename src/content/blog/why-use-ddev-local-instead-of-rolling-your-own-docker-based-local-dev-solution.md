@@ -30,7 +30,7 @@ If you know something about Docker, you know that you can throw one or two Docke
 - Explicit support for [many CMS types](https://docs.ddev.com/en/stable/users/quickstart/), including Drupal, Backdrop, TYPO3, Magento, Laravel, WordPress, Shopware and generic PHP, HTML, JavaScript, and Python projects. DDEV will set up basic settings files for you so you’re set up in moments, but you can [turn feature that off](controlling-cms-settings-files-in-ddev-local.md) when you don’t need it.
 - Support for nearly all versions of both MySQL, MariaDB, and PostgreSQL.
 - Native support for macOS (Apple Silicon and Intel), Windows, WSL2, Linux, both AMD64 and ARM64 architectures, great for diverse teams.
-- Out-of-the-box support for both Nginx and Apache and PHP 5.6-8.5.
+- Out-of-the-box support for both Nginx and Apache and PHP 5.6-8.6.
 - Trusted HTTPS for every project.
 - Import, export, and snapshot databases.
 - Run or start as many projects as you want to, all at the same time, depending on the resources you have available. Each project can have different PHP version, use apache instead of nginx, etc.

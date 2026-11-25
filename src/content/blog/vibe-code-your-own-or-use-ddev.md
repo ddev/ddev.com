@@ -1,6 +1,6 @@
 ---
 title: "Vibe-Code Your Own Local Dev Environment, or Use DDEV? What's the Difference"
-pubDate: 2026-11-19
+pubDate: 2026-11-25
 summary: Starting nginx, PHP-FPM, and a database on your computer is the easy part, and AI makes it even easier. What DDEV adds is per-project networking, the Traefik router, per-project PHP, web server, and database versions, an add-on ecosystem, support, and a nonprofit that will still be maintaining it next year.
 author: Randy Fay
 featureImage:
@@ -10,7 +10,7 @@ categories:
   - DevOps
 ---
 
-Every few weeks someone shows me a new local development tool. Lately many of them were written in a weekend with an AI agent, and the announcement often includes the words "ditching Docker". One I looked at this week has about 37,000 lines of Rust, a desktop app, a CLI, an MCP server, and native packages for four platforms, and the repository is five days old. It starts nginx or Apache, PHP-FPM, MariaDB, Redis, and Mailpit directly on your computer, with HTTPS and a `.test` hostname for each project.
+Every few weeks someone shows me a new local development tool. Lately many of them were written in a weekend with an AI agent, and the announcement often includes the words "ditching Docker". One I looked at recently has about 37,000 lines of Rust, a desktop app, a CLI, an MCP server, and native packages for four platforms, and the repository was five days old when I looked. It starts nginx or Apache, PHP-FPM, MariaDB, Redis, and Mailpit directly on your computer, with HTTPS and a `.test` hostname for each project.
 
 That's impressive work, and I mean that. It's also not a new idea. MAMP, XAMPP, Laravel Valet, [Laravel Herd](https://herd.laravel.com/), and [Local](https://localwp.com/) have all been "run the web components natively" tools for years, and plenty of people are happy with them.
 
@@ -54,7 +54,7 @@ database:
   version: "10.4"
 ```
 
-Another project running at the same time can use PHP 8.5 with `nginx-fpm` and PostgreSQL 18, and a third can use `webserver_type: generic` to run [FrankenPHP](using-frankenphp-with-ddev.md) or a Node.js server. DDEV supports PHP 5.6 through 8.5, MariaDB 5.5 through 12.3, MySQL 5.5 through 9.7, and PostgreSQL 9 through 18, so you can bring an [old project with unsupported PHP and MySQL](legacy-projects-with-unsupported-php-and-mysql-using-ddev.md) back to life without touching your other projects.
+Another project running at the same time can use PHP 8.5 with `nginx-fpm` and PostgreSQL 18, and a third can use `webserver_type: generic` to run [FrankenPHP](using-frankenphp-with-ddev.md) or a Node.js server. DDEV supports PHP 5.6 through 8.6, MariaDB 5.5 through 12.3, MySQL 5.5 through 9.7, and PostgreSQL 9 through 18, so you can bring an [old project with unsupported PHP and MySQL](legacy-projects-with-unsupported-php-and-mysql-using-ddev.md) back to life without touching your other projects.
 
 The database version is the one native stacks have the most trouble with. With one shared MariaDB server, every project gets the same MariaDB version. If one client is on MariaDB 10.4 and another is moving to 11.8, you're out of luck. In DDEV each project has its own database container with its own version, and `ddev snapshot` saves and restores it in seconds.
 
@@ -62,7 +62,7 @@ When a project needs something unusual, like an extra PHP extension or a newer I
 
 ## The Add-on Ecosystem
 
-The [DDEV Add-on Registry](https://addons.ddev.com) lists 315 add-ons today. 27 of them are official add-ons maintained by the DDEV team, and the other 288 come from the community. Redis, Solr, Elasticsearch, OpenSearch, Memcached, Varnish, MongoDB, RabbitMQ, Selenium, and many more are one command away:
+The [DDEV Add-on Registry](https://addons.ddev.com) lists 317 add-ons today. 27 of them are official add-ons maintained by the DDEV team, and the other 290 come from the community. Redis, Solr, Elasticsearch, OpenSearch, Memcached, Varnish, MongoDB, RabbitMQ, Selenium, and many more are one command away:
 
 ```bash
 ddev add-on get ddev/ddev-solr
@@ -77,7 +77,7 @@ With a native stack, a new service arrives only when the tool's author adds it, 
 
 Everything about a DDEV project lives in its `.ddev` directory, and you commit that directory. A new developer on the team clones the repository, runs `ddev start`, and has the same PHP version, the same database version, the same add-ons, the same hostnames, and the same custom commands as everybody else. It works the same on macOS, Windows, WSL2, and Linux, on both AMD64 and ARM64.
 
-Native tools usually keep project configuration in your home directory, so each developer sets up each project by hand, and the next person to join the team gets to do it again. I said in [Why use DDEV instead of rolling your own Docker-based local dev solution?](why-use-ddev-local-instead-of-rolling-your-own-docker-based-local-dev-solution.md) that the biggest benefit of DDEV may be that the team lead gets the day off. That's still true.
+Many native tools keep project configuration in your home directory, so each developer sets up each project by hand, and the next person to join the team gets to do it again. Herd is an exception: a [`herd.yml`](https://herd.laravel.com/docs/macos/sites/herd-yaml) file in the repository sets the PHP version, certificates, and services for the project. But it covers only what Herd ships, so it has no place for your own services or custom commands. I said in [Why use DDEV instead of rolling your own Docker-based local dev solution?](why-use-ddev-local-instead-of-rolling-your-own-docker-based-local-dev-solution.md) that the biggest benefit of DDEV may be that the team lead gets the day off. That's still true.
 
 ## Your Project Runs in Containers, Not on Your Host
 
@@ -134,21 +134,21 @@ But "I don't want Docker" doesn't mean what it did a few years ago. You don't ne
 
 ## The Comparison
 
-|                                  | Native or vibe-coded stack | Herd, Local, and similar      | Your own docker-compose | DDEV                                     |
-| -------------------------------- | -------------------------- | ----------------------------- | ----------------------- | ---------------------------------------- |
-| Project isolation                | None, shared servers       | None, shared servers          | Yes                     | Yes, a network per project               |
-| Hostnames and HTTPS              | Edits `/etc/hosts`         | Built-in                      | You build it            | `*.ddev.site`, Traefik, trusted HTTPS    |
-| PHP version per project          | Usually                    | Yes                           | Yes                     | 5.6 through 8.5                          |
-| Database version per project     | No, one per engine         | Varies                        | Yes                     | Yes, MariaDB, MySQL, PostgreSQL          |
-| Web server per project           | Sometimes                  | Usually one                   | Yes                     | nginx, Apache, or generic                |
-| Extra services                   | What the author ships      | What the vendor ships         | You build them          | 315 add-ons                              |
-| Configuration in your repository | Usually not                | No                            | Yes                     | Yes, `.ddev`                             |
-| Project types                    | PHP                        | One framework or CMS          | Anything                | PHP, Node.js, Python, and more           |
-| Platforms                        | Varies                     | Usually macOS and Windows     | Wherever Docker runs    | macOS, Windows, WSL2, Linux, AMD64/ARM64 |
-| Tied to a hosting company        | No                         | Often                         | No                      | No                                       |
-| License                          | Varies                     | Proprietary, often paid tiers | Yours                   | Apache-2.0, free                         |
-| Who maintains it                 | The author, for now        | A company                     | You                     | The DDEV Foundation, a nonprofit         |
-| Support                          | The author                 | The vendor                    | You                     | Maintainers and a large community        |
+|                                  | Native or vibe-coded stack | Herd, Local, and similar                         | Your own docker-compose | DDEV                                     |
+| -------------------------------- | -------------------------- | ------------------------------------------------ | ----------------------- | ---------------------------------------- |
+| Project isolation                | None, shared servers       | None, shared servers                             | Yes                     | Yes, a network per project               |
+| Hostnames and HTTPS              | Edits `/etc/hosts`         | Built-in                                         | You build it            | `*.ddev.site`, Traefik, trusted HTTPS    |
+| PHP version per project          | Usually                    | Yes                                              | Yes                     | 5.6 through 8.6                          |
+| Database version per project     | No, one per engine         | Varies                                           | Yes                     | Yes, MariaDB, MySQL, PostgreSQL          |
+| Web server per project           | Sometimes                  | Usually one                                      | Yes                     | nginx, Apache, or generic                |
+| Extra services                   | What the author ships      | What the vendor ships                            | You build them          | 317 add-ons                              |
+| Configuration in your repository | Usually not                | Herd: `herd.yml`, for what Herd ships; Local: No | Yes                     | Yes, `.ddev`                             |
+| Project types                    | PHP                        | One framework or CMS                             | Anything                | PHP, Node.js, Python, and more           |
+| Platforms                        | Varies                     | Herd: macOS and Windows; Local: also Linux       | Wherever Docker runs    | macOS, Windows, WSL2, Linux, AMD64/ARM64 |
+| Tied to a hosting company        | No                         | Often                                            | No                      | No                                       |
+| License                          | Varies                     | Proprietary, often paid tiers                    | Yours                   | Apache-2.0, free                         |
+| Who maintains it                 | The author, for now        | A company                                        | You                     | The DDEV Foundation, a nonprofit         |
+| Support                          | The author                 | The vendor                                       | You                     | Maintainers and a large community        |
 
 ## Go Ahead and Build One
 
