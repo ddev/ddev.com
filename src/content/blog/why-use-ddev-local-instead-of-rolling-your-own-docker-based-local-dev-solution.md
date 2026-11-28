@@ -1,8 +1,8 @@
 ---
 title: "Why use DDEV instead of rolling your own Docker-based local dev solution?"
 pubDate: 2022-12-22
-modifiedDate: 2026-07-29
-modifiedComment: "Updated the years-of-development figure, PHP version range (to 5.6-8.5), a dead step-debugging doc anchor, the Platform.sh link to Upsun, and added Lagoon to the hosting-provider integration list."
+modifiedDate: 2026-11-19
+modifiedComment: "Added the DDEV Foundation and a link to the newer comparison with native and vibe-coded local development tools."
 summary: The benefits of using DDEV instead of a custom Docker setup for local development.
 author: Randy Fay
 featureImage:
@@ -13,7 +13,7 @@ categories:
   - DevOps
 ---
 
-If you know something about Docker, you know that you can throw one or two Docker images together and get yourself a working local development environment. There are plenty of nginx and PHP images out there on [hub.docker.com](https://hub.docker.com), and you can do lots and lots of things with them. So why use [DDEV](https://docs.ddev.com), a tool that runs on Docker, when you could roll your own Docker solution for local development? I’ll try to make a comparison. Of course, I’m biased in favor of DDEV.
+If you know something about Docker, you know that you can throw one or two Docker images together and get yourself a working local development environment. There are plenty of nginx and PHP images out there on [hub.docker.com](https://hub.docker.com), and you can do lots and lots of things with them. So why use [DDEV](https://docs.ddev.com), a tool that runs on Docker, when you could roll your own Docker solution for local development? I’ll try to make a comparison. Of course, I’m biased in favor of DDEV. (These days the question is often about a tool that runs PHP and a database directly on your computer, maybe one written with an AI agent. I covered that in [Vibe-Code Your Own Local Dev Environment, or Use DDEV? What's the Difference](vibe-code-your-own-or-use-ddev.md). The same reasoning applies whether you or an AI wrote the configuration.)
 
 ### **Custom Docker or docker-compose solution:**
 
@@ -25,12 +25,12 @@ If you know something about Docker, you know that you can throw one or two Docke
 
 ### **DDEV:**
 
-- [Open-source project](https://github.com/ddev/ddev) with no vendor lock-in.
+- [Open-source project](https://github.com/ddev/ddev) with no vendor lock-in, owned by the [DDEV Foundation](/foundation), a [US 501(c)(3) nonprofit](501c3.md).
 - Has already undergone more than 10 years of development, adding requested features and collaborating with community contributors. Consider [sponsoring DDEV](/sponsor) to help keep it going.
 - Explicit support for [many CMS types](https://docs.ddev.com/en/stable/users/quickstart/), including Drupal, Backdrop, TYPO3, Magento, Laravel, WordPress, Shopware and generic PHP, HTML, JavaScript, and Python projects. DDEV will set up basic settings files for you so you’re set up in moments, but you can [turn feature that off](controlling-cms-settings-files-in-ddev-local.md) when you don’t need it.
 - Support for nearly all versions of both MySQL, MariaDB, and PostgreSQL.
 - Native support for macOS (Apple Silicon and Intel), Windows, WSL2, Linux, both AMD64 and ARM64 architectures, great for diverse teams.
-- Out-of-the-box support for both Nginx and Apache and PHP 5.6-8.5.
+- Out-of-the-box support for both Nginx and Apache and PHP 5.6-8.6.
 - Trusted HTTPS for every project.
 - Import, export, and snapshot databases.
 - Run or start as many projects as you want to, all at the same time, depending on the resources you have available. Each project can have different PHP version, use apache instead of nginx, etc.
